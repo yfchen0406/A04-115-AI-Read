@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>2026~yfchen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 首頁的icon圖案，yfchen -->
+  <link rel="shortcut icon" href="/images/A01-logo/A04-yfchen-logo-removebg-preview.png" type="image/x-icon">
+
+  <!-- 下面都固定，剩下自訂 css架構還沒放進來 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0/vue.cjs.js"></script> -->
+
+  <!-- 這邊新增Bootstrap 5 後面新增icon要使用 -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <!-- 自己的CSS，到1141202才發現這個沒有拉進來 -->
+  <!-- <link rel="stylesheet" href="/css/F01-1-note.css"> -->
+  <!-- 該檔案css -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- icon font 圖標得CSS -->
+  <link rel="stylesheet" href="css/iconfont.css">
+
+  <!-- 這個 Font Awesome 字型 -->
+  <!-- <link rel="stylesheet" href="css/all.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- (ok)  google font link  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+
+  <!-- GSAP CDN 引入，另外splitTex套件引入 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+
+  <!-- Animate.css 也是動畫套件 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- 自己寫的js檔案 -->
+  <script src="js/A01-index.js"></script>
+  <style>
+    .yf-bg-w1 {
+      background-color: antiquewhite;
+    }
+  </style>
+  <!-- 跑馬燈套件(左右)， https://api.adnan-tech.com/marquee 網站記一下  111.07.26 -->
+  <!-- 下面這一段可以不用寫，我放到後面去了 -->
+  <!-- <script>
+    (function () {
+      const script = document.createElement("script");
+      const s0 = document.getElementsByTagName("script")[0];
+      script.async = true;
+      script.src = "https://api.adnan-tech.com/public/js/at.js";
+      script.setAttribute("crossorigin", "*");
+      s0.parentNode.insertBefore(script, s0);
+    })();
+  </script> -->
+
+  <!-- 跑馬燈套件(垂直)， https://charleslin74.pixnet.net/blog/post/424417091  ，這個網站有點久， 111.09.26 -->
+  <script type="text/javascript">
+    var Scroll = new function () {
+      this.delay = 3000; //公告換行的時間
+      this.height = 22; //定義高度
+      this.step = 2; // 步長，20高度換4次
+      this.curHeight = 0;
+      this.stimer = null;
+      this.timer = null;
+      this.start = function () { //開始翻頁-調用move方法
+        this.move();
+      }
+
+      this.move = function () {
+        var self = this;
+        console.log(this);
+        if (this.curHeight == this.height) //如果顯示完一行
+        {
+          this.timer = setTimeout(function () { //使用計時器-定時下一行的翻頁時間
+            self.move();
+          }, this.delay);
+          this.curHeight = 0;
+          if (this.element.scrollTop >= this.element.scrollHeight - this.height) { //滾動資訊已經完畢
+            this.element.scrollTop = 0;
+          }
+          return true;
+        }
+        this.element.scrollTop += this.step;
+        this.curHeight += this.step;
+        this.timer = setTimeout(function () { //設置自動翻頁計時器
+          self.move();
+        }, 120);
+      }
+
+      // this.stop = function () { //清除定時期，停止滾動翻頁
+      //  clearTimeout(this.timer);
+      // }
+    }
+  </script>
+  <style>
+    #yf-good-sentence {
+      white-space: nowrap;
+      overflow: hidden;
+      /*border: 1px solid #ccc;
+        width: 200px;*/
+      /* 跑馬燈寬度 */
+      transition: transform 0.5s ease-in-out;
+      /* 添加轉場效果 */
+    }
+  </style>
+  <script src="js/index-js/intro-video.js"></script>
+</head>
+<!-- <body onload="updateCounter()" style="background-color: #f4f4f4;"> -->
+
+<body id="index-bg" onload="updateCounter(); setRandomDarkBackgroundColor()">
+  <!-- ************************************ navbar ******************************** -->
+  <div id="nav1"></div>
+  <!-- ****************        網頁主體開始    ************************************ -->
+  <header style="margin-top: 57px;">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="card-group col-sm-12 px-0">
+          <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="" target="_blank">
+                  <img id="p1-1" src="/images/B03-banner/A10-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p2-1" src="/images/B03-banner/A11-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p3-1" src="/images/B03-banner/A12-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p4-1" src="/images/B03-banner/A09-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p5-1" src="/images/B03-banner/A07-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p6-1" src="/images/B03-banner/A06-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p7-1" src="/images/B03-banner/A04-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p8-1" src="/images/B03-banner/A01-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p9-1" src="/images/B03-banner/A02-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p10-1" src="/images/B03-banner/A10-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p11-1" src="/images/B03-banner/A15-1.jpg" width="100%" title=""></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p12-1" src="/images/B03-banner/A16-1.jpg" width="100%" title=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- @@@@@@@@@@@@@@@@@@@  第一部分，輪播部分在這邊結束  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <!-- <div class="card-group col-sm-3 px-0">
+          <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="" target="_blank">
+                  <img id="p1-2" src="/images/B01-banner/C01-2.jpg" width="100%" title="退休-2"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p2-2" src="/images/B01-banner/C47-2.jpg" width="100%" title="2024-2"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p3-2" src="/images/B01-banner/C51-2.jpg" width="100%" title="2024-2"></a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- ******************** 第二部分，輪播部分在這邊結束    ************************** -->
+
+        <!-- ******************** 第三部分，輪播部分從這邊開始 ************************** -->
+        <!-- <div class="card-group col-sm-3 px-0">
+          <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="" target="_blank">
+                  <img id="p1-3" src="/images/B01-banner/C01-3.jpg" width="100%" title="退休-3"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p2-3" src="/images/B01-banner/C47-3.jpg" width="100%" title="2024-3"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p3-3" src="/images/B01-banner/C51-3.jpg" width="100%" title="2024-3"></a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- ******************** 第三部分，輪播部分在這邊結束    ************************** -->
+
+        <!-- @@@@@@@@@@@@@@@@@@@  第四部分，輪播部分從這邊開始  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <!-- <div class="card-group col-sm-3 px-0">
+          <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="" target="_blank">
+                  <img id="p1-4" src="/images/B01-banner/C01-4.jpg" width="100%" title="退休-4"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p2-4" src="/images/B01-banner/C47-4.jpg" width="100%" title="2024-4"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p3-4" src="/images/B01-banner/C51-4.jpg" width="100%" title="2024-4"></a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </header>
+  <!-- <div class="card text-center"> -->
+  <!-- <div class="card-body" > -->
+  <!-- 網頁底色  f4f4f4 -->
+  <!-- 跑馬燈橫向，移到這個位置來 -->
+  <!-- 【不積跬步，無以至千里;不積小流，無以成江海!】～～【造就成功的，是日常習慣，而不是千載難逢的轉變！】～～【好習慣的代價在當下，壞習慣的代價在未來！】 -->
+  <div>
+    <!-- <p id="yfmarquee" class="yf-font1 text-dark run">
+      <marquee direction="left" scrollamount="6" behavior="alternate"><span class="" id="yf-good-sentence"></span>
+      </marquee>
+    </p> -->
+    <div id="yf-vmarquee" style="overflow: hidden;height:30px;line-height:30px">
+      <h5 id="message" class="p-2 text-center yf-blink-2- yf-font1">你該比較的是今日與昨日的自己，而非那些與你截然不同的年輕人! ~ 《跨能致勝》</h5>
+      <!-- 你要跟昨天的自己比，而不是比你年輕的那些、跟你人生軌跡完全不同的人比！ -->
+      <!-- <h6 id="message" class="p-2 text-center yf-blink-2- yf-font1">「注意你的想法，因為想法會變成言辭；注意你的言辭，因為言辭會成為行為；注意你的行為，因為行為會成為習慣；注意你的習慣，你的習慣會成為性格；注意你的性格，因為性格會決定你的命運。我們的想法，決定我們成為什麼樣的人。」！</h6> -->
+    </div>
+
+    <div class="container text-center mt-1">
+      <!-- <div class="card text-center "> -->
+      <div id="card-container" class="row justify-content-around">
+
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <!-- 這邊是導覽列，利用 jQuery 套用，ex01-nav.html load 就好! -->
+  <div id="footer"></div>
+
+  <!--  ##################       各區塊html 載入     ###################### -->
+  <script>
+    $(function () {
+      $("#nav1").load("/ex-Comm/CX01-nav.html");
+      // $("#a1").load("A01-ex-comm/EX01-aside.html");
+      $("#footer").load("ex-Comm/CX01-footer.html");
+    });
+  </script>
+  <script src="/js/V03-vue3.js"></script>
+  <script src="/js/index-js/B01-index-marquee.js"></script>
+  <!-- 隨機選色底色顏色 -->
+  <script>
+    function setRandomDarkBackgroundColor() {
+      const darkColors = [
+        '#2C3E50', // 深藍灰 (Petroleum Blue) - 冷靜、專業
+        '#4A235A', // 深紫羅蘭 (Deep Violet) - 神秘、高雅
+        '#0B5345', // 深祖母綠 (Dark Emerald Green) - 自然、奢華
+        '#78281F', // 深勃根地紅 (Dark Burgundy) - 熱情、沉穩
+        '#1B4F72', // 深鋼藍 (Dark Steel Blue) - 穩重、現代
+        '#512E5F', // 暗梅子色 (Dark Plum) - 豐富、內斂
+        '#0E6655', // 深松綠 (Dark Pine Green) - 平靜、深邃
+        '#62241E', // 赤褐色 (Russet Brown) - 溫暖、大地
+        '#154360', // 海軍藍 (Navy Blue) - 經典、權威
+        '#40354F',  // 茄子色 (Eggplant) - 獨特、深沉
+        '#1A2B3C', // Very Dark Blue Gray (更深的藍灰)
+        '#34495E', // Desaturated Prussian Blue (灰普魯士藍)
+        '#212F3D', // Dark Midnight Blue (深午夜藍)
+        '#1B2A3B', // Deep Space Blue (深太空藍)
+        '#0A192F', // Ultra Dark Blue (極深藍)
+        '#283747', // Dark Slate Blue (深石板藍)
+        '#1C2833', // Charcoal Gray (炭灰色)
+        '#36454F', // Dark Gunmetal Gray (深金屬灰)
+        '#2E4053',  // Dark Steel Blue (深鋼藍)
+      ];
+
+      const randomIndex = Math.floor(Math.random() * darkColors.length);
+      const selectedColor = darkColors[randomIndex];
+      document.getElementById('index-bg').style.backgroundColor = selectedColor;
+    }
+
+    // 可以在頁面載入時調用這個函數，或者在你希望改變顏色時調用
+    // 將其加入到你的 onload 函數中
+    // 例如：
+    // <body id="index-bg" onload="updateCounter(); setRandomDarkBackgroundColor()" style="background-color: lightblue">
+
+    // 每10秒執行一次
+    setInterval(setRandomDarkBackgroundColor, 10000);
+  </script>
+
+  <!-- 這邊是橫幅輪播 -->
+  <script>
+    function updateCounter() {
+      // 112.10.05 移除之前舊資料
+      // const arr1 = ['01', '08', '51', '18', '21', '09', '10', '13','];
+      // '58', '59', '60', '61', '62', '63', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43',
+      // 1920 X 325 'CA4', 'CA5', 'CA6', 'CA7', 'CA8', 'CA9', 'CAA', 'CAB', 'CAC', 'CAD', 'CAE', 'CAF', 'CAG', 'CAH', 'CAI', 'CAJ','CAK'
+      // const arr1 = ['58', '59', '60', '61', '62', '63', '97', '98', '99', 'A0', 'A1', 'A2', 'A3']; -->
+      //  ['001', 'CB3', 'CB4', 'CB5', 'CB2', 'CB1', 'CB0', 'CA4', 'CA5', 'CA6', 'CA7', 'CA8', 'CA9', 'CAA', 'CAB',];
+      const arr1 = ['A10', 'A11', 'A12', 'A15', 'A16', 'A12', 'A13', 'A14', 'A13', 'A14', 'A13', 'A14', 'A06', 'A07', 'A03', 'A04', 'A05', 'A01', 'A02', 'A08', 'A09', 'A10', 'A11', 'A12',];
+
+      const randomNum = Math.floor(Math.random() * arr1.length);
+      const arr_ok = shuffleArray(arr1)
+      const str1 = 'images/B03-banner/'
+      const str2 = '.jpg';
+      document.getElementById('p1-1').src = str1 + arr_ok[0] + '-1' + str2;
+      document.getElementById('p2-1').src = str1 + arr_ok[1] + '-1' + str2;
+      document.getElementById('p3-1').src = str1 + arr_ok[2] + '-1' + str2;
+      document.getElementById('p4-1').src = str1 + arr_ok[3] + '-1' + str2;
+      document.getElementById('p5-1').src = str1 + arr_ok[4] + '-1' + str2;
+      document.getElementById('p6-1').src = str1 + arr_ok[5] + '-1' + str2;
+      document.getElementById('p7-1').src = str1 + arr_ok[6] + '-1' + str2;
+      document.getElementById('p8-1').src = str1 + arr_ok[7] + '-1' + str2;
+      document.getElementById('p9-1').src = str1 + arr_ok[8] + '-1' + str2;
+      document.getElementById('p10-1').src = str1 + arr_ok[9] + '-1' + str2;
+      document.getElementById('p11-1').src = str1 + arr_ok[10] + '-1' + str2;
+      document.getElementById('p12-1').src = str1 + arr_ok[11] + '-1' + str2;
+      // document.getElementById('p13-1').src = str1 + arr_ok[12] + '-1' + str2;
+      // document.getElementById('p14-1').src = str1 + arr_ok[13] + '-1' + str2;
+      // document.getElementById('p15-1').src = str1 + arr_ok[14] + '-1' + str2;
+      // document.getElementById('p16-1').src = str1 + arr_ok[15] + '-1' + str2;
+
+
+      //document.getElementById('p1-2').src = str1 + arr_ok[0] + '-2' + str2;
+      //document.getElementById('p2-2').src = str1 + arr_ok[1] + '-2' + str2;
+      //document.getElementById('p3-2').src = str1 + arr_ok[2] + '-2' + str2;
+      // document.getElementById('p4-2').src = str1 + arr_ok[3] + '-2' + str2;
+      // document.getElementById('p5-2').src = str1 + arr_ok[4] + '-2' + str2;
+      // document.getElementById('p6-2').src = str1 + arr_ok[5] + '-2' + str2;
+      // document.getElementById('p7-2').src = str1 + arr_ok[6] + '-2' + str2;
+      // document.getElementById('p8-2').src = str1 + arr_ok[7] + '-2' + str2;
+      // document.getElementById('p9-2').src = str1 + arr_ok[8] + '-2' + str2;
+      // document.getElementById('p10-2').src = str1 + arr_ok[9] + '-2' + str2;
+      // document.getElementById('p11-2').src = str1 + arr_ok[10] + '-2' + str2;
+      // document.getElementById('p12-2').src = str1 + arr_ok[11] + '-2' + str2;
+      // document.getElementById('p13-2').src = str1 + arr_ok[12] + '-2' + str2;
+      // document.getElementById('p14-2').src = str1 + arr_ok[13] + '-2' + str2;
+      // document.getElementById('p15-2').src = str1 + arr_ok[14] + '-2' + str2;
+      // document.getElementById('p16-2').src = str1 + arr_ok[15] + '-2' + str2;
+
+      //document.getElementById('p1-3').src = str1 + arr_ok[0] + '-3' + str2;
+      //document.getElementById('p2-3').src = str1 + arr_ok[1] + '-3' + str2;
+      //document.getElementById('p3-3').src = str1 + arr_ok[2] + '-3' + str2;
+      // document.getElementById('p4-3').src = str1 + arr_ok[3] + '-3' + str2;
+      // document.getElementById('p5-3').src = str1 + arr_ok[4] + '-3' + str2;
+      // document.getElementById('p6-3').src = str1 + arr_ok[5] + '-3' + str2;
+      // document.getElementById('p7-3').src = str1 + arr_ok[6] + '-3' + str2;
+      // document.getElementById('p8-3').src = str1 + arr_ok[7] + '-3' + str2;
+      // document.getElementById('p9-3').src = str1 + arr_ok[8] + '-3' + str2;
+      // document.getElementById('p10-3').src = str1 + arr_ok[9] + '-3' + str2;
+      // document.getElementById('p11-3').src = str1 + arr_ok[10] + '-3' + str2;
+      // document.getElementById('p12-3').src = str1 + arr_ok[11] + '-3' + str2;
+      // document.getElementById('p13-3').src = str1 + arr_ok[12] + '-3' + str2;
+      // document.getElementById('p14-3').src = str1 + arr_ok[13] + '-3' + str2;
+      // document.getElementById('p15-3').src = str1 + arr_ok[14] + '-3' + str2;
+      // document.getElementById('p16-3').src = str1 + arr_ok[15] + '-3' + str2;
+
+
+      //document.getElementById('p1-4').src = str1 + arr_ok[0] + '-4' + str2;
+      //document.getElementById('p2-4').src = str1 + arr_ok[1] + '-4' + str2;
+      //document.getElementById('p3-4').src = str1 + arr_ok[2] + '-4' + str2;
+      // document.getElementById('p4-4').src = str1 + arr_ok[3] + '-4' + str2;
+      // document.getElementById('p5-4').src = str1 + arr_ok[4] + '-4' + str2;
+      // document.getElementById('p6-4').src = str1 + arr_ok[5] + '-4' + str2;
+      // document.getElementById('p7-4').src = str1 + arr_ok[6] + '-4' + str2;
+      // document.getElementById('p8-4').src = str1 + arr_ok[7] + '-4' + str2;
+      // document.getElementById('p9-4').src = str1 + arr_ok[8] + '-4' + str2;
+      // document.getElementById('p10-4').src = str1 + arr_ok[9] + '-4' + str2;
+      // document.getElementById('p11-4').src = str1 + arr_ok[10] + '-4' + str2;
+      // document.getElementById('p12-4').src = str1 + arr_ok[11] + '-4' + str2;
+      // document.getElementById('p13-4').src = str1 + arr_ok[12] + '-4' + str2;
+      // document.getElementById('p14-4').src = str1 + arr_ok[13] + '-4' + str2;
+      // document.getElementById('p15-4').src = str1 + arr_ok[14] + '-4' + str2;
+      // document.getElementById('p16-4').src = str1 + arr_ok[15] + '-4' + str2;
+
+      function getRandomLightColor() {
+        const lightColors = [
+          '#F0F8FF', // AliceBlue
+          '#F5F5DC', // Beige
+          '#F8F8FF', // GhostWhite
+          '#F5FFFA', // MintCream
+          '#F0FFF0', // Honeydew
+          '#F0FFFF', // Azure
+          '#FAFAD2', // LightGoldenRodYellow
+          '#ADD8E6', // LightBlue (這個會稍微亮一點點，但仍在淺色系)
+          '#E0FFFF', // LightCyan
+          '#CCEEFF'  // Custom Light Sky Blue (自定義的淺天藍色)
+        ];
+        const randomIndex = Math.floor(Math.random() * lightColors.length);
+        return lightColors[randomIndex];
+      }
+
+
+
+      // 重複執行部分
+      function generateHomepage() {
+        // icon 隨機產生，從這邊開始  ~~  主要產生
+        // 隨機排序卡片資料陣列
+        const shuffledCardsData = shuffleArray(cardsData);
+        // 卡片重新排列，這時候重新選取一個淺色底色
+        const randomBgColor = getRandomLightColor(); // 獲取一個隨機淺色
+
+        // 獲取卡片容器
+        const cardContainer = document.getElementById('card-container');
+        cardContainer.innerHTML = '';
+        // 生成卡片 HTML
+
+        shuffledCardsData.forEach(card => {
+          const cardHTML = `
+    <div class="card col-md-4 yf-bg-w1 yf-font2" style="background-color: ${randomBgColor};">
+      <h1 id="${card.idName}" class="fa-solid ${card.iconClass} mt-3 display-1" style="color:${card.iconColor}"></h1>
+      <div class="card-body">
+        <h5 class="card-title yf-animista-1 yf-font2"><strong class="yf-font2 yf-title yf-blink-2">${card.title}</strong></h5>
+        <p class="card-text yf-blink- " title=""><strong class="yf-font2">${card.date}</strong></p>
+        <a href="${card.link}" class="btn btn-dark yf-animista-3 ${card.disable}" title="">${card.enterName}</a>
+      </div>
+    </div>
+  `;
+          // 將卡片 HTML 插入到卡片容器中
+          cardContainer.innerHTML += cardHTML;
+        });
+
+
+        // ********************** 變化icon顏色 *************************************************
+        // 選擇所有的 <h1> 標籤
+        const h1Elements = document.querySelectorAll('h1');
+
+        // 對每個 <h1> 標籤進行操作
+        h1Elements.forEach(h1 => {
+          // 產生隨機顏色
+          const randomColor = getRandomColor();
+
+          // 設置 <h1> 標籤的 style.color 屬性
+          h1.style.color = randomColor;
+        });
+        // 初始設置隨機顏色
+        setRandomColors();
+
+
+      }
+
+
+      // 亂數洗牌~外部被呼叫
+      // Fisher-Yates 演算法來實現隨機排序
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          // 交換元素
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+
+      // 變化文字顏色、設置隨機顏色~~外部被呼叫
+      function setRandomColors() {
+        const elements = document.querySelectorAll('.yf-title'); // 選擇所有具有 card-title 類的元素
+
+        elements.forEach(element => {
+          const randomColor = getRandomColor();
+          element.style.color = randomColor;
+        });
+      }
+
+      // 每10秒執行一次首頁隨機變化
+      setInterval(generateHomepage, 15000);
+      // 頁面加載時先生成一次卡片
+      generateHomepage();
+
+
+      /// 這部分沒用可以刪除
+      setTimeout(function () {
+        // 在這裡放置你想要延遲執行的程式碼
+        console.log('一秒後執行的程式碼');
+      }, 1000); // 延遲時間為 1000 毫秒，即一秒
+      //setTimeout();
+
+    }
+  </script>
+  <!-- 這邊是垂直跑馬燈 主體  這個目前沒有用 -->
+  <script type="text/javascript">
+    // Scroll.element = document.getElementById('yf-vmarquee');
+    // Scroll.start();
+
+
+
+
+  </script>
+
+  <!-- 這邊注意如果直接拉變數，不需要加上 type="module" -->
+
+  <!-- 垂直跑馬燈js，以這個為主，滾動的沒做出來-->
+  <script>
+
+    // 計數器變數
+    let messageCount = 1;
+
+    // 隨機選擇一條消息
+    function getRandomMessage() {
+      return marqueeTexts[Math.floor(Math.random() * marqueeTexts.length)];
+    }
+
+    // 顯示垂直跑馬燈效果
+    function showVerticalMarquee() {
+      const vmarqueeElement = document.getElementById('yf-vmarquee');
+      const messageElement = document.getElementById('message');
+      // 1141104
+      const counterElement = document.getElementById('message-counter');
+
+      const duration = 4500; // 每條消息的顯示時間（毫秒）
+
+      setInterval(() => {
+        const randomMessage = getRandomMessage();
+        // 這邊去抓高亮度色顏色函數，在CX01-footer.html 內的getRandomColorG()
+        const randomColor = getRandomColorG();
+        messageElement.textContent = randomMessage + " ~~ " + messageCount;
+        messageElement.style.color = randomColor;
+
+        // 更新計數器
+        messageCount++;
+        counterElement.textContent = messageCount;
+
+        // 顯示一條消息後，將其移動到容器的頂部
+        vmarqueeElement.scrollTop = 0;
+        // 延遲 1 秒後再次顯示下一條消息
+      }, duration);
+    }
+
+    // 初始化垂直跑馬燈效果
+    showVerticalMarquee();
+
+
+
+
+
+    // 隨機生成顏色的輔助函數
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // 網頁進來每個類別icon顏色都改一下 
+    // 選擇所有的 <h1> 標籤
+    const h1Elements = document.querySelectorAll('h1');
+    // 對每個 <h1> 標籤進行操作
+    h1Elements.forEach(h1 => {
+      // 產生隨機顏色
+      const randomColor = getRandomColor();
+      // 設置 <h1> 標籤的 style.color 屬性
+      h1.style.color = randomColor;
+    });
+
+
+    // 設置隨機顏色
+    function setRandomColors() {
+      const elements = document.querySelectorAll('.yf-title'); // 選擇所有具有 card-title 類的元素
+
+      elements.forEach(element => {
+        const randomColor = getRandomColor();
+        element.style.color = randomColor;
+      });
+    }
+    setTimeout(function () {
+      // 在這裡放置你想要延遲執行的程式碼
+      console.log('一秒後執行的程式碼');
+    }, 1000); // 延遲時間為 1000 毫秒，即一秒
+    // 初始設置隨機顏色
+    setRandomColors();
+
+
+
+  </script>
+
+
+
+
+</body>
+
+</html>
