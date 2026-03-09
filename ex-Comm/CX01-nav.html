@@ -1,0 +1,122 @@
+<nav class="navbar navbar-expand-sm bg-secondary navbar-dark fixed-top ">
+  <!-- <a class="navbar-brand yf-font1" href="/index.html"><span style="font-family: Times New Roman, Times, serif">
+      2024起</span></a> -->
+  <a class="navbar-brand" href="/index.html"><span class="yf-color-as2  yf-font1">
+      AI</span></a>
+  <!-- <a class="navbar-brand" href="/L01-Latest-Content/A01-Index-1130821/L02-Latet-Content-1130929.html"><i
+      class="fa-solid fa-list-ul" title="最新內容"></i></a>
+  <a class="navbar-brand"
+    href="/W02-Weather-Forecast/A01-36hour-waether-1131130/C13B-Weather-forcast-Ver20-1141121.html"><i
+      class="fa-solid fa-cloud-sun-rain" title="天氣預報"></i></a>
+  <a class="navbar-brand" href="/A01-AI-New-World/A02-AI-Resource-Link-1131102/A02-AI-Resource-Link-1131102.html"><i
+      class="fa-solid fa-hexagon-nodes-bolt" title="AI世界"></i></a>
+  <a class="navbar-brand" href="/L02-Website-classification-1140606/L01-Website-classification-1140606.html"><i
+      class="fa-solid fa-link" title="重要連結"></i></a>
+  <a class="navbar-brand" href="/C01-Coding/S01-Taiwan-Stock-1140810/S01-Taiwan-Stock-1140810.html"><i
+      class="fa-solid fa-money-bill-trend-up" title="股市資訊"></i></a>
+  <a class="navbar-brand" href="/S03-Search-1140421.html" target="_blank"><i class="fa-solid fa-magnifying-glass"
+      title="站內搜尋"></i></a>
+  <a class="navbar-brand" href="/D02-Death-Calendar-1140906/D02-Dead-life-good.html"><i class="fa-solid fa-skull"
+      title="生命週期"></i></a>
+  <a class="navbar-brand" href="/A00-Web-browser/A01-web-broswer-1141122-ver11.html" target="_blank"><i
+      class="fa-regular fa-bookmark" title="AI分類"></i></a>
+  <a class="navbar-brand" href="/C01-Coding/C14-Wallpaper-cycle-1141216/C14A-Wallpaper-cycle-1141216.html"
+    target="_blank"><i class="fa-regular fa-images" title="動態桌布"></i></a>
+
+  <a class="navbar-brand" href="/A00-Prompt-Pictures-1141130/A00D-Prompt-Pictures-ver30-1141130.html" target="_blank"
+    title="Nano Banana pro">🍌</a>
+    
+  <a class="navbar-brand" target="_blank" href="/C01-Coding/C18-JpgPngtoWebp-1141229/C18-JpgPngtoWebp-1141229.html"><i
+      class="fa-solid fa-face-smile text-primary" title="圖片轉webp"></i></a>
+  <a class="navbar-brand" href="/N01-Note/G01-Words-of-wisdom-1130830/E02-Ebook/E10-Gold-Sentence-pic-wall.html"
+    target="_blank" title="智慧箴言">✨</a>
+  <a class="navbar-brand"
+    href="/P02-Personal-2026/O01-Organize-House-4F-1141110/E01-E-Book-1150210/E09-PPT-NanoBananapro-mobile-pic-wall.html"
+    target="_blank" title="石牌整理全紀錄">📖</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul id="nav-icon" class="navbar-nav ml-auto">
+
+      <!-- <nav class="navbar navbar-expand-sm bg-secondary  ">
+    <a class="fas fa-coffee  navbar-brand yf-color-as2" href="index.html"> yfchen</a>
+    <a class="yf-color-as2" href="#"> 網站日誌</a>
+    <ul class="navbar-nav ml-auto "> -->
+
+
+
+      <!-- ******* fa-solid fa-microchip  *************** -->
+
+
+    </ul>
+  </div>
+
+  <!-- <a class="nav-link yf-color-as2" href="/W01-Website-Code-Statistic/W01-Website-Code-Statistic-1131101.html"
+    target="blank"><span class="yf-color-as2"><i class="fas fa-record-vinyl" title="程式碼統計"></i></span></a> -->
+  <!-- 資訊三忠-->
+  <a class="nav-link" href="https://yfchen-115.netlify.app/" title=""><span class="yf-color-as2  yf-font1"
+      title="Home"><i class="fa-solid fa-house-chimney" ></i></span></a>
+</nav>
+<script src="js/A01-index.js"></script>
+<script src="/js/index-js/B01-index-marquee.js"></script>
+<script>
+
+
+
+
+  // 定義卡片生成邏輯
+  function generateCards() {
+    // icon 隨機產生，從這邊開始  ~~  主要產生
+    // 隨機排序卡片資料陣列
+    const shuffledCardsData = shuffleArray(cardsData);
+
+    // 獲取卡片容器
+    const cardContainer = document.getElementById('nav-icon');
+    cardContainer.innerHTML = '';
+    // 生成卡片 HTML
+    shuffledCardsData.forEach(card => {
+      const cardHTML = `
+      <li id="yf-ani-top-1" class="nav-item ">
+        <a class="nav-link ${card.disable}" href="${card.link}" title=""><span style="color:${getRandomColor()}"
+            class="yf-color-as2 fa-solid  ${card.iconClass} mx-1" title="${card.enterName}"></span></a>
+      </li>`;
+
+      // 將卡片 HTML 插入到卡片容器中
+      // cardContainer.innerHTML += cardHTML;
+      cardContainer.innerHTML = cardHTML + cardContainer.innerHTML;
+
+    });
+
+  }
+
+
+
+
+  // 隨機生成顏色的輔助函數
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      // 交換元素
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // 每10秒執行一次
+  setInterval(generateCards, 10000);
+
+  // 頁面加載時先生成一次卡片
+  generateCards();
+
+
+</script>

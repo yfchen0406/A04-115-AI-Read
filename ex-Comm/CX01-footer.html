@@ -1,0 +1,253 @@
+<!-- 想要把嘉言錄寫在外面然後隨機產生一段，下面程式段可以 -->
+<!-- 該檔案css 感覺沒有用 -->
+<!-- <link rel="stylesheet" href="css/index.css"> -->
+<style>
+  .icon-inline {
+    height: 1em;
+    /* 高度 = 字體高度 */
+    vertical-align: middle;
+    /* 與文字中線對齊 */
+    margin-right: 4px;
+    /* 與文字留距離，可自行調整 */
+  }
+</style>
+<!-- <footer class="container-fluid text-center bg-secondary yf-footer60"> -->
+<!-- 過去的範本的放這邊 -->
+<!-- <p id="footer1" class="yf-color-as2 p-2"> <span class="float-left yf-font2 p2">
+        {{randStr()}}</span> <span class="float-right fas"><strong class="yf-font2"><a href=""></a>退休生活</strong>
+        <span id="visits"></span><strong class="yf-font2">時間累積器</strong></span><br>
+    <strong class="yf-font1 float-left"> © Copyright
+        2021.07.17 yfchen</strong></span>
+    <span id="countdown-12" class="float-right  yf-font2"></span>
+    <span class="float-right fas fa-history"> &nbsp;&nbsp;</span>
+</p> -->
+
+
+<footer class="container-fluid text-center bg-secondary yf-footer60">
+  <!-- <p id="footer1" class="yf-color-as2 p-2"> <span id="yf-marquee-footer" class="float-left yf-font2 p2">
+            {{randStr()}}</span> <span class="float-right fas"><strong class="yf-font2"><a href="https://app.heptabase.com/w/da3be654ebaca4985fdeddab95dabb2e9e6b41af431369f705c8b649c0f95a30" class="yf-color-as2"></strong>
+            <span id="visits"></span><strong class="yf-font2 yf-color-as2">2024~嘉義阿里山深度體驗四日遊倒數</strong></a></span><br>
+            <strong class="yf-font1 float-left"> © Copyright
+                2021.07.17 yfchen</strong></span>
+        <span id="countdown-12" class="float-right  yf-font2 yf-blink-2"></span>
+        <span class="float-right fas fa-history"> &nbsp;&nbsp;</span>
+    </p> -->
+  <p id="footer" class="yf-color-as2 p-2"> <span id="yf-marquee-footer" class="float-left yf-font2 p2">不積跬步，無以至千里;
+      不積小流，無以成江海!
+    </span>
+
+    <span class="float-right fas">
+      <strong class="yf-font2"><a href="" class="yf-color-as2"></strong>
+      <!-- <span id="visits"></span><strong class="yf-font2 yf-color-as1">2025~第三階段計畫截止日!</strong></a></span><br> -->
+      <span id="visits"></span><strong class="yf-font2 yf-color-as1">
+        <!-- <img src="/ex-Comm/images/firework.png" alt="" class="icon-inline"><img src="/ex-Comm/images/firework.png"
+          alt="" class="icon-inline"><img src="/ex-Comm/images/firework.png" alt="" class="icon-inline"> -->
+        58歲生日倒數計時~</strong></a></span><br>
+    <strong class="yf-font1 float-left"> © Copyright 2021.07.17 yfchen</strong></span><span
+      class="yf-font1">我們不可能成為我們不知道的人；我們不可能理解我們不知道的事!</span>
+    <span id="countdown-12" class="float-right  yf-font2 yf-blink-2 yf-color-as1"></span>
+    <span class="float-right fas fa-history yf-color-as1"> &nbsp;&nbsp;</span>
+  </p>
+</footer>
+<script src="/js/V03-vue3.js"></script>
+<script src="/js/index-js/B01-index-marquee.js"></script>
+<!-- </footer> -->
+<!-- <script src="/ex-Comm/CX01-footer.js" type="module"></script> -->
+<script src="/ex-Comm/CX01-footer.js"></script>
+
+<script>
+  // ###########  標籤往前數計時器-開始 - 可以用每一個地方  #############################
+  // 往前數計時器(112.05.25) 後來改成年月日
+  function leave_time(idData, countdownData) {
+    var timer = null;
+    var show = document.getElementById(idData);
+    var target = new Date(countdownData);
+    console.log(target);
+    var today = new Date();
+    //    var timeold = (today.getTime() - target.getTime()); 這一段落是往前計數
+    var timeold = (target.getTime() - today.getTime());
+    var sectimeold = timeold / 1000
+    var secondsold = Math.floor(sectimeold);
+    var msPerDay = 24 * 60 * 60 * 1000
+    var e_daysold = timeold / msPerDay
+    var yearsold = Math.floor(e_daysold / 365)
+    var daysold = Math.floor(e_daysold);
+    var daysold1 = Math.floor(e_daysold % 365);
+
+
+    var e_hrsold = (e_daysold - daysold) * 24;
+    var hrsold = Math.floor(e_hrsold);
+    var e_minsold = (e_hrsold - hrsold) * 60;
+    var minsold = Math.floor((e_hrsold - hrsold) * 60);
+    var seconds = Math.floor((e_minsold - minsold) * 60);
+    if (daysold < 0) {
+      document.getElementById(idData).innerHTML = "計數結束!";
+      clearInterval(timer);
+    }
+    else {
+      if (daysold < 10) { daysold = "0" + daysold }
+      if (hrsold < 10) { hrsold = "0" + hrsold }
+      if (minsold < 10) { minsold = "0" + minsold }
+      if (seconds < 10) { seconds = "0" + seconds }
+      show.innerHTML = yearsold + "年：" + daysold1 + "天：" + hrsold + "時：" + minsold + "分：" + seconds + "秒";
+    }
+  }
+
+  function start_time(idData, countdownData) {
+    var timer = null;
+    var show = document.getElementById(idData);
+    var target = new Date(countdownData);
+    console.log(target);
+    var today = new Date();
+    var timeold = (today.getTime() - target.getTime()); //這一段落是往前計數
+
+    // var timeold = (target.getTime() - today.getTime());  // 這一行是倒數
+    var sectimeold = timeold / 1000
+    var secondsold = Math.floor(sectimeold);
+    var msPerDay = 24 * 60 * 60 * 1000
+    var e_daysold = timeold / msPerDay
+    var yearsold = Math.floor(e_daysold / 365)
+    var daysold = Math.floor(e_daysold);
+    var daysold1 = Math.floor(e_daysold % 365);
+
+
+    var e_hrsold = (e_daysold - daysold) * 24;
+    var hrsold = Math.floor(e_hrsold);
+    var e_minsold = (e_hrsold - hrsold) * 60;
+    var minsold = Math.floor((e_hrsold - hrsold) * 60);
+    var seconds = Math.floor((e_minsold - minsold) * 60);
+    if (daysold < 0) {
+      document.getElementById(idData).innerHTML = "計數結束!";
+      clearInterval(timer);
+    }
+    else {
+      if (daysold < 10) { daysold = "0" + daysold }
+      if (hrsold < 10) { hrsold = "0" + hrsold }
+      if (minsold < 10) { minsold = "0" + minsold }
+      if (seconds < 10) { seconds = "0" + seconds }
+      show.innerHTML = yearsold + "年：" + daysold1 + "天：" + hrsold + "時：" + minsold + "分：" + seconds + "秒";
+    }
+  }
+  function start_time_days(idData, countdownData) {
+    var timer = null;
+    var show = document.getElementById(idData);
+    var target = new Date(countdownData);
+    console.log(target);
+    var today = new Date();
+    var timeold = (today.getTime() - target.getTime()); //這一段落是往前計數
+
+    // var timeold = (target.getTime() - today.getTime());  // 這一行是倒數
+    var sectimeold = timeold / 1000
+    var secondsold = Math.floor(sectimeold);
+    var msPerDay = 24 * 60 * 60 * 1000
+    var e_daysold = timeold / msPerDay
+    // var yearsold = Math.floor(e_daysold / 365)
+    var daysold = Math.floor(e_daysold);
+    var daysold1 = Math.floor(e_daysold % 365);
+
+
+    var e_hrsold = (e_daysold - daysold) * 24;
+    var hrsold = Math.floor(e_hrsold);
+    var e_minsold = (e_hrsold - hrsold) * 60;
+    var minsold = Math.floor((e_hrsold - hrsold) * 60);
+    var seconds = Math.floor((e_minsold - minsold) * 60);
+    if (daysold < 0) {
+      document.getElementById(idData).innerHTML = "計數結束!";
+      clearInterval(timer);
+    }
+    else {
+      if (daysold < 10) { daysold = "0" + daysold }
+      if (hrsold < 10) { hrsold = "0" + hrsold }
+      if (minsold < 10) { minsold = "0" + minsold }
+      if (seconds < 10) { seconds = "0" + seconds }
+      show.innerHTML =  daysold + "天：" + hrsold + "時：" + minsold + "分：" + seconds + "秒";
+    }
+  }
+
+
+
+
+
+  // 原本是退休日期計數，現在要改成倒數計期器
+  // 2025 跨年倒數
+  // *******************************************************************************************
+  timer = setInterval(function () { leave_time("countdown-12", "2026/04/06"); }, 1000);
+  timer = setInterval(function () { start_time("countdown-retire", "2023/06/28"); }, 1000);
+  timer = setInterval(function () { start_time_days("countdown-retire-days", "2023/06/28"); }, 1000);
+  // ****************************  1130905修改   這邊要改成隨機重複出現     ***********
+
+
+
+
+</script>
+<script>
+  // 隨機選擇一條消息
+  function getRandomMessageG() {
+    return goldTexts[Math.floor(Math.random() * goldTexts.length)];
+  }
+
+  // 顯示垂直跑馬燈效果
+  function showVerticalMarqueeG() {
+    const vmarqueeElement = document.getElementById('yf-marquee-footer');
+    const messageElement = document.getElementById('yf-marquee-footer');
+    const duration = 4000; // 每條消息的顯示時間（毫秒）
+
+    // 不隨機產生顏色
+    setInterval(() => {
+      const randomMessage = getRandomMessageG();
+      const randomColor = getRandomColorG();
+      messageElement.textContent = randomMessage;
+      messageElement.style.color = randomColor;
+
+      // 顯示一條消息後，將其移動到容器的頂部
+      vmarqueeElement.scrollTop = 0;
+      // 延遲 1 秒後再次顯示下一條消息
+    }, duration);
+  }
+
+  // 初始化垂直跑馬燈效果
+  showVerticalMarqueeG();
+
+  // 隨機生成顏色的輔助函數
+  function getRandomColorG() {
+    //const letters = '0123456789ABCDEF';
+    //let color = '#';
+    //for (let i = 0; i < 6; i++) {
+    //    color += letters[Math.floor(Math.random() * 16)];
+    //}
+    //return color;
+
+    // 需要出現的顏色放這邊
+    // const colors = ['maroon', 'red', 'navy', 'blue', 'purple', 'magenta', 'green', 'lime', 'yellow', 'tea', 'cyan ', 'orange','rebeccapurple','']; // 
+    const colors = [
+      '#FF5733', // Bright Orange
+      '#FFBD33', // Bright Yellow
+      '#FF33A8', // Bright Pink
+      '#33FF57', // Bright Green
+      '#33FFF3', // Bright Cyan
+      '#33A1FF', // Bright Sky Blue
+      '#FF3380', // Bright Magenta
+      '#FFD733', // Bright Gold
+      '#FF5733', // Bright Red
+      '#FF33FF', // Bright Purple
+      '#33FFBD', // Bright Mint
+      '#FF8F33', // Bright Coral
+      '#8FFF33', // Bright Lime Green
+      '#33FF6E', // Bright Sea Green
+      '#FF3385', // Bright Fuchsia
+      '#FF3385', // Bright Salmon
+      '#F3FF33', // Bright Lemon
+      '#FF5733', // Bright Carrot
+      '#33FFE5', // Bright Turquoise
+      '#FF33B8'  // Bright Rose
+    ];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  }
+
+ 
+
+
+
+</script>
+<!-- <script src="/ex-Comm/CX02-countdown.js" type="text/javascript"></script> -->

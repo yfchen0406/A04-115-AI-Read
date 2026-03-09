@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 工具導航站</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    // Tailwind 暗色模式配置
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    .dark body {
+      background-color: #0f172a;
+    }
+
+    body {
+      background-color: #f8fafc;
+      transition: background-color 0.3s;
+    }
+
+    .neon-border:hover {
+      box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+      border-color: #22d3ee;
+    }
+
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body class="text-slate-800 dark:text-slate-200 min-h-screen">
+
+  <div id="app" class="p-4 md:p-8">
+    <div class="max-w-7xl mx-auto flex justify-end mb-4">
+      <button @click="toggleTheme"
+        class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:ring-2 ring-cyan-500 transition">
+        <span v-if="isDark">☀️ 亮色模式</span>
+        <span v-else>🌙 暗色模式</span>
+      </button>
+    </div>
+
+    <header class="max-w-7xl mx-auto mb-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <h1 class="text-4xl font-extrabold bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+            AI Tools Directory
+          </h1>
+          <p class="text-slate-500 dark:text-slate-400 mt-2 font-medium">探索 AI 工具，紀錄退休學習生活</p>
+        </div>
+
+        <div class="relative w-full md:w-96">
+          <input v-model="searchQuery" type="text" placeholder="搜尋 AI 工具、標籤 (#)..."
+            class="w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-2xl py-3 px-5 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition shadow-sm" />
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-8 justify-center md:justify-start">
+        <button @click="selectedCategory = 'All'"
+          :class="selectedCategory === 'All' ? 'bg-cyan-600 text-white shadow-lg' : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:border-cyan-500 border border-transparent'"
+          class="px-5 py-2 rounded-xl text-sm font-bold transition-all">
+          全部
+        </button>
+        <button v-for="cat in categories" :key="cat" @click="selectedCategory = cat"
+          :class="selectedCategory === cat ? 'bg-cyan-600 text-white shadow-lg' : 'bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:border-cyan-500 border border-transparent'"
+          class="px-5 py-2 rounded-xl text-sm font-bold transition-all">
+          {{ cat }}
+        </button>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div v-for="item in filteredData" :key="item.id"
+        class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 neon-border flex flex-col h-full shadow-sm hover:shadow-xl">
+        <div class="h-40 overflow-hidden relative bg-slate-100 dark:bg-slate-900">
+          <img :src="item.bg"
+            class="w-full h-full object-cover opacity-80 dark:opacity-50 group-hover:scale-105 transition duration-500"
+            @error="handleImgError" />
+          <div
+            class="absolute bottom-3 left-4 p-1.5 bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-100 dark:border-slate-700">
+            <img :src="item.icon" class="w-10 h-10 object-contain" @error="handleIconError" />
+          </div>
+        </div>
+
+        <div class="p-6 pt-5 flex-grow">
+          <div class="mb-3">
+            <h3 class="text-xl font-bold dark:text-white group-hover:text-cyan-500 transition line-clamp-1">{{ item.name
+              }}</h3>
+          </div>
+
+          <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-4 min-h-[40px] leading-relaxed">
+            {{ item.function }}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-auto">
+            <span
+              class="text-[10px] uppercase font-black tracking-tighter text-cyan-600 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-900/30 px-2 py-1 rounded-md border border-cyan-100 dark:border-cyan-800">
+              #{{ item.category }}
+            </span>
+            <span
+              class="text-[10px] uppercase font-black tracking-tighter text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded-md border border-indigo-100 dark:border-indigo-800">
+              #{{ item.detail }}
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="px-6 py-4 border-t border-slate-100 dark:border-slate-700/50 flex justify-between items-center bg-slate-50/50 dark:bg-slate-800/50">
+          <span class="text-[11px] text-slate-400 font-mono">{{ item.date }}</span>
+          <a :href="item.url" target="_blank"
+            class="text-sm font-bold text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1 transition">
+            造訪網站 ↗
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <div v-if="filteredData.length === 0" class="text-center py-20">
+      <div class="text-5xl mb-4">🔍</div>
+      <p class="text-slate-500 dark:text-slate-400 text-lg font-medium">找不到相關工具，試試其他關鍵字？</p>
+    </div>
+  </div>
+
+  <script type="module">
+    import { dbData } from './database.js';
+
+    const { createApp, ref, computed, onMounted } = Vue;
+
+    createApp({
+      setup() {
+        const searchQuery = ref('');
+        const selectedCategory = ref('All');
+        const isDark = ref(true);
+
+        // 主題切換邏輯
+        const toggleTheme = () => {
+          isDark.value = !isDark.value;
+          updateTheme();
+        };
+
+        const updateTheme = () => {
+          if (isDark.value) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          }
+        };
+
+        // 自動提取類別
+        const categories = computed(() => {
+          return [...new Set(dbData.map(item => item.category))];
+        });
+
+        // 過濾與搜尋
+        const filteredData = computed(() => {
+          return dbData.filter(item => {
+            const q = searchQuery.value.toLowerCase();
+            const matchesSearch =
+              item.name.toLowerCase().includes(q) ||
+              item.function.toLowerCase().includes(q) ||
+              item.detail.toLowerCase().includes(q) ||
+              item.category.toLowerCase().includes(q);
+
+            const matchesCategory =
+              selectedCategory.value === 'All' || item.category === selectedCategory.value;
+
+            return matchesSearch && matchesCategory;
+          });
+        });
+
+        // 錯誤處理
+        const handleIconError = (e) => { e.target.src = 'https://www.google.com/s2/favicons?domain=google.com&sz=128'; };
+        const handleImgError = (e) => { e.target.src = 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80'; };
+
+        onMounted(() => {
+          // 檢查使用者之前的設定
+          const savedTheme = localStorage.getItem('theme');
+          isDark.value = savedTheme !== 'light';
+          updateTheme();
+        });
+
+        return {
+          searchQuery,
+          selectedCategory,
+          categories,
+          filteredData,
+          isDark,
+          toggleTheme,
+          handleIconError,
+          handleImgError
+        };
+      }
+    }).mount('#app');
+  </script>
+
+</body>
+
+</html>

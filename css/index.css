@@ -1,0 +1,421 @@
+@charset "utf-8";
+/* Google fonts：cwTeXFangSong (Chinese Traditional) 仿宋體字體 */
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+
+/* Google fonts：cwTeXYen (Chinese Traditional) 圓體字體 */
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+/* Google fonts – cwTeXKai (Chinese Traditional) 楷體字體 */
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+
+
+
+/* .p1{
+    background-image: url(../images/P03-上海夜景-h300.jpg); 
+    background-size: cover;
+} */
+
+/* 顏色設定第1版  前面掛上yf都是我自己的設定*/
+/* 	(#B23850)主色1—重要標記
+	(#3B8BEB)主色2---大版面顏色
+	(#E7E3D4)輔助色1
+	(#C4DBF6)輔助色2
+	(#8590AA)輔助色3 */
+
+.yf-color-pr1 {
+  color: #A64Ac9;
+}
+
+.yf-color-pr2 {
+  color: #FCCD04;
+}
+
+.yf-color-as1 {
+  color: #FFB48F;
+}
+
+.yf-color-as2 {
+  color: #F5E6CC;
+}
+
+.yf-color-as3 {
+  color: #17E9E0;
+}
+
+/* 背景顏色設定 */
+.yf-bg-color-pr1 {
+  background-color: #A64Ac9;
+}
+
+.yf-bg-color-pr2 {
+  background-color: #FCCD04;
+}
+
+.yf-bg-color-as1 {
+  background-color: #FFB48F;
+}
+
+.yf-bg-color-as2 {
+  background-color: #F5E6CC;
+}
+
+.yf-bg-color-as3 {
+  background-color: #17E9E0;
+}
+
+/* 標題字體 */
+.yf-header-font {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.yf-header-hight {
+  height: 175px;
+}
+
+/* 所有圖片寬度 */
+.yf-about-p1 {
+  width: 100%;
+  height: 100%;
+}
+
+.yf-footer {
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+}
+
+.yf-footer60 {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+}
+
+/* 111.10.14 新增CSS 紅字黃底加粗 */
+.yf-code1 {
+  color: red;
+  background: yellow;
+  font-weight: bold;
+}
+
+/* 111.10.22 新增CSS 紅字黃底加粗 */
+.yf-code2 {
+  color: blue;
+  background: yellow;
+  font-weight: bold;
+}
+
+/* 111.10.22 新增CSS 紅字黃底加粗 */
+.yf-code3 {
+  color: blue;
+  background: lightgray;
+  font-weight: bold;
+}
+
+/* 112.03.09 新增CSS 綠色字黃底加粗 */
+.yf-code4 {
+  color: green;
+  background: lightgray;
+  font-weight: bold;
+}
+
+/* 112.04.01 新增CSS 紛紅色字灰底加粗 */
+.yf-code5 {
+  color: rgb(235, 12, 224);
+  background: rgb(61, 216, 209);
+  font-weight: bold;
+}
+
+/* 111.11.06 圖片的外框 */
+.yf-frame1 {
+  padding: 5px;
+  background-color: gray
+}
+
+/* 111.11.06 圖片的外框 */
+.yf-frame2 {
+  padding: 5px;
+  background-color: red
+}
+
+/* 111.11.07  google仿宋字體 */
+.yf-font1 {
+  font-family: 'cwTeXFangSong', serif;
+  font-weight: 900;
+}
+
+/* 111.11.07  google仿宋字體 */
+.yf-font2 {
+  font-family: 'cwtexkai', serif;
+  font-weight: 900;
+}
+
+.run {
+  height: 1.2em;
+  width: 100%;
+  font-size: 1.2em;
+  color: red;
+  position: relative;
+}
+
+/* 112.05.25 背景透明 */
+.box-2 {
+  background: rgba(0, 0, 0, 0);
+  margin-bottom: 0px;
+}
+
+.box-3 {
+  background: #000;
+  filter: Alpha(opacity=60);
+}
+
+
+
+
+
+/* 這邊從動畫網站定義了三種動畫，很好用(111.07.29) */
+/* animista-1 */
+.yf-animista-1 {
+  animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* animista-2 */
+.yf-animista-2 {
+  animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/* animista-3 */
+.yf-animista-3 {
+  animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 這邊定義個人轉場的CSS */
+/* yf-transition */
+.yf-transition-shadow {
+  transition: box-shadow 1s, background-color 1s, filter 1s,
+}
+
+.yf-transition-shadow:hover {
+  box-shadow: 5px 5px 20px 5px rgba(133, 135, 136, 0.5);
+  background-color: black;
+  filter: brightness(50%);
+}
+
+/* 滑鼠按鍵動畫 */
+.yf-vibrate-1:hover {
+  animation: vibrate-1 0.3s linear infinite both;
+}
+
+@keyframes vibrate-1 {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+
+/* 取代跑馬燈動畫 */
+.yf-blink-2 {
+  animation: blink-2 0.9s infinite both;
+}
+
+@keyframes blink-2 {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 首頁icon 動畫 */
+#index-10 {
+  animation: rotate-diagonal-2 3s linear both;
+}
+
+@keyframes rotate-diagonal-2 {
+  0% {
+    transform: rotate3d(-1, 1, 0, 0deg);
+  }
+
+  50% {
+    transform: rotate3d(-1, 1, 0, 360deg);
+  }
+
+  100% {
+    transform: rotate3d(-1, 1, 0, 720deg);
+  }
+}
+
+#index-13 {
+  animation: rotate-vert-center 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@keyframes rotate-vert-center {
+  0% {
+    transform: rotateY(0);
+  }
+
+  100% {
+    transform: rotateY(720deg);
+  }
+}
+
+
+#index-16 {
+  animation: rotate-hor-center 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@keyframes rotate-hor-center {
+  0% {
+    transform: rotateX(0);
+  }
+
+  100% {
+    transform: rotateX(-720deg);
+  }
+}
+
+#yf-ani-top-1 {
+  animation: rotate-center 3s ease-in-out both;
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+/* 這邊放垂直垂直跑馬燈的 css  yf-vmarquee  */
+#yf-vmarquee {
+  line-height: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+/* 111.10.14 新增CSS 紅字黃底加粗 */
+.yf-code1 {
+  color: red;
+  background: yellow;
+  font-weight: bold;
+}
+
+/* 111.10.22 新增CSS 紅字黃底加粗 */
+.yf-code2 {
+  color: blue;
+  background: yellow;
+  font-weight: bold;
+}
+
+/* 111.10.22 新增CSS 紅字黃底加粗 */
+.yf-code3 {
+  color: blue;
+  background: lightgray;
+  font-weight: bold;
+}
+/* 112.03.09 新增CSS 綠色字黃底加粗 */
+.yf-code4 {
+  color: green;
+  background: lightgray;
+  font-weight: bold;
+}
+
+/* 112.04.01 新增CSS 紛紅色字灰底加粗 */
+.yf-code5 {
+  color: rgb(235, 12, 224);
+  background: rgb(61, 216, 209);
+  font-weight: bold;
+}
+/* 112.08.15 新增CSS 黑底白字加粗 */
+.yf-code6 {
+  color: white;
+  background-color: black;
+  font-weight: bold;
+}
+
+/* 111.11.06 圖片的外框 */
+.yf-frame1 {
+  padding: 5px;
+  background-color: gray
+}
+
+/* 111.11.07  google仿宋字體 */
+.yf-font1 {
+  font-family: 'cwTeXFangSong', serif;
+  font-weight: 900;
+}
+
+/*  112.07.29 填滿背景       */
+.yf-background-fit {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100%"
+
+}
