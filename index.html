@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- 首頁的icon圖案，yfchen -->
-  <link rel="shortcut icon" href="/images/A01-logo/A04-yfchen-logo-removebg-preview.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/A01-logo/A05-yfchen-logo-yellow-removebg-preview.png" type="image/x-icon">
 
   <!-- 下面都固定，剩下自訂 css架構還沒放進來 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -131,52 +131,52 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <a href="" target="_blank">
-                  <img id="p1-1" src="/images/B03-banner/A10-1.jpg" width="100%" title=""></a>
+                  <img id="p1-1" src="/images/B03-banner/A01.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p2-1" src="/images/B03-banner/A11-1.jpg" width="100%" title=""></a>
+                  <img id="p2-1" src="/images/B03-banner/A02.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p3-1" src="/images/B03-banner/A12-1.jpg" width="100%" title=""></a>
+                  <img id="p3-1" src="/images/B03-banner/A03.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p4-1" src="/images/B03-banner/A09-1.jpg" width="100%" title=""></a>
+                  <img id="p4-1" src="/images/B03-banner/A04.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p5-1" src="/images/B03-banner/A07-1.jpg" width="100%" title=""></a>
+                  <img id="p5-1" src="/images/B03-banner/A05.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p6-1" src="/images/B03-banner/A06-1.jpg" width="100%" title=""></a>
+                  <img id="p6-1" src="/images/B03-banner/A06.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p7-1" src="/images/B03-banner/A04-1.jpg" width="100%" title=""></a>
+                  <img id="p7-1" src="/images/B03-banner/A07.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p8-1" src="/images/B03-banner/A01-1.jpg" width="100%" title=""></a>
+                  <img id="p8-1" src="/images/B03-banner/A08.webp" width="100%" title=""></a>
+              </div>
+              <!-- <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p9-1" src="/images/B03-banner/A09.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p9-1" src="/images/B03-banner/A02-1.jpg" width="100%" title=""></a>
+                  <img id="p10-1" src="/images/B03-banner/A10.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p10-1" src="/images/B03-banner/A10-1.jpg" width="100%" title=""></a>
+                  <img id="p11-1" src="/images/B03-banner/A11.webp" width="100%" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p11-1" src="/images/B03-banner/A15-1.jpg" width="100%" title=""></a>
-              </div>
-              <div class="carousel-item">
-                <a href="" target="_blank">
-                  <img id="p12-1" src="/images/B03-banner/A16-1.jpg" width="100%" title=""></a>
-              </div>
+                  <img id="p12-1" src="/images/B03-banner/A12.webp" width="100%" title=""></a>
+              </div> -->
             </div>
           </div>
         </div>
@@ -329,28 +329,28 @@
       // 1920 X 325 'CA4', 'CA5', 'CA6', 'CA7', 'CA8', 'CA9', 'CAA', 'CAB', 'CAC', 'CAD', 'CAE', 'CAF', 'CAG', 'CAH', 'CAI', 'CAJ','CAK'
       // const arr1 = ['58', '59', '60', '61', '62', '63', '97', '98', '99', 'A0', 'A1', 'A2', 'A3']; -->
       //  ['001', 'CB3', 'CB4', 'CB5', 'CB2', 'CB1', 'CB0', 'CA4', 'CA5', 'CA6', 'CA7', 'CA8', 'CA9', 'CAA', 'CAB',];
-      const arr1 = ['A10', 'A11', 'A12', 'A15', 'A16', 'A12', 'A13', 'A14', 'A13', 'A14', 'A13', 'A14', 'A06', 'A07', 'A03', 'A04', 'A05', 'A01', 'A02', 'A08', 'A09', 'A10', 'A11', 'A12',];
+      const arr1 = ['A01', 'A02', 'A03', 'A04', 'A05', 'A06', 'A07','A08'];
 
       const randomNum = Math.floor(Math.random() * arr1.length);
       const arr_ok = shuffleArray(arr1)
       const str1 = 'images/B03-banner/'
-      const str2 = '.jpg';
-      document.getElementById('p1-1').src = str1 + arr_ok[0] + '-1' + str2;
-      document.getElementById('p2-1').src = str1 + arr_ok[1] + '-1' + str2;
-      document.getElementById('p3-1').src = str1 + arr_ok[2] + '-1' + str2;
-      document.getElementById('p4-1').src = str1 + arr_ok[3] + '-1' + str2;
-      document.getElementById('p5-1').src = str1 + arr_ok[4] + '-1' + str2;
-      document.getElementById('p6-1').src = str1 + arr_ok[5] + '-1' + str2;
-      document.getElementById('p7-1').src = str1 + arr_ok[6] + '-1' + str2;
-      document.getElementById('p8-1').src = str1 + arr_ok[7] + '-1' + str2;
-      document.getElementById('p9-1').src = str1 + arr_ok[8] + '-1' + str2;
-      document.getElementById('p10-1').src = str1 + arr_ok[9] + '-1' + str2;
-      document.getElementById('p11-1').src = str1 + arr_ok[10] + '-1' + str2;
-      document.getElementById('p12-1').src = str1 + arr_ok[11] + '-1' + str2;
-      // document.getElementById('p13-1').src = str1 + arr_ok[12] + '-1' + str2;
-      // document.getElementById('p14-1').src = str1 + arr_ok[13] + '-1' + str2;
-      // document.getElementById('p15-1').src = str1 + arr_ok[14] + '-1' + str2;
-      // document.getElementById('p16-1').src = str1 + arr_ok[15] + '-1' + str2;
+      const str2 = '.webp';
+      document.getElementById('p1-1').src = str1 + arr_ok[0] +  str2;
+      document.getElementById('p2-1').src = str1 + arr_ok[1] +  str2;
+      document.getElementById('p3-1').src = str1 + arr_ok[2] +  str2;
+      document.getElementById('p4-1').src = str1 + arr_ok[3] +  str2;
+      document.getElementById('p5-1').src = str1 + arr_ok[4] +  str2;
+      document.getElementById('p6-1').src = str1 + arr_ok[5] +  str2;
+      document.getElementById('p7-1').src = str1 + arr_ok[6] +  str2;
+      document.getElementById('p8-1').src = str1 + arr_ok[7] +  str2;
+      // document.getElementById('p9-1').src = str1 + arr_ok[8] +  str2;
+      // document.getElementById('p10-1').src = str1 + arr_ok[9] +  str2;
+      // document.getElementById('p11-1').src = str1 + arr_ok[10] +  str2;
+      // document.getElementById('p12-1').src = str1 + arr_ok[11] +  str2;
+      // document.getElementById('p13-1').src = str1 + arr_ok[12] +  str2;
+      // document.getElementById('p14-1').src = str1 + arr_ok[13] +  str2;
+      // document.getElementById('p15-1').src = str1 + arr_ok[14] +  str2;
+      // document.getElementById('p16-1').src = str1 + arr_ok[15] +  str2;
 
 
       //document.getElementById('p1-2').src = str1 + arr_ok[0] + '-2' + str2;

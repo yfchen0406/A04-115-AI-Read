@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title> AI Prompt 2026 </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-9.png" type="image/x-icon">
+  <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.2 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" rel="stylesheet">
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="./css/iconfont.js"></script>
+
+
+  <!-- (ok)  google font link  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yf-image-with-text {
+      display: inline-flex;
+      /* 讓容器和文字內容以行內方式顯示 */
+      align-items: baseline;
+      /* 對齊文字基線 */
+    }
+  </style>
+  <style>
+    td:nth-child(6n+1) {
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    td:nth-child(6n+2) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+3) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+4) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+5) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+6) {
+      vertical-align: middle;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body class="bg-dar" onload="updateCounter()">
+  <!-- 這邊是navigation 導覽列，利用 jQuery 套用，BX01-nav.html load 就好! -->
+  <div id="nav1"></div>
+
+  <!-- *************************************************************************** -->
+  <header style="margin-top: 57px;">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 輪播解說 -->
+        <!-- p1-1,p1-2,p1-3,p1-4 -->
+        <!-- p2-1,p2-2,p2-3,p2-4 -->
+        <!-- p3-1,p3-2,p3-3,p3-4 -->
+        <!-- p4-1,p4-2,p4-3,p4-4 -->
+
+
+        <!-- @@@@@@@@@@@@@@@@@@@  第一部分，輪播部分從這邊開始  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <div class="card-group col-sm-12 px-0">
+          <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <!-- 退休第1-1張  -->
+              <div class="carousel-item active">
+                <a href="" target="_blank">
+                  <img id="p1-1" src="/images/B02-banner/A09.webp" width="100%" title="AI提示詞"></a>
+              </div>
+              <!-- 2024第2-1張  -->
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p2-1" src="/images/B02-banner/A10.webp" width="100%" title="AI提示詞"></a>
+              </div>
+              <!-- 2024第3-1張  -->
+              <!-- <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p3-1" src="/images/B02-banner/A03.webp" width="100%" title="AI提示詞"></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+  <!-- <header class="text-center bg-dark p-2 yf-font1" style="margin-top:55px;">
+    <h1 class="text-info yf-header-font yf-font1"><svg class="icon text-info" aria-hidden="true">
+        <use xlink:href="#icon-icon_datas"> </use>
+      </svg> 台北國際書展!~2024.02.23</h1>
+    <p class="yf-color-as2 yf-font1"> 退休之後，花了比較多的時間在閱讀上面，也慢慢學會如何閱讀，目前的閱讀沒有壓力，沒有期限，可以依照自己的興趣和喜好去追尋自己想看的書籍!</p>
+
+  </header> -->
+  <!-- ############################################################################ -->
+  <!-- 主畫面整個 -->
+  <div class="container-fluid yf-font1" style="background-color:rgb(223, 241, 241);">
+    <!-- <div class="container-fluid yf-font1"> -->
+    <div class="row">
+      <!-- 相關連結，利用 jQuery 套用，BX01-aside.html load 就好!  -->
+      <div class="col-sm-1 yf-font1">
+        <div class="container-fluid">
+          <div class="btn-group-vertical">
+            <!-- <h5 class="yf-header-font text-primary yf-font1">照片集錦</h5> -->
+            <!-- <button type="button" class="btn btn-sm btn-outline-danger text-left mb-1">
+              <a href="/T01-Travel/T02-Kirigakure-Yingge-1130203/T02B-Kirigakure-Yingge-1130203-pic-wife.html" target="_blank"><i
+                  class="fa-solid fa-book"></i> 1.老婆新手機拍攝照片 </a></button> -->
+            <!-- <button type="button" class="btn btn-sm btn-outline-danger text-left mb-1">
+              <a href="/T01-Travel/U02-Chinese-Year-2024-11302014/U02A-Chinese-Year-2024-11-0214-pic.html" target="_blank"><i
+                  class="fa-regular fa-images"></i> 1.網頁內照片~照片牆 </a></button>
+            <button type="button" class="btn btn-sm btn-outline-danger text-left mb-1">
+              <a href="/T01-Travel/U02-Chinese-Year-2024-11302014/U02C-Chinese-Year-2024-11-0214-cycle.html" target="_blank"><i
+                  class="fa-regular fa-images"></i> 2.網頁內所有照片~輪播版 </a></button> -->
+            <br>
+          </div>
+        </div>
+      </div>
+      <!-- 主要內容 -->
+      <!-- 準備說明h4   -->
+      <div class="col-sm-10">
+        <br>
+        <h2 id="1-5" class=" yf-font2"><i class="fa-solid fa-paintbrush"></i> <strong class="yf-code2">
+            AI個人化工作情境</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-5" class="row" style="align-items: flex-end;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+
+        <br>
+        <h2 id="1-3" class=" yf-font2"><i class="fa-solid fa-paintbrush"></i> <strong class="yf-code2"> AI網站應用</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-3" class="row" style="align-items: flex-end;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-1" class=" yf-font2"><i class="fa-brands fa-line"></i> <strong class="yf-code2"> 照片牆&貼圖</strong>
+        </h2> -->
+        <h2 id="1-1" class=" yf-font2"><img class="icon" src="./images/A01-icon/ai.png"> <strong class="yf-code2">
+            照片牆&貼圖</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-1" class="row" style="align-items: flex-end;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+        <h2 id="1-2" class=" yf-font2"><i class="fa-solid fa-images"></i> <strong class="yf-code2"> AI繪圖</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-2" class="row" style="align-items: flex-end;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+
+        <h2 id="1-4" class=" yf-font2"><img class="icon" src="./images/A01-icon/ai-technology.png"> <strong
+            class="yf-code2"> AI生成</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-4" class="row" style="align-items: flex-end;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+        <!-- 參考資料 -->
+      </div>
+      <div class="col-sm-2">
+        <div class="container-fluid">
+          <div class="btn-group-vertical">
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="footer"></div>
+
+  <!-- 調整完成-->
+  <!--  ##################       各區塊html 載入     ###################### -->
+  <script>
+    $(function () {
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+  <script src="/js/V03-vue3.js"></script>
+
+  <script type="module">
+    import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+    // AI提示詞
+    const app5 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+          //  07.NotebookLM 產出五種簡報風格 ~ 115.02.12
+          {
+            pic1: '/A02-AI-New-World-2025/C07-NotebookLM-PPT-style-1150212/C07-NotebookLM-PPT-style-1150212.html',
+            pic1s: './images/A01-7.webp',
+            dec1: 'Gemini ',
+          },
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-5')
+
+
+
+    const app3 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-3')
+
+    const app1 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+
+
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-1')
+
+    const app2 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+
+
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-2')
+
+
+
+    const app4 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-4')
+
+
+
+    const app6 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-6')
+
+    const app7 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+
+
+
+
+        ]);
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-7')
+
+    const app8 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-8')
+
+
+
+    const app9 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-9')
+
+
+    const app10 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-10')
+
+
+
+
+  </script>
+  <!-- ####################################  套用資料區域結束  ##################################################### -->
+  <script>
+    function updateCounter() {
+      // 112.10.05 移除之前舊資料
+      const arr1 = ['A09', 'A10',];
+
+      const randomNum = Math.floor(Math.random() * arr1.length);
+      const arr_ok = shuffleArray(arr1)
+      const str1 = '/images/B03-banner/'
+      const str2 = '.webp';
+      document.getElementById('p1-1').src = str1 + arr_ok[0] + str2;
+      document.getElementById('p2-1').src = str1 + arr_ok[1] + str2;
+      // document.getElementById('p3-1').src = str1 + arr_ok[2] + str2;
+      // document.getElementById('p4-1').src = str1 + arr_ok[3] + str2;
+      // document.getElementById('p5-1').src = str1 + arr_ok[4] + str2;
+      // document.getElementById('p6-1').src = str1 + arr_ok[5] + str2;
+      // document.getElementById('p7-1').src = str1 + arr_ok[6] + str2;
+      // document.getElementById('p8-1').src = str1 + arr_ok[7] + str2;
+      // document.getElementById('p4-1').src = str1 + arr_ok[3] + '-1' + str2;
+      // document.getElementById('p5-1').src = str1 + arr_ok[4] + '-1' + str2;
+      // document.getElementById('p6-1').src = str1 + arr_ok[5] + '-1' + str2;
+      // document.getElementById('p7-1').src = str1 + arr_ok[6] + '-1' + str2;
+      // document.getElementById('p8-1').src = str1 + arr_ok[7] + '-1' + str2;
+      // document.getElementById('p9-1').src = str1 + arr_ok[8] + '-1' + str2;
+      // document.getElementById('p10-1').src = str1 + arr_ok[9] + '-1' + str2;
+      // document.getElementById('p11-1').src = str1 + arr_ok[10] + '-1' + str2;
+      // document.getElementById('p12-1').src = str1 + arr_ok[11] + '-1' + str2;
+      // document.getElementById('p13-1').src = str1 + arr_ok[12] + '-1' + str2;
+      // document.getElementById('p14-1').src = str1 + arr_ok[13] + '-1' + str2;
+      // document.getElementById('p15-1').src = str1 + arr_ok[14] + '-1' + str2;
+      // document.getElementById('p16-1').src = str1 + arr_ok[15] + '-1' + str2;
+
+
+      //document.getElementById('p1-2').src = str1 + arr_ok[0] + '-2' + str2;
+      //document.getElementById('p2-2').src = str1 + arr_ok[1] + '-2' + str2;
+      //document.getElementById('p3-2').src = str1 + arr_ok[2] + '-2' + str2;
+      // document.getElementById('p4-2').src = str1 + arr_ok[3] + '-2' + str2;
+      // document.getElementById('p5-2').src = str1 + arr_ok[4] + '-2' + str2;
+      // document.getElementById('p6-2').src = str1 + arr_ok[5] + '-2' + str2;
+      // document.getElementById('p7-2').src = str1 + arr_ok[6] + '-2' + str2;
+      // document.getElementById('p8-2').src = str1 + arr_ok[7] + '-2' + str2;
+      // document.getElementById('p9-2').src = str1 + arr_ok[8] + '-2' + str2;
+      // document.getElementById('p10-2').src = str1 + arr_ok[9] + '-2' + str2;
+      // document.getElementById('p11-2').src = str1 + arr_ok[10] + '-2' + str2;
+      // document.getElementById('p12-2').src = str1 + arr_ok[11] + '-2' + str2;
+      // document.getElementById('p13-2').src = str1 + arr_ok[12] + '-2' + str2;
+      // document.getElementById('p14-2').src = str1 + arr_ok[13] + '-2' + str2;
+      // document.getElementById('p15-2').src = str1 + arr_ok[14] + '-2' + str2;
+      // document.getElementById('p16-2').src = str1 + arr_ok[15] + '-2' + str2;
+
+      //document.getElementById('p1-3').src = str1 + arr_ok[0] + '-3' + str2;
+      //document.getElementById('p2-3').src = str1 + arr_ok[1] + '-3' + str2;
+      //document.getElementById('p3-3').src = str1 + arr_ok[2] + '-3' + str2;
+      // document.getElementById('p4-3').src = str1 + arr_ok[3] + '-3' + str2;
+      // document.getElementById('p5-3').src = str1 + arr_ok[4] + '-3' + str2;
+      // document.getElementById('p6-3').src = str1 + arr_ok[5] + '-3' + str2;
+      // document.getElementById('p7-3').src = str1 + arr_ok[6] + '-3' + str2;
+      // document.getElementById('p8-3').src = str1 + arr_ok[7] + '-3' + str2;
+      // document.getElementById('p9-3').src = str1 + arr_ok[8] + '-3' + str2;
+      // document.getElementById('p10-3').src = str1 + arr_ok[9] + '-3' + str2;
+      // document.getElementById('p11-3').src = str1 + arr_ok[10] + '-3' + str2;
+      // document.getElementById('p12-3').src = str1 + arr_ok[11] + '-3' + str2;
+      // document.getElementById('p13-3').src = str1 + arr_ok[12] + '-3' + str2;
+      // document.getElementById('p14-3').src = str1 + arr_ok[13] + '-3' + str2;
+      // document.getElementById('p15-3').src = str1 + arr_ok[14] + '-3' + str2;
+      // document.getElementById('p16-3').src = str1 + arr_ok[15] + '-3' + str2;
+
+
+      //document.getElementById('p1-4').src = str1 + arr_ok[0] + '-4' + str2;
+      //document.getElementById('p2-4').src = str1 + arr_ok[1] + '-4' + str2;
+      //document.getElementById('p3-4').src = str1 + arr_ok[2] + '-4' + str2;
+      // document.getElementById('p4-4').src = str1 + arr_ok[3] + '-4' + str2;
+      // document.getElementById('p5-4').src = str1 + arr_ok[4] + '-4' + str2;
+      // document.getElementById('p6-4').src = str1 + arr_ok[5] + '-4' + str2;
+      // document.getElementById('p7-4').src = str1 + arr_ok[6] + '-4' + str2;
+      // document.getElementById('p8-4').src = str1 + arr_ok[7] + '-4' + str2;
+      // document.getElementById('p9-4').src = str1 + arr_ok[8] + '-4' + str2;
+      // document.getElementById('p10-4').src = str1 + arr_ok[9] + '-4' + str2;
+      // document.getElementById('p11-4').src = str1 + arr_ok[10] + '-4' + str2;
+      // document.getElementById('p12-4').src = str1 + arr_ok[11] + '-4' + str2;
+      // document.getElementById('p13-4').src = str1 + arr_ok[12] + '-4' + str2;
+      // document.getElementById('p14-4').src = str1 + arr_ok[13] + '-4' + str2;
+      // document.getElementById('p15-4').src = str1 + arr_ok[14] + '-4' + str2;
+      // document.getElementById('p16-4').src = str1 + arr_ok[15] + '-4' + str2;
+
+      // 亂數洗牌
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          // 交換元素
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>

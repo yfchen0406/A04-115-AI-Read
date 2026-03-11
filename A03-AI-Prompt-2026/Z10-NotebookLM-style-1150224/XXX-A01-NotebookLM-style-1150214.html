@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01.NotebookLM 繁體中文風格指南 & 提示詞生成器~~ 115.02.14</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      height: 300px;
+      max-height: 400px;
+    }
+
+    .style-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      background-color: #fafaf9;
+      color: #1c1917;
+    }
+  </style>
+  <!-- Chosen Palette: 溫潤中性色調 (Stone/Warm Gray) 搭配專業藍與森林綠 -->
+  <!-- Application Structure Plan: 
+         1. 導覽列：快速跳轉。
+         2. 風格統計圖表：展示 2026 年風格分類分佈。
+         3. 全中文風格探索器：將 40+ 種風格翻譯為繁體中文，並提供分類過濾。
+         4. 個人目標加速器：針對使用者的 2026 目標（網頁、多益、兒子職場建議）預設按鈕。
+         5. 提示詞工作室：生成繁體中文提示詞。
+    -->
+  <!-- Visualization & Content Choices:
+         - Chart.js 圓環圖：展示風格比例。
+         - 互動卡片：展示全中文風格名稱與用途。
+         - 多功能表格：對應場景與風格。
+         - CONFIRMATION: 未使用 SVG 圖片。未使用 Mermaid JS。
+    -->
+  <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+
+<body class="font-sans antialiased bg-stone-50 text-stone-800">
+
+  <header class="bg-white border-b border-stone-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">📓</span>
+        <h1 class="text-xl font-bold tracking-tight text-stone-900">01.NotebookLM 繁體中文風格指南 & 提示詞生成器~~ 115.02.14</h1>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium text-stone-600">
+        <a href="#style-explorer" class="hover:text-emerald-600 transition-colors">風格探索</a>
+        <a href="#prompt-studio" class="hover:text-emerald-600 transition-colors">提示詞工作室</a>
+        <a href="#my-goals" class="hover:text-emerald-600 transition-colors">2026 個人目標</a>
+      </nav>
+      <button onclick="scrollToSection('prompt-studio')"
+        class="bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm hover:bg-emerald-800 transition-colors">
+        立即生成 🚀
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- 歡迎區 -->
+    <section class="text-center space-y-4 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">將您的退休學習轉化為精美視覺</h2>
+      <p class="text-lg text-stone-600">
+        專為退休老師設計的 NotebookLM 視覺化工具。無論是整理**網頁設計筆記**、**多益單字**，還是給**兒子的職場建議**，這裡都有適合您的風格提示詞。
+      </p>
+    </section>
+
+    <!-- 圖表分析區 -->
+    <section class="bg-white rounded-2xl shadow-sm border border-stone-100 p-6 sm:p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div class="lg:col-span-1 space-y-4">
+          <h3 class="text-xl font-bold text-stone-900">2026 風格體系分佈</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            根據最新指南，風格分為四大類。對於「職場建議」，建議使用**經典專業**；對於「英語學習」，**視覺藝術**與**資訊圖表**能幫助記憶。
+          </p>
+          <ul class="space-y-2 text-sm text-stone-600">
+            <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-slate-700"></span> 經典專業 (Business)
+            </li>
+            <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-indigo-500"></span> 科技復古
+              (Tech/Retro)</li>
+            <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-rose-400"></span> 視覺藝術 (Artistic)
+            </li>
+            <li class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> 數據圖表
+              (Infographic)</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-2 flex justify-center">
+          <div class="chart-container">
+            <canvas id="styleChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 風格探索區 -->
+    <section id="style-explorer" class="scroll-mt-20">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-6 gap-4">
+        <div>
+          <h3 class="text-2xl font-bold text-stone-900 flex items-center gap-2">🎨 中文風格探索器</h3>
+          <p class="text-stone-500 mt-1">探索所有已翻譯的視覺風格，並直接應用於提示詞生成。</p>
+        </div>
+        <div class="flex flex-wrap gap-2" id="style-filters">
+          <button class="filter-btn active bg-stone-800 text-white px-3 py-1 rounded-full text-sm"
+            data-filter="all">全部</button>
+          <button
+            class="filter-btn bg-white border border-stone-300 text-stone-600 px-3 py-1 rounded-full text-sm hover:bg-stone-50"
+            data-filter="professional">經典專業</button>
+          <button
+            class="filter-btn bg-white border border-stone-300 text-stone-600 px-3 py-1 rounded-full text-sm hover:bg-stone-50"
+            data-filter="creative">創意藝術</button>
+          <button
+            class="filter-btn bg-white border border-stone-300 text-stone-600 px-3 py-1 rounded-full text-sm hover:bg-stone-50"
+            data-filter="tech">科技工程</button>
+          <button
+            class="filter-btn bg-white border border-stone-300 text-stone-600 px-3 py-1 rounded-full text-sm hover:bg-stone-50"
+            data-filter="data">數據資訊</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="style-grid">
+        <!-- 由 JavaScript 動態生成 -->
+      </div>
+    </section>
+
+    <!-- 個人目標加速器 -->
+    <section id="my-goals"
+      class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6 sm:p-8 scroll-mt-20 border border-emerald-100">
+      <h3 class="text-xl font-bold text-emerald-900 mb-4 flex items-center gap-2">🎯 2026 目標快速套用</h3>
+      <p class="text-emerald-700 text-sm mb-6">點擊下方的個人目標，我們會為您選擇最合適的繁體中文風格與版面。</p>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <button onclick="applyGoal('web')"
+          class="group p-4 bg-white rounded-xl border border-emerald-200 shadow-sm hover:shadow-md transition-all text-left">
+          <div class="text-2xl mb-2">💻</div>
+          <div class="font-bold text-stone-800">網頁設計學習</div>
+          <div class="text-xs text-stone-500 mt-1">風格：藍圖工程 (Blueprint)</div>
+        </button>
+        <button onclick="applyGoal('toeic')"
+          class="group p-4 bg-white rounded-xl border border-emerald-200 shadow-sm hover:shadow-md transition-all text-left">
+          <div class="text-2xl mb-2">📚</div>
+          <div class="font-bold text-stone-800">多益英文單字</div>
+          <div class="text-xs text-stone-500 mt-1">風格：可愛塗鴉 (Kawaii)</div>
+        </button>
+        <button onclick="applyGoal('career')"
+          class="group p-4 bg-white rounded-xl border border-emerald-200 shadow-sm hover:shadow-md transition-all text-left">
+          <div class="text-2xl mb-2">👔</div>
+          <div class="font-bold text-stone-800">兒子的職場建議</div>
+          <div class="text-xs text-stone-500 mt-1">風格：高管儀表板 (Executive)</div>
+        </button>
+        <button onclick="applyGoal('ai')"
+          class="group p-4 bg-white rounded-xl border border-emerald-200 shadow-sm hover:shadow-md transition-all text-left">
+          <div class="text-2xl mb-2">🤖</div>
+          <div class="font-bold text-stone-800">AI 知識筆記</div>
+          <div class="text-xs text-stone-500 mt-1">風格：未來科技 (Sci-Fi)</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- 提示詞工作室 -->
+    <section id="prompt-studio" class="scroll-mt-20 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-5 space-y-6 bg-white p-6 rounded-2xl shadow-sm border border-stone-100 h-fit">
+        <div class="border-b border-stone-100 pb-4">
+          <h3 class="text-xl font-bold text-stone-900 flex items-center gap-2">🛠️ 提示詞生成工作室</h3>
+          <p class="text-sm text-stone-500">將您的想法轉化為專業的指令。</p>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-stone-700 mb-1">1. 版面版型 (Template)</label>
+            <select id="template-select"
+              class="w-full rounded-lg border-stone-300 bg-stone-50 p-2.5 text-sm focus:ring-2 focus:ring-emerald-500 border outline-none">
+              <option value="process">流程步驟圖 (Process Flow)</option>
+              <option value="numbers">關鍵數據展示 (By the Numbers)</option>
+              <option value="timeline">歷史發展軸 (Timeline)</option>
+              <option value="matrix">對比評估矩陣 (Comparison Matrix)</option>
+              <option value="executive">高管一頁紙簡報 (Executive One-Pager)</option>
+              <option value="story">視覺敘事故事 (Storytelling)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-stone-700 mb-1">2. 視覺風格 (Style)</label>
+            <select id="style-select"
+              class="w-full rounded-lg border-stone-300 bg-stone-50 p-2.5 text-sm focus:ring-2 focus:ring-emerald-500 border outline-none">
+              <option value="大膽極簡 (Bold Minimal)">大膽極簡 (Bold Minimal)</option>
+              <option value="高管儀表板 (Executive Dashboard)">高管儀表板 (Executive Dashboard)</option>
+              <option value="現代清新 (Modern Clean)">現代清新 (Modern Clean)</option>
+              <option value="黑板手繪 (Chalkboard)">黑板手繪 (Chalkboard)</option>
+              <option value="藍圖工程 (Blueprint)">藍圖工程 (Blueprint)</option>
+              <option value="未來科技 (Sci-Fi Tech)">未來科技 (Sci-Fi Tech)</option>
+              <option value="可愛塗鴉 (Kawaii Doodle)">可愛塗鴉 (Kawaii Doodle)</option>
+              <option value="3D 擬真浮雕 (3D Neumorphism)">3D 擬真浮雕 (3D Neumorphism)</option>
+              <option value="視覺筆記 (Sketch Noting)">視覺筆記 (Sketch Noting)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-stone-700 mb-1">3. 主題描述 (Topic)</label>
+            <input type="text" id="topic-input" placeholder="例如：給兒子的職場溝通建議"
+              class="w-full rounded-lg border-stone-300 border p-2.5 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-stone-700 mb-1">對象 (Audience)</label>
+              <input type="text" id="audience-input" placeholder="例如：入職新人"
+                class="w-full rounded-lg border-stone-300 border p-2.5 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-stone-700 mb-1">語言設定</label>
+              <select id="lang-select"
+                class="w-full rounded-lg border-stone-300 border bg-stone-50 p-2.5 text-sm outline-none">
+                <option value="Traditional Chinese">繁體中文</option>
+              </select>
+            </div>
+          </div>
+
+          <button onclick="generatePrompt()"
+            class="w-full bg-stone-900 hover:bg-stone-800 text-white font-medium py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
+            <span>✨ 生成繁體中文提示詞</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 輸出與預覽 -->
+      <div class="lg:col-span-7 flex flex-col h-full">
+        <div class="bg-stone-800 rounded-t-2xl p-4 flex justify-between items-center">
+          <span class="text-stone-300 text-sm font-mono">指令預覽 (Prompt Preview)</span>
+          <button onclick="copyToClipboard()"
+            class="text-xs bg-stone-700 hover:bg-stone-600 text-white px-3 py-1.5 rounded transition-colors">
+            📋 複製內容
+          </button>
+        </div>
+        <div id="preview-container"
+          class="flex-grow bg-white border-x border-b border-stone-200 rounded-b-2xl p-6 relative overflow-hidden">
+          <textarea id="prompt-output"
+            class="w-full h-64 md:h-full resize-none outline-none text-stone-700 font-mono text-sm leading-relaxed bg-transparent"
+            readonly>請選擇風格後生成提示詞...</textarea>
+        </div>
+        <div class="mt-4 bg-emerald-50 border border-emerald-100 p-4 rounded-xl text-emerald-800 text-sm flex gap-3">
+          <span class="text-xl">💡</span>
+          <div>
+            <p class="font-bold">溫馨提醒：</p>
+            <p>生成的提示詞可直接複製到 NotebookLM 的對話框中。若想要顏色更專業，可要求「使用藍灰色調」。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-stone-900 text-stone-400 py-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="mb-2">專為 2026 退休老師學習目標打造</p>
+      <p class="text-xs italic">基於 NotebookLM 2026.02 Style Guide</p>
+    </div>
+  </footer>
+
+  <script>
+    // --- 繁體中文風格定義 ---
+    const styles = [
+      { id: 'bold-minimal', name: '大膽極簡', enName: 'Bold Minimal', category: 'professional', desc: '粗體標題、大量負空間、高對比度', use: '展示單一核心數據或標語' },
+      { id: 'exec-dash', name: '高管儀表板', enName: 'Executive Dashboard', category: 'professional', desc: '商務深藍、數據圖表整齊排列、專業感', use: '職場簡報、績效總結' },
+      { id: 'modern-clean', name: '現代清新', enName: 'Modern Clean', category: 'professional', desc: '柔和色調、現代非襯線字體、簡潔線條', use: '網頁設計筆記、品牌介紹' },
+      { id: 'blueprint', name: '藍圖工程', enName: 'Blueprint', category: 'tech', desc: '深藍底色、白色線框、方格背景', use: '網站架構、系統流程圖' },
+      { id: 'chalkboard', name: '黑板手繪', enName: 'Chalkboard', category: 'creative', desc: '黑板質底、彩色粉筆筆觸、手寫體', use: '教學重點、課程總結' },
+      { id: 'sketch', name: '視覺筆記', enName: 'Sketch Noting', category: 'creative', desc: '紙張質感、手繪插圖、有機線條', use: '英語單字記憶、心智圖' },
+      { id: 'kawaii', name: '可愛塗鴉', enName: 'Kawaii Doodle', category: 'creative', desc: '馬卡龍色系、圓潤邊角、溫馨插畫', use: '生活紀錄、日常走路目標' },
+      { id: 'neumorphism', name: '3D 擬真浮雕', enName: 'Neumorphism', category: 'tech', desc: '軟陰影效果、介面浮雕感、前衛風格', use: 'UI/UX 設計概念展示' },
+      { id: 'scifi', name: '未來科技', enName: 'Sci-Fi Tech', category: 'tech', desc: '深色模式、霓虹光暈、HUD 界面感', use: 'AI 技術演進、前沿科技' },
+      { id: 'timeline', name: '視覺時間軸', enName: 'Timeline Visual', category: 'data', desc: '連貫的時程線、節點標記清晰', use: '歷史演變、學習進度追蹤' },
+      { id: 'matrix', name: '評估矩陣', enName: 'Comparison Matrix', category: 'data', desc: '方格布局、優劣對比清單', use: '工具選擇比較、方案評估' }
+    ];
+
+    document.addEventListener('DOMContentLoaded', function () {
+      renderStyleGrid('all');
+      initChart();
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.remove('bg-stone-800', 'text-white');
+            b.classList.add('bg-white', 'text-stone-600');
+          });
+          e.target.classList.remove('bg-white', 'text-stone-600');
+          e.target.classList.add('bg-stone-800', 'text-white');
+          renderStyleGrid(e.target.dataset.filter);
+        });
+      });
+    });
+
+    function renderStyleGrid(filter) {
+      const grid = document.getElementById('style-grid');
+      grid.innerHTML = '';
+      const filtered = filter === 'all' ? styles : styles.filter(s => s.category === filter);
+
+      filtered.forEach(style => {
+        let icon = '🎨';
+        if (style.category === 'professional') icon = '💼';
+        if (style.category === 'tech') icon = '🔧';
+        if (style.category === 'creative') icon = '✨';
+        if (style.category === 'data') icon = '📈';
+
+        const card = document.createElement('div');
+        card.className = 'style-card bg-white p-5 rounded-xl border border-stone-200 shadow-sm transition-all cursor-pointer';
+        card.onclick = () => {
+          document.getElementById('style-select').value = `${style.name} (${style.enName})`;
+          scrollToSection('prompt-studio');
+          generatePrompt();
+        };
+
+        card.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="text-2xl">${icon}</div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 bg-stone-100 rounded text-stone-500 uppercase">${style.enName}</span>
+                    </div>
+                    <h4 class="font-bold text-stone-900">${style.name}</h4>
+                    <p class="text-[11px] text-stone-500 mt-1 h-8 overflow-hidden">${style.desc}</p>
+                    <div class="mt-3 text-[10px] bg-emerald-50 text-emerald-700 p-1.5 rounded">
+                        <span class="font-bold">適合：</span>${style.use}
+                    </div>
+                `;
+        grid.appendChild(card);
+      });
+    }
+
+    function initChart() {
+      const ctx = document.getElementById('styleChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['經典專業', '創意藝術', '科技工程', '數據資訊'],
+          datasets: [{
+            data: [30, 25, 25, 20],
+            backgroundColor: ['#334155', '#fb7185', '#6366f1', '#10b981'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'right', labels: { font: { size: 12 } } }
+          },
+          cutout: '75%'
+        }
+      });
+    }
+
+    function applyGoal(type) {
+      const topic = document.getElementById('topic-input');
+      const audience = document.getElementById('audience-input');
+      const style = document.getElementById('style-select');
+      const template = document.getElementById('template-select');
+
+      if (type === 'web') {
+        topic.value = '網頁後端架構與設計邏輯';
+        audience.value = '退休學習者 (自我紀錄)';
+        style.value = '藍圖工程 (Blueprint)';
+        template.value = 'process';
+      } else if (type === 'toeic') {
+        topic.value = '多益商務必考單字整理';
+        audience.value = '多益考生';
+        style.value = '可愛塗鴉 (Kawaii Doodle)';
+        template.value = 'numbers';
+      } else if (type === 'career') {
+        topic.value = '入職第一年的三個成功關鍵點';
+        audience.value = '剛退伍的新進職員 (兒子)';
+        style.value = '高管儀表板 (Executive Dashboard)';
+        template.value = 'executive';
+      } else if (type === 'ai') {
+        topic.value = '2026 AI 核心工具地圖';
+        audience.value = 'AI 學習愛好者';
+        style.value = '未來科技 (Sci-Fi Tech)';
+        template.value = 'story';
+      }
+      scrollToSection('prompt-studio');
+      generatePrompt();
+    }
+
+    function generatePrompt() {
+      const templateType = document.getElementById('template-select').value;
+      const style = document.getElementById('style-select').value;
+      const topic = document.getElementById('topic-input').value || '[請輸入主題]';
+      const audience = document.getElementById('audience-input').value || '[請輸入對象]';
+
+      let prompt = `請根據以下要求為我生成一份 NotebookLM 資訊圖表：\n\n`;
+      prompt += `主題：${topic}\n`;
+      prompt += `受眾：${audience}\n`;
+      prompt += `視覺風格：${style}\n\n`;
+
+      if (templateType === 'process') {
+        prompt += `版面要求：請使用「流程步驟圖 (Process Flow)」。\n- 請將內容拆解為 4-6 個步驟。\n- 每個步驟需要一個圖標描述與 10 字以內的精簡繁體中文說明。\n- 視覺呈現應具有連貫性與動線導引。`;
+      } else if (templateType === 'numbers') {
+        prompt += `版面要求：請使用「數據展示 (By the Numbers)」。\n- 突出一個核心關鍵數字作為視覺中心。\n- 周圍環繞 3-5 個補充數據。\n- 請確保文字簡明扼要。`;
+      } else if (templateType === 'executive') {
+        prompt += `版面要求：請使用「高管一頁紙 (Executive One-Pager)」。\n- 採用專業商務色調。\n- 結構應包含：核心結論、關鍵洞察、具體建議行動。`;
+      } else {
+        prompt += `版面要求：請確保佈局平衡，並使用繁體中文呈現所有文字。`;
+      }
+
+      prompt += `\n\n語言提醒：所有文字內容必須使用繁體中文 (Traditional Chinese)。`;
+
+      document.getElementById('prompt-output').value = prompt;
+    }
+
+    function copyToClipboard() {
+      const textarea = document.getElementById('prompt-output');
+      textarea.select();
+      document.execCommand('copy');
+      const btn = document.querySelector('button[onclick="copyToClipboard()"]');
+      btn.innerText = "✅ 已複製到剪貼簿";
+      setTimeout(() => btn.innerText = "📋 複製內容", 2000);
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>

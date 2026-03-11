@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotebookLM 視覺設計顧問 (2026 進階版)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Chart Container Styling - Mandatory Requirement */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      /* Consistently limited width */
+      margin-left: auto;
+      margin-right: auto;
+      height: 300px;
+      /* Base height */
+      max-height: 400px;
+    }
+
+    @media (min-width: 768px) {
+      .chart-container {
+        height: 350px;
+      }
+    }
+
+    /* Custom Scrollbar for nicer UI */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
+    }
+
+    /* Animation utilities */
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#Fdfcf8] text-gray-800 font-sans leading-relaxed selection:bg-orange-100 selection:text-orange-900">
+
+  <!-- Application Structure Plan:
+    1. Header: Introduction and value proposition.
+    2. Dashboard Overview: A visual breakdown of style categories using Chart.js to give a quick overview of available tools.
+    3. Interactive Style Explorer: A filterable grid allowing users to find the right style based on their needs (Professional vs Creative vs Data).
+    4. Prompt Generator: The core utility. A dynamic form where users select a template, fill in blanks, and get a ready-to-copy prompt.
+    5. Personal Goal Strategy: A tabbed interface mapping the specific 2026 goals (English, Web, AI, etc.) to concrete NotebookLM actions.
+    6. Pro Tips & Workflow: Accordion/Cards for advanced settings like Personas and Color Palettes.
+    Rationale: This structure moves from "Understanding" (Overview/Styles) to "Action" (Generator) to "Application" (Personal Goals), fitting the user's workflow.
+    -->
+
+  <!-- Navbar -->
+  <nav class="bg-white border-b border-stone-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <span class="text-2xl font-bold text-stone-800 tracking-tight">NotebookLM <span
+              class="text-orange-600">視覺顧問</span></span>
+        </div>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#styles" class="text-stone-600 hover:text-orange-600 transition-colors">風格探索</a>
+          <a href="#generator" class="text-stone-600 hover:text-orange-600 transition-colors">指令生成器</a>
+          <a href="#goals" class="text-stone-600 hover:text-orange-600 transition-colors">個人目標</a>
+          <a href="#tips" class="text-stone-600 hover:text-orange-600 transition-colors">進階技巧</a>
+        </div>
+        <!-- Mobile menu button (visual only for simple spa) -->
+        <div class="flex items-center md:hidden">
+          <button class="text-stone-600 focus:outline-none">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-[#Fbf9f6] py-12 md:py-20 border-b border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6">將您的知識轉化為<br /><span
+          class="text-orange-600">專業視覺影響力</span></h1>
+      <p class="text-lg text-stone-600 mb-8 max-w-2xl mx-auto">
+        專為您的 2026 年目標打造。整合 40+ 種 NotebookLM 風格與高階提示詞技巧，從英文學習到職場彙報，一站式生成專業指令。
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#generator"
+          class="bg-stone-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-stone-700 transition-all shadow-lg hover:shadow-xl">
+          立即生成指令
+        </a>
+        <a href="#styles"
+          class="bg-white text-stone-900 border border-stone-300 px-8 py-3 rounded-lg font-medium hover:bg-stone-50 transition-all">
+          探索風格庫
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+    <!-- Section: Overview & Chart -->
+    <!-- Visualization Choice: Doughnut Chart to show the balance of style types available.
+             Goal: Inform user of the variety in the toolkit.
+             Interaction: Tooltip on hover.
+             No SVG/Mermaid. -->
+    <section id="overview"
+      class="grid md:grid-cols-2 gap-12 items-center bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+      <div>
+        <h2 class="text-2xl font-bold text-stone-800 mb-4">全方位視覺語彙庫</h2>
+        <p class="text-stone-600 mb-6">
+          NotebookLM 的視覺引擎涵蓋三大核心領域。無論您是需要為兒子準備職場報告，還是紀錄個人的退休生活，都有對應的視覺語言。
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center text-stone-700">
+            <span class="w-3 h-3 bg-slate-700 rounded-full mr-3"></span>
+            <strong>經典專業：</strong> 建立信任與權威 (職場/B2B)
+          </li>
+          <li class="flex items-center text-stone-700">
+            <span class="w-3 h-3 bg-orange-500 rounded-full mr-3"></span>
+            <strong>視覺藝術：</strong> 增加溫度與記憶 (學習/生活)
+          </li>
+          <li class="flex items-center text-stone-700">
+            <span class="w-3 h-3 bg-teal-600 rounded-full mr-3"></span>
+            <strong>資訊視覺化：</strong> 解析複雜邏輯 (AI/程式)
+          </li>
+        </ul>
+      </div>
+      <div class="flex justify-center items-center bg-stone-50 rounded-xl p-4">
+        <div class="chart-container">
+          <canvas id="styleChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Interactive Style Explorer -->
+    <section id="styles">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-stone-900 mb-4">風格探索 (Style Explorer)</h2>
+        <p class="text-stone-600 max-w-2xl mx-auto">
+          根據您的需求選擇最適合的視覺風格。點擊下方標籤進行篩選。
+        </p>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8" id="styleFilters">
+        <button onclick="filterStyles('all')"
+          class="filter-btn active bg-stone-900 text-white px-4 py-2 rounded-full text-sm transition-colors hover:bg-stone-700">全部顯示</button>
+        <button onclick="filterStyles('professional')"
+          class="filter-btn bg-stone-100 text-stone-600 px-4 py-2 rounded-full text-sm transition-colors hover:bg-stone-200 hover:text-stone-900">經典專業</button>
+        <button onclick="filterStyles('creative')"
+          class="filter-btn bg-stone-100 text-stone-600 px-4 py-2 rounded-full text-sm transition-colors hover:bg-stone-200 hover:text-stone-900">視覺藝術</button>
+        <button onclick="filterStyles('data')"
+          class="filter-btn bg-stone-100 text-stone-600 px-4 py-2 rounded-full text-sm transition-colors hover:bg-stone-200 hover:text-stone-900">資訊視覺化</button>
+      </div>
+
+      <!-- Grid -->
+      <div id="styleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Content injected via JS -->
+      </div>
+    </section>
+
+    <!-- Section: Prompt Generator -->
+    <!-- Core Interaction: Dynamic Text Generation.
+             User selects template -> Fills inputs -> Gets Output. -->
+    <section id="generator"
+      class="bg-stone-900 text-stone-100 rounded-3xl p-6 md:p-12 shadow-2xl overflow-hidden relative">
+      <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl font-serif select-none">Aa</div>
+
+      <div class="relative z-10 grid lg:grid-cols-2 gap-12">
+        <!-- Input Side -->
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-2">指令生成器 (Prompt Builder)</h2>
+          <p class="text-stone-400 mb-8">選擇情境模板，填入您的內容，立即生成高品質 AI 指令。</p>
+
+          <div class="space-y-6">
+            <div>
+              <label class="block text-stone-400 text-sm font-bold mb-2 uppercase tracking-wider">1. 選擇模板類型</label>
+              <select id="templateSelect" onchange="updatePromptInputs()"
+                class="w-full bg-stone-800 border border-stone-700 text-white rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all">
+                <option value="stepByStep">教學/學習：步驟流程圖 (Step-by-Step)</option>
+                <option value="executive">職場應用：高管一頁紙 (Executive One-Pager)</option>
+                <option value="flashcard">英文學習：黑板單字卡 (Vocabulary Flashcard)</option>
+                <option value="matrix">決策分析：比較矩陣 (Comparison Matrix)</option>
+                <option value="eduDeck">簡報製作：教育講座 (Educational Deck)</option>
+                <option value="seo">內容行銷：SEO 優化單頁 (SEO One-Pager)</option>
+              </select>
+            </div>
+
+            <div id="dynamicInputs" class="space-y-4">
+              <!-- Inputs injected via JS -->
+            </div>
+
+            <!-- Advanced Options -->
+            <div class="pt-4 border-t border-stone-700">
+              <label class="flex items-center space-x-2 cursor-pointer">
+                <input type="checkbox" id="useCustomPalette" onchange="updatePromptOutput()"
+                  class="form-checkbox h-5 w-5 text-orange-600 rounded bg-stone-800 border-stone-600 focus:ring-orange-500 focus:ring-offset-stone-900">
+                <span class="text-stone-300 text-sm">加入專業配色 (深藍/青/金)</span>
+              </label>
+              <label class="flex items-center space-x-2 cursor-pointer mt-2">
+                <input type="checkbox" id="addPersona" onchange="updatePromptOutput()"
+                  class="form-checkbox h-5 w-5 text-orange-600 rounded bg-stone-800 border-stone-600 focus:ring-orange-500 focus:ring-offset-stone-900">
+                <span class="text-stone-300 text-sm">加入專家角色設定 (Persona)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Side -->
+        <div class="bg-stone-800 rounded-xl p-6 border border-stone-700 flex flex-col h-full">
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-stone-400 text-xs font-mono uppercase">Output Prompt</span>
+            <button onclick="copyPrompt()"
+              class="bg-orange-600 hover:bg-orange-700 text-white text-xs px-3 py-1 rounded transition-colors flex items-center gap-1">
+              <span id="copyBtnText">複製指令</span>
+              <span class="text-lg">📋</span>
+            </button>
+          </div>
+          <textarea id="promptOutput" readonly
+            class="w-full flex-grow bg-stone-900 text-stone-200 font-mono text-sm p-4 rounded-lg border border-stone-700 focus:outline-none resize-none leading-relaxed custom-scrollbar h-64 md:h-auto"></textarea>
+          <p class="mt-3 text-stone-500 text-xs text-center">
+            提示：複製後，在 NotebookLM 的 Studio 面板中選擇 Infographic/Slide Deck 並貼上。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Personal Goals Strategy -->
+    <section id="goals">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-stone-900 mb-4">2026 目標應用策略</h2>
+        <p class="text-stone-600 max-w-2xl mx-auto">
+          針對您的年度目標，我們規劃了最具體的 NotebookLM 應用場景。
+        </p>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="flex flex-wrap justify-center border-b border-stone-200 mb-8">
+        <button onclick="switchGoal('english')"
+          class="goal-tab active text-stone-500 hover:text-stone-800 px-6 py-3 font-medium border-b-2 border-transparent transition-all"
+          data-target="english">每日英文</button>
+        <button onclick="switchGoal('web')"
+          class="goal-tab text-stone-500 hover:text-stone-800 px-6 py-3 font-medium border-b-2 border-transparent transition-all"
+          data-target="web">每日網頁</button>
+        <button onclick="switchGoal('ai')"
+          class="goal-tab text-stone-500 hover:text-stone-800 px-6 py-3 font-medium border-b-2 border-transparent transition-all"
+          data-target="ai">每日 AI</button>
+        <button onclick="switchGoal('career')"
+          class="goal-tab text-stone-500 hover:text-stone-800 px-6 py-3 font-medium border-b-2 border-transparent transition-all"
+          data-target="career">協助兒子</button>
+        <button onclick="switchGoal('life')"
+          class="goal-tab text-stone-500 hover:text-stone-800 px-6 py-3 font-medium border-b-2 border-transparent transition-all"
+          data-target="life">生活閱讀</button>
+      </div>
+
+      <!-- Goal Content Area -->
+      <div id="goalContent" class="bg-white rounded-2xl p-8 shadow-sm border border-stone-100 min-h-[300px]">
+        <!-- Content injected via JS -->
+      </div>
+    </section>
+
+    <!-- Section: Pro Tips -->
+    <section id="tips" class="grid md:grid-cols-2 gap-8">
+      <div class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+        <h3 class="text-xl font-bold text-orange-900 mb-4 flex items-center">
+          <span class="text-2xl mr-2">🛠</span> 進階技巧：文字修正
+        </h3>
+        <p class="text-stone-700 mb-4">
+          AI 偶爾會拼錯字，不要急著重新生成整張圖！請使用這個指令讓它知道如何修正。
+        </p>
+        <div
+          class="bg-white p-4 rounded-lg border border-orange-200 font-mono text-sm text-stone-600 relative group cursor-pointer"
+          onclick="copyText(this.innerText)">
+          "In my latest infographic, the text said '[錯誤原文]' but it should say '[正確文字]'. Can you show me how to fix
+          this?"
+          <span
+            class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-xs bg-stone-200 px-2 rounded">點擊複製</span>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+        <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center">
+          <span class="text-2xl mr-2">🎨</span> 進階技巧：固定配色
+        </h3>
+        <p class="text-stone-700 mb-4">
+          確保每次產出的視覺風格一致，符合專業標準。
+        </p>
+        <div
+          class="bg-white p-4 rounded-lg border border-blue-200 font-mono text-sm text-stone-600 relative group cursor-pointer"
+          onclick="copyText(this.innerText)">
+          Color palette: Primary #0284C7, Secondary #38bdf8, Accent #fbbf24. Ensure minimum 4.5:1 contrast for WCAG AA.
+          <span
+            class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-xs bg-stone-200 px-2 rounded">點擊複製</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-stone-900 text-stone-400 py-12 mt-20 text-center border-t border-stone-800">
+    <p class="mb-2">© 2026 NotebookLM 視覺設計顧問</p>
+    <p class="text-sm">祝您的學習與生活充實愉快！</p>
+  </footer>
+
+  <!-- Chosen Palette: Warm Neutrals (Stone/Orange/Slate) for a calm, professional yet inviting look. -->
+
+  <!-- JavaScript Logic -->
+  <script>
+    // --- Data ---
+
+    const styles = [
+      {
+        id: 'bold',
+        name: 'Bold Minimal',
+        category: 'professional',
+        desc: '大字體、單一色系、極致負空間。',
+        useCase: '強調單一核心數據或觀點',
+        color: 'bg-slate-800'
+      },
+      {
+        id: 'clean',
+        name: 'Modern Clean',
+        category: 'professional',
+        desc: '細緻線條、充足間距、無襯線字體。',
+        useCase: '網頁設計架構、CSS 列表',
+        color: 'bg-slate-600'
+      },
+      {
+        id: 'exec',
+        name: 'Executive Dashboard',
+        category: 'professional',
+        desc: '儀表板風格、KPI 指標、迷你圖表。',
+        useCase: '工作季度彙報、高管摘要',
+        color: 'bg-slate-700'
+      },
+      {
+        id: 'business',
+        name: 'Professional Business',
+        category: 'professional',
+        desc: '穩重深藍/灰色系、平衡版面。',
+        useCase: '正式提案、客戶報告',
+        color: 'bg-blue-900'
+      },
+      {
+        id: 'chalk',
+        name: 'Chalkboard',
+        category: 'creative',
+        desc: '黑板質感、手寫粉筆字、塗鴉。',
+        useCase: '英文單字卡、教學情境',
+        color: 'bg-emerald-900'
+      },
+      {
+        id: 'sketch',
+        name: 'Sketch Noting',
+        category: 'creative',
+        desc: '快速速寫風格、箭頭與手寫字。',
+        useCase: '讀書心得、講座重點',
+        color: 'bg-stone-500'
+      },
+      {
+        id: 'retro',
+        name: 'Retro / Y2K',
+        category: 'creative',
+        desc: '像素藝術、霓虹色、古早介面。',
+        useCase: '輕鬆分享、AI 學習趣事',
+        color: 'bg-pink-600'
+      },
+      {
+        id: 'process',
+        name: 'Process Flow',
+        category: 'data',
+        desc: '步驟編號、方向箭頭、標準符號。',
+        useCase: '前後端邏輯、程式運作',
+        color: 'bg-teal-600'
+      },
+      {
+        id: 'system',
+        name: 'Systems Diagram',
+        category: 'data',
+        desc: '回饋迴圈、元件關係、生態系。',
+        useCase: '後端架構、複雜系統',
+        color: 'bg-teal-700'
+      },
+      {
+        id: 'timeline',
+        name: 'Timeline Visual',
+        category: 'data',
+        desc: '時間軸線、過去/現在/未來節點。',
+        useCase: '退休大事記、歷史演進',
+        color: 'bg-indigo-600'
+      },
+      {
+        id: 'matrix',
+        name: 'Comparison Matrix',
+        category: 'data',
+        desc: '網格佈局、打勾打叉對比。',
+        useCase: 'AI 工具比較、投資評估',
+        color: 'bg-indigo-800'
+      }
+    ];
+
+    const goals = {
+      english: {
+        title: "每日英文 (多益)",
+        icon: "A",
+        style: "Chalkboard 或 Flashcard",
+        desc: "利用「情境依賴記憶」，模擬學校環境，加深單字印象。",
+        action: "每天挑選 3 個容易混淆的單字（如 affect vs effect），生成黑板圖卡。累積 30 張後，即可印製成專屬單字書。",
+        color: "bg-emerald-50 text-emerald-900 border-emerald-200"
+      },
+      web: {
+        title: "每日網頁 (前後端)",
+        icon: "</>",
+        style: "Process Flow 或 Systems Diagram",
+        desc: "將抽象的程式邏輯轉化為視覺化的流程，輔助記憶。",
+        action: "當您搞懂 Async/Await 或 API 串接原理時，生成一張 Process Flow，將程式碼變成視覺化的「接力賽跑」圖解。",
+        color: "bg-sky-50 text-sky-900 border-sky-200"
+      },
+      ai: {
+        title: "每日 AI (工具學習)",
+        icon: "🤖",
+        style: "Comparison Matrix 或 Timeline",
+        desc: "快速掌握 AI 工具的優劣與演進歷史。",
+        action: "每個月底製作一張 Timeline，紀錄 AI 界的大事（如 Gemini 更新）；或用 Matrix 比較不同 AI 模型的強項。",
+        color: "bg-purple-50 text-purple-900 border-purple-200"
+      },
+      career: {
+        title: "協助兒子職涯",
+        icon: "💼",
+        style: "Executive Dashboard 或 Bold Minimal",
+        desc: "提升職場能見度，將瑣碎工作轉化為高價值的商業數據。",
+        action: "當兒子需要做工作彙報時，幫他將數據轉為儀表板圖表，告訴他：「老闆只想看這個，細節放附錄。」",
+        color: "bg-slate-50 text-slate-900 border-slate-200"
+      },
+      life: {
+        title: "生活與閱讀",
+        icon: "📖",
+        style: "Sketch Noting 或 Timeline",
+        desc: "紀錄生活感悟與退休規劃，讓目標更具象。",
+        action: "讀完好書後，用 Sketch Noting 總結 3 個觀點；或用 Timeline 規劃退休後的旅遊與學習里程碑。",
+        color: "bg-orange-50 text-orange-900 border-orange-200"
+      }
+    };
+
+    const templates = {
+      stepByStep: {
+        label: "步驟流程圖",
+        fields: [
+          { id: 'topic', label: '教學主題 (Topic)', placeholder: '例如：建立響應式網頁導航列' }
+        ],
+        generate: (data) => `Create a step-by-step process infographic showing how to ${data.topic || '[您的主題]'}.
+
+Layout: Left-to-right flow with numbered steps and connecting arrows.
+
+Include:
+- Clear visual for each step (not just text)
+- Simple one-line description per step
+- Visual transition arrows between steps
+- Overall duration/timeframe at bottom if applicable
+
+Style: Clean, progressive, encouraging to follow along.`
+      },
+      executive: {
+        label: "高管一頁紙",
+        fields: [
+          { id: 'topic', label: '報告主題 (Topic)', placeholder: '例如：本季專案進度' }
+        ],
+        generate: (data) => `Create an executive one-pager infographic summarizing ${data.topic || '[您的主題]'} for senior decision-makers.
+
+Requirements:
+- Consumable in under 2 minutes
+- Heavy visual hierarchy (most important info: 50% visual weight)
+- Professional color palette (blues, grays, strategic accent color)
+- Slide-ready layout (can be inserted into PowerPoint/Google Slides)
+- Bottom line first (key decision/recommendation at top)
+
+Include: Key metrics, 3-5 supporting points, one recommended action.`
+      },
+      flashcard: {
+        label: "黑板單字卡",
+        fields: [
+          { id: 'topic', label: '學習主題 (Topic)', placeholder: '例如：多益常考商業單字' }
+        ],
+        generate: (data) => `Create a chalkboard-style infographic about ${data.topic || '[您的主題]'}.
+
+Style: Chalkboard aesthetic with:
+- Hand-drawn typography (chalk-like letters)
+- White/colored chalk lines and sketches on dark background
+- Sketched icons and illustrations
+- Casual, approachable feel suitable for educational content`
+      },
+      matrix: {
+        label: "比較矩陣",
+        fields: [
+          { id: 'items', label: '比較項目 (Items)', placeholder: '例如：ChatGPT, Gemini, Claude' },
+          { id: 'criteria', label: '比較標準 (Criteria)', placeholder: '例如：速度, 準確度, 價格' }
+        ],
+        generate: (data) => `Create a comparison matrix infographic evaluating ${data.items || '[項目1, 項目2]'} across these criteria: ${data.criteria || '[標準1, 標準2]'}.
+
+Layout: Grid with clear column headers (criteria) and row headers (options).
+Visual indicators: Use checkmarks, X's, or color intensity to show performance.
+Include one summary row for overall winner.
+
+Style: Professional, objective-looking, but visually highlight the recommended option subtly through design.`
+      },
+      eduDeck: {
+        label: "教育講座簡報",
+        fields: [
+          { id: 'topic', label: '講座主題 (Topic)', placeholder: '例如：AI 工具入門' },
+          { id: 'audience', label: '目標受眾 (Audience)', placeholder: '例如：退休銀髮族' }
+        ],
+        generate: (data) => `Create an educational slide deck about ${data.topic || '[主題]'} for ${data.audience || '[受眾]'}.
+
+Approach:
+- Opening: Hook question or surprising fact
+- Learning objectives (what will they learn?)
+- Main content (broken into digestible sections)
+- Real-world examples and case studies
+- Key takeaways (summarize main points)
+
+Style: Cartoon, playful, colorful. Make complex concepts tangible with illustrations. Include plenty of white space.`
+      },
+      seo: {
+        label: "SEO 優化單頁",
+        fields: [
+          { id: 'keyword', label: '關鍵字/問題 (Question)', placeholder: '例如：如何規劃退休財務?' }
+        ],
+        generate: (data) => `Create an SEO-optimized infographic that directly answers: "${data.keyword || '[您的問題/關鍵字]'}"
+
+Structure:
+- Title as question (your target keyword)
+- Quick answer summary (2-3 lines, direct response)
+- Structured answer section (4-5 key sub-points)
+- FAQ strip (anticipate 2-3 follow-up questions)
+- Source citations visible
+
+Style: Question-focused, structured answers, designed to rank in image search.`
+      }
+    };
+
+    const extraPrompts = {
+      palette: `Color palette: Primary color #0284C7 (Professional Blue), Secondary #38bdf8 (Light Cyan), Accent #fbbf24 (Warm Gold). Ensure minimum 4.5:1 contrast for WCAG AA compliance.`,
+      persona: `You are a professional infographic designer and data visualization expert. Your outputs prioritize: Visual clarity over decoration, Data accuracy, Accessible design (high contrast), and Modern design principles. When creating infographics, always ground all visuals in uploaded source material.`
+    };
+
+    // --- Core Logic ---
+
+    // 1. Initialize
+    window.onload = function () {
+      renderChart();
+      filterStyles('all');
+      updatePromptInputs(); // Render initial inputs
+      switchGoal('english'); // Set initial goal tab
+    };
+
+    // 2. Chart.js Implementation
+    function renderChart() {
+      const ctx = document.getElementById('styleChart').getContext('2d');
+
+      // Count styles per category
+      const counts = { professional: 0, creative: 0, data: 0 };
+      styles.forEach(s => counts[s.category]++);
+
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['經典專業', '視覺藝術', '資訊視覺化'],
+          datasets: [{
+            data: [counts.professional, counts.creative, counts.data],
+            backgroundColor: ['#334155', '#f97316', '#0d9488'], // Slate-700, Orange-500, Teal-600
+            borderWidth: 0,
+            hoverOffset: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { family: 'sans-serif', size: 12 }, padding: 20 } },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return ` ${context.label}: ${context.raw} 種風格`;
+                }
+              }
+            }
+          },
+          cutout: '65%'
+        }
+      });
+    }
+
+    // 3. Style Explorer Logic
+    function filterStyles(category) {
+      // Update buttons
+      document.querySelectorAll('#styleFilters button').forEach(btn => {
+        btn.classList.remove('bg-stone-900', 'text-white', 'hover:bg-stone-700');
+        btn.classList.add('bg-stone-100', 'text-stone-600', 'hover:bg-stone-200');
+        if (btn.innerText.includes(category === 'all' ? '全部' :
+          category === 'professional' ? '專業' :
+            category === 'creative' ? '藝術' : '資訊')) {
+          btn.classList.remove('bg-stone-100', 'text-stone-600', 'hover:bg-stone-200');
+          btn.classList.add('bg-stone-900', 'text-white', 'hover:bg-stone-700');
+        }
+      });
+
+      // Filter data
+      const filtered = category === 'all' ? styles : styles.filter(s => s.category === category);
+
+      // Render grid
+      const grid = document.getElementById('styleGrid');
+      grid.innerHTML = filtered.map(style => `
+                <div class="bg-white rounded-xl shadow-sm border border-stone-200 p-6 hover:shadow-md transition-shadow fade-in flex flex-col h-full">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg ${style.color} flex items-center justify-center text-white font-bold text-lg mr-4 shadow-sm">
+                            ${style.name.charAt(0)}
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-stone-800 text-lg leading-tight">${style.name}</h3>
+                            <span class="text-xs text-stone-500 uppercase tracking-wide font-semibold">${getCatName(style.category)}</span>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 text-sm mb-4 flex-grow">${style.desc}</p>
+                    <div class="bg-stone-50 rounded p-3 mt-auto">
+                        <span class="text-xs font-bold text-stone-500 block mb-1">BEST FOR</span>
+                        <p class="text-sm text-stone-800 font-medium">${style.useCase}</p>
+                    </div>
+                </div>
+            `).join('');
+    }
+
+    function getCatName(cat) {
+      return cat === 'professional' ? 'Professional' : cat === 'creative' ? 'Creative' : 'Data';
+    }
+
+    // 4. Prompt Generator Logic
+    function updatePromptInputs() {
+      const templateKey = document.getElementById('templateSelect').value;
+      const template = templates[templateKey];
+      const container = document.getElementById('dynamicInputs');
+
+      container.innerHTML = template.fields.map(field => `
+                <div>
+                    <label class="block text-stone-400 text-xs font-bold mb-1 ml-1">${field.label}</label>
+                    <input type="text" id="${field.id}" placeholder="${field.placeholder}" oninput="updatePromptOutput()" class="w-full bg-stone-800 border border-stone-700 text-white rounded px-3 py-2 text-sm focus:outline-none focus:border-orange-500 transition-colors">
+                </div>
+            `).join('');
+
+      updatePromptOutput();
+    }
+
+    function updatePromptOutput() {
+      const templateKey = document.getElementById('templateSelect').value;
+      const template = templates[templateKey];
+
+      // Gather input data
+      const data = {};
+      template.fields.forEach(field => {
+        data[field.id] = document.getElementById(field.id).value;
+      });
+
+      // Generate base prompt
+      let prompt = template.generate(data);
+
+      // Add extras
+      if (document.getElementById('addPersona').checked) {
+        prompt = extraPrompts.persona + "\n\n" + prompt;
+      }
+      if (document.getElementById('useCustomPalette').checked) {
+        prompt = prompt + "\n\n" + extraPrompts.palette;
+      }
+
+      document.getElementById('promptOutput').value = prompt;
+    }
+
+    function copyPrompt() {
+      const copyText = document.getElementById("promptOutput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+
+      const btnLabel = document.getElementById('copyBtnText');
+      const original = btnLabel.innerText;
+      btnLabel.innerText = "已複製！";
+      setTimeout(() => btnLabel.innerText = original, 2000);
+    }
+
+    // 5. Goal Strategy Logic
+    function switchGoal(target) {
+      // Update tabs
+      document.querySelectorAll('.goal-tab').forEach(btn => {
+        if (btn.dataset.target === target) {
+          btn.classList.add('active', 'text-stone-800', 'border-stone-800');
+          btn.classList.remove('text-stone-500', 'border-transparent');
+        } else {
+          btn.classList.remove('active', 'text-stone-800', 'border-stone-800');
+          btn.classList.add('text-stone-500', 'border-transparent');
+        }
+      });
+
+      // Render content
+      const data = goals[target];
+      const contentDiv = document.getElementById('goalContent');
+      contentDiv.className = `rounded-2xl p-8 shadow-sm border min-h-[300px] fade-in ${data.color}`;
+
+      contentDiv.innerHTML = `
+                <div class="flex items-start gap-6">
+                    <div class="hidden md:flex flex-shrink-0 w-16 h-16 bg-white bg-opacity-60 rounded-full items-center justify-center text-4xl shadow-sm">
+                        ${data.icon}
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">${data.title}</h3>
+                        <div class="inline-block bg-white bg-opacity-80 px-3 py-1 rounded text-sm font-bold mb-6 border border-white/50">
+                            推薦風格：${data.style}
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-white bg-opacity-70 rounded-xl p-5">
+                                <h4 class="font-bold mb-2 text-lg">💡 核心策略</h4>
+                                <p class="leading-relaxed opacity-90">${data.desc}</p>
+                            </div>
+                            <div class="bg-white bg-opacity-90 rounded-xl p-5 shadow-sm">
+                                <h4 class="font-bold mb-2 text-lg">🚀 立即行動 (Action)</h4>
+                                <p class="leading-relaxed opacity-90">${data.action}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("已複製提示詞！");
+    }
+
+  </script>
+</body>
+
+</html>

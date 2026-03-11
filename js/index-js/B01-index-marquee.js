@@ -487,7 +487,7 @@ const cardsData = [
     idName: "index-13",
     title: "AI提示詞",
     date: "2026.03.09起",
-    link: "/B01-Book/F06-0-2026-note-new.html",
+    link: "/A03-AI-Prompt-2026/A01-Index-AI-Prompt-1150309/A01-Index-AI-Prompt-1150309.html",
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-lightbulb",
     enterName: "增廣見聞",
