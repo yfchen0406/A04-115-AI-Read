@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>單字資料轉檔工具 (專業解析版)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+      padding: 30px;
+      line-height: 1.6;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #f0f2f5;
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      color: #0d9488;
+      margin-top: 0;
+      font-size: 24px;
+      border-left: 5px solid #0d9488;
+      padding-left: 15px;
+    }
+
+    .info {
+      background: #e1f5fe;
+      padding: 12px 15px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #01579b;
+      border: 1px solid #b3e5fc;
+    }
+
+    textarea {
+      width: 100%;
+      height: 250px;
+      margin-bottom: 15px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Consolas', monospace;
+      font-size: 13px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #0d9488;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0b7a6f;
+    }
+
+    .btn-secondary {
+      background: #64748b;
+      color: white;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .success {
+      color: #059669;
+    }
+
+    .error {
+      color: #dc2626;
+    }
+
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      max-height: 400px;
+      font-size: 13px;
+      border: 1px solid #334155;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>單字圖卡資料專業轉換器</h1>
+    <div class="info">
+      🚀 <b>專業解析模式：</b> 此版本可處理 Excel 複製出來的「跨行單字」與「Tab 分隔」。<br>
+      請直接選取 Excel 中包含「連結」、「單字內容」、「編號」的區域，複製並貼上到下方。
+    </div>
+
+    <textarea id="csvInput" placeholder="在此貼上 Excel 資料..."></textarea>
+
+    <div class="controls">
+      <button class="btn-primary" onclick="processData()">智慧提取並生成 JS</button>
+      <button class="btn-secondary" onclick="copyResult()">複製 JS 代碼</button>
+    </div>
+
+    <div id="status"></div>
+    <pre id="output">JSON 結果將顯示於此...</pre>
+  </div>
+
+  <script>
+    /**
+     * 高階解析器：處理 Tab 分隔、雙引號包裹、以及欄位內的換行
+     */
+    function advancedParse(text) {
+      const results = [];
+      const rows = text.split(/\r?\n/);
+      let buffer = [];
+      let inQuotes = false;
+      let currentField = "";
+
+      // 將整個文字視為一體進行字符掃描 (標準 CSV 邏輯)
+      const data = [];
+      let currentRow = [];
+      let charBuffer = "";
+      let quoteCount = 0;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const nextChar = text[i + 1];
+
+        if (char === '"') {
+          inQuotes = !inQuotes;
+          // 處理 CSV 內的雙引號轉義 ""
+          if (inQuotes && nextChar === '"') {
+            charBuffer += '"';
+            i++;
+          }
+        } else if (char === '\t' && !inQuotes) {
+          // Tab 分隔欄位
+          currentRow.push(charBuffer.trim());
+          charBuffer = "";
+        } else if ((char === '\n' || (char === '\r' && nextChar === '\n')) && !inQuotes) {
+          // 換行分隔列
+          currentRow.push(charBuffer.trim());
+          if (currentRow.length >= 3) {
+            data.push(currentRow);
+          }
+          currentRow = [];
+          charBuffer = "";
+          if (char === '\r') i++; // 跳過 \n
+        } else {
+          charBuffer += char;
+        }
+      }
+      // 處理最後一筆
+      if (charBuffer || currentRow.length > 0) {
+        currentRow.push(charBuffer.trim());
+        if (currentRow.length >= 3) data.push(currentRow);
+      }
+
+      // 格式化為物件
+      return data.map(row => {
+        // row[0] 是連結, row[1] 是文字, row[2] 是編號
+        let url = row[0] ? row[0].replace(/^0/, '') : "";
+        let content = row[1] || "";
+        let id = row[2] || "";
+
+        // 過濾掉標題列
+        if (url.toLowerCase().includes("http") && id) {
+          return { url, text: content, id };
+        }
+        return null;
+      }).filter(item => item !== null);
+    }
+
+    function processData() {
+      const input = document.getElementById('csvInput').value.trim();
+      if (!input) {
+        document.getElementById('status').innerHTML = '<span class="error">❌ 請先輸入資料！</span>';
+        return;
+      }
+
+      const finalData = advancedParse(input);
+
+      if (finalData.length === 0) {
+        document.getElementById('status').innerHTML = '<span class="error">❌ 無法解析有效欄位。請確認您的 Excel 資料順序為：連結、內容、編號。</span>';
+        return;
+      }
+
+      const finalJS = `/**\n * 每日英文單字圖卡資料庫\n * 生成時間：${new Date().toLocaleString()}\n */\nconst vocabData = ${JSON.stringify(finalData, null, 2)};`;
+
+      document.getElementById('output').textContent = finalJS;
+      document.getElementById('status').innerHTML = `<span class="success">✅ 解析成功！已分離連結、內容與編號。共 ${finalData.length} 筆。</span>`;
+    }
+
+    function copyResult() {
+      const content = document.getElementById('output').textContent;
+      if (content.includes('JSON 結果')) return;
+
+      const textarea = document.createElement('textarea');
+      textarea.value = content;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      document.getElementById('status').innerHTML = '<span class="success">📋 已複製到剪貼簿！請覆蓋 A01-vocab_data.js</span>';
+    }
+  </script>
+</body>
+
+</html>

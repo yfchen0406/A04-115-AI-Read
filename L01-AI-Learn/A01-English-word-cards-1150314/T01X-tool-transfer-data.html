@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精準 CSV 轉 JS 資料轉換器</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+      padding: 30px;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      background: #f0f2f5;
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      color: #2a9d8f;
+      margin-top: 0;
+      font-size: 24px;
+      border-left: 5px solid #2a9d8f;
+      padding-left: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-family: 'Consolas', monospace;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      background: #2a9d8f;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #21867a;
+      transform: translateY(-1px);
+    }
+
+    button.secondary {
+      background: #6c757d;
+    }
+
+    .mapping-area {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 1px dashed #ccc;
+      display: none;
+    }
+
+    #output {
+      background: #272822;
+      color: #f8f8f2;
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      font-size: 13px;
+      max-height: 500px;
+      overflow-y: auto;
+      font-family: 'Consolas', monospace;
+    }
+
+    .status-msg {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: #e76f51;
+    }
+
+    .success {
+      color: #2a9d8f;
+    }
+
+    .field-selector {
+      margin: 5px 10px 5px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>單字資料精準轉換器 (穩定版)</h1>
+
+    <textarea id="csvInput" placeholder="請在此貼上從 Excel CSV 檔案複製的內容..."></textarea>
+
+    <div class="controls">
+      <button onclick="parseCSVHeaders()">1. 解析 CSV 欄位</button>
+      <button id="convertBtn" class="secondary" onclick="generateJS()" disabled>2. 生成 JS 代碼</button>
+      <button class="secondary" onclick="copyResult()">複製結果</button>
+    </div>
+
+    <div id="mappingArea" class="mapping-area">
+      <strong>請確認欄位對應：</strong><br>
+      <span class="field-selector">圖片連結: <select id="urlCol"></select></span>
+      <span class="field-selector">單字文字: <select id="textCol"></select></span>
+      <span class="field-selector">編號 (ID): <select id="idCol"></select></span>
+    </div>
+
+    <div id="status" class="status-msg"></div>
+
+    <div class="result-container">
+      <h3>轉換結果 (A01-vocab_data.js)</h3>
+      <div id="output">尚未生成資料</div>
+    </div>
+  </div>
+
+  <script>
+    let parsedRows = [];
+
+    // 穩定版 CSV 解析邏輯（處理引號內換行）
+    function parseCSV(text) {
+      const p = [[]];
+      let c = 0, r = 0, q = false;
+      for (let i = 0; i < text.length; i++) {
+        let char = text[i], next = text[i + 1];
+        if (char == '"' && q && next == '"') { p[r][c] += char; i++; }
+        else if (char == '"') { q = !q; }
+        else if (char == ',' && !q) { p[r][++c] = ''; }
+        else if (char == '\n' && !q) { if (p[r][c] !== undefined || p[r].length > 1) p[++r] = [c = 0]; }
+        else { if (p[r][c] === undefined) p[r][c] = ''; p[r][c] += char; }
+      }
+      return p.filter(row => row.length > 1 || (row[0] && row[0].trim() !== ""));
+    }
+
+    function parseCSVHeaders() {
+      const input = document.getElementById('csvInput').value.trim();
+      const status = document.getElementById('status');
+      const mappingArea = document.getElementById('mappingArea');
+
+      if (!input) {
+        status.innerHTML = '<span class="error">❌ 請先輸入 CSV 內容</span>';
+        return;
+      }
+
+      try {
+        parsedRows = parseCSV(input);
+        if (parsedRows.length < 2) throw new Error("資料列數不足");
+
+        const headers = parsedRows[0].map(h => h.trim());
+        fillSelects(headers);
+
+        mappingArea.style.display = 'block';
+        document.getElementById('convertBtn').disabled = false;
+        document.getElementById('convertBtn').classList.remove('secondary');
+        status.innerHTML = `<span class="success">✅ 解析成功！偵測到 ${parsedRows.length - 1} 筆資料。請確認下方欄位對應。</span>`;
+      } catch (err) {
+        status.innerHTML = `<span class="error">❌ 解析失敗：${err.message}。請確認貼上的內容是否包含完整的標題列。</span>`;
+      }
+    }
+
+    function fillSelects(headers) {
+      const selects = ['urlCol', 'textCol', 'idCol'];
+      selects.forEach((id, idx) => {
+        const el = document.getElementById(id);
+        el.innerHTML = '';
+        headers.forEach((h, i) => {
+          const opt = document.createElement('option');
+          opt.value = i;
+          opt.textContent = h || `欄位 ${i + 1}`;
+          // 嘗試自動匹配
+          if (id === 'urlCol' && (h.includes('連結') || h.includes('url'))) opt.selected = true;
+          if (id === 'textCol' && (h.includes('文字') || h.includes('text'))) opt.selected = true;
+          if (id === 'idCol' && (h.includes('編號') || h.includes('id'))) opt.selected = true;
+          // 如果沒自動匹配到，按索引分配
+          if (!el.value && i === idx) opt.selected = true;
+          el.appendChild(opt);
+        });
+      });
+    }
+
+    function generateJS() {
+      const urlIdx = document.getElementById('urlCol').value;
+      const textIdx = document.getElementById('textCol').value;
+      const idIdx = document.getElementById('idCol').value;
+
+      const finalData = [];
+      for (let i = 1; i < parsedRows.length; i++) {
+        const row = parsedRows[i];
+        if (row[urlIdx] || row[textIdx]) {
+          finalData.push({
+            url: (row[urlIdx] || '').trim(),
+            text: (row[textIdx] || '').trim(),
+            id: (row[idIdx] || `Card-${i}`).trim()
+          });
+        }
+      }
+
+      const finalJS = `/**\n * 每日英文單字圖卡資料庫\n * 生成時間：${new Date().toLocaleString()}\n */\nconst vocabData = ${JSON.stringify(finalData, null, 4)};`;
+      document.getElementById('output').textContent = finalJS;
+      document.getElementById('status').innerHTML = `<span class="success">✅ JS 代碼已生成！共 ${finalData.length} 筆。</span>`;
+    }
+
+    function copyResult() {
+      const content = document.getElementById('output').textContent;
+      if (content.startsWith('尚未生成')) return;
+
+      // 修正：在 iframe/特定權限原則下，使用傳統 execCommand 確保相容性
+      const textarea = document.createElement('textarea');
+      textarea.value = content;
+      textarea.style.position = 'fixed'; // 避免捲動頁面
+      document.body.appendChild(textarea);
+      textarea.select();
+
+      try {
+        const successful = document.execCommand('copy');
+        const status = document.getElementById('status');
+        const oldMsg = status.innerHTML;
+        if (successful) {
+          status.innerHTML = '<span class="success">📋 代碼已複製到剪貼簿！</span>';
+        } else {
+          status.innerHTML = '<span class="error">❌ 複製失敗，請手動全選後複製。</span>';
+        }
+        setTimeout(() => status.innerHTML = oldMsg, 2000);
+      } catch (err) {
+        console.error('Copy error:', err);
+      }
+
+      document.body.removeChild(textarea);
+    }
+  </script>
+</body>
+
+</html>
