@@ -5,10 +5,10 @@
   // const videoSrc = '/images/A02-Video/P01-2.mp4';
 
   const imgList = [
-    '/images/O01-open/P01-2.webp',
-    '/images/O01-open/G01-1.webp',
+    '/images/O01-open/A01-1.webp',
+    //'/images/O01-open/G01-1.webp',
     // '/images/O01-open/K02-1.webp',
-    '/images/O01-open/O01-1.webp',
+    //'/images/O01-open/O01-1.webp',
     // '/images/O01-open/O01-2.webp',
     // '/images/O01-open/O01-3.webp',
     // '/images/O01-open/O01-4.webp',
