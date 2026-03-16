@@ -511,7 +511,7 @@ const cardsData = [
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-microchip",
     enterName: "增廣見聞",
-    disable: "",
+    disable: "disabled",
   },
   {
     idName: "index-13",
@@ -531,7 +531,7 @@ const cardsData = [
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-image",
     enterName: "增廣見聞",
-    disable: "",
+    disable: "disabled",
   },
   {
     idName: "index-13",
@@ -541,7 +541,7 @@ const cardsData = [
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-video",
     enterName: "增廣見聞",
-    disable: "",
+    disable: "disabled",
   },
   // // 2026 不更動
   // {
