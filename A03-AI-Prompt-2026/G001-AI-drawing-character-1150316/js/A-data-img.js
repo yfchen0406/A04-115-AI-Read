@@ -16,8 +16,19 @@ export const arr_article = [
           },
         ],
       },
-      { d1: "這樣在寫 prompt 時可以 快速組合角色群像。" },
-      { d1: "<br>" },
+      {
+        d1: "這樣在寫 prompt 時可以 快速組合角色群像。",
+        col: "col-sm-6",
+        p2: [
+          { pic1: "./images/G001-1.webp", dec2: "" },
+          { pic1: "./images/G001-2.webp", dec2: "" },
+          { pic1: "./images/G001-3.webp", dec2: "" },
+          { pic1: "./images/G001-4.webp", dec2: "" },
+        ],
+      },
+      {
+        d1: "<br>",
+      },
     ],
   },
   {
@@ -400,7 +411,11 @@ export const arr_article = [
           },
         ],
       },
-      { d1: "<br>" },
+      {
+        d1: "<br>",
+        col: "col-sm-12",
+        p2: [{ pic1: "./images/G001-3.webp", dec2: "" }],
+      },
     ],
   },
   {

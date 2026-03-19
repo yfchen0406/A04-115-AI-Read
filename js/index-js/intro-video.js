@@ -3,10 +3,15 @@
 (function () {
   // 1. 設定資源路徑
   const imgList = [
-    "/images/O01-open/A01-1.webp",
-    "/images/O01-open/A01-2.webp",
-    "/images/O01-open/A01-3.webp",
-    "/images/O01-open/A01-4.webp",
+    "/A03-AI-Prompt-2026/G001-AI-drawing-character-1150316/images/G001-1.webp",
+    "/A03-AI-Prompt-2026/G001-AI-drawing-character-1150316/images/G001-2.webp",
+    "/A03-AI-Prompt-2026/G001-AI-drawing-character-1150316/images/G001-3.webp",
+    "/A03-AI-Prompt-2026/G001-AI-drawing-character-1150316/images/G001-4.webp",
+
+    // "/images/O01-open/A01-1.webp",
+    // "/images/O01-open/A01-2.webp",
+    // "/images/O01-open/A01-3.webp",
+    // "/images/O01-open/A01-4.webp",
   ];
 
   // 2. 建立 CSS 樣式 (直接透過 JS 注入，這樣您就不必改動 index.html 的 <style>)
