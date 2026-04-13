@@ -158,16 +158,36 @@ button {
     background-color: red
 }
 
-/* 111.11.07  google仿宋字體 */
-.yf-font1 {
-    font-family: 'cwTeXFangSong', serif;
-    font-weight: 900;
+@font-face {
+    font-family: 'cwTeXQFangsongZH';
+    src: url('/css/cwTeXQFangsongZH-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* 111.11.07  google仿宋字體 */
+/* 2. 針對仿宋體 (yf-font1) 的修正建議 */
+.yf-font1 {
+    /* 順序：第三方仿宋 -> Mac 仿宋 -> Windows 備案標楷體 -> Noto 宋體細體 */
+    font-family:
+        "cwTeXQFangsongZH",
+        /* 思源宋體 */
+        "Noto Serif TC",
+        /* 思源宋體 */
+        "標楷體",
+        /* Windows 標楷體 */
+        "DFKai-SB",
+        /* Windows 標楷體代碼 */
+        serif !important;
+
+    font-weight: 700;
+    /* 使用較細字重模擬清秀感 */
+
+}
+
+/* 3. 針對楷體 (yf-font2) 的修正建議 */
 .yf-font2 {
-    font-family: 'cwtexkai', serif;
-    font-weight: 900;
+    font-family: 'cwtexkai', 'DFKai-SB', '標楷體', serif !important;
+    font-weight: 700;
 }
 
 .yf-dashed-border {
