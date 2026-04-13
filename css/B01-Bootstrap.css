@@ -129,23 +129,28 @@ button {
     background: lightblue;
     font-weight: bold;
 }
+
 /* 113.08.24 新增CSS 黑色字灰底加粗 */
 .yf-code7 {
     color: black;
     background: lightblue;
     font-weight: bold;
 }
+
 /* 114.04.25 新增CSS 紫色字體專門放故事用 */
 .yf-color1 {
-    color:purple;
+    color: purple;
 }
+
 /* 114.04.25 新增CSS 棕色字體專門放故事用 */
 .yf-color2 {
     color: brown;
 }
+
 .yf-color3 {
     color: rgb(231, 22, 151);
 }
+
 /* 111.11.06 圖片的外框 */
 .yf-frame1 {
     padding: 5px;
@@ -169,6 +174,9 @@ button {
 .yf-font1 {
     /* 順序：第三方仿宋 -> Mac 仿宋 -> Windows 備案標楷體 -> Noto 宋體細體 */
     font-family:
+        'serif',
+        'Times New Roman',
+        'Georgia',
         "cwTeXQFangsongZH",
         /* 思源宋體 */
         "Noto Serif TC",
@@ -198,5 +206,3 @@ button {
     background-color: #f8f9fa;
     /* 灰色背景 */
 }
-
-
