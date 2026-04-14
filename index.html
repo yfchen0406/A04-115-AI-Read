@@ -20,7 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
   <!-- 自己的CSS，到1141202才發現這個沒有拉進來 -->
-  <!-- <link rel="stylesheet" href="/css/F01-1-note.css"> -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
   <!-- 該檔案css -->
   <link rel="stylesheet" href="css/index.css">
 
@@ -125,7 +125,6 @@
   <header style="margin-top: 57px;">
     <div class="container-fluid">
       <div class="row">
-
         <div class="card-group col-sm-12 px-0">
           <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
@@ -330,7 +329,7 @@
       // 1920 X 325 'CA4', 'CA5', 'CA6', 'CA7', 'CA8', 'CA9', 'CAA', 'CAB', 'CAC', 'CAD', 'CAE', 'CAF', 'CAG', 'CAH', 'CAI', 'CAJ','CAK'
       // const arr1 = ['58', '59', '60', '61', '62', '63', '97', '98', '99', 'A0', 'A1', 'A2', 'A3']; -->
       //  ['001', 'CB3', 'CB4', 'CB5', 'CB2', 'CB1', 'CB0', 'CA4', 'CA5', 'CA6', 'CA7', 'CA8', 'CA9', 'CAA', 'CAB',];
-      const arr1 = ['A01', 'A02', 'A03', 'A04', 'A05', 'A06', 'A07', 'A08'];
+      const arr1 = ['A01', 'A02', 'A03', 'A04', 'A05', 'A06', 'A07', 'A08','A09','A10','A11','A12'];
 
       const randomNum = Math.floor(Math.random() * arr1.length);
       const arr_ok = shuffleArray(arr1)
@@ -440,11 +439,11 @@
 
         shuffledCardsData.forEach(card => {
           const cardHTML = `
-    <div class="card col-md-4 yf-bg-w1 yf-font2" style="background-color: ${randomBgColor};">
+    <div class="card col-md-4 yf-bg-w1 yf-font1" style="background-color: ${randomBgColor};">
       <h1 id="${card.idName}" class="fa-solid ${card.iconClass} mt-3 display-1" style="color:${card.iconColor}"></h1>
       <div class="card-body">
-        <h5 class="card-title yf-animista-1 yf-font2"><strong class="yf-font2 yf-title yf-blink-2">${card.title}</strong></h5>
-        <p class="card-text yf-blink- " title=""><strong class="yf-font2">${card.date}</strong></p>
+        <h5 class="card-title yf-animista-1 yf-font1"><strong class="yf-font1 yf-title yf-blink-2">${card.title}</strong></h5>
+        <p class="card-text yf-blink- " title=""><strong class="yf-font1">${card.date}</strong></p>
         <a href="${card.link}" class="btn btn-dark yf-animista-3 ${card.disable}" title="">${card.enterName}</a>
       </div>
     </div>

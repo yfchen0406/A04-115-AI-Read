@@ -122,12 +122,12 @@
               <!-- 退休第1-1張  -->
               <div class="carousel-item active">
                 <a href="" target="_blank">
-                  <img id="p1-1" src="/images/B02-banner/A09.webp" width="100%" title="AI提示詞"></a>
+                  <img id="p1-1" src="/images/B03-banner/A09.webp" width="100%" title="AI提示詞"></a>
               </div>
               <!-- 2024第2-1張  -->
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p2-1" src="/images/B02-banner/A10.webp" width="100%" title="AI提示詞"></a>
+                  <img id="p2-1" src="/images/B03-banner/A10.webp" width="100%" title="AI提示詞"></a>
               </div>
               <!-- 2024第3-1張  -->
               <!-- <div class="carousel-item">
@@ -327,25 +327,27 @@
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
-    
-          {
-            pic1: '/A03-AI-Prompt-2026/P001-7-AI-Workspaces-A-Comparison-1150311/P001-7-AI-Workspaces-A-Comparison-1150311.html',
-            pic1s: './images/P001-0.webp',
-            dec1: 'P001. 七大 AI 平台「個人化情境工作區」深度比較報告 ~ 115.03.11',
-          },
 
           {
-            pic1: '/A03-AI-Prompt-2026/P002-Perplexity-Spaces-1150413/P002-Perplexity-Spaces-1150413.html',
-            pic1s: './images/P002-0.webp',
-            dec1: 'P002. Perplexity生成式AI~space紀錄 ~ 115.04.13',
+            pic1: '/A03-AI-Prompt-2026/P005-ClaudeAI-function-description-1150414/P005-ClaudeAI-function-description-1150414.html',
+            pic1s: './images/P005-0.webp',
+            dec1: 'P005. Claude AI 簡單介紹 ~ 115.04.14',
           },
-        
           {
             pic1: '/A03-AI-Prompt-2026/P004-NotebookLM-Prompt-1150321/P004-NotebookLM-Prompt-1150321.html',
             pic1s: './images/P004-0.webp',
             dec1: 'P004.NotebookLM 提示詞~Prompt ~ 115.03.21',
           },
-
+          {
+            pic1: '/A03-AI-Prompt-2026/P002-Perplexity-Spaces-1150413/P002-Perplexity-Spaces-1150413.html',
+            pic1s: './images/P002-0.webp',
+            dec1: 'P002. Perplexity生成式AI~space紀錄 ~ 115.04.13',
+          },
+          {
+            pic1: '/A03-AI-Prompt-2026/P001-7-AI-Workspaces-A-Comparison-1150311/P001-7-AI-Workspaces-A-Comparison-1150311.html',
+            pic1s: './images/P001-0.webp',
+            dec1: 'P001. 七大 AI 平台「個人化情境工作區」深度比較報告 ~ 115.03.11',
+          },
 
 
         ]);
@@ -357,32 +359,32 @@
       }
     }).mount('#a1-5')
 
-      const app2 = createApp({
-        setup() {
-          // 使用 ref 定義響應式狀態（陣列）
-          const arr = ref([
+    const app2 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
 
-            {
-              pic1: '/A03-AI-Prompt-2026/G001-AI-drawing-character-1150316/G001-AI-drawing-character-1150316.html',
-              pic1s: './images/G001-1.webp',
-              dec1: 'G001. 2026 AI 出圖 80 個角色資料庫~ChatGPT ~ 115.03.16',
-            },
-
-
+          {
+            pic1: '/A03-AI-Prompt-2026/G001-AI-drawing-character-1150316/G001-AI-drawing-character-1150316.html',
+            pic1s: './images/G001-1.webp',
+            dec1: 'G001. 2026 AI 出圖 80 個角色資料庫~ChatGPT ~ 115.03.16',
+          },
 
 
 
 
 
-          ]);
 
-          // 返回數據和方法
-          return {
-            arr,
-          };
-        }
-      }).mount('#a1-2')
-    
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-2')
+
 
 
     const app3 = createApp({
