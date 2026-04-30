@@ -526,12 +526,12 @@ const cardsData = [
   {
     idName: "index-13",
     title: "AI生圖",
-    date: "2026.03.09起",
-    link: "/B01-Book/F06-0-2026-note-new.html",
+    date: "2026.04.30起",
+    link: "/A05-AI-Picture-Model-2026/A01-Index-AI-Picture-Model-1150430/A01-Index-AI-Picture-Model-1150430.html",
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-image",
-    enterName: "增廣見聞",
-    disable: "disabled",
+    enterName: "各類生圖",
+    disable: "",
   },
   {
     idName: "index-13",
