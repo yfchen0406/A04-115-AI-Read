@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title>P003. Gemini Gem 整理 ~ 持續更新  ~ 115.04.30</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+
+  <!-- (ok)  google font link  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yf1 {
+      color: green;
+      /* 深灰色 */
+      font-weight: bold;
+      /* 粗體 */
+      /* text-decoration: line-through; 
+      /* 刪除線 */
+    }
+
+    .yf11 {
+      color: green;
+      /* 深灰色 */
+
+    }
+
+
+    .yf2 {
+      color: purple;
+      /* 粉紅色 */
+      font-weight: bold;
+      /* 粗體 */
+    }
+
+    .yf22 {
+      color: purple;
+      /* 粉紅色 */
+
+    }
+
+    .yf3 {
+      color: #0D6EFD;
+      /* 藍色 */
+      font-weight: bold;
+    }
+
+    .yf33 {
+      color: #0D6EFD;
+      /* 粉紅色 */
+
+    }
+
+    .yf4 {
+      color: red;
+      /* 藍色 */
+      font-weight: bold;
+    }
+
+    .yf44 {
+      color: red;
+      /* 粉紅色 */
+
+    }
+
+    .yf5 {
+      color: rgb(143, 13, 13);
+      font-weight: bold;
+      /* 橘色 */
+    }
+
+    .yf55 {
+      color: rgb(143, 13, 13);
+      /* 橘色 */
+    }
+
+    .yf-c {
+      text-align: center
+        /* 粉紅色 */
+
+    }
+  </style>
+  <!-- 選單滾輪 -->
+  <style>
+    .dropdown-menu {
+      max-height: 600px;
+      /* 您希望的最大高度 */
+      overflow-y: auto;
+      /* 當內容超出時顯示垂直滾動條 */
+    }
+  </style>
+
+
+</head>
+
+<body id="n0" class="bg-dark" onload="updateCounter()">
+  <!-- 這邊是 導覽列，利用 jQuery 套用，BX01-nav.html load 就好! -->
+  <div id="nav1"></div>
+
+  <!-- *************************************************************************** -->
+  <header class="text-center p1 " style="margin-top: 75px;">
+    <h1 class="text-info yf-font1">P003. Gemini Gem 整理 ~ 持續更新 ~ 115.04.30</h1>
+    <p class="yf-color-as1 yf-font1">這個是Google的一個生成式AI，Gem 部分個功能都紀錄在該網頁，後續如有需要也會持續修正更改!</p>
+  </header>
+  <!-- ############################################################################ -->
+  <!-- 主畫面整個 -->
+  <!-- <div class="container-fluid yf-font1" style="margin-top:10px;background-color:antiquewhite"></div> -->
+  <div class="container-fluid yf-font1" style="margin-top:10px;background-color:white">
+    <div class="row">
+      <!-- page -->
+      <!-- <div class="container">
+        <ul class="pagination justify-content-center mt-1">
+          <li class="page-item "><a style="border: none; background: transparent;color:black"
+              class="page-link yf-font2 " target="_blank">網頁文字版~</a> </li>
+          <li class="page-item "><a class="page-link yf-font2 yf2" href="./B106-PPT-Genspark.html"
+              target="_blank">Genspark~A版~10張</a>
+          </li>
+          <li class="page-item "><a class="page-link yf-font2 yf2" href="./B106-PPT-Genspark2.html"
+              target="_blank">Genspark~B版~10張</a>
+          </li>
+          <li class="page-item "><a class="page-link yf-font2 yf3" href="./B106-PPT-Skywork.html"
+              target="_blank">Skywork~10張</a>
+          </li>
+          <li class="page-item "><a class="page-link yf-font2 yf1" href="./B106-PPT-Qwen3.html"
+              target="_blank">千問3~28張</a>
+          </li>
+          <li class="page-item "><a class="page-link yf-font2 yf4" href="./B106-PPT-NotebookLM-blackboard.html"
+              target="_blank">NotebookLM~15張~黑板風</a> </li>
+          <li class="page-item "><a class="page-link yf-font2 yf3" href="./B106-PPT-NotebookLM-Doodle.html"
+              target="_blank">NotebookLM~15張~手繪筆記風</a> </li>
+          <li class="page-item "><a class="page-link yf-font2 yf3" href="./B106-PPT-NotebookLM-new.html"
+              target="_blank">NotebookLM~15張~漫畫風</a> </li>
+
+        </ul>
+      </div> -->
+      <div class="container">
+        <ul class="pagination justify-content-center">
+          <!-- <li class="page-item "><a style="border: none; background: transparent;color:black"
+              class="page-link yf-font2 " target="_blank">原版書籍相關產出~</a> </li> -->
+          <!-- <li class="page-item "><a style="border: none; background: transparent;color:black"
+              class="page-link yf-font2 " target="_blank">網頁文字版~</a> </li> -->
+<!-- 
+          <li class="page-item"><a class="page-link yf-font2 yf2" href="./P001-Pic-NanoBananapro.html"
+              target="_blank">圖解 AI ｜七大平台深度比較圖集👍</a>
+          </li> -->
+          <!-- <li class="page-item"><a class="page-link yf-font2 yf2" href="./B106-PPT-NanoBananapro-Minions.html"
+              target="_blank">網頁內所有插圖~柯南👍</a>
+          </li> -->
+          <!-- <li class="page-item"><a class="page-link yf-font2 yf2" href="./B104-PPT-NanoBananapro-itsme.html"
+              target="_blank">網頁內所有插圖~我就是主角👍</a>
+          </li> -->
+          <!-- <li class="page-item"><a class="page-link yf-font2 yf3" href="./images/N106-L-blackboard.webp"
+              target="_blank">資訊圖表~黑板風</a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font2 yf3" href="./images/N106-L-Doodle.webp"
+              target="_blank">資訊圖表~手繪筆記風</a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font2 yf3" href="./images/N106-L-comics.webp"
+              target="_blank">資訊圖表~漫畫風</a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font2 yf5" href="https://youtu.be/67FRfaf-mwA"
+              target="_blank">NotebookLM影片摘要~黑板風</a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font2 yf5" href="https://youtu.be/3K_W-lYC-bA"
+              target="_blank">NotebookLM影片摘要~手繪筆記風</a>
+          </li> -->
+          <!-- <li class="page-item"><a class="page-link yf-font2 yf3" href="./images/N103-L-1.webp"
+              target="_blank">資訊圖表~手繪筆記風</a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font2 yf3" href="./images/N103-L-2.webp"
+              target="_blank">資訊圖表~馬克筆風</a>
+          </li> -->
+          <!-- <li class="page-item "><a style="border: none; background: transparent;color:black"
+              class="page-link yf-font2 " target="_blank">原版書籍版~</a> </li>
+          <li class="page-item "><a class="page-link yf-font2 yf4" href="./B100-PPT-NotebookLM-new.html"
+              target="_blank">NotebookLM~14張~新簡主義風</a> </li> -->
+        </ul>
+      </div>
+      <!-- 相關連結，利用 jQuery 套用，BX01-aside.html load 就好!  -->
+      <!-- 側邊 -->
+      <div class="col-sm-1 yf-font1">
+        <div class="container-fluid">
+          <br>
+
+        </div>
+      </div>
+      <!-- 主要內容 -->
+      <!-- 準備說明h4   -->
+      <div class="col-sm-10">
+        <br>
+        <!-- 目錄索引  -->
+        <h2 class="yf-font1"><span class=""><i class="fa-solid fa-list"></i> 目錄索引</span></h2>
+        <!-- 目錄三欄位 -->
+        <h6>
+          <div id="a1-0" class="yf-dashed-border yf-border-radius">
+            <div class="row">
+
+              <div class="col-4">
+                <ul class="">
+                  <li v-for="(item,index) in data.slice(0, Math.ceil(data.length / 3) )" :key="index"
+                    class="text-primary">
+                    <a :href="'#' + item.title_id" style="text-decoration: none;" v-html="item.title"
+                      class="yf-font1"></a>
+                    <ul>
+                      <li v-for="(child, indexC) in item.c1s" :key="indexC">
+                        <a :href="'#' + child.id2" style="text-decoration: none;" v-html="child.d1"></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-4">
+                <ul>
+                  <li v-for="(item,index) in data.slice(Math.ceil(data.length / 3), Math.ceil(data.length / 3) * 2-1 )"
+                    :key="index" class="text-primary">
+                    <a :href="'#' + item.title_id" style="text-decoration: none;" v-html="item.title"
+                      class="yf-font1"></a>
+                    <ul>
+                      <li v-for="(child, indexC) in item.c1s" :key="indexC">
+                        <a :href="'#' + child.id2" style="text-decoration: none;" v-html="child.d1"></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-4">
+                <ul>
+                  <li v-for="(item,index) in data.slice(Math.ceil(data.length / 3) * 2-1 , data.length)" :key="index"
+                    class="text-primary">
+                    <a :href="'#' + item.title_id" style="text-decoration: none;" v-html="item.title"
+                      class="yf-font1"></a>
+                    <ul>
+                      <li v-for="(child, indexC) in item.c1s" :key="indexC">
+                        <a :href="'#' + child.id2" style="text-decoration: none;" v-html="child.d1"></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </h6>
+        <!-- 目錄二欄位 -->
+        <!-- <h6>
+          <div id="a1-0" class="yf-dashed-border yf-border-radius">
+            <div class="row">
+              <div class="col-6">
+                <ul>
+                  <li v-for="(item,index) in data.slice(0, Math.ceil(data.length / 2)   )" :key="index"
+                    class="text-primary">
+                    <a :href="'#' + item.title_id" style="text-decoration: none;" v-html="item.title"
+                      class="yf-font1"></a>
+                    <ul>
+                      <li v-for="(child, indexC) in item.c1s" :key="indexC">
+                        <a :href="'#' + child.id2" style="text-decoration: none;" v-html="child.d1"></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li v-for="(item,index) in data.slice(Math.ceil((data.length / 2)   ), data.length)" :key="index"
+                    class="text-primary">
+                    <a :href="'#' + item.title_id" style="text-decoration: none;" v-html="item.title"
+                      class="yf-font1"></a>
+                    <ul>
+                      <li v-for="(child, indexC) in item.c1s" :key="indexC">
+                        <a :href="'#' + child.id2" style="text-decoration: none;" v-html="child.d1"></a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </h6> -->
+        <br>
+
+        <!-- 範本 -->
+        <div id="a1-1">
+          <div v-for="(item,index) in data" :key="index">
+            <!-- 大標題 -->
+            <h2 :id="item.title_id" class="yf-font1"><i class="fa-solid fa-feather"></i> <span :class="item.title_color"
+                v-html="item.title">
+              </span>
+              <a href="#n0"><i class="fa-solid fa-backward yf-color-as1 "></i></a>
+            </h2>
+            <h5>
+              <ul>
+                <ul>
+                  <li v-for="TitleA in item.t1"
+                    :style="{ 'list-style-type': TitleA.d1.includes('<br>') ? 'none' : 'disc' }">
+                    <!--  第一層 -->
+                    <span class="" v-html="TitleA.d1"></span>
+                    <!-- 新增條件渲染的表格 字體大小控制在18px，等同於h6-->
+                    <!-- <h6> -->
+                    <table v-if="TitleA.headers" class="table table-bordered table-sm table-striped mx-start"
+                      style="width:100%; background-color:rgb(208, 231, 238);font-size: 20px;border: 3px solid black;">
+                      <thead class="table-dark yf-font1">
+                        <tr class="text-center">
+                          <th v-for="(header, headerIndex) in TitleA.headers" :key="headerIndex" class="text-center"
+                            :style="{ width: header.width }" v-html="header.label">
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="(row, rowIndex) in TitleA.rows" :key="rowIndex">
+                          <td style="vertical-align: middle;" v-for="(col, colIndex) in row" :key="colIndex">
+
+                            <template v-if="col.isList">
+                              <ul v-if="col.cts">
+                                <li v-for="(grandD, g5Index) in col.cts" :key="g5Index"
+                                  :style="{ 'list-style-type': grandD.d1.includes('<br>') ? 'none' : 'disc' }">
+                                  <span v-html="grandD.d1"></span>
+                                </li>
+                              </ul>
+                            </template>
+
+                            <template v-else>
+                              <div v-html="col"></div>
+                            </template>
+
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- </h6> -->
+                    <!-- 圖片 -->
+                    <div class="container-fluid">
+                      <div class="row justify-content-center" style="align-items: flex-end;">
+                        <!-- 這邊都跟第一層的 TitleA 有框 -->
+                        <div :class="TitleA.col" v-for="item1 in TitleA.p1">
+                          <figure>
+                            <a :href="item1.pic1" target="_blank">
+                              <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1" :alt="item1.dec1"
+                                :title="item1.dec1" style="width:100%">
+                            </a>
+                            <h6>
+                              <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                            </h6>
+                          </figure>
+                        </div>
+                        <!-- 這邊都跟第一層的 TitleA 無框+R -->
+                        <div :class="TitleA.col" v-for="item1 in TitleA.p1R">
+                          <figure>
+                            <a :href="item1.pic1" target="_blank">
+                              <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1" :title="item1.dec1"
+                                style="width:100%">
+                            </a>
+                            <h6>
+                              <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                            </h6>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                    <ul v-if="TitleA.c2s">
+                      <li v-for="(TitleB, IndexB) in TitleA.c2s" :key="IndexB"
+                        :style="{ 'list-style-type': TitleB.d1.includes('<br>') ? 'none' : 'disc' }">
+                        <!--  第二層 -->
+                        <span v-html="TitleB.d1"></span>
+                        <!-- <h6> -->
+                        <table v-if="TitleB.headers" class="table table-bordered table-sm table-striped mx-start"
+                          style="width:100%; background-color:rgb(208, 231, 238);font-size: 18px;border: 3px solid black;">
+                          <thead class="table-dark yf-font1">
+                            <tr class="text-center">
+                              <th v-for="(header, headerIndex) in TitleB.headers" :key="headerIndex" class="text-center"
+                                :style="{ width: header.width }" v-html="header.label">
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                            <tr v-for="(row, rowIndex) in TitleB.rows" :key="rowIndex">
+                              <td style="vertical-align: middle;" v-for="(col, colIndex) in row" :key="colIndex"
+                                v-html="col">
+                                <!-- <span ></span> -->
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- 圖片 第二層有框 -->
+                        <div class="container-fluid">
+                          <div class="row justify-content-center" style="align-items: flex-end;">
+                            <div :class="TitleB.col" v-for="item1 in TitleB.p2">
+                              <figure>
+                                <a :href="item1.pic1" target="_blank">
+                                  <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                    :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                </a>
+                                <h6>
+                                  <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                </h6>
+                              </figure>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 圖片 第二層無框+R -->
+                        <div class="container-fluid">
+                          <div class="row justify-content-center" style="align-items: flex-end;">
+                            <div :class="TitleB.col" v-for="item1 in TitleB.p2R">
+                              <figure>
+                                <a :href="item1.pic1" target="_blank">
+                                  <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                    :title="item1.dec1" style="width:100%">
+                                </a>
+                                <h6>
+                                  <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                </h6>
+                              </figure>
+                            </div>
+                          </div>
+                        </div>
+                        <!--  第三層 -->
+                        <ul v-if="TitleB.c3s">
+                          <li v-for="(TitleC, IndexC) in TitleB.c3s" :key="IndexC"
+                            :style="{ 'list-style-type': TitleC.d1.includes('<br>') ? 'none' : 'disc' }">
+                            <span v-html="TitleC.d1"></span>
+                            <!-- <h6> -->
+                            <table v-if="TitleC.headers" class="table table-bordered table-sm table-striped mx-start"
+                              style="width:100%; background-color:rgb(208, 231, 238);font-size: 18px;border: 3px solid black;">
+                              <thead class="table-dark yf-font1">
+                                <tr class="text-center">
+                                  <th v-for="(header, headerIndex) in TitleC.headers" :key="headerIndex"
+                                    class="text-center" :style="{ width: header.width }" v-html="header.label">
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                <tr v-for="(row, rowIndex) in TitleC.rows" :key="rowIndex">
+                                  <td style="vertical-align: middle;" v-for="(col, colIndex) in row" :key="colIndex"
+                                    v-html="col">
+                                    <!-- <span ></span> -->
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <!-- 圖片~無框  -->
+                            <div class="container-fluid">
+                              <div class="row justify-content-center" style="align-items: flex-end;">
+                                <div :class="TitleC.col" v-for="item1 in TitleC.p3">
+                                  <figure>
+                                    <a :href="item1.pic1" target="_blank">
+                                      <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                        :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                    </a>
+                                    <h6>
+                                      <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                    </h6>
+                                  </figure>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 圖片~無框  -->
+                            <div class="container-fluid">
+                              <div class="row justify-content-center" style="align-items: flex-end;">
+                                <div :class="TitleC.col" v-for="item1 in TitleC.p3R">
+                                  <figure>
+                                    <a :href="item1.pic1" target="_blank">
+                                      <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                        :title="item1.dec1" style="width:100%">
+                                    </a>
+                                    <h6>
+                                      <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                    </h6>
+                                  </figure>
+                                </div>
+                              </div>
+                            </div>
+                            <!--  第4層 -->
+                            <ul v-if="TitleC.c4s">
+                              <li v-for="(TitleD, IndexD) in TitleC.c4s" :key="IndexD"
+                                :style="{ 'list-style-type': TitleD.d1.includes('<br>') ? 'none' : 'disc' }">
+                                <span v-html="TitleD.d1"></span>
+                                <!-- 圖片~有框  -->
+                                <div class="container-fluid">
+                                  <div class="row justify-content-center" style="align-items: flex-end;">
+                                    <div :class="TitleD.col" v-for="item1 in TitleD.p4">
+                                      <figure>
+                                        <a :href="item1.pic1" target="_blank">
+                                          <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                            :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                        </a>
+                                        <h6>
+                                          <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                        </h6>
+                                      </figure>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- 圖片~無框  -->
+                                <div class="container-fluid">
+                                  <div class="row justify-content-center" style="align-items: flex-end;">
+                                    <div :class="TitleD.col" v-for="item1 in TitleD.p4R">
+                                      <figure>
+                                        <a :href="item1.pic1" target="_blank">
+                                          <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                            :title="item1.dec1" style="width:100%">
+                                        </a>
+                                        <h6>
+                                          <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                        </h6>
+                                      </figure>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <!--  第5層 -->
+                                <ul v-if="TitleD.c5s">
+                                  <li v-for="(TitleE, IndexD) in TitleD.c5s" :key="IndexD"
+                                    :style="{ 'list-style-type': TitleE.d1.includes('<br>') ? 'none' : 'disc' }">
+                                    <span v-html="TitleE.d1"></span>
+                                    <!-- 圖片~有框  -->
+                                    <div class="container-fluid">
+                                      <div class="row justify-content-center" style="align-items: flex-end;">
+                                        <div :class="TitleE.col" v-for="item1 in TitleE.p5">
+                                          <figure>
+                                            <a :href="item1.pic1" target="_blank">
+                                              <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                                :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                            </a>
+                                            <h6>
+                                              <figcaption class="text-center text-primary" v-html="item1.dec2">
+                                              </figcaption>
+                                            </h6>
+                                          </figure>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!-- 圖片~無框  -->
+                                    <div class="container-fluid">
+                                      <div class="row justify-content-center" style="align-items: flex-end;">
+                                        <div :class="TitleE.col" v-for="item1 in TitleE.p5R">
+                                          <figure>
+                                            <a :href="item1.pic1" target="_blank">
+                                              <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                                :title="item1.dec1" style="width:100%">
+                                            </a>
+                                            <h6>
+                                              <figcaption class="text-center text-primary" v-html="item1.dec2">
+                                              </figcaption>
+                                            </h6>
+                                          </figure>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <!-- 圖片 -->
+                    <div class="container-fluid">
+                      <div class="row justify-content-center" style="align-items: flex-end;">
+                        <div :class="TitleA.col" v-for="item1 in TitleA.p2">
+                          <figure>
+                            <a :href="item1.pic1" target="_blank">
+                              <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1" :alt="item1.dec1"
+                                :title="item1.dec1" style="width:100%">
+                            </a>
+                            <h6>
+                              <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                            </h6>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </ul>
+            </h5>
+
+            <h5>
+              <ul class="">
+                <li v-for="(child, index) in item.c1s" :key="index" style="list-style-type:none">
+                  <!--  第一層標題 -->
+                  <h4 :id="child.id2" class="yf-font1"><i class="fa-solid fa-pen-to-square"></i> <span class="yf-code2"
+                      v-html="child.d1">
+                    </span> <a href="#n0"><i class="fa-solid fa-backward yf-color-as1"></i></a> </h4>
+                  <!-- 第二層 -->
+                  <ul v-if="child.c2s">
+                    <li v-for="(grand, grandIndex) in child.c2s" :key="grandIndex"
+                      :style="{ 'list-style-type': grand.d1.includes('<br>') ? 'none' : 'disc' }">
+                      <span v-html="grand.d1"></span>
+
+                      <!-- 新增條件渲染的表格 字體大小控制在16px，等同於h6-->
+                      <!-- <h6> -->
+                      <table v-if="grand.headers" class="table table-bordered table-sm table-striped mx-start"
+                        style="width:100%; background-color:rgb(208, 231, 238);font-size: 16px;border: 3px solid black;">
+                        <thead class="table-dark yf-font1">
+                          <tr class="text-center">
+                            <th v-for="(header, headerIndex) in grand.headers" :key="headerIndex" class="text-center"
+                              :style="{ width: header.width }" v-html="header.label">
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                          <tr v-for="(row, rowIndex) in grand.rows" :key="rowIndex">
+                            <td style="vertical-align: middle;" v-for="(col, colIndex) in row" :key="colIndex" class=""
+                              v-html="col">
+                              <!-- <span ></span> -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- </h6> -->
+
+                      <!-- 表格結束 -->
+
+                      <!-- 圖片 有框 -->
+                      <div class="container-fluid">
+                        <div class="row justify-content-center" style="align-items: flex-end;">
+                          <div :class="grand.col" v-for="item1 in grand.p2">
+                            <figure>
+                              <a :href="item1.pic1" target="_blank">
+                                <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1" :alt="item1.dec1"
+                                  :title="item1.dec1" style="width:100%">
+                              </a>
+                              <h6>
+                                <figcaption class="text-center yf-font1" v-html="item1.dec2"></figcaption>
+                              </h6>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 圖片~無框  -->
+                      <div class="container-fluid">
+                        <div class="row justify-content-center" style="align-items: flex-end;">
+                          <div :class="grand.col" v-for="item1 in grand.p3">
+                            <figure>
+                              <a :href="item1.pic1" target="_blank">
+                                <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                  :title="item1.dec1" style="width:100%">
+                              </a>
+                              <h6>
+                                <figcaption class="text-center yf-font1" v-html="item1.dec2"></figcaption>
+                              </h6>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 圖片~有框  -->
+                      <div class="container-fluid">
+                        <div class="row justify-content-center" style="align-items: flex-end;">
+                          <div :class="grand.col" v-for="item1 in grand.p3R">
+                            <figure>
+                              <a :href="item1.pic1" target="_blank">
+                                <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1" :alt="item1.dec1"
+                                  :title="item1.dec1" style="width:100%">
+                              </a>
+                              <h6>
+                                <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                              </h6>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <!-- 第三層 -->
+                      <ul v-if="grand.c3s">
+                        <li v-for="(grandA, grandAIndex) in grand.c3s" :key="grandAIndex"
+                          :style="{ 'list-style-type': grandA.d1.includes('<br>') ? 'none' : 'disc' }">
+                          <span v-html="grandA.d1"></span>
+                          <!-- 新增條件渲染的表格 -->
+                          <!-- <h6> -->
+                          <table v-if="grandA.headers" class="table table-bordered table-sm table-striped mx-start"
+                            style="width:100%; background-color:rgb(208, 231, 238);font-size: 18px;border: 3px solid black;">
+                            <thead class="table-dark yf-font1">
+                              <tr class="text-center">
+                                <th v-for="(header, headerIndex) in grandA.headers" :key="headerIndex"
+                                  class="text-center" :style="{ width: header.width } " v-html="header.label">
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                              <tr v-for="(row, rowIndex) in grandA.rows" :key="rowIndex">
+                                <td style="vertical-align: middle;" v-for="(col, colIndex) in row" :key="colIndex"
+                                  v-html="col">
+                                  <!-- <span ></span> -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <!-- </h6> -->
+                          <!-- 圖片~無框  -->
+                          <div class="container-fluid">
+                            <div class="row justify-content-center" style="align-items: flex-end;">
+                              <div :class="grandA.col" v-for="item1 in grandA.p3">
+                                <figure>
+                                  <a :href="item1.pic1" target="_blank">
+                                    <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                      :title="item1.dec1" style="width:100%">
+                                  </a>
+                                  <h6>
+                                    <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                  </h6>
+                                </figure>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- 圖片~有框  -->
+                          <div class="container-fluid">
+                            <div class="row justify-content-center" style="align-items: flex-end;">
+                              <div :class="grandA.col" v-for="item1 in grandA.p3R">
+                                <figure>
+                                  <a :href="item1.pic1" target="_blank">
+                                    <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                      :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                  </a>
+                                  <h6>
+                                    <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                  </h6>
+                                </figure>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- 第四層 -->
+                          <ul v-if="grandA.c4s">
+                            <li v-for="(grandB, g4Index) in grandA.c4s" :key="g4Index"
+                              :style="{ 'list-style-type': grandB.d1.includes('<br>') ? 'none' : 'disc' }">
+                              <span v-html="grandB.d1"></span>
+                              <!-- 圖片~無框  -->
+                              <div class="container-fluid">
+                                <div class="row justify-content-center" style="align-items: flex-end;">
+                                  <div :class="grandB.col" v-for="item1 in grandB.p4R">
+                                    <figure>
+                                      <a :href="item1.pic1" target="_blank">
+                                        <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                          :title="item1.dec1" style="width:100%">
+                                      </a>
+                                      <h6>
+                                        <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                      </h6>
+                                    </figure>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- 圖片~有框  -->
+                              <div class="container-fluid">
+                                <div class="row justify-content-center" style="align-items: flex-end;">
+                                  <div :class="grandB.col" v-for="item1 in grandB.p4">
+                                    <figure>
+                                      <a :href="item1.pic1" target="_blank">
+                                        <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                          :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                      </a>
+                                      <h6>
+                                        <figcaption class="text-center text-primary" v-html="item1.dec2"></figcaption>
+                                      </h6>
+                                    </figure>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- 第五層 -->
+                              <ul v-if="grandB.c5s">
+                                <li v-for="(grandC, g5Index) in grandB.c5s" :key="g5Index"
+                                  :style="{ 'list-style-type': grandC.d1.includes('<br>') ? 'none' : 'disc' }">
+                                  <span v-html="grandC.d1"></span>
+                                  <!-- 圖片~無框  -->
+                                  <div class="container-fluid">
+                                    <div class="row justify-content-center" style="align-items: flex-end;">
+                                      <div :class="grandC.col" v-for="item1 in grandC.p5R">
+                                        <figure>
+                                          <a :href="item1.pic1" target="_blank">
+                                            <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                              :title="item1.dec1" style="width:100%">
+                                          </a>
+                                          <h6>
+                                            <figcaption class="text-center text-primary" v-html="item1.dec2">
+                                            </figcaption>
+                                          </h6>
+                                        </figure>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- 圖片~有框  -->
+                                  <div class="container-fluid">
+                                    <div class="row justify-content-center" style="align-items: flex-end;">
+                                      <div :class="grandC.col" v-for="item1 in grandC.p5">
+                                        <figure>
+                                          <a :href="item1.pic1" target="_blank">
+                                            <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                              :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                          </a>
+                                          <h6>
+                                            <figcaption class="text-center text-primary" v-html="item1.dec2">
+                                            </figcaption>
+                                          </h6>
+                                        </figure>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- 第六層 -->
+                                  <ul v-if="grandC.c6s">
+                                    <li v-for="(grandD, g5Index) in grandC.c6s" :key="g5Index"
+                                      :style="{ 'list-style-type': grandD.d1.includes('<br>') ? 'none' : 'disc' }">
+                                      <span v-html="grandD.d1"></span>
+                                      <!-- 圖片~無框  -->
+                                      <div class="container-fluid">
+                                        <div class="row justify-content-center" style="align-items: flex-end;">
+                                          <div :class="grandD.col" v-for="item1 in grandD.p6R">
+                                            <figure>
+                                              <a :href="item1.pic1" target="_blank">
+                                                <img class="rounded float-end m-1" :src="item1.pic1" :alt="item1.dec1"
+                                                  :title="item1.dec1" style="width:100%">
+                                              </a>
+                                              <h6>
+                                                <figcaption class="text-center text-primary" v-html="item1.dec2">
+                                                </figcaption>
+                                              </h6>
+                                            </figure>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- 圖片~有框  -->
+                                      <div class="container-fluid">
+                                        <div class="row justify-content-center" style="align-items: flex-end;">
+                                          <div :class="grandD.col" v-for="item1 in grandD.p6">
+                                            <figure>
+                                              <a :href="item1.pic1" target="_blank">
+                                                <img class="rounded float-end m-1 yf-border-radius" :src="item1.pic1"
+                                                  :alt="item1.dec1" :title="item1.dec1" style="width:100%">
+                                              </a>
+                                              <h6>
+                                                <figcaption class="text-center text-primary" v-html="item1.dec2">
+                                                </figcaption>
+                                              </h6>
+                                            </figure>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                  <!-- 圖片  p1-->
+                  <div class="container-fluid">
+                    <div class="row justify-content-center" style="align-items: flex-end;">
+                      <div :class="child.col" v-for="item in child.p1">
+                        <figure>
+                          <a :href="item.pic1" target="_blank">
+                            <img class="rounded float-end m-1 yf-border-radius" :src="item.pic1" :alt="item.dec1"
+                              :title="item.dec1" style="width:100%">
+                          </a>
+                          <h6>
+                            <figcaption class="text-center yf-font1"></figcaption>
+                          </h6>
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+                </li>
+
+              </ul>
+            </h5>
+            <!-- <h6>
+              <ul>
+                <ul>
+                  <li v-for="text in item.t2" v-html="text.d1"></li>
+                </ul>
+              </ul>
+            </h6> -->
+            <hr>
+          </div>
+        </div>
+        <!-- <div class="row justify-content-center">
+            <div class="col-sm-6">
+              <figure>
+  
+                <img class="rounded float-end m-1" src="/B01-Book/B37-Financial-awakening-1131031/images/G01-3.jpg" style="width:100%">
+  
+              </figure>
+  
+            </div>
+  
+          </div> -->
+
+
+
+
+
+        <!-- <h5 class="yf-font text-primary text-center"> <a
+              href="/B01-Book/B33A-The-Most-Important-Thing-1131011/B33A-The-Most-Important-Thing-1131011.html"
+              target="_self">33A.《投資最重要的事》(上) ~ 投資股票的重要觀念! ~ 113.10.11</a> </h5> -->
+        <h5 class="yf-font yf3 text-center"></h5>
+        <h6 class="yf-font text-primary text-center"> ~ (115.04.13) ~ </h6>
+        <!-- 動畫容器 先入為主的成見，會讓原本可能做得到的事變成不可能。 -->
+
+
+        <br><br><br><br>
+        <!-- 參考資料 -->
+      </div>
+      <div class="col-sm-2">
+
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+
+  <!-- 調整完成-->
+  <!--  ##################       各區塊html 載入     ###################### -->
+  <script>
+    $(function () {
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+  <!-- 計數器壞掉，所以這個函數不需要了，先放著以後有機會要載入函數可以用(112.08.18) -->
+  <script>
+    function updateCounter() {
+
+    }
+  </script>
+
+  <script>
+    // 初始化 Lottie 動畫
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-container'), // 指定動畫容器
+      renderer: 'svg', // 使用 SVG 渲染
+      loop: true, // 是否循環播放
+      autoplay: true, // 自動播放
+      path: './js/Animation - 1729213900851.json' // 本地 JSON 檔案路徑
+    });
+  </script>
+
+  <!-- ####################################  套用資料區域開始  ##################################################### -->
+  <!-- 這邊開始是Vue.js 的主體，利用v-for 配合陣列使用 -->
+  <!-- Vue.js 引入 -->
+  <script src="/js/V03-vue3.js"></script>
+
+  <script type="module">
+    import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+    import { arr_article } from './js/A-data-img.js';
+
+    const appList = createApp({
+      setup() {
+        const data = ref([...arr_article]);
+
+        return {
+          data,
+
+        };
+      }
+    }).mount('#a1-0')
+
+    const appArticle = createApp({
+      setup() {
+        const data = ref([...arr_article]);
+
+
+
+        return {
+          data,
+
+        };
+      }
+    }).mount('#a1-1')
+
+
+  </script>
+
+
+  <!-- ####################################  套用資料區域結束  ##################################################### -->
+
+</body>
+
+</html>
