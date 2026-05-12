@@ -140,4 +140,142 @@ const promptsData = [
     date: "2026-05-07",
     url: "",
   },
+  {
+    id: 15,
+    title: "LINE貼圖~正芬姐~1/3",
+    category: "Line",
+    image: "./images/L01-LINE/L002-1.webp",
+    prompt:
+      "<span class='yf3'>步驟1(產生貼圖提示詞)~產出GPT Image2.0 line貼圖的提示詞，用附件圖片人物做主角，搭配下列動作，用4X4產出三張，貼圖開心活潑充滿朝氣，人物為圖片Q版造型，分三份提示詞呈現 謝謝/吃飯沒/有空嗎/在幹嘛/ok/早安/再見/開會中/快到了/再說啦/沒空啦/准/集合/約起來/讚/ YA/哭哭/？/哈哈哈/辛苦了/加油/收到/拜託/太感謝了/生日快樂/💗/Hello/No/+1/忙錄中/ 暈倒/晚安/不好意思/早點休息/</span><br><span class='yf11'>步驟2(產生圖片)~Create a 4x4 grid of 16 LINE sticker panels. The main character is a chibi Q-version of the person in the attached photo — big round head, small body, chubby cheeks, expressive eyes, cute proportions, wearing casual clothing consistent with the reference image. Each panel shows the character in a different lively and joyful pose with a bold Traditional Chinese label in a cute rounded bubble font clearly placed at the bottom of each panel. The overall style is bright, energetic, cheerful, and full of vitality — like a premium kawaii LINE sticker set. White background for each panel with soft rounded corners. The 16 panels in order are:【謝謝】— character bowing deeply with both hands clasped, big smile, sparkles around【吃飯沒】— character holding a bowl of rice and chopsticks, eyes sparkling, mouth watering expression【有空嗎】— character leaning forward curiously with hand raised asking, big hopeful eyes【在幹嘛】— character peeking sideways with a magnifying glass, curious and playful expression【OK】— character giving a big thumbs up with confident grin, fist pumped【早安】— character stretching arms up yawning with sunrise behind, sleepy but cheerful【再見】— character waving both hands enthusiastically with big smile, small hearts floating【開會中】— character sitting at tiny desk with laptop open, serious focused face, finger to lips 'shhh' gesture【快到了】— character running at full speed with speed lines, one arm stretched forward, sweating slightly【再說啦】— character waving dismissively with a cheeky grin, one eye winking【沒空啦】— character surrounded by floating tasks and clocks, arms crossed, overwhelmed but cute【准】— character stamping a big red approval seal with confident smile and thumbs up【集合】— character blowing a bugle/whistle and pointing forward energetically【約起來】— character holding up a calendar/phone with excited jumping pose, stars around【讚】— character flashing a huge double thumbs up with glowing aura and big grin【YA】— character jumping in the air with both arms raised in V-sign, confetti explodingAll text labels must be in Traditional Chinese with rounded cute font. No English text. Keep all 16 panels clean, vibrant, and consistent in character design.",
+    date: "2026-05-09",
+    url: "",
+  },
+  {
+    id: 16,
+    title: "LINE貼圖~正芬姐~2/3",
+    category: "Line",
+    image: "./images/L01-LINE/L002-2.webp",
+    prompt:
+      "<span class='yf3'>步驟1(產生貼圖提示詞)~產出GPT Image2.0 line貼圖的提示詞，用附件圖片人物做主角，搭配下列動作，用4X4產出三張，貼圖開心活潑充滿朝氣，人物為圖片Q版造型，分三份提示詞呈現 謝謝/吃飯沒/有空嗎/在幹嘛/ok/早安/再見/開會中/快到了/再說啦/沒空啦/准/集合/約起來/讚/ YA/哭哭/？/哈哈哈/辛苦了/加油/收到/拜託/太感謝了/生日快樂/💗/Hello/No/+1/忙錄中/ 暈倒/晚安/不好意思/早點休息/</span><br><span class='yf11'>步驟2(產生圖片)~Create a 4x4 grid of 16 LINE sticker panels. The main character is a chibi Q-version of the person in the attached photo — big round head, small body, chubby cheeks, expressive eyes, cute proportions, casual clothing matching the reference. Each panel features the character with a bold Traditional Chinese (or symbolic) label in cute rounded bubble font at the bottom. Style is bright, joyful, kawaii, full of energy. White background, soft rounded corners per panel. The 16 panels in order are:【哭哭】— character crying dramatically with big tears, pouty face, tissue in hand, cute and exaggerated【？】— character scratching head with a giant question mark floating above, confused tilted head【哈哈哈】— character laughing with mouth wide open, tears of joy, rolling slightly, super jolly【辛苦了】— character patting air gently with warm caring smile, soft glowing aura of warmth【加油】— character cheering with fist raised high, energetic pose, fire and stars around【收到】— character giving an OK salute gesture, eyes bright, military-style acknowledgement cute pose【拜託】— character clasping hands together in begging pose, big pleading puppy eyes, sparkles【太感謝了】— character bowing repeatedly with joy tears, golden thank-you sparkles floating【生日快樂】— character holding a birthday cake with candles, party hat on, confetti everywhere【💗】— character hugging a giant glowing pink heart, eyes closed in bliss, soft pink aura【Hello】— character waving cheerfully with big open smile, small stars around the hand【No】— character shaking head with both hands crossed in an X, firm but cute expression【+1】— character pointing upward holding a '+1' sign, smiling and nodding in agreement【忙碌中】— character spinning surrounded by tasks, calendar, phone, emails swirling around【暈倒】— character fainting dramatically with swirl eyes, falling backward, small birds circling head【晚安】— character in pajamas yawning, holding a pillow, crescent moon and stars background, sleepy smileAll text labels in Traditional Chinese with rounded cute font. Use heart emoji 💗 for panel 10. No extra English. Consistent character design across all 16 panels.",
+    date: "2026-05-09",
+    url: "",
+  },
+  {
+    id: 17,
+    title: "LINE貼圖~正芬姐~3/3",
+    category: "Line",
+    image: "./images/L01-LINE/L002-3.webp",
+    prompt:
+      "<span class='yf3'>步驟1(產生貼圖提示詞)~產出GPT Image2.0 line貼圖的提示詞，用附件圖片人物做主角，搭配下列動作，用4X4產出三張，貼圖開心活潑充滿朝氣，人物為圖片Q版造型，分三份提示詞呈現 謝謝/吃飯沒/有空嗎/在幹嘛/ok/早安/再見/開會中/快到了/再說啦/沒空啦/准/集合/約起來/讚/ YA/哭哭/？/哈哈哈/辛苦了/加油/收到/拜託/太感謝了/生日快樂/💗/Hello/No/+1/忙錄中/ 暈倒/晚安/不好意思/早點休息/</span><br><span class='yf11'>步驟2(產生圖片)~Create a 1x4 row (or 2x2 grid) of 4 LINE sticker panels. The main character is a chibi Q-version of the person in the attached photo — big round head, small body, chubby cheeks, expressive eyes, cute proportions, casual clothing. Each panel has a bold Traditional Chinese label in cute rounded bubble font at the bottom. Bright, cheerful, kawaii LINE sticker style, white background, soft rounded corners. The 4 panels are:【不好意思】— character blushing with hand behind head, embarrassed grin, little sweat drop, rosy cheeks【早點休息】— character in cozy sweater pointing at a clock showing bedtime, warm caring expression, moon and stars【打氣中】— character inflating a giant motivational balloon, cheerful flying pose, energy lines【繼續加油】— character running on a treadmill or track with determination, sweat flying, fire emoji auraAll text in Traditional Chinese rounded cute font. Consistent character style matching the previous sticker panels.",
+    date: "2026-05-09",
+    url: "",
+  },
+  {
+    id: 18,
+    title: "LINE貼圖~崇拜大哥篇",
+    category: "Line",
+    image: "./images/L01-LINE/L002-4.webp",
+    prompt:
+      "Create a 4x4 grid of 16 LINE sticker panels. There are TWO characters: Character A is a chibi Q-version of the person in attached photo 1 (the worshipper/follower) — big round head, small body, cute proportions. Character B is a chibi Q-version of the person in attached photo 2 (the admired 'Big Bro') — also chibi style but with a slightly more confident, cool, and charismatic aura. Both characters maintain facial likeness to their respective reference photos. The overall theme is 'worshipping Big Bro' — Character A adores, follows, and admires Character B with funny, lively, and heartwarming expressions. Style is bright kawaii LINE sticker, vibrant colors, white background, soft rounded corners per panel. Each panel has a bold Traditional Chinese label in cute rounded bubble font at the bottom. The 16 panels in order are:【大哥威武】— Character B stands heroically with cape and glowing aura, Character A beside pumping fist in awe【跟著大哥走】— Character A happily trotting behind Character B with stars in eyes, arms swinging, both walking forward【大哥最強】— Character A holding up a giant championship trophy presenting it to Character B who looks cool and modest【佩服佩服】— Character A bowing repeatedly with both thumbs up, eyes sparkling with total admiration【大哥說了算】— Character B pointing forward with authority, Character A nodding vigorously with eager smile【大哥請喝茶】— Character A presenting a steaming cup of tea with both hands to Character B, sweet respectful smile【拜大哥】— Character A in full dramatic bow pose prostrating in worship, sparkles around Character B【大哥罩我】— Character B standing protectively with arms spread wide shielding Character A who peeks out safely from behind【跟緊大哥】— Character A grabbing Character B's sleeve tightly while running, determined face, speed lines【大哥英明】— Character A clapping enthusiastically while Character B strikes a wise thoughtful pose with a light bulb above【太崇拜了】— Character A fainting dramatically with heart eyes, seeing Character B surrounded by golden sparkle aura【大哥加油】— Character A waving pom-poms cheering for Character B who is flexing muscles confidently【大哥我愛你】— Character A holding a giant heart sign pointing at Character B, blushing face, shy but bold【大哥請指示】— Character A standing at attention like a soldier saluting Character B who is pointing at a map/plan【有大哥真好】— Both characters laughing together happily, Character A leaning on Character B, warm sunshine background【永遠跟著大哥】— Character A and Character B walking side by side into the sunset, Character A giving a big thumbs up, friendship vibes, warm golden glowAll text labels must be in Traditional Chinese with rounded cute bubble font. Both characters must maintain consistent facial likeness to their respective reference photos throughout all 16 panels. Keep the mood funny, warm, lively, and full of admiration energy. No extra English text. Clean, vibrant, high-quality kawaii LINE sticker aesthetic.",
+    date: "2026-05-09",
+    url: "",
+  },
+  {
+    id: 19,
+    title: "迷你分身~退休負面篇-1",
+    category: "Mini",
+    image: "./images/M02-Mini/M003-1.webp",
+    prompt:
+      "16:9寬屏比例，根據附圖人物造型進行創作：一位戴眼鏡、短黑髮、穿深藍色上衣的中年退休男性，保留照片中沉穩、內斂的氣質，轉化成可愛Q版卡通風格。畫面主題是「退休後負面心情分身圖」，人物正中央是一位大主角，旁邊圍繞多個迷你分身，每個分身用誇張又幽默的動作，分別呈現退休後的負面詞句：身形走樣、體重增加、智力下降、記憶退化、地位低落、家事繁重、病痛增加、孤獨自閉、人生無趣、心境空虛、百事無成、失落茫然、消沉低迷、心灰意冷、意興闌珊、孤寂無依。每個迷你分身旁邊加上清楚易讀的中文字標籤，像漫畫海報一樣排列整齊。整體風格要可愛、幽默、療癒，避免悲傷感，背景用溫暖居家客廳或柔和漸層背景，色彩明亮，細節豐富，構圖平衡，適合社群分享。",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 20,
+    title: "迷你分身~退休負面篇-2",
+    category: "Mini",
+    image: "./images/M02-Mini/M003-2.webp",
+    prompt:
+      "16:9寬屏比例，Q版可愛卡通風格圖片，主角是根據附圖人物造型進行創作：一位戴眼鏡、短黑髮、穿深藍色上衣的中年退休男性，保留照片中沉穩、內斂的氣質，轉化成可愛Q版卡通風格、表情無奈但萌翻天。畫面為溫馨客廳背景，暖黃燈光，分成13個迷你可愛分身泡泡場景，每個分身用誇張動作呈現退休負面詞句，旁邊用手寫體大字標註詞句文字，幽默療癒不悲傷，整體有趣像漫畫海報。 - 身形走樣：分身變大肚腩抱枕頭吃薯片，標「身形走樣」。 - 體重增加：分身秤上彈跳超重，標「體重增加」。 - 智力下降：分身抓頭忘記鑰匙在哪，標「智力下降」。 - 記憶退化：分身看相簿認不出自己，標「記憶退化」。 - 地位低落：分身孤單坐沙發無人問津，標「地位低落」。 - 家事繁重：分身淹沒衣山裡洗衣，標「家事繁重」。 - 病痛增加：分身揉腰咳嗽戴護膝，標「病痛增加」。 - 孤獨自閉：分身抱膝躲沙發角，標「孤獨自閉」。 - 人生無趣：分身盯牆發呆吹泡泡，標「人生無趣」。 - 心境空虛：分身心口空洞風吹過，標「心境空虛」。 - 百事無成：分身看空獎盃架灰塵，標「百事無成」。 - 失落茫然：分身低頭小淚眼汪汪，標「失落茫然」。 - 消沉低迷：分身癱地板無力翻身，標「消沉低迷」。 - 心灰意冷：分身吹灰轉心形煙霧，標「心灰意冷」。 - 意興闌珊：分身半途丟書畫筆，標「意興闌珊」。 - 孤寂無依：分身望窗外雨景孤單，標「孤寂無依」。 構圖橫向排列分身，中央大分身統領，色彩鮮豔可愛，Pixar風格細節豐富，高解析度。",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 21,
+    title: "迷你分身~退休負面篇-3",
+    category: "Mini",
+    image: "./images/M02-Mini/M003-3.webp",
+    prompt:
+      "16:9寬屏比例，根據附圖人物造型進行創作：一位戴眼鏡、短黑髮、穿深藍色上衣的中年退休男性，保留照片中沉穩、內斂的氣質，轉化成可愛Q版卡通風格。畫面主題是「退休後負面心情分身圖」，人物正中央是一位大主角，旁邊圍繞多個迷你分身，每個分身用誇張又幽默的動作，分別呈現退休後的負面詞句：身形走樣、體重增加、智力下降、記憶退化、地位低落、家事繁重、病痛增加、孤獨自閉、人生無趣、心境空虛、百事無成、失落茫然、消沉低迷、心灰意冷、意興闌珊、孤寂無依。每個迷你分身旁邊加上清楚易讀的中文字標籤，像漫畫海報一樣排列整齊。整體風格要可愛、幽默、療癒，避免悲傷感，背景用溫暖居家客廳或柔和漸層背景，色彩明亮，細節豐富，構圖平衡，適合社群分享。",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 22,
+    title: "迷你分身~退休負面篇-4",
+    category: "Mini",
+    image: "./images/M02-Mini/M003-4.webp",
+    prompt:
+      "16:9寬屏比例，根據附圖人物造型進行創作：一位戴眼鏡、短黑髮、穿深藍色上衣的中年退休男性，保留照片中沉穩、內斂的氣質，轉化成可愛Q版卡通風格。畫面主題是「退休後悲慘心情」，人物正中央是一位大主角，旁邊圍繞多個迷你分身，每個分身用誇張又幽默的動作，分別呈現退休後的負面詞句：身形走樣、體重增加、智力下降、記憶退化、地位低落、家事繁重、病痛增加、孤獨自閉、人生無趣、心境空虛、百事無成、失落茫然、消沉低迷、心灰意冷、意興闌珊、孤寂無依。每個迷你分身旁邊加上清楚易讀的中文字標籤，像漫畫海報一樣排列整齊。整體風格要可愛、幽默、療癒，避免悲傷感，背景用溫暖居家客廳或柔和漸層背景，色彩明亮，細節豐富，構圖平衡，適合社群分享。",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 23,
+    title: "迷你分身~正面積極篇-1",
+    category: "Mini",
+    image: "./images/M02-Mini/M004-1.webp",
+    prompt:
+      "16:9寬屏比例，Q版可愛卡通風格圖片，主角根據附圖人物造型進行創作：一位戴眼鏡、短黑髮、穿深藍色上衣的中年退休男性，保留照片中沉穩、內斂、親切的氣質，轉化成可愛Q版卡通風格，表情從容、自信、愉快。畫面為溫馨明亮的客廳或書房背景，暖色燈光，分成16個迷你可愛分身泡泡場景，每個分身用生動動作表現退休後的正面狀態，旁邊用清楚易讀的中文字標註詞句文字，整體幽默療癒、充滿希望、像一本退休快樂生活漫畫海報，色彩鮮豔但柔和，高解析度，構圖整齊平衡。 身形結實：分身精神飽滿地做伸展運動，標「身形結實」。 體態輕盈：分身輕快地散步微笑，標「體態輕盈」。 智慧提升：分身閱讀書本、靈光一閃，標「智慧提升」。 記憶清晰：分身整理筆記、條理分明，標「記憶清晰」。 地位受敬：分身被大家圍繞致意，標「地位受敬」。 家務有序：分身整理家居、井井有條，標「家務有序」。 身體康健：分身神清氣爽、活力十足，標「身體康健」。 獨處自在：分身安靜喝茶、享受閱讀，標「獨處自在」。 生活有趣：分身畫畫、種花、玩樂器，標「生活有趣」。 心境充實：分身胸口發光、神情安定，標「心境充實」。 事事有成：分身完成作品、比出勝利手勢，標「事事有成」。 心情明朗：分身抬頭看光、露出笑容，標「心情明朗」。 積極向上：分身元氣滿滿地向前走，標「積極向上」。 熱情依舊：分身手捧愛好作品、充滿幹勁，標「熱情依舊」。 興致盎然：分身興高采烈參與學習與活動，標「興致盎然」。 逍遙自在：分身望著窗外風景悠然微笑，標「逍遙自在」。 構圖橫向排列分身，中央大分身統領全場，周圍各迷你分身以泡泡或漫畫框形式分布，像是一張退休後幸福生活的主題海報。整體風格可愛、溫暖、明亮、充滿正能量，人物保持附圖中的外型特徵但卡通化處理，細節豐富，適合社群分享與收藏。",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 24,
+    title: "迷你分身~正面積極篇-1",
+    category: "Mini",
+    image: "./images/M02-Mini/M004-2.webp",
+    prompt:
+      "16:9寬屏比例，Q版可愛卡通風格圖片，主角根據附圖人物造型進行創作：一位戴眼鏡、短黑髮、穿深藍色上衣的中年退休男性，保留照片中沉穩、內斂、親切的氣質，轉化成可愛Q版卡通風格，表情從容、自信、愉快。畫面為溫馨明亮的客廳或書房背景，暖色燈光，分成16個迷你可愛分身泡泡場景，每個分身用生動動作表現退休後的正面狀態，旁邊用清楚易讀的中文字標註詞句文字，整體幽默療癒、充滿希望、像一本退休快樂生活漫畫海報，色彩鮮豔但柔和，高解析度，構圖整齊平衡。身形結實：分身精神飽滿地做伸展運動，標「身形結實」。體態輕盈：分身輕快地散步微笑，標「體態輕盈」。智慧提升：分身閱讀書本、靈光一閃，標「智慧提升」。記憶清晰：分身整理筆記、條理分明，標「記憶清晰」。地位受敬：分身被大家圍繞致意，標「地位受敬」。家務有序：分身整理家居、井井有條，標「家務有序」。身體康健：分身神清氣爽、活力十足，標「身體康健」。獨處自在：分身安靜喝茶、享受閱讀，標「獨處自在」。生活有趣：分身畫畫、種花、玩樂器，標「生活有趣」。心境充實：分身胸口發光、神情安定，標「心境充實」。事事有成：分身完成作品、比出勝利手勢，標「事事有成」。心情明朗：分身抬頭看光、露出笑容，標「心情明朗」。積極向上：分身元氣滿滿地向前走，標「積極向上」。熱情依舊：分身手捧愛好作品、充滿幹勁，標「熱情依舊」。興致盎然：分身興高采烈參與學習與活動，標「興致盎然」。逍遙自在：分身望著窗外風景悠然微笑，標「逍遙自在」。構圖橫向排列分身，中央大分身統領全場，周圍各迷你分身以泡泡或漫畫框形式分布，像是一張退休後幸福生活的主題海報。整體風格可愛、溫暖、明亮、充滿正能量，人物保持附圖中的外型特徵但卡通化處理，細節豐富，適合社群分享與收藏。",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 25,
+    title: "個人目標~網站宣傳-1",
+    category: "Personal",
+    image: "./images/P04-Personal/P001-1.webp",
+    prompt:
+      "根據以下網站網址，幫我生成一張網頁詳細的介紹海報，以附件人物Q版造型當做主角 https://yfchen-115.netlify.app/",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 26,
+    title: "個人目標~網站宣傳-2",
+    category: "Personal",
+    image: "./images/P04-Personal/P001-2.webp",
+    prompt:
+      "根據以下網站網址，幫我生成一張網頁詳細的介紹海報，以附件人物Q版造型當做主角 https://yfchen-https://yfchen-115.netlify.app/b01-book/f06-0-2026-note-new",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 27,
+    title: "AI工具~字體提示詞-1",
+    category: "AI",
+    image: "./images/A02-AI/AI51-Font-1.webp",
+    prompt: "提示詞使用~當提示詞當中需要字體說明時，可以參考",
+    date: "2026-05-12",
+    url: "",
+  },
+  {
+    id: 27,
+    title: "AI工具~字體提示詞-1",
+    category: "AI",
+    image: "./images/A02-AI/AI51-Font-2.webp",
+    prompt: "提示詞使用~當提示詞當中需要字體說明時，可以參考",
+    date: "2026-05-12",
+    url: "",
+  },
 ];
