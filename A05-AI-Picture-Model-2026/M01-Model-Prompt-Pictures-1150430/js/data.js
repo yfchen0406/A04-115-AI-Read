@@ -298,4 +298,24 @@ const promptsData = [
     date: "2026-05-12",
     url: "",
   },
+  {
+    id: 30,
+    title: "yfchen咖啡店海報",
+    category: "Product",
+    image: "./images/P01-Product/P01-01-coffee.webp",
+    prompt:
+      "Claude~優化提示詞~A premium coffee shop marketing advertisement for [悅風 YFChen Café]. The brand logo (as provided in the reference image) is placed prominently in the upper-left corner against a dark background with clean contrast and adequate padding — do not alter or distort the logo.The shop name [悅風 YFChen Café] is rendered as the hero typographic element in expressive Traditional Chinese steel-pen calligraphy (鋼筆字體) — fluid ink brushstroke style with fine nib precision, combining elegant Chinese characters with refined Latin letterforms in the same calligraphic hand.Layout: rich dark espresso-brown background with warm amber and ivory accents. Ten signature coffees are arranged in a high-end editorial grid, each served in premium ceramic cups with professional food photography lighting — soft directional shadows, rising steam wisps, and glossy surface highlights.The ten coffees with bilingual labels:1. 義式濃縮 Espresso2. 美式咖啡 Americano3. 卡布奇諾 Cappuccino4. 拿鐵 Latte5. 馥芮白 Flat White6. 摩卡 Mocha7. 瑪奇朵 Macchiato 8. 冷萃咖啡 Cold Brew9. 冰拿鐵 Iced Latte10. 季節限定 Seasonal SpecialEach coffee name displayed in Traditional Chinese steel-pen calligraphy with small elegant serif Latin subtitle beneath. Price tags optional in subtle gold ink.Overall mood: upscale third-wave café, sophisticated and aspirational, suitable for print and social media. Aspect ratio 4:5. Photorealistic render with rich depth of field.",
+    date: "2026-05-14",
+    url: "",
+  },
+  {
+    id: 31,
+    title: "yfchen咖啡店吧檯",
+    category: "Product",
+    image: "./images/P01-Product/P01-02-coffee.webp",
+    prompt:
+      "Claude~優化提示詞~A photorealistic interior photograph of an upscale Japanese-style specialty coffee shop, 16:9 widescreen ratio, no people present.SPACE LAYOUT:A central espresso bar runs across the middle ground — dark walnut wood counter with professional La Marzocco or Slayer espresso machine, tamper station, precise pour-over drip setup, neatly arranged ceramic cups and brewing tools. Behind the bar: open shelving displaying single-origin coffee bags, glassware, and small potted moss arrangements. In front of the bar: 4–6 individual seats with Japanese crafted wooden stools and cushions in muted linen or indigo fabric, each with a small side table.INTERIOR DESIGN:Japanese wabi-sabi minimalism meets refined café warmth. Materials: aged hinoki cypress wood paneling, textured plaster walls in warm greige, raw concrete flooring with dark wood accents, soft pendant lighting (Edison filament bulbs in smoked glass shades). Natural light streaming from frosted shoji-style side windows. Potted bonsai or small matcha-green plants as décor accents. Color palette: deep espresso brown, warm ivory, muted gold, soft charcoal.POSTER / SIGNAGE:On the main back wall or near the entrance: a framed A2-size vertical poster of ‘悅風 YFChen Café’ in Traditional Chinese steel-pen calligraphy, gold ink on dark kraft paper, displayed in a thin black lacquered wooden frame. The poster design should visually reference the aesthetic of the provided menu image — same dark background, gold calligraphic lettering, premium café branding. A secondary smaller framed print nearby reads: 「一杯好咖啡・悅風陪伴每個美好時刻」in delicate brushstroke script.ATMOSPHERE & LIGHTING:Moody, intimate, dramatic — cinematic depth of field with shallow focus on the espresso machine in the midground. Warm tungsten tones mixed with cool ambient fill. Steam wisps rising from the machine. The overall atmosphere evokes a high-end Tokyo third-wave coffee bar in Daikanyama or Nakameguro district.Photorealistic, architectural interior photography style, 16:9 aspect ratio, no humans.",
+    date: "2026-05-14",
+    url: "",
+  },
 ];

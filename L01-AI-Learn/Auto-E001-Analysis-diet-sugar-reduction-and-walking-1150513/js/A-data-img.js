@@ -22,7 +22,10 @@ export const arr_article = [
       {
         d1: "簡單說，現在學習生活任何大小事情都可以透過AI詢問反推，去得到最好的答案，所以我盡量整理我的學習紀錄，讓AI去好好自動化執行",
         col: "col-sm-6",
-        p2: [{ pic1: "./images/E001-F-1-1.webp", dec2: "" }],
+        p2: [
+          { pic1: "./images/E001-F-1-1.webp", dec2: "" },
+          { pic1: "./images/E001-D-1-1.webp", dec2: "" },
+        ],
       },
       { d1: "<br>" },
     ],
@@ -396,7 +399,10 @@ export const arr_article = [
               {
                 d1: "出現兩次，要特別注意。",
                 col: "col-sm-6",
-                p3R: [{ pic1: "./images/E001-F-4-1.webp", dec2: "" }],
+                p3R: [
+                  { pic1: "./images/E001-F-4-1.webp", dec2: "" },
+                  { pic1: "./images/E001-D-4-1.webp", dec2: "" },
+                ],
               },
             ],
           },
@@ -419,7 +425,10 @@ export const arr_article = [
               {
                 d1: "你的午餐和晚餐其實很多都還 OK，但被早餐拖累。",
                 col: "col-sm-6",
-                p3R: [{ pic1: "./images/E001-F-4-2.webp", dec2: "" }],
+                p3R: [
+                  { pic1: "./images/E001-F-4-2.webp", dec2: "" },
+                  { pic1: "./images/E001-D-4-2.webp", dec2: "" },
+                ],
               },
             ],
           },
@@ -453,7 +462,10 @@ export const arr_article = [
           {
             d1: "<br>",
             col: "col-sm-6",
-            p2: [{ pic1: "./images/E001-F-4-3.webp", dec2: "" }],
+            p3R: [
+              { pic1: "./images/E001-F-4-3.webp", dec2: "" },
+              { pic1: "./images/E001-D-4-3.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -488,7 +500,10 @@ export const arr_article = [
               {
                 d1: "改喝溫熱開水或自帶無糖茶，飽足感一樣，糖分直接砍掉 10g。",
                 col: "col-sm-6",
-                p3R: [{ pic1: "./images/E001-F-4-4.webp", dec2: "" }],
+                p3R: [
+                  { pic1: "./images/E001-F-4-4.webp", dec2: "" },
+                  { pic1: "./images/E001-D-4-4.webp", dec2: "" },
+                ],
               },
             ],
           },
@@ -526,6 +541,11 @@ export const arr_article = [
             c3s: [
               {
                 d1: "米糕本身是精製白米加糯米，升糖指數極高，豆花再淋一層糖水，午餐一次吃進大量快速糖分。",
+                col: "col-sm-6",
+                p3R: [
+                  { pic1: "./images/E001-F-5-1.webp", dec2: "" },
+                  { pic1: "./images/E001-D-5-1.webp", dec2: "" },
+                ],
               },
             ],
           },
@@ -541,7 +561,14 @@ export const arr_article = [
               {
                 d1: "亮點：05/05 早餐生菜沙拉＋水煮蛋、05/08 晚餐煎鱸魚、05/02 早餐兩顆水煮蛋，符合減糖原則。",
               },
-              { d1: "需注意：每天咖啡500cc、巧克力食品出現3次、豆花出現2次。" },
+              {
+                d1: "需注意：每天咖啡500cc、巧克力食品出現3次、豆花出現2次。",
+                col: "col-sm-6",
+                p3R: [
+                  { pic1: "./images/E001-F-5-2.webp", dec2: "" },
+                  { pic1: "./images/E001-D-5-2.webp", dec2: "" },
+                ],
+              },
             ],
           },
         ],
@@ -583,6 +610,14 @@ export const arr_article = [
               ["05/12（二）", "1,106步", "麥香魚漢堡", "⚠️ 漢堡日卻幾乎沒走路"],
             ],
           },
+          {
+            d1: "<br>",
+            col: "col-sm-6",
+            p3R: [
+              { pic1: "./images/E001-F-5-3.webp", dec2: "" },
+              { pic1: "./images/E001-D-5-3.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -610,6 +645,11 @@ export const arr_article = [
             c3s: [
               {
                 d1: "像05/09那種日子，在家看電視同時站著走動，輕鬆達到2,000步目標。",
+                col: "col-sm-6",
+                p3R: [
+                  { pic1: "./images/E001-F-5-4.webp", dec2: "" },
+                  { pic1: "./images/E001-D-5-4.webp", dec2: "" },
+                ],
               },
             ],
           },
