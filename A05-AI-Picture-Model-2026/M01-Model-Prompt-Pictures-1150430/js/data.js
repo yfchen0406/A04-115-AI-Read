@@ -328,4 +328,44 @@ const promptsData = [
     date: "2026-05-16",
     url: "",
   },
+  {
+    id: 33,
+    title: "中美大和解咖啡-休閒服",
+    category: "Product",
+    image: "./images/P01-Product/P01-04-coffee.webp",
+    prompt:
+      "提示詞很簡單~~以咖啡廳為背景三人合照，戴墨鏡男生站中間，圖片3(有川普也有習近平)當中左側二位站戴墨鏡男生兩邊",
+    date: "2026-05-18",
+    url: "",
+  },
+  {
+    id: 34,
+    title: "中美大和解咖啡-黑色西裝",
+    category: "Product",
+    image: "./images/P01-Product/P01-05-coffee.webp",
+    prompt:
+      "提示詞很簡單~~幫中間墨鏡男生換上黑色帥氣西裝，藍色領帶，依然戴墨鏡",
+    date: "2026-05-18",
+    url: "",
+  },
+  {
+    id: 35,
+    title: "中美大和解咖啡-深藍色西裝",
+    category: "Product",
+    image: "./images/P01-Product/P01-06-coffee.webp",
+    prompt:
+      "提示詞很簡單~~中間黑色墨鏡男生換上深藍色西裝，藍色領帶，依然戴墨鏡",
+    date: "2026-05-18",
+    url: "",
+  },
+  {
+    id: 36,
+    title: "大和解咖啡-皮夾克(Jensen Huang)",
+    category: "Product",
+    image: "./images/P01-Product/P01-07-coffee.webp",
+    prompt:
+      "提示詞很簡單~~幫中間黑色墨鏡男生換上黑色皮夾克(如圖片2)整體造型，依然帶上墨鏡",
+    date: "2026-05-18",
+    url: "",
+  },
 ];
