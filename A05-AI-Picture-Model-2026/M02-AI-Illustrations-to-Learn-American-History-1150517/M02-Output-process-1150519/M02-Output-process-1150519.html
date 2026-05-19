@@ -4,7 +4,7 @@
 <!-- 版面準備以 2 8 2 做切割 -->
 
 <head>
-  <title>D.用AI插圖認識美國史：【骯髒交易起，血淚之路終】~16-20 ~ 115.05.19-2</title>
+  <title>0.AI認識美國史：製作流程 ~ 115.05.19</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,18 +54,17 @@
     .yf-box-c3,
     .yf-box-c4,
     .yf-box-c5,
-    .yf-box-c6
-    {
-    border: 1px solid #4a90d9;
-    border-left: 1px solid #4a90d9;
-    border-radius: 6px;
-    padding: 6px 14px 6px 20px;
-    /* 左邊內距加大 */
-    margin: 8px 0 8px -10px;
-    /* 左邊往外推 */
-    background-color: #f0f7ff;
-    list-style: none;
-    /* 移除預設項目符號縮排問題 */
+    .yf-box-c6 {
+      border: 1px solid #4a90d9;
+      border-left: 1px solid #4a90d9;
+      border-radius: 6px;
+      padding: 6px 14px 6px 20px;
+      /* 左邊內距加大 */
+      margin: 8px 0 8px -10px;
+      /* 左邊往外推 */
+      background-color: #f0f7ff;
+      list-style: none;
+      /* 移除預設項目符號縮排問題 */
     }
 
     .icon {
@@ -180,8 +179,8 @@
 
   <!-- *************************************************************************** -->
   <header class="text-center p1 " style="margin-top: 75px;">
-    <h1 class="text-info yf-font1"><b style="color: #f0c060;">D.用AI插圖認識美國史：</b><b
-        style="color:#e8e0c8;">【骯髒交易起，血淚之路終】~</b><b style="color: #7eb8d4">16-20 ~ 115.05.19-2</b></h1>
+    <h1 class="text-info yf-font1"><b style="color: #f0c060;">0.AI認識美國史：</b><b style="color:#e8e0c8;">【製作流程】~</b><b
+        style="color: #7eb8d4"> 115.05.19-3</b></h1>
     <p class="yf-color-as1 yf-font1"></p>
   </header>
   <!-- ############################################################################ -->
@@ -195,17 +194,20 @@
       <div class="container">
         <ul class="pagination justify-content-center">
 
-          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-16-20-Charlie.html"
+          <!-- <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-16-20-Charlie.html"
               target="_blank">查理布朗</a>
           </li>
           <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-16-20-USA-Superman.html"
               target="_blank">蜘蛛人</a>
           </li>
           <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-16-20-fong.html" target="_blank">個人Q版</a>
-          </li>
-          <!-- <li class="page-item"><a class="page-link yf-font1 yf2" href="./B115-PPT-NanoBananapro-info-fong.html"
-              target="_blank">個人Q版二版</a>
           </li> -->
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-NanoBananapro-fong.html"
+              target="_blank">個人Q版資訊圖表</a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-NanoBananapro-Minions.html"
+              target="_blank">教學型資訊圖表</a>
+          </li>
           <!-- <li class="page-item"><a class="page-link yf-font1 yf4" href="./B112-all-PPT-NanoBananapro-fong.html"
               target="_blank">帥哥永峯⭐⭐⭐</a>
           </li> -->
@@ -527,7 +529,10 @@
                               </div>
                             </div>
                             <!--  第4層 -->
-                            <ul v-if="TitleC.c4s">
+                            <!-- 😀😀😀 boxC4: true → c4s 整組加框 -->
+                            <ul v-if="TitleC.c4s" :class="{ 'yf-box-c4': TitleC.boxC4 }">
+                              <!-- <ul v-if="TitleC.c4s"> -->
+
                               <li v-for="(TitleD, IndexD) in TitleC.c4s" :key="IndexD"
                                 :style="{ 'list-style-type': TitleD.d1.includes('<br>') ? 'none' : 'disc' }">
                                 <span v-html="TitleD.d1"></span>
@@ -565,7 +570,10 @@
                                 </div>
 
                                 <!--  第5層 -->
-                                <ul v-if="TitleD.c5s">
+                                <!-- 😀😀😀 boxC5: true → c5s 整組加框 -->
+                                <ul v-if="TitleD.c2s" :class="{ 'yf-box-c5': TitleD.boxC5 }">
+                                  <!-- <ul v-if="TitleD.c5s"> -->
+
                                   <li v-for="(TitleE, IndexD) in TitleD.c5s" :key="IndexD"
                                     :style="{ 'list-style-type': TitleE.d1.includes('<br>') ? 'none' : 'disc' }">
                                     <span v-html="TitleE.d1"></span>
@@ -869,7 +877,7 @@
                                   <!-- 第六層 -->
                                   <!-- 😀😀😀 boxC6: true → c6s 整組加框 -->
                                   <!--  <ul v-if="grandC.c6s">-->
-                                  <ul v-if="grandC.c6s" :class="{ 'yf-box-c6': grandB.boxC6 }">
+                                  <ul v-if="grandC.c6s" :class="{ 'yf-box-c6': grandC.boxC6 }">
 
 
                                     <li v-for="(grandD, g5Index) in grandC.c6s" :key="g5Index"
@@ -1027,7 +1035,7 @@
 
   <script type="module">
     import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
-    import { arr_article } from './js/M02-16-20.js';
+    import { arr_article } from './js/M02-Output.js';
 
     const appList = createApp({
       setup() {
