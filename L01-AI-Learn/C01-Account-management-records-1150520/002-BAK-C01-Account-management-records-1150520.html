@@ -989,7 +989,21 @@
       DB.save('ai_logs', logs);
     }
 
-    // 資料由 Google Sheets 啟動時自動載入
+    // Seed default data if empty
+    if (!platforms.length) {
+      platforms = [
+        { id: 'gpt', name: 'GPT Image 2.0', icon: '🎨', limit: 25, color: '#e0f2fe' },
+        { id: 'nano', name: 'Nano Banana Pro', icon: '🍌', limit: 20, color: '#fef9c3' },
+        { id: 'nlm', name: 'NotebookLM', icon: '📓', limit: 15, color: '#f0fdf4' },
+      ];
+      accounts = [
+        { id: 'a1', platformId: 'gpt', email: 'example1@gmail.com', nick: '帳號 A', note: '' },
+        { id: 'a2', platformId: 'gpt', email: 'example2@gmail.com', nick: '帳號 B', note: '' },
+        { id: 'a3', platformId: 'nano', email: 'example1@gmail.com', nick: '帳號 A', note: '' },
+        { id: 'a4', platformId: 'nlm', email: 'example1@gmail.com', nick: '帳號 A', note: '' },
+      ];
+      persist();
+    }
 
     let nextId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
 
@@ -1561,25 +1575,23 @@
       }
     }
 
-    async function loadFromGS(silent = false) {
+    async function loadFromGS() {
       const url = getGSUrl();
       if (!url) { showToast('⚠️ 請先設定 Web App 網址'); return; }
-      if (!silent && !confirm('從 Google Sheets 讀取將覆蓋目前本地資料，確定嗎？')) return;
-      if (!silent) setGSStatus('⏳ 讀取中...', 'blue');
+      if (!confirm('從 Google Sheets 讀取將覆蓋目前本地資料，確定嗎？')) return;
+      setGSStatus('⏳ 讀取中...', 'blue');
       try {
         const res = await fetch(url + '?action=loadAll');
         const data = await res.json();
-        if (data.platforms && data.platforms.length) platforms = data.platforms;
-        if (data.accounts && data.accounts.length) accounts = data.accounts;
-        if (data.logs && data.logs.length) logs = data.logs;
+        if (data.platforms) platforms = data.platforms;
+        if (data.accounts) accounts = data.accounts;
+        if (data.logs) logs = data.logs;
         persist();
         renderDashboard();
-        if (!silent) {
-          setGSStatus(`✅ 讀取完成！平台 ${platforms.length} 筆、帳號 ${accounts.length} 筆、紀錄 ${logs.length} 筆`, 'green');
-          showToast('⬇️ 已從 Google Sheets 讀取資料');
-        }
+        setGSStatus(`✅ 讀取完成！平台 ${platforms.length} 筆、帳號 ${accounts.length} 筆、紀錄 ${logs.length} 筆`, 'green');
+        showToast('⬇️ 已從 Google Sheets 讀取資料');
       } catch (e) {
-        if (!silent) setGSStatus('❌ 讀取失敗：' + e.message, 'red');
+        setGSStatus('❌ 讀取失敗：' + e.message, 'red');
       }
     }
 
@@ -1698,33 +1710,7 @@ function getOrCreateSheet(name) {
     // INIT
     // ────────────────────────────────────────
     initHeader();
-
-    // 啟動時自動從 Google Sheets 載入資料
-    (async () => {
-      // 先顯示載入中畫面
-      document.getElementById('dashboardContent').innerHTML = `
-        <div style="text-align:center;padding:60px 20px;">
-          <div style="font-size:36px;margin-bottom:16px;">☁️</div>
-          <div style="font-size:16px;color:var(--sky-700);font-weight:500;">正在從 Google Sheets 載入資料...</div>
-          <div style="font-size:13px;color:var(--gray-400);margin-top:8px;">請稍候</div>
-        </div>`;
-      document.getElementById('summaryRow').innerHTML = '';
-
-      await loadFromGS(true);  // silent 模式，不彈 confirm
-
-      renderDashboard();  // 載入完成後重新渲染
-
-      // 若資料庫是空的才提示
-      if (!platforms.length && !accounts.length) {
-        document.getElementById('dashboardContent').innerHTML = `
-          <div style="text-align:center;padding:60px 20px;">
-            <div style="font-size:36px;margin-bottom:16px;">📋</div>
-            <div style="font-size:16px;color:var(--sky-700);font-weight:500;">Google Sheets 尚無資料</div>
-            <div style="font-size:13px;color:var(--gray-400);margin-top:8px;">請至「⚙️ 設定管理」新增平台與帳號</div>
-          </div>`;
-      }
-    })();
-
+    renderDashboard();
     // GS 設定在切換到設定頁時才初始化（避免 DOM 還沒渲染）
     const origRenderSettings = renderSettings;
     renderSettings = function () {
