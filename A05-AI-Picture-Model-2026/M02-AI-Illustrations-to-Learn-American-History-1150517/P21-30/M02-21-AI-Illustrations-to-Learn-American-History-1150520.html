@@ -4,7 +4,8 @@
 <!-- 版面準備以 2 8 2 做切割 -->
 
 <head>
-  <title>C.用AI插圖認識美國史：【黨爭烽火起，建國路崎嶇】~11-15 ~ 115.05.19</title>
+  <title>E.用AI插圖認識美國史：【林肯護聯邦，解放黑奴成】~21-25 ~ 115.05.20</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
@@ -48,6 +49,24 @@
     rel="stylesheet">
 
   <style>
+    /*   😀😀😀 1150519 加框修改*/
+    .yf-box-c2,
+    .yf-box-c3,
+    .yf-box-c4,
+    .yf-box-c5,
+    .yf-box-c6 {
+      border: 1px solid #4a90d9;
+      border-left: 1px solid #4a90d9;
+      border-radius: 6px;
+      padding: 6px 14px 6px 20px;
+      /* 左邊內距加大 */
+      margin: 8px 0 8px -10px;
+      /* 左邊往外推 */
+      background-color: #f0f7ff;
+      list-style: none;
+      /* 移除預設項目符號縮排問題 */
+    }
+
     .icon {
       width: 1em;
       height: 1em;
@@ -160,7 +179,8 @@
 
   <!-- *************************************************************************** -->
   <header class="text-center p1 " style="margin-top: 75px;">
-    <h1 class="text-info yf-font1"><b style="color: #f0c060;">C.用AI插圖認識美國史：</b><b style="color:#e8e0c8;">【黨爭烽火起，建國路崎嶇】~</b><b style="color: #7eb8d4">11-15 ~ 115.05.19</b></h1>
+    <h1 class="text-info yf-font1"><b style="color: #f0c060;">E.用AI插圖認識美國史：</b><b
+        style="color:#e8e0c8;">【林肯護聯邦，解放黑奴成】~</b><b style="color: #7eb8d4">21-25 ~ 115.05.20</b></h1>
     <p class="yf-color-as1 yf-font1"></p>
   </header>
   <!-- ############################################################################ -->
@@ -174,14 +194,12 @@
       <div class="container">
         <ul class="pagination justify-content-center">
 
-          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-11-15-Garfield.html"
-              target="_blank">加菲貓 (Garfield)</a>
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-21-25-Conan.html" target="_blank">柯南</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-11-15-USA-BatMan.html"
-              target="_blank">蝙蝠俠</a>
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-21-25-USA-IronMan.html"
+              target="_blank">鋼鐵俠</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-11-15-fong.html"
-              target="_blank">個人Q版</a>
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-21-25-fong.html" target="_blank">個人Q版</a>
           </li>
           <!-- <li class="page-item"><a class="page-link yf-font1 yf2" href="./B115-PPT-NanoBananapro-info-fong.html"
               target="_blank">個人Q版二版</a>
@@ -319,6 +337,7 @@
                   <li v-for="TitleA in item.t1"
                     :style="{ 'list-style-type': TitleA.d1.includes('<br>') ? 'none' : 'disc' }">
                     <!--  第一層 -->
+
                     <span class="" v-html="TitleA.d1"></span>
                     <!-- 新增條件渲染的表格 字體大小控制在18px，等同於h6-->
                     <!-- <h6> -->
@@ -382,7 +401,11 @@
                         </div>
                       </div>
                     </div>
-                    <ul v-if="TitleA.c2s">
+                    <!-- 😀😀😀 1150519 加框修改 以下舊資料 -->
+                    <!-- <ul v-if="TitleA.c2s"> -->
+                    <!-- boxC2: true → c2s 整組加框 -->
+                    <ul v-if="TitleA.c2s" :class="{ 'yf-box-c2': TitleA.boxC2 }">
+                      <!-- 😀😀😀 1150519 加框修改 以上 -->
                       <li v-for="(TitleB, IndexB) in TitleA.c2s" :key="IndexB"
                         :style="{ 'list-style-type': TitleB.d1.includes('<br>') ? 'none' : 'disc' }">
                         <!--  第二層 -->
@@ -440,7 +463,12 @@
                           </div>
                         </div>
                         <!--  第三層 -->
-                        <ul v-if="TitleB.c3s">
+                        <!-- 😀😀😀 1150519 加框修改 以下舊資料 -->
+                        <!-- <ul v-if="TitleB.c3s"> -->
+                        <!-- boxC3: true → c3s 整組加框 -->
+                        <ul v-if="TitleB.c3s" :class="{ 'yf-box-c3': TitleB.boxC3 }">
+                          <!-- 😀😀😀 1150519 加框修改 以上 -->
+
                           <li v-for="(TitleC, IndexC) in TitleB.c3s" :key="IndexC"
                             :style="{ 'list-style-type': TitleC.d1.includes('<br>') ? 'none' : 'disc' }">
                             <span v-html="TitleC.d1"></span>
@@ -611,7 +639,8 @@
                       v-html="child.d1">
                     </span> <a href="#n0"><i class="fa-solid fa-backward yf-color-as1"></i></a> </h4>
                   <!-- 第二層 -->
-                  <ul v-if="child.c2s">
+                  <!-- 😀😀😀 boxC2: true → c2s 整組加框 -->
+                  <ul v-if="child.c2s" :class="{ 'yf-box-c2': child.boxC2 }">
                     <li v-for="(grand, grandIndex) in child.c2s" :key="grandIndex"
                       :style="{ 'list-style-type': grand.d1.includes('<br>') ? 'none' : 'disc' }">
                       <span v-html="grand.d1"></span>
@@ -692,7 +721,9 @@
 
 
                       <!-- 第三層 -->
-                      <ul v-if="grand.c3s">
+                      <!-- 😀😀😀 boxC3: true → c3s 整組加框 -->
+                      <!-- <ul v-if="grand.c3s"> -->
+                      <ul v-if="grand.c3s" :class="{ 'yf-box-c3': grand.boxC3 }">
                         <li v-for="(grandA, grandAIndex) in grand.c3s" :key="grandAIndex"
                           :style="{ 'list-style-type': grandA.d1.includes('<br>') ? 'none' : 'disc' }">
                           <span v-html="grandA.d1"></span>
@@ -751,7 +782,10 @@
                             </div>
                           </div>
                           <!-- 第四層 -->
-                          <ul v-if="grandA.c4s">
+                          <!-- 😀😀😀 boxC4: true → c4s 整組加框 -->
+                          <!-- <ul v-if="grandA.c4s">-->
+                          <ul v-if="grandA.c4s" :class="{ 'yf-box-c4': grandA.boxC4 }">
+
                             <li v-for="(grandB, g4Index) in grandA.c4s" :key="g4Index"
                               :style="{ 'list-style-type': grandB.d1.includes('<br>') ? 'none' : 'disc' }">
                               <span v-html="grandB.d1"></span>
@@ -788,7 +822,11 @@
                                 </div>
                               </div>
                               <!-- 第五層 -->
-                              <ul v-if="grandB.c5s">
+                              <!-- 😀😀😀 boxC5: true → c5s 整組加框 -->
+                              <!-- <ul v-if="grandB.c5s"> -->
+                              <ul v-if="grandB.c5s" :class="{ 'yf-box-c5': grandB.boxC5 }">
+
+
                                 <li v-for="(grandC, g5Index) in grandB.c5s" :key="g5Index"
                                   :style="{ 'list-style-type': grandC.d1.includes('<br>') ? 'none' : 'disc' }">
                                   <span v-html="grandC.d1"></span>
@@ -827,7 +865,11 @@
                                     </div>
                                   </div>
                                   <!-- 第六層 -->
-                                  <ul v-if="grandC.c6s">
+                                  <!-- 😀😀😀 boxC6: true → c6s 整組加框 -->
+                                  <!--  <ul v-if="grandC.c6s">-->
+                                  <ul v-if="grandC.c6s" :class="{ 'yf-box-c6': grandB.boxC6 }">
+
+
                                     <li v-for="(grandD, g5Index) in grandC.c6s" :key="g5Index"
                                       :style="{ 'list-style-type': grandD.d1.includes('<br>') ? 'none' : 'disc' }">
                                       <span v-html="grandD.d1"></span>
@@ -932,7 +974,7 @@
 
 
         <h5 class="yf-font yf3 text-center"></h5>
-        <h6 class="yf-font text-primary text-center"> ~ (115.05.19) ~ 11-15 </h6>
+        <h6 class="yf-font text-primary text-center"> ~ (115.05.20) ~ 21-25 </h6>
         <!-- 動畫容器 先入為主的成見，會讓原本可能做得到的事變成不可能。 -->
 
 
@@ -983,7 +1025,7 @@
 
   <script type="module">
     import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
-    import { arr_article } from './js/M02-11-15.js';
+    import { arr_article } from './js/M02-21-25.js';
 
     const appList = createApp({
       setup() {
