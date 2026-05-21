@@ -1,34 +1,138 @@
 <div class="container yf-font1">
-  <ul class="pagination justify-content-center mt-1">
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P01-10/M02-01-AI-Illustrations-to-Learn-American-History-1150517.html">A:蠻荒到立國，美洲五百年~01-05</a>
-    </li>
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P01-10/M02-06-AI-Illustrations-to-Learn-American-History-1150518.html">B:獨立宣言立，聯邦憲法成~06-10</a>
-    </li>
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P11-20/M02-11-AI-Illustrations-to-Learn-American-History-1150519.html">C:黨爭烽火起，建國路崎嶇~11-15</a>
-    </li>
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P11-20/M02-16-AI-Illustrations-to-Learn-American-History-1150520.html">D:骯髒交易起，血淚之路終~16-20</a>
-    </li>
-    </li>
+    <!-- 獨立且專屬的藍色系導覽按鈕 CSS 樣式，不與 Bootstrap 或 yf-font1 衝突 -->
+    <style>
+        .history-nav-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0;
+            list-style: none;
+            /* 移除預設的清單符號 */
+        }
 
-  </ul>
-  <ul class="pagination justify-content-center mt-1">
+        .history-nav-item {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            /* 桌機版預設一列 4 個按鈕 */
+            flex: 1 1 calc(25% - 12px);
+            min-width: 220px;
+        }
 
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P21-30/M02-21-AI-Illustrations-to-Learn-American-History-1150520.html">E:林肯護聯邦，解放黑奴成~21-25</a>
-    </li>
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P21-30/M02-26-AI-Illustrations-to-Learn-American-History-1150521.html">F:重建夢碎裂，鍍金時代起~26-30</a>
-    </li>
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/M02-01-AI-Illustrations-to-Learn-American-History-1150517.html">G:31-35</a>
-    </li>
-    <li class="page-item"><a class="page-link"
-        href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/M02-01-AI-Illustrations-to-Learn-American-History-1150517.html">H:36-40</a>
-    </li>
+        .history-nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7px 8px;
+            color: #1e40af;
+            /* 經典深藍色 */
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            /* 圓角設計 */
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            box-sizing: border-box;
+        }
 
-  </ul>
+        /* 懸停動態效果 */
+        .history-nav-btn:hover {
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+            border-color: #1d4ed8 !important;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(29, 78, 216, 0.2);
+            text-decoration: none;
+        }
+
+        /* 點擊瞬間微回饋 */
+        .history-nav-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(29, 78, 216, 0.15);
+        }
+
+        /* 響應式：手機與平板直向優化 */
+        @media (max-width: 992px) {
+            .history-nav-item {
+                /* 平板與手機呈現一列 2 個按鈕 */
+                flex: 1 1 calc(50% - 12px);
+                min-width: 160px;
+            }
+
+            .history-nav-btn {
+                padding: 12px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .history-nav-item {
+                /* 超小螢幕單行排列 */
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+
+    <!-- 第一排 A-D -->
+    <ul class="history-nav-row mt-1">
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P01-10/M02-01-AI-Illustrations-to-Learn-American-History-1150517.html">
+                A:蠻荒到立國，美洲五百年~01-05
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P01-10/M02-06-AI-Illustrations-to-Learn-American-History-1150518.html">
+                B:獨立宣言立，聯邦憲法成~06-10
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P11-20/M02-11-AI-Illustrations-to-Learn-American-History-1150519.html">
+                C:黨爭烽火起，建國路崎嶇~11-15
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P11-20/M02-16-AI-Illustrations-to-Learn-American-History-1150520.html">
+                D:骯髒交易起，血淚之路終~16-20
+            </a>
+        </li>
+    </ul>
+
+    <!-- 第二排 E-H -->
+    <ul class="history-nav-row mt-1">
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P21-30/M02-21-AI-Illustrations-to-Learn-American-History-1150520.html">
+                E:林肯護聯邦，解放黑奴成~21-25
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P21-30/M02-26-AI-Illustrations-to-Learn-American-History-1150521.html">
+                F:重建夢碎裂，鍍金時代起~26-30
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P31-40/M02-31-AI-Illustrations-to-Learn-American-History-1150521.html">
+                G:強國初成形，平等夢未圓~31-35
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P31-40/M02-36-AI-Illustrations-to-Learn-American-History-1150522.html">
+                H:禁酒養黑幫，股災催二戰~36-40
+            </a>
+        </li>
+    </ul>
 </div>
