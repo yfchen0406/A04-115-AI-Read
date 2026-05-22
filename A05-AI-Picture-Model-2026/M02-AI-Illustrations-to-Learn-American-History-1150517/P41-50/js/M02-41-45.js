@@ -8,6 +8,12 @@ export const arr_article = [
       },
       {
         d1: "這場悲劇讓胡佛總統聲望崩盤，也讓二十世紀最重要的政治人物羅斯福趁勢崛起，開啟了史無前例的四屆總統任期，徹底改變了美國政黨格局和政府該扮演什麼角色。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "../images/P41-45/M02-2I-N-41-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-F-41-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-R-41-0.webp", dec2: "" },
+        ],
       },
       { d1: "<br>" },
     ],
@@ -27,6 +33,12 @@ export const arr_article = [
           },
           {
             d1: "這場流血衝突讓胡佛被罵成冷血無能，也給了對手羅斯福絕佳的攻擊機會。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-41-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-41-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-41-1.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -41,6 +53,12 @@ export const arr_article = [
           },
           {
             d1: "不過美國人也很怕出現獨裁者，所以羅斯福一死，馬上修憲規定總統最多只能做兩任——寧可犧牲讓偉人多幹幾年的好處，也要確保國家不會走向專制。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-41-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-41-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-41-2.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -57,6 +75,12 @@ export const arr_article = [
           },
           {
             d1: "這個一百八十度的大轉彎，不只讓美國政黨的支持群體大洗牌，也讓後來的政治鬥爭，變成「支持新政」vs.「反對新政」的長期對立。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-41-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-41-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-41-3.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -72,6 +96,12 @@ export const arr_article = [
       },
       {
         d1: "內容包括他顯赫卻有爭議的私生活、隱藏殘疾的政治手腕，以及上台後用「新政」擴大政府權力、試圖拯救經濟，最終重塑美國政治生態。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "../images/P41-45/M02-2I-N-42-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-F-42-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-R-42-0.webp", dec2: "" },
+        ],
       },
       { d1: "<br>" },
     ],
@@ -89,6 +119,12 @@ export const arr_article = [
           },
           {
             d1: "這種堅強又精明的做法，讓他成功在那個重視領袖體格的年代脫穎而出。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-42-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-42-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-42-1.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -108,6 +144,12 @@ export const arr_article = [
           },
           {
             d1: "這波「新官上任三把火」，後來成了所有美國總統上任後的表現標準。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-42-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-42-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-42-2.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -125,6 +167,12 @@ export const arr_article = [
           { d1: "這是因為當時全球經濟崩盤，光靠市場自己調節已經沒用了。" },
           {
             d1: "他關閉銀行防止擠兌、讓美元脫離金本位、強迫證券公司公開財報，試圖重建金融秩序。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-42-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-42-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-42-3.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -142,6 +190,12 @@ export const arr_article = [
           { d1: "這其實是為了減少供應、抬高價格，好讓農民有收入活下去。" },
           {
             d1: "雖然新政讓國會對總統幾乎言聽計從，但美國經濟真正恢復，其實要等到二戰開打；而民主黨也在1937年中期選舉慘敗。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-42-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-42-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-42-4.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -154,6 +208,12 @@ export const arr_article = [
     t1: [
       {
         d1: "這段講羅斯福在第二、第三任期面對的兩大難題：對內差點跟最高法院鬧翻，動搖三權分立；對外則要在民間強烈「孤立主義」和備戰之間小心平衡，最後帶領美國走上世界舞台中心。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "../images/P41-45/M02-2I-N-43-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-F-43-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-R-43-0.webp", dec2: "" },
+        ],
       },
       { d1: "<br>" },
     ],
@@ -173,6 +233,12 @@ export const arr_article = [
           },
           {
             d1: "結果他在1938年中期選舉慘敗，失去國會無條件支持，新政推進也大幅放緩。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-43-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-43-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-43-1.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -189,6 +255,12 @@ export const arr_article = [
           },
           {
             d1: "羅斯福只好一邊偷偷跟邱吉爾、蔣介石聯絡，一邊對國內演戲安撫反戰情緒。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-43-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-43-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-43-2.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -206,6 +278,12 @@ export const arr_article = [
           },
           {
             d1: "雖然嘴上說不參戰，但他心裡清楚躲不掉，一上任就開始秘密擴軍備戰，以防萬一。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-43-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-43-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-43-3.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -221,6 +299,12 @@ export const arr_article = [
           { d1: "他透過廣播不斷喊話，但孤立主義還是很強。" },
           {
             d1: "直到日本偷襲珍珠港，給了他一個誰都無法反對的理由，美國才正式撕掉和平假面具，全力投入二戰。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-43-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-43-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-43-4.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -234,7 +318,15 @@ export const arr_article = [
       {
         d1: "這段分析第二次世界大戰爆發的必然性與早期戰況，重點講德、義、日如何因困境與野心走向極端，以及英法「綏靖政策」的算計失誤，導致防線崩潰。",
       },
-      { d1: "最後因德國攻蘇聯、日本炸珍珠港，戰爭升級為全球混戰。" },
+      {
+        d1: "最後因德國攻蘇聯、日本炸珍珠港，戰爭升級為全球混戰。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "../images/P41-45/M02-2I-N-44-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-F-44-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-R-44-0.webp", dec2: "" },
+        ],
+      },
       { d1: "<br>" },
     ],
     c1s: [
@@ -252,6 +344,12 @@ export const arr_article = [
           },
           {
             d1: "這一切混亂，都是因為舊秩序守不住，新勢力又想用武力搶地盤，大戰幾乎不可避免。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-44-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-44-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-44-1.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -270,6 +368,12 @@ export const arr_article = [
           { d1: "三是英法暗自希望德國往東打，最好跟蘇聯拼個你死我活。" },
           {
             d1: "結果希特勒和史達林私下簽互不侵犯條約，還一起瓜分波蘭，讓想坐收漁利的英法傻眼。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-44-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-44-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-44-2.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -291,6 +395,12 @@ export const arr_article = [
           },
           {
             d1: "英國眼看不妙，趕緊在敦克爾克撤軍，還把自己留在法國的軍艦炸掉，免得被德軍拿走。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-44-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-44-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-44-3.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -309,6 +419,12 @@ export const arr_article = [
           { d1: "二是日本偷襲珍珠港，把美國正式拖下水。" },
           {
             d1: "這兩件事一發生，原本分散的戰火串成一體，二戰正式變成全球大混戰。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-44-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-44-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-44-4.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -322,6 +438,12 @@ export const arr_article = [
       { d1: "這段聚焦二戰關鍵轉折點：希特勒打蘇聯、日本炸珍珠港。" },
       {
         d1: "分析這些決策背後的算計與誤判，以及它們如何終結美國孤立主義，讓這頭「工業巨獸」參戰，徹底扭轉戰局。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "../images/P41-45/M02-2I-N-45-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-F-45-0.webp", dec2: "" },
+          { pic1: "../images/P41-45/M02-2I-R-45-0.webp", dec2: "" },
+        ],
       },
       { d1: "<br>" },
     ],
@@ -339,6 +461,12 @@ export const arr_article = [
           },
           {
             d1: "沒想到這一打，戰線拉超長，還把蘇聯逼到英國那邊，德國從此被兩面夾擊。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-45-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-45-1.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-45-1.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -354,6 +482,12 @@ export const arr_article = [
           },
           {
             d1: "當時日本軍國主義高漲，加上過去「賭國運」常贏的迷信，還有海軍想壓過陸軍，最後決定孤注一擲，先炸癱美國海軍，好在談判桌上占便宜。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-45-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-45-2.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-45-2.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -371,6 +505,12 @@ export const arr_article = [
           },
           {
             d1: "更糟的是，這次偷襲給了美國一個完美理由，讓原本只想看戲的美國民眾，瞬間團結起來支持參戰。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-45-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-45-3.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-45-3.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
@@ -389,6 +529,12 @@ export const arr_article = [
           },
           {
             d1: "無論是中國、英國還是蘇聯，士氣都大振；而德國和日本，也即將親身體驗什麼叫「實力碾壓」。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "../images/P41-45/M02-2I-N-45-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-F-45-4.webp", dec2: "" },
+              { pic1: "../images/P41-45/M02-2I-R-45-4.webp", dec2: "" },
+            ],
           },
           { d1: "<br>" },
         ],
