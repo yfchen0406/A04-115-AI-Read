@@ -22,7 +22,21 @@ export const arr_article = [
       },
       {
         d1: "此案至今仍是美國史上最爭議的政治謎團之一。",
-        c2s: [{ d1: "<br>" }],
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P61-65/M02-2M-J-61-0.webp",
+            dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-F-61-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-R-61-0.webp",
+            dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+          },
+        ],
       },
     ],
     c1s: [
@@ -39,7 +53,21 @@ export const arr_article = [
           { d1: "認為那些死掉的人只是被滅口的棋子。" },
           {
             d1: "為了平息民間的怒火與猜疑，繼任的詹森總統請出法律界大佬沃倫大法官成立調查小組，希望趕快找出真相給大眾一個交代。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-61-1.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-61-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-61-1.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -59,7 +87,21 @@ export const arr_article = [
           },
           {
             d1: "這個結論讓深愛甘迺迪的民眾完全無法接受，反而激發了更多人開始自發尋找「真正的答案」。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-61-2.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-61-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-61-2.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -80,7 +122,21 @@ export const arr_article = [
           },
           {
             d1: "這種情殺論點雖然聽起來像八卦，但在當時竟然還有不少支持者。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-61-3.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-61-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-61-3.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -98,7 +154,21 @@ export const arr_article = [
           { d1: "另外，那些賣武器的軍火商集團也被懷疑。" },
           {
             d1: "因為他們最希望看到世界打大仗，這樣才能肥得流油，而甘迺迪的和平政策擋了這群人的財路。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-61-4.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-61-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-61-4.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -116,7 +186,21 @@ export const arr_article = [
           { d1: "直接把美國推進越戰的泥潭。" },
           {
             d1: "這種政策上的巨大轉變，讓陰謀論者更加深信，這場刺殺案背後隱藏著高層權力鬥爭與軍事利益的交換，絕非孤狼犯案那麼簡單。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-61-5.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-61-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-61-5.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -149,7 +233,21 @@ export const arr_article = [
       },
       {
         d1: "這波運動為1963年「向華盛頓進軍」與後續《平權法案》奠定基礎。",
-        c2s: [{ d1: "<br>" }],
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P61-65/M02-2M-J-62-0.webp",
+            dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-F-62-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-R-62-0.webp",
+            dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+          },
+        ],
       },
     ],
     c1s: [
@@ -166,7 +264,21 @@ export const arr_article = [
           { d1: "為了面子和輿論宣傳，美國政府不得不開始正視這些隔離政策。" },
           {
             d1: "這股國內的不平與國外的壓力湊在一起，讓黑人平權運動在五六零年代迎來了新一波的高峰。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-62-1.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-62-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-62-1.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -187,7 +299,21 @@ export const arr_article = [
           { d1: "這完全違反了憲法精神。" },
           {
             d1: "這個判決正式宣佈學校裡的種族隔離違法。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-62-2.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-62-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-62-2.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -208,7 +334,21 @@ export const arr_article = [
           { d1: "這場抗爭讓年輕的牧師馬丁路德金一戰成名。" },
           {
             d1: "他提出了「公民不服從」的概念，主張當法律違背良知與正義時，人們有權利透過非暴力的手段來反抗。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-62-3.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-62-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-62-3.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -227,7 +367,21 @@ export const arr_article = [
           { d1: "甚至一度主張黑人應該跟白人徹底分開，甚至獨立建國。" },
           {
             d1: "不過，隨著運動發展，這些不同派系的領袖後來也慢慢達成共識。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-62-4.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-62-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-62-4.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -248,7 +402,21 @@ export const arr_article = [
           { d1: "雖然這幾個孩子在校內受盡欺負，只有一人順利畢業。" },
           {
             d1: "但這件事向全美展現了聯邦政府落實法律的決心。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-62-5.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-62-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-62-5.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -272,7 +440,21 @@ export const arr_article = [
       },
       {
         d1: "然而，金博士與小甘迺迪相繼遭暗殺，加上越戰加劇社會分裂，使這段追求平等的勝利蒙上深重陰影。",
-        c2s: [{ d1: "<br>" }],
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P61-65/M02-2M-J-63-0.webp",
+            dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-F-63-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-R-63-0.webp",
+            dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+          },
+        ],
       },
     ],
     c1s: [
@@ -289,7 +471,21 @@ export const arr_article = [
           { d1: "抗議者常被保守派警察抓走，甚至被極端的「三K黨」圍毆。" },
           {
             d1: "這些鮮血和眼淚讓運動領袖意識到，必須推動一條聯邦級別法律。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-63-1.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-63-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-63-1.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -304,7 +500,24 @@ export const arr_article = [
           { d1: "這場活動的高潮就是馬丁路德金的演講「我有一個夢想」。" },
           { d1: "他夢想有一天奴隸和奴隸主的後代能像兄弟般坐在一起。" },
           { d1: "夢想孩子能生活在一個不看膚色、只看人品的國家。" },
-          { d1: "這場演講的影響力巨大。", c3s: [{ d1: "<br>" }] },
+          {
+            d1: "這場演講的影響力巨大。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-63-2.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-63-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-63-2.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
+          },
         ],
       },
       {
@@ -319,7 +532,21 @@ export const arr_article = [
           },
           {
             d1: "這等於是從最高層級廢掉了南方那些不合理的隔離法規。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-63-3.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-63-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-63-3.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -333,7 +560,21 @@ export const arr_article = [
           { d1: "引發全美騷亂。" },
           {
             d1: "這場戰爭帶來的社會傷痕比之前的韓戰還要深。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-63-4.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-63-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-63-4.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -359,7 +600,21 @@ export const arr_article = [
       { d1: "1968年「春節攻勢」雖軍事失利，卻重創美國民心，引爆反戰浪潮。" },
       {
         d1: "尼克森上台後推動「越南化」並撤軍，但南越政權迅速崩潰。",
-        c2s: [{ d1: "<br>" }],
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P61-65/M02-2M-J-64-0.webp",
+            dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-F-64-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-R-64-0.webp",
+            dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+          },
+        ],
       },
     ],
     c1s: [
@@ -373,7 +628,21 @@ export const arr_article = [
           { d1: "從大航海時代起，這就是海上貿易的咽喉。" },
           {
             d1: "越南在歷史上長期受到中原王朝影響，近代則成為法國殖民地。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-64-1.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-64-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-64-1.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -385,7 +654,24 @@ export const arr_article = [
           { d1: "美軍人數從幾萬暴增到幾十萬，甚至動用空軍大規模轟炸。" },
           { d1: "但這場仗打得非常憋屈，美軍簡直是「戴著鐐銬起舞」。" },
           { d1: "因為白宮極度擔心會不小心炸到蘇聯或中國顧問。" },
-          { d1: "所有轟炸目標都得由白宮直接下令。", c3s: [{ d1: "<br>" }] },
+          {
+            d1: "所有轟炸目標都得由白宮直接下令。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-64-2.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-64-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-64-2.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
+          },
         ],
       },
       {
@@ -396,7 +682,24 @@ export const arr_article = [
           { d1: "雖然北越軍隊傷亡慘重，美軍在軍事技術上贏了。" },
           { d1: "但在戰略和心理上，北越卻大獲全勝。" },
           { d1: "因為這場突襲讓美國民眾驚覺政府一直在說謊。" },
-          { d1: "反戰輿論全面爆發。", c3s: [{ d1: "<br>" }] },
+          {
+            d1: "反戰輿論全面爆發。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-64-3.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-64-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-64-3.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
+          },
         ],
       },
       {
@@ -408,7 +711,24 @@ export const arr_article = [
           { d1: "一九七三年雙方簽約，美軍完全撤出。" },
           { d1: "沒想到南越政權很快崩潰。" },
           { d1: "北越迅速統一全境。" },
-          { d1: "美國付出巨大代價卻未達成戰略目標。", c3s: [{ d1: "<br>" }] },
+          {
+            d1: "美國付出巨大代價卻未達成戰略目標。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-64-4.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-64-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-64-4.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
+          },
         ],
       },
     ],
@@ -429,7 +749,21 @@ export const arr_article = [
       { d1: "嬉皮士以「要愛不要戰」為口號，挑戰傳統價值。" },
       {
         d1: "尼克森利用反共形象推動中美破冰，透過「乒乓外交」與基辛格密訪，改變冷戰格局。",
-        c2s: [{ d1: "<br>" }],
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P61-65/M02-2M-J-65-0.webp",
+            dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-F-65-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P61-65/M02-2M-R-65-0.webp",
+            dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+          },
+        ],
       },
     ],
     c1s: [
@@ -443,7 +777,21 @@ export const arr_article = [
           { d1: "卻要履行打仗的義務。" },
           {
             d1: "於是大批年輕人逃往加拿大或瑞典躲避徵兵。",
-            c3s: [{ d1: "<br>" }],
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-65-1.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-65-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-65-1.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
           },
         ],
       },
@@ -455,7 +803,24 @@ export const arr_article = [
           { d1: "他們對美國那套民主自由產生懷疑。" },
           { d1: "覺得國家被資本控制。" },
           { d1: "政客只是傀儡。" },
-          { d1: "大喊「要愛不要戰爭」的口號。", c3s: [{ d1: "<br>" }] },
+          {
+            d1: "大喊「要愛不要戰爭」的口號。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-65-2.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-65-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-65-2.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
+          },
         ],
       },
       {
@@ -466,7 +831,24 @@ export const arr_article = [
           { d1: "呼籲保守派支持他。" },
           { d1: "承諾結束戰爭泥潭。" },
           { d1: "最後成功當選總統。" },
-          { d1: "上台後開始安排撤軍並規劃外交轉向。", c3s: [{ d1: "<br>" }] },
+          {
+            d1: "上台後開始安排撤軍並規劃外交轉向。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-65-3.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-65-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-65-3.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
+          },
         ],
       },
       {
@@ -477,7 +859,24 @@ export const arr_article = [
           { d1: "中國也正跟蘇聯鬧翻。" },
           { d1: "雙方都有合作需求。" },
           { d1: "從乒乓外交到基辛格密訪。" },
-          { d1: "最終促成尼克森訪華，改變冷戰格局。", c3s: [{ d1: "<br>" }] },
+          {
+            d1: "最終促成尼克森訪華，改變冷戰格局。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P61-65/M02-2M-J-65-4.webp",
+                dec2: "托馬斯·傑斐遜（Thomas Jefferson）",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-F-65-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P61-65/M02-2M-R-65-4.webp",
+                dec2: "西奧多·羅斯福（Theodore Roosevelt）老羅斯福",
+              },
+            ],
+          },
         ],
       },
     ],
