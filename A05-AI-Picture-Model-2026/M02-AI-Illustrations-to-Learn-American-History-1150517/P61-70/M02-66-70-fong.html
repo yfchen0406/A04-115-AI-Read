@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字插圖~小小兵</title>
+  <style>
+    /* 1. 基本頁面重置 */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 2. 圖片容器 */
+    #image-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #current-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* 3. 控制項樣式 - 預設隱藏並加入過渡動畫 */
+    #controls-overlay {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border-radius: 30px;
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      text-align: center;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      /* 關鍵修改：預設透明度為 0，並設定平滑動畫 */
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      /* 隱藏時防止擋住滑鼠點擊圖片 */
+    }
+
+    /* 4. 觸發顯示：當滑鼠移到 body 下方或 hover 到 overlay 上時 */
+    /* 這裡我們設定當滑鼠進入頁面任意處或是 hover 狀態就顯示，
+       如果您希望「滑鼠靠近底部才顯示」，可以針對 body:hover 觸發 */
+    body:hover #controls-overlay,
+    #controls-overlay:hover {
+      opacity: 1;
+      pointer-events: auto;
+      /* 顯示時恢復點擊功能 */
+    }
+
+    #index-display {
+      font-size: 1.1em;
+      font-weight: bold;
+      min-width: 70px;
+    }
+
+    #tip {
+      font-size: 0.75em;
+      opacity: 0.6;
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      padding-left: 10px;
+    }
+
+    #prev-btn,
+    #next-btn {
+      padding: 8px 18px;
+      font-size: 0.9em;
+      cursor: pointer;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 20px;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    #prev-btn:hover,
+    #next-btn:hover {
+      background-color: #007bff;
+      transform: scale(1.05);
+    }
+
+    #prev-btn:active,
+    #next-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="image-container">
+    <img id="current-image" src="" alt="簡報圖片">
+  </div>
+
+  <div id="controls-overlay">
+    <button id="prev-btn">上一張 (↑)</button>
+    <span id="index-display">0 / 0</span>
+    <button id="next-btn">下一張 (↓)</button>
+    <div id="tip">
+      滑鼠移開即隱藏控制列
+    </div>
+  </div>
+
+  <script>
+    // 圖片資料庫
+    const IMAGE_FILES = [
+      '../images/P26-30/M02-2F-F-26-0.webp',
+      '../images/P26-30/M02-2F-F-26-1.webp',
+      '../images/P26-30/M02-2F-F-26-2.webp',
+      '../images/P26-30/M02-2F-F-26-3.webp',
+      '../images/P26-30/M02-2F-F-26-4.webp',
+
+      '../images/P26-30/M02-2F-F-27-0.webp',
+      '../images/P26-30/M02-2F-F-27-1.webp',
+      '../images/P26-30/M02-2F-F-27-2.webp',
+      '../images/P26-30/M02-2F-F-27-3.webp',
+      '../images/P26-30/M02-2F-F-27-4.webp',
+
+      '../images/P26-30/M02-2F-F-28-0.webp',
+      '../images/P26-30/M02-2F-F-28-1.webp',
+      '../images/P26-30/M02-2F-F-28-2.webp',
+      '../images/P26-30/M02-2F-F-28-3.webp',
+      '../images/P26-30/M02-2F-F-28-4.webp',
+
+      '../images/P26-30/M02-2F-F-29-0.webp',
+      '../images/P26-30/M02-2F-F-29-1.webp',
+      '../images/P26-30/M02-2F-F-29-2.webp',
+      '../images/P26-30/M02-2F-F-29-3.webp',
+      '../images/P26-30/M02-2F-F-29-4.webp',
+
+      '../images/P26-30/M02-2F-F-30-0.webp',
+      '../images/P26-30/M02-2F-F-30-1.webp',
+      '../images/P26-30/M02-2F-F-30-2.webp',
+      '../images/P26-30/M02-2F-F-30-3.webp',
+      '../images/P26-30/M02-2F-F-30-4.webp',
+
+
+    ];
+
+    let currentIndex = 0;
+    const totalImages = IMAGE_FILES.length;
+
+    const imageElement = document.getElementById('current-image');
+    const indexDisplay = document.getElementById('index-display');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    function displayImage() {
+      if (totalImages === 0) {
+        imageElement.src = '';
+        indexDisplay.textContent = '無圖片';
+        return;
+      }
+      imageElement.src = IMAGE_FILES[currentIndex];
+      indexDisplay.textContent = `${currentIndex + 1} / ${totalImages}`;
+    }
+
+    function goToPreviousImage() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        displayImage();
+      }
+    }
+
+    function goToNextImage() {
+      if (currentIndex < totalImages - 1) {
+        currentIndex++;
+        displayImage();
+      }
+    }
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // 防止觸發其他元件
+      goToPreviousImage();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToNextImage();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        goToPreviousImage();
+        event.preventDefault();
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        goToNextImage();
+        event.preventDefault();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', displayImage);
+  </script>
+</body>
+
+</html>

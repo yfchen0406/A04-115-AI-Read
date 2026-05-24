@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22.yfchen的未來事件預測簿 ~ 最終修復版</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { primary: '#1a237e', darkBg: '#121212', darkCard: '#1e1e2e' }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', 'Microsoft JhengHei', sans-serif;
+      transition: background-color 0.3s;
+    }
+
+    .prediction-card {
+      transition: all 0.3s ease;
+    }
+
+    .prediction-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .loader {
+      border-top-color: #1a237e;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .filter-btn.active {
+      background-color: #1a237e;
+      color: white;
+      border-color: #1a237e;
+    }
+
+    .dark .filter-btn.active {
+      background-color: #6366f1;
+      color: white;
+      border-color: #6366f1;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-darkBg text-gray-800 dark:text-gray-100 min-h-screen">
+
+  <header
+    class="sticky top-0 z-50 bg-white/80 dark:bg-darkCard/80 backdrop-blur-md px-6 py-4 flex justify-between items-center shadow-sm border-b border-gray-100 dark:border-gray-800">
+    <div class="flex items-center gap-3">
+      <img src="Logo.png" alt="Logo" class="w-10 h-10 object-contain rounded-lg"
+        onerror="this.src='https://via.placeholder.com/40/1a237e/ffffff?text=YF'">
+      <h1
+        class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-indigo-500 dark:from-indigo-300 dark:to-purple-400">
+        未來事件預測簿~建議查閱就好，加入資料筆數用另外一個</h1>
+    </div>
+    <button id="theme-toggle"
+      class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:ring-2 ring-primary/20 transition-all">
+      <i id="theme-icon" class="fas fa-moon text-lg text-gray-600 dark:text-yellow-400"></i>
+    </button>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-4 md:p-8">
+    <!-- 數據統計 -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600">
+            <i class="fas fa-database"></i>
+          </div>
+          <div>
+            <p class="text-xs opacity-50 font-bold">總預測量</p>
+            <h3 id="stat-total" class="text-2xl font-bold">0</h3>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 border-b-4 border-green-500">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div>
+            <p class="text-xs opacity-50 font-bold">準確率</p>
+            <h3 id="stat-accuracy" class="text-2xl font-bold">0%</h3>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white dark:bg-darkCard p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center text-amber-600">
+            <i class="fas fa-hourglass-half"></i>
+          </div>
+          <div>
+            <p class="text-xs opacity-50 font-bold">待驗證</p>
+            <h3 id="stat-pending" class="text-2xl font-bold">0</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 填寫表單 -->
+    <section
+      class="bg-white dark:bg-darkCard rounded-2xl shadow-lg p-6 mb-12 border border-gray-100 dark:border-gray-800">
+      <h2 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-edit text-primary"></i> 撰寫新預測</h2>
+      <form id="prediction-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" name="num" required placeholder="序號 (如: 010)"
+          class="w-full bg-gray-50 dark:bg-gray-800 p-3 rounded-xl outline-none focus:ring-2 focus:ring-primary">
+        <select name="category"
+          class="w-full bg-gray-50 dark:bg-gray-800 p-3 rounded-xl outline-none focus:ring-2 focus:ring-primary">
+          <option>財經</option>
+          <option>科技</option>
+          <option>政治</option>
+          <option>生活</option>
+          <option>其他</option>
+        </select>
+        <input type="date" name="date" id="input-date" required
+          class="w-full bg-gray-50 dark:bg-gray-800 p-3 rounded-xl outline-none focus:ring-2 focus:ring-primary">
+        <input type="time" name="time" id="input-time" required
+          class="w-full bg-gray-50 dark:bg-gray-800 p-3 rounded-xl outline-none focus:ring-2 focus:ring-primary">
+        <textarea name="content" placeholder="預測內容..." required
+          class="md:col-span-2 w-full bg-gray-50 dark:bg-gray-800 p-3 rounded-xl h-24 outline-none focus:ring-2 focus:ring-primary"></textarea>
+        <input type="date" name="verifyDate" required
+          class="w-full bg-gray-50 dark:bg-gray-800 p-3 rounded-xl outline-none focus:ring-2 focus:ring-primary">
+        <input type="text" name="proof" placeholder="備註/連結"
+          class="w-full bg-gray-50 dark:bg-gray-800 p-3 rounded-xl outline-none focus:ring-2 focus:ring-primary">
+        <button type="submit" id="submit-btn"
+          class="md:col-span-2 bg-primary text-white font-bold py-3.5 rounded-xl hover:opacity-90 active:scale-95 transition-all">提交預測</button>
+      </form>
+    </section>
+
+    <!-- 搜尋與過濾 -->
+    <section class="mb-6 space-y-4">
+      <div class="flex flex-col md:flex-row gap-3">
+        <div class="relative flex-1">
+          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 opacity-30"></i>
+          <input type="text" id="search-input" placeholder="搜尋內容或序號..."
+            class="w-full bg-white dark:bg-darkCard border border-gray-100 dark:border-gray-800 pl-11 pr-4 py-3 rounded-xl shadow-sm outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <button onclick="fetchRecords()"
+          class="bg-white dark:bg-darkCard border border-gray-100 dark:border-gray-800 px-6 py-3 rounded-xl shadow-sm font-bold text-primary dark:text-indigo-300 hover:bg-gray-50"><i
+            class="fas fa-sync-alt mr-2"></i>刷新</button>
+      </div>
+      <div id="category-filters" class="flex flex-wrap gap-2">
+        <button
+          class="filter-btn active px-4 py-2 rounded-lg text-sm font-bold border bg-white dark:bg-darkCard dark:border-gray-800"
+          data-cat="全部">全部</button>
+        <button
+          class="filter-btn px-4 py-2 rounded-lg text-sm font-bold border bg-white dark:bg-darkCard dark:border-gray-800"
+          data-cat="財經">財經</button>
+        <button
+          class="filter-btn px-4 py-2 rounded-lg text-sm font-bold border bg-white dark:bg-darkCard dark:border-gray-800"
+          data-cat="科技">科技</button>
+        <button
+          class="filter-btn px-4 py-2 rounded-lg text-sm font-bold border bg-white dark:bg-darkCard dark:border-gray-800"
+          data-cat="政治">政治</button>
+        <button
+          class="filter-btn px-4 py-2 rounded-lg text-sm font-bold border bg-white dark:bg-darkCard dark:border-gray-800"
+          data-cat="生活">生活</button>
+        <button
+          class="filter-btn px-4 py-2 rounded-lg text-sm font-bold border bg-white dark:bg-darkCard dark:border-gray-800"
+          data-cat="其他">其他</button>
+      </div>
+    </section>
+
+    <!-- 列表容器 -->
+    <div id="loading-state" class="hidden text-center py-10">
+      <div class="loader rounded-full border-4 h-10 w-10 mx-auto"></div>
+    </div>
+    <div id="records-container" class="space-y-4"></div>
+  </main>
+
+  <div id="toast"
+    class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-xl shadow-2xl opacity-0 transition-all pointer-events-none z-[100]">
+  </div>
+
+  <script>
+    //  S001-未來事件預測-code 就是第一個檔案
+    //  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxqucbcBad0mCHaISrdUDqR5z8RSWLXaXh2eRpKEOEvMYc9Ax83baMZKUj5twi60RgC/exec';
+    //  S002-claude版-未來事件預測簿
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9ZZopwDI9dOIFtYRYmwTpmnri0JmPJqVPOXs9JygCVxe2yPwf0i-7YXbhScWY4g/exec';
+    let allRecords = [];
+    let currentCategory = '全部';
+    let searchQuery = '';
+
+    // 主題與提示
+    function updateTheme(isDark) {
+      document.documentElement.classList.toggle('dark', isDark);
+      document.getElementById('theme-icon').className = isDark ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-gray-600';
+    }
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const isDark = !document.documentElement.classList.contains('dark');
+      updateTheme(isDark);
+      localStorage.theme = isDark ? 'dark' : 'light';
+    });
+
+    function showToast(msg, isError = false) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.style.backgroundColor = isError ? '#ef4444' : '#111827';
+      t.classList.replace('opacity-0', 'opacity-100');
+      setTimeout(() => t.classList.replace('opacity-100', 'opacity-0'), 3000);
+    }
+
+    // 搜尋與篩選
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      searchQuery = e.target.value.toLowerCase();
+      applyFilters();
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    function applyFilters() {
+      const filtered = allRecords.filter(r => {
+        const matchesCat = currentCategory === '全部' || r.category === currentCategory;
+        const matchesSearch = r.content.toLowerCase().includes(searchQuery) || String(r.num).includes(searchQuery);
+        return matchesCat && matchesSearch;
+      });
+      renderRecords(filtered);
+    }
+
+    // 讀取資料
+    async function fetchRecords() {
+      document.getElementById('loading-state').classList.remove('hidden');
+      try {
+        const res = await fetch(`${SCRIPT_URL}?action=read`);
+        allRecords = await res.json();
+        updateStats(allRecords);
+        applyFilters();
+      } catch (e) { showToast('同步失敗', true); }
+      finally { document.getElementById('loading-state').classList.add('hidden'); }
+    }
+
+    function updateStats(records) {
+      const total = records.length;
+      const correct = records.filter(r => r.result === '正確').length;
+      const wrong = records.filter(r => r.result === '錯誤').length;
+      const accuracy = (correct + wrong) > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
+      document.getElementById('stat-total').innerText = total;
+      document.getElementById('stat-accuracy').innerText = `${accuracy}%`;
+      document.getElementById('stat-pending').innerText = records.filter(r => r.result === '未驗證').length;
+    }
+
+    function renderRecords(records) {
+      const container = document.getElementById('records-container');
+      container.innerHTML = '';
+      [...records].reverse().forEach(r => {
+        const statusClass = r.result === '正確' ? 'border-green-500 bg-green-50/30 dark:bg-green-900/5 text-green-600' : (r.result === '錯誤' ? 'border-red-500 bg-red-50/30 dark:bg-red-900/5 text-red-600' : 'border-amber-400 bg-white dark:bg-darkCard text-amber-600');
+        const card = document.createElement('div');
+        card.className = `prediction-card p-5 rounded-2xl border-l-8 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4 ${statusClass}`;
+        card.innerHTML = `
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-black bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-gray-500">#${r.num}</span>
+              <span class="text-xs font-bold text-primary dark:text-indigo-300 uppercase">${r.category}</span>
+              <span class="text-[10px] opacity-50 ml-2">${r.date} ${r.time}</span>
+            </div>
+            <p class="font-bold text-gray-800 dark:text-gray-100 text-lg leading-tight">${r.content}</p>
+            <div class="text-[11px] opacity-60 mt-2 flex gap-4">
+              <span>驗證日期: ${r.verifyDate}</span>
+              <span class="truncate max-w-xs">備註: ${r.proof || '無'}</span>
+            </div>
+          </div>
+          <div class="flex flex-row md:flex-col items-center gap-2 w-full md:w-auto border-t md:border-t-0 pt-3 md:pt-0">
+            <div class="flex-1 text-center"><span class="block text-[9px] opacity-40 font-bold uppercase">驗證狀態</span><span class="font-black">${r.result}</span></div>
+            <div class="flex gap-1">
+              ${r.result === '未驗證' ? `
+                <button onclick="updateStatus('${r.num}', '正確', '${r.proof || ''}')" class="bg-green-600 text-white text-[10px] px-3 py-1.5 rounded-lg font-bold hover:bg-green-700">正確</button>
+                <button onclick="updateStatus('${r.num}', '錯誤', '${r.proof || ''}')" class="bg-red-600 text-white text-[10px] px-3 py-1.5 rounded-lg font-bold hover:bg-red-700">錯誤</button>
+              ` : `
+                <button onclick="deleteRecord('${r.num}')" class="text-gray-400 hover:text-red-500 p-2 transition-colors"><i class="fas fa-trash-alt text-lg"></i></button>
+              `}
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // --- 關鍵修復：更新與刪除函數 ---
+
+    async function updateStatus(num, result, oldProof) {
+      const proof = prompt(`將預測 #${num} 標記為「${result}」。如有需要請修改備註：`, oldProof);
+      if (proof === null) return;
+
+      showToast('正在更新資料庫...');
+      try {
+        // 發送 JSON 格式 POST 請求
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify({
+            action: 'update',
+            num: String(num),
+            result: result,
+            proof: proof
+          })
+        });
+        showToast('更新指令已送出');
+        setTimeout(fetchRecords, 2500); // 延遲刷新給後端處理時間
+      } catch (e) { showToast('更新失敗', true); }
+    }
+
+    async function deleteRecord(num) {
+      if (!confirm(`⚠️ 確定要永久刪除序號 #${num} 的紀錄嗎？此動作無法復原。`)) return;
+
+      showToast('正在從資料庫刪除...');
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify({
+            action: 'delete',
+            num: String(num)
+          })
+        });
+        showToast('刪除指令已送出');
+        setTimeout(fetchRecords, 2500);
+      } catch (e) { showToast('刪除失敗', true); }
+    }
+
+    // 新增預測
+    document.getElementById('prediction-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true; btn.innerText = '提交中...';
+      const data = Object.fromEntries(new FormData(e.target));
+      data.action = 'create';
+      try {
+        await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
+        showToast('預測已新增');
+        e.target.reset(); setDefaultDateTime();
+        setTimeout(fetchRecords, 2500);
+      } catch (e) { showToast('新增失敗', true); }
+      finally { btn.disabled = false; btn.innerText = '提交預測'; }
+    });
+
+    function setDefaultDateTime() {
+      const now = new Date();
+      document.getElementById('input-date').value = now.toISOString().split('T')[0];
+      document.getElementById('input-time').value = now.toTimeString().substring(0, 5);
+    }
+
+    window.onload = () => {
+      updateTheme(localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches));
+      setDefaultDateTime();
+      fetchRecords();
+    };
+  </script>
+</body>
+
+</html>

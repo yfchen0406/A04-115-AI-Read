@@ -220,11 +220,11 @@
             AI自動化~1150513起</strong>
         </h2>
         <div class="container-fluid">
-          <div id="a1-3" class="row" style="align-items: flex-end;">
+          <div id="a1-3" class="row" style="align-items: flex-start;">
             <div class="col-sm-2 p-1" v-for="item in arr">
-              <figure>
+              <figure >
                 <a :href="item.pic1" target="_blank">
-                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%; ">
                 </a>
                 <h6>
                   <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
@@ -242,7 +242,7 @@
         <h2 id="1-2" class=" yf-font1"><i class="fa-solid fa-images"></i> <strong class="yf-code2"> Vibe Coding</strong>
         </h2>
         <div class="container-fluid">
-          <div id="a1-2" class="row" style="align-items: flex-end;">
+          <div id="a1-2" class="row" style="align-items: flex-start;">
             <div class="col-sm-2 p-1" v-for="item in arr">
               <figure>
                 <a :href="item.pic1" target="_blank">
@@ -415,7 +415,19 @@
             pic1s: './images/C01-01.webp',
             dec1: '01.yfchen~帳號管理記錄 ~ 115.05.20!',
           },
-
+              // R002. 一封家書的三重解讀：情、理、與心的試煉! ~ 115.03.18!
+          {
+            pic1: '/L01-AI-Learn/C23-Claude-Forecast-Book-of-Future-Events-1150516/C23-Claude-Forecast-Book-of-Future-Events-1150516.html',
+            pic1s: './images/B2026-23.webp',
+            dec1: '23. yfchen 的未來事件預測簿(Claude) ~ 115.05.16!',
+          },
+          // R002. 一封家書的三重解讀：情、理、與心的試煉! ~ 115.03.18!
+          {
+            pic1: '/L01-AI-Learn/C22-Forecast-Book-of-Future-Events-1150515/C22-Forecast-Book-of-Future-Events-1150515.html',
+            pic1s: './images/B2026-22.webp',
+            dec1: '22.未來事件預測簿~建議查閱就好，加入資料筆數用另外一個!',
+          },
+      
 
 
 
