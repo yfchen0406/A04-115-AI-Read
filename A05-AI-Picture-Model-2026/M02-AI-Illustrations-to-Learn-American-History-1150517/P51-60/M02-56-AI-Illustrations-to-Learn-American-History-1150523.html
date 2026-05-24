@@ -159,7 +159,45 @@
         /* 粉紅色 */
 
     }
+
+
+
+    /* 1150524~以下加上滑鼠懸浮的設定 */
+    .page-link[data-tip] {
+      position: relative;
+    }
+
+    .page-link[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute;
+      top: calc(100% + 8px);
+      /* 改這裡：上方→下方 */
+      bottom: auto;
+      /* 改這裡：清除上方設定 */
+      left: 50%;
+      transform: translateX(-50%);
+      background: #185FA5;
+      color: #E6F1FB;
+      font-size: 16px;
+      /* 改這裡：12px→16px */
+      padding: 5px 10px;
+      border-radius: 6px;
+      white-space: normal;
+      /* 改這裡 */
+      width: 380px;
+      /* 加這裡 */
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 99;
+    }
+
+    .page-link[data-tip]:hover::after {
+      opacity: 1;
+    }
   </style>
+
+
   <!-- 選單滾輪 -->
   <style>
     .dropdown-menu {
@@ -175,12 +213,12 @@
 
 <body id="n0" class="bg-dark" onload="updateCounter()">
   <!-- 這邊是 導覽列，利用 jQuery 套用，BX01-nav.html load 就好! -->
-<div id="nav1"></div>
+  <div id="nav1"></div>
   <!-- *************************************************************************** -->
   <header class="text-center p1 " style="margin-top: 75px;">
     <h1 class="text-info yf-font1"><b style="color: #f0c060;">L.用AI插圖認識美國史：</b><b
         style="color:#e8e0c8;">【古巴藏飛彈，偶像總統殞】</b><b style="color: #7eb8d4">~56-60~ 115.05.23-3</b></h1>
-    <p class="yf-color-as1 yf-font1"></p>
+    <p class="yf-color-as1 yf-font1">這一集美國拉什莫爾山國家紀念地(俗稱總統山)上的美國開國元勛四個來了二個，分別是左右18世紀和19世紀的二個大人物，華盛頓和林肯，來當做插圖的介紹角色!</p>
   </header>
   <!-- ############################################################################ -->
   <!-- 主畫面整個 -->
@@ -193,13 +231,14 @@
       <div class="container">
         <ul class="pagination justify-content-center">
 
-          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-26-30-Minions.html"
-              target="_blank">小小兵</a>
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-56-60-USA-George-Washington.html"
+              target="_blank" data-tip="18世紀末，第1任（1789–1797），美國開國總統、確立憲政傳統與和平權力移交典範，象徵建國精神，道德權威無可比擬">喬治·華盛頓（George
+              Washington）👍👍👍</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-26-30-USA-SpongeBob.html"
-              target="_blank">海綿寶寶 (SpongeBob)👍</a>
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-56-60-USA-Abraham-Lincoln.html"
+              target="_blank"  data-tip="19世紀，第16任（1861-1865），領導內戰維護聯邦統一、廢除奴隸制、頒布《解放奴隸宣言》，幾乎所有學術排名中位列第一">亞伯拉罕·林肯（Abraham Lincoln）👍👍👍</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-26-30-fong.html" target="_blank">個人Q版</a>
+          <li class="page-item"><a class="page-link yf-font1 yf2" href="./M02-56-60-fong.html" target="_blank">個人Q版</a>
           </li>
           <!-- <li class="page-item"><a class="page-link yf-font1 yf2" href="./B115-PPT-NanoBananapro-info-fong.html"
               target="_blank">個人Q版二版</a>
@@ -680,7 +719,7 @@
                                   :title="item1.dec1" style="width:100%">
                               </a>
                               <h6>
-                                <figcaption class="text-center yf-font1" v-html="item1.dec2"></figcaption>
+                                <figcaption class="text-center  text-primary" v-html="item1.dec2"></figcaption>
                               </h6>
                             </figure>
                           </div>

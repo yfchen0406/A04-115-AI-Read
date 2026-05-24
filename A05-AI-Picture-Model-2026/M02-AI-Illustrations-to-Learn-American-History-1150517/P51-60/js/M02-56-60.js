@@ -12,6 +12,21 @@ export const arr_article = [
       { d1: "中國同時被美蘇兩大強權圍堵，外交處境非常艱難。" },
       {
         d1: "甘迺迪靠著年輕帥氣的形象當選總統，一上任就碰上古巴飛彈危機這種差點引爆核戰的大事，他跟赫魯雪夫的互動，直接決定人類能不能活下來，也成為冷戰的重要轉折點。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P56-60/M02-2L-W-56-0.webp",
+            dec2: "喬治·華盛頓（George Washington）",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-F-56-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-L-56-0.webp",
+            dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -32,7 +47,24 @@ export const arr_article = [
           {
             d1: "毛澤東認為帝國主義只能靠打仗打敗，看不起赫魯雪夫主張的和平共存，兩人漸行漸遠。",
           },
-          { d1: "最後蘇聯乾脆撤走所有專家，讓中國陷入極度困難的局面。" },
+          {
+            d1: "最後蘇聯乾脆撤走所有專家，讓中國陷入極度困難的局面。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-56-1.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-56-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-56-1.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -50,6 +82,21 @@ export const arr_article = [
           },
           {
             d1: "這場有名的「廚房辯論」清楚展現了兩種制度的差異，也說明為什麼美國最後能靠生活水準和自由，在冷戰中贏得人心。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-56-2.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-56-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-56-2.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -66,6 +113,21 @@ export const arr_article = [
           { d1: "為避免被全世界圍剿，中國只好打完就撤兵。" },
           {
             d1: "幸好當時美蘇正忙著處理古巴飛彈危機——這場差點毀滅全人類的事件，反而讓中國獲得一點喘息空間。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-56-3.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-56-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-56-3.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -80,7 +142,24 @@ export const arr_article = [
           {
             d1: "雖然他在位時間很短，沒做出太多政策成果，但因為在達拉斯街頭遇刺身亡，悲劇結局讓他被民眾深深懷念，連紐約主要機場都用他的名字命名。",
           },
-          { d1: "他超高的人氣，使他成為美國史上獨一無二的「偶像型」總統。" },
+          {
+            d1: "他超高的人氣，使他成為美國史上獨一無二的「偶像型」總統。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-56-4.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-56-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-56-4.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -98,6 +177,21 @@ export const arr_article = [
           },
           {
             d1: "接下來的世界命運，就看他怎麼跟赫魯雪夫周旋——只要一步走錯，人類可能就此完蛋。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-56-5.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-56-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-56-5.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -116,6 +210,21 @@ export const arr_article = [
       { d1: "面對冷戰僵局，他親赴柏林牆前喊出「我是柏林人」，樹立自由象徵。" },
       {
         d1: "同時推動登月計畫，把太空競爭變成制度優越的宣傳戰，奠定自己的傳奇地位。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P56-60/M02-2L-W-57-0.webp",
+            dec2: "喬治·華盛頓（George Washington）",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-F-57-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-L-57-0.webp",
+            dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -130,7 +239,24 @@ export const arr_article = [
           {
             d1: "關鍵轉折是跟尼克森的電視辯論：聽廣播的人覺得尼克森表現較好，但看電視的觀眾看到尼克森滿頭汗、衣服顏色跟背景混在一起顯得憔悴，反而被自信從容的甘迺迪圈粉。",
           },
-          { d1: "這場史上首次總統電視辯論，幫他順利入主白宮。" },
+          {
+            d1: "這場史上首次總統電視辯論，幫他順利入主白宮。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-57-1.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-57-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-57-1.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -147,6 +273,21 @@ export const arr_article = [
           { d1: "這番話連政敵都感動。" },
           {
             d1: "但他很快發現，當總統不是光靠口號就行，現實中一堆難題等著他，第一個就是柏林危機。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-57-2.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-57-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-57-2.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -165,7 +306,24 @@ export const arr_article = [
             d1: "牆上裝高壓電網、埋地雷、養警犬，還有士兵隨時開槍射殺逃亡者。",
           },
           { d1: "即便如此，仍有人挖地道、游泳、坐熱氣球冒死逃向西方。" },
-          { d1: "這道牆成了冷戰最殘酷的象徵。" },
+          {
+            d1: "這道牆成了冷戰最殘酷的象徵。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-57-3.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-57-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-57-3.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -182,6 +340,21 @@ export const arr_article = [
           },
           {
             d1: "他成功把柏林牆塑造成共產制度失敗的證據，也讓西方世界更擁護他，這場演講成為他政治生涯最成功的表演。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-57-4.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-57-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-57-4.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -198,6 +371,21 @@ export const arr_article = [
           },
           {
             d1: "他決定讓NASA放手一搏，啟動登月計畫，要在航太領域徹底超越蘇聯，這才有了後來震撼世界的阿波羅任務。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-57-5.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-57-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-57-5.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -216,6 +404,21 @@ export const arr_article = [
       { d1: "歷經挫折後，1969年阿姆斯壯成功踏上月球，陰謀論雖有但站不住腳。" },
       {
         d1: "同時，古巴爆發革命，卡斯楚推翻親美政府，沒收美資，讓這個近在咫尺的「紅色政權」成為美國心腹大患，加劇冷戰對抗。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P56-60/M02-2L-W-58-0.webp",
+            dec2: "喬治·華盛頓（George Washington）",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-F-58-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-L-58-0.webp",
+            dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -234,6 +437,21 @@ export const arr_article = [
           },
           {
             d1: "直到甘迺迪上台，才全力催促科學家加速，好不容易把落後幾個月的差距縮到只剩三週。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-58-1.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-58-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-58-1.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -251,6 +469,21 @@ export const arr_article = [
           { d1: "這番話激勵了全美。" },
           {
             d1: "雖然過程中發生阿波羅一號起火爆炸、三名太空人喪生的慘劇，但悲劇反而凝聚全國意志，決心要在月球上贏回尊嚴。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-58-2.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-58-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-58-2.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -270,6 +503,21 @@ export const arr_article = [
           { d1: "但蘇聯查了半天也找不到破綻，證明登月是真的。" },
           {
             d1: "後來美國不再登月，純粹是因為已經拿到第一名，再花大錢做宣傳已無必要。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-58-3.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-58-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-58-3.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -285,7 +533,24 @@ export const arr_article = [
           {
             d1: "他第一次攻打軍營失敗被捕，但在法庭上慷慨陳詞，留下「歷史將宣判我無罪」的名言。",
           },
-          { d1: "獲釋後，他找來切·格瓦拉等戰友，靠游擊戰成功推翻親美政權。" },
+          {
+            d1: "獲釋後，他找來切·格瓦拉等戰友，靠游擊戰成功推翻親美政權。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-58-4.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-58-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-58-4.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -303,6 +568,21 @@ export const arr_article = [
           },
           {
             d1: "這個近在眼前的威脅，立刻成為美國政府最頭痛的問題，也為日後更大危機埋下伏筆。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-58-5.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-58-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-58-5.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -322,6 +602,21 @@ export const arr_article = [
       { d1: "甘迺迪封鎖古巴要求撤彈，赫魯雪夫則要求美國也撤走歐洲飛彈。" },
       {
         d1: "1962年10月27日，人類站在毀滅邊緣，最終靠秘密協議化解——美國私下同意撤除土耳其飛彈，蘇聯公開撤出古巴飛彈，冷戰最危險時刻就此落幕。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P56-60/M02-2L-W-59-0.webp",
+            dec2: "喬治·華盛頓（George Washington）",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-F-59-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-L-59-0.webp",
+            dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -338,6 +633,21 @@ export const arr_article = [
           },
           {
             d1: "這種「誰都不敢先出手」的僵局，反而維持了冷戰時期那種緊繃但沒爆發全面戰爭的狀態。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-59-1.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-59-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-59-1.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -355,6 +665,21 @@ export const arr_article = [
           },
           {
             d1: "這場慘敗讓甘迺迪顏面掃地，也讓卡斯楚看清美國敵意，轉而投靠蘇聯。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-59-2.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-59-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-59-2.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
           },
         ],
       },
@@ -371,7 +696,24 @@ export const arr_article = [
             d1: "於是赫魯雪夫決定以其人之道還治其人之身，悄悄把中程飛彈運進古巴。",
           },
           { d1: "他得意地說，這就像「往美國褲襠裡塞了一隻刺蝟」。" },
-          { d1: "一旦部署完成，蘇聯就能威脅華盛頓，談判籌碼瞬間逆轉。" },
+          {
+            d1: "一旦部署完成，蘇聯就能威脅華盛頓，談判籌碼瞬間逆轉。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-59-3.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-59-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-59-3.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -386,7 +728,24 @@ export const arr_article = [
             d1: "赫魯雪夫開出條件：只要美國撤走土耳其和義大利的飛彈，蘇聯就撤古巴的。",
           },
           { d1: "雙方都在試探對方底線，誰也不想先示弱。" },
-          { d1: "1962年10月27日，局勢緊繃到極點，全人類命運懸於一線。" },
+          {
+            d1: "1962年10月27日，局勢緊繃到極點，全人類命運懸於一線。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-59-4.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-59-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-59-4.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
     ],
@@ -409,6 +768,21 @@ export const arr_article = [
       },
       {
         d1: "1963年11月，他在達拉斯遇刺身亡，官方稱兇手是孤狼，但陰謀論至今未解，成為美國史上最懸疑的政治暗殺案。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P56-60/M02-2L-W-60-0.webp",
+            dec2: "喬治·華盛頓（George Washington）",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-F-60-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P56-60/M02-2L-L-60-0.webp",
+            dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -422,7 +796,24 @@ export const arr_article = [
           },
           { d1: "艦長和政委都同意發射核魚雷報復，唯獨大副瓦西里堅決反對。" },
           { d1: "就靠他一個人的冷計，才阻止了這場可能毀滅文明的災難。" },
-          { d1: "如果他也點頭，美蘇將全面開戰，核彈將灑遍全球。" },
+          {
+            d1: "如果他也點頭，美蘇將全面開戰，核彈將灑遍全球。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-60-1.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-60-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-60-1.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -439,7 +830,24 @@ export const arr_article = [
           {
             d1: "表面上是蘇聯退讓，實際是雙方各退一步，才避免與死神同歸於盡。",
           },
-          { d1: "危機過後，甘迺迪聲望大增。" },
+          {
+            d1: "危機過後，甘迺迪聲望大增。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-60-2.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-60-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-60-2.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -451,7 +859,24 @@ export const arr_article = [
           { d1: "甘迺迪則因私下妥協、推動禁止核試驗，得罪軍火商和中情局。" },
           { d1: "加上他大力支持民權運動，觸動南方白人保守勢力的利益。" },
           { d1: "這位年輕總統在推動改革的同時，也累積了越來越多敵人。" },
-          { d1: "國內外各種不滿交織，政治氛圍極度緊張。" },
+          {
+            d1: "國內外各種不滿交織，政治氛圍極度緊張。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-60-3.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-60-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-60-3.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -467,7 +892,24 @@ export const arr_article = [
           { d1: "副總統詹森隨即在空軍一號上宣誓接任。" },
           { d1: "雖然兇手很快被捕，但幾乎沒人相信這是一人所為。" },
           { d1: "背後是否涉及軍火集團、情報單位或政治黑幕？" },
-          { d1: "這些謎團至今未解，使這起刺殺案成為美國史上最著名的懸案。" },
+          {
+            d1: "這些謎團至今未解，使這起刺殺案成為美國史上最著名的懸案。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P56-60/M02-2L-W-60-4.webp",
+                dec2: "喬治·華盛頓（George Washington）",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-F-60-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P56-60/M02-2L-L-60-4.webp",
+                dec2: "亞伯拉罕·林肯（Abraham Lincoln）",
+              },
+            ],
+          },
         ],
       },
     ],
