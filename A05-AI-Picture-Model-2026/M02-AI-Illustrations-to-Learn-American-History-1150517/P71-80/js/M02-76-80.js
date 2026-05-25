@@ -16,6 +16,21 @@ export const arr_article = [
       { d1: "外交上他主張撤軍與和解，移民政策也較寬鬆，引起保守派強烈不滿。" },
       {
         d1: "雖然他在任期間沒犯大錯，但偏左政策加劇政治對立，許多成果在他下台後被川普推翻，也間接導致2016年選舉結果大逆轉。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P76-80/M02-2P-M-76-0.webp",
+            dec2: "小小兵(Minions)",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-F-76-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-T-76-0.webp",
+            dec2: "川普（Donald John Trump）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -30,6 +45,21 @@ export const arr_article = [
           { d1: "相反地，廣大的南方與鄉村地區幾乎全是共和黨天下。" },
           {
             d1: "這種「城市vs.鄉村」、「進步vs.保守」的對立，顯示美國社會的紅藍分裂已經非常嚴重，雙方幾乎說不到一塊去。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-76-1.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-76-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-76-1.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -47,6 +77,21 @@ export const arr_article = [
           },
           {
             d1: "這些做法跟右派主張的「小政府、大市場」完全相反，大幅擴張了政府角色，甚至讓國營企業獲得特殊優待。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-76-2.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-76-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-76-2.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -65,6 +110,21 @@ export const arr_article = [
           },
           {
             d1: "這點被保守派猛烈抨擊，甚至有人因此質疑他的出生背景與忠誠度。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-76-3.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-76-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-76-3.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -82,7 +142,24 @@ export const arr_article = [
           {
             d1: "雖然靠民主黨掌控國會時勉強通過，但保守派痛批這會拖垮財政、效率又差。",
           },
-          { d1: "後來共和黨奪回國會，第一件事就是想在眾議院提案廢掉它。" },
+          {
+            d1: "後來共和黨奪回國會，第一件事就是想在眾議院提案廢掉它。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-76-4.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-76-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-76-4.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -94,6 +171,21 @@ export const arr_article = [
           { d1: "他辛苦推動的許多政策，在川普上台後幾乎全被推翻。" },
           {
             d1: "更關鍵的是，他的施政讓美國左右陣營的對立越來越深，尤其第二任期明顯左傾，嚇跑不少中間選民，最終促成2016年那場令人意外的選舉結果。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-76-5.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-76-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-76-5.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -115,6 +207,21 @@ export const arr_article = [
       { d1: "卻因敢打破政治正確、挑戰建制派而贏得死忠支持。" },
       {
         d1: "他的極化風格撕裂美國社會，最終逆轉民調劣勢，擊敗傳統政客拿下提名，徹底顛覆美國政治生態。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P76-80/M02-2P-M-77-0.webp",
+            dec2: "小小兵(Minions)",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-F-77-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-T-77-0.webp",
+            dec2: "川普（Donald John Trump）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -126,6 +233,21 @@ export const arr_article = [
           { d1: "他的人生信條就是：能上新聞就絕不上小報。" },
           {
             d1: "雖然商界評價兩極——有人說他靠高槓桿和法律漏洞撐起帝國，甚至該破產好幾次——但他在全球擁有眾多標誌性建築，始終活在聚光燈下，話題度從未停過。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-77-1.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-77-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-77-1.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -142,6 +264,21 @@ export const arr_article = [
           },
           {
             d1: "他懂得如何用誇張造型（比如招牌金髮）和驚人言論吸引目光，長期累積的媒體經驗，讓他精準掌握如何用情緒與表演抓住支持者。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-77-2.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-77-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-77-2.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -158,6 +295,21 @@ export const arr_article = [
           },
           {
             d1: "這種煽動性言論雖被主流媒體譴責，卻讓覺得被忽略的普通白人找到出口，紛紛投向他。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-77-3.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-77-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-77-3.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -174,6 +326,21 @@ export const arr_article = [
           },
           {
             d1: "儘管負面新聞殘身，但這種「敢說真話」、「不怕政治正確」的形象，反而讓厭倦官樣文章的選民對他死心塌地。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-77-4.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-77-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-77-4.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -189,7 +356,24 @@ export const arr_article = [
           {
             d1: "最終他擊敗所有共和黨傳統候選人，拿下提名，準備與希拉蕊對決。",
           },
-          { d1: "這場逆襲，打破了美國兩百年來由專業政客主導的選舉慣例。" },
+          {
+            d1: "這場逆襲，打破了美國兩百年來由專業政客主導的選舉慣例。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-77-5.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-77-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-77-5.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
     ],
@@ -209,6 +393,21 @@ export const arr_article = [
       },
       {
         d1: "上任後他推動修美墨邊牆、強調本土就業，並對中國發動貿易戰，標誌中美關係從合作走向對抗，也改變美國長期扮演的國際領導角色。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P76-80/M02-2P-M-78-0.webp",
+            dec2: "小小兵(Minions)",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-F-78-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-T-78-0.webp",
+            dec2: "川普（Donald John Trump）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -223,7 +422,24 @@ export const arr_article = [
           {
             d1: "當時幾乎所有人都認為希拉蕊穩贏，連部分共和黨人都怕川普搞砸，甚至考慮倒戈。",
           },
-          { d1: "沒想到，這場看似荒唐的對決，最後真的讓政治圈天翻地覆。" },
+          {
+            d1: "沒想到，這場看似荒唐的對決，最後真的讓政治圈天翻地覆。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-78-1.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-78-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-78-1.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -237,7 +453,24 @@ export const arr_article = [
           {
             d1: "二是「郵件門」：她用私人郵箱處理機密公務，雖司法調查結論是「疏忽非犯罪」，但民眾信任已嚴重受損。",
           },
-          { d1: "這兩件事讓她的領先優勢不斷縮水，給川普團隊大量攻擊素材。" },
+          {
+            d1: "這兩件事讓她的領先優勢不斷縮水，給川普團隊大量攻擊素材。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-78-2.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-78-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-78-2.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -253,6 +486,21 @@ export const arr_article = [
           },
           {
             d1: "最終他雖輸掉普選票，卻以304張選舉人票大勝，成為美國史上最富有、也最沒從政經驗的總統，徹底顛覆歷史慣例。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-78-3.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-78-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-78-3.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -269,6 +517,21 @@ export const arr_article = [
           },
           {
             d1: "這種做法短期提振就業，但讓美國放棄「世界燈塔」形象，不再扮演國際秩序維護者，反而處處算計誰佔便宜。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-78-4.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-78-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-78-4.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -283,6 +546,21 @@ export const arr_article = [
           { d1: "他告訴選民：這是在保護美國人的飯碗。" },
           {
             d1: "這種強硬姿態雖討好基層，卻讓中美關係從合作轉為全面對抗，打破多年來的表面穩定，開啟新一輪大國競爭。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-78-5.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-78-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-78-5.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -304,6 +582,21 @@ export const arr_article = [
       },
       {
         d1: "多數總統出身州長、國會議員或將軍，唯川普以商人素人身份破例入主白宮。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P76-80/M02-2P-M-79-0.webp",
+            dec2: "小小兵(Minions)",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-F-79-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-T-79-0.webp",
+            dec2: "川普（Donald John Trump）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -318,7 +611,24 @@ export const arr_article = [
           {
             d1: "其他常上榜的還有憲法之父麥迪遜、一戰英雄威爾遜、冷戰奠基者杜魯門。",
           },
-          { d1: "甘迺迪雖受大眾喜愛，但在史學家眼中排名約十至十五名。" },
+          {
+            d1: "甘迺迪雖受大眾喜愛，但在史學家眼中排名約十至十五名。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-79-1.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-79-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-79-1.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -334,6 +644,21 @@ export const arr_article = [
           },
           {
             d1: "林肯繼任者安德魯·約翰遜因激烈反對重建南方、與國會對抗，常被評為史上最差。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-79-2.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-79-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-79-2.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -346,7 +671,24 @@ export const arr_article = [
           { d1: "甘迺迪與奧巴馬也都四十多歲就當總統。" },
           { d1: "小羅斯福連任四屆（12年），此後美國修憲限任兩屆。" },
           { d1: "第九任總統哈里森上任一個月就病逝，任期最短。" },
-          { d1: "華盛頓兩次當選都拿到全部選舉人票，是史上唯一「全票總統」。" },
+          {
+            d1: "華盛頓兩次當選都拿到全部選舉人票，是史上唯一「全票總統」。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-79-3.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-79-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-79-3.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -358,7 +700,24 @@ export const arr_article = [
           {
             d1: "川普則是史上唯一既無公職經驗、也無軍旅背景，純靠商業與媒體知名度空降白宮的總統。",
           },
-          { d1: "這種「素人執政」模式，對美國未來走向仍是未知數。" },
+          {
+            d1: "這種「素人執政」模式，對美國未來走向仍是未知數。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-79-4.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-79-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-79-4.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
     ],
@@ -376,6 +735,21 @@ export const arr_article = [
       { d1: "其歷史既有憲政創新，也有種族壓迫等黑暗篇章，應客觀看待。" },
       {
         d1: "了解美國史有助識破其雙重標準（如林肯反分裂 vs. 支持港獨），並在中美競爭時代看清大國邏輯，做出理性判斷。",
+        col: "col-sm-4",
+        p2: [
+          {
+            pic1: "../images/P76-80/M02-2P-M-80-0.webp",
+            dec2: "小小兵(Minions)",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-F-80-0.webp",
+            dec2: "認真學習的退休教師",
+          },
+          {
+            pic1: "../images/P76-80/M02-2P-T-80-0.webp",
+            dec2: "川普（Donald John Trump）",
+          },
+        ],
       },
     ],
     c1s: [
@@ -388,6 +762,21 @@ export const arr_article = [
           { d1: "兩黨為爭選票亂開支票，造成債務高漲。" },
           {
             d1: "川普當選、英國脫歐等事件顯示，大眾未必具備足夠政治素養做理性選擇，有時民主反而變成浪費資源的鬧劇。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-80-1.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-80-1.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-80-1.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
@@ -401,7 +790,24 @@ export const arr_article = [
             d1: "國內或許習慣這種「四年一變天」，但對外國來說，美國顯得極不可靠。",
           },
           { d1: "盟友難以長期規劃合作，國際信用受損。" },
-          { d1: "這種「朝令夕改」的體制，長期恐削弱美國領導地位。" },
+          {
+            d1: "這種「朝令夕改」的體制，長期恐削弱美國領導地位。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-80-2.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-80-2.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-80-2.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -413,7 +819,24 @@ export const arr_article = [
           },
           { d1: "但也有洗不掉的污點：屠殺印第安人、奴役黑人、排華法案等。" },
           { d1: "看歷史應去掉濾鏡——好的壞的都真實存在。" },
-          { d1: "唯有如此，才能客觀理解一個國家的本質。" },
+          {
+            d1: "唯有如此，才能客觀理解一個國家的本質。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-80-3.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-80-3.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-80-3.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -425,7 +848,24 @@ export const arr_article = [
             d1: "例如當美方支持香港「自決」時，只要拿出林肯例子：當年南方州要獨立，林肯不惜打內戰也要維護統一，如今卻被尊為最偉大總統。",
           },
           { d1: "既然美國自己反對分裂，又有什麼立場批評中國維護主權。" },
-          { d1: "懂這點，跟美國人辯論才不會被牽著鼻子走。" },
+          {
+            d1: "懂這點，跟美國人辯論才不會被牽著鼻子走。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-80-4.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-80-4.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-80-4.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
+          },
         ],
       },
       {
@@ -439,6 +879,21 @@ export const arr_article = [
           { d1: "歷史不是故事書，而是鏡子。" },
           {
             d1: "照見興衰邏輯，也幫我們在複雜國際環境中，保持清醒、做出理性判斷。",
+            col: "col-sm-4",
+            p2: [
+              {
+                pic1: "../images/P76-80/M02-2P-M-80-5.webp",
+                dec2: "小小兵(Minions)",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-F-80-5.webp",
+                dec2: "認真學習的退休教師",
+              },
+              {
+                pic1: "../images/P76-80/M02-2P-T-80-5.webp",
+                dec2: "川普（Donald John Trump）",
+              },
+            ],
           },
         ],
       },
