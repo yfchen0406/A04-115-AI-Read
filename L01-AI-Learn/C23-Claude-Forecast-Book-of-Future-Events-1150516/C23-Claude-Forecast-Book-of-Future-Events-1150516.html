@@ -545,7 +545,13 @@
     .td-date {
       white-space: nowrap;
       font-size: .83rem;
-      color: var(--text2)
+      color: var(--text2);
+      width: 90px
+    }
+
+    .td-cat {
+      width: 80px;
+      white-space: nowrap
     }
 
     .td-cat .cat-badge {
@@ -555,7 +561,8 @@
       border-radius: 999px;
       padding: .15rem .65rem;
       font-size: .78rem;
-      font-weight: 500
+      font-weight: 500;
+      white-space: nowrap
     }
 
     [data-theme="dark"] .td-cat .cat-badge {
@@ -563,7 +570,7 @@
     }
 
     .td-content {
-      max-width: 240px;
+      min-width: 300px;
       line-height: 1.5
     }
 
@@ -845,6 +852,60 @@
       margin-top: .2rem
     }
 
+    /* Sort buttons in thead */
+    .th-sort {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      color: #e8eaf6;
+      font-weight: 600;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      padding: 0;
+      font-family: inherit
+    }
+
+    .th-sort:hover {
+      color: #fff;
+      text-decoration: underline
+    }
+
+    .sort-icon {
+      font-size: .72rem;
+      opacity: .6
+    }
+
+    .th-sort.asc .sort-icon::before {
+      content: '▲'
+    }
+
+    .th-sort.desc .sort-icon::before {
+      content: '▼'
+    }
+
+    .th-sort:not(.asc):not(.desc) .sort-icon::before {
+      content: '⇅'
+    }
+
+    /* Verify modal proof field */
+    .verify-proof-group {
+      margin: .9rem 0 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem
+    }
+
+    .verify-proof-group label {
+      font-size: .83rem;
+      font-weight: 500;
+      color: var(--text2)
+    }
+
     footer {
       text-align: center;
       padding: 1.5rem 1rem;
@@ -995,7 +1056,7 @@
           <div class="stat-chip s-error"><i class="fa-solid fa-times-circle"></i>錯誤：<strong id="statError">0</strong>
           </div>
 
-        
+
 
         </div>
         <div class="filter-bar">
@@ -1019,12 +1080,12 @@
           <table>
             <thead>
               <tr>
-                <th>#</th>
-                <th>日期 / 時間</th>
-                <th>分類</th>
+                <th><button class="th-sort" data-col="num">#<span class="sort-icon"></span></button></th>
+                <th><button class="th-sort" data-col="date">日期 / 時間<span class="sort-icon"></span></button></th>
+                <th><button class="th-sort" data-col="category">分類<span class="sort-icon"></span></button></th>
                 <th>預測內容</th>
-                <th>驗證日期</th>
-                <th>驗證結果</th>
+                <th><button class="th-sort" data-col="verifyDate">驗證日期<span class="sort-icon"></span></button></th>
+                <th><button class="th-sort" data-col="result">驗證結果<span class="sort-icon"></span></button></th>
                 <th>證明連結</th>
                 <th>操作</th>
               </tr>
@@ -1053,6 +1114,10 @@
     <div class="modal">
       <h3><i class="fa-solid fa-circle-check"></i> 驗證預測結果</h3>
       <p id="verifyContent">請選擇這則預測的驗證結果：</p>
+      <div class="verify-proof-group">
+        <label for="verifyProofInput"><i class="fa-solid fa-link"></i> 驗證證明（選填，可填文字或網址）</label>
+        <input type="text" id="verifyProofInput" placeholder="如有截圖說明或相關連結，請填入…" />
+      </div>
       <div class="modal-btns">
         <button class="btn-correct" id="btnCorrect"><i class="fa-solid fa-check"></i> 正確</button>
         <button class="btn-wrong" id="btnWrong"><i class="fa-solid fa-xmark"></i> 錯誤</button>
@@ -1120,6 +1185,8 @@
     let allRecords = [];
     let verifyRowId = null;
     let nextNum = 1;
+    let sortCol = 'num';
+    let sortDir = 'asc'; // 'asc' | 'desc'
 
     /* ─── Default Date ──────────────────────────────────────────── */
     function setDefaultDate() {
@@ -1200,6 +1267,11 @@
       return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     }
+    function fmtTime(t) {
+      const m = String(t).match(/(\d{1,2}):(\d{2})/);
+      if (!m) return String(t);
+      return m[1].padStart(2, '0') + ':' + m[2];
+    }
     function resultIcon(r) {
       if (r === '正確') return '<i class="fa-solid fa-check-circle result-correct" title="正確"></i>';
       if (r === '錯誤') return '<i class="fa-solid fa-times-circle result-error" title="錯誤"></i>';
@@ -1222,12 +1294,34 @@
         return true;
       });
     }
+    function getSorted(arr) {
+      const col = sortCol;
+      const dir = sortDir === 'asc' ? 1 : -1;
+      return [...arr].sort((a, b) => {
+        let av = a[col] ?? '', bv = b[col] ?? '';
+        if (col === 'num') { av = parseInt(av) || 0; bv = parseInt(bv) || 0; }
+        if (col === 'result') {
+          const order = { '未驗證': 0, '正確': 1, '錯誤': 2 };
+          av = order[av] ?? 0; bv = order[bv] ?? 0;
+        }
+        if (av < bv) return -1 * dir;
+        if (av > bv) return 1 * dir;
+        return 0;
+      });
+    }
+    function updateSortUI() {
+      document.querySelectorAll('.th-sort').forEach(btn => {
+        btn.classList.remove('asc', 'desc');
+        if (btn.dataset.col === sortCol) btn.classList.add(sortDir);
+      });
+    }
     function renderRecords() {
-      const filtered = getFiltered();
+      const filtered = getSorted(getFiltered());
       const tbody = document.getElementById('tableBody');
       const cards = document.getElementById('cardList');
       const empty = document.getElementById('emptyBox');
       tbody.innerHTML = ''; cards.innerHTML = '';
+      updateSortUI();
       if (!filtered.length) {
         empty.style.display = 'block';
         document.getElementById('tableWrap').style.display = 'none';
@@ -1249,7 +1343,7 @@
         const tr = document.createElement('tr');
         tr.innerHTML = `
       <td class="td-num">${escHtml(String(rec.num))}</td>
-      <td class="td-date">${escHtml(rec.date)}<br><small>${escHtml(rec.time)}</small></td>
+      <td class="td-date">${escHtml(rec.date)}<br><small>${escHtml(fmtTime(rec.time))}</small></td>
       <td class="td-cat"><span class="cat-badge">${escHtml(rec.category)}</span></td>
       <td class="td-content">${escHtml(rec.content)}</td>
       <td class="td-verify-date">${escHtml(rec.verifyDate)}</td>
@@ -1266,11 +1360,10 @@
         <span class="rec-card-result">${resultIcon(rec.result)}</span>
       </div>
       <div class="rec-card-meta">
-        <span><i class="fa-regular fa-calendar"></i> ${escHtml(rec.date)} ${escHtml(rec.time)}</span>
+        <span><i class="fa-regular fa-calendar"></i> ${escHtml(rec.date)} ${escHtml(fmtTime(rec.time))}</span>
         <span class="cat-badge">${escHtml(rec.category)}</span>
       </div>
       <div class="rec-card-content">${escHtml(rec.content)}</div>
-      <div class="rec-card-proof"><i class="fa-solid fa-link"></i> 證明：${proofCell(rec.proof)} &nbsp; 驗證日：${escHtml(rec.verifyDate)}</div>
       <div class="rec-card-footer">${verifyBtn}</div>`;
         cards.appendChild(card);
       });
@@ -1343,10 +1436,12 @@
     function openVerifyModal(rowId, content) {
       verifyRowId = rowId;
       document.getElementById('verifyContent').textContent = `「${content}」`;
+      document.getElementById('verifyProofInput').value = '';
       document.getElementById('verifyModal').classList.add('show');
     }
     function closeVerifyModal() {
       document.getElementById('verifyModal').classList.remove('show');
+      document.getElementById('verifyProofInput').value = '';
       verifyRowId = null;
     }
     document.getElementById('btnCancelVerify').addEventListener('click', closeVerifyModal);
@@ -1355,8 +1450,11 @@
     function submitVerify(result) {
       if (!verifyRowId) return;
       const rowId = verifyRowId;
+      const proof = document.getElementById('verifyProofInput').value.trim();
       closeVerifyModal();
-      jsonpCall({ action: 'updateResult', rowIndex: rowId, result }, 15000, (ok, data, err) => {
+      const params = { action: 'updateResult', rowIndex: rowId, result };
+      if (proof) params.proof = proof;
+      jsonpCall(params, 15000, (ok, data, err) => {
         if (ok) {
           showNotif(`驗證結果「${result}」已更新！`, 'success');
           setTimeout(loadRecords, 600);
@@ -1398,6 +1496,20 @@
         document.getElementById('verifyModal').classList.remove('show');
         document.getElementById('addCatModal').classList.remove('show');
       }
+    });
+
+    /* ─── Sort ──────────────────────────────────────────────────── */
+    document.querySelectorAll('.th-sort').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const col = btn.dataset.col;
+        if (sortCol === col) {
+          sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          sortCol = col;
+          sortDir = 'asc';
+        }
+        renderRecords();
+      });
     });
 
     /* ─── Init ──────────────────────────────────────────────────── */

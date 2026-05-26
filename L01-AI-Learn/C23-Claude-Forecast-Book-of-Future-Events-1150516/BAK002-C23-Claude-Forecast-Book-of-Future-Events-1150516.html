@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>23. yfchen 的未來事件預測簿(Claude)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f0f2f8;
+      --bg2: #e4e8f4;
+      --card: #ffffff;
+      --card2: #f7f8fd;
+      --text: #1a1c2e;
+      --text2: #4a4f6e;
+      --border: #c8ceea;
+      --primary: #1a237e;
+      --primary-lt: #3949ab;
+      --accent: #e53935;
+      --success: #2e7d32;
+      --error: #c62828;
+      --pending: #e65100;
+      --shadow: 0 2px 12px rgba(26, 35, 126, .10);
+      --shadow-lg: 0 8px 32px rgba(26, 35, 126, .16);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --transition: .22s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg: #1e1e2e;
+      --bg2: #181825;
+      --card: #2a2a3e;
+      --card2: #252538;
+      --text: #e8eaf6;
+      --text2: #9fa8da;
+      --border: #3d3d5c;
+      --primary: #5c6bc0;
+      --primary-lt: #7986cb;
+      --accent: #ef5350;
+      --success: #66bb6a;
+      --error: #ef5350;
+      --pending: #ffa726;
+      --shadow: 0 2px 12px rgba(0, 0, 0, .4);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, .5);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      transition: background var(--transition), color var(--transition);
+      min-height: 100vh
+    }
+
+    a {
+      color: var(--primary-lt);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit
+    }
+
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: .95rem;
+      color: var(--text);
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .55rem .85rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      width: 100%
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-lt);
+      box-shadow: 0 0 0 3px rgba(57, 73, 171, .18)
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c6bc0' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right .9rem center;
+      padding-right: 2.2rem
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.2rem
+    }
+
+    /* Header */
+    header {
+      background: var(--primary-lt);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .22);
+      position: sticky;
+      top: 0;
+      z-index: 100
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .75rem 1.2rem;
+      max-width: 1100px;
+      margin: 0 auto
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: .9rem
+    }
+
+    /* Logo 替換：將下方 div.logo-placeholder 換成 <img src="logo.png" class="logo-img"> */
+    .logo-placeholder {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7986cb, #e8eaf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .2)
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+      border-radius: var(--radius-sm)
+    }
+
+    .site-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #e8eaf6;
+      letter-spacing: .03em;
+      line-height: 1.3
+    }
+
+    .site-subtitle {
+      font-size: .72rem;
+      color: #9fa8da;
+      font-weight: 300
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .btn-icon {
+      background: rgba(255, 255, 255, .12);
+      border: 1.5px solid rgba(255, 255, 255, .22);
+      color: #e8eaf6;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      transition: background var(--transition), transform var(--transition)
+    }
+
+    .btn-icon:hover {
+      background: rgba(255, 255, 255, .22);
+      transform: scale(1.08)
+    }
+
+    main {
+      padding: 2rem 0 3rem
+    }
+
+    .section-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      margin-bottom: 1.1rem;
+      border-left: 4px solid var(--primary);
+      padding-left: .75rem
+    }
+
+    [data-theme="dark"] .section-title {
+      color: var(--primary-lt);
+      border-color: var(--primary-lt)
+    }
+
+    /* Form */
+    .form-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+      transition: background var(--transition)
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .35rem
+    }
+
+    .form-group.full {
+      grid-column: 1/-1
+    }
+
+    .form-group label {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text2);
+      letter-spacing: .02em
+    }
+
+    .form-group label span.req {
+      color: var(--accent);
+      margin-left: .2rem
+    }
+
+    .num-display {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .55rem .85rem;
+      font-weight: 600;
+      color: var(--primary-lt);
+      font-size: .95rem;
+      min-height: 38px
+    }
+
+    .cat-row {
+      display: flex;
+      gap: .5rem;
+      align-items: center
+    }
+
+    .cat-row select {
+      flex: 1
+    }
+
+    .btn-add-cat {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: .55rem .75rem;
+      font-size: .88rem;
+      white-space: nowrap;
+      transition: background var(--transition)
+    }
+
+    .btn-add-cat:hover {
+      background: var(--primary-lt)
+    }
+
+    .form-actions {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: .65rem 1.6rem;
+      font-size: .97rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 2px 8px rgba(26, 35, 126, .25)
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-lt);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(26, 35, 126, .3)
+    }
+
+    .btn-primary:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+      transform: none
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-lt);
+      border: 1.5px solid var(--primary-lt);
+      border-radius: var(--radius-sm);
+      padding: .62rem 1.2rem;
+      font-size: .95rem;
+      font-weight: 500;
+      transition: background var(--transition)
+    }
+
+    .btn-secondary:hover {
+      background: rgba(57, 73, 171, .08)
+    }
+
+    /* Notification */
+    #notification {
+      position: fixed;
+      top: 76px;
+      right: 1.2rem;
+      z-index: 200;
+      max-width: 340px;
+      min-width: 200px;
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg);
+      border-left: 4px solid var(--primary);
+      padding: .75rem 1rem;
+      font-size: .9rem;
+      display: none;
+      animation: slideIn .3s ease
+    }
+
+    #notification.show {
+      display: flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    #notification.success {
+      border-color: var(--success)
+    }
+
+    #notification.error {
+      border-color: var(--error)
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    /* Stats */
+    .stats-bar {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem
+    }
+
+    .stat-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .35rem 1rem;
+      font-size: .83rem;
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      box-shadow: var(--shadow)
+    }
+
+    .stat-chip i {
+      font-size: .9rem
+    }
+
+    .stat-chip.s-pending i {
+      color: var(--pending)
+    }
+
+    .stat-chip.s-success i {
+      color: var(--success)
+    }
+
+    .stat-chip.s-error i {
+      color: var(--error)
+    }
+
+    .stat-chip.s-total i {
+      color: var(--primary-lt)
+    }
+
+    /* Filter */
+    .filter-bar {
+      display: flex;
+      gap: .65rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+      align-items: center
+    }
+
+    .filter-bar select,
+    .filter-bar input[type="text"] {
+      max-width: 200px;
+      font-size: .88rem
+    }
+
+    .filter-bar label {
+      font-size: .83rem;
+      color: var(--text2)
+    }
+
+    .btn-refresh {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: .5rem .9rem;
+      font-size: .88rem;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      transition: background var(--transition)
+    }
+
+    .btn-refresh:hover {
+      background: var(--primary-lt)
+    }
+
+    /* Table */
+    .records-section {
+      overflow: hidden
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg)
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      font-size: .88rem;
+      min-width: 820px
+    }
+
+    thead tr {
+      background: var(--primary)
+    }
+
+    thead th {
+      color: #e8eaf6;
+      font-weight: 600;
+      font-size: .82rem;
+      padding: .75rem .9rem;
+      text-align: left;
+      letter-spacing: .04em;
+      white-space: nowrap
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition)
+    }
+
+    tbody tr:last-child {
+      border-bottom: none
+    }
+
+    tbody tr:hover {
+      background: var(--card2)
+    }
+
+    tbody td {
+      padding: .72rem .9rem;
+      vertical-align: top
+    }
+
+    .td-num {
+      color: var(--text2);
+      font-size: .8rem;
+      width: 48px;
+      text-align: center
+    }
+
+    .td-date {
+      white-space: nowrap;
+      font-size: .83rem;
+      color: var(--text2)
+    }
+
+    .td-cat .cat-badge {
+      display: inline-block;
+      background: rgba(57, 73, 171, .12);
+      color: var(--primary-lt);
+      border-radius: 999px;
+      padding: .15rem .65rem;
+      font-size: .78rem;
+      font-weight: 500
+    }
+
+    [data-theme="dark"] .td-cat .cat-badge {
+      background: rgba(92, 107, 192, .18)
+    }
+
+    .td-content {
+      max-width: 240px;
+      line-height: 1.5
+    }
+
+    .td-verify-date {
+      white-space: nowrap;
+      font-size: .83rem
+    }
+
+    .td-result {
+      text-align: center;
+      font-size: 1.1rem
+    }
+
+    .result-correct {
+      color: var(--success)
+    }
+
+    .result-error {
+      color: var(--error)
+    }
+
+    .result-pending {
+      color: var(--pending)
+    }
+
+    .td-proof {
+      max-width: 160px;
+      font-size: .83rem;
+      word-break: break-all
+    }
+
+    .td-action {
+      white-space: nowrap
+    }
+
+    .btn-verify {
+      background: transparent;
+      border: 1.5px solid var(--primary-lt);
+      color: var(--primary-lt);
+      border-radius: var(--radius-sm);
+      padding: .3rem .7rem;
+      font-size: .8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      transition: background var(--transition), color var(--transition)
+    }
+
+    .btn-verify:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary)
+    }
+
+    .btn-verify:disabled {
+      opacity: .45;
+      cursor: not-allowed
+    }
+
+    /* Cards (mobile) */
+    .card-list {
+      display: none;
+      flex-direction: column;
+      gap: 1rem
+    }
+
+    .rec-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+      transition: background var(--transition)
+    }
+
+    .rec-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: .6rem
+    }
+
+    .rec-card-num {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      padding: .1rem .6rem;
+      font-size: .78rem;
+      font-weight: 600
+    }
+
+    .rec-card-result {
+      font-size: 1.2rem
+    }
+
+    .rec-card-meta {
+      font-size: .8rem;
+      color: var(--text2);
+      margin-bottom: .5rem;
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap
+    }
+
+    .rec-card-content {
+      font-size: .9rem;
+      line-height: 1.6;
+      margin-bottom: .6rem
+    }
+
+    .rec-card-proof {
+      font-size: .82rem;
+      color: var(--text2);
+      word-break: break-all;
+      margin-bottom: .6rem
+    }
+
+    .rec-card-footer {
+      display: flex;
+      justify-content: flex-end
+    }
+
+    /* State */
+    .state-box {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 2.5rem 1rem;
+      text-align: center;
+      color: var(--text2);
+      font-size: .95rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow)
+    }
+
+    .state-box i {
+      font-size: 2.2rem;
+      margin-bottom: .8rem;
+      display: block;
+      opacity: .5
+    }
+
+    .spinner {
+      animation: spin 1s linear infinite
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      z-index: 300;
+      align-items: center;
+      justify-content: center
+    }
+
+    .modal-overlay.show {
+      display: flex;
+      animation: fadeIn .2s ease
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .modal {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      width: min(420px, 94vw);
+      box-shadow: var(--shadow-lg);
+      animation: slideUp .25s ease
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0
+      }
+
+      to {
+        transform: none;
+        opacity: 1
+      }
+    }
+
+    .modal h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.05rem;
+      margin-bottom: .4rem;
+      color: var(--primary)
+    }
+
+    [data-theme="dark"] .modal h3 {
+      color: var(--primary-lt)
+    }
+
+    .modal p {
+      font-size: .9rem;
+      color: var(--text2);
+      margin-bottom: 1.2rem
+    }
+
+    .modal-btns {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .btn-correct {
+      background: var(--success);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: .6rem 1.4rem;
+      font-size: .95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      transition: opacity var(--transition)
+    }
+
+    .btn-correct:hover {
+      opacity: .85
+    }
+
+    .btn-wrong {
+      background: var(--error);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: .6rem 1.4rem;
+      font-size: .95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      transition: opacity var(--transition)
+    }
+
+    .btn-wrong:hover {
+      opacity: .85
+    }
+
+    .btn-cancel {
+      background: transparent;
+      color: var(--text2);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .6rem 1rem;
+      font-size: .93rem
+    }
+
+    .btn-cancel:hover {
+      background: var(--bg2)
+    }
+
+    #addCatModal .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem
+    }
+
+    #addCatModal input {
+      margin-top: .2rem
+    }
+
+    /* Sort buttons in thead */
+    .th-sort {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      color: #e8eaf6;
+      font-weight: 600;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      padding: 0;
+      font-family: inherit
+    }
+
+    .th-sort:hover {
+      color: #fff;
+      text-decoration: underline
+    }
+
+    .sort-icon {
+      font-size: .72rem;
+      opacity: .6
+    }
+
+    .th-sort.asc .sort-icon::before { content: '▲' }
+    .th-sort.desc .sort-icon::before { content: '▼' }
+    .th-sort:not(.asc):not(.desc) .sort-icon::before { content: '⇅' }
+
+    /* Verify modal proof field */
+    .verify-proof-group {
+      margin: .9rem 0 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem
+    }
+
+    .verify-proof-group label {
+      font-size: .83rem;
+      font-weight: 500;
+      color: var(--text2)
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: .8rem;
+      color: var(--text2);
+      border-top: 1px solid var(--border)
+    }
+
+    @media(max-width:700px) {
+      .site-title {
+        font-size: .95rem
+      }
+
+      .form-card {
+        padding: 1.1rem 1rem
+      }
+
+      .table-wrap {
+        display: none
+      }
+
+      .card-list {
+        display: flex
+      }
+
+      .stats-bar {
+        gap: .5rem
+      }
+
+      .stat-chip {
+        font-size: .78rem;
+        padding: .3rem .8rem
+      }
+    }
+
+    @media(max-width:480px) {
+      .form-grid {
+        grid-template-columns: 1fr
+      }
+
+      .filter-bar select,
+      .filter-bar input[type="text"] {
+        max-width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-area">
+        <!--
+        Logo 替換說明：
+        PNG: <img src="logo.png" alt="yfchen Logo" class="logo-img">
+        SVG: <img src="logo.svg" alt="yfchen Logo" class="logo-img">
+        將下方 div.logo-placeholder 整行換掉即可。
+      -->
+        <!-- <div class="logo-placeholder" aria-label="yfchen Logo">Y</div> -->
+        <img style="height:40px;" src="logo.png" alt="yfchen Logo" class="logo-img">
+        <div>
+          <div class="site-title">23. yfchen 的未來事件預測簿(Claude) ~ 115.05.16</div>
+          <div class="site-subtitle">記錄・預測・驗證・成長</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn-icon" id="themeToggle" title="切換深色/淺色模式" aria-label="切換主題">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="notification" role="alert">
+    <i id="notifIcon" class="fa-solid fa-circle-info"></i>
+    <span id="notifMsg">訊息</span>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <section class="form-card" aria-label="新增預測">
+        <div class="section-title"><i class="fa-solid fa-crystal-ball"></i>新增預測事件</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>序號</label>
+            <div class="num-display" id="numDisplay">—</div>
+          </div>
+          <div class="form-group">
+            <label for="fDate">日期 <span class="req">*</span></label>
+            <input type="date" id="fDate" required />
+          </div>
+          <div class="form-group">
+            <label for="fTime">時間 <span class="req">*</span></label>
+            <input type="time" id="fTime" required />
+          </div>
+          <div class="form-group">
+            <label for="fCat">預測事件分類 <span class="req">*</span></label>
+            <div class="cat-row">
+              <select id="fCat" required>
+                <option value="">— 請選擇分類 —</option>
+                <option value="個人成長">個人成長</option>
+                <option value="健康醫療">健康醫療</option>
+                <option value="科技 AI">科技 AI</option>
+                <option value="財經市場">財經市場</option>
+                <option value="社會新聞">社會新聞</option>
+                <option value="家庭生活">家庭生活</option>
+                <option value="天氣自然">天氣自然</option>
+                <option value="其他">其他</option>
+              </select>
+              <button class="btn-add-cat" id="btnAddCat" title="新增自訂分類">
+                <i class="fa-solid fa-plus"></i> 自訂
+              </button>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="fContent">預測內容 <span class="req">*</span></label>
+            <textarea id="fContent" placeholder="詳細描述你的預測…" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="fVerifyDate">預測驗證日期 <span class="req">*</span></label>
+            <input type="date" id="fVerifyDate" required />
+          </div>
+          <div class="form-group">
+            <label for="fProof">驗證證明（文字或網址）</label>
+            <input type="text" id="fProof" placeholder="可填入說明文字或相關連結…" />
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-primary" id="btnSubmit">
+            <i class="fa-solid fa-paper-plane"></i> 送出預測
+          </button>
+          <button class="btn-secondary" id="btnClear">
+            <i class="fa-solid fa-eraser"></i> 清除
+          </button>
+        </div>
+      </section>
+
+      <section class="records-section" aria-label="預測記錄">
+        <div class="section-title"><i class="fa-solid fa-list-ul"></i>所有預測記錄</div>
+        <div class="stats-bar">
+          <div class="stat-chip s-total"><i class="fa-solid fa-database"></i>總筆數：<strong id="statTotal">0</strong></div>
+          <div class="stat-chip s-pending"><i class="fa-solid fa-clock"></i>未驗證：<strong id="statPending">0</strong>
+          </div>
+          <div class="stat-chip s-success"><i class="fa-solid fa-check-circle"></i>正確：<strong
+              id="statCorrect">0</strong></div>
+          <div class="stat-chip s-error"><i class="fa-solid fa-times-circle"></i>錯誤：<strong id="statError">0</strong>
+          </div>
+
+        
+
+        </div>
+        <div class="filter-bar">
+          <label>分類：</label>
+          <select id="filterCat">
+            <option value="">全部</option>
+          </select>
+          <label>結果：</label>
+          <select id="filterResult">
+            <option value="">全部</option>
+            <option value="未驗證">未驗證</option>
+            <option value="正確">正確</option>
+            <option value="錯誤">錯誤</option>
+          </select>
+          <input type="text" id="filterKeyword" placeholder="關鍵字搜尋…" style="max-width:180px;" />
+          <button class="btn-refresh" id="btnRefresh">
+            <i class="fa-solid fa-rotate-right"></i> 重新載入
+          </button>
+        </div>
+        <div class="table-wrap" id="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th><button class="th-sort" data-col="num">#<span class="sort-icon"></span></button></th>
+                <th><button class="th-sort" data-col="date">日期 / 時間<span class="sort-icon"></span></button></th>
+                <th><button class="th-sort" data-col="category">分類<span class="sort-icon"></span></button></th>
+                <th>預測內容</th>
+                <th><button class="th-sort" data-col="verifyDate">驗證日期<span class="sort-icon"></span></button></th>
+                <th><button class="th-sort" data-col="result">驗證結果<span class="sort-icon"></span></button></th>
+                <th>證明連結</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <div class="card-list" id="cardList"></div>
+        <div class="state-box" id="loadingBox" style="display:none;">
+          <i class="fa-solid fa-circle-notch spinner"></i>資料載入中…
+        </div>
+        <div class="state-box" id="emptyBox" style="display:none;">
+          <i class="fa-solid fa-inbox"></i>尚無預測記錄，新增第一筆吧！
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>yfchen 的未來事件預測簿 &copy; 2026 &nbsp;|&nbsp; 資料儲存於個人 Google Sheets</p>
+  </footer>
+
+  <!-- Verify Modal -->
+  <div class="modal-overlay" id="verifyModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h3><i class="fa-solid fa-circle-check"></i> 驗證預測結果</h3>
+      <p id="verifyContent">請選擇這則預測的驗證結果：</p>
+      <div class="verify-proof-group">
+        <label for="verifyProofInput"><i class="fa-solid fa-link"></i> 驗證證明（選填，可填文字或網址）</label>
+        <input type="text" id="verifyProofInput" placeholder="如有截圖說明或相關連結，請填入…" />
+      </div>
+      <div class="modal-btns">
+        <button class="btn-correct" id="btnCorrect"><i class="fa-solid fa-check"></i> 正確</button>
+        <button class="btn-wrong" id="btnWrong"><i class="fa-solid fa-xmark"></i> 錯誤</button>
+        <button class="btn-cancel" id="btnCancelVerify">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Category Modal -->
+  <div class="modal-overlay" id="addCatModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <h3><i class="fa-solid fa-tag"></i> 新增自訂分類</h3>
+      <div class="modal-form">
+        <div class="form-group">
+          <label for="newCatInput">分類名稱</label>
+          <input type="text" id="newCatInput" placeholder="輸入新分類名稱…" maxlength="20" />
+        </div>
+        <div class="modal-btns">
+          <button class="btn-primary" id="btnConfirmCat"><i class="fa-solid fa-plus"></i> 新增</button>
+          <button class="btn-cancel" id="btnCancelCat">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ================================================================
+       GAS_URL：你的 Google Apps Script Web App 網址
+       ✅ 已保留你原本填入的網址，無需修改
+    ================================================================ */
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbzZODnrqjTd5TCelqiKQ62y4v1eus8CqrqTXd5qC4y0SecPFs1qfkxEqNcp840UWj8/exec';
+
+    /* ================================================================
+       核心修正：改用 JSONP 模式（動態注入 <script> 標籤）
+       原因：從本機 file:// 開啟時，fetch() 會被瀏覽器 CORS 政策阻擋。
+             JSONP 透過 <script src="..."> 繞過 CORS，完全不需要伺服器。
+             GET 讀取 + 所有寫入動作（新增 / 驗證）統一走 doGet，
+             參數改用 URL query string 傳遞。
+       對應的 apps-script.gs 也需同步更新（已另附修正版）。
+    ================================================================ */
+
+    /* ─── Theme ─────────────────────────────────────────────────── */
+    function applyTheme(dark) {
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      document.getElementById('themeIcon').className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('yfchen-theme', dark ? 'dark' : 'light');
+    }
+    applyTheme(localStorage.getItem('yfchen-theme') === 'dark');
+    document.getElementById('themeToggle').addEventListener('click', () =>
+      applyTheme(document.documentElement.getAttribute('data-theme') !== 'dark'));
+
+    /* ─── Notification ──────────────────────────────────────────── */
+    let _notifTimer = null;
+    function showNotif(msg, type = 'info') {
+      const icons = { success: 'fa-circle-check', error: 'fa-circle-xmark', info: 'fa-circle-info' };
+      document.getElementById('notifIcon').className = `fa-solid ${icons[type] || icons.info}`;
+      document.getElementById('notifMsg').textContent = msg;
+      const el = document.getElementById('notification');
+      el.className = `show ${type}`;
+      clearTimeout(_notifTimer);
+      _notifTimer = setTimeout(() => el.classList.remove('show'), 4200);
+    }
+
+    /* ─── State ─────────────────────────────────────────────────── */
+    let allRecords = [];
+    let verifyRowId = null;
+    let nextNum = 1;
+    let sortCol = 'num';
+    let sortDir = 'asc'; // 'asc' | 'desc'
+
+    /* ─── Default Date ──────────────────────────────────────────── */
+    function setDefaultDate() {
+      const now = new Date(), pad = n => String(n).padStart(2, '0');
+      document.getElementById('fDate').value =
+        `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+      document.getElementById('fTime').value =
+        `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+      const later = new Date(now); later.setDate(later.getDate() + 7);
+      document.getElementById('fVerifyDate').value =
+        `${later.getFullYear()}-${pad(later.getMonth() + 1)}-${pad(later.getDate())}`;
+    }
+    setDefaultDate();
+
+    /* ================================================================
+       JSONP 通用函式：所有 GAS 呼叫統一走這裡
+       params  物件  → 轉成 URL 參數
+       timeout 毫秒  → 逾時保護（預設 12 秒）
+       onDone  fn(ok, data) → 回傳結果
+    ================================================================ */
+    function jsonpCall(params, timeout, onDone) {
+      const cbName = '_yfcb' + Date.now() + Math.floor(Math.random() * 1000);
+      let el = null;
+
+      const cleanup = () => {
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+        delete window[cbName];
+      };
+
+      const timer = setTimeout(() => {
+        cleanup();
+        onDone(false, null, 'timeout');
+      }, timeout || 12000);
+
+      window[cbName] = function (data) {
+        clearTimeout(timer);
+        cleanup();
+        onDone(data && data.status === 'ok', data, null);
+      };
+
+      const qs = Object.entries({ ...params, callback: cbName, _t: Date.now() })
+        .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('&');
+
+      el = document.createElement('script');
+      el.src = `${GAS_URL}?${qs}`;
+      el.onerror = () => { clearTimeout(timer); cleanup(); onDone(false, null, 'network'); };
+      document.head.appendChild(el);
+    }
+
+    /* ─── Load Records ──────────────────────────────────────────── */
+    function loadRecords() {
+      showLoading(true);
+      jsonpCall({ action: 'getAll' }, 12000, (ok, data, err) => {
+        showLoading(false);
+        if (!ok) {
+          const msg = err === 'timeout'
+            ? '⚠️ 載入逾時：確認 GAS_URL 正確且部署權限為「任何人」'
+            : '⚠️ 無法連接 Apps Script：確認 GAS_URL 是否正確';
+          showNotif(msg, 'error'); return;
+        }
+        allRecords = data.records || [];
+        nextNum = allRecords.length
+          ? Math.max(...allRecords.map(r => parseInt(r.num) || 0)) + 1 : 1;
+        document.getElementById('numDisplay').textContent = String(nextNum).padStart(4, '0');
+        renderRecords(); updateStats(); updateFilterCats();
+      });
+    }
+
+    function showLoading(on) {
+      document.getElementById('loadingBox').style.display = on ? 'block' : 'none';
+      document.getElementById('tableWrap').style.display = on ? 'none' : '';
+      document.getElementById('cardList').style.display = on ? 'none' : '';
+      if (on) document.getElementById('emptyBox').style.display = 'none';
+    }
+
+    /* ─── Render ────────────────────────────────────────────────── */
+    function escHtml(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+    function resultIcon(r) {
+      if (r === '正確') return '<i class="fa-solid fa-check-circle result-correct" title="正確"></i>';
+      if (r === '錯誤') return '<i class="fa-solid fa-times-circle result-error" title="錯誤"></i>';
+      return '<i class="fa-regular fa-clock result-pending" title="未驗證"></i>';
+    }
+    function proofCell(p) {
+      if (!p) return '—';
+      if (/^https?:\/\//i.test(p))
+        return `<a href="${escHtml(p)}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> 查看連結</a>`;
+      return escHtml(p);
+    }
+    function getFiltered() {
+      const cat = document.getElementById('filterCat').value;
+      const res = document.getElementById('filterResult').value;
+      const kw = document.getElementById('filterKeyword').value.trim().toLowerCase();
+      return allRecords.filter(r => {
+        if (cat && r.category !== cat) return false;
+        if (res && r.result !== res) return false;
+        if (kw && !r.content?.toLowerCase().includes(kw) && !r.proof?.toLowerCase().includes(kw)) return false;
+        return true;
+      });
+    }
+    function getSorted(arr) {
+      const col = sortCol;
+      const dir = sortDir === 'asc' ? 1 : -1;
+      return [...arr].sort((a, b) => {
+        let av = a[col] ?? '', bv = b[col] ?? '';
+        if (col === 'num') { av = parseInt(av) || 0; bv = parseInt(bv) || 0; }
+        if (col === 'result') {
+          const order = { '未驗證': 0, '正確': 1, '錯誤': 2 };
+          av = order[av] ?? 0; bv = order[bv] ?? 0;
+        }
+        if (av < bv) return -1 * dir;
+        if (av > bv) return 1 * dir;
+        return 0;
+      });
+    }
+    function updateSortUI() {
+      document.querySelectorAll('.th-sort').forEach(btn => {
+        btn.classList.remove('asc', 'desc');
+        if (btn.dataset.col === sortCol) btn.classList.add(sortDir);
+      });
+    }
+    function renderRecords() {
+      const filtered = getSorted(getFiltered());
+      const tbody = document.getElementById('tableBody');
+      const cards = document.getElementById('cardList');
+      const empty = document.getElementById('emptyBox');
+      tbody.innerHTML = ''; cards.innerHTML = '';
+      updateSortUI();
+      if (!filtered.length) {
+        empty.style.display = 'block';
+        document.getElementById('tableWrap').style.display = 'none';
+        cards.style.display = 'none'; return;
+      }
+      empty.style.display = 'none';
+      document.getElementById('tableWrap').style.display = '';
+      cards.style.display = 'flex';
+
+      filtered.forEach(rec => {
+        const iv = rec.result !== '未驗證';
+        const verifyBtn = `<button class="btn-verify"
+      data-rowid="${escHtml(String(rec.rowIndex))}"
+      data-content="${escHtml(rec.content)}"
+      ${iv ? 'disabled title="已驗證"' : 'title="進行驗證"'}>
+      <i class="fa-solid fa-pen-to-square"></i>${iv ? '已驗證' : '驗證'}
+    </button>`;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+      <td class="td-num">${escHtml(String(rec.num))}</td>
+      <td class="td-date">${escHtml(rec.date)}<br><small>${escHtml(rec.time)}</small></td>
+      <td class="td-cat"><span class="cat-badge">${escHtml(rec.category)}</span></td>
+      <td class="td-content">${escHtml(rec.content)}</td>
+      <td class="td-verify-date">${escHtml(rec.verifyDate)}</td>
+      <td class="td-result">${resultIcon(rec.result)}</td>
+      <td class="td-proof">${proofCell(rec.proof)}</td>
+      <td class="td-action">${verifyBtn}</td>`;
+        tbody.appendChild(tr);
+
+        const card = document.createElement('div');
+        card.className = 'rec-card';
+        card.innerHTML = `
+      <div class="rec-card-header">
+        <span class="rec-card-num">#${escHtml(String(rec.num))}</span>
+        <span class="rec-card-result">${resultIcon(rec.result)}</span>
+      </div>
+      <div class="rec-card-meta">
+        <span><i class="fa-regular fa-calendar"></i> ${escHtml(rec.date)} ${escHtml(rec.time)}</span>
+        <span class="cat-badge">${escHtml(rec.category)}</span>
+      </div>
+      <div class="rec-card-content">${escHtml(rec.content)}</div>
+      <div class="rec-card-proof"><i class="fa-solid fa-link"></i> 證明：${proofCell(rec.proof)} &nbsp; 驗證日：${escHtml(rec.verifyDate)}</div>
+      <div class="rec-card-footer">${verifyBtn}</div>`;
+        cards.appendChild(card);
+      });
+
+      document.querySelectorAll('.btn-verify:not([disabled])').forEach(btn =>
+        btn.addEventListener('click', () => openVerifyModal(btn.dataset.rowid, btn.dataset.content)));
+    }
+    function updateStats() {
+      document.getElementById('statTotal').textContent = allRecords.length;
+      document.getElementById('statPending').textContent = allRecords.filter(r => r.result === '未驗證').length;
+      document.getElementById('statCorrect').textContent = allRecords.filter(r => r.result === '正確').length;
+      document.getElementById('statError').textContent = allRecords.filter(r => r.result === '錯誤').length;
+    }
+    function updateFilterCats() {
+      const sel = document.getElementById('filterCat');
+      const cats = [...new Set(allRecords.map(r => r.category).filter(Boolean))].sort();
+      const cur = sel.value;
+      sel.innerHTML = '<option value="">全部</option>';
+      cats.forEach(c => {
+        const o = document.createElement('option');
+        o.value = c; o.textContent = c;
+        if (c === cur) o.selected = true;
+        sel.appendChild(o);
+      });
+    }
+
+    /* ─── Submit ────────────────────────────────────────────────── */
+    document.getElementById('btnSubmit').addEventListener('click', () => {
+      const fDate = document.getElementById('fDate').value.trim();
+      const fTime = document.getElementById('fTime').value.trim();
+      const fCat = document.getElementById('fCat').value;
+      const fContent = document.getElementById('fContent').value.trim();
+      const fVerify = document.getElementById('fVerifyDate').value.trim();
+      const fProof = document.getElementById('fProof').value.trim();
+      if (!fDate || !fTime || !fCat || !fContent || !fVerify) {
+        showNotif('請填寫所有必填欄位（標有 * 號）', 'error'); return;
+      }
+      const btn = document.getElementById('btnSubmit');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-circle-notch spinner"></i> 送出中…';
+
+      jsonpCall({
+        action: 'addRecord',
+        num: String(nextNum).padStart(4, '0'),
+        date: fDate, time: fTime, category: fCat,
+        content: fContent, verifyDate: fVerify, proof: fProof
+      }, 15000, (ok, data, err) => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 送出預測';
+        if (ok) {
+          showNotif('✅ 預測已成功記錄！', 'success');
+          clearForm();
+          setTimeout(loadRecords, 600);
+        } else {
+          const msg = err === 'timeout' ? '送出逾時，請重新嘗試' : '送出失敗：' + (data?.message || err || '未知');
+          showNotif(msg, 'error');
+        }
+      });
+    });
+
+    function clearForm() {
+      document.getElementById('fContent').value = '';
+      document.getElementById('fProof').value = '';
+      document.getElementById('fCat').value = '';
+      setDefaultDate();
+    }
+    document.getElementById('btnClear').addEventListener('click', clearForm);
+
+    /* ─── Verify Modal ──────────────────────────────────────────── */
+    function openVerifyModal(rowId, content) {
+      verifyRowId = rowId;
+      document.getElementById('verifyContent').textContent = `「${content}」`;
+      document.getElementById('verifyProofInput').value = '';
+      document.getElementById('verifyModal').classList.add('show');
+    }
+    function closeVerifyModal() {
+      document.getElementById('verifyModal').classList.remove('show');
+      document.getElementById('verifyProofInput').value = '';
+      verifyRowId = null;
+    }
+    document.getElementById('btnCancelVerify').addEventListener('click', closeVerifyModal);
+    document.getElementById('verifyModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeVerifyModal(); });
+
+    function submitVerify(result) {
+      if (!verifyRowId) return;
+      const rowId = verifyRowId;
+      const proof = document.getElementById('verifyProofInput').value.trim();
+      closeVerifyModal();
+      const params = { action: 'updateResult', rowIndex: rowId, result };
+      if (proof) params.proof = proof;
+      jsonpCall(params, 15000, (ok, data, err) => {
+        if (ok) {
+          showNotif(`驗證結果「${result}」已更新！`, 'success');
+          setTimeout(loadRecords, 600);
+        } else {
+          showNotif('驗證更新失敗：' + (data?.message || err || ''), 'error');
+        }
+      });
+    }
+    document.getElementById('btnCorrect').addEventListener('click', () => submitVerify('正確'));
+    document.getElementById('btnWrong').addEventListener('click', () => submitVerify('錯誤'));
+
+    /* ─── Add Category Modal ────────────────────────────────────── */
+    document.getElementById('btnAddCat').addEventListener('click', () => {
+      document.getElementById('newCatInput').value = '';
+      document.getElementById('addCatModal').classList.add('show');
+      setTimeout(() => document.getElementById('newCatInput').focus(), 80);
+    });
+    document.getElementById('btnCancelCat').addEventListener('click', () =>
+      document.getElementById('addCatModal').classList.remove('show'));
+    document.getElementById('addCatModal').addEventListener('click', e => { if (e.target === e.currentTarget) document.getElementById('addCatModal').classList.remove('show'); });
+    document.getElementById('btnConfirmCat').addEventListener('click', () => {
+      const val = document.getElementById('newCatInput').value.trim();
+      if (!val) { showNotif('請輸入分類名稱', 'error'); return; }
+      const sel = document.getElementById('fCat');
+      if ([...sel.options].some(o => o.value === val)) { showNotif('此分類已存在', 'error'); return; }
+      const o = document.createElement('option');
+      o.value = val; o.textContent = val; sel.appendChild(o); sel.value = val;
+      document.getElementById('addCatModal').classList.remove('show');
+      showNotif(`已新增分類「${val}」`, 'success');
+    });
+
+    /* ─── Filters & Refresh ─────────────────────────────────────── */
+    ['filterCat', 'filterResult', 'filterKeyword'].forEach(id =>
+      document.getElementById(id).addEventListener('input', renderRecords));
+    document.getElementById('btnRefresh').addEventListener('click', loadRecords);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.getElementById('verifyModal').classList.remove('show');
+        document.getElementById('addCatModal').classList.remove('show');
+      }
+    });
+
+    /* ─── Sort ──────────────────────────────────────────────────── */
+    document.querySelectorAll('.th-sort').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const col = btn.dataset.col;
+        if (sortCol === col) {
+          sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          sortCol = col;
+          sortDir = 'asc';
+        }
+        renderRecords();
+      });
+    });
+
+    /* ─── Init ──────────────────────────────────────────────────── */
+    loadRecords();
+  </script>
+</body>
+
+</html>

@@ -109,6 +109,13 @@ function doGet(e) {
       if (result !== '正確' && result !== '錯誤')
         return buildJsonp(callback, { status:'error', message:'result 須為「正確」或「錯誤」' });
       var sheet2   = getSheet();
+      // 若驗證時附上證明，寫入 PROOF 欄（現有欄位為空才覆寫，避免清除原始證明）
+      if (p.proof) {
+        var existingProof = sheet2.getRange(rowIndex, COL.PROOF).getValue();
+        if (!existingProof) {
+          sheet2.getRange(rowIndex, COL.PROOF).setValue(p.proof);
+        }
+      }
       var cell     = sheet2.getRange(rowIndex, COL.RESULT);
       cell.setValue(result);
       cell.setBackground(result==='正確' ? '#e8f5e9' : '#ffebee');
