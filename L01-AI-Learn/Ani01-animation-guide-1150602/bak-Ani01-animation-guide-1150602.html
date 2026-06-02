@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 動畫製作指南 ── AI 學苑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0d1b2a;
+      --navy2:  #1a2e45;
+      --teal:   #1a9e8f;
+      --teal2:  #13c5b2;
+      --gold:   #f5a623;
+      --gold2:  #ffd166;
+      --text:   #e8edf2;
+      --text2:  #9db3c8;
+      --card:   rgba(26,46,69,0.85);
+      --border: rgba(26,158,143,0.25);
+      --sans: 'Noto Sans TC', sans-serif;
+      --serif: 'Noto Serif TC', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--navy);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: rgba(13,27,42,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 64px;
+    }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--teal), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900; color: var(--navy); font-family: var(--serif);
+    }
+    .nav-title { font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: 1px; }
+    .nav-sub   { font-size: 11px; color: var(--text2); margin-top: 1px; }
+
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a {
+      color: var(--text2); text-decoration: none; font-size: 13px; font-weight: 500;
+      padding: 6px 14px; border-radius: 6px; transition: all .2s;
+    }
+    .nav-links a:hover { color: var(--teal2); background: rgba(26,158,143,0.1); }
+    .nav-badge {
+      background: var(--teal); color: var(--navy); font-size: 11px; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px; letter-spacing: 0.5px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: 64px; padding: 80px 32px 60px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(26,158,143,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block; background: rgba(26,158,143,0.15); border: 1px solid var(--teal);
+      color: var(--teal2); font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      padding: 4px 16px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(28px, 5vw, 52px);
+      font-weight: 900; line-height: 1.2;
+      background: linear-gradient(135deg, var(--text) 40%, var(--teal2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 16px;
+    }
+    .hero-sub {
+      color: var(--text2); font-size: 16px; line-height: 1.7; max-width: 560px; margin: 0 auto 32px;
+    }
+    .hero-meta {
+      display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+    }
+    .hero-meta span { font-size: 13px; color: var(--text2); display: flex; align-items: center; gap: 6px; }
+    .hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+    /* ── SECTION ── */
+    .section { max-width: 900px; margin: 0 auto; padding: 24px 24px; }
+    .section-title {
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
+      color: var(--teal2); margin-bottom: 24px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; gap: 16px; }
+
+    .step-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px 28px;
+      display: grid; grid-template-columns: 56px 1fr; gap: 20px;
+      transition: border-color .25s, transform .25s;
+      position: relative; overflow: hidden;
+    }
+    .step-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--step-color, var(--teal));
+      border-radius: 14px 0 0 14px;
+    }
+    .step-card:hover { border-color: var(--step-color, var(--teal)); transform: translateX(4px); }
+
+    .step-num {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: color-mix(in srgb, var(--step-color, var(--teal)) 15%, transparent);
+      border: 1.5px solid var(--step-color, var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 20px; font-weight: 900;
+      color: var(--step-color, var(--teal));
+    }
+
+    .step-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .step-body p  { font-size: 14px; color: var(--text2); line-height: 1.75; margin-bottom: 10px; }
+
+    .tool-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tool-pill {
+      font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px;
+      border: 1px solid; display: flex; align-items: center; gap: 5px;
+    }
+    .tool-free  { background: rgba(26,158,143,0.1); border-color: var(--teal); color: var(--teal2); }
+    .tool-note  { background: rgba(245,166,35,0.1); border-color: var(--gold); color: var(--gold2); }
+    .tool-warn  { background: rgba(220,80,80,0.1); border-color: #e05a5a; color: #f48888; }
+
+    .step-tip {
+      background: rgba(245,166,35,0.07); border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0; padding: 10px 14px; margin-top: 10px;
+      font-size: 13px; color: var(--gold2); line-height: 1.6;
+    }
+
+    /* ── TABLE ── */
+    .time-table {
+      width: 100%; border-collapse: collapse; margin-top: 8px;
+      font-size: 14px;
+    }
+    .time-table th {
+      background: rgba(26,158,143,0.15); color: var(--teal2);
+      font-weight: 700; padding: 10px 16px; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .time-table td {
+      padding: 10px 16px; color: var(--text2);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .time-table tr:last-child td { border-bottom: none; }
+    .time-table tr:hover td { background: rgba(26,158,143,0.05); }
+
+    /* ── CTA ── */
+    .cta-box {
+      background: linear-gradient(135deg, rgba(26,158,143,0.15), rgba(245,166,35,0.08));
+      border: 1px solid var(--border); border-radius: 16px;
+      padding: 40px 32px; text-align: center; margin: 32px 0 48px;
+    }
+    .cta-box h3 { font-family: var(--serif); font-size: 22px; margin-bottom: 10px; }
+    .cta-box p  { color: var(--text2); font-size: 14px; line-height: 1.7; max-width: 480px; margin: 0 auto 20px; }
+    .cta-btn {
+      display: inline-block; background: var(--teal); color: var(--navy);
+      font-weight: 700; font-size: 14px; padding: 12px 32px; border-radius: 8px;
+      text-decoration: none; transition: background .2s;
+    }
+    .cta-btn:hover { background: var(--teal2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(13,27,42,0.98); border-top: 1px solid var(--border);
+      padding: 40px 32px 24px;
+    }
+    .footer-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+    }
+    .footer-brand .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand p { font-size: 13px; color: var(--text2); line-height: 1.7; }
+    .footer-col h4 { font-size: 13px; font-weight: 700; color: var(--teal2); margin-bottom: 12px; letter-spacing: 1px; }
+    .footer-col a  { display: block; font-size: 13px; color: var(--text2); text-decoration: none; margin-bottom: 7px; transition: color .2s; }
+    .footer-col a:hover { color: var(--teal2); }
+    .footer-bottom {
+      max-width: 900px; margin: 32px auto 0; padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+    }
+    .footer-bottom span { font-size: 12px; color: var(--text2); }
+    .footer-tag {
+      background: rgba(26,158,143,0.12); color: var(--teal2);
+      font-size: 11px; padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border);
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 16px; }
+      .nav-links { display: none; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .step-card { grid-template-columns: 1fr; }
+      .hero { padding: 60px 20px 40px; }
+      .section { padding: 20px 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">AI</div>
+    <div>
+      <div class="nav-title">AI 學苑</div>
+      <div class="nav-sub">yfchen 退休學習記錄站</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#">首頁</a>
+    <a href="#">AI 工具</a>
+    <a href="#">每日英文</a>
+    <a href="#">閱讀筆記</a>
+    <a href="#">網頁設計</a>
+    <span class="nav-badge">2026</span>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">每日 AI ── 動畫製作專題</div>
+  <h1>退休生活動畫<br>免費工具全流程</h1>
+  <p class="hero-sub">從腳本到成品，用完全免費的 AI 工具組合，製作一部一分鐘的退休學習生活動畫。</p>
+  <div class="hero-meta">
+    <span><span class="dot"></span>全程免費工具</span>
+    <span><span class="dot"></span>7 個製作步驟</span>
+    <span><span class="dot"></span>預估 6～8 小時完成</span>
+    <span><span class="dot"></span>適合初學者</span>
+  </div>
+</section>
+
+<!-- ══════════ STEPS ══════════ -->
+<div class="section">
+  <div class="section-title">七步驟製作流程</div>
+
+  <div class="steps">
+
+    <!-- Step 1 -->
+    <div class="step-card" style="--step-color:#1a9e8f">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>腳本撰寫</h3>
+        <p>一分鐘動畫約需 150～180 字旁白。建議結構：開場（10秒）帶入退休情境，核心段落（40秒）呈現每日六件事，結尾（10秒）呼應主題「學習，不設終點」。</p>
+        <div class="tool-row">
+          <span class="tool-pill tool-free">✦ Claude — 免費</span>
+          <span class="tool-pill tool-free">✦ ChatGPT 免費版</span>
+        </div>
+        <div class="step-tip">建議先把生活情境描述給 AI，請它生成完整旁白稿，再自行微調語氣。</div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card" style="--step-color:#2196a8">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>分鏡規劃</h3>
+        <p>把旁白拆成 8～10 個場景，每場景對應一個畫面描述。例如：S1 早晨起床（陽光透窗）、S2 打開電腦（顯示 AI 介面）、S3 戴耳機聽英文……建立場景對照表。</p>
+        <div class="tool-row">
+          <span class="tool-pill tool-free">✦ Claude 輔助拆場景</span>
+          <span class="tool-pill tool-free">✦ Canva 免費版草圖</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-card" style="--step-color:#1565c0">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>圖片生成（人物 ＋ 場景）</h3>
+        <p>先生成「主角人物參考圖」，儲存提示詞，之後每張圖都帶入同一段 Prompt 確保外觀一致。建議風格：溫暖插畫感，避免照片寫實（動畫感更強）。</p>
+        <div class="tool-row">
+          <span class="tool-pill tool-free">✦ Leonardo.ai — 每日 150 積分</span>
+          <span class="tool-pill tool-free">✦ Kling AI 免費額度</span>
+          <span class="tool-pill tool-note">△ Adobe Firefly 免費版</span>
+        </div>
+        <div class="step-tip">範例 Prompt：「An elderly retired Taiwanese man in his 60s, casual home clothes, warm smile, sitting at desk with laptop, anime illustration style, soft warm lighting」</div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step-card" style="--step-color:#e05a5a">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>人物一致性（關鍵難點）</h3>
+        <p>這是免費工具流程中最大挑戰。同一個主角在不同場景必須保持相同外觀，需要固定 Prompt 或使用角色參考功能。</p>
+        <div class="tool-row">
+          <span class="tool-pill tool-free">✦ Kling AI 角色參考圖功能</span>
+          <span class="tool-pill tool-note">△ ComfyUI + IP-Adapter（本地免費，學習門檻較高）</span>
+        </div>
+        <div class="step-tip">建議先用 Kling AI 角色參考功能入門，熟悉後再研究 ComfyUI 本地方案，效果最穩定。</div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step-card" style="--step-color:#f5a623">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>圖片轉動畫影片</h3>
+        <p>將靜態圖片轉成 5 秒動態片段。一分鐘影片需要約 10～12 個片段。建議先從場景動態較小的畫面練手（如靜靜閱讀），再挑戰動作較多的場景。</p>
+        <div class="tool-row">
+          <span class="tool-pill tool-free">✦ Kling AI 免費版（5秒/片）</span>
+          <span class="tool-pill tool-free">✦ Pika Labs 免費額度</span>
+          <span class="tool-pill tool-note">△ Runway Gen-3 免費試用</span>
+        </div>
+        <div class="step-tip">積分策略：先用 Kling AI，積分不夠時用 Pika Labs 補齊，兩者風格接近可混用。</div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step-card" style="--step-color:#2e9c4a">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <h3>配音（中文旁白）</h3>
+        <p>將腳本文字轉為自然的中文語音。TTSMaker 支援繁體中文且完全免費，音質適合旁白使用；ElevenLabs 免費版音質更自然但每月有字數上限。</p>
+        <div class="tool-row">
+          <span class="tool-pill tool-free">✦ TTSMaker — 完全免費，繁中支援</span>
+          <span class="tool-pill tool-free">✦ ElevenLabs 免費版（每月 1 萬字）</span>
+          <span class="tool-pill tool-free">✦ Kokoro TTS（開源本地）</span>
+        </div>
+        <div class="step-tip">TTSMaker 每次最多 3000 字，一分鐘旁白完全夠用，直接匯出 MP3。</div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step-card" style="--step-color:#7b68ee">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <h3>剪輯 ＋ 字幕 ＋ 合成</h3>
+        <p>將所有片段、配音、背景音樂合併成完整影片。CapCut 桌面版有自動中文字幕功能，操作直覺，適合初學者。</p>
+        <div class="tool-row">
+          <span class="tool-pill tool-free">✦ CapCut 桌面版 — 免費，自動字幕</span>
+          <span class="tool-pill tool-note">△ DaVinci Resolve 免費版（進階）</span>
+        </div>
+        <div class="step-tip">操作順序：排入時間軸 → 匯入配音 MP3 對齊 → 自動生成字幕 → 加背景音樂 → 匯出 1080p MP4。</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ TIME TABLE ══════════ -->
+<div class="section">
+  <div class="section-title">時間規劃參考</div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+    <table class="time-table">
+      <thead>
+        <tr>
+          <th>階段</th>
+          <th>預估時間</th>
+          <th>難度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>腳本 ＋ 分鏡</td><td>約 1 小時</td><td style="color:var(--teal2)">★☆☆ 低</td></tr>
+        <tr><td>圖片生成 10 張</td><td>1～2 小時</td><td style="color:var(--teal2)">★★☆ 中</td></tr>
+        <tr><td>人物一致性調整</td><td>1～2 小時</td><td style="color:#f48888">★★★ 高</td></tr>
+        <tr><td>動畫生成（含等待）</td><td>2～3 小時</td><td style="color:var(--gold2)">★★☆ 中</td></tr>
+        <tr><td>配音製作</td><td>約 30 分鐘</td><td style="color:var(--teal2)">★☆☆ 低</td></tr>
+        <tr><td>剪輯合成</td><td>約 1 小時</td><td style="color:var(--teal2)">★★☆ 中</td></tr>
+        <tr><td><strong>總計</strong></td><td><strong>6～8 小時</strong></td><td style="color:var(--text2)">建議分 3～4 天</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ CTA ══════════ -->
+<div class="section">
+  <div class="cta-box">
+    <h3>準備好開始了嗎？</h3>
+    <p>把你想呈現的退休生活重點告訴 Claude，就能馬上生成完整旁白稿和分鏡大綱，是最快的起步方式。</p>
+    <a href="#" class="cta-btn">從腳本開始 →</a>
+  </div>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-row">
+        <div class="nav-logo" style="width:32px;height:32px;font-size:15px;">AI</div>
+        <div>
+          <div style="font-weight:700;font-size:15px;">AI 學苑</div>
+          <div style="font-size:11px;color:var(--text2);">yfchen 個人學習記錄站</div>
+        </div>
+      </div>
+      <p>退休後的自主學習與生活記錄。涵蓋 AI 工具實踐、網頁設計、英語學習與閱讀筆記。純粹為自己學習而建，不對外公開分享。</p>
+    </div>
+    <div class="footer-col">
+      <h4>每日學習</h4>
+      <a href="#">每日 AI</a>
+      <a href="#">每日網頁</a>
+      <a href="#">每日英文</a>
+      <a href="#">每日閱讀</a>
+    </div>
+    <div class="footer-col">
+      <h4>本站分類</h4>
+      <a href="#">AI 工具導覽</a>
+      <a href="#">提示詞庫</a>
+      <a href="#">圖片生成</a>
+      <a href="#">影片生成</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 yfchen ── AI 學苑．個人學習記錄</span>
+    <span class="footer-tag">關渡退休資深家庭專員</span>
+  </div>
+</footer>
+
+</body>
+</html>

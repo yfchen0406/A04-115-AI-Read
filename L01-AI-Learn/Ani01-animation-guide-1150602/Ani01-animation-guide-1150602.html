@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title>AI 動畫製作指南 ── AI 學苑</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 大陸網站iconfont圖標 -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── 範本原有 class，原封不動保留 ── */
+    .icon { width:1em; height:1em; vertical-align:-0.15em; fill:currentColor; overflow:hidden; }
+    .yf-container { position:relative; width:100%; height:0; padding-bottom:56.25%; }
+    .yf-video { position:absolute; top:0; left:0; width:100%; height:100%; }
+    .yf1  { color:green;  font-weight:bold; }
+    .yf11 { color:green; }
+    .yf2  { color:purple; font-weight:bold; }
+    .yf22 { color:purple; }
+    .yf3  { color:#0D6EFD; font-weight:bold; }
+    .yf33 { color:#0D6EFD; }
+    .yf4  { color:red; font-weight:bold; }
+    .yf44 { color:red; }
+    .yf5  { color:rgb(143,13,13); font-weight:bold; }
+    .yf55 { color:rgb(143,13,13); }
+    .yf-c { text-align:center; }
+
+    /* ── 本頁專用：步驟卡片 ── */
+    .step-card {
+      border-left: 4px solid;
+      border-radius: 6px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      background-color: #f8f9fa;
+    }
+    .step-card h5 { font-weight: 700; margin-bottom: 6px; }
+    .step-card p  { font-size: 14px; color: #444; margin-bottom: 8px; line-height: 1.75; }
+
+    .step-s1 { border-color: #1a9e8f; }
+    .step-s1 h5 { color: #1a9e8f; }
+    .step-s2 { border-color: #2196a8; }
+    .step-s2 h5 { color: #2196a8; }
+    .step-s3 { border-color: #0D6EFD; }
+    .step-s3 h5 { color: #0D6EFD; }
+    .step-s4 { border-color: #dc3545; }
+    .step-s4 h5 { color: #dc3545; }
+    .step-s5 { border-color: #fd7e14; }
+    .step-s5 h5 { color: #fd7e14; }
+    .step-s6 { border-color: #198754; }
+    .step-s6 h5 { color: #198754; }
+    .step-s7 { border-color: #6f42c1; }
+    .step-s7 h5 { color: #6f42c1; }
+
+    .tool-badge {
+      display: inline-block; font-size: 12px; font-weight: 500;
+      padding: 2px 10px; border-radius: 20px; margin: 2px 4px 2px 0;
+    }
+    .badge-free  { background: #d1f0eb; color: #0a7a6a; border: 1px solid #1a9e8f; }
+    .badge-note  { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+
+    .tip-box {
+      background: #fff8e1; border-left: 3px solid #ffc107;
+      border-radius: 0 4px 4px 0; padding: 8px 12px;
+      font-size: 13px; color: #6d4c00; margin-top: 8px;
+    }
+
+    /* 選單滾輪 */
+    .dropdown-menu { max-height:600px; overflow-y:auto; }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark" onload="updateCounter()">
+
+  <!-- 導覽列，jQuery 載入 -->
+  <div id="nav1"></div>
+
+  <!-- ============================================================ -->
+  <header class="text-center p1" style="margin-top: 75px;">
+    <h1 class="text-info yf-font1">
+      <i class="fa-solid fa-film me-2"></i>01.退休生活 AI 動畫製作指南(參考用) ~ 115.06.02
+    </h1>
+    <p class="yf-color-as1 yf-font1 text-secondary">免費工具全流程 ── 從腳本到成品一分鐘動畫</p>
+  </header>
+  <!-- ============================================================ -->
+
+  <div class="container-fluid yf-font1" style="margin-top:10px; background-color:white">
+    <div class="row">
+
+      <!-- 左側留白 2 -->
+      <div class="col-md-2"></div>
+
+      <!-- 主內容區 8 -->
+      <div class="col-md-8">
+
+        <!-- 說明橫幅 -->
+        <div class="alert alert-info d-flex align-items-center mt-3" role="alert">
+          <i class="fa-solid fa-circle-info me-2"></i>
+          <span>全程使用<strong>免費方案</strong>，7 個步驟，預估 6～8 小時，建議分 3～4 天完成。</span>
+        </div>
+
+        <!-- ── 步驟 1 ── -->
+        <div class="step-card step-s1">
+          <h5><span class="badge bg-secondary me-2">步驟 1</span>腳本撰寫</h5>
+          <p>一分鐘動畫約需 150～180 字旁白。建議結構：開場（10秒）帶入退休情境，核心段落（40秒）呈現每日六件事，結尾（10秒）呼應主題「學習，不設終點」。</p>
+          <div>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Claude — 免費</span>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>ChatGPT 免費版</span>
+          </div>
+          <div class="tip-box"><i class="fa-solid fa-lightbulb me-1"></i>把生活情境描述給 AI，請它生成完整旁白稿，再自行微調語氣即可。</div>
+        </div>
+
+        <!-- ── 步驟 2 ── -->
+        <div class="step-card step-s2">
+          <h5><span class="badge bg-secondary me-2">步驟 2</span>分鏡規劃</h5>
+          <p>把旁白拆成 8～10 個場景，每場景對應一個畫面描述。建立場景對照表：S1 早晨起床、S2 打開電腦、S3 戴耳機聽英文……每格寫明鏡頭內容。</p>
+          <div>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Claude 輔助拆場景</span>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Canva 免費版草圖</span>
+          </div>
+        </div>
+
+        <!-- ── 步驟 3 ── -->
+        <div class="step-card step-s3">
+          <h5><span class="badge bg-secondary me-2">步驟 3</span>圖片生成（人物 ＋ 場景）</h5>
+          <p>先生成「主角人物參考圖」並儲存提示詞，之後每張圖都帶入同一段 Prompt 確保外觀一致。建議使用溫暖插畫風格，比照片寫實更適合動畫。</p>
+          <div>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Leonardo.ai — 每日 150 積分</span>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Kling AI 免費額度</span>
+            <span class="tool-badge badge-note"><i class="fa-solid fa-triangle-exclamation me-1"></i>Adobe Firefly 免費版</span>
+          </div>
+          <div class="tip-box">
+            <i class="fa-solid fa-lightbulb me-1"></i>
+            <span class="yf2">範例 Prompt：</span>「An elderly retired Taiwanese man in his 60s, casual home clothes, warm smile, sitting at desk with laptop, anime illustration style, soft warm lighting」
+          </div>
+        </div>
+
+        <!-- ── 步驟 4 ── -->
+        <div class="step-card step-s4">
+          <h5><span class="badge bg-secondary me-2">步驟 4</span><span class="yf4">人物一致性（關鍵難點）</span></h5>
+          <p>這是免費工具流程中最大挑戰。同一個主角在不同場景必須保持相同外觀，需要固定 Prompt 或使用角色參考功能。</p>
+          <div>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Kling AI 角色參考圖功能</span>
+            <span class="tool-badge badge-note"><i class="fa-solid fa-triangle-exclamation me-1"></i>ComfyUI + IP-Adapter（本地免費，門檻較高）</span>
+          </div>
+          <div class="tip-box"><i class="fa-solid fa-lightbulb me-1"></i>建議先用 Kling AI 角色參考功能入門，熟悉流程後再研究 ComfyUI 本地方案。</div>
+        </div>
+
+        <!-- ── 步驟 5 ── -->
+        <div class="step-card step-s5">
+          <h5><span class="badge bg-secondary me-2">步驟 5</span>圖片轉動畫影片</h5>
+          <p>將靜態圖片轉成 5 秒動態片段。一分鐘影片需約 10～12 個片段。建議先從場景動態較小的畫面練手，再挑戰動作較多的場景。</p>
+          <div>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Kling AI 免費版（5秒/片）</span>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Pika Labs 免費額度</span>
+            <span class="tool-badge badge-note"><i class="fa-solid fa-triangle-exclamation me-1"></i>Runway Gen-3 免費試用</span>
+          </div>
+          <div class="tip-box"><i class="fa-solid fa-lightbulb me-1"></i>積分策略：先用 Kling AI，積分不夠時再用 Pika Labs 補齊，兩者風格接近可混用。</div>
+        </div>
+
+        <!-- ── 步驟 6 ── -->
+        <div class="step-card step-s6">
+          <h5><span class="badge bg-secondary me-2">步驟 6</span>配音（中文旁白）</h5>
+          <p>將腳本文字轉為自然的中文語音。TTSMaker 支援繁體中文且完全免費，一分鐘旁白約 180 字，遠低於每次 3000 字上限。</p>
+          <div>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>TTSMaker — 完全免費，繁中支援</span>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>ElevenLabs 免費版（每月 1 萬字）</span>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>Kokoro TTS（開源本地）</span>
+          </div>
+          <div class="tip-box"><i class="fa-solid fa-lightbulb me-1"></i>TTSMaker 直接匯出 MP3，不需安裝任何軟體，最快上手。</div>
+        </div>
+
+        <!-- ── 步驟 7 ── -->
+        <div class="step-card step-s7">
+          <h5><span class="badge bg-secondary me-2">步驟 7</span>剪輯 ＋ 字幕 ＋ 合成</h5>
+          <p>將所有片段、配音、背景音樂合併成完整影片。CapCut 桌面版有自動中文字幕功能，操作直覺，適合初學者。</p>
+          <div>
+            <span class="tool-badge badge-free"><i class="fa-solid fa-check me-1"></i>CapCut 桌面版 — 免費，自動字幕</span>
+            <span class="tool-badge badge-note"><i class="fa-solid fa-triangle-exclamation me-1"></i>DaVinci Resolve 免費版（進階）</span>
+          </div>
+          <div class="tip-box">
+            <i class="fa-solid fa-lightbulb me-1"></i>
+            操作順序：排入時間軸 → 匯入配音 MP3 對齊 → 自動生成字幕 → 加背景音樂 → 匯出 1080p MP4
+          </div>
+        </div>
+
+        <!-- ── 時間規劃表 ── -->
+        <h5 class="mt-4 mb-3 yf3"><i class="fa-solid fa-clock me-2"></i>時間規劃參考</h5>
+        <table class="table table-bordered table-hover table-sm">
+          <thead class="table-dark">
+            <tr>
+              <th>階段</th>
+              <th>預估時間</th>
+              <th>難度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>腳本 ＋ 分鏡</td><td>約 1 小時</td><td><span class="text-success">★☆☆ 低</span></td></tr>
+            <tr><td>圖片生成 10 張</td><td>1～2 小時</td><td><span class="text-warning">★★☆ 中</span></td></tr>
+            <tr><td>人物一致性調整</td><td>1～2 小時</td><td><span class="text-danger">★★★ 高</span></td></tr>
+            <tr><td>動畫生成（含等待）</td><td>2～3 小時</td><td><span class="text-warning">★★☆ 中</span></td></tr>
+            <tr><td>配音製作</td><td>約 30 分鐘</td><td><span class="text-success">★☆☆ 低</span></td></tr>
+            <tr><td>剪輯合成</td><td>約 1 小時</td><td><span class="text-warning">★★☆ 中</span></td></tr>
+            <tr class="table-secondary fw-bold"><td>總計</td><td>6～8 小時</td><td>建議分 3～4 天</td></tr>
+          </tbody>
+        </table>
+
+        <!-- 底部備注 -->
+        <div class="alert alert-secondary mt-3 mb-4" role="alert">
+          <i class="fa-solid fa-pen-to-square me-2"></i>
+          <strong>下一步：</strong>把你想呈現的退休生活重點告訴 Claude，就能馬上生成完整旁白稿和分鏡大綱。
+        </div>
+
+      </div><!-- /col-8 -->
+
+      <!-- 右側留白 2 -->
+      <div class="col-md-2"></div>
+
+    </div><!-- /row -->
+  </div><!-- /container-fluid -->
+
+  <div id="footer"></div>
+
+  <!-- ── jQuery 載入 nav / footer ── -->
+  <script>
+    $(function () {
+      $("#nav1").load("/L01-AI-Learn/B01-ex-comm/BX02-nav-2025.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+</body>
+</html>

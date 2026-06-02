@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站，以Bootstrap為主，版面為282格式但左右留白縮減 (1-10-1) -->
+
+<head>
+  <title>Canva Connector · 完整功能清單｜30 AI設計工具</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <!-- Bootstrap 4 & 5 混合相容 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS + JS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 保留原框架自訂CSS（避免跑版） -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #121212 !important;
+    }
+    .yf-font1 {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .table-canva th {
+      background-color: #f8f9fc;
+      border-bottom-width: 2px;
+      font-weight: 700;
+      color: #1a2c3e;
+    }
+    .table-canva td {
+      vertical-align: middle;
+    }
+    .badge-free {
+      background-color: #198754;
+      color: white;
+      font-weight: 500;
+      padding: 0.35rem 0.65rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+    .badge-pro {
+      background-color: #6f42c1;
+      color: white;
+      font-weight: 500;
+      padding: 0.35rem 0.65rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+    }
+    .section-title {
+      border-left: 5px solid #0d6efd;
+      padding-left: 1rem;
+      margin: 1.5rem 0 1rem 0;
+      font-weight: 700;
+      color: #0b2b3b;
+    }
+    .example-prompt {
+      font-size: 0.85rem;
+      background-color: #f4f7fb;
+      padding: 6px 10px;
+      border-radius: 16px;
+      display: inline-block;
+      max-width: 280px;
+      color: #0a4b6e;
+    }
+    .tool-code {
+      font-family: 'SF Mono', monospace;
+      background: #eef2fa;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0c4e6e;
+    }
+    .table-responsive-stack {
+      overflow-x: auto;
+    }
+    .text-info {
+      color: #17a2b8 !important;
+    }
+    .yf-color-as1 {
+      color: #6c757d;
+    }
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+    /* 手機版去除左右留白 */
+    @media (max-width: 767.98px) {
+      .example-prompt {
+        max-width: 200px;
+        font-size: 0.75rem;
+      }
+      .tool-code {
+        font-size: 0.7rem;
+      }
+      .d-md-block {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-white" onload="updateCounter()">
+  <div id="nav1"></div>
+
+  <!-- 主容器：左右留白縮減為各1份 (1-10-1) -->
+  <div class="container my-4" style="margin-top: 60px !important;">
+    <div class="row g-0">
+      <!-- 左側留白 1 份 (md以上顯示) -->
+      <div class="col-md-1 d-none d-md-block layout-gutter"></div>
+      
+      <!-- 中間主要內容 10 份 -->
+      <div class="col-md-10">
+        <!-- 頁首標題區 -->
+        <header class="text-center p-4 rounded-4" style="background: linear-gradient(135deg, #f8f9fc 0%, #e9ecef 100%);">
+          <h1 class="text-info yf-font1 display-5 fw-bold">
+            <i class="bi bi-easel2-fill me-2"></i> Canva Connector
+          </h1>
+          <p class="yf-color-as1 yf-font1 fs-5">完整功能清單 · 30 個設計自動化工具｜AI 生成 · 編輯 · 素材管理 · 協作</p>
+          <div class="container mt-2">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                  <span class="badge-free"><i class="fas fa-check-circle me-1"></i> 免費版適用</span>
+                  <span class="badge-pro"><i class="fas fa-star me-1"></i> Canva Pro 付費版</span>
+                  <span class="badge bg-secondary bg-opacity-50 text-dark"><i class="fas fa-lightbulb"></i> 範例提示詞引導</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- 主要內容區塊 -->
+        <div class="bg-white rounded-3 shadow-sm p-3 p-md-4 mt-4">
+          <!-- 簡介卡片 -->
+          <div class="alert alert-primary bg-light border-0 shadow-sm rounded-4 mb-4">
+            <div class="d-flex gap-3 align-items-center flex-wrap">
+              <i class="bi bi-magic fs-1 text-primary"></i>
+              <div><strong class="fs-5">Canva Connector 整合能力</strong><br>支援 AI 設計生成、結構化簡報、編輯交易、頁面合併、品牌套件、素材上傳… 大幅提升內容創作效率。<br>✅ 免費版已涵蓋 90% 核心功能，部分進階品牌與尺寸調整需 Canva Pro。</div>
+            </div>
+          </div>
+
+          <!-- 一、設計生成 -->
+          <div class="section-title"><i class="bi bi-stars me-2"></i> 一、設計生成 · AI 創作</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-hover table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td><code class="tool-code">generate-design</code></td><td>用 AI 生成海報、貼文、文件等各類設計</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「幫我設計一張 Instagram 貼文，主題是「每日 AI 學習」，風格簡約，使用繁體中文」</span></td></tr>
+                <tr><td>2</td><td><code class="tool-code">generate-design-structured</code></td><td>依已審核的大綱生成結構化簡報</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「根據我審核過的大綱，生成一份『2026 數位轉型趨勢』10頁簡報」</span></td></tr>
+                <tr><td>3</td><td><code class="tool-code">request-outline-review</code></td><td>生成簡報前先讓使用者審核大綱</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「幫我針對『孫子兵法現代應用』先產生簡報大綱，讓我審核後再繼續」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 二、設計搜尋與瀏覽 -->
+          <div class="section-title"><i class="bi bi-search-heart me-2"></i> 二、設計搜尋與瀏覽</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>4</td><td><code class="tool-code">search-designs</code></td><td>搜尋你帳號內已有的設計作品</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「幫我搜尋我帳號裡所有跟『AI 學苑』相關的設計」</span></td></tr>
+                <tr><td>5</td><td><code class="tool-code">get-design</code></td><td>取得特定設計的詳細資訊（標題、連結、頁數等）</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「取得設計 ID 'ABC123' 的詳細資訊與分享連結」</span></td></tr>
+                <tr><td>6</td><td><code class="tool-code">get-design-pages</code></td><td>列出設計內所有頁面（附縮圖）</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「列出我的『美國歷史簡報』所有頁面縮圖」</span></td></tr>
+                <tr><td>7</td><td><code class="tool-code">list-folder-items</code></td><td>列出某資料夾內所有設計與子資料夾</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「列出我 Canva 根目錄下『品牌素材』資料夾的所有設計」</span></td></tr>
+                <tr><td>8</td><td><code class="tool-code">search-folders</code></td><td>依名稱搜尋你的 Canva 資料夾</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「搜尋名稱包含『行銷企劃』的資料夾」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 三、設計編輯 -->
+          <div class="section-title"><i class="bi bi-pencil-square me-2"></i> 三、設計編輯（交易式編輯）</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>9</td><td><code class="tool-code">start-editing-transaction</code></td><td>開啟編輯工作階段（所有編輯的第一步）</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「開始編輯我的『Q1 報告』設計」</span></td></tr>
+                <tr><td>10</td><td><code class="tool-code">perform-editing-operations</code></td><td>執行實際編輯（改文字、換圖、格式化等）</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「把『美國歷史』簡報第一頁標題改成『美國獨立戰爭始末』」</span></td></tr>
+                <tr><td>11</td><td><code class="tool-code">commit-editing-transaction</code></td><td>儲存編輯結果</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「儲存剛才對簡報的所有變更」</span></td></tr>
+                <tr><td>12</td><td><code class="tool-code">cancel-editing-transaction</code></td><td>取消本次編輯，還原變更</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「取消這次編輯交易，恢復到原始狀態」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 四、頁面管理 -->
+          <div class="section-title"><i class="bi bi-layers me-2"></i> 四、頁面管理 · 合併與排版</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>13</td><td><code class="tool-code">merge-designs</code></td><td>合併多份設計、插入頁面、調整順序、刪除頁面</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「把我『封面設計』的第一頁插入到『美國歷史簡報』的最前面，並刪除第3頁」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 五、素材資產 -->
+          <div class="section-title"><i class="bi bi-images me-2"></i> 五、素材與資產管理</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>14</td><td><code class="tool-code">get-assets</code></td><td>取得設計內圖片/影片素材的詳細資訊與縮圖</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「取得我簡報中所有圖片素材的解析度與縮圖」</span></td></tr>
+                <tr><td>15</td><td><code class="tool-code">upload-asset-from-url</code></td><td>從網址上傳圖片或影片到 Canva</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「把這張圖片上傳到我的 Canva：https://example.com/brand-logo.png」</span></td></tr>
+                <tr><td>16</td><td><code class="tool-code">import-design-from-url</code></td><td>從網址匯入檔案（PDF、PPTX、DOCX 等）到 Canva</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「把這個 PDF 匯入 Canva 做成可編輯簡報：https://example.com/report.pdf」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 六、匯出 -->
+          <div class="section-title"><i class="bi bi-download me-2"></i> 六、匯出設計</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>17</td><td><code class="tool-code">get-export-formats</code></td><td>查詢設計支援哪些匯出格式（PDF、PNG、PPTX 等）</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「這份簡報可以匯出成哪些格式？」</span></td></tr>
+                <tr><td>18</td><td><code class="tool-code">export-design</code></td><td>將設計匯出為指定格式（部分高階格式需 Pro）</td><td><span class="badge-free">免費版 <small class="text-muted">(部分付費)</small></span></td><td><span class="example-prompt">「把我的『AI 學苑封面』設計匯出成 PNG，去背版本」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 七、評論協作 -->
+          <div class="section-title"><i class="bi bi-chat-dots me-2"></i> 七、評論與協作</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>19</td><td><code class="tool-code">comment-on-design</code></td><td>在設計上新增留言</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「在我的『美國歷史簡報』上新增留言：『第三頁數據需要再核實』」</span></td></tr>
+                <tr><td>20</td><td><code class="tool-code">list-comments</code></td><td>列出設計上所有留言</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「列出這份設計目前的所有留言與狀態」</span></td></tr>
+                <tr><td>21</td><td><code class="tool-code">reply-to-comment</code></td><td>回覆設計上的留言</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「回覆留言 ID #5：『已確認修改完成，感謝提醒』」</span></td></tr>
+                <tr><td>22</td><td><code class="tool-code">list-replies</code></td><td>列出某則留言的所有回覆</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「列出設計留言『封面調整建議』下方的所有回覆」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 八、品牌識別 Pro -->
+          <div class="section-title"><i class="bi bi-briefcase-fill me-2"></i> 八、品牌識別 · Brand Kit <span class="badge-pro ms-2">Canva Pro 限定</span></div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>23</td><td><code class="tool-code">list-brand-kits</code></td><td>列出帳號內所有品牌套件</td><td><span class="badge-pro">付費版 (Pro)</span></td><td><span class="example-prompt">「列出我所有可用的品牌套件，包含色調與Logo」</span></td></tr>
+                <tr><td>24</td><td><code class="tool-code">create-design-from-brand-template</code></td><td>從品牌模板建立新設計</td><td><span class="badge-pro">付費版 (Pro)</span></td><td><span class="example-prompt">「用我的品牌套件模板，製作一份新的簡報『2026 行銷報告』」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 九、資料夾管理 -->
+          <div class="section-title"><i class="bi bi-folder-symlink me-2"></i> 九、資料夾管理</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>25</td><td><code class="tool-code">create-folder</code></td><td>在 Canva 新增資料夾</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「幫我在 Canva 建立一個名為『AI 學苑 2026』的資料夾」</span></td></tr>
+                <tr><td>26</td><td><code class="tool-code">move-item-to-folder</code></td><td>將設計或資料夾移動到指定位置</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「把『美國歷史封面』設計移動到『AI 學苑 2026』資料夾」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 十、其他工具 -->
+          <div class="section-title"><i class="bi bi-grid-3x3-gap-fill me-2"></i> 十、其他實用工具</div>
+          <div class="table-responsive-stack mb-5">
+            <table class="table table-bordered table-canva align-middle">
+              <thead class="table-light"><tr><th>#</th><th>工具名稱</th><th>功能說明</th><th>版本</th><th>範例 Prompt</th></tr></thead>
+              <tbody>
+                <tr><td>27</td><td><code class="tool-code">help</code></td><td>查詢 Canva 官方說明文件與操作教學</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「如何在 Canva 加入動畫效果？」</span></td></tr>
+                <tr><td>28</td><td><code class="tool-code">copy-design</code></td><td>複製一份現有設計</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「複製我的『AI 學苑首頁』設計，並命名為『AI學苑_備份』」</span></td></tr>
+                <tr><td>29</td><td><code class="tool-code">resize-design</code></td><td>調整設計尺寸（例如把 IG 貼文改成 16:9）</td><td><span class="badge-pro">付費版 (Pro)</span></td><td><span class="example-prompt">「把這份 IG 貼文設計改成 16:9 簡報尺寸」</span></td></tr>
+                <tr><td>30</td><td><code class="tool-code">resolve-shortlink</code></td><td>將 Canva 短網址解析為完整設計 URL</td><td><span class="badge-free">免費版</span></td><td><span class="example-prompt">「解析這個 Canva 短網址：https://canva.link/abcde」</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 總結 -->
+          <div class="mt-4 p-3 bg-light rounded-3 border-start border-4 border-info">
+            <i class="bi bi-info-circle-fill text-info me-2"></i>
+            <strong>功能覆蓋摘要：</strong> 共 30 項工具，涵蓋 AI 生成、編輯交易、合併頁面、資產上傳、協作評論、品牌及資料夾管理。<br>
+            💡 <strong>付費功能僅標注「Canva Pro」</strong>：品牌套件 (23,24) 、調整尺寸 (29) 與進階匯出選項需付費版，其餘皆可在免費版中暢用。
+          </div>
+          <div class="text-center mt-4 mb-2 text-muted small">
+            <i class="bi bi-robot"></i> 與 Canva Connector 整合 —— 加速設計自動化工作流
+          </div>
+        </div>
+      </div>
+      
+      <!-- 右側留白 1 份 -->
+      <div class="col-md-1 d-none d-md-block layout-gutter"></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    $(function () {
+      $("#nav1").load("/B02A-2026-Book-read/F01-ex-comm/FX02-nav-2026.html", function(response, status, xhr) {
+        if (status == "error") console.log("導覽列載入略過，保留區塊位置");
+      });
+      $("#footer").load("/ex-Comm/CX01-footer.html", function(response, status, xhr) {
+        if (status == "error") { 
+          $("#footer").html('<footer class="text-center text-white bg-dark p-3 mt-4"><small>© Canva Connector 功能清單 | 左右留白縮減版 (1-10-1) | 設計工具整合展示</small></footer>'); 
+        }
+      });
+    });
+    window.updateCounter = window.updateCounter || function() {};
+  </script>
+  <noscript>
+    <div class="container text-center text-white bg-dark py-2">完整框架需支援 JavaScript 載入導覽列與頁腳</div>
+  </noscript>
+    <script>
+      $(function () {
+        $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+        // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+        // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+        $("#footer").load("/ex-Comm/CX01-footer.html");
+      });
+    </script>
+</body>
+</html>
