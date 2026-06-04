@@ -270,7 +270,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 27,
+    id: 28,
     title: "AI工具~字體提示詞-1",
     category: "AI",
     image: "./images/A02-AI/AI51-Font-2.webp",
@@ -279,7 +279,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 28,
+    id: 29,
     title: "LINE貼圖~生氣篇-1",
     category: "Line",
     image: "./images/L01-LINE/L004-angry-1.webp",
@@ -289,7 +289,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 29,
+    id: 30,
     title: "LINE貼圖~生氣篇-2",
     category: "Line",
     image: "./images/L01-LINE/L004-angry-2.webp",
@@ -299,7 +299,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 30,
+    id: 31,
     title: "yfchen咖啡店海報",
     category: "Product",
     image: "./images/P01-Product/P01-01-coffee.webp",
@@ -309,7 +309,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 31,
+    id: 32,
     title: "yfchen咖啡店吧檯",
     category: "Product",
     image: "./images/P01-Product/P01-02-coffee.webp",
@@ -319,7 +319,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 32,
+    id: 33,
     title: "yfchen咖啡店逐主角角拍廣告",
     category: "Product",
     image: "./images/P01-Product/P01-03-coffee.webp",
@@ -329,7 +329,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 33,
+    id: 34,
     title: "中美大和解咖啡-休閒服",
     category: "Product",
     image: "./images/P01-Product/P01-04-coffee.webp",
@@ -339,7 +339,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 34,
+    id: 35,
     title: "中美大和解咖啡-黑色西裝",
     category: "Product",
     image: "./images/P01-Product/P01-05-coffee.webp",
@@ -349,7 +349,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 35,
+    id: 36,
     title: "中美大和解咖啡-深藍色西裝",
     category: "Product",
     image: "./images/P01-Product/P01-06-coffee.webp",
@@ -359,7 +359,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 36,
+    id: 37,
     title: "大和解咖啡-皮夾克(Jensen Huang)",
     category: "Product",
     image: "./images/P01-Product/P01-07-coffee.webp",
@@ -369,7 +369,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 37,
+    id: 38,
     title: "家訓~1~Nano Banana",
     category: "Personal",
     image: "./images/P04-Personal/Home-01.webp",
@@ -379,7 +379,7 @@ const promptsData = [
     url: "",
   },
   {
-    id: 38,
+    id: 39,
     title: "家訓~2~GPT Image2.0",
     category: "Personal",
     image: "./images/P04-Personal/Home-02.webp",
@@ -389,13 +389,241 @@ const promptsData = [
     url: "",
   },
   {
-    id: 39,
+    id: 40,
     title: "淡江大橋~工程藍圖",
     category: "Scene",
     image: "./images/S01-Scene/S002-1.webp",
     prompt:
       "製作一張 16:9 寬幅資訊圖表，主題為「新北市淡江大橋」。以真實橋梁空拍照片為底圖，疊加藍圖美學的白色線條技術圖，呈現工程藍圖風格。 圖面包含：①主橋全長 920 公尺、主跨 450 公尺標示線；②世界最長單塔不對稱斜張橋說明標籤；③橋塔側視結構圖與截面圖；④負載流向箭頭；⑤建材數量與工法說明框；⑥設計單位「札哈·哈蒂建築師事務所」來源標記；⑦左上角設標題框「淡江大橋 工程藍圖解析」。 所有文字以繁體中文清晰呈現，字體銳利無模糊，數字與單位保留英數格式。風格：白色粉筆線稿疊加於真實影像，技術製圖 × 教育資訊圖表，藍色底調，高對比度，專業工程美學。",
     date: "2026-05-25",
+    url: "",
+  },
+  {
+    id: 41,
+    title: "課題分離",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr001-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~就是先解釋課題分離後貼上空間",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 42,
+    title: "1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr001-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~有4件事情別想要改變別人\
+      1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 43,
+    title: "1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr001-3.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~有4件事情別想要改變別人\
+      1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 44,
+    title: "1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr001-4.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~有4件事情別想要改變別人\
+      1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 45,
+    title: "1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr001-5.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~有4件事情別想要改變別人\
+      1.扶爛泥、2.滾死豬、3.翻鹹魚、4.雕朽木",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 46,
+    title: "鐵達尼號",
+    category: "Art",
+    image: "./images/A03-Art/Art001-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~將附件人物類似鐵達尼號一樣站在船頭",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 47,
+    title: "鐵達尼號~雙人",
+    category: "Art",
+    image: "./images/A03-Art/Art001-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~將附件中二個人物類似鐵達尼號一樣站在船頭",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 48,
+    title: "赴大陸廈門旅遊資訊",
+    category: "Map",
+    image: "./images/M01-Map/M001-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~赴大陸旅遊資訊直接貼",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 49,
+    title: "好市多金卡事件1~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F001-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~前往好市多，被趕出來，因為手持普卡不是黑卡不能在10:前進去，非常生氣，去辦卡櫃檯大吵大鬧，準備抵制好市多",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 50,
+    title: "好市多金卡事件1~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F001-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~前往好市多，被趕出來，因為手持普卡不是黑卡不能在10:前進去，非常生氣，去辦卡櫃檯大吵大鬧，準備抵制好市多",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 51,
+    title: "防詐須知1~老婆收到不明電子郵件",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K001-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~老婆收到不明電子郵件後AI產生的防詐需知內如",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 52,
+    title: "防詐須知2~老婆收到不明電子郵件",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K001-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~老婆收到不明電子郵件後AI產生的防詐需知內如",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 53,
+    title: "好市多金卡事件3~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F002-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~在好市多大賣場準備購物，因為手持普卡無法進入，因為黑卡才能在10:前進去，非常生氣，默默在站在門口等到十點才可進去購物，心情非常沮喪",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 54,
+    title: "好市多金卡事件4~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F002-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~在好市多大賣場準備購物，因為手持普卡無法進入，因為黑卡才能在10:前進去，非常生氣，默默在站在門口等到十點才可進去購物，心情非常沮喪",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 55,
+    title: "好市多金卡事件4~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F002-3.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~在好市多大賣場準備購物，因為手持普卡無法進入，因為黑卡才能在10:前進去，非常生氣，默默在站在門口等到十點才可進去購物，心情非常沮喪",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 56,
+    title: "好市多金卡事件6~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F002-4.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~在好市多大賣場準備購物，因為手持普卡無法進入，因為黑卡才能在10:前進去，非常生氣，默默在站在門口等到十點才可進去購物，心情非常沮喪",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 57,
+    title: "川普與川哥-1~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F003-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~川普與川哥在白宮圓形辦公室討論伊朗停戰事宜",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 58,
+    title: "川普與川哥-1~虛構",
+    category: "Fun",
+    image: "./images/F01-Fun/F003-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~川普與川哥在白宮圓形辦公室討論伊朗停戰事宜",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 59,
+    title: "說謊~1",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr002-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~「我們知道他們在說謊，他們也知道自己是說謊，\
+      他們也知道我們知道他們在說謊，我們也知道他們知道我們知道他們說謊，但是他們依然在說謊。」--蘇聯作家、諾貝爾獎得主索忍尼辛",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 60,
+    title: "說謊~2",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr002-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~「我們知道他們在說謊，他們也知道自己是說謊，\
+      他們也知道我們知道他們在說謊，我們也知道他們知道我們知道他們說謊，但是他們依然在說謊。」--蘇聯作家、諾貝爾獎得主索忍尼辛",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 61,
+    title: "說謊~3",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr002-3.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~「我們知道他們在說謊，他們也知道自己是說謊，\
+      他們也知道我們知道他們在說謊，我們也知道他們知道我們知道他們說謊，但是他們依然在說謊。」--蘇聯作家、諾貝爾獎得主索忍尼辛",
+    date: "2026-06-03",
+    url: "",
+  },
+  {
+    id: 62,
+    title: "說謊~4",
+    category: "Princlple",
+    image: "./images/P04-principle/Pr002-4.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~「我們知道他們在說謊，他們也知道自己是說謊，\
+      他們也知道我們知道他們在說謊，我們也知道他們知道我們知道他們說謊，但是他們依然在說謊。」--蘇聯作家、諾貝爾獎得主索忍尼辛",
+    date: "2026-06-03",
     url: "",
   },
 ];

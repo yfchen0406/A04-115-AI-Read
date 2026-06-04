@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PNG → PDF 合成工具</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #edeae2; --surface: #ffffff; --surface2: #e4e0d8;
+    --border: #ccc6b8; --accent: #2d6a4f; --accent2: #52b788;
+    --text: #1a1a18; --text2: #5a5750; --danger: #c0392b; --radius: 10px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    font-family: 'Hiragino Sans GB','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
+    background: var(--bg); color: var(--text);
+    display: flex; flex-direction: column; height: 100vh;
+  }
+
+  /* ── Toolbar ── */
+  .topbar {
+    flex-shrink: 0; background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.55rem 1rem;
+    display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;
+  }
+  .topbar h1 { font-size: 1.05rem; font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .sep { width: 1px; height: 22px; background: var(--border); flex-shrink: 0; }
+  .ctrl { display: flex; align-items: center; gap: 0.35rem; }
+  .ctrl label { font-size: 0.74rem; font-weight: 600; color: var(--text2); white-space: nowrap; }
+  select {
+    height: 28px; border: 1px solid var(--border); border-radius: 5px;
+    padding: 0 0.45rem; background: var(--surface2); color: var(--text);
+    font-size: 0.8rem; appearance: none; cursor: pointer;
+  }
+  input[type=range] { width: 80px; cursor: pointer; accent-color: var(--accent); }
+  .range-val {
+    font-size: 0.76rem; font-weight: 700; background: var(--accent); color: #fff;
+    border-radius: 4px; padding: 1px 5px; min-width: 36px; text-align: center;
+  }
+  .btn {
+    height: 28px; padding: 0 0.85rem; border-radius: 6px; border: none;
+    font-size: 0.82rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+    transition: opacity 0.15s, transform 0.1s;
+  }
+  .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn:active { transform: scale(0.97); }
+  .btn:disabled { opacity: 0.38; cursor: not-allowed; transform: none; }
+  .btn-primary   { background: var(--accent); color: #fff; }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-add { background: #e6f4ec; color: var(--accent); border: 1px solid var(--accent2); position: relative; overflow: hidden; }
+  .btn-add input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .badge { background: var(--accent2); color: #fff; font-size: 0.74rem; font-weight: 700; border-radius: 20px; padding: 2px 10px; }
+
+  /* Sort buttons */
+  .sort-group { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .sort-btn {
+    height: 28px; padding: 0 0.65rem; border: none; background: var(--surface2);
+    color: var(--text2); font-size: 0.76rem; font-weight: 600; cursor: pointer;
+    border-right: 1px solid var(--border); white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+  }
+  .sort-btn:last-child { border-right: none; }
+  .sort-btn.active { background: var(--accent); color: #fff; }
+  .sort-btn:hover:not(.active) { background: #d8f0e4; color: var(--accent); }
+
+  /* ── Canvas ── */
+  .canvas-area {
+    flex: 1; overflow-y: auto; overflow-x: hidden; padding: 20px;
+    background: radial-gradient(circle,#c4bfb5 1px,transparent 1px) 0 0/26px 26px, var(--bg);
+  }
+  .empty-hint {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: calc(100vh - 130px); gap: 0.75rem; color: var(--text2); pointer-events: none;
+  }
+  .empty-hint .icon { font-size: 3.5rem; }
+  .empty-hint p { font-size: 0.95rem; }
+  .empty-hint strong { color: var(--accent); }
+
+  .thumb-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .thumb {
+    background: var(--surface); border: 2px solid var(--border);
+    border-radius: var(--radius); box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    cursor: grab; user-select: none; position: relative;
+    transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+  }
+  .thumb:hover { box-shadow: 0 5px 16px rgba(0,0,0,0.16); border-color: var(--accent2); transform: translateY(-2px); }
+  .thumb.drag-source { opacity: 0.35; transform: scale(0.96); }
+  .thumb.drag-over   { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(45,106,79,0.25); transform: scale(1.02); }
+  .thumb img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f0f0f0; display: block; border-radius: calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0 0; pointer-events: none; }
+  .thumb-info { padding: 6px 9px; display: flex; justify-content: space-between; align-items: center; }
+  .thumb-name { font-size: 0.71rem; color: var(--text2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 130px; }
+  .thumb-order { font-size: 0.71rem; font-weight: 700; color: var(--accent); background: #e6f4ec; border-radius: 4px; padding: 1px 6px; }
+  .remove-btn {
+    position: absolute; top: 5px; right: 5px; width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(192,57,43,0.82); border: none; color: #fff;
+    font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.15s;
+  }
+  .thumb:hover .remove-btn { opacity: 1; }
+
+  /* ── Status bar ── */
+  .statusbar {
+    flex-shrink: 0; background: var(--surface); border-top: 1px solid var(--border);
+    padding: 0.32rem 1rem; display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.77rem; color: var(--text2);
+  }
+  .progress-bar-bg { width: 220px; background: var(--surface2); border-radius: 99px; height: 5px; overflow: hidden; }
+  .progress-bar { background: var(--accent2); height: 100%; border-radius: 99px; transition: width 0.2s; width: 0%; }
+  .status-msg { flex: 1; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>🖼 PNG → PDF</h1>
+
+  <button class="btn btn-add">
+    ＋ 加入圖片
+    <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" multiple>
+  </button>
+
+  <div class="sep"></div>
+
+  <!-- Sort group -->
+  <div class="ctrl"><label>排序</label></div>
+  <div class="sort-group">
+    <button class="sort-btn active" id="sortName"   onclick="applySort('name')">檔名 A→Z</button>
+    <button class="sort-btn"        id="sortNameD"  onclick="applySort('nameD')">檔名 Z→A</button>
+    <button class="sort-btn"        id="sortTime"   onclick="applySort('time')">時間 舊→新</button>
+    <button class="sort-btn"        id="sortTimeD"  onclick="applySort('timeD')">時間 新→舊</button>
+    <button class="sort-btn"        id="sortManual" onclick="applySort('manual')">手動排列</button>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="ctrl">
+    <label>頁面</label>
+    <select id="pageSize">
+      <option value="a4">A4</option>
+      <option value="a3">A3</option>
+      <option value="letter">Letter</option>
+      <option value="original">原圖尺寸</option>
+    </select>
+  </div>
+  <div class="ctrl">
+    <label>方向</label>
+    <select id="pageOrient">
+      <option value="portrait">縱向</option>
+      <option value="landscape">橫向</option>
+    </select>
+  </div>
+  <div class="ctrl">
+    <label>填滿</label>
+    <select id="fillMode">
+      <option value="stretch" selected>滿版拉伸</option>
+      <option value="cover">等比裁切</option>
+      <option value="fit">等比留邊</option>
+    </select>
+  </div>
+
+  <div class="sep"></div>
+
+  <div class="ctrl">
+    <label>品質</label>
+    <input type="range" id="quality" min="0.3" max="1" step="0.05" value="0.92">
+    <span class="range-val" id="qualityVal">92%</span>
+  </div>
+  <div class="ctrl">
+    <label>DPI</label>
+    <input type="range" id="dpi" min="72" max="300" step="12" value="150">
+    <span class="range-val" id="dpiVal">150</span>
+  </div>
+
+  <div class="sep"></div>
+
+  <span class="badge" id="countBadge">0 張</span>
+  <button class="btn btn-secondary" onclick="clearAll()">🗑 清除</button>
+  <button class="btn btn-primary" id="generateBtn" onclick="generatePDF()">⬇ 產出 PDF</button>
+</div>
+
+<div class="canvas-area" id="canvasArea">
+  <div id="emptyHint" class="empty-hint">
+    <div class="icon">📂</div>
+    <p>點上方「<strong>＋ 加入圖片</strong>」或將圖片拖曳到這裡</p>
+    <p style="font-size:0.82rem">支援 PNG / JPG / WebP，可多選；預設依檔名排序</p>
+  </div>
+  <div class="thumb-grid" id="thumbGrid"></div>
+</div>
+
+<div class="statusbar">
+  <span class="status-msg" id="statusMsg">就緒</span>
+  <div class="progress-bar-bg"><div class="progress-bar" id="progressBar"></div></div>
+  <span id="progressPct"></span>
+</div>
+
+<script>
+// images: [{name, src, lastModified}]
+let images = [];
+let currentSort = 'name'; // default: filename A→Z
+let dragSrcIdx = null;
+
+const fileInput     = document.getElementById('fileInput');
+const canvasArea    = document.getElementById('canvasArea');
+const thumbGrid     = document.getElementById('thumbGrid');
+const emptyHint     = document.getElementById('emptyHint');
+const countBadge    = document.getElementById('countBadge');
+const generateBtn   = document.getElementById('generateBtn');
+const progressBar   = document.getElementById('progressBar');
+const progressPct   = document.getElementById('progressPct');
+const statusMsg     = document.getElementById('statusMsg');
+const qualitySlider = document.getElementById('quality');
+const qualityVal    = document.getElementById('qualityVal');
+const dpiSlider     = document.getElementById('dpi');
+const dpiVal        = document.getElementById('dpiVal');
+
+qualitySlider.addEventListener('input', () => { qualityVal.textContent = Math.round(qualitySlider.value*100)+'%'; });
+dpiSlider.addEventListener('input',     () => { dpiVal.textContent = dpiSlider.value; });
+
+fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+canvasArea.addEventListener('dragover', e => e.preventDefault());
+canvasArea.addEventListener('drop', e => {
+  if (e.dataTransfer.files.length) { e.preventDefault(); handleFiles(e.dataTransfer.files); }
+});
+
+// ── Handle incoming files ──
+function handleFiles(files) {
+  const arr = Array.from(files).filter(f => f.type.startsWith('image/'));
+  if (!arr.length) return;
+  let loaded = 0;
+  arr.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      images.push({ name: file.name, src: ev.target.result, lastModified: file.lastModified || 0 });
+      loaded++;
+      if (loaded === arr.length) {
+        sortImages();   // auto-sort after loading
+        renderGrid();
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// ── Sort logic ──
+function naturalCmp(a, b) {
+  return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
+}
+
+function sortImages() {
+  if (currentSort === 'name')   images.sort((a,b) =>  naturalCmp(a,b));
+  if (currentSort === 'nameD')  images.sort((a,b) => -naturalCmp(a,b));
+  if (currentSort === 'time')   images.sort((a,b) => a.lastModified - b.lastModified);
+  if (currentSort === 'timeD')  images.sort((a,b) => b.lastModified - a.lastModified);
+  // 'manual' → no sort, keep current order
+}
+
+function applySort(mode) {
+  currentSort = mode;
+  // Highlight active button
+  ['sortName','sortNameD','sortTime','sortTimeD','sortManual'].forEach(id => {
+    document.getElementById(id).classList.remove('active');
+  });
+  const map = { name:'sortName', nameD:'sortNameD', time:'sortTime', timeD:'sortTimeD', manual:'sortManual' };
+  document.getElementById(map[mode]).classList.add('active');
+
+  if (mode !== 'manual') { sortImages(); renderGrid(); }
+  setStatus(mode === 'manual' ? '手動模式：拖曳縮圖調整頁序' : '排序完成', 0);
+}
+
+// ── Render ──
+function renderGrid() {
+  thumbGrid.innerHTML = '';
+  dragSrcIdx = null;
+
+  images.forEach((img, i) => {
+    const div = document.createElement('div');
+    div.className = 'thumb';
+    div.draggable = currentSort === 'manual'; // drag only in manual mode
+    div.dataset.idx = i;
+    div.innerHTML = `
+      <img src="${img.src}" alt="${img.name}">
+      <div class="thumb-info">
+        <span class="thumb-name">${img.name}</span>
+        <span class="thumb-order">#${i+1}</span>
+      </div>
+      <button class="remove-btn" title="移除">✕</button>`;
+
+    // Drag-to-reorder (manual mode only)
+    if (currentSort === 'manual') {
+      div.addEventListener('dragstart', e => {
+        dragSrcIdx = i;
+        div.classList.add('drag-source');
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', String(i));
+      });
+      div.addEventListener('dragend', () => {
+        div.classList.remove('drag-source');
+        thumbGrid.querySelectorAll('.thumb').forEach(t => t.classList.remove('drag-over'));
+      });
+      div.addEventListener('dragover', e => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        thumbGrid.querySelectorAll('.thumb').forEach(t => t.classList.remove('drag-over'));
+        div.classList.add('drag-over');
+      });
+      div.addEventListener('dragleave', () => div.classList.remove('drag-over'));
+      div.addEventListener('drop', e => {
+        e.stopPropagation();
+        const targetIdx = +div.dataset.idx;
+        if (dragSrcIdx !== null && dragSrcIdx !== targetIdx) {
+          const moved = images.splice(dragSrcIdx, 1)[0];
+          images.splice(targetIdx, 0, moved);
+          dragSrcIdx = null;
+          renderGrid();
+        }
+      });
+    }
+
+    // Remove
+    div.querySelector('.remove-btn').addEventListener('click', () => {
+      images.splice(i, 1);
+      renderGrid();
+    });
+
+    thumbGrid.appendChild(div);
+  });
+
+  emptyHint.style.display = images.length ? 'none' : 'flex';
+  thumbGrid.style.display  = images.length ? 'grid' : 'none';
+  countBadge.textContent   = images.length + ' 張';
+}
+
+function clearAll() {
+  images = []; fileInput.value = '';
+  renderGrid(); setStatus('已清除', 0);
+}
+
+function setStatus(msg, pct) {
+  statusMsg.textContent = msg;
+  progressBar.style.width = pct + '%';
+  progressPct.textContent = (pct > 0 && pct < 100) ? pct + '%' : '';
+}
+
+// ── Generate PDF ──
+async function generatePDF() {
+  if (!images.length) return;
+  generateBtn.disabled = true;
+  const quality  = parseFloat(qualitySlider.value);
+  const dpi      = parseInt(dpiSlider.value);
+  const pageSize = document.getElementById('pageSize').value;
+  const orient   = document.getElementById('pageOrient').value;
+  const fillMode = document.getElementById('fillMode').value;
+  const scale    = dpi / 96;
+
+  setStatus(`開始產出 PDF，共 ${images.length} 張…`, 5);
+  await tick();
+
+  try {
+    const { jsPDF } = window.jspdf;
+    let pdf;
+    for (let i = 0; i < images.length; i++) {
+      setStatus(`處理第 ${i+1}/${images.length} 張：${images[i].name}`, 10 + Math.round((i/images.length)*85));
+      await tick();
+
+      const imgEl = await loadImage(images[i].src);
+      const iw = imgEl.naturalWidth, ih = imgEl.naturalHeight;
+      let pdfW, pdfH;
+      if (pageSize==='original') { pdfW=iw/(dpi/25.4); pdfH=ih/(dpi/25.4); }
+      else {
+        const sizes={a4:[210,297],a3:[297,420],letter:[215.9,279.4]};
+        [pdfW,pdfH]=sizes[pageSize]||[210,297];
+        if(orient==='landscape')[pdfW,pdfH]=[pdfH,pdfW];
+      }
+      const autoOrient = pageSize==='original'?(iw>=ih?'l':'p'):orient;
+      const fmt = pageSize==='original'?[pdfW,pdfH]:(pageSize==='letter'?'letter':pageSize.toUpperCase());
+      if(i===0){pdf=new jsPDF({orientation:autoOrient,unit:'mm',format:fmt});}
+      else{pdf.addPage(fmt,autoOrient);}
+
+      const canvas=document.createElement('canvas');
+      let sx=0,sy=0,sw=iw,sh=ih;
+      if(fillMode==='cover'){const ia=iw/ih,pa=pdfW/pdfH;if(ia>pa){sw=ih*pa;sx=(iw-sw)/2;}else{sh=iw/pa;sy=(ih-sh)/2;}}
+      canvas.width=Math.round(sw*scale); canvas.height=Math.round(sh*scale);
+      canvas.getContext('2d').drawImage(imgEl,sx,sy,sw,sh,0,0,canvas.width,canvas.height);
+      const dataUrl=canvas.toDataURL('image/jpeg',quality);
+
+      if(fillMode==='stretch'||fillMode==='cover'){pdf.addImage(dataUrl,'JPEG',0,0,pdfW,pdfH,'','FAST');}
+      else{const ia=sw/sh,pa=pdfW/pdfH;let dw,dh,dx=0,dy=0;if(ia>pa){dw=pdfW;dh=pdfW/ia;dy=(pdfH-dh)/2;}else{dh=pdfH;dw=pdfH*ia;dx=(pdfW-dw)/2;}pdf.addImage(dataUrl,'JPEG',dx,dy,dw,dh,'','FAST');}
+    }
+    setStatus('儲存…',98); await tick();
+    const now=new Date();
+    const ts=`${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}_${String(now.getHours()).padStart(2,'0')}${String(now.getMinutes()).padStart(2,'0')}`;
+    pdf.save(`merged_${ts}.pdf`);
+    setStatus(`✅ 完成！共 ${images.length} 頁`,100);
+  } catch(e) {
+    setStatus('❌ 錯誤：'+e.message,0);
+  }
+  generateBtn.disabled=false;
+}
+
+function loadImage(src){return new Promise((res,rej)=>{const img=new Image();img.onload=()=>res(img);img.onerror=()=>rej(new Error('載入失敗'));img.src=src;});}
+function tick(){return new Promise(r=>setTimeout(r,30));}
+
+renderGrid();
+</script>
+</body>
+</html>
