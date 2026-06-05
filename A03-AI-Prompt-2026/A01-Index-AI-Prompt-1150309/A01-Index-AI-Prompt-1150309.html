@@ -23,9 +23,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css" rel="stylesheet">
 
   <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
   <link rel="stylesheet" href="/css/B01-Bootstrap.css">
   <link rel="stylesheet" href="/css/all.css">
-  <link rel="stylesheet" href="./css/iconfont.css">
+
   <script src="./css/iconfont.js"></script>
 
 
@@ -187,7 +189,7 @@
                   <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
                 </a>
                 <h6>
-                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                  <figcaption class="text-center text-primary yf-font1" v-html="item.dec1"></figcaption>
                 </h6>
               </figure>
             </div>
@@ -205,7 +207,7 @@
                   <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
                 </a>
                 <h6>
-                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                  <figcaption class="text-center text-primary yf-font1" v-html="item.dec1"></figcaption>
                 </h6>
               </figure>
             </div>
@@ -226,7 +228,7 @@
                   <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
                 </a>
                 <h6>
-                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                  <figcaption class="text-center text-primary yf-font1" v-html="item.dec1"></figcaption>
                 </h6>
               </figure>
             </div>
@@ -247,7 +249,7 @@
                   <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
                 </a>
                 <h6>
-                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                  <figcaption class="text-center text-primary yf-font1" v-html="item.dec1"></figcaption>
                 </h6>
               </figure>
             </div>
@@ -270,7 +272,7 @@
                   <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
                 </a>
                 <h6>
-                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                  <figcaption class="text-center text-primary yf-font1" v-html="item.dec1"></figcaption>
                 </h6>
               </figure>
             </div>
@@ -328,6 +330,16 @@
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
+
+
+
+          // P008.Claude 目前所有Skill 整理分類，持續更新中 ~115.06.05
+          {
+            pic1: '/A03-AI-Prompt-2026/P008-claude-skill-1150605/P008-claude-skill-1150605.html',
+            pic1s: './images/P008-0.webp',
+            dec1: '<span class="yf4">P008.Claude 目前所有Skill 整理分類，持續更新中 ~115.06.05',
+          },
+
           // P007.Claude連接Canva ~ 30個設計自動化工具 ~ 115.06.02
           {
             pic1: '/A03-AI-Prompt-2026/P007-Claude-Connector-Canva-1150603/P007-Claude-Connector-Canva-1150603.html',

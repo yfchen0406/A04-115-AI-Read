@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- Skill 地圖網頁 — 嵌入標準框架 -->
+
+<head>
+  <title>Skill 技能地圖 | AI 學苑</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的 CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- iconfont -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+
+  <!-- Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── 全域 ── */
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f0f7ff;
+    }
+
+    /* ── Header ── */
+    .skill-header {
+      background: linear-gradient(135deg, #1a6fc4 0%, #2d9cdb 60%, #56c4f5 100%);
+      color: #fff;
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+      margin-top: 75px;
+    }
+
+    .skill-header h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+      margin-bottom: .4rem;
+    }
+
+    .skill-header p {
+      font-size: .95rem;
+      opacity: .85;
+      margin: 0;
+    }
+
+    .skill-header .badge-count {
+      display: inline-block;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 20px;
+      font-size: .8rem;
+      padding: 3px 14px;
+      margin-top: .7rem;
+    }
+
+    /* ── 主容器 ── */
+    .skill-main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    /* ── 分類標題 ── */
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 1rem;
+    }
+
+    .cat-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .cat-icon.blue  { background: #dbeeff; color: #1a6fc4; }
+    .cat-icon.green { background: #d9f5e8; color: #1a7a4a; }
+    .cat-icon.amber { background: #fff3d6; color: #a06000; }
+
+    .cat-title-text {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a3c5e;
+      margin: 0;
+    }
+
+    .cat-subtitle {
+      font-size: .8rem;
+      color: #6b8cae;
+      margin: 0;
+    }
+
+    .cat-block {
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Skill 卡片格線 ── */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    /* ── 單張卡片 ── */
+    .skill-card {
+      background: #fff;
+      border: 1.5px solid #d6eaf8;
+      border-radius: 14px;
+      padding: 16px 18px;
+      transition: transform .18s, box-shadow .18s, border-color .18s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      border-radius: 14px 0 0 14px;
+    }
+
+    .skill-card.blue::before  { background: #2d9cdb; }
+    .skill-card.green::before { background: #27ae60; }
+    .skill-card.amber::before { background: #f0a500; }
+
+    .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(30, 100, 180, .12);
+      border-color: #a8d4f5;
+    }
+
+    .skill-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .skill-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .skill-badge.blue  { background: #dbeeff; color: #1a5fa0; }
+    .skill-badge.green { background: #d9f5e8; color: #1a6e42; }
+    .skill-badge.amber { background: #fff3d6; color: #8c5500; }
+
+    .skill-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a3c5e;
+      margin: 0;
+    }
+
+    .skill-cmd {
+      font-size: 12px;
+      font-family: 'Courier New', monospace;
+      color: #2d9cdb;
+      background: #f0f7ff;
+      border: 1px solid #cce5f8;
+      border-radius: 5px;
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+
+    .skill-desc {
+      font-size: 13px;
+      color: #4a6a8a;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ── 流程提示區 ── */
+    .flow-box {
+      background: #e8f4fd;
+      border: 1.5px dashed #90c9f0;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 2rem;
+    }
+
+    .flow-box h6 {
+      font-size: .85rem;
+      font-weight: 700;
+      color: #1a5fa0;
+      margin-bottom: 10px;
+    }
+
+    .flow-steps {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .flow-step {
+      background: #fff;
+      border: 1px solid #a8d4f5;
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 12.5px;
+      color: #1a5fa0;
+      font-weight: 500;
+    }
+
+    .flow-arrow {
+      font-size: 14px;
+      color: #2d9cdb;
+    }
+
+    /* ── 統計條 ── */
+    .stats-bar {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .stat-pill {
+      background: #fff;
+      border: 1.5px solid #d6eaf8;
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-size: 13px;
+      color: #1a5fa0;
+      font-weight: 500;
+    }
+
+    .stat-pill span {
+      font-weight: 700;
+      color: #1a6fc4;
+    }
+  </style>
+
+  <!-- 選單滾輪 -->
+  <style>
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark">
+  <!-- Nav -->
+  <div id="nav1"></div>
+
+  <!-- Header -->
+  <div class="skill-header">
+    <h1><i class="fas fa-layer-group me-2"></i>P008.Claude 目前 Skill 技能地圖</h1>
+    <p> 整理分類，持續更新中 ~ 115.06.05</p>
+    <div class="badge-count">共 9 個 Skill · 3 大分類</div>
+  </div>
+
+  <!-- 主內容 -->
+  <div class="skill-main">
+
+    <!-- 統計條 -->
+    <div class="stats-bar">
+      <div class="stat-pill"><span>4</span> 個內容創作</div>
+      <div class="stat-pill"><span>4</span> 個學習成長</div>
+      <div class="stat-pill"><span>1</span> 個系統工具</div>
+    </div>
+
+    <!-- ── 分類一：內容創作 ── -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-icon blue"><i class="fas fa-pen-nib"></i></div>
+        <div>
+          <p class="cat-title-text">內容創作</p>
+          <p class="cat-subtitle">插圖 · 改寫 · 潤稿 · 格式轉換 — AI 學苑內容生產線</p>
+        </div>
+      </div>
+      <div class="skill-grid">
+
+        <div class="skill-card blue">
+          <div class="skill-top">
+            <span class="skill-badge blue">s004</span>
+            <p class="skill-name">文章插圖提示詞</p>
+          </div>
+          <div class="skill-cmd">/s004-article-illustration</div>
+          <p class="skill-desc">貼入文章 → 選配角、風格、工具（N/G）→ 自動生成插圖 prompt。支援 Nano Banana Pro 與 GPT Image 2.0，16:9 橫幅格式。</p>
+        </div>
+
+        <div class="skill-card blue">
+          <div class="skill-top">
+            <span class="skill-badge blue">s006</span>
+            <p class="skill-name">口吻改寫器</p>
+          </div>
+          <div class="skill-cmd">/s006-voice-rewrite</div>
+          <p class="skill-desc">將任何文章改寫為退休教師個人口吻，保留原意不增刪，文字更有溫度與個人風格。</p>
+        </div>
+
+        <div class="skill-card blue">
+          <div class="skill-top">
+            <span class="skill-badge blue">s007</span>
+            <p class="skill-name">文章潤稿整理器</p>
+          </div>
+          <div class="skill-cmd">/s007-article-polish</div>
+          <p class="skill-desc">草稿貼入 → 結構清晰的正式文章，自動加入小標題，並提供 3～5 個標題選項供選擇。</p>
+        </div>
+
+        <div class="skill-card blue">
+          <div class="skill-top">
+            <span class="skill-badge blue">a001</span>
+            <p class="skill-name">文章格式轉換器</p>
+          </div>
+          <div class="skill-cmd">/a001-article-format-conversion</div>
+          <p class="skill-desc">AI 產出文章 → Notion 格式，方便後續轉換為網頁，順接發布到 AI 學苑流程。</p>
+        </div>
+
+      </div>
+
+      <!-- 流程提示 -->
+      <div class="flow-box">
+        <h6><i class="fas fa-route me-1"></i>內容生產完整流程</h6>
+        <div class="flow-steps">
+          <span class="flow-step">s004 插圖提示詞</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">s006 口吻改寫</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">s007 潤稿整理</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">a001 轉 Notion 格式</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">🌐 上架 AI 學苑</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 分類二：學習成長 ── -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-icon green"><i class="fas fa-book-open"></i></div>
+        <div>
+          <p class="cat-title-text">學習成長（每日一）</p>
+          <p class="cat-subtitle">直接對應六項每日學習框架，每天都用得到</p>
+        </div>
+      </div>
+      <div class="skill-grid">
+
+        <div class="skill-card green">
+          <div class="skill-top">
+            <span class="skill-badge green">s001</span>
+            <p class="skill-name">AI 工具評測報告</p>
+          </div>
+          <div class="skill-cmd">/s001-ai-tool-review</div>
+          <p class="skill-desc">輸入工具名稱 → 自動產出標準格式評測報告，輸出 Obsidian Markdown。對應每日一「AI 項目」。</p>
+        </div>
+
+        <div class="skill-card green">
+          <div class="skill-top">
+            <span class="skill-badge green">s002</span>
+            <p class="skill-name">每日英文學習</p>
+          </div>
+          <div class="skill-cmd">/s002-daily-english（或「每日英文」）</div>
+          <p class="skill-desc">TOEIC 導向，涵蓋單字、句型、聽力、閱讀四合一內容。對應每日一「英文項目」。</p>
+        </div>
+
+        <div class="skill-card green">
+          <div class="skill-top">
+            <span class="skill-badge green">s003</span>
+            <p class="skill-name">讀書摘要整理</p>
+          </div>
+          <div class="skill-cmd">/s003-reading-summary</div>
+          <p class="skill-desc">書名或章節內容 → 結構化書摘，輸出 Obsidian 格式。對應每日一「閱讀項目」。</p>
+        </div>
+
+        <div class="skill-card green">
+          <div class="skill-top">
+            <span class="skill-badge green">s005</span>
+            <p class="skill-name">退休學習生活連結器</p>
+          </div>
+          <div class="skill-cmd">/s005-life-connect（或「退休連結」）</div>
+          <p class="skill-desc">貼入任何文章或語錄 → 對應「每日六項＋家庭顧問」框架，產出具體可行的個人化行動建議。</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 分類三：系統工具 ── -->
+    <div class="cat-block">
+      <div class="cat-header">
+        <div class="cat-icon amber"><i class="fas fa-tools"></i></div>
+        <div>
+          <p class="cat-title-text">系統工具</p>
+          <p class="cat-subtitle">跨平台提示詞優化，需要寫 prompt 時隨時召喚</p>
+        </div>
+      </div>
+      <div class="skill-grid">
+
+        <div class="skill-card amber">
+          <div class="skill-top">
+            <span class="skill-badge amber">通用</span>
+            <p class="skill-name">提示詞優化大師</p>
+          </div>
+          <div class="skill-cmd">/prompt-master</div>
+          <p class="skill-desc">原始提示詞 → 依「角色任務 / 背景資訊 / 具體指令 / 約束條件」四維度優化，立即產出成果。適用 Claude、GPT、Midjourney 等各類 AI 工具。</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end skill-main -->
+
+  <div id="footer"></div>
+
+  <!-- jQuery 載入 nav / footer -->
+  <script>
+    $(function () {
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+</body>
+</html>
