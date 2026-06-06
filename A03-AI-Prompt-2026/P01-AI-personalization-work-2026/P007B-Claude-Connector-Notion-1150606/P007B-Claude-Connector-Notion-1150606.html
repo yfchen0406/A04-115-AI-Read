@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <title>Notion Connector 功能總覽 | AI 學苑</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  
+  <!-- 自己的 CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  
+  <!-- iconfont -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  
+  <!-- Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Sans TC', sans-serif; }
+
+    /* ===== yf 顏色工具 ===== */
+    .yf1  { color: green;          font-weight: bold; }
+    .yf11 { color: green; }
+    .yf2  { color: purple;         font-weight: bold; }
+    .yf22 { color: purple; }
+    .yf3  { color: #0D6EFD;        font-weight: bold; }
+    .yf33 { color: #0D6EFD; }
+    .yf4  { color: red;            font-weight: bold; }
+    .yf44 { color: red; }
+    .yf5  { color: rgb(143,13,13); font-weight: bold; }
+    .yf55 { color: rgb(143,13,13); }
+    .yf-c { text-align: center; }
+
+    /* ===== 下拉選單滾輪 ===== */
+    .dropdown-menu { max-height: 600px; overflow-y: auto; }
+
+    /* ===== 版面 ===== */
+    #main-content { min-height: 60vh; }
+
+    /* ===== 分類標題列（Notion 黑色主題）===== */
+    .cat-header {
+      background: linear-gradient(135deg, #2e2e2e 0%, #454545 100%);
+      color: #fff;
+      border-radius: .5rem .5rem 0 0;
+      padding: .65rem 1rem;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    /* ===== 功能卡片 ===== */
+    .func-card {
+      border: 1px solid #dee2e6;
+      border-top: none;
+      padding: .85rem 1rem;
+      background: #fff;
+      transition: background .15s;
+    }
+    .func-card:last-child { border-radius: 0 0 .5rem .5rem; }
+    .func-card:hover { background: #f5f5f0; }
+
+    .func-name {
+      font-weight: 700;
+      font-size: .95rem;
+      color: #333;
+      font-family: 'Courier New', monospace;
+    }
+    .func-desc {
+      font-size: .88rem;
+      color: #444;
+      margin: .25rem 0 .4rem;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .prompt-box {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: .35rem;
+      padding: .4rem .75rem;
+      font-size: .82rem;
+      font-family: 'Courier New', monospace;
+      margin-bottom: .25rem;
+      line-height: 1.6;
+    }
+    .prompt-box::before {
+      content: '📝 Prompt：';
+      color: #a6e3a1;
+      font-weight: bold;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: .8rem;
+    }
+
+    /* ===== 版本徽章 ===== */
+    .badge-free { background-color: #198754; color: #fff; font-size: .75rem; }
+    .badge-pro  { background-color: #6366f1; color: #fff; font-size: .75rem; }
+    .badge-biz  { background-color: #dc3545; color: #fff; font-size: .75rem; }
+
+    /* ===== 側欄快捷 ===== */
+    .aside-link {
+      display: block;
+      font-size: .83rem;
+      padding: .28rem .5rem;
+      color: #333;
+      text-decoration: none;
+      border-radius: .25rem;
+      transition: background .12s;
+    }
+    .aside-link:hover { background: #f0efeb; color: #333; }
+
+    /* ===== 右側統計 ===== */
+    .stat-box {
+      background: #f5f5f0;
+      border-radius: .5rem;
+      padding: .6rem .8rem;
+      text-align: center;
+      margin-bottom: .75rem;
+      font-size: .82rem;
+    }
+    .stat-num {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #333;
+    }
+
+    /* ===== 置頂說明區 ===== */
+    .intro-box {
+      background: #f5f5f0;
+      border-left: 5px solid #333;
+      border-radius: 0 .5rem .5rem 0;
+      padding: .85rem 1.1rem;
+      margin-bottom: 1.5rem;
+      font-size: .9rem;
+    }
+
+    /* ===== 付費功能彙整表 ===== */
+    .paid-table thead th { background: #f5f5f0; }
+
+    /* ===== 流程圖提示 ===== */
+    .flow-note {
+      background: #fffbeb;
+      border: 1px solid #fcd34d;
+      border-radius: .4rem;
+      padding: .5rem .9rem;
+      font-size: .83rem;
+      color: #78350f;
+      margin-bottom: .75rem;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark" onload="updateCounter()">
+
+  <!-- 導覽列 -->
+  <div id="nav1"></div>
+
+  <!-- Header -->
+  <header class="text-center p-3" style="margin-top: 75px;">
+    <h1 class="text-info yf-font1">
+      <i class="bi bi-journal-text me-2"></i>P007B.Claude 連接 Notion 功能總覽 ~ 115.06.06
+    </h1>
+    <p class="text-secondary yf-font1 mb-1">14 個工具 ✦ 範例 Prompt ✦ 免費／付費版標示</p>
+    <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+      <ol class="breadcrumb mb-0" style="background:transparent;">
+        <li class="breadcrumb-item"><a href="/" class="text-info">首頁</a></li>
+        <li class="breadcrumb-item"><a href="#" class="text-info">AI 工具</a></li>
+        <li class="breadcrumb-item text-secondary active" aria-current="page">Notion Connector</li>
+      </ol>
+    </nav>
+  </header>
+
+  <!-- 主畫面 2-8-2 -->
+  <div class="container-fluid yf-font1" style="margin-top:10px; background-color:white;">
+    <div class="row g-0">
+
+      <!-- ── 左側欄（2）── -->
+      <aside class="col-12 col-md-2 bg-light border-end p-2 d-none d-md-block">
+        <h6 class="text-muted fw-bold mt-2 mb-2 px-1" style="font-size:.78rem; letter-spacing:.08em;">
+          <i class="bi bi-list-ul me-1"></i>功能分類
+        </h6>
+        <a class="aside-link" href="#cat1"><i class="bi bi-search text-secondary me-1"></i>搜尋與讀取</a>
+        <a class="aside-link" href="#cat2"><i class="bi bi-file-earmark-plus text-success me-1"></i>建立頁面</a>
+        <a class="aside-link" href="#cat3"><i class="bi bi-pencil-square text-primary me-1"></i>編輯頁面</a>
+        <a class="aside-link" href="#cat4"><i class="bi bi-copy text-info me-1"></i>複製與移動</a>
+        <a class="aside-link" href="#cat5"><i class="bi bi-grid-3x2-gap text-warning me-1"></i>資料庫管理</a>
+        <a class="aside-link" href="#cat6"><i class="bi bi-eye text-primary me-1"></i>檢視管理</a>
+        <a class="aside-link" href="#cat7"><i class="bi bi-chat-dots text-danger me-1"></i>留言與討論</a>
+        <a class="aside-link" href="#cat8"><i class="bi bi-people text-muted me-1"></i>使用者與團隊</a>
+        <hr class="my-2">
+        <a class="aside-link" href="#paid-summary"><i class="bi bi-credit-card text-danger me-1"></i>付費版彙整</a>
+        <hr class="my-2">
+        <a class="aside-link" href="#n0"><i class="bi bi-arrow-up-circle me-1"></i>回頂端</a>
+      </aside>
+
+      <!-- ── 主內容（8）── -->
+      <main id="main-content" class="col-12 col-md-8 p-3 p-md-4">
+
+        <!-- 說明區 -->
+        <div class="intro-box">
+          <strong><i class="bi bi-info-circle-fill me-1"></i>使用說明</strong><br>
+          以下列出透過 Claude × Notion Connector 可使用的 <strong>14 個工具</strong>，每項附有功能說明、範例 Prompt 及版本需求。<br>
+          <div class="mt-2">
+            <span class="badge badge-free me-1">免費版</span>Notion Free 即可使用　
+            <span class="badge badge-pro me-1">Plus 以上</span>需 Notion Plus 方案　
+            <span class="badge badge-biz me-1">Business 以上</span>需 Notion Business 方案
+          </div>
+        </div>
+
+        <!-- ============================
+             第一類：搜尋與讀取
+        ============================= -->
+        <section id="cat1" class="mb-4">
+          <div class="cat-header"><i class="bi bi-search"></i>一、搜尋與讀取</div>
+
+          <!-- notion-search -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">1. notion-search</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              對整個 Notion 工作區進行語意搜尋，支援連接 Slack、Google Drive、GitHub、Jira 等外部來源（需開啟 Notion AI）。
+              可依建立日期、建立者進行篩選，也可限定在特定頁面或資料庫內搜尋。
+            </div>
+            <div class="prompt-box">搜尋工作區內所有跟「孫子兵法」相關的頁面</div>
+          </div>
+
+          <!-- notion-fetch -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">2. notion-fetch</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              輸入頁面 URL 或 ID，取得完整的頁面內容、資料庫結構（schema）、資料來源（data source）詳細資訊。
+              這是幾乎所有操作的第一步，先 fetch 再編輯。
+            </div>
+            <div class="prompt-box">幫我讀取這個 Notion 頁面的內容：https://notion.so/mypage-abc123</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             第二類：建立頁面
+        ============================= -->
+        <section id="cat2" class="mb-4">
+          <div class="cat-header"><i class="bi bi-file-earmark-plus"></i>二、建立頁面</div>
+
+          <!-- notion-create-pages -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">3. notion-create-pages</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              在指定的父頁面或資料庫下，一次建立一或多個頁面，支援設定標題、內容（Markdown 格式）、屬性、圖示（emoji）、封面圖片，以及套用資料庫模板。
+            </div>
+            <div class="prompt-box">在我的「AI 學苑」頁面下建立一篇新文章，標題：「Notion Connector 完全指南」，並加上 📓 圖示</div>
+          </div>
+
+          <!-- notion-create-database -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">4. notion-create-database</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              使用 SQL DDL 語法建立新的 Notion 資料庫，支援各種欄位類型：文字、日期、選項、多選、人員、核取方塊、公式、關聯、彙總等。
+            </div>
+            <div class="prompt-box">幫我在「每日學習」頁面下建立一個資料庫，欄位包含：標題、日期、分類（AI/網頁/英文/閱讀）、完成狀態</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             第三類：編輯頁面
+        ============================= -->
+        <section id="cat3" class="mb-4">
+          <div class="cat-header"><i class="bi bi-pencil-square"></i>三、編輯頁面</div>
+
+          <div class="flow-note">
+            <i class="bi bi-lightbulb-fill me-1"></i>
+            <strong>建議流程：</strong>先用 <code>notion-fetch</code> 讀取頁面，確認內容與屬性名稱後，再呼叫 <code>notion-update-page</code> 進行修改。
+          </div>
+
+          <!-- notion-update-page -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">5. notion-update-page</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              更新頁面內容或屬性，支援六種操作模式：
+              <ul class="mb-0 mt-1" style="font-size:.85rem;">
+                <li><strong>update_properties</strong>：更新標題、資料庫屬性值</li>
+                <li><strong>update_content</strong>：搜尋並取代特定段落文字</li>
+                <li><strong>replace_content</strong>：全面替換頁面內容</li>
+                <li><strong>insert_content</strong>：在頁首或頁尾插入新內容</li>
+                <li><strong>apply_template</strong>：套用資料庫模板</li>
+                <li><strong>update_verification</strong>：標記頁面為已驗證（需 Business 方案）</li>
+              </ul>
+            </div>
+            <div class="prompt-box">在「AI 學苑週誌」頁面末尾，新增本週學習摘要：「本週完成 Notion Connector 文件整理」</div>
+          </div>
+
+          <!-- notion-update-data-source -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">6. notion-update-data-source</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              修改資料庫結構（schema）：新增欄位、刪除欄位、重新命名欄位、變更欄位類型，也可以修改資料庫標題、描述，或將資料庫移至垃圾桶。
+            </div>
+            <div class="prompt-box">幫我在「每日學習」資料庫新增一個「心得筆記」欄位（純文字），以及「難度評分」（1–5 分）數字欄位</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             第四類：複製與移動
+        ============================= -->
+        <section id="cat4" class="mb-4">
+          <div class="cat-header"><i class="bi bi-copy"></i>四、複製與移動</div>
+
+          <!-- notion-duplicate-page -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">7. notion-duplicate-page</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              複製一個現有頁面（包含子頁面），系統會在背景非同步完成，複製後可透過回傳的 URL 查看結果。
+            </div>
+            <div class="prompt-box">複製我的「AI 工具評測模板」頁面，做一份新的備份</div>
+          </div>
+
+          <!-- notion-move-pages -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">8. notion-move-pages</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              將一或多個頁面（最多 100 個）移動到新的父頁面、資料庫或工作區頂層，支援同時移動多個項目。
+            </div>
+            <div class="prompt-box">把「Claude 評測」和「Gemini 評測」這兩個頁面，都移到「AI 工具評測」資料夾下</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             第五類：資料庫管理
+        ============================= -->
+        <section id="cat5" class="mb-4">
+          <div class="cat-header"><i class="bi bi-grid-3x2-gap"></i>五、資料庫管理</div>
+
+          <!-- notion-create-database（已在第二類說明，此處補充操作視角）-->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">（見第二類）notion-create-database</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              建立資料庫時，支援的欄位類型一覽：<br>
+              <code>TITLE</code>、<code>RICH_TEXT</code>、<code>DATE</code>、<code>PEOPLE</code>、
+              <code>CHECKBOX</code>、<code>URL</code>、<code>EMAIL</code>、<code>PHONE_NUMBER</code>、
+              <code>STATUS</code>、<code>NUMBER</code>、<code>SELECT</code>、<code>MULTI_SELECT</code>、
+              <code>FORMULA</code>、<code>RELATION</code>、<code>ROLLUP</code>、<code>UNIQUE_ID</code>、
+              <code>CREATED_TIME</code>、<code>LAST_EDITED_TIME</code>
+            </div>
+            <div class="prompt-box">建立「書單追蹤」資料庫，欄位：書名（標題）、作者、分類（多選）、閱讀狀態（待讀/閱讀中/已完成）、評分（數字）、完成日期</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             第六類：檢視管理
+        ============================= -->
+        <section id="cat6" class="mb-4">
+          <div class="cat-header"><i class="bi bi-eye"></i>六、資料庫檢視管理</div>
+
+          <!-- notion-create-view -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">9. notion-create-view</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              為現有資料庫新增檢視（View），支援 10 種類型：
+              <code>table</code>（表格）、<code>board</code>（看板）、<code>list</code>（列表）、
+              <code>calendar</code>（日曆）、<code>timeline</code>（時間軸）、<code>gallery</code>（圖庫）、
+              <code>form</code>（表單）、<code>chart</code>（圖表）、<code>map</code>（地圖）、<code>dashboard</code>（儀表板）。
+              可設定篩選、排序、群組等條件。
+            </div>
+            <div class="prompt-box">在「每日學習」資料庫新增一個看板檢視，以「分類」欄位分組，命名為「學習看板」</div>
+          </div>
+
+          <!-- notion-update-view -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">10. notion-update-view</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              修改現有檢視的名稱、篩選條件、排序方式、群組設定，或清除原有的篩選/排序/群組設定。
+            </div>
+            <div class="prompt-box">把「學習看板」的篩選條件改成只顯示「完成狀態 = 未完成」的項目，並依日期升冪排列</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             第七類：留言與討論
+        ============================= -->
+        <section id="cat7" class="mb-4">
+          <div class="cat-header"><i class="bi bi-chat-dots"></i>七、留言與討論</div>
+
+          <!-- notion-create-comment -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">11. notion-create-comment</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              在頁面新增留言，或回覆現有討論串，支援針對特定段落文字留言（提供前後 10 字的文字片段定位）。
+              留言內容支援粗體、斜體、連結、行內程式碼等 Markdown 格式。
+            </div>
+            <div class="prompt-box">在「AI 學苑週誌」頁面新增留言：「這週的 Notion Connector 整理非常實用，下週繼續研究 API 整合」</div>
+          </div>
+
+          <!-- notion-get-comments -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">12. notion-get-comments</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              讀取指定頁面的所有留言與討論串，可選擇是否包含子區塊的留言、已解決的討論，或只讀取特定討論串。
+            </div>
+            <div class="prompt-box">列出「AI 學苑週誌」頁面的所有留言，包含已解決的討論</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             第八類：使用者與團隊
+        ============================= -->
+        <section id="cat8" class="mb-4">
+          <div class="cat-header"><i class="bi bi-people"></i>八、使用者與團隊</div>
+
+          <!-- notion-get-users -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">13. notion-get-users</span>
+              <span class="badge badge-free">免費版</span>
+            </div>
+            <div class="func-desc">
+              列出工作區內的所有成員與訪客，包含 ID、姓名、Email、帳號類型（人員或機器人），支援依姓名或 Email 篩選，以及分頁瀏覽。
+              可用 <code>"self"</code> 查詢目前登入的使用者。
+            </div>
+            <div class="prompt-box">查詢工作區內目前登入的使用者資訊</div>
+          </div>
+
+          <!-- notion-get-teams -->
+          <div class="func-card">
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <span class="func-name">14. notion-get-teams</span>
+              <span class="badge badge-pro">Plus 以上</span>
+            </div>
+            <div class="func-desc">
+              列出工作區內所有的團隊空間（Teamspace），顯示名稱、ID、成員身份與角色。
+              注意：Teamspace 功能需要 Notion Plus 以上方案。
+            </div>
+            <div class="prompt-box">列出工作區內所有的團隊空間，看看我是哪些團隊的成員</div>
+          </div>
+        </section>
+
+        <!-- ============================
+             付費功能彙整表
+        ============================= -->
+        <section id="paid-summary" class="mb-4">
+          <h5 class="fw-bold border-bottom pb-2 mb-3" style="color:#333;">
+            <i class="bi bi-credit-card me-2 text-danger"></i>付費版功能彙整
+          </h5>
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm paid-table">
+              <thead>
+                <tr>
+                  <th style="width:25%">功能</th>
+                  <th style="width:30%">工具名稱</th>
+                  <th style="width:20%">需要版本</th>
+                  <th>備註</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>團隊空間管理</td>
+                  <td><code>notion-get-teams</code></td>
+                  <td><span class="badge badge-pro">Plus 以上</span></td>
+                  <td>免費版無 Teamspace 功能</td>
+                </tr>
+                <tr>
+                  <td>頁面驗證標記</td>
+                  <td><code>notion-update-page</code><br><small>（update_verification 模式）</small></td>
+                  <td><span class="badge badge-biz">Business 以上</span></td>
+                  <td>或頁面位於 Wiki 內才可使用</td>
+                </tr>
+                <tr>
+                  <td>AI 語意搜尋</td>
+                  <td><code>notion-search</code><br><small>（ai_search 模式）</small></td>
+                  <td><span class="badge badge-pro">Plus 以上</span></td>
+                  <td>連接外部來源需開啟 Notion AI</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-muted" style="font-size:.85rem;">
+            <i class="bi bi-check-circle-fill text-success me-1"></i>
+            其餘 <strong>11 個工具</strong>皆可在 <strong>Notion 免費版</strong>中使用，對個人學習記錄已相當足夠。
+          </p>
+        </section>
+
+        <!-- 回頂端 -->
+        <div class="text-end mt-2">
+          <a href="#n0" class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-arrow-up-circle me-1"></i>回頂端
+          </a>
+        </div>
+
+      </main>
+
+      <!-- ── 右側欄（2）── -->
+      <aside class="col-12 col-md-2 bg-light border-start p-2 d-none d-md-block">
+
+        <!-- 統計 -->
+        <div class="stat-box mt-2">
+          <div class="stat-num">14</div>
+          <div class="text-muted">工具總數</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:#198754;">11</div>
+          <div class="text-muted">免費版可用</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:#6366f1;">2</div>
+          <div class="text-muted">需 Plus 以上</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:#dc3545;">1</div>
+          <div class="text-muted">需 Business</div>
+        </div>
+
+        <hr class="my-2">
+
+        <!-- 標籤 -->
+        <h6 class="text-muted fw-bold mb-2" style="font-size:.78rem; letter-spacing:.08em;">
+          <i class="bi bi-tags me-1"></i>相關標籤
+        </h6>
+        <div style="font-size:.78rem; line-height:2.2;">
+          <span class="badge bg-dark me-1 mb-1">Notion</span>
+          <span class="badge bg-primary me-1 mb-1">MCP</span>
+          <span class="badge bg-success me-1 mb-1">AI 工具</span>
+          <span class="badge bg-secondary me-1 mb-1">知識管理</span>
+          <span class="badge bg-warning text-dark me-1 mb-1">Prompt</span>
+          <span class="badge bg-info text-dark me-1 mb-1">資料庫</span>
+        </div>
+
+        <hr class="my-2">
+
+        <!-- 訪問計數 -->
+        <div class="text-center text-muted mt-1" style="font-size:.8rem;">
+          <i class="bi bi-eye me-1"></i>本頁訪問：<strong id="counter-num">--</strong>
+        </div>
+      </aside>
+
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- jQuery load：nav / footer -->
+  <script>
+    $(function () {
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+  <!-- 訪問計數器（LocalStorage）-->
+  <script>
+    function updateCounter() {
+      const key = 'visit_' + location.pathname;
+      let count = parseInt(localStorage.getItem(key) || '0') + 1;
+      localStorage.setItem(key, count);
+      const el = document.getElementById('counter-num');
+      if (el) el.textContent = count;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- Gmail 功能大全 × Prompt 範例 | AI 學苑 -->
+<!-- 版面以 S001 標準架構為基礎 -->
+
+<head>
+  <title>Gmail 功能大全 × Prompt 範例 | AI 學苑</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <!-- Bootstrap 4（與你的模板一致） -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Gmail 色系變數 ── */
+    :root {
+      --g-red:    #EA4335;
+      --g-blue:   #4285F4;
+      --g-green:  #34A853;
+      --g-yellow: #FBBC05;
+      --card-bg:  #1e2a3a;
+      --card-bd:  #2d4060;
+      --prompt-bg:#0d1b2a;
+    }
+
+    /* ── Header 區 ── */
+    .yf-gmail-header {
+      text-align: center;
+      padding: 10px 0 18px;
+      border-bottom: 3px solid var(--g-red);
+      margin-bottom: 20px;
+    }
+    .yf-gmail-header h1 { font-size: 2rem; font-weight: 900; letter-spacing: 2px; }
+    .g-r { color: var(--g-red); }
+    .g-b { color: var(--g-blue); }
+    .g-y { color: var(--g-yellow); }
+    .g-g { color: var(--g-green); }
+
+    /* ── 統計列 ── */
+    .yf-stats {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .yf-stat {
+      background: var(--card-bg);
+      border: 1px solid var(--card-bd);
+      border-radius: 10px;
+      padding: 12px 24px;
+      text-align: center;
+      color: #e0e0e0;
+    }
+    .yf-stat .num { font-size: 1.8rem; font-weight: 900; line-height: 1; }
+    .yf-stat .lbl { font-size: 0.78rem; color: #8090a0; margin-top: 3px; }
+
+    /* ── 搜尋欄 ── */
+    .yf-search-wrap { position: relative; margin-bottom: 24px; }
+    .yf-search {
+      width: 100%; padding: 10px 16px 10px 42px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-bd);
+      border-radius: 25px;
+      color: #e0e0e0; font-size: 0.9rem;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .yf-search:focus { outline: none; border-color: var(--g-blue); }
+    .yf-search-ico {
+      position: absolute; left: 14px; top: 50%;
+      transform: translateY(-50%); color: #8090a0;
+    }
+
+    /* ── 分類標題 ── */
+    .yf-cat-title {
+      font-size: 1rem; font-weight: 700; color: #fff;
+      padding: 9px 16px; border-radius: 8px;
+      margin: 28px 0 16px;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .yf-cat-title.red    { background: rgba(234,67,53,.18);  border-left: 4px solid var(--g-red); }
+    .yf-cat-title.blue   { background: rgba(66,133,244,.18); border-left: 4px solid var(--g-blue); }
+    .yf-cat-title.green  { background: rgba(52,168,83,.18);  border-left: 4px solid var(--g-green); }
+    .yf-cat-title.yellow { background: rgba(251,188,5,.18);  border-left: 4px solid var(--g-yellow); }
+
+    /* ── 功能卡片 ── */
+    .yf-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-bd);
+      border-radius: 12px;
+      padding: 18px;
+      height: 100%;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+    .yf-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--g-blue);
+      box-shadow: 0 6px 20px rgba(66,133,244,.2);
+    }
+    .yf-card-icon {
+      width: 38px; height: 38px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; margin-bottom: 10px;
+    }
+    .ico-r { background: rgba(234,67,53,.15);  color: var(--g-red); }
+    .ico-b { background: rgba(66,133,244,.15); color: var(--g-blue); }
+    .ico-g { background: rgba(52,168,83,.15);  color: var(--g-green); }
+    .ico-y { background: rgba(251,188,5,.15);  color: var(--g-yellow); }
+
+    .yf-fname { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 5px; }
+    .yf-fdesc { font-size: .8rem; color: #8090a0; margin-bottom: 13px; line-height: 1.6; }
+
+    /* ── Prompt 區塊 ── */
+    .yf-plabel {
+      font-size: .7rem; font-weight: 700;
+      letter-spacing: 1.4px; color: var(--g-blue);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .yf-prompt {
+      background: var(--prompt-bg);
+      border: 1px solid var(--g-blue);
+      border-radius: 8px;
+      padding: 10px 36px 10px 12px;
+      font-size: .8rem; color: #c9d1d9;
+      line-height: 1.65;
+      position: relative;
+    }
+    .yf-copy {
+      position: absolute; top: 7px; right: 7px;
+      background: transparent; border: none;
+      color: #6080a0; cursor: pointer; font-size: .85rem;
+      padding: 2px 5px; border-radius: 4px;
+      transition: color .2s;
+    }
+    .yf-copy:hover  { color: var(--g-blue); }
+    .yf-copy.copied { color: var(--g-green); }
+
+    /* ── 快捷分類導覽（固定在 header 下） ── */
+    .yf-catnav {
+      background: #111c2d;
+      border-bottom: 1px solid var(--card-bd);
+      padding: 10px 0;
+      position: sticky; top: 0; z-index: 999;
+    }
+    .yf-catnav a {
+      display: inline-block;
+      padding: 4px 13px;
+      border: 1px solid var(--card-bd);
+      border-radius: 18px;
+      color: #8090a0; font-size: .8rem;
+      text-decoration: none; margin: 3px 4px;
+      transition: all .2s;
+    }
+    .yf-catnav a:hover, .yf-catnav a.active {
+      background: var(--g-blue);
+      border-color: var(--g-blue);
+      color: #fff;
+    }
+
+    /* ── 回頂部 ── */
+    #yf-top {
+      position: fixed; bottom: 22px; right: 22px;
+      background: var(--g-blue); color: #fff;
+      border: none; border-radius: 50%;
+      width: 42px; height: 42px;
+      font-size: 1rem; cursor: pointer;
+      display: none; z-index: 9999;
+      box-shadow: 0 4px 12px rgba(66,133,244,.4);
+    }
+  </style>
+
+  <!-- 選單滾輪 -->
+  <style>
+    .dropdown-menu { max-height: 600px; overflow-y: auto; }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark" onload="">
+
+  <!-- 導覽列 jQuery load -->
+  <div id="nav1"></div>
+
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Header -->
+  <header class="text-center" style="margin-top: 75px;">
+    <h1 class="text-info" style="font-family:'Noto Sans TC';font-weight:900;letter-spacing:2px;">P007C.Claude 連接
+      <span class="g-r">G</span><span class="g-b">m</span><span class="g-y">a</span><span class="g-r">i</span><span class="g-g">l</span>
+      &nbsp;功能大全 ~  115.06.06
+    </h1>
+    <p style="color:#8090a0; font-size:.9rem; margin-top:4px;">
+      <i class="bi bi-robot me-1"></i>每個功能附帶 AI Prompt 範例 &nbsp;|&nbsp;
+      <i class="bi bi-book me-1"></i>AI 學苑 yfchen 整理 &nbsp;|&nbsp; 2026
+    </p>
+  </header>
+
+  <!-- 快捷分類導覽 -->
+  <div class="yf-catnav text-center">
+    <a href="#cat1" class="active">✉️ 撰寫寄信</a>
+    <a href="#cat2">📁 整理收件</a>
+    <a href="#cat3">🔍 搜尋篩選</a>
+    <a href="#cat4">⚙️ 自動化</a>
+    <a href="#cat5">🔒 安全隱私</a>
+    <a href="#cat6">🤖 AI 功能</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- 主畫面 container-fluid，白底改深色 -->
+  <div class="container-fluid" style="margin-top:10px; background-color:#0d1b2a; padding: 20px 24px 60px;">
+
+    <!-- 統計列 -->
+    <div class="yf-stats">
+      <div class="yf-stat"><div class="num g-r">6</div><div class="lbl">功能分類</div></div>
+      <div class="yf-stat"><div class="num g-b">30</div><div class="lbl">功能項目</div></div>
+      <div class="yf-stat"><div class="num g-g">30</div><div class="lbl">Prompt 範例</div></div>
+      <div class="yf-stat"><div class="num g-y">∞</div><div class="lbl">學習可能性</div></div>
+    </div>
+
+    <!-- 搜尋 -->
+    <div class="yf-search-wrap">
+      <i class="bi bi-search yf-search-ico"></i>
+      <input type="text" class="yf-search" id="yfSearch" placeholder="搜尋功能名稱或 Prompt 關鍵字…" oninput="yfFilter()">
+    </div>
+
+    <!-- ── 第 1 類：撰寫與寄信 ── -->
+    <div id="cat1">
+      <div class="yf-cat-title red"><i class="bi bi-envelope-fill"></i> 撰寫與寄信</div>
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-pencil-square"></i></div>
+            <div class="yf-fname">撰寫新郵件</div>
+            <div class="yf-fdesc">點擊「撰寫」建立新郵件，支援富文字格式、附件與多位收件人。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">幫我撰寫一封正式中文商業邀請函，邀請廠商參加下個月產品發表會，語氣專業友善，200 字以內。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-reply-fill"></i></div>
+            <div class="yf-fname">回覆與轉寄</div>
+            <div class="yf-fdesc">快速回覆單一寄件人或全部收件人，或將郵件轉寄給第三方。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">對方詢問報價，幫我婉拒並保留未來合作機會，語氣客氣，3 句話以內。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-paperclip"></i></div>
+            <div class="yf-fname">附件與插入圖片</div>
+            <div class="yf-fdesc">可附加本機檔案、雲端硬碟檔案，或直接在郵件內嵌入圖片。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我要寄含報表附件的 Email，幫我寫一段附件說明，提醒對方為 PDF 格式需 Acrobat 開啟，30 字以內。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-y"><i class="bi bi-clock-history"></i></div>
+            <div class="yf-fname">排程傳送</div>
+            <div class="yf-fdesc">設定未來特定日期時間自動寄出郵件，避免深夜打擾收件人。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我想週一早上 9 點準時發出活動通知，請給我 Gmail「排程傳送」的操作步驟，5 步以內。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-arrow-counterclockwise"></i></div>
+            <div class="yf-fname">收回已傳送郵件</div>
+            <div class="yf-fdesc">啟用「傳送復原」，可在寄出後 30 秒內撤回郵件，避免寄錯。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明 Gmail「傳送復原」的設定位置與時間限制，以及寄錯信後的補救方法。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-people-fill"></i></div>
+            <div class="yf-fname">群組 / 通訊錄寄信</div>
+            <div class="yf-fdesc">使用 Google 通訊錄建立聯絡人群組，一次寄送給多位成員。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我有 20 位讀書會成員的 Email，告訴我如何在 Google 通訊錄建立群組，一鍵群發到 Gmail。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cat1 -->
+
+    <!-- ── 第 2 類：整理收件 ── -->
+    <div id="cat2">
+      <div class="yf-cat-title blue"><i class="bi bi-folder-fill"></i> 整理與收件管理</div>
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-tag-fill"></i></div>
+            <div class="yf-fname">標籤 (Labels)</div>
+            <div class="yf-fdesc">建立自訂標籤，如同資料夾，將郵件分類歸檔，支援多重標籤。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我是退休教師，請建議適合個人學習管理的 Gmail 標籤架構，涵蓋 AI、閱讀、英文、生活帳單，5 個以內。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-star-fill"></i></div>
+            <div class="yf-fname">星號標記與多色星號</div>
+            <div class="yf-fdesc">用星號標記重要郵件，進階設定可啟用不同顏色與形狀的星號。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明 Gmail 多色星號的啟用方式，並建議用顏色區分「緊急」「待辦」「參考」三種狀態的方法。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-y"><i class="bi bi-archive-fill"></i></div>
+            <div class="yf-fname">封存與刪除</div>
+            <div class="yf-fdesc">封存讓郵件從收件匣消失但保留搜尋；刪除則移至垃圾桶 30 天後清除。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">比較 Gmail 封存與刪除的差異，建議哪類郵件適合封存、哪類直接刪除，用表格呈現。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-layout-three-columns"></i></div>
+            <div class="yf-fname">收件匣類型設定</div>
+            <div class="yf-fdesc">可選擇預設、優先、多重收件匣等版面，自動分類主要、社交、促銷郵件。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">解釋 Gmail 各收件匣類型的差異，哪種最適合想專注重要信件的退休人士？<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-chat-left-dots-fill"></i></div>
+            <div class="yf-fname">對話串 (Threading)</div>
+            <div class="yf-fdesc">同一主旨往返郵件自動聚合成對話串，方便追蹤完整脈絡。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明如何關閉 Gmail 對話串功能，改為每封郵件獨立顯示，並比較各自的優缺點。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-bell-fill"></i></div>
+            <div class="yf-fname">提醒稍後處理 (Snooze)</div>
+            <div class="yf-fdesc">對郵件設定提醒，讓郵件在指定時間重回收件匣頂端。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">告訴我 Gmail Snooze（稍後提醒）功能的操作方式，以及如何為需週五前回覆的信設定提醒。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cat2 -->
+
+    <!-- ── 第 3 類：搜尋篩選 ── -->
+    <div id="cat3">
+      <div class="yf-cat-title green"><i class="bi bi-search"></i> 搜尋與篩選</div>
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-funnel-fill"></i></div>
+            <div class="yf-fname">進階搜尋運算子</div>
+            <div class="yf-fdesc">使用 from: to: subject: has:attachment 等指令精確定位郵件。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">列出最常用的 10 個 Gmail 搜尋運算子，每個附上實際範例，以表格呈現並附中文說明。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-sliders"></i></div>
+            <div class="yf-fname">篩選器建立</div>
+            <div class="yf-fdesc">設定條件自動對特定來源郵件套用標籤、封存、標記等動作。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">幫我設計一個 Gmail 篩選器，讓電商促銷郵件自動加上「促銷」標籤並跳過收件匣，請說明步驟。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-y"><i class="bi bi-calendar3"></i></div>
+            <div class="yf-fname">依日期範圍搜尋</div>
+            <div class="yf-fdesc">使用 before: after: older_than: 等語法鎖定特定時段的郵件。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我想找出 2024 年全年收到的含附件郵件，請給我完整的 Gmail 搜尋語法指令。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-person-x-fill"></i></div>
+            <div class="yf-fname">封鎖寄件人</div>
+            <div class="yf-fdesc">封鎖特定寄件人，之後來信自動移至垃圾郵件，可隨時解除。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明在 Gmail 封鎖特定寄件人的步驟、封鎖後郵件的去向，以及封鎖與篩選的差別。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-bookmark-fill"></i></div>
+            <div class="yf-fname">儲存搜尋 / 快捷搜尋</div>
+            <div class="yf-fdesc">將常用搜尋條件儲存為篩選器，不必每次重新輸入複雜語法。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我每週都要查「含發票字樣」的郵件，如何在 Gmail 建立可重複使用的搜尋快捷方式？<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cat3 -->
+
+    <!-- ── 第 4 類：自動化與設定 ── -->
+    <div id="cat4">
+      <div class="yf-cat-title yellow"><i class="bi bi-gear-fill"></i> 自動化與設定</div>
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-y"><i class="bi bi-reply-all-fill"></i></div>
+            <div class="yf-fname">度假自動回覆</div>
+            <div class="yf-fdesc">設定外出自動回覆，對所有或指定聯絡人自動發出通知信。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">幫我寫一段 Gmail 度假自動回覆英文範本，說明休假到月底，緊急請打電話，語氣友善專業。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-file-earmark-text-fill"></i></div>
+            <div class="yf-fname">罐頭回覆（範本）</div>
+            <div class="yf-fdesc">預先儲存常用回覆範本，一鍵插入，節省重複打字時間。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">幫我設計 3 種 Gmail 罐頭回覆範本：①確認收到 ②需要更多時間 ③婉拒請求，各 50 字以內。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-send-plus-fill"></i></div>
+            <div class="yf-fname">多個寄件身分</div>
+            <div class="yf-fdesc">新增其他 Email 地址作為寄件身分，統一用 Gmail 管理多個信箱。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明如何在 Gmail 設定多個寄件人身分（個人信箱＋部落格信箱），並設定各自的預設簽名。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-pen-fill"></i></div>
+            <div class="yf-fname">簽名檔設定</div>
+            <div class="yf-fdesc">建立含格式、連結、圖片的 HTML 簽名檔，可為不同身分設不同簽名。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">幫我撰寫一段 Gmail 簽名檔，包含：退休教師、AI 學苑部落格連結、聯絡 Email，格式簡潔。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-y"><i class="bi bi-keyboard-fill"></i></div>
+            <div class="yf-fname">鍵盤快捷鍵</div>
+            <div class="yf-fdesc">啟用後可用 c 撰寫、r 回覆、j/k 移動等鍵操作，大幅提升效率。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">列出 Gmail 最實用的 10 個鍵盤快捷鍵，以表格呈現「鍵位」「功能」「適合情境」三欄。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-box-arrow-in-down"></i></div>
+            <div class="yf-fname">匯入其他信箱</div>
+            <div class="yf-fdesc">透過 POP3 將其他信箱郵件匯入 Gmail，統一管理所有來信。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明如何將 Outlook 或 Yahoo 信箱透過 POP3 匯入 Gmail，並列出常見問題與解法。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cat4 -->
+
+    <!-- ── 第 5 類：安全隱私 ── -->
+    <div id="cat5">
+      <div class="yf-cat-title red"><i class="bi bi-shield-fill-check"></i> 安全性與隱私</div>
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-lock-fill"></i></div>
+            <div class="yf-fname">機密模式</div>
+            <div class="yf-fdesc">設定郵件到期日與 SMS 驗證，防止收件人轉寄或複製內容。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明 Gmail 機密模式的功能與限制，哪些情況適合使用，並比較與一般加密的差異。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-phone-fill"></i></div>
+            <div class="yf-fname">兩步驟驗證</div>
+            <div class="yf-fdesc">開啟 Google 帳號兩步驟驗證，即使密碼外洩也能保護 Gmail 安全。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">為什麼 Gmail 一定要開啟兩步驟驗證？說明開啟步驟、驗證方式選項，以及備用碼的重要性。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-eye-slash-fill"></i></div>
+            <div class="yf-fname">垃圾郵件管理</div>
+            <div class="yf-fdesc">Gmail 自動過濾垃圾郵件，可手動標記或解除標記訓練過濾效果。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我的 Gmail 常收到假冒銀行的釣魚信，說明如何辨識釣魚郵件，並設定讓 Gmail 更準確過濾。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-y"><i class="bi bi-activity"></i></div>
+            <div class="yf-fname">帳號活動查看</div>
+            <div class="yf-fdesc">查看最近登入記錄與裝置，發現異常即可立即登出所有裝置。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明如何在 Gmail 查看帳號登入活動，判斷是否異常，以及發現可疑登入的緊急處理步驟。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-shield-x"></i></div>
+            <div class="yf-fname">一鍵取消訂閱</div>
+            <div class="yf-fdesc">Gmail 在促銷信件頂部顯示「取消訂閱」按鈕，一鍵退訂電子報。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我收件匣塞滿電子報，給我有效清理 Gmail 促銷訂閱的完整流程，包含批次取消訂閱的方法。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cat5 -->
+
+    <!-- ── 第 6 類：AI 功能 ── -->
+    <div id="cat6">
+      <div class="yf-cat-title blue"><i class="bi bi-robot"></i> AI 智慧功能 (Gemini)</div>
+      <div class="row">
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-magic"></i></div>
+            <div class="yf-fname">Gemini 協助撰寫</div>
+            <div class="yf-fdesc">撰寫郵件時呼叫 Gemini AI，輸入大意即可生成完整草稿並調整語氣。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">使用 Gmail Gemini 幫我把「想向舊同事問候，順便說說退休後的生活」擴展為一封溫暖的中文信件。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-g"><i class="bi bi-card-text"></i></div>
+            <div class="yf-fname">郵件智慧摘要</div>
+            <div class="yf-fdesc">Gemini 自動摘要長串郵件，讓你快速掌握重點，不必逐封閱讀。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">這封郵件串有 15 封往返，請用 Gemini 幫我摘要出：主要決議、待辦清單、下次會議時間。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-y"><i class="bi bi-chat-dots-fill"></i></div>
+            <div class="yf-fname">智慧回覆建議</div>
+            <div class="yf-fdesc">Gmail 分析郵件內容，在回覆欄下方提供 3 個快速回覆選項。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">說明 Gmail「智慧回覆」功能的運作原理、如何讓它更符合個人語氣偏好，以及使用限制。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-r"><i class="bi bi-lightbulb-fill"></i></div>
+            <div class="yf-fname">智慧撰寫 (預測輸入)</div>
+            <div class="yf-fdesc">輸入文字時 Gmail 自動補全句子，按 Tab 接受建議加速撰寫。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">Gmail「智慧撰寫」預測輸入如何運作？如何開啟或關閉，對英文寫作的幫助是否比中文大？<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-3 yf-item">
+          <div class="yf-card">
+            <div class="yf-card-icon ico-b"><i class="bi bi-translate"></i></div>
+            <div class="yf-fname">郵件翻譯功能</div>
+            <div class="yf-fdesc">收到外語郵件時 Gmail 自動偵測並提供翻譯，支援 100 多種語言。</div>
+            <div class="yf-plabel"><i class="bi bi-terminal me-1"></i>Prompt 範例</div>
+            <div class="yf-prompt">我收到一封日文商業郵件，說明使用 Gmail 內建翻譯的方式，以及翻譯結果的準確度限制。<button class="yf-copy" onclick="yfCopy(this)"><i class="bi bi-clipboard"></i></button></div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /cat6 -->
+
+  </div><!-- /container-fluid -->
+
+  <!-- footer jQuery load -->
+  <div id="footer"></div>
+
+  <!-- 回頂部按鈕 -->
+  <button id="yf-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ══════════  各區塊 html 載入  ══════════ -->
+  <script>
+    $(function () {
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+  <script>
+    /* 一鍵複製 Prompt */
+    function yfCopy(btn) {
+      const txt = btn.parentElement.childNodes[0].textContent.trim();
+      navigator.clipboard.writeText(txt).then(() => {
+        btn.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<i class="bi bi-clipboard"></i>';
+          btn.classList.remove('copied');
+        }, 1800);
+      });
+    }
+
+    /* 關鍵字搜尋 */
+    function yfFilter() {
+      const q = document.getElementById('yfSearch').value.toLowerCase();
+      document.querySelectorAll('.yf-item').forEach(el => {
+        el.style.display = el.innerText.toLowerCase().includes(q) ? '' : 'none';
+      });
+    }
+
+    /* 分類導覽 active 狀態 */
+    document.querySelectorAll('.yf-catnav a').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.yf-catnav a').forEach(x => x.classList.remove('active'));
+        this.classList.add('active');
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* 回頂部顯示 */
+    window.addEventListener('scroll', () => {
+      document.getElementById('yf-top').style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+  </script>
+
+</body>
+</html>

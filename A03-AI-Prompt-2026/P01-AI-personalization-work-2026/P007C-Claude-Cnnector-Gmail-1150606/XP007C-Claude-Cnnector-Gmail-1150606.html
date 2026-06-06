@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <title>Gmail 功能大全 × Prompt 範例 | AI 學苑</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gmail-red: #EA4335;
+      --gmail-blue: #4285F4;
+      --gmail-green: #34A853;
+      --gmail-yellow: #FBBC05;
+      --dark-bg: #1a1a2e;
+      --card-bg: #16213e;
+      --card-border: #0f3460;
+      --text-primary: #e0e0e0;
+      --text-muted: #a0a0b0;
+      --prompt-bg: #0d1b2a;
+      --prompt-border: #4285F4;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    /* ── Header ── */
+    .yf-header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 60px 0 40px;
+      text-align: center;
+      border-bottom: 2px solid var(--gmail-red);
+      position: relative;
+      overflow: hidden;
+    }
+    .yf-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(66,133,244,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .yf-header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .gmail-g { color: var(--gmail-red); }
+    .gmail-m1 { color: var(--gmail-blue); }
+    .gmail-m2 { color: var(--gmail-yellow); }
+    .gmail-a { color: var(--gmail-red); }
+    .gmail-i { color: var(--gmail-blue); }
+    .gmail-l { color: var(--gmail-green); }
+
+    .yf-header .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 6px;
+    }
+
+    /* ── Category Nav Pills ── */
+    .cat-nav {
+      background: var(--card-bg);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--card-border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .cat-nav .nav-pills {
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .cat-nav .nav-link {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.82rem;
+      transition: all 0.2s;
+    }
+    .cat-nav .nav-link:hover,
+    .cat-nav .nav-link.active {
+      background: var(--gmail-blue);
+      border-color: var(--gmail-blue);
+      color: #fff;
+    }
+
+    /* ── Main Layout ── */
+    .main-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px 60px;
+    }
+
+    /* ── Category Section ── */
+    .cat-section {
+      margin-bottom: 48px;
+    }
+    .cat-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cat-title.red    { background: linear-gradient(90deg, rgba(234,67,53,0.25), transparent); border-left: 4px solid var(--gmail-red); }
+    .cat-title.blue   { background: linear-gradient(90deg, rgba(66,133,244,0.25), transparent); border-left: 4px solid var(--gmail-blue); }
+    .cat-title.green  { background: linear-gradient(90deg, rgba(52,168,83,0.25), transparent); border-left: 4px solid var(--gmail-green); }
+    .cat-title.yellow { background: linear-gradient(90deg, rgba(251,188,5,0.25), transparent); border-left: 4px solid var(--gmail-yellow); }
+
+    /* ── Feature Card ── */
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      height: 100%;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--gmail-blue);
+      box-shadow: 0 8px 24px rgba(66,133,244,0.15);
+    }
+
+    .feature-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+    .icon-red    { background: rgba(234,67,53,0.15);  color: var(--gmail-red); }
+    .icon-blue   { background: rgba(66,133,244,0.15); color: var(--gmail-blue); }
+    .icon-green  { background: rgba(52,168,83,0.15);  color: var(--gmail-green); }
+    .icon-yellow { background: rgba(251,188,5,0.15);  color: var(--gmail-yellow); }
+
+    .feature-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── Prompt Box ── */
+    .prompt-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--gmail-blue);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .prompt-box {
+      background: var(--prompt-bg);
+      border: 1px solid var(--prompt-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 0.82rem;
+      color: #c9d1d9;
+      line-height: 1.7;
+      position: relative;
+      font-family: 'Noto Sans TC', monospace;
+    }
+    .prompt-box .prompt-text {
+      padding-right: 28px;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 8px; right: 8px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 2px 5px;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+    .copy-btn:hover { color: var(--gmail-blue); }
+    .copy-btn.copied { color: var(--gmail-green); }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Search Box ── */
+    .search-wrap {
+      margin-bottom: 28px;
+    }
+    .search-input {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 25px;
+      color: var(--text-primary);
+      padding: 10px 20px 10px 44px;
+      width: 100%;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--gmail-blue);
+      background: var(--card-bg);
+      color: var(--text-primary);
+    }
+    .search-icon {
+      position: absolute;
+      left: 16px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    /* ── Back to Top ── */
+    #backTop {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      background: var(--gmail-blue);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px; height: 44px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(66,133,244,0.4);
+    }
+
+    /* ── Footer ── */
+    .yf-footer {
+      background: var(--card-bg);
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 576px) {
+      .yf-header h1 { font-size: 1.5rem; }
+      .cat-nav { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header class="yf-header">
+  <h1>
+    <span class="gmail-g">G</span><span class="gmail-m1">m</span><span class="gmail-m2">a</span><span class="gmail-a">i</span><span class="gmail-l">l</span>
+    &nbsp;功能大全
+  </h1>
+  <p class="subtitle">
+    <i class="bi bi-robot me-1"></i> 每個功能附帶 AI Prompt 範例 &nbsp;|&nbsp;
+    <i class="bi bi-book me-1"></i> AI 學苑 yfchen 整理
+  </p>
+  <p class="subtitle mt-1" style="font-size:0.78rem; opacity:0.6">
+    整理日期：2026年 &nbsp;|&nbsp; 共 6 大類 × 30 項功能
+  </p>
+</header>
+
+<!-- ══════════ CATEGORY NAV ══════════ -->
+<nav class="cat-nav">
+  <div class="nav nav-pills px-3">
+    <a class="nav-link active" href="#cat-compose">✉️ 撰寫寄信</a>
+    <a class="nav-link" href="#cat-organize">📁 整理收件</a>
+    <a class="nav-link" href="#cat-search">🔍 搜尋篩選</a>
+    <a class="nav-link" href="#cat-auto">⚙️ 自動化</a>
+    <a class="nav-link" href="#cat-security">🔒 安全隱私</a>
+    <a class="nav-link" href="#cat-ai">🤖 AI 功能</a>
+  </div>
+</nav>
+
+<!-- ══════════ MAIN ══════════ -->
+<div class="main-wrap">
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num" style="color:var(--gmail-red)">6</div>
+      <div class="stat-label">功能分類</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:var(--gmail-blue)">30</div>
+      <div class="stat-label">功能項目</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:var(--gmail-green)">30</div>
+      <div class="stat-label">Prompt 範例</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" style="color:var(--gmail-yellow)">∞</div>
+      <div class="stat-label">學習可能性</div>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="search-wrap position-relative">
+    <i class="bi bi-search search-icon"></i>
+    <input type="text" class="search-input" id="searchInput" placeholder="搜尋功能名稱或 Prompt 關鍵字…" oninput="filterCards()">
+  </div>
+
+  <!-- ── 1. 撰寫寄信 ── -->
+  <section class="cat-section" id="cat-compose">
+    <div class="cat-title red"><i class="bi bi-envelope-fill"></i> 撰寫與寄信</div>
+    <div class="row g-3" id="grid-compose">
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-pencil-square"></i></div>
+          <div class="feature-name">撰寫新郵件</div>
+          <div class="feature-desc">點擊「撰寫」建立新郵件，支援富文字格式、附件、收件人欄位。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">幫我撰寫一封正式的中文商業邀請函，邀請廠商參加下個月的產品發表會，語氣專業但友善，200 字以內。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-reply-fill"></i></div>
+          <div class="feature-name">回覆與轉寄</div>
+          <div class="feature-desc">快速回覆單一寄件人或全部收件人，或將郵件轉寄給第三方。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">對方詢問報價，請幫我婉拒並說明目前暫不接新案，但保留未來合作機會，語氣客氣，3 句話以內。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-paperclip"></i></div>
+          <div class="feature-name">附件與插入圖片</div>
+          <div class="feature-desc">可附加本機檔案、雲端硬碟檔案，或直接在郵件內嵌入圖片。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我要寄出含報表附件的 Email，幫我寫一段附件說明文字，提醒對方報表為 PDF 格式，需 Acrobat 開啟，30 字以內。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-yellow"><i class="bi bi-clock-history"></i></div>
+          <div class="feature-name">排程傳送</div>
+          <div class="feature-desc">設定未來特定日期時間自動寄出郵件，避免深夜打擾收件人。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我想在週一早上 9 點準時發出活動通知，請給我 Gmail「排程傳送」的操作步驟，5 步以內。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-arrow-counterclockwise"></i></div>
+          <div class="feature-name">收回已傳送郵件</div>
+          <div class="feature-desc">啟用「傳送復原」功能，可在寄出後 30 秒內撤回郵件。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">解釋 Gmail「傳送復原」功能的設定位置與限制，以及我不小心寄錯信後的補救方式。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-people-fill"></i></div>
+          <div class="feature-name">群組 / 通訊錄寄信</div>
+          <div class="feature-desc">使用 Google 通訊錄建立聯絡人群組，一次寄送給多位成員。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我有 20 位讀書會成員的 Email，告訴我如何在 Google 通訊錄建立群組，以後在 Gmail 一鍵群發。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 2. 整理收件 ── -->
+  <section class="cat-section" id="cat-organize">
+    <div class="cat-title blue"><i class="bi bi-folder-fill"></i> 整理與收件管理</div>
+    <div class="row g-3" id="grid-organize">
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-tag-fill"></i></div>
+          <div class="feature-name">標籤 (Labels)</div>
+          <div class="feature-desc">建立自訂標籤，如同資料夾，將郵件分類歸檔，支援多重標籤。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我是退休教師，請建議一套適合個人學習管理的 Gmail 標籤架構，涵蓋 AI、閱讀、英文、生活帳單，5 個以內。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-star-fill"></i></div>
+          <div class="feature-name">星號標記與多色星號</div>
+          <div class="feature-desc">用星號快速標記重要郵件，進階設定可啟用不同顏色與形狀的星號。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明 Gmail 多色星號功能的啟用方式，並建議一套用顏色區分「緊急」、「待辦」、「參考」的方法。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-yellow"><i class="bi bi-archive-fill"></i></div>
+          <div class="feature-name">封存與刪除</div>
+          <div class="feature-desc">封存讓郵件從收件匣消失但保留搜尋，刪除則移至垃圾桶 30 天後清除。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">比較 Gmail「封存」與「刪除」的差異，並建議哪類郵件適合封存、哪類直接刪除，用表格呈現。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-layout-three-columns"></i></div>
+          <div class="feature-name">收件匣類型設定</div>
+          <div class="feature-desc">可選擇預設、優先、多重收件匣等版面，自動分類主要、社交、促銷郵件。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">解釋 Gmail 收件匣各類型（預設、優先、多重收件匣）的差異，哪種最適合想專注重要信件的退休人士？</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-chat-left-dots-fill"></i></div>
+          <div class="feature-name">對話串 (Threading)</div>
+          <div class="feature-desc">同一主旨的往返郵件自動聚合成對話串，方便追蹤完整脈絡。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明如何關閉 Gmail 對話串功能，改為每封郵件獨立顯示，並說明各自的優缺點。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-bell-fill"></i></div>
+          <div class="feature-name">提醒稍後處理</div>
+          <div class="feature-desc">對郵件設定「提醒」，讓郵件在指定時間重回收件匣頂端提醒你。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">告訴我 Gmail Snooze（稍後提醒）功能的操作方式，以及如何為一封需要週五前回覆的信設定提醒。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 3. 搜尋篩選 ── -->
+  <section class="cat-section" id="cat-search">
+    <div class="cat-title green"><i class="bi bi-search"></i> 搜尋與篩選</div>
+    <div class="row g-3" id="grid-search">
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-funnel-fill"></i></div>
+          <div class="feature-name">進階搜尋運算子</div>
+          <div class="feature-desc">使用 from: to: subject: has:attachment 等指令精確定位郵件。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">列出最常用的 10 個 Gmail 搜尋運算子，每個附上實際範例，以表格呈現，包含中文說明。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-sliders"></i></div>
+          <div class="feature-name">篩選器建立</div>
+          <div class="feature-desc">設定條件自動對特定來源郵件套用標籤、封存、標記等動作。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">幫我設計一個 Gmail 篩選器，讓所有來自電商促銷的郵件自動加上「促銷」標籤並跳過收件匣，操作步驟說明。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-yellow"><i class="bi bi-calendar3"></i></div>
+          <div class="feature-name">依日期範圍搜尋</div>
+          <div class="feature-desc">使用 before: after: older_than: 等語法鎖定特定時段的郵件。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我想找出 2024 年全年收到的含附件郵件，請給我完整的 Gmail 搜尋語法指令。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-person-x-fill"></i></div>
+          <div class="feature-name">封鎖寄件人</div>
+          <div class="feature-desc">封鎖特定寄件人，之後來信自動移至垃圾郵件，可隨時解除。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明在 Gmail 封鎖特定寄件人的步驟，以及封鎖後郵件的去向，和封鎖與篩選的差別。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-graph-up"></i></div>
+          <div class="feature-name">儲存搜尋條件</div>
+          <div class="feature-desc">將常用搜尋條件儲存為篩選器，不必每次重新輸入複雜語法。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我每週都要查閱含「發票」字樣的郵件，如何在 Gmail 建立一個可重複使用的搜尋快捷方式？</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 4. 自動化 ── -->
+  <section class="cat-section" id="cat-auto">
+    <div class="cat-title yellow"><i class="bi bi-gear-fill"></i> 自動化與設定</div>
+    <div class="row g-3" id="grid-auto">
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-yellow"><i class="bi bi-reply-all-fill"></i></div>
+          <div class="feature-name">自動回覆 (度假回覆)</div>
+          <div class="feature-desc">設定外出自動回覆，對所有或指定聯絡人自動發出通知信。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">幫我寫一段 Gmail 度假自動回覆的英文範本，說明我休假到月底，緊急聯絡請打電話，語氣友善專業。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-file-earmark-text-fill"></i></div>
+          <div class="feature-name">罐頭回覆 (範本)</div>
+          <div class="feature-desc">預先儲存常用回覆範本，需要時一鍵插入，節省重複打字時間。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">幫我設計 3 種 Gmail 罐頭回覆範本：①確認收到 ②需要更多時間 ③婉拒請求，各 50 字以內。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-send-plus-fill"></i></div>
+          <div class="feature-name">多個寄件身分</div>
+          <div class="feature-desc">新增其他 Email 地址作為寄件身分，統一用 Gmail 管理多個信箱。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明如何在 Gmail 設定以不同寄件人身分（如個人信箱與部落格信箱）寄信，並設定各自的預設簽名。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-pen-fill"></i></div>
+          <div class="feature-name">簽名檔設定</div>
+          <div class="feature-desc">建立含格式、連結、圖片的 HTML 簽名檔，可為不同身分設定不同簽名。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">幫我撰寫一段 Gmail 簽名檔文字，包含：退休教師、AI 學苑部落格連結、聯絡 Email，格式簡潔。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-yellow"><i class="bi bi-keyboard-fill"></i></div>
+          <div class="feature-name">鍵盤快捷鍵</div>
+          <div class="feature-desc">啟用快捷鍵後，可用 c 撰寫、r 回覆、j/k 移動等鍵操作，大幅提升效率。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">列出 Gmail 最實用的 10 個鍵盤快捷鍵，以表格呈現，包含「鍵位」「功能說明」「適合情境」三欄。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-box-arrow-in-down"></i></div>
+          <div class="feature-name">匯入其他信箱</div>
+          <div class="feature-desc">透過 POP3 設定將其他信箱郵件匯入 Gmail 統一管理。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明如何將 Outlook 或 Yahoo 信箱透過 POP3 匯入 Gmail，並列出可能遇到的常見問題與解法。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 5. 安全隱私 ── -->
+  <section class="cat-section" id="cat-security">
+    <div class="cat-title red"><i class="bi bi-shield-fill-check"></i> 安全性與隱私</div>
+    <div class="row g-3" id="grid-security">
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-lock-fill"></i></div>
+          <div class="feature-name">機密模式</div>
+          <div class="feature-desc">設定郵件到期日與 SMS 密碼驗證，防止收件人轉寄或複製內容。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明 Gmail 機密模式的功能與限制，以及哪些情況下適合使用，並比較與一般加密的差異。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-phone-fill"></i></div>
+          <div class="feature-name">兩步驟驗證</div>
+          <div class="feature-desc">開啟 Google 帳號兩步驟驗證，即使密碼外洩也能保護 Gmail 安全。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">為什麼 Gmail 一定要開啟兩步驟驗證？說明開啟步驟、驗證方式選項，以及備用碼的重要性。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-eye-slash-fill"></i></div>
+          <div class="feature-name">垃圾郵件管理</div>
+          <div class="feature-desc">Gmail 自動過濾垃圾郵件，可手動標記、解除標記，訓練過濾效果。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我的 Gmail 常收到假冒銀行的釣魚信，說明如何辨識釣魚郵件的特徵，並設定讓 Gmail 更準確過濾。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-yellow"><i class="bi bi-activity"></i></div>
+          <div class="feature-name">帳號活動查看</div>
+          <div class="feature-desc">查看最近登入記錄與裝置，發現異常即可立即登出所有裝置。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明如何在 Gmail 查看帳號最近的登入活動，判斷是否有異常，以及發現可疑登入後的緊急處理步驟。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-shield-x"></i></div>
+          <div class="feature-name">取消訂閱功能</div>
+          <div class="feature-desc">Gmail 在促銷信件上方顯示「取消訂閱」按鈕，一鍵退訂電子報。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我收件匣塞滿電子報，給我一個有效清理 Gmail 促銷訂閱的完整流程，包含批次取消訂閱的方法。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 6. AI 功能 ── -->
+  <section class="cat-section" id="cat-ai">
+    <div class="cat-title blue"><i class="bi bi-robot"></i> AI 智慧功能 (Gemini)</div>
+    <div class="row g-3" id="grid-ai">
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-magic"></i></div>
+          <div class="feature-name">Gemini 協助撰寫</div>
+          <div class="feature-desc">在撰寫郵件時呼叫 Gemini AI，輸入大意即可生成完整草稿並調整語氣。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">在 Gmail 使用 Gemini 協助寫信功能，幫我把「想向舊同事問候近況，順便說說自己退休後的生活」擴展為一封溫暖的中文信件。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-green"><i class="bi bi-card-text"></i></div>
+          <div class="feature-name">郵件智慧摘要</div>
+          <div class="feature-desc">Gemini 自動摘要長串郵件，顯示重點摘要讓你快速掌握內容。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">這封郵件串有 15 封往返信件，請用 Gemini 功能幫我摘要出：主要決議事項、待辦清單、下次會議時間。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-yellow"><i class="bi bi-chat-dots-fill"></i></div>
+          <div class="feature-name">智慧回覆建議</div>
+          <div class="feature-desc">Gmail 自動分析郵件內容，在回覆欄下方提供 3 個快速回覆選項。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">說明 Gmail「智慧回覆」功能的運作原理，以及如何讓它更符合個人語氣偏好，有哪些限制？</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-red"><i class="bi bi-lightbulb-fill"></i></div>
+          <div class="feature-name">智慧撰寫建議</div>
+          <div class="feature-desc">輸入文字時 Gmail 自動補全句子，按 Tab 接受建議，加速撰寫。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">Gmail 的「智慧撰寫」預測輸入功能如何運作？如何開啟或關閉，對英文寫作的幫助是否比中文大？</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 feature-item">
+        <div class="feature-card">
+          <div class="feature-icon icon-blue"><i class="bi bi-translate"></i></div>
+          <div class="feature-name">郵件翻譯功能</div>
+          <div class="feature-desc">收到外語郵件時 Gmail 自動偵測並提供翻譯，支援 100 多種語言。</div>
+          <div class="prompt-label"><i class="bi bi-terminal"></i> Prompt 範例</div>
+          <div class="prompt-box">
+            <div class="prompt-text">我收到一封日文商業郵件，說明如何使用 Gmail 內建翻譯功能，以及翻譯結果的準確度限制與注意事項。</div>
+            <button class="copy-btn" onclick="copyPrompt(this)"><i class="bi bi-clipboard"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /main-wrap -->
+
+<!-- Footer -->
+<footer class="yf-footer">
+  <i class="bi bi-mortarboard-fill me-1" style="color:var(--gmail-blue)"></i>
+  AI 學苑 × yfchen &nbsp;|&nbsp; 退休不退學，持續精進中 &nbsp;|&nbsp;
+  <span style="color:var(--gmail-red)">G</span><span style="color:var(--gmail-blue)">m</span><span style="color:var(--gmail-yellow)">a</span><span style="color:var(--gmail-red)">i</span><span style="color:var(--gmail-green)">l</span> 功能整理 © 2026
+</footer>
+
+<!-- Back to Top -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script>
+  // Copy Prompt
+  function copyPrompt(btn) {
+    const text = btn.previousElementSibling.textContent.trim();
+    navigator.clipboard.writeText(text).then(() => {
+      btn.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = '<i class="bi bi-clipboard"></i>';
+        btn.classList.remove('copied');
+      }, 1800);
+    });
+  }
+
+  // Search Filter
+  function filterCards() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    document.querySelectorAll('.feature-item').forEach(item => {
+      const text = item.innerText.toLowerCase();
+      item.style.display = text.includes(q) ? '' : 'none';
+    });
+  }
+
+  // Back to Top
+  window.addEventListener('scroll', () => {
+    document.getElementById('backTop').style.display = window.scrollY > 300 ? 'flex' : 'none';
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('.cat-nav a').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.cat-nav a').forEach(x => x.classList.remove('active'));
+      this.classList.add('active');
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
