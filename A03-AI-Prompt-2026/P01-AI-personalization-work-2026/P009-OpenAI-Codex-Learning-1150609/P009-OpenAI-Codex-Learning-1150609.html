@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 
+  網頁名稱：OpenAI Codex 學習指南 | 有效方法與實戰案例
+  說明：此頁面基於使用者提供的 Bootstrap 4/5 混合架構，保留 nav / footer 動態載入，
+        並以 2-8-2 三欄切割呈現 Codex 學習路徑、核心技巧與實例。
+-->
+
+<head>
+  <title>OpenAI Codex 學習指南 | 方法與案例</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <!-- Bootstrap 4 核心庫 (穩定) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 額外資源 (整合圖示與部分元件) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自訂樣式 (保留路徑，若無檔案不影響主要閱讀) -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 中國大陸 iconfont 資源 (重複載入已調整為一次) -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <!-- Lottie 動畫庫 (保留) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- Google Font (Noto Sans TC) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* 基礎調整與自訂工具類 */
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f8f9fc;
+    }
+
+    .yf-font1 {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .yf-color-as1 {
+      color: #5a626e;
+    }
+
+    /* 側邊欄裝飾 */
+    .sidebar-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-left: 5px solid #0d6efd;
+      padding-left: 12px;
+      margin-bottom: 1rem;
+      color: #1e2a3e;
+    }
+
+    .main-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #0d6efd;
+      color: white;
+      border-radius: 40px;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .badge-codex {
+      background-color: #e9ecef;
+      color: #1e2a3e;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    pre {
+      background: #f1f3f5;
+      padding: 1rem;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      border-left: 4px solid #0d6efd;
+      overflow-x: auto;
+    }
+
+    .table-custom th {
+      background-color: #eef2ff;
+      border-bottom: 2px solid #cbd5e1;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 保留原始樣式類別 (與原有設計一致) */
+    .yf1 {
+      color: green;
+      font-weight: bold;
+    }
+
+    .yf2 {
+      color: purple;
+      font-weight: bold;
+    }
+
+    .yf3 {
+      color: #0D6EFD;
+      font-weight: bold;
+    }
+
+    .yf4 {
+      color: red;
+      font-weight: bold;
+    }
+
+    .yf-c {
+      text-align: center;
+    }
+
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-light">
+  <!-- ========================= 導覽列區域 (動態載入) ========================= -->
+  <div id="nav1"></div>
+
+  <!-- ========================= 頁首標題區 ========================= -->
+  <header class="text-center py-4" style="margin-top: 80px;">
+    <h1 class="text-primary yf-font1 display-5 fw-bold">🤖 OpenAI Codex 有效學習指南 ~ 115.06.09</h1>
+    <p class="lead text-secondary yf-font1">從思維轉變 → 實戰案例 → 融入日常開發</p>
+    <div class="mt-2">
+      <span class="badge-codex"><i class="fas fa-code me-1"></i> 4大工作模式</span>
+      <span class="badge-codex ms-2"><i class="fas fa-chalkboard-user"></i> 三階段學習路徑</span>
+      <span class="badge-codex ms-2"><i class="fas fa-rocket"></i> 實用案例集</span>
+    </div>
+  </header>
+
+  <!-- ========================= 主內容區 (2-8-2 切割) ========================= -->
+  <div class="container-fluid yf-font1" style="background-color: #f8f9fc;">
+    <div class="row g-4">
+      
+      <!-- 左側邊欄 2/12 (col-md-2) 提供快速導覽與小工具 -->
+      <div class="col-lg-2 col-md-3">
+        <div class="sidebar-card">
+          <div class="sidebar-title"><i class="fas fa-compass me-2"></i> 學習捷徑</div>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#mode" class="text-decoration-none text-dark"><i class="fas fa-caret-right text-primary me-1"></i> 四大工作模式</a></li>
+            <li class="mb-2"><a href="#roadmap" class="text-decoration-none text-dark"><i class="fas fa-caret-right text-primary me-1"></i> 三階段地圖</a></li>
+            <li class="mb-2"><a href="#cases" class="text-decoration-none text-dark"><i class="fas fa-caret-right text-primary me-1"></i> 實戰案例</a></li>
+            <li class="mb-2"><a href="#tips" class="text-decoration-none text-dark"><i class="fas fa-caret-right text-primary me-1"></i> 提問心法</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title"><i class="fas fa-lightbulb"></i> 核心心態</div>
+          <p class="small text-secondary">從「執行者」轉變為「指揮家」，學會精準描述意圖、拆解任務，讓AI高效協作。</p>
+          <div class="progress mb-2" style="height: 6px;">
+            <div class="progress-bar bg-success" style="width: 85%"></div>
+          </div>
+          <p class="small fw-bold">效率提升預估 +85%</p>
+        </div>
+      </div>
+
+      <!-- 中間主要內容區 8/12 -->
+      <div class="col-lg-8 col-md-9">
+        <!-- 四大模式表格區塊 -->
+        <div class="main-card" id="mode">
+          <h3 class="fw-bold mb-3"><i class="fas fa-microchip text-primary me-2"></i> 🧩 Codex 四大工作模式</h3>
+          <p class="text-secondary">對應不同任務場景，精準切換模式讓 AI 充分發揮潛能。</p>
+          <div class="table-responsive">
+            <table class="table table-bordered table-custom align-middle">
+              <thead>
+                <tr><th style="width:20%">工作模式</th><th>核心用法</th><th>適用場景</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="fw-bold text-primary">獨立對話</td><td>不綁定資料夾，快速問答、生成文案、摘要翻譯</td><td>撰寫郵件、會議記錄、臨時任務</td></tr>
+                <tr><td class="fw-bold text-primary">專案工作流</td><td>建立/開啟專案資料夾，實際讀寫檔案、產出結構</td><td>寫研究報告、建立網站、整理筆記</td></tr>
+                <tr><td class="fw-bold text-primary">程式設計模式</td><td>生成程式碼、執行建置指令、重構專案</td><td>開發 Flask 網站、自動化腳本、API 串接</td></tr>
+                <tr><td class="fw-bold text-primary">自動化維護</td><td>設定規則讓 Codex 自動執行重複性任務</td><td>批次備份、監控服務、定時整理檔案</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 學習路線圖：三階段 -->
+        <div class="main-card" id="roadmap">
+          <h3 class="fw-bold mb-4"><i class="fas fa-map-signs text-primary me-2"></i> 🗺️ 三階段學習路線圖</h3>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="border rounded-3 p-3 h-100 bg-white">
+                <div class="step-number mb-2">1</div>
+                <h5 class="fw-bold">新手村 (1-2天)</h5>
+                <p class="small">安裝Codex、建立專案資料夾、獨立對話練習。學會建立 <code>ideas.txt</code> 並迭代修改。</p>
+                <span class="badge bg-info bg-opacity-10 text-dark">✅ 目標：熟悉基本操作</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="border rounded-3 p-3 h-100 bg-white">
+                <div class="step-number mb-2">2</div>
+                <h5 class="fw-bold">核心區 (3-5天)</h5>
+                <p class="small">任務驅動式提問：給出明確約束，讓 AI 主動規劃。實作待辦清單網站、理解他人專案流程。</p>
+                <span class="badge bg-success bg-opacity-10 text-dark">💡 掌握精準指令</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="border rounded-3 p-3 h-100 bg-white">
+                <div class="step-number mb-2">3</div>
+                <h5 class="fw-bold">進階區 (1-2週+)</h5>
+                <p class="small">配置 Skills / MCP、自動化程式碼審查、重構遷移，建構個人 AI 工作流。</p>
+                <span class="badge bg-warning bg-opacity-10 text-dark">⚙️ 自動化與協作</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 實戰案例區塊 -->
+        <div class="main-card" id="cases">
+          <h3 class="fw-bold mb-3"><i class="fas fa-laptop-code text-primary me-2"></i> 💼 實戰案例：從零打造「待辦清單網站」</h3>
+          <p>使用 <strong>任務驅動式提問</strong>，讓 Codex 自動生成完整 Flask 應用，包含資料庫與前端。</p>
+          <pre><code>「幫我做一個待辦清單網站：
+- 使用 Flask 框架
+- 需要有新增、完成、刪除待辦事項的功能
+- 資料存在 SQLite 資料庫裡
+- 完成後幫我啟動它」</code></pre>
+          <div class="alert alert-light border-start border-4 border-primary mt-2" role="alert">
+            <i class="fas fa-check-circle text-primary me-2"></i> <strong>成果：</strong> Codex 將自動產生 <code>app.py</code>、<code>templates/index.html</code>，建立資料庫模型，並提供即時預覽網址。整個過程只需 30 秒～2 分鐘。
+          </div>
+          <hr>
+          <h5 class="fw-semibold mt-3"><i class="fas fa-code-review"></i> 案例二：理解開源專案驗證流程</h5>
+          <p>當你拿到一個陌生程式碼倉庫，在 Codex 對話框輸入：</p>
+          <pre><code>「這個專案的身份驗證功能是怎麼實現的？請幫我梳理整個流程。」</code></pre>
+          <p>Codex 會掃描相關檔案，以流程圖文字描述 token 驗證、session 管理或 OAuth 步驟，幫你快速上手。</p>
+        </div>
+
+        <!-- 提問心法與最佳實踐 -->
+        <div class="main-card" id="tips">
+          <h3 class="fw-bold"><i class="fas fa-comment-dots text-primary me-2"></i> ✨ 提問心法：從模糊到精準</h3>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="p-3 bg-light rounded-3 h-100">
+                <i class="fas fa-times-circle text-danger me-1"></i> <strong class="text-danger">低效問法</strong>
+                <p class="mt-2 mb-0 small">「幫我寫個網站」<br>「這個函數怎麼改」</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 bg-light rounded-3 h-100 border-start border-success border-3">
+                <i class="fas fa-check-circle text-success me-1"></i> <strong class="text-success">高效提問 (任務驅動)</strong>
+                <p class="mt-2 mb-0 small">「用 React + Tailwind 做一個記帳儀表板，需要圖表和支出分類，並儲存到 localStorage」<br>→ 提供框架、功能邊界、儲存方式。</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-3 bg-primary bg-opacity-10 rounded-3">
+            <i class="fas fa-graduation-cap me-2"></i> <strong>學習生活融入建議：</strong> 每日將重複性的文書、程式碼模板交給 Codex，你只需要專注設計與邏輯架構。兩週後你會發現產能顯著提升。
+          </div>
+        </div>
+      </div>
+
+      <!-- 右側邊欄 2/12 提供資源與小提醒 -->
+      <div class="col-lg-2 col-md-3">
+        <div class="sidebar-card">
+          <div class="sidebar-title"><i class="fas fa-link"></i> 推薦資源</div>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><i class="fab fa-github"></i> <a href="#" class="text-decoration-none">Codex 官方教學網站</a></li>
+            <li class="mb-2"><i class="fas fa-book"></i> <a href="#" class="text-decoration-none">Codex 實戰藍皮書 (GitHub)</a></li>
+            <li class="mb-2"><i class="fas fa-language"></i> <a href="#" class="text-decoration-none">中文教程合集 (AI-Coding-Guide)</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title"><i class="fas fa-chart-line"></i> 效率對比</div>
+          <div class="d-flex justify-content-between"><span>手寫函式</span><span>🔥 5 min</span></div>
+          <div class="progress mb-2" style="height: 6px;"><div class="progress-bar bg-secondary" style="width:100%"></div></div>
+          <div class="d-flex justify-content-between"><span>Codex 生成</span><span>⚡ 20 sec</span></div>
+          <div class="progress mb-2" style="height: 6px;"><div class="progress-bar bg-primary" style="width:20%"></div></div>
+          <div class="mt-2 text-center fw-bold small text-success">節省約 85% 時間</div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title"><i class="fas fa-brain"></i> 思維轉變</div>
+          <p class="small mb-0">你不是在「寫程式」，而是在「設計指令」。把繁雜細節交給 Codex，專注打造創新。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= 頁腳區域 ========================= -->
+  <div id="footer"></div>
+
+  <!-- ========================= 動態載入 Nav 與 Footer 的腳本 ========================= -->
+  <script>
+    $(function () {
+      // 載入導覽列 (請確認實際路徑是否與伺服器結構相符；若無此檔案，僅影響顯示，頁面仍可操作)
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html", function(response, status, xhr) {
+        if (status == "error") {
+          console.log("Nav 載入失敗，保留空白導覽區塊，可自行替換路徑");
+          // 友善提醒：若要在本地測試可顯示預設導覽列
+          $("#nav1").html('<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top"><div class="container"><a class="navbar-brand" href="#">Codex 學習筆記</a><div class="collapse navbar-collapse"><ul class="navbar-nav ms-auto"><li class="nav-item"><span class="nav-link text-white-50">導覽列示範</span></li></ul></div></div></nav>');
+        }
+      });
+      $("#footer").load("/ex-Comm/CX01-footer.html", function(response, status, xhr) {
+        if (status == "error") {
+          $("#footer").html('<footer class="bg-dark text-white text-center py-3 mt-5"><small>© 2025 OpenAI Codex 學習指南 | 保留所有權利</small></footer>');
+        }
+      });
+    });
+    
+    // 移除原本可能未定義的 updateCounter 以避免錯誤
+    window.updateCounter = window.updateCounter || function() {};
+    // 確保 Lottie 不報錯 (保留)
+  </script>
+
+  <!-- 額外調整: 因為引用了兩個 bootstrap 版本，確保無衝突；使用 BS5 的按鈕樣式需注意，但本頁不使用複雜元件，故無礙 -->
+  <style>
+    /* 修復 BS5 與 BS4 混合時 tab 等衝突，僅作微調 */
+    .btn-outline-primary {
+      border-radius: 50px;
+    }
+    .main-card pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    @media (max-width: 768px) {
+      .main-card {
+        padding: 1rem;
+      }
+      .sidebar-card {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+  <!-- 由於有些自訂 CSS 路徑不存在，但版面依然整潔；google font 與 boostrap 確保可讀性 -->
+</body>
+</html>
