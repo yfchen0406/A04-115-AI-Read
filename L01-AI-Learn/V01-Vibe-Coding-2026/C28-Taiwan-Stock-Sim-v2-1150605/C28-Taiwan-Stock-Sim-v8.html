@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台股模擬競技場 v5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f0f4f8;
+  --bg2:       #ffffff;
+  --bg3:       #ffffff;
+  --bg4:       #e8eef5;
+  --accent:    #1a73e8;
+  --accent2:   #0d47a1;
+  --gold:      #f59e0b;
+  --silver:    #9ca3af;
+  --bronze:    #b45309;
+  --green:     #16a34a;
+  --red:       #dc2626;
+  --yellow:    #d97706;
+  --text:      #1e293b;
+  --dim:       #64748b;
+  --border:    rgba(30,100,200,0.12);
+  --glow:      0 2px 12px rgba(30,100,200,0.08);
+  --r:         10px;
+  --mono:      'Share Tech Mono', monospace;
+  --sans:      'Noto Sans TC', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+
+/* ── Header ── */
+header{
+  position:relative;z-index:20;
+  background:linear-gradient(135deg,#1a73e8,#0d47a1);
+  border-bottom:1px solid rgba(255,255,255,0.15);
+  padding:14px 22px;
+  display:flex;align-items:center;gap:14px;
+  box-shadow:0 2px 40px rgba(0,0,0,0.7);
+}
+.logo-ring{
+  width:46px;height:46px;border-radius:50%;
+  background:conic-gradient(#fff,rgba(255,255,255,0.6),#fff);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+  box-shadow:0 0 18px rgba(255,255,255,0.4);
+  animation:spin-slow 12s linear infinite;
+}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+.logo-inner{
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(13,71,161,0.85);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.logo-text h1{
+  font-size:18px;font-weight:900;letter-spacing:2px;
+  background:linear-gradient(90deg,#fff,rgba(255,255,255,0.85));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.logo-text p{font-size:10px;color:rgba(255,255,255,0.7);font-family:var(--mono);letter-spacing:3px;margin-top:2px}
+
+/* clock */
+.header-clock{
+  margin-left:auto;
+  text-align:right;
+}
+.clock-time{
+  font-family:var(--mono);font-size:22px;font-weight:700;
+  color:#ffffff;
+  text-shadow:0 1px 4px rgba(0,0,0,0.2);
+}
+.market-badge{
+  font-size:10px;padding:2px 8px;border-radius:20px;
+  font-family:var(--mono);letter-spacing:1px;
+  margin-top:3px;display:inline-block;
+}
+.market-badge.open{background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.5)}
+.market-badge.close{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.35)}
+.market-badge.after{background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.4)}
+
+/* ── Tabs ── */
+.tab-bar{
+  position:relative;z-index:15;
+  display:flex;gap:2px;padding:10px 20px 0;
+  background:#fff;
+  border-bottom:2px solid var(--border);
+  overflow-x:auto;scrollbar-width:none;
+}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab-btn{
+  padding:10px 20px;border:1px solid transparent;
+  border-bottom:none;border-radius:var(--r) var(--r) 0 0;
+  background:transparent;color:var(--dim);
+  font-family:var(--sans);font-size:15px;font-weight:500;
+  cursor:pointer;white-space:nowrap;transition:all .2s;position:relative;
+}
+.tab-btn:hover{color:var(--text);background:rgba(0,212,255,0.06)}
+.tab-btn.active{
+  background:#f0f6ff;color:var(--accent);
+  border-color:rgba(26,115,232,0.3);font-weight:700;
+}
+.tab-btn.active::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+}
+
+/* ── Main ── */
+main{position:relative;z-index:5;max-width:100%;margin:0;padding:0}
+.main-inner{max-width:960px;margin:0 auto;padding:20px 24px}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fadein .25s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ── Card ── */
+.card{
+  background:#ffffff;
+  border:1px solid rgba(30,100,200,0.12);
+  border-radius:var(--r);padding:22px;margin-bottom:18px;
+  box-shadow:0 2px 12px rgba(30,100,200,0.07);
+}
+.card-title{
+  font-size:13px;font-weight:700;color:var(--accent);
+  letter-spacing:1.5px;
+  margin-bottom:16px;display:flex;align-items:center;gap:8px;
+}
+.card-title::before{
+  content:'';display:inline-block;
+  width:3px;height:14px;
+  background:linear-gradient(var(--accent2),var(--accent));
+  border-radius:2px;
+}
+
+/* ── Info box ── */
+.info-box{
+  border-radius:8px;padding:11px 14px;font-size:14px;margin-bottom:14px;
+  display:flex;align-items:flex-start;gap:8px;line-height:1.6;
+}
+.info-box.blue{background:#eff6ff;border:1px solid rgba(26,115,232,0.3);color:#1e40af}
+.info-box.green{background:#f0fdf4;border:1px solid rgba(22,163,74,0.3);color:#166534}
+.info-box.yellow{background:#fffbeb;border:1px solid rgba(217,119,6,0.3);color:#92400e}
+.info-box.red{background:#fff1f2;border:1px solid rgba(220,38,38,0.3);color:#991b1b}
+.info-box strong{color:inherit;font-weight:700}
+
+/* ── Form ── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:580px){.form-grid{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group.full{grid-column:1/-1}
+.form-group.span3{grid-column:span 2}
+label{font-size:13px;color:var(--dim);letter-spacing:0.5px;font-weight:600}
+label span.req{color:var(--red);margin-left:2px}
+input,select{
+  background:#f8fafc;border:1px solid var(--border);
+  border-radius:7px;padding:10px 13px;
+  color:var(--text);font-family:var(--sans);font-size:15px;
+  outline:none;transition:border-color .2s,box-shadow .2s;width:100%;
+}
+input:focus,select:focus{
+  border-color:var(--accent2);
+  box-shadow:0 0 0 3px rgba(0,102,255,0.15);
+}
+input::placeholder{color:var(--dim);opacity:.6}
+input:disabled{opacity:.4;cursor:not-allowed}
+select option{background:#ffffff}
+
+/* ── Section divider ── */
+.section-sep{
+  border:none;border-top:1px solid rgba(30,100,200,0.12);
+  margin:18px 0;
+}
+
+/* ── Calc boxes ── */
+.calc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px}
+@media(max-width:580px){.calc-grid{grid-template-columns:1fr}}
+.calc-box{
+  background:#eff6ff;
+  border:1px solid rgba(26,115,232,0.2);
+  border-radius:8px;padding:12px 14px;
+}
+.calc-lbl{font-size:12px;color:var(--dim);letter-spacing:0.8px;margin-bottom:4px}
+.calc-val{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--text)}
+.calc-val.pos{color:var(--green)}
+.calc-val.neg{color:var(--red)}
+
+/* ── Status badge ── */
+.status-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;
+  font-family:var(--mono);letter-spacing:1px;
+}
+.status-pill.matched{background:#dcfce7;color:#166534;border:1px solid rgba(22,163,74,0.35)}
+.status-pill.pending{background:#fef9c3;color:#854d0e;border:1px solid rgba(202,138,4,0.35)}
+.status-pill.cancelled{background:#fee2e2;color:#991b1b;border:1px solid rgba(220,38,38,0.35)}
+.status-pill.after-hours{background:#dbeafe;color:#1e40af;border:1px solid rgba(26,115,232,0.3)}
+.status-pill.sold{background:#f3e8ff;color:#6b21a8;border:1px solid rgba(147,51,234,0.3)}
+
+/* ── Btn ── */
+.btn-row{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.btn{
+  padding:11px 26px;border-radius:8px;border:none;
+  font-family:var(--sans);font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .2s;letter-spacing:.5px;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;box-shadow:0 4px 18px rgba(0,102,255,0.4);
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,102,255,0.55)}
+.btn-danger{
+  background:linear-gradient(135deg,#c0000a,var(--red));
+  color:#fff;box-shadow:0 4px 18px rgba(255,23,68,0.35);
+}
+.btn-danger:hover{transform:translateY(-1px)}
+.btn-ghost{
+  background:#fff;border:1px solid var(--border);color:var(--dim);
+}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:#eff6ff}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+
+/* ── Table ── */
+.table-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid rgba(30,100,200,0.15)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead tr{background:#e8eef5;border-bottom:2px solid var(--border)}
+th{
+  padding:11px 13px;text-align:left;
+  font-size:12px;letter-spacing:1px;color:var(--accent2);
+  font-weight:700;white-space:nowrap;
+}
+tbody tr{border-bottom:1px solid rgba(30,100,200,0.07);transition:background .15s}
+tbody tr:hover{background:#f0f6ff}
+td{padding:11px 13px;color:var(--text);white-space:nowrap;font-family:var(--mono);font-size:14px}
+td.label-col{font-family:var(--sans);font-size:15px}
+.pnl.pos{color:var(--green);font-weight:700}
+.pnl.neg{color:var(--red);font-weight:700}
+
+/* ── Summary ── */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:14px}
+.sum-box{background:#f8fafc;border:1px solid rgba(30,100,200,0.15);border-radius:9px;padding:13px 15px;text-align:center}
+.sum-lbl{font-size:12px;color:var(--dim);letter-spacing:0.5px}
+.sum-val{font-family:var(--mono);font-size:20px;font-weight:700;margin-top:3px}
+.sum-val.pos{color:var(--green)}
+.sum-val.neg{color:var(--red)}
+
+/* ── Rank ── */
+.rank-toggle{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tgl-btn{
+  padding:7px 18px;border-radius:20px;
+  border:1px solid var(--border);background:#fff;
+  color:var(--dim);font-family:var(--sans);font-size:13px;cursor:pointer;transition:all .2s;
+}
+.tgl-btn.active{
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;border-color:transparent;font-weight:700;
+}
+.rank-badge{
+  display:inline-flex;width:26px;height:26px;border-radius:50%;
+  align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;
+}
+.r1{background:var(--gold);color:#000;box-shadow:0 0 12px rgba(255,215,0,.5)}
+.r2{background:var(--silver);color:#000}
+.r3{background:var(--bronze);color:#fff}
+.rn{background:var(--bg4);color:var(--dim)}
+
+/* ── Toast ── */
+#toast{
+  position:fixed;bottom:22px;right:22px;
+  background:#fff;border:2px solid var(--accent);
+  border-radius:10px;padding:11px 20px;font-size:14px;
+  box-shadow:0 8px 36px rgba(30,100,200,0.2);z-index:9999;
+  transform:translateY(80px);opacity:0;transition:all .3s;
+  max-width:320px;line-height:1.5;
+}
+#toast.show{transform:translateY(0);opacity:1}
+#toast.err{border-color:var(--red);color:#991b1b}
+#toast.ok{border-color:var(--green);color:#166534}
+#toast.warn{border-color:var(--yellow);color:#854d0e}
+
+/* ── Spinner ── */
+.spinner{display:flex;justify-content:center;align-items:center;padding:36px}
+.spin{width:30px;height:30px;border:3px solid rgba(26,115,232,.15);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{text-align:center;padding:36px;color:var(--dim);font-size:15px}
+
+/* ── Sidebar + Layout ── */
+.page-layout{display:flex;gap:0;min-height:calc(100vh - 130px)}
+.sidebar{
+  width:230px;flex-shrink:0;
+  background:#fff;border-right:1px solid rgba(30,100,200,0.12);
+  padding:14px 10px;overflow-y:auto;
+  position:sticky;top:0;height:calc(100vh - 130px);
+}
+.sidebar-title{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;
+  color:var(--accent);margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;
+}
+.sidebar-refresh{
+  margin-left:auto;font-size:10px;color:var(--dim);
+  font-family:var(--mono);
+}
+.sidebar-stock{
+  border:1px solid rgba(30,100,200,0.1);border-radius:8px;
+  margin-bottom:8px;background:#f8fafc;overflow:hidden;
+  transition:box-shadow .2s;
+}
+.sidebar-stock:hover{box-shadow:0 2px 12px rgba(26,115,232,0.15)}
+.sidebar-stock-head{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 10px 4px;
+}
+.sidebar-stock-code{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--text)}
+.sidebar-stock-name{font-size:11px;color:var(--dim)}
+.sidebar-stock-price{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:4px 10px 8px;
+}
+.sidebar-price-val{font-family:var(--mono);font-size:16px;font-weight:700}
+.sidebar-price-chg{font-family:var(--mono);font-size:11px;font-weight:700;text-align:right}
+.sidebar-price-val.up,.sidebar-price-chg.up{color:var(--red)}
+.sidebar-price-val.dn,.sidebar-price-chg.dn{color:var(--green)}
+.sidebar-price-val.flat,.sidebar-price-chg.flat{color:var(--dim)}
+.sidebar-buy-btn{
+  display:block;width:calc(100% - 20px);margin:0 10px 10px;
+  padding:5px 0;border-radius:6px;border:none;
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  color:#fff;font-size:12px;font-weight:700;cursor:pointer;
+  transition:all .2s;font-family:var(--sans);
+}
+.sidebar-buy-btn:hover{box-shadow:0 3px 12px rgba(26,115,232,0.4);transform:translateY(-1px)}
+.main-content{flex:1;min-width:0;padding:0}
+
+@media(max-width:768px){
+  .page-layout{flex-direction:column}
+  .sidebar{width:100%;height:auto;position:relative;display:flex;flex-wrap:wrap;gap:6px;padding:10px}
+  .sidebar-title{width:100%}
+  .sidebar-stock{width:calc(50% - 3px);margin-bottom:0}
+}
+
+/* ── Sell panel enhanced ── */
+.sell-holdings-list{margin-top:12px}
+.sell-holding-card{
+  border:1px solid rgba(30,100,200,0.12);border-radius:8px;
+  padding:12px 14px;margin-bottom:8px;background:#f8fafc;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  cursor:pointer;transition:all .2s;
+}
+.sell-holding-card:hover{border-color:var(--red);background:#fff1f2;box-shadow:0 2px 10px rgba(220,38,38,0.1)}
+.sell-holding-card.selected{border-color:var(--red);background:#fff1f2;box-shadow:0 2px 10px rgba(220,38,38,0.15)}
+.shc-info{flex:1;min-width:140px}
+.shc-code{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--text)}
+.shc-name{font-size:12px;color:var(--dim);margin-top:1px}
+.shc-num{font-family:var(--mono);font-size:13px;color:var(--accent)}
+.shc-cost{font-family:var(--mono);font-size:13px;color:var(--dim)}
+.shc-select-tag{
+  font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;
+  background:linear-gradient(135deg,#c0000a,var(--red));color:#fff;
+  opacity:0;transition:opacity .2s;
+}
+.sell-holding-card:hover .shc-select-tag,.sell-holding-card.selected .shc-select-tag{opacity:1}
+
+.limit-warn{
+  background:#fffbeb;
+  border:1px solid rgba(217,119,6,0.35);
+  border-radius:8px;padding:10px 14px;
+  font-size:13px;color:#92400e;
+  display:none;margin-top:10px;
+}
+.limit-warn.show{display:flex;align-items:center;gap:8px}
+
+/* ── Trade type tag ── */
+.type-buy{color:var(--green)}
+.type-sell{color:var(--red)}
+
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:#f0f4f8}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-ring"><div class="logo-inner">📈</div></div>
+  <div class="logo-text">
+    <h1>台股模擬競技場</h1>
+    <p>TAIWAN STOCK SIM v5 · MULTI-PLAYER</p>
+  </div>
+  <div class="header-clock">
+    <div class="clock-time" id="hdr-clock">--:--:--</div>
+    <div id="hdr-badge" class="market-badge close">盤後</div>
+  </div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('tab-buy',this)">🟢 買入掛單</button>
+  <button class="tab-btn" onclick="switchTab('tab-sell',this)">🔴 賣出掛單</button>
+  <button class="tab-btn" onclick="switchTab('tab-my',this)">📋 個人記錄</button>
+  <button class="tab-btn" onclick="switchTab('tab-lb',this)">🏆 排行榜</button>
+  <button class="tab-btn" onclick="switchTab('tab-sim',this)">🎮 模擬練習</button>
+</div>
+
+<div class="page-layout">
+<!-- ── 左側股票看板 ── -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-title">
+    📊 即時報價
+    <span class="sidebar-refresh" id="sidebar-refresh-time">--:--</span>
+  </div>
+  <button onclick="fetchSidebarLivePrices()" style="width:100%;margin-bottom:8px;padding:6px 0;border-radius:6px;border:1px solid rgba(26,115,232,0.3);background:#eff6ff;color:var(--accent);font-size:12px;font-weight:700;cursor:pointer;font-family:var(--sans);">🌐 抓取今日即時股價</button>
+  <div id="sidebar-stocks-list">
+    <!-- 動態產生 -->
+  </div>
+</div>
+
+<main>
+<div class="main-inner">
+
+<!-- ══════════════════════════════════════
+     模組一：買入掛單
+══════════════════════════════════════ -->
+<div id="tab-buy" class="tab-panel active">
+  <div class="card">
+    <div class="card-title">買入掛單 / 下單</div>
+
+    <div class="info-box blue" id="market-info-buy">
+      <span>⏳</span>
+      <span id="market-text-buy">載入交易時段資訊中…</span>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>暱稱<span class="req">*</span></label>
+        <input id="b-nick" type="text" placeholder="例：股神阿嬤" maxlength="20" value="yfchen">
+      </div>
+      <div class="form-group">
+        <label>股票代號<span class="req">*</span></label>
+        <input id="b-code" type="text" placeholder="例：2330" maxlength="10" oninput="autoFillName()">
+      </div>
+      <div class="form-group">
+        <label>股票名稱</label>
+        <input id="b-name" type="text" placeholder="依代號自動帶入" maxlength="20" readonly style="background:#f0f4f8;color:var(--dim)">
+      </div>
+      <div class="form-group">
+        <label>下單日期時間<span class="req">*</span></label>
+        <input id="b-date" type="datetime-local">
+      </div>
+      <div class="form-group" style="display:none">
+        <label>前日收盤價（自動帶入）</label>
+        <input id="b-prev" type="number" placeholder="自動帶入" min="0" step="0.1" oninput="calcLimitPrice('b')" readonly>
+      </div>
+      <div class="form-group">
+        <label id="b-order-lbl">掛單價 / 時價（元/股）<span class="req">*</span></label>
+        <input id="b-order-price" type="number" placeholder="例：950" min="0" step="0.1" oninput="calcBuy()">
+      </div>
+      <div class="form-group">
+        <label>買入股數（股）<span class="req">*</span></label>
+        <input id="b-shares" type="number" placeholder="例：1000" min="1" step="1" oninput="calcBuy()">
+      </div>
+      <div class="form-group" id="b-close-group" style="display:none">
+        <label>當日收盤價（自動判斷）</label>
+        <input id="b-close" type="number" placeholder="系統帶入" min="0" step="0.1" oninput="calcBuy()" readonly>
+      </div>
+    </div>
+
+    <!-- 漲跌停資訊 -->
+    <div id="b-limit-info" class="limit-warn">
+      <span>⚠️</span>
+      <span id="b-limit-text"></span>
+    </div>
+
+    <!-- 成交量驗證（漲跌停時顯示） -->
+    <div id="b-vol-group" style="display:none;margin-top:12px">
+      <div class="info-box yellow">
+        <span>🔒</span>
+        <div><strong>偵測到漲停或跌停價位！</strong><br>
+        依規則，須有成交量才可買入。請填入當時市場成交張數（>0 才允許送出）。</div>
+      </div>
+      <div class="form-group" style="margin-top:8px;max-width:240px">
+        <label>當時市場成交張數<span class="req">*</span></label>
+        <input id="b-vol" type="number" placeholder="例：3500" min="0" step="1">
+      </div>
+    </div>
+
+    <hr class="section-sep">
+    <div class="card-title" style="margin-bottom:10px">即時試算</div>
+    <div class="calc-grid">
+      <div class="calc-box"><div class="calc-lbl">漲停價</div><div class="calc-val" id="c-limit-up">—</div></div>
+      <div class="calc-box"><div class="calc-lbl">跌停價</div><div class="calc-val" id="c-limit-dn">—</div></div>
+      <div class="calc-box"><div class="calc-lbl">總投入金額</div><div class="calc-val" id="c-b-total">—</div></div>
+      <div class="calc-box"><div class="calc-lbl">預估成交狀態</div><div class="calc-val" id="c-b-status">—</div></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="b-submit-btn" onclick="submitBuy()">📤 送出買入掛單</button>
+      <button class="btn btn-ghost" onclick="clearBuyForm()">🗑 清除</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     模組二：賣出掛單
+══════════════════════════════════════ -->
+<div id="tab-sell" class="tab-panel">
+  <div class="card">
+    <div class="card-title">賣出掛單</div>
+
+    <div class="info-box blue">
+      <span>ℹ️</span>
+      <div>輸入暱稱後點擊「查詢持倉」，直接點選想賣出的股票，填入賣出價格即可。<br>
+      <strong>成交規則：賣出價 ≤ 即時股價 → 立即成交</strong></div>
+    </div>
+
+    <!-- Step 1: 暱稱查詢 -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px">
+      <div class="form-group" style="flex:1;min-width:160px">
+        <label>暱稱<span class="req">*</span></label>
+        <input id="s-nick" type="text" placeholder="與買入時相同" maxlength="20" value="yfchen">
+      </div>
+      <button class="btn btn-primary" onclick="loadSellHoldings()">🔍 查詢持倉</button>
+    </div>
+
+    <!-- Step 2: 持倉列表 -->
+    <div id="sell-holdings-area" style="display:none">
+      <div class="card-title" style="margin-bottom:10px">選擇要賣出的股票（點選）</div>
+      <div class="sell-holdings-list" id="sell-holdings-list"></div>
+    </div>
+
+    <!-- Step 3: 賣出表單（點選持倉後顯示） -->
+    <div id="sell-form-area" style="display:none">
+      <hr class="section-sep">
+      <div class="card-title" style="margin-bottom:10px">📤 確認賣出條件</div>
+
+      <!-- 選中股票資訊 -->
+      <div id="sell-selected-info" class="info-box green" style="margin-bottom:14px">
+        <span>✅</span><div id="sell-selected-text">已選擇股票</div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>賣出日期時間<span class="req">*</span></label>
+          <input id="s-date" type="datetime-local">
+        </div>
+        <div class="form-group">
+          <label>賣出張數（張）<span class="req">*</span></label>
+          <input id="s-lots" type="number" placeholder="例：1" min="1" step="1" oninput="calcSellNew()">
+        </div>
+        <div class="form-group">
+          <label>掛單賣出價（元/股）<span class="req">*</span></label>
+          <input id="s-order-price" type="number" placeholder="例：975" min="0" step="0.1" oninput="calcSellNew()">
+        </div>
+        <div class="form-group" style="display:none">
+          <input id="s-prev" type="number">
+        </div>
+        <div class="form-group" style="display:none">
+          <input id="s-close" type="number">
+        </div>
+        <div class="form-group" style="display:none">
+          <input id="s-rowid" type="number">
+        </div>
+      </div>
+
+      <div id="s-limit-info" class="limit-warn">
+        <span>⚠️</span><span id="s-limit-text"></span>
+      </div>
+
+      <div id="s-vol-group" style="display:none;margin-top:12px">
+        <div class="info-box yellow">
+          <span>🔒</span>
+          <div><strong>偵測到漲停或跌停！</strong><br>需有成交量才可賣出。</div>
+        </div>
+        <div class="form-group" style="margin-top:8px;max-width:240px">
+          <label>當時市場成交張數<span class="req">*</span></label>
+          <input id="s-vol" type="number" placeholder="例：2800" min="0" step="1">
+        </div>
+      </div>
+
+      <hr class="section-sep">
+      <div class="calc-grid">
+        <div class="calc-box"><div class="calc-lbl">即時股價</div><div class="calc-val" id="cs-cur-price">—</div></div>
+        <div class="calc-box"><div class="calc-lbl">漲停價</div><div class="calc-val" id="cs-limit-up">—</div></div>
+        <div class="calc-box"><div class="calc-lbl">跌停價</div><div class="calc-val" id="cs-limit-dn">—</div></div>
+        <div class="calc-box"><div class="calc-lbl">預估賣出金額</div><div class="calc-val" id="cs-sell-val">—</div></div>
+        <div class="calc-box"><div class="calc-lbl">預估損益</div><div class="calc-val" id="cs-pnl">—</div></div>
+        <div class="calc-box"><div class="calc-lbl">預估成交狀態</div><div class="calc-val" id="cs-status">—</div></div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-danger" id="s-submit-btn" onclick="submitSellNew()">📤 送出賣出掛單</button>
+        <button class="btn btn-ghost" onclick="clearSellForm()">🗑 清除</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     模組三：個人記錄
+══════════════════════════════════════ -->
+<div id="tab-my" class="tab-panel">
+  <div class="card">
+    <div class="card-title">查詢個人記錄</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end">
+      <div class="form-group" style="flex:1;min-width:160px">
+        <label>暱稱</label>
+        <input id="q-nick" type="text" placeholder="輸入你的暱稱" maxlength="20" value="yfchen">
+      </div>
+      <button class="btn btn-primary" onclick="loadPersonal()">🔍 查詢</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">更新現在股價（更新損益）</div>
+    <div class="info-box blue"><span>ℹ️</span><div>輸入序號（#）與最新股價，系統更新現值與損益計算。</div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end">
+      <div class="form-group" style="min-width:100px">
+        <label>序號（#）</label>
+        <input id="u-row" type="number" placeholder="例：2" min="1">
+      </div>
+      <div class="form-group" style="min-width:130px">
+        <label>新現在股價</label>
+        <input id="u-price" type="number" placeholder="例：980" min="0" step="0.1">
+      </div>
+      <button class="btn btn-primary" onclick="updatePrice()">💾 更新</button>
+    </div>
+  </div>
+
+  <div id="personal-result"></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     模組四：排行榜
+══════════════════════════════════════ -->
+<div id="tab-lb" class="tab-panel">
+  <div class="card">
+    <div class="card-title">全體排行榜</div>
+    <div class="rank-toggle">
+      <button class="tgl-btn active" onclick="setSort('pct',this)">依損益%排行</button>
+      <button class="tgl-btn" onclick="setSort('amt',this)">依損益金額排行</button>
+      <button class="tgl-btn" onclick="setSort('real',this)">依已實現損益排行</button>
+    </div>
+    <button class="btn btn-ghost" style="margin-bottom:12px" onclick="loadLeaderboard()">🔄 重新載入</button>
+    <div id="lb-result"></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     模組五：模擬練習環境
+══════════════════════════════════════ -->
+<div id="tab-sim" class="tab-panel">
+
+  <!-- 今日行情看板 -->
+  <div class="card">
+    <div class="card-title" id="sim-date-title">📅 載入模擬日期中…</div>
+    <div class="info-box blue">
+      <span>ℹ️</span>
+      <div>
+        <strong>模擬說明：</strong>以<strong>前一個交易日</strong>為模擬日期（<span id="sim-date-display">--</span>）。股價與左側看板同步，每分鐘更新一次。
+        點選「填入下單表單」可直接帶入數值到買入欄位，體驗完整下單流程。<br>
+        <strong>成交規則：買入價 ≥ 即時股價 → 立即成交</strong>
+      </div>
+    </div>
+
+    <!-- 今日模擬行情表 -->
+    <div class="table-wrap" style="margin-bottom:16px">
+      <table>
+        <thead>
+          <tr>
+            <th>代號</th><th>股票名稱</th><th>前日收盤</th>
+            <th>今日開盤</th><th>漲停價</th><th>跌停價</th>
+            <th>模擬現價</th><th>漲跌幅</th><th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="sim-stock-table"></tbody>
+      </table>
+    </div>
+
+    <!-- 行情刷新說明 -->
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <button class="btn btn-ghost" onclick="simRefreshPrices()">🔄 模擬盤中波動</button>
+      <span style="font-size:13px;color:var(--dim)">每次點擊隨機模擬小幅價格波動（±1~3%）</span>
+    </div>
+  </div>
+
+  <!-- 模擬下單結果 -->
+  <div class="card">
+    <div class="card-title">📝 模擬下單紀錄（不連接 Google Sheets）</div>
+    <div class="info-box green">
+      <span>✅</span>
+      <div>點擊上方「填入下單表單」後，切換至「買入掛單」頁面即可看到預填資料。下方可直接在模擬環境送出訂單（本地儲存）。</div>
+    </div>
+
+    <!-- 快速下單面板 -->
+    <div class="form-grid" style="margin-bottom:14px">
+      <div class="form-group">
+        <label>暱稱（模擬帳號）</label>
+        <input id="sim-nick" type="text" placeholder="例：測試小強" maxlength="20" value="yfchen">
+      </div>
+      <div class="form-group">
+        <label>選擇股票</label>
+        <select id="sim-stock-sel" onchange="simSelectStock()">
+          <option value="">-- 請選擇 --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>下單張數（1張=1000股）</label>
+        <input id="sim-lots" type="number" value="1" min="1" max="100" step="1" oninput="simCalc()">
+      </div>
+      <div class="form-group">
+        <label>下單價格（元/股）</label>
+        <input id="sim-price" type="number" min="0" step="0.1" oninput="simCalc()">
+      </div>
+    </div>
+    <div class="calc-grid" style="margin-bottom:14px">
+      <div class="calc-box"><div class="calc-lbl">投入金額（元）</div><div class="calc-val" id="sim-total">—</div></div>
+      <div class="calc-box"><div class="calc-lbl">預估成交</div><div class="calc-val" id="sim-est">—</div></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="simSubmitBuy()">📤 模擬買入</button>
+      <button class="btn btn-ghost" onclick="simClear()">🗑 清除</button>
+    </div>
+  </div>
+
+  <!-- 模擬持倉 -->
+  <div class="card">
+    <div class="card-title">💼 模擬持倉與損益</div>
+    <div id="sim-portfolio-result">
+      <div class="empty">尚無模擬持倉，請先下單</div>
+    </div>
+  </div>
+
+</div>
+</div><!-- end main-inner -->
+</main>
+</div><!-- end page-layout -->
+
+<div id="toast"></div>
+
+<script>
+// https://script.google.com/macros/s/AKfycbw8W3OHAldKJoP5lFIFIPFvT3KVW7LHQl6yPt5wSQSUbFDq0eT26wWh9cmyWhPKlhA/exec  
+// ════════════════════════════════════════════════════════════════
+// ★ 將下方替換為你的 Apps Script 部署網址
+// ════════════════════════════════════════════════════════════════
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw8W3OHAldKJoP5lFIFIPFvT3KVW7LHQl6yPt5wSQSUbFDq0eT26wWh9cmyWhPKlhA/exec';
+
+// ── 台股交易時段（台北時間） ────────────────────────────────────
+const MARKET_OPEN  = { h:9,  m:0  };
+const MARKET_CLOSE = { h:13, m:30 };
+
+// ── 全域狀態 ───────────────────────────────────────────────────
+let sortMode   = 'pct';
+let allData    = [];
+let isLimitB   = false;
+let isLimitS   = false;
+let selectedSellRow = null;  // 選中的賣出持倉
+let sellHoldingsData = [];   // 暱稱的買入持倉
+let quoteLoadError = '';
+
+// ── 左側看板股票：價格與昨收由 GAS/TWSE 回填，避免寫死日期基準 ──
+const SIDEBAR_STOCKS = [
+  { code:'2330', name:'台積電',    prev:0, cur:0 },
+  { code:'2317', name:'鴻海',      prev:0, cur:0 },
+  { code:'2454', name:'聯發科',    prev:0, cur:0 },
+  { code:'2308', name:'台達電',    prev:0, cur:0 },
+  { code:'2303', name:'聯電',      prev:0, cur:0 },
+  { code:'0050', name:'元大台灣50',prev:0, cur:0 },
+  { code:'2882', name:'國泰金',    prev:0, cur:0 },
+  { code:'2881', name:'富邦金',    prev:0, cur:0 },
+  { code:'2886', name:'兆豐金',    prev:0, cur:0 },
+  { code:'2412', name:'中華電',    prev:0, cur:0 },
+  { code:'2002', name:'中鋼',      prev:0, cur:0 },
+  { code:'1301', name:'台塑',      prev:0, cur:0 },
+];
+const PREV_CLOSE_CACHE = {};
+
+// 取得側欄股票的即時價格（用於成交判斷）
+function getSidebarPrice(code) {
+  const s = SIDEBAR_STOCKS.find(x=>x.code===code);
+  return s ? s.cur : null;
+}
+
+// ── 初始化 ──────────────────────────────────────────────────────
+document.getElementById('b-date').value = nowDateTimeStr();
+document.getElementById('s-date').value = nowDateTimeStr();
+setInterval(tickClock, 1000);
+setInterval(()=>{
+  if(getMarketStatus()==='open') fetchSidebarLivePrices({silent:true});
+  else refreshSidebarPrices();
+}, 30000);
+tickClock();
+renderSidebar();
+// 頁面載入時自動抓取即時股價（3秒後，讓頁面先渲染完成）
+setTimeout(()=>{ fetchSidebarLivePrices(); }, 3000);
+setTimeout(()=>{ loadPersonal(); }, 4200);
+
+
+function nowDateTimeStr(){
+  const now = new Date();
+  const tpe = new Date(now.toLocaleString('en-US',{timeZone:'Asia/Taipei'}));
+  const Y = tpe.getFullYear();
+  const M = String(tpe.getMonth()+1).padStart(2,'0');
+  const D = String(tpe.getDate()).padStart(2,'0');
+  const h = String(tpe.getHours()).padStart(2,'0');
+  const m = String(tpe.getMinutes()).padStart(2,'0');
+  return `${Y}-${M}-${D}T${h}:${m}`;
+}
+
+function todayStr(){
+  return new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Taipei'});
+}
+
+// ── 股票名稱對照表（依代號自動帶入；若不在此表且不在側欄，會透過 GAS 查詢）──
+const STOCK_NAME_MAP = {
+  '2330':'台積電','2317':'鴻海','2454':'聯發科','2882':'國泰金',
+  '2412':'中華電','0050':'元大台灣50','2308':'台達電','1301':'台塑',
+  '2002':'中鋼','2303':'聯電','2881':'富邦金','2886':'兆豐金',
+  '2891':'中信金','2892':'第一金','2884':'玉山金','2885':'元大金',
+  '2887':'台新金','2888':'新光金','2890':'永豐金',
+  '2357':'華碩','2382':'廣達','2395':'研華','6505':'台塑化',
+  '1303':'南亞','1326':'台化','2207':'和泰車','2408':'南亞科',
+  '3008':'大立光','2379':'瑞昱','6669':'緯穎','3711':'日月光投控',
+  '2823':'中壽','2801':'彰銀','2834':'台企銀','2838':'聯邦銀',
+  '5880':'合庫金','2849':'安泰銀','2867':'三商壽','5871':'中租-KY',
+  '2327':'國巨','3034':'聯詠','3037':'欣興','2301':'光寶科',
+  '2347':'聯強','2360':'致茂','2385':'群光','2451':'創見',
+  '2458':'義隆','2492':'華新科','2498':'宏達電','3045':'台灣大',
+  '4904':'遠傳','4938':'和碩','6415':'矽力-KY','6446':'藥華藥',
+  '8046':'南電','9910':'豐泰','1229':'聯華','1216':'統一',
+  '2912':'統一超','2915':'潤泰全','5904':'寶雅','2823':'中壽',
+  '0051':'元大中型100','0052':'富邦科技','0056':'元大高股息',
+  '00878':'國泰永續高股息','00881':'國泰台灣5G+','00919':'群益台灣精選高息',
+};
+
+// ── 左側看板渲染 ────────────────────────────────────────────────
+function renderSidebar() {
+  const list = document.getElementById('sidebar-stocks-list');
+  const now  = new Date().toLocaleTimeString('zh-TW',{timeZone:'Asia/Taipei',hour12:false,hour:'2-digit',minute:'2-digit'});
+  document.getElementById('sidebar-refresh-time').textContent = now;
+
+  list.innerHTML = SIDEBAR_STOCKS.map(s => {
+    const hasQuote = s.cur > 0 && s.prev > 0;
+    const diff = hasQuote ? +(s.cur - s.prev).toFixed(2) : 0;
+    const pct  = hasQuote ? (diff/s.prev*100).toFixed(2) : null;
+    const dir  = !hasQuote ? 'flat' : diff>0?'up':diff<0?'dn':'flat';
+    const arrow= !hasQuote ? '—' : diff>0?'▲':diff<0?'▼':'—';
+    const priceText = hasQuote ? '$'+s.cur.toLocaleString() : (quoteLoadError ? '報價失敗' : '查詢中');
+    const pctText = hasQuote ? `${arrow}${Math.abs(pct)}%` : (quoteLoadError ? '請看提示' : '等待報價');
+    const prevDateText = s.prevDate ? `基準 ${s.prevDate}` : '昨收';
+    const prevText = hasQuote ? `${prevDateText} $${s.prev.toLocaleString()}` : (quoteLoadError || '昨收待更新');
+    const btn = hasQuote
+      ? `<button class="sidebar-buy-btn" onclick="sidebarBuy('${s.code}','${s.name}',${s.prev},${s.cur})">⚡ 快速買入</button>`
+      : `<button class="sidebar-buy-btn" onclick="fetchSidebarLivePrices()" style="opacity:.65">更新報價</button>`;
+    return `<div class="sidebar-stock">
+      <div class="sidebar-stock-head">
+        <div>
+          <div class="sidebar-stock-code">${s.code}</div>
+          <div class="sidebar-stock-name">${s.name}</div>
+        </div>
+      </div>
+      <div class="sidebar-stock-price">
+        <div>
+          <div class="sidebar-price-val ${dir}">${priceText}</div>
+          <div class="sidebar-stock-name">${prevText}</div>
+        </div>
+        <div class="sidebar-price-chg ${dir}">${pctText}</div>
+      </div>
+      ${btn}
+    </div>`;
+  }).join('');
+}
+
+function refreshSidebarPrices() {
+  SIDEBAR_STOCKS.forEach(s => {
+    if(s.fromQuote) return;
+    if(!s.cur || !s.prev) return;
+    // 以目前即時價為基準做小幅波動（±1.25%），並保持在漲跌停範圍內
+    const base = s.cur || PREV_CLOSE_CACHE[s.code] || s.prev;
+    const tick = base>=1000?5:base>=500?1:base>=100?0.5:base>=50?0.1:base>=10?0.05:0.01;
+    const lim  = getLimits(s.prev);
+    const chg  = (Math.random()*0.025-0.0125); // ±1.25% 波動
+    let newP   = Math.round(base*(1+chg)/tick)*tick;
+    newP = Math.min(lim.up, Math.max(lim.dn, newP));
+    s.cur = +newP.toFixed(2);
+  });
+  renderSidebar();
+  // 同步更新 simStocks 中對應的價格
+  if(typeof simStocks !== 'undefined') {
+    simStocks.forEach(ss => {
+      const sb = SIDEBAR_STOCKS.find(x=>x.code===ss.code);
+      if(sb) ss.cur = sb.cur;
+    });
+    if(document.getElementById('tab-sim').classList.contains('active')) simRenderTable();
+  }
+}
+
+function sidebarBuy(code, name, prev, cur) {
+  // 切換到買入 tab 並預填
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-buy').classList.add('active');
+  document.querySelectorAll('.tab-btn')[0].classList.add('active');
+
+  document.getElementById('b-code').value  = code;
+  document.getElementById('b-name').value  = name;
+  document.getElementById('b-prev').value  = prev;
+  document.getElementById('b-order-price').value = cur;
+  document.getElementById('b-date').value  = nowDateTimeStr();
+  calcLimitPrice('b');
+  calcBuy();
+  showToast(`📌 已帶入 ${name}（${code}）現價 $${cur}，請確認買入張數`, 'ok');
+  getFreshStockQuote(code).then(quote=>{
+    if(!quote || !quote.price) return;
+    document.getElementById('b-name').value = quote.name || name;
+    document.getElementById('b-prev').value = quote.prev || prev;
+    document.getElementById('b-order-price').value = quote.price;
+    calcLimitPrice('b');
+    calcBuy();
+    showToast(`📌 已更新 ${quote.name || name} 即時價 $${quote.price}，掛單價已帶入`, 'ok');
+  });
+}
+
+
+// ── 股票代號自動帶入名稱與即時股價 ──────────────────────────────
+async function autoFillName() {
+  const code   = document.getElementById('b-code').value.trim();
+  const nameEl = document.getElementById('b-name');
+  const orderEl= document.getElementById('b-order-price');
+  const prevEl = document.getElementById('b-prev');
+
+  if(!code){ nameEl.value=''; return; }
+
+  // 1. 先查本地資料庫（側欄 & 名稱對照表）
+  const sidebarStock = SIDEBAR_STOCKS.find(s=>s.code===code);
+  if(sidebarStock){
+    nameEl.value  = sidebarStock.name;
+    prevEl.value  = sidebarStock.prev;
+    orderEl.value = sidebarStock.cur;
+    calcLimitPrice('b');
+    calcBuy();
+    const quote = await getFreshStockQuote(code);
+    if(quote && quote.price > 0){
+      nameEl.value = quote.name || sidebarStock.name;
+      prevEl.value = quote.prev || sidebarStock.prev;
+      orderEl.value = quote.price;
+      calcLimitPrice('b');
+      calcBuy();
+      showToast(`📌 已帶入 ${nameEl.value} 最新價 $${quote.price}`, 'ok');
+    } else {
+      showToast(`📌 已帶入 ${sidebarStock.name} 報價 $${sidebarStock.cur}`, 'ok');
+    }
+    return;
+  }
+
+  // 2. 查本地靜態名稱對照表
+  const localName = STOCK_NAME_MAP[code];
+  if(localName) nameEl.value = localName;
+
+  // 3. 若代號有4~5碼，透過 GAS 查詢股價
+  if(/^\d{4,5}$/.test(code)){
+    nameEl.value = localName || '查詢中…';
+    orderEl.placeholder = '查詢中…';
+    try {
+      const result = await getFreshStockQuote(code);
+      if(result){
+        nameEl.value  = result.name || localName || code;
+        if(result.price > 0){
+          orderEl.value = result.price;
+          if(result.prev > 0) prevEl.value = result.prev;
+        }
+        calcLimitPrice('b');
+        calcBuy();
+        showToast(`📌 已帶入 ${result.name} 即時價 $${result.price}`, 'ok');
+        // 同步更新側欄股票清單顯示（若不在側欄就新增）
+        if(!sidebarStock && result.price > 0){
+          const tick = result.price>=1000?5:result.price>=500?1:result.price>=100?0.5:result.price>=50?0.1:result.price>=10?0.05:0.01;
+          SIDEBAR_STOCKS.push({
+            code, name: result.name, prev: result.prev||result.price,
+            cur: result.price, fromQuote: true,
+            prevDate: result.prevDate || '',
+            quoteTime: result.quoteTime || ''
+          });
+          PREV_CLOSE_CACHE[code] = result.prev || result.price;
+          renderSidebar();
+        }
+      } else {
+        nameEl.value = localName || '';
+        orderEl.placeholder = '請手動輸入';
+        if(!localName) showToast(`⚠️ 找不到代號 ${code}，請確認是否正確`, 'warn');
+      }
+    } catch(e){
+      nameEl.value = localName || '';
+      orderEl.placeholder = '請手動輸入';
+    }
+  } else {
+    nameEl.value = '';
+  }
+}
+
+
+// ── 透過 GAS 查詢台股股價（開盤取即時價，收盤後取最後成交/收盤價） ──
+async function fetchStockQuoteFromGas(code) {
+  try {
+    const obj = await gasGet({action:'getStockQuote', code});
+    if(!obj || obj.status!=='ok') {
+      quoteLoadError = (obj && obj.message) || '單一股票報價查詢失敗';
+      return null;
+    }
+    return {
+      code: obj.code || code,
+      name: obj.name || STOCK_NAME_MAP[code] || code,
+      price: parseFloat(obj.price)||0,
+      prev: parseFloat(obj.prev)||0,
+      prevDate: obj.prevDate || '',
+      change: parseFloat(obj.change)||0,
+      marketSession: obj.marketSession || getMarketStatus(),
+      source: obj.source || '',
+      quoteTime: obj.quoteTime || ''
+    };
+  } catch(e){ return null; }
+}
+
+function syncQuoteToSidebar(quote) {
+  if(!quote || !quote.code || !quote.price) return;
+  let s = SIDEBAR_STOCKS.find(x=>x.code===quote.code);
+  if(!s){
+    s = { code: quote.code, name: quote.name || STOCK_NAME_MAP[quote.code] || quote.code, prev: quote.prev || quote.price, cur: quote.price };
+    SIDEBAR_STOCKS.push(s);
+  }
+  s.name = STOCK_NAME_MAP[quote.code] || quote.name || s.name;
+  s.prev = quote.prev || s.prev || quote.price;
+  s.cur = quote.price;
+  s.fromQuote = true;
+  s.source = quote.source || s.source || '';
+  s.quoteTime = quote.quoteTime || s.quoteTime || '';
+  s.prevDate = quote.prevDate || s.prevDate || '';
+  PREV_CLOSE_CACHE[s.code] = s.prev;
+  renderSidebar();
+}
+
+async function getFreshStockQuote(code) {
+  const quote = await fetchStockQuoteFromGas(code);
+  if(quote && quote.price > 0) {
+    quoteLoadError = '';
+    syncQuoteToSidebar(quote);
+  }
+  return quote;
+}
+
+// ── 批次查詢側欄股票即時股價 ───────────────────────────────────
+async function fetchSidebarLivePrices(options={}) {
+  const codes = SIDEBAR_STOCKS.map(s=>s.code).join(',');
+  document.getElementById('sidebar-refresh-time').textContent = '查詢中…';
+  try {
+    const ping = await gasGet({action:'ping'});
+    if(!ping || ping.status!=='ok'){
+      throw new Error('GAS 尚未部署新版報價後端');
+    }
+    const data = await gasGet({action:'getStockQuotes', codes});
+    if(!data || data.status!=='ok'){
+      throw new Error((data && data.message) || 'GAS 報價查詢失敗');
+    }
+    const arr = data.rows || [];
+    if(arr.length===0){
+      throw new Error('GAS 沒有回傳任何股票報價，請檢查 Apps Script 外部連線權限或重新部署');
+    }
+    let updated = 0;
+    arr.forEach(item => {
+      const s = SIDEBAR_STOCKS.find(x=>x.code===item.code);
+      if(s && item.price > 0){
+        const localName = STOCK_NAME_MAP[item.code];
+        s.name = localName || item.name || s.name;
+        s.prev = parseFloat(item.prev) || s.prev;
+        s.cur  = parseFloat(item.price);
+        s.fromQuote = true;
+        s.source = item.source || s.source || '';
+        s.quoteTime = item.quoteTime || s.quoteTime || '';
+        s.prevDate = item.prevDate || s.prevDate || '';
+        PREV_CLOSE_CACHE[s.code] = s.prev;
+        updated++;
+      }
+    });
+    if(updated===0){
+      throw new Error('GAS 有回應，但沒有可用價格欄位');
+    }
+    quoteLoadError = '';
+    renderSidebar();
+    // 同步更新 simStocks
+    if(typeof simStocks !== 'undefined'){
+      simStocks.forEach(ss=>{
+        const sb=SIDEBAR_STOCKS.find(x=>x.code===ss.code);
+        if(sb){ ss.cur=sb.cur; ss.prev=sb.prev; }
+      });
+    }
+    if(!options.silent) showToast(`✅ 股價已更新（${updated} 支）`, 'ok');
+    return true;
+  } catch(e){
+    quoteLoadError = e.message || '即時股價查詢失敗';
+    renderSidebar();
+    if(!options.silent) showToast('⚠️ '+quoteLoadError, 'warn');
+    return false;
+  }
+}
+
+
+function getMarketStatus(){
+  const now = new Date();
+  const tpe = new Date(now.toLocaleString('en-US',{timeZone:'Asia/Taipei'}));
+  const h = tpe.getHours(), m = tpe.getMinutes();
+  const mins = h*60+m;
+  const openMins  = MARKET_OPEN.h *60+MARKET_OPEN.m;
+  const closeMins = MARKET_CLOSE.h*60+MARKET_CLOSE.m;
+  if(mins>=openMins && mins<closeMins) return 'open';
+  if(mins>=closeMins && mins<closeMins+60) return 'after'; // 盤後時段（13:30~14:30）
+  return 'close';
+}
+
+function tickClock(){
+  const now = new Date();
+  const tpe = now.toLocaleTimeString('zh-TW',{timeZone:'Asia/Taipei',hour12:false});
+  document.getElementById('hdr-clock').textContent = tpe;
+
+  const status = getMarketStatus();
+  const badge  = document.getElementById('hdr-badge');
+  const buyTxt = document.getElementById('market-text-buy');
+  const buyBox = document.getElementById('market-info-buy');
+
+  if(status==='open'){
+    badge.className='market-badge open'; badge.textContent='開盤中';
+    buyBox.className='info-box green';
+    buyTxt.innerHTML='<strong>開盤時段（09:00–13:30）：</strong>請輸入掛單價。收盤價落在 <em>掛單價 ±1 tick</em> 範圍內視為成交；否則標記「未成交」。';
+    document.getElementById('b-order-lbl').textContent='掛單價（元/股）*';
+  } else if(status==='after'){
+    badge.className='market-badge after'; badge.textContent='盤後';
+    buyBox.className='info-box yellow';
+    buyTxt.innerHTML='<strong>盤後時段（13:30–14:30）：</strong>以盤後收盤固定價直接成交，輸入「盤後成交價」即可。';
+    document.getElementById('b-order-lbl').textContent='盤後成交價（元/股）*';
+  } else {
+    badge.className='market-badge close'; badge.textContent='收盤';
+    buyBox.className='info-box blue';
+    buyTxt.innerHTML='<strong>非交易時段：</strong>可先填入資料並記錄。送出後狀態標記為「盤後」，次日開盤後再更新。';
+    document.getElementById('b-order-lbl').textContent='預掛價格（元/股）*';
+  }
+}
+
+// ── 計算漲跌停價 ───────────────────────────────────────────────
+function roundToTick(price, round){
+  // 台股 tick：<10→0.01, <50→0.05, <100→0.1, <500→0.5, <1000→1, ≥1000→5
+  let tick;
+  if(price<10)   tick=0.01;
+  else if(price<50)  tick=0.05;
+  else if(price<100) tick=0.1;
+  else if(price<500) tick=0.5;
+  else if(price<1000)tick=1;
+  else               tick=5;
+  return round==='up'
+    ? Math.ceil(price/tick)*tick
+    : Math.floor(price/tick)*tick;
+}
+
+function getLimits(prev){
+  const up = roundToTick(prev*1.1,'up');
+  const dn = roundToTick(prev*0.9,'dn');
+  return { up: +up.toFixed(2), dn: +dn.toFixed(2) };
+}
+
+function calcLimitPrice(prefix){
+  const prev = parseFloat(document.getElementById(prefix+'-prev').value)||0;
+  if(!prev){ clearLimitUI(prefix); return; }
+  const {up,dn} = getLimits(prev);
+  if(prefix==='b'){
+    document.getElementById('c-limit-up').textContent = '$'+up.toFixed(2);
+    document.getElementById('c-limit-dn').textContent = '$'+dn.toFixed(2);
+  } else {
+    document.getElementById('cs-limit-up').textContent = '$'+up.toFixed(2);
+    document.getElementById('cs-limit-dn').textContent = '$'+dn.toFixed(2);
+  }
+  if(prefix==='b') calcBuy(); else calcSell();
+}
+
+function clearLimitUI(prefix){
+  if(prefix==='b'){
+    document.getElementById('c-limit-up').textContent='—';
+    document.getElementById('c-limit-dn').textContent='—';
+  } else {
+    document.getElementById('cs-limit-up').textContent='—';
+    document.getElementById('cs-limit-dn').textContent='—';
+  }
+}
+
+// ── 檢查是否觸及漲跌停 ─────────────────────────────────────────
+function checkLimit(orderPrice, prev, prefix){
+  if(!prev||!orderPrice){ hideLimit(prefix); return false; }
+  const {up,dn} = getLimits(prev);
+  const isUp = Math.abs(orderPrice-up)<0.001;
+  const isDn = Math.abs(orderPrice-dn)<0.001;
+  const isLimit = isUp||isDn;
+  const el = document.getElementById(prefix+'-limit-info');
+  const txt= document.getElementById(prefix+'-limit-text');
+  const vg = document.getElementById(prefix+'-vol-group');
+  if(isLimit){
+    el.classList.add('show');
+    txt.textContent = isUp
+      ? `⬆ 掛單價 $${orderPrice} 為漲停價，依規則需有市場成交量才可成交！`
+      : `⬇ 掛單價 $${orderPrice} 為跌停價，依規則需有市場成交量才可成交！`;
+    vg.style.display='';
+  } else {
+    hideLimit(prefix);
+  }
+  return isLimit;
+}
+
+function hideLimit(prefix){
+  document.getElementById(prefix+'-limit-info').classList.remove('show');
+  document.getElementById(prefix+'-vol-group').style.display='none';
+}
+
+// ── 買入試算 ────────────────────────────────────────────────────
+function calcBuy(){
+  const prev   = parseFloat(document.getElementById('b-prev').value)||0;
+  const op     = parseFloat(document.getElementById('b-order-price').value)||0;
+  const sh     = parseFloat(document.getElementById('b-shares').value)||0;
+  const code   = document.getElementById('b-code').value.trim();
+
+  isLimitB = checkLimit(op, prev, 'b');
+
+  const total  = op*sh;
+  document.getElementById('c-b-total').textContent = total>0 ? '$'+Math.round(total).toLocaleString() : '—';
+
+  // 成交判斷：買入價 >= 即時股價 → 成交
+  const stEl   = document.getElementById('c-b-status');
+  stEl.className='calc-val';
+  if(!op){ stEl.textContent='—'; return; }
+
+  const curPrice = getSidebarPrice(code);
+  if(curPrice && curPrice > 0) {
+    if(op >= curPrice) {
+      stEl.textContent='✅ 預估成交'; stEl.style.color='var(--green)';
+    } else {
+      stEl.textContent='⏳ 掛單等待（價格偏低）'; stEl.style.color='var(--yellow)';
+    }
+  } else {
+    const status = getMarketStatus();
+    if(status==='open'){
+      stEl.textContent='掛單中（等待行情比對）'; stEl.style.color='var(--dim)';
+    } else if(status==='after'){
+      stEl.textContent='盤後直接成交'; stEl.style.color='var(--accent)';
+    } else {
+      stEl.textContent='非交易時段'; stEl.style.color='var(--dim)';
+    }
+  }
+}
+
+
+// ── 賣出試算（新版）────────────────────────────────────────────
+function calcSellNew(){
+  if(!selectedSellRow) return;
+  const op    = parseFloat(document.getElementById('s-order-price').value)||0;
+  const lots  = parseFloat(document.getElementById('s-lots').value)||0;
+  const shares= lots*1000;
+  const code  = selectedSellRow[2];
+  const inv   = parseFloat(selectedSellRow[9])||0;
+  const buySh = parseFloat(selectedSellRow[8])||0;
+  const prev  = parseFloat(selectedSellRow[5])||parseFloat(selectedSellRow[11])||0;
+
+  isLimitS = checkLimit(op, prev, 's');
+
+  const curPrice = getSidebarPrice(code) || parseFloat(selectedSellRow[15])||op;
+  document.getElementById('cs-cur-price').textContent = curPrice ? '$'+curPrice.toLocaleString() : '—';
+
+  if(prev>0){
+    const {up,dn}=getLimits(prev);
+    document.getElementById('cs-limit-up').textContent='$'+up.toFixed(2);
+    document.getElementById('cs-limit-dn').textContent='$'+dn.toFixed(2);
+  }
+
+  const sellVal = op * shares;
+  document.getElementById('cs-sell-val').textContent = sellVal>0 ? '$'+Math.round(sellVal).toLocaleString() : '—';
+
+  // 損益計算（按比例）
+  const costPerShare = buySh>0 ? inv/buySh : 0;
+  const costThis = costPerShare * shares;
+  const pnl = sellVal - costThis;
+  const pnlEl = document.getElementById('cs-pnl');
+  if(sellVal>0 && costThis>0) {
+    pnlEl.textContent = (pnl>=0?'+':'')+Math.round(pnl).toLocaleString()+' 元';
+    pnlEl.style.color = pnl>=0?'var(--green)':'var(--red)';
+  } else {
+    pnlEl.textContent='—'; pnlEl.style.color='';
+  }
+
+  // 成交判斷：賣出價 <= 即時股價 → 成交
+  const stEl = document.getElementById('cs-status');
+  stEl.className='calc-val';
+  if(!op){ stEl.textContent='—'; return; }
+  if(curPrice>0) {
+    if(op <= curPrice) {
+      stEl.textContent='✅ 預估成交'; stEl.style.color='var(--green)';
+    } else {
+      stEl.textContent='⏳ 掛單等待（賣價偏高）'; stEl.style.color='var(--yellow)';
+    }
+  } else {
+    stEl.textContent='無法判斷'; stEl.style.color='var(--dim)';
+  }
+}
+
+// 舊版 calcSell 保留相容
+function calcSell(){ if(selectedSellRow) calcSellNew(); }
+
+
+// ── 送出買入掛單 ────────────────────────────────────────────────
+async function submitBuy(){
+  const nick   = v('b-nick');
+  const code   = v('b-code');
+  const name   = v('b-name');
+  const date   = v('b-date');
+  const prev   = pf('b-prev');
+  const op     = pf('b-order-price');
+  const sh     = pf('b-shares');
+  const close  = pf('b-close');
+
+  if(!nick||!code||!date||!op||!sh){
+    showToast('❌ 請填寫所有必填欄位（代號、掛單價、股數）','err'); return;
+  }
+  // 若股票名稱未自動帶入，提示
+  if(!name){ showToast('❌ 找不到此股票代號，請確認代號是否正確','err'); return; }
+  // 若前日收盤未帶入，使用掛單價作為基準（允許送出但提示）
+  if(!prev){ document.getElementById('b-prev').value = op; }
+
+  // 漲跌停驗證
+  if(isLimitB){
+    const vol = pf('b-vol');
+    if(!vol||vol<=0){
+      showToast('⚠️ 漲跌停時須填入成交張數（>0）','warn'); return;
+    }
+  }
+
+  // 成交狀態判斷：買入價 >= 即時股價 → 成交
+  const status = getMarketStatus();
+  let tradeStatus, tradePrice;
+  const quote = await getFreshStockQuote(code);
+  const curPrice = (quote && quote.price) || getSidebarPrice(code);
+
+  if(status==='after'){
+    tradeStatus='after-hours'; tradePrice=op;
+  } else if(curPrice && curPrice>0) {
+    if(op >= curPrice){ tradeStatus='matched'; tradePrice=op; }
+    else { tradeStatus='pending'; tradePrice=op; }
+  } else {
+    tradeStatus='pending'; tradePrice=op;
+  }
+
+
+  const total = tradePrice*sh;
+  const vol   = isLimitB ? pf('b-vol') : 0;
+
+  const btn = document.getElementById('b-submit-btn');
+  btn.disabled=true; btn.textContent='送出中…';
+
+  try {
+    const res = await gasPost({
+      action:'addBuy', nick, code, name, date,
+      prevClose:prev, orderPrice:op, closePrice:close||0,
+      shares:sh, total, tradeStatus, tradePrice, vol,
+      marketSession: status
+    });
+    if(res.status==='ok'){
+      showToast('✅ 買入掛單已送出！狀態：'+statusLabel(tradeStatus),'ok');
+      clearBuyForm();
+    } else {
+      showToast('❌ 送出失敗：'+(res.message||''),'err');
+    }
+  } catch(e){
+    showToast('❌ 連線失敗，請確認 SHEET_URL','err');
+  }
+  btn.disabled=false; btn.textContent='📤 送出買入掛單';
+}
+
+// ── 查詢賣出持倉 ────────────────────────────────────────────────
+async function loadSellHoldings() {
+  const nick = document.getElementById('s-nick').value.trim();
+  if(!nick){ showToast('請輸入暱稱','err'); return; }
+
+  const holdingsArea = document.getElementById('sell-holdings-area');
+  const formArea     = document.getElementById('sell-form-area');
+  holdingsArea.style.display='none';
+  formArea.style.display='none';
+  selectedSellRow = null;
+  sellHoldingsData = [];
+
+  try {
+    const data = await gasGet({action:'getByNick', nick});
+    if(!data.rows||data.rows.length===0){
+      showToast('查無此暱稱的買入記錄','err'); return;
+    }
+    // 篩選：買入、未賣出（非 sold 狀態）
+    sellHoldingsData = data.rows.filter(r => r[14]==='buy' && r[10]!=='sold');
+    if(sellHoldingsData.length===0){
+      showToast('目前無可賣出的持倉（可能已全部賣出）','warn'); return;
+    }
+    renderSellHoldings();
+    holdingsArea.style.display='';
+  } catch(e) {
+    showToast('❌ 連線失敗，請確認 SHEET_URL','err');
+  }
+}
+
+function renderSellHoldings() {
+  const list = document.getElementById('sell-holdings-list');
+  list.innerHTML = sellHoldingsData.map((r,i) => {
+    const code  = r[2]||'';
+    const name  = r[3]||'';
+    const shares= +r[8]||0;
+    const inv   = +r[9]||0;
+    const tp    = +r[11]||+r[6]||0;
+    const lots  = Math.floor(shares/1000);
+    const curP  = getSidebarPrice(code)||tp;
+    const nowV  = curP*shares;
+    const pnl   = nowV-inv;
+    const pct   = inv>0?(pnl/inv*100).toFixed(2):'0.00';
+    const cls   = pnl>=0?'pos':'neg';
+    const status= r[10]||'pending';
+    return `<div class="sell-holding-card" onclick="selectSellRow(${i},this)">
+      <div class="shc-info">
+        <div class="shc-code">${code} <span style="font-size:14px;color:var(--dim)">${name}</span></div>
+        <div class="shc-num">${lots}張（${shares.toLocaleString()}股）</div>
+        <div class="shc-cost">買入價 $${tp.toLocaleString()} ｜ 即時 $${curP.toLocaleString()} ｜ <span class="pnl ${cls}">${pnl>=0?'+':''}${Math.round(pnl).toLocaleString()}（${pct}%）</span></div>
+      </div>
+      <span class="shc-select-tag">點選賣出 →</span>
+    </div>`;
+  }).join('');
+}
+
+function selectSellRow(idx, el) {
+  document.querySelectorAll('.sell-holding-card').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedSellRow = sellHoldingsData[idx];
+
+  const code  = selectedSellRow[2];
+  const name  = selectedSellRow[3];
+  const shares= +selectedSellRow[8]||0;
+  const lots  = Math.floor(shares/1000);
+  const tp    = +selectedSellRow[11]||+selectedSellRow[6]||0;
+  const curP  = getSidebarPrice(code)||tp;
+  const prev  = +selectedSellRow[5]||tp;
+
+  // 找出這筆資料在 nickRows 中的序號（addSell 用的 buyRowIndex）
+  // 暫以索引+1傳入（GAS 從 nick 的買入記錄序號計算）
+  document.getElementById('s-rowid').value = idx+1;
+  document.getElementById('s-prev').value  = prev;
+  document.getElementById('s-close').value = curP;
+  document.getElementById('s-lots').value  = lots;
+  document.getElementById('s-order-price').value = curP;
+  document.getElementById('s-date').value  = nowDateTimeStr();
+
+  document.getElementById('sell-selected-text').textContent =
+    `已選擇：${code} ${name} | 持股 ${lots}張 | 買入價 $${tp} | 即時 $${curP}`;
+  document.getElementById('cs-cur-price').textContent = '$'+curP.toLocaleString();
+
+  if(prev>0){
+    const {up,dn}=getLimits(prev);
+    document.getElementById('cs-limit-up').textContent='$'+up.toFixed(2);
+    document.getElementById('cs-limit-dn').textContent='$'+dn.toFixed(2);
+  }
+  document.getElementById('sell-form-area').style.display='';
+  calcSellNew();
+  document.getElementById('s-order-price').focus();
+  getFreshStockQuote(code).then(quote=>{
+    if(!quote || !quote.price || selectedSellRow !== sellHoldingsData[idx]) return;
+    document.getElementById('s-prev').value = quote.prev || prev;
+    document.getElementById('s-close').value = quote.price;
+    document.getElementById('s-order-price').value = quote.price;
+    document.getElementById('cs-cur-price').textContent = '$'+quote.price.toLocaleString();
+    document.getElementById('sell-selected-text').textContent =
+      `已選擇：${code} ${name} | 持股 ${lots}張 | 買入價 $${tp} | 即時 $${quote.price}`;
+    if(quote.prev>0){
+      const {up,dn}=getLimits(quote.prev);
+      document.getElementById('cs-limit-up').textContent='$'+up.toFixed(2);
+      document.getElementById('cs-limit-dn').textContent='$'+dn.toFixed(2);
+    }
+    calcSellNew();
+    showToast(`📌 已帶入 ${name} 即時賣出參考價 $${quote.price}`, 'ok');
+  });
+}
+
+// ── 送出賣出掛單（新版）────────────────────────────────────────
+async function submitSellNew(){
+  if(!selectedSellRow){ showToast('請先選擇要賣出的股票','err'); return; }
+  const nick  = document.getElementById('s-nick').value.trim();
+  const lots  = parseFloat(document.getElementById('s-lots').value)||0;
+  const date  = document.getElementById('s-date').value;
+  const op    = parseFloat(document.getElementById('s-order-price').value)||0;
+  const prev  = parseFloat(document.getElementById('s-prev').value)||0;
+  const rowid = parseInt(document.getElementById('s-rowid').value)||1;
+
+  if(!nick||!lots||!date||!op){ showToast('❌ 請填寫所有必填欄位','err'); return; }
+
+  if(isLimitS){
+    const vol = parseFloat(document.getElementById('s-vol').value)||0;
+    if(!vol||vol<=0){ showToast('⚠️ 漲跌停時須填入成交張數（>0）','warn'); return; }
+  }
+
+  const code     = selectedSellRow[2];
+  const quote = await getFreshStockQuote(code);
+  const curPrice = (quote && quote.price) || getSidebarPrice(code) || parseFloat(selectedSellRow[15])||op;
+  const status   = getMarketStatus();
+  let tradeStatus, tradePrice;
+
+  if(status==='after'){
+    tradeStatus='after-hours'; tradePrice=op;
+  } else if(curPrice>0) {
+    if(op <= curPrice){ tradeStatus='matched'; tradePrice=op; }
+    else { tradeStatus='pending'; tradePrice=op; }
+  } else {
+    tradeStatus='pending'; tradePrice=op;
+  }
+
+  const vol = isLimitS ? (parseFloat(document.getElementById('s-vol').value)||0) : 0;
+
+  const btn = document.getElementById('s-submit-btn');
+  btn.disabled=true; btn.textContent='送出中…';
+
+  try {
+    const res = await gasPost({
+      action:'addSell', nick, buyRowIndex:rowid, date,
+      prevClose:prev, orderPrice:op, closePrice:curPrice||0,
+      tradeStatus, tradePrice, vol,
+      marketSession: status,
+      buySheetRow: selectedSellRow[19] || ''
+    });
+    if(res.status==='ok'){
+      showToast('✅ 賣出掛單已送出！狀態：'+statusLabel(tradeStatus),'ok');
+      clearSellForm();
+    } else {
+      showToast('❌ 送出失敗：'+(res.message||''),'err');
+    }
+  } catch(e){
+    showToast('❌ 連線失敗，請確認 SHEET_URL','err');
+  }
+  btn.disabled=false; btn.textContent='📤 送出賣出掛單';
+}
+
+// 舊版 submitSell 相容
+async function submitSell(){ await submitSellNew(); }
+
+
+// ── 個人記錄 ────────────────────────────────────────────────────
+async function loadPersonal(){
+  const nick = v('q-nick') || 'yfchen';
+  document.getElementById('q-nick').value = nick;
+  if(!nick){ showToast('請輸入暱稱','err'); return; }
+  const el = document.getElementById('personal-result');
+  el.innerHTML = '<div class="spinner"><div class="spin"></div></div>';
+  try {
+    const data = await gasGet({action:'getByNick', nick});
+    if(!data.rows||data.rows.length===0){
+      el.innerHTML='<div class="empty">查無此暱稱的交易記錄</div>'; return;
+    }
+    renderPersonal(data.rows, nick);
+  } catch(e){
+    el.innerHTML='<div class="empty" style="color:var(--red)">連線失敗，請確認 SHEET_URL</div>';
+  }
+}
+
+function renderPersonal(rows, nick){
+  // cols: 0=ts,1=nick,2=code,3=name,4=date,5=prevClose,6=orderPrice,7=closePrice,
+  //       8=shares,9=total,10=tradeStatus,11=tradePrice,12=vol,13=session,
+  //       14=type(buy/sell),15=curPrice,16=nowVal,17=realizedPnl,18=buyRef
+  let totalIn=0, totalNow=0, totalReal=0;
+  const holdings = rows.filter(r => r[14]==='buy' && (r[10]==='matched'||r[10]==='after-hours'));
+  let holdingRows = '';
+  holdings.forEach((r,i)=>{
+    const code = r[2]||'', rname = r[3]||'';
+    const sh = +r[8]||0;
+    const inv = +r[9]||0;
+    const buyP = +r[11]||+r[6]||0;
+    const cp = +r[15]||buyP;
+    const nowV = +r[16]||(cp*sh);
+    const pnl = nowV-inv;
+    const pct = inv>0 ? (pnl/inv*100) : 0;
+    const cls = pnl>=0?'pos':'neg';
+    totalIn += inv;
+    totalNow += nowV;
+    holdingRows += `<tr>
+      <td>${i+1}</td>
+      <td>${code}</td>
+      <td class="label-col">${rname}</td>
+      <td>${sh.toLocaleString()}</td>
+      <td>$${buyP.toLocaleString()}</td>
+      <td>$${Math.round(inv).toLocaleString()}</td>
+      <td>$${cp.toLocaleString()}</td>
+      <td>$${Math.round(nowV).toLocaleString()}</td>
+      <td class="pnl ${cls}">${(pnl>=0?'+':'')+Math.round(pnl).toLocaleString()}</td>
+      <td class="pnl ${cls}">${(pct>=0?'+':'')+pct.toFixed(2)}%</td>
+    </tr>`;
+  });
+
+  rows.forEach(r=>{ totalReal += +r[17]||0; });
+  const totalPnl = totalNow-totalIn;
+  const totalPct = totalIn>0 ? (totalPnl/totalIn*100) : 0;
+  const tPC = totalPnl>=0?'pos':'neg';
+
+  let html=`
+  <div class="card">
+    <div class="card-title">${nick} 目前手上股票（${holdings.length} 檔）</div>
+    ${holdings.length ? `<div class="table-wrap"><table>
+      <thead><tr>
+        <th>#</th><th>代號</th><th>名稱</th><th>股數</th><th>買入價</th>
+        <th>投入資金</th><th>現價</th><th>目前市值</th><th>未實現損益</th><th>損益%</th>
+      </tr></thead><tbody>${holdingRows}</tbody></table></div>` : '<div class="empty">目前沒有持股</div>'}
+    <div class="summary-grid">
+      <div class="sum-box"><div class="sum-lbl">投入資金</div><div class="sum-val">$${Math.round(totalIn).toLocaleString()}</div></div>
+      <div class="sum-box"><div class="sum-lbl">目前市值</div><div class="sum-val">$${Math.round(totalNow).toLocaleString()}</div></div>
+      <div class="sum-box"><div class="sum-lbl">持股損益</div><div class="sum-val ${tPC}">${(totalPnl>=0?'+':'')+Math.round(totalPnl).toLocaleString()}</div></div>
+      <div class="sum-box"><div class="sum-lbl">持股損益%</div><div class="sum-val ${tPC}">${(totalPct>=0?'+':'')+totalPct.toFixed(2)}%</div></div>
+      <div class="sum-box"><div class="sum-lbl">已實現損益</div><div class="sum-val ${totalReal>=0?'pos':'neg'}">${(totalReal>=0?'+':'')+Math.round(totalReal).toLocaleString()}</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">${nick} 的過去買賣紀錄（共 ${rows.length} 筆）</div>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>#</th><th>類型</th><th>代號</th><th>名稱</th><th>日期</th>
+        <th>掛單價</th><th>成交狀態</th><th>股數</th>
+        <th>投入金額</th><th>現價</th><th>現值</th>
+        <th>未實現損益</th><th>損益%</th><th>已實現損益</th>
+      </tr></thead><tbody>`;
+
+  rows.forEach((r,i)=>{
+    const type      = r[14]||'buy';
+    const code      = r[2]||'', rname=r[3]||'', date=r[4]||'';
+    const op        = +r[6]||0;
+    const sh        = +r[8]||0;
+    const inv       = +r[9]||0;
+    const tStatus   = r[10]||'pending';
+    const tp        = +r[11]||op;
+    const cp        = +r[15]||tp;
+    const nowV      = +r[16]||(cp*sh);
+    const realPnl   = +r[17]||0;
+    const pnl       = nowV-inv;
+    const pct       = inv>0 ? (pnl/inv*100) : 0;
+    const pCls      = pnl>=0?'pos':'neg';
+    const tLabel    = statusLabel(tStatus);
+
+    const typeTag = type==='buy'
+      ? `<span class="type-buy">▲ 買入</span>`
+      : `<span class="type-sell">▼ 賣出</span>`;
+
+    html+=`<tr>
+      <td>${i+1}</td>
+      <td class="label-col">${typeTag}</td>
+      <td>${code}</td>
+      <td class="label-col">${rname}</td>
+      <td>${date}</td>
+      <td>$${op.toLocaleString()}</td>
+      <td><span class="status-pill ${tStatus}">${tLabel}</span></td>
+      <td>${sh.toLocaleString()}</td>
+      <td>${inv>0?'$'+Math.round(inv).toLocaleString():'—'}</td>
+      <td>${cp>0?'$'+cp.toLocaleString():'—'}</td>
+      <td>${nowV>0?'$'+Math.round(nowV).toLocaleString():'—'}</td>
+      <td class="pnl ${pCls}">${inv>0?(pnl>=0?'+':'')+Math.round(pnl).toLocaleString():'—'}</td>
+      <td class="pnl ${pCls}">${inv>0?(pct>=0?'+':'')+pct.toFixed(2)+'%':'—'}</td>
+      <td class="pnl ${realPnl>=0?'pos':'neg'}">${realPnl!==0?(realPnl>=0?'+':'')+Math.round(realPnl).toLocaleString():'—'}</td>
+    </tr>`;
+  });
+
+  html+=`</tbody></table></div></div>`;
+
+  document.getElementById('personal-result').innerHTML=html;
+}
+
+// ── 更新現在股價 ────────────────────────────────────────────────
+async function updatePrice(){
+  const nick  = v('q-nick');
+  const row   = parseInt(document.getElementById('u-row').value);
+  const price = parseFloat(document.getElementById('u-price').value);
+  if(!nick){showToast('請先查詢暱稱','err');return}
+  if(!row){showToast('請輸入序號','err');return}
+  if(!price){showToast('請輸入新股價','err');return}
+  try {
+    const res = await gasPost({action:'updatePrice',nick,rowIndex:row,curPrice:price});
+    if(res.status==='ok'){ showToast('✅ 股價已更新','ok'); loadPersonal(); }
+    else showToast('❌ 更新失敗：'+(res.message||''),'err');
+  } catch(e){ showToast('❌ 連線失敗','err'); }
+}
+
+// ── 排行榜 ──────────────────────────────────────────────────────
+async function loadLeaderboard(){
+  const el = document.getElementById('lb-result');
+  el.innerHTML='<div class="spinner"><div class="spin"></div></div>';
+  try {
+    const data = await gasGet({action:'getAll'});
+    if(!data.rows||data.rows.length===0){
+      el.innerHTML='<div class="empty">目前無任何成交記錄</div>'; return;
+    }
+    allData=data.rows; renderLeaderboard();
+  } catch(e){
+    el.innerHTML='<div class="empty" style="color:var(--red)">連線失敗，請確認 SHEET_URL</div>';
+  }
+}
+
+function setSort(mode,btn){
+  sortMode=mode;
+  document.querySelectorAll('.tgl-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderLeaderboard();
+}
+
+function renderLeaderboard(){
+  if(!allData.length) return;
+  const map={};
+  allData.forEach(r=>{
+    const type    = r[14]||'buy';
+    const nick    = r[1];
+    if(!nick) return;
+    const ts      = r[10]||'pending'; // tradeStatus
+    const inv     = +r[9]||0;
+    const nowV    = +r[16]||(+r[15]||+r[11]||0)*(+r[8]||0);
+    const realPnl = +r[17]||0;
+    if(!map[nick]) map[nick]={nick,totalIn:0,totalNow:0,totalReal:0,realProfit:0,realLoss:0,buyCount:0,sellCount:0};
+    if(type==='buy'&&(ts==='matched'||ts==='after-hours')){
+      map[nick].totalIn  +=inv;
+      map[nick].totalNow +=nowV;
+      map[nick].buyCount++;
+    }
+    if(type==='sell'){
+      map[nick].sellCount++;
+      if(realPnl>=0) map[nick].realProfit += realPnl;
+      else map[nick].realLoss += realPnl;
+    }
+    map[nick].totalReal+=realPnl;
+  });
+
+  let players=Object.values(map).map(p=>{
+    const pnl=p.totalNow-p.totalIn;
+    const pct=p.totalIn>0?(pnl/p.totalIn*100):0;
+    const totalPnl = pnl + p.totalReal;
+    return {...p,pnl,pct,totalPnl};
+  });
+
+  if(sortMode==='pct') players.sort((a,b)=>b.pct-a.pct);
+  else if(sortMode==='amt') players.sort((a,b)=>b.totalPnl-a.totalPnl);
+  else players.sort((a,b)=>b.totalReal-a.totalReal);
+
+  const bc=i=>['r1','r2','r3'][i]||'rn';
+  const md=i=>['🥇','🥈','🥉'][i]||(i+1);
+
+  let html=`<div class="table-wrap"><table>
+    <thead><tr>
+      <th>名次</th><th>暱稱</th><th>持股投入資金</th><th>目前市值</th>
+      <th>持股損益</th><th>持股損益%</th><th>賣出獲利</th>
+      <th>賣出虧損</th><th>已實現損益</th><th>合計損益</th><th>買/賣筆數</th>
+    </tr></thead><tbody>`;
+
+  players.forEach((p,i)=>{
+    const pc=p.pct>=0?'pos':'neg';
+    const tc=p.totalPnl>=0?'pos':'neg';
+    html+=`<tr>
+      <td><span class="rank-badge ${bc(i)}">${md(i)}</span></td>
+      <td class="label-col" style="font-weight:700">${p.nick}</td>
+      <td>$${Math.round(p.totalIn).toLocaleString()}</td>
+      <td>$${Math.round(p.totalNow).toLocaleString()}</td>
+      <td class="pnl ${p.pnl>=0?'pos':'neg'}">${(p.pnl>=0?'+':'')+Math.round(p.pnl).toLocaleString()}</td>
+      <td class="pnl ${pc}">${(p.pct>=0?'+':'')+p.pct.toFixed(2)}%</td>
+      <td class="pnl pos">+${Math.round(p.realProfit).toLocaleString()}</td>
+      <td class="pnl neg">${Math.round(p.realLoss).toLocaleString()}</td>
+      <td class="pnl ${p.totalReal>=0?'pos':'neg'}">${(p.totalReal>=0?'+':'')+Math.round(p.totalReal).toLocaleString()}</td>
+      <td class="pnl ${tc}">${(p.totalPnl>=0?'+':'')+Math.round(p.totalPnl).toLocaleString()}</td>
+      <td>${p.buyCount}/${p.sellCount}</td>
+    </tr>`;
+  });
+
+  html+=`</tbody></table></div>`;
+  document.getElementById('lb-result').innerHTML=html;
+}
+
+// ── Tab切換 ──────────────────────────────────────────────────────
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  if(id==='tab-my') loadPersonal();
+  if(id==='tab-lb') loadLeaderboard();
+  if(id==='tab-sim'){ simRenderTable(); simRenderPortfolio(); }
+}
+
+// ── 清除表單 ─────────────────────────────────────────────────────
+function clearBuyForm(){
+  ['b-code','b-name','b-prev','b-order-price','b-shares','b-close','b-vol']
+    .forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+  document.getElementById('b-nick').value='yfchen';
+  document.getElementById('b-date').value=nowDateTimeStr();
+  document.getElementById('c-b-total').textContent='—';
+  document.getElementById('c-b-status').textContent='—';
+  document.getElementById('c-limit-up').textContent='—';
+  document.getElementById('c-limit-dn').textContent='—';
+  hideLimit('b'); isLimitB=false;
+}
+function clearSellForm(){
+  ['s-rowid','s-prev','s-order-price','s-close','s-vol','s-lots']
+    .forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
+  document.getElementById('s-nick').value='yfchen';
+  document.getElementById('s-date').value=nowDateTimeStr();
+  document.getElementById('cs-status').textContent='—';
+  document.getElementById('cs-limit-up').textContent='—';
+  document.getElementById('cs-limit-dn').textContent='—';
+  document.getElementById('cs-cur-price').textContent='—';
+  document.getElementById('cs-sell-val').textContent='—';
+  document.getElementById('cs-pnl').textContent='—';
+  document.getElementById('sell-holdings-area').style.display='none';
+  document.getElementById('sell-form-area').style.display='none';
+  selectedSellRow=null; sellHoldingsData=[];
+  document.querySelectorAll('.sell-holding-card').forEach(c=>c.classList.remove('selected'));
+  hideLimit('s'); isLimitS=false;
+}
+
+
+// ── GAS 呼叫 ────────────────────────────────────────────────────
+async function gasGet(params){
+  if(SHEET_URL.includes('YOUR_DEPLOYMENT_ID_HERE')) throw new Error('SHEET_URL 未設定');
+  const qs = new URLSearchParams(params);
+  const res = await fetch(SHEET_URL+'?'+qs.toString());
+  return res.json();
+}
+async function gasPost(payload){
+  if(SHEET_URL.includes('YOUR_DEPLOYMENT_ID_HERE')) throw new Error('SHEET_URL 未設定');
+  const res = await fetch(SHEET_URL,{
+    method:'POST',
+    headers:{'Content-Type':'text/plain'},
+    body:JSON.stringify(payload)
+  });
+  return res.json();
+}
+
+// ── Helpers ──────────────────────────────────────────────────────
+function v(id){ return (document.getElementById(id).value||'').trim(); }
+function pf(id){ return parseFloat(document.getElementById(id).value)||0; }
+function statusLabel(s){
+  return {matched:'✅ 成交',pending:'⏳ 未成交',cancelled:'❌ 取消',
+    'after-hours':'🌙 盤後成交',sold:'💰 已賣出'}[s]||s;
+}
+
+
+// ════════════════════════════════════════════════════════════════
+// 🎮 模擬練習環境 JS
+// ════════════════════════════════════════════════════════════════
+
+// 計算前一個交易日（跳過週末）
+function getPrevTradingDay() {
+  const now = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Taipei'}));
+  let d = new Date(now);
+  d.setDate(d.getDate()-1);
+  // 跳過週末（0=日,6=六）
+  while(d.getDay()===0||d.getDay()===6) d.setDate(d.getDate()-1);
+  const Y=d.getFullYear();
+  const M=String(d.getMonth()+1).padStart(2,'0');
+  const D=String(d.getDate()).padStart(2,'0');
+  return `${Y}-${M}-${D}`;
+}
+const SIM_DATE = getPrevTradingDay();
+
+// 模擬股票同步自左側看板（以最新昨收為漲跌幅基準）
+let simStocks = SIDEBAR_STOCKS.map(s => ({
+  code: s.code,
+  name: s.name,
+  prev: PREV_CLOSE_CACHE[s.code] || s.prev,
+  open: +((( PREV_CLOSE_CACHE[s.code] || s.prev || 0 )*(1+(Math.random()*0.008-0.004))).toFixed(1)),
+  cur:  s.cur
+}));
+
+
+
+// 模擬持倉（本地）
+let simPortfolio = [];
+
+function simRoundTick(price) {
+  let tick;
+  if(price<10)   tick=0.01;
+  else if(price<50)  tick=0.05;
+  else if(price<100) tick=0.1;
+  else if(price<500) tick=0.5;
+  else if(price<1000)tick=1;
+  else               tick=5;
+  return Math.round(price/tick)*tick;
+}
+
+function simLimits(prev) {
+  const up = simRoundTick(prev*1.1);
+  const dn = simRoundTick(prev*0.9);
+  return { up: +up.toFixed(2), dn: +dn.toFixed(2) };
+}
+
+function simRenderTable() {
+  // 更新標題
+  const days=['日','一','二','三','四','五','六'];
+  const sd = new Date(SIM_DATE+'T00:00:00');
+  const titleEl = document.getElementById('sim-date-title');
+  if(titleEl) titleEl.textContent = `📅 模擬交易日：${SIM_DATE}（${days[sd.getDay()]}）｜前一個交易日模擬環境`;
+  const dateEl = document.getElementById('sim-date-display');
+  if(dateEl) dateEl.textContent = SIM_DATE;
+
+  const tbody = document.getElementById('sim-stock-table');
+  const sel   = document.getElementById('sim-stock-sel');
+  let rows='', opts='<option value="">-- 請選擇 --</option>';
+  simStocks.forEach((s,i) => {
+    const hasQuote = s.prev > 0 && s.cur > 0;
+    const {up,dn} = hasQuote ? simLimits(s.prev) : {up:0,dn:0};
+    const diff  = hasQuote ? s.cur - s.prev : 0;
+    const pct   = hasQuote ? (diff/s.prev*100).toFixed(2) : '0.00';
+    const cls   = !hasQuote ? '' : diff>=0 ? 'style="color:var(--red);font-weight:700"' : 'style="color:var(--green);font-weight:700"';
+    const arrow = !hasQuote ? '—' : diff>=0 ? '▲' : '▼';
+    rows += `<tr>
+      <td>${s.code}</td>
+      <td class="label-col">${s.name}</td>
+      <td>${hasQuote?'$'+s.prev.toLocaleString():'—'}</td>
+      <td>${hasQuote?'$'+s.open.toLocaleString():'—'}</td>
+      <td style="color:var(--red);font-weight:700">${hasQuote?'$'+up.toLocaleString():'—'}</td>
+      <td style="color:var(--green);font-weight:700">${hasQuote?'$'+dn.toLocaleString():'—'}</td>
+      <td ${cls}>${hasQuote?s.cur.toLocaleString():'等待報價'}</td>
+      <td ${cls}>${hasQuote?arrow+Math.abs(pct)+'%':'—'}</td>
+      <td><button class="btn btn-ghost" style="padding:5px 12px;font-size:12px" onclick="simPrefill(${i})">填入下單</button></td>
+    </tr>`;
+    opts += `<option value="${i}">${s.code} ${s.name} / ${hasQuote?'$'+s.cur:'等待報價'}</option>`;
+  });
+  tbody.innerHTML = rows;
+  sel.innerHTML = opts;
+}
+
+function simRefreshPrices() {
+  // 同步左側看板並更新 simStocks
+  refreshSidebarPrices();
+  simStocks.forEach(ss => {
+    const sb = SIDEBAR_STOCKS.find(x=>x.code===ss.code);
+    if(sb) ss.cur = sb.cur;
+  });
+  simRenderTable();
+  simRenderPortfolio();
+  document.getElementById('sim-stock-sel').dispatchEvent(new Event('change'));
+  showToast('📊 盤中行情已更新（與看板同步）','ok');
+}
+
+function simPrefill(idx) {
+  const s = simStocks[idx];
+  // 切換到買入 tab 並預填
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-buy').classList.add('active');
+  document.querySelectorAll('.tab-btn')[0].classList.add('active');
+
+  document.getElementById('b-code').value   = s.code;
+  document.getElementById('b-name').value   = s.name;
+  document.getElementById('b-date').value   = SIM_DATE;
+  document.getElementById('b-prev').value   = s.prev;
+  document.getElementById('b-order-price').value = s.cur;
+  calcLimitPrice('b');
+  calcBuy();
+  showToast(`✅ 已預填 ${s.name} 資料，請確認下單價`, 'ok');
+}
+
+function simSelectStock() {
+  const idx = document.getElementById('sim-stock-sel').value;
+  if(idx==='') return;
+  const s = simStocks[parseInt(idx)];
+  document.getElementById('sim-price').value = s.cur;
+  simCalc();
+}
+
+function simCalc() {
+  const idx   = document.getElementById('sim-stock-sel').value;
+  const lots  = parseFloat(document.getElementById('sim-lots').value)||0;
+  const price = parseFloat(document.getElementById('sim-price').value)||0;
+  const shares= lots*1000;
+  const total = price*shares;
+  document.getElementById('sim-total').textContent = total>0 ? '$'+Math.round(total).toLocaleString() : '—';
+
+  if(idx!=='' && price>0) {
+    const s = simStocks[parseInt(idx)];
+    // 成交規則：買入價 >= 即時股價 → 成交
+    const est = price>=s.cur ? '✅ 可成交（買價≥即時價）' : '⏳ 掛單等待（買價偏低）';
+    document.getElementById('sim-est').textContent=est;
+  }
+}
+
+function simSubmitBuy() {
+  const nick  = document.getElementById('sim-nick').value.trim();
+  const idx   = document.getElementById('sim-stock-sel').value;
+  const lots  = parseFloat(document.getElementById('sim-lots').value)||0;
+  const price = parseFloat(document.getElementById('sim-price').value)||0;
+  if(!nick||idx===''||!lots||!price){showToast('❌ 請填寫所有欄位','err');return;}
+  const s     = simStocks[parseInt(idx)];
+  const shares= lots*1000;
+  const total = price*shares;
+  const {up,dn} = simLimits(s.prev);
+  const matched = price >= s.cur; // 買入價 >= 即時股價 → 成交
+  simPortfolio.push({
+    nick, code:s.code, name:s.name, date:SIM_DATE,
+    shares, buyPrice:price, total,
+    curPrice:s.cur, stockIdx:parseInt(idx),
+    matched, id: Date.now()
+  });
+  simRenderPortfolio();
+  showToast(`✅ 模擬買入 ${s.name} x${lots}張 已記錄`, 'ok');
+  simClear();
+}
+
+function simClear(){
+  document.getElementById('sim-nick').value='yfchen';
+  document.getElementById('sim-stock-sel').value='';
+  document.getElementById('sim-price').value='';
+  document.getElementById('sim-lots').value='1';
+  document.getElementById('sim-total').textContent='—';
+  document.getElementById('sim-est').textContent='—';
+}
+
+function simRenderPortfolio(){
+  const el = document.getElementById('sim-portfolio-result');
+  if(!simPortfolio.length){
+    el.innerHTML='<div class="empty">尚無模擬持倉，請先下單</div>'; return;
+  }
+  // update curPrice from simStocks
+  simPortfolio.forEach(p=>{
+    p.curPrice = simStocks[p.stockIdx].cur;
+  });
+  let totalIn=0, totalNow=0;
+  let rows = simPortfolio.map((p,i)=>{
+    const nowVal = p.curPrice * p.shares;
+    const pnl = nowVal - p.total;
+    const pct = (pnl/p.total*100).toFixed(2);
+    const cls = pnl>=0?'pos':'neg';
+    if(p.matched){ totalIn+=p.total; totalNow+=nowVal; }
+    return `<tr>
+      <td>${i+1}</td>
+      <td class="label-col">${p.nick}</td>
+      <td>${p.code}</td>
+      <td class="label-col">${p.name}</td>
+      <td>${(p.shares/1000).toFixed(0)}張</td>
+      <td>$${p.buyPrice.toLocaleString()}</td>
+      <td>$${p.curPrice.toLocaleString()}</td>
+      <td>$${Math.round(p.total).toLocaleString()}</td>
+      <td>$${Math.round(nowVal).toLocaleString()}</td>
+      <td class="pnl ${cls}">${pnl>=0?'+':''}${Math.round(pnl).toLocaleString()}</td>
+      <td class="pnl ${cls}">${pct>=0?'+':''}${pct}%</td>
+      <td><button class="btn btn-ghost" style="padding:4px 10px;font-size:12px" onclick="simSell(${i})">賣出</button></td>
+    </tr>`;
+  }).join('');
+
+  const totalPnl = totalNow-totalIn;
+  const totalPct = totalIn>0?(totalPnl/totalIn*100).toFixed(2):'0.00';
+  const tc = parseFloat(totalPct)>=0?'pos':'neg';
+
+  el.innerHTML=`<div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th>#</th><th>帳號</th><th>代號</th><th>名稱</th><th>持股</th>
+        <th>買入價</th><th>現價</th><th>成本</th><th>現值</th>
+        <th>損益</th><th>損益%</th><th>操作</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>
+  <div class="summary-grid" style="margin-top:12px">
+    <div class="sum-box"><div class="sum-lbl">總成本</div><div class="sum-val">$${Math.round(totalIn).toLocaleString()}</div></div>
+    <div class="sum-box"><div class="sum-lbl">總現值</div><div class="sum-val">$${Math.round(totalNow).toLocaleString()}</div></div>
+    <div class="sum-box"><div class="sum-lbl">未實現損益</div><div class="sum-val ${tc}">${parseFloat(totalPnl)>=0?'+':''}${Math.round(totalPnl).toLocaleString()}</div></div>
+    <div class="sum-box"><div class="sum-lbl">整體損益%</div><div class="sum-val ${tc}">${parseFloat(totalPct)>=0?'+':''}${totalPct}%</div></div>
+  </div>`;
+}
+
+function simSell(idx) {
+  const p = simPortfolio[idx];
+  const nowVal = p.curPrice * p.shares;
+  const pnl = nowVal - p.total;
+  showToast(`💰 模擬賣出 ${p.name}，損益：${pnl>=0?'+':''}${Math.round(pnl).toLocaleString()} 元`,'ok');
+  simPortfolio.splice(idx,1);
+  simRenderPortfolio();
+}
+
+// 初始化模擬看板
+simRenderTable();
+
+let toastTimer;
+function showToast(msg,type='ok'){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.className='show '+type;
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>{ t.className=''; },3500);
+}
+</script>
+</body>
+</html>
