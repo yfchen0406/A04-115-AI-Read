@@ -157,19 +157,23 @@ const tripData = [
       },
       {
         src: "./images/Day3-S/JAPDAY3-08.webp",
-        caption: "時間順序垂直清單風",
+        caption: "神戶美食雙星",
       },
       {
         src: "./images/Day3-S/JAPDAY3-09.webp",
-        caption: "美食重點導航風",
+        caption: "神戶異國探險",
       },
       {
         src: "./images/Day3-S/JAPDAY3-10.webp",
-        caption: "故事敘述分鏡風服",
+        caption: "VIP 等級享受風",
       },
       {
         src: "./images/Day3-S/JAPDAY3-11.webp",
-        caption: "對比前後變化風",
+        caption: "時間情緒曲線風",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-12.webp",
+        caption: "神戶局長推薦",
       },
     ],
     memoryWallImgs: [
@@ -222,6 +226,11 @@ const tripData = [
         src: "./images/Day3-M/Day3-10.webp",
         caption:
           "固力果（Glico）推出的高端品牌 Bâton d'or，被譽為「Pocky界的LV」。",
+      },
+      {
+        src: "./images/Day3-M/Day3-11.webp",
+        caption:
+          "晚餐大阪燒~大阪心齋橋巷弄內的人氣隱藏版名店——お好み鉄板酒場 どら十（Dorajyu）。它在社群平台上非常受到歡迎，被許多老饕譽為「大阪燒天花板」。",
       },
       {
         src: "./images/Day3-M/Day3-10A.webp",
