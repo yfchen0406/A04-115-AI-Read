@@ -889,4 +889,124 @@ const promptsData = [
     date: "2026-06-09",
     url: "",
   },
+  {
+    id: 89,
+    title: "詣超關西六日行規劃篇-1",
+    category: "Map",
+    image: "./images/M01-Map/M004-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~幫我產生一個GPT Image2.0提示詞，\
+以附件圖片人物為主角，使用手繪插畫風格呈現，周圍務必要有一個台灣桃園機場，加上以日本關西各重要景點圍繞，並且解釋每一景點，人物在中間呈現，格式16:9，所有文字以繁體中文呈現，字體務必以鋼筆字體為主，標題為[日本關西六日遊]",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 90,
+    title: "詣超關西六日行規劃篇-2",
+    category: "Map",
+    image: "./images/M01-Map/M004-2.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~幫我產生一個GPT Image2.0提示詞，\
+以附件圖片人物為主角，使用手繪插畫風格呈現，周圍務必要有一個台灣桃園機場，加上以日本關西各重要景點圍繞，並且解釋每一景點，人物在中間呈現，格式16:9，所有文字以繁體中文呈現，字體務必以鋼筆字體為主，標題為[日本關西六日遊]",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 91,
+    title: "仿貼圖-貓爪抓-散步抓-1",
+    category: "Line",
+    image: "./images/L01-Line/GPT007-1.webp",
+    prompt:
+      "<span class='yf3'>-仿貓爪抓-散步抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 92,
+    title: "仿貼圖-貓爪抓-散步抓-2",
+    category: "Line",
+    image: "./images/L01-Line/GPT007-2.webp",
+    prompt:
+      "<span class='yf3'>-仿貓爪抓-散步抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 93,
+    title: "仿貼圖-貓爪抓-散步抓-3",
+    category: "Line",
+    image: "./images/L01-Line/GPT007-3.webp",
+    prompt:
+      "<span class='yf3'>-仿貓爪抓-散步抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 94,
+    title: "仿貼圖-胸毛公寓的猴子朋友2",
+    category: "Line",
+    image: "./images/L01-Line/GPT007-4.webp",
+    prompt:
+      "<span class='yf3'>-仿胸毛公寓的猴子朋友2</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 95,
+    title: "仿貼圖-貓爪抓-大字好好抓-1",
+    category: "Line",
+    image: "./images/L01-Line/GPT007-5.webp",
+    prompt:
+      "<span class='yf3'>-仿貓爪抓-大字好好抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 96,
+    title: "仿貼圖-貓爪抓-大字好好抓-2",
+    category: "Line",
+    image: "./images/L01-Line/GPT007-6.webp",
+    prompt:
+      "<span class='yf3'>-仿貓爪抓-大字好好抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 97,
+    title: "3D微型城市~神戶北野異人館-1",
+    category: "3D",
+    image: "./images/A01-3D/3D001-1.webp",
+    prompt:
+      "<span class='yf3'>透過Claude優化提示詞，下列提示詞在Claude會轉英文版</span>~~幫我修飾下列提示詞，為3D low poly 微型城市，主題為神戶北野異人館，相關周遭著名景點幫我補上，產生一段完整可以立刻使用的GPT Image2.0提示詞Please use GPT Image 2.0 model to generate images 3D low poly 微型城市，主題為「神戶北野異人館」，45度俯視等距視角，isometric game map style，像桌面上的精緻城市沙盤模型。 中央是 {北野異人館}，周圍有 {各類洋式建築}、街道、樹木、路燈、迷你車輛、小行人、商店、攤位與城市生活細節。 整體為低多邊形 3D 建模風格，造型可愛簡化但辨識度高，乾淨俐落，像遊戲場景與玩具模型。 配色以 {紅色與白色} 為主，搭配 {綠色}，營造 {舒適可愛}。 柔和日光或夕陽光，乾淨陰影，空間層次清楚，高解析度，精緻細節。 避免真實攝影風、過度寫實、雜亂背景、模糊、文字錯誤、水印、建築嚴重變形",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 98,
+    title: "3D微型城市~神戶北野異人館-2",
+    category: "3D",
+    image: "./images/A01-3D/3D001-2.webp",
+    prompt:
+      "<span class='yf3'>透過Claude優化提示詞，下列提示詞在Claude會轉英文版</span>~~幫我修飾下列提示詞，為3D low poly 微型城市，主題為神戶北野異人館，相關周遭著名景點幫我補上，產生一段完整可以立刻使用的GPT Image2.0提示詞Please use GPT Image 2.0 model to generate images 3D low poly 微型城市，主題為「神戶北野異人館」，45度俯視等距視角，isometric game map style，像桌面上的精緻城市沙盤模型。 中央是 {北野異人館}，周圍有 {各類洋式建築}、街道、樹木、路燈、迷你車輛、小行人、商店、攤位與城市生活細節。 整體為低多邊形 3D 建模風格，造型可愛簡化但辨識度高，乾淨俐落，像遊戲場景與玩具模型。 配色以 {紅色與白色} 為主，搭配 {綠色}，營造 {舒適可愛}。 柔和日光或夕陽光，乾淨陰影，空間層次清楚，高解析度，精緻細節。 避免真實攝影風、過度寫實、雜亂背景、模糊、文字錯誤、水印、建築嚴重變形",
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 99,
+    title: "3D微型城市~神戶北野異人館動畫-1",
+    category: "Video",
+    image: "./images/A01-3D/3D001-1.webp",
+    prompt: '<a href="./images/V01-video/3D001-1V.mp4">影片製作連結</a>',
+    date: "2026-06-12",
+    url: "",
+  },
+  {
+    id: 100,
+    title: "3D微型城市~神戶北野異人館動畫-2",
+    category: "Video",
+    image: "./images/A01-3D/3D001-2.webp",
+    prompt: '<a href="./images/V01-video/3D001-2V.mp4">影片製作連結</a>',
+    date: "2026-06-12",
+    url: "",
+  },
 ];

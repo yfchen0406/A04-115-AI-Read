@@ -10,6 +10,8 @@ const tripData = [
     cardImg: "./images/Day1-S/JAPDAY1-01.webp",
     // 行程日誌點擊卡片主圖時顯示的圖庫（與回憶寫真館不同）
     galleryImgs: [
+      { src: "./images/Day1-S/JAPDAY0-01.webp", caption: "出發前爸爸胡亂規劃" },
+      { src: "./images/Day1-S/JAPDAY0-02.webp", caption: "出發前爸爸胡亂規劃" },
       { src: "./images/Day1-S/JAPDAY1-01.webp", caption: "Q版紀錄" },
       {
         src: "./images/Day1-S/JAPDAY1-02.webp",
@@ -122,10 +124,11 @@ const tripData = [
   },
   {
     day: 3,
-    title: "神戶異人館與港口",
+    title: "神戶燒肉・北野異人館星巴克、魚鱗之家",
     subtitle: "洋風浪漫",
-    summary: "北野異人館，神戶港夜景，品嚐神戶牛排洋食。",
-    cardImg: "./images/Day3-S/JAPDAY3-01.webp",
+    summary:
+      "品嚐神戶牛WASSIA、北野異人館星巴克，魚鱗之家、Bâton d'or 神戶限定版「神戶原味」（Kobe Plain）餅乾棒",
+    cardImg: "./images/Day3-S/JAPDAY3-05.webp",
     galleryImgs: [
       { src: "./images/Day3-S/JAPDAY3-01.webp", caption: "事先預告~Q版" },
       {
@@ -136,19 +139,130 @@ const tripData = [
         src: "./images/Day3-S/JAPDAY3-03.webp",
         caption: "事先預告~地圖路線版",
       },
+      {
+        src: "./images/Day3-S/JAPDAY3-04.webp",
+        caption: "事先預告~地圖路線版~換件衣服",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-05.webp",
+        caption: "Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-06.webp",
+        caption: "雜誌旅行版",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-07.webp",
+        caption: "地圖路線版",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-08.webp",
+        caption: "時間順序垂直清單風",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-09.webp",
+        caption: "美食重點導航風",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-10.webp",
+        caption: "故事敘述分鏡風服",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-11.webp",
+        caption: "對比前後變化風",
+      },
     ],
     memoryWallImgs: [
       {
-        src: "https://picsum.photos/id/70/400/300",
-        caption: "風見雞館，異國風情",
+        src: "./images/Day3-M/Day3-01.webp",
+        caption: "神戶牛 WASSIA 現場照",
       },
       {
-        src: "https://picsum.photos/id/71/400/300",
-        caption: "神戶港夜景，絢爛燈光",
+        src: "./images/Day3-M/Day3-02.webp",
+        caption: "神戶牛 WASSIA 現場照",
       },
       {
-        src: "https://picsum.photos/id/72/400/300",
-        caption: "神戶牛排，軟嫩多汁",
+        src: "./images/Day3-M/Day3-02A.webp",
+        caption: "神戶牛 WASSIA 網路照",
+      },
+      {
+        src: "./images/Day3-M/Day3-03.webp",
+        caption: "神戶牛 WASSIA 網路照~詣超那張應該吃掉盤子下面部分",
+      },
+      {
+        src: "./images/Day3-M/Day3-04.webp",
+        caption: "神戶牛 WASSIA 網路照~門口",
+      },
+      {
+        src: "./images/Day3-M/Day3-05.webp",
+        caption: "神戶牛 WASSIA 網路照~菜單",
+      },
+      {
+        src: "./images/Day3-M/Day3-05A.webp",
+        caption: "神戶牛 WASSIA 網路照~店門口",
+      },
+      {
+        src: "./images/Day3-M/Day3-06.webp",
+        caption: "Google地圖~神戶牛 WASSIA -> 北野異人館星巴克",
+      },
+      {
+        src: "./images/Day3-M/Day3-07.webp",
+        caption: "北野異人星巴克",
+      },
+      {
+        src: "./images/Day3-M/Day3-08.webp",
+        caption: "日本神戶的星冰樂",
+      },
+      {
+        src: "./images/Day3-M/Day3-09.webp",
+        caption:
+          "這是位於日本神戶北野異人館街的著名景點「魚鱗之家」~建於明治時代後期，原為外國人的住宅，是神戶最早對外公開的異人館",
+      },
+      {
+        src: "./images/Day3-M/Day3-10.webp",
+        caption:
+          "固力果（Glico）推出的高端品牌 Bâton d'or，被譽為「Pocky界的LV」。",
+      },
+      {
+        src: "./images/Day3-M/Day3-10A.webp",
+        caption: "網路照~Bâton d'or~詣超晚上的零食",
+      },
+      {
+        src: "./images/Day3-M/Day3-10B.webp",
+        caption: "網路照~Bâton d'or ~ 店家應該在阪集百貨",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-1.webp",
+        caption:
+          "18年前~神戶港的中突堤前端眺望神戶美利堅公園東方酒店，其獨特的郵輪造型與坐擁神戶港 270 度海景聞名",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-2.webp",
+        caption: "18年前~背景為著名的地標是位於日本兵庫縣的神戶港塔",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-3.webp",
+        caption: "復刻當年舊照片",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-3A.webp",
+        caption: "18年前~背景為當年著名的地標是位於日本兵庫縣的神戶港塔",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-4.webp",
+        caption: "18年前~當年詣超手裡拿著龍貓公車和小白",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-5.webp",
+        caption: "18年前~當年詣超手裡拿著龍貓公車和小白",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-6.webp",
+        caption: "18年前~一直拿著龍貓公車",
+      },
+      {
+        src: "./images/Day3-M/Day3-O-7.webp",
+        caption: "18年前~背景為神戶塔",
       },
     ],
   },
