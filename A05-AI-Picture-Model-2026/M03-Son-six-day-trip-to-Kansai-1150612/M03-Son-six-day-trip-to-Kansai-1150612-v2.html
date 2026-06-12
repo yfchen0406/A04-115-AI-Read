@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 日本關西六日旅｜鋼筆旅人・六日全紀錄 -->
+
+<head>
+  <title>日本關西六日旅 | 鋼筆旅人・六日全紀錄</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <!-- Bootstrap 4 資源（保留相容） -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 主要核心 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Google Fonts：鋼筆字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* 主題色彩變數 (淺色預設) */
+    :root {
+      --bg-body: #F4F9FE;
+      --bg-surface: #FFFFFF;
+      --text-primary: #1F2E3A;
+      --text-secondary: #2C4C6E;
+      --card-bg: #ffffff;
+      --border-light: #CFE3F0;
+      --accent-blue: #2A6F97;
+      --navbar-footer-mode: #E6F0F8;
+      --carousel-control: #1B4F6E;
+    }
+
+    body.dark-mode {
+      --bg-body: #1A2B3C;
+      --bg-surface: #233A4B;
+      --text-primary: #EFF3F8;
+      --text-secondary: #C9E1F0;
+      --card-bg: #1E3347;
+      --border-light: #2C4D66;
+      --accent-blue: #6CAED9;
+      --navbar-footer-mode: #0F212E;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+      transition: background-color 0.25s ease, color 0.2s ease;
+    }
+
+    /* 卡片樣式 */
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 26px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .card-img-top:hover {
+      opacity: 0.85;
+    }
+
+    .badge-day {
+      background-color: var(--accent-blue);
+      color: white;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+
+    /* 照片牆網格 (CSS Grid auto-fill) */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .photo-item {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 1rem;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .photo-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      border-radius: 1rem;
+    }
+
+    .photo-item:hover img {
+      transform: scale(1.02);
+    }
+
+    .photo-item:hover {
+      border-color: var(--accent-blue);
+    }
+
+    /* 輪播牆 — 符合附件圖片規格：固定比例 16:9，優化顯示 */
+    .carousel-item img {
+      object-fit: cover;
+      height: 460px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 280px;
+      }
+    }
+
+    /* 篩選按鈕 */
+    .filter-btn-group .btn {
+      border-radius: 40px;
+      margin: 0 0.3rem 0.6rem 0;
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      border-color: var(--border-light);
+    }
+
+    .filter-btn-group .btn.active,
+    .filter-btn-group .btn:hover {
+      background-color: var(--accent-blue);
+      color: white;
+      border-color: var(--accent-blue);
+    }
+
+    /* 深色模式切換浮動按鈕 */
+    .theme-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1060;
+      background-color: var(--accent-blue);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.05);
+    }
+
+    /* 燈箱圖片 */
+    #lightboxModal .modal-body img {
+      width: 100%;
+      border-radius: 12px;
+      max-height: 70vh;
+      object-fit: contain;
+    }
+
+    .travel-header h1 {
+      font-weight: 900;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--accent-blue), #5199c4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subhead {
+      border-left: 4px solid var(--accent-blue);
+      padding-left: 1rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="nav1"></div>
+
+  <main style="margin-top: 70px;">
+    <div class="container mt-4 mb-3">
+      <div class="travel-header text-center">
+        <h1 class="display-4 fw-bold">日本關西六日旅</h1>
+        <p class="subhead fs-5 mt-2" style="color: var(--text-secondary);">✍️ 鋼筆旅人・六日全紀錄 | 沉浸古都與美食的慢行</p>
+      </div>
+    </div>
+
+    <!-- 輪播牆 (圖片規格統一固定比例) -->
+    <div class="container-fluid px-0 mb-5">
+      <div id="tripCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+        <div class="carousel-inner" id="carouselInner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#tripCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">上一張</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#tripCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">下一張</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 行程日誌圖卡區 -->
+    <div class="container my-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold"><i class="bi bi-journal-bookmark-fill me-2"
+            style="color: var(--accent-blue);"></i>行程日誌・珍藏每一刻</h2>
+      </div>
+      <div class="row g-4" id="cardsContainer"></div>
+    </div>
+
+    <!-- 回憶寫真館 (照片牆) -->
+    <div class="container my-5">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold"><i class="bi bi-images me-2" style="color: var(--accent-blue);"></i>回憶寫真館</h2>
+        <div class="filter-btn-group mt-2 mt-sm-0" id="filterButtons"></div>
+      </div>
+      <div class="photo-grid" id="photoGalleryGrid"></div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- 燈箱 Modal -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-labelledby="lightboxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content" style="background-color: var(--bg-surface);">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="lightboxLabel">旅行寫真</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <img id="modalPhotoImg" src="" alt="旅行照片" class="img-fluid">
+          <div class="d-flex justify-content-between mt-4">
+            <button id="prevPhotoBtn" class="btn btn-outline-secondary rounded-pill px-4"><i
+                class="bi bi-arrow-left-circle"></i> 上一張</button>
+            <span id="photoCounter" class="align-self-center fw-bold">1 / 1</span>
+            <button id="nextPhotoBtn" class="btn btn-outline-secondary rounded-pill px-4">下一張 <i
+                class="bi bi-arrow-right-circle"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="darkModeToggle" class="theme-toggle" aria-label="深淺模式切換">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    // ---------- 1. 行程資料（第一天更新為真實描述，並保留六天範本）----------
+    const tripData = [
+      {
+        day: 1,
+        title: "星宇啟航・大阪初夜",
+        subtitle: "燒肉與拉麵的饗宴",
+        summary: "從台灣家裡出發，搭乘星宇航空飛往大阪。晚餐力丸燒肉，入住民宿後逛藥妝店，再以神座拉麵完美收尾。",
+        cardImg: "./images/JAPDAY1-01.webp",
+        galleryImgs: [
+          "./images/JAPDAY1-01.webp",
+          "./images/JAPDAY1-02.webp",
+          "./images/JAPDAY1-03.webp",
+          "./images/JAPDAY1-4.webp",
+          "./images/JAPDAY1-4X.webp",
+          "./images/JAPDAY1-05.webp",
+
+        ]
+      },
+      {
+        day: 2,
+        title: "黑門市場・牛舌名店與神社",
+        subtitle: "大阪廚房大冒險",
+        summary: "黑門市場新鮮海鮮，牛舌の檸檬炭火燒，大島神社透明御守祈願。",
+        cardImg: "https://picsum.photos/id/130/800/500",
+        galleryImgs: [
+          "https://picsum.photos/id/30/400/300",
+          "https://picsum.photos/id/31/400/300",
+          "https://picsum.photos/id/32/400/300"
+        ]
+      },
+      {
+        day: 3,
+        title: "京都・伏見稻荷千本鳥居",
+        subtitle: "朱紅神話",
+        summary: "走進千本鳥居，狐狸祈願，品嚐抹茶甜點，感受古都靈氣。",
+        cardImg: "https://picsum.photos/id/96/800/500",
+        galleryImgs: [
+          "https://picsum.photos/id/40/400/300",
+          "https://picsum.photos/id/41/400/300",
+          "https://picsum.photos/id/42/400/300"
+        ]
+      },
+      {
+        day: 4,
+        title: "嵐山竹林與渡月橋",
+        subtitle: "風雅嵯峨野",
+        summary: "竹林小徑、野宮神社，搭乘復古小火車，保津川峽谷風光。",
+        cardImg: "https://picsum.photos/id/15/800/500",
+        galleryImgs: [
+          "https://picsum.photos/id/50/400/300",
+          "https://picsum.photos/id/51/400/300",
+          "https://picsum.photos/id/52/400/300"
+        ]
+      },
+      {
+        day: 5,
+        title: "奈良・小鹿與大佛",
+        subtitle: "春日靈域",
+        summary: "東大寺大佛殿，奈良公園鹿群互動，享用柿葉壽司。",
+        cardImg: "https://picsum.photos/id/94/800/500",
+        galleryImgs: [
+          "https://picsum.photos/id/60/400/300",
+          "https://picsum.photos/id/61/400/300",
+          "https://picsum.photos/id/62/400/300"
+        ]
+      },
+      {
+        day: 6,
+        title: "神戶異人館與港口",
+        subtitle: "洋風浪漫",
+        summary: "北野異人館，神戶港夜景，品嚐神戶牛排洋食。",
+        cardImg: "https://picsum.photos/id/79/800/500",
+        galleryImgs: [
+          "https://picsum.photos/id/70/400/300",
+          "https://picsum.photos/id/71/400/300",
+          "https://picsum.photos/id/72/400/300"
+        ]
+      }
+    ];
+
+    // 全域變數 (燈箱使用)
+    let currentFilter = "all";
+    let currentLightboxList = [];
+    let currentLightboxIndex = 0;
+
+    // ---------- 2. 動態渲染輪播牆 ----------
+    function renderCarousel() {
+      const carouselInner = document.getElementById('carouselInner');
+      const indicatorsContainer = document.getElementById('carouselIndicators');
+      if (!carouselInner) return;
+      let innerHtml = '', indicatorsHtml = '';
+      tripData.forEach((item, idx) => {
+        const activeClass = idx === 0 ? 'active' : '';
+        innerHtml += `
+        <div class="carousel-item ${activeClass}">
+          <img src="${item.cardImg}" class="d-block w-100" alt="Day${item.day} - ${item.title}">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+            <h5 class="text-white">Day ${item.day} · ${item.title}</h5>
+            <p class="text-white small">${item.subtitle}</p>
+          </div>
+        </div>
+      `;
+        indicatorsHtml += `<button type="button" data-bs-target="#tripCarousel" data-bs-slide-to="${idx}" class="${activeClass}" aria-label="Slide ${idx + 1}"></button>`;
+      });
+      carouselInner.innerHTML = innerHtml;
+      indicatorsContainer.innerHTML = indicatorsHtml;
+    }
+
+    // ---------- 3. 行程卡片 (點擊圖片可放大該行程對應圖庫) ----------
+    function renderCards() {
+      const container = document.getElementById('cardsContainer');
+      if (!container) return;
+      let cardsHtml = '';
+      tripData.forEach(item => {
+        cardsHtml += `
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="${item.cardImg}" class="card-img-top" alt="Day${item.day} 行程主圖" data-day="${item.day}" data-type="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge-day">第 ${item.day} 天</span>
+                <small class="text-muted"><i class="bi bi-geo-alt-fill"></i> 關西</small>
+              </div>
+              <h5 class="card-title fw-bold">${item.title}</h5>
+              <h6 class="card-subtitle mb-2" style="color: var(--accent-blue);">${item.subtitle}</h6>
+              <p class="card-text">${item.summary}</p>
+            </div>
+          </div>
+        </div>
+      `;
+      });
+      container.innerHTML = cardsHtml;
+
+      // 重要：為所有卡片中的圖片加上點擊事件 -> 點擊下方日誌的圖片可放大觀察（顯示該天所有圖庫）
+      const cardImages = document.querySelectorAll('.card-img-top');
+      cardImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const dayAttr = img.getAttribute('data-day');
+          const targetDay = parseInt(dayAttr);
+          const dayData = tripData.find(d => d.day === targetDay);
+          if (dayData && dayData.galleryImgs && dayData.galleryImgs.length) {
+            const galleryList = dayData.galleryImgs.map((src, idx) => ({
+              src: src,
+              day: dayData.day,
+              title: `${dayData.title} - 寫真 ${idx + 1}`,
+              originDay: dayData.day
+            }));
+            openLightbox(galleryList, 0);
+          } else {
+            // 若無圖庫則顯示主圖當作單張
+            const singleImg = [{ src: dayData.cardImg, day: dayData.day, title: dayData.title }];
+            openLightbox(singleImg, 0);
+          }
+        });
+      });
+    }
+
+    // ---------- 4. 照片牆相關功能 (篩選＋渲染＋點擊放大) ----------
+    function getAllImagesByFilter(filterDay) {
+      let imageList = [];
+      if (filterDay === 'all') {
+        tripData.forEach(dayItem => {
+          dayItem.galleryImgs.forEach((imgSrc, idx) => {
+            imageList.push({
+              src: imgSrc,
+              day: dayItem.day,
+              title: `${dayItem.title} - 寫真 ${idx + 1}`,
+              originDay: dayItem.day
+            });
+          });
+        });
+      } else {
+        const targetDay = parseInt(filterDay);
+        const found = tripData.find(d => d.day === targetDay);
+        if (found) {
+          found.galleryImgs.forEach((imgSrc, idx) => {
+            imageList.push({
+              src: imgSrc,
+              day: found.day,
+              title: `${found.title} - 回憶 ${idx + 1}`,
+              originDay: found.day
+            });
+          });
+        }
+      }
+      return imageList;
+    }
+
+    function renderPhotoGallery(filterDay) {
+      const galleryGrid = document.getElementById('photoGalleryGrid');
+      if (!galleryGrid) return;
+      const imagesArray = getAllImagesByFilter(filterDay);
+      if (imagesArray.length === 0) {
+        galleryGrid.innerHTML = `<div class="col-12 text-center py-5">📸 沒有照片，稍後新增更多回憶 ✨</div>`;
+        return;
+      }
+      let gridHtml = '';
+      imagesArray.forEach((img, idx) => {
+        gridHtml += `
+        <div class="photo-item" data-photo-src="${img.src}" data-day="${img.day}" data-idx="${idx}">
+          <img src="${img.src}" alt="day${img.day}旅拍" loading="lazy" class="w-100">
+          <div class="mt-1 small text-center text-muted">Day ${img.day}</div>
+        </div>
+      `;
+      });
+      galleryGrid.innerHTML = gridHtml;
+
+      // 照片牆縮圖點擊放大
+      const photoItems = document.querySelectorAll('.photo-item');
+      photoItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const currentImageList = getAllImagesByFilter(currentFilter);
+          const targetSrc = item.getAttribute('data-photo-src');
+          const foundIndex = currentImageList.findIndex(imgObj => imgObj.src === targetSrc);
+          if (foundIndex !== -1) {
+            openLightbox(currentImageList, foundIndex);
+          } else {
+            openLightbox(currentImageList, 0);
+          }
+        });
+      });
+    }
+
+    // 生成篩選按鈕 (全部 + Day1~6)
+    function renderFilterButtons() {
+      const filterContainer = document.getElementById('filterButtons');
+      if (!filterContainer) return;
+      let btns = `<button class="btn btn-sm filter-btn active" data-filter="all">📷 全部照片</button>`;
+      for (let i = 1; i <= 6; i++) {
+        btns += `<button class="btn btn-sm filter-btn" data-filter="${i}">📅 第 ${i} 天</button>`;
+      }
+      filterContainer.innerHTML = btns;
+      const btnsList = document.querySelectorAll('.filter-btn');
+      btnsList.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          btnsList.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filterVal = btn.getAttribute('data-filter');
+          currentFilter = filterVal;
+          renderPhotoGallery(currentFilter);
+        });
+      });
+    }
+
+    // ---------- 5. 共用燈箱控制 ----------
+    let currentModal = null;
+    function openLightbox(imageArray, startIndex) {
+      if (!imageArray.length) return;
+      currentLightboxList = [...imageArray];
+      currentLightboxIndex = startIndex;
+      updateModalContent();
+      const modalElement = document.getElementById('lightboxModal');
+      if (!currentModal) {
+        currentModal = new bootstrap.Modal(modalElement);
+      }
+      currentModal.show();
+    }
+
+    function updateModalContent() {
+      const modalImg = document.getElementById('modalPhotoImg');
+      const counterSpan = document.getElementById('photoCounter');
+      const titleElem = document.getElementById('lightboxLabel');
+      if (!modalImg) return;
+      const currentPhoto = currentLightboxList[currentLightboxIndex];
+      if (currentPhoto) {
+        modalImg.src = currentPhoto.src;
+        titleElem.innerText = `Day ${currentPhoto.day} · ${currentPhoto.title || '旅拍印象'}`;
+        if (counterSpan) counterSpan.innerText = `${currentLightboxIndex + 1} / ${currentLightboxList.length}`;
+      }
+    }
+
+    function nextPhoto() {
+      if (!currentLightboxList.length) return;
+      currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxList.length;
+      updateModalContent();
+    }
+    function prevPhoto() {
+      if (!currentLightboxList.length) return;
+      currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxList.length) % currentLightboxList.length;
+      updateModalContent();
+    }
+
+    // ---------- 6. 深色模式記憶 ----------
+    function initTheme() {
+      const storedTheme = localStorage.getItem('travelTheme');
+      const body = document.body;
+      if (storedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        document.getElementById('darkModeToggle').innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        body.classList.remove('dark-mode');
+        document.getElementById('darkModeToggle').innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    }
+    function toggleTheme() {
+      const body = document.body;
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('travelTheme', 'light');
+        toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      } else {
+        body.classList.add('dark-mode');
+        localStorage.setItem('travelTheme', 'dark');
+        toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      }
+    }
+
+    // 調整body初始背景
+    function adaptBodyInit() {
+      document.body.classList.remove('bg-dark');
+      document.body.style.backgroundColor = 'var(--bg-body)';
+    }
+
+    // ---------- 7. 整頁載入與 jQuery 導覽列 ----------
+    $(function () {
+      // 保留原本 nav 與 footer 的 load (原路徑)
+      $("#nav1").load("/B02A-2026-Book-read/F01-ex-comm/FX02-nav-2026.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+
+      initTheme();
+      adaptBodyInit();
+      renderCarousel();
+      renderCards();          // 行程卡片 + 圖片點擊放大功能
+      renderFilterButtons();
+      renderPhotoGallery('all'); // 預設顯示全部照片牆
+
+      // 燈箱按鈕監聽
+      const prevBtn = document.getElementById('prevPhotoBtn');
+      const nextBtn = document.getElementById('nextPhotoBtn');
+      if (prevBtn) prevBtn.addEventListener('click', prevPhoto);
+      if (nextBtn) nextBtn.addEventListener('click', nextPhoto);
+
+      const toggleBtn = document.getElementById('darkModeToggle');
+      if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
+
+      // 確保輪播實例自動播放 (強化)
+      const carouselElem = document.querySelector('#tripCarousel');
+      if (carouselElem && typeof bootstrap !== 'undefined') {
+        new bootstrap.Carousel(carouselElem, {
+          interval: 4000,
+          ride: 'carousel',
+          wrap: true
+        });
+      }
+      // 深色模式動態調整 modal 背景
+      const styleObserver = new MutationObserver(() => {
+        const modalContent = document.querySelector('#lightboxModal .modal-content');
+        if (modalContent) modalContent.style.backgroundColor = 'var(--bg-surface)';
+      });
+      styleObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    });
+  </script>
+</body>
+
+</html>
