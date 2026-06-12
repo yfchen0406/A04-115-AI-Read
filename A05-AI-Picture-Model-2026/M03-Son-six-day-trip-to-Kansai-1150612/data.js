@@ -277,14 +277,43 @@ const tripData = [
   },
   {
     day: 4,
-    title: "嵐山竹林與渡月橋",
-    subtitle: "風雅嵯峨野",
-    summary: "竹林小徑、野宮神社，搭乘復古小火車，保津川峽谷風光。",
-    cardImg: "https://picsum.photos/id/15/800/500",
+    title: "京都、伏見稻荷、清水寺、金閣寺",
+    subtitle: "沉浸於千本鳥居的朱紅隧道，聆聽清水舞台的滴水禪音",
+    summary: "仰望金閣寺的熠熠生輝，一日盡覽京都經典信仰與建築之美",
+    cardImg: "./images/Day4-S/JAPDAY4-01-Q 版手繪插畫風.webp",
     galleryImgs: [
-      { src: "https://picsum.photos/id/50/400/300", caption: "竹林小徑" },
-      { src: "https://picsum.photos/id/51/400/300", caption: "嵯峨野小火車" },
-      { src: "https://picsum.photos/id/52/400/300", caption: "渡月橋" },
+      {
+        src: "./images/Day4-S/JAPDAY4-01-Q 版手繪插畫風.webp",
+        caption: "爸爸胡亂規劃~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-02-雜誌旅行版.webp",
+        caption: "爸爸胡亂規劃~雜誌旅行版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-03-地圖路線版.webp",
+        caption: "地圖路線版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-04-世界遺產地圖風.webp",
+        caption: "爸爸胡亂規劃~世界遺產地圖風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-05-攝影打卡指南風.webp",
+        caption: "爸爸胡亂規劃~攝影打卡指南風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-07-藝伎文化探訪風.webp",
+        caption: "爸爸胡亂規劃~藝伎文化探訪風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-08-季節賞櫻賞楓風.webp",
+        caption: "爸爸胡亂規劃~季節賞櫻賞楓",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-09-時間效率攻略風.webp",
+        caption: "爸爸胡亂規劃~時間效率攻略風",
+      },
     ],
     memoryWallImgs: [
       { src: "https://picsum.photos/id/50/400/300", caption: "嵐山竹林" },
