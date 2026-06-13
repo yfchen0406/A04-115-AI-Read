@@ -3,10 +3,9 @@
 const tripData = [
   {
     day: 1,
-    title: "星宇啟航・大阪初訪",
-    subtitle: "燒肉與拉麵的饗宴",
-    summary:
-      "出發，搭乘星宇航空飛往大阪。晚餐力丸燒肉，入住民宿後逛藥妝店，再以神座拉麵完美收尾。",
+    title: "星宇敞航 · 大阪初訪 / 燒肉與拉麺的餐宴",
+    subtitle: "力丸燒肉與神座拉麵的雙重饗宴",
+    summary: "逛當地超市與菜市場，深夜大阪風情",
     cardImg: "./images/Day1-S/JAPDAY1-01.webp",
     // 行程日誌點擊卡片主圖時顯示的圖庫（與回憶寫真館不同）
     galleryImgs: [
@@ -124,10 +123,9 @@ const tripData = [
   },
   {
     day: 3,
-    title: "神戶燒肉・北野異人館星巴克、魚鱗之家",
-    subtitle: "洋風浪漫",
-    summary:
-      "品嚐神戶牛WASSIA、北野異人館星巴克，魚鱗之家、Bâton d'or 神戶限定版「神戶原味」（Kobe Plain）餅乾棒",
+    title: "神戶燒肉 · 北野異人館星巴克、魚鱗之家 / 洋風浪漫",
+    subtitle: "神戶WASSIA燒肉，異人館與星巴克巡禮",
+    summary: "限定「神戶原味」餅乾棒，懷舊洋館漫步",
     cardImg: "./images/Day3-S/JAPDAY3-05.webp",
     galleryImgs: [
       { src: "./images/Day3-S/JAPDAY3-01.webp", caption: "事先預告~Q版" },
@@ -277,10 +275,11 @@ const tripData = [
   },
   {
     day: 4,
-    title: "京都、伏見稻荷、清水寺、金閣寺",
-    subtitle: "沉浸於千本鳥居的朱紅隧道，聆聽清水舞台的滴水禪音",
-    summary: "仰望金閣寺的熠熠生輝，一日盡覽京都經典信仰與建築之美",
-    cardImg: "./images/Day4-S/JAPDAY4-01-Q 版手繪插畫風.webp",
+    title: "京都、伏見稻荷、千本鳥居、土井活鰻、空蟬亭熟成豚炸豬排",
+    subtitle: "穿梭千本朱紅鳥居，祈願稻荷之神",
+    summary: "午嚐土井活鰻的炭火香氣，晚品空蟬亭熟成豚炸豬排的酥脆軟嫩",
+
+    cardImg: "./images/Day4-S/JAPDAY4-B1-Q 版手繪插畫風.webp",
     galleryImgs: [
       {
         src: "./images/Day4-S/JAPDAY4-01-Q 版手繪插畫風.webp",
@@ -314,12 +313,100 @@ const tripData = [
         src: "./images/Day4-S/JAPDAY4-09-時間效率攻略風.webp",
         caption: "爸爸胡亂規劃~時間效率攻略風",
       },
+      {
+        src: "./images/Day4-S/JAPDAY4-B1-Q 版手繪插畫風.webp",
+        caption: "正式行程~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B2-雜誌旅行版.webp",
+        caption: "正式行程~雜誌旅行版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B3-地圖路線版.webp",
+        caption: "正式行程~地圖路線版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B4-美食三星評鑑風.webp",
+        caption: "正式行程~美食三星評鑑風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B5-電影分鏡故事風.webp",
+        caption: "正式行程~電影分鏡故事風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B6-行程手帳日記風.webp",
+        caption: "正式行程~行程手帳日記風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B7-時間順序清單版.webp",
+        caption: "正式行程~時間順序清單版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B8-推薦打卡清單風.webp",
+        caption: "正式行程~推薦打卡清單風",
+      },
     ],
     memoryWallImgs: [
-      { src: "https://picsum.photos/id/50/400/300", caption: "嵐山竹林" },
-      { src: "https://picsum.photos/id/51/400/300", caption: "小火車" },
-      { src: "https://picsum.photos/id/52/400/300", caption: "渡月橋" },
-      { src: "https://picsum.photos/id/53/400/300", caption: "野宮神社" },
+      {
+        src: "./images/Day4-M/Day4-00.webp",
+        caption: "AI~第四天先換件衣服",
+      },
+      {
+        src: "./images/Day4-M/Day4-01A.webp",
+        caption: "網路照~千本鳥居",
+      },
+      {
+        src: "./images/Day4-M/Day4-02.webp",
+        caption: "土井活鰻",
+      },
+      {
+        src: "./images/Day4-M/Day4-03.webp",
+        caption: "土井活鰻~打開",
+      },
+      {
+        src: "./images/Day4-M/Day4-03A.webp",
+        caption: "吃飽準備前往伏見稻荷大社",
+      },
+      {
+        src: "./images/Day4-M/Day4-04.webp",
+        caption: "伏見稻荷大社~入口",
+      },
+      {
+        src: "./images/Day4-M/Day4-05.webp",
+        caption: "伏見稻荷大社",
+      },
+      {
+        src: "./images/Day4-M/Day4-06.webp",
+        caption: "千本鳥居~不知道走到多高",
+      },
+      {
+        src: "./images/Day4-M/Day4-07.webp",
+        caption: "很熱~吃冰!當然是巧克力!",
+      },
+      {
+        src: "./images/Day4-M/Day4-08.webp",
+        caption: "卡比獸鑰匙圈~買三個",
+      },
+      {
+        src: "./images/Day4-M/Day4-08A.webp",
+        caption: "google照~新京極商店街",
+      },
+      {
+        src: "./images/Day4-M/Day4-09.webp",
+      caption: "空蟬亭 熟成豚炸豬排~配菜",
+      },
+      {
+        src: "./images/Day4-M/Day4-10.webp",
+        caption: "空蟬亭 熟成豚炸豬排~套餐",
+      },
+      {
+        src: "./images/Day4-M/Day4-11.webp",
+        caption: "空蟬亭 熟成豚炸豬排，米其林推薦(京都No.1炸豬排)~很厚的豬排",
+      },
+      {
+        src: "./images/Day4-M/Day4-12.webp",
+        caption: "宵夜~金龍拉麵",
+      },
     ],
   },
   {
