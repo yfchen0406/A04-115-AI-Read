@@ -1009,4 +1009,144 @@ const promptsData = [
     date: "2026-06-12",
     url: "",
   },
+  {
+    id: 101,
+    title: "老婆貼圖-1",
+    category: "Line",
+    image: "./images/L01-Line/GPT008-1.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-上班族來抓</span>~提示詞很簡單~將女生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 102,
+    title: "老婆貼圖-2",
+    category: "Line",
+    image: "./images/L01-Line/GPT008-2.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-大字好好抓</span>~提示詞很簡單~將女生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 103,
+    title: "老婆貼圖-3",
+    category: "Line",
+    image: "./images/L01-Line/GPT008-3.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-大字好好抓</span>~提示詞很簡單~將女生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 104,
+    title: "老婆貼圖-1",
+    category: "Line",
+    image: "./images/L01-Line/GPT008-4.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-上班族來抓</span>~提示詞很簡單~將女生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 105,
+    title: "老婆貼圖-5",
+    category: "Line",
+    image: "./images/L01-Line/GPT008-5.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-上班族來抓</span>~提示詞很簡單~將女生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 106,
+    title: "KUGA坐船要去日本",
+    category: "Map",
+    image: "./images/M01-Map/M005-1.webp",
+    prompt:
+      "<span class='yf3'>利用Perplexity空間~P001-產生文章的資訊圖表提示詞產出後到Arena網站生圖~內容</span>~附件圖片人物Q版墨鏡造型開車KUGA(附件1)從基隆碼頭上船(榮耀號)，從日本九州佐世堡下車，然後開車到京都伏見大荷看千鳥居",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 107,
+    title: "個人貼圖-9-1",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-1.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-特效爪抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 108,
+    title: "個人貼圖-9-2",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-2.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-特效爪抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 109,
+    title: "個人貼圖-9-3",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-3.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓 -禮貌大字抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 110,
+    title: "個人貼圖-9-4",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-4.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓 -禮貌大字抓</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 111,
+    title: "個人貼圖-9-5",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-5.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-爪抓人生</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 112,
+    title: "個人貼圖-9-6",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-6.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-爪抓人生</span>~提示詞很簡單~將墨鏡男生照片，以Q版樣式，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 113,
+    title: "小小兵貼圖-9-7",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-7.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-禮貌大字抓</span>~提示詞很簡單~將Minions，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
+  {
+    id: 114,
+    title: "小小兵貼圖-9-8",
+    category: "Line",
+    image: "./images/L01-Line/GPT009-8.webp",
+    prompt:
+      "<span class='yf3'>仿貓爪抓-禮貌大字抓</span>~提示詞很簡單~將Minions，仿照附件貼圖格式[12]個，生成圖像",
+    date: "2026-06-13",
+    url: "",
+  },
 ];

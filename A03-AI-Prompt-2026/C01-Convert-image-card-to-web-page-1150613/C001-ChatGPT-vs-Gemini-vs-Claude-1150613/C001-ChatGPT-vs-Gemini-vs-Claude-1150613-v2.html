@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <title>AI助手完全對比｜ChatGPT vs Gemini vs Claude 功能圖解</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+
+  <!-- Bootstrap 4 (原始框架要求) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS + JS (新卡片樣式 + 模態框) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 保留框架原有自訂CSS (避免遺漏) -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- Google Font 中文優化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans TC', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      background-color: #121212;
+      /* 框架原本 bg-dark 效果 */
+    }
+
+    /* 主要內容區左右留白增加 (讓 UI 更舒適) */
+    .content-padding {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+
+    @media (max-width: 768px) {
+      .content-padding {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+
+    .yf-font1,
+    body,
+    .container-fluid {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .bg-soft-chat {
+      background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 100%);
+      border-left: 5px solid #10a37f;
+    }
+
+    .bg-soft-gemini {
+      background: linear-gradient(135deg, #fef9e6 0%, #fff3db 100%);
+      border-left: 5px solid #4285f4;
+    }
+
+    .bg-soft-claude {
+      background: linear-gradient(135deg, #f3f0ff 0%, #e9e4ff 100%);
+      border-left: 5px solid #7c3aed;
+    }
+
+    .badge-power {
+      background-color: #ff8c42;
+      color: #1e1e2f;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .feature-title {
+      font-weight: 800;
+      border-bottom: 2px dashed #ccc;
+      display: inline-block;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .simple-explanation {
+      background: #f8f9fc;
+      border-radius: 16px;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      color: #2c3e66;
+      margin-top: 8px;
+      border-left: 3px solid #86b7fe;
+    }
+
+    .original-img-card {
+      background: white;
+      border-radius: 28px;
+      transition: all 0.2s;
+    }
+
+    .img-preview-wrapper {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 20px;
+      transition: 0.2s;
+    }
+
+    .img-preview-wrapper:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-bg-custom {
+      background: linear-gradient(98deg, #eef2ff 0%, #ffffff 100%);
+      border-radius: 0 0 2rem 2rem;
+      padding: 2rem 0;
+    }
+
+    /* 模態框圖片樣式 */
+    .modal-img-preview {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 表格風格保留 */
+    .table-bordered td,
+    .table-bordered th {
+      border-color: #dee2e6;
+    }
+
+    .bg-dark .card-header {
+      background-color: #1e1e2f;
+    }
+
+    /* 為了左右留白，覆蓋原本 row 的邊距 (確保美觀) */
+    .custom-gutter {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-white" onload="updateCounter()">
+  <!-- 導覽列 (利用 jQuery 載入，完全保留框架結構) -->
+  <div class="yf-font1" id="nav1"></div>
+
+  <!-- 主要內容區：左右新增留白 padding 讓 UI 更精緻 -->
+  <div class="container-fluid yf-font1 content-padding"
+    style="margin-top:0px; background-color:white; padding-bottom: 2rem;">
+
+    <!-- 自訂 Header 標題區 -->
+    <div class="text-center p-4 header-bg-custom yf-font1" style="margin-top: 75px;">
+      <h1 class="display-5 fw-bold text-dark">🤖C001. ChatGPT vs Gemini vs Claude ~ 115.06.13</h1>
+      <p class="lead text-secondary mt-2">一張圖完整解析｜三大AI助手的「功能、強項、秘技」一次看懂！</p>
+
+      <!-- 原始圖片展示區域 + 連結，點擊圖片可放大觀看 -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8 col-md-10">
+          <div class="original-img-card p-3 shadow-sm border-0">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+              <div class="img-preview-wrapper flex-shrink-0 bg-light p-2 rounded-4" style="max-width: 180px;"
+                data-bs-toggle="modal" data-bs-target="#imageModal">
+                <!-- 點擊縮圖即可觸發放大模態框 -->
+                <img src="C001-1.webp" alt="ChatGPT Gemini Claude 完整對比圖" class="img-fluid rounded-3 shadow-sm"
+                  style="max-height: 140px; width: auto; object-fit: contain; cursor: pointer;"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=AI+Comparison+Preview';">
+              </div>
+              <div class="text-start flex-grow-1">
+                <h5 class="fw-bold mb-1"><i class="fa-regular fa-image me-2 text-primary"></i>原始對比圖片</h5>
+                <p class="mb-2 text-muted small">這張圖就是我們解析的來源，詳細列出三個AI的定位、使用時機、案例、優缺點與絕招。</p>
+                <a href="C001-1.webp" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill" download>
+                  <i class="fa-regular fa-eye"></i> 點擊查看 / 下載原圖
+                </a>
+                <span class="ms-2 text-muted small"><i class="fa-regular fa-link"></i> 連結已提供</span>
+                <div class="mt-2 small text-info"><i class="fa-regular fa-hand-pointer"></i> 點擊左側圖片可放大觀看</div>
+              </div>
+            </div>
+            <div class="alert alert-light mt-3 mb-0 py-2 small">
+              <i class="fa-regular fa-circle-info text-info"></i> 💡
+              圖片檔名「<strong>C001-1.webp</strong>」請與本網頁放在相同資料夾，即可正常顯示。點擊圖片可放大檢視細節。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 開場白話說明 -->
+    <div class="row mb-5 mt-4">
+      <div class="col-12">
+        <div class="alert alert-info border-0 shadow-sm bg-white">
+          <div class="d-flex gap-3 align-items-center flex-wrap">
+            <i class="fa-regular fa-clipboard fa-3x text-info"></i>
+            <div>
+              <h5 class="alert-heading fw-bold">📸 圖片所有功能全解析 (逐項白話說明)</h5>
+              <p class="mb-0">以下根據上方圖片內容，將 ChatGPT、Gemini 與 Claude 的「它是什麼、何時用、案例、優點、缺點、獨門絕招」用最簡單的方式完整解釋，讓你秒懂差異！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 三大AI 卡片詳細區塊 -->
+    <div class="row mb-5">
+      <!-- ChatGPT 區塊 -->
+      <div id="chatgpt" class="col-lg-4 mb-4">
+        <div class="card card-hover border-0 shadow-lg h-100 bg-soft-chat">
+          <div class="card-body">
+            <div class="text-center mb-3">
+              <i class="fa-brands fa-openai fa-4x" style="color:#10a37f;"></i>
+              <h2 class="card-title fw-bold mt-2">ChatGPT</h2>
+              <span class="badge bg-dark text-white">OpenAI · 全能型助理</span>
+            </div>
+            <hr>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-circle-question"></i> 它是什麼？</h5>
+              <p><strong>官方定位：</strong> 隨時待命的工作、創意、解難夥伴，支援文字/圖像/語音/瀏覽/推理。</p>
+              <div class="simple-explanation">💬 白話解釋：就像一個「萬能小秘書」，可以寫文案、寫程式、看懂圖片、聽語音指令，還能上網查資料。每天24小時幫你解決各種任務。</div>
+            </div>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-clock"></i> 什麼時候用它？</h5>
+              <ul class="list-unstyled">
+                <li><i class="fa-solid fa-check-circle text-success"></i> 需要寫作、程式、圖片、上網等多功能助手</li>
+                <li><i class="fa-solid fa-check-circle text-success"></i> 想使用外掛(Plugins)、記憶功能、瀏覽工具</li>
+                <li><i class="fa-solid fa-check-circle text-success"></i> 最適合創意工作流 & 自動化任務</li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-folder-open"></i> 實際案例</h5>
+              <ul>
+                <li>📝 把凌亂筆記變成乾淨的新人入門手冊</li>
+                <li>🌐 總結網站內容，提煉出超有說服力的銷售故事</li>
+                <li>⚡ 串接 Zapier + GPTs 自動產生開發信</li>
+              </ul>
+            </div>
+            <div class="row g-2 mb-4">
+              <div class="col-6">
+                <div class="bg-white p-2 rounded h-100"><i class="fa-regular fa-thumbs-up text-primary"></i>
+                  <strong>優點</strong>
+                  <ul class="small ps-3 mt-1">
+                    <li>反應快、直覺、多模態(圖/文/語音)</li>
+                    <li>自訂GPT生態系龐大</li>
+                    <li>內建網頁瀏覽＆記憶工具</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bg-white p-2 rounded h-100"><i class="fa-regular fa-thumbs-down text-danger"></i>
+                  <strong>缺點</strong>
+                  <ul class="small ps-3 mt-1">
+                    <li>免費版只能用舊模型(4o mini)</li>
+                    <li>偶爾會產生幻覺(編造內容)</li>
+                    <li>常需要人工複核</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3 p-2 bg-white rounded border-start border-4 border-warning">
+              <span class="badge-power px-2 py-1 rounded-pill"><i class="fa-solid fa-bolt"></i> 獨門絕招</span>
+              <p class="mt-2 mb-0 fw-bold">✨ 打造「企業專屬自訂GPT」</p>
+              <p class="small text-muted">例如：AI寫手(Ghostwriter) 或 AI教練，完全客製化工作流程。</p>
+              <div class="simple-explanation mt-1 p-1 bg-light">🔥 白話絕招：把重複任務變成一個「專屬小AI」，一鍵自動完成！</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gemini 區塊 -->
+      <div id="gemini" class="col-lg-4 mb-4">
+        <div class="card card-hover border-0 shadow-lg h-100 bg-soft-gemini">
+          <div class="card-body">
+            <div class="text-center mb-3"><i class="fa-brands fa-google fa-4x" style="color:#4285f4;"></i>
+              <h2 class="card-title fw-bold mt-2">Gemini</h2><span class="badge bg-dark text-white">Google原生 ·
+                全家桶王者</span>
+            </div>
+            <hr>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-circle-question"></i> 它是什麼？</h5>
+              <p><strong>官方定位：</strong> Google 回應 GPT 的產品，深度綁定 Gmail、文件、搜尋，專為多格式的豐富上下文工作流設計。</p>
+              <div class="simple-explanation">📧 白話解釋：如果你每天用 Gmail、Google文件、日曆，Gemini 就像「住」在你的Google工作區裡，直接幫你摘要郵件、起草文件。
+              </div>
+            </div>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-clock"></i> 什麼時候用它？</h5>
+              <ul class="list-unstyled">
+                <li><i class="fa-solid fa-check-circle text-success"></i> 主要生活在 Google Workspace (Gmail,文件,簡報)</li>
+                <li><i class="fa-solid fa-check-circle text-success"></i> 需要很強的多模態輸入輸出(文字+圖片+音訊+影片)</li>
+                <li><i class="fa-solid fa-check-circle text-success"></i> 團隊協作、會議前預備資料</li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-folder-open"></i> 實際案例</h5>
+              <ul>
+                <li>📎 總結超長郵件討論串與附件重點</li>
+                <li>📊 透過圖表或圖片情境來起草文件</li>
+                <li>🎥 多模態研究與設計工作流(影片+語音+文字)</li>
+              </ul>
+            </div>
+            <div class="row g-2 mb-4">
+              <div class="col-6">
+                <div class="bg-white p-2 rounded h-100"><i class="fa-regular fa-thumbs-up text-primary"></i>
+                  <strong>優點</strong>
+                  <ul class="small ps-3 mt-1">
+                    <li>與 Google App 無縫整合</li>
+                    <li>強大多模態處理能力</li>
+                    <li>團隊協作與非同步準備超優秀</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bg-white p-2 rounded h-100"><i class="fa-regular fa-thumbs-down text-danger"></i>
+                  <strong>缺點</strong>
+                  <ul class="small ps-3 mt-1">
+                    <li>進階功能需付費高級版</li>
+                    <li>一般聊天體驗仍在優化</li>
+                    <li>在Google生態圈外較弱</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3 p-2 bg-white rounded border-start border-4 border-warning"><span
+                class="badge-power px-2 py-1 rounded-pill"><i class="fa-solid fa-bolt"></i> 獨門絕招</span>
+              <p class="mt-2 mb-0 fw-bold">⚡ 打造「情境感知智能體」</p>
+              <p class="small text-muted">同一段提示詞中結合「郵件＋日曆＋文件」，自動生成摘要或提案。</p>
+              <div class="simple-explanation mt-1 p-1 bg-light">🧠 白話絕招：讓AI讀懂你的行程和信件，自動幫你統整回覆，超省時！</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Claude 區塊 -->
+      <div id="claude" class="col-lg-4 mb-4">
+        <div class="card card-hover border-0 shadow-lg h-100 bg-soft-claude">
+          <div class="card-body">
+            <div class="text-center mb-3"><i class="fa-regular fa-brain fa-4x" style="color:#7c3aed;"></i>
+              <h2 class="card-title fw-bold mt-2">Claude</h2><span class="badge bg-dark text-white">Anthropic ·
+                長文精算師</span>
+            </div>
+            <hr>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-circle-question"></i> 它是什麼？</h5>
+              <p><strong>官方定位：</strong> Anthropic 開發，專注高上下文推理與安全性。程式碼分析、法律文件、長篇寫作最佳首選。</p>
+              <div class="simple-explanation">📚 白話解釋：就像一位「超級學霸律師兼資深工程師」，一次能讀完整本厚書(20萬字以上)，分析合約、抓錯誤超級精準。</div>
+            </div>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-clock"></i> 什麼時候用它？</h5>
+              <ul class="list-unstyled">
+                <li><i class="fa-solid fa-check-circle text-success"></i> 法律、政策、研究等高精確度需求</li>
+                <li><i class="fa-solid fa-check-circle text-success"></i> 需要超長上下文（200k+ tokens），一次丟入上百頁文件</li>
+                <li><i class="fa-solid fa-check-circle text-success"></i> 追求精準與可辯護性</li>
+              </ul>
+            </div>
+            <div class="mb-4">
+              <h5 class="feature-title"><i class="fa-regular fa-folder-open"></i> 實際案例</h5>
+              <ul>
+                <li>📑 分析90頁合約，清楚標示風險條款</li>
+                <li>📄 將艱澀研究轉換成吸引人的社群貼文</li>
+                <li>💻 丟入大型程式碼庫，獲得乾淨可讀的修正建議</li>
+              </ul>
+            </div>
+            <div class="row g-2 mb-4">
+              <div class="col-6">
+                <div class="bg-white p-2 rounded h-100"><i class="fa-regular fa-thumbs-up text-primary"></i>
+                  <strong>優點</strong>
+                  <ul class="small ps-3 mt-1">
+                    <li>處理超長文件無敵強</li>
+                    <li>技術主題精準度最高</li>
+                    <li>寫作風格自然、對話感流暢</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="bg-white p-2 rounded h-100"><i class="fa-regular fa-thumbs-down text-danger"></i>
+                  <strong>缺點</strong>
+                  <ul class="small ps-3 mt-1">
+                    <li>無法原生生成圖片或音檔</li>
+                    <li>語氣有時過於謹慎保守</li>
+                    <li>點子發想速度比 ChatGPT 慢一些</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3 p-2 bg-white rounded border-start border-4 border-warning"><span
+                class="badge-power px-2 py-1 rounded-pill"><i class="fa-solid fa-bolt"></i> 獨門絕招</span>
+              <p class="mt-2 mb-0 fw-bold">🔍 完整感知程式碼審查＆重構</p>
+              <p class="small text-muted">將整個專案程式碼交給Claude，它會掌握完整上下文，提供高品質修改建議。</p>
+              <div class="simple-explanation mt-1 p-1 bg-light">🛠️ 白話絕招：工程師神器！幾千行程式碼的bug，Claude能全局重構，如同技術合夥人。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 完整功能總表 -->
+    <div id="summary" class="row mt-4">
+      <div class="col-12">
+        <div class="card shadow border-0">
+          <div class="card-header bg-dark text-white">
+            <h4 class="mb-0"><i class="fa-regular fa-rectangle-list me-2"></i> 圖文總表｜每個功能點白話對照</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>功能項目</th>
+                    <th>ChatGPT (簡單說)</th>
+                    <th>Gemini (簡單說)</th>
+                    <th>Claude (簡單說)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-bold">🎯 核心定位</td>
+                    <td>全能型助理(寫/程/圖/語音/上網)</td>
+                    <td>Google全家桶AI (Gmail/文件/搜尋)</td>
+                    <td>長文/法律/程式碼精準專家</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">📌 何時用它</td>
+                    <td>需要多功能、外掛、自動化、創意工作</td>
+                    <td>使用Google生態系、團隊協作、多媒體處理</td>
+                    <td>需要超高精確度、處理百頁合約/論文、重構程式</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">💼 經典案例</td>
+                    <td>筆記→入門手冊、網站文案提煉、Zapier自動發信</td>
+                    <td>總結郵件串、圖表起草文件、影音研究工作流</td>
+                    <td>90頁合約風險標註、研究轉社群文、大型codebase除錯</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">✅ 優點</td>
+                    <td>快速直覺、多模態、自訂GPT生態、內建瀏覽記憶</td>
+                    <td>Google無縫整合、多模態強、協作預備優秀</td>
+                    <td>超長上下文200k+token、技術準確、對話自然</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">⚠️ 缺點</td>
+                    <td>免費版舊模型、可能幻覺、需人工複核</td>
+                    <td>高階功能付費、聊天體驗打磨中、生態圈外較弱</td>
+                    <td>無圖像/音檔生成、語氣保守、發想速度較慢</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-bold">💥 獨門絕招</td>
+                    <td>建立企業「自訂GPT」(Ghostwriter/AI教練)</td>
+                    <td>結合郵件+日曆的情境感知智能體</td>
+                    <td>完整感知複雜程式碼重構與全脈絡審查</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="alert alert-secondary mt-3"><i class="fa-solid fa-lightbulb"></i> <strong>白話小辭典：</strong><br>▪
+              <strong>多模態(Multimodal)</strong>：AI能同時理解圖片、語音、文字，像人一樣用多種感官。<br>▪ <strong>上下文200k tokens</strong>：Claude
+              一次可讀完《三體》三部曲等級的內容，記得所有細節。<br>▪ <strong>自訂GPTs</strong>：ChatGPT 讓你打造「特化版AI」，例如食譜機器人、簡報助手。<br>▪
+              <strong>幻覺(Hallucinate)</strong>：AI會編造看起來合理卻錯誤的資訊，使用時最好覆核。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 實用選購指南 -->
+    <div class="row mt-5 mb-4">
+      <div class="col-md-8 mx-auto">
+        <div class="card bg-warning bg-opacity-10 border-warning">
+          <div class="card-body text-center">
+            <i class="fa-regular fa-compass fa-2x text-warning mb-2"></i>
+            <h5 class="card-title">🧭 所以到底該選哪個AI？</h5>
+            <p class="card-text">✅ <strong>ChatGPT</strong> ➜ 追求多功能＋外掛生態＋創意發想，就是它。<br>✅ <strong>Gemini</strong> ➜ 工作離不開
+              Google 信箱、文件、日曆，它會讓你效率暴增。<br>✅ <strong>Claude</strong> ➜ 法律合約、長篇技術文件、程式碼安全審查，選它最安心。</p>
+            <hr><small class="text-muted">✨ 本頁面完整解析圖中所有功能：定位、使用時機、案例、優缺點、絕招，一目瞭然！點擊圖片可放大觀看細節。</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 圖片放大模態框 (Modal) -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-dark bg-opacity-90 border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-white" id="imageModalLabel">完整對比圖｜ChatGPT vs Gemini vs Claude</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <img src="C001-1.webp" alt="放大版 AI 對比圖" class="modal-img-preview img-fluid"
+            style="max-height: 85vh; width: auto; margin: 0 auto;">
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <a href="C001-1.webp" class="btn btn-light" download><i class="fa-regular fa-download"></i> 下載圖片</a>
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 Footer (保留框架載入方式) -->
+  <div id="footer"></div>
+
+  <!-- 框架原有的 jQuery 載入 nav 與 footer 腳本 (完全保留) -->
+  <script>
+    $(function () {
+      // 保留框架原始路徑 (若實際檔案不存在不影響主要體驗)
+      $("#nav1").load("../../B01-ex-comm/BX02-nav-2025.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+    function updateCounter() { }
+  </script>
+
+  <!-- 平滑滾動輔助 (若動態導覽載入完成後可支援) -->
+  <script>
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('.nav-link');
+      if (link && link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElem = document.querySelector(targetId);
+        if (targetElem) {
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
