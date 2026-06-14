@@ -781,19 +781,198 @@ const tripData = [
   {
     day: 6,
     title: "結束六天行程，搭機回台",
-    subtitle: "",
-    summary: "",
-    cardImg: "https://picsum.photos/id/79/800/500",
+    subtitle: "六天行程回顧",
+    summary: "各種風格旅程紀錄",
+    cardImg: "./images/Day6-S/JAPDAY6-01-Q 版手繪插畫風.webp",
     galleryImgs: [
-      { src: "https://picsum.photos/id/70/400/300", caption: "風見雞館" },
-      { src: "https://picsum.photos/id/71/400/300", caption: "神戶港夜景" },
-      { src: "https://picsum.photos/id/72/400/300", caption: "神戶牛排" },
+      {
+        src: "./images/Day6-S/JAPDAY6-01-Q 版手繪插畫風.webp",
+        caption: "預估第六天行程~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-02-雜誌旅行風.webp",
+        caption: "預估第六天行程~雜誌旅行風",
+      },
+
+      {
+        src: "./images/Day6-S/JAPDAY6-04-韓系 ins 地圖風.webp",
+        caption: "預估第六天行程~韓系 ins 地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-05-浮世繪旅圖風.webp",
+        caption: "預估第六天行程~浮世繪旅圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-06-簡約現代 Flat 地圖風.webp",
+        caption: "預估第六天行程~簡約現代 Flat 地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-07-歐美復古航海地圖風.webp",
+        caption: "預估第六天行程~歐美復古航海地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-08-京都古都地圖風.webp",
+        caption: "預估第六天行程~京都古都地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-09-日系手帳地圖風.webp",
+        caption: "預估第六天行程~日系手帳地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-03-六天總結地圖路線版.webp",
+        caption: "六天回顧~總結地圖路線版",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL01-韓系 ins 六天回顧風.webp",
+        caption: "六天回顧~韓系 ins 回顧風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL02-京都古都六天回顧風.webp",
+        caption: "六天回顧~京都古都六天回顧風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL03-日系手帳六天回顧風.webp",
+        caption: "六天回顧~日系手帳六天回顧風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL04-歐美復古航海風.webp",
+        caption: "六天回顧~歐美復古航海風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL05-簡約現代 Flat 風.webp",
+        caption: "六天回顧~簡約現代 Flat 風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL06-浮世繪風.webp",
+        caption: "六天回顧~浮世繪風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL07-Q 版手繪風.webp",
+        caption: "六天回顧~Q 版手繪風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL08-動漫風.webp",
+        caption: "六天回顧~動漫風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL08X-動漫風.webp",
+        caption: "六天回顧~動漫風~女主角不錯~保留",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL09-3D 卡通風.webp",
+        caption: "六天回顧~3D 卡通風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL10-吉卜力水彩風.webp",
+        caption: "六天回顧~吉卜力水彩風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL11-吉卜力手繪風.webp",
+        caption: "六天回顧~吉卜力手繪風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL12-吉卜力動畫風.webp",
+        caption: "六天回顧~吉卜力動畫風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL12X-吉卜力動畫風.webp",
+        caption: "六天回顧~吉卜力動畫風~女主角不錯~保留",
+      },
     ],
     memoryWallImgs: [
-      { src: "https://picsum.photos/id/70/400/300", caption: "異人館" },
-      { src: "https://picsum.photos/id/71/400/300", caption: "港灣夜景" },
-      { src: "https://picsum.photos/id/72/400/300", caption: "神戶牛排" },
-      { src: "https://picsum.photos/id/73/400/300", caption: "北野街道" },
+      {
+        src: "./images/Day6-S/JAPDAY6-01-Q 版手繪插畫風.webp",
+        caption: "預估第六天行程~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-02-雜誌旅行風.webp",
+        caption: "預估第六天行程~雜誌旅行風",
+      },
+
+      {
+        src: "./images/Day6-S/JAPDAY6-04-韓系 ins 地圖風.webp",
+        caption: "預估第六天行程~韓系 ins 地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-05-浮世繪旅圖風.webp",
+        caption: "預估第六天行程~浮世繪旅圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-06-簡約現代 Flat 地圖風.webp",
+        caption: "預估第六天行程~簡約現代 Flat 地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-07-歐美復古航海地圖風.webp",
+        caption: "預估第六天行程~歐美復古航海地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-08-京都古都地圖風.webp",
+        caption: "預估第六天行程~京都古都地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-09-日系手帳地圖風.webp",
+        caption: "預估第六天行程~日系手帳地圖風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-03-六天總結地圖路線版.webp",
+        caption: "六天回顧~總結地圖路線版",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL01-韓系 ins 六天回顧風.webp",
+        caption: "六天回顧~韓系 ins 回顧風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL02-京都古都六天回顧風.webp",
+        caption: "六天回顧~京都古都六天回顧風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL03-日系手帳六天回顧風.webp",
+        caption: "六天回顧~日系手帳六天回顧風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL04-歐美復古航海風.webp",
+        caption: "六天回顧~歐美復古航海風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL05-簡約現代 Flat 風.webp",
+        caption: "六天回顧~簡約現代 Flat 風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL06-浮世繪風.webp",
+        caption: "六天回顧~浮世繪風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL07-Q 版手繪風.webp",
+        caption: "六天回顧~Q 版手繪風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL08-動漫風.webp",
+        caption: "六天回顧~動漫風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL08X-動漫風.webp",
+        caption: "六天回顧~動漫風~女主角不錯~保留",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL09-3D 卡通風.webp",
+        caption: "六天回顧~3D 卡通風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL10-吉卜力水彩風.webp",
+        caption: "六天回顧~吉卜力水彩風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL11-吉卜力手繪風.webp",
+        caption: "六天回顧~吉卜力手繪風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL12-吉卜力動畫風.webp",
+        caption: "六天回顧~吉卜力動畫風",
+      },
+      {
+        src: "./images/Day6-S/JAPDAY6-ALL12X-吉卜力動畫風.webp",
+        caption: "六天回顧~吉卜力動畫風~女主角不錯~保留",
+      },
     ],
   },
 ];
