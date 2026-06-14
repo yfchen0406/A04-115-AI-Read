@@ -32,6 +32,30 @@ const tripData = [
     ],
     // 回憶寫真館專用照片牆（可與 galleryImgs 不同）
     memoryWallImgs: [
+      { src: "./images/Day1-S/JAPDAY0-01.webp", caption: "出發前爸爸胡亂規劃" },
+      { src: "./images/Day1-S/JAPDAY0-02.webp", caption: "出發前爸爸胡亂規劃" },
+      { src: "./images/Day1-S/JAPDAY1-01.webp", caption: "Q版紀錄" },
+      {
+        src: "./images/Day1-S/JAPDAY1-02.webp",
+        caption: "簡潔清單式，無具體時間點",
+      },
+      {
+        src: "./images/Day1-S/JAPDAY1-03.webp",
+        caption: "散亂筆記/草稿風格，含個人化標注",
+      },
+      {
+        src: "./images/Day1-S/JAPDAY1-04X.webp",
+        caption: "結構化編號清單~藥盒錯了",
+      },
+      {
+        src: "./images/Day1-S/JAPDAY1-04.webp",
+        caption: "結構化編號清單-藥盒太大",
+      },
+      { src: "./images/Day1-S/JAPDAY1-05.webp", caption: "時間軸/地圖式" },
+      {
+        src: "./images/LINE/GPT0010-1.webp",
+        caption: "第一天~出發到大阪旅遊貼圖",
+      },
       { src: "./images/Day1-M/day1-01.webp", caption: "家中五點出發" },
       { src: "./images/Day1-M/day1-02.webp", caption: "家中五點出發" },
       { src: "./images/Day1-M/day1-02A.webp", caption: "星與飛航軌跡" },
@@ -106,6 +130,47 @@ const tripData = [
       },
     ],
     memoryWallImgs: [
+      {
+        src: "./images/Day2-S/JAPDAY2-1-全紀錄.webp",
+        caption: "寫實全紀錄",
+      },
+      {
+        src: "./images/Day2-S/JAPDAY2-2-Q.webp",
+        caption: "Q版可愛風",
+      },
+      {
+        src: "./images/Day2-S/JAPDAY2-3-雜誌風.webp",
+        caption: "雜誌旅行風",
+      },
+      {
+        src: "./images/Day2-S/JAPDAY2-4-地圖風.webp",
+        caption: "地圖路線風",
+      },
+      {
+        src: "./images/Day2-S/JAPDAY2-5-日記手帳風.webp",
+        caption: "日記手帳風",
+      },
+
+      {
+        src: "./images/Day2-S/JAPDAY2-6-社群 Instagram風.webp",
+        caption: "社群 Instagram風",
+      },
+      {
+        src: "./images/Day2-S/JAPDAY2-7-視覺時間軸風.webp",
+        caption: "視覺時間軸風",
+      },
+      {
+        src: "./images/Day2-S/JAPDAY2-8-照片拼圖.webp",
+        caption: "照片拼圖風",
+      },
+      {
+        src: "./images/Day2-S/JAPDAY2-9-影片腳本.webp",
+        caption: "影片腳本風",
+      },
+      {
+        src: "./images/LINE/GPT0010-2.webp",
+        caption: "第二天~大阪地區旅遊貼圖",
+      },
       { src: "./images/Day2-M/Day2-01.webp", caption: "小七早餐" },
       { src: "./images/Day2-M/Day2-02.webp", caption: "小七早餐~內餡用" },
       { src: "./images/Day2-M/Day2-03.webp", caption: "小七早餐~合起來吃" },
@@ -175,6 +240,55 @@ const tripData = [
       },
     ],
     memoryWallImgs: [
+      { src: "./images/Day3-S/JAPDAY3-01.webp", caption: "事先預告~Q版" },
+      {
+        src: "./images/Day3-S/JAPDAY3-02.webp",
+        caption: "事先預告~雜誌旅行版",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-03.webp",
+        caption: "事先預告~地圖路線版",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-04.webp",
+        caption: "事先預告~地圖路線版~換件衣服",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-05.webp",
+        caption: "Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-06.webp",
+        caption: "雜誌旅行版",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-07.webp",
+        caption: "地圖路線版",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-08.webp",
+        caption: "神戶美食雙星",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-09.webp",
+        caption: "神戶異國探險",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-10.webp",
+        caption: "VIP 等級享受風",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-11.webp",
+        caption: "時間情緒曲線風",
+      },
+      {
+        src: "./images/Day3-S/JAPDAY3-12.webp",
+        caption: "神戶局長推薦",
+      },
+      {
+        src: "./images/LINE/GPT0010-3.webp",
+        caption: "第三天~神戶地區旅遊貼圖",
+      },
       {
         src: "./images/Day3-M/Day3-01.webp",
         caption: "神戶牛 WASSIA 現場照",
@@ -348,6 +462,74 @@ const tripData = [
     ],
     memoryWallImgs: [
       {
+        src: "./images/Day4-S/JAPDAY4-01-Q 版手繪插畫風.webp",
+        caption: "爸爸胡亂規劃~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-02-雜誌旅行版.webp",
+        caption: "爸爸胡亂規劃~雜誌旅行版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-03-地圖路線版.webp",
+        caption: "地圖路線版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-04-世界遺產地圖風.webp",
+        caption: "爸爸胡亂規劃~世界遺產地圖風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-05-攝影打卡指南風.webp",
+        caption: "爸爸胡亂規劃~攝影打卡指南風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-07-藝伎文化探訪風.webp",
+        caption: "爸爸胡亂規劃~藝伎文化探訪風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-08-季節賞櫻賞楓風.webp",
+        caption: "爸爸胡亂規劃~季節賞櫻賞楓",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-09-時間效率攻略風.webp",
+        caption: "爸爸胡亂規劃~時間效率攻略風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B1-Q 版手繪插畫風.webp",
+        caption: "正式行程~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B2-雜誌旅行版.webp",
+        caption: "正式行程~雜誌旅行版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B3-地圖路線版.webp",
+        caption: "正式行程~地圖路線版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B4-美食三星評鑑風.webp",
+        caption: "正式行程~美食三星評鑑風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B5-電影分鏡故事風.webp",
+        caption: "正式行程~電影分鏡故事風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B6-行程手帳日記風.webp",
+        caption: "正式行程~行程手帳日記風",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B7-時間順序清單版.webp",
+        caption: "正式行程~時間順序清單版",
+      },
+      {
+        src: "./images/Day4-S/JAPDAY4-B8-推薦打卡清單風.webp",
+        caption: "正式行程~推薦打卡清單風",
+      },
+      {
+        src: "./images/LINE/GPT0010-4.webp",
+        caption: "第二天~伏見稻荷地區旅遊貼圖",
+      },
+      {
         src: "./images/Day4-M/Day4-00.webp",
         caption: "AI~第四天先換件衣服",
       },
@@ -393,7 +575,7 @@ const tripData = [
       },
       {
         src: "./images/Day4-M/Day4-09.webp",
-      caption: "空蟬亭 熟成豚炸豬排~配菜",
+        caption: "空蟬亭 熟成豚炸豬排~配菜",
       },
       {
         src: "./images/Day4-M/Day4-10.webp",
@@ -411,22 +593,102 @@ const tripData = [
   },
   {
     day: 5,
-    title: "奈良・小鹿與大佛",
-    subtitle: "春日靈域",
-    summary: "東大寺大佛殿，奈良公園鹿群互動，享用柿葉壽司。",
-    cardImg: "https://picsum.photos/id/94/800/500",
+    title:
+      "宇治平等院鳳凰堂、宇治洋食屋咖哩、日本京都宇治的知名百年抹茶老店「中村藤吉本店」",
+    subtitle: "走進千年鳳凰堂，感受平安時代的極樂淨土",
+    summary: "午後享用以日式咖哩為招牌的洋食屋，為宇治之旅添一抹溫暖滋味",
+    cardImg: "./images/Day5-S/JAPDAY5-01.webp",
     galleryImgs: [
-      { src: "https://picsum.photos/id/60/400/300", caption: "奈良公園鹿群" },
-      { src: "https://picsum.photos/id/61/400/300", caption: "東大寺大佛" },
-      { src: "https://picsum.photos/id/62/400/300", caption: "柿葉壽司" },
+      {
+        src: "./images/Day5-S/JAPDAY5-01.webp",
+        caption: "爸爸胡亂規劃~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-02.webp",
+        caption: "爸爸胡亂規劃~雜誌旅行版",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-03.webp",
+        caption: "爸爸胡亂規劃~地圖路線版",
+      },
     ],
     memoryWallImgs: [
-      { src: "https://picsum.photos/id/60/400/300", caption: "小鹿討食" },
-      { src: "https://picsum.photos/id/61/400/300", caption: "大佛殿" },
-      { src: "https://picsum.photos/id/62/400/300", caption: "柿葉壽司" },
-      { src: "https://picsum.photos/id/63/400/300", caption: "春日大社" },
+      {
+        src: "./images/Day5-S/JAPDAY5-01.webp",
+        caption: "爸爸胡亂規劃~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-02.webp",
+        caption: "爸爸胡亂規劃~雜誌旅行版",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-03.webp",
+        caption: "爸爸胡亂規劃~地圖路線版",
+      },
+      {
+        src: "./images/LINE/GPT0010-4.webp",
+        caption: "第二天~宇治地區旅遊貼圖",
+      },
+
+      {
+        src: "./images/Day5-M/Day5-00.webp",
+        caption: "換一件衣服",
+      },
+      {
+        src: "./images/Day5-M/Day5-01.webp",
+        caption: "平等院表參道石碑",
+      },
+      {
+        src: "./images/Day5-M/Day5-02.webp",
+        caption: "平等院入口鳥居",
+      },
+      {
+        src: "./images/Day5-M/Day5-03.webp",
+        caption: "京都宇治的復古咖哩專門店~宇治洋食屋咖哩",
+      },
+      {
+        src: "./images/Day5-M/Day5-03A.webp",
+        caption: "網路照~宇治洋食屋咖哩門口",
+      },
+      {
+        src: "./images/Day5-M/Day5-03B.webp",
+        caption: "網路照~宇治洋食屋咖哩菜單",
+      },
+      {
+        src: "./images/Day5-M/Day5-03C.webp",
+        caption: "網路照~宇治洋食屋咖哩~人氣第一名",
+      },
+      {
+        src: "./images/Day5-M/Day5-04A.webp",
+        caption: "網路照~平等院街道~就是鳥居入口",
+      },
+      {
+        src: "./images/Day5-M/Day5-04B.webp",
+        caption: "網路照~平等院表參道石碑位置",
+      },
+      {
+        src: "./images/Day5-M/Day5-05.webp",
+        caption: "百年抹茶老店「中村藤吉本店」",
+      },
+      {
+        src: "./images/Day5-M/Day5-05A.webp",
+        caption: "百年抹茶老店「中村藤吉本店",
+      },
+      {
+        src: "./images/Day5-M/Day5-04C.webp",
+        caption: "google地圖~平等院->宇治洋食屋咖哩->「中村藤吉本店」",
+      },
+      {
+        src: "./images/Day5-M/Day5-06.webp",
+        caption: "平等院鳳凰堂",
+      },
+      {
+        src: "./images/Day5-M/Day5-06A.webp",
+        caption: "日幣十元銅板上的圖案~就是平等院鳳凰堂",
+      },
     ],
   },
+
   {
     day: 6,
     title: "結束六天行程，搭機回台",
