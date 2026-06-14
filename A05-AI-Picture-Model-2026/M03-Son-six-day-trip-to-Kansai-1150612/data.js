@@ -597,7 +597,7 @@ const tripData = [
       "宇治平等院鳳凰堂、宇治洋食屋咖哩、日本京都宇治的知名百年抹茶老店「中村藤吉本店」",
     subtitle: "走進千年鳳凰堂，感受平安時代的極樂淨土",
     summary: "午後享用以日式咖哩為招牌的洋食屋，為宇治之旅添一抹溫暖滋味",
-    cardImg: "./images/Day5-S/JAPDAY5-01.webp",
+    cardImg: "./images/Day5-S/JAPDAY5-A01-Q 版手繪插畫風.webp",
     galleryImgs: [
       {
         src: "./images/Day5-S/JAPDAY5-01.webp",
@@ -611,8 +611,97 @@ const tripData = [
         src: "./images/Day5-S/JAPDAY5-03.webp",
         caption: "爸爸胡亂規劃~地圖路線版",
       },
+      {
+        src: "./images/Day5-S/JAPDAY5-A01-Q 版手繪插畫風.webp",
+        caption: "正確版本~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A02-雜誌旅行風.webp",
+        caption: "正確版本~雜誌旅行風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A03-美食路線風.webp",
+        caption: "正確版本~美食路線風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A04-美食三星評鑑風.webp",
+        caption: "正確版本~美食三星評鑑風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A05-電影分鏡故事風.webp",
+        caption: "正確版本~電影分鏡故事風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A06-行程手帳日記風.webp",
+        caption: "正確版本~行程手帳日記風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A07-時間順序清單風.webp",
+        caption: "正確版本~時間順序清單風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A08-推薦打卡清單風.webp",
+        caption: "正確版本~推薦打卡清單風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A09-韓系ins風地圖.webp",
+        caption: "正確版本~韓系ins風地",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A10-京都古都水墨風地圖.webp",
+        caption: "正確版本~京都古都水墨風地圖",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A11-日系暖色手繪風地圖.webp",
+        caption: "正確版本~日系暖色手繪風地圖",
+      },
     ],
     memoryWallImgs: [
+      {
+        src: "./images/Day5-S/JAPDAY5-A01-Q 版手繪插畫風.webp",
+        caption: "正確版本~Q 版手繪插畫風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A02-雜誌旅行風.webp",
+        caption: "正確版本~雜誌旅行風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A03-美食路線風.webp",
+        caption: "正確版本~美食路線風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A04-美食三星評鑑風.webp",
+        caption: "正確版本~美食三星評鑑風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A05-電影分鏡故事風.webp",
+        caption: "正確版本~電影分鏡故事風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A06-行程手帳日記風.webp",
+        caption: "正確版本~行程手帳日記風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A07-時間順序清單風.webp",
+        caption: "正確版本~時間順序清單風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A08-推薦打卡清單風.webp",
+        caption: "正確版本~推薦打卡清單風",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A09-韓系ins風地圖.webp",
+        caption: "正確版本~韓系ins風地",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A10-京都古都水墨風地圖.webp",
+        caption: "正確版本~京都古都水墨風地圖",
+      },
+      {
+        src: "./images/Day5-S/JAPDAY5-A11-日系暖色手繪風地圖.webp",
+        caption: "正確版本~日系暖色手繪風地圖",
+      },
+
       {
         src: "./images/Day5-S/JAPDAY5-01.webp",
         caption: "爸爸胡亂規劃~Q 版手繪插畫風",

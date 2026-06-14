@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <title>2.Claude 超能力大全｜10倍聰明提示指令集｜完整圖文解析</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  
+  <!-- Bootstrap 4 (原始框架核心) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 輔助元件（模態框、進階樣式） -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 保留原有框架CSS（路徑可能不存在，但不影響版面） -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- Google Font 中文 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans TC', 'Segoe UI', system-ui, sans-serif;
+    }
+    body {
+      background-color: #121212;
+    }
+    /* 左右留白優化 */
+    .content-padding {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+    @media (max-width: 768px) {
+      .content-padding {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+    .yf-font1, body, .container-fluid {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    /* 卡片與按鈕樣式 */
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1rem 2rem rgba(0,0,0,0.12) !important;
+    }
+    .bg-claude-purple {
+      background: linear-gradient(135deg, #f5f0ff 0%, #ede7f6 100%);
+      border-left: 5px solid #7c3aed;
+    }
+    .badge-command {
+      background-color: #2d2a5e;
+      color: #f0e6ff;
+      font-family: monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+    .simple-explain {
+      background: #f8f9fc;
+      border-radius: 18px;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      color: #1f2a44;
+      border-left: 4px solid #7c3aed;
+      margin-top: 8px;
+    }
+    .original-img-card {
+      background: white;
+      border-radius: 28px;
+      transition: 0.2s;
+    }
+    .img-preview {
+      cursor: pointer;
+      transition: 0.2s;
+      border-radius: 20px;
+    }
+    .img-preview:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    .header-bg-grad {
+      background: linear-gradient(98deg, #f1eaff 0%, #ffffff 100%);
+      border-radius: 0 0 2rem 2rem;
+    }
+    .modal-img-large {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+    .prompt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+    .need-badge {
+      background: #e9ecef;
+      border-radius: 40px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: #adb5bd;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark" onload="updateCounter()">
+  <!-- 導覽列 (完全保留框架 jQuery 載入機制) -->
+  <div id="nav1"></div>
+
+  <!-- 主要內容區，左右留白增加舒適度 -->
+  <div class="container-fluid  content-padding" style="margin-top:55px; background-color:white; padding-bottom: 2.5rem;">
+    
+    <!-- 標題區塊 (符合框架 header 風格) -->
+    <div class="text-center p-4 header-bg-grad" style="margin-top: 10px;">
+      <h1 class="display-5 fw-bold text-dark yf-font1">⚡C002. Make Claude 10x Smarter ~ 115.06.14</h1>
+      <p class="lead text-secondary mt-2">一組斜槓指令｜讓你的Claude瞬間解鎖工程師思維、即時網路、頂尖UI設計 | 白話完全解析</p>
+      
+      <!-- 原始圖片展示區域 (點擊可放大) -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8 col-md-10">
+          <div class="original-img-card p-3 shadow-sm border-0">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+              <div class="img-preview flex-shrink-0 bg-light p-2 rounded-4" style="max-width: 200px;" data-bs-toggle="modal" data-bs-target="#imageModal">
+                <img src="./C002-1.webp" alt="Make Claude 10x smarter 指令圖" class="img-fluid rounded-3 shadow-sm" style="max-height: 140px; width: auto; object-fit: contain; cursor: pointer;" /
+                onerror="this.onerror=null; this.src='./C002-1.webp';">
+              </div>
+              <div class="text-start flex-grow-1">
+                <h5 class="fw-bold mb-1"><i class="fa-regular fa-image me-2 text-primary"></i> 原始對比圖｜指令大全</h5>
+                <p class="mb-2 text-muted small">圖中清楚列出「當你需要...」的場景，以及對應的超強Claude斜槓指令。點擊左側圖片可放大瀏覽細節。</p>
+                <a href="./C002-1.webp" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill" download>
+                  <i class="fa-regular fa-eye"></i> 查看／下載原圖
+                </a>
+                <span class="ms-2 text-muted small"><i class="fa-regular fa-hand-pointer"></i> 點擊圖片放大</span>
+              </div>
+            </div>
+            <div class="alert alert-light mt-3 mb-0 py-2 small">
+              <i class="fa-regular fa-circle-info text-info"></i> 💡 圖片檔名「<strong>C002-1.webp</strong>」請與網頁同資料夾。下方表格將逐一「白話解釋」每個指令的功能及用法，讓你真正用斜槓讓Claude變身超級助手。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 開場說明：簡單介紹這張圖的核心價值 -->
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="alert alert-secondary border-0 shadow-sm bg-white">
+          <div class="d-flex gap-3 align-items-center">
+            <i class="fa-regular fa-gem fa-3x text-primary"></i>
+            <div>
+              <h5 class="fw-bold">🧠 圖片功能總覽｜Claude 十倍聰明術</h5>
+              <p class="mb-0">這張圖告訴你：只要在對話中輸入「斜槓指令」，Claude 就能瞬間切換成「頂尖工程師、UX設計師、網路爬蟲、企劃大師」等專業模式。以下我們將每個情境與指令拆解成「白話說明 + 實際應用」，讓你秒上手！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 核心：逐項解釋功能 (需求場景 + 對應指令) -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <h2 class="fw-bold border-bottom pb-2"><i class="fa-regular fa-list-tree"></i> 完整功能＆指令白話教室</h2>
+        <p class="text-muted">以下每一個「斜槓指令」都是讓Claude更專業的鑰匙，搭配使用效果驚人。</p>
+      </div>
+    </div>
+
+    <div class="prompt-grid">
+      <!-- 1. refine an idea / brainstorming -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/brainstorming</span>
+            <span class="need-badge">🎯 當你需要： refine an idea</span>
+          </div>
+          <h5 class="card-title fw-bold">💡 打磨點子・瘋狂腦暴</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 你有一個模糊的想法或粗略概念，輸入 <code>/brainstorming</code> 後，Claude 會像專業創新顧問一樣，幫你延伸、發散、提煉出不同角度與可能性，甚至找出盲點。</p>
+          <div class="simple-explain">✨ 實際用法：貼上你的點子草稿，加上「/brainstorming」，Claude 會產出 10 種延伸方向、潛在風險和執行路徑。</div>
+        </div>
+      </div>
+
+      <!-- 2. create new skills / skill-creator -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/skill-creator</span>
+            <span class="need-badge">📚 當你需要： create new skills</span>
+          </div>
+          <h5 class="card-title fw-bold">🛠️ 創造新技能｜自訂學習路徑</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 不只問問題，還能讓Claude幫你「設計一套新能力的養成計畫」。無論是想學會某項軟體、溝通技巧，或是提升某種專業，它會拆解學習步驟並提供練習框架。</p>
+          <div class="simple-explain">🎯 舉例：輸入「/skill-creator 我想培養數據分析思維」，Claude 會產出從入門到實戰的完整學習地圖與資源建議。</div>
+        </div>
+      </div>
+
+      <!-- 3. write plans / writing-plans -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/writing-plans</span>
+            <span class="need-badge">📋 當你需要： write plans</span>
+          </div>
+          <h5 class="card-title fw-bold">📌 寫出縝密計畫書</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 專案計畫、行銷排程、個人年度目標…… 只要用這個指令，Claude 會用結構化的方式為你產出「目標、資源、時間軸、風險評估」的完整計畫。</p>
+          <div class="simple-explain">📝 實際應用：輸入「/writing-plans 三個月內推出個人網站」，Claude 會自動產出甘特圖風格文字計畫＋每週里程碑。</div>
+        </div>
+      </div>
+
+      <!-- 4. execute tasks / executing-plans -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/executing-plans</span>
+            <span class="need-badge">⚙️ 當你需要： execute tasks</span>
+          </div>
+          <h5 class="card-title fw-bold">🚀 執行力模式｜把計畫變行動</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 有了計畫但不知如何下手？這個指令讓Claude化身專案執行教練，將大目標切分成具體、可立刻做的子任務，並提供清單、工具建議與追蹤方法。</p>
+          <div class="simple-explain">🔧 舉例：上傳你的計畫摘要 +「/executing-plans」，Claude 會產出第一週每日行動清單，甚至提醒常見卡關點。</div>
+        </div>
+      </div>
+
+      <!-- 5. design UI components / ui-ux-pro-max -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/ui-ux-pro-max</span>
+            <span class="need-badge">🎨 當你需要： design UI components</span>
+          </div>
+          <h5 class="card-title fw-bold">🎨 頂級 UI/UX 元件設計</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 專門產生現代化、高品質的前端元件（按鈕、表單、卡片、導航列等），附帶 CSS / Tailwind 程式碼及無障礙設計建議。告別普通「AI 雜亂風格」。</p>
+          <div class="simple-explain">💎 使用技巧：輸入「/ui-ux-pro-max 登入表單 + 深色模式」，Claude 會回傳可直接複製的 HTML/CSS 元件，且符合專業設計規範。</div>
+        </div>
+      </div>
+
+      <!-- 6. avoid AI slop design / frontend-design -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/frontend-design</span>
+            <span class="need-badge">🚫 當你需要： avoid AI slop design</span>
+          </div>
+          <h5 class="card-title fw-bold">✨ 擺脫廉價AI風格｜高質感前端</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 許多 AI 生成的版面都長得很「模板感」、缺乏細節。這個指令會讓 Claude 產生精緻、有層次、具有現代感的前端程式碼，乾淨且高度客製化。</p>
+          <div class="simple-explain">🌟 實際用法：下達「/frontend-design 製作一個復古未來風的定價卡片」，輸出的設計將脫離典型AI濫觴，更有設計師品味。</div>
+        </div>
+      </div>
+
+      <!-- 7. access live internet / brave search -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/brave search</span>
+            <span class="need-badge">🌐 當你需要： access live internet</span>
+          </div>
+          <h5 class="card-title fw-bold">🔍 Brave 即時搜尋引擎</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 讓 Claude 能夠即時上網抓取最新資料，而不是只依賴過時的訓練數據。透過 Brave Search API，取得新聞、產品價格、即時資訊，並附上來源。</p>
+          <div class="simple-explain">⚡ 例子：輸入「/brave search 2026 年最佳AI工具排名」，Claude 會提供當前網路上的真實清單與評測連結。</div>
+        </div>
+      </div>
+
+      <!-- 8. live social media data / socialcrawl -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/socialcrawl</span>
+            <span class="need-badge">📱 當你需要： live social media data</span>
+          </div>
+          <h5 class="card-title fw-bold">📊 社群媒體即時數據爬取</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 分析當下流行的社群貼文、熱門話題、競爭者動態。能抓取 Twitter / Reddit / Threads 等平台的公開數據摘要，讓你即時掌握風向。</p>
+          <div class="simple-explain">📈 案例：輸入「/socialcrawl 最近 24 小時關於 AI 繪圖的熱門討論」，Claude 會回饋趨勢總結與代表性貼文觀點。</div>
+        </div>
+      </div>
+
+      <!-- 9. live web data / firecrawl -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/firecrawl</span>
+            <span class="need-badge">🔥 當你需要： live web data</span>
+          </div>
+          <h5 class="card-title fw-bold">🔥 Firecrawl 深度網頁資料</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 比一般搜尋更深入，能夠爬取特定網站的結構化內容（例如產品規格、新聞內文、價格表），並將多個頁面統整成易讀摘要。</p>
+          <div class="simple-explain">🕸️ 實際應用：輸入「/firecrawl 官網 最新優惠活動＋規格表」，Claude 會幫你抓取並整理成比較表格，省去手動逐頁查看的時間。</div>
+        </div>
+      </div>
+
+      <!-- 10. think like engineer / feature-dev -->
+      <div class="card h-100 border-0 shadow-sm card-hover bg-claude-purple">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-command badge p-2 rounded-pill">/feature-dev</span>
+            <span class="need-badge">⚙️ 當你需要： think like engineer</span>
+          </div>
+          <h5 class="card-title fw-bold">🧑‍💻 工程師思維｜功能開發模式</h5>
+          <p class="card-text"><strong>白話解釋：</strong> 讓Claude模擬頂尖軟體工程師的邏輯，針對功能需求進行系統分析、架構設計、演算法建議，並產出可執行的技術方案或程式碼片段。</p>
+          <div class="simple-explain">🛠️ 例子：輸入「/feature-dev 開發一個即時聊天室的後端 API」，Claude 會提供 Node.js + WebSocket 的設計思路、資料庫結構及安全性考量。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 額外加映：免費資源區 (Drop "100" 訊息) -->
+    <!-- <div class="row mt-5">
+      <div class="col-12">
+        <div class="card border-warning bg-warning bg-opacity-10 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fa-regular fa-gift fa-2x text-warning mb-2"></i>
+            <h4 class="fw-bold">🎁 獨家彩蛋｜免費獲取完整 Prompt 庫</h4>
+            <p class="card-text">圖中底部提示：<strong class="text-dark">Drop "100" To Get My Claude AI Prompts Library For FREE</strong> —— 只要留言或輸入「100」，即可獲得完整 Claude 斜槓指令大全（包含更多獨家指令與範例），讓你的 AI 助理突破極限！</p>
+            <div class="simple-explain d-inline-block bg-white p-2 rounded-pill px-4">👉 複製這段文字：「100」 傳給指令提供者，領取免費資源 👈</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- 快速總結對照表（讓使用者一目了然） -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-dark text-white">
+            <h5 class="mb-0"><i class="fa-regular fa-table-list"></i> 場景 vs 指令 快速對照表</h5>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead class="table-light">
+                  <tr><th>💡 當你需要…</th><th>⚡ 就用這個指令</th><th>📖 一句話白話功能</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>打磨點子 / 腦力激盪</td><td><code>/brainstorming</code></td><td>幫你把模糊想法變成完整創意清單</td></tr>
+                  <tr><td>創造新技能</td><td><code>/skill-creator</code></td><td>設計一套從零到一的技能學習路徑</td></tr>
+                  <tr><td>寫計畫書</td><td><code>/writing-plans</code></td><td>產出結構化、有時間軸的詳細計畫</td></tr>
+                  <tr><td>執行任務</td><td><code>/executing-plans</code></td><td>將計畫拆解成具體每日行動步驟</td></tr>
+                  <tr><td>設計 UI 元件</td><td><code>/ui-ux-pro-max</code></td><td>生成現代化、可直接複製的前端元件</td></tr>
+                  <tr><td>避免廉價AI設計</td><td><code>/frontend-design</code></td><td>創造高質感、獨特的網頁介面</td></tr>
+                  <tr><td>即時網路資訊</td><td><code>/brave search</code></td><td>搜尋即時新聞、產品、最新資料</td></tr>
+                  <tr><td>社群媒體即時數據</td><td><code>/socialcrawl</code></td><td>爬取熱門社群趨勢與討論</td></tr>
+                  <tr><td>深度網頁資料</td><td><code>/firecrawl</code></td><td>抓取特定網站結構化內容並整理</td></tr>
+                  <tr><td>工程師思維開發</td><td><code>/feature-dev</code></td><td>模擬工程師邏輯，給出技術架構與程式碼</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+    <!-- 鼓勵行動小區塊 -->
+    <div class="row mt-4">
+      <div class="col text-center text-muted small">
+        <i class="fa-regular fa-message"></i> 把這些斜槓指令存起來，下次使用 Claude 時直接貼上，解放真正生產力！
+      </div>
+    </div>
+  </div>
+
+  <!-- 圖片放大模態框 (Modal) -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-dark bg-opacity-95 border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-white" id="imageModalLabel">Make Claude 10x smarter 指令原圖</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <img src="./C002-1.webp" alt="Claude指令放大圖" class="modal-img-large img-fluid" style="max-height: 85vh; width: auto;">
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <a href="./C002-1.webp" class="btn btn-light" download><i class="fa-regular fa-download"></i> 下載圖片</a>
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 Footer (保留框架 jQuery 載入) -->
+  <div id="footer"></div>
+
+  <!-- 框架原有的 jQuery 載入 nav 與 footer 腳本 (完全保留) -->
+  <script>
+    $(function () {
+      // 保留框架原始路徑 (若實際檔案不存在不影響主要體驗)
+      $("#nav1").load("../../B01-ex-comm/BX02-nav-2025.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+    function updateCounter() { }
+  </script>
+
+  <!-- 平滑滾動輔助（若未來導覽列有錨點連結） -->
+  <script>
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('.nav-link');
+      if(link && link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>
