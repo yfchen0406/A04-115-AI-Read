@@ -1494,4 +1494,872 @@ const stickerPacks = [
       { id: "GPT0011-6-G", img: "./images/GPT0011-6/split_3_3.webp" },
     ],
   },
+  {
+    id: 65,
+    name: "詣超Q版",
+    description: "關西六日遊~Q版",
+    category: "旅遊系列",
+    stickers: [
+      { id: "GPT0012-01-Q版-1", img: "./images/GPT0012-01-Q版/split_0_0.webp" },
+      { id: "GPT0012-01-Q版-2", img: "./images/GPT0012-01-Q版/split_0_1.webp" },
+      { id: "GPT0012-01-Q版-3", img: "./images/GPT0012-01-Q版/split_0_2.webp" },
+      { id: "GPT0012-01-Q版-4", img: "./images/GPT0012-01-Q版/split_0_3.webp" },
+      { id: "GPT0012-01-Q版-5", img: "./images/GPT0012-01-Q版/split_1_0.webp" },
+      { id: "GPT0012-01-Q版-6", img: "./images/GPT0012-01-Q版/split_1_1.webp" },
+      { id: "GPT0012-01-Q版-7", img: "./images/GPT0012-01-Q版/split_1_2.webp" },
+      { id: "GPT0012-01-Q版-8", img: "./images/GPT0012-01-Q版/split_1_3.webp" },
+      { id: "GPT0012-01-Q版-9", img: "./images/GPT0012-01-Q版/split_2_0.webp" },
+      { id: "GPT0012-01-Q版-A", img: "./images/GPT0012-01-Q版/split_2_1.webp" },
+      { id: "GPT0012-01-Q版-B", img: "./images/GPT0012-01-Q版/split_2_2.webp" },
+      { id: "GPT0012-01-Q版-C", img: "./images/GPT0012-01-Q版/split_2_3.webp" },
+      { id: "GPT0012-01-Q版-D", img: "./images/GPT0012-01-Q版/split_3_0.webp" },
+      { id: "GPT0012-01-Q版-E", img: "./images/GPT0012-01-Q版/split_3_1.webp" },
+      { id: "GPT0012-01-Q版-F", img: "./images/GPT0012-01-Q版/split_3_2.webp" },
+      { id: "GPT0012-01-Q版-G", img: "./images/GPT0012-01-Q版/split_3_3.webp" },
+    ],
+  },
+  {
+    id: 66,
+    name: "詣超Q版",
+    description: "關西六日遊~手繪插畫風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-02-手繪插畫風-1",
+        img: "./images/GPT0012-02-手繪插畫風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-2",
+        img: "./images/GPT0012-02-手繪插畫風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-3",
+        img: "./images/GPT0012-02-手繪插畫風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-4",
+        img: "./images/GPT0012-02-手繪插畫風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-5",
+        img: "./images/GPT0012-02-手繪插畫風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-6",
+        img: "./images/GPT0012-02-手繪插畫風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-7",
+        img: "./images/GPT0012-02-手繪插畫風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-8",
+        img: "./images/GPT0012-02-手繪插畫風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-9",
+        img: "./images/GPT0012-02-手繪插畫風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-A",
+        img: "./images/GPT0012-02-手繪插畫風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-B",
+        img: "./images/GPT0012-02-手繪插畫風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-C",
+        img: "./images/GPT0012-02-手繪插畫風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-D",
+        img: "./images/GPT0012-02-手繪插畫風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-E",
+        img: "./images/GPT0012-02-手繪插畫風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-F",
+        img: "./images/GPT0012-02-手繪插畫風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-02-手繪插畫風-G",
+        img: "./images/GPT0012-02-手繪插畫風/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 67,
+    name: "詣超Q版",
+    description: "關西六日遊~韓系ins風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-03-韓系 ins風-1",
+        img: "./images/GPT0012-03-韓系 ins風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-2",
+        img: "./images/GPT0012-03-韓系 ins風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-3",
+        img: "./images/GPT0012-03-韓系 ins風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-4",
+        img: "./images/GPT0012-03-韓系 ins風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-5",
+        img: "./images/GPT0012-03-韓系 ins風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-6",
+        img: "./images/GPT0012-03-韓系 ins風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-7",
+        img: "./images/GPT0012-03-韓系 ins風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-8",
+        img: "./images/GPT0012-03-韓系 ins風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-9",
+        img: "./images/GPT0012-03-韓系 ins風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-A",
+        img: "./images/GPT0012-03-韓系 ins風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-B",
+        img: "./images/GPT0012-03-韓系 ins風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-C",
+        img: "./images/GPT0012-03-韓系 ins風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-D",
+        img: "./images/GPT0012-03-韓系 ins風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-E",
+        img: "./images/GPT0012-03-韓系 ins風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-F",
+        img: "./images/GPT0012-03-韓系 ins風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-03-韓系 ins風-G",
+        img: "./images/GPT0012-03-韓系 ins風/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 68,
+    name: "詣超Q版",
+    description: "關西六日遊~浮世繪旅圖風-20",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-1",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-2",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-3",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-4",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-5",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-6",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-7",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-8",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-9",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-A",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-B",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-C",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-D",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-E",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-F",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-G",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_3_3.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-H",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_4_0.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-I",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_4_1.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-J",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_4_2.webp",
+      },
+      {
+        id: "GPT0012-04-浮世繪旅圖風-20-K",
+        img: "./images/GPT0012-04-浮世繪旅圖風-20/split_4_3.webp",
+      },
+    ],
+  },
+  {
+    id: 69,
+    name: "詣超Q版",
+    description: "關西六日遊~簡約現代 flat風-20",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-1",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-2",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-3",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-4",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-5",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-6",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-7",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-8",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-9",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-A",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-B",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-C",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-D",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-E",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-F",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-G",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_3_3.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-H",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_4_0.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-I",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_4_1.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-J",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_4_2.webp",
+      },
+      {
+        id: "GPT0012-05-簡約現代 flat風-20-K",
+        img: "./images/GPT0012-05-簡約現代 flat風-20/split_4_3.webp",
+      },
+    ],
+  },
+  {
+    id: 70,
+    name: "詣超Q版",
+    description: "關西六日遊~歐美復古航海地圖風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-1",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-2",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-3",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-4",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-5",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-6",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-7",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-8",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-9",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-A",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-B",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-C",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-D",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-E",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-F",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-06-歐美復古航海地圖風-G",
+        img: "./images/GPT0012-06-歐美復古航海地圖風/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 71,
+    name: "詣超Q版",
+    description: "關西六日遊~京都古都地圖風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-07- 京都古都地圖風-1",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-2",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-3",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-4",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-5",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-6",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-7",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-8",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-9",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-A",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-B",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-C",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-D",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-E",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-F",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-07- 京都古都地圖風-G",
+        img: "./images/GPT0012-07- 京都古都地圖風/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 72,
+    name: "詣超Q版",
+    description: "關西六日遊~動漫風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-08- 動漫風-1",
+        img: "./images/GPT0012-08- 動漫風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-2",
+        img: "./images/GPT0012-08- 動漫風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-3",
+        img: "./images/GPT0012-08- 動漫風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-4",
+        img: "./images/GPT0012-08- 動漫風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-5",
+        img: "./images/GPT0012-08- 動漫風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-6",
+        img: "./images/GPT0012-08- 動漫風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-7",
+        img: "./images/GPT0012-08- 動漫風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-8",
+        img: "./images/GPT0012-08- 動漫風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-9",
+        img: "./images/GPT0012-08- 動漫風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-A",
+        img: "./images/GPT0012-08- 動漫風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-B",
+        img: "./images/GPT0012-08- 動漫風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-C",
+        img: "./images/GPT0012-08- 動漫風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-D",
+        img: "./images/GPT0012-08- 動漫風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-E",
+        img: "./images/GPT0012-08- 動漫風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-F",
+        img: "./images/GPT0012-08- 動漫風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-G",
+        img: "./images/GPT0012-08- 動漫風/split_3_3.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-H",
+        img: "./images/GPT0012-08- 動漫風/split_4_0.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-I",
+        img: "./images/GPT0012-08- 動漫風/split_4_1.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-J",
+        img: "./images/GPT0012-08- 動漫風/split_4_2.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-K",
+        img: "./images/GPT0012-08- 動漫風/split_4_3.webp",
+      },
+      {
+        id: "GPT0012-08- 動漫風-L",
+        img: "./images/GPT0012-08- 動漫風/split_4_4.webp",
+      },
+    ],
+  },
+  {
+    id: 73,
+    name: "詣超Q版",
+    description: "關西六日遊~3D 卡通風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-09-3D 卡通風-1",
+        img: "./images/GPT0012-09-3D 卡通風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-2",
+        img: "./images/GPT0012-09-3D 卡通風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-3",
+        img: "./images/GPT0012-09-3D 卡通風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-4",
+        img: "./images/GPT0012-09-3D 卡通風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-5",
+        img: "./images/GPT0012-09-3D 卡通風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-6",
+        img: "./images/GPT0012-09-3D 卡通風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-7",
+        img: "./images/GPT0012-09-3D 卡通風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-8",
+        img: "./images/GPT0012-09-3D 卡通風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-9",
+        img: "./images/GPT0012-09-3D 卡通風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-A",
+        img: "./images/GPT0012-09-3D 卡通風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-B",
+        img: "./images/GPT0012-09-3D 卡通風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-C",
+        img: "./images/GPT0012-09-3D 卡通風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-D",
+        img: "./images/GPT0012-09-3D 卡通風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-E",
+        img: "./images/GPT0012-09-3D 卡通風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-F",
+        img: "./images/GPT0012-09-3D 卡通風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-09-3D 卡通風-G",
+        img: "./images/GPT0012-09-3D 卡通風/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 74,
+    name: "詣超Q版",
+    description: "關西六日遊~吉卜力水彩風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-10-吉卜力水彩風-1",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-2",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-3",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-4",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-5",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-6",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-7",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-8",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-9",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-A",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-B",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-C",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-D",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-E",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-F",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-10-吉卜力水彩風-G",
+        img: "./images/GPT0012-10-吉卜力水彩風/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 75,
+    name: "詣超Q版",
+    description: "關西六日遊~吉卜力手繪風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-11-吉卜力手繪風-1",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-2",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-3",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-4",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-5",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-6",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-7",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-8",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-9",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-A",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-B",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-C",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-D",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-E",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-F",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-11-吉卜力手繪風-G",
+        img: "./images/GPT0012-11-吉卜力手繪風/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 76,
+    name: "詣超Q版",
+    description: "關西六日遊~吉卜力動畫風",
+    category: "旅遊系列",
+    stickers: [
+      {
+        id: "GPT0012-12-吉卜力動畫風-1",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_0_0.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-2",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_0_1.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-3",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_0_2.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-4",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_0_3.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-5",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_1_0.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-6",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_1_1.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-7",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_1_2.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-8",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_1_3.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-9",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_2_0.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-A",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_2_1.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-B",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_2_2.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-C",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_2_3.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-D",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_3_0.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-E",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_3_1.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-F",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_3_2.webp",
+      },
+      {
+        id: "GPT0012-12-吉卜力動畫風-G",
+        img: "./images/GPT0012-12-吉卜力動畫風/split_3_3.webp",
+      },
+    ],
+  },
 ];

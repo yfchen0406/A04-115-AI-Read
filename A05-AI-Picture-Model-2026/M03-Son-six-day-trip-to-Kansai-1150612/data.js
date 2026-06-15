@@ -973,6 +973,54 @@ const tripData = [
         src: "./images/Day6-S/JAPDAY6-ALL12X-吉卜力動畫風.webp",
         caption: "六天回顧~吉卜力動畫風~女主角不錯~保留",
       },
+      {
+        src: "./images/LINE/GPT0012-01-Q版.webp",
+        caption: "六天回顧LINE貼圖~正統Q版",
+      },
+      {
+        src: "./images/LINE/GPT0012-02-手繪插畫風.webp",
+        caption: "六天回顧LINE貼圖~手繪插畫風",
+      },
+      {
+        src: "./images/LINE/GPT0012-03-韓系 ins風.webp",
+        caption: "六天回顧LINE貼圖~韓系 ins風",
+      },
+      {
+        src: "./images/LINE/GPT0012-04-浮世繪旅圖風.webp",
+        caption: "六天回顧LINE貼圖~浮世繪旅圖風",
+      },
+      {
+        src: "./images/LINE/GPT0012-05-簡約現代 flat風.webp",
+        caption: "六天回顧LINE貼圖~簡約現代 flat風",
+      },
+      {
+        src: "./images/LINE/GPT0012-06-歐美復古航海地圖風.webp",
+        caption: "六天回顧LINE貼圖~歐美復古航海地圖風",
+      },
+      {
+        src: "./images/LINE/GPT0012-07- 京都古都地圖風.webp",
+        caption: "六天回顧LINE貼圖~京都古都地圖風.webp",
+      },
+      {
+        src: "./images/LINE/GPT0012-08- 動漫風.webp",
+        caption: "六天回顧LINE貼圖~動漫風",
+      },
+      {
+        src: "./images/LINE/GPT0012-09-3D 卡通風.webp",
+        caption: "六天回顧LINE貼圖~3D 卡通風",
+      },
+      {
+        src: "./images/LINE/GPT0012-10-吉卜力水彩風.webp",
+        caption: "六天回顧LINE貼圖~吉卜力水彩風",
+      },
+      {
+        src: "./images/LINE/GPT0012-11-吉卜力手繪風.webp",
+        caption: "六天回顧LINE貼圖~吉卜力手繪風",
+      },
+      {
+        src: "./images/LINE/GPT0012-12-吉卜力動畫風.webp",
+        caption: "六天回顧LINE貼圖~吉卜力動畫風",
+      },
     ],
   },
 ];
