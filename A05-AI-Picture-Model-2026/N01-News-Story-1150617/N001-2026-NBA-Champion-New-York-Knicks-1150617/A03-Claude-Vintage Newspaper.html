@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紐約尼克隊 · 2026年NBA總冠軍奪冠全紀錄</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+  :root {
+    --ink: #1a1008;
+    --ink-light: #3b2a1a;
+    --parchment: #f5edd8;
+    --parchment-dark: #e8dbbf;
+    --sepia: #8b6914;
+    --sepia-light: #b8921e;
+    --rule: #3b2a1a;
+    --column-gap: 2.2rem;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #c9b68a;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 28px, rgba(0,0,0,0.03) 28px, rgba(0,0,0,0.03) 29px
+    );
+    font-family: 'IM Fell English', 'Libre Baskerville', Georgia, serif;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  .paper {
+    max-width: 1100px;
+    margin: 2rem auto;
+    background: var(--parchment);
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(184,146,30,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(139,105,20,0.1) 0%, transparent 60%);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.4), inset 0 0 60px rgba(139,105,20,0.07);
+    padding: 3rem 3.5rem 4rem;
+    border: 1px solid #b8921e44;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    text-align: center;
+    border-top: 4px double var(--rule);
+    border-bottom: 4px double var(--rule);
+    padding: 1.2rem 0 1rem;
+    margin-bottom: 0;
+  }
+
+  .paper-name {
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 4.8rem;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    line-height: 1;
+    text-shadow: 1px 1px 0 rgba(184,146,30,0.3);
+  }
+
+  .edition-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 0.5rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 0.25rem 0;
+  }
+
+  .paper-tagline {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--sepia);
+    margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── HEADLINE BLOCK ── */
+  .headline-block {
+    text-align: center;
+    padding: 1.8rem 1rem 1.2rem;
+    border-bottom: 3px solid var(--rule);
+    margin-bottom: 0;
+  }
+
+  .kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sepia);
+    margin-bottom: 0.5rem;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  .main-headline {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.8rem;
+  }
+
+  .sub-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-light);
+    line-height: 1.4;
+    max-width: 700px;
+    margin: 0 auto 0.8rem;
+  }
+
+  .deck {
+    font-size: 0.92rem;
+    color: var(--ink-light);
+    font-style: italic;
+    letter-spacing: 0.02em;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ── RULING LINES ── */
+  .rule-single { border-top: 1px solid var(--rule); margin: 0; }
+  .rule-double { border-top: 3px double var(--rule); margin: 0; }
+  .rule-thick  { border-top: 4px solid var(--rule); margin: 0; }
+
+  /* ── IMAGE PLACEHOLDER (16:9) ── */
+  .img-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--parchment-dark);
+    border: 2px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sepia);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin: 0.8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px dashed var(--sepia);
+    opacity: 0.4;
+  }
+
+  .img-caption {
+    font-size: 0.75rem;
+    font-style: italic;
+    text-align: center;
+    color: var(--sepia);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid var(--parchment-dark);
+    padding-bottom: 0.4rem;
+  }
+
+  /* ── COLUMN LAYOUTS ── */
+  .cols-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .cols-feature {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .cols-feature-rev {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .col {
+    padding: 1.2rem var(--column-gap) 1.2rem 0;
+    border-right: 1px solid var(--rule);
+  }
+
+  .col:last-child {
+    border-right: none;
+    padding-left: var(--column-gap);
+    padding-right: 0;
+  }
+
+  .col:only-child {
+    padding: 1.2rem 0;
+  }
+
+  .col-inner {
+    padding: 1.2rem var(--column-gap) 1.2rem var(--column-gap);
+    border-right: 1px solid var(--rule);
+  }
+
+  .col-inner:last-child {
+    border-right: none;
+  }
+
+  /* ── SECTION HEADING ── */
+  .sec-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 0.3rem;
+  }
+
+  .sec-head-sm {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+    color: var(--ink);
+  }
+
+  .byline {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sepia);
+    margin-bottom: 0.7rem;
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  /* ── BODY TEXT ── */
+  p {
+    font-size: 0.92rem;
+    line-height: 1.72;
+    margin-bottom: 0.7rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4em;
+    font-weight: 900;
+    float: left;
+    line-height: 0.82;
+    margin: 0.05em 0.08em 0 0;
+    color: var(--ink);
+  }
+
+  .no-dropcap p:first-of-type::first-letter {
+    all: unset;
+    font-size: 0.92rem;
+    line-height: 1.72;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-top: 3px solid var(--rule);
+    border-bottom: 3px solid var(--rule);
+    padding: 0.9rem 0.5rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+    text-align: center;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .pull-quote p::first-letter { all: unset; font-size: 1.15rem; }
+
+  .pull-quote cite {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sepia);
+    margin-top: 0.5rem;
+    font-style: normal;
+  }
+
+  /* ── SCORE BOX ── */
+  .score-box {
+    background: var(--ink);
+    color: var(--parchment);
+    padding: 0.8rem 1rem;
+    margin: 0.7rem 0;
+    text-align: center;
+  }
+
+  .score-box .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.2rem;
+  }
+
+  .score-box .score {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .score-box .desc {
+    font-size: 0.72rem;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 0.2rem;
+  }
+
+  /* ── STAT PANEL ── */
+  .stat-panel {
+    border: 2px solid var(--rule);
+    padding: 0.8rem;
+    margin: 0.7rem 0;
+  }
+
+  .stat-panel .panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    border-bottom: 1px solid var(--parchment-dark);
+    padding: 0.2rem 0;
+  }
+
+  .stat-row:last-child { border-bottom: none; }
+  .stat-val { font-weight: 700; font-family: 'Playfair Display', serif; }
+
+  /* ── SECTION BANNER ── */
+  .section-banner {
+    background: var(--ink);
+    color: var(--parchment);
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  /* ── ORNAMENT ── */
+  .ornament {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--sepia);
+    margin: 0.6rem 0;
+    letter-spacing: 0.3em;
+  }
+
+  /* ── FULL PAGE SECTION ── */
+  .full-col {
+    padding: 1.2rem 0;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  /* ── INLINE LOGO ── */
+  .knicks-logo {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 0.1em 0.5em;
+    vertical-align: middle;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .paper { padding: 1.2rem 1rem 2rem; margin: 0.5rem; }
+    .paper-name { font-size: 2.8rem; }
+    .main-headline { font-size: 2.4rem; }
+    .cols-3, .cols-2, .cols-feature, .cols-feature-rev {
+      grid-template-columns: 1fr;
+    }
+    .col, .col-inner { padding: 0.8rem 0; border-right: none; border-bottom: 1px solid var(--rule); }
+    .col:last-child, .col-inner:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<article class="paper">
+
+  <!-- ══ MASTHEAD ══ -->
+  <header class="masthead">
+    <div class="paper-name">The Knicks Gazette</div>
+    <div class="edition-bar">
+      <span>第貳百拾捌號</span>
+      <span>SPECIAL CHAMPIONSHIP EDITION</span>
+      <span>2026年6月13日 · 星期六</span>
+    </div>
+    <div class="paper-tagline">「紐約的榮耀，半世紀的救贖」</div>
+  </header>
+
+  <!-- ══ MAIN HEADLINE ══ -->
+  <div class="headline-block">
+    <div class="kicker">✦ 2026年 NBA 總冠軍 · 歷史性一刻 ✦</div>
+    <h1 class="main-headline">五十三年的等待<br>終成正果</h1>
+    <div class="sub-headline">尼克以94比90擊敗馬刺，4勝1敗勇奪隊史第三座NBA總冠軍</div>
+    <div class="deck">帝國大廈橘藍燈光照亮曼哈頓，紐約全城沸騰——<br>1973年以來，一個最古老的夢想，於此夜兌現。</div>
+  </div>
+
+  <!-- ══ ROW 1 ══ -->
+  <div class="cols-3">
+    <div class="col">
+      <h2 class="sec-head">楔子：半世紀的等待</h2>
+      <div class="byline">特派記者 New York Desk</div>
+      <p>2026年6月13日，聖安東尼奧弗羅斯特銀行中心的計時器歸零那一刻，紐約尼克隊以94比90擊敗聖安東尼奧馬刺隊，以4勝1敗的戰績奪下隊史第三座NBA總冠軍。</p>
+      <p>53年。從1973年到2026年，這座城市等了整整半個世紀。尼克隊上一次拿下總冠軍，美國總統還是尼克森，麥迪遜廣場花園的球迷還抽著煙看球，Willis Reed和Walt Frazier還是這支球隊的臉孔。</p>
+      <p>此後53年裡，尼克更換了24位總教練，從2001年到2010年連續10個賽季勝率不到五成，從2014年到2020年連續7年無緣季後賽。這支NBA創始球隊之一，淪為聯盟笑柄長達數十年。</p>
+      <div class="pull-quote">
+        <p>「HISTORY」</p>
+        <cite>— 紐約市長 Zohran Mamdani，比賽結束後社群媒體發文</cite>
+      </div>
+    </div>
+
+    <div class="col-inner">
+      <div class="img-placeholder">【請置入16:9圖片】<br>帝國大廈橘藍燈光</div>
+      <div class="img-caption">▲ 奪冠當晚，帝國大廈亮起橘藍色燈光，與全城球迷共慶榮耀。</div>
+      <div class="score-box">
+        <div class="label">封王戰最終比分 · G5</div>
+        <div class="score">NYK 94 — SAS 90</div>
+        <div class="desc">聖安東尼奧弗羅斯特銀行中心 · 2026.06.13</div>
+      </div>
+    </div>
+
+    <div class="col-inner no-dropcap">
+      <div class="stat-panel">
+        <div class="panel-title">總決賽系列賽成績</div>
+        <div class="stat-row"><span>G1 聖安東尼奧</span><span class="stat-val">NYK 105–95</span></div>
+        <div class="stat-row"><span>G2 聖安東尼奧</span><span class="stat-val">NYK 105–104</span></div>
+        <div class="stat-row"><span>G3 紐約</span><span class="stat-val">SAS 115–111</span></div>
+        <div class="stat-row"><span>G4 紐約</span><span class="stat-val">NYK 107–106 ★</span></div>
+        <div class="stat-row"><span>G5 聖安東尼奧</span><span class="stat-val">NYK 94–90 🏆</span></div>
+        <div class="stat-row"><span>系列賽結果</span><span class="stat-val">NYK 4–1</span></div>
+      </div>
+      <div class="stat-panel">
+        <div class="panel-title">Brunson 封王戰成績單</div>
+        <div class="stat-row"><span>得分</span><span class="stat-val">45分</span></div>
+        <div class="stat-row"><span>投籃</span><span class="stat-val">14/27</span></div>
+        <div class="stat-row"><span>三分球</span><span class="stat-val">4/7</span></div>
+        <div class="stat-row"><span>第四節</span><span class="stat-val">13分（獨得）</span></div>
+        <div class="stat-row"><span>總決賽場均</span><span class="stat-val">32.6分</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BANNER 2 ══ -->
+  <div class="section-banner">§ 第二章 · 當家球星布朗森（Jalen Brunson）的故事 §</div>
+
+  <!-- ══ ROW 2 ══ -->
+  <div class="cols-feature">
+    <div class="col">
+      <h2 class="sec-head">從第二輪選秀到「紐約之王」</h2>
+      <div class="byline">體育特稿組</div>
+      <p>2018年NBA選秀大會上，當第33順位的名字被念出時，Jalen Brunson沒有太多表情。他剛帶領維拉諾瓦大學贏得NCAA冠軍，但NBA對他的評價很簡單：6呎2吋、運動能力普通、天花板有限。</p>
+      <p>第二輪第33順位——這是Brunson職業生涯的起點。他被達拉斯獨行俠選中，在Luka Dončić身邊擔任替補控衛。四個賽季，他一步步證明自己不只是「Dončić的替補」。2022年季後賽，Brunson扛起球隊場均轟下27.8分，讓全聯盟開始正視這個被低估的名字。</p>
+      <p>但獨行俠隊拒絕給他4年5,500萬美元的續約。這個決定，改變了NBA的歷史。2022年夏天，Brunson以4年1.04億美元加盟紐約尼克隊。</p>
+
+      <h3 class="sec-head-sm">驚天動地的自我犧牲</h3>
+      <p>2024年夏天，Brunson做了一件NBA歷史上幾乎前所未聞的事。他原本可以在2025年夏天成為自由球員，有資格簽下一份5年2.69億美元的頂薪合約。但他選擇提前續約，簽下4年1.565億美元的合約——直接放棄了1.13億美元。</p>
+      <div class="pull-quote">
+        <p>「百分之百，我為球隊做出了犧牲。但最重要的是，我確保我的家人和我都得到了照顧。」</p>
+        <cite>— Jalen Brunson</cite>
+      </div>
+      <p>尼克總教練Mike Brown在奪冠後直說大實話：「他接受了我不會接受的減薪。每次他們把那個數字放在我面前，我都會說不——而我覺得我已經是個很不錯的人了。他設下了標準。」</p>
+
+      <div class="img-placeholder">【請置入16:9圖片】<br>Brunson 舉起冠軍獎盃</div>
+      <div class="img-caption">▲ Jalen Brunson——從第二輪新秀到總決賽MVP，完成傳奇逆襲。</div>
+    </div>
+
+    <div class="col-inner no-dropcap">
+      <h2 class="sec-head">父子傳承的淚水</h2>
+      <p>比賽結束後，Brunson在場上尋找一個人——他的父親、尼克助理教練Rick Brunson。當他轉身看到父親的那一刻，情緒完全潰堤。</p>
+      <p>Rick Brunson曾在1999年為尼克效力——那是尼克上一次打進總決賽。26年後，他以教練身份與兒子一同奪冠。Brunson家族成為NBA史上第一對在同一支球隊一起贏得總冠軍的父子檔。</p>
+      <div class="pull-quote">
+        <p>「我轉過身，我父親就在那裡。」</p>
+        <cite>— Jalen Brunson，賽後</cite>
+      </div>
+
+      <div class="stat-panel">
+        <div class="panel-title">Brunson 賽季成就</div>
+        <div class="stat-row"><span>NBA盃 MVP</span><span class="stat-val">✓</span></div>
+        <div class="stat-row"><span>東區決賽 MVP</span><span class="stat-val">✓</span></div>
+        <div class="stat-row"><span>總決賽 MVP</span><span class="stat-val">✓ 🏅</span></div>
+        <div class="stat-row"><span>隊史季後賽得分紀錄</span><span class="stat-val">45分</span></div>
+        <div class="stat-row"><span>單季雙冠MVP史上首人</span><span class="stat-val">✓</span></div>
+      </div>
+
+      <h3 class="sec-head-sm">德州的緣份</h3>
+      <p>德州是Brunson的福地。2016年他在休士頓贏得第一個NCAA冠軍，2018年在聖安東尼奧贏得第二個NCAA冠軍。2026年，他又在同一座城市舉起NBA總冠軍獎盃。</p>
+      <p>Brunson成為NBA史上第四位在第二輪被選中卻贏得總決賽MVP的球員——前三位是尼克傳奇Willis Reed、Dennis Johnson和Nikola Jokić。</p>
+      <p>封王戰第四節，他一個人連拿13分。當比賽剩下約1分鐘、比分88比88平手時，Brunson命中一記致勝拋投。</p>
+      <div class="ornament">✦ ✦ ✦</div>
+      <p style="text-align:center;font-style:italic;font-size:0.88rem;">「我無法用言語形容，這是我夢想的一切。」</p>
+    </div>
+  </div>
+
+  <!-- ══ BANNER 3 ══ -->
+  <div class="section-banner">§ 第三章 · 先發球員——「維拉諾瓦三傑」與冠軍陣容 §</div>
+
+  <!-- ══ ROW 3 ══ -->
+  <div class="cols-3">
+    <div class="col">
+      <h2 class="sec-head">先發五虎：全聯盟最均衡陣容</h2>
+      <div class="byline">陣容分析</div>
+      <div class="stat-panel" style="margin-top:0.3rem;">
+        <div class="panel-title">2025–26賽季先發五虎</div>
+        <div class="stat-row"><span>#11 控衛</span><span class="stat-val">Jalen Brunson</span></div>
+        <div class="stat-row"><span>#25 得分後衛</span><span class="stat-val">Mikal Bridges</span></div>
+        <div class="stat-row"><span>#3 小前鋒</span><span class="stat-val">Josh Hart</span></div>
+        <div class="stat-row"><span>#8 大前鋒</span><span class="stat-val">OG Anunoby</span></div>
+        <div class="stat-row"><span>#32 中鋒</span><span class="stat-val">Karl-Anthony Towns</span></div>
+      </div>
+      <p>重要替補包括：Mitchell Robinson（G5關鍵進攻籃板）、Jordan Clarkson（頂級板凳得分手）、Jose Alvarado（季後賽奇兵）。</p>
+    </div>
+
+    <div class="col-inner">
+      <h2 class="sec-head">「維拉諾瓦三傑」</h2>
+      <p>Brunson、Mikal Bridges和Josh Hart三人的故事，要從費城郊區的維拉諾瓦大學說起。2016年，在傳奇教練Jay Wright帶領下，三人共同贏得NCAA冠軍。2018年，Brunson和Bridges再度聯手，在聖安東尼奧奪得第二座NCAA冠軍。</p>
+      <p>大學畢業後，三人各奔前程。但命運讓他們在紐約重新聚首：Brunson於2022年率先加盟尼克，Hart於2023年透過交易加入，Bridges則於2024年7月從布魯克林籃網加盟。</p>
+      <div class="pull-quote">
+        <p>「他們是我一輩子的兄弟，我們的羈絆永遠不會被打破。」</p>
+        <cite>— Josh Hart</cite>
+      </div>
+      <p>封王戰中，「Nova Knicks」三人合計攻下72分：Brunson 45分、Bridges 14分、Hart 13分。根據ESPN數據，三人成為史上第一組同時擁有NCAA冠軍和NBA冠軍的三人組。</p>
+    </div>
+
+    <div class="col-inner no-dropcap">
+      <h2 class="sec-head">其他先發球員的貢獻</h2>
+      <p><strong>OG Anunoby</strong>是這支球隊的無名英雄。G4全場攻下33分，並在比賽剩下1.2秒時補籃絕殺，完成NBA總決賽史上最大逆轉。G5又貢獻11分8籃板，關鍵罰球穩穩命中。</p>
+      <p><strong>Karl-Anthony Towns</strong>在封王戰雖只拿下2分10籃板，但整個季後賽的內線威懾力無可取代。東區決賽第四戰，他繳出19分14籃板的雙十表現。</p>
+      <p><strong>Mitchell Robinson</strong>在G5帶傷上陣，全場抓下10個籃板，包括比賽最後時刻的致命進攻籃板——當時Towns已犯滿離場，Robinson的這個籃板直接保住了勝利。</p>
+      <div class="img-placeholder">【請置入16:9圖片】<br>維拉諾瓦三傑奪冠合影</div>
+      <div class="img-caption">▲ 「Nova Knicks」——從大學到職業，兄弟情誼跨越十年。</div>
+    </div>
+  </div>
+
+  <!-- ══ BANNER 4 ══ -->
+  <div class="section-banner">§ 第四章 · 從錫伯杜到麥克·布朗——總教練的帶兵哲學 §</div>
+
+  <!-- ══ ROW 4 ══ -->
+  <div class="cols-feature-rev">
+    <div class="col no-dropcap">
+      <h2 class="sec-head">震撼決策：解僱錫伯杜</h2>
+      <p>Tom Thibodeau在2020年接掌尼克兵符時，這支球隊已連續7年沒打過季後賽。他花了5年時間，把尼克從笑柄變成勁旅——連續4年闖入季後賽，2025年更率隊闖入東區決賽，這是尼克25年來的最佳成績。</p>
+      <p>但Thibodeau也有致命傷：過度依賴主力、堅持8人輪換、球員體能經常在季後賽崩盤。2025年東區決賽，尼克在2比0領先溜馬的情況下被連追4場遭到淘汰。</p>
+      <p>2025年6月3日，尼克宣布解僱Tom Thibodeau。Rick Carlisle甚至說他以為「這是AI生成的新聞」。Brunson本人也說他「很難過」。</p>
+      <div class="score-box">
+        <div class="label">Mike Brown 執教生涯</div>
+        <div class="score">454–304</div>
+        <div class="desc">助理教練期間贏得4座NBA總冠軍（馬刺·勇士）</div>
+      </div>
+    </div>
+
+    <div class="col-inner">
+      <h2 class="sec-head">布朗的三大變革</h2>
+      <div class="byline">管理評析</div>
+      <p>2025年7月7日，尼克聘請兩度NBA年度最佳教練Mike Brown為新任總教練。55歲的Brown剛在2024年12月被沙加緬度國王解僱，但他擁有輝煌資歷。</p>
+      <p>Brown在就職記者會說了一句話，奠定了他的執教基調：「沒有人對我的期望比我對自己的期望更高。」</p>
+      <div class="stat-panel">
+        <div class="panel-title">布朗的三大關鍵變革</div>
+        <div class="stat-row"><span>①</span><span>擴充輪換至9–10人，主力限時35分鐘</span></div>
+        <div class="stat-row"><span>②</span><span>傾聽球員，靈活調整戰術</span></div>
+        <div class="stat-row"><span>③</span><span>打造「逆轉尼克」心理韌性文化</span></div>
+      </div>
+      <p>Brown的帶兵哲學可以濃縮為三個關鍵詞：<strong>團隊、防守、韌性</strong>。18個月前被國王隊解僱，18個月後成為NBA冠軍教練。</p>
+      <div class="pull-quote">
+        <p>「我仍然不敢相信這一切發生了。」</p>
+        <cite>— Mike Brown，奪冠後</cite>
+      </div>
+      <div class="img-placeholder">【請置入16:9圖片】<br>Mike Brown 執教場邊</div>
+      <div class="img-caption">▲ 從被解僱到冠軍教頭，Mike Brown的救贖之路。</div>
+    </div>
+  </div>
+
+  <!-- ══ BANNER 5 ══ -->
+  <div class="section-banner">§ 第五章 · 賽季調整與季後賽晉級全程 §</div>
+
+  <!-- ══ ROW 5 ══ -->
+  <div class="cols-2">
+    <div class="col">
+      <h2 class="sec-head">常規賽·季後賽晉級之路</h2>
+      <div class="byline">本報體育組</div>
+      <p>2025-26賽季，尼克以53勝29敗結束常規賽，排名東區第三種子。賽季並非一帆風順，12月底到1月中旬曾經歷2勝9敗的低潮，兩度4連敗。</p>
+      <p>最大亮點出現在12月。尼克在NBA盃中打出6勝1敗戰績，在拉斯維加斯決賽以124比113擊敗馬刺奪冠。尼克隊拒絕在球場懸掛NBA盃冠軍旗幟，因為他們的目標更遠大。</p>
+
+      <h3 class="sec-head-sm">首輪：對亞特蘭大老鷹（4-2）</h3>
+      <p>系列賽前3戰打完，尼克陷入1勝2敗落後。但從第4戰開始，他們連贏3場，包括第6戰在主場以140比89狂勝51分——刷新隊史季後賽最大贏球分差。</p>
+
+      <h3 class="sec-head-sm">東區半決賽：對費城76人（4-0）</h3>
+      <p>第二輪面對費城76人，尼克展現壓倒性統治力。4場比賽全部碾壓過關，首戰137比98大勝，以不敗之身橫掃76人，將季後賽連勝紀錄推進到7場。</p>
+
+      <h3 class="sec-head-sm">東區決賽：對克利夫蘭騎士（4-0）</h3>
+      <p>尼克的統治力達到巔峰。第4戰在客場以130比93狂勝37分——全場最多領先45分——完成4戰橫掃。這是尼克自1999年以來首次闖入NBA總決賽，在季後賽打出11連勝，追平隊史紀錄。Brunson獲選東區決賽MVP，場均27.8分。</p>
+
+      <div class="img-placeholder">【請置入16:9圖片】<br>尼克季後賽晉級慶祝</div>
+      <div class="img-caption">▲ 尼克隊27年來首闖總決賽，麥迪遜廣場花園沸騰。</div>
+    </div>
+
+    <div class="col-inner">
+      <h2 class="sec-head">總決賽五場全紀錄</h2>
+      <div class="byline">場次詳情</div>
+
+      <h3 class="sec-head-sm">G1 · 客場 · NYK 105–95</h3>
+      <p>Brunson攻下30分，率隊在聖安東尼奧搶下主場優勢。</p>
+
+      <h3 class="sec-head-sm">G2 · 客場 · NYK 105–104</h3>
+      <p>Brunson全場命中率僅28%，只拿20分，但關鍵時刻的表現價值連城。KAT貢獻21分13籃板。尼克客場2連勝。</p>
+
+      <h3 class="sec-head-sm">G3 · 主場 · SAS 115–111</h3>
+      <p>馬刺在麥迪遜廣場花園以4分之差搶下一勝，Wembanyama轟下32分。尼克的13連勝在此終止。</p>
+
+      <h3 class="sec-head-sm">G4 · 主場 · NYK 107–106 ★ 史上最大逆轉</h3>
+      <p>這場比賽將被永遠銘記。尼克在第二節一度落後29分，半場結束時仍落後27分。但尼克在最後21分半鐘打出55比25的攻勢。OG Anunoby全場33分，Brunson全場36分。比賽剩下1.2秒，Anunoby補籃絕殺——這是NBA總決賽史上最大逆轉，超越1948年巴爾的摩子彈隊創下的21分紀錄。</p>
+
+      <div class="img-placeholder">【請置入16:9圖片】<br>Anunoby G4絕殺瞬間</div>
+      <div class="img-caption">▲ G4：Anunoby在1.2秒絕殺，完成NBA總決賽史上最大逆轉。</div>
+
+      <h3 class="sec-head-sm">G5 · 客場 · NYK 94–90 🏆 封王之戰</h3>
+      <p>馬刺首節打出23比13攻勢，半場42比37領先。第四節尼克一度落後10分。然後Brunson接管了比賽——第四節連拿13分。終場前約1分鐘，比分88平，Brunson拋投命中。Hart罰球、Anunoby罰球、Robinson關鍵進攻籃板。94比90，比賽結束。尼克4勝1敗，隊史第三座總冠軍。</p>
+      <div class="pull-quote">
+        <p>「只要全隊目標一致，最終就能實現期待。」</p>
+        <cite>— OG Anunoby，G4絕殺後</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BANNER 6 ══ -->
+  <div class="section-banner">§ 第六章 · 尼克奪冠的關鍵因素 §</div>
+
+  <!-- ══ ROW 6 ══ -->
+  <div class="cols-3">
+    <div class="col">
+      <h2 class="sec-head">球星無私與化學效應</h2>
+      <p>Brunson放棄1.13億美元——這不僅是金錢的犧牲，更是一種領袖格局的展現。當球隊的頭號球星願意為團隊做出如此巨大的犧牲，整個球隊的化學效應就不一樣了。</p>
+      <p>「維拉諾瓦三傑」從大學到職業的兄弟情誼，更是這支球隊凝聚力的核心。球場內外，他們是彼此最堅實的後盾。</p>
+      <h3 class="sec-head-sm">逆轉數據的密碼</h3>
+      <div class="stat-panel">
+        <div class="panel-title">「逆轉尼克」季後賽紀錄</div>
+        <div class="stat-row"><span>落後雙位數的場次</span><span class="stat-val">8場</span></div>
+        <div class="stat-row"><span>落後後仍獲勝</span><span class="stat-val">6場</span></div>
+        <div class="stat-row"><span>30年有紀錄以來最佳</span><span class="stat-val">✓</span></div>
+        <div class="stat-row"><span>總決賽最大逆轉</span><span class="stat-val">G4落後29分</span></div>
+      </div>
+    </div>
+
+    <div class="col-inner">
+      <h2 class="sec-head">管理層的操盤智慧</h2>
+      <p>尼克總裁Leon Rose展現了卓越的建隊能力。從2022年簽下Brunson、2023年交易來Hart、2024年交易來Bridges和簽下Anunoby、再到交易來Towns——每一步都精準到位。</p>
+      <p>更關鍵的是，Rose敢於做出艱難的決定——在球隊25年來最佳戰績之後解僱Thibodeau，聘請Brown。這需要極大的勇氣。</p>
+      <div class="img-placeholder">【請置入16:9圖片】<br>尼克全隊奪冠慶祝</div>
+      <div class="img-caption">▲ Leon Rose（右）與Brunson共同打造的冠軍藍圖，今夜圓滿。</div>
+    </div>
+
+    <div class="col-inner">
+      <h2 class="sec-head">心理韌性與麥迪遜廣場花園</h2>
+      <p>從首輪1勝2敗落後到11連勝、從總決賽G4落後29分到逆轉、從G5落後16分到封王——這支球隊的心理素質達到了歷史級別。</p>
+      <p>麥迪遜廣場花園是世界上最著名的體育館。2026年總決賽是第12次在此舉辦——比任何其他球場都多。數萬球迷遠征聖安東尼奧，將客場化為橘藍色的海洋。當馬刺球員罰球時，全場響起「防守」的吶喊——這是屬於紐約的聲音。</p>
+    </div>
+  </div>
+
+  <!-- ══ BANNER 7 ══ -->
+  <div class="section-banner">§ 第七章 · 令人感動的小故事 §</div>
+
+  <!-- ══ ROW 7 ══ -->
+  <div class="cols-2">
+    <div class="col">
+      <h2 class="sec-head">高層的故事：老闆的勇氣</h2>
+      <p>2025年6月，James Dolan批准了解僱Thibodeau的決定。這不是一個輕鬆的決定——Thibodeau剛帶隊打出25年來最佳戰績。但Dolan和Rose看到了更大的可能性，選擇了更艱難的道路。</p>
+      <h3 class="sec-head-sm">Thibodeau的風度</h3>
+      <p>被解僱的Thibodeau沒有怨言。他在《紐約時報》上刊登了一封給球迷的告別信。奪冠後，許多人說：「沒有他，就沒有這座冠軍。」Thibodeau改變了尼克的文化，為這座冠軍打下了基礎。</p>
+      <h3 class="sec-head-sm">Towns的真情流露</h3>
+      <p>Karl-Anthony Towns在賽後說：「我們圓了無數尼克傳奇球星與球迷的心願。」這句話，道出了所有尼克人的心聲。</p>
+      <h3 class="sec-head-sm">Ewing的深情發聲</h3>
+      <p>尼克傳奇中鋒Patrick Ewing在奪冠後公開發聲。這位將整個職業生涯奉獻給尼克的偉大中鋒，從未在紐約贏得總冠軍。但他的精神——那個在90年代帶領尼克與Michael Jordan的芝加哥公牛浴血奮戰的身影——是這座冠軍的基石之一。</p>
+    </div>
+
+    <div class="col-inner">
+      <h2 class="sec-head">球迷的故事：「戴夫，我們做到了」</h2>
+      <p>一位尼克球迷在奪冠後接受採訪時說，她的丈夫戴夫是尼克隊的死忠球迷，幾年前過世了。她把丈夫的骨灰灑在了麥迪遜廣場花園——「戴夫，我們終於做到了。」</p>
+      <div class="pull-quote">
+        <p>「戴夫，我們終於做到了。」</p>
+        <cite>— 一位尼克球迷，獻給已故丈夫</cite>
+      </div>
+      <h3 class="sec-head-sm">數萬球迷遠征聖安東尼奧</h3>
+      <p>數以萬計的尼克球迷飛越半個美國，將馬刺的主場變成橘藍色的海洋。當終場哨響，他們在客場瘋狂慶祝——這一刻，他們等了53年。</p>
+      <h3 class="sec-head-sm">紐約的狂歡</h3>
+      <p>奪冠當晚，紐約街頭萬人空巷。帝國大廈亮起橘藍色燈光。紐約市長宣布6月18日舉辦彩帶遊行——沿著百老匯「英雄峽谷」前進——這是尼克隊史第一次獲得這項榮譽。</p>
+      <div class="img-placeholder">【請置入16:9圖片】<br>紐約街頭萬人空巷慶典</div>
+      <div class="img-caption">▲ 奪冠之夜，紐約街頭成為橘藍色的海洋。</div>
+    </div>
+  </div>
+
+  <!-- ══ FINAL SECTION ══ -->
+  <div class="section-banner">§ 結語 §</div>
+
+  <div class="full-col">
+    <h2 class="sec-head" style="text-align:center;border:none;font-size:2rem;padding:1rem 0 0.5rem;">不僅僅是一座冠軍</h2>
+    <div class="byline" style="text-align:center;margin-bottom:1rem;">本報主筆 · 2026年6月13日</div>
+
+    <div style="max-width:700px;margin:0 auto;">
+      <p>53年的等待，終於在2026年6月13日畫下句點。</p>
+      <p>這不只是一座冠軍。這是Jalen Brunson從第二輪選秀到總決賽MVP的逆襲故事。這是「維拉諾瓦三傑」從大學到職業的兄弟情誼。這是Mike Brown從被解僱到冠軍教練的救贖。這是Leon Rose從零開始打造冠軍陣容的操盤智慧。這是數萬球迷53年不離不棄的忠誠。</p>
+
+      <div class="img-placeholder" style="margin:1.5rem 0;">【請置入16:9圖片】<br>尼克全隊 · 2026年NBA總冠軍頒獎典禮</div>
+      <div class="img-caption">▲ 2026年6月13日，紐約尼克隊——隊史第三座NBA總冠軍。</div>
+
+      <div class="pull-quote" style="margin:1.5rem 0;">
+        <p>不是天賦的堆砌，而是犧牲、信任與永不放棄。</p>
+        <cite>— 2026年紐約尼克隊，冠軍精神</cite>
+      </div>
+
+      <p>帝國大廈的橘藍燈光終將熄滅，彩帶終將掃盡，但這座冠軍將永遠刻在紐約的靈魂裡。</p>
+    </div>
+  </div>
+
+  <div class="ornament" style="padding:1.2rem 0;border-top:3px double var(--rule);">✦ &nbsp; 紐約尼克隊，2026年NBA總冠軍 &nbsp; ✦</div>
+  <div style="text-align:center;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);padding-top:0.4rem;">
+    The Knicks Gazette · 特別版 · 本刊所有版權保留 · 2026
+  </div>
+
+</article>
+</body>
+</html>

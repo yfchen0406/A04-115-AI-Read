@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- AI 學苑 - NotebookLM 讀書心得系列提示詞 -->
+<!-- 版面：2-8-2 切割 -->
+
+<head>
+  <title>P010.NotebookLM 讀書心得系列提示詞｜AI 學苑</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  
+  <!-- 自己的 CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  
+  <!-- iconfont -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  
+  <!-- Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    /* ── 色彩工具類 ── */
+    .yf1  { color: green;   font-weight: bold; }
+    .yf11 { color: green; }
+    .yf2  { color: purple;  font-weight: bold; }
+    .yf22 { color: purple; }
+    .yf3  { color: #0D6EFD; font-weight: bold; }
+    .yf33 { color: #0D6EFD; }
+    .yf4  { color: red;     font-weight: bold; }
+    .yf44 { color: red; }
+    .yf5  { color: rgb(143,13,13); font-weight: bold; }
+    .yf55 { color: rgb(143,13,13); }
+    .yf-c { text-align: center; }
+
+    /* ── 下拉選單滾輪 ── */
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    /* ── 頁面結構 ── */
+    header h1 { letter-spacing: .05em; }
+
+    /* ── 步驟卡片 ── */
+    .step-card {
+      border-left: 5px solid;
+      border-radius: 8px;
+      background: #f8f9fa;
+      margin-bottom: 2rem;
+      padding: 1.5rem 1.75rem;
+    }
+    .step-card.s1 { border-color: #0d6efd; }
+    .step-card.s2 { border-color: #198754; }
+    .step-card.s3 { border-color: #6f42c1; }
+    .step-card.s4 { border-color: #fd7e14; }
+    .step-card.s5 { border-color: #dc3545; }
+
+    .step-badge {
+      display: inline-block;
+      font-size: .85rem;
+      font-weight: 700;
+      padding: .25em .75em;
+      border-radius: 20px;
+      margin-bottom: .75rem;
+      color: #fff;
+    }
+    .s1 .step-badge { background: #0d6efd; }
+    .s2 .step-badge { background: #198754; }
+    .s3 .step-badge { background: #6f42c1; }
+    .s4 .step-badge { background: #fd7e14; }
+    .s5 .step-badge { background: #dc3545; }
+
+    .step-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    /* ── 提示詞區塊 ── */
+    .prompt-box {
+      position: relative;
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      font-family: 'Noto Sans TC', monospace;
+      font-size: .9rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: .6rem;
+      right: .75rem;
+      background: rgba(255,255,255,.15);
+      border: none;
+      color: #cdd6f4;
+      border-radius: 5px;
+      padding: .2rem .6rem;
+      font-size: .78rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,.3); }
+    .copy-btn.copied { background: #198754; color: #fff; }
+
+    /* ── 流程圖卡 ── */
+    .flow-step {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      margin-bottom: .6rem;
+    }
+    .flow-num {
+      min-width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: #0d6efd;
+      color: #fff;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+    }
+
+    /* ── 重點提示 ── */
+    .tip-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    /* ── 側邊欄 ── */
+    .sidebar-card {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .sidebar-card h6 {
+      font-weight: 700;
+      border-bottom: 2px solid #0d6efd;
+      padding-bottom: .4rem;
+      margin-bottom: .85rem;
+    }
+    .sidebar-card ul { padding-left: 1.2rem; margin: 0; }
+    .sidebar-card li { margin-bottom: .4rem; font-size: .9rem; }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark">
+  <!-- 導覽列 -->
+  <div id="nav1"></div>
+
+  <!-- ===== Header ===== -->
+  <header class="text-center p-2" style="margin-top: 65px;">
+    <h1 class="text-info yf-font1">
+      <i class="fa-solid fa-book-open-reader me-1"></i>P010.NotebookLM 讀書心得系列提示詞 ~ 115.06.16
+    </h1>
+    <p class="text-light yf-font1">
+      五步驟完整工作流程・從核心觀念萃取到 8000～10000 字讀書心得，各項數字都可以調整
+    </p>
+  </header>
+
+  <!-- ===== 主畫面 ===== -->
+  <div class="container-fluid yf-font1" style="margin-top:1px; background-color:white;">
+    <div class="row">
+
+      <!-- 左側欄 (2) -->
+      <div class="col-md-2 d-none d-md-block py-3">
+        <div class="sidebar-card">
+          <h6><i class="bi bi-list-ul me-1"></i>快速跳轉</h6>
+          <ul class="list-unstyled">
+            <li><a href="#step1" class="text-decoration-none">🔵 Step 1 核心觀念萃取</a></li>
+            <li><a href="#step2" class="text-decoration-none">🟢 Step 2 讀書心得綱要</a></li>
+            <li><a href="#step3" class="text-decoration-none">🟣 Step 3 展開正文</a></li>
+            <li><a href="#step4" class="text-decoration-none">🟠 Step 4 金句反思</a></li>
+            <li><a href="#step5" class="text-decoration-none">🔴 Step 5 整合潤稿</a></li>
+            <li><a href="#flow" class="text-decoration-none">📋 使用流程</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h6><i class="bi bi-tools me-1"></i>工具資訊</h6>
+          <ul>
+            <li>目標工具：NotebookLM</li>
+            <li>費用：<span class="yf1">免費</span></li>
+            <li>成品字數：8000～10000</li>
+            <li>步驟數：5 步驟</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 主內容 (8) -->
+      <div class="col-md-8 py-4 px-3 px-md-4">
+
+        <!-- 說明區 -->
+        <div class="alert alert-info d-flex align-items-start gap-2 mb-4" role="alert">
+          <i class="bi bi-info-circle-fill fs-5 mt-1"></i>
+          <div>
+            <strong>使用方法：</strong>先在 NotebookLM 上傳書籍（PDF 或貼上章節文字），建立 Notebook 後，依序將下方五個提示詞逐步貼入，即可完成一篇有結構、有個人連結的完整讀書心得。
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="step-card s1" id="step1">
+          <span class="step-badge">Step 1</span>
+          <div class="step-title">
+            <i class="bi bi-search me-1"></i>萃取書中核心觀念
+          </div>
+          <p class="text-muted mb-3" style="font-size:.9rem;">
+            目的：讓 NotebookLM 從書中提煉重要主張、代表故事與金句，作為後續寫作的素材庫。
+          </p>
+          <div class="prompt-box" id="prompt1">
+<button class="copy-btn" onclick="copyPrompt('prompt1', this)"><i class="bi bi-clipboard me-1"></i>複製</button>你是一位資深閱讀顧問。請根據本書內容，完成以下任務：
+
+1. 列出本書 5～8 個最重要的核心觀念或主張，每個觀念附上 2～3 句說明
+2. 每個觀念標注對應的章節或頁數（若可查到）
+3. 列出書中最具代表性的 3～5 個故事案例（每個案例 3～5 句摘要）
+4. 精選書中 5～8 句金句，逐句附上出處章節
+
+輸出格式：分四個區塊，用標題區隔。使用繁體中文。</div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card s2" id="step2">
+          <span class="step-badge">Step 2</span>
+          <div class="step-title">
+            <i class="bi bi-layout-text-window-reverse me-1"></i>產出讀書心得綱要
+          </div>
+          <p class="text-muted mb-3" style="font-size:.9rem;">
+            目的：根據書中素材與個人背景，生成五大結構綱要，確認架構後再展開正文。
+          </p>
+          <div class="prompt-box" id="prompt2">
+<button class="copy-btn" onclick="copyPrompt('prompt2', this)"><i class="bi bi-clipboard me-1"></i>複製</button>你是一位擅長撰寫深度讀書心得的寫作教練。我是一位退休高中教師，目前積極學習 AI 工具與網頁設計，維持「每日學習」的退休生活框架。
+
+請根據本書核心觀念，為我產出一份完整的讀書心得寫作綱要，結構如下：
+
+【一、前言：閱讀動機與背景】（200 字方向說明）
+- 為何選讀這本書
+- 閱讀前的期待與疑問
+
+【二、書中重點摘要】（3～5 個主題，每主題 150 字方向）
+- 涵蓋書中核心觀念與代表性故事案例
+
+【三、與我的人生連結】（分三段，每段 150 字方向）
+- 過去：對應我的高中教職經歷
+- 現在：對應我的退休學習生活（AI 工具、每日學習框架）
+- 未來：對這本書的延伸應用或行動計畫
+
+【四、書中金句與反思】（選 3 句金句，每句附上 100 字個人反思）
+
+【五、結論與總結】（200 字方向）
+- 這本書對我最大的價值
+- 對讀者的推薦語
+
+總字數目標：8000～10000 字。請先產出綱要，不要直接寫正文。</div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card s3" id="step3">
+          <span class="step-badge">Step 3</span>
+          <div class="step-title">
+            <i class="bi bi-pencil-square me-1"></i>展開正文（逐節撰寫）
+          </div>
+          <p class="text-muted mb-3" style="font-size:.9rem;">
+            目的：依綱要逐節展開，每節完成後確認再繼續，避免 NotebookLM 一次輸出過長而截斷。
+          </p>
+          <div class="prompt-box" id="prompt3">
+<button class="copy-btn" onclick="copyPrompt('prompt3', this)"><i class="bi bi-clipboard me-1"></i>複製</button>請根據剛才確認的讀書心得綱要，開始撰寫讀書心得正文。
+
+寫作要求：
+- 我的身份：退休高中教師，現在每日學習 AI 與網頁設計，關注認知思維類書籍
+- 語氣：第一人稱，親切但有條理，具有個人觀點，不流於表面摘要
+- 每段必須有具體的書中內容支撐（故事、數據、金句），再轉入個人感受或對應
+- MUST 在「與我的人生連結」段落中，具體點出高中教職的真實情境或退休後的實際行動
+- NEVER 使用空泛語句如「這本書給了我很大的啟發」，必須說明啟發的具體內容是什麼
+
+請從【一、前言】開始，逐節撰寫，每完成一節請停頓並提示我確認後再繼續。</div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card s4" id="step4">
+          <span class="step-badge">Step 4</span>
+          <div class="step-title">
+            <i class="bi bi-chat-quote me-1"></i>金句反思強化
+          </div>
+          <p class="text-muted mb-3" style="font-size:.9rem;">
+            目的：針對最有衝擊力的 3 句金句，產出結合個人經歷的深度反思段落。
+          </p>
+          <div class="prompt-box" id="prompt4">
+<button class="copy-btn" onclick="copyPrompt('prompt4', this)"><i class="bi bi-clipboard me-1"></i>複製</button>請從本書中挑選 3 句對我（退休教師、AI 學習者）最具衝擊力的金句。
+
+對每一句金句，依以下格式輸出：
+━━━━━━━━━━━━━━━━━━
+📌 金句：「[原文]」——第 X 章
+🔍 作者意圖：（50 字，說明作者用這句話想表達什麼）
+💬 我的反思：（150 字，結合我的教職經歷或現在退休生活，寫出具體感受與行動啟示）
+━━━━━━━━━━━━━━━━━━
+
+使用繁體中文，語氣真誠有個人色彩。</div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card s5" id="step5">
+          <span class="step-badge">Step 5</span>
+          <div class="step-title">
+            <i class="bi bi-check2-all me-1"></i>全文整合與潤稿
+          </div>
+          <p class="text-muted mb-3" style="font-size:.9rem;">
+            目的：整合所有段落，確認結構完整、字數達標，並產出三款標題選項。
+          </p>
+          <div class="prompt-box" id="prompt5">
+<button class="copy-btn" onclick="copyPrompt('prompt5', this)"><i class="bi bi-clipboard me-1"></i>複製</button>請將所有已完成的段落整合為一篇完整的讀書心得，並執行以下潤稿任務：
+
+1. 確認五大結構完整（前言、書中重點、人生連結、金句反思、結論）
+2. 段落之間加入適當的過渡語，使全文讀來流暢自然
+3. 檢查人生連結三段（過去、現在、未來）是否有具體情境，若過於抽象請補強
+4. 全文字數確認在 8000～10000 字範圍內，不足請補寫，超過請精簡
+5. 最後提供 3 個文章標題選項，風格分別為：知性型、故事型、行動型
+
+輸出：完整正文 + 標題三選項。使用繁體中文。</div>
+        </div>
+
+        <!-- 使用流程 -->
+        <div class="mt-2 mb-4" id="flow">
+          <h5 class="fw-bold mb-3">
+            <i class="bi bi-diagram-3 me-2 text-primary"></i>NotebookLM 操作流程
+          </h5>
+          <div class="flow-step">
+            <div class="flow-num">①</div>
+            <div>在 NotebookLM 上傳書籍（PDF 或逐章貼上文字），建立 Notebook</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">②</div>
+            <div>貼入 <strong>Step 1</strong>，取得核心觀念、故事案例、金句清單</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">③</div>
+            <div>貼入 <strong>Step 2</strong>，確認五大結構綱要後再進行下一步</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">④</div>
+            <div>貼入 <strong>Step 3</strong>，<span class="yf2">逐節確認</span>，每節完成後回覆「繼續」</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">⑤</div>
+            <div>貼入 <strong>Step 4</strong>，補充金句反思段落</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">⑥</div>
+            <div>貼入 <strong>Step 5</strong>，整合全文並選定標題</div>
+          </div>
+
+          <div class="tip-box">
+            <i class="bi bi-lightbulb-fill text-warning me-2"></i>
+            <strong>小提示：</strong>若手上有特定書名，可在 Step 2 的「人生連結」段落預先植入該書的核心主題關鍵字，讓提示詞更精準。Step 3 採「節節確認」策略，是避免 NotebookLM 輸出過長截斷的最佳解法。
+          </div>
+        </div>
+
+      </div><!-- /col-8 -->
+
+      <!-- 右側欄 (2) -->
+      <div class="col-md-2 d-none d-md-block py-3">
+        <div class="sidebar-card">
+          <h6><i class="bi bi-flag me-1"></i>五大結構</h6>
+          <ul>
+            <li>一、前言（閱讀動機）</li>
+            <li>二、書中重點摘要</li>
+            <li>三、人生連結<br><small class="text-muted">過去・現在・未來</small></li>
+            <li>四、金句與反思</li>
+            <li>五、結論總結</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h6><i class="bi bi-tag me-1"></i>適用書籍類型</h6>
+          <ul>
+            <li>認知思維類</li>
+            <li>心理學類</li>
+            <li>職場商業類</li>
+            <li>哲學人文類</li>
+            <li>健康科學類</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h6><i class="bi bi-clock-history me-1"></i>預計時間</h6>
+          <ul>
+            <li>Step 1－2：30 分鐘</li>
+            <li>Step 3：60～90 分鐘</li>
+            <li>Step 4－5：30 分鐘</li>
+          </ul>
+          <p class="text-muted mt-2 mb-0" style="font-size:.8rem;">總計約 2～2.5 小時</p>
+        </div>
+      </div><!-- /col-2 -->
+
+    </div><!-- /row -->
+    <br><br>
+  </div><!-- /container-fluid -->
+
+  <div id="footer"></div>
+
+
+  <!-- jQuery 載入 nav / footer -->
+  <script>
+    $(function () {
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+  <!-- 複製功能 -->
+  <script>
+    function copyPrompt(id, btn) {
+      const box = document.getElementById(id);
+      // 取得純文字（排除按鈕文字）
+      const btnEl = box.querySelector('.copy-btn');
+      const btnText = btnEl.innerText;
+      btnEl.remove();
+      const text = box.innerText.trim();
+      box.insertBefore(btnEl, box.firstChild);
+
+      navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = '<i class="bi bi-check2 me-1"></i>已複製';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = '<i class="bi bi-clipboard me-1"></i>複製';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

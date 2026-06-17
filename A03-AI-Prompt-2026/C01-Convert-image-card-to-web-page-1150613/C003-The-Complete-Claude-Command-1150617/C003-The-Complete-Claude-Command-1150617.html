@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <title>Claude 完整命令速查表｜190+ 斜杠指令全解析｜白話圖解</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+
+  <!-- Bootstrap 4 (原始框架核心) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 輔助 (模態框、進階樣式) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 保留框架原有CSS（路徑可能不存在） -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- Google Font 中文 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans TC', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      background-color: #121212;
+    }
+
+    .content-padding {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+
+    @media (max-width: 768px) {
+      .content-padding {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+    }
+
+    .yf-font1,
+    body,
+    .container-fluid {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .header-bg-grad {
+      background: linear-gradient(98deg, #f0edff 0%, #ffffff 100%);
+      border-radius: 0 0 2rem 2rem;
+    }
+
+    .original-img-card {
+      background: white;
+      border-radius: 28px;
+      transition: 0.2s;
+    }
+
+    .img-preview {
+      cursor: pointer;
+      transition: 0.2s;
+      border-radius: 20px;
+    }
+
+    .img-preview:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-img-large {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+
+    .command-badge {
+      background: #2d2a5e;
+      color: #f0e6ff;
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    .category-header {
+      background-color: #f1f3f5;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-bottom: 2px solid #7c3aed;
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: #f8f0ff;
+    }
+
+    .simple-desc {
+      color: #2c3e66;
+      font-size: 0.9rem;
+    }
+
+    .footer-custom {
+      background-color: #1e1e2f;
+      color: #adb5bd;
+    }
+
+    .badge-bonus {
+      background: #ffd966;
+      color: #1e1e2f;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark" onload="updateCounter()">
+  <!-- 導覽列 (使用 jQuery 載入，保留框架結構) -->
+  <div id="nav1"></div>
+
+  <!-- 主要內容區，左右留白 -->
+  <div class="container-fluid yf-font1 content-padding"
+    style="margin-top:55px;  background-color:white; padding-bottom: 2.5rem;">
+
+    <!-- 標題區塊 -->
+    <div class="text-center p-4 header-bg-grad" style="margin-top: 10px;">
+      <h1 class="display-5 fw-bold text-dark">📋 C003.Claude 完整命令速查表 ~ 115.06.17</h1>
+      <p class="lead text-secondary mt-2">190+ 斜杠指令全收錄｜白話解釋 · 分類清楚 · 一鍵複製</p>
+
+      <!-- 原始圖片展示 (點擊放大) -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8 col-md-10">
+          <div class="original-img-card p-3 shadow-sm border-0">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+              <div class="img-preview flex-shrink-0 bg-light p-2 rounded-4" style="max-width: 200px;"
+                data-bs-toggle="modal" data-bs-target="#imageModal">
+                <img src="./C003-1.webp" alt="Claude 命令速查表原圖" class="img-fluid rounded-3 shadow-sm"
+                  style="max-height: 140px; width: auto; object-fit: contain; cursor: pointer;"
+                  onerror="this.onerror=null; this.src='./C003-1.webp';">
+              </div>
+              <div class="text-start flex-grow-1">
+                <h5 class="fw-bold mb-1"><i class="fa-regular fa-image me-2 text-primary"></i> 原始完整命令海報</h5>
+                <p class="mb-2 text-muted small">這張圖列出了所有 Claude 斜杠指令，分為 12 大類。點擊左側縮圖可放大檢視細節，下方表格提供每個指令的「白話解釋」。</p>
+                <a href="./C003-1.webp" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill" download>
+                  <i class="fa-regular fa-eye"></i> 查看／下載原圖
+                </a>
+                <span class="ms-2 text-muted small"><i class="fa-regular fa-hand-pointer"></i> 點擊圖片放大</span>
+              </div>
+            </div>
+            <div class="alert alert-light mt-3 mb-0 py-2 small">
+              <i class="fa-regular fa-circle-info text-info"></i> 💡
+              圖片檔名「<strong>C003-1.webp</strong>」請與網頁同資料夾。下方表格已將所有命令分類整理，並附上白話用法，讓你真正「停止提問，開始指揮」！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 開場說明 -->
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="alert alert-secondary border-0 shadow-sm bg-white">
+          <div class="d-flex gap-3 align-items-center">
+            <i class="fa-regular fa-gem fa-3x text-primary"></i>
+            <div>
+              <h5 class="fw-bold">🧠 命令分類總覽｜白話對照</h5>
+              <p class="mb-0">以下表格依圖片分類，每個命令都附上「英文原意」與「白話用途」。學會這些斜杠指令，你就能像專業人士一樣操控 Claude，大幅提升效率。</p>
+            </div>
+          </div>
+          <br>
+          <div class="d-flex gap-3 align-items-center flex-wrap">
+            <i class="fa-solid fa-comment-nodes fa-2x text-info"></i>
+            <div>
+              <h5 class="alert-heading fw-bold"><b>提示詞</b></h5>
+              <p class="mb-0 yf33">
+                詳細解釋這張圖片的所有功能，用簡單的用詞說明，完成後以往頁格式是呈現，完成後將上述資料轉成網頁版，網頁格式參考我的網頁架構如附件，注意保留nav和footer，標題也利用我的網頁架構！
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============= 命令總表 (表格形式) ============= -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0" style="font-size: 0.95rem;">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width: 15%;">分類</th>
+                    <th style="width: 18%;">命令</th>
+                    <th style="width: 30%;">英文描述 (圖片原文)</th>
+                    <th style="width: 37%;">💬 白話解釋 (簡單用詞)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ===== START & CREATE ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">🚀 START & CREATE — 開始與新建</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/new</span></td>
+                    <td>Start a fresh conversation</td>
+                    <td>開啟一個全新的對話，清除之前的內容。</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/project</span></td>
+                    <td>Create a new project</td>
+                    <td>建立新專案，讓 Claude 針對特定任務集中管理。</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/upload</span></td>
+                    <td>Attach files for Claude to read</td>
+                    <td>上傳檔案（PDF、圖片、文件等），讓 Claude 閱讀內容。</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/paste</span></td>
+                    <td>Paste from clipboard</td>
+                    <td>直接貼上剪貼簿中的文字，快速輸入大量內容。</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/template</span></td>
+                    <td>Use a pre-built prompt structure</td>
+                    <td>使用預先設計好的提示模板，節省打字的時間。</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/import</span></td>
+                    <td>Import from a file</td>
+                    <td>從檔案中匯入資料（例如 CSV、JSON），讓 Claude 分析。</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/scan</span></td>
+                    <td>Scan documents</td>
+                    <td>掃描文件，快速提取重點或關鍵資訊。</td>
+                  </tr>
+                  <tr>
+                    <td>START</td>
+                    <td><span class="command-badge">/voice</span></td>
+                    <td>Use voice input</td>
+                    <td>使用語音輸入，用說的取代打字。</td>
+                  </tr>
+
+                  <!-- ===== FOCUS & CONTEXT ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">🎯 FOCUS & CONTEXT — 聚焦與背景</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/focus</span></td>
+                    <td>Tell Claude exactly what you want</td>
+                    <td>明確告訴 Claude 你想要的具體目標，讓它專注不跑題。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/context</span></td>
+                    <td>Add background so answers are sharper</td>
+                    <td>補充背景資訊，讓 Claude 的回答更精準。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/details</span></td>
+                    <td>Provide more details</td>
+                    <td>提供更多細節，幫助 Claude 理解完整脈絡。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/examples</span></td>
+                    <td>Give examples</td>
+                    <td>給出具體範例，讓 Claude 知道你要的風格或格式。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/claimify</span></td>
+                    <td>Let Claude ask the right questions first</td>
+                    <td>讓 Claude 先問你關鍵問題，釐清需求再回答。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/define</span></td>
+                    <td>Define terms</td>
+                    <td>定義專業術語，避免 Claude 誤解。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/assumptions</span></td>
+                    <td>List assumptions</td>
+                    <td>列出你預設的假設，讓 Claude 在此基礎上回應。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/priorities</span></td>
+                    <td>Set priorities</td>
+                    <td>設定優先順序，讓 Claude 知道哪些部分最重要。</td>
+                  </tr>
+                  <tr>
+                    <td>FOCUS</td>
+                    <td><span class="command-badge">/constraints</span></td>
+                    <td>Set constraints</td>
+                    <td>設定限制條件（例如時間、資源、字數），讓答案更實際。</td>
+                  </tr>
+
+                  <!-- ===== THINK & SOLVE ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">🧠 THINK & SOLVE — 思考與解題</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/analyze</span></td>
+                    <td>Break any problem into parts</td>
+                    <td>將任何問題拆解成小部分，逐步分析。</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/compare</span></td>
+                    <td>Put two options head to head</td>
+                    <td>將兩個選項並排比較，幫助你做決定。</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/pros-cons</span></td>
+                    <td>List pros & cons</td>
+                    <td>列出優點和缺點，評估利弊。</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/evaluate</span></td>
+                    <td>Evaluate ideas</td>
+                    <td>評估你的想法，指出潛在風險和機會。</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/recommend</span></td>
+                    <td>Get recommendations</td>
+                    <td>根據你的需求，獲得具體建議。</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/brainstorm</span></td>
+                    <td>Generate ideas fast, no filter</td>
+                    <td>快速產生大量點子，不設限，激發創意。</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/solve</span></td>
+                    <td>Solve the problem</td>
+                    <td>直接解決問題，給出明確答案或解決方案。</td>
+                  </tr>
+                  <tr>
+                    <td>THINK</td>
+                    <td><span class="command-badge">/challenge</span></td>
+                    <td>Challenge assumptions</td>
+                    <td>挑戰你的假設，幫助你發現思維盲點。</td>
+                  </tr>
+
+                  <!-- ===== WRITE & EDIT ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">✍️ WRITE & EDIT — 寫作與編輯</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/write</span></td>
+                    <td>Generate content from scratch</td>
+                    <td>從零開始生成內容（文章、郵件、報告等）。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/edit</span></td>
+                    <td>Clean up what you already have</td>
+                    <td>幫你潤飾、修改現有的文字，讓它更流暢。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/rewrite</span></td>
+                    <td>Same message, better delivery</td>
+                    <td>改寫同樣的內容，但用更吸引人的方式表達。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/shorten</span></td>
+                    <td>Keep the punch</td>
+                    <td>濃縮文字，保留精華，刪除多餘內容。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/expand</span></td>
+                    <td>Add more detail</td>
+                    <td>擴充內容，補充更多細節和說明。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/improve</span></td>
+                    <td>Improve writing</td>
+                    <td>提升寫作品質，讓用詞更精準、結構更清晰。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/summarize</span></td>
+                    <td>Summarize text</td>
+                    <td>摘要長篇文章，快速掌握重點。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/paraphrase</span></td>
+                    <td>Paraphrase text</td>
+                    <td>換句話說，用不同方式表達相同意思，避免抄襲。</td>
+                  </tr>
+                  <tr>
+                    <td>WRITE</td>
+                    <td><span class="command-badge">/proofread</span></td>
+                    <td>Proofread text</td>
+                    <td>校對文字，檢查錯字、標點和文法錯誤。</td>
+                  </tr>
+
+                  <!-- ===== ORGANIZE & STRUCTURE ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">📂 ORGANIZE & STRUCTURE — 組織與結構</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/outline</span></td>
+                    <td>Build a skeleton before you write</td>
+                    <td>寫作前先建立大綱，規劃內容架構。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/structure</span></td>
+                    <td>Organize content</td>
+                    <td>重新整理內容，讓邏輯順序更清楚。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/bullet</span></td>
+                    <td>Turn walls of text into scannable points</td>
+                    <td>將一大段文字轉成條列式重點，方便閱讀。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/numbered</span></td>
+                    <td>Make numbered list</td>
+                    <td>製作編號清單，適用於步驟或順序性內容。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/table</span></td>
+                    <td>Organize comparisons visually</td>
+                    <td>用表格視覺化比較不同項目的差異。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/summary</span></td>
+                    <td>Summarize content</td>
+                    <td>總結內容，濃縮成幾句精華。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/key-points</span></td>
+                    <td>Extract key points</td>
+                    <td>提取關鍵要點，抓出最重要的訊息。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/mindmap</span></td>
+                    <td>Map out connected ideas</td>
+                    <td>繪製心智圖，呈現想法之間的關聯。</td>
+                  </tr>
+                  <tr>
+                    <td>ORGANIZE</td>
+                    <td><span class="command-badge">/flowchart</span></td>
+                    <td>Create flowchart</td>
+                    <td>建立流程圖，說明步驟或決策路徑。</td>
+                  </tr>
+
+                  <!-- ===== CODE & TECH ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">💻 CODE & TECH — 程式碼與技術</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/code</span></td>
+                    <td>Write code in any language</td>
+                    <td>用任何程式語言寫出程式碼。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/debug</span></td>
+                    <td>Find and fix what's broken</td>
+                    <td>找出程式中的錯誤並提供修復方法。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/explain</span></td>
+                    <td>Explain code</td>
+                    <td>解釋程式碼的邏輯和功能，幫助你理解。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/optimize</span></td>
+                    <td>Make it faster and cleaner</td>
+                    <td>優化程式碼，讓它跑得更快、更簡潔。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/refactor</span></td>
+                    <td>Refactor code</td>
+                    <td>重構程式碼，改善結構但不改變功能。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/test</span></td>
+                    <td>Write tests</td>
+                    <td>為你的程式碼編寫測試案例，確保品質。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/convert</span></td>
+                    <td>Convert formats</td>
+                    <td>轉換程式碼或檔案格式（例如 JSON to CSV）。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/documentation</span></td>
+                    <td>Write docs</td>
+                    <td>撰寫技術文件或 API 說明文檔。</td>
+                  </tr>
+                  <tr>
+                    <td>CODE</td>
+                    <td><span class="command-badge">/review</span></td>
+                    <td>Review code</td>
+                    <td>審查程式碼，指出潛在問題和改進建議。</td>
+                  </tr>
+
+                  <!-- ===== DATA & ANALYSIS ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">📊 DATA & ANALYSIS — 數據與分析</td>
+                  </tr>
+                  <tr>
+                    <td>DATA</td>
+                    <td><span class="command-badge">/analyze-data</span></td>
+                    <td>Find patterns in raw data</td>
+                    <td>從原始數據中找出規律或趨勢。</td>
+                  </tr>
+                  <tr>
+                    <td>DATA</td>
+                    <td><span class="command-badge">/visualize</span></td>
+                    <td>Turn numbers into charts</td>
+                    <td>將數據轉換成圖表，視覺化呈現。</td>
+                  </tr>
+                  <tr>
+                    <td>DATA</td>
+                    <td><span class="command-badge">/insights</span></td>
+                    <td>Pull the "so what"</td>
+                    <td>歸納數據背後的洞見，告訴你「然後呢？」</td>
+                  </tr>
+                  <tr>
+                    <td>DATA</td>
+                    <td><span class="command-badge">/forecast</span></td>
+                    <td>Make predictions</td>
+                    <td>根據歷史數據做出預測。</td>
+                  </tr>
+                  <tr>
+                    <td>DATA</td>
+                    <td><span class="command-badge">/report</span></td>
+                    <td>Generate report</td>
+                    <td>自動產生數據分析報告，含圖表和結論。</td>
+                  </tr>
+                  <tr>
+                    <td>DATA</td>
+                    <td><span class="command-badge">/stats</span></td>
+                    <td>Calculate statistics</td>
+                    <td>計算統計數據（平均數、標準差等）。</td>
+                  </tr>
+                  <tr>
+                    <td>DATA</td>
+                    <td><span class="command-badge">/clean</span></td>
+                    <td>Clean data</td>
+                    <td>清理髒數據，移除重複或錯誤值。</td>
+                  </tr>
+
+                  <!-- ===== AUTOMATE & INTEGRATE ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">⚙️ AUTOMATE & INTEGRATE — 自動化與整合</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/workflow</span></td>
+                    <td>Design a repeatable process</td>
+                    <td>設計可重複的工作流程，標準化作業。</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/automate</span></td>
+                    <td>Remove manual steps</td>
+                    <td>自動化手動步驟，節省時間。</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/api</span></td>
+                    <td>Connect Claude to other tools</td>
+                    <td>串接 API，讓 Claude 與其他工具協作。</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/integrate</span></td>
+                    <td>Integrate systems</td>
+                    <td>整合不同系統，讓資料流通。</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/schedule</span></td>
+                    <td>Schedule tasks</td>
+                    <td>安排任務時程，設定執行時間。</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/trigger</span></td>
+                    <td>Set triggers</td>
+                    <td>設定觸發條件，當條件滿足時自動執行動作。</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/tasklist</span></td>
+                    <td>Create task list</td>
+                    <td>建立任務清單，追蹤進度。</td>
+                  </tr>
+                  <tr>
+                    <td>AUTO</td>
+                    <td><span class="command-badge">/checklist</span></td>
+                    <td>Create checklist</td>
+                    <td>製作檢查清單，確保步驟不漏。</td>
+                  </tr>
+
+                  <!-- ===== PERSONALIZE & CONTROL ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">🎛️ PERSONALIZE & CONTROL — 個人化與控制</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/preferences</span></td>
+                    <td>Set preferences</td>
+                    <td>設定個人偏好（例如語言、單位）。</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/memory</span></td>
+                    <td>Tell Claude what to always remember</td>
+                    <td>告訴 Claude 要記住的內容，讓它長期記憶。</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/tone</span></td>
+                    <td>Formal, casual, your call</td>
+                    <td>調整語氣（正式、輕鬆等），任你選擇。</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/style</span></td>
+                    <td>Match a writing voice or persona</td>
+                    <td>模仿特定寫作風格或人格，例如模仿某位作家。</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/length</span></td>
+                    <td>Control response length</td>
+                    <td>控制回答的長短（簡短、詳細等）。</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/format</span></td>
+                    <td>Change format</td>
+                    <td>改變輸出格式（例如 Markdown、純文字）。</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/reset</span></td>
+                    <td>Reset conversation</td>
+                    <td>重置對話，清除所有上下文，重新開始。</td>
+                  </tr>
+                  <tr>
+                    <td>PERSONAL</td>
+                    <td><span class="command-badge">/clear</span></td>
+                    <td>Clear context</td>
+                    <td>清除當前上下文，但不重置整個對話。</td>
+                  </tr>
+
+                  <!-- ===== LEARN & RESEARCH ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">🔍 LEARN & RESEARCH — 學習與研究</td>
+                  </tr>
+                  <tr>
+                    <td>LEARN</td>
+                    <td><span class="command-badge">/search</span></td>
+                    <td>Pull current info from the web</td>
+                    <td>從網路抓取最新資訊，即時查詢。</td>
+                  </tr>
+                  <tr>
+                    <td>LEARN</td>
+                    <td><span class="command-badge">/research</span></td>
+                    <td>Go deep on any topic</td>
+                    <td>深入研究任何主題，提供詳盡的資料整理。</td>
+                  </tr>
+                  <tr>
+                    <td>LEARN</td>
+                    <td><span class="command-badge">/learn</span></td>
+                    <td>Explain like I'm a...</td>
+                    <td>用簡單方式解釋複雜概念（例如「像教 10 歲小孩」）。</td>
+                  </tr>
+                  <tr>
+                    <td>LEARN</td>
+                    <td><span class="command-badge">/tldr</span></td>
+                    <td>Summarize key points</td>
+                    <td>太長了，濃縮成幾句話的重點。</td>
+                  </tr>
+                  <tr>
+                    <td>LEARN</td>
+                    <td><span class="command-badge">/sources</span></td>
+                    <td>Find sources</td>
+                    <td>查找資訊來源，提供參考文獻或連結。</td>
+                  </tr>
+                  <tr>
+                    <td>LEARN</td>
+                    <td><span class="command-badge">/fact-check</span></td>
+                    <td>Verify before you trust it</td>
+                    <td>事實查核，確認資訊正確性再相信。</td>
+                  </tr>
+                  <tr>
+                    <td>LEARN</td>
+                    <td><span class="command-badge">/explore</span></td>
+                    <td>Explore related topics</td>
+                    <td>探索相關主題，拓展知識廣度。</td>
+                  </tr>
+
+                  <!-- ===== COLLABORATE & SHARE ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">🤝 COLLABORATE & SHARE — 協作與分享</td>
+                  </tr>
+                  <tr>
+                    <td>COLLAB</td>
+                    <td><span class="command-badge">/share</span></td>
+                    <td>Share conversation</td>
+                    <td>分享對話記錄給其他人。</td>
+                  </tr>
+                  <tr>
+                    <td>COLLAB</td>
+                    <td><span class="command-badge">/export</span></td>
+                    <td>Save the output in your format</td>
+                    <td>匯出結果，選擇你需要的格式（PDF、TXT 等）。</td>
+                  </tr>
+                  <tr>
+                    <td>COLLAB</td>
+                    <td><span class="command-badge">/download</span></td>
+                    <td>Get the file instantly</td>
+                    <td>立即下載生成的文件或報告。</td>
+                  </tr>
+                  <tr>
+                    <td>COLLAB</td>
+                    <td><span class="command-badge">/copy</span></td>
+                    <td>Copy to clipboard</td>
+                    <td>複製內容到剪貼簿，方便貼到其他地方。</td>
+                  </tr>
+                  <tr>
+                    <td>COLLAB</td>
+                    <td><span class="command-badge">/email</span></td>
+                    <td>Draft and send directly</td>
+                    <td>草擬郵件並可直接發送（需設定）。</td>
+                  </tr>
+                  <tr>
+                    <td>COLLAB</td>
+                    <td><span class="command-badge">/publish</span></td>
+                    <td>Publish content</td>
+                    <td>發布內容到部落格或社群平台。</td>
+                  </tr>
+                  <tr>
+                    <td>COLLAB</td>
+                    <td><span class="command-badge">/feedback</span></td>
+                    <td>Send feedback</td>
+                    <td>發送回饋意見給開發者或團隊。</td>
+                  </tr>
+
+                  <!-- ===== BONUS: POWER SHORTCUTS ===== -->
+                  <tr class="category-header">
+                    <td colspan="4">⚡ BONUS: POWER SHORTCUTS — 超強快捷技巧</td>
+                  </tr>
+                  <tr>
+                    <td>BONUS</td>
+                    <td colspan="3">
+                      <span class="badge-bonus badge p-2 me-1">Use /+command for quick access</span>
+                      直接輸入斜槓+指令名稱，快速啟用。<br>
+                      <span class="badge-bonus badge p-2 me-1">Combine commands for better results</span>
+                      組合多個指令，效果更強大（例如 /write + /shorten）。<br>
+                      <span class="badge-bonus badge p-2 me-1">Add context early for better answers</span>
+                      早點給背景資訊，答案會更精準。<br>
+                      <span class="badge-bonus badge p-2 me-1">Be specific and clear</span> 指令越明確，Claude 越懂你。<br>
+                      <span class="badge-bonus badge p-2 me-1">Iterate and refine</span> 可以來回修改，逐步完善結果。<br>
+                      <span class="badge-bonus badge p-2 me-1">Save and reuse what works</span> 把好用的指令組合存起來，下次直接套用。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 結語與提醒 -->
+    <div class="row mt-5">
+      <div class="col-md-8 mx-auto">
+        <div class="card bg-light border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fa-regular fa-message fa-2x text-primary mb-2"></i>
+            <h5 class="fw-bold">🗣️ 停止提問，開始指揮！</h5>
+            <p class="mb-0">把這些斜槓指令當作你的「快捷鍵」，直接告訴 Claude 你要做什麼，它就能立刻化身為寫手、工程師、分析師、設計師…… 讓 AI 真正成為你的超強戰友。</p>
+            <hr>
+            <small class="text-muted">📌 圖片中的所有命令均已收錄在上表，點擊圖片可放大瀏覽原版海報。</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 圖片放大模態框 (修正：圖片來源改為 C003-1.webp) -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content bg-dark bg-opacity-95 border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-white" id="imageModalLabel">Claude 完整命令速查表 (原圖)</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <!-- 修改圖片 src 為正確的檔案 -->
+          <img src="./C003-1.webp" alt="Claude 命令海報放大" class="modal-img-large img-fluid">
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <!-- 修改下載連結為正確檔案 -->
+          <a href="./C003-1.webp" class="btn btn-light" download><i class="fa-regular fa-download"></i> 下載圖片</a>
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 Footer (保留框架 jQuery 載入) -->
+  <div id="footer"></div>
+
+  <!-- 框架原有腳本：載入 nav 與 footer -->
+  <script>
+    $(function () {
+      // 保留原始路徑（若檔案不存在不影響主要內容）
+      $("#nav1").load("/A03-AI-Prompt-2026/B01-ex-comm/BX02-nav-2025.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+    function updateCounter() { }
+  </script>
+
+  <!-- 平滑滾動輔助（若導覽列有錨點） -->
+  <script>
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('.nav-link');
+      if (link && link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+
+</html>

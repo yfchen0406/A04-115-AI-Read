@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1708827982237') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sikao:before {
+  content: "\e64a";
+}
+
+.icon-yuetan:before {
+  content: "\e523";
+}
+
+.icon-zhuanyeku:before {
+  content: "\e51a";
+}
+
+.icon-book-:before {
+  content: "\e67d";
+}
+
+.icon-sikao1:before {
+  content: "\e786";
+}
+
+.icon-tuxiangtushuguanlogo-copy:before {
+  content: "\e69a";
+}
+
+.icon-n:before {
+  content: "\e882";
+}
+
+.icon-zixun:before {
+  content: "\e60a";
+}
+
+.icon-icon:before {
+  content: "\e64c";
+}
+
+.icon-Appreciations:before {
+  content: "\e7a5";
+}
+
+.icon-idea-full:before {
+  content: "\e861";
+}
+
+.icon-icon_datas:before {
+  content: "\e611";
+}
+
+.icon-sikuquanshu:before {
+  content: "\e78c";
+}
+
+.icon-a-light-researchtools:before {
+  content: "\e6d2";
+}
+
+.icon-sikao2:before {
+  content: "\e616";
+}
+
+.icon-icon_books:before {
+  content: "\e71c";
+}
+
+.icon-sikao3:before {
+  content: "\e6b5";
+}
+

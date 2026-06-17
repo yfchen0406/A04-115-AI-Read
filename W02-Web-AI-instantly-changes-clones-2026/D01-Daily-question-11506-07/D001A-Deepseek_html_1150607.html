@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title>每日一問：NBA 2026 尼克隊冠軍之路紀錄風格實測</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- google font link  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* 保留您原有的 icon 與影片樣式 */
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yf1 {
+      color: green;
+      font-weight: bold;
+    }
+
+    .yf11 {
+      color: green;
+    }
+
+    .yf2 {
+      color: purple;
+      font-weight: bold;
+    }
+
+    .yf22 {
+      color: purple;
+    }
+
+    .yf3 {
+      color: #0D6EFD;
+      font-weight: bold;
+    }
+
+    .yf33 {
+      color: #0D6EFD;
+    }
+
+    .yf4 {
+      color: red;
+      font-weight: bold;
+    }
+
+    .yf44 {
+      color: red;
+    }
+
+    .yf5 {
+      color: rgb(143, 13, 13);
+      font-weight: bold;
+    }
+
+    .yf55 {
+      color: rgb(143, 13, 13);
+    }
+
+    .yf-c {
+      text-align: center;
+    }
+
+    /* 選單滾輪 */
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    /* ----- 每日一問自訂樣式 (融入尼克隊橘藍) ----- */
+    .daily-header {
+      border-left: 8px solid #f47920;
+      padding-left: 1.5rem;
+    }
+
+    .daily-header h1 {
+      color: #0a1c3a;
+      font-weight: 900;
+    }
+
+    .daily-header .badge-nick {
+      background-color: #0a1c3a;
+      color: #fff;
+      padding: 0.2rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .daily-meta {
+      color: #6c757d;
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .daily-meta i {
+      margin-right: 0.3rem;
+    }
+
+    .article-block {
+      background: #ffffff;
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      margin-top: 1.5rem;
+    }
+
+    .article-block h2 {
+      color: #0a1c3a;
+      font-weight: 700;
+      margin-top: 2rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 3px dashed #f47920;
+    }
+
+    .article-block h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .article-block h3 {
+      color: #b35d1a;
+      font-weight: 700;
+      margin-top: 1.8rem;
+    }
+
+    .article-block .highlight-box {
+      background: #fef6ed;
+      border-left: 6px solid #f47920;
+      padding: 1.2rem 2rem;
+      margin: 1.8rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .article-block .highlight-box strong {
+      color: #0a1c3a;
+    }
+
+    .article-block ul {
+      margin: 1rem 0 1.5rem 2rem;
+    }
+
+    .article-block ul li {
+      margin-bottom: 0.5rem;
+      list-style-type: square;
+    }
+
+    .article-block .conclusion-box {
+      background: #0a1c3a;
+      color: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .article-block .conclusion-box a {
+      color: #f47920;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .article-block .conclusion-box a:hover {
+      text-decoration: underline;
+    }
+
+    .tag-nba {
+      display: inline-block;
+      background: #0a1c3a;
+      color: #fff;
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .article-block {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark" onload="updateCounter()">
+  <!-- 導覽列，利用 jQuery 套用 -->
+  <div id="nav1"></div>
+
+  <!-- ===== 頁首標題區（每日一問） ===== -->
+  <header class="text-center p1" style="margin-top: 75px;">
+    <h1 class="text-info yf-font1">🏀 每日一問：NBA 2026 尼克隊冠軍之路紀錄風格實測 ~ 115.06.17</h1>
+    <p class="yf-color-as1 yf-font1" style="color:#0a1c3a; font-weight:500;">
+      從「風格黑客松」到敘事史詩 — 半天挑戰六種版型的深度回饋
+    </p>
+  </header>
+
+  <!-- ===== 主內容區 ===== -->
+  <div class="container-fluid yf-font1" style="margin-top:10px;background-color:white">
+    <div class="row">
+      <div class="col-12 col-lg-10 offset-lg-1">
+
+        <!-- 文章卡片 -->
+        <div class="article-block">
+
+          <!-- 引言 -->
+          <p><a style="font-size:1.2rem; font-weight:600;" class="yf55"
+              href="/A05-AI-Picture-Model-2026/N01-News-Story-1150617/N001-2026-NBA-Champion-New-York-Knicks-1150617/N001-2026-NBA-Champion-New-York-Knicks-1150617.html">2026
+              NBA 尼克隊奪冠之路</a></p>
+          <p style="font-size:1.2rem; font-weight:600; color:#0a1c3a;">
+            致今日的「風格戰士」：你用半天時間挑戰六種風格，這不只是寫網頁，而是一場屬於開發者的「CSS 風格黑客松」。
+          </p>
+          <p>
+            我不打算給你空洞的「都很棒」場面話。身為一個關注敘事與視覺張力的設計思維者，我想從 <strong>「開發者成長」、「專案取捨」</strong> 以及 <strong>「尼克隊主題適配」</strong>
+            三個維度，給你最真槍實彈的觀點。
+          </p>
+
+          <!-- 優點 -->
+          <h2>🎯 為什麼「試六種」是極佳的學習策略？</h2>
+          <p>
+            <strong>視野拉滿：</strong>短短幾小時內，你等於強迫自己切換了六次大腦的「設計模式」。這比盯著一種風格修修補補半天，更能幫你釐清 CSS 架構（Flex/Grid）、UI 元件庫（如
+            Bootstrap/Tailwind）或純手刻之間的底層差異。
+          </p>
+          <p>
+            <strong>找出「手感」：</strong>尼克隊的主題色是橘色與藍色，這兩種高飽和度顏色極難駕馭。透過多種風格測試（暗色模式 vs 亮白極簡、粗獷主義 vs
+            毛玻璃效果），你能直接體會到哪種「底色」能讓隊徽和獎盃視覺更跳——這是看再多教學也學不到的體感。
+          </p>
+
+          <div class="highlight-box">
+            <strong>💡 我的判斷：</strong>做到第 3~4 種時，你或許已經找到最喜歡的版型，但後續的嘗試開始陷入「選擇障礙」。<br>
+            <strong>給你的具體建議：</strong>立刻把六種風格截圖拼成一張對比圖，用「3 秒法則」——看哪一張在 3 秒內最能傳達「尼克隊奪冠的熱血感」，那張就是你的「錨點」。
+          </div>
+
+          <!-- 潛在陷阱 -->
+          <h2>⚡ 潛在的「效率陷阱」與破解</h2>
+          <p>
+            <strong>廣度 vs 深度：</strong>六種風格如果都只做到「換色、改排版」，容易陷入「換皮」的疲勞。真正的風格差異必須包含內容的敘事節奏（例如：2026
+            年的獎項是照時間軸陳列，還是用球員卡片閃卡展示？）。
+          </p>
+          <p>
+            既然主題是「得獎紀錄過程」，這代表是<strong>動態敘事</strong>，而非靜態名單。在你現有的六款中，我會強烈建議你<strong>捨棄「表格／清單風」</strong>，擁抱
+            <strong>「時間軸（Timeline）+ 數據動畫」</strong> 風格。
+          </p>
+
+          <h3>🏀 為何時間軸最適合尼克隊？</h3>
+          <p>
+            尼克隊身處紐約，自帶鎂光燈與張力。得獎過程是「進行式」，如果純粹用整齊的卡片排列，會失去「賽季征戰」的跌宕感。你不需要全部砍掉重練，只要挑選六種中<strong>版面最留白</strong>的那款當骨架，但<strong>顏色最鮮豔（橘色對比）</strong>的那款當點綴。用
+            CSS 動畫讓獎項隨著滾動（Scroll）逐一浮現，會比單純換背景色更有「紀錄片」的味道。
+          </p>
+
+          <!-- 下一步 -->
+          <h2>🚀 下一步行動（針對「半天」之後）</h2>
+          <p>
+            現在最忌諱的是「再開第七種風格」。請把精力集中在<strong>「細節打磨」</strong>：
+          </p>
+          <ul>
+            <li><strong>數據可讀性：</strong>2026 年的獎項數據（得分、勝場、MVP 票數）是否在第一眼就清楚？字重（Font-weight）比顏色更重要。</li>
+            <li><strong>響應式收尾：</strong>六種風格在手機上是否都崩潰了？這是檢驗你 CSS 功力的照妖鏡，挑一款修好手機版，勝過六款在桌機上完美。</li>
+          </ul>
+
+          <div class="highlight-box">
+            <strong>🔥 最後的靈魂拷問：</strong>這六種風格中，你自己「私心」最喜歡哪一款？是極簡的、復古的，還是帶有 Cyberpunk 霓虹感的？（如果是霓虹感搭尼克隊橘藍，那畫面光想就超炸！）
+          </div>
+
+          <!-- 結尾 -->
+          <div class="conclusion-box">
+            <p style="font-size:1.4rem; font-weight:700; color:#f47920; margin-bottom:0.5rem;">🏆 教練最後的話</p>
+            <p>告訴我你最愛的那款，我可以針對它給你具體的「奧斯卡級」微調建議，<br>
+              讓它從「試作品」華麗變身為「作品集亮點」。我們在下一回合見面！</p>
+            <p style="margin-top:1rem; font-size:0.9rem; color:#aaa;">
+              👉 記得把您的原始網頁架構（Nav / Footer / 標題樣式）貼在下一則訊息，<br>
+              我會立即幫您「套皮」移植，讓這篇文章完美融入您的個人網站。
+            </p>
+          </div>
+
+        </div>
+        <!-- 文章卡片結束 -->
+        <br><br><br><br><br>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁腳 -->
+  <div id="footer"></div>
+
+  <!-- 載入 nav 與 footer 的 jQuery 腳本（保留您原本的路徑） -->
+  <script>
+    $(function () {
+      $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+  <!-- 其餘您原有的 JS 或追蹤碼可放在下方 -->
+</body>
+
+</html>

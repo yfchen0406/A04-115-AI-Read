@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站，以 Bootstrap 4/5 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title>2026 NBA 尼克隊奪冠之路</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 大陸網站iconfont圖標 -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- ===== 原有自訂 class 完整保留 ===== -->
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yf1 {
+      color: green;
+      font-weight: bold;
+    }
+
+    .yf11 {
+      color: green;
+    }
+
+    .yf2 {
+      color: purple;
+      font-weight: bold;
+    }
+
+    .yf22 {
+      color: purple;
+    }
+
+    .yf3 {
+      color: #0D6EFD;
+      font-weight: bold;
+    }
+
+    .yf33 {
+      color: #0D6EFD;
+    }
+
+    .yf4 {
+      color: red;
+      font-weight: bold;
+    }
+
+    .yf44 {
+      color: red;
+    }
+
+    .yf5 {
+      color: rgb(143, 13, 13);
+      font-weight: bold;
+    }
+
+    .yf55 {
+      color: rgb(143, 13, 13);
+    }
+
+    .yf-c {
+      text-align: center;
+    }
+
+    /* 選單滾輪 */
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+  </style>
+
+  <!-- ===== 本頁專屬樣式 ===== -->
+  <style>
+    /* ── 色彩語彙（尼克：深藍 + 橘） ── */
+    :root {
+      --knicks-blue: #006BB6;
+      --knicks-orange: #F58426;
+      --knicks-dark: #001F5B;
+      --knicks-light: #EEF4FB;
+      --text-main: #1a1a2e;
+      --card-shadow: 0 4px 16px rgba(0, 107, 182, .15);
+    }
+
+    /* ── Hero Header ── */
+    .hero-section {
+      background: linear-gradient(135deg, var(--knicks-dark) 0%, var(--knicks-blue) 60%, #1a5fa8 100%);
+      color: #fff;
+      padding: 56px 20px 40px;
+      margin-top: 75px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: "🏆";
+      position: absolute;
+      font-size: 280px;
+      opacity: .05;
+      right: -30px;
+      top: -40px;
+      line-height: 1;
+    }
+
+    .hero-section h1 {
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+    }
+
+    .hero-section h1 span {
+      color: var(--knicks-orange);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, .82);
+      margin-top: .5rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--knicks-orange);
+      color: #fff;
+      font-weight: 700;
+      font-size: .82rem;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      letter-spacing: .06em;
+    }
+
+    /* ── 主內容區 ── */
+    .main-wrapper {
+      background-color: #f8f9fa;
+      padding: 0 0 40px;
+    }
+
+    /* ── Section 標題 ── */
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--knicks-dark);
+      border-left: 5px solid var(--knicks-orange);
+      padding-left: 12px;
+      margin: 32px 0 18px;
+    }
+
+    /* ── 球隊介紹卡片 ── */
+    .info-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      border-top: 3px solid var(--knicks-blue);
+    }
+
+    .info-card h5 {
+      color: var(--knicks-blue);
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .info-card p {
+      color: var(--text-main);
+      font-size: .95rem;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* ── 球員表格 ── */
+    .player-table th {
+      background: var(--knicks-blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: .9rem;
+      white-space: nowrap;
+    }
+
+    .player-table td {
+      font-size: .9rem;
+      vertical-align: middle;
+    }
+
+    .player-table tbody tr:hover {
+      background-color: var(--knicks-light);
+    }
+
+    /* ── 奪冠歷程時間軸 ── */
+    .timeline {
+      position: relative;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .timeline-badge {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--knicks-blue);
+      color: #fff;
+      font-weight: 700;
+      font-size: .78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.2;
+      border: 3px solid var(--knicks-orange);
+    }
+
+    .timeline-content strong {
+      color: var(--knicks-dark);
+      font-size: .95rem;
+      display: block;
+    }
+
+    .timeline-content span {
+      color: #555;
+      font-size: .87rem;
+    }
+
+    /* ── AI 工具卡片區 ── */
+    .ai-section {
+      background: var(--knicks-dark);
+      padding: 10px 0 32px;
+      margin-top: 8px;
+    }
+
+    .ai-section .section-title {
+      color: #fff;
+      border-left-color: var(--knicks-orange);
+    }
+
+    .ai-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 24px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .ai-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 107, 182, .25);
+    }
+
+    /* 4:3 圖片容器 */
+    .ai-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 75%;
+      overflow: hidden;
+      background: var(--knicks-light);
+    }
+
+    .ai-img-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 無圖時顯示佔位 */
+    .ai-img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--knicks-light) 0%, #d0e4f7 100%);
+      color: var(--knicks-blue);
+    }
+
+    .ai-img-placeholder i {
+      font-size: 2.4rem;
+      margin-bottom: 6px;
+      opacity: .7;
+    }
+
+    .ai-img-placeholder span {
+      font-size: .8rem;
+      color: #888;
+    }
+
+    .ai-card .card-body {
+      padding: 16px 18px 18px;
+    }
+
+    .ai-card .card-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--knicks-dark);
+      margin-bottom: 6px;
+    }
+
+    .ai-card .card-text {
+      font-size: .85rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .btn-knicks {
+      background: var(--knicks-blue);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 18px;
+      font-size: .85rem;
+      font-weight: 700;
+      transition: background .2s;
+    }
+
+    .btn-knicks:hover {
+      background: var(--knicks-orange);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ── 側欄（左/右 2欄）── */
+    .sidebar-panel {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+    }
+
+    .sidebar-panel h6 {
+      font-weight: 700;
+      color: var(--knicks-blue);
+      border-bottom: 2px solid var(--knicks-orange);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      font-size: .88rem;
+    }
+
+    .sidebar-panel p,
+    .sidebar-panel li {
+      font-size: .82rem;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    .sidebar-panel ul {
+      padding-left: 16px;
+    }
+
+    /* ── 數字統計 ── */
+    .stat-box {
+      background: var(--knicks-blue);
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .stat-box .stat-num {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--knicks-orange);
+      line-height: 1;
+    }
+
+    .stat-box .stat-label {
+      font-size: .72rem;
+      opacity: .9;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-white" onload="updateCounter()">
+  <!-- 導覽列 jQuery load -->
+  <div id="nav1"></div>
+
+  <!-- ===== Section 1 — Hero Header ===== -->
+  <header class="hero-section text-center yf-font1" style="margin-top: 25px;">
+    <div class="hero-badge">🏆 2026 NBA 總冠軍</div>
+    <h1>1. 2026 NBA <span>尼克隊</span>奪冠之路 ~ 115.06.17</h1>
+    <p class="hero-subtitle">各大 AI 生成式工具的精彩呈現</p>
+  </header>
+
+  <!-- ===== 主畫面 2-8-2 ===== -->
+  <div class="main-wrapper">
+    <div class="container-fluid yf-font1" style="margin-top:0px;">
+      <div class="row">
+
+        <!-- ── 左側欄（2欄）── -->
+        <div class="col-lg-2 col-md-3 pt-3 px-3">
+          <div class="sidebar-panel">
+            <h6><i class="bi bi-bar-chart-fill me-1"></i>本季戰績</h6>
+            <div class="stat-box">
+              <div class="stat-num">53</div>
+              <div class="stat-label">例行賽勝場</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">16</div>
+              <div class="stat-label">季後賽勝場</div>
+            </div>
+            <div class="stat-box" style="background:var(--knicks-orange);">
+              <div class="stat-num" style="color:#fff;">53年</div>
+              <div class="stat-label">等待的終結</div>
+            </div>
+          </div>
+          <div class="sidebar-panel">
+            <h6><i class="bi bi-trophy-fill me-1"></i>奪冠快訊</h6>
+            <ul>
+              <li>Finals MVP：<strong>Jalen Brunson</strong></li>
+              <li>G5 得分：<strong>45 分</strong></li>
+              <li>總教練：<strong>Mike Brown</strong></li>
+              <li>對手：聖安東尼奧馬刺</li>
+              <li>系列賽：<strong>4–1</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── 主內容（8欄）── -->
+        <div class="col-lg-8 col-md-6 pt-3 px-3">
+
+          <!-- Section 2：尼克隊介紹 -->
+          <h2 class="section-title"><i class="bi bi-info-circle me-2"></i>尼克隊介紹</h2>
+
+          <!-- 卡片 1：球隊簡介 -->
+          <div class="info-card">
+            <h5><i class="fa-solid fa-basketball me-2"></i>球隊簡介</h5>
+            <p>
+              紐約尼克隊（New York Knicks）成立於 1946 年，是 NBA 歷史最悠久的球隊之一，也是東岸最具代表性的職籃品牌。
+              主場設於全球最著名的球館——<strong>麥迪遜廣場花園（Madison Square Garden，MSG）</strong>，坐落於曼哈頓中城，素有「世界最知名運動場館」之稱。
+              <br><br>
+              球隊歷史上曾於 <strong>1970 年與 1973 年</strong>兩度奪得 NBA 總冠軍，由 Willis Reed 與 Walt Frazier 領銜的黃金陣容奠定了傳奇地位。
+              然而此後長達 53 年的等待，使尼克隊成為 NBA 奪冠旱魃之最——直到 <strong>2026 年 6 月 19 日</strong>，Jalen Brunson 以 G5 獨得 45
+              分，終結了這段史詩般的漫長等待，在聖城拿下第三座總冠軍。
+            </p>
+          </div>
+
+          <!-- 卡片 2：關鍵球員（表格） -->
+          <div class="info-card">
+            <h5><i class="fa-solid fa-users me-2"></i>2025–26 球季關鍵球員</h5>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover player-table mb-0">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>球員名</th>
+                    <th>位置</th>
+                    <th>特色</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11</td>
+                    <td><strong>Jalen Brunson</strong></td>
+                    <td>控衛 PG</td>
+                    <td>Finals MVP，G5 攻下 45 分；超強關鍵時刻控場能力，全隊精神領袖</td>
+                  </tr>
+                  <tr>
+                    <td>32</td>
+                    <td><strong>Karl-Anthony Towns</strong></td>
+                    <td>中鋒 C</td>
+                    <td>交易加盟後成為禁區支柱，具備外線射程的雙向大個子</td>
+                  </tr>
+                  <tr>
+                    <td>25</td>
+                    <td><strong>Mikal Bridges</strong></td>
+                    <td>小前鋒 SF</td>
+                    <td>防守端核心，能守住對方關鍵球員，與 Brunson 同為 NCAA 冠軍隊友</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><strong>Josh Hart</strong></td>
+                    <td>得分後衛 SG</td>
+                    <td>全力衝搶籃板的拼勁象徵，積極防守、不惜身體，季後賽關鍵貢獻者</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><strong>OG Anunoby</strong></td>
+                    <td>小前鋒 SF</td>
+                    <td>2023 年自多倫多猛龍交易而來，鋒線防守悍將，擅長護框與爭搶</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 卡片 3：奪冠歷程 -->
+          <div class="info-card">
+            <h5><i class="fa-solid fa-road me-2"></i>奪冠歷程摘要</h5>
+            <ul class="timeline mb-0">
+              <li class="timeline-item">
+                <div class="timeline-badge">第<br>一<br>輪</div>
+                <div class="timeline-content">
+                  <strong>對陣亞特蘭大老鷹（4–2）</strong>
+                  <span>
+                    開局遭對手先馳得點，一度以 1–2 落後，隨後連贏三場逆轉晉級。
+                    G6 以 140–89 大勝收官，進入第二輪。
+                  </span>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-badge">第<br>二<br>輪</div>
+                <div class="timeline-content">
+                  <strong>對陣費城 76 人（4–0）✦ 橫掃</strong>
+                  <span>
+                    四連勝橫掃費城，火力全開、防守壓制，季後賽氣勢全面爆發，隨後展開長達 13 場的連勝之旅。
+                  </span>
+                </div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-badge">東區<br>冠軍<br>賽</div>
+                <div class="timeline-content">
+                  <strong>對陣克里夫蘭騎士（4–0）✦ 橫掃</strong>
+                  <span>
+                    G4 上演驚天大逆轉，落後 22 分依舊攻克強敵。以 11 連勝之姿闖進總決賽，歷史積分差創下入決賽隊伍最高紀錄。
+                  </span>
+                </div>
+              </li>
+              <li class="timeline-item" style="margin-bottom:0">
+                <div class="timeline-badge" style="background:var(--knicks-orange);">NBA<br>總決<br>賽</div>
+                <div class="timeline-content">
+                  <strong>對陣聖安東尼奧馬刺（4–1）🏆 奪冠</strong>
+                  <span>
+                    決賽歷經 5 場史詩對決，每場終盤均在 5 分內決出勝負。G5 Brunson 單場爆砍 45 分，以 94–90 在客場封王，
+                    終結 53 年等待，奪回 Larry O'Brien 獎盃。
+                  </span>
+                </div>
+              </li>
+              <br>
+              <img src="./images/N001-1.webp" alt="2026NBA冠軍紐約尼克隊" class="img-fluid yf-border-radius"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            </ul>
+          </div>
+
+        </div><!-- /主內容 8 欄 -->
+
+        <!-- ── 右側欄（2欄）── -->
+        <div class="col-lg-2 col-md-3 pt-3 px-3">
+          <div class="sidebar-panel">
+            <h6><i class="bi bi-calendar3 me-1"></i>季後賽路徑</h6>
+            <ul>
+              <li>第一輪 vs 老鷹 <span class="yf1">4–2</span></li>
+              <li>第二輪 vs 76人 <span class="yf1">4–0</span></li>
+              <li>東區冠軍賽 vs 騎士 <span class="yf1">4–0</span></li>
+              <li>NBA Finals vs 馬刺 <span class="yf1">4–1</span></li>
+            </ul>
+          </div>
+          <div class="sidebar-panel">
+            <h6><i class="bi bi-robot me-1"></i>AI 工具一覽</h6>
+            <ul>
+              <li><a target="_blank" href="./A01-Perplexity-knicks-brunson-article.html">1.Perplexity~基本款</a></li>
+              <li><a target="_blank" href="./A01-Perplexity-knicks-brunson-article.html">2.DeepSeeK~採用文稿</a></li>
+              <li><a target="_blank" href="./A03-Claude-Vintage Newspaper.html">3.Claude~復古報紙風</a></li>
+              <li><a target="_blank" href="./A04-Deepseek-NYC-Street-Style.html">4.DeepSeeK~紐約街頭潮流風</a></li>
+              <li><a target="_blank" href="./A05-Gemini-knicks_2026_championship_road.html">5.Gemini~英雄史詩風</a></li>
+              <li><a target="_blank" href="./A06-Deepseek-Meme-Celebration.html">6.DeepSeek~迷因慶典風</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-panel">
+            <h6><i class="bi bi-quote me-1"></i>名言</h6>
+            <p style="font-style:italic;color:#333;">"After 53 years, your Knicks are finally NBA champions once again!"
+            </p>
+            <p style="font-size:.75rem;color:#888;margin-bottom:0;">— ESPN Mike Breen，2026/6/19</p>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div><!-- /container-fluid 主內容 -->
+
+    <!-- ===== Section 3 — AI 生成內容導覽（深色底） ===== -->
+    <div class="ai-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-2 col-md-3"></div><!-- 左側佔位 -->
+          <div class="col-lg-8 col-md-6 px-3">
+
+            <h2 class="section-title mt-4"><i class="bi bi-robot me-2"></i>各 AI 工具生成版本</h2>
+            <p style="color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:24px;">
+              同樣的主題，六款主流 AI 工具各自呈現的風格與切入角度，一次完整收錄。
+            </p>
+
+            <div class="row">
+
+              <!-- 卡片 1：Perplexity -->
+              <div class="col-md-4">
+                <div class="ai-card">
+                  <div class="ai-img-wrap">
+                    <img src="./images/P01-Perplexity.webp" alt="Perplexity 生成版本" class="img-fluid"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="ai-img-placeholder" style="display:none;">
+                      <i class="bi bi-search"></i>
+                      <span>./images/ai-perplexity.jpg</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-search me-1"></i>Perplexity</h5>
+                    <p class="card-text">即時網路搜尋加持，資料最新、引用來源清晰，以新聞報導風格呈現尼克奪冠全紀錄，沒有採用固定文稿!</p>
+                    <a href="A01-Perplexity-knicks-brunson-article.html" class="btn-knicks">前往觀看</a>
+                  </div>
+                </div>
+              </div>
+              <!-- 卡片 2：DeepSeek -->
+              <div class="col-md-4">
+                <div class="ai-card">
+                  <div class="ai-img-wrap">
+                    <img src="./images/P02-DeepSeek.webp" alt="DeepSeek 生成版本" class="img-fluid"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="ai-img-placeholder" style="display:none;">
+                      <i class="bi bi-lightning-charge"></i>
+                      <span>./images/ai-deepseek.jpg</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-lightning-charge me-1"></i>DeepSeek</h5>
+                    <p class="card-text">推理能力突出，善用數據與邏輯分析，從戰術與統計角度深度拆解尼克的奪冠密碼~採用固定文稿!</p>
+                    <a href="A02-deepseek_html_20260617_22b5de.html" class="btn-knicks">前往觀看</a>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- 卡片 3：Claude -->
+              <div class="col-md-4">
+                <div class="ai-card">
+                  <div class="ai-img-wrap">
+                    <img src="./images/P03-Claude.webp" alt="Claude 生成版本" class="img-fluid"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="ai-img-placeholder" style="display:none;">
+                      <i class="bi bi-cpu"></i>
+                      <span>./images/ai-claude.jpg</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-cpu me-1"></i>Claude</h5>
+                    <p class="card-text">復古報紙風（Vintage Newspaper）：黑白棕色調、老式排版，致敬尼克隊近53年等待，充滿歷史厚重感。~採用文搞</p>
+                    <a href="A03-Claude-Vintage Newspaper.html" class="btn-knicks">前往觀看</a>
+                  </div>
+                </div>
+              </div>
+              <!-- 卡片 4：DeepSeek -->
+              <div class="col-md-4">
+                <div class="ai-card">
+                  <div class="ai-img-wrap">
+                    <img src="./images/P04-Deepseek.webp" alt="DeepSeek 生成版本" class="img-fluid"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="ai-img-placeholder" style="display:none;">
+                      <i class="bi bi-lightning-charge"></i>
+                      <span>./images/ai-deepseek.jpg</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-lightning-charge me-1"></i>DeepSeek</h5>
+                    <p class="card-text">紐約街頭潮流風（NYC Street Style）：橘藍主色（尼克隊色）、霓虹燈效果、現代感強，展現紐約精神。~採用文搞</p>
+                    <a href="A04-Deepseek-NYC-Street-Style.html" class="btn-knicks">前往觀看</a>
+                  </div>
+                </div>
+              </div>
+              <!-- 卡片 3：ChatGPT  爛死了~給一點點額度 -->
+              <!-- <div class="col-md-4">
+                <div class="ai-card">
+                  <div class="ai-img-wrap">
+                    <img src="./images/ai-chatgpt.jpg" alt="ChatGPT 生成版本" class="img-fluid"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="ai-img-placeholder" style="display:none;">
+                      <i class="bi bi-chat-dots"></i>
+                      <span>./images/ai-chatgpt.jpg</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-chat-dots me-1"></i>ChatGPT</h5>
+                    <p class="card-text">表達親切易讀，以對話式風格詮釋賽事，適合籃球新手快速建立完整的奪冠印象。</p>
+                    <a href="#" class="btn-knicks">前往觀看</a>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- 卡片 5：Gemini -->
+              <div class="col-md-4">
+                <div class="ai-card">
+                  <div class="ai-img-wrap">
+                    <img src="./images/P05-Gemini.webp" alt="Gemini 生成版本" class="img-fluid"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="ai-img-placeholder" style="display:none;">
+                      <i class="bi bi-stars"></i>
+                      <span>./images/ai-gemini.jpg</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-stars me-1"></i>Gemini</h5>
+                    <p class="card-text">網頁風格以英雄史詩風（Epic Timeline）：垂直時間軸呈現奪冠之路，搭配大圖、數據卡片，適合逐場回顧。</p>
+                    <a href="A05-Gemini-knicks_2026_championship_road.html" class="btn-knicks">前往觀看</a>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <!-- 卡片 6：DeepSeek -->
+              <div class="col-md-4">
+                <div class="ai-card">
+                  <div class="ai-img-wrap">
+                    <img src="./images/P06-DeepSeek.webp" alt="DeepSeek 生成版本" class="img-fluid"
+                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="ai-img-placeholder" style="display:none;">
+                      <i class="bi bi-lightning-charge"></i>
+                      <span>./images/ai-deepseek.jpg</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-lightning-charge me-1"></i>DeepSeek</h5>
+                    <p class="card-text">迷因慶典風（Meme Celebration）：融入網路迷因元素，輕鬆幽默，貼近球迷文化</p>
+                    <a href="A06-Deepseek-Meme-Celebration.html" class="btn-knicks">前往觀看</a>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /AI cards row -->
+          </div><!-- /col-8 -->
+          <div class="col-lg-2 col-md-3"></div><!-- 右側佔位 -->
+        </div>
+      </div>
+    </div><!-- /ai-section -->
+
+  </div><!-- /main-wrapper -->
+
+  <div id="footer"></div>
+
+  <!-- jQuery load nav & footer -->
+  <script>
+    $(function () {
+      $("#nav1").load("/A05-AI-Picture-Model-2026/B01-ex-comm/BX02-nav-2026.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+</body>
+
+</html>

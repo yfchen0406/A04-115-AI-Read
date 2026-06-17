@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <title>紐約尼克隊2026年NBA總冠軍 — 奪冠全紀錄</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23F58426'/%3E%3Ctext x='50' y='68' font-size='40' text-anchor='middle' fill='%23006BB6' font-weight='bold'%3EN%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+    <!-- Bootstrap 4 + 5 混合（依原架構保留） -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- Google Font (Noto Sans TC) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- 原架構中的自訂CSS（保留，若無檔案不影響） -->
+    <link rel="stylesheet" href="/css/F01-1-note.css">
+    <link rel="stylesheet" href="/css/F02-2-note.css">
+    <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+
+    <style>
+        /* ========== 尼克隊主題色 ========== */
+        :root {
+            --knicks-orange: #F58426;
+            --knicks-blue: #006BB6;
+            --knicks-darkblue: #1D428A;
+            --knicks-orange-light: #FFF4E8;
+            --knicks-blue-light: #E8F2FA;
+            --knicks-gold: #FFC72C;
+        }
+
+        * {
+            font-family: 'Noto Sans TC', 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f8f6f3;
+            color: #1e1e1e;
+        }
+
+        /* 導覽列與頁尾（保留原架構，同時直接嵌入內容） */
+        .knicks-navbar {
+            background: linear-gradient(135deg, var(--knicks-darkblue) 0%, var(--knicks-blue) 100%);
+            border-bottom: 4px solid var(--knicks-orange);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .knicks-navbar .navbar-brand {
+            font-weight: 900;
+            color: #fff !important;
+            letter-spacing: 1px;
+        }
+        .knicks-navbar .navbar-brand i {
+            color: var(--knicks-orange);
+            margin-right: 8px;
+        }
+        .knicks-navbar .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .knicks-navbar .nav-link:hover {
+            color: #fff !important;
+            background: rgba(245, 132, 38, 0.25);
+            border-radius: 6px;
+        }
+
+        /* 標題系統 */
+        .knicks-title {
+            color: var(--knicks-orange);
+            font-weight: 900;
+            border-bottom: 4px solid var(--knicks-blue);
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .knicks-title i {
+            color: var(--knicks-blue);
+            margin-right: 10px;
+        }
+        .knicks-subtitle {
+            color: var(--knicks-blue);
+            font-weight: 700;
+            border-left: 6px solid var(--knicks-orange);
+            padding-left: 16px;
+            margin: 32px 0 20px 0;
+        }
+
+        /* 引用區塊 */
+        .knicks-quote {
+            border-left: 6px solid var(--knicks-orange);
+            background: var(--knicks-orange-light);
+            padding: 18px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+        .knicks-quote strong {
+            color: var(--knicks-darkblue);
+        }
+
+        /* 數據卡片 */
+        .knicks-stat-card {
+            background: linear-gradient(145deg, var(--knicks-orange), var(--knicks-blue));
+            color: #fff;
+            border-radius: 16px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 107, 182, 0.25);
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .knicks-stat-card:hover {
+            transform: translateY(-4px);
+        }
+        .knicks-stat-card .number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+        .knicks-stat-card .label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        /* 分隔線 */
+        .knicks-divider {
+            height: 4px;
+            background: linear-gradient(to right, var(--knicks-orange), var(--knicks-blue), var(--knicks-orange));
+            margin: 48px 0;
+            border-radius: 4px;
+            opacity: 0.6;
+        }
+
+        /* 章節背景切換 */
+        .section-light {
+            background-color: #ffffff;
+        }
+        .section-alt {
+            background-color: #f5f2ee;
+        }
+        .section-hero {
+            background: linear-gradient(135deg, var(--knicks-darkblue) 0%, var(--knicks-blue) 100%);
+            color: #fff;
+            padding: 60px 0 50px 0;
+            border-bottom: 6px solid var(--knicks-orange);
+        }
+        .section-hero h1 {
+            color: #fff;
+            font-weight: 900;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .section-hero .lead {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .section-hero .knicks-title {
+            border-bottom-color: var(--knicks-orange);
+            color: var(--knicks-orange);
+        }
+
+        /* 球員名稱標記 */
+        .player-en {
+            font-size: 0.85rem;
+            color: var(--knicks-blue);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* 頁尾 */
+        .knicks-footer {
+            background: var(--knicks-darkblue);
+            color: rgba(255, 255, 255, 0.7);
+            border-top: 4px solid var(--knicks-orange);
+            padding: 32px 0 24px 0;
+            margin-top: 0;
+        }
+        .knicks-footer a {
+            color: var(--knicks-orange);
+            text-decoration: none;
+        }
+        .knicks-footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* 響應式微調 */
+        @media (max-width: 768px) {
+            .knicks-stat-card .number {
+                font-size: 2rem;
+            }
+            .section-hero {
+                padding: 40px 0 30px 0;
+            }
+            .knicks-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* 小故事卡片 */
+        .story-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border-left: 5px solid var(--knicks-orange);
+            margin-bottom: 20px;
+            transition: 0.2s;
+        }
+        .story-card:hover {
+            box-shadow: 0 8px 28px rgba(0, 107, 182, 0.12);
+            transform: translateX(4px);
+        }
+        .story-card .story-tag {
+            display: inline-block;
+            background: var(--knicks-blue);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 14px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .story-card .story-tag.orange {
+            background: var(--knicks-orange);
+        }
+
+        /* logo 裝飾 */
+        .logo-badge {
+            display: inline-block;
+            background: var(--knicks-orange);
+            color: var(--knicks-darkblue);
+            font-weight: 900;
+            font-size: 1.4rem;
+            padding: 4px 18px;
+            border-radius: 40px;
+            box-shadow: 0 4px 12px rgba(245, 132, 38, 0.3);
+        }
+        .logo-badge i {
+            margin-right: 8px;
+        }
+
+        /* 導覽列固定用 */
+        .fixed-top {
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================ -->
+    <!-- 導覽列 (保留原 nav1 架構，同時直接呈現內容)                    -->
+    <!-- ============================================================ -->
+    <div id="nav1">
+        <nav class="navbar navbar-expand-lg knicks-navbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-basketball-ball"></i> 尼克 <span style="color:var(--knicks-orange);">冠軍</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#ch1">楔子</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ch2">布朗森</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ch3">先發陣容</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ch4">總教練</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ch5">季後賽</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ch6">關鍵因素</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ch7">感動故事</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ch8">結語</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- ============================================================ -->
+<!-- 頁首 HERO                                                    -->
+<!-- ============================================================ -->
+<header class="section-hero" style="margin-top: 72px;">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="logo-badge mb-3">
+                    <i class="fas fa-trophy"></i> 2026 NBA 總冠軍
+                </div>
+                <h1 class="display-4 fw-bold">
+                    紐約尼克隊 <span style="color:var(--knicks-orange);">奪冠</span>全紀錄
+                </h1>
+                <p class="lead fs-4 mt-3">
+                    半世紀的等待 · 一座城市的救贖
+                </p>
+                <p class="mt-2" style="color:rgba(255,255,255,0.7);">
+                    <i class="fas fa-calendar-alt me-1"></i> 2026年6月13日 · 聖安東尼奧
+                </p>
+                <div class="mt-4">
+                    <span class="badge bg-orange" style="background:var(--knicks-orange);color:#1e1e1e;padding:8px 20px;">
+                        <i class="fas fa-star"></i> Jalen Brunson · FMVP
+                    </span>
+                    <span class="badge bg-light text-dark ms-2" style="padding:8px 20px;">
+                        <i class="fas fa-users"></i> 維拉諾瓦三傑
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- 主內容                                                       -->
+<!-- ============================================================ -->
+<main>
+
+    <!-- ========================================================= -->
+    <!-- 第一章：楔子                                               -->
+    <!-- ========================================================= -->
+    <section id="ch1" class="section-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="knicks-title"><i class="fas fa-clock"></i> 楔子：半世紀的等待，一夕成真</h2>
+                    <p class="lead" style="color:var(--knicks-darkblue);">
+                        2026年6月13日，聖安東尼奧弗羅斯特銀行中心（Frost Bank Center）的計時器歸零那一刻，紐約尼克隊（New York Knicks）以94比90擊敗聖安東尼奧馬刺隊（San Antonio Spurs），以4勝1敗的戰績奪下隊史第三座NBA總冠軍。
+                    </p>
+                    <p><strong>53年。</strong> 從1973年到2026年，這座城市等了整整半個世紀。</p>
+                    <p>尼克隊上一次拿下總冠軍，美國總統還是尼克森（Richard Nixon），麥迪遜廣場花園（Madison Square Garden）的球迷還抽著煙看球，Willis Reed和Walt Frazier還是這支球隊的臉孔。此後的53年裡，尼克隊更換了24位總教練——是的，24位——從2001年到2010年連續10個賽季勝率不到五成，從2014年到2020年連續7年無緣季後賽。這支NBA創始球隊之一、全聯盟最具市場價值的豪門，淪為聯盟笑柄長達數十年。</p>
+                    <p>但2026年6月13日這一天，一切都改變了。</p>
+                    <p>比賽結束的瞬間，帝國大廈（Empire State Building）點亮了橘藍色的燈光。紐約街頭鞭炮聲四起，塞滿汽車的街道上喇叭聲此起彼伏，消防隊員從消防車上伸出雙手與狂歡的球迷擊掌。數千名尼克球迷遠征德州，將馬刺隊的主場變成了橘藍色的海洋。Spike Lee、Timothée Chalamet、Tracy Morgan等知名尼克球迷都在現場見證了歷史。</p>
+                    <p>紐約市長Zohran Mamdani在社群媒體上只寫了一個字：「HISTORY」。他隨後宣布，6月18日將舉辦尼克隊史首次彩帶遊行（ticker-tape parade），沿著百老匯（Broadway）的「英雄峽谷」（Canyon of Heroes）前進。</p>
+                    <div class="knicks-quote">
+                        <i class="fas fa-quote-left me-2" style="color:var(--knicks-orange);"></i>
+                        這不只是一座冠軍，這是一座城市的救贖。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="knicks-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 第二章：布朗森                                             -->
+    <!-- ========================================================= -->
+    <section id="ch2" class="section-alt py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="knicks-title"><i class="fas fa-user-circle"></i> 當家球星布朗森（Jalen Brunson）的故事</h2>
+
+                    <h4 class="knicks-subtitle">2.1 從第二輪選秀到「紐約之王」</h4>
+                    <p>2018年NBA選秀大會上，當第33順位的名字被念出時，<strong>Jalen Brunson</strong>沒有太多表情。他剛帶領維拉諾瓦大學（Villanova University）贏得NCAA冠軍、拿下全美大學年度最佳球員、獲得Bob Cousy獎和Lute Olson獎，但NBA對他的評價很簡單：6呎2吋（約188公分）、運動能力普通、天花板有限。</p>
+                    <p>第二輪第33順位——這是Brunson職業生涯的起點。</p>
+                    <p>他被達拉斯獨行俠（Dallas Mavericks）選中，在Luka Dončić身邊擔任替補控衛。四個賽季，他一步步證明自己不只是「Dončić的替補」。2022年季後賽，當Dončić因傷缺陣時，Brunson扛起球隊，場均轟下27.8分，讓全聯盟開始正視這個被低估的名字。</p>
+                    <p>但獨行俠隊拒絕給他4年5,500萬美元的續約。這個決定，改變了NBA的歷史。</p>
+
+                    <h4 class="knicks-subtitle">2.2 關鍵轉折：加盟尼克</h4>
+                    <p>2022年夏天，Brunson以4年1.04億美元加盟紐約尼克隊。這份合約在當時被許多人質疑——一個第二輪出身、從未入選過明星賽的控衛，值得破億合約嗎？</p>
+                    <p>答案來得很快。</p>
+                    <p>Brunson加盟前的21個賽季，尼克隊只有4年勝率超過五成。Brunson加盟後，尼克連續4年闖入季後賽，連3年拿下50勝以上——這是Patrick Ewing和Pat Riley時代以來第一次。</p>
+                    <p>他從「被低估的第二輪秀」變成了「紐約之王」。</p>
+
+                    <h4 class="knicks-subtitle">2.3 驚天動地的自我犧牲</h4>
+                    <p>2024年夏天，Brunson做了一件NBA歷史上幾乎前所未聞的事。</p>
+                    <p>他原本可以在2025年夏天成為自由球員，有資格簽下一份5年2.69億美元的頂薪合約。但他選擇提前續約，簽下4年1.565億美元的合約——直接放棄了1.13億美元。</p>
+                    <div class="knicks-quote">
+                        <i class="fas fa-dollar-sign me-2" style="color:var(--knicks-orange);"></i>
+                        <strong>1.13億美元。</strong> 這不是小數目，這是絕大多數球員一輩子都賺不到的錢。
+                    </div>
+                    <p>「很多人說我為球隊做出了犧牲，」Brunson後來在接受《Vanity Fair》專訪時說，「百分之百，我為球隊做出了犧牲。但最重要的是，我確保我的家人和我都得到了照顧。」</p>
+                    <p>尼克總教練Mike Brown在奪冠後受訪時說了一句大實話：「他接受了我不會接受的減薪。每次他們把那個數字放在我面前，我都會說不——而我覺得我已經是個很不錯的人了。他設下了標準。」</p>
+                    <p>Brunson的降薪讓尼克隊得以在薪資上限之下保持操作彈性。如果沒有這個犧牲，尼克在交易得到Mikal Bridges和簽下OG Anunoby之後可能已經超過第二層豪華稅 apron——更別提後續交易來Karl-Anthony Towns和Jose Alvarado了。</p>
+
+                    <h4 class="knicks-subtitle">2.4 總決賽MVP的史詩演出</h4>
+                    <p>總冠軍賽5場，Brunson場均32.6分。封王戰他狂砍45分——打破Willis Reed在1970年總決賽第三戰創下的38分隊史紀錄——外帶3籃板3助攻，投籃27投14中，三分球7投4中。</p>
+                    <p>第四節，他一個人連拿13分。當比賽剩下約1分鐘、比分88比88平手時，Brunson命中一記致勝拋投。紐約市長在社群媒體上寫道：「HISTORY」。</p>
+                    <p>Brunson成為NBA史上第四位在第二輪被選中卻贏得總決賽MVP的球員——前三位是尼克傳奇Willis Reed、三屆NBA冠軍Dennis Johnson和三屆MVPNikola Jokić。</p>
+                    <p>但Brunson的2025-26賽季比這更瘋狂。他在12月的NBA盃（NBA Cup）決賽中率隊擊敗馬刺，拿下NBA盃MVP。六個月後，他又在同一支對手面前拿下總冠軍和總決賽MVP——成為NBA史上第一位單季同時贏得NBA盃和總冠軍、且兩項賽事都獲選MVP的球員。</p>
+                    <p>德州是Brunson的福地。2016年他在休士頓（Houston）贏得第一個NCAA冠軍，2018年在聖安東尼奧（San Antonio）贏得第二個NCAA冠軍。2026年，他又在同一座城市舉起NBA總冠軍獎盃。</p>
+                    <div class="knicks-quote">
+                        <i class="fas fa-quote-right me-2" style="color:var(--knicks-orange);"></i>
+                        「我無法用言語形容，這是我夢想的一切。」<br>
+                        <span style="font-size:0.9rem;font-style:normal;">—— Jalen Brunson，2026年總決賽封王戰賽後</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="knicks-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 第三章：先發陣容                                           -->
+    <!-- ========================================================= -->
+    <section id="ch3" class="section-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="knicks-title"><i class="fas fa-users"></i> 先發球員組成——「維拉諾瓦三傑」與冠軍陣容</h2>
+
+                    <h4 class="knicks-subtitle">3.1 先發五虎陣容</h4>
+                    <div class="row g-4 mb-4">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="knicks-stat-card">
+                                <div class="number">#11</div>
+                                <div class="label">Jalen Brunson</div>
+                                <div style="font-size:0.75rem;opacity:0.8;">PG · FMVP</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="knicks-stat-card">
+                                <div class="number">#25</div>
+                                <div class="label">Mikal Bridges</div>
+                                <div style="font-size:0.75rem;opacity:0.8;">SG</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="knicks-stat-card">
+                                <div class="number">#3</div>
+                                <div class="label">Josh Hart</div>
+                                <div style="font-size:0.75rem;opacity:0.8;">SF</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="knicks-stat-card">
+                                <div class="number">#8</div>
+                                <div class="label">OG Anunoby</div>
+                                <div style="font-size:0.75rem;opacity:0.8;">PF</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="knicks-stat-card">
+                                <div class="number">#32</div>
+                                <div class="label">KAT</div>
+                                <div style="font-size:0.75rem;opacity:0.8;">C</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="knicks-stat-card" style="background:linear-gradient(145deg,#1D428A,#006BB6);">
+                                <div class="number"><i class="fas fa-crown"></i></div>
+                                <div class="label">深度輪換</div>
+                                <div style="font-size:0.7rem;opacity:0.8;">Robinson · Clarkson · Alvarado</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="knicks-subtitle">3.2 「維拉諾瓦三傑」的大學傳奇</h4>
+                    <p>Brunson、Mikal Bridges和Josh Hart三人的故事，要從費城郊區的維拉諾瓦大學說起。</p>
+                    <p>2016年，在傳奇教練Jay Wright的帶領下，Brunson、Bridges和Hart共同為維拉諾瓦贏得NCAA冠軍。兩年後的2018年，Brunson和Bridges再度聯手，在聖安東尼奧贏得第二座NCAA冠軍。</p>
+                    <p>「維拉諾瓦三傑」的稱號由此誕生。</p>
+
+                    <h4 class="knicks-subtitle">3.3 從大學到職業的重聚</h4>
+                    <p>大學畢業後，三人的職業生涯走向了不同的方向。但命運讓他們在紐約重新聚首：</p>
+                    <ul>
+                        <li><strong>2022年</strong>：Brunson率先加盟尼克</li>
+                        <li><strong>2023年</strong>：Hart透過交易加入尼克</li>
+                        <li><strong>2024年7月</strong>：Bridges透過交易從布魯克林籃網（Brooklyn Nets）加盟尼克</li>
+                    </ul>
+                    <p>三人組在紐約團圓了。球迷們給了他們一個綽號：「Nova Knicks」——「從維拉諾瓦到紐約」。封王戰中，三人合計攻下72分——Brunson 45分、Bridges 14分、Hart 13分。</p>
+                    <p>更重要的是，他們創造了NBA歷史。根據ESPN的數據，Brunson、Bridges和Hart成為史上第一組同時擁有NCAA冠軍和NBA冠軍的三人組。</p>
+                    <div class="knicks-quote">
+                        「他們是我一輩子的兄弟，我們的羈絆永遠不會被打破。」<br>
+                        <span style="font-size:0.9rem;font-style:normal;">—— Josh Hart</span>
+                    </div>
+
+                    <h4 class="knicks-subtitle">3.4 其他先發球員的貢獻</h4>
+                    <p><strong>Karl-Anthony Towns</strong>在總冠軍賽封王戰雖然只拿下2分10籃板，但他在整個季後賽的內線威懾力無可取代。東區決賽第四戰，他繳出19分14籃板的雙十表現。總決賽G5他在關鍵時刻犯滿離場，但在場邊依然用最大的熱情為隊友加油。</p>
+                    <p><strong>OG Anunoby</strong>是這支球隊的無名英雄。G4他全場攻下33分，並在比賽剩下1.2秒時補籃絕殺，完成NBA總決賽史上最大逆轉。G5他又貢獻11分8籃板，關鍵罰球穩穩命中。</p>
+                    <p><strong>Mitchell Robinson</strong>在G5帶傷上陣，全場抓下10個籃板，包括比賽最後時刻的致命進攻籃板——當時Towns已經犯滿離場，Robinson的這個籃板直接保住了勝利。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="knicks-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 第四章：總教練                                             -->
+    <!-- ========================================================= -->
+    <section id="ch4" class="section-alt py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="knicks-title"><i class="fas fa-chalkboard-teacher"></i> 總教練的帶兵哲學——從錫伯杜到麥克．布朗</h2>
+
+                    <h4 class="knicks-subtitle">4.1 錫伯杜時代的功與過</h4>
+                    <p><strong>Tom Thibodeau</strong>在2020年接掌尼克兵符時，這支球隊已經連續7年沒打過季後賽。他花了5年時間，把尼克從笑柄變成了勁旅——連續4年闖入季後賽，2025年更率隊闖入東區決賽——這是尼克25年來的最佳成績。</p>
+                    <p>Thibodeau改變了尼克的文化。他帶來了防守紀律、拼搏精神和贏球心態。</p>
+                    <p>但Thibodeau也有他的致命傷：過度依賴主力、堅持8人輪換、球員體能經常在季後賽崩盤。2025年東區決賽，尼克在2比0領先印第安納溜馬（Indiana Pacers）的情況下被連追4場淘汰——主力的體力透支是關鍵原因之一。</p>
+
+                    <h4 class="knicks-subtitle">4.2 震撼決策：解僱錫伯杜，聘請麥克．布朗</h4>
+                    <p>2025年6月3日，尼克隊宣布解僱Tom Thibodeau。這個決定震驚了整個NBA。Rick Carlisle（當時的溜馬總教練）甚至說他以為「這是AI生成的新聞」。Jalen Brunson本人也說他「很難過」。</p>
+                    <p>但尼克總裁Leon Rose看到了更深層的問題。2025年7月7日，尼克宣布聘請兩度NBA年度最佳教練<strong>Mike Brown</strong>為新任總教練，簽下4年合約。</p>
+                    <p>55歲的Brown剛在2024年12月被沙加緬度國王（Sacramento Kings）解僱。但他擁有輝煌的資歷：生涯執教戰績454勝304敗、2007年帶領克利夫蘭騎士（Cleveland Cavaliers）打進總決賽、作為助理教練贏得4座NBA總冠軍（2003年馬刺、2017、2018、2022年勇士）。</p>
+                    <div class="knicks-quote">
+                        「沒有人對我的期望比我對自己的期望更高。」<br>
+                        <span style="font-size:0.9rem;font-style:normal;">—— Mike Brown，就職記者會</span>
+                    </div>
+
+                    <h4 class="knicks-subtitle">4.3 布朗的三大變革</h4>
+                    <p><strong>第一，擴充輪換深度。</strong> 他把Thibodeau的8人輪換擴大到9-10人穩定輪換，主力場均出賽時間控制在35分鐘上下。2025年夏天簽下Jordan Clarkson和Guerschon Yabusele就是這個思維的體現。</p>
+                    <p><strong>第二，傾聽球員。</strong> Brown不像Thibodeau那樣固執，他願意與球員溝通、根據對手和狀況靈活調整戰術。</p>
+                    <p><strong>第三，心理建設。</strong> Brown打造了「逆轉尼克」的心理韌性——這在季後賽中發揮了決定性作用。</p>
+
+                    <h4 class="knicks-subtitle">4.4 布朗的執教哲學</h4>
+                    <p>Brown的帶兵哲學可以濃縮為三個關鍵詞：<strong>團隊、防守、韌性</strong>。</p>
+                    <p>「他理解什麼是贏球，」Brunson在奪冠後如此評價他的教練。</p>
+                    <p>18個月前被國王隊解僱時，許多人認為Brown的執教生涯已經走到盡頭。18個月後，他成為了NBA冠軍教練。</p>
+                    <div class="knicks-quote">
+                        「我仍然不敢相信這一切發生了。」<br>
+                        <span style="font-size:0.9rem;font-style:normal;">—— Mike Brown，奪冠後</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="knicks-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 第五章：季後賽                                             -->
+    <!-- ========================================================= -->
+    <section id="ch5" class="section-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="knicks-title"><i class="fas fa-trophy"></i> 賽季調整與季後賽晉級過程</h2>
+
+                    <h4 class="knicks-subtitle">5.1 常規賽：磨合與調整</h4>
+                    <p>2025-26賽季，尼克以53勝29敗的戰績結束常規賽，排名東區第三種子。</p>
+                    <p>賽季並非一帆風順。12月31日到1月19日期間，尼克經歷了一段2勝9敗的低潮，包括兩次4連敗。Brunson也曾因傷短暫缺陣，球隊一度面臨磨合問題。</p>
+                    <p>但最大的亮點出現在12月。尼克在NBA盃（NBA Cup）中打出6勝1敗的戰績，在拉斯維加斯（Las Vegas）的決賽中以124比113擊敗馬刺隊奪冠。Brunson以場均33.2分的表現獲選NBA盃MVP。</p>
+                    <p>這座獎盃意義重大——尼克隊拒絕在球場懸掛NBA盃冠軍旗幟，因為他們的目標更遠大。</p>
+
+                    <h4 class="knicks-subtitle">5.2 季後賽首輪：對亞特蘭大老鷹（4-2）</h4>
+                    <p>季後賽首輪，尼克面對亞特蘭大老鷹（Atlanta Hawks）。系列賽前3戰打完，尼克陷入1勝2敗的落後。但從第4戰開始，尼克像是被打開了某個開關。他們連贏3場，包括第6戰在主場以140比89狂勝51分——刷新隊史季後賽最大贏球分差。這場勝利開啟了一段瘋狂的旅程。</p>
+
+                    <h4 class="knicks-subtitle">5.3 東區半決賽：對費城76人（4-0）</h4>
+                    <p>第二輪面對費城76人（Philadelphia 76ers），尼克展現了壓倒性的統治力。4場比賽全部碾壓過關。首戰137比98的大勝只是開始。尼克以不敗之身橫掃76人，將季後賽連勝紀錄推進到7場。</p>
+
+                    <h4 class="knicks-subtitle">5.4 東區決賽：對克利夫蘭騎士（4-0）</h4>
+                    <p>東區決賽面對克利夫蘭騎士（Cleveland Cavaliers），尼克的統治力達到巔峰。第4戰在克利夫蘭，尼克以130比93狂勝37分——全場最多領先45分——完成4戰橫掃。4場比賽全部以雙位數分差獲勝。這是尼克自1999年以來首次闖入NBA總決賽。他們在季後賽中打出11連勝，追平了隊史紀錄。Brunson獲選東區決賽MVP，場均27.8分。</p>
+
+                    <h4 class="knicks-subtitle">5.5 總決賽：對聖安東尼奧馬刺（4-1）</h4>
+                    <p><strong>G1（聖安東尼奧）：</strong> 尼克105比95獲勝。Brunson攻下30分，率隊在客場搶下主場優勢。</p>
+                    <p><strong>G2（聖安東尼奧）：</strong> 尼克105比104獲勝。Brunson雖然全場命中率僅28%只拿20分，但關鍵時刻的表現價值連城。KAT貢獻21分13籃板。尼克客場2連勝。</p>
+                    <p><strong>G3（紐約）：</strong> 尼克111比115落敗。馬刺在麥迪遜廣場花園以4分之差搶下一勝。Wembanyama轟下32分。尼克的13連勝在此終止。</p>
+                    <p><strong>G4（紐約）——史上最大逆轉：</strong> 尼克在第二節一度落後29分。半場結束時仍落後27分。但尼克在最後21分半鐘打出55比25的攻勢。OG Anunoby全場33分。Brunson全場36分。比賽剩下1.2秒，Anunoby補籃絕殺。這是NBA總決賽史上最大逆轉——超越了1948年巴爾的摩子彈隊（Baltimore Bullets）創下的21分逆轉紀錄。</p>
+                    <p><strong>G5（聖安東尼奧）——封王之戰：</strong> 馬刺首節打出23比13的攻勢，半場42比37領先。第四節尼克一度落後10分。然後Brunson接管了比賽。第四節連拿13分。終場前約1分鐘，比分88平，Brunson拋投命中。Hart罰球、Anunoby罰球、Robinson關鍵進攻籃板。94比90，比賽結束。尼克4勝1敗，隊史第三座總冠軍。</p>
+
+                    <h4 class="knicks-subtitle">5.6 「逆轉尼克」的數據密碼</h4>
+                    <p>整個總冠軍賽5場比賽，尼克在每一場的第一節都落後雙位數。馬刺5場比賽第一節合計淨勝57分，但尼克在第二、三、四節全面壓制。尼克在季後賽中共有8場比賽曾落後雙位數，他們贏了其中6場——這是過去30年有逐球紀錄以來的最佳紀錄。</p>
+                    <div class="knicks-quote">
+                        <i class="fas fa-rocket me-2" style="color:var(--knicks-orange);"></i>
+                        他們被稱為「逆轉尼克」（The Comeback Knicks）——一球一球追、一場一場拚、永不放棄。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="knicks-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 第六章：關鍵因素                                           -->
+    <!-- ========================================================= -->
+    <section id="ch6" class="section-alt py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="knicks-title"><i class="fas fa-key"></i> 尼克奪冠的關鍵因素</h2>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="story-card" style="border-left-color:var(--knicks-blue);">
+                                <span class="story-tag">6.1</span>
+                                <h5>球星無私與團隊化學效應</h5>
+                                <p>Brunson放棄1.13億美元——這不僅是金錢的犧牲，更是一種領袖格局的展現。「他設下了標準，」總教練Brown說。當球隊的頭號球星願意為團隊做出如此巨大的犧牲，整個球隊的化學效應就不一樣了。「維拉諾瓦三傑」從大學到職業的兄弟情誼，更是這支球隊凝聚力的核心。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="story-card" style="border-left-color:var(--knicks-orange);">
+                                <span class="story-tag orange">6.2</span>
+                                <h5>管理層的操盤智慧</h5>
+                                <p>尼克總裁Leon Rose展現了卓越的建隊能力。從2022年簽下Brunson、2023年交易來Hart、2024年交易來Bridges和簽下Anunoby、再到交易來Towns——每一步都精準到位。更關鍵的是，Rose敢於做出艱難的決定——在球隊25年來最佳戰績之後解僱Thibodeau，聘請Brown。這需要極大的勇氣。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="story-card" style="border-left-color:var(--knicks-blue);">
+                                <span class="story-tag">6.3</span>
+                                <h5>陣容深度與攻防均衡</h5>
+                                <p>尼克的先發五人是全聯盟最均衡的陣容——Brunson的組織與得分、Bridges的攻防一體、Hart的拚勁與全能、Anunoby的防守與關鍵球、Towns的內線威懾力。更重要的是9-10人的穩定輪換。當馬刺在總決賽後段體力下滑時，尼克的主力還有充足的燃料。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="story-card" style="border-left-color:var(--knicks-orange);">
+                                <span class="story-tag orange">6.4</span>
+                                <h5>心理韌性與「逆轉文化」</h5>
+                                <p>從首輪1勝2敗落後到11連勝、從總決賽G4落後29分到逆轉、從G5落後16分到封王——這支球隊的心理素質達到了歷史級別。</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="story-card" style="border-left-color:var(--knicks-darkblue);">
+                                <span class="story-tag" style="background:var(--knicks-darkblue);">6.5</span>
+                                <h5>麥迪遜廣場花園與紐約球迷</h5>
+                                <p>麥迪遜廣場花園是世界上最著名的體育館。2026年總決賽第12次在此舉辦——比任何其他球場都多。數萬球迷遠征聖安東尼奧，將客場化為橘藍色的海洋。當馬刺球員罰球時，全場響起「防守」的吶喊——這是屬於紐約的聲音。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="knicks-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 第七章：感動小故事                                         -->
+    <!-- ========================================================= -->
+    <section id="ch7" class="section-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="knicks-title"><i class="fas fa-heart" style="color:var(--knicks-orange);"></i> 令人感動的小故事</h2>
+
+                    <div class="row g-4">
+                        <!-- 7.1 高層 -->
+                        <div class="col-md-6">
+                            <div class="story-card">
+                                <span class="story-tag">🏢 高層</span>
+                                <h5>老闆James Dolan的勇氣</h5>
+                                <p>2025年6月，Dolan批准了解僱Thibodeau的決定。這不是一個輕鬆的決定——Thibodeau剛帶隊打出25年來最佳戰績。但Dolan和Rose看到了更大的可能性，選擇了更艱難的道路。他們對Brown的全力支持也至關重要，從簽下Clarkson到交易來需要的球員，管理層全力配合Brown的建隊藍圖。</p>
+                            </div>
+                        </div>
+                        <!-- 7.2 球隊 -->
+                        <div class="col-md-6">
+                            <div class="story-card">
+                                <span class="story-tag orange">🏀 球隊</span>
+                                <h5>Thibodeau的風度</h5>
+                                <p>被解僱的Thibodeau沒有怨言。他在《紐約時報》上刊登了一封給球迷的告別信。奪冠後，許多人說：「沒有他，就沒有這座冠軍。」Thibodeau改變了尼克的文化，為這座冠軍打下了基礎。Karl-Anthony Towns在賽後真情流露：「我們圓了無數尼克傳奇球星與球迷的心願。」</p>
+                            </div>
+                        </div>
+                        <!-- 7.3 球員 -->
+                        <div class="col-md-6">
+                            <div class="story-card">
+                                <span class="story-tag">👟 球員</span>
+                                <h5>Brunson與父親的擁抱</h5>
+                                <p>比賽結束後，Brunson在場上尋找一個人——他的父親、尼克助理教練Rick Brunson。當他轉身看到父親的那一刻，情緒完全潰堤。Rick Brunson曾在1999年為尼克效力——那是尼克上一次打進總決賽。26年後，他以教練身份與兒子一同奪冠。Brunson家族成為NBA史上第一對在同一支球隊一起贏得總冠軍的父子檔。</p>
+                                <p class="mt-2"><small>「我轉過身，我父親就在那裡。」—— Jalen Brunson</small></p>
+                            </div>
+                        </div>
+                        <!-- 7.4 球迷 -->
+                        <div class="col-md-6">
+                            <div class="story-card">
+                                <span class="story-tag orange">🗽 球迷</span>
+                                <h5>「戴夫，我們終於做到了」</h5>
+                                <p>一位尼克球迷在奪冠後接受採訪時說，她的丈夫戴夫（Dave）是尼克隊的死忠球迷，幾年前過世了。她把丈夫的骨灰灑在了麥迪遜廣場花園——「戴夫，我們終於做到了。」</p>
+                                <p class="mt-2">尼克傳奇中鋒Patrick Ewing也在奪冠後公開發聲。這位將整個職業生涯奉獻給尼克的偉大中鋒，從未在紐約贏得總冠軍。但他的精神——那個在90年代帶領尼克與Michael Jordan的芝加哥公牛浴血奮戰的身影——是這座冠軍的基石之一。</p>
+                            </div>
+                        </div>
+                        <!-- 額外：球迷遠征 -->
+                        <div class="col-12">
+                            <div class="story-card" style="border-left-color:var(--knicks-darkblue);">
+                                <span class="story-tag" style="background:var(--knicks-darkblue);">✈️ 遠征軍</span>
+                                <h5>數萬球迷遠征聖安東尼奧</h5>
+                                <p>數以萬計的尼克球迷飛越半個美國，將馬刺的主場變成了橘藍色的海洋。當終場哨響，他們在客場瘋狂慶祝——這一刻，他們等了53年。奪冠當晚，紐約街頭萬人空巷。帝國大廈亮起橘藍色燈光。紐約市長宣布6月18日舉辦彩帶遊行——這是尼克隊史第一次獲得這項榮譽。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="knicks-divider"></div>
+
+    <!-- ========================================================= -->
+    <!-- 第八章：結語                                               -->
+    <!-- ========================================================= -->
+    <section id="ch8" class="section-alt py-5" style="background:linear-gradient(135deg,#1D428A 0%,#006BB6 100%);color:#fff;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h2 class="knicks-title" style="border-bottom-color:var(--knicks-orange);color:#fff;border-bottom-color:var(--knicks-orange);">
+                        <i class="fas fa-flag-checkered" style="color:var(--knicks-orange);"></i> 結語：不僅僅是一座冠軍
+                    </h2>
+                    <p class="fs-5" style="color:rgba(255,255,255,0.9);">
+                        53年的等待，終於在2026年6月13日畫下句點。
+                    </p>
+                    <p style="color:rgba(255,255,255,0.85);">
+                        這不只是一座冠軍。這是Jalen Brunson從第二輪選秀到總決賽MVP的逆襲故事。<br>
+                        這是「維拉諾瓦三傑」從大學到職業的兄弟情誼。<br>
+                        這是Mike Brown從被解僱到冠軍教練的救贖。<br>
+                        這是Leon Rose從零開始打造冠軍陣容的操盤智慧。<br>
+                        這是數萬球迷53年不離不棄的忠誠。
+                    </p>
+                    <div class="knicks-quote" style="background:rgba(255,255,255,0.12);border-left-color:var(--knicks-orange);color:#fff;font-size:1.2rem;">
+                        <i class="fas fa-quote-left me-2" style="color:var(--knicks-orange);"></i>
+                        2026年的尼克隊，證明了籃球最美好的模樣——<br>
+                        <strong style="color:var(--knicks-orange);">不是天賦的堆砌，而是犧牲、信任與永不放棄。</strong>
+                    </div>
+                    <p class="mt-4" style="color:rgba(255,255,255,0.7);">
+                        帝國大廈的橘藍燈光終將熄滅，彩帶終將掃盡，<br>
+                        但這座冠軍將永遠刻在紐約的靈魂裡。
+                    </p>
+                    <p class="display-6 fw-bold mt-4" style="color:var(--knicks-orange);">
+                        紐約尼克隊，2026年NBA總冠軍。
+                    </p>
+                    <div class="mt-4">
+                        <i class="fas fa-basketball-ball fa-3x" style="color:var(--knicks-orange);opacity:0.5;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============================================================ -->
+<!-- 頁尾 (保留原 footer 架構)                                     -->
+<!-- ============================================================ -->
+<div id="footer">
+    <footer class="knicks-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">
+                        <i class="fas fa-basketball-ball" style="color:var(--knicks-orange);"></i>
+                        <span style="font-weight:700;color:#fff;">紐約尼克</span> · 2026 NBA 總冠軍
+                    </p>
+                    <small>半世紀的等待 · 一座城市的救贖</small>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <p class="mt-2 mb-0 small">
+                        &copy; 2026 尼克冠軍紀念 · 橘藍榮耀
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- ============================================================ -->
+<!-- 保留原架構的 jQuery / Bootstrap 腳本                          -->
+<!-- ============================================================ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+<!-- 保留原 nav / footer 的 load 機制（同時直接內容已存在，不衝突） -->
+<script>
+    $(function () {
+        // 若您有外部 nav / footer 檔案，可取消註解以下兩行載入；
+        // 目前頁面已直接內嵌導覽列與頁尾，因此不重複載入。
+        // $("#nav1").load("/B02A-2026-Book-read/F01-ex-comm/FX02-nav-2026.html");
+        // $("#footer").load("/ex-Comm/CX01-footer.html");
+
+        // 平滑滾動（選單錨點）
+        $('a[href^="#"]').on('click', function (e) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - 80
+                }, 600);
+            }
+        });
+    });
+</script>
+
+<!-- 原架構中的 iconfont 腳本（保留） -->
+<script src="css/iconfont.js"></script>
+
+</body>
+</html>

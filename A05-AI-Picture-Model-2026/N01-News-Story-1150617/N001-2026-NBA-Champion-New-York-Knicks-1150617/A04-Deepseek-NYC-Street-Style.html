@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026 NBA 尼克隊奪冠之路</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --nyc-orange: #F58426;
+            --nyc-blue: #006BB6;
+            --nyc-dark: #0B0E14;
+            --nyc-dark-card: #121820;
+            --nyc-light: #F5F0EB;
+            --nyc-gray: #8A8F98;
+            --neon-glow-orange: 0 0 20px rgba(245, 132, 38, 0.6), 0 0 60px rgba(245, 132, 38, 0.3);
+            --neon-glow-blue: 0 0 20px rgba(0, 107, 182, 0.6), 0 0 60px rgba(0, 107, 182, 0.3);
+            --neon-glow-white: 0 0 15px rgba(255, 255, 255, 0.3);
+            --font-display: 'Orbitron', monospace;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* ===== Reset & Base ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--nyc-dark);
+            color: var(--nyc-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== Scrollbar ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--nyc-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--nyc-orange);
+            border-radius: 4px;
+            box-shadow: var(--neon-glow-orange);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== Utility ===== */
+        .text-orange {
+            color: var(--nyc-orange);
+        }
+        .text-blue {
+            color: var(--nyc-blue);
+        }
+        .text-glow-orange {
+            text-shadow: var(--neon-glow-orange);
+        }
+        .text-glow-blue {
+            text-shadow: var(--neon-glow-blue);
+        }
+        .text-glow-white {
+            text-shadow: var(--neon-glow-white);
+        }
+
+        .section-tag {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--nyc-orange);
+            background: rgba(245, 132, 38, 0.12);
+            border: 1px solid rgba(245, 132, 38, 0.25);
+            padding: 4px 16px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+        .section-title .highlight {
+            background: linear-gradient(135deg, var(--nyc-orange), var(--nyc-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-sub {
+            font-size: 1.1rem;
+            color: var(--nyc-gray);
+            max-width: 680px;
+            line-height: 1.8;
+        }
+
+        /* ===== Header / Hero ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(245, 132, 38, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(0, 107, 182, 0.08) 0%, transparent 60%),
+                var(--nyc-dark);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(245, 132, 38, 0.02) 40px, rgba(245, 132, 38, 0.02) 41px),
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(0, 107, 182, 0.02) 40px, rgba(0, 107, 182, 0.02) 41px);
+            pointer-events: none;
+        }
+
+        /* 霓虹城市天际线 */
+        .hero-skyline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            opacity: 0.15;
+            background:
+                /* 简化的建筑剪影 */
+                linear-gradient(0deg, transparent 30%, var(--nyc-orange) 30%, var(--nyc-orange) 40%, transparent 40%),
+                linear-gradient(0deg, transparent 20%, var(--nyc-blue) 20%, var(--nyc-blue) 50%, transparent 50%),
+                linear-gradient(0deg, transparent 40%, var(--nyc-orange) 40%, var(--nyc-orange) 55%, transparent 55%),
+                linear-gradient(0deg, transparent 15%, var(--nyc-blue) 15%, var(--nyc-blue) 60%, transparent 60%),
+                linear-gradient(0deg, transparent 35%, var(--nyc-orange) 35%, var(--nyc-orange) 45%, transparent 45%);
+            background-size: 80px 100%, 60px 100%, 100px 100%, 70px 100%, 50px 100%;
+            background-position: 10% 100%, 25% 100%, 45% 100%, 65% 100%, 85% 100%;
+            background-repeat: no-repeat;
+            filter: blur(1px);
+        }
+        .hero-skyline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--nyc-orange), var(--nyc-blue), var(--nyc-orange));
+            box-shadow: 0 0 40px rgba(245, 132, 38, 0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            color: var(--nyc-orange);
+            border: 2px solid var(--nyc-orange);
+            padding: 8px 24px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 32px;
+            box-shadow: var(--neon-glow-orange);
+            animation: pulse-border 2s ease-in-out infinite;
+        }
+        @keyframes pulse-border {
+            0%,
+            100% {
+                box-shadow: var(--neon-glow-orange);
+            }
+            50% {
+                box-shadow: 0 0 10px rgba(245, 132, 38, 0.3), 0 0 30px rgba(245, 132, 38, 0.1);
+            }
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--nyc-orange) 30%, var(--nyc-blue) 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 40px rgba(245, 132, 38, 0.2));
+            animation: title-flicker 4s ease-in-out infinite;
+        }
+        @keyframes title-flicker {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            96% {
+                opacity: 0.6;
+            }
+            97% {
+                opacity: 1;
+            }
+            98% {
+                opacity: 0.7;
+            }
+            99% {
+                opacity: 1;
+            }
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            color: var(--nyc-gray);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            letter-spacing: 0.05em;
+        }
+        .hero-sub strong {
+            color: var(--nyc-light);
+            font-weight: 700;
+        }
+
+        .hero-date {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: var(--nyc-orange);
+            letter-spacing: 0.15em;
+            opacity: 0.8;
+        }
+        .hero-date span {
+            color: var(--nyc-blue);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--nyc-gray);
+            animation: bounce-down 2s ease-in-out infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .hero-scroll .arrow {
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid var(--nyc-orange);
+            border-bottom: 2px solid var(--nyc-orange);
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+        @keyframes bounce-down {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(8px);
+            }
+        }
+
+        /* ===== 霓虹分隔线 ===== */
+        .neon-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 60px 0 40px;
+        }
+        .neon-divider .line {
+            flex: 1;
+            height: 2px;
+            max-width: 120px;
+            background: linear-gradient(90deg, transparent, var(--nyc-orange), transparent);
+        }
+        .neon-divider .line.blue {
+            background: linear-gradient(90deg, transparent, var(--nyc-blue), transparent);
+        }
+        .neon-divider .icon {
+            font-size: 1.6rem;
+            color: var(--nyc-orange);
+            text-shadow: var(--neon-glow-orange);
+            animation: pulse-icon 2s ease-in-out infinite;
+        }
+        @keyframes pulse-icon {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* ===== Cards / Sections ===== */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        section:nth-child(even) {
+            background: var(--nyc-dark-card);
+        }
+
+        .card {
+            background: var(--nyc-dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 40px 48px;
+            margin-bottom: 32px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            border-color: rgba(245, 132, 38, 0.15);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--nyc-orange), var(--nyc-blue));
+            opacity: 0.3;
+        }
+
+        .card-glow {
+            border-color: rgba(245, 132, 38, 0.15);
+            box-shadow: 0 0 60px rgba(245, 132, 38, 0.03);
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--nyc-light);
+        }
+        .card-title .orange {
+            color: var(--nyc-orange);
+        }
+        .card-title .blue {
+            color: var(--nyc-blue);
+        }
+
+        .card p {
+            color: rgba(255, 255, 255, 0.78);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+        .card strong {
+            color: var(--nyc-light);
+            font-weight: 700;
+        }
+        .card .highlight-text {
+            color: var(--nyc-orange);
+            font-weight: 600;
+        }
+        .card .highlight-blue {
+            color: var(--nyc-blue);
+            font-weight: 600;
+        }
+
+        .card ul,
+        .card ol {
+            color: rgba(255, 255, 255, 0.78);
+            padding-left: 24px;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        .card li {
+            margin-bottom: 6px;
+        }
+        .card li strong {
+            color: var(--nyc-light);
+        }
+
+        /* ===== 球员卡片 ===== */
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 20px 0 10px;
+        }
+        .player-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .player-tag:hover {
+            border-color: var(--nyc-orange);
+            background: rgba(245, 132, 38, 0.05);
+            transform: translateY(-2px);
+        }
+        .player-tag .number {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            color: var(--nyc-orange);
+            letter-spacing: 0.1em;
+        }
+        .player-tag .name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--nyc-light);
+            margin: 4px 0 2px;
+        }
+        .player-tag .role {
+            font-size: 0.8rem;
+            color: var(--nyc-gray);
+        }
+
+        /* ===== 数据高亮块 ===== */
+        .stat-block {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+            padding: 20px 24px;
+            background: rgba(245, 132, 38, 0.04);
+            border-radius: 12px;
+            border-left: 3px solid var(--nyc-orange);
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--nyc-orange);
+            display: block;
+            text-shadow: var(--neon-glow-orange);
+        }
+        .stat-item .label {
+            font-size: 0.8rem;
+            color: var(--nyc-gray);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* ===== 引用块 ===== */
+        .quote-block {
+            padding: 24px 32px;
+            margin: 24px 0;
+            border-left: 4px solid var(--nyc-orange);
+            background: rgba(245, 132, 38, 0.04);
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+        .quote-block::before {
+            content: '"';
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--nyc-orange);
+            opacity: 0.2;
+            position: absolute;
+            top: 4px;
+            left: 12px;
+            line-height: 1;
+        }
+        .quote-block p {
+            font-size: 1.1rem !important;
+            font-weight: 400;
+            color: var(--nyc-light) !important;
+            padding-left: 24px;
+            font-style: italic;
+        }
+        .quote-block .attribution {
+            font-style: normal;
+            font-size: 0.9rem !important;
+            color: var(--nyc-gray) !important;
+            margin-top: 8px;
+            padding-left: 24px;
+        }
+
+        /* ===== 逆轉數據 ===== */
+        .comeback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .comeback-item {
+            background: rgba(0, 107, 182, 0.04);
+            border: 1px solid rgba(0, 107, 182, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .comeback-item .big {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: var(--nyc-blue);
+            display: block;
+            text-shadow: var(--neon-glow-blue);
+        }
+        .comeback-item .desc {
+            font-size: 0.9rem;
+            color: var(--nyc-gray);
+            margin-top: 4px;
+        }
+
+        /* ===== 故事小卡片 ===== */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 20px 0;
+        }
+        .story-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        .story-card:hover {
+            border-color: rgba(245, 132, 38, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        .story-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .story-card h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--nyc-light);
+            margin-bottom: 6px;
+            letter-spacing: 0.02em;
+        }
+        .story-card p {
+            font-size: 0.95rem !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+            line-height: 1.7 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ===== 结语 ===== */
+        .epilogue {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .epilogue .big-word {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 6vw, 4.4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--nyc-orange), var(--nyc-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 0 40px rgba(245, 132, 38, 0.15));
+        }
+        .epilogue p {
+            max-width: 700px;
+            margin: 0 auto 12px;
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .epilogue .tagline {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            color: var(--nyc-orange);
+            text-shadow: var(--neon-glow-orange);
+            margin-top: 24px;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--nyc-gray);
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .footer .nyc-symbol {
+            color: var(--nyc-orange);
+            font-size: 1.2rem;
+            margin: 0 6px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .card {
+                padding: 24px 20px;
+            }
+            .hero-title {
+                font-size: clamp(2.4rem, 8vw, 4rem);
+            }
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 6px 16px;
+            }
+            .player-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .stat-block {
+                grid-template-columns: 1fr 1fr;
+                padding: 16px;
+            }
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+            .comeback-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            section {
+                padding: 50px 0;
+            }
+            .quote-block {
+                padding: 16px 20px;
+            }
+            .quote-block p {
+                padding-left: 12px;
+                font-size: 1rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-block {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .comeback-grid {
+                grid-template-columns: 1fr;
+            }
+            .player-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .hero {
+                padding: 60px 16px;
+            }
+        }
+
+        /* ===== 霓虹闪烁动画 ===== */
+        .neon-flicker {
+            animation: flicker 3s ease-in-out infinite;
+        }
+        @keyframes flicker {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            92% {
+                opacity: 1;
+            }
+            93% {
+                opacity: 0.4;
+            }
+            94% {
+                opacity: 1;
+            }
+            96% {
+                opacity: 0.6;
+            }
+            97% {
+                opacity: 1;
+            }
+        }
+
+        /* 滚动渐入 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== 纽约街头装饰元素 ===== */
+        .street-tag {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            color: var(--nyc-gray);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 2px 12px;
+            border-radius: 2px;
+            margin-right: 6px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- HERO -->
+    <!-- ============================================================ -->
+    <header class="hero" id="top">
+        <div class="hero-skyline"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">★ 2026 NBA CHAMPIONS ★</div>
+            <h1 class="hero-title">尼克隊<br />奪冠之路</h1>
+            <p class="hero-sub">
+                <strong>53年</strong> 的等待 · 從 <strong>1973</strong> 到 <strong>2026</strong> · 紐約榮耀回歸
+            </p>
+            <div class="hero-date">
+                <span>🏆</span> 2026.06.13 · 聖安東尼奧 <span>│</span> 4–1 擊敗馬刺
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>SCROLL</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- 楔子 -->
+    <!-- ============================================================ -->
+    <section id="prologue">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-tag">楔子</span>
+                <h2 class="section-title">
+                    半世紀的等待，<br /><span class="highlight">一夕成真</span>
+                </h2>
+                <p class="section-sub">
+                    2026年6月13日，計時器歸零的那一刻，紐約尼克隊以 94 比 90 擊敗聖安東尼奧馬刺，
+                    以 4 勝 1 敗奪下隊史第三座 NBA 總冠軍。
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <p>
+                    <strong>53年。</strong> 從1973年到2026年，這座城市等了整整半個世紀。
+                </p>
+                <p>
+                    尼克隊上一次拿下總冠軍，美國總統還是 <strong>尼克森</strong>，麥迪遜廣場花園的球迷還抽著煙看球，
+                    <strong>Willis Reed</strong> 和 <strong>Walt Frazier</strong> 還是這支球隊的臉孔。
+                    此後的53年裡，尼克隊更換了 <strong>24位</strong> 總教練——從2001年到2010年連續10個賽季勝率不到五成，
+                    從2014年到2020年連續7年無緣季後賽。這支NBA創始球隊之一、全聯盟最具市場價值的豪門，
+                    淪為聯盟笑柄長達數十年。
+                </p>
+                <p>
+                    但2026年6月13日這一天，一切都改變了。
+                </p>
+                <div class="stat-block">
+                    <div class="stat-item">
+                        <span class="number">53</span>
+                        <span class="label">年等待</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">24</span>
+                        <span class="label">位總教練</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">3rd</span>
+                        <span class="label">隊史冠軍</span>
+                    </div>
+                </div>
+                <p>
+                    比賽結束的瞬間，帝國大廈點亮了橘藍色的燈光。紐約街頭鞭炮聲四起，塞滿汽車的街道上喇叭聲此起彼伏，
+                    消防隊員從消防車上伸出雙手與狂歡的球迷擊掌。數千名尼克球迷遠征德州，將馬刺隊的主場變成了橘藍色的海洋。
+                    <strong>Spike Lee</strong>、<strong>Timothée Chalamet</strong>、<strong>Tracy Morgan</strong>
+                    等知名尼克球迷都在現場見證了歷史。
+                </p>
+                <p>
+                    紐約市長 <strong>Zohran Mamdani</strong> 在社群媒體上只寫了一個字：<span class="highlight-text">「HISTORY」</span>。
+                    他隨後宣布，6月18日將舉辦尼克隊史首次彩帶遊行，沿著百老匯的「英雄峽谷」前進。
+                </p>
+                <p style="font-size:1.2rem; font-weight:700; color:var(--nyc-orange); margin-top:8px;">
+                    ═══ 這不只是一座冠軍，這是一座城市的救贖。 ═══
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider">
+        <span class="line"></span>
+        <span class="icon">✦</span>
+        <span class="line blue"></span>
+        <span class="icon" style="color:var(--nyc-blue);text-shadow:var(--neon-glow-blue);">✦</span>
+        <span class="line"></span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 當家球星 布朗森 -->
+    <!-- ============================================================ -->
+    <section id="brunson" style="background:var(--nyc-dark-card);">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-tag">當家球星</span>
+                <h2 class="section-title">
+                    Jalen Brunson<br /><span class="highlight">從第二輪到紐約之王</span>
+                </h2>
+            </div>
+
+            <!-- 2.1 -->
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">2.1</span> 從第二輪選秀到「紐約之王」</h3>
+                <p>
+                    2018年NBA選秀大會上，當第33順位的名字被念出時，Jalen Brunson沒有太多表情。
+                    他剛帶領維拉諾瓦大學贏得NCAA冠軍、拿下全美大學年度最佳球員、獲得Bob Cousy獎和Lute Olson獎，
+                    但NBA對他的評價很簡單：6呎2吋、運動能力普通、天花板有限。
+                </p>
+                <p>
+                    <strong>第二輪第33順位</strong> —— 這是Brunson職業生涯的起點。
+                </p>
+                <p>
+                    他被達拉斯獨行俠選中，在Luka Dončić身邊擔任替補控衛。四個賽季，他一步步證明自己不只是「Dončić的替補」。
+                    2022年季後賽，當Dončić因傷缺陣時，Brunson扛起球隊，場均轟下 <strong>27.8分</strong>，
+                    讓全聯盟開始正視這個被低估的名字。
+                </p>
+                <p>
+                    但獨行俠隊拒絕給他4年5,500萬美元的續約。這個決定，<span class="highlight-text">改變了NBA的歷史</span>。
+                </p>
+            </div>
+
+            <!-- 2.2 -->
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">2.2</span> 關鍵轉折：加盟尼克</h3>
+                <p>
+                    2022年夏天，Brunson以 <strong>4年1.04億美元</strong> 加盟紐約尼克隊。
+                    這份合約在當時被許多人質疑——一個第二輪出身、從未入選過明星賽的控衛，值得破億合約嗎？
+                </p>
+                <p>
+                    答案來得很快。
+                </p>
+                <p>
+                    Brunson加盟前的21個賽季，尼克隊只有4年勝率超過五成。
+                    Brunson加盟後，尼克連續4年闖入季後賽，連3年拿下50勝以上——
+                    這是Patrick Ewing和Pat Riley時代以來第一次。
+                </p>
+                <p>
+                    他從「被低估的第二輪秀」變成了 <span class="highlight-text">「紐約之王」</span>。
+                </p>
+            </div>
+
+            <!-- 2.3 -->
+            <div class="card fade-in" style="border-color:rgba(245,132,38,0.2);">
+                <h3 class="card-title"><span class="orange">2.3</span> 驚天動地的自我犧牲</h3>
+                <p>
+                    2024年夏天，Brunson做了一件NBA歷史上幾乎前所未聞的事。
+                </p>
+                <p>
+                    他原本可以在2025年夏天成為自由球員，有資格簽下一份 <strong>5年2.69億美元</strong> 的頂薪合約。
+                    但他選擇提前續約，簽下 <strong>4年1.565億美元</strong> 的合約 ——
+                    直接放棄了 <span class="highlight-text" style="font-size:1.3rem;font-weight:900;">1.13億美元</span>。
+                </p>
+                <div class="stat-block">
+                    <div class="stat-item">
+                        <span class="number">$1.13億</span>
+                        <span class="label">放棄的金額</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">4年</span>
+                        <span class="label">續約長度</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">$1.565億</span>
+                        <span class="label">新合約總額</span>
+                    </div>
+                </div>
+                <div class="quote-block">
+                    <p>
+                        「很多人說我為球隊做出了犧牲，百分之百，我為球隊做出了犧牲。
+                        但最重要的是，我確保我的家人和我都得到了照顧。」
+                    </p>
+                    <div class="attribution">—— Jalen Brunson，Vanity Fair 專訪</div>
+                </div>
+                <p>
+                    尼克總教練Mike Brown在奪冠後受訪時說了一句大實話：
+                    <span class="highlight-text">「他接受了我不會接受的減薪。」</span>
+                </p>
+                <p>
+                    Brunson的降薪讓尼克隊得以在薪資上限之下保持操作彈性。
+                    如果沒有這個犧牲，尼克在交易得到Mikal Bridges和簽下OG Anunoby之後可能已經超過第二層豪華稅apron——
+                    更別提後續交易來Karl-Anthony Towns和Jose Alvarado了。
+                </p>
+                <p>
+                    <em>「他的妥協幫助尼克贏得了這座冠軍。」</em> —— Sports Illustrated
+                </p>
+            </div>
+
+            <!-- 2.4 -->
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">2.4</span> 總決賽MVP的史詩演出</h3>
+                <p>
+                    總冠軍賽5場，Brunson場均 <strong>32.6分</strong>。
+                    封王戰他狂砍 <strong>45分</strong> —— 打破Willis Reed在1970年總決賽第三戰創下的38分隊史紀錄 ——
+                    外帶3籃板3助攻，投籃27投14中，三分球7投4中。
+                </p>
+                <p>
+                    第四節，他一個人連拿 <strong>13分</strong>。當比賽剩下約1分鐘、比分88比88平手時，
+                    Brunson命中一記致勝拋投。紐約市長在社群媒體上寫道：<span class="highlight-text">「HISTORY」</span>。
+                </p>
+                <div class="stat-block">
+                    <div class="stat-item">
+                        <span class="number">32.6</span>
+                        <span class="label">總決賽場均得分</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">45</span>
+                        <span class="label">封王戰得分</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">4th</span>
+                        <span class="label">第二輪出身FMVP</span>
+                    </div>
+                </div>
+                <p>
+                    Brunson成為NBA史上第四位在第二輪被選中卻贏得總決賽MVP的球員 ——
+                    前三位是尼克傳奇Willis Reed、三屆NBA冠軍Dennis Johnson和三屆MVP Nikola Jokić。
+                </p>
+                <p>
+                    但Brunson的2025-26賽季比這更瘋狂。他在12月的NBA盃決賽中率隊擊敗馬刺，拿下NBA盃MVP。
+                    六個月後，他又在同一支對手面前拿下總冠軍和總決賽MVP ——
+                    成為 <span class="highlight-text">NBA史上第一位</span> 單季同時贏得NBA盃和總冠軍、
+                    且兩項賽事都獲選MVP的球員。
+                </p>
+                <p>
+                    德州是Brunson的福地。2016年他在休士頓贏得第一個NCAA冠軍，2018年在聖安東尼奧贏得第二個NCAA冠軍。
+                    2026年，他又在同一座城市舉起NBA總冠軍獎盃。
+                </p>
+                <div class="quote-block">
+                    <p>「我無法用言語形容，這是我夢想的一切。」</p>
+                    <div class="attribution">—— Jalen Brunson，賽後場上訪問</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider">
+        <span class="line blue"></span>
+        <span class="icon" style="color:var(--nyc-blue);text-shadow:var(--neon-glow-blue);">◆</span>
+        <span class="line"></span>
+        <span class="icon">◆</span>
+        <span class="line blue"></span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 先發球員 -->
+    <!-- ============================================================ -->
+    <section id="roster">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-tag">冠軍陣容</span>
+                <h2 class="section-title">
+                    「維拉諾瓦三傑」<br /><span class="highlight">與冠軍五虎</span>
+                </h2>
+            </div>
+
+            <!-- 3.1 -->
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">3.1</span> 先發五虎陣容</h3>
+                <p>
+                    2025-26賽季尼克隊的先發五人組是全聯盟最整齊、最均衡的陣容：
+                </p>
+                <div class="player-grid">
+                    <div class="player-tag">
+                        <div class="number">#11</div>
+                        <div class="name">Jalen Brunson</div>
+                        <div class="role">控球後衛 · 隊長 · FMVP</div>
+                    </div>
+                    <div class="player-tag">
+                        <div class="number">#25</div>
+                        <div class="name">Mikal Bridges</div>
+                        <div class="role">得分後衛 · 2018 #10</div>
+                    </div>
+                    <div class="player-tag">
+                        <div class="number">#3</div>
+                        <div class="name">Josh Hart</div>
+                        <div class="role">小前鋒 · 2017 #30</div>
+                    </div>
+                    <div class="player-tag">
+                        <div class="number">#8</div>
+                        <div class="name">OG Anunoby</div>
+                        <div class="role">大前鋒 · 防守大鎖</div>
+                    </div>
+                    <div class="player-tag">
+                        <div class="number">#32</div>
+                        <div class="name">Karl-Anthony Towns</div>
+                        <div class="role">中鋒 · 4×全明星</div>
+                    </div>
+                </div>
+                <p style="margin-top:12px;">
+                    <strong>重要替補：</strong> Mitchell Robinson（G5關鍵進攻籃板）、Jordan Clarkson（頂級板凳得分手）、
+                    Jose Alvarado（季後賽奇兵）、McBride 等。
+                </p>
+            </div>
+
+            <!-- 3.2 + 3.3 -->
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">3.2</span> 「維拉諾瓦三傑」的大學傳奇</h3>
+                <p>
+                    Brunson、Mikal Bridges 和 Josh Hart 三人的故事，要從費城郊區的維拉諾瓦大學說起。
+                </p>
+                <p>
+                    2016年，在傳奇教練 Jay Wright 的帶領下，Brunson、Bridges 和 Hart 共同為維拉諾瓦贏得NCAA冠軍。
+                    兩年後的2018年，Brunson 和 Bridges 再度聯手，在聖安東尼奧贏得第二座NCAA冠軍。
+                </p>
+                <p>
+                    <span class="highlight-text">「維拉諾瓦三傑」</span> 的稱號由此誕生。
+                </p>
+
+                <h3 class="card-title" style="margin-top:28px;"><span class="orange">3.3</span> 從大學到職業的重聚</h3>
+                <p>
+                    大學畢業後，三人的職業生涯走向了不同的方向。但命運讓他們在紐約重新聚首：
+                </p>
+                <ul>
+                    <li><strong>2022年：</strong>Brunson 率先加盟尼克</li>
+                    <li><strong>2023年：</strong>Hart 透過交易加入尼克</li>
+                    <li><strong>2024年7月：</strong>Bridges 透過交易從布魯克林籃網加盟尼克</li>
+                </ul>
+                <p>
+                    三人組在紐約團圓了。球迷們給了他們一個綽號：<span class="highlight-text">「Nova Knicks」</span> ——
+                    從維拉諾瓦到紐約。
+                </p>
+                <p>
+                    封王戰中，三人合計攻下 <strong>72分</strong> —— Brunson 45分、Bridges 14分、Hart 13分。
+                </p>
+                <div class="stat-block">
+                    <div class="stat-item">
+                        <span class="number">72</span>
+                        <span class="label">三傑合計得分（G5）</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">1st</span>
+                        <span class="label">同時擁有NCAA+NBA冠軍的三人組</span>
+                    </div>
+                </div>
+                <div class="quote-block">
+                    <p>「他們是我一輩子的兄弟，我們的羈絆永遠不會被打破。」</p>
+                    <div class="attribution">—— Josh Hart</div>
+                </div>
+            </div>
+
+            <!-- 3.4 -->
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">3.4</span> 其他先發球員的貢獻</h3>
+                <p>
+                    <strong>Karl-Anthony Towns</strong> 在總冠軍賽封王戰雖然只拿下2分10籃板，
+                    但他在整個季後賽的內線威懾力無可取代。東區決賽第四戰，他繳出19分14籃板的雙十表現。
+                    總決賽G5他在關鍵時刻犯滿離場，但在場邊依然用最大的熱情為隊友加油。
+                </p>
+                <p>
+                    <strong>OG Anunoby</strong> 是這支球隊的無名英雄。G4他全場攻下33分，
+                    並在比賽剩下1.2秒時補籃絕殺，完成NBA總決賽史上最大逆轉。
+                    G5他又貢獻11分8籃板，關鍵罰球穩穩命中。
+                </p>
+                <p>
+                    <strong>Mitchell Robinson</strong> 在G5帶傷上陣，全場抓下10個籃板，
+                    包括比賽最後時刻的致命進攻籃板——當時Towns已經犯滿離場，
+                    Robinson的這個籃板直接保住了勝利。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider">
+        <span class="line"></span>
+        <span class="icon">✦</span>
+        <span class="line blue"></span>
+        <span class="icon" style="color:var(--nyc-blue);text-shadow:var(--neon-glow-blue);">✦</span>
+        <span class="line"></span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 總教練 -->
+    <!-- ============================================================ -->
+    <section id="coach" style="background:var(--nyc-dark-card);">
+        <div class="container">
+            <div class="fade-in">
+                <span class="section-tag">總教練</span>
+                <h2 class="section-title">
+                    從錫伯杜到<br /><span class="highlight">Mike Brown</span>
+                </h2>
+            </div>
+
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">4.1</span> 錫伯杜時代的功與過</h3>
+                <p>
+                    Tom Thibodeau 在2020年接掌尼克兵符時，這支球隊已經連續7年沒打過季後賽。
+                    他花了5年時間，把尼克從笑柄變成了勁旅——連續4年闖入季後賽，
+                    2025年更率隊闖入東區決賽——這是尼克25年來的最佳成績。
+                </p>
+                <p>
+                    Thibodeau 改變了尼克的文化。他帶來了防守紀律、拼搏精神和贏球心態。
+                </p>
+                <p>
+                    但 Thibodeau 也有他的致命傷：過度依賴主力、堅持8人輪換、球員體能經常在季後賽崩盤。
+                    2025年東區決賽，尼克在2比0領先印第安納溜馬的情況下被連追4場淘汰——
+                    主力的體力透支是關鍵原因之一。
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">4.2</span> 震撼決策：解僱錫伯杜，聘請 Mike Brown</h3>
+                <p>
+                    2025年6月3日，尼克隊宣布解僱 Tom Thibodeau。這個決定震驚了整個NBA。
+                    Rick Carlisle 甚至說他以為「這是AI生成的新聞」。Jalen Brunson 本人也說他「很難過」。
+                </p>
+                <p>
+                    但尼克總裁 Leon Rose 看到了更深層的問題。2025年7月7日，尼克宣布聘請兩度NBA年度最佳教練
+                    <strong>Mike Brown</strong> 為新任總教練，簽下4年合約。
+                </p>
+                <p>
+                    55歲的 Brown 剛在2024年12月被沙加緬度國王解僱。但他擁有輝煌的資歷：
+                    生涯執教戰績454勝304敗、2007年帶領克利夫蘭騎士打進總決賽、
+                    作為助理教練贏得4座NBA總冠軍（2003年馬刺、2017、2018、2022年勇士）。
+                </p>
+                <div class="quote-block">
+                    <p>「沒有人對我的期望比我對自己的期望更高。」</p>
+                    <div class="attribution">—— Mike Brown，就職記者會</div>
+                </div>
+            </div>
+
+            <div class="card fade-in">
+                <h3 class="card-title"><span class="orange">4.3</span> Brown 的三大變革</h3>
+                <p>
+                    Brown 上任後立刻進行了三項關鍵改革：
+                </p>
+                <ul>
+                    <li><strong>第一，擴充輪換深度。</strong>他把 Thibodeau 的8人輪換擴大到9-10人穩定輪換，
+                    主力場均出賽時間控制在35分鐘上下。2025年夏天簽下 Jordan Clarkson 和 Guerschon Yabusele
+                就是這個思維的體現。</li>
+                <li><strong>第二，傾聽球員。</strong>Brown 不像 Thibodeau 那樣固執，他願意與球員溝通、
+                根據對手和狀況靈活調整戰術。</li>
+            <li><strong>第三，心理建設。</strong>Brown 打造了「逆轉尼克」的心理韌性——
+            這在季後賽中發揮了決定性作用。</li>
+        </ul>
+    </div>
+
+    <div class="card fade-in">
+        <h3 class="card-title"><span class="orange">4.4</span> Brown 的執教哲學</h3>
+        <p>
+            Brown 的帶兵哲學可以濃縮為三個關鍵詞：<span class="highlight-text">團隊、防守、韌性</span>。
+        </p>
+        <div class="quote-block">
+            <p>「他理解什麼是贏球。」</p>
+            <div class="attribution">—— Jalen Brunson 評價 Mike Brown</div>
+        </div>
+        <p>
+            18個月前被國王隊解僱時，許多人認為 Brown 的執教生涯已經走到盡頭。
+            18個月後，他成為了 NBA 冠軍教練。
+        </p>
+        <div class="quote-block">
+            <p>「我仍然不敢相信這一切發生了。」</p>
+            <div class="attribution">—— Mike Brown，奪冠後</div>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="neon-divider">
+    <span class="line blue"></span>
+    <span class="icon" style="color:var(--nyc-blue);text-shadow:var(--neon-glow-blue);">◆</span>
+    <span class="line"></span>
+    <span class="icon">◆</span>
+    <span class="line blue"></span>
+</div>
+
+<!-- ============================================================ -->
+<!-- 賽季與季後賽 -->
+<!-- ============================================================ -->
+<section id="playoffs">
+    <div class="container">
+        <div class="fade-in">
+            <span class="section-tag">季後賽征程</span>
+            <h2 class="section-title">
+                從低潮到 <span class="highlight">11連勝</span>
+            </h2>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">5.1</span> 常規賽：磨合與調整</h3>
+            <p>
+                2025-26賽季，尼克以 <strong>53勝29敗</strong> 的戰績結束常規賽，排名東區第三種子。
+            </p>
+            <p>
+                賽季並非一帆風順。12月31日到1月19日期間，尼克經歷了一段2勝9敗的低潮，包括兩次4連敗。
+                Brunson 也曾因傷短暫缺陣，球隊一度面臨磨合問題。
+            </p>
+            <p>
+                但最大的亮點出現在12月。尼克在NBA盃中打出6勝1敗的戰績，在拉斯維加斯的決賽中以
+                <strong>124比113</strong> 擊敗馬刺隊奪冠。Brunson 以場均33.2分的表現獲選NBA盃MVP。
+            </p>
+            <p>
+                這座獎盃意義重大——尼克隊拒絕在球場懸掛NBA盃冠軍旗幟，因為他們的目標更遠大。
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">5.2</span> 季後賽首輪：對亞特蘭大老鷹（4-2）</h3>
+            <p>
+                季後賽首輪，尼克面對亞特蘭大老鷹。系列賽前3戰打完，尼克陷入1勝2敗的落後。
+            </p>
+            <p>
+                但從第4戰開始，尼克像是被打開了某個開關。他們連贏3場，包括第6戰在主場以
+                <strong>140比89</strong> 狂勝51分——刷新隊史季後賽最大贏球分差。
+            </p>
+            <p>
+                這場勝利開啟了一段瘋狂的旅程。
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">5.3</span> 東區半決賽：對費城76人（4-0）</h3>
+            <p>
+                第二輪面對費城76人，尼克展現了壓倒性的統治力。
+            </p>
+            <p>
+                4場比賽全部碾壓過關。首戰137比98的大勝只是開始。尼克以不敗之身橫掃76人，
+                將季後賽連勝紀錄推進到7場。
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">5.4</span> 東區決賽：對克利夫蘭騎士（4-0）</h3>
+            <p>
+                東區決賽面對克利夫蘭騎士，尼克的統治力達到巔峰。
+            </p>
+            <p>
+                第4戰在克利夫蘭，尼克以 <strong>130比93</strong> 狂勝37分——全場最多領先45分——
+                完成4戰橫掃。4場比賽全部以雙位數分差獲勝。
+            </p>
+            <p>
+                這是尼克自1999年以來首次闖入NBA總決賽。他們在季後賽中打出 <strong>11連勝</strong>，
+                追平了隊史紀錄。
+            </p>
+            <p>
+                Brunson 獲選東區決賽MVP，場均27.8分。
+            </p>
+        </div>
+
+        <div class="card fade-in" style="border-color:rgba(245,132,38,0.25);">
+            <h3 class="card-title"><span class="orange">5.5</span> 總決賽：對聖安東尼奧馬刺（4-1）</h3>
+            <p>
+                總決賽的對手是常規賽西區第一的聖安東尼奧馬刺，由 Victor Wembanyama 領軍。
+            </p>
+
+            <p><strong>G1（聖安東尼奧）：尼克 105 比 95 獲勝</strong><br />
+            Brunson 攻下30分，率隊在客場搶下主場優勢。</p>
+
+            <p><strong>G2（聖安東尼奧）：尼克 105 比 104 獲勝</strong><br />
+            Brunson 雖然全場命中率僅28%只拿20分，但關鍵時刻的表現價值連城。KAT 貢獻21分13籃板。尼克客場2連勝。</p>
+
+            <p><strong>G3（紐約）：尼克 111 比 115 落敗</strong><br />
+            馬刺在麥迪遜廣場花園以4分之差搶下一勝。Wembanyama 轟下32分。尼克的13連勝在此終止。</p>
+
+            <p style="border-left:3px solid var(--nyc-orange);padding-left:16px;background:rgba(245,132,38,0.04);border-radius:4px;padding:16px 20px;">
+                <strong>G4（紐約）：尼克 107 比 106 獲勝 —— 史上最大逆轉</strong><br />
+                尼克在第二節一度落後 <strong>29分</strong>。半場結束時仍落後27分。
+                但尼克在最後21分半鐘打出55比25的攻勢。<br />
+                OG Anunoby 全場33分。Brunson 全場36分。比賽剩下1.2秒，Anunoby 補籃絕殺。<br />
+                這是NBA總決賽史上最大逆轉——超越了1948年巴爾的摩子彈隊創下的21分逆轉紀錄。
+            </p>
+
+            <p style="border-left:3px solid var(--nyc-blue);padding-left:16px;background:rgba(0,107,182,0.04);border-radius:4px;padding:16px 20px;margin-top:12px;">
+                <strong>G5（聖安東尼奧）：尼克 94 比 90 獲勝 —— 封王之戰</strong><br />
+                馬刺首節打出23比13的攻勢，半場42比37領先。第四節尼克一度落後10分。<br />
+                然後 Brunson 接管了比賽。第四節連拿13分。終場前約1分鐘，比分88平，Brunson 拋投命中。
+                Hart 罰球、Anunoby 罰球、Robinson 關鍵進攻籃板。94比90，比賽結束。<br />
+                <strong style="color:var(--nyc-orange);">尼克4勝1敗，隊史第三座總冠軍。</strong>
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">5.6</span> 「逆轉尼克」的數據密碼</h3>
+            <p>
+                整個總冠軍賽5場比賽，尼克在每一場的第一節都落後雙位數。
+                馬刺5場比賽第一節合計淨勝57分，但尼克在第二、三、四節全面壓制。
+            </p>
+            <div class="comeback-grid">
+                <div class="comeback-item">
+                    <span class="big">29</span>
+                    <span class="desc">G4 最大落後分差</span>
+                </div>
+                <div class="comeback-item">
+                    <span class="big">8</span>
+                    <span class="desc">季後賽落後雙位數場次</span>
+                </div>
+                <div class="comeback-item">
+                    <span class="big">6</span>
+                    <span class="desc">逆轉勝場數</span>
+                </div>
+                <div class="comeback-item">
+                    <span class="big">30年</span>
+                    <span class="desc">逐球紀錄以來最佳</span>
+                </div>
+            </div>
+            <p style="text-align:center;font-weight:700;color:var(--nyc-orange);margin-top:8px;">
+                ═══ 他們被稱為「逆轉尼克」—— 一球一球追、一場一場拚、永不放棄。 ═══
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="neon-divider">
+    <span class="line"></span>
+    <span class="icon">✦</span>
+    <span class="line blue"></span>
+    <span class="icon" style="color:var(--nyc-blue);text-shadow:var(--neon-glow-blue);">✦</span>
+    <span class="line"></span>
+</div>
+
+<!-- ============================================================ -->
+<!-- 關鍵因素 -->
+<!-- ============================================================ -->
+<section id="factors" style="background:var(--nyc-dark-card);">
+    <div class="container">
+        <div class="fade-in">
+            <span class="section-tag">關鍵因素</span>
+            <h2 class="section-title">
+                奪冠的 <span class="highlight">五大關鍵</span>
+            </h2>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">6.1</span> 球星無私與團隊化學效應</h3>
+            <p>
+                Brunson 放棄1.13億美元——這不僅是金錢的犧牲，更是一種領袖格局的展現。
+            </p>
+            <div class="quote-block">
+                <p>「他設下了標準。」</p>
+                <div class="attribution">—— Mike Brown</div>
+            </div>
+            <p>
+                「維拉諾瓦三傑」從大學到職業的兄弟情誼，更是這支球隊凝聚力的核心。
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">6.2</span> 管理層的操盤智慧</h3>
+            <p>
+                尼克總裁 Leon Rose 展現了卓越的建隊能力。從2022年簽下Brunson、2023年交易來Hart、
+                2024年交易來Bridges和簽下Anunoby、再到交易來Towns——每一步都精準到位。
+            </p>
+            <p>
+                更關鍵的是，Rose 敢於做出艱難的決定——在球隊25年來最佳戰績之後解僱Thibodeau，
+                聘請Brown。這需要極大的勇氣。
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">6.3</span> 陣容深度與攻防均衡</h3>
+            <p>
+                尼克的先發五人是全聯盟最均衡的陣容——Brunson的組織與得分、Bridges的攻防一體、
+                Hart的拚勁與全能、Anunoby的防守與關鍵球、Towns的內線威懾力。
+            </p>
+            <p>
+                更重要的是9-10人的穩定輪換。當馬刺在總決賽後段體力下滑時，尼克的主力還有充足的燃料。
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">6.4</span> 心理韌性與「逆轉文化」</h3>
+            <p>
+                從首輪1勝2敗落後到11連勝、從總決賽G4落後29分到逆轉、從G5落後16分到封王——
+                這支球隊的心理素質達到了歷史級別。
+            </p>
+        </div>
+
+        <div class="card fade-in">
+            <h3 class="card-title"><span class="orange">6.5</span> 麥迪遜廣場花園與紐約球迷</h3>
+            <p>
+                麥迪遜廣場花園是世界上最著名的體育館。2026年總決賽第12次在此舉辦——
+                比任何其他球場都多。
+            </p>
+            <p>
+                數萬球迷遠征聖安東尼奧，將客場化為橘藍色的海洋。當馬刺球員罰球時，全場響起「防守」的吶喊——
+                這是屬於紐約的聲音。
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="neon-divider">
+    <span class="line blue"></span>
+    <span class="icon" style="color:var(--nyc-blue);text-shadow:var(--neon-glow-blue);">◆</span>
+    <span class="line"></span>
+    <span class="icon">◆</span>
+    <span class="line blue"></span>
+</div>
+
+<!-- ============================================================ -->
+<!-- 感人小故事 -->
+<!-- ============================================================ -->
+<section id="stories">
+    <div class="container">
+        <div class="fade-in">
+            <span class="section-tag">動人故事</span>
+            <h2 class="section-title">
+                橘藍色 <span class="highlight">的淚與笑</span>
+            </h2>
+            <p class="section-sub">
+                這座冠軍背後，有太多令人動容的瞬間。
+            </p>
+        </div>
+
+        <div class="story-grid">
+            <div class="story-card fade-in">
+                <span class="emoji">🏢</span>
+                <h4>老闆 James Dolan 的勇氣</h4>
+                <p>
+                    2025年6月，Dolan 批准了解僱 Thibodeau 的決定。這不是一個輕鬆的決定——
+                    Thibodeau 剛帶隊打出25年來最佳戰績。但 Dolan 和 Rose 看到了更大的可能性，
+                    選擇了更艱難的道路。
+                </p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="emoji">📰</span>
+                <h4>Thibodeau 的風度</h4>
+                <p>
+                    被解僱的 Thibodeau 沒有怨言。他在《紐約時報》上刊登了一封給球迷的告別信。
+                    奪冠後，許多人說：「沒有他，就沒有這座冠軍。」他改變了尼克的文化，
+                    為這座冠軍打下了基礎。
+                </p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="emoji">👨‍👦</span>
+                <h4>Brunson 與父親的擁抱</h4>
+                <p>
+                    比賽結束後，Brunson 在場上尋找他的父親、尼克助理教練 Rick Brunson。
+                    當他轉身看到父親的那一刻，情緒完全潰堤。<br />
+                    Rick 曾在1999年為尼克效力——那是尼克上一次打進總決賽。
+                    26年後，他以教練身份與兒子一同奪冠。<br />
+                    <span class="highlight-text">Brunson 家族成為NBA史上第一對在同一支球隊一起贏得總冠軍的父子檔。</span>
+                </p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="emoji">💔</span>
+                <h4>「戴夫，我們終於做到了」</h4>
+                <p>
+                    一位尼克球迷在奪冠後接受採訪時說，她的丈夫戴夫是尼克隊的死忠球迷，幾年前過世了。
+                    她把丈夫的骨灰灑在了麥迪遜廣場花園——<br />
+                    <span class="highlight-text">「戴夫，我們終於做到了。」</span>
+                </p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="emoji">🏀</span>
+                <h4>Ewing 的深情發聲</h4>
+                <p>
+                    尼克傳奇中鋒 Patrick Ewing 在奪冠後公開發聲。這位將整個職業生涯奉獻給尼克的偉大中鋒，
+                    從未在紐約贏得總冠軍。但他的精神——那個在90年代帶領尼克與 Michael Jordan 的
+                    芝加哥公牛浴血奮戰的身影——是這座冠軍的基石之一。
+                </p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="emoji">🗽</span>
+                <h4>數萬球迷遠征聖安東尼奧</h4>
+                <p>
+                    數以萬計的尼克球迷飛越半個美國，將馬刺的主場變成了橘藍色的海洋。
+                    當終場哨響，他們在客場瘋狂慶祝——這一刻，他們等了53年。
+                </p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="emoji">🎉</span>
+                <h4>紐約的狂歡</h4>
+                <p>
+                    奪冠當晚，紐約街頭萬人空巷。帝國大廈亮起橘藍色燈光。
+                    紐約市長宣布6月18日舉辦彩帶遊行——這是尼克隊史第一次獲得這項榮譽。
+                </p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="emoji">💬</span>
+                <h4>Anunoby 的團隊精神</h4>
+                <p>
+                    OG Anunoby 在G4絕殺後說了一句話，完美詮釋了這支球隊的精神：<br />
+                    <span class="highlight-text">「只要全隊目標一致，最終就能實現期待。」</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="card fade-in" style="margin-top:12px;">
+            <p style="text-align:center;font-size:1.1rem;">
+                Towns 在賽後說：<span class="highlight-text">「我們圓了無數尼克傳奇球星與球迷的心願。」</span>
+                這句話，道出了所有尼克人的心聲。
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="neon-divider">
+    <span class="line"></span>
+    <span class="icon">✦</span>
+    <span class="line blue"></span>
+    <span class="icon" style="color:var(--nyc-blue);text-shadow:var(--neon-glow-blue);">✦</span>
+    <span class="line"></span>
+</div>
+
+<!-- ============================================================ -->
+<!-- 結語 -->
+<!-- ============================================================ -->
+<section id="epilogue" style="background:var(--nyc-dark-card);">
+    <div class="container">
+        <div class="epilogue fade-in">
+            <div class="big-word">★ 2026 ★</div>
+            <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);">
+                不僅僅是 <span class="highlight">一座冠軍</span>
+            </h2>
+            <p>
+                53年的等待，終於在2026年6月13日畫下句點。
+            </p>
+            <p>
+                這不只是一座冠軍。這是 Jalen Brunson 從第二輪選秀到總決賽MVP的逆襲故事。
+                這是「維拉諾瓦三傑」從大學到職業的兄弟情誼。這是 Mike Brown 從被解僱到冠軍教練的救贖。
+                這是 Leon Rose 從零開始打造冠軍陣容的操盤智慧。這是數萬球迷53年不離不棄的忠誠。
+            </p>
+            <p style="font-size:1.2rem;font-weight:700;color:var(--nyc-light);margin:20px 0;">
+                2026年的尼克隊，證明了籃球最美好的模樣——
+            </p>
+            <p style="font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--nyc-orange),var(--nyc-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                不是天賦的堆砌，而是犧牲、信任與永不放棄。
+            </p>
+            <p style="margin-top:24px;color:var(--nyc-gray);font-style:italic;">
+                帝國大廈的橘藍燈光終將熄滅，彩帶終將掃盡，<br />
+                但這座冠軍將永遠刻在紐約的靈魂裡。
+            </p>
+            <div class="tagline">🏆 紐約尼克隊 · 2026年 NBA 總冠軍 🏆</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<footer class="footer">
+    <div class="container">
+        <p>
+            <span class="nyc-symbol">✦</span>
+            2026 NBA Champions · New York Knicks
+            <span class="nyc-symbol">✦</span>
+        </p>
+        <p style="margin-top:4px;font-size:0.75rem;opacity:0.6;">
+            NYC Street Style · 橘藍榮耀 · 半世紀等待
+        </p>
+    </div>
+</footer>
+
+<!-- ============================================================ -->
+<!-- 滾動漸入 Script -->
+<!-- ============================================================ -->
+<script>
+    (function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -20px 0px'
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // 一進場就先觸發一次
+        setTimeout(() => {
+            fadeElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 200);
+    })();
+</script>
+
+</body>
+</html>

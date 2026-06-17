@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 NBA 紐約尼克隊奪冠之路：半世紀的等待，一夕成真</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        knicks: {
+                            blue: '#006BB6',
+                            orange: '#F58426',
+                            silver: '#BEC0C2',
+                            dark: '#0B0E14',
+                            card: '#151A24',
+                            glow: 'rgba(245, 132, 38, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .glow-orange {
+            box-shadow: 0 0 25px rgba(245, 132, 38, 0.35);
+        }
+        .glow-blue {
+            box-shadow: 0 0 25px rgba(0, 107, 182, 0.35);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #006BB6, #F58426, #006BB6);
+        }
+        .bg-grid {
+            background-image: radial-gradient(rgba(245, 132, 38, 0.08) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="bg-knicks-dark text-gray-100 font-sans bg-grid antialiased overflow-x-hidden">
+
+<script>
+    // Web Audio Synthesizer for championship sound effects
+    class SoundEngine {
+        constructor() {
+            this.ctx = null;
+        }
+        init() {
+            if (!this.ctx) {
+                this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+        playChampionshipHorn() {
+            this.init();
+            const now = this.ctx.currentTime;
+            
+            // Buzzer horn (low gritty saw wave)
+            const osc1 = this.ctx.createOscillator();
+            const osc2 = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            const filter = this.ctx.createBiquadFilter();
+
+            osc1.type = 'sawtooth';
+            osc1.frequency.setValueAtTime(120, now);
+            osc1.frequency.linearRampToValueAtTime(100, now + 1.5);
+
+            osc2.type = 'square';
+            osc2.frequency.setValueAtTime(121, now);
+            osc2.frequency.linearRampToValueAtTime(101, now + 1.5);
+
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(800, now);
+            filter.frequency.exponentialRampToValueAtTime(1500, now + 0.3);
+
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 2.0);
+
+            osc1.connect(filter);
+            osc2.connect(filter);
+            filter.connect(gain);
+            gain.connect(this.ctx.destination);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + 2.0);
+            osc2.stop(now + 2.0);
+
+            // Crowd cheer white-noise simulation
+            const bufferSize = this.ctx.sampleRate * 2.5;
+            const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            const noise = this.ctx.createBufferSource();
+            noise.buffer = buffer;
+
+            const noiseFilter = this.ctx.createBiquadFilter();
+            noiseFilter.type = 'bandpass';
+            noiseFilter.frequency.setValueAtTime(400, now);
+            noiseFilter.frequency.exponentialRampToValueAtTime(1200, now + 0.5);
+            noiseFilter.Q.setValueAtTime(1.0, now);
+
+            const noiseGain = this.ctx.createGain();
+            noiseGain.gain.setValueAtTime(0.2, now);
+            noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 2.5);
+
+            noise.connect(noiseFilter);
+            noiseFilter.connect(noiseGain);
+            noiseGain.connect(this.ctx.destination);
+
+            noise.start(now);
+            noise.stop(now + 2.5);
+        }
+
+        playChime() {
+            this.init();
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(440, now);
+            osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+            
+            gain.gain.setValueAtTime(0.15, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.5);
+        }
+    }
+    const audio = new SoundEngine();
+</script>
+
+<!-- Header Navbar -->
+<nav class="sticky top-0 z-50 bg-knicks-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="audio.playChime(); window.scrollTo({top: 0, behavior: 'smooth'});">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-knicks-blue to-knicks-orange flex items-center justify-center font-black text-white text-lg tracking-wider transform hover:scale-110 transition duration-300">
+                    NY
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-400 to-knicks-orange">NEW YORK</span>
+                    <span class="block text-[10px] tracking-[0.25em] text-gray-400 font-semibold uppercase">2026 Champion Road</span>
+                </div>
+            </div>
+
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="#prologue" class="text-gray-300 hover:text-knicks-orange font-semibold text-sm tracking-wider transition-colors">半世紀等待</a>
+                <a href="#superstar" class="text-gray-300 hover:text-knicks-orange font-semibold text-sm tracking-wider transition-colors">當家球星</a>
+                <a href="#lineup" class="text-gray-300 hover:text-knicks-orange font-semibold text-sm tracking-wider transition-colors">黃金陣容</a>
+                <a href="#coaching" class="text-gray-300 hover:text-knicks-orange font-semibold text-sm tracking-wider transition-colors">教練變革</a>
+                <a href="#timeline" class="text-gray-300 hover:text-knicks-orange font-semibold text-sm tracking-wider transition-colors">晉級之路</a>
+                <a href="#factors" class="text-gray-300 hover:text-knicks-orange font-semibold text-sm tracking-wider transition-colors">奪冠關鍵</a>
+                <a href="#stories" class="text-gray-300 hover:text-knicks-orange font-semibold text-sm tracking-wider transition-colors">感人故事</a>
+            </div>
+
+            <!-- Interative Audio Toggle & Call to Action -->
+            <div class="flex items-center space-x-4">
+                <button onclick="audio.playChampionshipHorn()" class="relative group px-4 py-2 bg-gradient-to-r from-knicks-blue to-knicks-orange hover:from-knicks-orange hover:to-knicks-blue text-white text-xs font-bold tracking-widest rounded-full uppercase shadow-md transition-all duration-500 overflow-hidden">
+                    <span class="relative z-10"><i class="fa-solid fa-volume-high mr-1"></i> 慶祝音效</span>
+                    <span class="absolute inset-0 bg-white/20 transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Showcase Banner -->
+<section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(11, 14, 20, 0.85), rgba(11, 14, 20, 0.98)), url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1920&auto=format&fit=crop');">
+    <div class="absolute inset-0 bg-gradient-to-t from-knicks-dark via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-knicks-blue/10 via-transparent to-knicks-orange/10"></div>
+    
+    <!-- Neon Circular Glows -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-knicks-blue/10 filter blur-[100px] animate-pulse"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-knicks-orange/15 filter blur-[100px] animate-pulse"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 py-16 text-center z-10">
+        <!-- Badge -->
+        <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500/20 to-blue-500/20 border border-knicks-orange/40 px-5 py-2 rounded-full mb-8 animate-bounce">
+            <i class="fa-solid fa-trophy text-knicks-orange"></i>
+            <span class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-orange-300">2026 NBA World Champions</span>
+        </div>
+
+        <!-- Epic Main Title -->
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter text-white uppercase select-none leading-none mb-6">
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-gray-300">紐約尼克隊</span>
+            <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-knicks-orange via-amber-400 to-white">奪冠之巔</span>
+        </h1>
+
+        <!-- Emotional Subtitle -->
+        <p class="max-w-3xl mx-auto text-lg md:text-2xl text-gray-300 font-light leading-relaxed mb-12 px-4">
+            「53年的靈魂等待，一夕成真。狂歡吧，紐約！橘藍色風暴終將載入史冊。」
+        </p>
+
+        <!-- CTA & Stats Ticker Container -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <a href="#prologue" onclick="audio.playChime()" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-knicks-orange to-amber-500 text-black font-extrabold text-sm tracking-wider rounded-lg uppercase shadow-lg hover:shadow-knicks-orange/30 transform hover:-translate-y-1 transition duration-300">
+                見證傳奇之路 <i class="fa-solid fa-arrow-down ml-2"></i>
+            </a>
+            <a href="#timeline" onclick="audio.playChime()" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-gray-600 hover:border-knicks-blue hover:text-white text-gray-300 font-bold text-sm tracking-wider rounded-lg uppercase transition duration-300">
+                季後賽逐場戰報 <i class="fa-solid fa-calendar-days ml-2"></i>
+            </a>
+        </div>
+
+        <!-- High-Impact Stat Highlights -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div class="bg-knicks-card/80 backdrop-blur border border-gray-800 rounded-xl p-5 hover:border-knicks-orange transition duration-300">
+                <span class="block text-3xl md:text-4xl font-extrabold text-knicks-orange">53 年</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wider block mt-1">漫長奪冠等待</span>
+            </div>
+            <div class="bg-knicks-card/80 backdrop-blur border border-gray-800 rounded-xl p-5 hover:border-knicks-blue transition duration-300">
+                <span class="block text-3xl md:text-4xl font-extrabold text-knicks-blue">16-3</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wider block mt-1">季後賽狂潮戰績</span>
+            </div>
+            <div class="bg-knicks-card/80 backdrop-blur border border-gray-800 rounded-xl p-5 hover:border-knicks-orange transition duration-300">
+                <span class="block text-3xl md:text-4xl font-extrabold text-white">94 - 90</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wider block mt-1">封王戰擊沉馬刺</span>
+            </div>
+            <div class="bg-knicks-card/80 backdrop-blur border border-gray-800 rounded-xl p-5 hover:border-knicks-blue transition duration-300">
+                <span class="block text-3xl md:text-4xl font-extrabold text-yellow-400">2 項</span>
+                <span class="text-xs text-gray-400 uppercase tracking-wider block mt-1">NBA盃+總決雙MVP</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section One: The Prologue -->
+<section id="prologue" class="py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Hero Graphic -->
+        <div class="lg:col-span-5 relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-knicks-blue to-knicks-orange rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
+            <div class="relative bg-knicks-card border border-gray-800 rounded-2xl p-8 overflow-hidden">
+                <div class="absolute -top-12 -right-12 w-40 h-40 bg-knicks-orange/10 rounded-full blur-2xl"></div>
+                <div class="flex flex-col space-y-6">
+                    <i class="fa-solid fa-clock-rotate-left text-5xl text-knicks-orange mb-2"></i>
+                    <h3 class="text-2xl font-bold text-white tracking-wide">一個城市的半世紀救贖</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        紐約尼克隊上次捧回冠軍獎盃時，美國總統還是理查·尼克森（Richard Nixon），麥迪遜廣場花園的球迷在看球時甚至還抽著菸，Willis Reed 和 Walt Frazier 還是這支球隊的代名詞。此後五十餘載，球隊經歷了無數黑夜與笑柄，直至今日。
+                    </p>
+                    <div class="border-t border-gray-800 pt-6">
+                        <span class="text-xs text-gray-500 uppercase tracking-widest block">歷史塵埃與等待</span>
+                        <div class="flex items-baseline space-x-1 mt-1">
+                            <span class="text-2xl font-bold text-white">24</span>
+                            <span class="text-sm text-gray-400">任總教練更迭，如今宿願終償</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content Narrative -->
+        <div class="lg:col-span-7 space-y-6">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-[2px] bg-knicks-orange"></div>
+                <span class="text-sm uppercase tracking-widest font-bold text-knicks-orange">一、 楔子：半世紀的等待，一夕成真</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+                2026年6月13日<br>
+                那一刻，紐約化為無盡的橘藍海洋！
+            </h2>
+            <div class="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base">
+                <p>
+                    在聖安東尼奧弗羅斯特銀行中心（Frost Bank Center）的計時器歸零那一刻，紐約尼克隊以 94 比 90 擊敗聖安東尼奧馬刺隊，以 4 勝 1 敗的輝煌戰績奪下隊史第三座 NBA 總冠軍！這座城市，等了整整 <strong class="text-knicks-orange">53 年</strong>。
+                </p>
+                <p>
+                    比賽結束的瞬間，紐約曼哈頓的<strong>帝國大廈（Empire State Building）</strong>瞬間點亮了橘藍色的慶典燈光。紐約街道陷入瘋狂：塞滿汽車的馬路上喇叭聲不絕於耳，市民與消防隊員在大街上擊掌。數千名遠征德州的尼克球迷，將客場硬生生變成了自家歡樂的主場，Spike Lee、Timothée Chalamet 等知名巨星無不熱淚盈眶。
+                </p>
+                <p>
+                    紐約市長 Zohran Mamdani 在社群媒體上寫下了震撼全城的「<strong>HISTORY</strong>」，並高調宣布：將於 6 月 18 日在著名的「英雄峽谷」（Canyon of Heroes）為功臣們舉辦隊史首次盛大彩帶遊行。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Two: Superstar - Jalen Brunson -->
+<section id="superstar" class="py-24 bg-knicks-card/30 border-y border-gray-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Title Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-sm font-bold uppercase tracking-[0.2em] text-knicks-blue">二、 紐約之王與救贖之魂</span>
+            <h2 class="text-3xl md:text-5xl font-black text-white mt-3">當家球星 Jalen Brunson 傳奇</h2>
+            <p class="text-gray-400 mt-4">從二輪選秀、到自願降薪一億美元、再到狂奪雙料 MVP 的不屈戰神。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Card 1: The Origin -->
+            <div class="bg-knicks-card border border-gray-800 rounded-2xl p-8 relative overflow-hidden group hover:border-knicks-orange transition duration-300">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-knicks-orange/10 to-transparent rounded-bl-full"></div>
+                <div class="text-4xl text-knicks-orange mb-6"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">從第二輪秀到「紐約之王」</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    2018年選秀大會第33順位，Jalen Brunson 沒有多餘表情。即便贏過兩座 NCAA 冠軍，全聯盟對他的評價依然是：188公分、運動力普通、天花板有限。但他在達拉斯一步步打出名號，直到 2022 年，尼克以 4 年 1.04 億美元的報價帶走他時，世界還在質疑這筆合約的價值。
+                </p>
+                <div class="mt-6 pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-500">
+                    <span>達拉斯獨行俠起步</span>
+                    <span class="text-knicks-orange">#33順位奇蹟</span>
+                </div>
+            </div>
+
+            <!-- Card 2: The Sacrifice -->
+            <div class="bg-knicks-card border border-gray-800 rounded-2xl p-8 relative overflow-hidden group hover:border-knicks-blue transition duration-300">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-knicks-blue/10 to-transparent rounded-bl-full"></div>
+                <div class="text-4xl text-knicks-blue mb-6"><i class="fa-solid fa-handshake-simple"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">放棄一億美金的瘋狂犧牲</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    2024年夏天，原本有資格簽下 5 年 2.69 億頂薪的他，自願提前簽下 4 年 1.565 億美元合約，<strong>直接為球隊省下了 1.13 億美元</strong>。這筆空前的資金餘裕，讓尼克得以後續交易來 Bridges、Towns 及簽下防守大鎖 Anunoby，打造了近乎完美的冠軍基底。
+                </p>
+                <div class="mt-6 pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-500">
+                    <span>驚天動地的降薪決策</span>
+                    <span class="text-knicks-blue">節省 $1.13 億美元</span>
+                </div>
+            </div>
+
+            <!-- Card 3: The Glory -->
+            <div class="bg-knicks-card border border-gray-800 rounded-2xl p-8 relative overflow-hidden group hover:border-yellow-500 transition duration-300">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-yellow-500/10 to-transparent rounded-bl-full"></div>
+                <div class="text-4xl text-yellow-500 mb-6"><i class="fa-solid fa-crown"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">雙冠 MVP 的史詩大滿貫</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    總決賽5戰場均 32.6 分，封王戰狂飆 45 分打破隊史傳奇紀錄！他更成為 NBA 歷史第一位<strong>單季同時捧回 NBA盃（12月）與總冠軍（6月），且兩項大賽都獲選 MVP</strong> 的無上神話。德州是他的福地，兩座大學冠軍與此時的總冠軍均在此地誕生。
+                </p>
+                <div class="mt-6 pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-500">
+                    <span>封王戰轟下歷史級 45分</span>
+                    <span class="text-yellow-500">FMVP + NBA Cup MVP</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Section Three: Villanova Connection & Championship Lineup -->
+<section id="lineup" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text details -->
+        <div class="lg:col-span-6 space-y-6">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-[2px] bg-knicks-blue"></div>
+                <span class="text-sm uppercase tracking-widest font-bold text-knicks-blue">三、 黃金陣容與兄弟羈絆</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">「Nova Knicks」<br>維拉諾瓦三傑的完美救贖</h2>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                Jalen Brunson、Mikal Bridges、Josh Hart。他們的故事發源於費城郊區的維拉諾瓦大學（Villanova University）。
+                在 2016 年與 2018 年，他們共同或交替為學校帶來了 NCAA 全美冠軍。
+            </p>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                大學畢業後各奔東西的他們，命命之中在紐約再度重聚：2022 年 Brunson 先行，2023 年 Hart 加盟，2024 年 Bridges 震撼來歸。在封王之夜，這三位同窗手足合力砍下 <strong>72 分</strong>（Brunson 45分、Bridges 14分、Hart 13分），成為 NBA 史上第一組在大學與職業均聯手奪冠的三人傳奇。
+            </p>
+
+            <div class="p-6 bg-knicks-card border border-gray-800 rounded-xl space-y-3">
+                <div class="flex items-center space-x-2 text-knicks-orange">
+                    <i class="fa-solid fa-users"></i>
+                    <h4 class="font-extrabold text-sm tracking-wider uppercase">其他冠軍拼圖與重大戰略亮點</h4>
+                </div>
+                <ul class="text-xs text-gray-400 space-y-2 list-disc pl-5 leading-relaxed">
+                    <li><strong>Karl-Anthony Towns (C)</strong>：東決狂砍雙十，總決賽內線不可動搖的大山。</li>
+                    <li><strong>OG Anunoby (PF)</strong>：防守鐵鎖！G4補籃絕殺，完成總決賽史上最大逆轉的神級拼圖。</li>
+                    <li><strong>Mitchell Robinson (Sub)</strong>：G5關鍵時刻上陣，抓下致命進攻籃板奠定勝局。</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Interactive Visual Cards (Grid) -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="bg-gradient-to-b from-knicks-card to-knicks-blue/10 border border-knicks-blue/30 rounded-2xl p-6 text-center">
+                <span class="inline-flex w-12 h-12 rounded-full bg-knicks-blue/20 text-knicks-blue items-center justify-center font-bold text-lg mb-4">#11</span>
+                <h4 class="text-lg font-bold text-white">Jalen Brunson</h4>
+                <p class="text-xs text-knicks-orange font-bold uppercase tracking-widest mt-1">Point Guard • 隊長</p>
+                <div class="my-4 border-t border-gray-800/60 py-3 text-xs text-gray-400 space-y-1">
+                    <p>總決賽場均：32.6 分</p>
+                    <p>封王戰得分：45 分 (創紀錄)</p>
+                </div>
+                <span class="text-[10px] bg-knicks-blue/30 text-blue-200 px-3 py-1 rounded-full uppercase tracking-wider">大學與總決雙MVP</span>
+            </div>
+
+            <div class="bg-gradient-to-b from-knicks-card to-knicks-orange/10 border border-knicks-orange/30 rounded-2xl p-6 text-center">
+                <span class="inline-flex w-12 h-12 rounded-full bg-knicks-orange/20 text-knicks-orange items-center justify-center font-bold text-lg mb-4">#25</span>
+                <h4 class="text-lg font-bold text-white">Mikal Bridges</h4>
+                <p class="text-xs text-knicks-blue font-bold uppercase tracking-widest mt-1">Shooting Guard • 攻防一體</p>
+                <div class="my-4 border-t border-gray-800/60 py-3 text-xs text-gray-400 space-y-1">
+                    <p>無與倫比的鐵人防守</p>
+                    <p>封王戰斬獲：14 分</p>
+                </div>
+                <span class="text-[10px] bg-knicks-orange/30 text-orange-200 px-3 py-1 rounded-full uppercase tracking-wider">防守側翼核心</span>
+            </div>
+
+            <div class="bg-gradient-to-b from-knicks-card to-gray-500/10 border border-gray-800 rounded-2xl p-6 text-center">
+                <span class="inline-flex w-12 h-12 rounded-full bg-gray-800 text-gray-300 items-center justify-center font-bold text-lg mb-4">#3</span>
+                <h4 class="text-lg font-bold text-white">Josh Hart</h4>
+                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">Small Forward • 拼命三郎</p>
+                <div class="my-4 border-t border-gray-800/60 py-3 text-xs text-gray-400 space-y-1">
+                    <p>籃板癡迷、活力狂人</p>
+                    <p>封王戰斬獲：13 分</p>
+                </div>
+                <span class="text-[10px] bg-gray-800 text-gray-300 px-3 py-1 rounded-full uppercase tracking-wider">無私拼搏代名詞</span>
+            </div>
+
+            <div class="bg-gradient-to-b from-knicks-card to-yellow-500/10 border border-yellow-500/20 rounded-2xl p-6 text-center flex flex-col justify-center items-center">
+                <i class="fa-solid fa-medal text-4xl text-yellow-500 mb-3 animate-pulse"></i>
+                <h4 class="text-lg font-bold text-white">大學+NBA聯手奪冠</h4>
+                <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                    Brunson, Bridges, & Hart 寫下籃球史新頁，完美展現「手足兄弟情」的威力。
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Section Four: Coaching Dualism & Transition -->
+<section id="coaching" class="py-24 bg-knicks-card/40 border-y border-gray-800 relative">
+    <div class="absolute inset-0 bg-gradient-to-r from-knicks-orange/5 via-transparent to-knicks-blue/5"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-sm font-bold uppercase tracking-[0.2em] text-knicks-orange">四、 統帥決策與文化淬鍊</span>
+            <h2 class="text-3xl md:text-5xl font-black text-white mt-3">震撼大更迭：Thibodeau 與 Mike Brown</h2>
+            <p class="text-gray-400 mt-4">從改變風骨的鐵血硬漢，到極具智慧的戰術家，管理層的果決促成了最終拼圖。</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Tom Thibodeau Card -->
+            <div class="bg-knicks-card/80 border border-gray-800 rounded-2xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 px-4 py-1.5 bg-gray-800 text-gray-400 text-[10px] uppercase font-bold tracking-widest rounded-bl-xl">前度主帥 • 文化基石</div>
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-14 h-14 rounded-full bg-red-950/40 text-red-400 border border-red-500/30 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-white">Tom Thibodeau 時代</h3>
+                        <p class="text-xs text-gray-400 mt-0.5">防守風骨與拼搏意志的締造者</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                        <strong>歷史功績：</strong>在 2020 年入主尼克時，球隊已連續 7 年被拒於季後賽之外。Thibodeau 用鐵腕與防守紀律重塑了球隊，並在 2025 年將尼克帶進東區決賽。
+                    </p>
+                    <p class="text-red-300/80 bg-red-950/20 p-3 rounded-lg border border-red-950/40">
+                        <strong>致命死穴：</strong>過度操勞主力、頑固採用 8 人狹窄輪換，導致球隊體能總在季後賽尾端徹底崩潰。在 2025 年東區決賽 2 比 0 領先時被溜馬連趕四場，種下了變更帥印的導火線。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mike Brown Card -->
+            <div class="bg-knicks-card/80 border border-knicks-orange/30 rounded-2xl p-8 relative overflow-hidden glow-orange">
+                <div class="absolute top-0 right-0 px-4 py-1.5 bg-knicks-orange text-black text-[10px] uppercase font-bold tracking-widest rounded-bl-xl">冠軍教頭 • 奪冠鑰匙</div>
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-14 h-14 rounded-full bg-knicks-orange/20 text-knicks-orange border border-knicks-orange/50 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-chess"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-white">Mike Brown 變革</h3>
+                        <p class="text-xs text-knicks-orange font-bold mt-0.5">多變戰略、深度輪換與冠軍智慧</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-sm text-gray-300 leading-relaxed">
+                    <p>
+                        <strong>核心戰術變革：</strong>擴大為 9-10 人輪換制度，精準控制主力球員時間不超過 35 分鐘。招徠 Jordan Clarkson 與 Guerschon Yabusele 等板凳尖刀，釋放板凳深度。
+                    </p>
+                    <p class="text-emerald-300/80 bg-emerald-950/20 p-3 rounded-lg border border-emerald-950/40">
+                        <strong>心理學大師：</strong>更願意在關鍵戰役調整應變，善於傾聽。他打造了「逆轉尼克（Comeback Knicks）」的頂級心理防線，帶領球隊完成了不可思議的絕地反擊。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Five: Epic Playoff & Finals Timeline -->
+<section id="timeline" class="py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-sm font-bold uppercase tracking-[0.2em] text-knicks-blue">五、 征戰狂瀾時間軸</span>
+        <h2 class="text-3xl md:text-5xl font-black text-white mt-3">2026 季後賽與總決賽史詩全紀錄</h2>
+        <p class="text-gray-400 mt-4">從開局坎坷、季後賽 11 連勝、至總決賽 29 分歷史大逆轉，逐戰重回榮耀戰場。</p>
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="relative">
+        <!-- Vertical Central Line -->
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-[4px] -translate-x-1/2 timeline-line rounded"></div>
+
+        <!-- Timeline Step 1: Regular Season & NBA Cup -->
+        <div class="relative flex flex-col md:flex-row items-stretch mb-16 group">
+            <div class="flex items-center justify-start md:justify-end md:w-1/2 pl-12 md:pl-0 md:pr-12">
+                <div class="bg-knicks-card border border-gray-800 rounded-2xl p-6 hover:border-knicks-orange transition duration-300 max-w-lg">
+                    <div class="flex items-center space-x-2 text-knicks-orange mb-2">
+                        <i class="fa-solid fa-trophy text-sm"></i>
+                        <span class="text-xs uppercase font-extrabold tracking-widest">2025年 12月 • 常規賽前哨戰</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">NBA 盃率先奪冠與賽季調整</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        常規賽並非坦途，球隊在隆冬經歷過 2 勝 9 敗的低潮，然而在 12 月的 NBA 杯決賽中，尼克以 124 比 113 擊潰聖安東尼奧馬刺先聲奪人。Brunson 榮膺場均 33.2 分的季中 MVP。為專注於大業，尼克拒絕在麥迪遜廣場花園懸掛此項錦旗，誓奪最終奧布萊恩金盃！
+                    </p>
+                </div>
+            </div>
+            <!-- Node Marker -->
+            <div class="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-knicks-dark border-4 border-knicks-orange z-10 group-hover:scale-125 transition duration-300"></div>
+            <div class="md:w-1/2 hidden md:block"></div>
+        </div>
+
+        <!-- Timeline Step 2: First Round vs Hawks -->
+        <div class="relative flex flex-col md:flex-row items-stretch mb-16 group">
+            <div class="md:w-1/2 hidden md:block"></div>
+            <!-- Node Marker -->
+            <div class="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-knicks-dark border-4 border-knicks-blue z-10 group-hover:scale-125 transition duration-300"></div>
+            <div class="flex items-center justify-start md:w-1/2 pl-12">
+                <div class="bg-knicks-card border border-gray-800 rounded-2xl p-6 hover:border-knicks-blue transition duration-300 max-w-lg">
+                    <div class="flex items-center space-x-2 text-knicks-blue mb-2">
+                        <i class="fa-solid fa-shield text-sm"></i>
+                        <span class="text-xs uppercase font-extrabold tracking-widest">季後賽第一輪 • 對亞特蘭大老鷹 (4-2)</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">狂瀾重啟與 51 分大屠殺</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        系列賽一開始面臨 1 比 2 的落後逆境。然而從第4戰起球隊被點燃了無底戰魂，連克三局，更在第6戰以 140 比 89、足足 51 分的季後賽歷史最高贏球分差終結對手。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Step 3: Eastern Semis & Finals -->
+        <div class="relative flex flex-col md:flex-row items-stretch mb-16 group">
+            <div class="flex items-center justify-start md:justify-end md:w-1/2 pl-12 md:pl-0 md:pr-12">
+                <div class="bg-knicks-card border border-gray-800 rounded-2xl p-6 hover:border-knicks-orange transition duration-300 max-w-lg">
+                    <div class="flex items-center space-x-2 text-knicks-orange mb-2">
+                        <i class="fa-solid fa-bolt text-sm"></i>
+                        <span class="text-xs uppercase font-extrabold tracking-widest">東部準決賽 & 決賽 • 碾壓通關</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">橫掃 76 人與騎士：11 連勝神蹟</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        第二輪遭遇強敵 76 人，尼克毫無保留以 4比0 將其肢解；東區決賽面對騎士，更再次祭出 4比0 瘋狂橫掃！第 4 戰在克里夫蘭客場以 130 比 93 屠殺，最大領先達 45 分，以季後賽 11 連勝無敵之姿、時隔 27 年再次跨入總決賽神聖殿堂。
+                    </p>
+                </div>
+            </div>
+            <!-- Node Marker -->
+            <div class="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-knicks-dark border-4 border-knicks-orange z-10 group-hover:scale-125 transition duration-300"></div>
+            <div class="md:w-1/2 hidden md:block"></div>
+        </div>
+
+        <!-- Timeline Step 4: NBA Finals G1 - G3 -->
+        <div class="relative flex flex-col md:flex-row items-stretch mb-16 group">
+            <div class="md:w-1/2 hidden md:block"></div>
+            <!-- Node Marker -->
+            <div class="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-knicks-dark border-4 border-knicks-blue z-10 group-hover:scale-125 transition duration-300"></div>
+            <div class="flex items-center justify-start md:w-1/2 pl-12">
+                <div class="bg-knicks-card border border-gray-800 rounded-2xl p-6 hover:border-knicks-blue transition duration-300 max-w-lg">
+                    <div class="flex items-center space-x-2 text-knicks-blue mb-2">
+                        <i class="fa-solid fa-gamepad text-sm"></i>
+                        <span class="text-xs uppercase font-extrabold tracking-widest">總決賽第一戰至第三戰 (對馬刺)</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">德州拉鋸戰與連勝終結</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        <strong>G1 (客)</strong>: 105-95 突襲拔得頭籌。 <strong>G2 (客)</strong>: 105-104 險勝，Towns 獨得 21分 13籃板。 <strong>G3 (主)</strong>: MSG 迎來馬刺瘋狂反撲，Wemby 轟下32分，以 111-115 飲恨告終，尼克的 13 連勝遺憾中斷。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Step 5: NBA Finals G4 (The Miracle Comeback) -->
+        <div class="relative flex flex-col md:flex-row items-stretch mb-16 group">
+            <div class="flex items-center justify-start md:justify-end md:w-1/2 pl-12 md:pl-0 md:pr-12">
+                <div class="bg-gradient-to-tr from-knicks-card to-knicks-orange/10 border border-knicks-orange/50 rounded-2xl p-6 hover:border-knicks-orange transition duration-300 max-w-lg glow-orange">
+                    <div class="flex items-center space-x-2 text-knicks-orange mb-2">
+                        <i class="fa-solid fa-fire text-sm"></i>
+                        <span class="text-xs uppercase font-extrabold tracking-widest text-orange-400">總決賽第四戰 • 史詩奇蹟</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">落後 29 分！總決賽史上最大逆轉</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                        第二節尼克一度落後 29 分、半場結束仍以 27 分落後，眼看大勢已去。但他們在隨後的 21 分半鐘內掀起風暴狂潮，打出 55 比 25 的窒息式攻勢！
+                    </p>
+                    <div class="bg-knicks-dark/60 p-3 rounded-lg border border-gray-800 text-xs text-gray-300">
+                        <span class="text-knicks-orange font-bold">1.2秒絕殺：</span>OG Anunoby (33分) 籃下補籃絕殺！以 107 比 106 奇蹟勝出，打破 1948 年巴爾的摩子彈隊保持的 21 分總決賽逆轉史詩紀錄。
+                    </div>
+                </div>
+            </div>
+            <!-- Node Marker -->
+            <div class="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-knicks-dark border-4 border-knicks-orange z-10 group-hover:scale-125 transition duration-300"></div>
+            <div class="md:w-1/2 hidden md:block"></div>
+        </div>
+
+        <!-- Timeline Step 6: NBA Finals G5 (The Championship) -->
+        <div class="relative flex flex-col md:flex-row items-stretch group">
+            <div class="md:w-1/2 hidden md:block"></div>
+            <!-- Node Marker -->
+            <div class="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 w-6 h-6 rounded-full bg-knicks-dark border-4 border-yellow-500 z-10 group-hover:scale-125 transition duration-300"></div>
+            <div class="flex items-center justify-start md:w-1/2 pl-12">
+                <div class="bg-gradient-to-tr from-knicks-card to-knicks-blue/10 border border-knicks-blue/50 rounded-2xl p-6 hover:border-yellow-500 transition duration-300 max-w-lg glow-blue">
+                    <div class="flex items-center space-x-2 text-yellow-500 mb-2">
+                        <i class="fa-solid fa-trophy text-sm"></i>
+                        <span class="text-xs uppercase font-extrabold tracking-widest text-yellow-400">總決賽第五戰 • 登基為王</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">94-90：跨越半世紀的狂喜</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                        客場作戰首節便落後兩位數，第四節依然落後達 10 分。而在此刻，隊長 Jalen Brunson 毅然接管球場——末節連砍 13 分，並在終場前一分鐘比分打平之時，精準命中大心臟拋投！
+                    </p>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        最後關頭 Hart、Anunoby 罰球命中，加上 Mitchell Robinson 的關鍵前場板直接磨平對手時間，以 94 比 90，我們是總冠軍！
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Section Six: Core Championship Factors -->
+<section id="factors" class="py-24 bg-knicks-card/30 border-y border-gray-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-sm font-bold uppercase tracking-[0.2em] text-knicks-orange">六、 勝利密碼解析</span>
+            <h2 class="text-3xl md:text-5xl font-black text-white mt-3">紐約尼克隊奪冠關鍵要素</h2>
+            <p class="text-gray-400 mt-4">成功絕非偶然，而是球星奉獻、高超管理與驚人意志的極致融合。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Factor 1 -->
+            <div class="bg-knicks-dark border border-gray-800 rounded-2xl p-6 space-y-4 hover:border-knicks-orange transition duration-300">
+                <div class="w-12 h-12 bg-knicks-orange/10 rounded-xl flex items-center justify-center text-knicks-orange text-xl">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">球星無私與團隊化學效應</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    以隊長 Brunson 的重大降薪為範本，高層得以為主力框架維持深度。維拉諾瓦大學手足之間的強烈情感鏈接，鑄造了全聯盟最強大的向心力。
+                </p>
+            </div>
+
+            <!-- Factor 2 -->
+            <div class="bg-knicks-dark border border-gray-800 rounded-2xl p-6 space-y-4 hover:border-knicks-blue transition duration-300">
+                <div class="w-12 h-12 bg-knicks-blue/10 rounded-xl flex items-center justify-center text-knicks-blue text-xl">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">總裁 Leon Rose 的神操盤</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    在球隊剛交出隊史 25 年來最佳表現之時，果敢換掉功勛主帥 Thibodeau，改聘冠軍助教 Mike Brown。驚人膽識在今天得到了最終的最高獎賞。
+                </p>
+            </div>
+
+            <!-- Factor 3 -->
+            <div class="bg-knicks-dark border border-gray-800 rounded-2xl p-6 space-y-4 hover:border-knicks-orange transition duration-300">
+                <div class="w-12 h-12 bg-knicks-orange/10 rounded-xl flex items-center justify-center text-knicks-orange text-xl">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">陣容深度與攻防完美均衡</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    先發五虎完美分工（Brunson 突破組織、Bridges/Anunoby 頂級側翼大鎖、Hart 全能反擊、KAT 護框牽制）。當對手主力在漫長的系列賽氣力放盡時，尼克的兵力依然源源不絕。
+                </p>
+            </div>
+
+            <!-- Factor 4 -->
+            <div class="bg-knicks-dark border border-gray-800 rounded-2xl p-6 space-y-4 hover:border-knicks-blue transition duration-300">
+                <div class="w-12 h-12 bg-knicks-blue/10 rounded-xl flex items-center justify-center text-knicks-blue text-xl">
+                    <i class="fa-solid fa-anchor"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">逆轉靈魂與頑抗意志</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    總決賽5場戰役，每一戰開局首節均落後至雙位數，但中後段尼克均能瘋狂蠶食對手。在季後賽 8 次曾面臨兩位數落後的局勢下，我們贏了其中 6 場，這就是「逆轉尼克」！
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Section Seven: Heartwarming Side Stories Gallery -->
+<section id="stories" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-sm font-bold uppercase tracking-[0.2em] text-knicks-blue">七、 橘藍色的靈魂史詩</span>
+        <h2 class="text-3xl md:text-5xl font-black text-white mt-3">令人淚下的冠軍逸事</h2>
+        <p class="text-gray-400 mt-4">不止於球技，這些場外的溫情與深沉執著，才是總冠軍最動人的風景。</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Story 1 -->
+        <div class="bg-knicks-card border border-gray-800 rounded-2xl overflow-hidden group hover:border-knicks-orange transition duration-300">
+            <div class="p-8 space-y-4">
+                <div class="text-3xl text-knicks-orange"><i class="fa-solid fa-people-roof"></i></div>
+                <h3 class="text-xl font-bold text-white">Brunson 與父親在總決戰後的緊抱</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    比賽結束那刻，Jalen Brunson 在混亂的球場中尋找著助理教練——他的親生父親 Rick Brunson。一見面的那瞬間，父子緊緊抱頭痛哭。Rick Brunson 曾在 1999 年以尼克球員身份殺入總決賽惜敗，26年後，父子聯手以教練與核心球員的身份在同一支球隊登頂，寫下歷史神話。
+                </p>
+            </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="bg-knicks-card border border-gray-800 rounded-2xl overflow-hidden group hover:border-knicks-blue transition duration-300">
+            <div class="p-8 space-y-4">
+                <div class="text-3xl text-knicks-blue"><i class="fa-solid fa-box-archive"></i></div>
+                <h3 class="text-xl font-bold text-white">「戴夫，我們終於做到了」</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    一位紐約女球迷在當晚奪冠街頭狂歡接受採訪，泣不成聲。她表示，亡夫 Dave 是尼克隊一輩子的忠實擁護者，直至幾年前因病離世前也未能目睹奪冠。在決賽勝出那天，她特地將珍藏的伴侶骨灰緩緩灑在了麥迪遜廣場花園的基石旁，「戴夫，你看到了嗎？我們終於贏了。」
+                </p>
+            </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="bg-knicks-card border border-gray-800 rounded-2xl overflow-hidden group hover:border-yellow-500 transition duration-300">
+            <div class="p-8 space-y-4">
+                <div class="text-3xl text-yellow-500"><i class="fa-solid fa-envelope"></i></div>
+                <h3 class="text-xl font-bold text-white">Patrick Ewing 的深情發聲</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    90 年代戰神 Patrick Ewing 在賽後第一時間致電向晚輩祝賀。身為尼克無可爭辯的偉大中鋒，他未能在此城親手拿下一枚戒指，但他說：「看著今天的你們，我們那代尼克隊的戰鬥意志就依然活著。你們圓了所有人未竟的夢。」
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Interactive Trivia Sandbox -->
+<section class="py-16 bg-gradient-to-t from-knicks-dark to-knicks-card/50 border-t border-gray-800">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <i class="fa-solid fa-basketball text-knicks-orange text-4xl mb-4 animate-bounce"></i>
+        <h3 class="text-2xl font-bold text-white mb-2">尼克球迷終極大考驗</h3>
+        <p class="text-xs text-gray-400 mb-8">測試你是否完全了解 2026 年這段偉大的奇蹟旅程！</p>
+        
+        <div class="bg-knicks-dark border border-gray-800 p-6 md:p-8 rounded-2xl text-left max-w-xl mx-auto shadow-xl">
+            <!-- Quiz Card State -->
+            <div id="quiz-container">
+                <p class="text-xs uppercase text-knicks-orange font-bold tracking-widest mb-2">問題 1 / 3</p>
+                <h4 id="quiz-question" class="text-base md:text-lg font-bold text-white mb-4">尼克當家控衛 Jalen Brunson 在 2024 年夏天為了給球隊留出薪資空間，提前續約時自願少拿了多少美金？</h4>
+                
+                <div class="space-y-3" id="quiz-options">
+                    <button onclick="checkAnswer(0)" class="w-full text-left p-3.5 bg-knicks-card border border-gray-800 rounded-lg hover:border-knicks-orange hover:bg-knicks-orange/5 text-xs text-gray-300 transition duration-300">
+                        A) 5,500 萬美元
+                    </button>
+                    <button onclick="checkAnswer(1)" class="w-full text-left p-3.5 bg-knicks-card border border-gray-800 rounded-lg hover:border-knicks-orange hover:bg-knicks-orange/5 text-xs text-gray-300 transition duration-300">
+                        B) 1.13 億美元
+                    </button>
+                    <button onclick="checkAnswer(2)" class="w-full text-left p-3.5 bg-knicks-card border border-gray-800 rounded-lg hover:border-knicks-orange hover:bg-knicks-orange/5 text-xs text-gray-300 transition duration-300">
+                        C) 2.69 億美元
+                    </button>
+                </div>
+            </div>
+
+            <div id="quiz-feedback" class="hidden mt-4 p-3 rounded-lg text-xs font-bold text-center"></div>
+
+            <div class="flex justify-end mt-6">
+                <button id="next-btn" onclick="nextQuestion()" class="hidden px-5 py-2 bg-gradient-to-r from-knicks-blue to-knicks-orange text-white text-xs font-bold rounded-lg uppercase tracking-wider">
+                    下一題 <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const quizData = [
+        {
+            q: "尼克當家控衛 Jalen Brunson 在 2024 年夏天為了給球隊留出薪資空間，提前續約時自願少拿了多少美金？",
+            options: [
+                "A) 5,500 萬美元",
+                "B) 1.13 億美元",
+                "C) 2.69 億美元"
+            ],
+            correct: 1,
+            fact: "沒錯！他拒絕了隔年可能得到的 2.69 億頂薪，而提前簽下 1.56 億合約，做出 1.13 億的無私自我犧牲！"
+        },
+        {
+            q: "在總決賽第四戰中，尼克完成了總決賽歷史上最大的逆轉，他們在比賽中最大落後高達幾分？",
+            options: [
+                "A) 15 分",
+                "B) 21 分",
+                "C) 29 分"
+            ],
+            correct: 2,
+            fact: "完全正確！第二節一度落後達 29 分、半場依然落後 27 分，但最終完成了史上最偉大的翻盤絕殺！"
+        },
+        {
+            q: "「維拉諾瓦三傑（Nova Knicks）」不包含下列哪一位現役尼克奪冠成員？",
+            options: [
+                "A) Karl-Anthony Towns",
+                "B) Josh Hart",
+                "C) Mikal Bridges"
+            ],
+            correct: 0,
+            fact: "正確！維拉諾瓦三傑分別為 Brunson, Bridges 和 Hart，他們在大學和職業皆聯手捧冠。"
+        }
+    ];
+
+    let currentQuizIndex = 0;
+
+    function checkAnswer(selectedIndex) {
+        audio.playChime();
+        const currentQuiz = quizData[currentQuizIndex];
+        const feedbackDiv = document.getElementById('quiz-feedback');
+        
+        // Disable option buttons
+        const buttons = document.querySelectorAll('#quiz-options button');
+        buttons.forEach(btn => btn.disabled = true);
+
+        feedbackDiv.classList.remove('hidden', 'bg-red-950/40', 'text-red-400', 'bg-emerald-950/40', 'text-emerald-400');
+
+        if (selectedIndex === currentQuiz.correct) {
+            feedbackDiv.classList.add('bg-emerald-950/40', 'text-emerald-400');
+            feedbackDiv.innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i> 回答正確！${currentQuiz.fact}`;
+        } else {
+            feedbackDiv.classList.add('bg-red-950/40', 'text-red-400');
+            feedbackDiv.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1"></i> 答錯了。正確答案是 B。 ${currentQuiz.fact}`;
+        }
+
+        document.getElementById('next-btn').classList.remove('hidden');
+    }
+
+    function nextQuestion() {
+        audio.playChime();
+        currentQuizIndex++;
+        if (currentQuizIndex >= quizData.length) {
+            // End of Quiz
+            document.getElementById('quiz-container').innerHTML = `
+                <div class="text-center py-6">
+                    <i class="fa-solid fa-trophy text-5xl text-yellow-500 mb-4 animate-bounce"></i>
+                    <h4 class="text-xl font-bold text-white mb-2">恭喜完成挑戰！</h4>
+                    <p class="text-xs text-gray-400">你是一位百分之百的狂熱橘藍死忠球迷！讓我們繼續為這座偉大的城市歡呼！</p>
+                </div>
+            `;
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+            return;
+        }
+
+        const nextQuiz = quizData[currentQuizIndex];
+        document.getElementById('quiz-container').innerHTML = `
+            <p class="text-xs uppercase text-knicks-orange font-bold tracking-widest mb-2">問題 ${currentQuizIndex + 1} / 3</p>
+            <h4 id="quiz-question" class="text-base md:text-lg font-bold text-white mb-4">${nextQuiz.q}</h4>
+            
+            <div class="space-y-3" id="quiz-options">
+                <button onclick="checkAnswer(0)" class="w-full text-left p-3.5 bg-knicks-card border border-gray-800 rounded-lg hover:border-knicks-orange hover:bg-knicks-orange/5 text-xs text-gray-300 transition duration-300">
+                    ${nextQuiz.options[0]}
+                </button>
+                <button onclick="checkAnswer(1)" class="w-full text-left p-3.5 bg-knicks-card border border-gray-800 rounded-lg hover:border-knicks-orange hover:bg-knicks-orange/5 text-xs text-gray-300 transition duration-300">
+                    ${nextQuiz.options[1]}
+                </button>
+                <button onclick="checkAnswer(2)" class="w-full text-left p-3.5 bg-knicks-card border border-gray-800 rounded-lg hover:border-knicks-orange hover:bg-knicks-orange/5 text-xs text-gray-300 transition duration-300">
+                    ${nextQuiz.options[2]}
+                </button>
+            </div>
+        `;
+        document.getElementById('quiz-feedback').classList.add('hidden');
+        document.getElementById('next-btn').classList.add('hidden');
+    }
+</script>
+
+<!-- Section Eight: Epilogue -->
+<section class="py-24 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-900">
+    <div class="bg-gradient-to-r from-knicks-blue/20 via-knicks-orange/10 to-transparent border border-gray-800 rounded-3xl p-8 md:p-16 relative overflow-hidden">
+        <div class="absolute -top-16 -right-16 w-60 h-60 bg-knicks-orange/15 rounded-full blur-3xl animate-pulse"></div>
+        <div class="relative z-10 space-y-6 max-w-4xl">
+            <span class="text-sm font-bold uppercase tracking-[0.2em] text-knicks-orange block">八、 結語：不僅僅是一座冠軍</span>
+            <h2 class="text-3xl md:text-6xl font-black text-white leading-tight">橘藍之魂，永遠烙印於這座偉大的城市。</h2>
+            <p class="text-gray-300 text-sm md:text-lg leading-relaxed">
+                53載漫長歲月的等待，在 2026 年 6 月 13 日落下了最動人心魄的帷幕。這不僅僅是一尊奧布萊恩金盃。
+            </p>
+            <p class="text-gray-300 text-sm md:text-lg leading-relaxed">
+                這是 Jalen Brunson 從無名二輪秀逆天改命榮登總決 MVP 的無上傳奇；是「維拉諾瓦三傑」大學手足情義直至職業巔峰的完美演繹；是 Mike Brown 教頭從失業到榮獲冠軍的偉大自證；是無數忠實尼克球迷、紐約市民跨越世代苦盡甘來的極致狂熱。
+            </p>
+            <p class="text-gray-300 text-sm md:text-lg leading-relaxed">
+                這支 2026 年的紐約尼克隊，為我們展現了籃球運動最本源、最美好的姿態：沒有極限的天賦堆砌，唯有極致的個人犧牲、絕對的同儕信任，以及永不言棄的頑強精神。
+            </p>
+            <div class="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                    <span class="text-sm text-gray-400 font-bold block uppercase tracking-widest">NEW YORK KNICKS</span>
+                    <span class="text-xs text-gray-500">2026 NBA World Champion • History Is Written</span>
+                </div>
+                <button onclick="audio.playChampionshipHorn()" class="px-6 py-3 bg-gradient-to-r from-knicks-orange to-yellow-500 hover:from-yellow-500 hover:to-knicks-orange text-black font-extrabold text-xs tracking-wider rounded-lg uppercase shadow-md transition duration-300">
+                    <i class="fa-solid fa-trophy mr-1"></i> 響起慶祝勝利哨音
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-knicks-dark border-t border-gray-950 py-12 text-center text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-4">
+        <div class="flex items-center justify-center space-x-3">
+            <span class="w-8 h-[1px] bg-gray-800"></span>
+            <span class="font-extrabold text-gray-400 uppercase tracking-widest">2026 New York Knicks Championship Timeline</span>
+            <span class="w-8 h-[1px] bg-gray-800"></span>
+        </div>
+        <p>© 2026 紐約尼克球迷網頁誌. 跨越半世紀的史詩之盟. 本網頁資料源自尼克奪冠紀念文獻彙整.</p>
+    </div>
+</footer>
+
+</body>
+</html>

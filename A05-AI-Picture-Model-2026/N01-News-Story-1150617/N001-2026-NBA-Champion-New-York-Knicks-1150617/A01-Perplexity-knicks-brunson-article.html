@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <title>紐約尼克隊奪冠記與布朗森故事</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="以紐約尼克隊橘藍色系呈現的中文長文專欄，回顧尼克隊2026年奪冠過程與Jalen Brunson的領袖故事。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+      --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-5:1.25rem; --space-6:1.5rem; --space-8:2rem; --space-10:2.5rem; --space-12:3rem; --space-16:4rem; --space-20:5rem;
+      --font-display:'Oswald','Noto Sans TC',sans-serif;
+      --font-body:'Noto Sans TC',sans-serif;
+      --knicks-blue:#006BB6;
+      --knicks-orange:#F58426;
+      --knicks-silver:#BEC0C2;
+      --color-bg:#f5f7fb;
+      --color-surface:#ffffff;
+      --color-surface-2:#eef3fb;
+      --color-surface-offset:#dfe8f5;
+      --color-border:rgba(0,45,98,.14);
+      --color-divider:rgba(0,45,98,.10);
+      --color-text:#0e2340;
+      --color-text-muted:#4b5d79;
+      --color-text-inverse:#ffffff;
+      --color-primary:var(--knicks-blue);
+      --color-primary-hover:#00579a;
+      --color-accent:var(--knicks-orange);
+      --radius-sm:.5rem; --radius-md:.875rem; --radius-lg:1.25rem; --radius-xl:1.75rem; --radius-full:9999px;
+      --shadow-sm:0 4px 14px rgba(0,61,130,.08);
+      --shadow-md:0 12px 30px rgba(0,61,130,.12);
+      --shadow-lg:0 20px 60px rgba(0,61,130,.16);
+      --content:1180px;
+    }
+    [data-theme="dark"]{
+      --color-bg:#09111d;
+      --color-surface:#101b2c;
+      --color-surface-2:#14233a;
+      --color-surface-offset:#1c2f4b;
+      --color-border:rgba(190,192,194,.18);
+      --color-divider:rgba(190,192,194,.14);
+      --color-text:#eef3fb;
+      --color-text-muted:#b7c4d7;
+      --color-text-inverse:#09111d;
+      --color-primary:#59a8ea;
+      --color-primary-hover:#7dbcf0;
+      --shadow-sm:0 4px 14px rgba(0,0,0,.28);
+      --shadow-md:0 12px 30px rgba(0,0,0,.34);
+      --shadow-lg:0 20px 60px rgba(0,0,0,.45);
+    }
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+    body{min-height:100vh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.8;background:radial-gradient(circle at top right, rgba(245,132,38,.12), transparent 26%),radial-gradient(circle at left top, rgba(0,107,182,.12), transparent 28%),var(--color-bg);color:var(--color-text)}
+    img,svg{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;border:none;background:none;cursor:pointer}
+    .skip-link{position:absolute;left:var(--space-4);top:-44px;background:var(--color-accent);color:#111;padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);z-index:999}
+    .skip-link:focus{top:var(--space-4)}
+    .site-shell{min-height:100vh;display:flex;flex-direction:column}
+    .container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
+    nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);background:rgba(255,255,255,.74);border-bottom:1px solid var(--color-divider)}
+    [data-theme="dark"] nav{background:rgba(9,17,29,.72)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
+    .brand{display:flex;align-items:center;gap:var(--space-3);font-weight:800;letter-spacing:.04em}
+    .brand-mark{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 210deg,var(--knicks-blue),var(--knicks-orange),var(--knicks-blue));box-shadow:var(--shadow-sm)}
+    .brand-mark svg{width:26px;height:26px;color:#fff}
+    .brand span{font-family:var(--font-display);font-size:var(--text-lg);text-transform:uppercase}
+    .nav-links{display:flex;gap:var(--space-4);align-items:center;flex-wrap:wrap}
+    .nav-links a{padding:.65rem .9rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700;color:var(--color-text-muted)}
+    .nav-links a:hover,.nav-links a:focus-visible{background:var(--color-surface-2);color:var(--color-primary)}
+    .theme-toggle{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--color-border);background:var(--color-surface)}
+    header.hero{padding:clamp(4rem,8vw,7rem) 0 var(--space-16);margin-top:10px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-8);align-items:end}
+    .eyebrow{display:inline-flex;align-items:center;gap:.65rem;padding:.45rem .9rem;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:rgba(245,132,38,.14);color:#9a4e06;margin-bottom:var(--space-5)}
+    .eyebrow:before{content:'';width:10px;height:10px;border-radius:50%;background:var(--knicks-orange);box-shadow:0 0 0 4px rgba(245,132,38,.18)}
+    h1{font-family:var(--font-display);font-size:clamp(2.7rem,8vw,6.2rem);line-height:.95;letter-spacing:.02em;text-transform:uppercase;max-width:10ch}
+    .hero-highlight{color:var(--knicks-orange);text-shadow:0 6px 30px rgba(245,132,38,.18)}
+    .hero-copy{margin-top:var(--space-5);max-width:60ch;color:var(--color-text-muted)}
+    .hero-meta{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-6)}
+    .meta-chip{padding:.7rem 1rem;border-radius:var(--radius-full);background:var(--color-surface);border:1px solid var(--color-border);font-size:var(--text-sm);font-weight:700;box-shadow:var(--shadow-sm)}
+    .hero-card{position:relative;background:linear-gradient(160deg, rgba(0,107,182,.96), rgba(12,31,63,.98));color:#fff;border-radius:var(--radius-xl);padding:var(--space-8);overflow:hidden;box-shadow:var(--shadow-lg)}
+    .hero-card:before,.hero-card:after{content:'';position:absolute;border-radius:50%}
+    .hero-card:before{width:220px;height:220px;right:-60px;top:-50px;background:rgba(245,132,38,.95)}
+    .hero-card:after{width:320px;height:320px;left:-120px;bottom:-170px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18)}
+    .card-logo{position:relative;z-index:1;display:flex;align-items:center;gap:var(--space-4);margin-bottom:var(--space-8)}
+    .ball{width:88px;height:88px;border-radius:50%;background:var(--knicks-orange);position:relative;box-shadow:inset 0 0 0 4px rgba(255,255,255,.16)}
+    .ball:before,.ball:after{content:'';position:absolute;background:#222;border-radius:999px;opacity:.7}
+    .ball:before{inset:0;width:4px;left:50%;transform:translateX(-50%)}
+    .ball:after{height:4px;inset:auto 0 50% 0;transform:translateY(50%)}
+    .ball i,.ball b{position:absolute;inset:0;border:4px solid rgba(34,34,34,.7);border-left-color:transparent;border-right-color:transparent;border-radius:50%}
+    .ball b{transform:rotate(90deg)}
+    .hero-card h2{position:relative;z-index:1;font-family:var(--font-display);font-size:var(--text-2xl);line-height:1;text-transform:uppercase;max-width:8ch}
+    .hero-card p{position:relative;z-index:1;margin-top:var(--space-4);max-width:30ch;color:rgba(255,255,255,.84)}
+    main{flex:1;padding-bottom:var(--space-20)}
+    .section{padding:var(--space-10) 0}
+    .section-heading{display:flex;align-items:end;justify-content:space-between;gap:var(--space-4);margin-bottom:var(--space-6)}
+    .section-heading h2{font-family:var(--font-display);font-size:var(--text-2xl);text-transform:uppercase;color:var(--color-primary);line-height:1}
+    .section-heading p{max-width:48ch;color:var(--color-text-muted)}
+    .outline-grid,.story-grid,.timeline{display:grid;gap:var(--space-5)}
+    .outline-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .story-grid{grid-template-columns:1.1fr .9fr}
+    .panel,.timeline article,.quote-card,.stat-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+    .panel{padding:var(--space-6)}
+    .panel h3{font-size:var(--text-lg);margin-bottom:var(--space-3);color:var(--color-primary)}
+    .panel p,.timeline p,.quote-card p{color:var(--color-text-muted)}
+    .outline-list{display:grid;gap:var(--space-3);list-style:none}
+    .outline-list li{display:grid;grid-template-columns:auto 1fr;gap:var(--space-3);align-items:start}
+    .outline-list strong{width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;background:rgba(0,107,182,.12);color:var(--color-primary);font-size:var(--text-sm)}
+    .timeline{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .timeline article{padding:var(--space-6);position:relative;overflow:hidden}
+    .timeline article:before{content:'';position:absolute;left:0;top:0;width:100%;height:4px;background:linear-gradient(90deg,var(--knicks-blue),var(--knicks-orange))}
+    .timeline .stage{font-size:var(--text-xs);font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--knicks-orange)}
+    .timeline h3{margin:var(--space-2) 0 var(--space-3);font-size:var(--text-lg)}
+    .feature-wrap{display:grid;grid-template-columns:1fr 320px;gap:var(--space-5)}
+    .article-card{padding:var(--space-8);background:linear-gradient(180deg,var(--color-surface),var(--color-surface-2));border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
+    .article-card p{margin-bottom:var(--space-5)}
+    .article-card p:last-child{margin-bottom:0}
+    .dropcap:first-letter{float:left;font-family:var(--font-display);font-size:4.8rem;line-height:.85;padding-right:.5rem;color:var(--knicks-orange)}
+    .stats{display:grid;gap:var(--space-4)}
+    .stat-card{padding:var(--space-5);background:linear-gradient(180deg,rgba(0,107,182,.1),rgba(245,132,38,.08),var(--color-surface))}
+    .stat-card .num{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);line-height:1;color:var(--color-primary)}
+    .stat-card .label{font-size:var(--text-sm);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-top:var(--space-2)}
+    .quote-card{padding:var(--space-8);position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(0,107,182,.95),rgba(245,132,38,.92));color:#fff}
+    .quote-card p{color:rgba(255,255,255,.9)}
+    .quote-card blockquote{font-size:var(--text-lg);font-weight:700;line-height:1.7;margin-bottom:var(--space-4)}
+    .logo-band{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-5);border-radius:var(--radius-lg);background:repeating-linear-gradient(135deg, rgba(0,107,182,.11), rgba(0,107,182,.11) 16px, rgba(245,132,38,.08) 16px, rgba(245,132,38,.08) 32px);border:1px solid var(--color-border)}
+    .logo-crest{width:92px;height:92px;flex:0 0 auto}
+    .logo-crest svg{width:100%;height:100%}
+    footer{margin-top:auto;border-top:1px solid var(--color-divider);background:var(--color-surface)}
+    .footer-inner{padding:var(--space-8) 0;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--color-text-muted);font-size:var(--text-sm)}
+    .footer-links{display:flex;gap:var(--space-4);flex-wrap:wrap}
+    .footer-links a:hover{color:var(--color-primary)}
+    @media (max-width:980px){.hero-grid,.story-grid,.feature-wrap,.outline-grid,.timeline{grid-template-columns:1fr}.section-heading{align-items:start;flex-direction:column}h1{max-width:12ch}}
+    @media (max-width:680px){.nav-inner{align-items:flex-start;flex-direction:column}.nav-links{width:100%;justify-content:space-between}.hero-card,.article-card,.quote-card,.panel,.timeline article{padding:var(--space-5)}.footer-inner{flex-direction:column;align-items:flex-start}.brand span{font-size:1.3rem}}
+  </style>
+</head>
+<body id="n0">
+  <a class="skip-link" href="#main-content">跳到主要內容</a>
+  <div class="site-shell">
+    <nav aria-label="主選單">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="回到頁首">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 18 12 4l7 14"/><path d="M8.5 13h7"/><path d="M7 18h10"/></svg>
+          </span>
+          <span>Knicks Report</span>
+        </a>
+        <div class="nav-links">
+          <a href="#outline">文章架構</a>
+          <a href="#title-run">奪冠過程</a>
+          <a href="#brunson">布朗森故事</a>
+          <a href="#legacy">城市象徵</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="切換深色模式">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero text-center" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">2026 NBA Champions</div>
+          <h1>紐約終於等到 <span class="hero-highlight">尼克封王</span></h1>
+          <p class="hero-copy">這是一篇以中文專欄語氣整理的長文頁面，回顧紐約尼克隊走過半世紀等待後重返王座，也寫下 Jalen Brunson 從被低估到成為城市旗手的故事。</p>
+          <div class="hero-meta">
+            <div class="meta-chip">紐約尼克橘藍色系</div>
+            <div class="meta-chip">保留 nav 與 footer</div>
+            <div class="meta-chip">專欄／網頁閱讀版型</div>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="尼克風格主視覺卡片">
+          <div class="card-logo">
+            <div class="ball" aria-hidden="true"><i></i><b></b></div>
+            <div>
+              <div style="font-size:var(--text-xs);font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.76)">New York Basketball</div>
+              <h2>Blue. Orange. Broadway.</h2>
+            </div>
+          </div>
+          <p>以紐約籃球風重構頁面，透過大標、拼貼卡片、籃球線條與橘藍撞色，讓整體閱讀感更接近 Madison Square Garden 的主場氣氛。</p>
+        </aside>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section" id="outline">
+        <div class="container">
+          <div class="section-heading">
+            <div><h2>文章架構</h2></div>
+            <p>先讓讀者快速掌握全文節奏，再往下閱讀奪冠之路、關鍵戰役與布朗森的人物故事，這樣會更像一篇完整的中文運動專欄。</p>
+          </div>
+          <div class="outline-grid">
+            <article class="panel">
+              <h3>上半場</h3>
+              <ol class="outline-list">
+                <li><strong>1</strong><span>城市等待已久的冠軍時刻，先把紐約球迷53年的情緒打開。</span></li>
+                <li><strong>2</strong><span>回顧尼克隊季後賽一路晉級，讓讀者看見這支球隊的成熟。</span></li>
+                <li><strong>3</strong><span>挑出最關鍵的比賽與第四節場景，鋪陳 Brunson 的領袖份量。</span></li>
+              </ol>
+            </article>
+            <article class="panel">
+              <h3>下半場</h3>
+              <ol class="outline-list">
+                <li><strong>4</strong><span>寫 Brunson 從被低估到成為紐約門面的人生弧線。</span></li>
+                <li><strong>5</strong><span>分析他如何改變球隊氣質，讓尼克從拚勁球隊變成冠軍球隊。</span></li>
+                <li><strong>6</strong><span>最後收束到紐約這座城市，讓奪冠不只是新聞，而是一個時代畫面。</span></li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="title-run">
+        <div class="container">
+          <div class="section-heading">
+            <div><h2>奪冠過程</h2></div>
+            <p>整體書寫方式偏報導與專欄之間，既保留比賽節奏，也保留城市情感與人物光影。</p>
+          </div>
+          <div class="timeline">
+            <article>
+              <div class="stage">Round 1</div>
+              <h3>先用壓倒性勝利打開季後賽</h3>
+              <p>尼克隊在首輪就展現極高壓迫感與執行力，用大比分勝利宣告他們不是來陪跑，而是準備衝擊總冠軍。</p>
+            </article>
+            <article>
+              <div class="stage">East Run</div>
+              <h3>東區連戰連勝，氣勢一路升高</h3>
+              <p>當球隊通過更高強度的系列賽考驗，紐約球迷開始相信，這一次也許真的不一樣。</p>
+            </article>
+            <article>
+              <div class="stage">Finals</div>
+              <h3>在總冠軍賽完成歷史性封王</h3>
+              <p>從紐約到客場，Brunson 與隊友撐住每一個關鍵回合，最終將等待半世紀的夢想拉回現實。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container feature-wrap">
+          <article class="article-card">
+            <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);line-height:1;text-transform:uppercase;margin-bottom:var(--space-5);color:var(--color-primary)">紐約，終於等到了</h2>
+            <p class="dropcap">2026年6月，麥迪遜廣場花園外的街道不再只是人潮，而像是一場城市總動員。半個多世紀的等待，在那一夜突然有了出口；歡呼、眼淚、旗幟與手機燈海，把紐約的夜色照成一場藍與橘交織的大遊行。</p>
+            <p>對紐約球迷而言，尼克隊從來不只是籃球隊，而是一種城市自尊的延伸。這支球隊曾歷經無數次重建、失望與嘲諷，但2026年的這次封王，終於讓「希望」不再只是口號，而是寫進歷史的事實。</p>
+            <p>而站在聚光燈中央的人，不是最誇張的表演者，不是最張揚的明星，而是那位總能在比賽最危險的時刻穩住球隊的人——Jalen Brunson。當尼克需要一個可以讓全隊相信的人時，他剛好成了那個答案。</p>
+          </article>
+          <aside class="stats" aria-label="文章重點資訊">
+            <div class="stat-card">
+              <div class="num">53</div>
+              <div class="label">年等待</div>
+              <p>從1973到2026，這座城市終於等回總冠軍的榮耀。</p>
+            </div>
+            <div class="stat-card">
+              <div class="num">4Q</div>
+              <div class="label">關鍵時刻</div>
+              <p>本篇主軸之一，是 Brunson 在第四節的冷靜與決勝能力。</p>
+            </div>
+            <div class="stat-card">
+              <div class="num">NY</div>
+              <div class="label">城市精神</div>
+              <p>整體網頁視覺以橘藍色與籃球線條表現紐約籃球風。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="brunson">
+        <div class="container story-grid">
+          <article class="article-card">
+            <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);line-height:1;text-transform:uppercase;margin-bottom:var(--space-5);color:var(--knicks-orange)">布朗森的故事</h2>
+            <p>Jalen Brunson 的故事，最動人的地方，不在於他天賦有多驚人，而在於他長期被低估，卻始終用比別人更扎實的方式往上爬。從聯盟裡不被放在第一層級討論的控衛，到成為紐約尼克隊的當家核心，他的成長更像一種慢火熬成的領袖形狀。</p>
+            <p>他不是那種靠華麗動作去製造光環的球員，而是靠節奏、判斷、腳步與關鍵決策建立威信。這也正是紐約球迷會愛上他的原因：他身上沒有漂浮感，只有可信任的重量。</p>
+            <p>更重要的是，他讓球隊文化改變了。當一支球隊在最危急時，總有人能把局面重新整理好，其他人就知道自己該如何投入；這種穩定，最後會從一個人的特質，變成整支球隊的習慣。</p>
+          </article>
+          <aside>
+            <div class="quote-card">
+              <blockquote>「這不是只關於一座獎盃，而是關於一座城市，終於重新相信自己可以站回舞台中央。」</blockquote>
+              <p>頁面中的引言卡採用尼克橘藍撞色，模擬體育專欄裡最有情緒張力的段落節點。</p>
+            </div>
+            <div class="logo-band" style="margin-top:var(--space-5)">
+              <div class="logo-crest" aria-hidden="true">
+                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M60 12 104 37v46L60 108 16 83V37L60 12Z" fill="#006BB6"/>
+                  <path d="M60 22 95 42v36L60 98 25 78V42l35-20Z" fill="#F58426"/>
+                  <path d="M60 33 84 46v28L60 87 36 74V46l24-13Z" fill="#F7F9FC"/>
+                  <path d="M44 54h32M60 41v44M43 70c3-8 12-13 17-13s14 5 17 13M43 54c3 8 12 13 17 13s14-5 17-13" stroke="#111827" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3 style="margin-bottom:.35rem;color:var(--color-primary)">紐約籃球風標誌</h3>
+                <p>用盾形、籃球線條與橘藍對比做出呼應 Knicks logo 氛圍的裝飾圖形，避免直接使用正式隊徽，但保留明確的紐約主場感。</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="legacy">
+        <div class="container">
+          <div class="section-heading">
+            <div><h2>城市象徵</h2></div>
+            <p>文章最後從球星回到城市，讓冠軍不只是賽事結果，而是紐約與尼克隊重新彼此擁抱的象徵。</p>
+          </div>
+          <article class="article-card">
+            <p>奪冠那一夜真正動人的，不只是比分停住的瞬間，而是整座城市終於找到了一個共同抬頭的理由。紐約見過太多巨星，也經歷過太多喧鬧，但真正能讓這座城市長久記住的，往往不是最大聲的人，而是最能扛住壓力的人。</p>
+            <p>Brunson 正是這樣的存在。他把自己的比賽打成一種秩序，讓尼克隊從情緒型球隊變成可以在壓力裡持續運轉的成熟隊伍；這樣的球星，不只是數據主角，也是城市信任感的來源。</p>
+            <p>因此，這次總冠軍最終留下的，不只是「尼克終於奪冠」這個事實，而是另一種更長久的印象：紐約籃球重新長出屬於自己的樣子，而 Jalen Brunson，正是這個新時代最清楚的臉孔。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© 2026 Knicks Report Web Article．以紐約尼克橘藍風格重構的中文專欄版面</div>
+        <div class="footer-links">
+          <a href="#top">回到頂端</a>
+          <a href="#outline">文章架構</a>
+          <a href="#brunson">人物故事</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (function(){
+      const toggle=document.querySelector('[data-theme-toggle]');
+      const root=document.documentElement;
+      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',theme);
+      function render(){
+        toggle.setAttribute('aria-label',theme==='dark'?'切換淺色模式':'切換深色模式');
+        toggle.innerHTML=theme==='dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      }
+      render();
+      toggle.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);render();});
+    })();
+  </script>
+</body>
+</html>

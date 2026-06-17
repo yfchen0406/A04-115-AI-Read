@@ -495,12 +495,12 @@ const cardsData = [
   },
   {
     idName: "index-13",
-    title: "AI網站導覽",
-    date: "2026.03.09起",
-    link: "/B01-Book/F06-0-2026-note-new.html",
+    title: "AI網站相關",
+    date: "2026.06.17起",
+    link: "/W02-Web-AI-instantly-changes-clones-2026/A01-Index-AI-Change-1150617/A01-Index-AI-Change-1150617.html",
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-network-wired",
-    enterName: "增廣見聞",
+    enterName: "每日一問",
     disable: "",
   },
   {
