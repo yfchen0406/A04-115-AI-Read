@@ -2434,4 +2434,188 @@ const stickerPacks = [
       },
     ],
   },
+  {
+    id: 78,
+    name: "個人Q版",
+    description: "端午節祝賀詞",
+    category: "年節系列",
+    stickers: [
+      {
+        id: "GPT0013-2-端午節-1",
+        img: "./images/GPT0013-2-端午節/split_0_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-2",
+        img: "./images/GPT0013-2-端午節/split_0_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-3",
+        img: "./images/GPT0013-2-端午節/split_0_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-4",
+        img: "./images/GPT0013-2-端午節/split_0_3.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-5",
+        img: "./images/GPT0013-2-端午節/split_1_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-6",
+        img: "./images/GPT0013-2-端午節/split_1_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-7",
+        img: "./images/GPT0013-2-端午節/split_1_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-8",
+        img: "./images/GPT0013-2-端午節/split_1_3.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-9",
+        img: "./images/GPT0013-2-端午節/split_2_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-A",
+        img: "./images/GPT0013-2-端午節/split_2_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-B",
+        img: "./images/GPT0013-2-端午節/split_2_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-C",
+        img: "./images/GPT0013-2-端午節/split_2_3.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-D",
+        img: "./images/GPT0013-2-端午節/split_3_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-E",
+        img: "./images/GPT0013-2-端午節/split_3_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-F",
+        img: "./images/GPT0013-2-端午節/split_3_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-G",
+        img: "./images/GPT0013-2-端午節/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 79,
+    name: "個人Q版",
+    description: "端午節祝賀詞",
+    category: "年節系列",
+    stickers: [
+      {
+        id: "GPT0013-3-端午節-1",
+        img: "./images/GPT0013-3-端午節/split_0_0.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-2",
+        img: "./images/GPT0013-3-端午節/split_0_1.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-3",
+        img: "./images/GPT0013-3-端午節/split_0_2.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-4",
+        img: "./images/GPT0013-3-端午節/split_0_3.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-5",
+        img: "./images/GPT0013-3-端午節/split_1_0.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-6",
+        img: "./images/GPT0013-3-端午節/split_1_1.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-7",
+        img: "./images/GPT0013-3-端午節/split_1_2.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-8",
+        img: "./images/GPT0013-3-端午節/split_1_3.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-9",
+        img: "./images/GPT0013-3-端午節/split_2_0.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-A",
+        img: "./images/GPT0013-3-端午節/split_2_1.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-B",
+        img: "./images/GPT0013-3-端午節/split_2_2.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-C",
+        img: "./images/GPT0013-3-端午節/split_2_3.webp",
+      },
+    ],
+  },
+  {
+    id: 79,
+    name: "個人Q版",
+    description: "端午節祝賀詞",
+    category: "年節系列",
+    stickers: [
+      {
+        id: "GPT0013-4-端午節-1",
+        img: "./images/GPT0013-4-端午節/split_0_0.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-2",
+        img: "./images/GPT0013-4-端午節/split_0_1.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-3",
+        img: "./images/GPT0013-4-端午節/split_0_2.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-4",
+        img: "./images/GPT0013-4-端午節/split_0_3.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-5",
+        img: "./images/GPT0013-4-端午節/split_1_0.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-6",
+        img: "./images/GPT0013-4-端午節/split_1_1.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-7",
+        img: "./images/GPT0013-4-端午節/split_1_2.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-8",
+        img: "./images/GPT0013-4-端午節/split_1_3.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-9",
+        img: "./images/GPT0013-4-端午節/split_2_0.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-A",
+        img: "./images/GPT0013-4-端午節/split_2_1.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-B",
+        img: "./images/GPT0013-4-端午節/split_2_2.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-C",
+        img: "./images/GPT0013-4-端午節/split_2_3.webp",
+      },
+    ],
+  },
 ];
