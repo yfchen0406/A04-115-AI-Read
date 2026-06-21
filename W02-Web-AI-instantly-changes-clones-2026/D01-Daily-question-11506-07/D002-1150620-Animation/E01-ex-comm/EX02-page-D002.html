@@ -1,0 +1,185 @@
+<div class="container yf-font1">
+  <!-- 獨立且專屬的藍色系導覽按鈕 CSS 樣式，不與 Bootstrap 或 yf-font1 衝突 -->
+  <style>
+    .history-nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3px;
+      padding: 0;
+      margin: 10px 0;
+      list-style: none;
+      /* 移除預設的清單符號 */
+    }
+
+    .history-nav-item {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      /* 桌機版預設一列 4 個按鈕 */
+      flex: 1 1 calc(25% - 12px);
+      min-width: 80px;
+    }
+
+    .history-nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7px 8px;
+      color: #1e40af;
+      /* 經典深藍色 */
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      /* 圓角設計 */
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.04);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    /* 懸停動態效果 */
+    .history-nav-btn:hover {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+      border-color: #1d4ed8 !important;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(29, 78, 216, 0.2);
+      text-decoration: none;
+    }
+
+    /* 點擊瞬間微回饋 */
+    .history-nav-btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(29, 78, 216, 0.15);
+    }
+
+    /* 響應式：手機與平板直向優化 */
+    @media (max-width: 992px) {
+      .history-nav-item {
+        /* 平板與手機呈現一列 2 個按鈕 */
+        flex: 1 1 calc(50% - 12px);
+        min-width: 160px;
+      }
+
+      .history-nav-btn {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .history-nav-item {
+        /* 超小螢幕單行排列 */
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+
+  <!-- 第一排 A-D -->
+  <ul class="history-nav-row mt-2">
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="/W02-Web-AI-instantly-changes-clones-2026/D01-Daily-question-11506-07/D002-1150620-Animation/D002A-A01-daily-question-ai-animation.html">
+        D002A<span class="yf5"></span>
+      </a>
+    </li>
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="/W02-Web-AI-instantly-changes-clones-2026/D01-Daily-question-11506-07/D002-1150620-Animation/A02-retirement-ai-animation-ready.html">
+        D002B<span class="yf5"></span>
+      </a>
+    </li>
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="/W02-Web-AI-instantly-changes-clones-2026/D01-Daily-question-11506-07/D002-1150620-Animation/A03-retirement-ai-animation-article.html">
+        D002C<span class="yf5"></span>
+      </a>
+    </li>
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="/W02-Web-AI-instantly-changes-clones-2026/D01-Daily-question-11506-07/D002-1150620-Animation/A04-AI-animation-guide-20260620.html">
+        D002D<span class="yf5"></span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- 第二排 E-H -->
+  <!-- <ul class="history-nav-row mt-1">
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="../A05/B122-A5-AI-smart-life-technology-1150607.html">
+        A5.AI 搜尋~<span class="yf5">比 Google 更強</span>
+      </a>
+    </li>
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="../A06/B122-A6-AI-smart-life-technology-1150607.html">
+        A6.AI 圖像創作~<span class="yf5">人人都是設計師</span>
+      </a>
+    </li>
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="../A09/B122-A9-AI-smart-life-technology-1150607.html">
+        A9.AI 影響力與個人品牌~<span class="yf5">讓自己被看見</span>
+      </a>
+    </li>
+    <li class="history-nav-item">
+      <a class="history-nav-btn" href="../A10/B122-A10-AI-smart-life-technology-1150607.html">
+        A10.AI 金錢、決策與風險~<span class="yf5">更聰明的選擇</span>
+      </a>
+    </li>
+  </ul> -->
+  <!-- 第三排 I-L -->
+  <!-- <ul class="history-nav-row mt-1">
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P41-50/M02-41-AI-Illustrations-to-Learn-American-History-1150521.html">
+                I:新政改乾坤，珍珠港點火~41-45
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P41-50/M02-46-AI-Illustrations-to-Learn-American-History-1150522.html">
+                J:原子彈落地，冷戰鐵幕起~46-50
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P51-60/M02-51-AI-Illustrations-to-Learn-American-History-1150523.html">
+                K:冷戰陰影下，文化黃金起~51-55
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P51-60/M02-56-AI-Illustrations-to-Learn-American-History-1150523.html">
+                L:古巴藏飛彈，偶像總統殞~56-60
+            </a>
+        </li>
+    </ul> -->
+  <!-- 第四排 M-P -->
+  <!-- <ul class="history-nav-row mt-1">
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P61-70/M02-61-AI-Illustrations-to-Learn-American-History-1150523.html">
+                M:刺殺疑雲起，平權越戰燒~61-65
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P61-70/M02-66-AI-Illustrations-to-Learn-American-History-1150523.html">
+                N:冷戰棋局定，帝國終解體~66-70
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P71-80/M02-71-AI-Illustrations-to-Learn-American-History-1150525.html">
+                O:忍辱換發展，崩盤送新人~71-75
+            </a>
+        </li>
+        <li class="history-nav-item">
+            <a class="history-nav-btn"
+                href="/A05-AI-Picture-Model-2026/M02-AI-Illustrations-to-Learn-American-History-1150517/P71-80/M02-76-AI-Illustrations-to-Learn-American-History-1150523.html">
+                P:素人掀桌起、霸權照鏡終~76-80
+            </a>
+        </li>
+    </ul> -->
+
+</div>

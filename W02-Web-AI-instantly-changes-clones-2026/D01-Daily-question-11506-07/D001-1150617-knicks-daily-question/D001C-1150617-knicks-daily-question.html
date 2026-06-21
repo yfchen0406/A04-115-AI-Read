@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+    <title>D001C.NBA 2026 尼克隊得獎紀錄 — 六種風格設計實驗</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+    <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+        
+    </script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <!-- font-awesome 6.7.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- 自己的CSS -->
+    <link rel="stylesheet" href="/css/F01-1-note.css">
+    <link rel="stylesheet" href="/css/F02-2-note.css">
+    <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+    <link rel="stylesheet" href="/css/all.css">
+
+    <!-- 大陸網站iconfont圖標  -->
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="css/iconfont.js">
+    </script>
+    <!-- 引入 Lottie Web 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+    </script>
+    <!-- 大陸網站iconfont圖標  -->
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="css/iconfont.js">
+    </script>
+    <!-- 引入 Lottie Web 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+    </script>
+
+
+    <!-- (ok)  google font link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== 尼克隊主題配色 ===== */
+        :root {
+            --knicks-blue: #006BB6;
+            --knicks-orange: #F58426;
+            --knicks-dark: #1a1a2e;
+            --knicks-gold: #C5A059;
+            --knicks-light: #f8f6f0;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .yf-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        .yf-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 自訂字體粗細 */
+        .yf-font1 {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        /* 尼克藍 */
+        .knicks-blue {
+            color: var(--knicks-blue);
+        }
+        .knicks-blue-bg {
+            background-color: var(--knicks-blue);
+            color: #fff;
+        }
+        .knicks-orange {
+            color: var(--knicks-orange);
+        }
+        .knicks-orange-bg {
+            background-color: var(--knicks-orange);
+            color: #fff;
+        }
+        .knicks-gold {
+            color: var(--knicks-gold);
+        }
+        .knicks-border {
+            border-color: var(--knicks-blue) !important;
+        }
+
+        /* 標題裝飾線 */
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--knicks-blue), var(--knicks-orange));
+            margin: 0.5rem 0 1.5rem 0;
+            border-radius: 4px;
+        }
+        .section-divider-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 引用區塊 */
+        .blockquote-knicks {
+            border-left: 6px solid var(--knicks-orange);
+            background: #fefcf7;
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 1.1rem;
+            color: #2d2d2d;
+            margin: 1.8rem 0;
+        }
+        .blockquote-knicks i {
+            color: var(--knicks-blue);
+        }
+
+        /* 收穫卡片 */
+        .harvest-card {
+            border: none;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(0, 107, 182, 0.08);
+            padding: 1.8rem 1.5rem;
+            height: 100%;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-top: 5px solid var(--knicks-blue);
+        }
+        .harvest-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 107, 182, 0.15);
+        }
+        .harvest-card .card-icon {
+            font-size: 2.4rem;
+            color: var(--knicks-orange);
+            margin-bottom: 0.8rem;
+        }
+        .harvest-card .card-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--knicks-blue);
+        }
+        .harvest-card .card-text {
+            color: #444;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        /* 檢查點列表 */
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.2rem;
+            background: #fafaf8;
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid var(--knicks-blue);
+            transition: background 0.2s;
+        }
+        .check-list li:hover {
+            background: #f0f4fa;
+        }
+        .check-list .num {
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--knicks-orange);
+            min-width: 2.2rem;
+            text-align: center;
+        }
+        .check-list .content {
+            flex: 1;
+        }
+        .check-list .content strong {
+            color: var(--knicks-blue);
+        }
+
+        /* 評估表格 */
+        .eval-table {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+        .eval-table thead th {
+            background: var(--knicks-blue);
+            color: #fff;
+            font-weight: 700;
+            padding: 1rem 1.2rem;
+            border: none;
+        }
+        .eval-table tbody td {
+            padding: 1rem 1.2rem;
+            vertical-align: middle;
+            border-bottom: 1px solid #eee;
+        }
+        .eval-table tbody tr:hover {
+            background: #f8f6f0;
+        }
+        .eval-table .dimension-icon {
+            font-size: 1.4rem;
+            color: var(--knicks-orange);
+            width: 2.2rem;
+            text-align: center;
+        }
+        .eval-table .badge-dim {
+            background: var(--knicks-blue);
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* 步驟卡 */
+        .step-card {
+            background: linear-gradient(145deg, #ffffff, #fafaf8);
+            border-radius: 16px;
+            padding: 2rem 2rem 1.8rem;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 107, 182, 0.08);
+            height: 100%;
+        }
+        .step-card .step-num {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--knicks-orange);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            .blockquote-knicks {
+                padding: 1.2rem 1.2rem;
+                font-size: 1rem;
+            }
+            .harvest-card {
+                padding: 1.2rem 1rem;
+            }
+            .check-list li {
+                padding: 0.8rem 1rem;
+            }
+            .step-card {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        /* 舊有樣式保留相容 */
+        .yf1 {
+            color: green;
+            font-weight: bold;
+        }
+        .yf11 {
+            color: green;
+        }
+        .yf2 {
+            color: purple;
+            font-weight: bold;
+        }
+        .yf22 {
+            color: purple;
+        }
+        .yf3 {
+            color: #0D6EFD;
+            font-weight: bold;
+        }
+        .yf33 {
+            color: #0D6EFD;
+        }
+        .yf4 {
+            color: red;
+            font-weight: bold;
+        }
+        .yf44 {
+            color: red;
+        }
+        .yf5 {
+            color: rgb(143, 13, 13);
+            font-weight: bold;
+        }
+        .yf55 {
+            color: rgb(143, 13, 13);
+        }
+        .yf-c {
+            text-align: center;
+        }
+
+        /* 選單滾輪 */
+        .dropdown-menu {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        /* 尼克隊主題裝飾 */
+        .header-accent {
+            background: linear-gradient(135deg, var(--knicks-blue) 0%, #004a7c 100%);
+            color: #fff;
+            padding: 2.8rem 0 2.2rem;
+            border-bottom: 6px solid var(--knicks-orange);
+            position: relative;
+            overflow: hidden;
+        }
+        .header-accent::after {
+            content: "🏀";
+            position: absolute;
+            right: 2rem;
+            bottom: -0.5rem;
+            font-size: 8rem;
+            opacity: 0.06;
+            transform: rotate(12deg);
+        }
+        .header-accent h1 {
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+        .header-accent .subtitle {
+            font-weight: 400;
+            opacity: 0.85;
+            letter-spacing: 2px;
+            font-size: 1.05rem;
+        }
+        .header-accent .badge-nick {
+            background: var(--knicks-orange);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 0.3rem;
+        }
+    </style>
+</head>
+
+<body id="n0" class="bg-light" onload="updateCounter()" style="margin-top: 25px;">
+
+    <!-- ===== 導覽列 ===== -->
+    <div id="nav1"></div>
+
+    <!-- ===== 頁首標題區 ===== -->
+    <header class="header-accent text-center">
+        <div class="container">
+            <span class="badge-nick"><i class="fas fa-trophy me-2"></i>D001C.NBA 2026 尼克隊得獎紀錄 — 六種風格設計實驗</span>
+            <h1 class="display-5 fw-bold mt-3 mb-2">六種風格 · 同一榮耀</h1>
+            <p class="subtitle mb-0">NBA 2026 尼克隊得獎紀錄 — 從六種風格中找到最適合運動敘事的視覺語言</p>
+            <div class="mt-3 d-flex justify-content-center gap-3 flex-wrap">
+                <span class="badge bg-light text-dark px-3 py-2 rounded-pill"><i class="fas fa-palette me-1"></i> 設計實驗</span>
+                <span class="badge bg-light text-dark px-3 py-2 rounded-pill"><i class="fas fa-layer-group me-1"></i> 六種風格</span>
+                <span class="badge bg-light text-dark px-3 py-2 rounded-pill"><i class="fas fa-clock me-1"></i> 半天淬煉</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== 主內容 ===== -->
+    <main class="container-fluid yf-font1" style="background:#ffffff; padding: 2.5rem 0 3.5rem;">
+        <div class="container">
+
+            <!-- ============================================ -->
+            <!-- 引言 -->
+            <!-- ============================================ -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="blockquote-knicks">
+                        <i class="fas fa-quote-left me-2" style="font-size:1.6rem; color:var(--knicks-orange);"></i>
+                        <p class="mb-0" style="font-size:1.12rem; line-height:1.9;">
+                            今天花了大概半天的時間做了一個 NBA 2026 年尼克隊得獎紀錄過程的一個網頁，
+                            那過程中大概用了 <strong class="knicks-orange">六種不同的風格</strong> 來寫這網頁試試看你的看法。
+                        </p>
+                    </div>
+                    <p class="lead mt-4" style="font-weight:400; color:#3a3a3a; line-height:1.9;">
+                        我覺得這半天花得很值得，因為你不是只做出一頁網頁，而是在同一主題上用六種風格反覆試驗，
+                        這其實就是很好的前端設計訓練方式：你在練的不只是排版，而是
+                        <span class="fw-bold knicks-blue">「敘事、視覺語氣、資訊層次」</span> 三件事。
+                    </p>
+                    <p style="color:#555; line-height:1.9;">
+                        而且你選「NBA 2026年尼克隊得獎紀錄過程」這種題材也很適合做網頁實驗，
+                        因為它本身就帶有時間線、榮耀感、球隊識別和故事性，特別適合做成運動敘事型頁面。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- 對你的看法 -->
+            <!-- ============================================ -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold knicks-blue" style="font-size:1.8rem;">
+                        <i class="fas fa-eye me-2 knicks-orange"></i>對你的看法
+                    </h2>
+                    <div class="section-divider"></div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="step-card">
+                                <div class="step-num">01</div>
+                                <h5 class="fw-bold mt-1" style="color:var(--knicks-blue);">不只是「做網頁」</h5>
+                                <p style="color:#555; line-height:1.8;">
+                                    你這次不像是在單純「做網頁」，比較像是在做一個主題的
+                                    <strong>多版本視覺研究</strong>，這種做法很接近真正設計師或前端開發者在找方向時的工作方式。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="step-card">
+                                <div class="step-num">02</div>
+                                <h5 class="fw-bold mt-1" style="color:var(--knicks-blue);">對學習方向的價值</h5>
+                                <p style="color:#555; line-height:1.8;">
+                                    對你目前正在學網頁前後端、又想把 AI 用在網站更新上的目標來說，
+                                    這種「同題多風格」練習非常<strong>有價值</strong>，
+                                    因為它能幫你更快分辨什麼風格適合資訊展示、什麼風格只適合吸睛但不耐看。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- 六種風格的收穫 -->
+            <!-- ============================================ -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold knicks-blue" style="font-size:1.8rem;">
+                        <i class="fas fa-gem me-2 knicks-orange"></i>六種風格的收穫
+                    </h2>
+                    <div class="section-divider"></div>
+                    <p class="mb-4" style="color:#555; font-size:1.05rem;">
+                        如果六種風格差異夠明顯，那你這次最大的收穫通常會有這三個：
+                    </p>
+                    <div class="row g-4">
+                        <!-- 收穫 1 -->
+                        <div class="col-md-4">
+                            <div class="harvest-card">
+                                <div class="card-icon"><i class="fas fa-list-check"></i></div>
+                                <div class="card-title">最適合「紀錄型內容」</div>
+                                <div class="card-text">
+                                    你會看出哪一種最適合紀錄型內容，因為得獎歷程需要
+                                    <strong>清楚的時間順序</strong>與<strong>資料層級</strong>。
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 收穫 2 -->
+                        <div class="col-md-4">
+                            <div class="harvest-card" style="border-top-color:var(--knicks-orange);">
+                                <div class="card-icon"><i class="fas fa-fire"></i></div>
+                                <div class="card-title">最適合「球迷情緒」</div>
+                                <div class="card-text">
+                                    你會看出哪一種最適合球迷情緒，像尼克隊這種主題，
+                                    <strong>藍橘色、街頭感、紐約感</strong>都很容易帶出氣氛。
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 收穫 3 -->
+                        <div class="col-md-4">
+                            <div class="harvest-card" style="border-top-color:var(--knicks-gold);">
+                                <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                                <div class="card-title">最適合「長時間閱讀」</div>
+                                <div class="card-text">
+                                    你會看出哪一種最適合長時間閱讀，因為好看的頁面不一定好讀，
+                                    尤其當內容涉及<strong>年份、球員、獎項與過程</strong>時更明顯。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- 檢查建議：5個角度 -->
+            <!-- ============================================ -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold knicks-blue" style="font-size:1.8rem;">
+                        <i class="fas fa-clipboard-check me-2 knicks-orange"></i>我建議你檢查的點
+                    </h2>
+                    <div class="section-divider"></div>
+                    <p class="mb-3" style="color:#555; font-size:1.05rem;">
+                        你可以回頭用這 <strong class="knicks-orange">5 個角度</strong> 檢查六個版本：
+                    </p>
+                    <ul class="check-list">
+                        <li>
+                            <span class="num">1</span>
+                            <div class="content">
+                                <strong>一眼就懂主題</strong> — 首頁打開 3 秒內，能不能看出這是尼克隊得獎紀錄頁。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="num">2</span>
+                            <div class="content">
+                                <strong>時間線清不清楚</strong> — 如果讀者找某一年或某個獎項要滑很久、找很久，表示資訊架構還能再修。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="num">3</span>
+                            <div class="content">
+                                <strong>風格有沒有壓過內容</strong> — 運動風網頁很容易做得很帥，但如果標題太重、特效太多，資料反而不容易讀。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="num">4</span>
+                            <div class="content">
+                                <strong>是否有敘事感</strong> — 好的 sports storytelling 網頁，不只是列資料，而是讓人有在看一段賽季歷程的感覺。
+                            </div>
+                        </li>
+                        <li>
+                            <span class="num">5</span>
+                            <div class="content">
+                                <strong>是否能延伸成你的模板</strong> — 若其中一種風格最穩定，你未來就能把它變成自己的運動主題頁模板。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- 鼓勵 -->
+            <!-- ============================================ -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="p-4 p-md-5 rounded-4" style="background:linear-gradient(145deg, #f0f4fa, #fafaf8); border:1px solid rgba(0,107,182,0.12);">
+                        <h2 class="fw-bold knicks-blue" style="font-size:1.8rem;">
+                            <i class="fas fa-heart me-2" style="color:var(--knicks-orange);"></i>我會怎麼鼓勵你
+                        </h2>
+                        <div class="section-divider"></div>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-8">
+                                <p style="color:#2d2d2d; line-height:1.9; font-size:1.05rem;">
+                                    以你的學習方向來看，我會很<strong>肯定</strong>你這種做法，
+                                    因為你不是停在「會切版」，而是開始進入
+                                    <span class="fw-bold knicks-blue">「比較風格、挑選敘事方式、累積作品方法」</span>的層次。
+                                </p>
+                                <p style="color:#2d2d2d; line-height:1.9; font-size:1.05rem;">
+                                    這也很適合你之後整理成自己的 AI 學苑或個人網站經驗筆記，
+                                    例如直接寫成：
+                                    <span class="fst-italic" style="color:var(--knicks-blue); background:rgba(0,107,182,0.06); padding:0.1rem 0.8rem; border-radius:30px;">
+                                        「同一主題用六種風格製作，最後我選擇第 X 種，原因是資訊最清楚、閱讀最順、最有運動感。」
+                                    </span>
+                                    這樣你的網站內容會很有真實學習價值。
+                                </p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <div style="font-size:5rem; opacity:0.15; user-select:none;">🏀</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- 下一步做法 -->
+            <!-- ============================================ -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold knicks-blue" style="font-size:1.8rem;">
+                        <i class="fas fa-arrow-right me-2 knicks-orange"></i>下一步做法
+                    </h2>
+                    <div class="section-divider"></div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="step-card" style="border-left:6px solid var(--knicks-blue);">
+                                <p style="font-size:1.1rem; font-weight:700; color:var(--knicks-blue);">
+                                    <i class="fas fa-flag-checkered me-2"></i>先做一件事
+                                </p>
+                                <p style="color:#444; line-height:1.8;">
+                                    從六種裡面選出 <strong>「最適合展示」</strong> 與 <strong>「最適合閱讀」</strong> 各一種。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="step-card" style="border-left:6px solid var(--knicks-orange);">
+                                <p style="font-size:1.1rem; font-weight:700; color:var(--knicks-orange);">
+                                    <i class="fas fa-code-merge me-2"></i>合併進化
+                                </p>
+                                <p style="color:#444; line-height:1.8;">
+                                    如果兩者是不同版本，你就可以再做第七版，把<strong>展示感和可讀性合併</strong>，
+                                    這樣進步會非常快，也更接近成熟作品。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-4 rounded-4 text-center" style="background:var(--knicks-blue); color:#fff;">
+                        <p class="mb-0" style="font-size:1.1rem; letter-spacing:1px;">
+                            <i class="fas fa-star me-2" style="color:var(--knicks-orange);"></i>
+                            你若願意，我可以直接幫你把這六種風格整理成「評比表」
+                            <i class="fas fa-star ms-2" style="color:var(--knicks-orange);"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- 風格評估框架 (評比表) -->
+            <!-- ============================================ -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="fw-bold knicks-blue" style="font-size:1.8rem;">
+                        <i class="fas fa-table me-2 knicks-orange"></i>風格評估框架 — 六維度評比
+                    </h2>
+                    <div class="section-divider"></div>
+                    <p class="text-muted" style="font-size:0.95rem;">
+                        以下六個面向，可用 1–5 分為你的六個版本評分，找出最值得留下的那一版。
+                    </p>
+                    <div class="table-responsive eval-table mt-3">
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th style="width:12%;">#</th>
+                                    <th style="width:18%;">評估維度</th>
+                                    <th style="width:50%;">說明</th>
+                                    <th style="width:20%;" class="text-center">評分 (1–5)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center fw-bold knicks-orange">1</td>
+                                    <td><span class="dimension-icon"><i class="fas fa-palette"></i></span> 配色</td>
+                                    <td>是否有效運用尼克隊藍橘色系，營造球隊識別與運動氛圍</td>
+                                    <td class="text-center"><span class="badge-dim">____</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center fw-bold knicks-orange">2</td>
+                                    <td><span class="dimension-icon"><i class="fas fa-font"></i></span> 排版</td>
+                                    <td>字級層次、行距、留白是否清晰舒適，利於資訊掃讀</td>
+                                    <td class="text-center"><span class="badge-dim">____</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center fw-bold knicks-orange">3</td>
+                                    <td><span class="dimension-icon"><i class="fas fa-timeline"></i></span> 時間線</td>
+                                    <td>得獎歷程的年份與事件順序是否一目瞭然、容易追蹤</td>
+                                    <td class="text-center"><span class="badge-dim">____</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center fw-bold knicks-orange">4</td>
+                                    <td><span class="dimension-icon"><i class="fas fa-bolt"></i></span> 運動感</td>
+                                    <td>視覺風格是否傳達出籃球的動態、熱血與紐約街頭精神</td>
+                                    <td class="text-center"><span class="badge-dim">____</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center fw-bold knicks-orange">5</td>
+                                    <td><span class="dimension-icon"><i class="fas fa-book"></i></span> 可讀性</td>
+                                    <td>長時間閱讀下，內容是否依然舒適、不疲勞，資訊好吸收</td>
+                                    <td class="text-center"><span class="badge-dim">____</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center fw-bold knicks-orange">6</td>
+                                    <td><span class="dimension-icon"><i class="fas fa-gem"></i></span> 收藏價值</td>
+                                    <td>整體設計是否具有獨特性，值得作為個人作品集或模板留存</td>
+                                    <td class="text-center"><span class="badge-dim">____</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-3 text-end text-muted small">
+                        <i class="fas fa-pencil-alt me-1"></i> 將每個版本的六項分數加總，最高分者即為最值得留下的風格。
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 頁尾分隔 ===== -->
+            <hr class="my-5" style="border-color:rgba(0,107,182,0.15);">
+
+            <div class="text-center text-muted small" style="letter-spacing:1px;">
+                <i class="fas fa-basketball me-2 knicks-orange"></i>
+                紐約尼克 · 2026 · 六種風格設計實驗
+                <i class="fas fa-basketball ms-2 knicks-orange"></i>
+            </div>
+
+        </div>
+        <!-- end container -->
+    </main>
+
+    <!-- ===== 頁腳 ===== -->
+    <div id="footer"></div>
+
+    <!-- ============================================================ -->
+    <!--  jQuery 載入各區塊 -->
+    <!-- ============================================================ -->
+<script>
+    $(function () {
+        $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+        // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+        // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+        $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+</script>
+
+</body>
+
+</html>

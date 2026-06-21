@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<!-- 第一支退休生活 AI 動畫：文章式網頁 -->
+<!-- 依照使用者版型保留 nav、footer、header 結構 -->
+
+<head>
+  <title>每日一問｜第一支退休生活 AI 動畫完整範本</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #111827;
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf1 { color: green; font-weight: bold; }
+    .yf11 { color: green; }
+    .yf2 { color: purple; font-weight: bold; }
+    .yf22 { color: purple; }
+    .yf3 { color: #0D6EFD; font-weight: bold; }
+    .yf33 { color: #0D6EFD; }
+    .yf4 { color: red; font-weight: bold; }
+    .yf44 { color: red; }
+    .yf5 { color: rgb(143, 13, 13); font-weight: bold; }
+    .yf55 { color: rgb(143, 13, 13); }
+    .yf-c { text-align: center; }
+
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .hero-note {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #dbeafe;
+      font-size: 1rem;
+      line-height: 1.8;
+      padding: 0 14px;
+    }
+
+    .article-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 10px 48px;
+    }
+
+    .article-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(14, 165, 233, 0.10);
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+
+    .article-card .card-head {
+      background: linear-gradient(135deg, #eff6ff 0%, #ecfeff 100%);
+      border-bottom: 1px solid #dbeafe;
+      padding: 16px 20px;
+    }
+
+    .article-card .card-head h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #0369a1;
+      font-weight: 800;
+    }
+
+    .article-card .card-body2 {
+      padding: 22px 22px 18px;
+      color: #1f2937;
+      line-height: 1.95;
+      font-size: 1rem;
+    }
+
+    .question-box {
+      background: linear-gradient(135deg, #082f49 0%, #0f172a 100%);
+      color: #f8fafc;
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(125, 211, 252, 0.28);
+    }
+
+    .question-tag {
+      display: inline-block;
+      background: #0ea5e9;
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .lead-article {
+      font-size: 1.03rem;
+      line-height: 2;
+      margin-bottom: 0;
+    }
+
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .scene-item {
+      background: #f8fafc;
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      padding: 16px;
+      height: 100%;
+    }
+
+    .scene-time {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .scene-item h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .tool-item {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      height: 100%;
+    }
+
+    .tool-item h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .free-tag {
+      display: inline-block;
+      margin-top: 8px;
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .step-list {
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .step-list li {
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+
+    .script-box {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 16px;
+      padding: 22px;
+      border-left: 6px solid #38bdf8;
+    }
+
+    .script-box h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #7dd3fc;
+      margin-bottom: 10px;
+    }
+
+    .prompt-box {
+      background: #f8fafc;
+      border: 1px dashed #93c5fd;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .prompt-box h4 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #1e40af;
+      margin-bottom: 8px;
+    }
+
+    .end-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdfa 100%);
+      border: 1px solid #bae6fd;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .small-note {
+      color: #6b7280;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 768px) {
+      .article-card .card-body2 { padding: 18px 16px 14px; }
+      .article-card .card-head { padding: 14px 16px; }
+      .question-box { padding: 18px; }
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark">
+  <div id="nav1"></div>
+
+  <header class="text-center p1" style="margin-top: 75px; padding: 18px 0 10px;">
+    <h1 class="text-info yf-font1">第一支退休生活 AI 動畫完整範本</h1>
+    <p class="hero-note">把想法變成第一支 30 秒短片，從腳本、分鏡、提示詞到工具流程，一次整理成可直接開做的文章式內容。</p>
+  </header>
+
+  <div class="container-fluid yf-font1" style="margin-top:10px;background-color:white">
+    <div class="article-shell">
+  <div id="page1" class="m-0"></div>
+      <section class="question-box">
+        <div class="question-tag"><i class="bi bi-question-circle-fill me-1"></i>今天的每日一問</div>
+        <p class="lead-article mb-0">想學 AI 動畫或影片製作，但很多網站需要訂閱，加上不容易踏出入門第一步。那麼，能不能先做一支以退休生活為背景、簡單又能完成的 30 秒 AI 動畫？答案是可以，而且最適合的方式不是一開始追求大作品，而是先做出一支有畫面、有字幕、有旁白的短片。</p>
+      </section>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-pen-nib me-2"></i>文章開場</h2></div>
+        <div class="card-body2">
+          <p>很多人卡在 AI 動畫的起點，不是因為不夠努力，而是同時面對太多工具、太多網站、太多功能，反而不知道第一步該做什麼。尤其當看到許多平台採用訂閱制時，更容易產生一種距離感，覺得「等我更懂一點再開始」。</p>
+          <p>其實最好的方法恰恰相反。不是等到全部搞懂才開始，而是先完成一支最簡單的作品。對退休生活來說，題材並不難找，因為每天的閱讀、學習 AI、改網站、散步、記錄生活，本身就很適合拍成一支安靜而真實的短片。</p>
+          <p>因此，第一支作品不必追求很炫的動畫效果，只要做到三件事：有主題、有畫面、有一句想留下來的話。當你完成第一支影片之後，第二支就不再是跨不出去的門檻，而是一種自然延伸的創作練習。</p>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-film me-2"></i>30 秒影片定位</h2></div>
+        <div class="card-body2">
+          <p>第一支退休生活 AI 動畫，建議設定為 30 秒、4 個鏡頭、9:16 直式影片。這樣的規格最適合手機觀看，也方便用 Canva、CapCut 或圖片轉影片工具完成。</p>
+          <p>影片主題可以命名為：<span class="yf3">退休後，我開始學 AI</span>。整體風格走溫暖、安靜、真實、有一點希望感，不需要戲劇化，而是像日記一樣，讓觀眾感受到「退休不是停下來，而是換一種方式繼續前進」。</p>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-clapperboard me-2"></i>影片結構與分鏡</h2></div>
+        <div class="card-body2">
+          <p>把短片拆成四個小鏡頭，是最容易執行的做法。每個鏡頭只負責一個意思，畫面就會穩，剪輯也會簡單。</p>
+          <div class="scene-grid">
+            <div class="scene-item">
+              <div class="scene-time">鏡頭一｜0–6 秒</div>
+              <h3>晨光書桌</h3>
+              <p>畫面放在茶杯、書本、筆記本與窗邊微光，旁白是「退休之後，我沒有停下來。」這是一個安靜的開場。</p>
+            </div>
+            <div class="scene-item">
+              <div class="scene-time">鏡頭二｜6–14 秒</div>
+              <h3>打開筆電學 AI</h3>
+              <p>畫面出現電腦、AI 網站、學習筆記，旁白是「每天早晨，我學一點新的 AI 工具。」</p>
+            </div>
+            <div class="scene-item">
+              <div class="scene-time">鏡頭三｜14–22 秒</div>
+              <h3>散步與思考</h3>
+              <p>人物在社區步道慢慢走，手上拿著手機或小筆記，旁白是「不急著學會全部，只想比昨天更懂一點。」</p>
+            </div>
+            <div class="scene-item">
+              <div class="scene-time">鏡頭四｜22–30 秒</div>
+              <h3>回到書桌收尾</h3>
+              <p>畫面回到桌前，螢幕旁貼著一句提醒，旁白是「退休，不是結束，而是我重新開始的方式。」</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-microphone-alt me-2"></i>完整旁白稿</h2></div>
+        <div class="card-body2">
+          <div class="script-box">
+            <h3>可直接使用的 30 秒旁白</h3>
+            <p class="mb-0">「退休之後，我沒有停下來。每天早晨，我泡一杯茶，打開書本，也打開電腦，學一點新的 AI 工具。不急著學會全部，只希望今天的自己，比昨天再多懂一點。退休，不是結束，而是我重新開始的方式。」</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-image me-2"></i>每一幕的 AI 圖片提示詞</h2></div>
+        <div class="card-body2">
+          <div class="prompt-box">
+            <h4>鏡頭一：晨光書桌</h4>
+            <p class="mb-0">退休女性的清晨書桌，桌上有茶杯、一本打開的書、筆記本與筆，窗外晨光灑進室內，安靜溫暖的居家空間，畫面乾淨有生活感，中景，柔和自然光，溫暖紀錄片風格，直式 9:16。</p>
+          </div>
+          <div class="prompt-box">
+            <h4>鏡頭二：打開筆電學 AI</h4>
+            <p class="mb-0">退休女性坐在書桌前操作筆電，螢幕顯示 AI 學習網站與筆記畫面，桌面整齊，有閱讀與學習的氛圍，人物專注平靜，室內暖色光，中近景，真實生活感，直式 9:16。</p>
+          </div>
+          <div class="prompt-box">
+            <h4>鏡頭三：散步與思考</h4>
+            <p class="mb-0">退休女性在社區步道慢慢散步，手裡拿著手機像是在記錄想法，早晨陽光柔和，綠意環境，輕鬆自在，側面跟拍感，自然紀錄風格，直式 9:16。</p>
+          </div>
+          <div class="prompt-box">
+            <h4>鏡頭四：回到書桌收尾</h4>
+            <p class="mb-0">退休女性回到書桌前，看著電腦微笑，螢幕旁有便條紙寫著今天又前進一步，房間安靜整潔，帶有學習完成後的小成就感，特寫到中景，溫暖收尾畫面，直式 9:16。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-magic me-2"></i>讓圖片動起來的動作提示</h2></div>
+        <div class="card-body2">
+          <p>若你使用圖片轉影片工具，可以在每一幕加入簡單動作，避免畫面完全靜止。原則是每個鏡頭只放一個主要動作，畫面會比較穩定。</p>
+          <ul class="step-list">
+            <li>鏡頭一：晨光微微變化，窗簾輕輕晃動，鏡頭慢慢推近書桌。</li>
+            <li>鏡頭二：手部輕微操作電腦，螢幕光感變化，鏡頭穩定微推進。</li>
+            <li>鏡頭三：人物慢步前進，樹葉與光影微動，鏡頭輕柔跟拍。</li>
+            <li>鏡頭四：人物露出淡淡微笑，字幕慢慢浮現，鏡頭停住收尾。</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-toolbox me-2"></i>建議工具組合</h2></div>
+        <div class="card-body2">
+          <div class="tool-grid">
+            <div class="tool-item">
+              <h3>ChatGPT / Deepseek</h3>
+              <p>用來生成旁白、分鏡與提示詞。先把一句想法整理成可執行腳本。</p>
+              <span class="free-tag">免費可用</span>
+            </div>
+            <div class="tool-item">
+              <h3>Canva</h3>
+              <p>最適合做第一支作品。可放圖片、上字幕、套動畫、輸出影片。</p>
+              <span class="free-tag">免費方案</span>
+            </div>
+            <div class="tool-item">
+              <h3>CapCut / 剪映</h3>
+              <p>用來加字幕、轉場、背景音樂與最後輸出，是新手最容易上手的剪輯工具。</p>
+              <span class="free-tag">免費方案</span>
+            </div>
+            <div class="tool-item">
+              <h3>Adobe Express</h3>
+              <p>若想讓角色說話或做簡單口型同步，這是直覺好上手的選擇。</p>
+              <span class="free-tag">免費方案</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-list-ol me-2"></i>最實際的製作流程</h2></div>
+        <div class="card-body2">
+          <ol class="step-list">
+            <li>先把四個鏡頭內容與旁白存成筆記，確認影片主題不跑掉。</li>
+            <li>用 Canva 或 AI 生圖工具，先做出四張對應場景圖片。</li>
+            <li>每張圖片放進 Canva 或 CapCut，設定每段約 6 到 8 秒。</li>
+            <li>加入自己的錄音旁白，或使用文字轉語音功能。</li>
+            <li>加字幕、音樂與淡入淡出，最後輸出成 MP4。</li>
+          </ol>
+          <p class="small-note mt-3 mb-0">提醒：第一支作品不必追求完美，只要完成即可。先做出一支能播放的短片，比一直研究工具更重要。</p>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-highlighter me-2"></i>可直接複製的總提示詞</h2></div>
+        <div class="card-body2">
+          <div class="end-box">
+            <p class="mb-0">你是一位擅長短影音創作的動畫導演，請以「退休後學習 AI 的日常」為背景，設計一支 30 秒直式短片。請輸出 4 個分鏡，每個分鏡都包含：畫面內容、角色動作、鏡頭語言、字幕文字、旁白內容、圖片生成提示詞。整體風格溫暖、真實、安靜，適合 55 歲退休教師的學習紀錄，內容要簡單易做，讓新手可以直接用 Canva 或 CapCut 完成。</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="card-head"><h2><i class="fas fa-seedling me-2"></i>結語：先做一支屬於自己的短片</h2></div>
+        <div class="card-body2">
+          <p>如果把 AI 動畫看成一座很大的山，第一支作品不是攻頂，而是先踏上山路。你的退休生活本來就有故事、有節奏、有溫度，只要把這些日常轉成畫面與文字，就能慢慢做出屬於自己的創作風格。</p>
+          <p class="mb-0">所以，今天最值得做的一件事，不是再比較更多工具，而是先寫下第一支影片的四個畫面。當第一支影片完成，你就已經不是站在門外的人，而是正式開始創作的人。</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    $(function () {
+      $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+      $("#page1").load("./E01-ex-comm/EX02-page-D002.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+</body>
+</html>

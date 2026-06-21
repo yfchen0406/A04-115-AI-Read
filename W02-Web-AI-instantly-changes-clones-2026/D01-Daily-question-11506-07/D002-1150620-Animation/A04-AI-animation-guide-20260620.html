@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 每日一問：AI動畫視頻入門指南 -->
+<!-- 退休生活 x AI學習 網頁 -->
+
+<head>
+  <title>每日一問 | 如何製作30秒退休生活AI動畫？</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* === 基礎設定 === */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+      margin: 0;
+    }
+
+    /* === 顏色變數 === */
+    :root {
+      --primary: #00b4d8;
+      --secondary: #0077b6;
+      --accent: #90e0ef;
+      --gold: #ffd166;
+      --green: #06d6a0;
+      --surface: #16213e;
+      --surface2: #0f3460;
+      --text: #e0e0e0;
+      --text-muted: #a0a0b0;
+    }
+
+    /* === NAV 模擬（因本機載入） === */
+    .nav-placeholder {
+      background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 16px rgba(0, 180, 216, 0.15);
+    }
+
+    .nav-brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-brand i {
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+
+    .nav-badge {
+      background: var(--surface2);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* === HEADER === */
+    .page-header {
+      background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 60%, #0d1b2a 100%);
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 180, 216, 0.12) 0%, transparent 70%);
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 209, 102, 0.10) 0%, transparent 70%);
+    }
+
+    .date-tag {
+      display: inline-block;
+      background: rgba(0, 180, 216, 0.15);
+      border: 1px solid rgba(0, 180, 216, 0.4);
+      color: var(--accent);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .page-header h1 span {
+      color: var(--primary);
+    }
+
+    .page-header .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* === 主內容 === */
+    .main-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 36px 16px 60px;
+    }
+
+    /* 每日一問卡片 */
+    .daily-question-card {
+      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .daily-question-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 16px;
+      font-size: 6rem;
+      color: rgba(0, 180, 216, 0.10);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .question-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .daily-question-card p {
+      font-size: 1.05rem;
+      color: #f0f0f0;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* 章節標題 */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+    }
+
+    .section-title i {
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    /* 文章段落 */
+    .article-section {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .article-section p {
+      color: var(--text);
+      line-height: 1.85;
+      font-size: 0.97rem;
+      margin-bottom: 12px;
+    }
+
+    .article-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 30秒結構卡 */
+    .structure-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .structure-card {
+      background: var(--surface);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .structure-card .time-badge {
+      background: rgba(0, 180, 216, 0.15);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      display: inline-block;
+      letter-spacing: 0.04em;
+    }
+
+    .structure-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .structure-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* 工具卡片 */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 18px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .tool-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .tool-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(0, 180, 216, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .tool-card h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .tool-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .tool-free-badge {
+      display: inline-block;
+      background: rgba(6, 214, 160, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(6, 214, 160, 0.3);
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+
+    /* 流程步驟 */
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .steps-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .steps-list li:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      min-width: 32px;
+      height: 32px;
+      background: var(--surface2);
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .step-body h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* 主題建議 */
+    .topic-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .topic-chip {
+      background: var(--surface2);
+      border: 1px solid rgba(0, 180, 216, 0.25);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+
+    .topic-chip i {
+      margin-right: 5px;
+      color: var(--gold);
+    }
+
+    /* 示範腳本 */
+    .script-box {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2042 100%);
+      border: 1px solid rgba(0, 180, 216, 0.35);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 22px;
+      margin-bottom: 24px;
+    }
+
+    .script-box .script-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .script-box .script-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .script-meta span {
+      font-size: 0.8rem;
+      background: rgba(0, 180, 216, 0.1);
+      color: var(--text-muted);
+      padding: 3px 10px;
+      border-radius: 10px;
+    }
+
+    .script-meta span strong {
+      color: var(--accent);
+    }
+
+    .script-text {
+      font-size: 1rem;
+      color: #f0f0f0;
+      line-height: 2;
+      font-style: italic;
+      border-top: 1px solid rgba(0, 180, 216, 0.15);
+      padding-top: 14px;
+    }
+
+    /* 下一步行動提示 */
+    .action-cta {
+      background: linear-gradient(135deg, rgba(0, 119, 182, 0.3) 0%, rgba(0, 180, 216, 0.15) 100%);
+      border: 1px solid rgba(0, 180, 216, 0.4);
+      border-radius: 14px;
+      padding: 24px 26px;
+      text-align: center;
+    }
+
+    .action-cta h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .action-cta p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .action-btn:hover {
+      background: var(--secondary);
+      color: #fff;
+    }
+
+    /* === FOOTER 模擬 === */
+    .footer-placeholder {
+      background: #0f1923;
+      border-top: 1px solid rgba(0, 180, 216, 0.2);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .footer-placeholder p {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* 響應式 */
+    @media (max-width: 600px) {
+
+      .structure-grid,
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header {
+        padding: 40px 16px 30px;
+      }
+
+      .main-wrap {
+        padding: 24px 12px 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav1"></div>
+  <!-- ====== NAV ====== -->
+  <!-- 本頁使用模擬nav；實際部署時請替換為 jQuery load -->
+  <!-- <div id="nav1">
+    <nav class="nav-placeholder">
+      <a class="nav-brand" href="#">
+        <i class="fas fa-robot"></i>
+        AI學苑 · 退休學習紀錄
+      </a>
+      <span class="nav-badge"><i class="bi bi-camera-video me-1"></i>每日一問 AI動畫</span>
+    </nav>
+  </div> -->
+
+  <!-- ====== HEADER ====== -->
+  <header class="page-header">
+    <div class="date-tag"><i class="bi bi-calendar3 me-1"></i>2026年6月20日 · 每日一AI</div>
+    <h1>如何製作<span>30秒</span>退休生活AI動畫？</h1>
+    <p class="subtitle">從入門第一步開始，不需訂閱費、不需學複雜軟體，你的退休故事就是最好的素材</p>
+  </header>
+
+  <!-- ====== 主內容 ====== -->
+  <main class="main-wrap">
+    <div id="page1" class="m-0"></div>
+    <!-- 每日一問 -->
+    <div class="daily-question-card">
+      <div class="question-label"><i class="bi bi-question-circle-fill"></i> 今日提問</div>
+      <p>從 AI 開始就很想學習動畫或影片視頻，但很多 AI 網站都需要訂閱制，加上自己無法踏進入門的第一步。如何製作簡單的 30 秒動畫或視頻，以退休生活為背景？提供相關製作方法、工具和流程，讓 AI 動畫視頻可以往前一步。
+      </p>
+    </div>
+
+    <!-- 一、核心思路 -->
+    <div class="article-section">
+      <div class="section-title"><i class="fas fa-lightbulb"></i>核心思路：先完成一支，再求完美</div>
+      <p>許多人在學 AI 動畫的路上卡住，不是因為工具太難，而是目標設得太高——一開始就想做複雜的長片或精緻動畫。最有效的入門策略只有一件事：先做出第一支 30 秒的「可播放作品」。</p>
+      <p>所謂「可播放作品」不需要很精緻，只需要：<strong>有畫面、有聲音（或字幕）、能播放就算成功</strong>。這一支作品的意義不在於完美，而在於你走完了整個流程，下一支就會快十倍。</p>
+      <p>你的退休生活本身就是最好的題材——每天的讀書、學習 AI、走路散步、幫兒子想職場建議，這些真實故事比任何虛構劇情都有溫度，也是 AI 動畫最容易表現的素材類型。</p>
+    </div>
+
+    <!-- 二、30秒影片結構 -->
+    <div class="section-title mt-4"><i class="fas fa-film"></i>30 秒影片基本結構</div>
+    <div class="structure-grid">
+      <div class="structure-card">
+        <span class="time-badge">⏱ 0–5秒</span>
+        <h4>開場：生活場景</h4>
+        <p>一個畫面定格你的日常：書桌、茶杯、一本書、或電腦螢幕。簡單靜態畫面就夠了。</p>
+      </div>
+      <div class="structure-card">
+        <span class="time-badge">⏱ 5–20秒</span>
+        <h4>中段：小事件或轉折</h4>
+        <p>加入一個你最近學到的事、一個想法，或一個生活中的觀察。例如：今天學了什麼 AI 工具。</p>
+      </div>
+      <div class="structure-card">
+        <span class="time-badge">⏱ 20–30秒</span>
+        <h4>結尾：一句感想</h4>
+        <p>用一句話收尾。例如：「退休不是停下來，是換一種方式繼續學習。」這句話就是整支片的靈魂。</p>
+      </div>
+    </div>
+
+    <!-- 三、推薦工具 -->
+    <div class="article-section">
+      <div class="section-title"><i class="fas fa-tools"></i>推薦免費工具（照難度排序）</div>
+      <p>以下工具都有免費方案，適合入門使用。建議從最容易的 Canva 開始，做完第一支再考慮進階工具。</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-icon"><i class="fas fa-paint-brush"></i></div>
+        <h4>Canva</h4>
+        <p>最簡單的入門選擇。有大量動態模板，直接填入文字與圖片就能輸出影片。不需要任何技術基礎。</p>
+        <span class="tool-free-badge">✓ 免費方案</span>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="fas fa-cut"></i></div>
+        <h4>CapCut / 剪映</h4>
+        <p>剪輯、加字幕、加音樂、加轉場最方便的工具。可搭配任何素材使用，電腦版操作直覺。</p>
+        <span class="tool-free-badge">✓ 免費方案</span>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="fas fa-magic"></i></div>
+        <h4>Adobe Express</h4>
+        <p>用音訊就能讓角色「說話」並同步嘴型，特別適合做有旁白的人物動畫，操作非常直覺。</p>
+        <span class="tool-free-badge">✓ 免費方案</span>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="fas fa-video"></i></div>
+        <h4>FlexClip</h4>
+        <p>有豐富動畫模板與 AI 旁白功能，適合圖文影片風格，幾分鐘就能做出完整 30 秒短片。</p>
+        <span class="tool-free-badge">✓ 免費方案</span>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="fas fa-robot"></i></div>
+        <h4>即夢（Jianying）</h4>
+        <p>圖片轉動畫的利器，畫面感強。可用 ChatGPT 生成腳本與圖片描述，再用即夢轉成動態影片。</p>
+        <span class="tool-free-badge">✓ 有免費額度</span>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon"><i class="fas fa-microphone"></i></div>
+        <h4>Deepseek + Clipchamp</h4>
+        <p>Deepseek 免費生成文案腳本，Clipchamp 做文字轉語音，適合火柴人風格的趣味動畫短片。</p>
+        <span class="tool-free-badge">✓ 完全免費</span>
+      </div>
+    </div>
+
+    <!-- 四、製作流程 -->
+    <div class="article-section">
+      <div class="section-title"><i class="fas fa-list-ol"></i>新手製作流程（5步驟）</div>
+      <ul class="steps-list">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h5>寫 30 秒腳本（3句話）</h5>
+            <p>用 ChatGPT 或 Deepseek 輸入「幫我寫一段30秒退休生活短片旁白，分成開場、中段、結尾三部分」，直接取用或微調就好。</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h5>準備每段畫面（圖片或模板）</h5>
+            <p>用 Canva 選一個動態模板，或用 AI 圖片生成工具（如 Bing Image Creator 免費）生成每段場景的圖片素材。</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h5>讓圖片動起來</h5>
+            <p>在 Canva 裡套用「動畫效果」，或把圖片上傳到即夢轉換成動態影片片段。每段 5–10 秒就夠了。</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h5>加上配音或字幕</h5>
+            <p>用 Adobe Express 錄自己的聲音並同步角色嘴型，或直接在 CapCut 加上字幕卡片，不需要真人出鏡。</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h5>剪輯、加音樂、輸出</h5>
+            <p>用 CapCut 把所有片段合在一起，加上背景音樂（CapCut 有免費音樂庫），最後輸出為 MP4，第一支完成！</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 五、退休生活主題 -->
+    <div class="article-section">
+      <div class="section-title"><i class="fas fa-seedling"></i>你的退休生活主題靈感</div>
+      <p>最容易開始的方式：從你今天真實發生的事取材。以下是幾個直接可用的主題：</p>
+      <div class="topic-chips">
+        <span class="topic-chip"><i class="fas fa-mug-hot"></i>退休早晨的泡茶與閱讀</span>
+        <span class="topic-chip"><i class="fas fa-laptop"></i>今天學到的 AI 工具心得</span>
+        <span class="topic-chip"><i class="fas fa-walking"></i>每日 2000 步的健走紀錄</span>
+        <span class="topic-chip"><i class="fas fa-code"></i>更新網站的一個小改變</span>
+        <span class="topic-chip"><i class="fas fa-dumbbell"></i>給健身教練兒子的職場建議</span>
+        <span class="topic-chip"><i class="fas fa-book-open"></i>今天讀的書給我一個想法</span>
+      </div>
+      <p style="margin-top: 14px;">這些主題的特點是「素材就在身邊」——不用編故事，只要紀錄就好。AI 動畫最大的優勢，就是讓日常的文字和圖片，有了聲音和動感。</p>
+    </div>
+
+    <!-- 六、示範腳本 -->
+    <div class="section-title mt-2"><i class="fas fa-scroll"></i>第一支影片示範腳本</div>
+    <div class="script-box">
+      <div class="script-label"><i class="bi bi-play-circle me-1"></i>範例腳本 — 可直接使用或修改</div>
+      <div class="script-meta">
+        <span><strong>主題：</strong>退休後的AI學習日常</span>
+        <span><strong>長度：</strong>30秒</span>
+        <span><strong>風格：</strong>圖文動畫 + 字幕</span>
+      </div>
+      <div class="script-text">
+        「退休之後，我開始了一段新的學習。<br>
+        每天，翻開一本書、打開電腦、試用一個新的 AI 工具。<br>
+        不急著完成全部，只想比昨天更懂一點點。<br>
+        今天，我替自己的學習，又往前走了一步。」
+      </div>
+    </div>
+
+    <!-- 七、行動提示 -->
+    <div class="action-cta">
+      <h4><i class="fas fa-rocket me-2" style="color:var(--gold)"></i>下一步：只寫這三句話</h4>
+      <p>現在，不需要打開任何工具。只要打開手機備忘錄，寫下你今天的「開場一句、中段一句、結尾一句」，那就是你第一支影片的雛形，剩下的交給工具來做。</p>
+      <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer" class="action-btn">
+        <i class="fas fa-external-link-alt"></i>開始用 Canva 製作
+      </a>
+    </div>
+    <br>
+  </main>
+  <div id="footer"></div>
+
+  <script>
+    $(function () {
+      $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+      $("#page1").load("./E01-ex-comm/EX02-page-D002.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+  <!-- ====== FOOTER ====== -->
+  <!-- <div id="footer">
+    <footer class="footer-placeholder">
+      <div class="footer-links">
+        <a href="https://yfchen-115.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="bi bi-house me-1"></i>退休學習網站</a>
+        <a href="https://a04-115-ai-read.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="bi bi-book me-1"></i>AI閱讀紀錄</a>
+        <a href="#n0"><i class="bi bi-arrow-up-circle me-1"></i>回到頁首</a>
+      </div>
+      <p>© 2026 退休教師的 AI 學習紀錄 · 每日一AI · 每日閱讀 · 每日網頁</p>
+    </footer>
+  </div> -->
+
+  <!-- 實際部署時啟用 jQuery load -->
+  <!--
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $("#nav1").load("/B02A-2026-Book-read/F01-ex-comm/FX02-nav-2026.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+  -->
+
+</body>
+
+</html>
