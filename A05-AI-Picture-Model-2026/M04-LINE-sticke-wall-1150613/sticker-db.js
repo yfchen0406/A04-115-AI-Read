@@ -4,6 +4,1130 @@
 // ========================================
 const stickerPacks = [
   {
+    id: 92,
+    name: "個人Q版",
+    description: "世界盃足球賽~第四版~I-L組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A04-3-1",
+        img: "./images/GPT0014-A04-3/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A04-3-2",
+        img: "./images/GPT0014-A04-3/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A04-3-3",
+        img: "./images/GPT0014-A04-3/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A04-3-4",
+        img: "./images/GPT0014-A04-3/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A04-3-5",
+        img: "./images/GPT0014-A04-3/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A04-3-6",
+        img: "./images/GPT0014-A04-3/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A04-3-7",
+        img: "./images/GPT0014-A04-3/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A04-3-8",
+        img: "./images/GPT0014-A04-3/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A04-3-9",
+        img: "./images/GPT0014-A04-3/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A04-3-A",
+        img: "./images/GPT0014-A04-3/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A04-3-B",
+        img: "./images/GPT0014-A04-3/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A04-3-C",
+        img: "./images/GPT0014-A04-3/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A04-3-D",
+        img: "./images/GPT0014-A04-3/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A04-3-E",
+        img: "./images/GPT0014-A04-3/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A04-3-F",
+        img: "./images/GPT0014-A04-3/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A04-3-G",
+        img: "./images/GPT0014-A04-3/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 91,
+    name: "個人Q版",
+    description: "世界盃足球賽~第四版~E-HD組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A04-2-1",
+        img: "./images/GPT0014-A04-2/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A04-2-2",
+        img: "./images/GPT0014-A04-2/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A04-2-3",
+        img: "./images/GPT0014-A04-2/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A04-2-4",
+        img: "./images/GPT0014-A04-2/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A04-2-5",
+        img: "./images/GPT0014-A04-2/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A04-2-6",
+        img: "./images/GPT0014-A04-2/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A04-2-7",
+        img: "./images/GPT0014-A04-2/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A04-2-8",
+        img: "./images/GPT0014-A04-2/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A04-2-9",
+        img: "./images/GPT0014-A04-2/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A04-2-A",
+        img: "./images/GPT0014-A04-2/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A04-2-B",
+        img: "./images/GPT0014-A04-2/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A04-2-C",
+        img: "./images/GPT0014-A04-2/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A04-2-D",
+        img: "./images/GPT0014-A04-2/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A04-2-E",
+        img: "./images/GPT0014-A04-2/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A04-2-F",
+        img: "./images/GPT0014-A04-2/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A04-2-G",
+        img: "./images/GPT0014-A04-2/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 90,
+    name: "個人Q版",
+    description: "世界盃足球賽~第四版~A-D組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A04-1-1",
+        img: "./images/GPT0014-A04-1/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A04-1-2",
+        img: "./images/GPT0014-A04-1/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A04-1-3",
+        img: "./images/GPT0014-A04-1/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A04-1-4",
+        img: "./images/GPT0014-A04-1/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A04-1-5",
+        img: "./images/GPT0014-A04-1/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A04-1-6",
+        img: "./images/GPT0014-A04-1/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A04-1-7",
+        img: "./images/GPT0014-A04-1/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A04-1-8",
+        img: "./images/GPT0014-A04-1/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A04-1-9",
+        img: "./images/GPT0014-A04-1/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A04-1-A",
+        img: "./images/GPT0014-A04-1/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A04-1-B",
+        img: "./images/GPT0014-A04-1/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A04-1-C",
+        img: "./images/GPT0014-A04-1/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A04-1-D",
+        img: "./images/GPT0014-A04-1/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A04-1-E",
+        img: "./images/GPT0014-A04-1/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A04-1-F",
+        img: "./images/GPT0014-A04-1/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A04-1-G",
+        img: "./images/GPT0014-A04-1/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 89,
+    name: "個人Q版",
+    description: "世界盃足球賽~第三版有足球~I-L組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A03-3-1",
+        img: "./images/GPT0014-A03-3/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A03-3-2",
+        img: "./images/GPT0014-A03-3/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A03-3-3",
+        img: "./images/GPT0014-A03-3/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A03-3-4",
+        img: "./images/GPT0014-A03-3/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A03-3-5",
+        img: "./images/GPT0014-A03-3/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A03-3-6",
+        img: "./images/GPT0014-A03-3/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A03-3-7",
+        img: "./images/GPT0014-A03-3/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A03-3-8",
+        img: "./images/GPT0014-A03-3/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A03-3-9",
+        img: "./images/GPT0014-A03-3/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A03-3-A",
+        img: "./images/GPT0014-A03-3/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A03-3-B",
+        img: "./images/GPT0014-A03-3/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A03-3-C",
+        img: "./images/GPT0014-A03-3/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A03-3-D",
+        img: "./images/GPT0014-A03-3/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A03-3-E",
+        img: "./images/GPT0014-A03-3/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A03-3-F",
+        img: "./images/GPT0014-A03-3/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A03-3-G",
+        img: "./images/GPT0014-A03-3/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 88,
+    name: "個人Q版",
+    description: "世界盃足球賽~第三版有足球~E-H組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A03-2-1",
+        img: "./images/GPT0014-A03-2/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A03-2-2",
+        img: "./images/GPT0014-A03-2/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A03-2-3",
+        img: "./images/GPT0014-A03-2/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A03-2-4",
+        img: "./images/GPT0014-A03-2/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A03-2-5",
+        img: "./images/GPT0014-A03-2/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A03-2-6",
+        img: "./images/GPT0014-A03-2/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A03-2-7",
+        img: "./images/GPT0014-A03-2/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A03-2-8",
+        img: "./images/GPT0014-A03-2/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A03-2-9",
+        img: "./images/GPT0014-A03-2/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A03-2-A",
+        img: "./images/GPT0014-A03-2/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A03-2-B",
+        img: "./images/GPT0014-A03-2/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A03-2-C",
+        img: "./images/GPT0014-A03-2/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A03-2-D",
+        img: "./images/GPT0014-A03-2/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A03-2-E",
+        img: "./images/GPT0014-A03-2/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A03-2-F",
+        img: "./images/GPT0014-A03-2/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A03-2-G",
+        img: "./images/GPT0014-A03-2/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 87,
+    name: "個人Q版",
+    description: "世界盃足球賽~第三版有足球~A-D組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A03-1-1",
+        img: "./images/GPT0014-A03-1/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A03-1-2",
+        img: "./images/GPT0014-A03-1/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A03-1-3",
+        img: "./images/GPT0014-A03-1/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A03-1-4",
+        img: "./images/GPT0014-A03-1/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A03-1-5",
+        img: "./images/GPT0014-A03-1/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A03-1-6",
+        img: "./images/GPT0014-A03-1/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A03-1-7",
+        img: "./images/GPT0014-A03-1/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A03-1-8",
+        img: "./images/GPT0014-A03-1/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A03-1-9",
+        img: "./images/GPT0014-A03-1/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A03-1-A",
+        img: "./images/GPT0014-A03-1/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A03-1-B",
+        img: "./images/GPT0014-A03-1/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A03-1-C",
+        img: "./images/GPT0014-A03-1/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A03-1-D",
+        img: "./images/GPT0014-A03-1/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A03-1-E",
+        img: "./images/GPT0014-A03-1/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A03-1-F",
+        img: "./images/GPT0014-A03-1/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A03-1-G",
+        img: "./images/GPT0014-A03-1/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 86,
+    name: "個人Q版",
+    description: "世界盃足球賽~第二版無背景~I-組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A02-3-1",
+        img: "./images/GPT0014-A02-3/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A02-3-2",
+        img: "./images/GPT0014-A02-3/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A02-3-3",
+        img: "./images/GPT0014-A02-3/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A02-3-4",
+        img: "./images/GPT0014-A02-3/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A02-3-5",
+        img: "./images/GPT0014-A02-3/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A02-3-6",
+        img: "./images/GPT0014-A02-3/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A02-3-7",
+        img: "./images/GPT0014-A02-3/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A02-3-8",
+        img: "./images/GPT0014-A02-3/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A02-3-9",
+        img: "./images/GPT0014-A02-3/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A02-3-A",
+        img: "./images/GPT0014-A02-3/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A02-3-B",
+        img: "./images/GPT0014-A02-3/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A02-3-C",
+        img: "./images/GPT0014-A02-3/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A02-3-D",
+        img: "./images/GPT0014-A02-3/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A02-3-E",
+        img: "./images/GPT0014-A02-3/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A02-3-F",
+        img: "./images/GPT0014-A02-3/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A02-3-G",
+        img: "./images/GPT0014-A02-3/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 85,
+    name: "個人Q版",
+    description: "世界盃足球賽~第二版無背景~E-H組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A02-2-1",
+        img: "./images/GPT0014-A02-2/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A02-2-2",
+        img: "./images/GPT0014-A02-2/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A02-2-3",
+        img: "./images/GPT0014-A02-2/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A02-2-4",
+        img: "./images/GPT0014-A02-2/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A02-2-5",
+        img: "./images/GPT0014-A02-2/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A02-2-6",
+        img: "./images/GPT0014-A02-2/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A02-2-7",
+        img: "./images/GPT0014-A02-2/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A02-2-8",
+        img: "./images/GPT0014-A02-2/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A02-2-9",
+        img: "./images/GPT0014-A02-2/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A02-2-A",
+        img: "./images/GPT0014-A02-2/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A02-2-B",
+        img: "./images/GPT0014-A02-2/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A02-2-C",
+        img: "./images/GPT0014-A02-2/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A02-2-D",
+        img: "./images/GPT0014-A02-2/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A02-2-E",
+        img: "./images/GPT0014-A02-2/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A02-2-F",
+        img: "./images/GPT0014-A02-2/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A02-2-G",
+        img: "./images/GPT0014-A02-2/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 84,
+    name: "個人Q版",
+    description: "世界盃足球賽~第二版無背景~A-D組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A02-1-1",
+        img: "./images/GPT0014-A02-1/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A02-1-2",
+        img: "./images/GPT0014-A02-1/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A02-1-3",
+        img: "./images/GPT0014-A02-1/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A02-1-4",
+        img: "./images/GPT0014-A02-1/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A02-1-5",
+        img: "./images/GPT0014-A02-1/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A02-1-6",
+        img: "./images/GPT0014-A02-1/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A02-1-7",
+        img: "./images/GPT0014-A02-1/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A02-1-8",
+        img: "./images/GPT0014-A02-1/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A02-1-9",
+        img: "./images/GPT0014-A02-1/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A02-1-A",
+        img: "./images/GPT0014-A02-1/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A02-1-B",
+        img: "./images/GPT0014-A02-1/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A02-1-C",
+        img: "./images/GPT0014-A02-1/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A02-1-D",
+        img: "./images/GPT0014-A02-1/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A02-1-E",
+        img: "./images/GPT0014-A02-1/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A02-1-F",
+        img: "./images/GPT0014-A02-1/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A02-1-G",
+        img: "./images/GPT0014-A02-1/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 83,
+    name: "個人Q版",
+    description: "世界盃足球賽~第一版有背景~I-L組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A01-3-1",
+        img: "./images/GPT0014-A01-3/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A01-3-2",
+        img: "./images/GPT0014-A01-3/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A01-3-3",
+        img: "./images/GPT0014-A01-3/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A01-3-4",
+        img: "./images/GPT0014-A01-3/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A01-3-5",
+        img: "./images/GPT0014-A01-3/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A01-3-6",
+        img: "./images/GPT0014-A01-3/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A01-3-7",
+        img: "./images/GPT0014-A01-3/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A01-3-8",
+        img: "./images/GPT0014-A01-3/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A01-3-9",
+        img: "./images/GPT0014-A01-3/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A01-3-A",
+        img: "./images/GPT0014-A01-3/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A01-3-B",
+        img: "./images/GPT0014-A01-3/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A01-3-C",
+        img: "./images/GPT0014-A01-3/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A01-3-D",
+        img: "./images/GPT0014-A01-3/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A01-3-E",
+        img: "./images/GPT0014-A01-3/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A01-3-F",
+        img: "./images/GPT0014-A01-3/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A01-3-G",
+        img: "./images/GPT0014-A01-3/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 82,
+    name: "個人Q版",
+    description: "世界盃足球賽~第一版有背景~E-H組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A01-2-1",
+        img: "./images/GPT0014-A01-2/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A01-2-2",
+        img: "./images/GPT0014-A01-2/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A01-2-3",
+        img: "./images/GPT0014-A01-2/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A01-2-4",
+        img: "./images/GPT0014-A01-2/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A01-2-5",
+        img: "./images/GPT0014-A01-2/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A01-2-6",
+        img: "./images/GPT0014-A01-2/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A01-2-7",
+        img: "./images/GPT0014-A01-2/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A01-2-8",
+        img: "./images/GPT0014-A01-2/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A01-2-9",
+        img: "./images/GPT0014-A01-2/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A01-2-A",
+        img: "./images/GPT0014-A01-2/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A01-2-B",
+        img: "./images/GPT0014-A01-2/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A01-2-C",
+        img: "./images/GPT0014-A01-2/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A01-2-D",
+        img: "./images/GPT0014-A01-2/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A01-2-E",
+        img: "./images/GPT0014-A01-2/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A01-2-F",
+        img: "./images/GPT0014-A01-2/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A01-2-G",
+        img: "./images/GPT0014-A01-2/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 81,
+    name: "個人Q版",
+    description: "世界盃足球賽~第一版有背景~A-D組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A01-1-1",
+        img: "./images/GPT0014-A01-1/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A01-1-2",
+        img: "./images/GPT0014-A01-1/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A01-1-3",
+        img: "./images/GPT0014-A01-1/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A01-1-4",
+        img: "./images/GPT0014-A01-1/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A01-1-5",
+        img: "./images/GPT0014-A01-1/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A01-1-6",
+        img: "./images/GPT0014-A01-1/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A01-1-7",
+        img: "./images/GPT0014-A01-1/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A01-1-8",
+        img: "./images/GPT0014-A01-1/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A01-1-9",
+        img: "./images/GPT0014-A01-1/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A01-1-A",
+        img: "./images/GPT0014-A01-1/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A01-1-B",
+        img: "./images/GPT0014-A01-1/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A01-1-C",
+        img: "./images/GPT0014-A01-1/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A01-1-D",
+        img: "./images/GPT0014-A01-1/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A01-1-E",
+        img: "./images/GPT0014-A01-1/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A01-1-F",
+        img: "./images/GPT0014-A01-1/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A01-1-G",
+        img: "./images/GPT0014-A01-1/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 77,
+    name: "個人Q版",
+    description: "端午節祝賀詞",
+    category: "年節系列",
+    stickers: [
+      {
+        id: "GPT0013-1-端午節-1",
+        img: "./images/GPT0013-1-端午節/split_0_0.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-2",
+        img: "./images/GPT0013-1-端午節/split_0_1.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-3",
+        img: "./images/GPT0013-1-端午節/split_0_2.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-4",
+        img: "./images/GPT0013-1-端午節/split_0_3.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-5",
+        img: "./images/GPT0013-1-端午節/split_1_0.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-6",
+        img: "./images/GPT0013-1-端午節/split_1_1.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-7",
+        img: "./images/GPT0013-1-端午節/split_1_2.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-8",
+        img: "./images/GPT0013-1-端午節/split_1_3.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-9",
+        img: "./images/GPT0013-1-端午節/split_2_0.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-A",
+        img: "./images/GPT0013-1-端午節/split_2_1.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-B",
+        img: "./images/GPT0013-1-端午節/split_2_2.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-C",
+        img: "./images/GPT0013-1-端午節/split_2_3.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-D",
+        img: "./images/GPT0013-1-端午節/split_3_0.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-E",
+        img: "./images/GPT0013-1-端午節/split_3_1.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-F",
+        img: "./images/GPT0013-1-端午節/split_3_2.webp",
+      },
+      {
+        id: "GPT0013-1-端午節-G",
+        img: "./images/GPT0013-1-端午節/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 78,
+    name: "個人Q版",
+    description: "端午節祝賀詞",
+    category: "年節系列",
+    stickers: [
+      {
+        id: "GPT0013-2-端午節-1",
+        img: "./images/GPT0013-2-端午節/split_0_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-2",
+        img: "./images/GPT0013-2-端午節/split_0_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-3",
+        img: "./images/GPT0013-2-端午節/split_0_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-4",
+        img: "./images/GPT0013-2-端午節/split_0_3.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-5",
+        img: "./images/GPT0013-2-端午節/split_1_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-6",
+        img: "./images/GPT0013-2-端午節/split_1_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-7",
+        img: "./images/GPT0013-2-端午節/split_1_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-8",
+        img: "./images/GPT0013-2-端午節/split_1_3.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-9",
+        img: "./images/GPT0013-2-端午節/split_2_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-A",
+        img: "./images/GPT0013-2-端午節/split_2_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-B",
+        img: "./images/GPT0013-2-端午節/split_2_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-C",
+        img: "./images/GPT0013-2-端午節/split_2_3.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-D",
+        img: "./images/GPT0013-2-端午節/split_3_0.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-E",
+        img: "./images/GPT0013-2-端午節/split_3_1.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-F",
+        img: "./images/GPT0013-2-端午節/split_3_2.webp",
+      },
+      {
+        id: "GPT0013-2-端午節-G",
+        img: "./images/GPT0013-2-端午節/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 79,
+    name: "個人Q版",
+    description: "端午節祝賀詞",
+    category: "年節系列",
+    stickers: [
+      {
+        id: "GPT0013-3-端午節-1",
+        img: "./images/GPT0013-3-端午節/split_0_0.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-2",
+        img: "./images/GPT0013-3-端午節/split_0_1.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-3",
+        img: "./images/GPT0013-3-端午節/split_0_2.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-4",
+        img: "./images/GPT0013-3-端午節/split_0_3.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-5",
+        img: "./images/GPT0013-3-端午節/split_1_0.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-6",
+        img: "./images/GPT0013-3-端午節/split_1_1.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-7",
+        img: "./images/GPT0013-3-端午節/split_1_2.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-8",
+        img: "./images/GPT0013-3-端午節/split_1_3.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-9",
+        img: "./images/GPT0013-3-端午節/split_2_0.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-A",
+        img: "./images/GPT0013-3-端午節/split_2_1.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-B",
+        img: "./images/GPT0013-3-端午節/split_2_2.webp",
+      },
+      {
+        id: "GPT0013-3-端午節-C",
+        img: "./images/GPT0013-3-端午節/split_2_3.webp",
+      },
+    ],
+  },
+  {
+    id: 80,
+    name: "個人Q版",
+    description: "端午節祝賀詞",
+    category: "年節系列",
+    stickers: [
+      {
+        id: "GPT0013-4-端午節-1",
+        img: "./images/GPT0013-4-端午節/split_0_0.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-2",
+        img: "./images/GPT0013-4-端午節/split_0_1.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-3",
+        img: "./images/GPT0013-4-端午節/split_0_2.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-4",
+        img: "./images/GPT0013-4-端午節/split_0_3.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-5",
+        img: "./images/GPT0013-4-端午節/split_1_0.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-6",
+        img: "./images/GPT0013-4-端午節/split_1_1.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-7",
+        img: "./images/GPT0013-4-端午節/split_1_2.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-8",
+        img: "./images/GPT0013-4-端午節/split_1_3.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-9",
+        img: "./images/GPT0013-4-端午節/split_2_0.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-A",
+        img: "./images/GPT0013-4-端午節/split_2_1.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-B",
+        img: "./images/GPT0013-4-端午節/split_2_2.webp",
+      },
+      {
+        id: "GPT0013-4-端午節-C",
+        img: "./images/GPT0013-4-端午節/split_2_3.webp",
+      },
+    ],
+  },
+  {
     id: 1,
     name: "個人Q版",
     description: "仿貓爪抓-特效爪抓",
@@ -2359,262 +3483,6 @@ const stickerPacks = [
       {
         id: "GPT0012-12-吉卜力動畫風-G",
         img: "./images/GPT0012-12-吉卜力動畫風/split_3_3.webp",
-      },
-    ],
-  },
-  {
-    id: 77,
-    name: "個人Q版",
-    description: "端午節祝賀詞",
-    category: "年節系列",
-    stickers: [
-      {
-        id: "GPT0013-1-端午節-1",
-        img: "./images/GPT0013-1-端午節/split_0_0.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-2",
-        img: "./images/GPT0013-1-端午節/split_0_1.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-3",
-        img: "./images/GPT0013-1-端午節/split_0_2.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-4",
-        img: "./images/GPT0013-1-端午節/split_0_3.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-5",
-        img: "./images/GPT0013-1-端午節/split_1_0.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-6",
-        img: "./images/GPT0013-1-端午節/split_1_1.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-7",
-        img: "./images/GPT0013-1-端午節/split_1_2.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-8",
-        img: "./images/GPT0013-1-端午節/split_1_3.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-9",
-        img: "./images/GPT0013-1-端午節/split_2_0.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-A",
-        img: "./images/GPT0013-1-端午節/split_2_1.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-B",
-        img: "./images/GPT0013-1-端午節/split_2_2.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-C",
-        img: "./images/GPT0013-1-端午節/split_2_3.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-D",
-        img: "./images/GPT0013-1-端午節/split_3_0.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-E",
-        img: "./images/GPT0013-1-端午節/split_3_1.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-F",
-        img: "./images/GPT0013-1-端午節/split_3_2.webp",
-      },
-      {
-        id: "GPT0013-1-端午節-G",
-        img: "./images/GPT0013-1-端午節/split_3_3.webp",
-      },
-    ],
-  },
-  {
-    id: 78,
-    name: "個人Q版",
-    description: "端午節祝賀詞",
-    category: "年節系列",
-    stickers: [
-      {
-        id: "GPT0013-2-端午節-1",
-        img: "./images/GPT0013-2-端午節/split_0_0.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-2",
-        img: "./images/GPT0013-2-端午節/split_0_1.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-3",
-        img: "./images/GPT0013-2-端午節/split_0_2.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-4",
-        img: "./images/GPT0013-2-端午節/split_0_3.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-5",
-        img: "./images/GPT0013-2-端午節/split_1_0.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-6",
-        img: "./images/GPT0013-2-端午節/split_1_1.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-7",
-        img: "./images/GPT0013-2-端午節/split_1_2.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-8",
-        img: "./images/GPT0013-2-端午節/split_1_3.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-9",
-        img: "./images/GPT0013-2-端午節/split_2_0.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-A",
-        img: "./images/GPT0013-2-端午節/split_2_1.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-B",
-        img: "./images/GPT0013-2-端午節/split_2_2.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-C",
-        img: "./images/GPT0013-2-端午節/split_2_3.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-D",
-        img: "./images/GPT0013-2-端午節/split_3_0.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-E",
-        img: "./images/GPT0013-2-端午節/split_3_1.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-F",
-        img: "./images/GPT0013-2-端午節/split_3_2.webp",
-      },
-      {
-        id: "GPT0013-2-端午節-G",
-        img: "./images/GPT0013-2-端午節/split_3_3.webp",
-      },
-    ],
-  },
-  {
-    id: 79,
-    name: "個人Q版",
-    description: "端午節祝賀詞",
-    category: "年節系列",
-    stickers: [
-      {
-        id: "GPT0013-3-端午節-1",
-        img: "./images/GPT0013-3-端午節/split_0_0.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-2",
-        img: "./images/GPT0013-3-端午節/split_0_1.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-3",
-        img: "./images/GPT0013-3-端午節/split_0_2.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-4",
-        img: "./images/GPT0013-3-端午節/split_0_3.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-5",
-        img: "./images/GPT0013-3-端午節/split_1_0.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-6",
-        img: "./images/GPT0013-3-端午節/split_1_1.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-7",
-        img: "./images/GPT0013-3-端午節/split_1_2.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-8",
-        img: "./images/GPT0013-3-端午節/split_1_3.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-9",
-        img: "./images/GPT0013-3-端午節/split_2_0.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-A",
-        img: "./images/GPT0013-3-端午節/split_2_1.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-B",
-        img: "./images/GPT0013-3-端午節/split_2_2.webp",
-      },
-      {
-        id: "GPT0013-3-端午節-C",
-        img: "./images/GPT0013-3-端午節/split_2_3.webp",
-      },
-    ],
-  },
-  {
-    id: 79,
-    name: "個人Q版",
-    description: "端午節祝賀詞",
-    category: "年節系列",
-    stickers: [
-      {
-        id: "GPT0013-4-端午節-1",
-        img: "./images/GPT0013-4-端午節/split_0_0.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-2",
-        img: "./images/GPT0013-4-端午節/split_0_1.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-3",
-        img: "./images/GPT0013-4-端午節/split_0_2.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-4",
-        img: "./images/GPT0013-4-端午節/split_0_3.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-5",
-        img: "./images/GPT0013-4-端午節/split_1_0.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-6",
-        img: "./images/GPT0013-4-端午節/split_1_1.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-7",
-        img: "./images/GPT0013-4-端午節/split_1_2.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-8",
-        img: "./images/GPT0013-4-端午節/split_1_3.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-9",
-        img: "./images/GPT0013-4-端午節/split_2_0.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-A",
-        img: "./images/GPT0013-4-端午節/split_2_1.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-B",
-        img: "./images/GPT0013-4-端午節/split_2_2.webp",
-      },
-      {
-        id: "GPT0013-4-端午節-C",
-        img: "./images/GPT0013-4-端午節/split_2_3.webp",
       },
     ],
   },

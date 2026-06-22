@@ -60,11 +60,12 @@ function renderCards(data) {
     const isVideo = item.image.toLowerCase().endsWith('.mp4');
 
     // 處理標題連結 (既有邏輯)
+    // 1150622修改，標題上加上title 可以看到全部名稱
     let cardSubjectHtml = '';
     if (item.url) {
       cardSubjectHtml = `<a href="${item.url}" target="_blank" class="card-subject-link"><div class="card-subject">${item.title}</div></a>`;
     } else {
-      cardSubjectHtml = `<div class="card-subject">${item.title}</div>`;
+      cardSubjectHtml = `<div class="card-subject" title="${item.title}">${item.title}</div>`;
     }
 
     // 建立媒體 HTML (如果是影片顯示 video 標籤，圖片則顯示 img)
