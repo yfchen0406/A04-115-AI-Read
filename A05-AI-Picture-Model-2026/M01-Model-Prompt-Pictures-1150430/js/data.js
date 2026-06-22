@@ -1679,4 +1679,44 @@ const promptsData = [
     date: "2026-06-22",
     url: "",
   },
+  {
+    id: 169,
+    title: "個人Q版~2026世足賽~A-D組(各國隊服)~claude",
+    category: "Line",
+    image: "./images/L01-Line/GPT0014-A05-1.webp",
+    prompt:
+      "<span class='yf2'>利用claude的/prompt-master，優化提示詞，自己寫的提示詞如下</span>~~以附件圖片風隔為範例主題，人物可以參照範例，也可以參考附件圖片人物Q版墨鏡造型，另外背後需要放各個國家主要代表型風景或建築，球衣為要換成各國2026世界盃足球賽傳統出賽隊服，完成以下✅A-D 組 提示詞",
+    date: "2026-06-22",
+    url: "",
+  },
+  {
+    id: 170,
+    title: "個人Q版~2026世足賽~E-H組(各國隊服)~claude",
+    category: "Line",
+    image: "./images/L01-Line/GPT0014-A05-2.webp",
+    prompt:
+      "<span class='yf2'>利用claude的/prompt-master，優化提示詞，自己寫的提示詞如下</span>~~以附件圖片風隔為範例主題，人物可以參照範例，也可以參考附件圖片人物Q版墨鏡造型，另外背後需要放各個國家主要代表型風景或建築，球衣為要換成各國2026世界盃足球賽傳統出賽隊服，完成以下✅E-H 組 提示詞",
+    date: "2026-06-22",
+    url: "",
+  },
+  {
+    id: 171,
+    title: "個人Q版~2026世足賽~I-L組(各國隊服)~claude",
+    category: "Line",
+    image: "./images/L01-Line/GPT0014-A05-3.webp",
+    prompt:
+      "<span class='yf2'>利用claude的/prompt-master，優化提示詞，自己寫的提示詞如下</span>~~以附件圖片風隔為範例主題，人物可以參照範例，也可以參考附件圖片人物Q版墨鏡造型，另外背後需要放各個國家主要代表型風景或建築，球衣為要換成各國2026世界盃足球賽傳統出賽隊服，完成以下✅I-L 組 提示詞",
+    date: "2026-06-22",
+    url: "",
+  },
+  {
+    id: 172,
+    title: "個人Q版~2026世足賽~A-D組(這組只生16隊~要補上另外32隊)~claude",
+    category: "Line",
+    image: "./images/L01-Line/GPT0014-A06-1.webp",
+    prompt:
+      "<span class='yf2'>利用claude的/prompt-master，優化提示詞，自己寫的提示詞如下</span>~~以附件圖片風隔為範例主題，人物可以參照範例，也可以參考附件圖片人物Q版墨鏡造型，另外背後需要放各個國家主要代表型風景或建築，球衣為要換成各國2026世界盃足球賽傳統出賽隊服，完成以下✅I-L 組 提示詞",
+    date: "2026-06-22",
+    url: "",
+  },
 ];

@@ -4,6 +4,294 @@
 // ========================================
 const stickerPacks = [
   {
+    id: 96,
+    name: "個人Q版",
+    description: "世界盃足球賽~第六版(這組也不錯，不過只做16隊)~A-D組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A06-1-1",
+        img: "./images/GPT0014-A06-1/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A06-1-2",
+        img: "./images/GPT0014-A06-1/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A06-1-3",
+        img: "./images/GPT0014-A06-1/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A06-1-4",
+        img: "./images/GPT0014-A06-1/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A06-1-5",
+        img: "./images/GPT0014-A06-1/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A06-1-6",
+        img: "./images/GPT0014-A06-1/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A06-1-7",
+        img: "./images/GPT0014-A06-1/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A06-1-8",
+        img: "./images/GPT0014-A06-1/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A06-1-9",
+        img: "./images/GPT0014-A06-1/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A06-1-A",
+        img: "./images/GPT0014-A06-1/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A06-1-B",
+        img: "./images/GPT0014-A06-1/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A06-1-C",
+        img: "./images/GPT0014-A06-1/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A06-1-D",
+        img: "./images/GPT0014-A06-1/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A06-1-E",
+        img: "./images/GPT0014-A06-1/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A06-1-F",
+        img: "./images/GPT0014-A06-1/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A06-1-G",
+        img: "./images/GPT0014-A06-1/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 95,
+    name: "個人Q版",
+    description: "世界盃足球賽~第五版(各國隊服)~I-L組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A05-3-1",
+        img: "./images/GPT0014-A05-3/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A05-3-2",
+        img: "./images/GPT0014-A05-3/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A05-3-3",
+        img: "./images/GPT0014-A05-3/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A05-3-4",
+        img: "./images/GPT0014-A05-3/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A05-3-5",
+        img: "./images/GPT0014-A05-3/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A05-3-6",
+        img: "./images/GPT0014-A05-3/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A05-3-7",
+        img: "./images/GPT0014-A05-3/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A05-3-8",
+        img: "./images/GPT0014-A05-3/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A05-3-9",
+        img: "./images/GPT0014-A05-3/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A05-3-A",
+        img: "./images/GPT0014-A05-3/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A05-3-B",
+        img: "./images/GPT0014-A05-3/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A05-3-C",
+        img: "./images/GPT0014-A05-3/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A05-3-D",
+        img: "./images/GPT0014-A05-3/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A05-3-E",
+        img: "./images/GPT0014-A05-3/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A05-3-F",
+        img: "./images/GPT0014-A05-3/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A05-3-G",
+        img: "./images/GPT0014-A05-3/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 94,
+    name: "個人Q版",
+    description: "世界盃足球賽~第五版(各國隊服)~E-HD組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A05-2-1",
+        img: "./images/GPT0014-A05-2/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A05-2-2",
+        img: "./images/GPT0014-A05-2/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A05-2-3",
+        img: "./images/GPT0014-A05-2/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A05-2-4",
+        img: "./images/GPT0014-A05-2/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A05-2-5",
+        img: "./images/GPT0014-A05-2/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A05-2-6",
+        img: "./images/GPT0014-A05-2/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A05-2-7",
+        img: "./images/GPT0014-A05-2/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A05-2-8",
+        img: "./images/GPT0014-A05-2/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A05-2-9",
+        img: "./images/GPT0014-A05-2/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A05-2-A",
+        img: "./images/GPT0014-A05-2/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A05-2-B",
+        img: "./images/GPT0014-A05-2/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A05-2-C",
+        img: "./images/GPT0014-A05-2/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A05-2-D",
+        img: "./images/GPT0014-A05-2/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A05-2-E",
+        img: "./images/GPT0014-A05-2/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A05-2-F",
+        img: "./images/GPT0014-A05-2/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A05-2-G",
+        img: "./images/GPT0014-A05-2/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 93,
+    name: "個人Q版",
+    description: "世界盃足球賽~第五版(各國隊服)~A-D組",
+    category: "世足系列",
+    stickers: [
+      {
+        id: "GPT0014-A05-1-1",
+        img: "./images/GPT0014-A05-1/split_0_0.webp",
+      },
+      {
+        id: "GPT0014-A05-1-2",
+        img: "./images/GPT0014-A05-1/split_0_1.webp",
+      },
+      {
+        id: "GPT0014-A05-1-3",
+        img: "./images/GPT0014-A05-1/split_0_2.webp",
+      },
+      {
+        id: "GPT0014-A05-1-4",
+        img: "./images/GPT0014-A05-1/split_0_3.webp",
+      },
+      {
+        id: "GPT0014-A05-1-5",
+        img: "./images/GPT0014-A05-1/split_1_0.webp",
+      },
+      {
+        id: "GPT0014-A05-1-6",
+        img: "./images/GPT0014-A05-1/split_1_1.webp",
+      },
+      {
+        id: "GPT0014-A05-1-7",
+        img: "./images/GPT0014-A05-1/split_1_2.webp",
+      },
+      {
+        id: "GPT0014-A05-1-8",
+        img: "./images/GPT0014-A05-1/split_1_3.webp",
+      },
+      {
+        id: "GPT0014-A05-1-9",
+        img: "./images/GPT0014-A05-1/split_2_0.webp",
+      },
+      {
+        id: "GPT0014-A05-1-A",
+        img: "./images/GPT0014-A05-1/split_2_1.webp",
+      },
+      {
+        id: "GPT0014-A05-1-B",
+        img: "./images/GPT0014-A05-1/split_2_2.webp",
+      },
+      {
+        id: "GPT0014-A05-1-C",
+        img: "./images/GPT0014-A05-1/split_2_3.webp",
+      },
+      {
+        id: "GPT0014-A05-1-D",
+        img: "./images/GPT0014-A05-1/split_3_0.webp",
+      },
+      {
+        id: "GPT0014-A05-1-E",
+        img: "./images/GPT0014-A05-1/split_3_1.webp",
+      },
+      {
+        id: "GPT0014-A05-1-F",
+        img: "./images/GPT0014-A05-1/split_3_2.webp",
+      },
+      {
+        id: "GPT0014-A05-1-G",
+        img: "./images/GPT0014-A05-1/split_3_3.webp",
+      },
+    ],
+  },
+  {
     id: 92,
     name: "個人Q版",
     description: "世界盃足球賽~第四版~I-L組",
