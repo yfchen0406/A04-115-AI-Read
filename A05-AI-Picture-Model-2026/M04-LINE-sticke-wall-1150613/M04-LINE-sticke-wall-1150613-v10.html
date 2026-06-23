@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <!-- Google Font：Noto Sans TC -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 
   <!-- 自己的CSS -->
@@ -45,15 +45,14 @@
       font-family: 'Noto Sans TC', sans-serif;
     }
 
-    /* 強制鎖定 html & body，防止外部載入的 CSS 撐開寬度導致水平滾動條 */
     html,
     body {
-      margin: 0 !important;
-      padding: 0 !important;
-      height: 100dvh !important;
-      width: 100% !important;
-      overflow: hidden !important; /* 徹底杜絕全域滾動條，防堵頁尾被推上去 */
-      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      height: 100dvh;
+      width: 100%;
+      overflow: hidden;
+      /* 防止整體滾動，讓內部區域滾動 */
     }
 
     body {
@@ -69,21 +68,20 @@
       right: 0;
       z-index: 1050;
       background-color: #212529;
+      /* 與深色背景一致 */
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
-    /* === 固定底部頁尾 (修正貼地防禦樣式) === */
+    /* === 固定底部頁尾 === */
     #footer {
-      position: fixed !important;
-      bottom: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      z-index: 1050 !important;
-      background-color: #212529 !important;
-      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15) !important;
-      padding-bottom: env(safe-area-inset-bottom, 0) !important;
-      margin-bottom: 0 !important; /* 確保沒有下外邊距 */
-      overflow: hidden !important;  /* 防止頁尾載入的內容溢出產生滾動條 */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1050;
+      background-color: #212529;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+      padding-bottom: env(safe-area-inset-bottom, 0);
     }
 
     /* 可滾動的主要內容區 */
@@ -93,8 +91,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      overflow-y: auto !important; /* 只允許垂直滾動 */
-      overflow-x: hidden !important; /* 嚴格禁止水平溢出 */
+      overflow-y: auto;
+      overflow-x: hidden;
       padding-top: 80px;
       /* 預留空間給 nav，避免內容被遮擋 */
       padding-bottom: 60px;

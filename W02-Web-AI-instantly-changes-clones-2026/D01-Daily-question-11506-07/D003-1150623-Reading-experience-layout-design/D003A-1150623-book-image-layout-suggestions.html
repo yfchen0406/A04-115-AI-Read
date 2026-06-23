@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <title>D002A.每日一問｜第一支退休生活 AI 動畫可立即開工版</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: #fffdfa;
+      --surface-2: #f3efe7;
+      --text: #2b241c;
+      --muted: #6f675f;
+      --primary: #8f5f2d;
+      --line: #d8d0c6;
+      --shadow: 0 14px 34px rgba(68, 49, 27, .10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171412;
+        --surface: #221d19;
+        --surface-2: #2a241f;
+        --text: #f3ece3;
+        --muted: #c8b9a7;
+        --primary: #ddb075;
+        --line: #4b4036;
+        --shadow: 0 16px 38px rgba(0, 0, 0, .34);
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: linear-gradient(180deg, var(--bg), var(--surface-2));
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin-inline: auto
+    }
+
+    main {
+      padding: 32px 0 72px
+    }
+
+    .hero {
+      padding: 28px;
+      background: linear-gradient(135deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px
+    }
+
+    .kicker {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(143, 95, 45, .10);
+      color: var(--primary);
+      font-size: .92rem;
+      font-weight: 700
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      line-height: 1.2;
+      margin: 14px 0 12px
+    }
+
+    .lead {
+      max-width: 72ch;
+      color: var(--muted)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      margin-top: 22px
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow)
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      margin: 0 0 12px
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin: 22px 0 10px
+    }
+
+    ul,
+    ol {
+      padding-left: 1.2rem;
+      margin: 0
+    }
+
+    .patterns {
+      display: grid;
+      gap: 16px
+    }
+
+    .pattern {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, var(--surface), var(--surface-2))
+    }
+
+    .pattern strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--primary)
+    }
+
+    .layout-demo {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 14px;
+      margin-top: 16px
+    }
+
+    .panel {
+      min-height: 170px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      padding: 16px;
+      overflow: hidden
+    }
+
+    .info {
+      background: linear-gradient(180deg, #eef4fb, #f7fbff)
+    }
+
+    .mainpanel {
+      background: linear-gradient(180deg, #f4eadb, #fff8f0)
+    }
+
+    .mood {
+      background: linear-gradient(180deg, #eff7f1, #f8fcf9)
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(255, 255, 255, .7);
+      border: 1px solid rgba(143, 95, 45, .24);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px
+    }
+
+    .mini-lines span {
+      display: block;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(43, 36, 28, .10);
+      margin-top: 10px
+    }
+
+    .mini-lines span:nth-child(1) {
+      width: 72%
+    }
+
+    .mini-lines span:nth-child(2) {
+      width: 88%
+    }
+
+    .mini-lines span:nth-child(3) {
+      width: 60%
+    }
+
+    .flow {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 12px
+    }
+
+    .node {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(43, 36, 28, .12);
+      font-size: .92rem
+    }
+
+    .note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: .95rem
+    }
+
+    .section {
+      margin-top: 26px
+    }
+
+    .table {
+      display: grid;
+      gap: 12px
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      padding: 14px 0;
+      border-top: 1px dashed var(--line)
+    }
+
+    .row:first-child {
+      border-top: none;
+      padding-top: 0
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 12px;
+      border-radius: 14px;
+      background: var(--surface-2);
+      color: var(--primary);
+      font-weight: 700
+    }
+
+    .prompt {
+      background: var(--surface-2);
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      color: var(--muted)
+    }
+
+    @media (max-width:900px) {
+
+      .grid,
+      .layout-demo {
+        grid-template-columns: 1fr
+      }
+
+      main {
+        padding-top: 20px
+      }
+
+      .hero,
+      .card {
+        padding: 20px
+      }
+
+      .row {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <main id="content" style="margin-top:75px;">
+    <div id="nav1"></div>
+    <div class="container yf-font1">
+      <section class="hero">
+        <span class="kicker">讀書心得圖像策略</span>
+        <h2><b>D003A.每日一問｜三圖版型中，左右兩側如何和中間主圖形成最佳互補 ~ 115.06.23</b></h2>
+        <h5 class="yf33">
+          <b>問題~我近幾個月讀書心得都會分主題分段落小標題紀錄書中重要內容，每一個小段落都會有三張圖，我最滿意中間那一張，但是對於其他二張我想用不一樣的方式來呈現每段的文字內容，你有哪些建議幫我除了中間那張圖之外，左右二側可以有哪些圖的類型、風格或排版做最好的呈現，我的圖片都會用GPT
+            Image2.0和Nanp Banana Pro 生圖</b></h5>
+        <p>
+          依照你目前的閱讀筆記呈現方式，中間圖最適合保留為主敘事圖；左右兩側則不要再做同型重複，而要分別承擔資訊整理與情緒延伸兩種功能。這樣整段內容會更有節奏，也更容易讓讀者一眼抓到重點。</p>
+        <p><a class="yf2" href="./D003B-1150623-prompt-palette-demo.html">讀書心得圖片 Prompt 與配色示範</a></p>
+        <div class="layout-demo">
+          <article class="panel info"><span class="badge">左側｜資訊型</span>
+            <div class="flow"><span class="node">關鍵詞</span><span class="node">流程</span><span class="node">比較</span>
+            </div>
+            <div class="mini-lines"><span></span><span></span><span></span></div>
+            <p class="note">適合放重點摘要、因果關係、時間線與步驟。</p>
+          </article>
+          <article class="panel mainpanel"><span class="badge">中間｜主敘事圖</span>
+            <div
+              style="height:84px;border-radius:18px;background:rgba(255,255,255,.7);border:1px solid rgba(43,36,28,.12);margin-top:12px">
+            </div>
+            <p class="note">保留你最滿意的故事性主圖，作為整段視覺核心。</p>
+          </article>
+          <article class="panel mood"><span class="badge">右側｜情緒型</span>
+            <div
+              style="height:84px;border-radius:18px;background:rgba(255,255,255,.7);border:1px solid rgba(43,36,28,.12);margin-top:12px">
+            </div>
+            <p class="note">適合放情境隱喻、角色感、氛圍或一句話總結。</p>
+          </article>
+        </div>
+      </section>
+      <section class="grid">
+        <article class="card">
+          <h2>左右圖的最佳分工</h2>
+          <h3>左側：資訊型圖片</h3>
+          <ul>
+            <li>適合做流程圖、步驟卡、時間軸、關鍵字圖示、前後對照圖。</li>
+            <li>功能是讓讀者先快速抓到這一段的邏輯骨架，像是導讀卡或重點整理卡。</li>
+            <li>風格建議偏扁平化、簡約、留白多，字少而準，每個模組只講一件事。</li>
+          </ul>
+          <h3>右側：情緒型圖片</h3>
+          <ul>
+            <li>適合做場景插畫、概念隱喻、漫畫式角色、象徵畫面或帶氛圍的構圖。</li>
+            <li>功能是補足抽象文字的感受層，讓內容不只看得懂，也記得住。</li>
+            <li>可加入一句短標語，像是這段的結論、提醒或價值判斷。</li>
+          </ul>
+          <h3>中間：主敘事圖保持不變</h3>
+          <ul>
+            <li>中圖繼續作為全段主視覺，承擔故事感與辨識度。</li>
+            <li>左右圖不要再搶戲，而是像兩個輔助欄位，幫中圖鋪陳與收束。</li>
+          </ul>
+        </article>
+        <aside class="card">
+          <h2>可直接套用的版型組合</h2>
+          <div class="patterns">
+            <div class="pattern"><strong>A. 左摘要 × 中主圖 × 右金句情境</strong>最穩定，最適合大多數讀書心得段落。</div>
+            <div class="pattern"><strong>B. 左時間軸 × 中故事圖 × 右象徵隱喻</strong>適合歷史、觀念演變、制度變化主題。</div>
+            <div class="pattern"><strong>C. 左比較表 × 中核心圖 × 右人物反應圖</strong>適合觀點對比、價值衝突類段落。</div>
+            <div class="pattern"><strong>D. 左關鍵詞卡 × 中場景圖 × 右一句話結論卡</strong>適合短篇筆記或每段資訊量較少的頁面。</div>
+          </div>
+          <div class="section">
+            <h3>視覺協調原則</h3>
+            <ul>
+              <li>三張圖主色一致，例如都帶米色、藍灰或暖棕系。</li>
+              <li>中圖細節最多，左圖最乾淨，右圖最有情緒，層次會更清楚。</li>
+              <li>外框、圓角、陰影與圖下說明字樣盡量一致，版面更像一組作品。</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+      <section class="card section">
+        <h2>圖像風格與排版建議</h2>
+        <div class="table">
+          <div class="row">
+            <div class="tag">類型</div>
+            <div>左側用資訊圖、流程圖、圖示卡；右側用情緒插畫、概念隱喻、漫畫人物或氛圍場景。</div>
+          </div>
+          <div class="row">
+            <div class="tag">風格</div>
+            <div>左側偏簡潔扁平、右側偏故事感或手繪感；中間則保留你目前最滿意的精緻主圖風格。</div>
+          </div>
+          <div class="row">
+            <div class="tag">比例</div>
+            <div>如果中圖較搶眼，左右可略微簡化；常見可用 1 : 1.2 : 1 或 1 : 1.3 : 1 的視覺份量。</div>
+          </div>
+          <div class="row">
+            <div class="tag">文字</div>
+            <div>左圖放 3 到 5 個關鍵項目；右圖放 1 句總結；避免三張都塞滿文字。</div>
+          </div>
+          <div class="row">
+            <div class="tag">留白</div>
+            <div>左右圖都要保留呼吸感，尤其左圖若資訊太滿，會和中圖互相擠壓。</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid section">
+        <article class="card">
+          <h2>GPT Image2.0 / Nanp Banana Pro 出圖提示方向</h2>
+          <h3>左圖 Prompt 結構</h3>
+          <div class="prompt">請生成一張簡潔資訊圖卡，主題是「某段落重點」，以扁平化圖示風呈現，包含 3 個關鍵概念、箭頭流程、少量中文字標籤、留白清楚、教育型排版、米白與淺藍配色。
+          </div>
+          <h3>右圖 Prompt 結構</h3>
+          <div class="prompt">請生成一張情境插畫，主題是「某段文字的核心價值」，用溫暖敘事感或手繪風，畫面有象徵物與情緒氛圍，右下角預留一句短標語的位置，整體色調與中間主圖一致。</div>
+        </article>
+        <article class="card">
+          <h2>實作順序</h2>
+          <ol>
+            <li>先寫出每段的一句重點句。</li>
+            <li>拆成 3 個關鍵詞，給左圖做資訊整理。</li>
+            <li>再抓出這段的情緒或價值判斷，給右圖做隱喻或場景。</li>
+            <li>最後統一三張圖的主色、外框、字體與邊角設定。</li>
+          </ol>
+          <div class="section">
+            <h3>適合你的方向</h3>
+            <p>你現在的中圖已經有敘事力，因此最值得優化的不是再做第二張類似主圖，而是把左右變成讀者入口與閱讀收束。這樣會比三張都走同一種插畫風更成熟，也更有網站感。</p>
+          </div>
+        </article>
+      </section>
+    </div>
+    <br><br><br>
+  </main>
+
+  <div id="footer"></div>
+  <script>
+    $(function () {
+      $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+      $("#page1").load("./E01-ex-comm/EX02-page-D002.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+</body>
+
+</html>

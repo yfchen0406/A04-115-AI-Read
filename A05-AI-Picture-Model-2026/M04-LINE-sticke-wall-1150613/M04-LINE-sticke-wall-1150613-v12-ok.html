@@ -158,19 +158,17 @@
       font-weight: 500;
     }
 
-    /* 篩選列 – 手機橫向滾動 */
+    /* === 篩選列 – 修正為自動折行（可依寬度自動分配為兩行或多行，排版整齊） === */
     .filter-scroll-x {
-      overflow-x: auto;
-      white-space: nowrap;
-      flex-wrap: nowrap;
       display: flex;
-      gap: 0.5rem;
+      flex-wrap: wrap;            /* 關鍵：允許按鈕自動折行 */
+      gap: 0.5rem 0.6rem;         /* 設定行與行之間、按鈕與按鈕之間的間距 */
       padding-bottom: 0.5rem;
-      scrollbar-width: thin;
+      width: 100%;
     }
 
     .filter-scroll-x .btn {
-      white-space: nowrap;
+      white-space: nowrap;        /* 確保單個按鈕文字不會在內部折行 */
       flex-shrink: 0;
     }
 

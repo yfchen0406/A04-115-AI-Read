@@ -226,10 +226,10 @@
       gap: 1rem;
     }
 
-    /* 桌機強制4列，讓圖片更大 */
+    /* 桌機改為3列，貼圖更大更清晰 */
     @media (min-width: 992px) {
       .modal-sticker-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -322,10 +322,10 @@
       }
     }
 
-    /* 調整 modal 整體尺寸：適中，內部圖片已放大 */
+    /* 調整 modal 整體尺寸：放大視窗，讓貼圖看得更清楚 */
     .custom-modal-dialog {
-      max-width: 650px;
-      width: 92%;
+      max-width: 1000px;
+      width: 95%;
       margin: 1.75rem auto;
     }
 
@@ -334,6 +334,80 @@
         width: calc(100% - 1rem);
         max-width: none;
         margin: 0.5rem;
+      }
+    }
+
+    /* === 貼圖放大預覽燈箱 === */
+    .sticker-lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .sticker-lightbox.active {
+      display: flex;
+    }
+
+    .sticker-lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .sticker-lightbox-img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .sticker-lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .sticker-lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .sticker-lightbox-tip {
+      color: #999;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
       }
     }
   </style>
@@ -392,6 +466,16 @@
 
   <!-- 固定頁尾區塊 -->
   <div id="footer"></div>
+
+  <!-- 貼圖放大預覽燈箱 -->
+  <div class="sticker-lightbox" id="stickerLightbox">
+    <div class="sticker-lightbox-content">
+      <button class="sticker-lightbox-close" id="lightboxClose">✕</button>
+      <img id="lightboxImg" class="sticker-lightbox-img" alt="放大貼圖" src="">
+      <div class="sticker-lightbox-tip">點擊圖片或按 ESC 關閉 · 已自動複製到剪貼簿</div>
+    </div>
+  </div>
+
   <!-- 外部貼圖資料庫 -->
   <script src="sticker-db.js"></script>
 
@@ -409,6 +493,32 @@
       toast.style.backgroundColor = isError ? 'rgba(220,53,69,0.9)' : 'rgba(6,199,85,0.9)';
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 2000);
+    }
+
+    // 放大預覽相關函數
+    function showLightbox(imgUrl) {
+      const lightbox = document.getElementById('stickerLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      lightboxImg.src = imgUrl;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('stickerLightbox');
+      lightbox.classList.remove('active');
+    }
+
+    function initLightboxEvents() {
+      const lightbox = document.getElementById('stickerLightbox');
+      const closeBtn = document.getElementById('lightboxClose');
+      
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
     }
 
     // 複製圖片到剪貼簿（圖片本身）
@@ -549,6 +659,9 @@
           img.addEventListener('click', async (e) => {
             e.stopPropagation();
             if (imgUrl) {
+              // 顯示放大預覽
+              showLightbox(imgUrl);
+              // 複製圖片到剪貼簿
               await copyImageToClipboard(imgUrl);
             } else {
               showMessage('❌ 無效的圖片', true);
@@ -606,6 +719,7 @@
     }
 
     function init() {
+      initLightboxEvents();
       if (typeof stickerPacks !== 'undefined') {
         buildFilterButtons();
         renderStickerPacks();

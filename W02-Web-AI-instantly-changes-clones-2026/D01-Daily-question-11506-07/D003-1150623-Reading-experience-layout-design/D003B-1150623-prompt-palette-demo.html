@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>讀書心得圖片 Prompt 與配色示範</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <style>
+    .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+    .yf1 { color: green; font-weight: bold; }
+    .yf2 { color: purple; font-weight: bold; }
+    .yf3 { color: #0D6EFD; font-weight: bold; }
+    .yf4 { color: red; font-weight: bold; }
+    .yf5 { color: rgb(143,13,13); font-weight: bold; }
+    .yf-c { text-align: center; }
+    .dropdown-menu { max-height: 600px; overflow-y: auto; }
+
+    .hero-box, .note-box, .prompt-box, .palette-box, .font-box {
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      border: 1px solid #e8e2d8;
+      margin-bottom: 24px;
+    }
+    .hero-box { background: linear-gradient(135deg, #f7f1e7, #fffaf3); padding: 28px; }
+    .note-box { background: #fffdf9; padding: 24px; }
+    .prompt-box { background: #fcfaf6; padding: 22px; }
+    .palette-box { background: #fff; padding: 22px; }
+    .font-box { background: #fff; padding: 22px; }
+    .demo-text {
+      background: #fff9f0;
+      border-left: 6px solid #b8894f;
+      padding: 18px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+    .section-title {
+      color: #0dcaf0;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .prompt-card {
+      background: #fff;
+      border: 1px dashed #d4c3ab;
+      border-radius: 14px;
+      padding: 18px;
+      white-space: pre-line;
+      line-height: 1.9;
+    }
+    .swatch {
+      height: 72px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.08);
+      margin-bottom: 10px;
+    }
+    .size-sample {
+      background: #f8f4ee;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border: 1px solid #e7ded2;
+    }
+    .left-tag, .right-tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .left-tag { background: #e8f0f8; color: #5b728a; }
+    .right-tag { background: #f6ead8; color: #9a6b38; }
+    .tip-list li { margin-bottom: 10px; }
+  </style>
+</head>
+<body id="n0" class="bg-dark">
+  <div id="nav1"></div>
+
+  <header class="text-center p1" style="margin-top: 75px;">
+    <h1 class="text-info yf-font1">讀書心得圖片 Prompt 與配色示範</h1>
+    <p class="yf-color-as1 yf-font1">將一段文字轉成左圖 / 右圖的具體提示詞，並搭配最適合中圖風格的色盤與字體尺寸。</p>
+  </header>
+
+  <div class="container-fluid yf-font1" style="margin-top:10px;background-color:white">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 py-4">
+
+        <section class="hero-box">
+          <h2 class="section-title">一、示範文字</h2>
+          <div class="demo-text">
+            美國巧妙地把「想賺錢」包裝成「天命所歸」，用宗教理由合理化對財富的追求，為資本主義的瘋狂發展打下堅實的心理基礎。
+          </div>
+          <p class="mt-3 mb-0">這段內容適合拆成兩條線：左圖做邏輯與重點整理，右圖做情緒與象徵延伸，中間主圖則繼續保留你目前最滿意的故事型畫面。</p>
+        </section>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <section class="prompt-box h-100">
+              <span class="left-tag">左圖｜資訊型 Prompt</span>
+              <div class="prompt-card">角色任務：請你擔任教育型資訊圖設計師，把一段歷史觀點整理成清楚易讀的摘要圖卡。
+
+背景資訊：主題是「信仰與商業的共生」，內容強調宗教信念如何讓財富追求被視為正當，進一步形成資本主義發展的心理基礎。
+
+具體指令：製作一張橫式資訊圖，畫面分成 3 到 4 個模組，依序呈現「神選觀念」、「賺錢即祝福」、「適者生存」、「資本擴張」；每個模組搭配簡單圖示、箭頭流程、少量中文字短標；版面乾淨、重點明確、留白清楚。
+
+約束條件：採用扁平插畫加簡報式排版，色調使用米白、淺藍灰、暖金棕，中文字清楚可讀，整體像高質感讀書筆記圖卡，16:9 橫式構圖。</div>
+            </section>
+          </div>
+          <div class="col-lg-6">
+            <section class="prompt-box h-100">
+              <span class="right-tag">右圖｜情緒型 Prompt</span>
+              <div class="prompt-card">角色任務：請你擔任概念插畫設計師，把一段抽象的歷史評論轉成有情境感與象徵性的畫面。
+
+背景資訊：主題是「把對財富的追求包裝成神聖使命」，重點在於宗教與商業結合後，讓人把逐利視為合理、甚至高尚的行為。
+
+具體指令：生成一張具有故事感的概念插畫，畫面中可出現教堂、金幣、商人、光環、工廠或象徵資本擴張的城市元素；整體呈現「財富被神聖化」的視覺隱喻；右下角預留一句短標語的位置。
+
+約束條件：使用敘事插畫風、略帶復古教育海報感，色調與中間主圖一致，主色為米金棕、霧藍灰、柔和暖光，畫面細節中等，不要過度擁擠，16:9 橫式構圖。</div>
+            </section>
+          </div>
+        </div>
+
+        <section class="palette-box mt-4">
+          <h2 class="section-title">二、最適合現有中圖風格的色盤</h2>
+          <div class="row text-center">
+            <div class="col-md-2 col-6"><div class="swatch" style="background:#F6F1E8;"></div><div><strong>米白</strong><br>#F6F1E8</div></div>
+            <div class="col-md-2 col-6"><div class="swatch" style="background:#E9E1D2;"></div><div><strong>淺米灰</strong><br>#E9E1D2</div></div>
+            <div class="col-md-2 col-6"><div class="swatch" style="background:#3A2F28;"></div><div><strong>深棕黑</strong><br>#3A2F28</div></div>
+            <div class="col-md-2 col-6"><div class="swatch" style="background:#B8894F;"></div><div><strong>暖金棕</strong><br>#B8894F</div></div>
+            <div class="col-md-2 col-6"><div class="swatch" style="background:#A9B8C6;"></div><div><strong>霧藍灰</strong><br>#A9B8C6</div></div>
+            <div class="col-md-2 col-6"><div class="swatch" style="background:#A8B39E;"></div><div><strong>鼠尾草綠</strong><br>#A8B39E</div></div>
+          </div>
+          <ul class="tip-list mt-4 mb-0">
+            <li>左圖資訊卡：建議用米白底、霧藍灰模組、暖金棕作為流程箭頭或重點標示。</li>
+            <li>中圖主視覺：維持目前的暖棕敘事感，讓它繼續當三圖中的視覺核心。</li>
+            <li>右圖情緒圖：可用米白或暖灰底，再加暖金棕與少量鼠尾草綠，畫面會更柔和耐看。</li>
+          </ul>
+        </section>
+
+        <section class="font-box mt-4">
+          <h2 class="section-title">三、字體尺寸示範</h2>
+          <div class="size-sample" style="font-size:42px;font-weight:800;color:#3A2F28;">大標題：36–44 px</div>
+          <div class="size-sample" style="font-size:26px;font-weight:700;color:#5b728a;">小標題 / 模組標題：22–28 px</div>
+          <div class="size-sample" style="font-size:18px;color:#3A2F28;">內文短句：16–20 px，適合左圖模組說明與右圖一句結論。</div>
+          <div class="size-sample" style="font-size:14px;color:#7b6e5f;">補充小字：13–15 px，適合角標、來源、提示語。</div>
+          <p class="mt-3 mb-0">如果中圖本身元素較多，左右圖的文字請再減少，尤其右圖保留一句 10 到 14 字的短標語最穩定。</p>
+        </section>
+
+        <section class="note-box mt-4">
+          <h2 class="section-title">四、可直接套用的轉換模板</h2>
+          <div class="row">
+            <div class="col-lg-6 mb-3">
+              <div class="prompt-card">左圖模板
+角色任務：請擔任教育型資訊圖設計師。
+背景資訊：這段文字主題是「＿＿＿」，重點包含「關鍵詞1、關鍵詞2、關鍵詞3」。
+具體指令：做成一張橫式資訊圖卡，分成 3 到 4 個模組，用箭頭、圖示、短標題整理邏輯。
+約束條件：扁平風、留白清楚、中文字清晰、米白與藍灰配色、16:9 橫式。</div>
+            </div>
+            <div class="col-lg-6 mb-3">
+              <div class="prompt-card">右圖模板
+角色任務：請擔任概念插畫設計師。
+背景資訊：這段文字核心感受是「＿＿＿」，想傳達的價值判斷是「＿＿＿」。
+具體指令：做成一張有故事感的概念插畫，用場景、人物或象徵物表現抽象概念，右下角預留一句短標語。
+約束條件：敘事插畫風、暖棕與霧藍灰色調、細節中等、構圖平衡、16:9 橫式。</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    $(function () {
+      $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+      $("#page1").load("./E01-ex-comm/EX02-page-D002.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+</body>
+</html>
