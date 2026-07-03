@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title>D004.每日一問｜ OKR退休學習生活計畫 ~ 115.07.02</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+  </script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js">
+  </script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+  </script>
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js">
+  </script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+  </script>
+
+
+  <!-- (ok)  google font link  -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link
+    href="[https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap)"
+    rel="stylesheet">
+
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yf1 {
+      color: green;
+      font-weight: bold;
+    }
+
+    .yf11 {
+      color: green;
+    }
+
+    .yf2 {
+      color: purple;
+      font-weight: bold;
+    }
+
+    .yf22 {
+      color: purple;
+    }
+
+    .yf3 {
+      color: #0D6EFD;
+      font-weight: bold;
+    }
+
+    .yf33 {
+      color: #0D6EFD;
+    }
+
+    .yf4 {
+      color: red;
+      font-weight: bold;
+    }
+
+    .yf44 {
+      color: red;
+    }
+
+    .yf5 {
+      color: rgb(143, 13, 13);
+      font-weight: bold;
+    }
+
+    .yf55 {
+      color: rgb(143, 13, 13);
+    }
+
+    .yf-c {
+      text-align: center
+    }
+
+    /* 自訂卡片樣式 */
+    .okr-card {
+      border-left: 5px solid #0D6EFD;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+      height: 100%;
+    }
+
+    .okr-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .okr-card .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 2px solid #e9ecef;
+      font-weight: 700;
+    }
+
+    .okr-card .card-header i {
+      margin-right: 8px;
+    }
+
+    .kr-item {
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+
+    .kr-item::before {
+      content: "▸";
+      position: absolute;
+      left: 4px;
+      color: #0D6EFD;
+      font-weight: bold;
+    }
+
+    .action-item {
+      padding: 4px 0 4px 20px;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    .action-item::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: #6c757d;
+    }
+
+    .section-title {
+      border-bottom: 3px solid #0D6EFD;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .highlight-box {
+      background-color: #f0f7ff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      border-left: 4px solid #0D6EFD;
+    }
+
+    .o-label {
+      font-weight: 700;
+      color: #0D6EFD;
+    }
+
+    .kr-label {
+      font-weight: 600;
+      color: #6f42c1;
+    }
+
+    .action-label {
+      font-weight: 600;
+      color: #198754;
+    }
+
+    .tag-blue {
+      background-color: #e7f1ff;
+      color: #0D6EFD;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .tag-purple {
+      background-color: #f3e8ff;
+      color: #6f42c1;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .tag-green {
+      background-color: #e6f9ed;
+      color: #198754;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .tag-red {
+      background-color: #ffe8e8;
+      color: #dc3545;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .step-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #0D6EFD;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .timeline-step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .timeline-step .step-content {
+      padding-top: 2px;
+    }
+
+    .yf-font1 {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+    }
+
+    .main-content-area {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 30px 30px 40px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 576px) {
+      .main-content-area {
+        padding: 16px;
+      }
+    }
+
+    .header-sub {
+      color: #6c757d;
+      font-size: 1.1rem;
+    }
+
+    .kr-number {
+      font-weight: 700;
+      color: #0D6EFD;
+    }
+
+    .question-box {
+      background-color: #fff8e7;
+      border-left: 6px solid #fd7e14;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+    }
+
+    .question-box .question-label {
+      font-weight: 700;
+      color: #d68a1c;
+      font-size: 1.1rem;
+    }
+
+    .question-box .question-text {
+      font-size: 1.05rem;
+      color: #3d3d3d;
+      margin-top: 6px;
+    }
+  </style>
+
+  <!-- 選單滾輪 -->
+  <style>
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+  </style>
+
+</head>
+
+<body id="n0" class="bg-light" onload="updateCounter()">
+  <!-- 導覽列 -->
+  <div id="nav1"></div>
+
+  <!-- *************************************************************************** -->
+  <header class="text-center p-4"
+    style="margin-top: 75px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <h1 class="text-primary yf-font1" style="font-weight: 900; font-size: 2.6rem;">
+      <i class="fas fa-bullseye text-primary me-2"></i>D004.每日一問｜OKR退休學習生活計畫 ~ 115.07.02
+    </h1>
+    <p class="text-muted yf-font1" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+      用目標與關鍵成果，打造有方向、有節奏的成長計畫
+    </p>
+  </header>
+
+  <!-- ############################################################################ -->
+  <!-- 主內容 -->
+  <div class="container yf-font1">
+    <div class="main-content-area">
+
+      <!-- ============================================================ -->
+      <!-- 原始問題背景 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="question-box">
+            <div class="question-label">
+              <i class="fas fa-pen me-2"></i>我的提問（緣起）
+            </div>
+            <div class="question-text">
+              <p class="mb-1">
+                最近看一本書是羅振宇匯集37位名人所寫的《未來1000天》，其中書中有一個觀念為OKR，
+                簡單就是一家公司以OKR為觀點，透過導入AI協作讓公司從500人變成29人但是業績不減反增。
+              </p>
+              <p class="mb-0">
+                幫我詳細說明OKR，並且可以用在我目前的退休學習生活上，透過OKR觀念結合讓我的各項學習有更好的成效。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 引言 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="highlight-box">
+            <p style="font-size: 1.05rem; margin-bottom: 0;">
+              <i class="fas fa-quote-left text-primary me-2" style="opacity:0.6;"></i>
+              OKR 是一套用「明確目標＋可量化成果」來聚焦行動、提升效率的框架，
+              很適合用在你的退休學習生活，讓這些「每日一」變成有方向、有節奏的成長計畫。
+              <i class="fas fa-quote-right text-primary ms-2" style="opacity:0.6;"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 是什麼？ -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2 class="section-title">
+            <i class="fas fa-question-circle text-primary me-2"></i>OKR 是什麼？
+          </h2>
+          <p>
+            OKR 是 <strong>Objectives and Key Results</strong> 的縮寫，中文是「<strong>目標與關鍵成果</strong>」，
+            源自 Intel 前執行長 Andy Grove 的管理方法，後來被 Google 等公司廣泛採用。
+          </p>
+          <p>
+            <span class="o-label">O（Objective）</span> 是具啟發性、有挑戰但清楚的大目標，
+            <span class="kr-label">KR（Key Results）</span> 是用來衡量達成程度的量化指標，
+            通常一個目標搭配 2–5 個關鍵成果。
+          </p>
+          <p>
+            OKR 強調 <span class="tag-blue">簡潔聚焦</span>、
+            <span class="tag-purple">定期檢視</span>、
+            <span class="tag-green">挑戰性的目標</span>，
+            以及「<span class="tag-red">與獎金或考核分離</span>」，
+            目的是提高自主性與創造力，而不是做績效打分。
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR vs KPI -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2 class="section-title">
+            <i class="fas fa-arrows-left-right text-primary me-2"></i>與 KPI 的差異
+            <span style="font-size:0.85rem; color:#6c757d; font-weight:400;">（為什麼適合你的退休生活）</span>
+          </h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-header bg-white fw-bold text-danger">
+                  <i class="fas fa-times-circle text-danger me-1"></i> KPI
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    多半是由上而下設定，用來考核員工表現，因此人們往往求「達標」而不敢設定太有挑戰性的目標。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-header bg-white fw-bold text-success">
+                  <i class="fas fa-check-circle text-success me-1"></i> OKR
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    鼓勵由下而上的共同設定，高度透明、公開分享，每個人可以主動提出自己有野心的目標，
+                    再用 KR 來量化進展，<strong>60–70% 達成率</strong> 就被視為良好而不是失敗。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-2 text-muted">
+            <i class="fas fa-lightbulb text-warning me-1"></i>
+            對退休生活與個人學習來說，OKR 很適合拿來「導航」，幫你決定該把時間和精力放在哪裡，
+            而不是用來壓力式考核自己。
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 結構：三層思考 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2 class="section-title">
+            <i class="fas fa-layer-group text-primary me-2"></i>OKR 的結構：三層思考
+          </h2>
+          <p class="text-muted">多數實務會把 OKR 拆成三層來使用，這也很適合你的風格。</p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                  <div class="step-circle" style="background-color:#0D6EFD; margin:0 auto 12px;">1</div>
+                  <h5 class="card-title o-label">目標 Objective</h5>
+                  <p class="card-text small">
+                    我想要在這一季或一年「變成什麼樣子的人」或「達到什麼狀態」。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                  <div class="step-circle" style="background-color:#6f42c1; margin:0 auto 12px;">2</div>
+                  <h5 class="card-title kr-label">關鍵成果 Key Results</h5>
+                  <p class="card-text small">
+                    用 2–4 個具體、可量化的指標來描述「做到什麼，就算這個目標有 60–70% 達成」。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                  <div class="step-circle" style="background-color:#198754; margin:0 auto 12px;">3</div>
+                  <h5 class="card-title action-label">對應行動 Initiatives</h5>
+                  <p class="card-text small">
+                    為了達成每個 KR，要做哪些具體行動（每日、每週的任務）。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-2 text-muted">
+            <i class="fas fa-arrow-right text-primary me-1"></i>
+            你現在的「每日一」其實已經很接近第 3 層（行動），OKR 能幫你補上「清楚的目標」與「量化成果」，
+            讓行動更有方向感。
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 如何用 OKR 設計退休學習生活 -->
+      <div class="row mb-3">
+        <div class="col-12">
+          <h2 class="section-title">
+            <i class="fas fa-pencil-ruler text-primary me-2"></i>如何用 OKR 設計你的退休學習生活
+          </h2>
+          <p>
+            可以先用「一季或一年」為周期（例如 2026 下半年），設計 3–5 個大的 OKR，
+            分別對應你現在的重要面向。
+          </p>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 範例 1 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card okr-card">
+            <div class="card-header" style="background-color:#f0f7ff; border-left:5px solid #0D6EFD;">
+              <i class="fas fa-robot text-primary"></i> OKR 範例 1：AI 學習與 AI 學苑
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <span class="o-label"><i class="fas fa-flag-checkered me-1"></i>目標 O1：</span>
+                打造一個有系統的「個人 AI 學苑」，成為自己學 AI 的知識地圖。
+              </div>
+              <div class="mb-3">
+                <span class="kr-label"><i class="fas fa-list-check me-1"></i>關鍵成果 KR：</span>
+                <div class="kr-item">KR1-1：完成至少 <strong>5 個 AI 主題專區</strong>（如提示詞、圖片生成、影片、Agent、工具導覽），每個專區有 5 則以上的學習紀錄。
+                </div>
+                <div class="kr-item">KR1-2：整理至少 <strong>30 個常用免費 AI 工具</strong>／網站，完成分類與簡要說明。</div>
+                <div class="kr-item">KR1-3：每週至少更新 AI 學苑 <strong>3 次</strong>（文章、記錄或結構調整），連續 12 週。</div>
+              </div>
+              <div>
+                <span class="action-label"><i class="fas fa-tasks me-1"></i>對應行動（每日／每週）：</span>
+                <div class="action-item"><strong>每日 AI：</strong>選一個主題（例如 Vibe coding、AI Agent）做 15–30 分鐘學習，並在你的網頁中留下紀錄。
+                </div>
+                <div class="action-item"><strong>每週一次「整理日」：</strong>把這週零散的 AI 工具與學習內容，分類進 AI 學苑。</div>
+                <div class="mt-2 text-muted small" style="border-top:1px dashed #dee2e6; padding-top:8px;">
+                  <i class="fas fa-link me-1"></i> 這樣「每日 AI、每日網頁」就被同一個明確的大目標 O1 串起來，而不是各做各的。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 範例 2 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card okr-card">
+            <div class="card-header" style="background-color:#f3e8ff; border-left:5px solid #6f42c1;">
+              <i class="fas fa-language text-purple"></i> OKR 範例 2：英文能力與多益準備
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <span class="o-label"><i class="fas fa-flag-checkered me-1"></i>目標 O2：</span>
+                為多益做系統準備，把英文變成每天的自然習慣。
+              </div>
+              <div class="mb-3">
+                <span class="kr-label"><i class="fas fa-list-check me-1"></i>關鍵成果 KR：</span>
+                <div class="kr-item">KR2-1：連續 12 週，每週累積至少 <strong>5 天</strong> 英文練習，每次 20 分鐘以上（單字／句型／聽力／閱讀都可）。</div>
+                <div class="kr-item">KR2-2：完成至少 <strong>6 回</strong> 完整多益模擬測驗，紀錄分數與錯題分析。</div>
+                <div class="kr-item">KR2-3：建立一份 <strong>300–500 個</strong> 常用多益字彙清單，分主題整理，並在 AI 學苑中建立專頁。</div>
+              </div>
+              <div>
+                <span class="action-label"><i class="fas fa-tasks me-1"></i>對應行動：</span>
+                <div class="action-item"><strong>每日英文：</strong>固定在早上或晚上做一個小模組（例如：10 分鐘聽力＋10 分鐘閱讀）。</div>
+                <div class="action-item"><strong>每週一回顧：</strong>檢查 KR2 的進度，在網頁上寫簡短學習心得。</div>
+                <div class="mt-2 text-muted small" style="border-top:1px dashed #dee2e6; padding-top:8px;">
+                  <i class="fas fa-check-circle text-success me-1"></i>
+                  OKR 的好處是：就算某週比較忙，只做到 3 天，仍然可以看見「整體趨勢」，不會因為沒達到 100% 就否定自己。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 範例 3 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card okr-card">
+            <div class="card-header" style="background-color:#e6f9ed; border-left:5px solid #198754;">
+              <i class="fas fa-heartbeat text-success"></i> OKR 範例 3：身心與健康（走路＋減糖＋石牌整理）
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <span class="o-label"><i class="fas fa-flag-checkered me-1"></i>目標 O3：</span>
+                建立可持續的健康生活節奏。
+              </div>
+              <div class="mb-3">
+                <span class="kr-label"><i class="fas fa-list-check me-1"></i>關鍵成果 KR：</span>
+                <div class="kr-item">KR3-1：連續 12 週，每週平均每日步數達到 <strong>3000 步</strong> 以上（你目前是 2000，可以稍微拉高一點做挑戰）。</div>
+                <div class="kr-item">KR3-2：每週記錄飲食至少 <strong>3 天</strong>，標記「減糖成功日」，12 週累積達到至少 <strong>30 天</strong>。
+                </div>
+                <div class="kr-item">KR3-3：石牌整理在今年年底前，完成 <strong>3 次</strong> 「整體檢視與整理」，每次有照片／文字紀錄。</div>
+              </div>
+              <div>
+                <span class="action-label"><i class="fas fa-tasks me-1"></i>對應行動：</span>
+                <div class="action-item"><strong>每日走路：</strong>Costco、散步都算，搭配手機記錄步數。</div>
+                <div class="action-item"><strong>每週健康回顧：</strong>把步數和飲食記錄更新到網頁（可以當作「健康 AI 專區」的一部分）。</div>
+                <div class="mt-2 text-muted small" style="border-top:1px dashed #dee2e6; padding-top:8px;">
+                  <i class="fas fa-heart text-danger me-1"></i>
+                  這個 OKR 的精神是「讓健康變成可量化的習慣」，而不是變成壓力或罪惡感來源。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 範例 4 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card okr-card">
+            <div class="card-header" style="background-color:#fff3e0; border-left:5px solid #fd7e14;">
+              <i class="fas fa-users text-warning"></i> OKR 範例 4：協助兒子的職涯與教練工作
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <span class="o-label"><i class="fas fa-flag-checkered me-1"></i>目標 O4：</span>
+                成為兒子職涯的長期陪跑顧問，而不是只在他遇到問題時臨時支援。
+              </div>
+              <div class="mb-3">
+                <span class="kr-label"><i class="fas fa-list-check me-1"></i>關鍵成果 KR：</span>
+                <div class="kr-item">KR4-1：每月至少 <strong>1 次</strong> 深度對談（60–90 分鐘），聚焦在課程設計、客戶經營與職涯規畫，總計 <strong>6
+                    次</strong> 以上。</div>
+                <div class="kr-item">KR4-2：協助他設計並實驗至少 <strong>3 種</strong> 新的課程或服務方案（例如：銀髮健身、減脂班、小團體課）。</div>
+                <div class="kr-item">KR4-3：共同整理一份「健身教練職場心法」筆記，至少 <strong>20 條</strong>（可以結合你的教學經驗與他的實務案例）。</div>
+              </div>
+              <div>
+                <span class="action-label"><i class="fas fa-tasks me-1"></i>對應行動：</span>
+                <div class="action-item"><strong>固定約談時間：</strong>例如每月第 1 個週末，當作「職涯教練日」。</div>
+                <div class="action-item">讓他也學會簡單的 OKR，一起寫出他自己的 O、KR，讓你扮演旁邊的顧問角色。</div>
+                <div class="mt-2 text-muted small" style="border-top:1px dashed #dee2e6; padding-top:8px;">
+                  <i class="fas fa-handshake text-primary me-1"></i>
+                  這樣你在「家庭與職場顧問」這個角色上的貢獻就會更明確，而不是零散的建議。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 運作節奏 -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h2 class="section-title">
+            <i class="fas fa-clock text-primary me-2"></i>OKR 的運作節奏：如何避免變成「又一套流程」
+          </h2>
+          <p>為了讓 OKR 真正幫助你，而不是變成複雜的管理工具，可以用簡單的三步節奏。</p>
+
+          <div class="timeline-step">
+            <div class="step-circle" style="background-color:#0D6EFD;">1</div>
+            <div class="step-content">
+              <h6 class="fw-bold">設定期初</h6>
+              <p class="mb-0">
+                例如 2026 下半年，設定 3–5 個 O，每個 O 配 2–4 個 KR，
+                寫在你的 AI 學苑首頁或一個專頁。
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-circle" style="background-color:#6f42c1;">2</div>
+            <div class="step-content">
+              <h6 class="fw-bold">每週一次 15–30 分鐘檢視</h6>
+              <ul class="mb-0" style="padding-left:20px;">
+                <li>看每個 KR 的進度（例如：本週英文練習幾天？AI 學苑新增了幾篇？步數平均多少？）</li>
+                <li>如果某個 KR 已經不適合（例如太難或方向錯了），可以調整——OKR 是動態的，不是死板計畫。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-circle" style="background-color:#198754;">3</div>
+            <div class="step-content">
+              <h6 class="fw-bold">每季末做一次回顧</h6>
+              <ul class="mb-0" style="padding-left:20px;">
+                <li>評估每個 O 的達成度，大約估計在 0–1 之間（例如 0.6 代表達成 60%）。</li>
+                <li>記錄「學到什麼」比「有沒有完全做到」更重要，並據此設計下一季的 OKR。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="highlight-box mt-3">
+            <p class="mb-0">
+              <i class="fas fa-info-circle text-primary me-2"></i>
+              OKR 的文化本來就是假設 <strong>60–70%</strong> 是健康的達成率，
+              如果你每季都把自己逼到 100%，反而代表目標不夠有挑戰性。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- OKR 搭配 AI -->
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title">
+            <i class="fas fa-robot text-primary me-2"></i>OKR 搭配 AI：
+            <span style="font-size:0.85rem; color:#6c757d; font-weight:400;">讓你也有「500 人變 29 人」的效率感</span>
+          </h2>
+          <p>
+            正如你在《未來1000天》中看到的案例，書中提到公司用 OKR＋AI 協作，讓人力大幅縮減但業績不減反增，
+            本質上是：<strong>用清楚的目標把 AI 變成「會做事的夥伴」</strong>。
+          </p>
+          <p>
+            你可以用同樣思路運用 AI（包括你現在熟悉的 Perplexity Space、Gemini、Claude 等）：
+          </p>
+          <ul style="padding-left:20px;">
+            <li>在每個 O 底下，把 KR 明確寫進提示詞，例如：</li>
+          </ul>
+          <div class="highlight-box mb-3" style="background-color:#f8f9fa; border-left-color:#6c757d;">
+            <p class="mb-0" style="font-style:italic; color:#495057;">
+              「你是我的 AI 學習教練，目標是幫我完成 300 個多益字彙的主題整理，請幫我設計 12 週的學習計畫…」
+            </p>
+          </div>
+          <p>讓 AI 幫你：</p>
+          <div class="row g-2 mb-2">
+            <div class="col-md-3 col-6">
+              <div class="card border-0 bg-light text-center p-2 h-100">
+                <div class="card-body p-2">
+                  <i class="fas fa-tasks text-primary fa-lg"></i>
+                  <div class="small mt-1">拆 KR 成每週或每日任務</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="card border-0 bg-light text-center p-2 h-100">
+                <div class="card-body p-2">
+                  <i class="fas fa-pen-fancy text-success fa-lg"></i>
+                  <div class="small mt-1">產生練習題、英聽摘要、閱讀重點</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="card border-0 bg-light text-center p-2 h-100">
+                <div class="card-body p-2">
+                  <i class="fas fa-chart-line text-warning fa-lg"></i>
+                  <div class="small mt-1">分析紀錄，找出「卡住點」</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="card border-0 bg-light text-center p-2 h-100">
+                <div class="card-body p-2">
+                  <i class="fas fa-lightbulb text-danger fa-lg"></i>
+                  <div class="small mt-1">提供下一步建議</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- 結尾 -->
+      <div class="row mt-4">
+        <div class="col-12 text-center text-muted" style="border-top:2px solid #e9ecef; padding-top:20px;">
+          <p class="mb-0" style="font-size:0.95rem;">
+            <i class="fas fa-flag-checkered text-primary me-1"></i>
+            用 OKR 為退休生活導航，讓每一天都朝著有意義的方向前進。
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <!-- /main-content-area -->
+  </div>
+  <!-- /container -->
+
+  <!-- 頁腳 -->
+  <div id="footer"></div>
+  <script>
+    $(function () {
+      $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+      $("#page1").load("./E01-ex-comm/EX02-page-D002.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+</body>
+
+</html>

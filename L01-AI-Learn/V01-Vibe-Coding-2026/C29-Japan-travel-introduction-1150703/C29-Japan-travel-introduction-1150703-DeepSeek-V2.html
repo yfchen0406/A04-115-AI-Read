@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C29.日本地圖~47個都道府縣</title>
+
+  <!-- 引用您的標準架構所需的 CSS 與 JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 您可能還有自訂的 CSS，請保留 -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- 原 C29 的樣式（微調） ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #f0ede8;
+      /* 避免與標準架構背景衝突，但可保留 */
+    }
+
+    .app-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 16px 56px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: box-shadow 0.25s ease;
+      margin: 20px auto;
+    }
+
+    .app-wrapper:hover {
+      box-shadow: 0 24px 72px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ---------- 左側邊欄 ---------- */
+    .sidebar {
+      width: 280px;
+      min-width: 240px;
+      flex: 0 0 280px;
+      background: #f9f8f6;
+      padding: 18px 14px 30px;
+      border-right: 1px solid #e6e3dd;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
+    }
+
+    .sidebar-header {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e1e2a;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #d6d2ca;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .sidebar-header span {
+      background: #c0392b;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0 12px;
+      border-radius: 20px;
+      line-height: 24px;
+    }
+
+    .region-group {
+      margin-bottom: 14px;
+    }
+
+    .region-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #4a3f35;
+      padding: 6px 0 4px 8px;
+      border-bottom: 1px dashed #ddd8d0;
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .region-title .badge {
+      background: #b0a89c;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 0 10px;
+      border-radius: 12px;
+      line-height: 20px;
+    }
+
+    /* 修改：每行兩個縣市 */
+    .pref-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      padding-left: 6px;
+    }
+
+    .pref-link {
+      display: block;
+      width: calc(50% - 2px);  /* 每行兩個，減去間隙 */
+      padding: 5px 6px 5px 10px;
+      font-size: 14px;
+      color: #2d2a24;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s, padding-left 0.15s;
+      border-left: 3px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pref-link:hover {
+      background: #ede8e0;
+      color: #a93226;
+      border-left-color: #c0392b;
+      padding-left: 14px;
+    }
+
+    .pref-link:active {
+      background: #dcd5cb;
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+      background: #f0ede8;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+      background: #cac3b8;
+      border-radius: 6px;
+    }
+
+    /* ---------- 右側地圖區 ---------- */
+    .map-area {
+      flex: 1;
+      padding: 20px 24px 28px;
+      min-width: 0;
+      background: #ffffff;
+    }
+
+    .map-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .map-title small {
+      font-weight: 400;
+      font-size: 15px;
+      color: #999;
+      letter-spacing: 0.3px;
+    }
+
+    .map-wrapper {
+      position: relative;
+      width: 100%;
+      background: #faf8f6;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #ece8e2;
+    }
+
+    .map-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      padding: 14px 20px;
+      background: #f7f5f1;
+      border-radius: 12px;
+      border-left: 5px solid #c0392b;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #3d3d3d;
+    }
+
+    .footer-note strong {
+      color: #1a1a2e;
+    }
+    .footer-note code {
+      background: #eae7e0;
+      padding: 1px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #2c3e50;
+    }
+    .footer-note .tool-link {
+      color: #c0392b;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px dashed #c0392b;
+    }
+    .footer-note .tool-link:hover {
+      border-bottom-style: solid;
+    }
+
+    /* 響應式調整 */
+    @media (max-width: 820px) {
+      .app-wrapper {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        flex: none;
+        border-right: none;
+        border-bottom: 1px solid #e6e3dd;
+        max-height: 280px;
+        position: relative;
+        top: 0;
+        padding: 14px 16px 18px;
+      }
+      .pref-link {
+        width: calc(50% - 2px);
+        font-size: 13px;
+        padding: 4px 6px 4px 10px;
+      }
+      .map-area {
+        padding: 16px;
+      }
+      .map-title {
+        font-size: 20px;
+      }
+      .map-title small {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar {
+        max-height: 220px;
+        padding: 10px 12px 14px;
+      }
+      .pref-link {
+        font-size: 12px;
+        padding: 3px 4px 3px 8px;
+      }
+      .map-area {
+        padding: 10px;
+      }
+      .map-title {
+        font-size: 17px;
+      }
+      .footer-note {
+        font-size: 12px;
+        padding: 10px 14px;
+      }
+    }
+
+    /* 保留標準架構中可能需要的額外樣式 */
+    .yf-container { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .yf-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark">
+  <!-- 導覽列（您的標準架構） -->
+  <div id="nav1"></div>
+
+  <!-- 標題區域（採用您的 header 架構） -->
+  <header class="text-center p1" style="margin-top: 65px;">
+    <h1 class="text-info yf-font1">C29.日本地圖~47個都道府縣 ~ 115.07.04</h1>
+    <p class="yf-color-as1 yf-font1">點擊地圖或左側名稱，即可查看著名旅遊景點</p>
+  </header>
+
+  <!-- 主內容容器（採用您的 container-fluid） -->
+  <div class="container-fluid" style="margin-top:5px;background-color:white">
+    <div class="row">
+      <div class="col-12">
+        <!-- 將原本的 app-wrapper 放入此處 -->
+        <div class="app-wrapper">
+          <!-- 左側邊欄 -->
+          <nav class="sidebar" aria-label="都道府縣導航">
+            <div class="sidebar-header">
+              🗾 都道府县
+              <span>47</span>
+            </div>
+
+            <!-- 北海道地方 -->
+            <div class="region-group">
+              <div class="region-title"><a class="pref-link" href="./images/M006-0-北海道全覽.webp" style="width:auto; border-left-color:transparent;">北海道</a><span class="badge">4</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="./images/M006-4-道北.webp">道北(北海道)</a>
+                <a class="pref-link" href="./images/M006-3-道央.webp">道央(北海道)</a>
+                <a class="pref-link" href="./images/M006-2-道南.webp">道南(北海道)</a>
+                <a class="pref-link" href="./images/M006-5-道東.webp">道東(北海道)</a>
+              </div>
+            </div>
+
+            <!-- 東北地方 -->
+            <div class="region-group">
+              <div class="region-title"><a class="pref-link" href="./images/M010-0-東北地區總覽.webp" style="width:auto; border-left-color:transparent;">東北地區</a><span class="badge">6</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="./images/M010-1-青森.webp">青森県</a>
+                <a class="pref-link" href="./images/M010-2-岩手.webp">岩手県</a>
+                <a class="pref-link" href="./images/M010-3-宮城.webp">宮城県</a>
+                <a class="pref-link" href="./images/M010-4-秋田.webp">秋田県</a>
+                <a class="pref-link" href="./images/M010-5-山形.webp">山形県</a>
+                <a class="pref-link" href="./images/M010-6-福島.webp">福島県</a>
+              </div>
+            </div>
+
+            <!-- 関東地方 -->
+            <div class="region-group">
+              <div class="region-title"><a class="pref-link" href="./images/M015-0-關東地區.webp" style="width:auto; border-left-color:transparent;">關東地區</a><span class="badge">7</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="#pref-ibaraki">茨城県</a>
+                <a class="pref-link" href="#pref-tochigi">栃木県</a>
+                <a class="pref-link" href="#pref-gunma">群馬県</a>
+                <a class="pref-link" href="#pref-saitama">埼玉県</a>
+                <a class="pref-link" href="#pref-chiba">千葉県</a>
+                <a class="pref-link" href="#pref-tokyo">東京都</a>
+                <a class="pref-link" href="#pref-kanagawa">神奈川県</a>
+              </div>
+            </div>
+
+            <!-- 中部地方 -->
+            <div class="region-group">
+              <div class="region-title">中部 <span class="badge">9</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="#pref-niigata">新潟県</a>
+                <a class="pref-link" href="#pref-toyama">富山県</a>
+                <a class="pref-link" href="#pref-ishikawa">石川県</a>
+                <a class="pref-link" href="#pref-fukui">福井県</a>
+                <a class="pref-link" href="#pref-yamanashi">山梨県</a>
+                <a class="pref-link" href="#pref-nagano">長野県</a>
+                <a class="pref-link" href="#pref-gifu">岐阜県</a>
+                <a class="pref-link" href="#pref-shizuoka">静岡県</a>
+                <a class="pref-link" href="#pref-aichi">愛知県</a>
+              </div>
+            </div>
+
+            <!-- 近畿地方 -->
+            <div class="region-group">
+              <div class="region-title">近畿 <span class="badge">7</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="#pref-mie">三重県</a>
+                <a class="pref-link" href="#pref-shiga">滋賀県</a>
+                <a class="pref-link" href="#pref-kyoto">京都府</a>
+                <a class="pref-link" href="#pref-osaka">大阪府</a>
+                <a class="pref-link" href="#pref-hyogo">兵庫県</a>
+                <a class="pref-link" href="#pref-nara">奈良県</a>
+                <a class="pref-link" href="#pref-wakayama">和歌山県</a>
+              </div>
+            </div>
+
+            <!-- 中国地方 -->
+            <div class="region-group">
+              <div class="region-title">中国 <span class="badge">5</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="#pref-tottori">鳥取県</a>
+                <a class="pref-link" href="#pref-shimane">島根県</a>
+                <a class="pref-link" href="#pref-okayama">岡山県</a>
+                <a class="pref-link" href="#pref-hiroshima">広島県</a>
+                <a class="pref-link" href="#pref-yamaguchi">山口県</a>
+              </div>
+            </div>
+
+            <!-- 四国地方 -->
+            <div class="region-group">
+              <div class="region-title">四国 <span class="badge">4</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="#pref-tokushima">徳島県</a>
+                <a class="pref-link" href="#pref-kagawa">香川県</a>
+                <a class="pref-link" href="#pref-ehime">愛媛県</a>
+                <a class="pref-link" href="#pref-kochi">高知県</a>
+              </div>
+            </div>
+
+            <!-- 九州・沖縄地方 -->
+            <div class="region-group">
+              <div class="region-title">九州・沖縄 <span class="badge">8</span></div>
+              <div class="pref-list">
+                <a class="pref-link" href="#pref-fukuoka">福岡県</a>
+                <a class="pref-link" href="#pref-saga">佐賀県</a>
+                <a class="pref-link" href="#pref-nagasaki">長崎県</a>
+                <a class="pref-link" href="#pref-kumamoto">熊本県</a>
+                <a class="pref-link" href="#pref-oita">大分県</a>
+                <a class="pref-link" href="#pref-miyazaki">宮崎県</a>
+                <a class="pref-link" href="#pref-kagoshima">鹿児島県</a>
+                <a class="pref-link" href="#pref-okinawa">沖縄県</a>
+              </div>
+            </div>
+
+            <div style="margin-top:12px; padding-top:10px; border-top:1px solid #e0dbd3; font-size:12px; color:#a0988a; text-align:center;">
+              點擊左側名稱或地圖上的文字
+            </div>
+          </nav>
+
+          <!-- 右側地圖區 -->
+          <main class="map-area">
+            <div class="map-title">
+              🗾 日本地圖～
+              <small>47個都道府縣 · 點即可看著名旅遊景點</small>
+            </div>
+
+            <div class="map-wrapper">
+              <img src="A00.webp" alt="日本地图（47都道府县）" usemap="#japanMap" loading="lazy" />
+
+              <map name="japanMap">
+                <!-- 北海道 -->
+                <area shape="rect" coords="220,30,380,200" href="#pref-hokkaido" alt="北海道" title="北海道" />
+                <!-- 東北 -->
+                <area shape="rect" coords="280,210,370,280" href="#pref-aomori" alt="青森県" title="青森県" />
+                <area shape="rect" coords="330,290,420,380" href="#pref-iwate" alt="岩手県" title="岩手県" />
+                <area shape="rect" coords="350,390,430,460" href="#pref-miyagi" alt="宮城県" title="宮城県" />
+                <area shape="rect" coords="260,300,330,380" href="#pref-akita" alt="秋田県" title="秋田県" />
+                <area shape="rect" coords="300,380,360,440" href="#pref-yamagata" alt="山形県" title="山形県" />
+                <area shape="rect" coords="360,450,440,530" href="#pref-fukushima" alt="福島県" title="福島県" />
+                <!-- 関東 -->
+                <area shape="rect" coords="440,530,520,590" href="#pref-ibaraki" alt="茨城県" title="茨城県" />
+                <area shape="rect" coords="420,480,490,540" href="#pref-tochigi" alt="栃木県" title="栃木県" />
+                <area shape="rect" coords="380,470,440,530" href="#pref-gunma" alt="群馬県" title="群馬県" />
+                <area shape="rect" coords="440,550,510,610" href="#pref-saitama" alt="埼玉県" title="埼玉県" />
+                <area shape="rect" coords="510,580,590,640" href="#pref-chiba" alt="千葉県" title="千葉県" />
+                <area shape="rect" coords="480,560,540,620" href="#pref-tokyo" alt="東京都" title="東京都" />
+                <area shape="rect" coords="470,620,540,680" href="#pref-kanagawa" alt="神奈川県" title="神奈川県" />
+                <!-- 中部 -->
+                <area shape="rect" coords="380,420,440,490" href="#pref-niigata" alt="新潟県" title="新潟県" />
+                <area shape="rect" coords="340,460,390,510" href="#pref-toyama" alt="富山県" title="富山県" />
+                <area shape="rect" coords="320,480,370,530" href="#pref-ishikawa" alt="石川県" title="石川県" />
+                <area shape="rect" coords="330,530,380,580" href="#pref-fukui" alt="福井県" title="福井県" />
+                <area shape="rect" coords="440,540,490,590" href="#pref-yamanashi" alt="山梨県" title="山梨県" />
+                <area shape="rect" coords="400,470,460,540" href="#pref-nagano" alt="長野県" title="長野県" />
+                <area shape="rect" coords="390,560,440,620" href="#pref-gifu" alt="岐阜県" title="岐阜県" />
+                <area shape="rect" coords="480,600,550,660" href="#pref-shizuoka" alt="静岡県" title="静岡県" />
+                <area shape="rect" coords="440,640,510,710" href="#pref-aichi" alt="愛知県" title="愛知県" />
+                <!-- 近畿 -->
+                <area shape="rect" coords="420,680,480,740" href="#pref-mie" alt="三重県" title="三重県" />
+                <area shape="rect" coords="370,660,420,710" href="#pref-shiga" alt="滋賀県" title="滋賀県" />
+                <area shape="rect" coords="360,680,410,730" href="#pref-kyoto" alt="京都府" title="京都府" />
+                <area shape="rect" coords="390,730,440,780" href="#pref-osaka" alt="大阪府" title="大阪府" />
+                <area shape="rect" coords="340,700,400,760" href="#pref-hyogo" alt="兵庫県" title="兵庫県" />
+                <area shape="rect" coords="410,750,460,800" href="#pref-nara" alt="奈良県" title="奈良県" />
+                <area shape="rect" coords="410,790,460,850" href="#pref-wakayama" alt="和歌山県" title="和歌山県" />
+                <!-- 中国 -->
+                <area shape="rect" coords="300,730,350,780" href="#pref-tottori" alt="鳥取県" title="鳥取県" />
+                <area shape="rect" coords="260,740,320,800" href="#pref-shimane" alt="島根県" title="島根県" />
+                <area shape="rect" coords="330,780,390,840" href="#pref-okayama" alt="岡山県" title="岡山県" />
+                <area shape="rect" coords="290,810,350,870" href="#pref-hiroshima" alt="広島県" title="広島県" />
+                <area shape="rect" coords="270,870,330,930" href="#pref-yamaguchi" alt="山口県" title="山口県" />
+                <!-- 四国 -->
+                <area shape="rect" coords="400,830,450,880" href="#pref-tokushima" alt="徳島県" title="徳島県" />
+                <area shape="rect" coords="370,850,420,900" href="#pref-kagawa" alt="香川県" title="香川県" />
+                <area shape="rect" coords="340,880,400,940" href="#pref-ehime" alt="愛媛県" title="愛媛県" />
+                <area shape="rect" coords="390,910,450,970" href="#pref-kochi" alt="高知県" title="高知県" />
+                <!-- 九州・沖縄 -->
+                <area shape="rect" coords="280,940,340,1000" href="#pref-fukuoka" alt="福岡県" title="福岡県" />
+                <area shape="rect" coords="260,970,310,1020" href="#pref-saga" alt="佐賀県" title="佐賀県" />
+                <area shape="rect" coords="220,980,280,1040" href="#pref-nagasaki" alt="長崎県" title="長崎県" />
+                <area shape="rect" coords="290,1020,350,1080" href="#pref-kumamoto" alt="熊本県" title="熊本県" />
+                <area shape="rect" coords="340,980,400,1040" href="#pref-oita" alt="大分県" title="大分県" />
+                <area shape="rect" coords="340,1060,400,1120" href="#pref-miyazaki" alt="宮崎県" title="宮崎県" />
+                <area shape="rect" coords="290,1100,360,1170" href="#pref-kagoshima" alt="鹿児島県" title="鹿児島県" />
+                <area shape="rect" coords="500,1100,570,1180" href="#pref-okinawa" alt="沖縄県" title="沖縄県" />
+              </map>
+            </div>
+
+            <!-- 使用說明 -->
+            <div class="footer-note">
+              <strong>✏️ 如何調整座標：</strong>
+              由於每張地圖的尺寸和文字位置不同，當前 <code>coords</code> 為<strong>參考座標</strong>（基於標準日本地圖估算）。
+              請使用
+              <a class="tool-link" href="https://www.image-map.net/" target="_blank">image-map.net</a>
+              上傳您的 <code>A00.webp</code>，框選每個縣名的文字區域，生成精確座標後替換。
+              <br />
+              <strong>🔗 修改連結：</strong> 將每個 <code>&lt;area href="#pref-xxx"&gt;</code> 中的 <code>#pref-xxx</code> 替換為您的真實
+              URL（例如 <code>https://example.com/hokkaido</code>）。
+              <br />
+              <strong>📌 左側列表：</strong> 點擊左側縣名同樣會跳轉，與地圖上的點擊效果一致。
+            </div>
+
+            <!-- 全部縣名參考（摺疊） -->
+            <details style="margin-top:16px; cursor:pointer; user-select:none;">
+              <summary style="font-weight:600; color:#4a3f35; padding:6px 0; font-size:14px; border-bottom:1px solid #ece8e2;">
+                📋 查看全部 47 都道府縣
+              </summary>
+              <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:2px 10px; padding:12px 6px 4px; font-size:13px; color:#3d3d3d; max-height:200px; overflow-y:auto; background:#faf8f6; border-radius:8px; margin-top:6px;">
+                <span>北海道</span><span>青森県</span><span>岩手県</span><span>宮城県</span>
+                <span>秋田県</span><span>山形県</span><span>福島県</span><span>茨城県</span>
+                <span>栃木県</span><span>群馬県</span><span>埼玉県</span><span>千葉県</span>
+                <span>東京都</span><span>神奈川県</span><span>新潟県</span><span>富山県</span>
+                <span>石川県</span><span>福井県</span><span>山梨県</span><span>長野県</span>
+                <span>岐阜県</span><span>静岡県</span><span>愛知県</span><span>三重県</span>
+                <span>滋賀県</span><span>京都府</span><span>大阪府</span><span>兵庫県</span>
+                <span>奈良県</span><span>和歌山県</span><span>鳥取県</span><span>島根県</span>
+                <span>岡山県</span><span>広島県</span><span>山口県</span><span>徳島県</span>
+                <span>香川県</span><span>愛媛県</span><span>高知県</span><span>福岡県</span>
+                <span>佐賀県</span><span>長崎県</span><span>熊本県</span><span>大分県</span>
+                <span>宮崎県</span><span>鹿児島県</span><span>沖縄県</span>
+              </div>
+            </details>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾（您的標準架構） -->
+  <div id="footer"></div>
+
+  <!-- 動態載入 nav 與 footer（請確認路徑正確） -->
+  <script>
+    $(function () {
+      $("#nav1").load("/L01-AI-Learn/B01-ex-comm/BX02-nav-2025.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+  <!-- 地圖點擊控制台提示（保留原功能） -->
+  <script>
+    (function () {
+      const areas = document.querySelectorAll('map[name="japanMap"] area');
+      areas.forEach(area => {
+        area.addEventListener('click', function (e) {
+          const name = this.getAttribute('alt') || this.getAttribute('title') || '都道府县';
+          console.log(`🔗 點擊: ${name} → ${this.getAttribute('href')}`);
+        });
+      });
+      console.log(`✅ 日本地圖載入完成 · 共 ${areas.length} 個可點擊區域`);
+      console.log('💡 提示：點擊左側列表或地圖上的文字均可跳轉');
+    })();
+  </script>
+</body>
+</html>

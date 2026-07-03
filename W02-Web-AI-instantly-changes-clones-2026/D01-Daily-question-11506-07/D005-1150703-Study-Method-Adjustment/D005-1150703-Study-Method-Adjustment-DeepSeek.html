@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+    <title>D005.每日一問｜讀書方法調整：從AI主導到自我主導 ~ 115.07.03</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+    <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <!-- font-awesome 6.7.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- 自己的CSS -->
+    <link rel="stylesheet" href="/css/F01-1-note.css">
+    <link rel="stylesheet" href="/css/F02-2-note.css">
+    <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+    <link rel="stylesheet" href="/css/all.css">
+
+    <!-- 大陸網站iconfont圖標  -->
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="css/iconfont.js">
+    </script>
+    <!-- 引入 Lottie Web 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+    </script>
+    <!-- 大陸網站iconfont圖標  -->
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="css/iconfont.js">
+    </script>
+    <!-- 引入 Lottie Web 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+    </script>
+
+
+    <!-- (ok)  google font link  -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link
+    href="[https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap)"
+    rel="stylesheet">
+
+    <style>
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .yf-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        .yf-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .yf1 {
+            color: green;
+            font-weight: bold;
+        }
+
+        .yf11 {
+            color: green;
+        }
+
+        .yf2 {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .yf22 {
+            color: purple;
+        }
+
+        .yf3 {
+            color: #0D6EFD;
+            font-weight: bold;
+        }
+
+        .yf33 {
+            color: #0D6EFD;
+        }
+
+        .yf4 {
+            color: red;
+            font-weight: bold;
+        }
+
+        .yf44 {
+            color: red;
+        }
+
+        .yf5 {
+            color: rgb(143, 13, 13);
+            font-weight: bold;
+        }
+
+        .yf55 {
+            color: rgb(143, 13, 13);
+        }
+
+        .yf-c {
+            text-align: center
+        }
+
+        /* 自訂卡片樣式 */
+        .question-box {
+            background-color: #fff8e7;
+            border-left: 6px solid #fd7e14;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 28px;
+        }
+        .question-box .question-label {
+            font-weight: 700;
+            color: #d68a1c;
+            font-size: 1.1rem;
+        }
+        .question-box .question-text {
+            font-size: 1.05rem;
+            color: #3d3d3d;
+            margin-top: 6px;
+        }
+
+        .advice-card {
+            border-left: 5px solid #0D6EFD;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .advice-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .advice-card .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            font-weight: 700;
+        }
+        .step-item {
+            padding: 8px 0 8px 28px;
+            position: relative;
+        }
+        .step-item::before {
+            content: "▸";
+            position: absolute;
+            left: 4px;
+            color: #0D6EFD;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background-color: #f0f7ff;
+            border-radius: 8px;
+            padding: 16px 20px;
+            border-left: 4px solid #0D6EFD;
+        }
+        .section-title {
+            border-bottom: 3px solid #0D6EFD;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .yf-font1 {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+        }
+        .main-content-area {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 30px 30px 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 576px) {
+            .main-content-area {
+                padding: 16px;
+            }
+        }
+        .tag-blue {
+            background-color: #e7f1ff;
+            color: #0D6EFD;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .tag-green {
+            background-color: #e6f9ed;
+            color: #198754;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .tag-purple {
+            background-color: #f3e8ff;
+            color: #6f42c1;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .tag-orange {
+            background-color: #fff3e0;
+            color: #fd7e14;
+            padding: 2px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+    </style>
+
+    <!-- 選單滾輪 -->
+    <style>
+        .dropdown-menu {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+    </style>
+
+</head>
+
+<body id="n0" class="bg-light" onload="updateCounter()">
+    <!-- 導覽列 -->
+    <div id="nav1"></div>
+
+    <!-- *************************************************************************** -->
+    <header class="text-center p-4" style="margin-top: 75px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <h1 class="text-primary yf-font1" style="font-weight: 900; font-size: 2.6rem;">
+            <i class="fas fa-book-open text-primary me-2"></i>D005.每日一問｜讀書方法調整：從AI主導到自我主導 ~ 115.07.03
+        </h1>
+        <p class="text-muted yf-font1" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+            讓AI成為你的協作夥伴，而非思考主導者
+        </p>
+    </header>
+
+    <!-- ############################################################################ -->
+    <!-- 主內容 -->
+    <div class="container yf-font1">
+        <div class="main-content-area">
+
+            <!-- ============================================================ -->
+            <!-- 原始問題 -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="question-box">
+                        <div class="question-label">
+                            <i class="fas fa-question-circle me-2"></i>我的提問
+                        </div>
+                        <div class="question-text">
+                            <p class="mb-1">
+                                我都用NotebookLM整理書籍的綱要，然後再產出讀書心得，不過總覺的少了一點和自己有關的東西，
+                                後來我就改用很多生成式AI都有個人設定記憶功能，讓AI知道我目前的規劃和學習方向，
+                                但是還有一點缺少自己的感覺。接下來我讀書方法為：看完一個章節，找出幾個我喜歡的點，
+                                然後記錄下來，讓AI產出綱要後產出心得，這樣或許跟我的關聯比較多一點。
+                            </p>
+                            <p class="mb-0">
+                                你給我一點建議。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- AI 回答 - 核心觀點 -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="highlight-box">
+                        <h5 class="text-primary fw-bold">
+                            <i class="fas fa-lightbulb me-2"></i>AI 的回應核心
+                        </h5>
+                        <p class="mb-0" style="font-size: 1.05rem;">
+                            您這個調整方向非常對，因為關鍵問題不在工具，而在「<strong>誰先思考</strong>」。
+                            當AI先讀完整本書、先給綱要，再由你套上個人背景時，其實是AI的思路在主導，
+                            你的感受只是後製的裝飾；改成先自己標記喜歡的段落，再讓AI整理，
+                            <span class="text-primary fw-bold">順序一換，主導權就回到你手上。</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- 先讀後標的核心價值 -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <i class="fas fa-check-circle text-primary me-2"></i>先讀後標的核心價值
+                    </h2>
+                    <p>
+                        有網誌作者實測後發現，NotebookLM若一開始就整理全部資料，容易產出「看似完整卻沒有深度」的內容，
+                        真正有溫度的部分來自使用者自己的判斷與取捨，而非AI的摘要能力。
+                        你先圈出喜歡的點，等於是把「文獻卡」先過濾一輪，只留下真正打中自己的內容，
+                        這樣AI後續產出的心得雜訊更少，也更貼近你的閱讀感受。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- 建議的操作流程 -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <i class="fas fa-list-ol text-primary me-2"></i>建議的操作流程
+                    </h2>
+                    <div class="card advice-card">
+                        <div class="card-body">
+                            <div class="step-item">
+                                <strong>步驟 1：</strong>讀完一章後，先手寫（或語音輸入）<strong>3-5個喜歡的句子或觀點</strong>，
+                                並標註「<span class="text-primary fw-bold">為什麼喜歡</span>」——這一句「為什麼」比句子本身更重要，因為它才是真正屬於你的東西。
+                            </div>
+                            <div class="step-item">
+                                <strong>步驟 2：</strong>把這些「喜歡點+理由」單獨存成一個檔案丟進NotebookLM，
+                                <span class="tag-orange">而不是整本書都丟進去</span>，讓AI只根據你篩選過的素材做綱要。
+                            </div>
+                            <div class="step-item">
+                                <strong>步驟 3：</strong>請AI產出心得時，明確要求它把你寫的「理由」<strong>原文保留或引用</strong>進心得裡，
+                                而不是重新改寫成AI語氣——這樣心得裡才會留有你的用詞和語感。
+                            </div>
+                            <div class="step-item">
+                                <strong>步驟 4：</strong>心得產出後，自己再讀一次，刪掉聽起來太像AI罐頭句的段落，
+                                換成自己平常說話的方式——這一步是把「AI初稿」變成「自己作品」的關鍵。
+                            </div>
+                            <div class="step-item">
+                                <strong>步驟 5（進階）：</strong>可以請AI用表格比較「這一章的重點」vs「我特別有感的點」，
+                                藉此清楚看出哪些是書本知識、哪些是你的延伸想法，兩者不混在一起。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- 個人設定記憶的角色調整 -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <i class="fas fa-brain text-primary me-2"></i>個人設定記憶的角色調整
+                    </h2>
+                    <p>
+                        你提到的AI個人記憶功能其實更適合用在「<strong>連結</strong>」而非「產出」。
+                        例如讓AI在心得結尾多問一句：
+                    </p>
+                    <div class="highlight-box mb-3" style="background-color:#f8f9fa; border-left-color:#6c757d;">
+                        <p class="mb-0" style="font-style:italic; color:#495057;">
+                            「這個觀點跟你退休生活／兒子職場建議／網頁學習有什麼呼應？」
+                        </p>
+                    </div>
+                    <p>
+                        由你自己回答，而不是讓AI自動代答。這樣AI記憶提供的是<strong>提問的方向</strong>，
+                        真正的連結內容仍然出自你，感覺就會更真實。
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- 建立「反思筆記」分類 -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <i class="fas fa-folder-open text-primary me-2"></i>建立你的「反思筆記」分類
+                    </h2>
+                    <p>
+                        你可以在NotebookLM或Evernote裡，把每次的「喜歡點+理由」單獨存一個「反思筆記」資料夾，
+                        跟「AI綱要」資料夾分開存放。久了之後這個反思筆記本身就是一份很有價值的自我成長紀錄，
+                        也可以直接放進你正在規劃的AI學苑網站裡，當作認知思維類書籍的個人讀書歷程展示。
+                    </p>
+                    <div class="highlight-box mt-3" style="background-color:#e6f9ed; border-left-color:#198754;">
+                        <p class="mb-0">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            這種「<strong>資料/知識交給AI、任務/經驗自己寫</strong>」的分工，
+                            也是不少AI筆記工作流建議的核心原則。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- 結尾 -->
+            <div class="row mt-4">
+                <div class="col-12 text-center text-muted" style="border-top:2px solid #e9ecef; padding-top:20px;">
+                    <p class="mb-0" style="font-size:0.95rem;">
+                        <i class="fas fa-pen-fancy text-primary me-1"></i>
+                        把閱讀的主導權留給自己，讓AI成為你最稱職的寫作夥伴。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /main-content-area -->
+    </div>
+    <!-- /container -->
+
+    <!-- 頁腳 -->
+    <div id="footer"></div>
+
+    <!-- ################################################################ -->
+    <!-- 各區塊 html 載入 -->
+<script>
+    $(function () {
+        $("#nav1").load("/W02-Web-AI-instantly-changes-clones-2026/B01-ex-comm/BX02-nav-2026.html");
+        $("#page1").load("./E01-ex-comm/EX02-page-D002.html");
+        // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+        // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+        $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+</script>
+
+
+</body>
+
+</html>
