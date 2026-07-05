@@ -1,0 +1,2894 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!--
+    日本旅遊互動式導覽
+    本次更新：
+      1. 左欄圖片高度增加至 680px，更顯大氣
+      2. 左欄內容使用 flex 列，下方三個卡片高度自適應內容，減少多餘留白
+      3. 調整卡片間距，讓版面更緊湊
+-->
+
+<head>
+  <title>30.日本旅遊介紹~圖卡+景點資訊 ~ 115.07.04</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+
+  <!-- Bootstrap 4 & 5 混用，但以 Bootstrap 5 為主體 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+  </script>
+
+  <!-- Bootstrap 5 CSS & JS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 大陸網站iconfont圖標 -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js">
+  </script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+  </script>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== 變數定義 ===== */
+    :root {
+      --color-hokkaido-1n: #e098e3;
+      --color-hokkaido-1w: #8edc8b;
+      --color-hokkaido-1s: #6da6f5;
+      --color-hokkaido-1e: #fbb245;
+      --color-tohoku: #a1db7d;
+      --color-kanto: #fbbc57;
+      --color-chubu: #e99191;
+      --color-kinki: #bfa8e9;
+      --color-chugoku: #79b7e7;
+      --color-shikoku: #f8994e;
+      --color-kyushu: #6dc7cf;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif !important;
+      background-color: #f4f6f9;
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    /* ===== 主儀表板 ===== */
+    .travel-dashboard {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+      margin-bottom: 35px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    /* ===== 左側清單 ===== */
+    .region-card {
+      margin-bottom: 12px;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .region-card:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .region-header {
+      cursor: pointer;
+      font-weight: 700;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.25s ease;
+      font-size: 0.95rem;
+    }
+
+    .region-header .badge {
+      font-size: 0.75rem;
+      border-radius: 30px;
+      padding: 6px 12px;
+      font-weight: 700;
+    }
+
+    .prefecture-list {
+      max-height: 380px;
+      overflow-y: auto;
+    }
+
+    .prefecture-item {
+      cursor: pointer;
+      padding: 12px 20px;
+      font-size: 0.9rem;
+      border-left: 4px solid transparent;
+      transition: all 0.2s ease;
+      color: #495057;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .prefecture-item:hover {
+      background-color: #f8f9fa;
+      color: #000;
+      padding-left: 24px;
+    }
+
+    .prefecture-item.active-item {
+      background-color: #f1f7fe;
+      color: #0d6efd;
+      font-weight: bold;
+      border-left: 4px solid #0d6efd;
+    }
+
+    /* ===== SVG 地圖 ===== */
+    .svg-container {
+      position: relative;
+      width: 100%;
+      background: #fcfcfd;
+      border-radius: 16px;
+      padding: 15px;
+      border: 1px solid #f1f3f5;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.01);
+    }
+
+    .prefecture-rect {
+      stroke: #ffffff;
+      stroke-width: 1.8px;
+      stroke-linejoin: round;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.05));
+      cursor: pointer;
+    }
+
+    .prefecture-rect:hover {
+      filter: brightness(1.05) contrast(1.02) drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.18));
+      stroke: #ffffff;
+      stroke-width: 2.5px;
+    }
+
+    .prefecture-rect.active {
+      filter: brightness(1.1) contrast(1.05) drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.25));
+      stroke: #212529;
+      stroke-width: 2.8px;
+    }
+
+    .prefecture-path {
+      display: none !important;
+    }
+
+    .map-group {
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .map-group:hover .map-label-bg {
+      fill: #ffffff;
+      stroke: #212529;
+      stroke-width: 1px;
+      filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15));
+    }
+
+    .map-group:hover .map-label {
+      fill: #000000;
+      font-weight: 900;
+    }
+
+    .map-label {
+      pointer-events: none;
+      font-size: 11px;
+      font-weight: 700;
+      fill: #343a40;
+      text-anchor: middle;
+      font-family: 'Noto Sans TC', sans-serif;
+      transition: all 0.2s ease;
+    }
+
+    .map-label-bg {
+      fill: rgba(255, 255, 255, 0.88);
+      stroke: rgba(0, 0, 0, 0.08);
+      stroke-width: 0.8px;
+      rx: 8px;
+      ry: 8px;
+      pointer-events: none;
+      transition: all 0.2s ease;
+      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.05));
+    }
+
+    /* 地區配色 */
+    .region-01n {
+      fill: var(--color-hokkaido-1n);
+    }
+
+    .region-01w {
+      fill: var(--color-hokkaido-1w);
+    }
+
+    .region-01s {
+      fill: var(--color-hokkaido-1s);
+    }
+
+    .region-01e {
+      fill: var(--color-hokkaido-1e);
+    }
+
+    .region-tohoku {
+      fill: var(--color-tohoku);
+    }
+
+    .region-kanto {
+      fill: var(--color-kanto);
+    }
+
+    .region-chubu {
+      fill: var(--color-chubu);
+    }
+
+    .region-kinki {
+      fill: var(--color-kinki);
+    }
+
+    .region-chugoku {
+      fill: var(--color-chugoku);
+    }
+
+    .region-shikoku {
+      fill: var(--color-shikoku);
+    }
+
+    .region-kyushu {
+      fill: var(--color-kyushu);
+    }
+
+    .inset-box {
+      stroke: #ced4da;
+      stroke-dasharray: 5 5;
+      stroke-width: 1.2px;
+      fill: none;
+    }
+
+    /* ===== 滿版沉浸式導覽頁面 ===== */
+    .immersive-detail-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(248, 249, 250, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1050;
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.95) translateY(20px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .immersive-detail-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+
+    .immersive-header {
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1060;
+      backdrop-filter: blur(10px);
+    }
+
+    .back-btn {
+      transition: all 0.25s ease;
+      font-weight: 700;
+      border-radius: 30px;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-3px);
+    }
+
+    /* ===== 圖片區域 - 加大高度 ===== */
+    .immersive-hero-img-container {
+      width: 100%;
+      height: 680px;
+      /* 從 560px 增高至 680px */
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+      position: relative;
+      background: #f1f3f5;
+      flex-shrink: 0;
+      /* 防止被壓縮 */
+    }
+
+    .immersive-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .immersive-hero-img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ===== 圖片載入失敗的優雅佔位卡 ===== */
+    .immersive-fallback {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(145deg, #e9ecef, #dee2e6);
+      color: #495057;
+      padding: 30px;
+      text-align: center;
+      border-radius: 16px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+
+    .immersive-fallback .fallback-icon {
+      font-size: 4.5rem;
+      color: #6c757d;
+      margin-bottom: 16px;
+      opacity: 0.7;
+    }
+
+    .immersive-fallback .fallback-title {
+      font-weight: 900;
+      font-size: 1.6rem;
+      color: #343a40;
+      letter-spacing: 1px;
+    }
+
+    .immersive-fallback .fallback-sub {
+      font-size: 1rem;
+      color: #6c757d;
+      margin-top: 6px;
+    }
+
+    .immersive-fallback .fallback-badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 6px 22px;
+      background: rgba(13, 110, 253, 0.12);
+      border-radius: 30px;
+      color: #0d6efd;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: none;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+      /* 移除 height: 100% 讓卡片高度由內容決定 */
+    }
+
+    .detail-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== 歡迎看版 ===== */
+    .welcome-tip-card {
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+      color: #ffffff;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+    }
+
+    /* 選單滾輪 */
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    /* RWD 調整 */
+    @media (max-width: 992px) {
+      .immersive-hero-img-container {
+        height: 420px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .immersive-hero-img-container {
+        height: 300px;
+      }
+
+      .travel-dashboard {
+        padding: 16px;
+      }
+    }
+
+    /* 左欄 flex 列，讓卡片自動撐開，底部不留白 */
+    .left-col-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      /* 卡片間距，等同於 mt-3 左右 */
+    }
+
+    .left-col-flex .detail-card {
+      flex: 0 1 auto;
+      /* 高度由內容決定，不拉伸 */
+    }
+
+    /* 最後一個卡片無需額外 margin-bottom */
+    .left-col-flex .detail-card:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body id="n0" class="bg-dark" onload="updateCounter()">
+
+  <!-- ===== 導覽列 ===== -->
+  <div id="nav1"></div>
+
+  <!-- ===== 標題區 ===== -->
+  <header class="text-center p1" style="margin-top: 75px;">
+    <h1 class="text-info yf-font1">30.日本旅遊介紹~圖卡+景點資訊 ~ 115.07.04</h1>
+    <p class="yf-color-as1 yf-font1">點擊地圖上的【文字標籤】或【矩形區域】，將會展示該行政區的「滿版沉浸式景點介紹」~不同上一個日本旅遊介紹，只有圖卡！</p>
+  </header>
+
+  <!-- ===== 主畫面 ===== -->
+  <div class="container-fluid yf-font1" style="margin-top:10px;background-color:white">
+    <div class="row">
+      <div class="col-12">
+        <div class="travel-dashboard mt-3">
+          <div class="row">
+
+            <!-- ===== 左欄：都道府縣摺疊選單 (col-lg-3) ===== -->
+            <div class="col-lg-3 col-md-4 col-12 mb-4 mb-md-0">
+              <h5 class="border-bottom pb-2 mb-3 font-weight-bold text-dark">
+                <i class="fa-solid fa-map-location-dot text-primary mr-2"></i> 47都道府縣清單
+              </h5>
+              <div class="accordion" id="regionsAccordion">
+
+                <!-- 北海道地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(224, 152, 227, 0.15);" data-toggle="collapse"
+                    data-target="#collapseHokkaido" aria-expanded="true">
+                    <span class="text-dark"><i class="fa-solid fa-snowflake mr-2" style="color:#df97e2"></i> 北海道地方
+                      (4)</span>
+                    <span class="badge" style="background-color: #df97e2; color: #fff;">1N-1E</span>
+                  </div>
+                  <div id="collapseHokkaido" class="collapse show" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-01n" data-id="01n"><span>1N. 道北
+                          (北海道)</span> <i class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-01w" data-id="01w"><span>1W. 道央
+                          (北海道)</span> <i class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-01s" data-id="01s"><span>1S. 道南
+                          (北海道)</span> <i class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-01e" data-id="01e"><span>1E. 道東
+                          (北海道)</span> <i class="fa-solid fa-chevron-right text-muted small"></i></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 東北地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(161, 219, 125, 0.15);" data-toggle="collapse"
+                    data-target="#collapseTohoku" aria-expanded="false">
+                    <span class="text-dark"><i class="fa-solid fa-leaf mr-2" style="color:#9cd978"></i> 東北地方 (6)</span>
+                    <span class="badge" style="background-color: #9cd978; color: #fff;">02-07</span>
+                  </div>
+                  <div id="collapseTohoku" class="collapse" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-02" data-id="02"><span>2. 青森縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-03" data-id="03"><span>3. 岩手縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-04" data-id="04"><span>4. 宮城縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-05" data-id="05"><span>5. 秋田縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-06" data-id="06"><span>6. 山形縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-07" data-id="07"><span>7. 福島縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 關東地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(251, 188, 87, 0.15);" data-toggle="collapse"
+                    data-target="#collapseKanto" aria-expanded="false">
+                    <span class="text-dark"><i class="fa-solid fa-city mr-2" style="color:#fbb851"></i> 關東地方 (7)</span>
+                    <span class="badge" style="background-color: #fbb851; color: #fff;">08-14</span>
+                  </div>
+                  <div id="collapseKanto" class="collapse" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-08" data-id="08"><span>8. 茨城縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-09" data-id="09"><span>9. 栃木縣</span> <i
+                          class="fa-solid fa-chevron-right text-muted small"></i></div>
+                      <div class="list-group-item prefecture-item" id="list-item-10" data-id="10"><span>10. 群馬縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-11" data-id="11"><span>11. 埼玉縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-12" data-id="12"><span>12. 千葉縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-13" data-id="13"><span>13. 東京都</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-14" data-id="14"><span>14. 神奈川縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 中部地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(233, 145, 145, 0.15);" data-toggle="collapse"
+                    data-target="#collapseChubu" aria-expanded="false">
+                    <span class="text-dark"><i class="fa-solid fa-mountain-sun mr-2" style="color:#e98b8b"></i> 中部地方
+                      (9)</span>
+                    <span class="badge" style="background-color: #e98b8b; color: #fff;">15-23</span>
+                  </div>
+                  <div id="collapseChubu" class="collapse" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-15" data-id="15"><span>15. 新潟縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-16" data-id="16"><span>16. 富山縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-17" data-id="17"><span>17. 石川縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-18" data-id="18"><span>18. 福井縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-19" data-id="19"><span>19. 山梨縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-20" data-id="20"><span>20. 長野縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-21" data-id="21"><span>21. 岐阜縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-22" data-id="22"><span>22. 静岡縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-23" data-id="23"><span>23. 愛知縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 近畿地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(191, 168, 233, 0.15);" data-toggle="collapse"
+                    data-target="#collapseKinki" aria-expanded="false">
+                    <span class="text-dark"><i class="fa-solid fa-torii-gate mr-2" style="color:#baa1e8"></i> 近畿地方
+                      (7)</span>
+                    <span class="badge" style="background-color: #baa1e8; color: #fff;">24-30</span>
+                  </div>
+                  <div id="collapseKinki" class="collapse" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-24" data-id="24"><span>24. 三重縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-25" data-id="25"><span>25. 滋賀縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-26" data-id="26"><span>26. 京都府</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-27" data-id="27"><span>27. 大阪府</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-28" data-id="28"><span>28. 兵庫縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-29" data-id="29"><span>29. 奈良縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-30" data-id="30"><span>30. 和歌山縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 中國地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(121, 183, 231, 0.15);" data-toggle="collapse"
+                    data-target="#collapseChugoku" aria-expanded="false">
+                    <span class="text-dark"><i class="fa-solid fa-water mr-2" style="color:#73b2e5"></i> 中國地方 (5)</span>
+                    <span class="badge" style="background-color: #73b2e5; color: #fff;">31-35</span>
+                  </div>
+                  <div id="collapseChugoku" class="collapse" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-31" data-id="31"><span>31. 鳥取縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-32" data-id="32"><span>32. 島根縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-33" data-id="33"><span>33. 岡山縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-34" data-id="34"><span>34. 廣島縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-35" data-id="35"><span>35. 山口縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 四國地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(248, 153, 78, 0.15);" data-toggle="collapse"
+                    data-target="#collapseShikoku" aria-expanded="false">
+                    <span class="text-dark"><i class="fa-solid fa-bridge-water mr-2" style="color:#f89345"></i> 四國地方
+                      (4)</span>
+                    <span class="badge" style="background-color: #f89345; color: #fff;">36-39</span>
+                  </div>
+                  <div id="collapseShikoku" class="collapse" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-36" data-id="36"><span>36. 德島縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-37" data-id="37"><span>37. 香川縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-38" data-id="38"><span>38. 愛媛縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-39" data-id="39"><span>39. 高知縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 九州・沖繩地方 -->
+                <div class="card region-card">
+                  <div class="region-header" style="background-color: rgba(109, 199, 207, 0.15);" data-toggle="collapse"
+                    data-target="#collapseKyushu" aria-expanded="false">
+                    <span class="text-dark"><i class="fa-solid fa-umbrella-beach mr-2" style="color:#66c3cc"></i>
+                      九州・沖繩地方 (8)</span>
+                    <span class="badge" style="background-color: #66c3cc; color: #fff;">40-47</span>
+                  </div>
+                  <div id="collapseKyushu" class="collapse" data-parent="#regionsAccordion">
+                    <div class="list-group list-group-flush prefecture-list">
+                      <div class="list-group-item prefecture-item" id="list-item-40" data-id="40"><span>40. 福岡縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-41" data-id="41"><span>41. 佐賀縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-42" data-id="42"><span>42. 長崎縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-43" data-id="43"><span>43. 熊本縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-44" data-id="44"><span>44. 大分縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-45" data-id="45"><span>45. 宮崎縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-46" data-id="46"><span>46. 鹿兒島縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                      <div class="list-group-item prefecture-item" id="list-item-47" data-id="47"><span>47. 沖繩縣</span>
+                        <i class="fa-solid fa-chevron-right text-muted small"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- ===== 中欄 + 右欄：地圖 (col-lg-9) ===== -->
+            <div class="col-lg-9 col-md-8 col-12 d-flex flex-column align-items-center">
+              <div class="svg-container w-100">
+                <svg viewBox="0 0 1000 800" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="oceanGrad" cx="50%" cy="50%" r="70%">
+                      <stop offset="0%" stop-color="#f8f9fa" />
+                      <stop offset="100%" stop-color="#e9ecef" />
+                    </radialGradient>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#oceanGrad)" rx="16" />
+
+                  <!-- 裝飾羅盤 -->
+                  <g opacity="0.15">
+                    <circle cx="160" cy="180" r="45" fill="none" stroke="#212529" stroke-width="1.5"
+                      stroke-dasharray="5 5" />
+                    <line x1="160" y1="120" x2="160" y2="240" stroke="#212529" stroke-width="1.5" />
+                    <line x1="100" y1="180" x2="220" y2="180" stroke="#212529" stroke-width="1.5" />
+                    <text x="160" y="110" text-anchor="middle" font-weight="900" font-size="14">N</text>
+                  </g>
+
+                  <!-- 北海道地方 -->
+                  <g class="map-group" data-id="01n">
+                    <rect id="rect-map-jp-01n" class="prefecture-rect region-01n" x="780" y="50" width="50" height="90"
+                      rx="4" ry="4" data-id="01n" />
+                    <rect class="map-label-bg" x="782" y="75" width="32" height="18" />
+                    <text class="map-label" x="798" y="88">1N</text>
+                  </g>
+                  <g class="map-group" data-id="01w">
+                    <rect id="rect-map-jp-01w" class="prefecture-rect region-01w" x="735" y="170" width="60" height="75"
+                      rx="4" ry="4" data-id="01w" />
+                    <rect class="map-label-bg" x="745" y="155" width="32" height="18" />
+                    <text class="map-label" x="761" y="168">1W</text>
+                  </g>
+                  <g class="map-group" data-id="01s">
+                    <rect id="rect-map-jp-01s" class="prefecture-rect region-01s" x="675" y="210" width="55" height="55"
+                      rx="4" ry="4" data-id="01s" />
+                    <rect class="map-label-bg" x="714" y="210" width="32" height="18" />
+                    <text class="map-label" x="730" y="223">1S</text>
+                  </g>
+                  <g class="map-group" data-id="01e">
+                    <rect id="rect-map-jp-01e" class="prefecture-rect region-01e" x="800" y="120" width="120"
+                      height="60" rx="4" ry="4" data-id="01e" />
+                    <rect class="map-label-bg" x="840" y="125" width="32" height="18" />
+                    <text class="map-label" x="856" y="138">1E</text>
+                  </g>
+
+                  <!-- 東北地方 -->
+                  <g class="map-group" data-id="02">
+                    <rect id="rect-map-jp-02" class="prefecture-rect region-tohoku" x="680" y="260" width="50"
+                      height="40" rx="4" ry="4" data-id="02" />
+                    <rect class="map-label-bg" x="690" y="270" width="24" height="18" /><text class="map-label" x="702"
+                      y="283">2</text>
+                  </g>
+                  <g class="map-group" data-id="03">
+                    <rect id="rect-map-jp-03" class="prefecture-rect region-tohoku" x="698" y="300" width="40"
+                      height="55" rx="4" ry="4" data-id="03" />
+                    <rect class="map-label-bg" x="704" y="315" width="24" height="18" /><text class="map-label" x="716"
+                      y="328">3</text>
+                  </g>
+                  <g class="map-group" data-id="05">
+                    <rect id="rect-map-jp-05" class="prefecture-rect region-tohoku" x="665" y="300" width="40"
+                      height="55" rx="4" ry="4" data-id="05" />
+                    <rect class="map-label-bg" x="671" y="315" width="24" height="18" /><text class="map-label" x="683"
+                      y="328">5</text>
+                  </g>
+                  <g class="map-group" data-id="04">
+                    <rect id="rect-map-jp-04" class="prefecture-rect region-tohoku" x="695" y="355" width="35"
+                      height="55" rx="4" ry="4" data-id="04" />
+                    <rect class="map-label-bg" x="700" y="370" width="24" height="18" /><text class="map-label" x="712"
+                      y="383">4</text>
+                  </g>
+                  <g class="map-group" data-id="06">
+                    <rect id="rect-map-jp-06" class="prefecture-rect region-tohoku" x="660" y="355" width="40"
+                      height="55" rx="4" ry="4" data-id="06" />
+                    <rect class="map-label-bg" x="668" y="370" width="24" height="18" /><text class="map-label" x="680"
+                      y="383">6</text>
+                  </g>
+                  <g class="map-group" data-id="07">
+                    <rect id="rect-map-jp-07" class="prefecture-rect region-tohoku" x="650" y="410" width="65"
+                      height="55" rx="4" ry="4" data-id="07" />
+                    <rect class="map-label-bg" x="673" y="425" width="24" height="18" /><text class="map-label" x="685"
+                      y="438">7</text>
+                  </g>
+
+                  <!-- 關東地方 -->
+                  <g class="map-group" data-id="08">
+                    <rect id="rect-map-jp-08" class="prefecture-rect region-kanto" x="670" y="465" width="40"
+                      height="40" rx="4" ry="4" data-id="08" />
+                    <rect class="map-label-bg" x="678" y="475" width="24" height="18" /><text class="map-label" x="690"
+                      y="488">8</text>
+                  </g>
+                  <g class="map-group" data-id="09">
+                    <rect id="rect-map-jp-09" class="prefecture-rect region-kanto" x="640" y="465" width="35"
+                      height="40" rx="4" ry="4" data-id="09" />
+                    <rect class="map-label-bg" x="646" y="475" width="24" height="18" /><text class="map-label" x="658"
+                      y="488">9</text>
+                  </g>
+                  <g class="map-group" data-id="10">
+                    <rect id="rect-map-jp-10" class="prefecture-rect region-kanto" x="610" y="465" width="35"
+                      height="40" rx="4" ry="4" data-id="10" />
+                    <rect class="map-label-bg" x="616" y="475" width="24" height="18" /><text class="map-label" x="628"
+                      y="488">10</text>
+                  </g>
+                  <g class="map-group" data-id="11">
+                    <rect id="rect-map-jp-11" class="prefecture-rect region-kanto" x="610" y="505" width="55"
+                      height="30" rx="4" ry="4" data-id="11" />
+                    <rect class="map-label-bg" x="628" y="508" width="28" height="18" /><text class="map-label" x="642"
+                      y="521">11</text>
+                  </g>
+                  <g class="map-group" data-id="12">
+                    <rect id="rect-map-jp-12" class="prefecture-rect region-kanto" x="665" y="505" width="35"
+                      height="70" rx="4" ry="4" data-id="12" />
+                    <rect class="map-label-bg" x="668" y="525" width="28" height="18" /><text class="map-label" x="682"
+                      y="538">12</text>
+                  </g>
+                  <g class="map-group" data-id="13">
+                    <rect id="rect-map-jp-13" class="prefecture-rect region-kanto" x="610" y="530" width="55"
+                      height="30" rx="4" ry="4" data-id="13" />
+                    <rect class="map-label-bg" x="628" y="533" width="28" height="18" /><text class="map-label" x="642"
+                      y="546">13</text>
+                  </g>
+                  <g class="map-group" data-id="14">
+                    <rect id="rect-map-jp-14" class="prefecture-rect region-kanto" x="610" y="555" width="55"
+                      height="30" rx="4" ry="4" data-id="14" />
+                    <rect class="map-label-bg" x="628" y="558" width="28" height="18" /><text class="map-label" x="642"
+                      y="571">14</text>
+                  </g>
+
+                  <!-- 中部地方 -->
+                  <g class="map-group" data-id="15">
+                    <rect id="rect-map-jp-15" class="prefecture-rect region-chubu" x="590" y="390" width="70"
+                      height="75" rx="4" ry="4" data-id="15" />
+                    <rect class="map-label-bg" x="612" y="420" width="28" height="18" /><text class="map-label" x="626"
+                      y="433">15</text>
+                  </g>
+                  <g class="map-group" data-id="16">
+                    <rect id="rect-map-jp-16" class="prefecture-rect region-chubu" x="560" y="410" width="35"
+                      height="55" rx="4" ry="4" data-id="16" />
+                    <rect class="map-label-bg" x="562" y="425" width="28" height="18" /><text class="map-label" x="576"
+                      y="438">16</text>
+                  </g>
+                  <g class="map-group" data-id="17">
+                    <rect id="rect-map-jp-17" class="prefecture-rect region-chubu" x="535" y="375" width="35"
+                      height="95" rx="4" ry="4" data-id="17" />
+                    <rect class="map-label-bg" x="532" y="415" width="28" height="18" /><text class="map-label" x="546"
+                      y="428">17</text>
+                  </g>
+                  <g class="map-group" data-id="18">
+                    <rect id="rect-map-jp-18" class="prefecture-rect region-chubu" x="505" y="440" width="35"
+                      height="45" rx="4" ry="4" data-id="18" />
+                    <rect class="map-label-bg" x="506" y="445" width="28" height="18" /><text class="map-label" x="520"
+                      y="458">18</text>
+                  </g>
+                  <g class="map-group" data-id="20">
+                    <rect id="rect-map-jp-20" class="prefecture-rect region-chubu" x="560" y="465" width="50"
+                      height="55" rx="4" ry="4" data-id="20" />
+                    <rect class="map-label-bg" x="572" y="480" width="28" height="18" /><text class="map-label" x="586"
+                      y="493">20</text>
+                  </g>
+                  <g class="map-group" data-id="19">
+                    <rect id="rect-map-jp-19" class="prefecture-rect region-chubu" x="580" y="520" width="35"
+                      height="35" rx="4" ry="4" data-id="19" />
+                    <rect class="map-label-bg" x="581" y="525" width="28" height="18" /><text class="map-label" x="595"
+                      y="538">19</text>
+                  </g>
+                  <g class="map-group" data-id="21">
+                    <rect id="rect-map-jp-21" class="prefecture-rect region-chubu" x="530" y="480" width="35"
+                      height="55" rx="4" ry="4" data-id="21" />
+                    <rect class="map-label-bg" x="531" y="495" width="28" height="18" /><text class="map-label" x="545"
+                      y="508">21</text>
+                  </g>
+                  <g class="map-group" data-id="22">
+                    <rect id="rect-map-jp-22" class="prefecture-rect region-chubu" x="560" y="535" width="50"
+                      height="40" rx="4" ry="4" data-id="22" />
+                    <rect class="map-label-bg" x="572" y="545" width="28" height="18" /><text class="map-label" x="586"
+                      y="558">22</text>
+                  </g>
+                  <g class="map-group" data-id="23">
+                    <rect id="rect-map-jp-23" class="prefecture-rect region-chubu" x="530" y="535" width="35"
+                      height="40" rx="4" ry="4" data-id="23" />
+                    <rect class="map-label-bg" x="531" y="545" width="28" height="18" /><text class="map-label" x="545"
+                      y="558">23</text>
+                  </g>
+
+                  <!-- 近畿地方 -->
+                  <g class="map-group" data-id="25">
+                    <rect id="rect-map-jp-25" class="prefecture-rect region-kinki" x="480" y="480" width="30"
+                      height="40" rx="4" ry="4" data-id="25" />
+                    <rect class="map-label-bg" x="481" y="490" width="28" height="18" /><text class="map-label" x="495"
+                      y="503">25</text>
+                  </g>
+                  <g class="map-group" data-id="24">
+                    <rect id="rect-map-jp-24" class="prefecture-rect region-kinki" x="505" y="520" width="30"
+                      height="65" rx="4" ry="4" data-id="24" />
+                    <rect class="map-label-bg" x="502" y="545" width="28" height="18" /><text class="map-label" x="516"
+                      y="559">24</text>
+                  </g>
+                  <g class="map-group" data-id="26">
+                    <rect id="rect-map-jp-26" class="prefecture-rect region-kinki" x="450" y="460" width="35"
+                      height="60" rx="4" ry="4" data-id="26" />
+                    <rect class="map-label-bg" x="451" y="475" width="28" height="18" /><text class="map-label" x="465"
+                      y="488">26</text>
+                  </g>
+                  <g class="map-group" data-id="27">
+                    <rect id="rect-map-jp-27" class="prefecture-rect region-kinki" x="460" y="520" width="30"
+                      height="35" rx="4" ry="4" data-id="27" />
+                    <rect class="map-label-bg" x="458" y="525" width="28" height="18" /><text class="map-label" x="472"
+                      y="538">27</text>
+                  </g>
+                  <g class="map-group" data-id="28">
+                    <rect id="rect-map-jp-28" class="prefecture-rect region-kinki" x="410" y="460" width="45"
+                      height="75" rx="4" ry="4" data-id="28" />
+                    <rect class="map-label-bg" x="421" y="485" width="28" height="18" /><text class="map-label" x="435"
+                      y="498">28</text>
+                  </g>
+                  <g class="map-group" data-id="29">
+                    <rect id="rect-map-jp-29" class="prefecture-rect region-kinki" x="480" y="520" width="30"
+                      height="50" rx="4" ry="4" data-id="29" />
+                    <rect class="map-label-bg" x="481" y="535" width="28" height="18" /><text class="map-label" x="495"
+                      y="548">29</text>
+                  </g>
+                  <g class="map-group" data-id="30">
+                    <rect id="rect-map-jp-30" class="prefecture-rect region-kinki" x="450" y="550" width="35"
+                      height="60" rx="4" ry="4" data-id="30" />
+                    <rect class="map-label-bg" x="453" y="570" width="28" height="18" /><text class="map-label" x="467"
+                      y="583">30</text>
+                  </g>
+
+                  <!-- 中國地方 -->
+                  <g class="map-group" data-id="31">
+                    <rect id="rect-map-jp-31" class="prefecture-rect region-chugoku" x="360" y="460" width="50"
+                      height="35" rx="4" ry="4" data-id="31" />
+                    <rect class="map-label-bg" x="371" y="465" width="28" height="18" /><text class="map-label" x="385"
+                      y="478">31</text>
+                  </g>
+                  <g class="map-group" data-id="32">
+                    <rect id="rect-map-jp-32" class="prefecture-rect region-chugoku" x="290" y="460" width="75"
+                      height="35" rx="4" ry="4" data-id="32" />
+                    <rect class="map-label-bg" x="311" y="465" width="28" height="18" /><text class="map-label" x="325"
+                      y="478">32</text>
+                  </g>
+                  <g class="map-group" data-id="33">
+                    <rect id="rect-map-jp-33" class="prefecture-rect region-chugoku" x="360" y="495" width="50"
+                      height="40" rx="4" ry="4" data-id="33" />
+                    <rect class="map-label-bg" x="371" y="500" width="28" height="18" /><text class="map-label" x="385"
+                      y="513">33</text>
+                  </g>
+                  <g class="map-group" data-id="34">
+                    <rect id="rect-map-jp-34" class="prefecture-rect region-chugoku" x="290" y="495" width="75"
+                      height="40" rx="4" ry="4" data-id="34" />
+                    <rect class="map-label-bg" x="311" y="500" width="28" height="18" /><text class="map-label" x="325"
+                      y="513">34</text>
+                  </g>
+                  <g class="map-group" data-id="35">
+                    <rect id="rect-map-jp-35" class="prefecture-rect region-chugoku" x="240" y="480" width="60"
+                      height="55" rx="4" ry="4" data-id="35" />
+                    <rect class="map-label-bg" x="251" y="495" width="28" height="18" /><text class="map-label" x="265"
+                      y="508">35</text>
+                  </g>
+
+                  <!-- 四國地方 -->
+                  <g class="map-group" data-id="37">
+                    <rect id="rect-map-jp-37" class="prefecture-rect region-shikoku" x="345" y="550" width="50"
+                      height="30" rx="4" ry="4" data-id="37" />
+                    <rect class="map-label-bg" x="356" y="551" width="28" height="18" /><text class="map-label" x="370"
+                      y="564">37</text>
+                  </g>
+                  <g class="map-group" data-id="36">
+                    <rect id="rect-map-jp-36" class="prefecture-rect region-shikoku" x="345" y="575" width="50"
+                      height="40" rx="4" ry="4" data-id="36" />
+                    <rect class="map-label-bg" x="356" y="585" width="28" height="18" /><text class="map-label" x="370"
+                      y="598">36</text>
+                  </g>
+                  <g class="map-group" data-id="38">
+                    <rect id="rect-map-jp-38" class="prefecture-rect region-shikoku" x="285" y="550" width="65"
+                      height="40" rx="4" ry="4" data-id="38" />
+                    <rect class="map-label-bg" x="301" y="558" width="28" height="18" /><text class="map-label" x="315"
+                      y="571">38</text>
+                  </g>
+                  <g class="map-group" data-id="39">
+                    <rect id="rect-map-jp-39" class="prefecture-rect region-shikoku" x="285" y="590" width="65"
+                      height="35" rx="4" ry="4" data-id="39" />
+                    <rect class="map-label-bg" x="301" y="595" width="28" height="18" /><text class="map-label" x="315"
+                      y="608">39</text>
+                  </g>
+
+                  <!-- 九州地方 -->
+                  <g class="map-group" data-id="40">
+                    <rect id="rect-map-jp-40" class="prefecture-rect region-kyushu" x="180" y="520" width="50"
+                      height="35" rx="4" ry="4" data-id="40" />
+                    <rect class="map-label-bg" x="191" y="525" width="28" height="18" /><text class="map-label" x="205"
+                      y="538">40</text>
+                  </g>
+                  <g class="map-group" data-id="41">
+                    <rect id="rect-map-jp-41" class="prefecture-rect region-kyushu" x="145" y="525" width="40"
+                      height="35" rx="4" ry="4" data-id="41" />
+                    <rect class="map-label-bg" x="150" y="528" width="28" height="18" /><text class="map-label" x="164"
+                      y="541">41</text>
+                  </g>
+                  <g class="map-group" data-id="42">
+                    <rect id="rect-map-jp-42" class="prefecture-rect region-kyushu" x="115" y="525" width="35"
+                      height="50" rx="4" ry="4" data-id="42" />
+                    <rect class="map-label-bg" x="118" y="540" width="28" height="18" /><text class="map-label" x="132"
+                      y="553">42</text>
+                  </g>
+                  <g class="map-group" data-id="44">
+                    <rect id="rect-map-jp-44" class="prefecture-rect region-kyushu" x="210" y="555" width="40"
+                      height="50" rx="4" ry="4" data-id="44" />
+                    <rect class="map-label-bg" x="214" y="570" width="28" height="18" /><text class="map-label" x="228"
+                      y="583">44</text>
+                  </g>
+                  <g class="map-group" data-id="43">
+                    <rect id="rect-map-jp-43" class="prefecture-rect region-kyushu" x="165" y="555" width="50"
+                      height="60" rx="4" ry="4" data-id="43" />
+                    <rect class="map-label-bg" x="174" y="575" width="28" height="18" /><text class="map-label" x="188"
+                      y="591">43</text>
+                  </g>
+                  <g class="map-group" data-id="45">
+                    <rect id="rect-map-jp-45" class="prefecture-rect region-kyushu" x="200" y="615" width="45"
+                      height="65" rx="4" ry="4" data-id="45" />
+                    <rect class="map-label-bg" x="208" y="635" width="28" height="18" /><text class="map-label" x="222"
+                      y="648">45</text>
+                  </g>
+                  <g class="map-group" data-id="46">
+                    <rect id="rect-map-jp-46" class="prefecture-rect region-kyushu" x="150" y="615" width="55"
+                      height="65" rx="4" ry="4" data-id="46" />
+                    <rect class="map-label-bg" x="162" y="635" width="28" height="18" /><text class="map-label" x="176"
+                      y="648">46</text>
+                  </g>
+
+                  <!-- 沖繩 (47) 放大區 -->
+                  <rect x="700" y="630" width="260" height="130" class="inset-box" />
+                  <g class="map-group" data-id="47">
+                    <rect id="rect-map-jp-47" class="prefecture-rect region-kyushu" x="730" y="690" width="170"
+                      height="50" rx="4" ry="4" data-id="47" />
+                    <rect class="map-label-bg" x="800" y="720" width="28" height="18" />
+                    <text class="map-label" x="814" y="733">47</text>
+                    <text x="715" y="655" font-size="12px" fill="#495057" font-weight="bold">47. 沖繩縣 (放大區域)</text>
+                  </g>
+
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- ===== 滿版沉浸式地區導覽頁面 (左欄flex列，圖片加高，卡片自適應) ===== -->
+  <div id="immersiveDetailOverlay" class="immersive-detail-overlay">
+    <div class="immersive-header py-3 px-4 shadow-sm d-flex justify-content-between align-items-center">
+      <button class="btn btn-outline-dark back-btn" id="closeDetailBtn">
+        <i class="fa-solid fa-arrow-left mr-2"></i> 返回地圖導覽
+      </button>
+      <span class="h5 font-weight-bold mb-0 text-dark" id="overlayTopTitle">地區詳細導覽</span>
+      <div style="width: 120px;" class="d-none d-sm-block text-right">
+        <i class="fa-solid fa-share-nodes text-muted mr-3" style="cursor: pointer;"></i>
+        <i class="fa-regular fa-bookmark text-muted" style="cursor: pointer;"></i>
+      </div>
+    </div>
+
+    <!-- 使用 container-fluid 加寬版面，px-lg-4 控制兩側留白 -->
+    <div class="container-fluid px-lg-4 py-4">
+      <div class="row">
+        <!-- ===== 左半部：圖片、標題、概覽、美食 (col-lg-8) ===== -->
+        <!-- 加入 d-flex flex-column 與 gap-3 控制間距 -->
+        <div class="col-lg-8 d-flex flex-column gap-3">
+          <!-- 1. 圖片區 -->
+          <div class="immersive-hero-img-container">
+            <img id="detailHeroImage" class="immersive-hero-img" src="" alt="旅遊地圖" onerror="handleDetailImageError()">
+            <div id="detailFallback" class="immersive-fallback">
+              <i class="fa-regular fa-map fallback-icon"></i>
+              <div class="fallback-title" id="fallbackRegionName">地區名稱</div>
+              <div class="fallback-sub">我們正在精心繪製該區域的精緻手繪導覽地圖</div>
+              <span class="fallback-badge"><i class="fa-regular fa-clock mr-2"></i>敬請期待</span>
+            </div>
+          </div>
+
+          <!-- 2. 地區標題與描述 -->
+          <div class="detail-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <span id="detailRegionBadge" class="detail-badge mr-3">地區</span>
+              <h1 id="detailTitle" class="font-weight-bold text-dark mb-0" style="font-size: 1.6rem;">行政區名稱</h1>
+            </div>
+            <p id="detailDesc" class="text-secondary lead font-weight-normal mb-0" style="line-height: 1.7;">
+              精緻詳細導覽內文載入中...
+            </p>
+          </div>
+
+          <!-- 3. 地區概覽 -->
+          <div class="detail-card p-4">
+            <h5 class="font-weight-bold mb-3 text-primary"><i class="fa-solid fa-circle-info mr-2"></i> 地區概覽</h5>
+            <div class="row">
+              <div class="col-4 mb-2">
+                <span class="text-muted d-block small">地理分區</span>
+                <strong id="infoRegion" class="text-dark">-</strong>
+              </div>
+              <div class="col-4 mb-2">
+                <span class="text-muted d-block small">代表性首府</span>
+                <strong id="infoCapital" class="text-dark">-</strong>
+              </div>
+              <div class="col-4 mb-2">
+                <span class="text-muted d-block small">最佳旅遊季節</span>
+                <span class="badge badge-success px-3 py-2 rounded-pill mt-1" id="infoSeason">春季 &amp; 秋季</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 在地必吃美食推薦 -->
+          <div class="detail-card p-4">
+            <h5 class="font-weight-bold mb-3 text-warning"><i class="fa-solid fa-utensils mr-2"></i> 在地必吃美食推薦</h5>
+            <div class="row" id="foodsContainer"></div>
+          </div>
+        </div>
+
+        <!-- ===== 右半部：僅保留「經典必去景點」 (col-lg-4) ===== -->
+        <div class="col-lg-4">
+          <div class="detail-card p-4 h-100">
+            <h5 class="font-weight-bold mb-3 text-danger"><i class="fa-solid fa-map-pin mr-2"></i> 經典必去景點</h5>
+            <div class="row" id="spotsContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div id="footer"></div>
+
+  <!-- ========================================================================= -->
+  <!-- ===== 47 都道府縣資料庫 (內含 image 欄位) ===== -->
+  <script>
+    const travelDatabase = [
+      {
+        id: "01n",
+        name: "1N. 道北 (北海道)",
+        region: "hokkaido",
+        regionName: "北海道地方",
+        color: "#df97e2",
+        capital: "旭川市",
+        bestSeason: "冬季 (12月 - 2月)",
+        desc: "道北地區包含稚內、旭川等，是日本最北端的雪國。這裡擁有雄偉的大雪山脈、壯觀的流冰奇景，以及全日本最頂級的優質滑雪場，是冬季探險家與滑雪愛好者的終極天堂。",
+        spots: [
+          "富良野薰衣草田 (夏季盛開的紫色花海，是北海道最具代表性的景色之一)",
+          "美瑛拼布之路 (丘陵上的農田如拼布般多彩，景色優美)",
+          "青池 (美瑛的夢幻景點，因礦物質使池水呈現神秘的藍色)",
+          "四季彩之丘 (美瑛的花田公園，可欣賞到各種花卉組成的彩色地毯)",
+          "旭山動物園 (以獨特的「行為展示」聞名，可近距離觀察動物生態)",
+          "大雪山國立公園 (北海道的屋脊，擁有壯麗的山景和豐富的生態)",
+          "層雲峽 (大雪山國立公園內的峽谷，溫泉與秋季紅葉著名)",
+          "旭岳 (大雪山的主峰，夏季可登山，冬季可滑雪)",
+          "天人峽 (擁有瀑布和溫泉的自然景觀區)",
+          "宗谷岬 (日本本土最北端之地，可眺望庫頁島)",
+          "白色道路 (稚內附近的筆直公路，是著名的兜風路線)",
+          "利尻富士 (利尻島上的標誌性山峰，形似富士山)",
+          "禮文島 (以高山花卉聞名的「花之浮島」)",
+          "雲海平台 (星野度假村內可欣賞壯闊雲海的觀景台)",
+          "美瑛聖誕樹 (田野中一棵孤獨的樹木，冬季雪景別具風情)",
+          "國稀釀酒廠 (位於留萌的歷史悠久的酒廠)",
+          "富良野滑雪場 (北海道首屈一指的滑雪勝地)",
+          "當麻鐘乳洞 (北海道罕見的鐘乳石洞)",
+        ],
+        foods: ["旭川醬油拉麵", "石狩鍋", "成吉思汗烤羊肉"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M006-4-道北.webp"
+      },
+      {
+        id: "01w",
+        name: "1W. 道央 (北海道)",
+        region: "hokkaido",
+        regionName: "北海道地方",
+        color: "#88db85",
+        capital: "札幌市",
+        bestSeason: "四季皆宜",
+        desc: "道央地區包含札幌、小樽、登別等，是整個北海道的經濟、文化與旅遊核心重鎮。四季皆有獨特魅力，從春櫻、夏薰衣草、秋楓到震撼全球的札幌雪祭，搭配浪漫的小樽運河與溫泉，提供無可挑剔的度假體驗。",
+        spots: [
+          "大通公園 (札幌市的中心地標，也是冬季札幌雪祭的主要會場)",
+          "札幌電視塔 (位於大通公園內，可從展望台一覽札幌市景)",
+          "北海道神宮 (位於圓山公園內，是北海道最具代表性的神社)",
+          "二條市場 (札幌的廚房，可在此品嘗新鮮的海鮮)",
+          "狸小路商店街 (札幌知名的拱廊購物街，適合採買伴手禮)",
+          "時計台 (札幌市的標誌性歷史建築)",
+          "北海道大學 (札幌市內的著名學府，校園廣闊，銀杏並木道是秋季名景)",
+          "小樽運河 (浪漫的運河與復古倉庫群，是道央最具代表性的景點之一)",
+          "小樽音樂盒堂 (小樽著名的音樂盒專賣店，充滿懷舊氛圍)",
+          "堺町通 (小樽的主要商店街，玻璃工藝品和甜點店林立)",
+          "登別地獄谷 (登別溫泉的源頭，火山地熱景觀獨特)",
+          "登別溫泉 (北海道最具代表性的溫泉鄉之一，泉質多樣)",
+          "洞爺湖 (美麗的火山口湖，可搭乘遊覽船欣賞湖景)",
+          "昭和新山 (洞爺湖旁仍在成長的活火山，可近距離觀察火山活動)",
+          "定山溪溫泉 (札幌的後花園，是著名的溫泉與賞楓勝地)",
+          "豐平峽大壩 (定山溪附近的壯觀水壩，秋季紅葉絕美)",
+          "支笏湖 (日本最北端的不凍湖，湖水清澈，適合戶外活動)",
+          "千歲市 (新千歲機場所在地，機場內有哆啦A夢等主題樂園)",
+          "二世古（新雪谷） (世界級的滑雪勝地，夏季亦可登山、騎行)",
+          "羊蹄山 (形似富士山，是二世古地區的象徵)",
+        ],
+        foods: ["札幌味噌拉麵", "湯咖哩", "小樽現撈海鮮丼"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M006-3-道央.webp"
+
+      }, {
+        id: "01s",
+        name: "1S. 道南 (北海道)",
+        region: "hokkaido",
+        regionName: "北海道地方",
+        color: "#67a3f3",
+        capital: "函館市",
+        bestSeason: "秋季 & 冬季",
+        desc: "道南地區以函館為中心，擁有被譽為百萬夜景的函館山夜景、歷史悠久的星形五稜郭碉堡，以及異國風情濃厚的元町建築群，處處洋溢著迷人的港町復古氣息。",
+        spots: [
+          "函館山 (名列「世界三大夜景」的百萬夜景，可搭乘纜車登頂俯瞰)",
+          "五稜郭 (日本獨特的星形城郭，春天是賞櫻名所，可從五稜郭塔眺望全景)",
+          "函館元町 (保留著開港時期的西洋建築與坂道，充滿異國情調)",
+          "金森紅磚倉庫 (港邊的紅磚倉庫群，現已改為商場、餐廳，是函館的標誌性景點)",
+          "函館朝市 (函館的廚房，可在此品嘗新鮮的海鮮丼和帝王蟹)",
+          "大沼國定公園 (由大小島嶼和湖泊組成，可騎自行車環湖，欣賞壯麗的駒岳景色)",
+          "湯之川溫泉 (函館市郊的溫泉鄉，可在海景溫泉中放鬆身心)",
+          "香雪園 (位於函館的日式庭園，秋季是賞楓名所)",
+          "道南漁火鐵道 (沿海岸線行駛的鐵道，可從車窗欣賞津輕海峽的美景)",
+          "森町 (知名鐵路便當「花枝飯」的發源地，坐擁噴火灣的豐富海產)",
+          "松前城 (日本最北端的城堡，春季櫻花盛開時非常壯觀)",
+          "惠山 (可登山眺望津輕海峽與函館市的活火山)",
+          "函館市熱帶植物園 (以冬季觀賞猴子泡溫泉而聞名)",
+          "特拉皮斯汀修道院 (日本最早的女子修道院，環境寧靜優美)",
+          "八幡坂 (函館最具代表性的坂道，盡頭可直通海邊，景色絕佳)",
+          "北斗市 (可體驗採摘草莓等農場樂趣)",
+          "木古內町 (北海道新幹線的終點站，可在此轉乘道南漁火鐵道)",
+          "上磯郡 (擁有豐富的自然景觀和歷史遺跡)"
+        ],
+        foods: ["函館鹽味拉麵", "烏賊刺身", "長谷川商店烤肉串便當"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M006-2-道南.webp"
+      }, {
+        id: "01e",
+        name: "1E. 道東 (北海道)",
+        region: "hokkaido",
+        regionName: "北海道地方",
+        color: "#fbb040",
+        capital: "釧路市",
+        bestSeason: "夏季 (7月 - 9月)",
+        desc: "道東地區擁有知床半島、阿寒湖等世界自然遺產與國家公園，是大自然與野生動物的天堂。在這裡，您可以觀賞丹頂鶴、體驗神祕的霧之摩周湖，深刻感受毫無人工修飾的壯麗野性自然環境。",
+        spots: [
+          "知床半島 (被列為世界自然遺產，擁有原始森林與豐富的野生動物)",
+          "知床五湖 (知床半島上的五個湖泊，是代表性的徒步路線)",
+          "羅臼町 (知床半島的另一側，以觀賞鯨魚和海鳥而聞名)",
+          "網走流冰 (冬季可在鄂霍次克海體驗破冰船，欣賞流冰)",
+          "摩周湖 (以極高的透明度聞名的火山口湖，湖水呈現獨特的藍色)",
+          "神之子池 (摩周湖附近的小池，水色清澈湛藍)",
+          "阿寒湖 (以綠球藻和愛努文化聞名的美麗湖泊)",
+          "屈斜路湖 (日本最大的火山口湖，冬季可見天鵝)",
+          "弟子屈町 (摩周湖和屈斜路湖所在的城鎮，是道東旅遊的樞紐)",
+          "釧路濕原國立公園 (日本最大的濕地，是丹頂鶴的棲息地)",
+          "塘路湖 (釧路濕原附近的湖泊，可進行獨木舟等活動)",
+          "霧多布濕原 (位於根室，是另一個重要的濕地保護區)",
+          "釧路市 (有「霧都」之稱，是道東的重要城市)",
+          "根室市 (日本最東端的城市，可前往納沙布岬)",
+          "納沙布岬 (日本本土最東端之地，是迎接新年第一道曙光的名所)",
+          "厚岸町 (以牡蠣養殖聞名，可品嘗新鮮海產)",
+          "十勝牧場 (擁有美麗的白樺林蔭大道，是電視劇和電影的取景地)",
+          "開陽台 (可360度眺望知床半島和野付半島的展望台)",
+          "野付半島 (獨特的沙嘴地形，可觀賞到「冷杉枯木林」景觀)",
+        ],
+        foods: ["勝手丼 (釧路和商市場自選海鮮)", "爐端燒", "帶廣豚丼"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M006-5-道東.webp"
+      }, {
+        id: "02",
+        name: "2. 青森縣",
+        region: "tohoku",
+        regionName: "東北地方",
+        color: "#9cd978",
+        capital: "青森市",
+        bestSeason: "秋季 (10月 - 11月)",
+        desc: "青森縣位於本州最北端，以奧入瀨溪流的絕美溪谷、弘前城櫻花、美味可口的富士蘋果以及每年夏天的熱情睡魔祭名揚世界。這裡蘊含豐富的森林溫泉資源與獨特北國文化。",
+        spots: [
+          "白神山地 (世界自然遺產，擁有世界上最大的山毛櫸原始林)",
+          "十二湖（青池） (白神山地內的33座湖沼群，其中青池的藍色水面如夢似幻)",
+          "十和田湖 (美麗的破火山口湖，湖面如鏡般倒映天空與群山)",
+          "奧入瀨溪流 (全長約14公里的溪流，沿途瀑布與急流交錯，是東北最具代表性的自然景觀之一)",
+          "蔦沼 (秋季清晨的「朝燒」絕景，湖面如鏡般倒映染紅的山林)",
+          "城倉大橋 (日本最長的拱橋之一，可眺望八甲田山的壯麗景色)",
+          "弘前公園（弘前城） (日本百名城之一，春季約2,600株櫻花盛開，是東北賞櫻第一名所)",
+          "睡魔之家 WA・RASSE (位於青森站旁，可近距離欣賞睡魔祭的花燈，感受祭典的熱鬧氛圍)",
+          "青森縣立美術館 (展示青森出身藝術家奈良美智的代表作「青森犬」)",
+          "八甲田纜車 (10分鐘即可抵達山頂，四季景色各異，冬季的樹冰奇景尤為壯觀)",
+          "酸湯溫泉 (八甲田山中的秘湯，以混浴大浴場聞名)",
+          "淺蟲溫泉 (青森市郊的溫泉鄉，可一邊泡湯一邊欣賞陸奧灣的海景)",
+          "三內丸山遺跡 (日本最大規模的繩文時代聚落遺跡，已被登錄為世界文化遺產)",
+          "恐山 (日本三大靈場之一，火山地熱景觀獨特，被稱為「死者之山」)",
+          "佛浦 (下北半島的海岸絕景，奇岩怪石林立，被譽為「日本海的阿爾卑斯」)",
+          "龍飛崎 (津輕半島最北端，可眺望津輕海峽與北海道的景色)",
+          "高山稻荷神社 (擁有千本鳥居的絕景神社，是青森縣的隱藏版景點)",
+          "八食中心 (八戶市的海鮮市場，可品嚐新鮮漁獲與烤海鮮)",
+        ],
+        foods: ["青森蘋果派", "大間黑鮪魚", "味噌咖哩牛奶拉麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M010-1-青森.webp"
+      }, {
+        id: "03",
+        name: "3. 岩手縣",
+        region: "tohoku",
+        regionName: "東北地方",
+        color: "#9cd978",
+        capital: "盛岡市",
+        bestSeason: "秋季 (10月)",
+        desc: "岩手縣是日本面積第二大的縣，擁有平泉世界遺產（中尊寺金色堂）與壯麗的三陸海岸。境內保留了大量宮澤賢治筆下的童話場景，是探索日本傳統工藝與秀麗風景的絕佳之地。",
+        spots: [
+          "中尊寺 (位於平泉的世界文化遺產，寺內的金色堂以金箔裝飾，是平安時代佛教美術的寶庫)",
+          "毛越寺 (平泉的世界遺產之一，平安時代淨土庭園的代表作)",
+          "江刺藤原之鄉 (重現平安時代歷史的大型主題園區，可體驗古代文化)",
+          "猊鼻溪 (搭乘船夫撐篙的平底船順流而下，欣賞溪谷的奇岩美景，秋季紅葉尤其迷人)",
+          "嚴美溪 (被譽為「日本第一溪流美」，奇岩與急流交織的溪谷景觀令人讚嘆)",
+          "龍泉洞 (日本三大鐘乳洞之一，擁有美麗的地底湖，湖水呈現神秘的藍色)",
+          "安家洞 (岩手三大鐘乳洞之一，洞內空間廣闊如迷宮)",
+          "瀧觀洞 (北上山地的鐘乳洞之一，洞內有震撼力十足的地下瀑布)",
+          "淨土之濱 (三陸海岸的代表性景點，白色岩石與清澈海水形成如極樂淨土般的美景)",
+          "三陸海岸 (擁有里亞斯式海岸的壯麗海景，可搭乘三陸鐵道沿線欣賞)",
+          "盛岡城跡公園（岩手公園） (盛岡城的遺址，春季約250棵櫻花盛開，是市區的賞櫻名所)",
+          "北上展勝地 (與弘前、角館並列「東北三大賞櫻名所」，櫻花隧道與北上川相映成趣)",
+          "小岩井農場 (日本最大的民營農場，佔地廣闊，以岩手山為背景的牧場風光十分療癒)",
+          "八幡平 (夏季是登山避暑勝地，春季的「雪之迴廊」與夏季的「龍眼沼」絕景令人驚艷)",
+          "宮澤賢治紀念館 (紀念《銀河鐵道之夜》作者宮澤賢治的博物館，展示其文學與科學成就)",
+          "宮澤賢治童話村 (以宮澤賢治作品世界為主題的公園，充滿童話氛圍)",
+          "花卷溫泉 (岩手縣代表性的溫泉鄉，也是宮澤賢治的故鄉)",
+          "盛岡八幡宮 (縣內第一大神社，朱紅色的社殿莊嚴氣派)"
+        ],
+        foods: ["盛岡冷麵", "一口蕎麥麵 (Wanko Soba)", "盛岡炸醬麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M010-2-岩手.webp"
+      }, {
+        id: "04",
+        name: "4. 宮城縣",
+        region: "tohoku",
+        regionName: "東北地方",
+        color: "#9cd978",
+        capital: "仙台市",
+        bestSeason: "春季 & 秋季",
+        desc: "宮城縣以東北最大都市「仙台市」為核心，歷史上由戰國名將伊達政宗建城。不僅擁有日本三景之一的松島灣，還有氣勢磅礡的藏王御釜與藏王狐狸村，兼具都會便利與頂級自然景色。",
+        spots: [
+          "松島灣 (日本三景之一，約260座小島散布在海灣中，可搭乘遊覽船欣賞多島之美)",
+          "五大堂 (松島的代表性建築，建於海邊的朱紅色堂宇，可眺望松島灣)",
+          "瑞巖寺 (松島的代表性寺廟，伊達政宗重建的桃山建築風格本堂為國寶)",
+          "圓通院 (松島的著名庭園，秋季的紅葉與夜間點燈十分迷人)",
+          "仙台城跡（青葉城） (伊達政宗建造的城堡遺址，可遠眺仙台市區全景)",
+          "大崎八幡宮 (仙台市內的代表性神社，社殿為國寶，建築風格華麗)",
+          "石之森章太郎故鄉紀念館 (紀念《假面騎士》作者石之森章太郎的美術館)",
+          "藏王御釜 (藏王連峰中的火口湖，湖水因陽光折射呈現獨特的綠色，被稱為「五色沼」)",
+          "藏王狐狸村 (可近距離觀察上百隻狐狸的獨特景點，是宮城縣的人氣打卡地)",
+          "鳴子峽 (秋季紅葉的絕佳觀賞地，峽谷中的奇岩與紅葉相映成趣)",
+          "白石川堤一目千本櫻 (沿著白石川約8公里的櫻花大道，約1,200株櫻花盛開時極為壯觀)",
+          "秋保大瀑布 (被選為「日本瀑布百選」之一，落差55公尺的壯麗瀑布)",
+          "磊磊峽 (秋保温泉附近的溪谷，奇岩與急流交織的景觀優美)",
+          "作並溫泉 (仙台市郊的溫泉鄉，被稱為「仙台的奧座敷」)",
+          "仙台麵包超人兒童博物館 (親子旅遊的熱門景點，適合帶小朋友同遊)",
+          "仙台海洋森林水族館 (展示東北海域的海洋生物，海豚表演精彩)",
+          "國營陸奧杜之湖畔公園 (廣闊的國營公園，四季花卉繽紛)"
+        ],
+        foods: ["炭烤牛舌", "毛豆泥麻糬 (Zunda)", "牡蠣小屋現烤鮮蚵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M010-3-宮城.webp"
+      }, {
+        id: "05",
+        name: "5. 秋田縣",
+        region: "tohoku",
+        regionName: "東北地方",
+        color: "#9cd978",
+        capital: "秋田市",
+        bestSeason: "冬季 (2月)",
+        desc: "秋田縣是忠犬八公、秋田犬的故鄉，以乳頭溫泉鄉、角館武家屋敷、男鹿半島生剝鬼祭及烤米棒馳名。此處水質純淨，生產的秋田小町米與優質清酒更是日本饕客的首選。",
+        spots: [
+          "角館武家屋敷 (被稱為「陸奧小京都」，保存完好的江戶時代武士宅邸群，春季櫻花尤其美麗)",
+          "千秋公園 (秋田城遺址改建的公園，春季櫻花與秋季紅葉皆美)",
+          "田澤湖 (日本最深的湖泊，湖水透明度極高，湖畔的金色辰子雕像為代表性景觀)",
+          "乳頭溫泉鄉 (秋田代表性的秘湯，擁有7座不同泉質的溫泉，可購買「溫泉巡迴帖」一次體驗)",
+          "後生掛溫泉 (八幡平地區的秘湯，以天然泥湯聞名)",
+          "川原毛地獄 (秋田縣的火山地熱景觀，與登別地獄谷相似)",
+          "男鹿半島 (以「生剝鬼（Namahage）」文化聞名，寒風山迴轉展望台可眺望日本海)",
+          "仁賀保高原 (可360度眺望鳥海山與日本海的絕景展望台)",
+          "象潟・九十九島 (世界罕見的步行環島景點，曾是松尾芭蕉《奧之細道》的造訪地)",
+          "八郎潟 (日本第二大湖，湖畔的夕陽美景十分動人)",
+          "大曲花火大會 (日本三大花火大會之一，每年8月最後一個週六舉辦，花火職人齊聚競技)",
+          "缺",
+          "白神山地 (世界自然遺產，秋田縣側亦有入口，可探索原始山毛櫸林)",
+          "鳥海山 (秋田縣與山形縣交界處的活火山，被稱為「出羽富士」，登山健行的熱門地點)",
+          "秋田美術館 (由建築大師安藤忠雄設計，建築本身即為藝術品)",
+          "鈴木酒造店 (百年歷史的釀酒廠，可參觀清酒釀造過程並試飲)",
+          "秋田竿燈祭 (東北三大祭之一，每年8月3日至6日舉辦，以撐起竿燈祈求五穀豐收)",
+        ],
+        foods: ["比內地雞親子丼", "秋田烤米棒火鍋", "稻庭烏龍麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M010-4-秋田.webp"
+      }, {
+        id: "06",
+        name: "6. 山形縣",
+        region: "tohoku",
+        regionName: "東北地方",
+        color: "#9cd978",
+        capital: "山形市",
+        bestSeason: "冬季 (1月 - 2月)",
+        desc: "山形縣境內各個市町村皆有溫泉，其中以銀山溫泉、藏王樹冰、出羽三山修行勝地以及頂級櫻桃（佐藤錦）最為著稱。冬季時大雪紛飛的銀山溫泉，猶如走進大正浪漫的童話世界中。",
+        spots: [
+          "藏王樹冰 (冬季藏王連峰上的「雪怪」奇景，是世界罕見的自然現象，可搭乘纜車欣賞)",
+          "藏王溫泉滑雪場 (東北知名的滑雪勝地，冬季可同時享受滑雪與樹冰美景)",
+          "藏王溫泉(藏王溫泉街)",
+          "銀山溫泉 (大正浪漫風格的溫泉街，復古木造建築沿河而立，冬季雪景如童話世界)",
+          "立石寺（山寺） (松尾芭蕉《奧之細道》中造訪的名寺，登上1015級石階可眺望絕景)",
+          "最上川舟遊 (搭乘傳統木舟順流而下，欣賞最上川兩岸的四季美景)",
+          "山居倉庫 (酒田市的歷史倉庫群，白牆黑瓦的景觀充滿懷舊風情)",
+          "日和山公園 (酒田市的展望公園，可眺望日本海與最上川的景色)",
+          "鶴岡市立加茂水族館 (以水母展示聞名，擁有世界最大直徑5公尺的「水母夢幻劇場」)",
+          "致道博物館 (鶴岡市的博物館，展示莊內地區的歷史與文化)",
+          "烏帽子山八幡宮 (日本櫻花百選之一，擁有全日本最大的無接縫石鳥居)",
+          "文翔館 (山形市的文藝復興風格建築，為重要文化財，曾是縣廳與縣議會的所在地)",
+          "霞城公園 (山形城遺址改建的公園，約1,500株櫻花盛開時是市區的賞櫻名所)",
+          "山形美術館 (收藏畢卡索、莫內等西方藝術作品，以及江戶時期的日本畫作)",
+          "羽黑山五重塔 (出羽三山之一的羽黑山上的國寶五重塔，被原始森林環繞)",
+          "丸池樣 (山形縣的湧水名所，水質清澈，被選為日本名水百選之一)",
+          "天童溫泉 (山形縣的溫泉鄉，以將棋棋子產地聞名)",
+          "高畠葡萄酒廠 (山形縣的葡萄酒知名產地，可參觀釀造過程與試飲)",
+
+        ],
+        foods: ["米澤牛肉壽喜燒", "佐藤錦櫻桃", "山形冷拉麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M010-5-山形.webp"
+      }, {
+        id: "07",
+        name: "7. 福島縣",
+        region: "tohoku",
+        regionName: "東北地方",
+        color: "#9cd978",
+        capital: "福島市",
+        bestSeason: "春季 (4月)",
+        desc: "福島縣擁有大內宿茅草屋、會津若松鶴之城及豬苗代湖。春櫻、夏翠、秋楓、冬雪四季分明，特別是大內宿在冬季大雪覆蓋時，古色古香的街道美不勝收，是極具江戶風情的文化重鎮。",
+        spots: [
+          "會津若松城（鶴城） (日本唯一的紅瓦天守閣，春季約1,000株櫻花盛開，是福島最具代表性的歷史地標)",
+          "飯盛山 (會津戰爭的舞台之一，螺旋堂（會津さざえ堂）的獨特建築值得一看)",
+          "會津武家屋敷 (重現江戶時代武士宅邸的主題園區，可體驗會津的歷史文化)",
+          "東山溫泉 (會津若松市郊的溫泉鄉，歷史超過1,300年)",
+          "大內宿 (保留江戶時代宿場町風貌的茅草屋建築群，被列為重要傳統建造物群保存地區)",
+          "五色沼 (裏磐梯的湖沼群，湖水顏色會隨氣候與角度變化，是福島最著名的自然絕景)",
+          "豬苗代湖 (日本第四大湖，湖水透明度極高，被稱為「天鏡湖」)",
+          "磐梯山 (日本百名山之一，山頂可360度俯瞰豬苗代湖與吾妻連山)",
+          "磐梯吾妻Sky Line (貫穿吾妻連峰的山岳道路，沿途可欣賞壯麗的火山景觀)",
+          "只見線 (被譽為「日本最美的鐵道線」，第一只見川橋梁的景色是攝影愛好者的聖地)",
+          "霧幻峽 (只見川沿岸的峽谷，清晨時常出現夢幻般的霧氣)",
+          "大志集落 (只見川沿岸的集落，從對岸眺望的景色被譽為「日本的原始風景」)",
+          "三春瀧櫻 (日本三大櫻花之一，樹齡超過1,000年的巨型垂枝櫻，春季極為壯觀)",
+          "日中線紀念自行車步道 (廢線鐵道改建的自行車道，春季垂枝櫻並木極為美麗)",
+          "喜多方 (與札幌、博多並列日本三大拉麵之城，可品嚐喜多方拉麵)",
+          "阿武隈洞 (福島縣代表性的鐘乳洞，洞內鐘乳石景觀豐富)",
+          "夏威夷溫泉度假村 (福島縣的溫泉主題樂園，擁有日本最大的室內溫泉泳池)",
+        ],
+        foods: ["喜多方拉麵 (三大拉麵之一)", "大內宿大蔥蕎麥麵", "福島水蜜桃"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M010-6-福島.webp"
+      }, {
+        id: "08",
+        name: "8. 茨城縣",
+        region: "kanto",
+        regionName: "關東地方",
+        color: "#fbb851",
+        capital: "水戶市",
+        bestSeason: "春季 (4月 - 5月)",
+        desc: "茨城縣擁有國營常陸海濱公園的夢幻粉蝶花海、筑波山以及日本三大名園之一的「偕樂園」，是東京近郊春季與秋季賞花一日遊的最佳去處。",
+        spots: [
+          "袋田瀑布：日本三大名瀑之一，高120公尺、分四段傾瀉，冬季可能結成冰瀑。",
+          "大子（奧久慈）：以奧久慈軍雞與自然溪谷聞名的地區。",
+          "龍神大吊橋：橫跨龍神峽的步行吊橋，景色壯觀。",
+          "花貫溪谷：以溪谷美景與紅葉聞名的自然景點。",
+          "國營常陸海濱公園：春季的粉蝶花海與秋季的掃帚草是絕景，四季花卉繽紛。",
+          "日立車站（日立市）：由建築師妹島和世設計的「漂浮在玻璃建築中的車站」，可眺望太平洋。",
+          "海洋世界茨城縣大洗水族館：關東地區規模最大的水族館之一，飼育約580種海洋生物。",
+          "大洗磯前神社：以矗立於太平洋上的「海上鳥居」聞名，日出時分尤為壯觀。",
+          "茨城縣立歷史館：展示茨城縣從古代至現代的歷史與文化。",
+          "常陸風土記之丘：可欣賞粉蝶花與大波斯菊的賞花景點。",
+          "偕樂園（水戶）：日本三大名園之一，以超過3000株梅花聞名。",
+          "弘道館（水戶）：江戶時代最大的藩校，為國家重要文化財。",
+          "水戶藝術館：由建築師磯崎新設計的標誌性建築，其100公尺高的塔樓可俯瞰市景。",
+          "牛久大佛：金氏世界紀錄認證的世界最高青銅製立佛像，高120公尺。",
+          "筑波山：被稱為「西有富士、東有筑波」的知名山峰，可搭乘纜車登山。",
+          "筑波實驗植物園：隸屬於國立科學博物館的植物園，展示多樣化的植物。",
+          "霞浦湖：日本第二大湖，可乘船遊湖、欣賞夕陽美景。",
+          "鹿島神宮：日本全國鹿島神社的總本宮，歷史悠久，是武運與勝運的信仰中心。",
+          "水鄉潮來（潮來市）：以水鄉風情與菖蒲花季聞名的地區。",
+          "笠間燒（笠間市）：日本知名的陶器產地，可體驗陶藝製作。",
+        ],
+        foods: ["水戶納豆", "常陸牛排", "安鱇魚火鍋"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M015-7- 茨城.webp"
+      },
+      {
+        id: "09",
+        name: "9. 栃木縣",
+        region: "kanto",
+        regionName: "關東地方",
+        color: "#fbb851",
+        capital: "宇都宮市",
+        bestSeason: "春季 & 秋季",
+        desc: "栃木縣以德川家康的陵寢「日光東照宮」最為聞名。此外，鬼怒川溫泉、足利花卉公園的世紀紫藤花海，以及全日本消耗量第一的宇都宮餃子，也都是這裡不容錯過的超強旅遊元素。",
+        spots: [
+          "日光東照宮：世界文化遺產，祭祀德川家康的華麗神社，雕刻精細。",
+          "日光二荒山神社：世界文化遺產，歷史悠久的古老神社，以結緣聞名。",
+          "日光山輪王寺：世界文化遺產，是天台宗在關東的重要寺院。",
+          "神橋（連接山中聖城的朱紅橋樑）",
+          "中禪寺湖：日本海拔最高的天然湖泊，由火山熔岩形成，湖光山色優美。",
+          "華嚴瀑布：日本三大名瀑之一，落差約97公尺，氣勢恢宏。",
+          "明智平展望台：可搭乘纜車前往，眺望中禪寺湖與華嚴瀑布的絕佳地點。",
+          "伊呂波坂：通往中禪寺湖的著名山道，擁有48個彎道，秋季紅葉極美。",
+          "戰場之原：日光國立公園內的高山濕原，傳說為眾神爭奪中禪寺湖的戰場。",
+          "龍頭瀑布：日光代表性的瀑布之一，因形似龍頭而得名。",
+          "湯之湖：日光湯元溫泉區的寧靜湖泊，周邊設有完善的散步道。",
+          "霧降瀑布：日光「四十八瀑」之一，可從不同角度感受瀑布魅力。",
+          "鬼怒川溫泉：沿著鬼怒川溪谷發展的溫泉鄉，是知名的溫泉度假勝地。",
+          "龍王峽：鬼怒川沿岸的溪谷景觀，奇岩與急流交織。",
+          "那須高原：廣闊的高原度假區，擁有動物王國、牧場與溫泉。",
+          "那須動物王國與牧場：與動物親近互動的樂園與牧場。",
+          "宇都宮（餃子之城）：以餃子聞名的城市，擁有眾多餃子專賣店。",
+          "足利花卉公園：以「日本三大燈飾」聞名，春季的紫藤花瀑布是絕景。",
+          "大谷資料館：由地下採石場改建而成的獨特空間，是電影與MV的熱門拍攝地。",
+          "若山農場（金色竹林）：擁有珍貴金色竹林的農場，是知名的電影拍攝地。",
+          "栃木市（藏造老街）：保留濃濃江戶風情的古老街區，適合漫步。",
+          "日光江戶村：重現江戶時代街景與文化的主題樂園。",
+        ],
+        foods: ["宇都宮煎餃", "日光湯波豆腐 (Yuba)", "栃木草莓 (栃乙女)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M015-6- 栃木.webp"
+      },
+      {
+        id: 10,
+        name: "10. 群馬縣",
+        region: "kanto",
+        regionName: "關東地方",
+        color: "#fbb851",
+        capital: "前橋市",
+        bestSeason: "冬季 (12月 - 2月)",
+        desc: "群馬縣是享譽全日的溫泉帝國。草津溫泉的「湯畑」與拌湯秀、伊香保溫泉的石段街等遠近馳名，還有被列為世界遺產的富岡製絲廠，是兼具歷史意義與深度放鬆的療癒之鄉。",
+        spots: [
+          "草津溫泉：日本三大名湯之一，湯畑是溫泉街的中心地標。",
+          "四萬溫泉：以乳白色「四萬藍」溫泉聞名的秘湯，積善館據說是《神隱少女》的靈感來源。",
+          "積善館：神隱少女場景靈感",
+          "伊香保溫泉：位於榛名山半山腰的溫泉鄉，以「黃金之湯」與「白銀之湯」聞名，石段街是其特色。",
+          "榛名神社：創建於6世紀的古老神社，被譽為「群馬最強的能量景點」。",
+          "谷川岳：日本百名山之一，可搭乘纜車輕鬆欣賞壯麗山景。",
+          "水上溫泉郷：由水上十八湯組成的溫泉區，夏季可泛舟、冬季可滑雪。",
+          "吹割瀑布：被譽為「東洋的尼加拉瀑布」，氣勢磅礡。",
+          "尾瀨國立公園（尾瀨原）：日本最大的高層濕原，春季的水芭蕉與秋季的草紅葉是絕景。",
+          "富岡製絲廠：世界文化遺產，建於1872年，是日本近代工業發展的象徵。",
+          "碓冰峠鐵道文化村：展示舊鐵道與車輛的博物館，鐵道迷必訪。",
+          "眼鏡橋（碓冰第三橋樑）：群馬縣的紅磚拱橋，是著名的鐵道遺產。",
+          "少林山達磨寺：被認為是「開運達摩」的故鄉，寺內展示大量達摩不倒翁。",
+          "高崎（達摩不倒翁市）：日本最大的達摩不倒翁產地，可體驗彩繪達摩。",
+          "群馬野生動物園：可搭乘叢林巴士近距離觀賞動物的野生動物園。",
+          "蒟蒻樂園（甘樂町）：可免費試吃與體驗蒟蒻製作的主題設施。",
+          "群馬花卉公園：四季花卉盛開的廣闊公園。",
+          "奧四萬湖：以鈷藍色湖水聞名的美麗湖泊。",
+          "軽井澤玩具王國：位於群馬與長野交界的大型遊樂園。"
+        ],
+        foods: ["水澤烏龍麵", "上州和牛", "草津溫泉饅頭"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M015-5-群馬.webp"
+      },
+      {
+        id: 11,
+        name: "11. 埼玉縣",
+        region: "kanto",
+        regionName: "關東地方",
+        color: "#fbb851",
+        capital: "埼玉市",
+        bestSeason: "春季 & 秋季",
+        desc: "埼玉縣緊鄰東京，擁有保存完整江戶時代建築的「小江戶」川越、長瀞的溪流遊船以及秩父的壯麗芝櫻。這裡是深度感受關東庶民文化、動漫巡禮與大自然綠意的後花園。",
+        spots: [
+          "羊山公園（秩父）：春季約40萬株芝櫻盛開，將山坡染成粉紅色花毯。",
+          "秩父神社：擁有2000年以上歷史的神社，本殿雕刻精美。",
+          "長瀞川（長瀞）：以「岩畳」奇景與川下り（遊船）聞名，可欣賞溪谷美景。",
+          "寶登山神社（長瀞）：位於寶登山山頂的神社，可搭乘纜車前往。",
+          "行田市（古代蓮之里）：夏季可欣賞超過40萬株古代蓮花盛開的壯觀景象。",
+          "小川町（和紙體驗）：可體驗日本傳統手抄和紙製作。",
+          "武甲山（秩父）：秩父地區的象徵山峰，被指定為國家地質公園。",
+          "寺坂棚田：保留傳統景觀的梯田，四季皆有不同風貌。",
+          "鐵道博物館（大宮）：日本最大的鐵道博物館之一，展示從蒸汽火車到新幹線的實物車輛。",
+          "大宮公園：歷史悠久的市區公園，內有日式庭園、動物園與博物館。",
+          "大宮盆栽美術館：世界首座以盆栽為主題的公立美術館，展示精美的盆栽藝術。",
+          "川越（藏造老街）：被稱為「小江戶」，保存大量江戶時期的藏造建築與鐘樓。",
+          "冰川神社（川越）：擁有超過1500年歷史的古老神社，其「繪馬隧道」是著名打卡景點。",
+          "埼玉超級體育館：日本最大的多功能體育場館之一，常舉辦大型演唱會與體育賽事。",
+          "嚕嚕米主題公園（姆明谷公園）：北歐童話風的主題樂園，重現姆明谷的世界。",
+          "角川武藏野博物館：由建築師隈研吾設計的複合文化設施，外觀由花崗岩打造，極具視覺衝擊。",
+          "缺",
+          "見沼代用水（櫻花迴廊）：沿著見沼代用水綿延約20公里的櫻花並木，春季美不勝收。",
+          "東武動物公園：結合動物園、遊樂園與泳池的大型休閒設施。",
+          "西武巨蛋：日本職棒埼玉西武獅隊的主場，也是大型演唱會場地。",
+        ],
+        foods: ["川越地瓜甜品", "秩父草鞋豬排丼", "狹山茶"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M015-4-崎玉.webp"
+      },
+      {
+        id: 12,
+        name: "12. 千葉縣",
+        region: "kanto",
+        regionName: "關東地方",
+        color: "#fbb851",
+        capital: "千葉市",
+        bestSeason: "四季皆宜",
+        desc: "千葉縣坐擁世界級景點東京迪士尼樂園度假區、日本最大聯外樞紐成田國際機場，以及風光明媚、盛產新鮮海產的房總半島，是所有造訪關東旅客的起點與終點。",
+        spots: [
+          "東京迪士尼樂園・迪士尼海洋：亞洲最受歡迎的主題樂園，實際位於千葉縣舞濱。",
+          "成田山新勝寺：擁有千年歷史的古寺，通往寺廟的參道兩旁商店林立。",
+          "香取神宮：日本最古老的神社之一，擁有超過2600年歷史。",
+          "佐原（小江戶）：被稱為「小江戶」的水鄉古鎮，保留江戶時期的街景與運河風光。",
+          "母親牧場：可與動物互動、欣賞花卉與牧場風光的親子景點。",
+          "東京德國村：重現德國鄉村風情的主題公園，夜晚的燈飾極具浪漫氛圍。",
+          "船橋安徒生公園：以丹麥童話作家安徒生命名的公園，擁有廣闊花園與遊樂設施。",
+          "鴨川海洋世界：以虎鯨表演聞名的大型水族館，飼養超過800種海洋生物。",
+          "九十九里濱：千葉縣代表性海岸線，適合漫步沙灘、欣賞海景。",
+          "銚子（犬吠埼燈塔）：關東地區最東端的燈塔，是欣賞日出的著名地點。",
+          "屏風浦（銚子）：由太平洋海浪侵蝕形成的壯麗斷崖景觀。",
+          "原岡海岸（南房總）：以夕陽美景與奇岩海岸聞名的景點。",
+          "房總之村：重現江戶時代房總地區生活樣貌的主題設施，可體驗傳統工藝。",
+          "小湊鐵道：穿越田園與溪谷的復古觀光鐵道，春季可欣賞油菜花與櫻花。",
+          "幕張海濱公園：鄰近幕張展覽館的海濱公園，適合散步與欣賞海景。",
+          "養老溪谷：房總半島的溪谷秘境，秋季紅葉與瀑布景色優美。",
+          "千葉市動物公園：飼育多種動物的市立動物園。",
+          "千葉都市單軌電車：世界最長的懸掛式單軌電車，可從空中遊覽市區。",
+          "木更津（三井OUTLET PARK）：位於木更津的大型購物中心，可遠眺東京灣景色。",
+        ],
+        foods: ["房總海鮮炭烤", "勝浦擔擔麵", "落花生 (千葉名產)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M015-3-千葉.webp"
+      }, {
+        id: 13,
+        name: "13. 東京都",
+        region: "kanto",
+        regionName: "關東地方",
+        color: "#fbb851",
+        capital: "新宿區",
+        bestSeason: "四季皆宜",
+        desc: "東京都為日本首都與世界最繁忙的大都市。這裡完美融合了最前衛的摩天大樓、流行發源地（澀谷、原宿）、歷史悠久的古剎神社（淺草寺）與綠意盎然的明治神宮，展現無窮的都市活力。",
+        spots: [
+          "高尾山：距都心約1小時車程的自然景點，多條登山路線適合健行，可遠眺富士山。",
+          "三鷹之森吉卜力美術館：由宮崎駿設計，展示吉卜力工作室的動畫世界與手稿。",
+          "上野公園（上野恩賜公園）：東京著名的文化與休憩場所，春季是賞櫻勝地，園內有博物館、美術館與動物園。",
+          "東京晴空塔：全球第二高的觀景塔，高634公尺，天氣好時能遠眺富士山。",
+          "淺草寺（雷門）：東京最古老的寺廟，穿過巨大的雷門燈籠、漫步仲見世通商店街是經典行程。",
+          "井之頭恩賜公園：吉祥寺地區的公園，可划船與散步，秋季紅葉迷人。",
+          "新宿御苑：位於市中心的廣闊庭園，融合日式、法式與英式風格，是賞櫻與賞楓名所。",
+          "明治神宮：供奉明治天皇與昭憲皇太后的神社，擁有東京市中心最大規模的森林。",
+          "皇居（東御苑）：日本天皇的居所，部分區域定期開放參觀，可感受江戶城遺址的歷史氛圍。",
+          "神樂坂：保留石板路與小巷弄風情的區域，充滿懷舊氛圍與法式小店。",
+          "兩國國技館：東京的相撲聖地，可觀賞相撲比賽與體驗相撲文化。",
+          "秋葉原：全球知名的電器與動漫聖地，各種電子產品、模型與女僕咖啡廳林立。",
+          "築地場外市場：即使市場搬遷，場外市場仍充滿活力，可品嚐新鮮海鮮與道地小吃。",
+          "六本木新城（森大廈展望台）：從52樓的展望台可360度欣賞東京全景，包括東京鐵塔。",
+          "國立新美術館：由建築師黑川紀章設計，波浪狀的外觀是其特色，館內空間寬敞。",
+          "東京鐵塔：東京的永恆象徵，從觀景台可欣賞璀璨的都市全景。",
+          "代官山（蔦屋書店）：時尚與文化的街區，被譽為「世界最美書店」之一的蔦屋書店是其地標。",
+          "澀谷十字路口：世界最繁忙的十字路口，忠犬八公像是著名的會面點。",
+          "目黑川：春季賞櫻的絕佳地點，兩岸約800株櫻花盛開時形成粉色隧道。",
+          "台場：東京灣的人工島，擁有彩虹大橋、富士電視台與大型購物中心，是娛樂與夜景勝地。",
+        ],
+        foods: ["文字燒 (Monjayaki)", "江戶前握壽司", "東京香蕉甜點 (伴手禮)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M015-1-東京.webp"
+      },
+      {
+        id: 14,
+        name: "14. 神奈川縣",
+        region: "kanto",
+        regionName: "關東地方",
+        color: "#fbb851",
+        capital: "橫濱市",
+        bestSeason: "四季皆宜",
+        desc: "神奈川縣擁有浪漫時尚的港灣橫濱、鎌倉幕府的古都歷史（鐮倉大佛）、江之島海岸線（灌籃高手經典平交道）與箱根溫泉，旅遊元素應有盡有，是全日本最具人氣的觀光縣之一。",
+        spots: [
+          "橫濱港未來21：橫濱的現代化港灣區，地標摩天輪與夜景迷人。",
+          "橫濱紅磚倉庫：歷史悠久的紅磚建築群，現為文創與商業設施。",
+          "橫濱中華街：日本最大的中華街，充滿異國風情與美食。",
+          "山下公園：橫濱的海濱公園，可欣賞港灣景色與豪華客船。",
+          "橫濱海洋塔：橫濱的標誌性建築，可360度俯瞰港灣景色。",
+          "杯麵博物館（安藤百福發明紀念館）：位於橫濱，可體驗製作專屬的杯麵。",
+          "八景島海島樂園：日本規模最大的水族館之一，結合遊樂園與購物設施。",
+          "大涌谷（箱根）：火山活動旺盛的景觀區，可品嚐以溫泉蒸煮的「黑玉子」。",
+          "鎌倉大佛（高德院）：鎌倉的象徵，高約13.35公尺的青銅佛像，莊嚴肅穆。",
+          "鶴岡八幡宮：鎌倉最重要的神社之一，是賞櫻與感受歷史的絕佳場所。",
+          "長谷寺（鎌倉）：以四季花卉與觀音信仰聞名的古寺。",
+          "小田原城：戰國時代北條氏的居城，天守閣是重要的歷史遺跡。",
+          "江之島：湘南海岸的代表性景點，島上有神社、展望台與海鮮餐廳。",
+          "葉山（一色海岸）：可同時眺望燈塔與海上鳥居的絕美海灘。",
+          "箱根溫泉：日本知名的溫泉度假勝地，可遠眺富士山並享受各種泉質。",
+          "蘆之湖（箱根）：箱根火山口湖，天氣晴朗時可欣賞富士山倒映湖面的美景。",
+          "湘南海岸：以衝浪文化與悠閒海灘聞名的海岸線，也是日劇常見場景。",
+          "YOKOHAMA AIR CABIN：連接港未來21地區與櫻木町的都市空中纜車。",
+          "三崎港：位於三浦半島最南端，以新鮮鮪魚料理聞名的漁港。",
+          "川崎（藤子・F・不二雄博物館）：展示《哆啦A夢》等作品原畫與資料的博物館。",
+        ],
+        foods: ["橫濱家系拉麵", "江之島吻仔魚丼", "鎌倉豐島屋鴿子餅乾"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M015-2-神奈川.webp"
+      }, {
+        id: 15,
+        name: "15. 新潟縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "新潟市",
+        bestSeason: "冬季 (12月 - 2月)",
+        desc: "新潟縣是全日本頂級越光米與純米清酒的最著名產地，也是諾貝爾文學獎得主川端康成筆下的「雪國」。冬季的高降雪量孕育了越後湯澤等眾多滑雪勝地，吸引全球滑雪愛好者慕名而來。",
+        spots: [
+          "清津峽溪谷隧道 (日本三大溪谷之一，隧道內的「光之隧道」與鏡池倒影是藝術與自然結合的打卡聖地)",
+          "星峠梯田 (入選「日本之里百選」的美麗梯田，清晨時水田如鏡，倒映天空，被稱為「水鏡」絕景)",
+          "美人林 (位於十日町市的山毛櫸林，樹木筆直優美，四季皆有不同的風貌)",
+          "奧只見湖 (位於奧只見水庫的人工湖，被群山環繞，秋季紅葉與湖面倒影如詩如畫)",
+          "佐渡島 (新潟縣外海的島嶼，以盆舟體驗、佐渡金山與宿根木傳統建築群聞名)",
+          "彌彥神社 (新潟縣地位最高的神社，被譽為「越後第一神社」，坐落於彌彥山腳下)",
+          "彌彥山Sky Line (可駕車或搭乘纜車登頂的山岳道路，從山頂可一望日本海與佐渡島)",
+          "阿賀野川 (新潟縣的主要河川，可搭乘遊覽船欣賞溪谷美景與豐富的自然生態)",
+          "越後湯澤 (日本知名的滑雪與溫泉勝地，也是川端康成小說《雪國》的舞台)",
+          "GALA湯澤滑雪場 (JR車站直通的滑雪場，交通便利，是東京出發最方便的滑雪度假村之一)",
+          "苗場滑雪場 (新潟縣最具代表性的滑雪場之一，擁有多條滑雪道與日本最長的「龍纜車」)",
+          "高田公園 (日本三大夜櫻名所之一，春季約4,000棵櫻花盛開，夜間點燈極為壯觀)",
+          "月岡溫泉 (新潟縣代表性的溫泉鄉，以「美白之湯」聞名，泉質優良)",
+          "北方文化博物館 (展示越後地區歷史與文化的博物館，豪農的宅邸建築本身即為珍貴文化財)",
+          "清酒博物館「PONSHU館」 (位於新潟車站內，可試飲新潟縣內所有酒廠的日本酒，是酒迷的天堂)",
+          "燕三條 (日本著名的金屬加工產地，可參觀工廠與選購高品質的刀具、鍋具等工藝品)",
+          "長岡花火大會 (日本三大花火大會之一，每年8月舉辦，規模盛大，震撼力十足)",
+          "佐渡金山 (江戶時代日本最大的金銀礦山，可參觀礦坑遺跡並體驗淘金)",
+          "小木盆舟 (佐渡島的傳統交通工具，乘坐橢圓形木舟在海上搖擺，是獨特的觀光體驗)",
+
+        ],
+        foods: ["魚沼越光米便當", "新潟醬油炸豬排丼", "笹糰子 (竹葉紅豆麻糬)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M013-3-新瀉.webp"
+      }, {
+        id: 16,
+        name: "16. 富山縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "富山市",
+        bestSeason: "春季 (4月 - 6月)",
+        desc: "富山縣以「立山黑部阿爾卑斯路線」的春季高聳雪牆聞名於世。壯麗的富山灣擁有獨特的「螢光魷」魔幻海藍光芒，而世界遺產五箇山合掌造更展現了與世隔絕的日本原始農村風貌。",
+        spots: [
+          "立山黑部阿爾卑斯山脈路線 (世界頂級的山岳觀光路線之一，貫穿日本北阿爾卑斯山，春季的「雪之大谷」是經典絕景)",
+          "黑部水壩 (日本最大的拱形水壩，氣勢宏偉，是立山黑部路線上的重要景點)",
+          "黑部峽谷 (日本最深的V字形峽谷，可搭乘黑部峽谷鐵道觀光小火車深入溪谷，欣賞紅葉與原始森林美景)",
+          "宇奈月溫泉 (位於黑部峽谷入口處的溫泉鄉，是峽谷觀光的起點，以優質泉質聞名)",
+          "雨晴海岸 (可隔海眺望立山連峰壯麗景色的絕美海岸線，冬季晴朗時山巒與海景交織如畫)",
+          "翡翠海岸 (位於朝日町，綿延約4公里的天然海岸，因翡翠綠色的美麗海灘而得名，獲選為「日本百大海岸」)",
+          "五箇山合掌造聚落（相倉・菅沼） (世界文化遺產，與白川鄉齊名的合掌造民家聚落，冬季雪景如童話世界)",
+          "富山城跡 (富山市中心的歷史地標，周邊的城址公園是市民休憩與賞櫻名所)",
+          "高岡古城公園 (日本百大名城之一「高岡城」的遺址公園，春季約1,800株櫻花盛開，是北陸賞櫻名所)",
+          "高岡大佛 (與奈良、鐮倉大佛並稱日本三大佛之一，是高岡市的象徵)",
+          "瑞龍寺 (位於高岡市的曹洞宗名剎，被列為國寶，建築風格優美莊嚴)",
+          "富山市玻璃美術館 (由建築大師隈研吾設計的現代美術館，建築本身極具藝術感，是富山工藝之都的象徵)",
+          "富岩運河環水公園 (位於富山車站旁的廣闊公園，擁有「世界最美星巴克」之一，夜晚點燈後氛圍浪漫)",
+          "松川遊船 (沿著富山市中心的松川，春季可搭乘遊船欣賞兩岸櫻花隧道美景)",
+          "礪波鬱金香博覽會 (春季舉辦的盛大花卉慶典，百萬株鬱金香同時綻放，五彩繽紛)",
+          "螢火蟲魷魚博物館 (位於滑川市，展示富山灣神秘的螢火魷生態，春季是觀賞螢火魷的最佳季節)",
+          "魚津埋沒林博物館 (展示約2,000年前因地殼變動而被埋沒的古代森林遺跡)",
+          "肖米奧瀑布 (日本最高的瀑布，雄偉壯觀，春夏秋季皆適合造訪)",
+        ],
+        foods: ["富山黑拉麵", "富山灣白蝦壽司", "螢光魷刺身"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M013-1-富山.webp"
+      }, {
+        id: 17,
+        name: "17. 石川縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "金澤市",
+        bestSeason: "秋季 & 冬季",
+        desc: "石川縣的金澤市保留了完整的古雅兼六園（日本三大名園之首）、東茶屋街江戶建築，同時以金箔工藝與精緻的加賀溫泉著稱。漫步在此，能深深感受到日本精緻藝術與古都底蘊。",
+        spots: [
+          "兼六園 (日本三名園之首，以「宏大、幽邃、人力、蒼古、水泉、眺望」六勝聞名)",
+          "金澤城 (加賀藩前田家的居城，日本百名城之一)",
+          "武家屋敷遺跡（長町） (金澤市區內保存完好的武士宅邸區)",
+          "東茶屋街 (金澤最大的茶屋街，充滿江戶風情的木造建築，可體驗金箔工藝)",
+          "金澤車站 (曾被選為世界最美車站之一，鼓門與接待圓頂極為壯觀)",
+          "金澤21世紀美術館 (以現代藝術聞名的美術館，建築本身即為藝術品)",
+          "石川縣立美術館 (收藏加賀藩相關美術品與傳統工藝品)",
+          "近江町市場 (金澤的廚房，可品嚐新鮮海鮮與加賀料理)",
+          "箔一本店（箔巧館） (可體驗金箔貼附工藝的設施)",
+          "妙立寺（忍者寺） (外觀為普通寺廟，內部卻充滿陷阱與機關的「忍者寺」)",
+          "能登半島 (擁有千里濱海岸、白米千枚田等絕景)",
+          "白米千枚田 (能登半島的梯田景觀，被列為世界農業遺產)",
+          "千里濱海岸 (可將汽車行駛在沙灘上的獨特海岸)",
+          "能登金剛（巖門） (能登半島的海蝕洞與奇岩景觀)",
+          "鴨浦岩岸 (能登半島的私房景點，壯麗的岩岸景觀)",
+          "輪島朝市 (日本三大朝市之一，可購買新鮮海產與輪島塗漆器)",
+          "加賀溫泉鄉 (由山代、山中、片山津等溫泉組成的千年古湯)",
+          "白山白川鄉白色公路 (連結石川縣與岐阜縣的山岳觀光道路)",
+        ],
+        foods: ["金澤金箔霜淇淋", "治部煮 (Jibuni)", "加賀能登新鮮海能蟹"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M011-5-石川.webp"
+      }, {
+        id: 18,
+        name: "18. 福井縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "福井市",
+        bestSeason: "四季皆宜",
+        desc: "福井縣是世界級的恐龍化石寶庫，擁有國際級的福井恐龍博物館。此外，東尋坊陡峭的柱狀火山岩海岸、佛教修行勝地曹洞宗大本山永平寺，都是這裡深受國內外旅客喜愛的亮點。",
+        spots: [
+          "福井縣立恐龍博物館 (世界頂尖的恐龍博物館之一，展示眾多恐龍化石與標本，是福井最具代表性的景點)",
+          "勝山恐龍森林 (恐龍博物館周邊的戶外體驗區，可與恐龍模型互動，適合親子同遊)",
+          "永平寺 (日本曹洞宗的大本山，由道元禪師於1244年創立，是日本最具代表性的禪宗寺院之一)",
+          "一乘谷朝倉氏遺跡 (戰國大名朝倉氏的城下町遺跡，被埋沒約400年後發掘出土，重現戰國時代的風貌)",
+          "福井城遺址 (福井市的歷史地標，城址公園內有石垣與護城河遺跡)",
+          "丸岡城 (日本最古老的現存天守，別名「霞城」，木造天守閣充滿古意盎然的風情)",
+          "越前大野城 (位於大野市的古城，被稱為「天空之城」，春秋季節雲海出現時宛如漂浮在空中)",
+          "東尋坊 (綿延約1公里的柱狀節理斷崖絕壁，高達20-30公尺的岩壁被日本海波濤沖刷，景色震撼)",
+          "越前海岸 (以越前蟹聞名的海岸線，冬季是品嚐越前蟹的最佳季節)",
+          "越前松島 (擁有里亞斯式海岸的美麗景觀，奇岩與松林交織，風景如畫)",
+          "敦賀港 (歷史悠久的港口城市，敦賀鐵道資料館（舊敦賀港車站）是懷舊的紅磚建築景點)",
+          "氣比神宮 (北陸地區地位最高的神社之一，擁有巨大的朱紅色鳥居，為國家重要文化財)",
+          "三方五湖 (由五個湖泊組成的風景名勝區，湖水顏色各異，可從梅丈岳山頂公園一覽全景)",
+          "彩虹線山頂公園 (位於三方五湖上方，可搭乘纜車登頂，欣賞五湖與日本海的壯闊景色)",
+          "蘆原溫泉 (福井縣代表性的溫泉鄉，以「關西的奧座敷」聞名，適合放鬆身心)",
+          "白山 (日本三大靈山之一，橫跨石川與福井，是登山與信仰的聖地)",
+          "平泉寺白山神社 (位於山區的古老神社，境內覆蓋著青苔，氛圍神秘而莊嚴)",
+        ],
+        foods: ["福井越前蟹", "醬汁炸豬排丼", "越前蘿蔔泥蕎麥麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M013-4-福井.webp"
+      }, {
+        id: 19,
+        name: "19. 山梨縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "甲府市",
+        bestSeason: "秋季 (10月 - 11月)",
+        desc: "山梨縣坐擁富士山北側與美麗的富士五湖，是日本頂級水蜜桃、葡萄、溫泉與高品質甲州葡萄酒的故鄉。這裡能拍到最經典的富士山與紅葉、新倉山淺間公園大紅塔的絕景合影。",
+        spots: [
+          "本栖湖 (五湖中透明度最高的湖泊，能完美映照富士山。日本千圓紙鈔背面的圖案正是本栖湖與富士山)",
+          "精進湖 (五湖中最小、最靜謐的湖泊，帶有遺世獨立的靜謐感)",
+          "西湖 (戶外活動愛好者的樂園，可釣魚、划獨木舟、露營等)",
+          "河口湖 (富士五湖中最受歡迎的湖泊，以拍攝「逆富士」（富士山倒影）而聞名。可搭乘天上山纜車或遊覽船，從不同角度欣賞富士山美景)",
+          "山中湖 (富士五湖中面積最大，也是距離富士山最近的湖泊。可搭乘河馬水陸兩用船、騎自行車環湖，或在冬季欣賞「鑽石富士」的壯麗景象)",
+          "昇仙峽 (被譽為「日本第一美溪谷」，以奇岩怪石、清澈溪流與仙娥瀑布（日本百瀑之一）聞名)",
+          "忍野八海 (由富士山融雪滲入地下後湧出形成的八個清澈泉池，水質純淨，被列為天然紀念物，景色古樸)",
+          "大石公園 (位於河口湖北岸的熱門景點，可欣賞隨季節變換的花田（如夏季薰衣草、秋季掃帚草）與富士山同框的美景)",
+          "河口湖音樂森林美術館 (歐式童話風格的主題美術館，展示珍貴的音樂盒與自動演奏樂器，並有定時音樂演奏)",
+          "新倉富士淺間神社 (可將富士山、五重塔與櫻花（春季）一同入鏡的經典拍攝地)",
+          "武田神社 (供奉戰國名將武田信玄的神社，位於其居館遺址上，是著名的「勝運」能量景點)",
+          "河口淺間神社 (建於西元865年，擁有超過千年歷史的世界文化遺產。位於神社後方山坡上的「遙拜所」，有「天空鳥居」的美譽，是能眺望富士山與河口湖的絕景之地)",
+          "惠林寺（建於1330年，是戰國名將武田信玄的菩提寺，歷史悠久）",
+          "甲州夢小路 (位於甲府車站旁的復古建築群，重現明治至昭和初期甲府城下町風情的懷舊購物區)",
+          "富士急樂園 (以多項金氏世界紀錄級的雲霄飛車（如FUJIYAMA、高飛車）而聞名的主題樂園)",
+          "石和溫泉 (山梨縣最大規模的溫泉鄉，以「青空溫泉」為起源，周邊盛產桃子和葡萄)",
+          "Hottarakashi溫泉（置之不理溫泉） (位於海拔700公尺高地的日歸溫泉，以能一邊泡湯、一邊欣賞富士山與甲府盆地絕景而聞名)",
+          "猿橋 (日本三大奇橋之一，以其獨特的不設橋墩結構聞名)",
+          "富岳風穴・鳴澤冰穴 (由富士山火山噴發形成的天然熔岩洞穴。即使在盛夏，洞內溫度也維持在0°C左右，是天然的地下冰箱與消暑勝地)",
+          "北口本宮富士淺間神社 (擁有逾一千九百年歷史的富士山信仰聖地)",
+          "甲府城 (曾是統治甲斐國的重要根據地，可從天守台眺望甲府市景與遠方的富士山)",
+          "清里高原 (位於八岳山麓的高原度假勝地，以廣闊的自然景觀和「清里露台」展望台而聞名)",
+          "勝沼葡萄之丘 (日本葡萄酒的發源地，可在地下葡萄酒酒窖試飲多達數百種葡萄酒)"
+        ],
+        foods: ["餺飥麵 (Houtou 蔬菜扁烏龍麵)", "甲州葡萄酒", "信玄餅"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M011-7X-山梨.webp"
+      }, {
+        id: 20,
+        name: "20. 長野縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "長野市",
+        bestSeason: "四季皆宜",
+        desc: "長野縣為壯麗的日本阿爾卑斯山脈環抱，曾舉辦冬季奧運。這裡有優雅的避暑聖地輕井澤、歷史悠久的善光寺、以及在白雪皚皚中泡溫泉的療癒野生「地獄谷雪猴」，極具魅力。",
+        spots: [
+          "松本城 (日本國寶，現存最古老的五重六階天守，黑色外牆極具震懾力)",
+          "上田城 (戰國名將真田幸村的居城，真田粉絲必訪)",
+          "上高地 (北阿爾卑斯的玄關，擁有清澈梓川與穗高連峰的絕景)",
+          "白馬八方尾根 (1998年長野冬季奧運會場，日本頂級滑雪勝地)",
+          "志賀高原 (日本最大的滑雪區域之一，夏季也是登山避暑勝地)",
+          "缺",
+          "輕井澤 (日本首屈一指的避暑勝地，歐風別墅與購物中心林立)",
+          "雲場池 (輕井澤的代表性景點，被稱為「天鵝湖」的寧靜湖泊)",
+          "舊輕井澤銀座通 (輕井澤最熱鬧的商店街)",
+          "御射鹿池 (因《你的名字》聖地巡禮而聞名的夢幻湖泊)",
+          "諏訪大社 (日本最古老的神社之一，全國諏訪神社的總本社)",
+          "善光寺 (擁有約1400年歷史的無教派佛寺，本堂為國寶)",
+          "戶隱神社 (坐落於千年杉林中的古老神社，被視為能量聖地)",
+          "小布施町 (以栗子點心與葛飾北齋畫作聞名的小鎮)",
+          "地獄谷野猿公苑 (可觀賞野生日本獼猴在雪中泡溫泉的奇景)",
+          "白骨溫泉 (長野縣的秘湯，乳白色的溫泉水極為獨特)",
+          "野澤溫泉 (日本知名的滑雪與溫泉勝地)",
+          "缺",
+          "阿智村 (被譽為「日本最美星空」的村莊)",
+
+
+        ],
+        foods: ["信州蕎麥麵", "信州蘋果", "野澤菜漬物"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M011-4-長野.webp"
+      }, {
+        id: 21,
+        name: "21. 岐阜縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "岐阜市",
+        bestSeason: "冬季 (1月 - 2月)",
+        desc: "岐阜縣擁有世界文化遺產「白川鄉合掌村」、飛驒高山古老街道與日本三大溫泉之一的「下呂溫泉」。在這裡，春季的高山祭（日本三大美祭之一）更展示了傳統神轎與工藝的巔峰。",
+        spots: [
+          "白川鄉合掌造聚落 (世界文化遺產，獨特的合掌造茅草屋建築，冬季點燈如童話世界)",
+          "飛驒之里 (移建合掌造民家的野外博物館，可體驗飛驒傳統生活)",
+          "飛驒高山（高山老街） (被稱為「飛驒的小京都」，保留江戶時代木造町屋的城下町風情)",
+          "郡上八幡 (以郡上舞聞名的城下町，保留白牆土藏與清澈水路)",
+          "馬籠宿 (中山道上的宿場町，石板坡道與木造建築充滿江戶風情)",
+          "美濃市（卯建房屋街道） (以美濃和紙聞名，街道兩旁是江戶時代的町家建築)",
+          "下呂溫泉 (與草津、有馬並列「日本三名泉」，以「美人湯」聞名)",
+          "奧飛驒溫泉鄉 (由平湯、福地、新平湯等五個溫泉地組成的秘湯群)",
+          "岐阜城（金華山） (織田信長「天下布武」的根據地，可搭乘纜車登頂俯瞰長良川)",
+          "長良川鵜飼 (夏夜在長良川上觀賞傳統鵜鶘捕魚，已有1300年歷史)",
+          "關原古戰場 (決定日本天下的關原之戰舞台，歷史迷必訪)",
+          "伊奈波神社 (擁有超過1900年歷史的古老神社)",
+          "上高地 (被譽為「神的故鄉」，擁有壯麗的山岳景觀與清澈梓川)",
+          "新穗高纜車 (日本唯一的雙層纜車，可欣賞北阿爾卑斯山的壯麗全景)",
+          "乘鞍岳 (日本百名山之一，夏季可登山，秋季紅葉絕美)",
+          "蛭野高原 (冬季滑雪、夏季高原避暑的度假勝地)",
+
+        ],
+        foods: ["飛驒牛串燒 / 握壽司", "高山高湯拉麵", "五平餅"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M011-2-歧阜.webp"
+      }, {
+        id: 22,
+        name: "22. 静岡縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "靜岡市",
+        bestSeason: "春季 & 秋季",
+        desc: "靜岡縣以茶葉生產全國第一、壯麗的富士山南麓絕景、伊豆半島熱海溫泉而聞名於世。在這裡，您可以搭乘大井川鐵道的蒸汽火車，或是在富士山腳下的綠色茶園中一邊品茗一邊欣賞雪山景緻。",
+        spots: [
+          "富士山 (日本第一高峰，世界文化遺產，靜岡縣側可欣賞其雄偉姿態)",
+          "富士山本宮淺間大社 (全日本淺間神社的總本宮，富士山信仰的中心)",
+          "靜岡縣富士山世界遺產中心 (展示富士山信仰與文化的現代建築)",
+          "三島天空步道 (日本最長的步行吊橋，可眺望富士山與駿河灣)",
+          "日本平 (可將富士山與清水港盡收眼底的絕景展望台)",
+          "久能山東照宮 (德川家康的長眠之地，華麗的社殿為國寶)",
+          "靜岡淺間神社 (靜岡市區的古老神社，與德川家康淵源深厚)",
+          "濱松城 (德川家康年輕時居住的城池，別名「出世城」)",
+          "夢之吊橋 (被譽為「世界最想去的吊橋」之一，橫跨大井川)",
+          "大井川鐵道 (行駛SL蒸汽火車與湯瑪士小火車的觀光鐵道)",
+          "濱名湖 (日本第十大湖，以鰻魚養殖與花卉公園聞名)",
+          "御殿場PREMIUM OUTLET (日本最大的購物中心之一，可同時眺望富士山)",
+          "櫻桃小丸子樂園 (以小丸子為主題的主題樂園，位於清水)",
+          "靜岡MOA美術館 (位於熱海，收藏東洋美術品的美術館)",
+          "伊豆半島 (日本知名的溫泉度假勝地，擁有白濱海岸與修善寺等景點)",
+          "修善寺溫泉 (伊豆半島歷史最悠久的溫泉鄉)",
+          "城崎海岸 (伊豆東海岸的熔岩海岸，有吊橋與奇岩景觀)",
+
+        ],
+        foods: ["靜岡綠茶 / 抹茶甜點", "靜岡關東煮 (黑湯特色)", "櫻花蝦天婦羅"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M011-3-靜岡.webp"
+      }, {
+        id: 23,
+        name: "23. 愛知縣",
+        region: "chubu",
+        regionName: "中部地方",
+        color: "#e98b8b",
+        capital: "名古屋市",
+        bestSeason: "春季 & 秋季",
+        desc: "愛知縣以名古屋市為中心，是日本工業重鎮與歷史名城。境內擁有名古屋城金祥鯱、熱田神宮，以及近年轟動全球的吉卜力公園。名古屋的在地美食極具個人特色，濃郁的味噌文化讓人一試難忘。",
+        spots: [
+          "名古屋城 (日本百名城之一，由德川家康下令建造，天守閣上的金鯱是著名標誌)",
+          "熱田神宮 (供奉日本三神器之一的「草薙劍」，是地位極高的古老神社)",
+          "犬山城 (日本現存最古老的木造天守閣之一，國寶級名城，可眺望木曾川美景)",
+          "清洲城 (織田信長統一天下的起點，歷史意義深遠)",
+          "岡崎城 (德川家康的出生地，岡崎公園內有家康銅像與歷史資料館)",
+          "吉卜力公園 (重現吉卜力工作室動畫世界的夢幻主題園區，包含魔女之谷等五大區域)",
+          "日本樂高樂園 (亞洲第二座樂高主題樂園，適合親子同遊)",
+          "愛・地球博紀念公園（Moricoro Park） (2005年萬博會場改建的公園)",
+          "豐田產業技術紀念館 (由豐田集團舊廠房改建，展示豐田從紡織到汽車的發展史)",
+          "磁浮·鐵道館 (展示東海道新幹線與磁浮列車的鐵道博物館)",
+          "名古屋市科學館 (擁有世界最大級別的星象儀)",
+          "名古屋港水族館 (擁有殺人鯨與海豚表演的大型水族館)",
+          "東山動植物園 (結合動物園與植物園的綜合公園)",
+          "大須觀音與大須商店街 (名古屋的千年古寺與熱鬧商店街，被稱為「日本第一活力商店街」)",
+          "香嵐溪 (愛知縣最具代表性的賞楓名所，秋季約4,000株楓樹染紅溪谷)",
+          "博物館「明治村」 (移建保存明治時代建築的野外博物館)",
+          "常滑陶瓷器散步道 (常滑是日本六大古窯之一，散步道可欣賞陶器與招財貓)",
+          "Laguna Ten Bosch (位於蒲郡市的複合式度假村，有遊樂園與溫泉)",
+        ],
+        foods: ["手羽先 (香炸雞翅)", "鰻魚飯三吃 (Hitsumabushi)", "味噌炸豬排"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M011-1-愛知.webp"
+      }, {
+        id: 24,
+        name: "24. 三重縣",
+        region: "kinki",
+        regionName: "近畿地方",
+        color: "#baa1e8",
+        capital: "津市",
+        bestSeason: "秋季 & 冬季",
+        desc: "三重縣擁有日本人心靈故鄉、神聖崇高的「伊勢神宮」以及世界遺產熊野古道。沿海的伊勢志摩地區以海女捕撈珍珠著稱，同時這裡也是頂級牛肉「松阪牛」的產地。",
+        spots: [
+          "伊勢神宮 (日本地位最高的神社，供奉天照大神，被譽為「日本心靈的故鄉」)",
+          "御袚町與御蔭橫丁 (伊勢神宮前的參道商店街，重現江戶與明治風情)",
+          "夫婦岩（二見興玉神社） (海中的大小兩塊岩石以注連繩相連，是祈求姻緣的聖地)",
+          "鳥羽水族館 (日本飼養種類最多的水族館)",
+          "伊賀流忍者博物館 (可體驗忍者屋敷的機關與欣賞忍者秀)",
+          "西班牙村（Parque España） (以西班牙為主題的主題樂園)",
+          "鈴鹿賽道 (日本最具代表性的國際賽車場，賽車迷聖地)",
+          "長島溫泉樂園 (擁有日本最長雲霄飛車的大型遊樂園)",
+          "VISON (三重縣的大型複合度假設施，結合美食、溫泉與體驗)",
+          "熊野古道（伊勢路） (世界遺產，古時通往熊野三山的參拜道)",
+          "鬼城（世界遺產） (熊野地區的海岸奇岩景觀，被登錄為世界遺產)",
+          "御在所岳 (鈴鹿山脈的代表山峰，纜車可欣賞四季美景)",
+          "赤目四十八瀑布 (被選為「日本瀑布百選」之一，沿溪谷健行可欣賞大小瀑布)",
+          "關宿 (東海道五十三次的宿場町，保留江戶時代街景)",
+          "松阪 (松阪牛的故鄉，可品嚐頂級和牛)",
+          "英虞灣遊船 (志摩半島的里亞斯式海岸，可乘船欣賞珍珠養殖筏與夕陽)",
+        ],
+        foods: ["松阪牛壽喜燒", "伊勢龍蝦", "赤福餅 (經典紅豆麻糬)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M011-6-三重.webp"
+      }, {
+        id: 25,
+        name: "25. 滋賀縣",
+        region: "kinki",
+        regionName: "近畿地方",
+        color: "#baa1e8",
+        capital: "大津市",
+        bestSeason: "春季 & 夏季",
+        desc: "滋賀縣擁有日本最大的淡水湖泊「琵琶湖」。圍繞著琵琶湖，有雄偉的比叡山延曆寺、國寶彥根城，以及白鬚神社湖中大鳥居，景色隨著季節與湖光瀲灩，美得像一幅水墨畫。",
+        spots: [
+          "琵琶湖：日本最大的淡水湖，佔據滋賀縣六分之一的面積，湖畔騎單車、觀光船遊湖與夏季煙火大會皆為經典體驗。",
+          "彥根城：日本國寶，現存12座原始天守之一，別名「金龜城」，從天守閣可眺望琵琶湖美景。",
+          "安土城遺址：織田信長建造的天下名城遺址，石垣與本丸遺跡仍可遙想當年的雄偉。",
+          "長濱城歷史博物館：位於琵琶湖畔的復古城堡，館內展示豐臣秀吉與長濱的歷史淵源。",
+          "黑壁廣場（長濱市）：由老倉庫群改建的文創聚落，以玻璃工藝為主題，適合漫步與手作體驗。",
+          "海津大崎：琵琶湖畔的賞櫻名所，約800株櫻花沿湖岸盛開，被譽為「關西的吉野山」。",
+          "白鬚神社（湖中鳥居）：琵琶湖西岸的古老神社，朱紅色的鳥居矗立於湖中，日出時分景色如夢似幻。",
+          "浮御堂（滿月寺）：琵琶湖畔的經典風景，祠堂建於湖上，被選為「近江八景」之一。",
+          "水杉林蔭大道（高島市）：全長約2.4公里的水杉並木，四季景色各異，秋季金黃色的林蔭大道美不勝收。",
+          "琵琶湖露台（琵琶湖Valley）：標高1,100公尺的絕景展望台，可將琵琶湖全景盡收眼底。",
+          "瀨田唐橋：被譽為「近江八景」之一的「瀨田之夕照」，古老木橋與夕陽交織出絕美畫面。",
+          "石山寺：與紫式部《源氏物語》淵源深厚的古寺，也是著名的賞楓名所。",
+          "信樂陶藝之里：信樂燒的發源地，可參觀陶藝工坊並體驗手作陶器。",
+          "美秀美術館（MIHO MUSEUM）：建築大師貝聿銘設計的山中美術館，穿越隧道與吊橋如入桃花源。",
+          "近江八幡（八幡堀）：保留江戶時代風貌的水鄉古鎮，乘船漫遊八幡堀運河，兩岸白牆土藏林立。",
+          "日牟禮八幡宮：近江八幡的總鎮守，歷史悠久的古老神社。",
+          "La Collina 近江八幡：由老字號甜點商TANEYA打造的童話風複合設施，建築與自然融為一體。",
+          "比叡山延曆寺：世界文化遺產，日本佛教天台宗的總本山，被譽為「日本佛教的母山」。",
+        ],
+        foods: ["近江牛肉泡飯", "琵琶湖香魚料理", "鯽魚壽司 (滋賀傳統發酵味)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M014-6-滋賀.webp"
+      }, {
+        id: 26,
+        name: "26. 京都府",
+        region: "kinki",
+        regionName: "近畿地方",
+        color: "#baa1e8",
+        capital: "京都市",
+        bestSeason: "春季 & 秋季",
+        desc: "京都府是日本千年文化古都，是全日本歷史與精緻工藝的最高殿堂。清水寺、金閣寺、伏見稻荷大社的千本鳥居、以及嵐山的翠綠竹林，共同勾勒出優雅、靜謐且經典的日本和風美學風景。",
+        spots: [
+          "嵐山（渡月橋、竹林小徑）：京都的後花園，渡月橋橫跨桂川，竹林小徑光影交錯，四季皆美。",
+          "金閣寺（鹿苑寺）：以金箔覆蓋的舍利殿倒映在鏡湖池中，是京都最經典的風景之一。",
+          "銀閣寺（慈照寺）：與金閣寺齊名，以枯山水庭園與質樸的禪意美學聞名。",
+          "貴船神社：京都知名的戀愛神社，擁有獨特的「水占卜」，夏季的川床料理與流水素麵是季節限定體驗。",
+          "哲學之道：沿著琵琶湖疏水道而建的散步小徑，春季櫻花盛開時美不勝收。",
+          "天龍寺：嵐山的世界遺產，擁有由夢窗疏石設計的絕美曹源池庭園。",
+          "龍安寺：以世界知名的枯山水石庭聞名，15塊石頭的配置充滿禪意。",
+          "京都御所：日本天皇遷都東京前的皇居，可預約參觀體驗皇室風采。",
+          "平安神宮：為紀念平安遷都1100年而建，朱紅色的社殿與廣闊的庭園極為壯觀。",
+          "錦市場：被稱為「京都的廚房」，擁有400多年歷史，可品嚐京野菜、漬物與各種地道小吃。",
+          "清水寺：京都最具代表性的寺院，世界文化遺產。本堂前方的清水舞台採用傳統工法、未用一根釘子搭建，春季櫻花與秋季紅葉皆為絕景。",
+          "祇園（花見小路）：京都最知名的藝妓區，石板路與木造茶屋充滿古都風情，傍晚常有舞妓身影。",
+          "二條城：德川家康在京都的居城，國寶級建築，內部「鶯聲地板」會發出鳥鳴般的聲響。",
+          "三十三間堂：以供奉1,001尊千手觀音立像而聞名，是日本最長的木造建築之一。",
+          "東寺（教王護國寺）：擁有日本現存最高的五重塔，是京都的象徵性地標之一。",
+          "伏見稻荷大社：以「千本鳥居」聞名，數千座朱紅色鳥居綿延至稻荷山頂，是日本最具代表性的神社之一。",
+          "南禪寺：京都五大禪寺之首，三門、方丈庭園與水路閣皆為經典。",
+          "京都國立博物館：收藏大量日本與東洋美術品的國立博物館，建築本身亦為重要文化財。",
+        ],
+        foods: ["宇治抹茶甜點", "京都湯豆腐 (Yudofu)", "京懷石料理"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M014-2-京都.webp"
+      }, {
+        id: 27,
+        name: "27. 大阪府",
+        region: "kinki",
+        regionName: "近畿地方",
+        color: "#baa1e8",
+        capital: "大阪市",
+        bestSeason: "四季皆宜",
+        desc: "大阪府是西日本的核心門戶與商業娛樂天堂。道頓堀運河的巨型跑跑人霓虹看板、雄偉的大阪城、以及好玩刺激的日本環球影城，散發著大阪人熱情、幽默、不拘小節的爽朗都會魅力。",
+        spots: [
+          "日本環球影城（USJ） (世界級的主題樂園，擁有「超級任天堂世界」等多元主題園區，是闔家歡樂的首選)",
+          "梅田藍天大廈（空中庭園展望台） (可360度欣賞大阪市區全景的絕佳展望台，夜景尤其浪漫)",
+          "天神橋筋商店街 (日本最長的商店街，全長約2.6公里，充滿在地生活氣息)",
+          "萬博紀念公園（太陽之塔） (1970年萬國博覽會場址，岡本太郎設計的太陽之塔為標誌)",
+          "中之島 (大阪的行政與文化中心，公園綠地與古典建築交織，是都市中的綠洲)",
+          "大阪天滿宮 (供奉學問之神，夏季的「天神祭」是日本三大祭典之一)",
+          "大阪城（天守閣） (日本三大名城之一，由豐臣秀吉建造，天守閣內為歷史博物館，春季櫻花季尤為壯觀)",
+          "海遊館 (世界級規模的水族館，以太平洋生態為主題，鯨鯊是鎮館之寶)",
+          "大阪港（天保山摩天輪） (曾是日本最大級的摩天輪，可同時欣賞港灣與城市景觀)",
+          "心齋橋商店街 (大阪最知名的購物街，從時尚服飾到藥妝雜貨應有盡有，是血拼天堂)",
+          "道頓堀 (大阪美食與娛樂的心臟地帶，格力高跑者招牌與蟹道樂大螃蟹是經典地標，運河兩側霓虹閃爍，越夜越美麗)",
+          "黑門市場 (被稱為「大阪的廚房」，可品嚐新鮮海鮮、和牛與各種地道小吃)",
+          "難波八阪神社 (以巨大的獅子頭造型「獅子殿」聞名，是祈求勝運的能量景點)",
+          "通天閣與新世界 (大阪的復古象徵，新世界街區充滿懷舊下町風情，串炸與居酒屋林立)",
+          "天王寺動物園 (位於天王寺公園內，歷史悠久的動物園，適合親子同遊)",
+          "四天王寺 (日本最早正式引入佛教的寺院，歷史超過1,400年)",
+          "阿倍野HARUKAS展望台 (日本最高大樓的展望台，300公尺高空的視野極為震撼)",
+          "住吉大社 (日本全國住吉神社的總本社，擁有獨特的「住吉造」建築樣式)",
+        ],
+        foods: ["章魚燒", "大阪燒 (Okonomiyaki)", "串炸 (Kushikatsu)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M014-1-大阪.webp"
+      }, {
+        id: 28,
+        name: "28. 兵庫縣",
+        region: "kinki",
+        regionName: "近畿地方",
+        color: "#baa1e8",
+        capital: "神戶市",
+        bestSeason: "四季皆宜",
+        desc: "兵庫縣有白鷺美譽的世界遺產「姬路城」、極具異國情調的神戶港、以及日本最古老溫泉「有馬溫泉」與「城崎溫泉」。這裡也盛產享譽全球的頂級神戶牛肉與日本一的灘五鄉清酒。",
+        spots: [
+          "竹田城跡：被稱為「天空之城」，秋冬清晨雲海環繞時如漂浮空中。",
+          "城崎溫泉：擁有超過1,300年歷史的溫泉鄉，七座外湯巡禮是經典體驗。",
+          "出石城跡：被稱為「但馬的小京都」，城下町的古老街景與出石蕎麥麵遠近馳名。",
+          "寶塚大劇場：寶塚歌劇團的根據地，全女性演員的華麗舞台表演風靡全球。",
+          "姬路城：日本首座世界文化遺產，擁有超過400年歷史，雪白的天守閣如白鷺展翅，被譽為「日本第一名城」。",
+          "好古園：姬路城旁的日本庭園，借景姬路城，四季花卉與池泉回遊式庭園優美動人。",
+          "神戶布引香草園：可搭乘纜車上山，欣賞廣闊的香草花園與神戶全景。",
+          "六甲山：可將神戶市區與大阪灣盡收眼底，山頂的夜景與函館、長崎並列「日本三大夜景」。",
+          "摩耶山：從掬星台欣賞的「百萬夜景」被譽為日本三大夜景之一。",
+          "北野異人館街：神戶開港時期外國人居住的西洋建築群，風見雞館是最具代表性的建築。",
+          "生田神社：神戶最古老的神社之一，創建於西元201年，是著名的結緣聖地。",
+          "神戶港塔與美利堅公園：神戶港的標誌性建築，2024年重新開放後新增空中甲板，可360度眺望港灣與六甲山景。",
+          "神戶動物王國：可與水豚、小貓熊等動物近距離互動，鳥類表演精彩，適合親子同遊。",
+          "明石海峽大橋：世界最長的吊橋之一，全長3,911公尺，可登頂體驗「舞子海上步道」。",
+          "淡路島（淡路夢舞台、鳴門漩渦）：安藤忠雄設計的夢舞台花園壯麗繽紛，鳴門海峽的漩渦奇景令人震撼。",
+          "須磨浦公園：神戶西部的海濱公園，可欣賞明石海峽大橋與瀨戶內海的絕美海景。",
+          "有馬溫泉：日本三大古湯之一，以金黃色的「金泉」與無色透明的「銀泉」聞名，歷史超過千年。",
+          "二次元之森：位於淡路島的動漫主題樂園，以《火影忍者》《哥吉拉》等作品為主題。",
+        ],
+        foods: ["神戶牛排 (鐵板燒)", "明石燒 (高湯章魚燒)", "明石鯛魚拉麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M014-3-兵庫.webp"
+      }, {
+        id: 29,
+        name: "29. 奈良縣",
+        region: "kinki",
+        regionName: "近畿地方",
+        color: "#baa1e8",
+        capital: "奈良市",
+        bestSeason: "春季 & 秋季",
+        desc: "奈良縣擁有比京都更古老的建城歷史。東大寺的巨大青銅大佛、奈良公園內上千隻自由奔跑的可愛小鹿，以及吉野山在春天開滿整座山頭的「一目千本櫻」，是感受大自然與歷史靈性的神聖之地。",
+        spots: [
+          "東大寺（大佛殿）：世界文化遺產，擁有世界最大的木造建築，內置高達14.98公尺的「奈良大佛」，氣勢磅礴。",
+          "奈良公園：佔地超過500公頃，園內東大寺、春日大社、興福寺等文化遺產林立，野生鹿群自由漫步是其代表性風景。",
+          "春日大社：世界文化遺產，以朱紅色的社殿與數千盞石燈籠聞名，是奈良最重要的神社之一。",
+          "興福寺（五重塔）：世界文化遺產，國寶五重塔與東金堂為代表性建築，阿修羅像被譽為天平佛雕的傑作。",
+          "平城宮跡：世界文化遺產，奈良時代平城京的宮殿遺址，朱雀門與大極殿已部分復原。",
+          "奈良國立博物館：收藏大量奈良時代的佛教美術品，是日本最重要的佛教藝術博物館之一。",
+          "奈良町：保留江戶至明治時期町家建築的古樸街區，老屋改建的咖啡廳與雜貨店遍布。",
+          "法隆寺：世界文化遺產，被認為是世界上最古老的木造建築群，飛鳥時代的建築傑作。",
+          "藥師寺：世界文化遺產，以「藥師三尊像」與東塔聞名，是白鳳時代佛教藝術的瑰寶。",
+          "唐招提寺：世界文化遺產，由唐朝鑑真和尚創建，保留濃厚的唐代建築風格。",
+          "吉野山：日本首屈一指的賞櫻名所，春季約3萬株櫻花覆蓋整座山，被譽為「一目千本」。",
+          "室生寺：被稱為「女人高野」，是少數允許女性參拜的寺院，五重塔為國寶。",
+          "長谷寺：以十一面觀音立像與四季花卉聞名，春季的牡丹與秋季的紅葉尤為美麗。",
+          "談山神社：建於山腰的朱紅色神社，秋季楓紅與多寶塔相映成趣。",
+          "飛鳥寺：日本最古老的佛教寺院，供奉日本最古老的佛像「飛鳥大佛」。",
+          "橿原神宮：建於日本初代天皇神武天皇的即位之地，是皇室信仰的重要據點。",
+          "今井町：保留完整江戶時代町家建築的傳統聚落，被列為重要傳統建造物群保存地區。",
+          "若草山：奈良公園內的小山丘，可俯瞰奈良市區，每年1月的「若草山燒山」是傳統盛事。",
+
+        ],
+        foods: ["柿葉壽司", "大佛布丁", "中谷堂現搗艾草麻糬"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M014-4-奈良.webp"
+      }, {
+        id: 30,
+        name: "30. 和歌山縣",
+        region: "kinki",
+        regionName: "近畿地方",
+        color: "#baa1e8",
+        capital: "和歌山市",
+        bestSeason: "秋季 & 冬季",
+        desc: "和歌山縣是日本佛教與神道教交融的聖域，有千年朝聖之路熊野古道、佛教聖地高野山，以及震撼的那智大瀑布。沿海的白濱海灘溫泉與勝浦溫泉則提供完美的海岸度假感。",
+        spots: [
+          "熊野古道（世界文化遺產，千年來無數人徒步朝聖的參拜道",
+          "熊野三山（熊野本宮大社、熊野速玉大社、熊野那智大社合稱「熊野三山」）",
+          "那智瀑布：日本落差最大的瀑布（133公尺），與熊野那智大社相鄰，被視為神聖的能量景點。",
+          "",
+          "龍神溫泉：被譽為「日本天下第一美人湯」的秘湯，泉質滑順，深受女性喜愛。",
+          "高野山（奧之院、金剛峯寺）：弘法大師空海開創的日本佛教聖地，奧之院為大師入定之處，氣氛莊嚴肅穆。",
+          "和歌山城：日本百名城之一，與松山城、姬路城並列「日本三大連立式平山城」。",
+          "紀三井寺：和歌山市的代表性古寺，以「紀三井」名水與春季櫻花聞名。",
+          "和歌浦：自平安時代以來被文人墨客詠讚的絕景海岸，古老神社與奇岩海岸交織。",
+          "友島：被稱為「日本的軍艦島」，曾是軍事要塞，廢墟景觀與自然風光交織。",
+          "白濱溫泉（圓月島）：與有馬、道後並列日本三大古湯，圓月島的海蝕洞是白濱的標誌性景觀。",
+          "圓月島（夕陽從園洞落入海中，絕景地標）",
+          "冒險大世界（Adventure World）：日本飼養熊貓數量最多的動物園，同時也是遊樂園與水族館的複合設施。",
+          "串本（橋杭岩）：紀伊半島最南端，奇岩如橋墩般排列於海中，日出時分尤為壯觀。",
+          "潮岬：本州最南端的海岬，白色燈塔與太平洋的遼闊海景令人心曠神怡。",
+          "太地町（鯨魚博物館）：日本傳統捕鯨文化的發源地，可了解鯨魚生態與歷史。",
+          "根來寺：以豐臣秀吉「根來攻め」的歷史舞台聞名，擁有日本最大的多寶塔。",
+          "歐羅巴港（和歌山遊艇城）：重現中世紀歐洲街景的主題園區，充滿異國風情。",
+          "貓咪電車（貴志川線）：以貓站長「小玉」聞名的特色鐵道，列車有貓咪造型，可愛療癒。",
+          "生石高原：和歌山縣的草原台地，可360度眺望紀伊山地與太平洋，秋季芒草如金色波浪。",
+          "湯峰溫泉：隱身於熊野山中的秘境溫泉，據傳擁有超過1,800年歷史，是日本最古老的溫泉之一。",
+        ],
+        foods: ["和歌山中華拉麵 (豚骨醬油湯底)", "紀州南高梅", "勝浦港現撈黑鮪魚"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M014-5-和歌山.webp"
+      }, {
+        id: 31,
+        name: "31. 鳥取縣",
+        region: "chugoku",
+        regionName: "中國地方",
+        color: "#73b2e5",
+        capital: "鳥取市",
+        bestSeason: "秋季 & 冬季",
+        desc: "鳥取縣以壯麗的「鳥取砂丘」奇觀聞名全日。此外，這裡也是《名偵探柯南》與《鬼太郎》原作者的故鄉，境內設有柯南小鎮與水木茂大道，動漫迷絕不能錯過。",
+        spots: [
+          "鳥取砂丘 (日本最大的觀光砂丘，綿延約16公里，已被指定為國家天然紀念物)",
+          "砂之美術館 (全球首個室內砂雕美術館，每年邀請世界各地的藝術家創作不同主題的砂雕)",
+          "浦富海岸 (擁有裡亞斯式海岸的絕景，海水清澈見底，被譽為「山陰的松島」)",
+          "白兔神社 (與神話「因幡的白兔」有關，是著名的戀愛結緣神社)",
+          "柯南小鎮（北榮町） (《名偵探柯南》作者青山剛昌的故鄉，到處是漫畫角色的雕塑和銅像)",
+          "水木茂之路（境港市） (《鬼太郎》作者水木茂的故鄉，街道兩旁立滿了妖怪銅像)",
+          "大山 (中國地區的最高峰，擁有壯麗的山景，四季皆宜)",
+          "大鹿瀑布 (落差24米的瀑布，被列為「諸鹿七瀑」之一)",
+          "皆生溫泉 (面向日本海的溫泉鄉，可一邊泡湯一邊欣賞海景)",
+          "三朝溫泉 (以高濃度氡元素而聞名的溫泉，是世界罕見的放射性溫泉)",
+          "倉吉白壁土藏群 (保留著白牆倉庫和古老街景的建築群，充滿復古風情)",
+          "植田正治美術館 (為紀念著名攝影師植田正治而建的美術館，建築本身也是藝術品)",
+          "二十世紀梨博物館 (以鳥取縣特產「二十世紀梨」為主題的博物館)",
+          "鳥取港海鮮賀露市場 (可品嘗到鳥取縣特產「紅楚蟹」等新鮮海鮮)",
+          "高濱咖啡廳 (由建築大師隈研吾設計的咖啡廳，是鳥取市的新興打卡地)",
+          "若櫻鐵道 (行駛在鄉間的觀光小火車，可欣賞沿途田園風光)",
+
+        ],
+        foods: ["松葉蟹 (冬之味覺)", "鳥取牛骨拉麵", "二十世紀梨"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M009-4-鳥取.webp"
+      }, {
+        id: 32,
+        name: "32. 島根縣",
+        region: "chugoku",
+        regionName: "中國地方",
+        color: "#73b2e5",
+        capital: "松江市",
+        bestSeason: "秋季 (11月)",
+        desc: "島根縣擁有祈求緣分最為靈驗、日本神話發源地「出雲大社」，以及連續多年被評為日本第一日式庭園的「足立美術館」，處處流露著寧靜祥和、神靈護佑的氛圍。",
+        spots: [
+          "出雲大社 (日本最古老、地位最高的神社之一，以供奉「大國主大神」和巨型「注連繩」聞名)",
+          "島根縣立古代出雲歷史博物館 (展示出雲地區歷史和文化的博物館，緊鄰出雲大社)",
+          "日御碕神社 (位於出雲市的海邊神社，與出雲大社齊名)",
+          "出雲日御碕燈塔 (矗立在懸崖上的白色燈塔，是島根縣的標誌性景觀之一)",
+
+          "松江城 (山陰地區現存唯一完整保存的天守閣，為國寶，別稱「千鳥城」)",
+          "宍道湖 (日本第七大湖，以入選「日本夕陽百選」的絕美日落景色聞名)",
+          "足立美術館 (以擁有頂級的日本庭園而聞名，庭園在雜誌評選中常獲高分)",
+          "由志園 (大根島上的傳統回游式日本庭園，以牡丹花聞名)",
+          "玉造溫泉 (歷史悠久的溫泉鄉，泉水有「美肌之湯」的美譽)",
+          "石見銀山 (亞洲首個被列入世界遺產的礦山遺址)",
+          "溫泉津溫泉 (位於石見銀山附近的溫泉，曾是銀山從業者的療養地)",
+          "三瓶山 (中國地區僅有的兩座活火山之一，是登山和戶外活動的熱門地點)",
+          "隱岐諸島 (被認定為聯合國教科文組織世界地質公園，擁有壯麗的自然景觀)",
+          "津和野 (保留著古老街道風貌的城下町，有「山陰的小京都」之稱)",
+          "八重垣神社 (知名的結緣神社，與出雲神話有關)",
+          "安來節演藝館 (可欣賞傳統藝術「安來節」的表演場館)",
+        ],
+        foods: ["出雲蕎麥麵 (割子蕎麥)", "宍道湖七珍蜆仔湯", "島根和牛"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M009-2-島根.webp"
+      }, {
+        id: 33,
+        name: "33. 岡山縣",
+        region: "chugoku",
+        regionName: "中國地方",
+        color: "#73b2e5",
+        capital: "岡山市",
+        bestSeason: "夏季 (7月 - 9月)",
+        desc: "岡山縣有「晴天王國」之美譽，降雨量極少。這裡既是日本著名民間故事「桃太郎」的傳說發源地，也擁有日本三大名園之一的後樂園，以及白牆黑瓦、古典優雅的倉敷美觀地區。",
+        spots: [
+          "岡山後樂園 (日本三大名園之一，是一座精緻的回游式庭園)",
+          "岡山城 (日本百名城之一，因黑色外牆而被稱為「烏城」)",
+          "倉敷美觀地區 (白牆倉庫與運河交織的古老街區，充滿大正浪漫風情)",
+          "大原美術館 (位於倉敷，是日本第一家西洋美術館，收藏豐富)",
+          "吉備津神社 (與桃太郎傳說有關的神社，擁有長長的回廊)",
+          "最上稻荷 (日本三大稻荷之一，是岡山著名的能量景點)",
+          "備中松山城 (日本百名城之一，是現存天守閣中海拔最高的山城)",
+          "吹屋故鄉村 (保留著江戶時代銅礦小鎮風貌的傳統建築群)",
+          "湯原溫泉 (「美作三湯」之一，是西日本知名的溫泉鄉)",
+          "奧津溫泉 (「美作三湯」之一，以優美的溪谷景色聞名)",
+          "湯鄉溫泉 (「美作三湯」之一，歷史悠久)",
+          "神庭瀑布 (被選入「日本瀑布百選」和「日本百景」的著名瀑布)",
+          "蒜山高原 (位於岡山縣北部的高原度假勝地，可體驗戶外活動)",
+          "GREENable HIRUZEN (位於蒜山的可持續性旅遊設施，設計現代)",
+          "黑島金星路 (位於瀨戶內市的沿海公路，日落時分景色迷人)",
+          "岡山南村 (充滿南歐風情的農業公園)",
+        ],
+        foods: ["清水白桃 (汁多甘甜)", "岡山散壽司 (Barazushi)", "吉備糰子 (Kibi Dango)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M009-5-岡山.webp"
+      }, {
+        id: 34,
+        name: "34. 廣島縣",
+        region: "chugoku",
+        regionName: "中國地方",
+        color: "#73b2e5",
+        capital: "廣島市",
+        bestSeason: "春季 & 秋季",
+        desc: "廣島縣擁有人類歷史地標原爆圓頂館，以及建在海上的宮島「嚴島神社」紅色大鳥居。雙世界遺產的加持，加上充滿懷舊貓咪風情的山城尾道，讓這裡充滿故事與深刻感觸。",
+        spots: [
+          "嚴島神社（宮島） (世界文化遺產，日本三景之一，以建在海上的「浮起」大鳥居而聞名)",
+          "原爆圓頂館 (世界文化遺產，原子彈爆炸後倖存下來的建築遺跡，是和平的象徵)",
+          "廣島和平紀念公園 (為祈求和平而建的公園，園內有和平紀念資料館、原爆之子像等)",
+          "廣島城 (別名「鯉城」，是日本百大名城之一)",
+          "廣島紙鶴塔 (毗鄰原爆圓頂館，可登塔眺望和平紀念公園的展望台)",
+          "廣島市環境局中工廠 (由建築大師谷口吉生設計的垃圾焚化廠，是美學與實用性的結合)",
+          "大久野島 (島上棲息著數百隻野生兔子，也被稱為「兔子島」)",
+          "耕三寺 (位於生口島，是一座色彩鮮豔的寺廟)",
+          "未來心之丘 (位於耕三寺旁，由白色大理石打造的現代藝術庭園)",
+          "鞆之浦 (保留著古老街道的港口小鎮，風景如畫)",
+          "御手洗老街 (位於吳市，曾是繁榮的港口，保留著許多歷史建築)",
+          "尾道 (充滿風情的山坡小城，以千光寺和「貓之細道」聞名)",
+          "千光寺 (位於尾道的山頂寺廟，可俯瞰瀨戶內海的海景)",
+          "貓之細道(擺設有許多貓咪裝飾的散策小道)",
+          "三段峽 (日本五大名峽之一，被原始森林環繞的峽谷，秋季紅葉尤為壯觀)",
+          "世羅町 (以廣闊的薰衣草田和藝術空間聞名)",
+          "瀨戶內海 (散佈著眾多島嶼，風景優美，可乘船遊覽)",
+
+        ],
+        foods: ["廣島燒 (含炒麵的堆疊燒)", "廣島現烤牡蠣", "紅葉饅頭 (楓葉型紅豆糕)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M009-3-廣島.webp"
+      }, {
+        id: 35,
+        name: "35. 山口縣",
+        region: "chugoku",
+        regionName: "中國地方",
+        color: "#73b2e5",
+        capital: "山口市",
+        bestSeason: "春季 & 夏季",
+        desc: "山口縣有關門海峽、絕美的藍海角島大橋、以及「元乃隅神社」沿著絕壁排開的 123 座紅色連綿鳥居。這裡盛產日本最高級的河豚料理，兼具山海壯麗景觀與極品美食。",
+        spots: [
+          "角島大橋 (全長約1780米的跨海大橋，是廣告和日劇的熱門取景地，被譽為「一生必看的風景」)",
+          "日和山公園 (可眺望日本海和角島大橋絕景的公園)",
+          "元乃隅神社 (123座紅色鳥居沿著斷崖面向日本海延綿，被CNN評為「日本最美31個景點」之一)",
+          "別府弁天池 (有著透明藍色池水的秘境，被列為日本名水百選之一)",
+          "秋芳洞 (日本三大鐘乳洞之一，位於秋吉台國定公園地下100米處，洞內景觀令人歎為觀止)",
+          "秋吉台(日本最大的克斯特高原)",
+          "錦帶橋 (日本三大名橋之一，是一座有五段拱形的木造橋樑，橫跨錦川，四季景色宜人)",
+          "萩城下町 (保存完好的武士宅邸和石板街道，可體驗江戶時代風情，感受「西之京都」的韻味)",
+          "唐戶市場 (下關市的廚房，以新鮮的海鮮和河豚料理聞名)",
+          "仙崎廚房 (緊鄰漁港的公路休息站，可品嘗漁港直送的海鮮美食)",
+          "長門湯本溫泉 (山口縣五大名湯之一，歷史悠久的溫泉小鎮)",
+          "湯田溫泉 (同樣知名的溫泉鄉，適合放鬆身心)",
+          "雲林寺 (被昵稱為「貓寺」，寺內有超過600件貓主題的木雕和擺飾)",
+          "巖流島 (著名的歷史舞臺，是宮本武藏與佐佐木小次郎決鬥之地)",
+          "菜香亭 (可體驗穿和服並拍照留念的日式料亭)",
+          "下關 (河豚的重要產地，可在此品嘗頂級的河豚料理)",
+          "瑠璃光寺五重塔 (位於山口市的國寶，是室町時代建築的代表作)",
+
+        ],
+        foods: ["下關河豚生魚片", "瓦蕎麥麵 (瓦片上香煎綠蕎麥)", "山口外郎糕 (Uirou)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M009-1-山口.webp"
+      }, {
+        id: 36,
+        name: "36. 德島縣",
+        region: "shikoku",
+        regionName: "四國地方",
+        color: "#f89345",
+        capital: "德島市",
+        bestSeason: "夏季 (8月)",
+        desc: "德島縣以擁有 400 年歷史、動感狂熱的「阿波舞」聞名日本。自然奇觀包括壯觀的鳴門漩渦、陡峭的大步危小步危溪谷，散發著濃厚原始的山林與激流泛舟魅力。",
+        spots: [
+          "鳴門漩渦 (世界三大漩渦之一，因鳴門海峽潮位差產生，最大直徑可超過20公尺。可從大鳴門橋上的「渦之道」或搭乘觀潮船近距離觀賞)",
+          "大塚國際美術館 (將超過1000幅世界名畫以陶板畫重現的美術館，可近距離觸摸欣賞)",
+          "大步危・小步危 (吉野川歷經2億年沖積而成的溪谷，長約8公里，奇岩峭壁景致優美，被列為國家指定天然紀念物。可搭乘觀光遊覽船體驗秘境絕景)",
+          "祖谷藤蔓橋 (日本三大奇橋之一，全長45公尺的藤蔓編織橋梁橫跨祖谷溪，走在橋上搖晃驚險)",
+          "小便小僧 (位於祖谷峽谷高200公尺崖上的小僧雕像，是德島出身的雕塑家河崎良行於1968年創作)",
+          "奧祖谷二重藤蔓橋 (位於奧祖谷的兩座藤蔓橋並列，又被稱為「男橋」與「女橋」)",
+          "落合集落 (與白川鄉並列日本三大秘境的茅草屋聚落)",
+          "脇町卯建街道 (保留江戶時代建築的街道，以「卯建」防火牆建築聞名)",
+          "阿波舞會館 (全年可觀賞德島傳統藝能「阿波舞」的公演)",
+          "眉山纜車 (可從眉山頂眺望德島市區與吉野川的夜景)",
+          "藥王寺 (四國八十八所遍路的第23號札所，歷史悠久的古寺)",
+          "藍之館 (可體驗德島傳統「阿波藍」染色的設施)",
+          "KURUKURU鳴門 (以鳴門金時地瓜為主題的互動式美食主題樂園)",
+          "葫蘆島夜間遊船 (德島市區的夜間遊船，可欣賞運河夜景)",
+          "竹島海底公園 (可在海中展望塔觀察海底生態的設施)",
+          "劍山 (德島縣最高峰，登山與賞楓的熱門地點)",
+          "祖谷溫泉 (位於祖谷溪畔的秘湯溫泉，可一邊泡湯一邊欣賞溪谷美景)",
+          "大川原高原 (夏季可欣賞繡球花海的高原景點)",
+
+        ],
+        foods: ["德島拉麵 (生雞蛋搭配甜辣五花肉醬油湯)", "祖谷蕎麥麵", "阿波尾雞烤雞排"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M012-1-德島.webp"
+      }, {
+        id: 37,
+        name: "37. 香川縣",
+        region: "shikoku",
+        regionName: "四國地方",
+        color: "#f89345",
+        capital: "高松市",
+        bestSeason: "四季皆宜",
+        desc: "香川縣是全日本面積最小的縣，卻以極具彈牙嚼勁的「讚岐烏龍麵」名揚全日本。這裡擁有金刀比羅宮、高松栗林公園，以及近年舉辦瀨戶內國際藝術祭的小豆島、直島，充滿文藝氣息。",
+        spots: [
+          "栗林公園 (四國唯一被指定為「特別名勝」的日本庭園，獲得米其林觀光指南三星評價。園內約有1400棵松樹)",
+          "高松城（玉藻公園） (日本三大水城之一，護城河直接引入海水，可體驗「城舟」遊覽)",
+          "丸龜城 (現存十二天守之一，以石垣高度日本第一聞名)",
+          "金刀比羅宮 (被譽為「日本人一生必去一次」的神社，需登上1368級石階才能到達本宮)",
+          "高屋神社 (位於稻積山山頂的「天空鳥居」，是祈求財運的能量景點)",
+          "直島 (國際當代藝術聖地，有安藤忠雄設計的「地中美術館」與草間彌生的「紅南瓜」等作品)",
+          "男木島・女木島 (充滿島嶼風情的瀨戶內海小島，有藝術作品與悠閒氛圍)",
+          "小豆島 (被稱為「日本地中海」，以橄欖公園、天使之路、寒霞溪聞名)",
+          "天使之路（天使的散步道） (一天僅出現兩次的沙洲，連接小豆島與余島，據說牽手走過的戀人能永遠在一起)",
+          "寒霞溪 (小豆島的國立公園，可搭乘纜車欣賞溪谷與瀨戶內海的絕景)",
+          "橄欖公園 (《魔女宅急便》真人電影拍攝場景，希臘風格的公園可眺望瀨戶內海)",
+          "紫雲出山 (春季櫻花與瀨戶內海同框的絕景名所)",
+          "父母之濱 (退潮時可拍出「天空之鏡」絕美倒影的熱門打卡景點)",
+          "屋島 (源平合戰的古戰場，從山頂可眺望瀨戶內海與高松市景)",
+          "新屋島水族館 (位於屋島山頂的水族館，可同時欣賞海景)",
+          "四國水族館 (展示四國海域豐富海洋生物的水族館)",
+          "國營讚岐滿濃公園 (四國唯一的國營公園，四季花卉繽紛)",
+          "二十四瞳電影村 (小豆島上重現電影《二十四瞳》拍攝場景的主題園區)"
+        ],
+        foods: ["讚岐烏龍麵 (釜揚、生醬油等多種吃法)", "骨付鳥 (香辣帶骨烤雞腿)", "小豆島手豆麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M012-3-香川.webp"
+      }, {
+        id: 38,
+        name: "38. 愛媛縣",
+        region: "shikoku",
+        regionName: "四國地方",
+        color: "#f89345",
+        capital: "松山市",
+        bestSeason: "春季 & 秋季",
+        desc: "愛媛縣盛產多汁柑橘，並擁有宮崎駿動畫《神隱少女》油屋原型、日本最古老溫泉「道後溫泉」本館。島波海道更是世界級的自行車聖地，跨越蔚藍的瀨戶內海群島。",
+        spots: [
+          "道後溫泉本館 (日本三古湯之一，擁有3000年歷史，是夏目漱石《少爺》的舞台，木造建築充滿復古風情)",
+          "松山城 (日本現存十二天守之一，建於1602年，可搭乘纜車登頂眺望松山市景)",
+          "石手寺 (四國八十八所遍路第51號札所，歷史悠久的古寺)",
+          "伊佐爾波神社 (建於海岸旁的古老神社，擁有美麗的朱紅社殿)",
+          "島波海道 (全長70公里的海上自行車道，連接愛媛今治市與廣島尾道市，途經六座瀨戶內海大橋)",
+          "來島海峽大橋 (世界首座三連吊橋，可登頂眺望「日本三大急流」之一的來島海峽潮汐)",
+          "下灘站 (日本距離海邊最近的無人車站，從月台可一望瀨戶內海，夕陽時分如動畫場景)",
+          "宇和島城 (位於高台上的原始木造天守，可眺望宇和島港的海景)",
+          "大洲城 (復元天守與城下町風情)",
+          "臥龍山莊 (大洲市的著名日式庭園與茶室，被譽為「愛媛的桂離宮」)",
+          "大洲紅磚館 (1901年建造的紅磚建築，原為大洲商業銀行，現為伴手禮與藝文空間)",
+          "萬翠莊 (國家重要文化財，大正時代建造的西洋風格建築)",
+          "坂上之雲博物館 (由建築大師安藤忠雄設計的博物館，展示司馬遼太郎小說《坂上之雲》的相關資料)",
+          "石鎚山 (西日本最高峰，日本百名山之一，可搭乘纜車登山，是信仰與登山勝地)",
+          "四國喀斯特 (橫跨愛媛與高知的高原台地，可欣賞壯闊的牧場風光)",
+          "能島城跡 (瀨戶內海上的海中城堡遺跡，是日本南北朝時期的水軍據點)",
+          "霧之森菓子工房 (以抹茶大福聞名的人氣甜點店，經常大排長龍)"
+        ],
+        foods: ["宇和島鯛魚飯 (新鮮生鯛魚淋特製醬汁與蛋黃)", "愛媛蜜柑 / 柑橘果汁", "今治燒鳥"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M012-2-愛媛.webp"
+      }, {
+        id: 39,
+        name: "39. 高知縣",
+        region: "shikoku",
+        regionName: "四國地方",
+        color: "#f89345",
+        capital: "高知市",
+        bestSeason: "春季 & 夏季",
+        desc: "高知縣是幕末維新名將「坂本龍馬」的故鄉。這裡擁有被譽為「日本最後清流」的藍綠色四萬十川，其無欄杆沉下橋極具詩意，高知人豪爽熱情，夜市與炙烤鰹魚文化名聲響亮。",
+        spots: [
+          "高知城 (日本現存十二天守之一，別稱「鷹城」，完整保留江戶時代樣貌，為國家重要文化財)",
+          "桂濱 (高知最具代表性的海濱，擁有巨大的坂本龍馬銅像與美麗的太平洋海景)",
+          "坂本龍馬紀念館 (展示幕末維新志士坂本龍馬相關資料的紀念館，提供繁體中文導覽)",
+          "弘人市場 (被稱為「高知人的廚房」，可品嚐炙燒鰹魚等在地美食，氣氛熱鬧)",
+          "播磨屋橋 (高知市中心的朱紅色小橋地標，承載著一段動人的悲戀傳說)",
+          "四萬十川 (被譽為「日本最後的清流」，全長196公里，可體驗泛舟、獨木舟等水上活動)",
+          "仁淀川 (以「仁淀藍」的清澈水色聞名，安居溪谷與水晶淵是代表性景點)",
+          "足摺岬 (四國最南端的海岬，有白色燈塔與壯闊的太平洋景觀)",
+          "室戶岬 (面向太平洋的海岬，被列為室戶阿南海岸國定公園)",
+          "龍河洞 (日本三大鐘乳洞之一，全長約4公里，可欣賞鐘乳石與地底湖)",
+          "高知縣立野市動物公園 (被TripAdvisor選為日本動物園排行冠軍的大型動物園)",
+          "西島園藝團地 (可體驗採草莓、品嚐哈密瓜的農園設施)",
+          "雲之上的圖書館 (由建築大師隈研吾設計的美麗圖書館，位於梼原町)",
+          "能島城跡（水軍據點、海中之城）",
+          "四國喀斯特 (高知與愛媛交界處的高原台地，可欣賞草原與牧場風光)",
+          "柏島 (高知縣的潛水勝地，擁有透明度極高的海水與豐富的海洋生態)",
+          "日曜市 (高知市每週日舉辦的露天市場，是日本最大的路邊市場之一)",
+          "鳴無神社 (擁有浮在海上鳥居的神秘神社，被稱為「高知的嚴島」)",
+        ],
+        foods: ["稻草炙烤鰹魚 (Tataka 焦香逼人)", "土佐赤牛燒肉", "高知鍋燒烏龍麵"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M012-4-高知.webp"
+      }, {
+        id: 40,
+        name: "40. 福岡縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "福岡市",
+        bestSeason: "四季皆宜",
+        desc: "福岡縣是整個九州的交通與經濟樞紐，也是博多拉麵與日本屋台（路邊攤）文化的核心地。太宰府天滿宮香火鼎盛，搭配博多運河城、柳川乘船，是自由行極好上手的旅遊勝地。",
+        spots: [
+          "太宰府天滿宮 (供奉學問之神，是福岡最具代表性的神社，以梅花聞名)",
+          "福岡塔 (高234米，由8,000片半反射鏡覆蓋，可眺望海濱美景)",
+          "櫛田神社 (博多總鎮守，歷史悠久，是博多祇園山笠祭的舉辦地)",
+          "大濠公園 (圍繞福岡城護城河而建的公園，造型仿杭州西湖，是賞櫻名所)",
+          "舞鶴公園 (以福岡城遺址為象徵的公園，四季自然風光秀麗)",
+          "博多運河城 (大型複合式購物中心，運河與現代建築結合，晚上有水舞表演)",
+          "天神地下街 (福岡最繁華的購物區，地下街商鋪林立)",
+          "中洲屋台街 (福岡代表性的屋台（路邊攤）集中地，可品嚐地道美食)",
+          "海洋世界海之中道 (展示九州外海生態的水族館，海豚表演精彩)",
+          "海之中道海濱公園 (佔地廣闊，四季花卉綻放，適合親子同遊)",
+          "柳川遊船 (被譽為「水鄉之城」，可乘船遊覽護城河，體驗水鄉風情)",
+          "小倉城 (位於北九州市的歷史名城，城內有庭園與資料館)",
+          "門司港懷舊區 (充滿大正浪漫風情的港口，保存許多西洋建築)",
+          "宗像大社 (歷史悠久的神社，周邊海域被列為世界文化遺產)",
+          "宮地嶽神社 (以壯觀的夕陽與「光之道」聞名)",
+          "南藏院 (以世界最大青銅臥佛聞名的佛寺)",
+          "九州國立博物館 (展示亞洲歷史文化交流的國立博物館)",
+          "福岡城（舞鶴城） (由黑田長政建造的歷史遺跡，現為遺址公園)",
+
+        ],
+        foods: ["博多豚骨拉麵", "牛雜鍋 (Motsunabe)", "明太子 (福岡名產)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-1-福岡.webp"
+      }, {
+        id: 41,
+        name: "41. 佐賀縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "佐賀市",
+        bestSeason: "秋季 (11月)",
+        desc: "佐賀縣是日本有田燒、伊萬里燒等高檔陶瓷的發源與生產重鎮。這裡每年舉辦的「佐賀國際熱氣球節」讓上百顆繽紛熱氣球升上天空，並盛產油花豐富細緻的頂級「佐賀牛」。",
+        spots: [
+          "有田町 (日本瓷器的發源地，被譽為「日本景德鎮」，可參觀陶藝老鋪與博物館)",
+          "伊萬里大川內山 (伊萬里燒的發源地，群山環繞的陶藝之里)",
+          "陶山神社 (供奉陶瓷之神的神社，鳥居由陶器製成)",
+          "武雄溫泉 (擁有1300年歷史的溫泉鄉，樓門是象徵性地標)",
+          "嬉野溫泉 (被譽為「美肌之湯」，水質滑順，可品嚐溫泉豆腐)",
+          "御船山樂園 (武雄領主鍋島茂義建造的別莊，以四季花卉和夜間點燈聞名)",
+          "慧洲園 (純日本庭園，為國家登錄紀念物)",
+          "唐津城 (位於唐津灣畔的歷史名城，可眺望虹之松原與海景)",
+          "虹之松原 (日本三大松原之一，長約4.5公里的帶狀松林)",
+          "鏡山展望台 (可居高臨下眺望虹之松原與唐津灣全景)",
+          "佐賀城公園 (佐賀城遺址公園，春季櫻花盛開)",
+          "大魚神社的海中鳥居 (退潮時才會出現的海中鳥居，景色夢幻)",
+          "吉野里歷史公園 (日本最大的彌生時代遺跡，重現古代村落)",
+          "呼子朝市 (日本三大朝市之一，可品嚐新鮮活烏賊)",
+          "鳥栖Outlets (九州最大的暢貨中心，適合購物)",
+          "武雄市圖書館 (結合蔦屋書店的複合式圖書館，設計新穎)",
+          "祐德稻荷神社 (日本三大稻荷神社之一，朱紅色的建築依山而建，十分壯觀)",
+          "七釜 (位於玄海國立公園內的海蝕洞，被指定為國家天然紀念物)",
+        ],
+        foods: ["佐賀牛鐵板燒", "呼子活烏賊刺身", "嬉野溫泉豆腐鍋"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-2-佐賀.webp"
+      }, {
+        id: 42,
+        name: "42. 長崎縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "長崎市",
+        bestSeason: "四季皆宜",
+        desc: "長崎縣在鎖國時代是日本唯一對外開放的窗口，深深受到荷蘭、葡萄牙與中國文化薰陶。歐風滿載的豪斯登堡、神秘莫測的軍艦島、以及被譽為新世界三大夜景的稻佐山夜景，獨步全日。",
+        spots: [
+          "稻佐山展望台 (可欣賞被評為「世界新三大夜景」之一的長崎百萬夜景)",
+          "長崎百萬夜景 (稻佐山展望台的長崎百萬夜景)",
+          "哥拉巴園 (以活躍於長崎的英國商人哥拉巴故居為中心的庭園，充滿異國風情)",
+          "大浦天主堂 (日本現存最古老的哥德式教堂，被列為國寶)",
+          "出島 (江戶時代的荷蘭商館遺跡，重現當時的貿易場景)",
+          "新地中華街 (日本三大中華街之一，可品嚐長崎什錦麵等美食)",
+          "眼鏡橋 (長崎最具代表性的石橋，倒映在水面形似眼鏡)",
+          "長崎原爆資料館 (展示原子彈爆炸的歷史與資料，傳達和平的重要性)",
+          "平和公園 (為祈願和平而建的公園，園內有和平祈念像)",
+          "豪斯登堡 (日本最大的主題樂園，重現荷蘭風情，夜晚燈光秀「光之王國」極具震撼力)",
+          "九十九島 (由約208個島嶼組成的群島，可乘船遊覽，欣賞多島美景)",
+          "軍艦島（端島） (曾繁榮一時的煤礦島，現為無人廢墟，獨特景觀吸引眾多遊客)",
+          "雲仙地獄 (高溫蒸氣與硫磺噴出的溫泉地帶，景觀獨特)",
+          "島原城 (歷史名城，城內有基督教歷史資料館)",
+          "平戶城 (位於平戶島的歷史名城，可眺望海景)",
+          "鎮西大社諏訪神社 (長崎規模最大的神社，秋季例大祭「長崎祭典」聞名)",
+          "壹岐島 (擁有豐富自然景觀與歷史遺跡的離島)",
+          "五島列島 (擁有美麗海灘與天主堂群，自然與歷史交織)",
+        ],
+        foods: ["長崎什錦麵 (Champon)", "長崎蜂蜜蛋糕 (Castella)", "土耳其飯"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-3-長崎.webp"
+      }, {
+        id: 43,
+        name: "43. 熊本縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "熊本市",
+        bestSeason: "春季 & 秋季",
+        desc: "熊本縣以最萌官方吉祥物「熊本熊」與日本三大名城「熊本城」廣為人知。境內矗立著世界最大的重疊複式活火山「阿蘇火山」，擁有遼闊浩瀚的草千里原野與溫泉。",
+        spots: [
+          "熊本城 (日本三大名城之一，由加藤清正建造，別名「銀杏城」)",
+          "櫻之馬場城彩苑 (熊本城下的復古街區，可體驗美食與文化)",
+          "熊本熊部長辦公室 (熊本熊的活動基地，可觀賞部長表演)",
+          "阿蘇山 (世界屈指可數的活火山，中岳火山口可近距離感受火山活動)",
+          "草千里 (阿蘇山腳下的廣闊草原，可眺望火山，夏季牛馬成群)",
+          "大觀峰 (可眺望阿蘇五嶽與壯觀雲海的展望台)",
+          "黑川溫泉 (米其林二星推薦的溫泉鄉，保留傳統日式風情)",
+          "菊池溪谷 (避暑勝地，擁有清澈溪流與豐富自然景觀)",
+          "鍋瀑布 (可由瀑布內側觀賞的「裏見瀑布」，景色清幽)",
+          "阿蘇神社 (擁有2500年歷史的古老神社，為阿蘇地區的信仰中心)",
+          "上色見熊野座神社 (《螢火之森》的取景地，充滿神秘氛圍)",
+          "白川水源 (被選為日本名水百選之一，水質清澈)",
+          "御輿來海岸 (可欣賞夕陽美景的絕佳地點)",
+          "三角西港 (明治時代的西洋式港口，充滿懷舊風情)",
+          "崎津天主教堂 (天草地區的隱世教堂，融合和洋風格)",
+          "水前寺成趣園 (以阿蘇山為背景的迴遊式庭園，景色優雅)",
+        ],
+        foods: ["熊本馬肉刺身 (櫻肉)", "熊本黑蒜油拉麵", "太平燕 (冬粉中華湯)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-4-熊本.webp"
+      }, {
+        id: 44,
+        name: "44. 大分縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "大分市",
+        bestSeason: "秋季 & 冬季",
+        desc: "大分縣是全日本溫泉湧出量與源泉數量高居第一的「溫泉大縣」。別府的「地獄溫泉巡禮」展示了血池、海地獄等奇幻地熱，而由布院（湯布院）溫泉街與金鱗湖，則是女性自由行第一首選。",
+        spots: [
+          "別府溫泉（地獄巡禮） (別府溫泉的代表，包括海地獄、血池地獄等獨特景觀)",
+          "明礬溫泉湯之花小屋 (可參觀湯之花製作過程，並享受溫泉)",
+          "由布院溫泉 (充滿文藝氣息的溫泉小鎮，金鱗湖是代表性景點)",
+          "金鱗湖 (由布院的象徵，湖底湧出溫泉與冷水，晨霧景色夢幻)",
+          "九重「夢」大吊橋 (日本最高的步行專用吊橋，可眺望壯麗峽谷)",
+          "久住花公園 (西日本最大的花卉公園，四季花海繽紛)",
+          "原尻瀑布 (被稱為「東洋的尼加拉瀑布」，氣勢磅礴)",
+          "志高湖 (阿蘇九重國立公園內的美麗湖泊)",
+          "大分縣立美術館（OPAM） (由普立茲克獎建築師坂茂設計，建築本身即為藝術)",
+          "大分海洋宮殿水族館「海之卵」 (展示豐富海洋生物，親子旅遊首選)",
+          "九州自然動物園 (可搭乘叢林巴士近距離觀賞野生動物)",
+          "三麗鷗和諧樂園 (以三麗鷗角色為主題的主題樂園)",
+          "真玉海岸 (擁有美麗夕陽景觀的海岸線)",
+          "西寒多神社 (歷史悠久的神社，氛圍寧靜)",
+          "由布院之森觀光列車 (行駛於博多與由布院之間的特色列車，車窗風景優美)",
+        ],
+        foods: ["大分炸雞天婦羅 (Toriten)", "地獄蒸料理 (溫泉蒸氣蒸熟生鮮)", "關青魚刺身"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-5-大分.webp"
+      }, {
+        id: 45,
+        name: "45. 宮崎縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "宮崎市",
+        bestSeason: "春季 & 夏季",
+        desc: "宮崎縣充滿濃郁溫暖的南國風情，是日本建國神話的誕生地。日南海岸有著摩艾石像、海蝕洞天中的「鵜戶神宮」，以及高千穗峽谷的真名井瀑布划船，神祕又美麗。",
+        spots: [
+          "高千穗峽 (因阿蘇山火山活動形成的峽谷，真名井瀑布是代表性景觀)",
+          "高千穗神社 (高千穗地區的古老神社，本殿為國家重要文化財)",
+          "天岩戶神社 (供奉天照大神的神社，與日本神話淵源深厚)",
+          "日南海岸 (擁有壯麗海景與奇岩怪石的海岸線，被譽為「日本復活島」)",
+          "青島神社 (位於青島的神社，周圍有「鬼之洗衣板」奇景)",
+          "鵜戶神宮 (建於海邊洞窟內的神社，以祈求姻緣、安產聞名)",
+          "日南太陽花園（Sun Messe日南） (以復活節島摩艾石像為主題的公園)",
+          "西都原古墳群 (日本最大的古墳群之一，可感受古代浪漫氣息)",
+          "飫肥城跡 (歷史悠久的城下町，保留著江戶時代的風貌)",
+          "都井岬 (可觀賞野生馬「御崎馬」悠閒漫步)",
+          "日向岬 (擁有壯麗海景與燈塔的景點)",
+          "天城公園 (春季賞櫻名所，約1200株櫻花盛開)",
+          "宮崎縣立美術館 (展示國內外藝術作品的美術館)",
+          "韓國岳 (位於霧島連峰，是宮崎縣的最高峰)",
+          "綾照葉大吊橋 (位於照葉林中的吊橋，可欣賞壯闊的自然景觀)",
+
+        ],
+        foods: ["宮崎南蠻雞 (塔塔醬香雞)", "宮崎牛排", "芒果聖代 (宮崎盛產太陽之子芒果)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-6-宮崎.webp"
+      }, {
+        id: 46,
+        name: "46. 鹿兒島縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "鹿兒島市",
+        bestSeason: "春季 & 秋季",
+        desc: "鹿兒島縣由至今仍每天噴煙的活火山「櫻島火山」守護。這裡能體驗世界唯一的指宿天然砂浴（熱沙溫泉），並能搭船前往世界自然遺產屋久島，尋找千年的繩文杉與魔法公主森林。",
+        spots: [
+          "櫻島 (世界上最活躍的火山之一，鹿兒島的象徵，可搭乘渡輪前往)",
+          "城山公園展望台 (可一覽櫻島、錦江灣與鹿兒島市區全景)",
+          "鹿兒島城（鶴丸城） (島津家的居城遺跡，現為歷史公園)",
+          "仙巖園 (薩摩藩主島津家的別邸，借景櫻島的日式庭園，世界文化遺產)",
+          "鹿兒島天文館 (鹿兒島市中心最熱鬧的商業街區，購物、美食集中地)",
+          "鹿兒島水族館 (展示錦江灣與南九州海域的生態，可看到櫻島)",
+          "屋久島 (被列為世界自然遺產，擁有千年以上的屋久杉與苔蘚森林)",
+          "奄美大島 (洋溢南國風情，擁有獨特的自然與文化)",
+          "指宿溫泉（砂浴溫泉） (鹿兒島獨特的熱砂浴，將身體埋入溫熱的砂中)",
+          "霧島神宮 (位於霧島連峰，朱紅色的社殿莊嚴華麗)",
+          "知覽武家屋敷庭園 (保存完好的武士宅邸群，被稱為「薩摩的小京都」)",
+          "西鄉隆盛銅像 (位於城山公園，紀念明治維新的重要人物)",
+          "開聞岳 (被稱為「薩摩富士」的優美山岳)",
+          "曾木瀑布 (被稱為「東洋的尼加拉瀑布」，氣勢宏偉)"
+        ],
+        foods: ["鹿兒島黑豬肉涮涮鍋", "白熊刨冰", "薩摩揚 (炸魚漿天婦羅)"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-7-鹿兒島.webp"
+      }, {
+        id: 47,
+        name: "47. 沖繩縣",
+        region: "kyushu",
+        regionName: "九州・沖繩地方",
+        color: "#66c3cc",
+        capital: "那霸市",
+        bestSeason: "夏季 (5月 - 9月)",
+        desc: "沖繩縣曾為獨立的「琉球王國」，擁有與本州截然不同的獨特歷史與亞熱帶海島風情。這裡的湛藍玻璃海、世界奇觀萬座毛、美麗海水族館以及首里城，是享譽國際的蔚藍度假避暑天堂。",
+        spots: [
+          "今歸仁城遺址 (建於14世紀的琉球時代，擁有雄偉的石牆，是能俯瞰沖繩北部壯麗景色的世界遺產)",
+          "美麗海水族館 (位於海洋博公園內，擁有世界第二大的「黑潮之海」水槽，可以近距離觀賞巨大的鯨鯊)",
+          "備瀨福木林道 (位於海洋博公園內，由高大福木形成的綠色隧道，陽光灑落時光影交錯，氣氛療癒)",
+          "首里城 (琉球王國的政治與文化中心，雖經歷火災重建，但其獨特的中日混合建築風格與「守禮門」仍是必訪之地)",
+          "波上宮 (建築於珊瑚礁斷崖上的沖繩第一神社，是那霸市區的信仰中心)",
+          "國際通 (那霸市最繁華的街道，匯集了美食、伴手禮與藥妝店，是體驗沖繩熱鬧氛圍的必去之地)",
+          "齋場御嶽 (琉球王國時期最神聖的祈禱場所，被登錄為世界遺產，是了解琉球古老信仰的核心地點)",
+          "知念岬公園 (位於南城市，擁有能一望無際太平洋的絕佳視野，也是知名的夜間觀星地點)",
+          "玉泉洞 (全長約5公里的巨大鐘乳石洞，是東亞最大的地下鐘乳石洞之一，景觀令人驚嘆)",
+          "勝連城跡 (利用自然丘陵地形建造的階梯式古城遺跡，已被列為世界遺產)",
+          "古宇利大橋 (連接古宇利島與本島的跨海大橋，行駛其上可飽覽兩側的蒂芬妮藍海景，島上的心形岩也是熱門景點)",
+          "古宇利島 (由古宇利大橋連接，島上有古宇利海洋塔，能一覽大橋與整片大海的絕景)",
+          "名護鳳梨園 (位於名護市，可以搭乘可愛的鳳梨車遊園，並品嚐各式鳳梨製品與鳳梨酒)",
+          "JUNGLIA叢林樂園 (位於今歸仁村的恐龍主題新樂園，主打叢林探險與無邊際浴池等設施)",
+          "琉球村 (一個可以體驗沖繩傳統文化與生活型態的主題公園，保留了許多百年以上的古民家)",
+          "萬座毛 (位於恩納村的珊瑚斷崖，因外觀像象鼻而聞名，是俯瞰壯闊海景的絕佳地點)",
+          "殘波岬 (以壯麗的斷崖和絕美日落聞名的公園，是欣賞夕陽的熱門地點)",
+          "美國村 (位於北谷町，充滿美式異國風情的購物與娛樂休閒勝地)",
+          "DMM Kariyushi水族館 (位於豐見城市的新型態水族館，結合了最新光影技術與藝術裝置)",
+          "中城城跡 (同樣被登錄為世界遺產的「琉球王國的城堡及相關遺產群」之一，能深刻體驗琉球的歷史魅力)",
+          "瀨長島 (距離那霸機場僅約30分鐘車程，擁有純白建築群與無敵海景，被譽為「沖繩小希臘」)",
+          "沖繩Outlet Mall ASHIBINAA (距離那霸機場極近的大型暢貨中心，集結了上百家國際精品與品牌)",
+          "座間味島 (慶良間群島中的熱門島嶼，以高透明度的海水和美麗的海灘聞名，適合進行水上活動)",
+
+        ],
+        foods: ["沖繩控肉蕎麥麵 (Soba)", "石垣島和牛燒肉", "紅芋塔甜點"],
+        image: "../C29-Japan-travel-introduction-1150703/images/M008-8-沖繩.webp"
+      }];
+
+    // ===== 工具函數 =====
+    function getPrefectureData(id) {
+      return travelDatabase.find(item => item.id === id);
+    }
+
+    function handleDetailImageError() {
+      $('#detailHeroImage').hide();
+      $('#detailFallback').css('display', 'flex');
+    }
+
+    // ===== 核心選擇邏輯 =====
+    function selectPrefectureAndShow(id, triggerSource) {
+      const data = getPrefectureData(id);
+      if (!data) return;
+
+      // 1. 地圖矩形高亮
+      $('.prefecture-rect').removeClass('active');
+      $(`#rect-map-jp-${id}`).addClass('active');
+
+      // 2. 左側選單高亮
+      $('.prefecture-item').removeClass('active-item');
+      const $listItem = $(`#list-item-${id}`);
+      $listItem.addClass('active-item');
+
+      if (triggerSource === 'map') {
+        const $collapseEl = $listItem.closest('.collapse');
+        if (!$collapseEl.hasClass('show')) {
+          $('.collapse').collapse('hide');
+          $collapseEl.collapse('show');
+        }
+        setTimeout(() => {
+          $listItem[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+      }
+
+      // 3. 填入資料
+      $('#detailTitle').text(data.name);
+      $('#detailDesc').text(data.desc);
+      $('#overlayTopTitle').text(`${data.regionName} ── ${data.name} 旅遊導覽`);
+
+      $('#infoRegion').text(data.regionName);
+      $('#infoCapital').text(data.capital);
+      $('#infoSeason').text(data.bestSeason);
+
+      // 圖片
+      $('#detailHeroImage').show();
+      $('#detailFallback').css('display', 'none');
+      $('#detailHeroImage').attr('src', data.image);
+      $('#fallbackRegionName').text(data.name);
+
+      // Badge 顏色
+      $('#detailRegionBadge')
+        .text(data.regionName)
+        .css('background-color', data.color);
+
+      // 4. 景點 (右側)
+      let spotsHtml = '';
+      data.spots.forEach((spot, idx) => {
+        spotsHtml += `
+                    <div class="col-sm-12 mb-2 d-flex align-items-center">
+                        <span class="badge badge-pill badge-danger mr-2" style="width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">${idx + 1}</span>
+                        <span class="text-dark font-weight-bold" style="font-size: 0.95rem;">${spot}</span>
+                    </div>
+                `;
+      });
+      $('#spotsContainer').html(spotsHtml);
+
+      // 5. 美食 (左側)
+      let foodsHtml = '';
+      data.foods.forEach((food) => {
+        foodsHtml += `
+                    <div class="col-sm-4 mb-2">
+                        <div class="p-2 border rounded text-center bg-light" style="font-size: 0.9rem; font-weight: 700;">
+                            <i class="fa-solid fa-cookie text-warning mr-1"></i> ${food}
+                        </div>
+                    </div>
+                `;
+      });
+      $('#foodsContainer').html(foodsHtml);
+
+      // 6. 開啟滿版頁面
+      $('#immersiveDetailOverlay').addClass('active');
+    }
+
+    // ===== 初始化綁定 =====
+    $(function () {
+      $('.prefecture-path').hide();
+
+      // 清單點擊
+      $('.prefecture-item').on('click', function () {
+        const id = $(this).data('id');
+        selectPrefectureAndShow(id, 'list');
+      });
+
+      // 地圖點擊
+      $('.map-group').on('click', function () {
+        const id = $(this).data('id');
+        selectPrefectureAndShow(id, 'map');
+      });
+
+      // Hover 效果
+      $('.map-group').on('mouseenter', function () {
+        const id = $(this).data('id');
+        $(`#rect-map-jp-${id}`).css('opacity', '0.85');
+        $(`#list-item-${id}`).css('background-color', '#f1f3f5');
+      }).on('mouseleave', function () {
+        const id = $(this).data('id');
+        $(`#rect-map-jp-${id}`).css('opacity', '1');
+        $(`#list-item-${id}`).css('background-color', '');
+      });
+
+      // 關閉按鈕
+      $('#closeDetailBtn').on('click', function () {
+        $('#immersiveDetailOverlay').removeClass('active');
+      });
+
+      // ESC 關閉
+      $(document).on('keyup', function (e) {
+        if (e.key === "Escape") {
+          $('#immersiveDetailOverlay').removeClass('active');
+        }
+      });
+    });
+  </script>
+
+  <!-- ===== 動態載入 nav 與 footer ===== -->
+  <script>
+    $(function () {
+      $("#nav1").load("/L01-AI-Learn/B01-ex-comm/BX02-nav-2025.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+</body>
+
+</html>
