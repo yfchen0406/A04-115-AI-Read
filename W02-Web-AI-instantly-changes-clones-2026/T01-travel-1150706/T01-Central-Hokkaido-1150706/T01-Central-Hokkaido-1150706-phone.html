@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>T001. 2026 夏日北海道薰衣草之旅 ~ 115.07.06</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans TC', Roboto, sans-serif;
+            background: #f3eaf5;
+            color: #2e1a33;
+            line-height: 1.6;
+            padding: 12px;
+        }
+
+        /* 薰衣草紫背景 */
+        .bg-scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(170deg, #d9b8e0 0%, #c79ed4 30%, #b38ac9 55%, #d4b0d9 75%, #e7d0ed 100%);
+        }
+        .bg-scene::before {
+            content: '';
+            position: absolute;
+            top: 8%;
+            left: 5%;
+            width: 300px;
+            height: 120px;
+            background: rgba(255, 240, 150, 0.25);
+            border-radius: 300px / 150px;
+            filter: blur(60px);
+            box-shadow: 60px 80px 0 rgba(255, 230, 120, 0.2), -40px 140px 0 rgba(255, 200, 100, 0.15);
+        }
+        .bg-scene::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(0deg, rgba(180, 120, 200, 0.25) 0%, transparent 80%);
+            background-image: radial-gradient(circle at 15% 85%, rgba(220, 180, 255, 0.3) 0%, transparent 35%),
+                              radial-gradient(circle at 75% 60%, rgba(200, 150, 230, 0.25) 0%, transparent 45%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 248, 255, 0.88);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 28px 20px;
+            box-shadow: 0 20px 50px rgba(80, 40, 100, 0.18);
+            border: 1px solid rgba(220, 180, 240, 0.3);
+        }
+
+        /* 標題 */
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            border-bottom: 3px dashed #b58bc7;
+            padding-bottom: 16px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4a1f5e;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 rgba(200, 150, 220, 0.3);
+        }
+        .header h1 i {
+            color: #b87bc7;
+            margin: 0 6px;
+        }
+        .header .sub {
+            font-size: 1rem;
+            color: #5f3b6e;
+            background: rgba(210, 170, 230, 0.3);
+            display: inline-block;
+            padding: 4px 20px;
+            border-radius: 40px;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        .header .date-badge {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .header .date-badge span {
+            background: #5e2d73;
+            color: #faf0fc;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(120, 60, 140, 0.2);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #491f5c;
+            border-left: 8px solid #b77ccf;
+            padding-left: 14px;
+            margin: 32px 0 16px 0;
+        }
+        .section-title i {
+            margin-right: 10px;
+            color: #8f4da8;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin: 16px 0;
+        }
+
+        .card {
+            background: rgba(255, 248, 255, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 18px 18px;
+            box-shadow: 0 6px 18px rgba(130, 70, 160, 0.10);
+            border: 1px solid rgba(200, 160, 220, 0.3);
+            transition: 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        .card h3 {
+            font-size: 1.15rem;
+            color: #4a1f5e;
+            border-bottom: 2px dotted #d5b0e0;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+        .card h3 i {
+            margin-right: 8px;
+            color: #8f4da8;
+        }
+
+        .flight-box {
+            background: #f4e8fa;
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin: 10px 0;
+            border-left: 6px solid #8f4da8;
+        }
+        .flight-box .airline {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #3d1d4a;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #5e2d73;
+            color: #faf0fc;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        .dot.purple { background: #8f4da8; }
+        .dot.pink { background: #e67eb0; }
+        .dot.yellow { background: #f7c948; }
+        .dot.mint { background: #6fc1b0; }
+
+        /* 時間線 */
+        .day-timeline {
+            background: rgba(240, 225, 248, 0.5);
+            border-radius: 24px;
+            padding: 18px 18px;
+            margin: 22px 0;
+            border: 1px solid #dcc4e6;
+        }
+        .day-timeline .day-header {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #4a1f5e;
+            margin-bottom: 12px;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #dcc4e6;
+            align-items: flex-start;
+        }
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        .timeline-item .hour {
+            min-width: 68px;
+            font-weight: 600;
+            color: #4a1f5e;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+        .timeline-item .desc {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        .timeline-item .badge {
+            background: #7d3f96;
+            color: white;
+            font-size: 0.65rem;
+            border-radius: 30px;
+            padding: 2px 12px;
+            display: inline-block;
+            margin-left: 6px;
+            white-space: nowrap;
+        }
+
+        .highlight {
+            background: #efe3f7;
+            border-radius: 16px;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-left: 6px solid #b77ccf;
+            font-size: 0.95rem;
+        }
+
+        .total-cost {
+            background: #4a1f5e;
+            color: #faf0fc;
+            border-radius: 28px;
+            padding: 20px 22px;
+            margin: 24px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .total-cost .big {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fce38a;
+        }
+        .total-cost .note {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        .total-cost .cost-item {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .total-cost .cost-item span {
+            background: rgba(255,255,255,0.12);
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #5f3b6e;
+            border-top: 2px solid #dcc4e6;
+            padding-top: 18px;
+            font-size: 0.85rem;
+        }
+
+        /* ===== 響應式加強 ===== */
+        @media (max-width: 640px) {
+            body { padding: 8px; }
+            .container { padding: 16px 12px; border-radius: 20px; }
+            .header h1 { font-size: 1.6rem; }
+            .header .date-badge span { font-size: 0.75rem; padding: 4px 12px; white-space: normal; }
+            .section-title { font-size: 1.3rem; margin-top: 24px; }
+
+            /* 卡片改為單列 */
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .card { padding: 14px 16px; }
+
+            /* 時間線調整：上下排列 */
+            .timeline-item {
+                flex-direction: column;
+                gap: 2px;
+                padding: 10px 0;
+            }
+            .timeline-item .hour {
+                min-width: auto;
+                font-size: 0.9rem;
+                font-weight: 700;
+                color: #5e2d73;
+            }
+            .timeline-item .desc {
+                font-size: 0.92rem;
+                padding-left: 4px;
+            }
+            .timeline-item .badge {
+                font-size: 0.6rem;
+                padding: 2px 10px;
+            }
+            .day-timeline {
+                padding: 14px 14px;
+            }
+            .day-timeline .day-header {
+                font-size: 1.2rem;
+            }
+
+            /* 總費用 */
+            .total-cost {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 16px 18px;
+            }
+            .total-cost .big {
+                font-size: 1.6rem;
+            }
+            .total-cost .cost-item span {
+                font-size: 0.75rem;
+                padding: 2px 12px;
+            }
+
+            /* 其他 */
+            .flight-box { padding: 12px 14px; }
+            .price-tag { font-size: 0.8rem; padding: 3px 12px; }
+            .highlight { font-size: 0.9rem; padding: 10px 14px; }
+        }
+
+        @media (max-width: 400px) {
+            .header h1 { font-size: 1.4rem; }
+            .header .sub { font-size: 0.85rem; }
+            .section-title { font-size: 1.1rem; }
+            .timeline-item .desc { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-scene"></div>
+
+    <div class="container">
+        <!-- 標題 -->
+        <div class="header">
+            <h1><i class="fas fa-seedling"></i> T001. 2026 夏日北海道薰衣草之旅 ~ 115.07.06 <i class="fas fa-seedling"></i></h1>
+            <div class="sub">五天四夜 · 花季限定</div>
+            <div class="date-badge">
+                <span><i class="far fa-calendar-alt"></i> 2026/07/29 出發</span>
+                <span><i class="far fa-calendar-check"></i> 2026/08/02 回程</span>
+                <span><i class="fas fa-plane"></i> 台灣虎航</span>
+            </div>
+        </div>
+
+        <!-- 機票 -->
+        <h2 class="section-title"><i class="fas fa-plane-departure"></i> 機票選擇</h2>
+        <div class="card-grid">
+            <div class="card" style="border-left: 6px solid #8f4da8;">
+                <h3><i class="fas fa-check-circle" style="color:#8f4da8;"></i> 方案A · 台灣虎航 <span style="background:#8f4da8; color:white; font-size:0.7rem; padding:2px 10px; border-radius:30px; margin-left:6px;">採用</span></h3>
+                <div class="flight-box">
+                    <div><span class="airline">IT234</span> 桃園 06:20 → 新千歲 11:05</div>
+                    <div><span class="airline">IT235</span> 新千歲 12:05 → 桃園 15:20</div>
+                </div>
+                <p><span class="price-tag">來回含稅 NT$11,073</span> 經濟實惠</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-crown" style="color:#d4a017;"></i> 方案B · 中華航空</h3>
+                <div><strong>CI130</strong> 08:35 → 13:35</div>
+                <div><strong>CI131</strong> 15:05 → 18:15</div>
+                <p><span class="price-tag">約 NT$27,994</span> 傳統航空</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-star" style="color:#d45a8a;"></i> 方案C · 星宇航空</h3>
+                <div>去程 09:25 左右 / 回程 下午</div>
+                <p><span class="price-tag">約 NT$25,000~35,000</span> 精品航空</p>
+            </div>
+        </div>
+
+        <!-- 住宿 -->
+        <h2 class="section-title"><i class="fas fa-hotel"></i> 住宿推薦 (四晚)</h2>
+        <div class="card-grid">
+            <div class="card" style="border-left: 6px solid #8f4da8;">
+                <h3><i class="fas fa-check-circle" style="color:#8f4da8;"></i> 方案A · 札幌華盛頓廣場</h3>
+                <p><i class="fas fa-map-pin" style="color:#8f4da8;"></i> JR札幌站東出口步行數分鐘</p>
+                <p><span class="price-tag">約 NT$3,500~5,000 / 雙人房晚</span></p>
+                <p>交通極致便利，本次採用</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-building" style="color:#d45a8a;"></i> 方案B · 札幌京急EX</h3>
+                <p><i class="fas fa-map-pin" style="color:#d45a8a;"></i> JR札幌站北口步行1分鐘</p>
+                <p><span class="price-tag">約 NT$4,000~5,500</span> 全新開幕</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-spa" style="color:#3a9b8a;"></i> 方案C · MYSTAYS公園精品</h3>
+                <p><i class="fas fa-map-pin" style="color:#3a9b8a;"></i> 薄野區步行10分鐘</p>
+                <p><span class="price-tag">約 NT$3,000~4,500</span> 天然溫泉</p>
+            </div>
+        </div>
+
+        <!-- 詳細行程 -->
+        <h2 class="section-title"><i class="fas fa-calendar-day"></i> 五天四夜詳細行程</h2>
+
+        <!-- Day 1 -->
+        <div class="day-timeline">
+            <div class="day-header"><i class="fas fa-sun" style="color:#d4a017;"></i> Day 1 · 7/29 (三) 抵達札幌</div>
+            <div class="timeline-item"><span class="hour">06:20</span><span class="desc"><strong>桃園機場</strong> 台灣虎航 IT234 起飛</span></div>
+            <div class="timeline-item"><span class="hour">11:05</span><span class="desc"><strong>新千歲機場</strong> 抵達</span></div>
+            <div class="timeline-item"><span class="hour">12:00~12:37</span><span class="desc"><strong>交通</strong> JR快速Airport號 → 札幌站 (37分, 1,230円) <span class="badge">指定席</span></span></div>
+            <div class="timeline-item"><span class="hour">13:00</span><span class="desc">飯店寄放行李 (札幌華盛頓廣場)</span></div>
+            <div class="timeline-item"><span class="hour">14:00</span><span class="desc"><strong>午餐</strong> 札幌拉麵共和國 / 湯咖哩</span></div>
+            <div class="timeline-item"><span class="hour">15:30</span><span class="desc"><strong>景點</strong> 大通公園、札幌電視塔</span></div>
+            <div class="timeline-item"><span class="hour">18:30</span><span class="desc"><strong>晚餐</strong> 湯咖哩名店「Garaku」</span></div>
+            <div class="timeline-item"><span class="hour">20:00</span><span class="desc"><strong>購物</strong> 狸小路商店街</span></div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-timeline">
+            <div class="day-header"><i class="fas fa-ship" style="color:#3a9b8a;"></i> Day 2 · 7/30 (四) 小樽一日</div>
+            <div class="timeline-item"><span class="hour">09:00~09:35</span><span class="desc"><strong>交通</strong> JR快速Airport號 札幌→小樽 (35分, 800円)</span></div>
+            <div class="timeline-item"><span class="hour">10:00</span><span class="desc"><strong>景點</strong> 小樽運河 散步拍照</span></div>
+            <div class="timeline-item"><span class="hour">11:30</span><span class="desc"><strong>景點</strong> 北一硝子館、音樂盒堂</span></div>
+            <div class="timeline-item"><span class="hour">13:00</span><span class="desc"><strong>午餐</strong> 壽司屋通 新鮮壽司 / 海鮮丼</span></div>
+            <div class="timeline-item"><span class="hour">15:00</span><span class="desc"><strong>購物</strong> 堺町通商店街 (LeTAO、甜點)</span></div>
+            <div class="timeline-item"><span class="hour">18:00</span><span class="desc"><strong>景點</strong> 天狗山夜景 (可選纜車)</span></div>
+            <div class="timeline-item"><span class="hour">19:30~20:05</span><span class="desc"><strong>交通</strong> JR小樽→札幌 (快速)</span></div>
+            <div class="timeline-item"><span class="hour">20:30</span><span class="desc"><strong>晚餐</strong> 札幌站周邊</span></div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-timeline">
+            <div class="day-header"><i class="fas fa-seedling" style="color:#8f4da8;"></i> Day 3 · 7/31 (五) 富良野・美瑛花田</div>
+            <div class="timeline-item"><span class="hour">07:30~09:25</span><span class="desc"><strong>交通</strong> 特急Lilac/Kamui 札幌→旭川→富良野 (約1h55m, 指定席5,220円)</span></div>
+            <div class="timeline-item"><span class="hour">10:00</span><span class="desc"><strong>景點</strong> 富田農場 (薰衣草花田) <i class="fas fa-seedling" style="color:#8f4da8;"></i></span></div>
+            <div class="timeline-item"><span class="hour">12:30</span><span class="desc"><strong>午餐</strong> 富良野咖哩蛋包飯 / 薰衣草霜淇淋</span></div>
+            <div class="timeline-item"><span class="hour">14:00</span><span class="desc"><strong>景點</strong> 美瑛・四季彩之丘、青池</span></div>
+            <div class="timeline-item"><span class="hour">17:30</span><span class="desc"><strong>交通</strong> JR 美瑛/富良野 → 札幌 (約2h)</span></div>
+            <div class="timeline-item"><span class="hour">20:00</span><span class="desc"><strong>晚餐</strong> 成吉思汗烤肉「大黑屋」</span></div>
+            <div class="highlight"><i class="fas fa-info-circle" style="color:#8f4da8;"></i> 今日使用 <strong>JR北海道鐵路周遊券 (4日券 10,000円)</strong> 更划算，建議提前劃位。</div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-timeline">
+            <div class="day-header"><i class="fas fa-city" style="color:#d45a8a;"></i> Day 4 · 8/1 (六) 札幌市區深度</div>
+            <div class="timeline-item"><span class="hour">09:30</span><span class="desc"><strong>景點</strong> 北海道廳舊本廳舍、札幌市鐘樓</span></div>
+            <div class="timeline-item"><span class="hour">11:00</span><span class="desc"><strong>景點</strong> 北海道大學 校園散步</span></div>
+            <div class="timeline-item"><span class="hour">13:00</span><span class="desc"><strong>午餐</strong> 札幌車站周邊</span></div>
+            <div class="timeline-item"><span class="hour">14:30</span><span class="desc"><strong>景點</strong> 白色戀人公園 (工廠參觀、伴手禮)</span></div>
+            <div class="timeline-item"><span class="hour">18:00</span><span class="desc"><strong>晚餐</strong> 螃蟹本家 (豪華螃蟹料理)</span></div>
+            <div class="timeline-item"><span class="hour">20:00</span><span class="desc"><strong>自由活動</strong> 薄野區 或 飯店休息</span></div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-timeline">
+            <div class="day-header"><i class="fas fa-undo-alt" style="color:#3a9b8a;"></i> Day 5 · 8/2 (日) 最終採購・返台</div>
+            <div class="timeline-item"><span class="hour">09:00</span><span class="desc">市區最後採購 (藥妝、伴手禮)</span></div>
+            <div class="timeline-item"><span class="hour">10:30</span><span class="desc">返回飯店取行李，前往JR札幌站</span></div>
+            <div class="timeline-item"><span class="hour">11:00~11:37</span><span class="desc"><strong>交通</strong> JR快速Airport號 札幌→新千歲 (37分, 1,230円)</span></div>
+            <div class="timeline-item"><span class="hour">12:05</span><span class="desc"><strong>起飛</strong> 台灣虎航 IT235 返回桃園</span></div>
+            <div class="timeline-item"><span class="hour">15:20</span><span class="desc"><strong>抵達</strong> 台灣桃園國際機場</span></div>
+        </div>
+
+        <!-- 費用總估算 -->
+        <h2 class="section-title"><i class="fas fa-yen-sign"></i> 費用總估算 (每人, 新台幣)</h2>
+        <div class="total-cost">
+            <div>
+                <div class="big">NT$30,000 ~ 38,000</div>
+                <div class="note">不含個人購物</div>
+            </div>
+            <div class="cost-item">
+                <span><span class="dot purple"></span> 機票 11,073</span>
+                <span><span class="dot pink"></span> 住宿 8,000~10,000</span>
+                <span><span class="dot yellow"></span> 交通 3,500~5,000</span>
+                <span><span class="dot mint"></span> 餐飲 6,000~10,000</span>
+            </div>
+        </div>
+        <div style="background:#efe3f7; border-radius:16px; padding:12px 16px; margin:10px 0; border-left:6px solid #b77ccf; font-size:0.95rem;">
+            <i class="fas fa-train" style="color:#8f4da8;"></i> <strong>交通明細</strong>：JR周遊券(4日) 10,000円 + 機場來回 約2,460円 + 地鐵/巴士 約1,000円。
+        </div>
+
+        <!-- 採購與餐食 -->
+        <h2 class="section-title"><i class="fas fa-shopping-bag"></i> 採購 & 餐食推薦</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3><i class="fas fa-gift" style="color:#8f4da8;"></i> 伴手禮必買</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><i class="fas fa-check" style="color:#8f4da8;"></i> 白色戀人</li>
+                    <li><i class="fas fa-check" style="color:#8f4da8;"></i> 六花亭 (草莓巧克力)</li>
+                    <li><i class="fas fa-check" style="color:#8f4da8;"></i> LeTAO 雙層乳酪蛋糕</li>
+                    <li><i class="fas fa-check" style="color:#8f4da8;"></i> Royce 生巧克力</li>
+                    <li><i class="fas fa-check" style="color:#8f4da8;"></i> Calbee 薯條三兄弟</li>
+                </ul>
+                <p><strong>購物點：</strong>狸小路、堺町通、機場</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-utensils" style="color:#d45a8a;"></i> 道央美食</h3>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><i class="fas fa-egg" style="color:#d4a017;"></i> 札幌味噌拉麵</li>
+                    <li><i class="fas fa-fish" style="color:#3a9b8a;"></i> 螃蟹本家 (螃蟹料理)</li>
+                    <li><i class="fas fa-fire" style="color:#d45a8a;"></i> 成吉思汗烤肉</li>
+                    <li><i class="fas fa-pepper" style="color:#d4a017;"></i> 湯咖哩</li>
+                    <li><i class="fas fa-ice-cream" style="color:#8f4da8;"></i> 薰衣草霜淇淋</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 提醒 -->
+        <div style="background: #f4e8fa; border-radius: 20px; padding: 16px 18px; margin-top: 24px; border: 1px solid #d5b0e0; font-size:0.95rem;">
+            <i class="fas fa-lightbulb" style="color:#8f4da8;"></i> <strong>實用提醒</strong>：夏季薰衣草盛開；JR周遊券需提前兌換；退稅滿5,000日圓；網路建議買SIM卡；插座與台灣相同。
+        </div>
+
+        <footer>
+            <i class="fas fa-seedling" style="color:#8f4da8;"></i> 北海道薰衣草紫 · 2026/07/29 ~ 08/02  <i class="fas fa-seedling" style="color:#8f4da8;"></i><br>
+            所有價格為預估，請以實際為準。祝旅途愉快！
+        </footer>
+    </div>
+</body>
+</html>
