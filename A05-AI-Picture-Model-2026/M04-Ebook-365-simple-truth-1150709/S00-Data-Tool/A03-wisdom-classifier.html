@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金句分類工具</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1a1208;
+    --paper: #faf7f2;
+    --cream: #f0ebe0;
+    --gold: #c8963c;
+    --gold-light: #e8c87a;
+    --gold-dark: #8a6220;
+    --muted: #8a7a60;
+    --border: #d4c8a8;
+    --success: #4a7c59;
+    --tag-bg: #ede8da;
+    --mono: 'JetBrains Mono', monospace;
+    --serif: 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  /* === 頁首 === */
+  header {
+    max-width: 860px;
+    margin: 0 auto 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gold);
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: var(--ink);
+  }
+  header span {
+    font-size: .85rem;
+    color: var(--muted);
+    font-family: var(--sans);
+    font-weight: 300;
+  }
+
+  /* === 主體 === */
+  .main { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+
+  /* === 輸入區 === */
+  .input-section {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .input-section label {
+    display: block;
+    font-weight: 500;
+    font-size: .9rem;
+    margin-bottom: .75rem;
+    color: var(--muted);
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-size: .78rem;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 220px;
+    font-family: var(--mono);
+    font-size: .82rem;
+    line-height: 1.7;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    color: var(--ink);
+    resize: vertical;
+    transition: border-color .2s;
+    outline: none;
+  }
+  textarea:focus { border-color: var(--gold); }
+
+  .input-hint {
+    margin-top: .6rem;
+    font-size: .78rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* === 按鈕列 === */
+  .btn-row { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; margin-top: 1rem; }
+
+  button {
+    font-family: var(--sans);
+    font-size: .88rem;
+    font-weight: 500;
+    padding: .6rem 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: all .18s;
+    letter-spacing: .03em;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--gold-dark); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover { background: var(--cream); color: var(--ink); }
+  .btn-copy {
+    background: var(--success);
+    color: #fff;
+    margin-left: auto;
+  }
+  .btn-copy:hover { opacity: .85; }
+  .btn-copy.copied { background: #2a5a3a; }
+
+  /* === 分類標籤展示 === */
+  .tag-legend {
+    display: flex; flex-wrap: wrap; gap: .5rem; padding: .75rem 0;
+  }
+  .tag-item {
+    font-size: .76rem;
+    padding: .25rem .75rem;
+    border-radius: 20px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--gold-dark);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .15s;
+    user-select: none;
+  }
+  .tag-item:hover { background: var(--gold-light); border-color: var(--gold); }
+  .tag-item.active { background: var(--gold); color: #fff; border-color: var(--gold-dark); }
+
+  /* === 輸出區 === */
+  .output-section {
+    display: none;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .output-section.visible { display: block; }
+
+  .output-header {
+    background: var(--cream);
+    padding: .85rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .output-title {
+    font-family: var(--serif);
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+  }
+  .stat-badges { display: flex; gap: .5rem; flex-wrap: wrap; }
+  .stat-badge {
+    font-size: .74rem;
+    padding: .2rem .65rem;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .stat-badge strong { color: var(--gold-dark); }
+
+  pre {
+    font-family: var(--mono);
+    font-size: .8rem;
+    line-height: 1.75;
+    padding: 1.25rem 1.5rem;
+    overflow: auto;
+    max-height: 600px;
+    color: #2a2010;
+    background: #fff;
+    white-space: pre;
+  }
+
+  /* 語法高亮 */
+  .s-key   { color: #5c7a9a; }
+  .s-str   { color: #6a5a2a; }
+  .s-cat   { color: #c8480a; font-weight: 600; }
+  .s-num   { color: #3a7a3a; }
+  .s-punct { color: #9a8060; }
+
+  /* === 分類統計 === */
+  .stats-section { display: none; }
+  .stats-section.visible { display: block; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: .6rem;
+    padding: 1rem 0;
+  }
+  .stat-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: .75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .stat-card:hover { border-color: var(--gold); background: var(--tag-bg); }
+  .stat-card.active-filter { border-color: var(--gold); background: var(--gold-light); }
+  .stat-name { font-size: .83rem; font-weight: 500; color: var(--ink); }
+  .stat-count {
+    font-family: var(--mono);
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    background: rgba(200,150,60,.12);
+    padding: .1rem .5rem;
+    border-radius: 4px;
+  }
+
+  /* 空狀態 */
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 2;
+  }
+  .empty-icon { font-size: 2.5rem; margin-bottom: .75rem; opacity: .4; display: block; }
+
+  /* 錯誤訊息 */
+  .error-msg {
+    display: none;
+    background: #fff0ec;
+    border: 1px solid #f5c0a0;
+    border-radius: 6px;
+    padding: .75rem 1rem;
+    font-size: .84rem;
+    color: #8a3010;
+  }
+  .error-msg.show { display: block; }
+
+  /* 過濾控制 */
+  .filter-bar {
+    display: none;
+    align-items: center;
+    gap: .75rem;
+    padding: .75rem 1.25rem;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .filter-bar.visible { display: flex; }
+  .filter-label { font-size: .78rem; color: var(--muted); font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
+  .filter-select {
+    font-family: var(--sans);
+    font-size: .84rem;
+    padding: .35rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--ink);
+    cursor: pointer;
+    outline: none;
+  }
+  .filter-select:focus { border-color: var(--gold); }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin-bottom: .5rem;
+    padding-top: .25rem;
+    letter-spacing: .04em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>金句分類工具</h1>
+  <span>貼入 JS 物件陣列，自動分析並填入 category 欄位</span>
+</header>
+
+<div class="main">
+
+  <!-- 分類說明 -->
+  <div>
+    <div class="section-title">分類標籤</div>
+    <div class="tag-legend" id="tagLegend"></div>
+  </div>
+
+  <!-- 輸入區 -->
+  <div class="input-section">
+    <label>貼入 JS 金句資料（一筆或多筆）</label>
+    <textarea id="inputArea" placeholder="貼入如下格式的 JS 物件（可多筆，用逗號隔開）：
+
+  {
+    id: 1,
+    title: '行動會促進更多行動，決策帶來另一個決策，生活才能創造人生。',
+    category: 'Life',
+    image: '/images/W1130901-3.webp',
+    prompt: '<a href=\"...\">連結</a>',
+    date: '113.09.01',
+  },
+  {
+    id: 2,
+    title: '讀書不是為了雄辯和駁斥，也不是為了輕信和盲從，而是為了思考和權衡。',
+    category: 'Life',
+    image: '/images/W1130911.webp',
+    prompt: '<a href=\"...\">連結</a>',
+    date: '113.09.11',
+  },"></textarea>
+    <p class="input-hint">
+      支援貼入原始陣列內容（不含 <code>const lifeData = [...]</code> 外框）或整個陣列。<br>
+      category 欄位的原始值會被自動覆蓋為新分類。
+    </p>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="classify()">▶ 開始分類</button>
+      <button class="btn-secondary" onclick="loadSample()">載入範例</button>
+      <button class="btn-secondary" onclick="clearAll()">清除</button>
+      <button class="btn-copy" id="copyBtn" onclick="copyOutput()" style="display:none">複製結果</button>
+    </div>
+  </div>
+
+  <!-- 統計卡片 -->
+  <div class="stats-section" id="statsSection">
+    <div class="section-title">分類統計</div>
+    <div class="stats-grid" id="statsGrid"></div>
+  </div>
+
+  <!-- 輸出區 -->
+  <div class="output-section" id="outputSection">
+    <div class="output-header">
+      <span class="output-title">分類結果</span>
+      <div class="stat-badges" id="statBadges"></div>
+    </div>
+    <div class="filter-bar" id="filterBar">
+      <span class="filter-label">篩選分類</span>
+      <select class="filter-select" id="filterSelect" onchange="applyFilter()">
+        <option value="">全部顯示</option>
+      </select>
+    </div>
+    <pre id="outputPre"></pre>
+  </div>
+
+</div>
+
+<script>
+// ===================== 分類邏輯 =====================
+const CATEGORIES = {
+  'AI與科技':   { keywords: ['AI', '人工智能', '人工智慧', '數位時代'], color: '#2a6db5' },
+  '金錢與財富': { keywords: ['賺錢', '致富', '財富', '金錢', '投資', '理財', '貧窮', '複利', '利滾', '商業模式', '尊重金錢', '時薪'], color: '#b58a2a' },
+  '學習與閱讀': { keywords: ['讀書', '閱讀', '學習', '知識', '書山', '學而', '讀歷史', '書的價值'], color: '#2a6a45' },
+  '習慣與行動': { keywords: ['習慣', '行動', '持續', '堅持', '重複', '每天', '每日', '日常', '實踐', '拖延', '不積跬步'], color: '#7a3ab5' },
+  '溝通與人際': { keywords: ['溝通', '說話', '人脈', '友誼', '交談', '傾聽', '言詞', '表達', '一句話能', '嘴是', '關心對方'], color: '#2a8a9a' },
+  '情緒與心態': { keywords: ['幸福', '快樂', '心態', '心理', '情緒', '焦慮', '壓力', '憤怒', '煩惱', '擔心', '恐懼', '喜悅', '平靜', '知足', '欲望'], color: '#b54a7a' },
+  '成功與失敗': { keywords: ['成功', '失敗', '目標', '成就', '韌性', '挫折', '卓越', '偉大', '逆境', '突破'], color: '#b55a2a' },
+  '思維與認知': { keywords: ['思維', '認知', '思考', '邏輯', '觀點', '角度', '判斷', '理性', '見識', '洞察', '思想', '本質', '偏見', '成見', '模型'], color: '#3a5ab5' },
+  '時間與效率': { keywords: ['時間', '效率', '優先順序', '壓縮浪費時間', '使用時間', '時間＝'], color: '#5a7a2a' },
+  '品格與修身': { keywords: ['品格', '謙', '正直', '善', '德', '仁', '勇', '品德', '修身', '寬恕', '感恩', '法師', '慈悲'], color: '#8a5a2a' },
+  '處世智慧':   { keywords: [], color: '#6a6a6a' }, // 預設
+};
+
+function classifyTitle(title) {
+  if (!title || typeof title !== 'string') return '處世智慧';
+  for (const [cat, info] of Object.entries(CATEGORIES)) {
+    if (cat === '處世智慧') continue;
+    if (info.keywords.some(k => title.includes(k))) return cat;
+  }
+  return '處世智慧';
+}
+
+// ===================== 解析 JS 物件文字 =====================
+function parseEntries(raw) {
+  // 包容性解析：找到所有 {...} 區塊
+  const entries = [];
+  let depth = 0, start = -1;
+  for (let i = 0; i < raw.length; i++) {
+    if (raw[i] === '{') {
+      if (depth === 0) start = i;
+      depth++;
+    } else if (raw[i] === '}') {
+      depth--;
+      if (depth === 0 && start !== -1) {
+        entries.push(raw.substring(start, i + 1));
+        start = -1;
+      }
+    }
+  }
+  return entries;
+}
+
+function extractField(obj, field) {
+  // 逐字掃描方式，找到 field: 後的字串值，支援多行、含特殊字符
+  const key = field + ':';
+  const idx = obj.indexOf(key);
+  if (idx === -1) {
+    // 也嘗試 field 後接空白的格式
+    const re = new RegExp(field + '\\s*:');
+    const m = obj.match(re);
+    if (!m) return null;
+    return extractFieldAt(obj, m.index + m[0].length);
+  }
+  return extractFieldAt(obj, idx + key.length);
+}
+
+function extractFieldAt(obj, startIdx) {
+  // 跳過空白
+  let i = startIdx;
+  while (i < obj.length && (obj[i] === ' ' || obj[i] === '\t' || obj[i] === '\n' || obj[i] === '\r')) i++;
+  if (i >= obj.length) return null;
+
+  const quote = obj[i];
+  if (quote === "'" || quote === '"') {
+    // 逐字掃描直到找到未跳脫的同類引號
+    i++;
+    let val = '';
+    while (i < obj.length) {
+      const c = obj[i];
+      if (c === '\\') {
+        // 跳脫字符
+        i++;
+        const esc = obj[i] || '';
+        val += (esc === 'n' ? '\n' : esc === 't' ? '\t' : esc);
+        i++;
+        continue;
+      }
+      if (c === quote) break;
+      val += c;
+      i++;
+    }
+    return { val, quote };
+  }
+  // 數字
+  const numMatch = obj.slice(i).match(/^(\d+)/);
+  if (numMatch) return { val: numMatch[1], quote: '' };
+  return null;
+}
+
+// ===================== 主流程 =====================
+let lastEntries = [];
+let lastRawBlocks = [];
+
+function classify() {
+  const raw = document.getElementById('inputArea').value.trim();
+  const errEl = document.getElementById('errorMsg');
+  errEl.classList.remove('show');
+
+  if (!raw) {
+    errEl.textContent = '請先貼入金句資料。';
+    errEl.classList.add('show');
+    return;
+  }
+
+  const blocks = parseEntries(raw);
+  if (!blocks.length) {
+    errEl.textContent = '找不到有效的 JS 物件，請確認格式正確（需包含 { } 大括號）。';
+    errEl.classList.add('show');
+    return;
+  }
+
+  lastEntries = [];
+  lastRawBlocks = blocks;
+
+  const stats = {};
+  for (const cat of Object.keys(CATEGORIES)) stats[cat] = 0;
+
+  for (const block of blocks) {
+    const titleInfo = extractField(block, 'title');
+    const title = titleInfo ? titleInfo.val : '';
+    const newCat = classifyTitle(title);
+    stats[newCat] = (stats[newCat] || 0) + 1;
+    lastEntries.push({ block, newCat, title });
+  }
+
+  renderStats(stats, blocks.length);
+  renderOutput(lastEntries, null);
+  updateFilterSelect(stats);
+  document.getElementById('filterBar').classList.add('visible');
+  document.getElementById('copyBtn').style.display = 'inline-block';
+}
+
+function renderStats(stats, total) {
+  const grid = document.getElementById('statsGrid');
+  const badges = document.getElementById('statBadges');
+  grid.innerHTML = '';
+  badges.innerHTML = `<span class="stat-badge">共 <strong>${total}</strong> 筆</span>`;
+
+  for (const [cat, count] of Object.entries(stats)) {
+    if (!count) continue;
+    const pct = Math.round(count / total * 100);
+    badges.innerHTML += `<span class="stat-badge"><strong>${cat}</strong> ${count}</span>`;
+    const card = document.createElement('div');
+    card.className = 'stat-card';
+    card.dataset.cat = cat;
+    card.innerHTML = `<span class="stat-name">${cat}</span><span class="stat-count">${count}</span>`;
+    card.onclick = () => toggleCatFilter(cat, card);
+    grid.appendChild(card);
+  }
+  document.getElementById('statsSection').classList.add('visible');
+}
+
+let activeFilter = null;
+
+function toggleCatFilter(cat, card) {
+  if (activeFilter === cat) {
+    activeFilter = null;
+    document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active-filter'));
+    document.getElementById('filterSelect').value = '';
+    renderOutput(lastEntries, null);
+  } else {
+    activeFilter = cat;
+    document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active-filter'));
+    card.classList.add('active-filter');
+    document.getElementById('filterSelect').value = cat;
+    renderOutput(lastEntries, cat);
+  }
+}
+
+function applyFilter() {
+  const val = document.getElementById('filterSelect').value;
+  activeFilter = val || null;
+  document.querySelectorAll('.stat-card').forEach(c => {
+    c.classList.toggle('active-filter', c.dataset.cat === val && val);
+  });
+  renderOutput(lastEntries, activeFilter);
+}
+
+function updateFilterSelect(stats) {
+  const sel = document.getElementById('filterSelect');
+  sel.innerHTML = '<option value="">全部顯示</option>';
+  for (const [cat, count] of Object.entries(stats)) {
+    if (!count) continue;
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = `${cat} (${count})`;
+    sel.appendChild(opt);
+  }
+}
+
+function renderOutput(entries, filter) {
+  const filtered = filter ? entries.filter(e => e.newCat === filter) : entries;
+  if (!filtered.length) {
+    document.getElementById('outputPre').innerHTML = '<span style="color:#aaa">此分類沒有資料</span>';
+    document.getElementById('outputSection').classList.add('visible');
+    return;
+  }
+
+  const lines = filtered.map(({ block, newCat }) => {
+    // 重建 block，替換 category 欄位
+    let newBlock = block;
+    // 嘗試替換現有 category 值
+    const catRe = /category\s*:\s*'[^']*'/;
+    const catRe2 = /category\s*:\s*"[^"]*"/;
+    const replacement = `category: '${newCat}'`;
+    if (catRe.test(newBlock)) {
+      newBlock = newBlock.replace(catRe, replacement);
+    } else if (catRe2.test(newBlock)) {
+      newBlock = newBlock.replace(catRe2, replacement);
+    } else {
+      // 找不到 category 欄位，插在 title 後面或第一個欄位後
+      newBlock = newBlock.replace(/(title\s*:[^\n]+\n)/, `$1    ${replacement},\n`);
+    }
+    return highlight(newBlock) + ',';
+  });
+
+  document.getElementById('outputPre').innerHTML = lines.join('\n');
+  document.getElementById('outputSection').classList.add('visible');
+}
+
+function highlight(code) {
+  return code
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/(\w+)(\s*:)/g, '<span class="s-key">$1</span>$2')
+    .replace(/(category<\/span>\s*:\s*)'([^']*)'/g, (m, pre, val) =>
+      `${pre.replace('s-key', 's-key')}'<span class="s-cat">${val}</span>'`)
+    .replace(/:\s*(\d+)([,\n}])/g, ': <span class="s-num">$1</span>$2')
+    .replace(/[{}]/g, m => `<span class="s-punct">${m}</span>`);
+}
+
+function copyOutput() {
+  // 複製純文字版本（無高亮）
+  const filtered = activeFilter ? lastEntries.filter(e => e.newCat === activeFilter) : lastEntries;
+  const lines = filtered.map(({ block, newCat }) => {
+    let newBlock = block;
+    const catRe = /category\s*:\s*'[^']*'/;
+    const catRe2 = /category\s*:\s*"[^"]*"/;
+    const replacement = `category: '${newCat}'`;
+    if (catRe.test(newBlock)) newBlock = newBlock.replace(catRe, replacement);
+    else if (catRe2.test(newBlock)) newBlock = newBlock.replace(catRe2, replacement);
+    else newBlock = newBlock.replace(/(title\s*:[^\n]+\n)/, `$1    ${replacement},\n`);
+    return newBlock + ',';
+  });
+
+  navigator.clipboard.writeText(lines.join('\n')).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ 已複製！';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '複製結果'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function clearAll() {
+  document.getElementById('inputArea').value = '';
+  document.getElementById('outputSection').classList.remove('visible');
+  document.getElementById('statsSection').classList.remove('visible');
+  document.getElementById('filterBar').classList.remove('visible');
+  document.getElementById('copyBtn').style.display = 'none';
+  document.getElementById('errorMsg').classList.remove('show');
+  document.getElementById('outputPre').innerHTML = '';
+  document.getElementById('statsGrid').innerHTML = '';
+  document.getElementById('statBadges').innerHTML = '';
+  activeFilter = null;
+  lastEntries = [];
+}
+
+function loadSample() {
+  document.getElementById('inputArea').value = `  {
+    id: 1,
+    title: '行動會促進更多行動，決策帶來另一個決策，生活才能創造人生。',
+    category: 'Life',
+    image: '/N01-Note/G01-Words-of-wisdom-1130830/images/A01-11309/W1130901-3.webp',
+    prompt: '<a class="yf33" href="/N01-Note/G01-Words-of-wisdom-1130830/G01-Words-of-wisdom-1130901.html">連結</a>',
+    date: '113.09.01',
+  },
+  {
+    id: 13,
+    title: '讀書不是為了雄辯和駁斥，也不是為了輕信和盲從，而是為了思考和權衡。',
+    category: 'Life',
+    image: '/N01-Note/G01-Words-of-wisdom-1130830/images/A01-11309/W1130911.webp',
+    prompt: '<a class="yf33" href="/N01-Note/G01-Words-of-wisdom-1130830/G01-Words-of-wisdom-1130901.html">連結</a>',
+    date: '113.09.11',
+  },
+  {
+    id: 27,
+    title: '我這輩子遇到的聰明人（來自各行各業）沒有不每天閱讀的，沒有，一個都沒有。',
+    category: 'Life',
+    image: '/N01-Note/G01-Words-of-wisdom-1130830/images/A01-11309/W1130925.webp',
+    prompt: '<a class="yf33" href="/N01-Note/G01-Words-of-wisdom-1130830/G01-Words-of-wisdom-1130901.html">連結</a>',
+    date: '113.09.25',
+  },
+  {
+    id: 28,
+    title: '不要把 AI 當成一個商業模式，應該要把 AI 當成是一種加值的技術。',
+    category: 'Life',
+    image: '/N01-Note/G01-Words-of-wisdom-1130830/images/A01-11309/W1130926.webp',
+    prompt: '<a class="yf33" href="/N01-Note/G01-Words-of-wisdom-1130830/G01-Words-of-wisdom-1130901.html">連結</a>',
+    date: '113.09.26',
+  },
+  {
+    id: 53,
+    title: '生命的品質往往取決於習慣的品質',
+    category: 'Life',
+    image: '/N01-Note/G01-Words-of-wisdom-1130830/images/A01-11309/W1131021.webp',
+    prompt: '<a class="yf33" href="/N01-Note/G01-Words-of-wisdom-1130830/G02-Words-of-wisdom-1131001.html">連結</a>',
+    date: '113.10.21',
+  },
+  {
+    id: 70,
+    title: '賺錢，是為了要過自己心目中理想的生活，達成人生的夢想',
+    category: 'Life',
+    image: '/N01-Note/G01-Words-of-wisdom-1130830/images/A01-11309/W1131107.webp',
+    prompt: '<a class="yf33" href="/N01-Note/G01-Words-of-wisdom-1130830/G03-Words-of-wisdom-1131101.html">連結</a>',
+    date: '113.11.07',
+  },`;
+}
+
+// ===================== 初始化標籤列 =====================
+(function initTags() {
+  const legend = document.getElementById('tagLegend');
+  for (const [cat, info] of Object.entries(CATEGORIES)) {
+    const span = document.createElement('span');
+    span.className = 'tag-item';
+    span.textContent = cat;
+    span.style.setProperty('--cat-color', info.color);
+    legend.appendChild(span);
+  }
+})();
+</script>
+</body>
+</html>

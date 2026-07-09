@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title>30天AI語言學習計畫｜退休者專用</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+  <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+  </script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.7.2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+  <link rel="stylesheet" href="/css/F02-2-note.css">
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js">
+  </script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+  </script>
+  <!-- 大陸網站iconfont圖標  -->
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="css/iconfont.js">
+  </script>
+  <!-- 引入 Lottie Web 函式庫 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+  </script>
+
+
+  <!-- (ok)  google font link  -->
+  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link
+    href="[https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap)"
+    rel="stylesheet">
+
+  <style>
+    /* ----- 全局字體調大 (沿用之前設定) ----- */
+    body,
+    .yf-font1,
+    p,
+    li,
+    td,
+    th,
+    .card,
+    .badge-tag,
+    .table,
+    .small,
+    .text-muted {
+      font-size: 1.1rem;
+    }
+
+    h1 {
+      font-size: 2.2rem !important;
+    }
+    h4 {
+      font-size: 1.6rem !important;
+    }
+    h5 {
+      font-size: 1.3rem !important;
+    }
+    h6 {
+      font-size: 1.15rem !important;
+    }
+    .display-6 {
+      font-size: 2rem !important;
+    }
+    .card .p-4,
+    .card .p-3 {
+      font-size: 1.05rem;
+    }
+    .table td,
+    .table th {
+      font-size: 1.05rem;
+      padding: 0.9rem 0.8rem;
+    }
+    .badge-tag {
+      font-size: 0.95rem !important;
+      padding: 8px 18px;
+    }
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+    .mindset-box p {
+      font-size: 1.15rem;
+    }
+    .mindset-box h5 {
+      font-size: 1.4rem;
+    }
+    .container-fluid {
+      font-size: 1.1rem;
+    }
+
+    /* ----- 原有用戶樣式保留 ----- */
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yf1 {
+      color: green;
+      font-weight: bold;
+    }
+    .yf11 {
+      color: green;
+    }
+    .yf2 {
+      color: purple;
+      font-weight: bold;
+    }
+    .yf22 {
+      color: purple;
+    }
+    .yf3 {
+      color: #0D6EFD;
+      font-weight: bold;
+    }
+    .yf33 {
+      color: #0D6EFD;
+    }
+    .yf4 {
+      color: red;
+      font-weight: bold;
+    }
+    .yf44 {
+      color: red;
+    }
+    .yf5 {
+      color: rgb(143, 13, 13);
+      font-weight: bold;
+    }
+    .yf55 {
+      color: rgb(143, 13, 13);
+    }
+    .yf-c {
+      text-align: center
+    }
+
+    /* 卡片自訂 */
+    .card-shadow {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s;
+      border: none;
+      border-radius: 16px;
+    }
+    .card-shadow:hover {
+      transform: translateY(-4px);
+    }
+
+    .section-title {
+      border-left: 6px solid #0D6EFD;
+      padding-left: 16px;
+      font-weight: 700;
+      color: #1a2a3a;
+    }
+    .section-title-jp {
+      border-left: 6px solid #dc3545;
+      padding-left: 16px;
+      font-weight: 700;
+      color: #1a2a3a;
+    }
+
+    .badge-tag {
+      background: #eef2f7;
+      color: #1a2a3a;
+      font-weight: 500;
+      border-radius: 30px;
+    }
+
+    .tool-icon {
+      font-size: 2rem;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f6ff;
+      border-radius: 14px;
+      color: #0D6EFD;
+    }
+
+    .step-number {
+      background: #0D6EFD;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-number-jp {
+      background: #dc3545;
+    }
+
+    .mindset-box {
+      background: linear-gradient(145deg, #f8faff, #eef4fb);
+      border-radius: 20px;
+      padding: 28px 32px;
+      border: 1px solid rgba(13, 110, 253, 0.12);
+    }
+
+    /* 週標題 */
+    .week-tag {
+      display: inline-block;
+      background: #0D6EFD;
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .week-tag-jp {
+      background: #dc3545;
+    }
+
+    .day-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .day-list li {
+      padding: 6px 0;
+      border-bottom: 1px dashed #e9ecef;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .day-list li:last-child {
+      border-bottom: none;
+    }
+    .day-num {
+      font-weight: 700;
+      color: #0D6EFD;
+      min-width: 50px;
+    }
+    .day-num-jp {
+      color: #dc3545;
+    }
+  </style>
+  <!-- 選單滾輪 -->
+  <style>
+    .dropdown-menu {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+  </style>
+
+
+</head>
+
+<body id="n0" class="bg-light" onload="updateCounter()">
+  <!-- 這邊是 導覽列，利用 jQuery 套用，BX01-nav.html load 就好! -->
+  <div id="nav1"></div>
+
+  <!-- *************************************************************************** -->
+  <header class="text-center py-4" style="margin-top: 75px; background: linear-gradient(135deg, #f8faff 0%, #e8f0fe 100%);">
+    <div class="container">
+      <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-2" style="font-size:1.1rem;">
+        <i class="fas fa-calendar-alt me-1"></i> 30天計畫
+      </span>
+      <h1 class="display-6 fw-bold text-dark mt-2" style="letter-spacing: 1px;">
+        退休者專用：<span class="text-primary">英文＋日文</span> AI 學習 30 天計畫
+      </h1>
+      <p class="text-muted mt-2" style="font-size: 1.25rem;">
+        <i class="fas fa-robot me-2 text-primary"></i>每天 20～30 分鐘，30 天後產出可見成果
+      </p>
+    </div>
+  </header>
+  <!-- ############################################################################ -->
+  <!-- 主畫面整個 -->
+  <div class="container-fluid yf-font1 py-4" style="background-color:#f9fbfd;">
+    <div class="container">
+
+      <!-- ======== 目標設定 ======== -->
+      <div class="mindset-box mb-5">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <i class="fas fa-bullseye" style="font-size: 4.5rem; color: #0D6EFD; opacity: 0.7;"></i>
+          </div>
+          <div class="col-md-10">
+            <h5 class="fw-bold" style="color: #0a1a2b; font-size:1.4rem;">🎯 目標設定</h5>
+            <p style="font-size: 1.2rem; color: #2c3e50;">
+              30 天後，你不用期待變成很強的英文或日文使用者，而是要達到 <strong class="text-primary">三個可見成果</strong>：
+            </p>
+            <ul class="list-unstyled d-flex flex-wrap gap-3 mt-2">
+              <li><span class="badge-tag"><i class="fas fa-check-circle text-success me-1"></i>能用英文描述日常生活</span></li>
+              <li><span class="badge-tag"><i class="fas fa-check-circle text-danger me-1"></i>能用日文完成日本旅行基本情境</span></li>
+              <li><span class="badge-tag"><i class="fas fa-check-circle text-primary me-1"></i>能把學到的內容整理成自己的網頁學習檔案</span></li>
+            </ul>
+            <p class="mt-3 mb-0" style="font-size:1.15rem;">
+              <i class="fas fa-clock text-primary me-1"></i> 建議每天只花 <strong>20 到 30 分鐘</strong>，分成「英文 10 分鐘、日文 10 分鐘、整理 5 到 10 分鐘」。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== 每日固定流程 ======== -->
+      <div class="mb-5">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <i class="fas fa-rotate" style="font-size: 2.5rem; color: #0D6EFD;"></i>
+          <h4 class="section-title fw-bold mb-0" style="font-size:1.7rem;">📋 每日固定流程</h4>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-shadow p-3 h-100 text-center">
+              <span class="step-number mx-auto mb-2">1</span>
+              <h6 class="fw-bold">聽 / 看 1 段短內容</h6>
+              <p class="text-muted" style="font-size:1rem;">選一個主題，先聽或看一遍。</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-shadow p-3 h-100 text-center">
+              <span class="step-number mx-auto mb-2" style="background:#6c757d;">2</span>
+              <h6 class="fw-bold">跟讀或對話 5 分鐘</h6>
+              <p class="text-muted" style="font-size:1rem;">用 AI 進行跟讀或模擬對話。</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-shadow p-3 h-100 text-center">
+              <span class="step-number mx-auto mb-2" style="background:#28a745;">3</span>
+              <h6 class="fw-bold">AI 改錯並解釋</h6>
+              <p class="text-muted" style="font-size:1rem;">請 AI 修正錯誤並說明原因。</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-shadow p-3 h-100 text-center">
+              <span class="step-number mx-auto mb-2" style="background:#fd7e14;">4</span>
+              <h6 class="fw-bold">存 3 句到網頁</h6>
+              <p class="text-muted" style="font-size:1rem;">把今天最重要的 3 個句子記錄下來。</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card card-shadow p-3 h-100 text-center">
+              <span class="step-number mx-auto mb-2" style="background:#dc3545;">5</span>
+              <h6 class="fw-bold">睡前快速複習</h6>
+              <p class="text-muted" style="font-size:1rem;">花 2 分鐘回顧今天所學。</p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3 text-muted" style="font-size:1.05rem;"><i class="fas fa-lightbulb text-warning me-1"></i> 重點不是看很多，而是每天都有一點輸出。</p>
+      </div>
+
+      <!-- ======== 30 天安排 ======== -->
+      <div class="mb-5">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <i class="fas fa-list-ol" style="font-size: 2.5rem; color: #0D6EFD;"></i>
+          <h4 class="section-title fw-bold mb-0" style="font-size:1.7rem;">📅 30 天安排</h4>
+        </div>
+
+        <!-- 第1週 -->
+        <div class="card card-shadow p-4 mb-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="week-tag"><i class="fas fa-check-circle me-1"></i> 第 1 週：建立習慣</span>
+          </div>
+          <ul class="day-list row g-0">
+            <li class="col-md-6"><span class="day-num">Day 1</span>設定學習頁面（英文區、日文區、錯誤本）</li>
+            <li class="col-md-6"><span class="day-num">Day 2</span>英文自我介紹 5 句</li>
+            <li class="col-md-6"><span class="day-num">Day 3</span>日文自我介紹 5 句</li>
+            <li class="col-md-6"><span class="day-num">Day 4</span>英文數字、時間、日期</li>
+            <li class="col-md-6"><span class="day-num">Day 5</span>日文五十音與常見問候</li>
+            <li class="col-md-6"><span class="day-num">Day 6</span>英文旅遊句 5 句</li>
+            <li class="col-md-6"><span class="day-num">Day 7</span>日文旅遊句 5 句 ＋ 週回顧</li>
+          </ul>
+          <p class="text-muted mt-2" style="font-size:1rem;"><i class="fas fa-arrow-right me-1"></i> 本週重點：建立「每天都碰語言」的節奏，讓 AI 變成陪練。</p>
+        </div>
+
+        <!-- 第2週 -->
+        <div class="card card-shadow p-4 mb-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="week-tag" style="background:#28a745;"><i class="fas fa-comment-dots me-1"></i> 第 2 週：情境輸出</span>
+          </div>
+          <ul class="day-list row g-0">
+            <li class="col-md-6"><span class="day-num">Day 8</span>英文在餐廳點餐</li>
+            <li class="col-md-6"><span class="day-num">Day 9</span>日文在餐廳點餐</li>
+            <li class="col-md-6"><span class="day-num">Day 10</span>英文問路與交通</li>
+            <li class="col-md-6"><span class="day-num">Day 11</span>日文問路與交通</li>
+            <li class="col-md-6"><span class="day-num">Day 12</span>英文購物與價格</li>
+            <li class="col-md-6"><span class="day-num">Day 13</span>日文購物與價格</li>
+            <li class="col-md-6"><span class="day-num">Day 14</span>整理第 2 週錯誤本與複習測驗</li>
+          </ul>
+          <p class="text-muted mt-2" style="font-size:1rem;"><i class="fas fa-arrow-right me-1"></i> 讓 AI 模擬真實情境，口說和即時回應是進步關鍵。</p>
+        </div>
+
+        <!-- 第3週 -->
+        <div class="card card-shadow p-4 mb-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="week-tag" style="background:#fd7e14;"><i class="fas fa-comments me-1"></i> 第 3 週：對話延長</span>
+          </div>
+          <ul class="day-list row g-0">
+            <li class="col-md-6"><span class="day-num">Day 15</span>英文與 AI 對話 5 回合</li>
+            <li class="col-md-6"><span class="day-num">Day 16</span>日文與 AI 對話 5 回合</li>
+            <li class="col-md-6"><span class="day-num">Day 17</span>英文描述自己的退休生活</li>
+            <li class="col-md-6"><span class="day-num">Day 18</span>日文描述旅行計畫</li>
+            <li class="col-md-6"><span class="day-num">Day 19</span>英文聽力練習 1 段短影片</li>
+            <li class="col-md-6"><span class="day-num">Day 20</span>日文聽力練習 1 段短影片</li>
+            <li class="col-md-6"><span class="day-num">Day 21</span>做一頁「本週最常錯的 10 句」</li>
+          </ul>
+          <p class="text-muted mt-2" style="font-size:1rem;"><i class="fas fa-arrow-right me-1"></i> 把短句變成連續表達，開始看見自己的錯誤模式。</p>
+        </div>
+
+        <!-- 第4週 -->
+        <div class="card card-shadow p-4 mb-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <span class="week-tag" style="background:#dc3545;"><i class="fas fa-file-alt me-1"></i> 第 4 週：整合成作品</span>
+          </div>
+          <ul class="day-list row g-0">
+            <li class="col-md-6"><span class="day-num">Day 22</span>英文完成一段 80 字小短文</li>
+            <li class="col-md-6"><span class="day-num">Day 23</span>日文完成一段 80 字小短文</li>
+            <li class="col-md-6"><span class="day-num">Day 24</span>英文旅遊問答模擬</li>
+            <li class="col-md-6"><span class="day-num">Day 25</span>日文旅遊問答模擬</li>
+            <li class="col-md-6"><span class="day-num">Day 26</span>整理英文學習頁</li>
+            <li class="col-md-6"><span class="day-num">Day 27</span>整理日文學習頁</li>
+            <li class="col-md-6"><span class="day-num">Day 28</span>用 AI 幫你修正文稿</li>
+            <li class="col-md-6"><span class="day-num">Day 29</span>做一次總複習</li>
+            <li class="col-md-6"><span class="day-num">Day 30</span>完成一頁「我的英文＋日文 30 天成果」</li>
+          </ul>
+          <p class="text-muted mt-2" style="font-size:1rem;"><i class="fas fa-arrow-right me-1"></i> 讓成果可見，有成果才會有持續感與成就感。</p>
+        </div>
+      </div>
+
+      <!-- ======== 工具配置 ======== -->
+      <div class="mb-5">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <i class="fas fa-toolbox" style="font-size: 2.5rem; color: #0D6EFD;"></i>
+          <h4 class="section-title fw-bold mb-0" style="font-size:1.7rem;">🔧 工具配置</h4>
+        </div>
+        <div class="card card-shadow p-4">
+          <p style="font-size:1.15rem;" class="mb-3">最適合你的組合是「<strong>一個聊天家教、一個口說工具、一個翻譯工具、一個紀錄頁</strong>」。</p>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 h-100 text-center">
+                <i class="fas fa-robot text-primary fs-1 mb-2"></i>
+                <h6 class="fw-bold">ChatGPT / Gemini</h6>
+                <small class="text-muted">家教、改錯、出題</small>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 h-100 text-center">
+                <i class="fas fa-microphone text-success fs-1 mb-2"></i>
+                <h6 class="fw-bold">TalkMe / TalkPal</h6>
+                <small class="text-muted">英文、日文口說陪練</small>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 h-100 text-center">
+                <i class="fas fa-language text-info fs-1 mb-2"></i>
+                <h6 class="fw-bold">DeepL / Papago</h6>
+                <small class="text-muted">句子翻譯與理解</small>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 bg-light rounded-3 h-100 text-center">
+                <i class="fas fa-file-code text-warning fs-1 mb-2"></i>
+                <h6 class="fw-bold">你的網頁</h6>
+                <small class="text-muted">每日記錄與週回顧</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== 可直接使用的提示詞 ======== -->
+      <div class="mb-5">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <i class="fas fa-paste" style="font-size: 2.5rem; color: #0D6EFD;"></i>
+          <h4 class="section-title fw-bold mb-0" style="font-size:1.7rem;">📝 可直接使用的提示詞</h4>
+        </div>
+        <div class="card card-shadow p-4" style="background: #f8faff;">
+          <div class="p-3 bg-white rounded-3" style="border-left: 4px solid #0D6EFD;">
+            <p style="font-size:1.1rem; white-space: pre-wrap; word-break: break-word;">
+              <strong>請貼給 AI：</strong><br>
+              「請你當我的英文＋日文學習教練。我的目標是 30 天內建立日常英文與日本旅行日文的基本能力。
+              請依照我每天 20 到 30 分鐘的時間，幫我安排 30 天計畫，每天包含：1 個英文任務、1 個日文任務、1 個複習任務。
+              請使用繁體中文，內容要簡單、可執行、適合退休者，並附上可直接對話練習的題目與常見錯誤提醒。」
+            </p>
+          </div>
+          <p class="text-muted mt-3" style="font-size:1rem;"><i class="fas fa-arrow-right me-1"></i> 這類提示詞適合拿來持續迭代，讓 AI 為你客製化每日任務。</p>
+        </div>
+      </div>
+
+      <!-- ======== 你的最佳節奏 ======== -->
+      <div class="mindset-box mb-4" style="background: linear-gradient(145deg, #fdf6f0, #f8ede4); border-color: rgba(220, 53, 69, 0.12);">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <i class="fas fa-walking" style="font-size: 4.5rem; color: #dc3545; opacity: 0.6;"></i>
+          </div>
+          <div class="col-md-10">
+            <h5 class="fw-bold" style="color: #5a2d1a; font-size:1.4rem;">🚶 你的最佳節奏</h5>
+            <p style="font-size: 1.2rem; color: #3d2a1a;">
+              <strong class="text-primary">英文先穩</strong> → <strong class="text-danger">日文後接</strong> → <strong class="text-success">每週固定整理</strong>。
+              這樣不會太累，也能把 AI 工具變成真正幫你進步的助手，而不是讓你一直換工具卻沒有成果。
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-2">
+              <span class="badge bg-white text-dark px-4 py-2 rounded-pill shadow-sm" style="font-size:1rem;"><i class="fas fa-check-circle text-primary me-1"></i> 每天 20～30 分鐘</span>
+              <span class="badge bg-white text-dark px-4 py-2 rounded-pill shadow-sm" style="font-size:1rem;"><i class="fas fa-check-circle text-danger me-1"></i> 產出可見成果</span>
+              <span class="badge bg-white text-dark px-4 py-2 rounded-pill shadow-sm" style="font-size:1rem;"><i class="fas fa-check-circle text-success me-1"></i> 網頁記錄累積</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== 結尾 ======== -->
+      <div class="text-center pt-2 pb-4">
+        <p class="text-muted" style="font-size:1rem;"><i class="fas fa-robot me-1"></i> 2026 · 30 天計畫，讓語言真正為你所用</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <!-- 調整完成-->
+  <!--  ##################       各區塊html 載入     ###################### -->
+  <script>
+    $(function() {
+      $("#nav1").load("/B02A-2026-Book-read/F01-ex-comm/FX02-nav-2026.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+  <!-- ####################################  套用資料區域結束  ##################################################### -->
+
+</body>
+
+</html>

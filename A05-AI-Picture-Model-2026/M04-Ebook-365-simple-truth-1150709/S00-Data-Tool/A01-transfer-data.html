@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>資料格式轉換器 - 修正版</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+
+<body class="p-8">
+  <div class="max-w-6xl mx-auto">
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold text-slate-800 mb-2">D01 轉 A02 資料轉換工具 (圖片優化版)~A04的檔案更厲害</h1>
+      <p class="text-slate-600">自動精準提取 W 開頭圖片檔名，並生成無引號屬性格式</p>
+    </header>
+
+    <div class="grid grid-cols-1 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold text-slate-700">1. 輸入 D01-database.js 內容</h2>
+          <span class="text-xs text-slate-400">請貼上包含 [ ... ] 的完整資料</span>
+        </div>
+        <textarea id="inputData" class="w-full h-48 p-4 border rounded-lg font-mono text-sm mb-4"
+          placeholder="請將 database 陣列內容貼到此處..."></textarea>
+
+        <div class="flex gap-4">
+          <button id="convertBtn"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-200 shadow-md flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+              </path>
+            </svg>
+            執行轉換
+          </button>
+          <button id="copyBtn"
+            class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg transition duration-200 shadow-md flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m3 3h2a2 2 0 012 2v3m-7 0h3m-3 0a2 2 0 01-2-2v-1">
+              </path>
+            </svg>
+            複製結果
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+        <h2 class="text-xl font-semibold mb-4 text-slate-700">2. 轉換結果 (lifeData 格式)</h2>
+        <pre id="outputCode" class="code-block text-sm min-h-[300px]">轉換後的資料將顯示於此...</pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('convertBtn').addEventListener('click', () => {
+      const inputText = document.getElementById('inputData').value.trim();
+      if (!inputText) return;
+
+      try {
+        // 邏輯優化：直接尋找陣列的邊界 [ ]
+        const startIndex = inputText.indexOf('[');
+        const endIndex = inputText.lastIndexOf(']');
+
+        if (startIndex === -1 || endIndex === -1) {
+          throw new Error('找不到陣列結構。請確保輸入內容包含 [ ... ]');
+        }
+
+        // 提取中間的內容
+        let arrayPart = inputText.substring(startIndex, endIndex + 1);
+
+        // 使用 Function 構造函數解析
+        const dataArray = new Function(`return ${arrayPart}`)();
+
+        if (!Array.isArray(dataArray)) {
+          throw new Error('內容解析後不是陣列格式。');
+        }
+
+        const transformedData = dataArray.map((item, index) => {
+          // 提取標題 (a1)
+          const title = (item.words && item.words[0]) ? item.words[0].a1 : '未命名';
+
+          // 核心修正：深度搜尋 W 開頭的圖片
+          let imageUrl = '';
+
+          const findWImage = (obj) => {
+            if (!obj || typeof obj !== 'object') return null;
+
+            // 如果是對象，檢查所有 Key
+            for (let key in obj) {
+              const value = obj[key];
+
+              // 如果找到 pic1 屬性，檢查檔名
+              if (key === 'pic1' && typeof value === 'string') {
+                const fileName = value.split('/').pop(); // 取得路徑最後一段
+                if (fileName.toLowerCase().startsWith('w')) {
+                  return value;
+                }
+              }
+
+              // 如果值是陣列，遞迴遍歷陣列元素
+              if (Array.isArray(value)) {
+                for (let element of value) {
+                  const result = findWImage(element);
+                  if (result) return result;
+                }
+              }
+              // 如果值是物件，遞迴遍歷物件屬性
+              else if (typeof value === 'object' && value !== null) {
+                const result = findWImage(value);
+                if (result) return result;
+              }
+            }
+            return null;
+          };
+
+          // 從 pers 屬性開始深度搜尋
+          if (item.pers) {
+            imageUrl = findWImage(item.pers) || '';
+          }
+
+          return {
+            id: index + 1,
+            title: title,
+            category: 'Life',
+            image: imageUrl,
+            prompt: `<a class="yf33" href="${item.link || '#'}">連結</a>`,
+            date: item.date || ''
+          };
+        });
+
+        // 生成自定義格式：屬性名稱不加引號
+        const formatResult = (data) => {
+          let json = JSON.stringify(data, null, 2);
+          // 匹配 "key": 替換為 key:
+          return json.replace(/"(\w+)":/g, '$1:');
+        };
+
+        document.getElementById('outputCode').textContent = `const lifeData = ${formatResult(transformedData)};`;
+
+      } catch (err) {
+        console.error('解析出錯:', err);
+        document.getElementById('outputCode').textContent =
+          '【解析失敗】\n' + err.message +
+          '\n\n提示：請確認輸入內容是否包含完整的 [ ... ] 結構，且格式符合 JavaScript 物件標準。';
+      }
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const content = document.getElementById('outputCode').textContent;
+      if (content && content.includes('const lifeData')) {
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = content;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+
+        const btn = document.getElementById('copyBtn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✅ 已複製！';
+        setTimeout(() => btn.innerHTML = originalText, 2000);
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金句資料自動排序工具</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #f1f5f9;
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+
+<body class="p-6">
+  <div class="max-w-5xl mx-auto">
+    <header class="mb-6 flex justify-between items-end">
+      <div>
+        <h1 class="text-2xl font-bold text-slate-800">金句資料排序處理器 (穩定修正版)</h1>
+        <p class="text-slate-500 text-sm">輸入原始 JS 陣列或檔案內容，自動按日期排序並重新編號</p>
+      </div>
+      <div class="text-xs text-slate-400 bg-white px-2 py-1 rounded border">處理邏輯：民國年排序 + ID 重新編號</div>
+    </header>
+
+    <div class="grid grid-cols-1 gap-4">
+      <!-- 輸入區 -->
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+        <label class="block text-sm font-bold text-slate-700 mb-2">1. 請貼上原始資料內容 (將整個 .js 檔案內容貼進來即可):</label>
+        <textarea id="inputArea"
+          class="w-full h-72 p-3 font-mono text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+          placeholder="const lifeData = [ ... ];"></textarea>
+      </div>
+
+      <!-- 操作區 -->
+      <div class="flex flex-col items-center gap-2">
+        <button onclick="processData()"
+          class="px-10 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 shadow-lg transform active:scale-95 transition">
+          執行排序與編號 →
+        </button>
+      </div>
+
+      <!-- 輸出區 -->
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+        <div class="flex justify-between items-center mb-2">
+          <label class="text-sm font-bold text-slate-700">2. 處理後的結果 (可直接複製回 .js 檔案):</label>
+          <button onclick="copyToClipboard()" id="copyBtn"
+            class="text-xs bg-blue-50 text-blue-600 hover:bg-blue-100 px-4 py-1.5 rounded-md border border-blue-200 font-medium transition">複製結果代碼</button>
+        </div>
+        <textarea id="outputArea"
+          class="w-full h-72 p-3 font-mono text-sm border border-slate-300 rounded-lg bg-slate-50 text-slate-600"
+          readonly placeholder="處理後的資料將顯示在此..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 民國年排序轉換邏輯
+    function parseTaiwanDate(dateStr) {
+      if (!dateStr) return "00000000";
+      // 處理 '113.09.01-1'
+      const parts = dateStr.split('-');
+      const mainDate = parts[0];
+      const subOrder = parts[1] ? parts[1].padStart(3, '0') : '000';
+
+      const dateNodes = mainDate.split('.');
+      if (dateNodes.length === 3) {
+        const year = (parseInt(dateNodes[0]) + 1911).toString();
+        const month = dateNodes[1].padStart(2, '0');
+        const day = dateNodes[2].padStart(2, '0');
+        return `${year}${month}${day}${subOrder}`;
+      }
+      return dateStr;
+    }
+
+    function processData() {
+      const inputArea = document.getElementById('inputArea');
+      const outputArea = document.getElementById('outputArea');
+      let rawText = inputArea.value.trim();
+
+      if (!rawText) {
+        alert("請先輸入資料內容！");
+        return;
+      }
+
+      try {
+        // 優化後的抓取邏輯：找到第一個 [ 到最後一個 ] 之間的內容
+        const startIdx = rawText.indexOf('[');
+        const endIdx = rawText.lastIndexOf(']');
+
+        if (startIdx === -1 || endIdx === -1) {
+          throw new Error("無法在輸入中找到陣列格式 (缺少 [ 或 ])。");
+        }
+
+        const arrayContent = rawText.substring(startIdx, endIdx + 1);
+
+        // 使用 Function 解析陣列字串
+        const data = new Function(`return ${arrayContent}`)();
+
+        if (!Array.isArray(data)) {
+          throw new Error("解析結果不是一個有效的陣列。");
+        }
+
+        // 1. 日期排序 (由小到大)
+        data.sort((a, b) => {
+          const dateA = parseTaiwanDate(a.date);
+          const dateB = parseTaiwanDate(b.date);
+          return dateA.localeCompare(dateB);
+        });
+
+        // 2. 重新賦予 ID (依據排序後的順序重新編號 1, 2, 3...)
+        const result = data.map((item, index) => {
+          const newItem = { ...item };
+          newItem.id = index + 1;
+          return newItem;
+        });
+
+        // 3. 輸出美化後的 JS 字串
+        const finalCode = `const lifeData = ${JSON.stringify(result, null, 2)};`;
+        outputArea.value = finalCode;
+        outputArea.classList.remove('text-slate-600');
+        outputArea.classList.add('text-blue-800');
+
+      } catch (err) {
+        console.error(err);
+        alert("產出失敗！\n\n可能原因：資料格式錯誤或包含不支援的字元。\n\n錯誤訊息：" + err.message);
+      }
+    }
+
+    function copyToClipboard() {
+      const output = document.getElementById("outputArea");
+      if (!output.value) return;
+
+      output.select();
+      document.execCommand("copy");
+
+      const btn = document.getElementById("copyBtn");
+      const originalText = btn.innerText;
+      btn.innerText = "已複製！";
+      btn.classList.replace('bg-blue-50', 'bg-green-50');
+      btn.classList.replace('text-blue-600', 'text-green-600');
+
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.classList.replace('bg-green-50', 'bg-blue-50');
+        btn.classList.replace('text-green-600', 'text-blue-600');
+      }, 2000);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金句資料轉換工具</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ef;
+    --surface: #ffffff;
+    --surface2: #f0ede8;
+    --border: #ddd9d2;
+    --border2: #c8c3bb;
+    --text: #2a2620;
+    --text2: #6b6560;
+    --text3: #9e9890;
+    --accent: #8b6f47;
+    --accent-light: #f5ede0;
+    --accent-dark: #6b5235;
+    --success: #3a7d5a;
+    --success-bg: #eaf4ee;
+    --danger: #a03030;
+    --danger-bg: #faeaea;
+    --info: #2d6a9f;
+    --info-bg: #e8f2fb;
+    --mono: 'Courier New', 'Menlo', monospace;
+    --serif: 'Noto Serif TC', serif;
+    --sans: 'Noto Sans TC', sans-serif;
+    --radius: 8px;
+    --radius-lg: 14px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .logo-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    letter-spacing: 0.04em;
+  }
+  .logo-sub {
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: 0.06em;
+  }
+  .header-badge {
+    font-size: 11px;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid #e0d0bb;
+    border-radius: 20px;
+    padding: 3px 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Main Layout ── */
+  main {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 28px 24px 48px;
+  }
+
+  /* ── Config Bar ── */
+  .config-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .config-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .config-label {
+    font-size: 13px;
+    color: var(--text2);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .config-bar input[type="number"],
+  .config-bar input[type="text"] {
+    font-family: var(--sans);
+    font-size: 13px;
+    padding: 6px 10px;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    background: var(--surface2);
+    color: var(--text);
+    transition: border-color 0.15s;
+  }
+  .config-bar input[type="number"] { width: 72px; }
+  .config-bar input[type="text"]   { width: 140px; }
+  .config-bar input:focus { outline: none; border-color: var(--accent); }
+
+  .btn-convert {
+    margin-left: auto;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 28px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn-convert:hover  { background: var(--accent-dark); }
+  .btn-convert:active { transform: scale(0.97); }
+
+  /* ── Panels ── */
+  .panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 820px) {
+    .panels { grid-template-columns: 1fr; }
+    .config-bar { flex-direction: column; align-items: flex-start; }
+    .btn-convert { margin-left: 0; width: 100%; }
+  }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .panel-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .icon-src { background: #e8f0fb; color: #2d6a9f; }
+  .icon-out { background: #eaf4ee; color: #3a7d5a; }
+
+  .panel-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .panel-desc {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 1px;
+  }
+
+  .btn-action {
+    font-family: var(--sans);
+    font-size: 12px;
+    padding: 5px 14px;
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-action:hover { background: var(--surface2); border-color: var(--accent); color: var(--accent); }
+
+  .panel-body { padding: 14px 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+
+  textarea {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.65;
+    width: 100%;
+    flex: 1;
+    min-height: 300px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fafaf8;
+    color: var(--text);
+    resize: vertical;
+    transition: border-color 0.15s;
+  }
+  textarea:focus    { outline: none; border-color: var(--accent); }
+  textarea[readonly]{ background: #f7f9f7; color: var(--text); }
+
+  .hint-box {
+    font-size: 11.5px;
+    color: var(--text3);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    line-height: 1.6;
+  }
+  .hint-box strong { color: var(--text2); }
+
+  /* ── Message ── */
+  .msg {
+    font-size: 12.5px;
+    padding: 7px 12px;
+    border-radius: 6px;
+    display: none;
+    align-items: center;
+    gap: 6px;
+  }
+  .msg.show { display: flex; }
+  .msg-ok  { background: var(--success-bg); color: var(--success); border: 1px solid #b8dfc8; }
+  .msg-err { background: var(--danger-bg);  color: var(--danger);  border: 1px solid #f0bbbb; }
+  .msg-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+  /* ── Logic Map ── */
+  .logic-map {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .logic-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text2);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .logic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+  }
+  .logic-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 9px 13px;
+  }
+  .logic-key {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .logic-val {
+    font-size: 11.5px;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text3);
+    padding: 24px;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span class="logo-title">金句資料轉換工具</span>
+    <span class="logo-sub">Source → Input</span>
+  </div>
+  <span class="header-badge">Words of Wisdom</span>
+</header>
+
+<main>
+
+  <!-- Logic Map -->
+  <div class="logic-map">
+    <div class="logic-title">轉換對應規則</div>
+    <div class="logic-grid">
+      <div class="logic-item">
+        <div class="logic-key">id</div>
+        <div class="logic-val">起始值依序累加</div>
+      </div>
+      <div class="logic-item">
+        <div class="logic-key">title</div>
+        <div class="logic-val">words[0] + ~ + decs[0]</div>
+      </div>
+      <div class="logic-item">
+        <div class="logic-key">category</div>
+        <div class="logic-val">手動設定分類</div>
+      </div>
+      <div class="logic-item">
+        <div class="logic-key">image</div>
+        <div class="logic-val">pers 中 p4R[0].pic1<br>＋ link 路徑補全</div>
+      </div>
+      <div class="logic-item">
+        <div class="logic-key">prompt</div>
+        <div class="logic-val">link 組成 &lt;a class="yf33"&gt;</div>
+      </div>
+      <div class="logic-item">
+        <div class="logic-key">date</div>
+        <div class="logic-val">直接對應 date 欄位</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Config Bar -->
+  <div class="config-bar">
+    <div class="config-group">
+      <label class="config-label" for="startId">起始 id</label>
+      <input type="number" id="startId" value="1" min="1">
+    </div>
+    <div class="config-group">
+      <label class="config-label" for="category">分類</label>
+      <input type="text" id="category" value="處世智慧" placeholder="例：處世智慧">
+    </div>
+    <button class="btn-convert" onclick="doConvert()">▶ 開始轉換</button>
+  </div>
+
+  <!-- Panels -->
+  <div class="panels">
+    <!-- Source Panel -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">
+          <div class="panel-icon icon-src">◈</div>
+          <div>
+            <div class="panel-name">Source 原始資料</div>
+            <div class="panel-desc">貼上 source = [...] 或 [...] 陣列</div>
+          </div>
+        </div>
+        <button class="btn-action" onclick="clearSource()">清除</button>
+      </div>
+      <div class="panel-body">
+        <textarea id="sourceInput" placeholder="請貼上 source 陣列資料，例如：
+
+source = [
+  {
+    link: '/N01-Note/.../G17-Words-of-wisdom-1150101.html',
+    date: '115.01.01',
+    words: [{ a1: '不侷限於已經擁有的知識...' }],
+    decs:  [{ a2: '《人生十二法則》' }],
+    pers: [
+      { d1: '...' },
+      { d1: '', col: 'col-sm-12',
+        p4R: [{ pic1: './images/B01-115-all/W1150101.webp', dec1: '' }] }
+    ],
+  },
+]
+
+支援一次貼入多筆，批次轉換。"></textarea>
+        <div class="hint-box">
+          <strong>支援格式：</strong>
+          <code>source = [...]</code> 或直接 <code>[...]</code>，
+          可一次貼入多筆資料批次轉換。
+        </div>
+      </div>
+    </div>
+
+    <!-- Output Panel -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">
+          <div class="panel-icon icon-out">◉</div>
+          <div>
+            <div class="panel-name">Input 轉換結果</div>
+            <div class="panel-desc">可直接複製使用</div>
+          </div>
+        </div>
+        <button class="btn-action" onclick="copyOutput()">複製全部</button>
+      </div>
+      <div class="panel-body">
+        <textarea id="outputArea" readonly placeholder="轉換結果將顯示在此..."></textarea>
+        <div id="msg" class="msg">
+          <span class="msg-dot"></span>
+          <span id="msgText"></span>
+        </div>
+        <div class="hint-box">
+          <strong>使用提示：</strong>
+          確認 id 起始值與分類後，按「開始轉換」即可。
+          image 路徑會自動根據 link 目錄補全。
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  金句資料轉換工具 &nbsp;|&nbsp; yfchen 退休學習專案 &nbsp;|&nbsp; 2026
+</footer>
+
+<script>
+function extractArr(raw) {
+  raw = raw.trim();
+  // 移除 source = 或 input = 前綴
+  const m = raw.match(/(?:source|input)\s*=\s*(\[[\s\S]*\])/);
+  if (m) raw = m[1];
+  try {
+    return Function('"use strict"; return (' + raw + ')')();
+  } catch(e) {
+    return null;
+  }
+}
+
+function getPic(pers) {
+  if (!pers || !Array.isArray(pers)) return '';
+  for (const p of pers) {
+    if (p.p4R && Array.isArray(p.p4R) && p.p4R.length > 0) {
+      return p.p4R[0].pic1 || '';
+    }
+  }
+  return '';
+}
+
+function buildImage(link, picPath) {
+  if (!picPath) return '';
+  // 若圖片路徑以 ./ 開頭，用 link 的目錄補全
+  if (picPath.startsWith('./')) {
+    const dir = link.substring(0, link.lastIndexOf('/') + 1);
+    return dir + picPath.replace('./', '');
+  }
+  return picPath;
+}
+
+function getFirst(arr) {
+  if (!arr || !Array.isArray(arr) || arr.length === 0) return '';
+  const obj = arr[0];
+  const keys = Object.values(obj);
+  return keys.length > 0 ? keys[0] : '';
+}
+
+function doConvert() {
+  const raw      = document.getElementById('sourceInput').value;
+  const startId  = parseInt(document.getElementById('startId').value) || 1;
+  const category = document.getElementById('category').value.trim() || '處世智慧';
+
+  if (!raw.trim()) {
+    showMsg('請先貼上 Source 資料', 'err');
+    return;
+  }
+
+  const arr = extractArr(raw);
+  if (!arr || !Array.isArray(arr)) {
+    showMsg('資料格式錯誤，請確認是有效的 JavaScript 陣列', 'err');
+    return;
+  }
+  if (arr.length === 0) {
+    showMsg('陣列內沒有資料', 'err');
+    return;
+  }
+
+  const result = arr.map((item, i) => {
+    const words   = getFirst(item.words);
+    const decs    = getFirst(item.decs);
+    const title   = decs ? words + '~' + decs : words;
+    const picPath = getPic(item.pers);
+    const image   = buildImage(item.link || '', picPath);
+    const prompt  = item.link
+      ? '<a class="yf33" href="' + item.link + '">連結</a>'
+      : '';
+    return {
+      id:       startId + i,
+      title:    title,
+      category: category,
+      image:    image,
+      prompt:   prompt,
+      date:     item.date || '',
+    };
+  });
+
+  const output = 'input = ' + JSON.stringify(result, null, 2) + ';';
+  document.getElementById('outputArea').value = output;
+  showMsg('成功轉換 ' + result.length + ' 筆資料', 'ok');
+}
+
+function clearSource() {
+  document.getElementById('sourceInput').value = '';
+  document.getElementById('outputArea').value  = '';
+  hideMsg();
+}
+
+function copyOutput() {
+  const v = document.getElementById('outputArea').value;
+  if (!v) { showMsg('尚無轉換結果', 'err'); return; }
+  navigator.clipboard.writeText(v)
+    .then(()  => showMsg('已複製到剪貼簿', 'ok'))
+    .catch(()  => showMsg('複製失敗，請手動選取複製', 'err'));
+}
+
+function showMsg(text, type) {
+  const el = document.getElementById('msg');
+  document.getElementById('msgText').textContent = text;
+  el.className = 'msg show ' + (type === 'ok' ? 'msg-ok' : 'msg-err');
+}
+function hideMsg() {
+  document.getElementById('msg').className = 'msg';
+}
+</script>
+</body>
+</html>

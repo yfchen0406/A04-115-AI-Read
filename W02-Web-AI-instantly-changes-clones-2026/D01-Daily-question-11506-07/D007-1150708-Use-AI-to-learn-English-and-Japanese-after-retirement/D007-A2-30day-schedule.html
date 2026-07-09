@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+    <title>30天AI語言學習計畫｜每日詳細版＋表格版</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/A01-logo/A01-1.png" type="image/x-icon">
+    <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+    <!-- font-awesome 6.7.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <!-- 自己的CSS -->
+    <link rel="stylesheet" href="/css/F01-1-note.css">
+    <link rel="stylesheet" href="/css/F02-2-note.css">
+    <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+    <link rel="stylesheet" href="/css/all.css">
+
+    <!-- 大陸網站iconfont圖標  -->
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="css/iconfont.js">
+    </script>
+    <!-- 引入 Lottie Web 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+    </script>
+    <!-- 大陸網站iconfont圖標  -->
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <script src="css/iconfont.js">
+    </script>
+    <!-- 引入 Lottie Web 函式庫 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js">
+    </script>
+
+    <!-- (ok)  google font link  -->
+    <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
+    <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+    <link
+        href="[https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap)"
+        rel="stylesheet">
+
+    <style>
+        /* ----- 全局字體調大 ----- */
+        body,
+        .yf-font1,
+        p,
+        li,
+        td,
+        th,
+        .card,
+        .badge-tag,
+        .table,
+        .small,
+        .text-muted {
+            font-size: 1.1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem !important;
+        }
+        h4 {
+            font-size: 1.6rem !important;
+        }
+        h5 {
+            font-size: 1.3rem !important;
+        }
+        h6 {
+            font-size: 1.15rem !important;
+        }
+        .display-6 {
+            font-size: 2rem !important;
+        }
+        .card .p-4,
+        .card .p-3 {
+            font-size: 1.05rem;
+        }
+        .table td,
+        .table th {
+            font-size: 1.05rem;
+            padding: 0.9rem 0.8rem;
+        }
+        .badge-tag {
+            font-size: 0.95rem !important;
+            padding: 8px 18px;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+        }
+        .mindset-box p {
+            font-size: 1.15rem;
+        }
+        .mindset-box h5 {
+            font-size: 1.4rem;
+        }
+        .container-fluid {
+            font-size: 1.1rem;
+        }
+
+        /* ----- 原有用戶樣式保留 ----- */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .yf-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        .yf-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .yf1 {
+            color: green;
+            font-weight: bold;
+        }
+        .yf11 {
+            color: green;
+        }
+        .yf2 {
+            color: purple;
+            font-weight: bold;
+        }
+        .yf22 {
+            color: purple;
+        }
+        .yf3 {
+            color: #0D6EFD;
+            font-weight: bold;
+        }
+        .yf33 {
+            color: #0D6EFD;
+        }
+        .yf4 {
+            color: red;
+            font-weight: bold;
+        }
+        .yf44 {
+            color: red;
+        }
+        .yf5 {
+            color: rgb(143, 13, 13);
+            font-weight: bold;
+        }
+        .yf55 {
+            color: rgb(143, 13, 13);
+        }
+        .yf-c {
+            text-align: center
+        }
+
+        /* 卡片自訂 */
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s;
+            border: none;
+            border-radius: 16px;
+        }
+        .card-shadow:hover {
+            transform: translateY(-4px);
+        }
+
+        .section-title {
+            border-left: 6px solid #0D6EFD;
+            padding-left: 16px;
+            font-weight: 700;
+            color: #1a2a3a;
+        }
+        .section-title-jp {
+            border-left: 6px solid #dc3545;
+            padding-left: 16px;
+            font-weight: 700;
+            color: #1a2a3a;
+        }
+
+        .badge-tag {
+            background: #eef2f7;
+            color: #1a2a3a;
+            font-weight: 500;
+            border-radius: 30px;
+        }
+
+        .step-number {
+            background: #0D6EFD;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .step-number-jp {
+            background: #dc3545;
+        }
+
+        .mindset-box {
+            background: linear-gradient(145deg, #f8faff, #eef4fb);
+            border-radius: 20px;
+            padding: 28px 32px;
+            border: 1px solid rgba(13, 110, 253, 0.12);
+        }
+
+        /* 週標題 */
+        .week-tag {
+            display: inline-block;
+            background: #0D6EFD;
+            color: #fff;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .week-tag-jp {
+            background: #dc3545;
+        }
+
+        .day-detail {
+            padding: 12px 16px;
+            background: #f8faff;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border-left: 4px solid #0D6EFD;
+        }
+        .day-detail-jp {
+            border-left-color: #dc3545;
+        }
+        .day-detail strong {
+            color: #0a1a2b;
+        }
+        .day-detail .badge-day {
+            background: #0D6EFD;
+            color: #fff;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+        .day-detail-jp .badge-day {
+            background: #dc3545;
+        }
+
+        .table-plan th {
+            background: #e8f0fe;
+            font-weight: 700;
+        }
+        .table-plan td {
+            vertical-align: middle;
+        }
+    </style>
+    <!-- 選單滾輪 -->
+    <style>
+        .dropdown-menu {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+    </style>
+
+</head>
+
+<body id="n0" class="bg-light" onload="updateCounter()">
+    <!-- 這邊是 導覽列，利用 jQuery 套用，BX01-nav.html load 就好! -->
+    <div id="nav1"></div>
+
+    <!-- *************************************************************************** -->
+    <header class="text-center py-4" style="margin-top: 75px; background: linear-gradient(135deg, #f8faff 0%, #e8f0fe 100%);">
+        <div class="container">
+            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-2" style="font-size:1.1rem;">
+                <i class="fas fa-calendar-alt me-1"></i> 30天計畫
+            </span>
+            <h1 class="display-6 fw-bold text-dark mt-2" style="letter-spacing: 1px;">
+                30天 AI 語言學習計畫<br><span class="text-primary">每日詳細版</span> ＋ <span class="text-danger">表格版</span>
+            </h1>
+            <p class="text-muted mt-2" style="font-size: 1.25rem;">
+                <i class="fas fa-robot me-2 text-primary"></i>英文先穩、日文接上、每天有輸出
+            </p>
+        </div>
+    </header>
+    <!-- ############################################################################ -->
+    <!-- 主畫面整個 -->
+    <div class="container-fluid yf-font1 py-4" style="background-color:#f9fbfd;">
+        <div class="container">
+
+            <!-- ======== 簡介 ======== -->
+            <div class="mindset-box mb-5">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center mb-3 mb-md-0">
+                        <i class="fas fa-list-check" style="font-size: 4.5rem; color: #0D6EFD; opacity: 0.7;"></i>
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold" style="color: #0a1a2b; font-size:1.4rem;">📋 30天每日詳細＋表格對照</h5>
+                        <p style="font-size: 1.15rem; color: #2c3e50;">
+                            以下為完整 30 天每日任務，分為四週。每週有明確主題，每天包含 <strong class="text-primary">英文任務</strong>、<strong class="text-danger">日文任務</strong>、
+                            <strong class="text-success">AI 用法</strong>、<strong class="text-warning">網頁紀錄</strong> 與 <strong class="text-info">今日成果</strong>。
+                            表格版可直接複製到你的網頁或筆記工具中逐日填寫。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======== 每日詳細（按週分） ======== -->
+            <div class="mb-5">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <i class="fas fa-list-ul" style="font-size: 2.5rem; color: #0D6EFD;"></i>
+                    <h4 class="section-title fw-bold mb-0" style="font-size:1.7rem;">📖 每日詳細任務</h4>
+                </div>
+
+                <!-- 第1週 -->
+                <h5 class="fw-bold mt-4"><span class="week-tag"><i class="fas fa-check-circle me-1"></i> 第 1 週：建立習慣</span></h5>
+                <div class="day-detail"><span class="badge-day">Day 1</span> <strong>建立學習頁面</strong><br>
+                    <span class="text-primary">英文：</span>用 AI 產生一段 3 句自我介紹（姓名、退休身分、喜歡閱讀）。<br>
+                    <span class="text-danger">日文：</span>請 AI 列出 10 個最常見日文問候語。<br>
+                    <span class="text-success">網頁紀錄：</span>開三欄：「今日學到的句子」「不會的字」「明天要複習的內容」。<br>
+                    <span class="text-info">成果：</span>完成第一篇學習首頁。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 2</span> <strong>英文自我介紹</strong><br>
+                    <span class="text-primary">英文：</span>跟 AI 練 5 句自我介紹，請它每句都改成簡單英文。<br>
+                    <span class="text-danger">日文：</span>跟 AI 練 3 句日文問候。<br>
+                    <span class="text-success">網頁紀錄：</span>貼上 5 句英文與 3 句日文。<br>
+                    <span class="text-info">成果：</span>你能口頭說出自己的基本介紹。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 3</span> <strong>英文數字與時間</strong><br>
+                    <span class="text-primary">英文：</span>練習 1 到 100 的數字、時間說法、日期說法。<br>
+                    <span class="text-danger">日文：</span>認識日文數字 1 到 10。<br>
+                    <span class="text-success">網頁紀錄：</span>整理成一張小表格。<br>
+                    <span class="text-info">成果：</span>能讀懂基本數字與時間。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 4</span> <strong>日文五十音開始</strong><br>
+                    <span class="text-primary">英文：</span>複習昨天內容 10 分鐘。<br>
+                    <span class="text-danger">日文：</span>學平假名前 10 個。<br>
+                    <span class="text-success">網頁紀錄：</span>做一頁五十音筆記。<br>
+                    <span class="text-info">成果：</span>建立日文基礎感。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 5</span> <strong>英文生活句</strong><br>
+                    <span class="text-primary">英文：</span>學 5 句日常句型（I like..., I want..., I need...）。<br>
+                    <span class="text-danger">日文：</span>學 5 句簡單句型（です、ます 的基本感覺）。<br>
+                    <span class="text-success">網頁紀錄：</span>每句加中文意思與自己的例句。<br>
+                    <span class="text-info">成果：</span>會用固定句型表達自己。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 6</span> <strong>英文旅遊句</strong><br>
+                    <span class="text-primary">英文：</span>學機場、飯店、餐廳常用句各 2 句。<br>
+                    <span class="text-danger">日文：</span>學日本旅行最常用 5 句（例如「這個多少錢」）。<br>
+                    <span class="text-success">網頁紀錄：</span>做「旅行句庫」頁。<br>
+                    <span class="text-info">成果：</span>開始朝去日本可用的語言前進。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 7</span> <strong>週回顧</strong><br>
+                    <span class="text-primary">英文：</span>挑 10 句回想並朗讀。<br>
+                    <span class="text-danger">日文：</span>挑 10 個字或句子朗讀。<br>
+                    <span class="text-success">網頁紀錄：</span>寫下本週最常錯的 3 個地方。<br>
+                    <span class="text-info">成果：</span>完成第一週複習。
+                </div>
+
+                <!-- 第2週 -->
+                <h5 class="fw-bold mt-5"><span class="week-tag" style="background:#28a745;"><i class="fas fa-comment-dots me-1"></i> 第 2 週：情境練習</span></h5>
+                <div class="day-detail"><span class="badge-day">Day 8</span> <strong>餐廳點餐英文</strong><br>
+                    <span class="text-primary">英文：</span>和 AI 模擬點餐對話 5 回合。<br>
+                    <span class="text-danger">日文：</span>學日文點餐 5 句。<br>
+                    <span class="text-success">網頁紀錄：</span>貼上對話紀錄。<br>
+                    <span class="text-info">成果：</span>能完成基本點餐句。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 9</span> <strong>餐廳點餐日文</strong><br>
+                    <span class="text-primary">英文：</span>複習餐廳英文句。<br>
+                    <span class="text-danger">日文：</span>和 AI 模擬日文點餐 5 回合。<br>
+                    <span class="text-success">網頁紀錄：</span>記下 3 個你常卡住的字。<br>
+                    <span class="text-info">成果：</span>能說出簡單餐廳需求。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 10</span> <strong>問路與交通英文</strong><br>
+                    <span class="text-primary">英文：</span>學問路 5 句。<br>
+                    <span class="text-danger">日文：</span>學交通 5 句。<br>
+                    <span class="text-success">網頁紀錄：</span>整理成「交通小抄」。<br>
+                    <span class="text-info">成果：</span>能問方向與交通方式。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 11</span> <strong>問路與交通日文</strong><br>
+                    <span class="text-primary">英文：</span>複習問路句。<br>
+                    <span class="text-danger">日文：</span>和 AI 練問路對話。<br>
+                    <span class="text-success">網頁紀錄：</span>補充常見站名、方向詞。<br>
+                    <span class="text-info">成果：</span>能說出簡單移動需求。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 12</span> <strong>購物英文</strong><br>
+                    <span class="text-primary">英文：</span>學價格、尺寸、付款句。<br>
+                    <span class="text-danger">日文：</span>學購物句 5 句。<br>
+                    <span class="text-success">網頁紀錄：</span>做「購物會話區」。<br>
+                    <span class="text-info">成果：</span>能完成簡單購物對話。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 13</span> <strong>購物日文</strong><br>
+                    <span class="text-primary">英文：</span>複習昨天句型。<br>
+                    <span class="text-danger">日文：</span>模擬在藥妝店、便利商店購物。<br>
+                    <span class="text-success">網頁紀錄：</span>整理價錢、顏色、尺寸相關字。<br>
+                    <span class="text-info">成果：</span>能應付日本商店情境。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 14</span> <strong>第二週回顧</strong><br>
+                    <span class="text-primary">英文：</span>做 10 題口說快問快答。<br>
+                    <span class="text-danger">日文：</span>做 10 題情境快問快答。<br>
+                    <span class="text-success">網頁紀錄：</span>更新錯誤本。<br>
+                    <span class="text-info">成果：</span>開始看見自己會的內容變多。
+                </div>
+
+                <!-- 第3週 -->
+                <h5 class="fw-bold mt-5"><span class="week-tag" style="background:#fd7e14;"><i class="fas fa-comments me-1"></i> 第 3 週：對話延長</span></h5>
+                <div class="day-detail"><span class="badge-day">Day 15</span> <strong>英文五回合對話</strong><br>
+                    <span class="text-primary">英文：</span>請 AI 用慢速英文跟你對話 5 回合。<br>
+                    <span class="text-danger">日文：</span>聽 1 分鐘日文句子並跟讀。<br>
+                    <span class="text-success">網頁紀錄：</span>記下你不敢講的句子。<br>
+                    <span class="text-info">成果：</span>開始習慣連續講話。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 16</span> <strong>日文五回合對話</strong><br>
+                    <span class="text-primary">英文：</span>寫 5 句英文日記。<br>
+                    <span class="text-danger">日文：</span>和 AI 練 5 回合日文對話。<br>
+                    <span class="text-success">網頁紀錄：</span>整理錯誤句。<br>
+                    <span class="text-info">成果：</span>能延長日文輸出時間。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 17</span> <strong>英文描述生活</strong><br>
+                    <span class="text-primary">英文：</span>描述你的退休生活、閱讀習慣、散步習慣。<br>
+                    <span class="text-danger">日文：</span>學 3 句描述自己的固定生活。<br>
+                    <span class="text-success">網頁紀錄：</span>做「我的一天」頁。<br>
+                    <span class="text-info">成果：</span>把語言連到真實生活。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 18</span> <strong>日文描述旅行</strong><br>
+                    <span class="text-primary">英文：</span>複習昨天內容。<br>
+                    <span class="text-danger">日文：</span>描述你想去的日本城市與行程。<br>
+                    <span class="text-success">網頁紀錄：</span>貼上旅遊行程日文版。<br>
+                    <span class="text-info">成果：</span>能講自己的旅行計畫。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 19</span> <strong>英文聽力</strong><br>
+                    <span class="text-primary">英文：</span>選 1 段短影片或短對話，聽兩次。<br>
+                    <span class="text-danger">日文：</span>學會從影片中抓關鍵字。<br>
+                    <span class="text-success">網頁紀錄：</span>寫下聽到的 5 個字。<br>
+                    <span class="text-info">成果：</span>聽力開始有抓字能力。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 20</span> <strong>日文聽力</strong><br>
+                    <span class="text-primary">英文：</span>讀 1 段短英文文章。<br>
+                    <span class="text-danger">日文：</span>聽 1 段短日文影片。<br>
+                    <span class="text-success">網頁紀錄：</span>寫下聽懂的句子。<br>
+                    <span class="text-info">成果：</span>開始接觸真實語速。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 21</span> <strong>第三週回顧</strong><br>
+                    <span class="text-primary">英文：</span>整理 10 句最常用句。<br>
+                    <span class="text-danger">日文：</span>整理 10 句日本旅行句。<br>
+                    <span class="text-success">網頁紀錄：</span>做本週總整理頁。<br>
+                    <span class="text-info">成果：</span>完成第一輪累積。
+                </div>
+
+                <!-- 第4週 -->
+                <h5 class="fw-bold mt-5"><span class="week-tag" style="background:#dc3545;"><i class="fas fa-file-alt me-1"></i> 第 4 週：整合與輸出</span></h5>
+                <div class="day-detail"><span class="badge-day">Day 22</span> <strong>英文小短文</strong><br>
+                    <span class="text-primary">英文：</span>寫 80 字左右短文。<br>
+                    <span class="text-danger">日文：</span>寫 3 句日文自我介紹補充。<br>
+                    <span class="text-success">網頁紀錄：</span>貼上 AI 修正版。<br>
+                    <span class="text-info">成果：</span>完成第一篇英文短文。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 23</span> <strong>日文小短文</strong><br>
+                    <span class="text-primary">英文：</span>修正昨天短文。<br>
+                    <span class="text-danger">日文：</span>寫 80 字左右日文短文。<br>
+                    <span class="text-success">網頁紀錄：</span>記錄 AI 修正文法。<br>
+                    <span class="text-info">成果：</span>完成第一篇日文短文。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 24</span> <strong>英文旅遊問答</strong><br>
+                    <span class="text-primary">英文：</span>模擬機場、飯店、餐廳問答。<br>
+                    <span class="text-danger">日文：</span>補強 5 個常用旅遊句。<br>
+                    <span class="text-success">網頁紀錄：</span>把對話存成 Q&A。<br>
+                    <span class="text-info">成果：</span>語言更貼近旅行實用。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 25</span> <strong>日文旅遊問答</strong><br>
+                    <span class="text-primary">英文：</span>朗讀昨天英文句。<br>
+                    <span class="text-danger">日文：</span>模擬在車站、飯店、餐廳對話。<br>
+                    <span class="text-success">網頁紀錄：</span>更新旅行句庫。<br>
+                    <span class="text-info">成果：</span>可應付日本旅途中基本互動。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 26</span> <strong>整理英文頁</strong><br>
+                    <span class="text-primary">英文：</span>把本月英文內容分成單字、句型、對話。<br>
+                    <span class="text-danger">日文：</span>補上對應日文分類。<br>
+                    <span class="text-success">網頁紀錄：</span>整理排版。<br>
+                    <span class="text-info">成果：</span>英文學習頁完成初版。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 27</span> <strong>整理日文頁</strong><br>
+                    <span class="text-primary">英文：</span>複習 10 句。<br>
+                    <span class="text-danger">日文：</span>把日文內容整理成五十音、句型、旅遊句。<br>
+                    <span class="text-success">網頁紀錄：</span>完成日文學習頁。<br>
+                    <span class="text-info">成果：</span>日文學習頁完成初版。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 28</span> <strong>修正文稿</strong><br>
+                    <span class="text-primary">英文：</span>請 AI 幫你修正整篇英文學習筆記。<br>
+                    <span class="text-danger">日文：</span>請 AI 幫你修正日文例句。<br>
+                    <span class="text-success">網頁紀錄：</span>把正確版放回網站。<br>
+                    <span class="text-info">成果：</span>內容更整齊。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 29</span> <strong>總複習</strong><br>
+                    <span class="text-primary">英文：</span>抽 20 句快問快答。<br>
+                    <span class="text-danger">日文：</span>抽 20 句快問快答。<br>
+                    <span class="text-success">網頁紀錄：</span>寫下最有進步感的地方。<br>
+                    <span class="text-info">成果：</span>能清楚看到 30 天成果。
+                </div>
+                <div class="day-detail"><span class="badge-day">Day 30</span> <strong>成果發表頁</strong><br>
+                    <span class="text-primary">英文：</span>寫一句你最想持續下去的英文目標。<br>
+                    <span class="text-danger">日文：</span>寫一句你下一步想學的日文目標。<br>
+                    <span class="text-success">網頁紀錄：</span>完成「30 天成果頁」。<br>
+                    <span class="text-info">成果：</span>你有一個能持續擴充的語言學習首頁。
+                </div>
+            </div>
+
+            <!-- ======== 網頁表格版 ======== -->
+            <div class="mb-5">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <i class="fas fa-table" style="font-size: 2.5rem; color: #0D6EFD;"></i>
+                    <h4 class="section-title fw-bold mb-0" style="font-size:1.7rem;">📊 網頁表格版（可複製填寫）</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-plan" style="font-size:1.05rem;">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>英文任務</th>
+                                <th>日文任務</th>
+                                <th>AI 用法</th>
+                                <th>網頁紀錄</th>
+                                <th>今日成果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>自我介紹 3 句</td><td>問候語 10 句</td><td>幫我改成簡單英文/日文</td><td>建立學習首頁</td><td>完成第一頁</td></tr>
+                            <tr><td>2</td><td>自我介紹 5 句</td><td>問候語 3 句</td><td>陪我逐句練習</td><td>貼上對話</td><td>會說基本介紹</td></tr>
+                            <tr><td>3</td><td>數字、時間</td><td>日文數字 1–10</td><td>幫我出小測驗</td><td>做數字表</td><td>會讀基本數字</td></tr>
+                            <tr><td>4</td><td>複習昨天內容</td><td>五十音前 10 個</td><td>幫我記憶與發音</td><td>五十音筆記</td><td>建立基礎</td></tr>
+                            <tr><td>5</td><td>日常句型 5 句</td><td>基本句型 5 句</td><td>幫我造例句</td><td>句型區</td><td>會套用句型</td></tr>
+                            <tr><td>6</td><td>旅行句 6 句</td><td>旅行句 5 句</td><td>幫我模擬情境</td><td>旅行句庫</td><td>能說旅行句</td></tr>
+                            <tr><td>7</td><td>週回顧</td><td>週回顧</td><td>幫我做複習測驗</td><td>錯誤本</td><td>完成複習</td></tr>
+                            <tr><td>8</td><td>餐廳點餐</td><td>餐廳點餐</td><td>模擬對話</td><td>對話紀錄</td><td>會基本點餐</td></tr>
+                            <tr><td>9</td><td>餐廳複習</td><td>餐廳對話</td><td>幫我糾正文法</td><td>錯誤整理</td><td>會修正錯誤</td></tr>
+                            <tr><td>10</td><td>問路與交通</td><td>交通句</td><td>幫我列常用句</td><td>交通小抄</td><td>能問方向</td></tr>
+                            <tr><td>11</td><td>問路複習</td><td>問路對話</td><td>陪我對話 5 回合</td><td>對話本</td><td>可延長對話</td></tr>
+                            <tr><td>12</td><td>購物句</td><td>購物句</td><td>幫我做購物情境</td><td>購物區</td><td>會基本購物</td></tr>
+                            <tr><td>13</td><td>購物複習</td><td>藥妝店情境</td><td>幫我練自然說法</td><td>字彙整理</td><td>會應付商店</td></tr>
+                            <tr><td>14</td><td>週測驗</td><td>週測驗</td><td>幫我出 10 題</td><td>第二週回顧</td><td>完成第二週</td></tr>
+                            <tr><td>15</td><td>5 回合對話</td><td>聽力跟讀</td><td>幫我延長對話</td><td>錯句紀錄</td><td>開口更順</td></tr>
+                            <tr><td>16</td><td>英文日記 5 句</td><td>5 回合對話</td><td>幫我改寫句子</td><td>日記頁</td><td>能寫短句</td></tr>
+                            <tr><td>17</td><td>描述退休生活</td><td>描述日常</td><td>幫我轉成口說句</td><td>我的一天</td><td>連結生活</td></tr>
+                            <tr><td>18</td><td>複習英文</td><td>旅行計畫日文</td><td>幫我潤飾內容</td><td>旅遊頁</td><td>能講旅行</td></tr>
+                            <tr><td>19</td><td>聽力練習</td><td>關鍵字抓取</td><td>幫我出聽力題</td><td>聽到的字</td><td>聽懂片段</td></tr>
+                            <tr><td>20</td><td>短文閱讀</td><td>短片聽力</td><td>幫我整理重點</td><td>聽力筆記</td><td>開始適應</td></tr>
+                            <tr><td>21</td><td>週回顧</td><td>週回顧</td><td>幫我整理最常錯</td><td>總整理頁</td><td>完成第三週</td></tr>
+                            <tr><td>22</td><td>80 字短文</td><td>自介補充</td><td>幫我修正文法</td><td>英文短文頁</td><td>有作品</td></tr>
+                            <tr><td>23</td><td>修正短文</td><td>80 字短文</td><td>幫我逐句修正</td><td>日文短文頁</td><td>有作品</td></tr>
+                            <tr><td>24</td><td>旅遊問答</td><td>旅遊句補強</td><td>幫我模擬情境</td><td>Q&A 頁</td><td>可實戰</td></tr>
+                            <tr><td>25</td><td>朗讀句子</td><td>旅遊對話</td><td>幫我找弱點</td><td>旅行句庫</td><td>更穩定</td></tr>
+                            <tr><td>26</td><td>英文頁整理</td><td>補分類</td><td>幫我排版</td><td>英文學習頁</td><td>頁面完成</td></tr>
+                            <tr><td>27</td><td>複習句型</td><td>日文頁整理</td><td>幫我整理內容</td><td>日文學習頁</td><td>頁面完成</td></tr>
+                            <tr><td>28</td><td>修正文稿</td><td>修正例句</td><td>幫我校對</td><td>更新正式版</td><td>內容更完整</td></tr>
+                            <tr><td>29</td><td>快問快答</td><td>快問快答</td><td>幫我做總測驗</td><td>總複習頁</td><td>看見進步</td></tr>
+                            <tr><td>30</td><td>目標宣告</td><td>下一步目標</td><td>幫我寫成果頁</td><td>30 天成果頁</td><td>完成收尾</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-muted mt-2" style="font-size:1rem;"><i class="fas fa-arrow-right me-1"></i> 可直接複製此表格到你的筆記或網頁中，每日填寫。</p>
+            </div>
+
+            <!-- ======== 可直接使用的AI指令 ======== -->
+            <div class="mindset-box mb-4" style="background: linear-gradient(145deg, #fdf6f0, #f8ede4); border-color: rgba(220, 53, 69, 0.12);">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center mb-3 mb-md-0">
+                        <i class="fas fa-prompt" style="font-size: 4.5rem; color: #dc3545; opacity: 0.6;"></i>
+                    </div>
+                    <div class="col-md-10">
+                        <h5 class="fw-bold" style="color: #5a2d1a; font-size:1.4rem;">🤖 你可直接用的 AI 指令</h5>
+                        <p style="font-size: 1.15rem; color: #3d2a1a;">
+                            你可以每天都用這段指令貼給 AI：
+                        </p>
+                        <div class="p-3 bg-white rounded-3" style="border-left: 4px solid #dc3545;">
+                            <p style="font-size:1.1rem; white-space: pre-wrap; word-break: break-word;">
+                                「請當我的英文＋日文學習教練。我的程度不高，請用簡單、慢速、退休者友善的方式帶我練習。
+                                今天請給我：1 個英文任務、1 個日文任務、1 個小測驗、1 個網頁整理建議。
+                                請用繁體中文回答，並盡量使用我今天學得會的程度。」
+                            </p>
+                        </div>
+                        <p class="mt-3 mb-0" style="font-size:1.05rem;"><i class="fas fa-check-circle text-success me-1"></i> 這樣 AI 就能每天為你客製化當日任務。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======== 結尾 ======== -->
+            <div class="text-center pt-2 pb-4">
+                <p class="text-muted" style="font-size:1rem;"><i class="fas fa-robot me-1"></i> 2026 · 照表操課，30 天後看見自己的進步</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- 調整完成-->
+    <!--  ##################       各區塊html 載入     ###################### -->
+    <script>
+        $(function() {
+            $("#nav1").load("/B02A-2026-Book-read/F01-ex-comm/FX02-nav-2026.html");
+            $("#footer").load("/ex-Comm/CX01-footer.html");
+        });
+    </script>
+
+    <!-- ####################################  套用資料區域結束  ##################################################### -->
+
+</body>
+
+</html>
