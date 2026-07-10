@@ -1,10 +1,12 @@
+
 const lifeData = [
   {
     id: 1,
     title: "吞舟之魚，不游枝流（《列子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A001.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#01-04">連結</a>',
+    prompt:
+      '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#01-04">連結</a>',
     date: "115.07.09",
   },
   {
@@ -12,7 +14,7 @@ const lifeData = [
     title: "上善若水（《老子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A002.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#01-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -20,7 +22,7 @@ const lifeData = [
     title: "寧為雞口，無為牛後（《史記》）",
     category: "活用於人生-活的偉大",
     image: "./images/A003.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#01-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -28,7 +30,7 @@ const lifeData = [
     title: "知仁勇三者，天下之達德也（《中庸》）",
     category: "活用於人生-活的偉大",
     image: "./images/A004.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#01-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -36,7 +38,7 @@ const lifeData = [
     title: "君子有三樂天（《孟子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A005.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#01-31">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -44,7 +46,7 @@ const lifeData = [
     title: "人皆知有用之用，而莫知無用之用也（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A006.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#02-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -52,7 +54,7 @@ const lifeData = [
     title: "人生如白駒過隙（《十八史略》）",
     category: "活用於人生-活的偉大",
     image: "./images/A007.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#02-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -60,7 +62,7 @@ const lifeData = [
     title: "蝸角之爭（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A008.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#02-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -68,7 +70,7 @@ const lifeData = [
     title: "三十而立，四十而不惑（《論語》）",
     category: "活用於人生-活的偉大",
     image: "./images/A009.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#03-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -76,7 +78,7 @@ const lifeData = [
     title: "大道以多岐亡羊（《列子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A010.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#03-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -84,7 +86,7 @@ const lifeData = [
     title: "清能有容，仁能善斷（《菜根譚》）",
     category: "活用於人生-活的偉大",
     image: "./images/A011.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#03-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -92,7 +94,7 @@ const lifeData = [
     title: "報怨以德（《老子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A012.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#03-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -100,7 +102,7 @@ const lifeData = [
     title: "臨難毋茍免（《禮記》）",
     category: "活用於人生-活的偉大",
     image: "./images/A013.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#03-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -108,7 +110,7 @@ const lifeData = [
     title: "窮亦樂，通亦樂（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A014.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#04-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -116,7 +118,7 @@ const lifeData = [
     title: "人生百年，畫夜各分（《列子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A015.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#05-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -124,7 +126,7 @@ const lifeData = [
     title: "慮事深遠，則近於迂矣（《宋名臣言行錄》）",
     category: "活用於人生-活的偉大",
     image: "./images/A016.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#05-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -132,7 +134,7 @@ const lifeData = [
     title: "人生如朝露（《漢書》）",
     category: "活用於人生-活的偉大",
     image: "./images/A017.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#05-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -140,7 +142,7 @@ const lifeData = [
     title: "人生減省一分，便超脫一分（《菜根譚》）",
     category: "活用於人生-活的偉大",
     image: "./images/A018.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#05-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -148,7 +150,7 @@ const lifeData = [
     title: "往者不追，來者不拒（《孟子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A019.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#06-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -156,7 +158,7 @@ const lifeData = [
     title: "鷦鷯巢於深林，不過一枝（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A020.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#06-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -164,7 +166,7 @@ const lifeData = [
     title: "壽則多辱（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A021.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#06-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -172,7 +174,7 @@ const lifeData = [
     title: "四時之序，成功者去。（《史記》）",
     category: "活用於人生-活的偉大",
     image: "./images/A022.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#06-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -180,7 +182,7 @@ const lifeData = [
     title: "燕雀安知鴻鵠之志哉（《史記》）",
     category: "活用於人生-活的偉大",
     image: "./images/A023.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#07-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -188,7 +190,7 @@ const lifeData = [
     title: "己所不欲，勿施於人（《論語》）",
     category: "活用於人生-活的偉大",
     image: "./images/A024.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#07-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -196,7 +198,7 @@ const lifeData = [
     title: "笑而不答心自閒（《古文真寶》）",
     category: "活用於人生-活的偉大",
     image: "./images/A025.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#07-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -204,7 +206,7 @@ const lifeData = [
     title: "安時而處順，哀樂不能入也（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A026.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#08-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -212,7 +214,7 @@ const lifeData = [
     title: "直木先伐，甘井先竭（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A027.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#09-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -220,7 +222,7 @@ const lifeData = [
     title: "年年歲歲花相似，歲歲年年人不同（《唐詩選》）",
     category: "活用於人生-活的偉大",
     image: "./images/A028.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#09-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -228,7 +230,7 @@ const lifeData = [
     title: "曲則全（《老子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A029.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#09-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -236,7 +238,7 @@ const lifeData = [
     title: "已欲立而立人，已欲達而達人（《論語》）",
     category: "活用於人生-活的偉大",
     image: "./images/A030.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#10-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -244,7 +246,7 @@ const lifeData = [
     title: "以不貪為寶（《左傳》）",
     category: "活用於人生-活的偉大",
     image: "./images/A031.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#10-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -252,7 +254,7 @@ const lifeData = [
     title: "功遂身退，天之道也（《老子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A032.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#11-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -260,7 +262,7 @@ const lifeData = [
     title: "不義而富且貴，於我如浮雲（《論語》）",
     category: "活用於人生-活的偉大",
     image: "./images/A033.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#11-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -268,7 +270,7 @@ const lifeData = [
     title: "知者樂水，仁者樂山（《論語》）",
     category: "活用於人生-活的偉大",
     image: "./images/A034.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#11-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -276,7 +278,7 @@ const lifeData = [
     title: "呼我馬也，而謂之馬（《莊子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A035.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#11-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -284,7 +286,7 @@ const lifeData = [
     title: "眾曲不容直，眾枉不容正（《淮南子》）",
     category: "活用於人生-活的偉大",
     image: "./images/A036.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#12-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -292,7 +294,7 @@ const lifeData = [
     title: "發憤忘食，樂以忘憂（《論語》）",
     category: "活用於人生-活的偉大",
     image: "./images/A037.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#12-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -300,7 +302,7 @@ const lifeData = [
     title: "斷而敢行，鬼神避之（《史記》）",
     category: "活用於人生-活的偉大",
     image: "./images/A038.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A1-365-simple-philosophies-1130908.html#12-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -308,7 +310,7 @@ const lifeData = [
     title: "茍日新，日日新，又日新（《大學》）",
     category: "活用於人生-提升自我",
     image: "./images/A039.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#01-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -316,7 +318,7 @@ const lifeData = [
     title: "溫故知新（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A040.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#01-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -324,7 +326,7 @@ const lifeData = [
     title: "夫驥一日而千里，駑馬十駕，則亦及之矣（《荀子》）",
     category: "活用於人生-提升自我",
     image: "./images/A041.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#01-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -332,7 +334,7 @@ const lifeData = [
     title: "欹器以滿覆（《菜根譚》）",
     category: "活用於人生-提升自我",
     image: "./images/A042.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#01-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -340,7 +342,7 @@ const lifeData = [
     title: "懷與安，實敗名（《左傳》）",
     category: "活用於人生-提升自我",
     image: "./images/A043.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#01-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -348,7 +350,7 @@ const lifeData = [
     title: "飽食終日，無所用心，難矣哉!（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A044.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#01-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -356,7 +358,7 @@ const lifeData = [
     title: "小人之學也，入乎耳，出乎口（《荀子》）",
     category: "活用於人生-提升自我",
     image: "./images/A045.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#02-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -364,7 +366,7 @@ const lifeData = [
     title: "前事之不忘，後事之師（《戰國策》）",
     category: "活用於人生-提升自我",
     image: "./images/A046.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#02-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -372,7 +374,7 @@ const lifeData = [
     title: "知人者智，自知者明（《老子》）",
     category: "活用於人生-提升自我",
     image: "./images/A047.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#02-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -380,7 +382,7 @@ const lifeData = [
     title: "人須磨在事上（《傳習錄》）",
     category: "活用於人生-提升自我",
     image: "./images/A048.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#02-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -388,7 +390,7 @@ const lifeData = [
     title: "盡信書，則不如無書（《孟子》）",
     category: "活用於人生-提升自我",
     image: "./images/A049.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#03-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -396,7 +398,7 @@ const lifeData = [
     title: "殷鑑不遠，在夏后之世（《詩經》）",
     category: "活用於人生-提升自我",
     image: "./images/A050.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#03-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -404,7 +406,7 @@ const lifeData = [
     title: "貧而無怨難，富而無驕易（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A051.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#03-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -412,7 +414,7 @@ const lifeData = [
     title: "人有欲則無剛。（《近思錄》）",
     category: "活用於人生-提升自我",
     image: "./images/A052.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#03-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -420,7 +422,7 @@ const lifeData = [
     title: "前車覆，後車戒（《漢書》）",
     category: "活用於人生-提升自我",
     image: "./images/A053.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#03-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -428,7 +430,7 @@ const lifeData = [
     title: "和其光，同其塵（《老子》）",
     category: "活用於人生-提升自我",
     image: "./images/A054.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#04-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -436,7 +438,7 @@ const lifeData = [
     title: "蓬生麻中，不扶而直（《荀子》）",
     category: "活用於人生-提升自我",
     image: "./images/A055.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#04-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -444,7 +446,7 @@ const lifeData = [
     title: "他山之石，可以攻玉（《詩經》）",
     category: "活用於人生-提升自我",
     image: "./images/A056.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#04-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -452,7 +454,7 @@ const lifeData = [
     title: "三人行，必有我師焉（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A057.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#04-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -460,7 +462,7 @@ const lifeData = [
     title: "君子豹變（《易經》）",
     category: "活用於人生-提升自我",
     image: "./images/A058.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#05-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -468,7 +470,7 @@ const lifeData = [
     title: "言顧行，行顧言（《中庸》）",
     category: "活用於人生-提升自我",
     image: "./images/A059.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#05-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -476,7 +478,7 @@ const lifeData = [
     title: "養心莫善於寡欲（《孟子》）",
     category: "活用於人生-提升自我",
     image: "./images/A060.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#05-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -484,7 +486,7 @@ const lifeData = [
     title: "學而不思則罔，思而不學則殆（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A061.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#05-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -492,7 +494,7 @@ const lifeData = [
     title: "非吳下阿蒙（《三國志》）",
     category: "活用於人生-提升自我",
     image: "./images/A062.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#05-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -500,7 +502,7 @@ const lifeData = [
     title: "母意，母必，母固，母我（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A063.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#06-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -508,7 +510,7 @@ const lifeData = [
     title: "敬親者，不敢慢於人（《孝經》）",
     category: "活用於人生-提升自我",
     image: "./images/A064.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#06-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -516,7 +518,7 @@ const lifeData = [
     title: "人生大病，只是一傲字（《傳習錄》）",
     category: "活用於人生-提升自我",
     image: "./images/A065.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#06-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -524,7 +526,7 @@ const lifeData = [
     title: "辭讓之心，禮之端也（《孟子》）",
     category: "活用於人生-提升自我",
     image: "./images/A066.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#06-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -532,7 +534,7 @@ const lifeData = [
     title: "過猶不及（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A067.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#06-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -540,7 +542,7 @@ const lifeData = [
     title: "過而不改，是謂過矣（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A068.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#06-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -548,7 +550,7 @@ const lifeData = [
     title: "學然後知不足，教然後知困（《禮記》）",
     category: "活用於人生-提升自我",
     image: "./images/A069.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#07-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -556,7 +558,7 @@ const lifeData = [
     title: "劍待砥而後能利（《淮南子》）",
     category: "活用於人生-提升自我",
     image: "./images/A070.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#07-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -564,7 +566,7 @@ const lifeData = [
     title: "溫溫恭人，維德之基（《詩經》）",
     category: "活用於人生-提升自我",
     image: "./images/A071.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#07-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -572,7 +574,7 @@ const lifeData = [
     title: "多識前言往行，以蓄其德（《易經》）",
     category: "活用於人生-提升自我",
     image: "./images/A072.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#07-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -580,7 +582,7 @@ const lifeData = [
     title: "不學便老而衰（《近思錄》）",
     category: "活用於人生-提升自我",
     image: "./images/A073.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#07-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -588,7 +590,7 @@ const lifeData = [
     title: "後生可畏（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A074.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#07-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -596,7 +598,7 @@ const lifeData = [
     title: "君子有終身之憂，無一朝之患也（《孟子》）",
     category: "活用於人生-提升自我",
     image: "./images/A075.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#08-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -604,7 +606,7 @@ const lifeData = [
     title: "小人閒居為不善（《大學》）",
     category: "活用於人生-提升自我",
     image: "./images/A076.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#08-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -612,7 +614,7 @@ const lifeData = [
     title: "智者千慮，必有一失；愚者千慮，必有一得（《史記》）",
     category: "活用於人生-提升自我",
     image: "./images/A077.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#08-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -620,7 +622,7 @@ const lifeData = [
     title: "智猶水也，不流則腐（《宋名臣言行錄》）",
     category: "活用於人生-提升自我",
     image: "./images/A078.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#08-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -628,7 +630,7 @@ const lifeData = [
     title: "不受苦中苦，難爲人上人（《通俗編》）",
     category: "活用於人生-提升自我",
     image: "./images/A079.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#08-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -636,7 +638,7 @@ const lifeData = [
     title: "猶螳螂之怒臂以當車軼（《莊子》）",
     category: "活用於人生-提升自我",
     image: "./images/A080.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#09-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -644,7 +646,7 @@ const lifeData = [
     title: "不患無位，患所以立（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A081.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#09-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -652,7 +654,7 @@ const lifeData = [
     title: "所惡於上，毋以使下（《大學》）",
     category: "活用於人生-提升自我",
     image: "./images/A082.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#09-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -660,7 +662,7 @@ const lifeData = [
     title: "年五十而知四十九年非（《淮南子》）",
     category: "活用於人生-提升自我",
     image: "./images/A083.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#09-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -668,7 +670,7 @@ const lifeData = [
     title: "君之所讀者，古人之糟魄已夫（《莊子》）",
     category: "活用於人生-提升自我",
     image: "./images/A084.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#09-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -676,7 +678,7 @@ const lifeData = [
     title: "聞一以知十（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A085.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#09-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -684,7 +686,7 @@ const lifeData = [
     title: "以管窺天（《史記》）",
     category: "活用於人生-提升自我",
     image: "./images/A086.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -692,7 +694,7 @@ const lifeData = [
     title: "縱欲之病可醫，而勢理之病難醫（《菜根譚》）",
     category: "活用於人生-提升自我",
     image: "./images/A087.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -700,7 +702,7 @@ const lifeData = [
     title: "君子喻於義，小人喻於利（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A088.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -708,7 +710,7 @@ const lifeData = [
     title: "禍莫大於不知足（《老子》）",
     category: "活用於人生-提升自我",
     image: "./images/A089.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -716,7 +718,7 @@ const lifeData = [
     title: "見善則遷，有過則改（《易經》）",
     category: "活用於人生-提升自我",
     image: "./images/A090.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -724,7 +726,7 @@ const lifeData = [
     title: "為其不可復者也，則事寡敗矣（《韓非子》）",
     category: "活用於人生-提升自我",
     image: "./images/A091.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -732,7 +734,7 @@ const lifeData = [
     title: "知者過之，愚者不及也（《中庸》）",
     category: "活用於人生-提升自我",
     image: "./images/A092.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -740,7 +742,7 @@ const lifeData = [
     title: "知者弗言，言者弗知（《老子》）",
     category: "活用於人生-提升自我",
     image: "./images/A093.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -748,7 +750,7 @@ const lifeData = [
     title: "不恥下問（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A094.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#10-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -756,7 +758,7 @@ const lifeData = [
     title: "小人之過也必文（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A095.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -764,7 +766,7 @@ const lifeData = [
     title: "樹德務滋，除惡務本（《書經》）",
     category: "活用於人生-提升自我",
     image: "./images/A096.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -772,7 +774,7 @@ const lifeData = [
     title: "禮義之始，在於正容體，齊顏色，順辭令（《禮記》）",
     category: "活用於人生-提升自我",
     image: "./images/A097.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -780,7 +782,7 @@ const lifeData = [
     title: "處富貴之地，要知貧賤的痛癢（《菜根譚》）",
     category: "活用於人生-提升自我",
     image: "./images/A098.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -788,7 +790,7 @@ const lifeData = [
     title: "感慨殺身者易，從容就義者難（《近思錄》）",
     category: "活用於人生-提升自我",
     image: "./images/A099.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -796,7 +798,7 @@ const lifeData = [
     title: "言而當，知也；默而當，知也（《荀子》）",
     category: "活用於人生-提升自我",
     image: "./images/A100.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -804,7 +806,7 @@ const lifeData = [
     title: "勿謂今日不學而有來日（《古文真寶》）",
     category: "活用於人生-提升自我",
     image: "./images/A101.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -812,7 +814,7 @@ const lifeData = [
     title: "磨礪當如百煉之金，急就者非邃養（《菜根譚》）",
     category: "活用於人生-提升自我",
     image: "./images/A102.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#11-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -820,7 +822,7 @@ const lifeData = [
     title: "接小吏亦以禮（《宋名臣言行錄》）",
     category: "活用於人生-提升自我",
     image: "./images/A103.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#12-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -828,7 +830,7 @@ const lifeData = [
     title: "善善而不能用，惡惡而不能去（《管子》）",
     category: "活用於人生-提升自我",
     image: "./images/A104.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#12-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -836,7 +838,7 @@ const lifeData = [
     title: "非知之艱，行之惟艱（《書經》）",
     category: "活用於人生-提升自我",
     image: "./images/A105.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#12-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -844,7 +846,7 @@ const lifeData = [
     title: "坐忘（《莊子》）",
     category: "活用於人生-提升自我",
     image: "./images/A106.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#12-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -852,7 +854,7 @@ const lifeData = [
     title: "君子有九思（《論語》）",
     category: "活用於人生-提升自我",
     image: "./images/A107.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#12-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -860,7 +862,7 @@ const lifeData = [
     title: "凡人之患，弊於一曲，而闇於大理（《荀子》）",
     category: "活用於人生-提升自我",
     image: "./images/A108.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A2-365-simple-philosophies-1130910.html#12-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -868,7 +870,7 @@ const lifeData = [
     title: "行百里者半九十（《戰國策》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A109.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#01-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -876,7 +878,7 @@ const lifeData = [
     title: "無恆產，因無恆心（《孟子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A110.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#01-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -884,7 +886,7 @@ const lifeData = [
     title: "積善之家，必有餘慶（《易經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A111.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#01-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -892,7 +894,7 @@ const lifeData = [
     title: "良賈深藏若虛（《史記》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A112.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#01-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -900,7 +902,7 @@ const lifeData = [
     title: "知足不辱，知止不殆（《老子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A113.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#01-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -908,7 +910,7 @@ const lifeData = [
     title: "汝無面從，退有後言（《書經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A114.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#02-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -916,7 +918,7 @@ const lifeData = [
     title: "吉人之辭寡，躁人之辭多。（《易經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A115.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#02-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -924,7 +926,7 @@ const lifeData = [
     title: "天地之道，極則反，盈則損（《淮南子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A116.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#02-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -932,7 +934,7 @@ const lifeData = [
     title: "毋恃久安，毋憚初難（《菜根譚》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A117.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#02-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -940,7 +942,7 @@ const lifeData = [
     title: "樂不可極（《禮記》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A118.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#02-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -948,7 +950,7 @@ const lifeData = [
     title: "故彼人者，寡不死其所長（《墨子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A119.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#02-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -956,7 +958,7 @@ const lifeData = [
     title: "多算勝，少算不勝（《孫子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A120.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#03-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -964,7 +966,7 @@ const lifeData = [
     title: "大富由命，小富由勤（《俗諺》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A121.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#03-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -972,7 +974,7 @@ const lifeData = [
     title: "患生於所忽，禍起於細微（《說苑》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A122.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#03-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -980,7 +982,7 @@ const lifeData = [
     title: "夫輕諾必寡信（《老子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A123.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#03-31">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -988,7 +990,7 @@ const lifeData = [
     title: "既明且哲，以保其身（《中庸》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A124.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#04-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -996,7 +998,7 @@ const lifeData = [
     title: "瓜田不納履，李下不整冠（《文選》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A125.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#04-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1004,7 +1006,7 @@ const lifeData = [
     title: "花看半開，酒飲微醉（《菜根譚》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A126.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#04-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1012,7 +1014,7 @@ const lifeData = [
     title: "君子必愼其獨也（《大學》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A127.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#04-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1020,7 +1022,7 @@ const lifeData = [
     title: "見險而能止，知矣哉。（《易經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A128.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#04-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1028,7 +1030,7 @@ const lifeData = [
     title: "敖不可長，欲不可從（《禮記》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A129.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#04-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1036,7 +1038,7 @@ const lifeData = [
     title: "疾不可為也。在育之上，膏之下（《左傳》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A130.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#05-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1044,7 +1046,7 @@ const lifeData = [
     title: "疑心生暗鬼（《列子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A131.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#05-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1052,7 +1054,7 @@ const lifeData = [
     title: "君子欲納於言，而敏於行（《論語》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A132.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#05-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1060,7 +1062,7 @@ const lifeData = [
     title: "久受尊名不祥（《史記》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A133.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#05-31">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1068,7 +1070,7 @@ const lifeData = [
     title: "大辯若訥（《老子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A134.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#06-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1076,7 +1078,7 @@ const lifeData = [
     title: "有陰德者必有陽報（《淮南子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A135.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#06-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1084,7 +1086,7 @@ const lifeData = [
     title: "非無安居也，我無安心也（《墨子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A136.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#06-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1092,7 +1094,7 @@ const lifeData = [
     title: "亢龍有悔（《易經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A137.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#06-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1100,7 +1102,7 @@ const lifeData = [
     title: "天知，地知，子知，我知（《十八史略》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A138.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#07-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1108,7 +1110,7 @@ const lifeData = [
     title: "富在知足（《說苑》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A139.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#07-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1116,7 +1118,7 @@ const lifeData = [
     title: "眾心成城，眾口鑠金（《國語》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A140.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#07-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1124,7 +1126,7 @@ const lifeData = [
     title: "千金之子，不死於市（《史記》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A141.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#08-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1132,7 +1134,7 @@ const lifeData = [
     title: "羝羊觸藩，贏其角（《易經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A142.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#08-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1140,7 +1142,7 @@ const lifeData = [
     title: "非知之難也，處知則難也（《韓非子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A143.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#08-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1148,7 +1150,7 @@ const lifeData = [
     title: "匪言勿言，匪由勿語（《詩經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A144.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#11-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1156,7 +1158,7 @@ const lifeData = [
     title: "作德心逸日休，作僞心勞日拙（《書經》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A145.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#11-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1164,7 +1166,7 @@ const lifeData = [
     title: "修己而不責人，則免於難（《左傳》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A146.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#11-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1172,7 +1174,7 @@ const lifeData = [
     title: "不敢為天下先（《老子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A147.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#11-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1180,7 +1182,7 @@ const lifeData = [
     title: "熱鬧中著一冷眼，便省許多苦心思（《菜根譚》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A148.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#12-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1188,7 +1190,7 @@ const lifeData = [
     title: "恃人不如自恃也（《韓非子》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A149.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#12-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1196,7 +1198,7 @@ const lifeData = [
     title: "君子有三戒（《論語》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A150.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#12-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1204,7 +1206,7 @@ const lifeData = [
     title: "歡樂極兮哀情多（《古文真寶》）",
     category: "活用於人生-踏實地生活",
     image: "./images/A151.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A3-365-simple-philosophies-1131226.html#12-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1212,7 +1214,7 @@ const lifeData = [
     title: "苛政猛於虎（《禮記》）",
     category: "活用於人生-考慮社會",
     image: "./images/A152.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#04-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1220,7 +1222,7 @@ const lifeData = [
     title: "天下多忌諱，而民彌貧（《老子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A153.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#04-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1228,7 +1230,7 @@ const lifeData = [
     title: "眾怒難犯，專欲難成（《左傳》）",
     category: "活用於人生-考慮社會",
     image: "./images/A154.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#05-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1236,7 +1238,7 @@ const lifeData = [
     title: "君者舟也，庶人者水也（《荀子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A155.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#05-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1244,7 +1246,7 @@ const lifeData = [
     title: "公事有公利，無私忌（《左傳》）",
     category: "活用於人生-考慮社會",
     image: "./images/A156.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#06-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1252,7 +1254,7 @@ const lifeData = [
     title: "善待問者如撞鐘（《禮記》）",
     category: "活用於人生-考慮社會",
     image: "./images/A157.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#06-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1260,7 +1262,7 @@ const lifeData = [
     title: "牝雞之晨，惟家之索（《書經》）",
     category: "活用於人生-考慮社會",
     image: "./images/A158.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#06-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1268,7 +1270,7 @@ const lifeData = [
     title: "糟糠之妻不下堂（《後漢書》）",
     category: "活用於人生-考慮社會",
     image: "./images/A159.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#06-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1276,7 +1278,7 @@ const lifeData = [
     title: "治國之道，在乎寬猛得中（《宋名臣言行錄》）",
     category: "活用於人生-考慮社會",
     image: "./images/A160.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#06-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1284,7 +1286,7 @@ const lifeData = [
     title: "國士無雙（《史記》）",
     category: "活用於人生-考慮社會",
     image: "./images/A161.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#07-31">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1292,7 +1294,7 @@ const lifeData = [
     title: "大道廢，有仁義（《老子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A162.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#08-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1300,7 +1302,7 @@ const lifeData = [
     title: "兵者，凶器也。爭者，逆德也（《尉繚子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A163.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#08-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1308,7 +1310,7 @@ const lifeData = [
     title: "朝三而暮四（《莊子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A164.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#08-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1316,7 +1318,7 @@ const lifeData = [
     title: "儻所謂天道，是邪非邪（《史記》）",
     category: "活用於人生-考慮社會",
     image: "./images/A165.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#08-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1324,7 +1326,7 @@ const lifeData = [
     title: "杞憂（《列子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A166.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#08-31">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1332,7 +1334,7 @@ const lifeData = [
     title: "內言不出，外言不入（《禮記》）",
     category: "活用於人生-考慮社會",
     image: "./images/A167.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#09-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1340,7 +1342,7 @@ const lifeData = [
     title: "去無用之費，聖王之道，天下之大利也。（《墨子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A168.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#09-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1348,7 +1350,7 @@ const lifeData = [
     title: "民無信不立（《論語》）",
     category: "活用於人生-考慮社會",
     image: "./images/A169.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#09-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1356,7 +1358,7 @@ const lifeData = [
     title: "養子不教父之過（《古文真寶》）",
     category: "活用於人生-考慮社會",
     image: "./images/A170.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#10-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1364,7 +1366,7 @@ const lifeData = [
     title: "不患寡而患不均（《論語》）",
     category: "活用於人生-考慮社會",
     image: "./images/A171.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#10-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1372,7 +1374,7 @@ const lifeData = [
     title: "道在爾，而求諸遠（《孟子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A172.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#11-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1380,7 +1382,7 @@ const lifeData = [
     title: "家有賢妻，丈夫不遭橫事（《通俗編》）",
     category: "活用於人生-考慮社會",
     image: "./images/A173.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#11-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1388,7 +1390,7 @@ const lifeData = [
     title: "玉不琢，不成器；人不學，不知道（《禮記》）",
     category: "活用於人生-考慮社會",
     image: "./images/A174.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#12-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1396,7 +1398,7 @@ const lifeData = [
     title: "桀紂之失天下也，失其民也（《孟子》）",
     category: "活用於人生-考慮社會",
     image: "./images/A175.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#12-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1404,7 +1406,7 @@ const lifeData = [
     title: "順德者昌，逆德者亡（《漢書》）",
     category: "活用於人生-考慮社會",
     image: "./images/A176.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10A4-365-simple-philosophies-1140501.html#12-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1412,7 +1414,7 @@ const lifeData = [
     title: "天下不如意，恆十居七八（《晉書》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A177.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#01-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1420,7 +1422,7 @@ const lifeData = [
     title: "好死不如惡活（《通俗編》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A178.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#01-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1428,7 +1430,7 @@ const lifeData = [
     title: "不怨天，不尤人（《論語》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A179.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#02-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1436,7 +1438,7 @@ const lifeData = [
     title: "遇不遇者，時也。（《荀子》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A180.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#02-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1444,7 +1446,7 @@ const lifeData = [
     title: "百年俟河清（《左傳》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A181.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#03-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1452,7 +1454,7 @@ const lifeData = [
     title: "扶久者飛必高（《菜根譚》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A182.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#04-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1460,7 +1462,7 @@ const lifeData = [
     title: "禍福無門，唯人所召（《左傳》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A183.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#04-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1468,7 +1470,7 @@ const lifeData = [
     title: "轉禍而爲福（《戰國策》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A184.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#04-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1476,7 +1478,7 @@ const lifeData = [
     title: "雖有鎡基，不如待時（《孟子》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A185.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#07-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1484,7 +1486,7 @@ const lifeData = [
     title: "不患人之不已知，患不知人也（《論語》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A186.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#07-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1492,7 +1494,7 @@ const lifeData = [
     title: "天網恢恢，疏而不失（《老子》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A187.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#08-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1500,7 +1502,7 @@ const lifeData = [
     title: "德不孤，必有鄰（《論語》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A188.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#08-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1508,7 +1510,7 @@ const lifeData = [
     title: "樂天知命，故不憂（《易經》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A189.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#09-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1516,7 +1518,7 @@ const lifeData = [
     title: "人之有德、慧、術、知者，恆存乎疢疾（《孟子》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A190.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#10-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1524,7 +1526,7 @@ const lifeData = [
     title: "舟覆乃見善游，馬奔乃見良御（《淮南子》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A191.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#11-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1532,7 +1534,7 @@ const lifeData = [
     title: "於不可已而已者，無所不已（《孟子》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A192.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#12-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1540,7 +1542,7 @@ const lifeData = [
     title: "疾風知勁草（《後漢書》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A193.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#12-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1548,7 +1550,7 @@ const lifeData = [
     title: "窮則變，變則通（《易經》）",
     category: "活用於工作-用來突破逆境心得",
     image: "./images/A194.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B1-365-simple-philosophies-1140708.html#12-31">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1556,7 +1558,7 @@ const lifeData = [
     title: "靡不有初，鮮克有終（《詩經》）",
     category: "活用於工作-成功心得",
     image: "./images/A195.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#01-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1564,7 +1566,7 @@ const lifeData = [
     title: "愚公移山（《列子》）",
     category: "活用於工作-成功心得",
     image: "./images/A196.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#01-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1572,7 +1574,7 @@ const lifeData = [
     title: "功崇惟志，業廣惟勤（《書經》）",
     category: "活用於工作-成功心得",
     image: "./images/A197.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#01-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1580,7 +1582,7 @@ const lifeData = [
     title: "膽欲大而心欲小（《近思錄》）",
     category: "活用於工作-成功心得",
     image: "./images/A198.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#01-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1588,7 +1590,7 @@ const lifeData = [
     title: "智者之慮，必雜於利害（《孫子》）",
     category: "活用於工作-成功心得",
     image: "./images/A199.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#01-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1596,7 +1598,7 @@ const lifeData = [
     title: "不入虎穴，焉得虎子（《後漢書》）",
     category: "活用於工作-成功心得",
     image: "./images/A200.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#01-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1604,7 +1606,7 @@ const lifeData = [
     title: "知彼知已，百戰不殆（《孫子》）",
     category: "活用於工作-成功心得",
     image: "./images/A201.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#02-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1612,7 +1614,7 @@ const lifeData = [
     title: "見可而進，知難而退（《吳子》）",
     category: "活用於工作-成功心得",
     image: "./images/A202.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#02-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1620,7 +1622,7 @@ const lifeData = [
     title: "見小利則大事不成（《論語》）",
     category: "活用於工作-成功心得",
     image: "./images/A203.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#02-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1628,7 +1630,7 @@ const lifeData = [
     title: "愚者闇於成事，智者見於未萌（《戰國策》）",
     category: "活用於工作-成功心得",
     image: "./images/A204.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#03-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1636,7 +1638,7 @@ const lifeData = [
     title: "夫爭天下者，必先爭人（《管子》）",
     category: "活用於工作-成功心得",
     image: "./images/A205.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#03-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1644,7 +1646,7 @@ const lifeData = [
     title: "世有伯樂，然後有千里馬（《文章軌範》）",
     category: "活用於工作-成功心得",
     image: "./images/A206.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#03-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1652,7 +1654,7 @@ const lifeData = [
     title: "膠柱而鼓瑟（《史記》）",
     category: "活用於工作-成功心得",
     image: "./images/A207.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#04-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1660,7 +1662,7 @@ const lifeData = [
     title: "處事不可有心（《宋名臣言行錄》）",
     category: "活用於工作-成功心得",
     image: "./images/A208.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#04-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1668,7 +1670,7 @@ const lifeData = [
     title: "善戰者，勝於易勝者也（《孫子》）",
     category: "活用於工作-成功心得",
     image: "./images/A209.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#04-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1676,7 +1678,7 @@ const lifeData = [
     title: "弗慮胡獲，弗為胡成（《書經》）",
     category: "活用於工作-成功心得",
     image: "./images/A210.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#04-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1684,7 +1686,7 @@ const lifeData = [
     title: "以備待時，以時興事（《管子》）",
     category: "活用於工作-成功心得",
     image: "./images/A211.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#05-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1692,7 +1694,7 @@ const lifeData = [
     title: "爲山九仞，功虧一簣（《書經》）",
     category: "活用於工作-成功心得",
     image: "./images/A212.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#05-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1700,7 +1702,7 @@ const lifeData = [
     title: "疑謀勿成（《書經》）",
     category: "活用於工作-成功心得",
     image: "./images/A213.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#05-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1708,7 +1710,7 @@ const lifeData = [
     title: "人莫鑑於流水，而鑑於止水（《莊子》）",
     category: "活用於工作-成功心得",
     image: "./images/A214.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#05-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1716,7 +1718,7 @@ const lifeData = [
     title: "百戰百勝，非善之善者也。（《孫子》）",
     category: "活用於工作-成功心得",
     image: "./images/A215.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#05-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1724,7 +1726,7 @@ const lifeData = [
     title: "無急勝而忘敗（《荀子》）",
     category: "活用於工作-成功心得",
     image: "./images/A216.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#05-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1732,7 +1734,7 @@ const lifeData = [
     title: "顧小利則大利之殘也（《韓非子》）",
     category: "活用於工作-成功心得",
     image: "./images/A217.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#05-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1740,7 +1742,7 @@ const lifeData = [
     title: "行險以徼幸（《中庸》）",
     category: "活用於工作-成功心得",
     image: "./images/A218.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#06-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1748,7 +1750,7 @@ const lifeData = [
     title: "遠水不救近火也（《韓非子》）",
     category: "活用於工作-成功心得",
     image: "./images/A219.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#06-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1756,7 +1758,7 @@ const lifeData = [
     title: "始如處女，後如脫兔（《孫子》）",
     category: "活用於工作-成功心得",
     image: "./images/A220.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#06-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1764,7 +1766,7 @@ const lifeData = [
     title: "不積跬步，無以至千里（《荀子》）",
     category: "活用於工作-成功心得",
     image: "./images/A221.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#07-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1772,7 +1774,7 @@ const lifeData = [
     title: "大行不顧細謹，大禮不辭小讓（《史記》）",
     category: "活用於工作-成功心得",
     image: "./images/A222.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#07-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1780,7 +1782,7 @@ const lifeData = [
     title: "識時務者，在乎俊傑（《三國志》）",
     category: "活用於工作-成功心得",
     image: "./images/A223.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#07-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1788,7 +1790,7 @@ const lifeData = [
     title: "德者才之主，才者德之奴（《菜根譚》）",
     category: "活用於工作-成功心得",
     image: "./images/A224.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#07-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1796,7 +1798,7 @@ const lifeData = [
     title: "小人溺於水，君子溺於口，大人溺於民（《禮記》）",
     category: "活用於工作-成功心得",
     image: "./images/A225.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#08-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1804,7 +1806,7 @@ const lifeData = [
     title: "矜其能，喪其功（《書經》）",
     category: "活用於工作-成功心得",
     image: "./images/A226.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#08-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1812,7 +1814,7 @@ const lifeData = [
     title: "小不忍則亂大謀（《論語》）",
     category: "活用於工作-成功心得",
     image: "./images/A227.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#08-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1820,7 +1822,7 @@ const lifeData = [
     title: "以疑決疑，決必不當（《荀子》）",
     category: "活用於工作-成功心得",
     image: "./images/A228.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#08-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1828,7 +1830,7 @@ const lifeData = [
     title: "福生於微，禍生於忽（《說苑》）",
     category: "活用於工作-成功心得",
     image: "./images/A229.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#08-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1836,7 +1838,7 @@ const lifeData = [
     title: "疑行無名，疑事無功（《史記》）",
     category: "活用於工作-成功心得",
     image: "./images/A230.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#08-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1844,7 +1846,7 @@ const lifeData = [
     title: "無遠慮，必有近憂（《論語》）",
     category: "活用於工作-成功心得",
     image: "./images/A231.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#08-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1852,7 +1854,7 @@ const lifeData = [
     title: "千丈之堤，以螻蟻之穴潰（《韓非子》）",
     category: "活用於工作-成功心得",
     image: "./images/A232.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#09-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1860,7 +1862,7 @@ const lifeData = [
     title: "奇貨可居（《史記》）",
     category: "活用於工作-成功心得",
     image: "./images/A233.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#09-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1868,7 +1870,7 @@ const lifeData = [
     title: "君子以作事謀始（《易經》）",
     category: "活用於工作-成功心得",
     image: "./images/A234.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#09-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1876,7 +1878,7 @@ const lifeData = [
     title: "緣木而求魚（《孟子》）",
     category: "活用於工作-成功心得",
     image: "./images/A235.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#09-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1884,7 +1886,7 @@ const lifeData = [
     title: "人一能之，己百之（《中庸》）",
     category: "活用於工作-成功心得",
     image: "./images/A236.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#09-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1892,7 +1894,7 @@ const lifeData = [
     title: "兵形象水（《孫子》）",
     category: "活用於工作-成功心得",
     image: "./images/A237.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#09-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1900,7 +1902,7 @@ const lifeData = [
     title: "掘井九朝而不及泉，猶為棄井也（《孟子》）",
     category: "活用於工作-成功心得",
     image: "./images/A238.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#09-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1908,7 +1910,7 @@ const lifeData = [
     title: "三十六策，走是上計（《南齊書》）",
     category: "活用於工作-成功心得",
     image: "./images/A239.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#10-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1916,7 +1918,7 @@ const lifeData = [
     title: "善戰者，致人而不致於人（《孫子》）",
     category: "活用於工作-成功心得",
     image: "./images/A240.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#10-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1924,7 +1926,7 @@ const lifeData = [
     title: "有志者事竟成（《後漢書》）",
     category: "活用於工作-成功心得",
     image: "./images/A241.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#10-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1932,7 +1934,7 @@ const lifeData = [
     title: "履霜堅冰至（《易經》）",
     category: "活用於工作-成功心得",
     image: "./images/A242.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#10-31">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1940,7 +1942,7 @@ const lifeData = [
     title: "事以密成，語以泄敗（《韓非子》）",
     category: "活用於工作-成功心得",
     image: "./images/A243.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#11-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1948,7 +1950,7 @@ const lifeData = [
     title: "賢士之處世也，譬若錐之處於囊中（《史記》）",
     category: "活用於工作-成功心得",
     image: "./images/A244.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#11-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1956,7 +1958,7 @@ const lifeData = [
     title: "先發制人，後發制於人（《漢書》）",
     category: "活用於工作-成功心得",
     image: "./images/A245.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#11-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1964,7 +1966,7 @@ const lifeData = [
     title: "雞肋（《三國志》）",
     category: "活用於工作-成功心得",
     image: "./images/A246.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#11-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1972,7 +1974,7 @@ const lifeData = [
     title: "事豫則立，不豫則廢（《中庸》）",
     category: "活用於工作-成功心得",
     image: "./images/A247.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#12-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1980,7 +1982,7 @@ const lifeData = [
     title: "建功立業者，多虛圓之士（《菜根譚》）",
     category: "活用於工作-成功心得",
     image: "./images/A248.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B2-365-simple-philosophies-1140711.html#12-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1988,7 +1990,7 @@ const lifeData = [
     title: "君子之交淡若水（《莊子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A249.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#01-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -1996,7 +1998,7 @@ const lifeData = [
     title: "卑讓，德之基也（《左傳》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A250.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#01-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2004,7 +2006,7 @@ const lifeData = [
     title: "巧詐不如拙誠（《韓非子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A251.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#01-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2012,7 +2014,7 @@ const lifeData = [
     title: "人生感意氣，功名誰復論（《唐詩選》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A252.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#02-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2020,7 +2022,7 @@ const lifeData = [
     title: "知不知，尚矣（《老子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A253.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#02-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2028,7 +2030,7 @@ const lifeData = [
     title: "夜郎自大（《史記》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A254.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#02-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2036,7 +2038,7 @@ const lifeData = [
     title: "用兵之道，攻心爲上（《三國志》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A255.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#02-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2044,7 +2046,7 @@ const lifeData = [
     title: "益者三友，損者三友（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A256.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#02-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2052,7 +2054,7 @@ const lifeData = [
     title: "和爲貴（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A257.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#03-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2060,7 +2062,7 @@ const lifeData = [
     title: "人而無信，不知其可也（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A258.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#03-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2068,7 +2070,7 @@ const lifeData = [
     title: "滿招損，謙受益（《書經》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A259.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#03-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2076,7 +2078,7 @@ const lifeData = [
     title: "君子和而不同，小人同而不和（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A260.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#04-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2084,7 +2086,7 @@ const lifeData = [
     title: "暴虎馮河，死而無悔者，吾不與也（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A261.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#04-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2092,7 +2094,7 @@ const lifeData = [
     title: "君子交絕，不出惡聲（《史記》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A262.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#04-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2100,7 +2102,7 @@ const lifeData = [
     title: "管鮑之交（《史記》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A263.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#04-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2108,7 +2110,7 @@ const lifeData = [
     title: "接人則渾是一團和氣（《近思錄》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A264.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#04-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2116,7 +2118,7 @@ const lifeData = [
     title: "存乎人者，莫良於眸子（《孟子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A265.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#05-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2124,7 +2126,7 @@ const lifeData = [
     title: "二人同心，其利斷金（《易經》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A266.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#05-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2132,7 +2134,7 @@ const lifeData = [
     title: "細人之愛人也以姑息（《禮記》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A267.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#05-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2140,7 +2142,7 @@ const lifeData = [
     title: "無友不如已者（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A268.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#06-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2148,7 +2150,7 @@ const lifeData = [
     title: "不知其子，視其友（《荀子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A269.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#06-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2156,7 +2158,7 @@ const lifeData = [
     title: "花發多風雨，人生足別離（《唐詩選》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A270.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#06-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2164,7 +2166,7 @@ const lifeData = [
     title: "攻人之惡，毋太嚴（《菜根譚》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A271.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#06-28">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2172,7 +2174,7 @@ const lifeData = [
     title: "愛者憎之始也，德者怨之本也（《管子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A272.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#07-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2180,7 +2182,7 @@ const lifeData = [
     title: "信言不美，美言不信（《老子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A273.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#07-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2188,7 +2190,7 @@ const lifeData = [
     title: "巧言令色，鮮矣仁（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A274.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#08-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2196,7 +2198,7 @@ const lifeData = [
     title: "投我以桃，報之以李（《詩經》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A275.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#08-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2204,7 +2206,7 @@ const lifeData = [
     title: "交友須帶三分俠氣（《菜根譚》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A276.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#08-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2212,7 +2214,7 @@ const lifeData = [
     title: "處變當堅百忍以圖成（《菜根譚》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A277.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#08-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2220,7 +2222,7 @@ const lifeData = [
     title: "說者能無嬰人主之逆鱗，則幾矣（《韓非子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A278.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#08-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2228,7 +2230,7 @@ const lifeData = [
     title: "好稱人惡，人亦道其惡（《說苑》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A279.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#09-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2236,7 +2238,7 @@ const lifeData = [
     title: "怨豈在明，不見是圖（《書經》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A280.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#09-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2244,7 +2246,7 @@ const lifeData = [
     title: "一貴一賤，交情乃見（《史記》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A281.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#09-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2252,7 +2254,7 @@ const lifeData = [
     title: "韜晦無露圭角（《宋名臣言行錄》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A282.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#09-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2260,7 +2262,7 @@ const lifeData = [
     title: "有而不施，窮無與也（《荀子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A283.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#09-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2268,7 +2270,7 @@ const lifeData = [
     title: "不責人小過，不發人陰私，不念人舊惡（《菜根譚》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A284.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#09-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2276,7 +2278,7 @@ const lifeData = [
     title: "怨不期深淺，其於傷心（《戰國策》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A285.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#10-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2284,7 +2286,7 @@ const lifeData = [
     title: "處朋友，務相下則得益，相上則損（《傳習錄》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A286.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#10-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2292,7 +2294,7 @@ const lifeData = [
     title: "大凡舉人，須舉好退者（《宋名臣言行錄》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A287.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#11-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2300,7 +2302,7 @@ const lifeData = [
     title: "以利合者，迫窮禍患害相棄也（《莊子》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A288.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#12-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2308,7 +2310,7 @@ const lifeData = [
     title: "與人不求備（《書經》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A289.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#12-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2316,7 +2318,7 @@ const lifeData = [
     title: "忠告而善道之，不可則止（《論語》）",
     category: "活用於工作-用來待人的心情",
     image: "./images/A290.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B3-365-simple-philosophies-1140901.html#12-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2324,7 +2326,7 @@ const lifeData = [
     title: "貴其所長，忘其所短（《三國志》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A291.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#01-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2332,7 +2334,7 @@ const lifeData = [
     title: "士不可以不弘毅（《論語》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A292.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#01-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2340,7 +2342,7 @@ const lifeData = [
     title: "寬而見畏，嚴而見愛（《宋名臣言行錄》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A293.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#01-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2348,7 +2350,7 @@ const lifeData = [
     title: "綸言如汗（《禮記》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A294.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#01-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2356,7 +2358,7 @@ const lifeData = [
     title: "敗軍之將，不可以言勇（《史記》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A295.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#02-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2364,7 +2366,7 @@ const lifeData = [
     title: "德者事業之基（《菜根譚》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A296.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#02-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2372,7 +2374,7 @@ const lifeData = [
     title: "故善將者，愛與威而已（《尉繚子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A297.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#02-16">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2380,7 +2382,7 @@ const lifeData = [
     title: "為政之要，惟在得人（《貞觀政要》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A298.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#02-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2388,7 +2390,7 @@ const lifeData = [
     title: "善爲吏者樹德（《韓非子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A299.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#02-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2396,7 +2398,7 @@ const lifeData = [
     title: "疑人勿用，用人勿疑（《通俗編》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A300.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2404,7 +2406,7 @@ const lifeData = [
     title: "推赤心置人腹中（《後漢書》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A301.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2412,7 +2414,7 @@ const lifeData = [
     title: "泰山不讓土壤，故能成其大（《史記》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A302.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2420,7 +2422,7 @@ const lifeData = [
     title: "守一隅而遺萬方（《淮南子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A303.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2428,7 +2430,7 @@ const lifeData = [
     title: "諂諛我者，吾賊也（《荀子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A304.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2436,7 +2438,7 @@ const lifeData = [
     title: "用兵之害，猶豫最大（《吳子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A305.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-17">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2444,7 +2446,7 @@ const lifeData = [
     title: "士爲知已者死（《戰國策》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A306.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2452,7 +2454,7 @@ const lifeData = [
     title: "天時不如地利，地利不如人和（《孟子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A307.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2460,7 +2462,7 @@ const lifeData = [
     title: "言行，君子之樞機（《易經》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A308.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2468,7 +2470,7 @@ const lifeData = [
     title: "法三章耳（《史記》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A309.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#03-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2476,7 +2478,7 @@ const lifeData = [
     title: "流水清濁，在其源也（《貞觀政要》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A310.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#04-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2484,7 +2486,7 @@ const lifeData = [
     title: "惟賢惟德，能服於人（《三國志》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A311.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#04-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2492,7 +2494,7 @@ const lifeData = [
     title: "將大有爲之君，必有所不召之臣（《孟子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A312.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#04-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2500,7 +2502,7 @@ const lifeData = [
     title: "問鼎之輕重（《左傳》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A313.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#04-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2508,7 +2510,7 @@ const lifeData = [
     title: "鞠躬盡力，死而後已（《三國志》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A314.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#04-14">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2516,7 +2518,7 @@ const lifeData = [
     title: "明極則過察而多疑（《近思錄》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A315.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#05-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2524,7 +2526,7 @@ const lifeData = [
     title: "善用人者爲之下（《老子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A316.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#05-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2532,7 +2534,7 @@ const lifeData = [
     title: "運用之妙，存乎一心（《十八史略》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A317.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#05-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2540,7 +2542,7 @@ const lifeData = [
     title: "故舊無大故，則不棄也（《論語》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A318.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#05-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2548,7 +2550,7 @@ const lifeData = [
     title: "治大國若烹小鮮（《老子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A319.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#05-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2556,7 +2558,7 @@ const lifeData = [
     title: "居安思危（《貞觀政要》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A320.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#05-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2564,7 +2566,7 @@ const lifeData = [
     title: "毋私小惠而傷大體（《菜根譚》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A321.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#06-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2572,7 +2574,7 @@ const lifeData = [
     title: "諍臣必諫其漸（《貞觀政要》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A322.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#06-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2580,7 +2582,7 @@ const lifeData = [
     title: "揮淚斬馬謖（《三國志》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A323.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#06-27">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2588,7 +2590,7 @@ const lifeData = [
     title: "吳越同舟（《孫子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A324.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#06-30">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2596,7 +2598,7 @@ const lifeData = [
     title: "人之其所親愛而辟焉（《大學》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A325.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2604,7 +2606,7 @@ const lifeData = [
     title: "忌則多怨（《左傳》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A326.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-08">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2612,7 +2614,7 @@ const lifeData = [
     title: "人道惡盈而好謙（《易經》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A327.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2620,7 +2622,7 @@ const lifeData = [
     title: "望之似木雞（《莊子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A328.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2628,7 +2630,7 @@ const lifeData = [
     title: "與其殺不辜，寧失不經（《書經》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A329.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2636,7 +2638,7 @@ const lifeData = [
     title: "聖人之治，藏於民，不藏於府庫（《韓非子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A330.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2644,7 +2646,7 @@ const lifeData = [
     title: "將軍之事，靜以幽（《孫子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A331.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2652,7 +2654,7 @@ const lifeData = [
     title: "先和而後造大事（《吳子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A332.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2660,7 +2662,7 @@ const lifeData = [
     title: "先天下之憂而憂、後天下之樂而樂（《文章軌範》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A333.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2668,7 +2670,7 @@ const lifeData = [
     title: "草創與守成孰難?（《貞觀政要》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A334.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2676,7 +2678,7 @@ const lifeData = [
     title: "善戰者，求之於勢，不責於人（《孫子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A335.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#08-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2684,7 +2686,7 @@ const lifeData = [
     title: "宰相不親細事（《漢書》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A336.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#08-19">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2692,7 +2694,7 @@ const lifeData = [
     title: "麒麟之衰也，駑馬先之（《戰國策》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A337.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#08-21">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2700,7 +2702,7 @@ const lifeData = [
     title: "臨下以簡，御眾以寬（《書經》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A338.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#09-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2708,7 +2710,7 @@ const lifeData = [
     title: "不憤不啟，不悱不發（《論語》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A339.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#09-20">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2716,7 +2718,7 @@ const lifeData = [
     title: "喜怒不形於色（《三國志》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A340.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#09-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2724,7 +2726,7 @@ const lifeData = [
     title: "治國猶如栽樹（《貞觀政要》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A341.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-03">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2732,7 +2734,7 @@ const lifeData = [
     title: "明不及察，寬不至縱（《宋名臣言行錄》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A342.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2740,7 +2742,7 @@ const lifeData = [
     title: "桃李不言，下自成蹊（《史記》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A343.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-09">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2748,7 +2750,7 @@ const lifeData = [
     title: "治國者鎒田，去害苗者而已（《淮南子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A344.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-10">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2756,7 +2758,7 @@ const lifeData = [
     title: "衣食足則知禮節（《管子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A345.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-12">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2764,7 +2766,7 @@ const lifeData = [
     title: "國將興，必貴師而重傅（《荀子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A346.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-13">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2772,7 +2774,7 @@ const lifeData = [
     title: "恩若已出，怨將誰歸（《宋名臣言行錄》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A347.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-15">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2780,7 +2782,7 @@ const lifeData = [
     title: "下之事上也，不從其所令，而從其所行（《禮記》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A348.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-18">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2788,7 +2790,7 @@ const lifeData = [
     title: "木從繩則正，后從諫則聖（《書經》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A349.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-22">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2796,7 +2798,7 @@ const lifeData = [
     title: "大人者言不必信，行不必果（《孟子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A350.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-23">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2804,7 +2806,7 @@ const lifeData = [
     title: "忠信以得之，驕泰以失之（《大學》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A351.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#10-25">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2812,7 +2814,7 @@ const lifeData = [
     title: "枉已者，未有能直人者（《孟子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A352.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#11-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2820,7 +2822,7 @@ const lifeData = [
     title: "其身正，不令而行（《論語》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A353.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#11-06">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2828,7 +2830,7 @@ const lifeData = [
     title: "有術則制人，無術則制於人（《淮南子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A354.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#11-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2836,7 +2838,7 @@ const lifeData = [
     title: "默而成之，不言而信，存乎德行（《易經》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A355.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#11-11">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2844,7 +2846,7 @@ const lifeData = [
     title: "興一利不若除一害（《十八史略》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A356.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#11-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2852,7 +2854,7 @@ const lifeData = [
     title: "用法務在寬簡（《貞觀政要》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A357.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#11-29">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2860,7 +2862,7 @@ const lifeData = [
     title: "智貴免禍（《三國志》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A358.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#12-01">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2868,7 +2870,7 @@ const lifeData = [
     title: "水清無大魚（《後漢書》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A359.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#12-02">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2876,7 +2878,7 @@ const lifeData = [
     title: "大禹聖者，乃惜寸陰；至於眾人，當惜分陰（《晉書》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A360.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#12-04">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2884,7 +2886,7 @@ const lifeData = [
     title: "寬者，不為苛急；簡者，不為繁碎耳（《宋名臣言行錄》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A361.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#12-05">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2892,7 +2894,7 @@ const lifeData = [
     title: "明主之所導制其臣，二柄而已矣（《韓非子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A362.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#12-07">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2900,7 +2902,7 @@ const lifeData = [
     title: "太上，下知有之（《老子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A363.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-24">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
   {
@@ -2908,7 +2910,7 @@ const lifeData = [
     title: "惟有道者，能備患於未形也（《管子》）",
     category: "活用於工作-領導人的心情",
     image: "./images/A364.webp",
-    prompt: '<a class="yf33" href="https://yfchen-115.netlify.app/N01-Note/D10-365-simple-philosophies-1130908/D10B4-365-simple-philosophies-1141001.html#07-26">連結</a>',
+    prompt: "",
     date: "115.07.09",
   },
 ];

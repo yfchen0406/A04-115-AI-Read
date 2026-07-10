@@ -4,6 +4,166 @@
 // ========================================
 const stickerPacks = [
   {
+    id: 98,
+    name: "個人Q版",
+    description: "颱風相關貼圖",
+    category: "天氣系列",
+    stickers: [
+      {
+        id: "GPT0015-2-1",
+        img: "./images/GPT0015-2/split_0_0.webp",
+      },
+      {
+        id: "GPT0015-2-2",
+        img: "./images/GPT0015-2/split_0_1.webp",
+      },
+      {
+        id: "GPT0015-2-3",
+        img: "./images/GPT0015-2/split_0_2.webp",
+      },
+      {
+        id: "GPT0015-2-4",
+        img: "./images/GPT0015-2/split_0_3.webp",
+      },
+      {
+        id: "GPT0015-2-5",
+        img: "./images/GPT0015-2/split_0_4.webp",
+      },
+      {
+        id: "GPT0015-2-6",
+        img: "./images/GPT0015-2/split_1_0.webp",
+      },
+      {
+        id: "GPT0015-2-7",
+        img: "./images/GPT0015-2/split_1_1.webp",
+      },
+      {
+        id: "GPT0015-2-8",
+        img: "./images/GPT0015-2/split_1_2.webp",
+      },
+      {
+        id: "GPT0015-2-9",
+        img: "./images/GPT0015-2/split_1_3.webp",
+      },
+      {
+        id: "GPT0015-2-A",
+        img: "./images/GPT0015-2/split_1_4.webp",
+      },
+      {
+        id: "GPT0015-2-B",
+        img: "./images/GPT0015-2/split_2_0.webp",
+      },
+      {
+        id: "GPT0015-2-C",
+        img: "./images/GPT0015-2/split_2_1.webp",
+      },
+      {
+        id: "GPT0015-2-D",
+        img: "./images/GPT0015-2/split_2_2.webp",
+      },
+      {
+        id: "GPT0015-2-E",
+        img: "./images/GPT0015-2/split_2_3.webp",
+      },
+      {
+        id: "GPT0015-2-F",
+        img: "./images/GPT0015-2/split_2_4.webp",
+      },
+      {
+        id: "GPT0015-2-G",
+        img: "./images/GPT0015-2/split_3_0.webp",
+      },
+      {
+        id: "GPT0015-2-H",
+        img: "./images/GPT0015-2/split_3_1.webp",
+      },
+      {
+        id: "GPT0015-2-I",
+        img: "./images/GPT0015-2/split_3_2.webp",
+      },
+      {
+        id: "GPT0015-2-J",
+        img: "./images/GPT0015-2/split_3_3.webp",
+      },
+      {
+        id: "GPT0015-2-K",
+        img: "./images/GPT0015-2/split_3_4.webp",
+      },
+    ],
+  },
+  {
+    id: 97,
+    name: "個人Q版",
+    description: "颱風相關貼圖",
+    category: "天氣系列",
+    stickers: [
+      {
+        id: "GPT0015-1-1",
+        img: "./images/GPT0015-1/split_0_0.webp",
+      },
+      {
+        id: "GPT0015-1-2",
+        img: "./images/GPT0015-1/split_0_1.webp",
+      },
+      {
+        id: "GPT0015-1-3",
+        img: "./images/GPT0015-1/split_0_2.webp",
+      },
+      {
+        id: "GPT0015-1-4",
+        img: "./images/GPT0015-1/split_0_3.webp",
+      },
+      {
+        id: "GPT0015-1-5",
+        img: "./images/GPT0015-1/split_1_0.webp",
+      },
+      {
+        id: "GPT0015-1-6",
+        img: "./images/GPT0015-1/split_1_1.webp",
+      },
+      {
+        id: "GPT0015-1-7",
+        img: "./images/GPT0015-1/split_1_2.webp",
+      },
+      {
+        id: "GPT0015-1-8",
+        img: "./images/GPT0015-1/split_1_3.webp",
+      },
+      {
+        id: "GPT0015-1-9",
+        img: "./images/GPT0015-1/split_2_0.webp",
+      },
+      {
+        id: "GPT0015-1-A",
+        img: "./images/GPT0015-1/split_2_1.webp",
+      },
+      {
+        id: "GPT0015-1-B",
+        img: "./images/GPT0015-1/split_2_2.webp",
+      },
+      {
+        id: "GPT0015-1-C",
+        img: "./images/GPT0015-1/split_2_3.webp",
+      },
+      {
+        id: "GPT0015-1-D",
+        img: "./images/GPT0015-1/split_3_0.webp",
+      },
+      {
+        id: "GPT0015-1-E",
+        img: "./images/GPT0015-1/split_3_1.webp",
+      },
+      {
+        id: "GPT0015-1-F",
+        img: "./images/GPT0015-1/split_3_2.webp",
+      },
+      {
+        id: "GPT0015-1-G",
+        img: "./images/GPT0015-1/split_3_3.webp",
+      },
+    ],
+  },
+  {
     id: 96,
     name: "個人Q版",
     description: "世界盃足球賽~第六版(這組也不錯，不過只做16隊)~A-D組",

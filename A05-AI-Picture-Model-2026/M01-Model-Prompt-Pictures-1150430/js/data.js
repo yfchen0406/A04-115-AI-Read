@@ -2316,5 +2316,25 @@ const promptsData = [
     date: "2026-07-08",
     url: "",
   },
+  {
+    id: 231,
+    title: "個人Q版~颱風防颱",
+    category: "Line",
+    image: "./images/L01-Line/GPT0015-1.webp",
+    prompt:
+      "<span class='yf2'>利用claude的/prompt-master，優化提示詞，自己寫的提示詞如下</span>~~我要用我的個人附件圖片做一個LINE貼圖，主題是關於颱風的相關表情貼，是一個4X4的貼圖",
+    date: "2026-07-10",
+    url: "",
+  },
+  {
+    id: 231,
+    title: "個人Q版~颱風防颱",
+    category: "Line",
+    image: "./images/L01-Line/GPT0015-2.webp",
+    prompt:
+      "<span class='yf2'>利用claude的/prompt-master，優化提示詞，自己寫的提示詞如下</span>~~我要用我的個人附件圖片做一個LINE貼圖，主題是關於颱風的相關表情貼，是一個4X4的貼圖",
+    date: "2026-07-10",
+    url: "",
+  },
 ];
 

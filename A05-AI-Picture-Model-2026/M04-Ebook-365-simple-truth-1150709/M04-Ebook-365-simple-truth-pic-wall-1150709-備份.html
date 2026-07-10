@@ -746,8 +746,25 @@
       dateEl.textContent = `📅 ${item.date}`;
       catEl.textContent = `📂 ${item.category}`;
 
-      // 直接使用原始 prompt 作為連結（不修改任何內容）
-      linkEl.innerHTML = item.prompt || '';
+      // 處理連結：從 prompt 中抓取網址並附加 #date 作為索引
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = item.prompt || "";
+      const links = tempDiv.querySelectorAll('a');
+      linkEl.innerHTML = '';
+
+      if (links.length > 0) {
+        links.forEach(a => {
+          const newA = a.cloneNode(true);
+          // 核心修改：將連結網址加上日期索引
+          const originalHref = newA.getAttribute('href');
+          if (originalHref && item.date) {
+            // 確保如果原本已有 hash 則替換，否則附加
+            const baseUrl = originalHref.split('#')[0];
+            newA.setAttribute('href', `${baseUrl}#${item.date}`);
+          }
+          linkEl.appendChild(newA);
+        });
+      }
 
       imgEl.style.opacity = 0;
       imgEl.src = item.image;

@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>五十音學習網站</title>
+    <!-- ===== 全部 CSS 內嵌 ===== -->
+    <style>
+        /* ----- reset & base ----- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --primary: #2d4b6e;
+            --primary-light: #4a7a9c;
+            --primary-dark: #1a2f44;
+            --accent: #e8835a;
+            --accent-light: #f5b79a;
+            --bg: #f7f3ee;
+            --card-bg: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #5a5a5a;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.25s ease;
+            --font-jp: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+        }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: var(--font-jp);
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+        #app {
+            max-width: 1300px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 28px 24px 40px;
+            position: relative;
+        }
+
+        /* ----- header ----- */
+        .app-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #eee;
+        }
+        .app-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+        .app-header h1 span {
+            color: var(--accent);
+        }
+        .header-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            font-size: 0.9rem;
+            background: var(--bg);
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+        }
+        .header-stats .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .header-stats .stat-item .label {
+            color: var(--text-light);
+        }
+        .header-stats .stat-item .value {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        /* ----- tabs ----- */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 12px;
+        }
+        .tab-btn {
+            padding: 8px 20px;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            border-radius: 30px;
+            transition: var(--transition);
+            font-family: var(--font-jp);
+        }
+        .tab-btn:hover {
+            background: #f0ece7;
+            color: var(--text);
+        }
+        .tab-btn.active {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(45, 75, 110, 0.25);
+        }
+
+        /* ----- kana grid ----- */
+        .kana-grid-wrap {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        .kana-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+            gap: 10px;
+            min-width: 600px;
+        }
+        .kana-card {
+            background: var(--bg);
+            border-radius: var(--radius-sm);
+            padding: 12px 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            user-select: none;
+        }
+        .kana-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+            border-color: var(--primary-light);
+        }
+        .kana-card .char {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--primary-dark);
+        }
+        .kana-card .romaji {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .kana-card .play-icon {
+            font-size: 0.7rem;
+            opacity: 0.4;
+            transition: var(--transition);
+            margin-top: 2px;
+        }
+        .kana-card:hover .play-icon {
+            opacity: 0.8;
+        }
+        .kana-card .word-hint {
+            font-size: 0.6rem;
+            color: var(--text-light);
+            opacity: 0.7;
+            margin-top: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* 卡片點擊後展開詳情 */
+        .kana-detail {
+            display: none;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px dashed #ddd;
+            font-size: 0.7rem;
+            text-align: left;
+            color: var(--text-light);
+        }
+        .kana-card.expanded .kana-detail {
+            display: block;
+        }
+        .kana-card.expanded {
+            background: #f0f4fa;
+            border-color: var(--primary-light);
+            grid-column: span 2;
+        }
+        .kana-detail .word-item {
+            padding: 2px 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+        }
+        .kana-detail .word-item .jp {
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+        .kana-detail .word-item .zh {
+            color: var(--text-light);
+        }
+        .kana-detail .example {
+            margin-top: 4px;
+            padding: 4px 6px;
+            background: #eef3f8;
+            border-radius: 6px;
+            font-size: 0.7rem;
+        }
+        .kana-detail .example .jp {
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+        .kana-detail .example .zh {
+            color: var(--text-light);
+        }
+        .kana-detail .speak-btn {
+            background: none;
+            border: none;
+            color: var(--primary-light);
+            cursor: pointer;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        .kana-detail .speak-btn:hover {
+            background: #dce6f0;
+        }
+
+        /* ----- 測驗區域 ----- */
+        .quiz-section {
+            background: var(--bg);
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            margin-top: 10px;
+        }
+        .quiz-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .quiz-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .quiz-mode-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .quiz-mode-btn {
+            padding: 6px 16px;
+            border: 2px solid #d0d7df;
+            background: #fff;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-jp);
+        }
+        .quiz-mode-btn:hover {
+            border-color: var(--primary-light);
+            color: var(--primary);
+        }
+        .quiz-mode-btn.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .quiz-area {
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            padding: 24px 16px;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+        .quiz-prompt {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .quiz-prompt .sub {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+            margin: 8px 0 12px;
+        }
+        .quiz-options button {
+            padding: 14px 8px;
+            border: 2px solid #dce2ea;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-jp);
+            color: var(--text);
+        }
+        .quiz-options button:hover {
+            border-color: var(--primary-light);
+            background: #f5f8fc;
+        }
+        .quiz-options button.correct {
+            border-color: #2d8f5c;
+            background: #e1f3e9;
+            color: #1a6a42;
+        }
+        .quiz-options button.wrong {
+            border-color: #c0392b;
+            background: #fde8e5;
+            color: #a93226;
+        }
+        .quiz-options button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .quiz-feedback {
+            margin-top: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            min-height: 30px;
+            color: var(--text-light);
+        }
+        .quiz-feedback .correct-text {
+            color: #2d8f5c;
+        }
+        .quiz-feedback .wrong-text {
+            color: #c0392b;
+        }
+        .quiz-progress {
+            margin-top: 14px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .quiz-progress span {
+            background: #fff;
+            padding: 4px 14px;
+            border-radius: 30px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+        .quiz-next-btn {
+            margin-top: 16px;
+            padding: 10px 36px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-jp);
+        }
+        .quiz-next-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        .quiz-next-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .quiz-input-area {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 8px 0;
+        }
+        .quiz-input-area input {
+            padding: 12px 18px;
+            font-size: 1.4rem;
+            border: 2px solid #dce2ea;
+            border-radius: var(--radius-sm);
+            width: 160px;
+            text-align: center;
+            font-family: var(--font-jp);
+            outline: none;
+            transition: var(--transition);
+        }
+        .quiz-input-area input:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(45, 75, 110, 0.1);
+        }
+        .quiz-input-area button {
+            padding: 12px 28px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-jp);
+        }
+        .quiz-input-area button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ----- 進度區 (今日學習) ----- */
+        .progress-section {
+            margin-top: 28px;
+            padding: 18px 20px;
+            background: #f0f4fa;
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .progress-section .prog-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+        }
+        .progress-section .prog-item .num {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* ----- responsive ----- */
+        @media (max-width: 768px) {
+            #app {
+                padding: 16px 12px 28px;
+            }
+            .app-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+            .app-header h1 {
+                font-size: 1.5rem;
+            }
+            .header-stats {
+                justify-content: space-around;
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+            .tabs {
+                gap: 4px;
+            }
+            .tab-btn {
+                font-size: 0.85rem;
+                padding: 6px 14px;
+            }
+            .kana-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                gap: 6px;
+                min-width: 0;
+            }
+            .kana-card .char {
+                font-size: 1.6rem;
+            }
+            .kana-card .romaji {
+                font-size: 0.6rem;
+            }
+            .kana-card.expanded {
+                grid-column: span 1;
+            }
+            .quiz-prompt {
+                font-size: 2.4rem;
+                min-height: 56px;
+            }
+            .quiz-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .quiz-options button {
+                font-size: 1rem;
+                padding: 12px 6px;
+            }
+            .quiz-section {
+                padding: 16px 12px;
+            }
+            .progress-section {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+            .progress-section .prog-item {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 420px) {
+            .kana-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            .quiz-options {
+                grid-template-columns: 1fr 1fr;
+            }
+            .quiz-input-area input {
+                width: 120px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ----- 工具類 ----- */
+        .hidden {
+            display: none !important;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-8 {
+            margin-top: 8px;
+        }
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+        .gap-4 {
+            gap: 4px;
+        }
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .speak-mini {
+            background: none;
+            border: none;
+            color: var(--primary-light);
+            cursor: pointer;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+        .speak-mini:hover {
+            background: #e3eaf2;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--primary-dark);
+            font-size: 0.65rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- ===== HEADER ===== -->
+        <header class="app-header">
+            <h1>🌸 五十音 <span>学び</span></h1>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="label">📖 今日學習</span>
+                    <span class="value" id="todayCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">🎯 正確率</span>
+                    <span class="value" id="accuracyDisplay">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">🔥 連續天數</span>
+                    <span class="value" id="streakDisplay">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== 標籤切換 ===== -->
+        <div class="tabs" id="tabContainer">
+            <button class="tab-btn active" data-tab="seion">清音</button>
+            <button class="tab-btn" data-tab="dakuon">濁音</button>
+            <button class="tab-btn" data-tab="handakuon">半濁音</button>
+            <button class="tab-btn" data-tab="youon">拗音</button>
+        </div>
+
+        <!-- ===== 五十音卡片區 ===== -->
+        <div class="kana-grid-wrap">
+            <div class="kana-grid" id="kanaGrid"></div>
+        </div>
+
+        <!-- ===== 測驗區 ===== -->
+        <section class="quiz-section">
+            <div class="quiz-header">
+                <h2>✏️ 測驗挑戰</h2>
+                <div class="quiz-mode-group">
+                    <button class="quiz-mode-btn active" data-mode="kana2romaji">看假名選發音</button>
+                    <button class="quiz-mode-btn" data-mode="romaji2kana">聽發音選假名</button>
+                    <button class="quiz-mode-btn" data-mode="typing">羅馬拼音拼字</button>
+                </div>
+            </div>
+            <div class="quiz-area" id="quizArea">
+                <div class="quiz-prompt" id="quizPrompt">點擊「開始測驗」</div>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div class="quiz-input-area hidden" id="quizInputArea">
+                    <input type="text" id="quizInput" placeholder="輸入假名" maxlength="2" autocomplete="off" />
+                    <button id="quizInputBtn">確認</button>
+                </div>
+                <div class="quiz-feedback" id="quizFeedback"></div>
+                <div class="quiz-progress" id="quizProgress">
+                    <span>✅ 正確: <strong id="correctCount">0</strong></span>
+                    <span>❌ 錯誤: <strong id="wrongCount">0</strong></span>
+                    <span>📊 正確率: <strong id="rateDisplay">0%</strong></span>
+                </div>
+                <button class="quiz-next-btn" id="quizNextBtn">下一題 →</button>
+            </div>
+        </section>
+
+        <!-- ===== 進度區 ===== -->
+        <div class="progress-section" id="progressSection">
+            <div class="prog-item">📘 今日學習項目：<span class="num" id="progToday">0</span></div>
+            <div class="prog-item">🎯 測驗正確率：<span class="num" id="progAccuracy">-</span></div>
+            <div class="prog-item">🔥 連續學習天數：<span class="num" id="progStreak">0</span></div>
+            <div class="prog-item">⏱️ 今日練習時間：<span class="num" id="progTime">0</span> 分</div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ===== 全部 JavaScript 內嵌 ===== -->
+    <script>
+        // =================================================================
+        // 1. 五十音資料 (JSON) — 清音・濁音・半濁音・拗音
+        // =================================================================
+        const KANA_DATA = {
+            // ----- 清音 (Seion) -----
+            seion: [
+                // あ行
+                { char: 'あ', romaji: 'a', words: [{ word: '愛', reading: 'あい', meaning: '愛' },
+                        { word: '赤', reading: 'あか', meaning: '紅色' }],
+                    example: { sentence: 'あの人は優しいです。', meaning: '那個人很溫柔。' } },
+                { char: 'い', romaji: 'i', words: [{ word: '犬', reading: 'いぬ', meaning: '狗' },
+                        { word: '石', reading: 'いし', meaning: '石頭' }],
+                    example: { sentence: '犬が好きです。', meaning: '我喜歡狗。' } },
+                { char: 'う', romaji: 'u', words: [{ word: '魚', reading: 'うお', meaning: '魚' },
+                        { word: '海', reading: 'うみ', meaning: '海' }],
+                    example: { sentence: '海に行きたい。', meaning: '想去海邊。' } },
+                { char: 'え', romaji: 'e', words: [{ word: '絵', reading: 'え', meaning: '圖畫' },
+                        { word: '駅', reading: 'えき', meaning: '車站' }],
+                    example: { sentence: '駅はどこですか。', meaning: '車站在哪裡？' } },
+                { char: 'お', romaji: 'o', words: [{ word: '男', reading: 'おとこ', meaning: '男人' },
+                        { word: '女', reading: 'おんな', meaning: '女人' }],
+                    example: { sentence: 'お茶を飲みます。', meaning: '喝茶。' } },
+                // か行
+                { char: 'か', romaji: 'ka', words: [{ word: '花', reading: 'はな', meaning: '花' },
+                        { word: '傘', reading: 'かさ', meaning: '傘' }],
+                    example: { sentence: '花が咲いています。', meaning: '花正開著。' } },
+                { char: 'き', romaji: 'ki', words: [{ word: '木', reading: 'き', meaning: '樹' },
+                        { word: '着物', reading: 'きもの', meaning: '和服' }],
+                    example: { sentence: '木の下に座ります。', meaning: '坐在樹下。' } },
+                { char: 'く', romaji: 'ku', words: [{ word: '靴', reading: 'くつ', meaning: '鞋子' },
+                        { word: '暗い', reading: 'くらい', meaning: '昏暗的' }],
+                    example: { sentence: '暗い部屋です。', meaning: '昏暗的房間。' } },
+                { char: 'け', romaji: 'ke', words: [{ word: '毛', reading: 'け', meaning: '毛髮' },
+                        { word: '結婚', reading: 'けっこん', meaning: '結婚' }],
+                    example: { sentence: '結婚します。', meaning: '要結婚了。' } },
+                { char: 'こ', romaji: 'ko', words: [{ word: '子供', reading: 'こども', meaning: '小孩' },
+                        { word: '心', reading: 'こころ', meaning: '心' }],
+                    example: { sentence: '子供が大好きです。', meaning: '很喜歡小孩。' } },
+                // さ行
+                { char: 'さ', romaji: 'sa', words: [{ word: '酒', reading: 'さけ', meaning: '酒' },
+                        { word: '桜', reading: 'さくら', meaning: '櫻花' }],
+                    example: { sentence: '桜がきれいです。', meaning: '櫻花很漂亮。' } },
+                { char: 'し', romaji: 'shi', words: [{ word: '島', reading: 'しま', meaning: '島嶼' },
+                        { word: '新聞', reading: 'しんぶん', meaning: '報紙' }],
+                    example: { sentence: '新聞を読みます。', meaning: '讀報紙。' } },
+                { char: 'す', romaji: 'su', words: [{ word: '水', reading: 'みず', meaning: '水' },
+                        { word: '好き', reading: 'すき', meaning: '喜歡' }],
+                    example: { sentence: '水が好きです。', meaning: '喜歡水。' } },
+                { char: 'せ', romaji: 'se', words: [{ word: '世界', reading: 'せかい', meaning: '世界' },
+                        { word: '先生', reading: 'せんせい', meaning: '老師' }],
+                    example: { sentence: '先生は優しいです。', meaning: '老師很溫柔。' } },
+                { char: 'そ', romaji: 'so', words: [{ word: '外', reading: 'そと', meaning: '外面' },
+                        { word: '空', reading: 'そら', meaning: '天空' }],
+                    example: { sentence: '空が青いです。', meaning: '天空是藍色的。' } },
+                // た行
+                { char: 'た', romaji: 'ta', words: [{ word: '田', reading: 'た', meaning: '稻田' },
+                        { word: '建物', reading: 'たてもの', meaning: '建築物' }],
+                    example: { sentence: '田んぼが広いです。', meaning: '稻田很寬廣。' } },
+                { char: 'ち', romaji: 'chi', words: [{ word: '地図', reading: 'ちず', meaning: '地圖' },
+                        { word: '小さい', reading: 'ちいさい', meaning: '小的' }],
+                    example: { sentence: '小さい車です。', meaning: '小車。' } },
+                { char: 'つ', romaji: 'tsu', words: [{ word: '月', reading: 'つき', meaning: '月亮' },
+                        { word: '強い', reading: 'つよい', meaning: '強的' }],
+                    example: { sentence: '月がきれいです。', meaning: '月亮很美。' } },
+                { char: 'て', romaji: 'te', words: [{ word: '手', reading: 'て', meaning: '手' },
+                        { word: '天気', reading: 'てんき', meaning: '天氣' }],
+                    example: { sentence: '天気がいいです。', meaning: '天氣很好。' } },
+                { char: 'と', romaji: 'to', words: [{ word: '鳥', reading: 'とり', meaning: '鳥' },
+                        { word: '時計', reading: 'とけい', meaning: '時鐘' }],
+                    example: { sentence: '鳥が飛んでいます。', meaning: '鳥在飛。' } },
+                // な行
+                { char: 'な', romaji: 'na', words: [{ word: '夏', reading: 'なつ', meaning: '夏天' },
+                        { word: '名前', reading: 'なまえ', meaning: '名字' }],
+                    example: { sentence: '夏が好きです。', meaning: '喜歡夏天。' } },
+                { char: 'に', romaji: 'ni', words: [{ word: '庭', reading: 'にわ', meaning: '庭院' },
+                        { word: '日本', reading: 'にほん', meaning: '日本' }],
+                    example: { sentence: '日本に行きたい。', meaning: '想去日本。' } },
+                { char: 'ぬ', romaji: 'nu', words: [{ word: '布', reading: 'ぬの', meaning: '布' },
+                        { word: '滑る', reading: 'ぬる', meaning: '滑' }],
+                    example: { sentence: '布を買います。', meaning: '買布。' } },
+                { char: 'ね', romaji: 'ne', words: [{ word: '猫', reading: 'ねこ', meaning: '貓' },
+                        { word: '寝る', reading: 'ねる', meaning: '睡覺' }],
+                    example: { sentence: '猫が寝ています。', meaning: '貓在睡覺。' } },
+                { char: 'の', romaji: 'no', words: [{ word: '野', reading: 'の', meaning: '田野' },
+                        { word: '乗る', reading: 'のる', meaning: '搭乘' }],
+                    example: { sentence: '電車に乗ります。', meaning: '搭電車。' } },
+                // は行
+                { char: 'は', romaji: 'ha', words: [{ word: '花', reading: 'はな', meaning: '花' },
+                        { word: '橋', reading: 'はし', meaning: '橋' }],
+                    example: { sentence: '花を買いました。', meaning: '買了花。' } },
+                { char: 'ひ', romaji: 'hi', words: [{ word: '人', reading: 'ひと', meaning: '人' },
+                        { word: '光', reading: 'ひかり', meaning: '光' }],
+                    example: { sentence: '人が多いです。', meaning: '人很多。' } },
+                { char: 'ふ', romaji: 'fu', words: [{ word: '冬', reading: 'ふゆ', meaning: '冬天' },
+                        { word: '風', reading: 'かぜ', meaning: '風' }],
+                    example: { sentence: '冬が寒いです。', meaning: '冬天很冷。' } },
+                { char: 'へ', romaji: 'he', words: [{ word: '部屋', reading: 'へや', meaning: '房間' },
+                        { word: '平和', reading: 'へいわ', meaning: '和平' }],
+                    example: { sentence: '部屋がきれいです。', meaning: '房間很乾淨。' } },
+                { char: 'ほ', romaji: 'ho', words: [{ word: '星', reading: 'ほし', meaning: '星星' },
+                        { word: '本', reading: 'ほん', meaning: '書' }],
+                    example: { sentence: '星がきれいです。', meaning: '星星很美。' } },
+                // ま行
+                { char: 'ま', romaji: 'ma', words: [{ word: '町', reading: 'まち', meaning: '城鎮' },
+                        { word: '窓', reading: 'まど', meaning: '窗戶' }],
+                    example: { sentence: '窓を開けます。', meaning: '打開窗戶。' } },
+                { char: 'み', romaji: 'mi', words: [{ word: '耳', reading: 'みみ', meaning: '耳朵' },
+                        { word: '水', reading: 'みず', meaning: '水' }],
+                    example: { sentence: '水を飲みます。', meaning: '喝水。' } },
+                { char: 'む', romaji: 'mu', words: [{ word: '虫', reading: 'むし', meaning: '蟲' },
+                        { word: '村', reading: 'むら', meaning: '村莊' }],
+                    example: { sentence: '虫が嫌いです。', meaning: '討厭蟲。' } },
+                { char: 'め', romaji: 'me', words: [{ word: '目', reading: 'め', meaning: '眼睛' },
+                        { word: '女', reading: 'おんな', meaning: '女人' }],
+                    example: { sentence: '目が大きいです。', meaning: '眼睛很大。' } },
+                { char: 'も', romaji: 'mo', words: [{ word: '森', reading: 'もり', meaning: '森林' },
+                        { word: '物', reading: 'もの', meaning: '物品' }],
+                    example: { sentence: '森に行きます。', meaning: '去森林。' } },
+                // や行
+                { char: 'や', romaji: 'ya', words: [{ word: '山', reading: 'やま', meaning: '山' },
+                        { word: '野菜', reading: 'やさい', meaning: '蔬菜' }],
+                    example: { sentence: '山が高いです。', meaning: '山很高。' } },
+                { char: 'ゆ', romaji: 'yu', words: [{ word: '雪', reading: 'ゆき', meaning: '雪' },
+                        { word: '夢', reading: 'ゆめ', meaning: '夢' }],
+                    example: { sentence: '雪が降っています。', meaning: '正在下雪。' } },
+                { char: 'よ', romaji: 'yo', words: [{ word: '夜', reading: 'よる', meaning: '夜晚' },
+                        { word: '予約', reading: 'よやく', meaning: '預約' }],
+                    example: { sentence: '夜が静かです。', meaning: '夜晚很安靜。' } },
+                // ら行
+                { char: 'ら', romaji: 'ra', words: [{ word: '羅', reading: 'ら', meaning: '羅' },
+                        { word: '落ちる', reading: 'おちる', meaning: '掉落' }],
+                    example: { sentence: '落ちないでください。', meaning: '請不要掉落。' } },
+                { char: 'り', romaji: 'ri', words: [{ word: '林', reading: 'はやし', meaning: '森林' },
+                        { word: '料理', reading: 'りょうり', meaning: '料理' }],
+                    example: { sentence: '料理が上手です。', meaning: '料理很拿手。' } },
+                { char: 'る', romaji: 'ru', words: [{ word: '留守', reading: 'るす', meaning: '不在家' },
+                        { word: '瑠璃', reading: 'るり', meaning: '琉璃' }],
+                    example: { sentence: '留守にします。', meaning: '不在家。' } },
+                { char: 'れ', romaji: 're', words: [{ word: '歴史', reading: 'れきし', meaning: '歷史' },
+                        { word: '練習', reading: 'れんしゅう', meaning: '練習' }],
+                    example: { sentence: '歴史を勉強します。', meaning: '學習歷史。' } },
+                { char: 'ろ', romaji: 'ro', words: [{ word: '路', reading: 'ろ', meaning: '道路' },
+                        { word: '論', reading: 'ろん', meaning: '理論' }],
+                    example: { sentence: '論理を考えます。', meaning: '思考邏輯。' } },
+                // わ行
+                { char: 'わ', romaji: 'wa', words: [{ word: '私', reading: 'わたし', meaning: '我' },
+                        { word: '若い', reading: 'わかい', meaning: '年輕的' }],
+                    example: { sentence: '私は学生です。', meaning: '我是學生。' } },
+                { char: 'を', romaji: 'wo', words: [{ word: 'を', reading: 'を', meaning: '助詞' },
+                        { word: '越す', reading: 'こす', meaning: '越過' }],
+                    example: { sentence: '橋を渡ります。', meaning: '過橋。' } },
+                { char: 'ん', romaji: 'n', words: [{ word: '便', reading: 'びん', meaning: '方便' },
+                        { word: '本', reading: 'ほん', meaning: '書' }],
+                    example: { sentence: '本を読みます。', meaning: '看書。' } }
+            ],
+            // ----- 濁音 (Dakuon) -----
+            dakuon: [
+                // が行
+                { char: 'が', romaji: 'ga', words: [{ word: '学校', reading: 'がっこう', meaning: '學校' },
+                        { word: '外国', reading: 'がいこく', meaning: '外國' }],
+                    example: { sentence: '学校に行きます。', meaning: '去學校。' } },
+                { char: 'ぎ', romaji: 'gi', words: [{ word: '技術', reading: 'ぎじゅつ', meaning: '技術' },
+                        { word: '銀行', reading: 'ぎんこう', meaning: '銀行' }],
+                    example: { sentence: '銀行でお金を下ろします。', meaning: '在銀行領錢。' } },
+                { char: 'ぐ', romaji: 'gu', words: [{ word: '具', reading: 'ぐ', meaning: '工具' },
+                        { word: '偶然', reading: 'ぐうぜん', meaning: '偶然' }],
+                    example: { sentence: '偶然会いました。', meaning: '偶然相遇了。' } },
+                { char: 'げ', romaji: 'ge', words: [{ word: '下', reading: 'げ', meaning: '下' },
+                        { word: '玄関', reading: 'げんかん', meaning: '玄關' }],
+                    example: { sentence: '玄関で靴を脱ぎます。', meaning: '在玄關脫鞋。' } },
+                { char: 'ご', romaji: 'go', words: [{ word: '午後', reading: 'ごご', meaning: '下午' },
+                        { word: 'ご飯', reading: 'ごはん', meaning: '米飯' }],
+                    example: { sentence: '午後は暑いです。', meaning: '下午很熱。' } },
+                // ざ行
+                { char: 'ざ', romaji: 'za', words: [{ word: '座る', reading: 'すわる', meaning: '坐' },
+                        { word: '雑誌', reading: 'ざっし', meaning: '雜誌' }],
+                    example: { sentence: '雑誌を読みます。', meaning: '讀雜誌。' } },
+                { char: 'じ', romaji: 'ji', words: [{ word: '時間', reading: 'じかん', meaning: '時間' },
+                        { word: '辞書', reading: 'じしょ', meaning: '辭典' }],
+                    example: { sentence: '時間がありません。', meaning: '沒有時間。' } },
+                { char: 'ず', romaji: 'zu', words: [{ word: '図', reading: 'ず', meaning: '圖表' },
+                        { word: '頭', reading: 'あたま', meaning: '頭' }],
+                    example: { sentence: '頭が痛いです。', meaning: '頭痛。' } },
+                { char: 'ぜ', romaji: 'ze', words: [{ word: '畳', reading: 'たたみ', meaning: '榻榻米' },
+                        { word: '全', reading: 'ぜん', meaning: '全部' }],
+                    example: { sentence: '全部食べます。', meaning: '全部吃掉。' } },
+                { char: 'ぞ', romaji: 'zo', words: [{ word: 'ゾウ', reading: 'ぞう', meaning: '大象' },
+                        { word: '増す', reading: 'ます', meaning: '增加' }],
+                    example: { sentence: 'ゾウが大きいです。', meaning: '大象很大。' } },
+                // だ行
+                { char: 'だ', romaji: 'da', words: [{ word: '大', reading: 'だい', meaning: '大' },
+                        { word: '男', reading: 'おとこ', meaning: '男人' }],
+                    example: { sentence: '大好きです。', meaning: '最喜歡了。' } },
+                { char: 'ぢ', romaji: 'di', words: [{ word: '縮む', reading: 'ちぢむ', meaning: '縮小' },
+                        { word: '続く', reading: 'つづく', meaning: '繼續' }],
+                    example: { sentence: '続けます。', meaning: '繼續。' } },
+                { char: 'づ', romaji: 'du', words: [{ word: '続', reading: 'つづ', meaning: '繼續' },
+                        { word: '団子', reading: 'だんご', meaning: '糰子' }],
+                    example: { sentence: '団子を食べます。', meaning: '吃糰子。' } },
+                { char: 'で', romaji: 'de', words: [{ word: '出', reading: 'で', meaning: '出去' },
+                        { word: '電話', reading: 'でんわ', meaning: '電話' }],
+                    example: { sentence: '電話をかけます。', meaning: '打電話。' } },
+                { char: 'ど', romaji: 'do', words: [{ word: '土', reading: 'ど', meaning: '泥土' },
+                        { word: 'どの', reading: 'どの', meaning: '哪個' }],
+                    example: { sentence: 'どの本ですか。', meaning: '哪一本書？' } },
+                // ば行
+                { char: 'ば', romaji: 'ba', words: [{ word: '馬', reading: 'うま', meaning: '馬' },
+                        { word: '場', reading: 'ば', meaning: '場所' }],
+                    example: { sentence: '馬が走っています。', meaning: '馬在奔跑。' } },
+                { char: 'び', romaji: 'bi', words: [{ word: '美', reading: 'び', meaning: '美麗' },
+                        { word: 'ビル', reading: 'びる', meaning: '大樓' }],
+                    example: { sentence: '美しい花です。', meaning: '美麗的花。' } },
+                { char: 'ぶ', romaji: 'bu', words: [{ word: '部', reading: 'ぶ', meaning: '部分' },
+                        { word: '文化', reading: 'ぶんか', meaning: '文化' }],
+                    example: { sentence: '文化が好きです。', meaning: '喜歡文化。' } },
+                { char: 'べ', romaji: 'be', words: [{ word: '別', reading: 'べつ', meaning: '別' },
+                        { word: '勉強', reading: 'べんきょう', meaning: '學習' }],
+                    example: { sentence: '勉強します。', meaning: '學習。' } },
+                { char: 'ぼ', romaji: 'bo', words: [{ word: '母', reading: 'はは', meaning: '母親' },
+                        { word: '僕', reading: 'ぼく', meaning: '我（男性）' }],
+                    example: { sentence: '母が好きです。', meaning: '喜歡媽媽。' } }
+            ],
+            // ----- 半濁音 (Handakuon) -----
+            handakuon: [
+                { char: 'ぱ', romaji: 'pa', words: [{ word: 'パン', reading: 'ぱん', meaning: '麵包' },
+                        { word: 'パソコン', reading: 'ぱそこん', meaning: '電腦' }],
+                    example: { sentence: 'パンを食べます。', meaning: '吃麵包。' } },
+                { char: 'ぴ', romaji: 'pi', words: [{ word: 'ピアノ', reading: 'ぴあの', meaning: '鋼琴' },
+                        { word: 'ピンク', reading: 'ぴんく', meaning: '粉紅色' }],
+                    example: { sentence: 'ピアノを弾きます。', meaning: '彈鋼琴。' } },
+                { char: 'ぷ', romaji: 'pu', words: [{ word: 'プール', reading: 'ぷーる', meaning: '游泳池' },
+                        { word: 'プレゼント', reading: 'ぷれぜんと', meaning: '禮物' }],
+                    example: { sentence: 'プールで泳ぎます。', meaning: '在游泳池游泳。' } },
+                { char: 'ぺ', romaji: 'pe', words: [{ word: 'ペン', reading: 'ぺん', meaning: '筆' },
+                        { word: 'ページ', reading: 'ぺーじ', meaning: '頁面' }],
+                    example: { sentence: 'ペンで書きます。', meaning: '用筆寫。' } },
+                { char: 'ぽ', romaji: 'po', words: [{ word: 'ポケット', reading: 'ぽけっと', meaning: '口袋' },
+                        { word: 'ポスト', reading: 'ぽすと', meaning: '郵筒' }],
+                    example: { sentence: 'ポストに投函します。', meaning: '投進郵筒。' } }
+            ],
+            // ----- 拗音 (Youon) -----
+            youon: [
+                { char: 'きゃ', romaji: 'kya', words: [{ word: '客', reading: 'きゃく', meaning: '客人' },
+                        { word: 'キャンプ', reading: 'きゃんぷ', meaning: '露營' }],
+                    example: { sentence: 'キャンプに行きます。', meaning: '去露營。' } },
+                { char: 'きゅ', romaji: 'kyu', words: [{ word: '牛乳', reading: 'ぎゅうにゅう', meaning: '牛奶' },
+                        { word: '教室', reading: 'きょうしつ', meaning: '教室' }],
+                    example: { sentence: '教室で勉強します。', meaning: '在教室學習。' } },
+                { char: 'きょ', romaji: 'kyo', words: [{ word: '今日', reading: 'きょう', meaning: '今天' },
+                        { word: '京都', reading: 'きょうと', meaning: '京都' }],
+                    example: { sentence: '今日は晴れです。', meaning: '今天晴天。' } },
+                { char: 'しゃ', romaji: 'sha', words: [{ word: '社', reading: 'しゃ', meaning: '公司' },
+                        { word: '写真', reading: 'しゃしん', meaning: '照片' }],
+                    example: { sentence: '写真を撮ります。', meaning: '拍照。' } },
+                { char: 'しゅ', romaji: 'shu', words: [{ word: '手', reading: 'て', meaning: '手' },
+                        { word: '宿題', reading: 'しゅくだい', meaning: '作業' }],
+                    example: { sentence: '宿題をします。', meaning: '做功課。' } },
+                { char: 'しょ', romaji: 'sho', words: [{ word: '書', reading: 'しょ', meaning: '書寫' },
+                        { word: '食事', reading: 'しょくじ', meaning: '用餐' }],
+                    example: { sentence: '食事をします。', meaning: '用餐。' } },
+                { char: 'ちゃ', romaji: 'cha', words: [{ word: '茶', reading: 'ちゃ', meaning: '茶' },
+                        { word: 'ちゃんと', reading: 'ちゃんと', meaning: '好好地' }],
+                    example: { sentence: '茶を飲みます。', meaning: '喝茶。' } },
+                { char: 'ちゅ', romaji: 'chu', words: [{ word: '注意', reading: 'ちゅうい', meaning: '注意' },
+                        { word: '注射', reading: 'ちゅうしゃ', meaning: '注射' }],
+                    example: { sentence: '注意してください。', meaning: '請注意。' } },
+                { char: 'ちょ', romaji: 'cho', words: [{ word: 'ちょっと', reading: 'ちょっと', meaning: '稍微' },
+                        { word: '調査', reading: 'ちょうさ', meaning: '調查' }],
+                    example: { sentence: 'ちょっと待ってください。', meaning: '請稍等。' } },
+                { char: 'にゃ', romaji: 'nya', words: [{ word: 'にゃ', reading: 'にゃ', meaning: '喵' },
+                        { word: 'ニャン', reading: 'にゃん', meaning: '喵' }],
+                    example: { sentence: '猫がにゃんと鳴きます。', meaning: '貓喵喵叫。' } },
+                { char: 'にゅ', romaji: 'nyu', words: [{ word: 'ニュース', reading: 'にゅーす', meaning: '新聞' },
+                        { word: '入学', reading: 'にゅうがく', meaning: '入學' }],
+                    example: { sentence: '入学します。', meaning: '入學。' } },
+                { char: 'にょ', romaji: 'nyo', words: [{ word: 'にょ', reading: 'にょ', meaning: '女（古語）' },
+                        { word: '尿', reading: 'にょう', meaning: '尿' }],
+                    example: { sentence: 'にょにょと歩きます。', meaning: '輕步走。' } },
+                { char: 'ひゃ', romaji: 'hya', words: [{ word: '百', reading: 'ひゃく', meaning: '百' },
+                        { word: '拍手', reading: 'はくしゅ', meaning: '拍手' }],
+                    example: { sentence: '拍手をします。', meaning: '拍手。' } },
+                { char: 'ひゅ', romaji: 'hyu', words: [{ word: '流行', reading: 'りゅうこう', meaning: '流行' },
+                        { word: '氷', reading: 'こおり', meaning: '冰' }],
+                    example: { sentence: '流行っています。', meaning: '正在流行。' } },
+                { char: 'ひょ', romaji: 'hyo', words: [{ word: '表現', reading: 'ひょうげん', meaning: '表現' },
+                        { word: '評価', reading: 'ひょうか', meaning: '評價' }],
+                    example: { sentence: '表現が上手です。', meaning: '表現很好。' } },
+                { char: 'みゃ', romaji: 'mya', words: [{ word: 'みゃ', reading: 'みゃ', meaning: '宮（古語）' },
+                        { word: 'ミャンマー', reading: 'みゃんまー', meaning: '緬甸' }],
+                    example: { sentence: 'ミャンマーに行きます。', meaning: '去緬甸。' } },
+                { char: 'みゅ', romaji: 'myu', words: [{ word: 'ミュージック', reading: 'みゅーじっく', meaning: '音樂' },
+                        { word: 'ミューズ', reading: 'みゅーず', meaning: '繆斯' }],
+                    example: { sentence: '音楽が好きです。', meaning: '喜歡音樂。' } },
+                { char: 'みょ', romaji: 'myo', words: [{ word: '妙', reading: 'みょう', meaning: '奇妙' },
+                        { word: '著名', reading: 'ちょめい', meaning: '著名' }],
+                    example: { sentence: '妙な話です。', meaning: '奇怪的話。' } },
+                { char: 'りゃ', romaji: 'rya', words: [{ word: '旅行', reading: 'りょこう', meaning: '旅行' },
+                        { word: '利用', reading: 'りよう', meaning: '利用' }],
+                    example: { sentence: '旅行が好きです。', meaning: '喜歡旅行。' } },
+                { char: 'りゅ', romaji: 'ryu', words: [{ word: '理由', reading: 'りゆう', meaning: '理由' },
+                        { word: '留学', reading: 'りゅうがく', meaning: '留學' }],
+                    example: { sentence: '留学したいです。', meaning: '想去留學。' } },
+                { char: 'りょ', romaji: 'ryo', words: [{ word: '料理', reading: 'りょうり', meaning: '料理' },
+                        { word: '両親', reading: 'りょうしん', meaning: '父母' }],
+                    example: { sentence: '料理を作ります。', meaning: '做料理。' } },
+                { char: 'ぎゃ', romaji: 'gya', words: [{ word: '逆', reading: 'ぎゃく', meaning: '相反' },
+                        { word: 'ギャップ', reading: 'ぎゃっぷ', meaning: '差距' }],
+                    example: { sentence: '逆です。', meaning: '相反。' } },
+                { char: 'ぎゅ', romaji: 'gyu', words: [{ word: '牛', reading: 'うし', meaning: '牛' },
+                        { word: 'ぎゅう', reading: 'ぎゅう', meaning: '牛叫聲' }],
+                    example: { sentence: '牛肉を食べます。', meaning: '吃牛肉。' } },
+                { char: 'ぎょ', romaji: 'gyo', words: [{ word: '魚', reading: 'ぎょ', meaning: '魚' },
+                        { word: '漁業', reading: 'ぎょぎょう', meaning: '漁業' }],
+                    example: { sentence: '魚を釣ります。', meaning: '釣魚。' } },
+                { char: 'じゃ', romaji: 'ja', words: [{ word: '邪魔', reading: 'じゃま', meaning: '打擾' },
+                        { word: 'ジャンプ', reading: 'じゃんぷ', meaning: '跳躍' }],
+                    example: { sentence: '邪魔をします。', meaning: '打擾了。' } },
+                { char: 'じゅ', romaji: 'ju', words: [{ word: '準備', reading: 'じゅんび', meaning: '準備' },
+                        { word: '住所', reading: 'じゅうしょ', meaning: '住址' }],
+                    example: { sentence: '準備をします。', meaning: '做準備。' } },
+                { char: 'じょ', romaji: 'jo', words: [{ word: '女性', reading: 'じょせい', meaning: '女性' },
+                        { word: '助け', reading: 'たすけ', meaning: '幫助' }],
+                    example: { sentence: '助けてください。', meaning: '請幫我。' } },
+                { char: 'びゃ', romaji: 'bya', words: [{ word: 'びゃ', reading: 'びゃ', meaning: '古語' },
+                        { word: 'びゃく', reading: 'びゃく', meaning: '白（古語）' }],
+                    example: { sentence: 'びゃくしきです。', meaning: '白色。' } },
+                { char: 'びゅ', romaji: 'byu', words: [{ word: 'びゅう', reading: 'びゅう', meaning: '風聲' },
+                        { word: 'ビュッフェ', reading: 'びゅっふぇ', meaning: '自助餐' }],
+                    example: { sentence: 'ビュッフェを食べます。', meaning: '吃自助餐。' } },
+                { char: 'びょ', romaji: 'byo', words: [{ word: '病院', reading: 'びょういん', meaning: '醫院' },
+                        { word: '病気', reading: 'びょうき', meaning: '疾病' }],
+                    example: { sentence: '病院に行きます。', meaning: '去醫院。' } },
+                { char: 'ぴゃ', romaji: 'pya', words: [{ word: 'ぴゃ', reading: 'ぴゃ', meaning: '古語' },
+                        { word: 'ぴゃく', reading: 'ぴゃく', meaning: '古語' }],
+                    example: { sentence: 'ぴゃくしきです。', meaning: '白色。' } },
+                { char: 'ぴゅ', romaji: 'pyu', words: [{ word: 'ピュア', reading: 'ぴゅあ', meaning: '純淨' },
+                        { word: 'ピューマ', reading: 'ぴゅーま', meaning: '美洲獅' }],
+                    example: { sentence: 'ピュアな心です。', meaning: '純淨的心。' } },
+                { char: 'ぴょ', romaji: 'pyo', words: [{ word: 'ぴょん', reading: 'ぴょん', meaning: '跳躍聲' },
+                        { word: 'ピョンヤン', reading: 'ぴょんやん', meaning: '平壤' }],
+                    example: { sentence: 'ぴょんと跳ねます。', meaning: '蹦跳。' } }
+            ]
+        };
+
+        // =================================================================
+        // 2. 全域狀態
+        // =================================================================
+        const STATE = {
+            currentTab: 'seion', // seion | dakuon | handakuon | youon
+            quizMode: 'kana2romaji', // kana2romaji | romaji2kana | typing
+            quizPool: [], // 當前測驗用的假名陣列
+            quizIndex: 0,
+            correctCount: 0,
+            wrongCount: 0,
+            totalCount: 0,
+            isAnswered: false,
+            streak: 0,
+            todayItems: 0,
+            todayTime: 0, // 分鐘
+            sessionStart: Date.now(),
+            history: [], // 本地歷史記錄
+        };
+
+        // =================================================================
+        // 3. 工具函數
+        // =================================================================
+        function speak(text, lang = 'ja-JP') {
+            if (!window.speechSynthesis) return;
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = lang;
+            utter.rate = 0.9;
+            utter.pitch = 1.0;
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.speak(utter);
+        }
+
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        function getTodayStr() {
+            return new Date().toISOString().slice(0, 10);
+        }
+
+        function getLocalStorage(key, def) {
+            try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch { return def; }
+        }
+
+        function setLocalStorage(key, val) {
+            try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
+        }
+
+        // =================================================================
+        // 4. 學習進度管理 (localStorage)
+        // =================================================================
+        function loadProgress() {
+            const data = getLocalStorage('kanaProgress', {
+                streak: 0,
+                lastDate: '',
+                todayItems: 0,
+                history: [],
+                totalCorrect: 0,
+                totalWrong: 0,
+            });
+            const today = getTodayStr();
+            if (data.lastDate !== today) {
+                // 新的一天
+                if (data.lastDate && new Date(today) - new Date(data.lastDate) <= 86400000 * 2) {
+                    data.streak += 1;
+                } else if (data.lastDate) {
+                    data.streak = 0;
+                } else {
+                    data.streak = 1;
+                }
+                data.lastDate = today;
+                data.todayItems = 0;
+                // 不重置 history，保留所有記錄
+                setLocalStorage('kanaProgress', data);
+            }
+            STATE.streak = data.streak || 0;
+            STATE.todayItems = data.todayItems || 0;
+            STATE.history = data.history || [];
+            STATE.totalCorrect = data.totalCorrect || 0;
+            STATE.totalWrong = data.totalWrong || 0;
+            updateProgressUI();
+            return data;
+        }
+
+        function updateProgress(quizData) {
+            const data = getLocalStorage('kanaProgress', {
+                streak: 0,
+                lastDate: getTodayStr(),
+                todayItems: 0,
+                history: [],
+                totalCorrect: 0,
+                totalWrong: 0,
+            });
+            const today = getTodayStr();
+            if (data.lastDate !== today) {
+                data.lastDate = today;
+                data.todayItems = 0;
+                if (data.streak === undefined) data.streak = 0;
+                // 連續天數邏輯
+                const prevDate = data.lastDate;
+                if (prevDate && new Date(today) - new Date(prevDate) <= 86400000 * 2) {
+                    data.streak += 1;
+                } else {
+                    data.streak = 1;
+                }
+            }
+            data.todayItems += quizData.count || 0;
+            data.totalCorrect = (data.totalCorrect || 0) + (quizData.correct || 0);
+            data.totalWrong = (data.totalWrong || 0) + (quizData.wrong || 0);
+            // 記錄歷史
+            data.history.push({
+                date: today,
+                count: quizData.count || 0,
+                correct: quizData.correct || 0,
+                wrong: quizData.wrong || 0,
+                time: quizData.time || 0,
+                rate: quizData.rate || 0,
+            });
+            if (data.history.length > 100) data.history = data.history.slice(-100);
+            setLocalStorage('kanaProgress', data);
+            STATE.streak = data.streak;
+            STATE.todayItems = data.todayItems;
+            STATE.history = data.history;
+            STATE.totalCorrect = data.totalCorrect;
+            STATE.totalWrong = data.totalWrong;
+            updateProgressUI();
+            // 同步到 GAS
+            syncToGAS(quizData);
+        }
+
+        function updateProgressUI() {
+            document.getElementById('todayCount').textContent = STATE.todayItems || 0;
+            document.getElementById('streakDisplay').textContent = STATE.streak || 0;
+            const total = (STATE.totalCorrect || 0) + (STATE.totalWrong || 0);
+            const acc = total > 0 ? Math.round((STATE.totalCorrect / total) * 100) : 0;
+            document.getElementById('accuracyDisplay').textContent = total > 0 ? acc + '%' : '-';
+            document.getElementById('progToday').textContent = STATE.todayItems || 0;
+            document.getElementById('progStreak').textContent = STATE.streak || 0;
+            document.getElementById('progAccuracy').textContent = total > 0 ? acc + '%' : '-';
+            // 時間
+            const mins = Math.floor((Date.now() - STATE.sessionStart) / 60000);
+            document.getElementById('progTime').textContent = mins;
+        }
+
+        // =================================================================
+        // 5. GAS 同步 (fetch POST)
+        // =================================================================
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbxl-cE1gqrpdogdDUgVp2ZqMJ6rtwcZaz3Rti4QQRcNOC5toOoIkHnmhrcgXtmX4TI/exec'; // 請填入您的 GAS Web App URL
+
+        function syncToGAS(quizData) {
+            if (!GAS_URL) return;
+            const payload = {
+                date: getTodayStr(),
+                count: quizData.count || 0,
+                correct: quizData.correct || 0,
+                wrong: quizData.wrong || 0,
+                time: quizData.time || 0,
+                rate: quizData.rate || 0,
+                streak: STATE.streak || 0,
+                totalCorrect: STATE.totalCorrect || 0,
+                totalWrong: STATE.totalWrong || 0,
+            };
+            fetch(GAS_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                })
+                .then(() => console.log('✅ GAS sync ok'))
+                .catch(e => console.warn('GAS sync failed:', e));
+        }
+
+        // =================================================================
+        // 6. 渲染五十音表
+        // =================================================================
+        function renderKanaGrid(tab) {
+            const grid = document.getElementById('kanaGrid');
+            const data = KANA_DATA[tab] || [];
+            grid.innerHTML = '';
+            data.forEach((item, idx) => {
+                const card = document.createElement('div');
+                card.className = 'kana-card';
+                card.dataset.index = idx;
+                card.innerHTML = `
+              <div class="char">${item.char}</div>
+              <div class="romaji">${item.romaji}</div>
+              <div class="play-icon">🔊</div>
+              <div class="word-hint">${item.words.slice(0,2).map(w => w.reading).join(' ')}</div>
+              <div class="kana-detail">
+                ${item.words.map(w => `<div class="word-item"><span class="jp">${w.word} (${w.reading})</span><span class="zh">${w.meaning}</span><button class="speak-btn" data-text="${w.reading}">🔊</button></div>`).join('')}
+                <div class="example"><span class="jp">${item.example.sentence}</span> <span class="zh">${item.example.meaning}</span> <button class="speak-btn" data-text="${item.example.sentence}">🔊</button></div>
+              </div>
+            `;
+                // 點擊卡片展開/收合
+                card.addEventListener('click', (e) => {
+                    if (e.target.closest('.speak-btn')) return;
+                    card.classList.toggle('expanded');
+                });
+                // 點擊發音 (整體點擊播放假名)
+                card.addEventListener('dblclick', () => {
+                    speak(item.char);
+                });
+                // 點擊 play-icon 發音
+                card.querySelector('.play-icon').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    speak(item.char);
+                });
+                // 單字/例句發音按鈕
+                card.querySelectorAll('.speak-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        speak(btn.dataset.text);
+                    });
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        // =================================================================
+        // 7. 測驗系統
+        // =================================================================
+        function getQuizPool(tab, mode) {
+            const data = KANA_DATA[tab] || [];
+            // 複製一份
+            let pool = data.map(item => ({ ...item }));
+            // 根據模式過濾
+            if (mode === 'kana2romaji' || mode === 'romaji2kana') {
+                // 全部可用
+            } else if (mode === 'typing') {
+                // 全部可用
+            }
+            return shuffleArray(pool);
+        }
+
+        function startQuiz() {
+            const tab = STATE.currentTab;
+            const mode = STATE.quizMode;
+            STATE.quizPool = getQuizPool(tab, mode);
+            STATE.quizIndex = 0;
+            STATE.correctCount = 0;
+            STATE.wrongCount = 0;
+            STATE.totalCount = 0;
+            STATE.isAnswered = false;
+            document.getElementById('correctCount').textContent = '0';
+            document.getElementById('wrongCount').textContent = '0';
+            document.getElementById('rateDisplay').textContent = '0%';
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('quizInput').value = '';
+            document.getElementById('quizInputArea').classList.add('hidden');
+            document.getElementById('quizOptions').innerHTML = '';
+            document.getElementById('quizNextBtn').disabled = true;
+            if (STATE.quizPool.length === 0) {
+                document.getElementById('quizPrompt').innerHTML = '⚠️ 此分類暫無假名資料';
+                return;
+            }
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            const pool = STATE.quizPool;
+            const idx = STATE.quizIndex;
+            if (idx >= pool.length) {
+                finishQuiz();
+                return;
+            }
+            const item = pool[idx];
+            const mode = STATE.quizMode;
+            STATE.isAnswered = false;
+            document.getElementById('quizNextBtn').disabled = true;
+            document.getElementById('quizFeedback').textContent = '';
+            document.getElementById('quizInput').value = '';
+            document.getElementById('quizInputArea').classList.add('hidden');
+
+            const prompt = document.getElementById('quizPrompt');
+            const options = document.getElementById('quizOptions');
+            options.innerHTML = '';
+            options.querySelectorAll('button').forEach(b => b.disabled = false);
+
+            if (mode === 'kana2romaji') {
+                prompt.innerHTML = `「${item.char}」 的發音是？ <span class="sub">🔊 點擊發音</span>`;
+                // 點擊假名發音
+                prompt.style.cursor = 'pointer';
+                prompt.onclick = () => speak(item.char);
+                // 生成選項：1個正確 + 3個隨機錯誤
+                const allRomaji = pool.map(i => i.romaji);
+                const wrongs = allRomaji.filter(r => r !== item.romaji);
+                const shuffledWrongs = shuffleArray(wrongs).slice(0, 3);
+                const choices = shuffleArray([item.romaji, ...shuffledWrongs]);
+                choices.forEach(choice => {
+                    const btn = document.createElement('button');
+                    btn.textContent = choice;
+                    btn.dataset.value = choice;
+                    btn.addEventListener('click', () => handleQuizAnswer(btn, choice, item.romaji));
+                    options.appendChild(btn);
+                });
+            } else if (mode === 'romaji2kana') {
+                prompt.innerHTML = `🔊 聽發音，選出正確的假名 <span class="sub">(點擊播放)</span>`;
+                prompt.style.cursor = 'pointer';
+                prompt.onclick = () => speak(item.char);
+                // 生成選項：1個正確 + 3個隨機錯誤
+                const allChars = pool.map(i => i.char);
+                const wrongs = allChars.filter(c => c !== item.char);
+                const shuffledWrongs = shuffleArray(wrongs).slice(0, 3);
+                const choices = shuffleArray([item.char, ...shuffledWrongs]);
+                choices.forEach(choice => {
+                    const btn = document.createElement('button');
+                    btn.textContent = choice;
+                    btn.dataset.value = choice;
+                    btn.addEventListener('click', () => handleQuizAnswer(btn, choice, item.char));
+                    options.appendChild(btn);
+                });
+                // 自動播放發音
+                setTimeout(() => speak(item.char), 300);
+            } else if (mode === 'typing') {
+                prompt.innerHTML = `⌨️ 請輸入「${item.romaji}」的假名 <span class="sub">(羅馬拼音: ${item.romaji})</span>`;
+                prompt.style.cursor = 'default';
+                prompt.onclick = null;
+                const inputArea = document.getElementById('quizInputArea');
+                inputArea.classList.remove('hidden');
+                const input = document.getElementById('quizInput');
+                input.focus();
+                const btn = document.getElementById('quizInputBtn');
+                // 移除舊監聽
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+                newBtn.addEventListener('click', () => {
+                    const val = input.value.trim();
+                    if (!val) return;
+                    handleTypingAnswer(val, item.char);
+                });
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const val = input.value.trim();
+                        if (val) handleTypingAnswer(val, item.char);
+                    }
+                });
+                // 清空選項區
+                options.innerHTML = '';
+            }
+            // 更新進度
+            document.getElementById('quizProgress').querySelectorAll('span').forEach(s => {
+                const strong = s.querySelector('strong');
+                if (strong) {
+                    if (strong.id === 'correctCount') strong.textContent = STATE.correctCount;
+                    if (strong.id === 'wrongCount') strong.textContent = STATE.wrongCount;
+                    if (strong.id === 'rateDisplay') {
+                        const total = STATE.correctCount + STATE.wrongCount;
+                        strong.textContent = total > 0 ? Math.round((STATE.correctCount / total) * 100) + '%' : '0%';
+                    }
+                }
+            });
+        }
+
+        function handleQuizAnswer(btn, selected, correct) {
+            if (STATE.isAnswered) return;
+            STATE.isAnswered = true;
+            const isCorrect = selected === correct;
+            if (isCorrect) {
+                STATE.correctCount++;
+                btn.classList.add('correct');
+                document.getElementById('quizFeedback').innerHTML = '<span class="correct-text">✅ 正確！</span>';
+            } else {
+                STATE.wrongCount++;
+                btn.classList.add('wrong');
+                document.getElementById('quizFeedback').innerHTML =
+                    `<span class="wrong-text">❌ 錯誤，正確答案是「${correct}」</span>`;
+                // 標示正確答案
+                document.querySelectorAll('#quizOptions button').forEach(b => {
+                    if (b.dataset.value === correct) b.classList.add('correct');
+                });
+            }
+            STATE.totalCount = STATE.correctCount + STATE.wrongCount;
+            document.querySelectorAll('#quizOptions button').forEach(b => b.disabled = true);
+            document.getElementById('correctCount').textContent = STATE.correctCount;
+            document.getElementById('wrongCount').textContent = STATE.wrongCount;
+            const rate = STATE.totalCount > 0 ? Math.round((STATE.correctCount / STATE.totalCount) * 100) : 0;
+            document.getElementById('rateDisplay').textContent = rate + '%';
+            document.getElementById('quizNextBtn').disabled = false;
+            // 更新進度UI
+            updateProgressUI();
+        }
+
+        function handleTypingAnswer(input, correct) {
+            if (STATE.isAnswered) return;
+            STATE.isAnswered = true;
+            const isCorrect = input === correct;
+            if (isCorrect) {
+                STATE.correctCount++;
+                document.getElementById('quizFeedback').innerHTML = '<span class="correct-text">✅ 正確！</span>';
+            } else {
+                STATE.wrongCount++;
+                document.getElementById('quizFeedback').innerHTML =
+                    `<span class="wrong-text">❌ 錯誤，正確答案是「${correct}」</span>`;
+            }
+            STATE.totalCount = STATE.correctCount + STATE.wrongCount;
+            document.getElementById('correctCount').textContent = STATE.correctCount;
+            document.getElementById('wrongCount').textContent = STATE.wrongCount;
+            const rate = STATE.totalCount > 0 ? Math.round((STATE.correctCount / STATE.totalCount) * 100) : 0;
+            document.getElementById('rateDisplay').textContent = rate + '%';
+            document.getElementById('quizNextBtn').disabled = false;
+            document.getElementById('quizInput').disabled = true;
+            document.getElementById('quizInputBtn').disabled = true;
+            // 更新進度UI
+            updateProgressUI();
+        }
+
+        function finishQuiz() {
+            const total = STATE.correctCount + STATE.wrongCount;
+            const rate = total > 0 ? Math.round((STATE.correctCount / total) * 100) : 0;
+            const time = Math.floor((Date.now() - STATE.sessionStart) / 60000);
+            document.getElementById('quizPrompt').innerHTML = `🎉 測驗完成！ 正確 ${STATE.correctCount} 題，錯誤 ${STATE.wrongCount} 題，正確率 ${rate}%`;
+            document.getElementById('quizOptions').innerHTML = '';
+            document.getElementById('quizInputArea').classList.add('hidden');
+            document.getElementById('quizNextBtn').disabled = true;
+            document.getElementById('quizFeedback').innerHTML = '🏆 恭喜完成！';
+            // 更新學習進度
+            updateProgress({
+                count: total,
+                correct: STATE.correctCount,
+                wrong: STATE.wrongCount,
+                time: time,
+                rate: rate,
+            });
+            // 更新今日學習項目數
+            STATE.todayItems += total;
+            updateProgressUI();
+        }
+
+        // =================================================================
+        // 8. 事件綁定 & 初始化
+        // =================================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // 載入進度
+            loadProgress();
+            // 預設顯示清音
+            renderKanaGrid('seion');
+            // Tab 切換
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    STATE.currentTab = this.dataset.tab;
+                    renderKanaGrid(STATE.currentTab);
+                    // 重設測驗
+                    startQuiz();
+                });
+            });
+            // 測驗模式切換
+            document.querySelectorAll('.quiz-mode-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.quiz-mode-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    STATE.quizMode = this.dataset.mode;
+                    startQuiz();
+                });
+            });
+            // 下一題
+            document.getElementById('quizNextBtn').addEventListener('click', function() {
+                if (this.disabled) return;
+                STATE.quizIndex++;
+                // 恢復輸入
+                document.getElementById('quizInput').disabled = false;
+                document.getElementById('quizInputBtn').disabled = false;
+                showQuizQuestion();
+            });
+            // 初始啟動測驗
+            startQuiz();
+            // 每30秒更新一次時間
+            setInterval(updateProgressUI, 30000);
+        });
+
+        // 對外暴露 speak 以便調試
+        window.speak = speak;
+        console.log('🌸 五十音学習サイト 起動完了！');
+        console.log('📌 使用 Web Speech API 發音 (ja-JP)');
+        console.log('📌 資料包含清音・濁音・半濁音・拗音 共 ' +
+            (KANA_DATA.seion.length + KANA_DATA.dakuon.length + KANA_DATA.handakuon.length + KANA_DATA.youon.length) +
+            ' 個假名');
+        console.log('📌 GAS URL 請在程式碼中設定 GAS_URL 變數');
+    </script>
+</body>
+</html>
