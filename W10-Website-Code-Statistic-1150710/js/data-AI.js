@@ -1,0 +1,21 @@
+export const Data = [
+  {
+    num: 1,
+    file: 310,
+    avg_file: 0,
+    code: 207986,
+    avg_code: 0,
+    comments: 13082,
+    avg_comments: 0,
+    blank: 19498,
+    avg_blank: 0,
+    total: 240566,
+    avg_total: 0,
+    variation: "減少",
+    Difference: 0,
+    date: "10/07/2026",
+    time: "20:03",
+    diff_date: 1,
+    Acc_day: 1,
+  },
+];

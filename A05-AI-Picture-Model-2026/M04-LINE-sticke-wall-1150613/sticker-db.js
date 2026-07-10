@@ -4,6 +4,782 @@
 // ========================================
 const stickerPacks = [
   {
+    id: 108,
+    name: "個人Q版",
+    description: "北海道道東-1EX-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1EX-1",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-2",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-3",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-4",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_0_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1EX-6",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-7",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-8",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-9",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_1_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1EX-B",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-C",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-D",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-E",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_2_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1EX-G",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-H",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-I",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1EX-J",
+        img: "./images/A02-japan-tour/GPT0016-1EX/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 107,
+    name: "個人Q版",
+    description: "北海道道東-1E-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1E-1",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-2",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-3",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-4",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_0_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1E-6",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-7",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-8",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-9",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_1_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1E-B",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-C",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-D",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-E",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_2_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1E-G",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-H",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-I",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1E-J",
+        img: "./images/A02-japan-tour/GPT0016-1E/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 106,
+    name: "個人Q版",
+    description: "北海道道南-1SX-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1SX-1",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-2",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-3",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-4",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_0_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1SX-6",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-7",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-8",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-9",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_1_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1SX-B",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-C",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-D",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-E",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_2_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1SX-G",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-H",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-I",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1SX-J",
+        img: "./images/A02-japan-tour/GPT0016-1SX/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 105,
+    name: "個人Q版",
+    description: "北海道道南-1S-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1S-1",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-2",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-3",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-4",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_0_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1S-6",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-7",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-8",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-9",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_1_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1S-B",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-C",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-D",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-E",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_2_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1S-G",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-H",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-I",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1S-J",
+        img: "./images/A02-japan-tour/GPT0016-1S/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 104,
+    name: "個人Q版",
+    description: "北海道道北央-1WX-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1WX-1",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-2",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-3",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-4",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-5",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-6",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-7",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-8",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-9",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-A",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-B",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-C",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-D",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-E",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-F",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-G",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_3_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-H",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_4_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-I",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_4_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-J",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_4_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1WX-K",
+        img: "./images/A02-japan-tour/GPT0016-1WX/split_4_3.webp",
+      },
+    ],
+  },
+  {
+    id: 103,
+    name: "個人Q版",
+    description: "北海道道北央-1W-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1W-1",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-2",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-3",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-4",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-5",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-6",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-7",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-8",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-9",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-A",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-B",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-C",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-D",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-E",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-F",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-G",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_3_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-H",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_4_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-I",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_4_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-J",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_4_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1W-K",
+        img: "./images/A02-japan-tour/GPT0016-1W/split_4_3.webp",
+      },
+    ],
+  },
+  {
+    id: 102,
+    name: "個人Q版",
+    description: "北海道道北-1NX-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1NX-1",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-2",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-3",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-4",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_0_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1NX-6",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-7",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-8",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-9",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_1_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1NX-B",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-C",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-D",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-E",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_2_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1NX-G",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-H",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-I",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1NX-J",
+        img: "./images/A02-japan-tour/GPT0016-1NX/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 101,
+    name: "個人Q版",
+    description: "北海道道北-1N-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-1N-1",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-2",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-3",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-4",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_0_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1N-6",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-7",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-8",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-9",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_1_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1N-B",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-C",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-D",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-E",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_2_3.webp",
+      },
+
+      {
+        id: "A02-japan-tour/GPT0016-1N-G",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-H",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-I",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-1N-J",
+        img: "./images/A02-japan-tour/GPT0016-1N/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 100,
+    name: "個人Q版",
+    description: "地震潭風-2",
+    category: "天氣系列",
+    stickers: [
+      {
+        id: "GPT0015-4-1",
+        img: "./images/GPT0015-4/split_0_0.webp",
+      },
+      {
+        id: "GPT0015-4-2",
+        img: "./images/GPT0015-4/split_0_1.webp",
+      },
+      {
+        id: "GPT0015-4-3",
+        img: "./images/GPT0015-4/split_0_2.webp",
+      },
+      {
+        id: "GPT0015-4-4",
+        img: "./images/GPT0015-4/split_0_3.webp",
+      },
+
+      {
+        id: "GPT0015-4-6",
+        img: "./images/GPT0015-4/split_1_0.webp",
+      },
+      {
+        id: "GPT0015-4-7",
+        img: "./images/GPT0015-4/split_1_1.webp",
+      },
+      {
+        id: "GPT0015-4-8",
+        img: "./images/GPT0015-4/split_1_2.webp",
+      },
+      {
+        id: "GPT0015-4-9",
+        img: "./images/GPT0015-4/split_1_3.webp",
+      },
+
+      {
+        id: "GPT0015-4-B",
+        img: "./images/GPT0015-4/split_2_0.webp",
+      },
+      {
+        id: "GPT0015-4-C",
+        img: "./images/GPT0015-4/split_2_1.webp",
+      },
+      {
+        id: "GPT0015-4-D",
+        img: "./images/GPT0015-4/split_2_2.webp",
+      },
+      {
+        id: "GPT0015-4-E",
+        img: "./images/GPT0015-4/split_2_3.webp",
+      },
+
+      {
+        id: "GPT0015-4-G",
+        img: "./images/GPT0015-4/split_3_0.webp",
+      },
+      {
+        id: "GPT0015-4-H",
+        img: "./images/GPT0015-4/split_3_1.webp",
+      },
+      {
+        id: "GPT0015-4-I",
+        img: "./images/GPT0015-4/split_3_2.webp",
+      },
+      {
+        id: "GPT0015-4-J",
+        img: "./images/GPT0015-4/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 99,
+    name: "個人Q版",
+    description: "地震潭風-1",
+    category: "天氣系列",
+    stickers: [
+      {
+        id: "GPT0015-3-1",
+        img: "./images/GPT0015-3/split_0_0.webp",
+      },
+      {
+        id: "GPT0015-3-2",
+        img: "./images/GPT0015-3/split_0_1.webp",
+      },
+      {
+        id: "GPT0015-3-3",
+        img: "./images/GPT0015-3/split_0_2.webp",
+      },
+      {
+        id: "GPT0015-3-4",
+        img: "./images/GPT0015-3/split_0_3.webp",
+      },
+
+      {
+        id: "GPT0015-3-6",
+        img: "./images/GPT0015-3/split_1_0.webp",
+      },
+      {
+        id: "GPT0015-3-7",
+        img: "./images/GPT0015-3/split_1_1.webp",
+      },
+      {
+        id: "GPT0015-3-8",
+        img: "./images/GPT0015-3/split_1_2.webp",
+      },
+      {
+        id: "GPT0015-3-9",
+        img: "./images/GPT0015-3/split_1_3.webp",
+      },
+
+      {
+        id: "GPT0015-3-B",
+        img: "./images/GPT0015-3/split_2_0.webp",
+      },
+      {
+        id: "GPT0015-3-C",
+        img: "./images/GPT0015-3/split_2_1.webp",
+      },
+      {
+        id: "GPT0015-3-D",
+        img: "./images/GPT0015-3/split_2_2.webp",
+      },
+      {
+        id: "GPT0015-3-E",
+        img: "./images/GPT0015-3/split_2_3.webp",
+      },
+
+      {
+        id: "GPT0015-3-G",
+        img: "./images/GPT0015-3/split_3_0.webp",
+      },
+      {
+        id: "GPT0015-3-H",
+        img: "./images/GPT0015-3/split_3_1.webp",
+      },
+      {
+        id: "GPT0015-3-I",
+        img: "./images/GPT0015-3/split_3_2.webp",
+      },
+      {
+        id: "GPT0015-3-J",
+        img: "./images/GPT0015-3/split_3_3.webp",
+      },
+    ],
+  },
+  {
     id: 98,
     name: "個人Q版",
     description: "颱風相關貼圖",
