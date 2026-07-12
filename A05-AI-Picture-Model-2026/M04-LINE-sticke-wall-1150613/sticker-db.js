@@ -3,6 +3,5775 @@
 // 繁體中文說明：貼圖包與貼圖結構
 // ========================================
 const stickerPacks = [
+
+    {
+    "id": 199,
+    "name": "個人Q版",
+    "description": "沖繩地方-沖繩縣47-1",
+    "category": "日本景點系列",
+    "stickers": [
+      {
+        "id": "A02-japan-tour/GPT0016-47-1",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_0_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-2",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_0_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-3",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_0_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-4",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_0_3.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-6",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_1_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-7",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_1_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-8",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_1_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-9",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_1_3.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-B",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_2_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-C",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_2_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-D",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_2_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-E",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_2_3.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-G",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_3_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-H",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_3_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-I",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_3_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47-J",
+        "img": "./images/A02-japan-tour/GPT0016-47/split_3_3.webp"
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "name": "個人Q版",
+    "description": "沖繩地方-沖繩縣47-2",
+    "category": "日本景點系列",
+    "stickers": [
+      {
+        "id": "A02-japan-tour/GPT0016-47X-1",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-2",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-3",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-4",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_3.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-6",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-7",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-8",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-9",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_3.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-B",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-C",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-D",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-E",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_3.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-G",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_0.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-H",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_1.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-I",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_2.webp"
+      },
+      {
+        "id": "A02-japan-tour/GPT0016-47X-J",
+        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_3.webp"
+      }
+    ]
+  },
+  {
+    id: 197,
+    name: "個人Q版",
+    description: "九州地方-鹿兒島縣46-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-46-1",
+        img: "./images/A02-japan-tour/GPT0016-46/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-2",
+        img: "./images/A02-japan-tour/GPT0016-46/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-3",
+        img: "./images/A02-japan-tour/GPT0016-46/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-4",
+        img: "./images/A02-japan-tour/GPT0016-46/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-6",
+        img: "./images/A02-japan-tour/GPT0016-46/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-7",
+        img: "./images/A02-japan-tour/GPT0016-46/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-8",
+        img: "./images/A02-japan-tour/GPT0016-46/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-9",
+        img: "./images/A02-japan-tour/GPT0016-46/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-B",
+        img: "./images/A02-japan-tour/GPT0016-46/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-C",
+        img: "./images/A02-japan-tour/GPT0016-46/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-D",
+        img: "./images/A02-japan-tour/GPT0016-46/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-E",
+        img: "./images/A02-japan-tour/GPT0016-46/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-G",
+        img: "./images/A02-japan-tour/GPT0016-46/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-H",
+        img: "./images/A02-japan-tour/GPT0016-46/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-I",
+        img: "./images/A02-japan-tour/GPT0016-46/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46-J",
+        img: "./images/A02-japan-tour/GPT0016-46/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 198,
+    name: "個人Q版",
+    description: "九州地方-鹿兒島縣46-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-46X-1",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-2",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-3",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-4",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-6",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-7",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-8",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-9",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-B",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-C",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-D",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-E",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-G",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-H",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-I",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-46X-J",
+        img: "./images/A02-japan-tour/GPT0016-46X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 195,
+    name: "個人Q版",
+    description: "九州地方-宮崎縣45-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-45-1",
+        img: "./images/A02-japan-tour/GPT0016-45/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-2",
+        img: "./images/A02-japan-tour/GPT0016-45/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-3",
+        img: "./images/A02-japan-tour/GPT0016-45/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-4",
+        img: "./images/A02-japan-tour/GPT0016-45/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-6",
+        img: "./images/A02-japan-tour/GPT0016-45/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-7",
+        img: "./images/A02-japan-tour/GPT0016-45/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-8",
+        img: "./images/A02-japan-tour/GPT0016-45/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-9",
+        img: "./images/A02-japan-tour/GPT0016-45/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-B",
+        img: "./images/A02-japan-tour/GPT0016-45/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-C",
+        img: "./images/A02-japan-tour/GPT0016-45/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-D",
+        img: "./images/A02-japan-tour/GPT0016-45/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-E",
+        img: "./images/A02-japan-tour/GPT0016-45/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-G",
+        img: "./images/A02-japan-tour/GPT0016-45/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-H",
+        img: "./images/A02-japan-tour/GPT0016-45/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-I",
+        img: "./images/A02-japan-tour/GPT0016-45/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45-J",
+        img: "./images/A02-japan-tour/GPT0016-45/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 196,
+    name: "個人Q版",
+    description: "九州地方-宮崎縣45-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-45X-1",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-2",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-3",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-4",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-6",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-7",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-8",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-9",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-B",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-C",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-D",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-E",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-G",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-H",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-I",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-45X-J",
+        img: "./images/A02-japan-tour/GPT0016-45X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 193,
+    name: "個人Q版",
+    description: "九州地方-大分縣44-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-44-1",
+        img: "./images/A02-japan-tour/GPT0016-44/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-2",
+        img: "./images/A02-japan-tour/GPT0016-44/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-3",
+        img: "./images/A02-japan-tour/GPT0016-44/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-4",
+        img: "./images/A02-japan-tour/GPT0016-44/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-6",
+        img: "./images/A02-japan-tour/GPT0016-44/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-7",
+        img: "./images/A02-japan-tour/GPT0016-44/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-8",
+        img: "./images/A02-japan-tour/GPT0016-44/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-9",
+        img: "./images/A02-japan-tour/GPT0016-44/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-B",
+        img: "./images/A02-japan-tour/GPT0016-44/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-C",
+        img: "./images/A02-japan-tour/GPT0016-44/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-D",
+        img: "./images/A02-japan-tour/GPT0016-44/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-E",
+        img: "./images/A02-japan-tour/GPT0016-44/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-G",
+        img: "./images/A02-japan-tour/GPT0016-44/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-H",
+        img: "./images/A02-japan-tour/GPT0016-44/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-I",
+        img: "./images/A02-japan-tour/GPT0016-44/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44-J",
+        img: "./images/A02-japan-tour/GPT0016-44/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 194,
+    name: "個人Q版",
+    description: "九州地方-大分縣44-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-44X-1",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-2",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-3",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-4",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-6",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-7",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-8",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-9",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-B",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-C",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-D",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-E",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-G",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-H",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-I",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-44X-J",
+        img: "./images/A02-japan-tour/GPT0016-44X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 191,
+    name: "個人Q版",
+    description: "九州地方-熊本縣43-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-43-1",
+        img: "./images/A02-japan-tour/GPT0016-43/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-2",
+        img: "./images/A02-japan-tour/GPT0016-43/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-3",
+        img: "./images/A02-japan-tour/GPT0016-43/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-4",
+        img: "./images/A02-japan-tour/GPT0016-43/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-6",
+        img: "./images/A02-japan-tour/GPT0016-43/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-7",
+        img: "./images/A02-japan-tour/GPT0016-43/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-8",
+        img: "./images/A02-japan-tour/GPT0016-43/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-9",
+        img: "./images/A02-japan-tour/GPT0016-43/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-B",
+        img: "./images/A02-japan-tour/GPT0016-43/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-C",
+        img: "./images/A02-japan-tour/GPT0016-43/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-D",
+        img: "./images/A02-japan-tour/GPT0016-43/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-E",
+        img: "./images/A02-japan-tour/GPT0016-43/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-G",
+        img: "./images/A02-japan-tour/GPT0016-43/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-H",
+        img: "./images/A02-japan-tour/GPT0016-43/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-I",
+        img: "./images/A02-japan-tour/GPT0016-43/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43-J",
+        img: "./images/A02-japan-tour/GPT0016-43/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 192,
+    name: "個人Q版",
+    description: "九州地方-熊本縣43-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-43X-1",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-2",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-3",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-4",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-6",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-7",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-8",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-9",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-B",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-C",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-D",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-E",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-G",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-H",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-I",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-43X-J",
+        img: "./images/A02-japan-tour/GPT0016-43X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 189,
+    name: "個人Q版",
+    description: "九州地方-長崎縣42-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-42-1",
+        img: "./images/A02-japan-tour/GPT0016-42/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-2",
+        img: "./images/A02-japan-tour/GPT0016-42/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-3",
+        img: "./images/A02-japan-tour/GPT0016-42/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-4",
+        img: "./images/A02-japan-tour/GPT0016-42/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-6",
+        img: "./images/A02-japan-tour/GPT0016-42/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-7",
+        img: "./images/A02-japan-tour/GPT0016-42/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-8",
+        img: "./images/A02-japan-tour/GPT0016-42/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-9",
+        img: "./images/A02-japan-tour/GPT0016-42/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-B",
+        img: "./images/A02-japan-tour/GPT0016-42/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-C",
+        img: "./images/A02-japan-tour/GPT0016-42/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-D",
+        img: "./images/A02-japan-tour/GPT0016-42/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-E",
+        img: "./images/A02-japan-tour/GPT0016-42/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-G",
+        img: "./images/A02-japan-tour/GPT0016-42/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-H",
+        img: "./images/A02-japan-tour/GPT0016-42/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-I",
+        img: "./images/A02-japan-tour/GPT0016-42/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42-J",
+        img: "./images/A02-japan-tour/GPT0016-42/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 190,
+    name: "個人Q版",
+    description: "九州地方-長崎縣42-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-42X-1",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-2",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-3",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-4",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-6",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-7",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-8",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-9",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-B",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-C",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-D",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-E",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-G",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-H",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-I",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-42X-J",
+        img: "./images/A02-japan-tour/GPT0016-42X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 187,
+    name: "個人Q版",
+    description: "九州地方-佐賀縣41-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-41-1",
+        img: "./images/A02-japan-tour/GPT0016-41/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-2",
+        img: "./images/A02-japan-tour/GPT0016-41/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-3",
+        img: "./images/A02-japan-tour/GPT0016-41/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-4",
+        img: "./images/A02-japan-tour/GPT0016-41/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-6",
+        img: "./images/A02-japan-tour/GPT0016-41/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-7",
+        img: "./images/A02-japan-tour/GPT0016-41/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-8",
+        img: "./images/A02-japan-tour/GPT0016-41/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-9",
+        img: "./images/A02-japan-tour/GPT0016-41/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-B",
+        img: "./images/A02-japan-tour/GPT0016-41/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-C",
+        img: "./images/A02-japan-tour/GPT0016-41/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-D",
+        img: "./images/A02-japan-tour/GPT0016-41/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-E",
+        img: "./images/A02-japan-tour/GPT0016-41/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-G",
+        img: "./images/A02-japan-tour/GPT0016-41/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-H",
+        img: "./images/A02-japan-tour/GPT0016-41/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-I",
+        img: "./images/A02-japan-tour/GPT0016-41/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41-J",
+        img: "./images/A02-japan-tour/GPT0016-41/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 188,
+    name: "個人Q版",
+    description: "九州地方-佐賀縣41-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-41X-1",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-2",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-3",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-4",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-6",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-7",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-8",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-9",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-B",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-C",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-D",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-E",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-G",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-H",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-I",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-41X-J",
+        img: "./images/A02-japan-tour/GPT0016-41X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 185,
+    name: "個人Q版",
+    description: "九州地方-福岡縣40-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-40-1",
+        img: "./images/A02-japan-tour/GPT0016-40/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-2",
+        img: "./images/A02-japan-tour/GPT0016-40/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-3",
+        img: "./images/A02-japan-tour/GPT0016-40/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-4",
+        img: "./images/A02-japan-tour/GPT0016-40/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-6",
+        img: "./images/A02-japan-tour/GPT0016-40/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-7",
+        img: "./images/A02-japan-tour/GPT0016-40/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-8",
+        img: "./images/A02-japan-tour/GPT0016-40/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-9",
+        img: "./images/A02-japan-tour/GPT0016-40/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-B",
+        img: "./images/A02-japan-tour/GPT0016-40/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-C",
+        img: "./images/A02-japan-tour/GPT0016-40/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-D",
+        img: "./images/A02-japan-tour/GPT0016-40/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-E",
+        img: "./images/A02-japan-tour/GPT0016-40/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-G",
+        img: "./images/A02-japan-tour/GPT0016-40/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-H",
+        img: "./images/A02-japan-tour/GPT0016-40/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-I",
+        img: "./images/A02-japan-tour/GPT0016-40/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40-J",
+        img: "./images/A02-japan-tour/GPT0016-40/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 186,
+    name: "個人Q版",
+    description: "九州地方-福岡縣40-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-40X-1",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-2",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-3",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-4",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-6",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-7",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-8",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-9",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-B",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-C",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-D",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-E",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-G",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-H",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-I",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-40X-J",
+        img: "./images/A02-japan-tour/GPT0016-40X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 183,
+    name: "個人Q版",
+    description: "四國地方-高知縣39-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-39-1",
+        img: "./images/A02-japan-tour/GPT0016-39/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-2",
+        img: "./images/A02-japan-tour/GPT0016-39/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-3",
+        img: "./images/A02-japan-tour/GPT0016-39/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-4",
+        img: "./images/A02-japan-tour/GPT0016-39/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-6",
+        img: "./images/A02-japan-tour/GPT0016-39/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-7",
+        img: "./images/A02-japan-tour/GPT0016-39/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-8",
+        img: "./images/A02-japan-tour/GPT0016-39/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-9",
+        img: "./images/A02-japan-tour/GPT0016-39/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-B",
+        img: "./images/A02-japan-tour/GPT0016-39/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-C",
+        img: "./images/A02-japan-tour/GPT0016-39/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-D",
+        img: "./images/A02-japan-tour/GPT0016-39/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-E",
+        img: "./images/A02-japan-tour/GPT0016-39/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-G",
+        img: "./images/A02-japan-tour/GPT0016-39/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-H",
+        img: "./images/A02-japan-tour/GPT0016-39/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-I",
+        img: "./images/A02-japan-tour/GPT0016-39/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39-J",
+        img: "./images/A02-japan-tour/GPT0016-39/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 184,
+    name: "個人Q版",
+    description: "四國地方-高知縣39-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-39X-1",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-2",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-3",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-4",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-6",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-7",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-8",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-9",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-B",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-C",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-D",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-E",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-G",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-H",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-I",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-39X-J",
+        img: "./images/A02-japan-tour/GPT0016-39X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 181,
+    name: "個人Q版",
+    description: "四國地方-愛媛縣38-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-38-1",
+        img: "./images/A02-japan-tour/GPT0016-38/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-2",
+        img: "./images/A02-japan-tour/GPT0016-38/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-3",
+        img: "./images/A02-japan-tour/GPT0016-38/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-4",
+        img: "./images/A02-japan-tour/GPT0016-38/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-6",
+        img: "./images/A02-japan-tour/GPT0016-38/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-7",
+        img: "./images/A02-japan-tour/GPT0016-38/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-8",
+        img: "./images/A02-japan-tour/GPT0016-38/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-9",
+        img: "./images/A02-japan-tour/GPT0016-38/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-B",
+        img: "./images/A02-japan-tour/GPT0016-38/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-C",
+        img: "./images/A02-japan-tour/GPT0016-38/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-D",
+        img: "./images/A02-japan-tour/GPT0016-38/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-E",
+        img: "./images/A02-japan-tour/GPT0016-38/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-G",
+        img: "./images/A02-japan-tour/GPT0016-38/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-H",
+        img: "./images/A02-japan-tour/GPT0016-38/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-I",
+        img: "./images/A02-japan-tour/GPT0016-38/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38-J",
+        img: "./images/A02-japan-tour/GPT0016-38/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 182,
+    name: "個人Q版",
+    description: "四國地方-愛媛縣38-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-38X-1",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-2",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-3",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-4",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-6",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-7",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-8",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-9",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-B",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-C",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-D",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-E",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-G",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-H",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-I",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-38X-J",
+        img: "./images/A02-japan-tour/GPT0016-38X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 179,
+    name: "個人Q版",
+    description: "四國地方-香川縣37-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-37-1",
+        img: "./images/A02-japan-tour/GPT0016-37/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-2",
+        img: "./images/A02-japan-tour/GPT0016-37/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-3",
+        img: "./images/A02-japan-tour/GPT0016-37/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-4",
+        img: "./images/A02-japan-tour/GPT0016-37/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-6",
+        img: "./images/A02-japan-tour/GPT0016-37/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-7",
+        img: "./images/A02-japan-tour/GPT0016-37/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-8",
+        img: "./images/A02-japan-tour/GPT0016-37/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-9",
+        img: "./images/A02-japan-tour/GPT0016-37/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-B",
+        img: "./images/A02-japan-tour/GPT0016-37/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-C",
+        img: "./images/A02-japan-tour/GPT0016-37/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-D",
+        img: "./images/A02-japan-tour/GPT0016-37/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-E",
+        img: "./images/A02-japan-tour/GPT0016-37/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-G",
+        img: "./images/A02-japan-tour/GPT0016-37/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-H",
+        img: "./images/A02-japan-tour/GPT0016-37/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-I",
+        img: "./images/A02-japan-tour/GPT0016-37/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37-J",
+        img: "./images/A02-japan-tour/GPT0016-37/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 180,
+    name: "個人Q版",
+    description: "四國地方-香川縣37-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-37X-1",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-2",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-3",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-4",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-6",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-7",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-8",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-9",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-B",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-C",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-D",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-E",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-G",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-H",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-I",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-37X-J",
+        img: "./images/A02-japan-tour/GPT0016-37X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 177,
+    name: "個人Q版",
+    description: "四國地方-德島縣36-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-36-1",
+        img: "./images/A02-japan-tour/GPT0016-36/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-2",
+        img: "./images/A02-japan-tour/GPT0016-36/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-3",
+        img: "./images/A02-japan-tour/GPT0016-36/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-4",
+        img: "./images/A02-japan-tour/GPT0016-36/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-6",
+        img: "./images/A02-japan-tour/GPT0016-36/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-7",
+        img: "./images/A02-japan-tour/GPT0016-36/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-8",
+        img: "./images/A02-japan-tour/GPT0016-36/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-9",
+        img: "./images/A02-japan-tour/GPT0016-36/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-B",
+        img: "./images/A02-japan-tour/GPT0016-36/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-C",
+        img: "./images/A02-japan-tour/GPT0016-36/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-D",
+        img: "./images/A02-japan-tour/GPT0016-36/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-E",
+        img: "./images/A02-japan-tour/GPT0016-36/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-G",
+        img: "./images/A02-japan-tour/GPT0016-36/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-H",
+        img: "./images/A02-japan-tour/GPT0016-36/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-I",
+        img: "./images/A02-japan-tour/GPT0016-36/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36-J",
+        img: "./images/A02-japan-tour/GPT0016-36/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 178,
+    name: "個人Q版",
+    description: "四國地方-德島縣36-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-36X-1",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-2",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-3",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-4",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-6",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-7",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-8",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-9",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-B",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-C",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-D",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-E",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-G",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-H",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-I",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-36X-J",
+        img: "./images/A02-japan-tour/GPT0016-36X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 175,
+    name: "個人Q版",
+    description: "中國地方-山口縣35-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-35-1",
+        img: "./images/A02-japan-tour/GPT0016-35/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-2",
+        img: "./images/A02-japan-tour/GPT0016-35/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-3",
+        img: "./images/A02-japan-tour/GPT0016-35/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-4",
+        img: "./images/A02-japan-tour/GPT0016-35/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-6",
+        img: "./images/A02-japan-tour/GPT0016-35/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-7",
+        img: "./images/A02-japan-tour/GPT0016-35/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-8",
+        img: "./images/A02-japan-tour/GPT0016-35/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-9",
+        img: "./images/A02-japan-tour/GPT0016-35/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-B",
+        img: "./images/A02-japan-tour/GPT0016-35/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-C",
+        img: "./images/A02-japan-tour/GPT0016-35/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-D",
+        img: "./images/A02-japan-tour/GPT0016-35/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-E",
+        img: "./images/A02-japan-tour/GPT0016-35/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-G",
+        img: "./images/A02-japan-tour/GPT0016-35/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-H",
+        img: "./images/A02-japan-tour/GPT0016-35/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-I",
+        img: "./images/A02-japan-tour/GPT0016-35/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35-J",
+        img: "./images/A02-japan-tour/GPT0016-35/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 176,
+    name: "個人Q版",
+    description: "中國地方-山口縣35-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-35X-1",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-2",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-3",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-4",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-6",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-7",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-8",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-9",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-B",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-C",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-D",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-E",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-G",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-H",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-I",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-35X-J",
+        img: "./images/A02-japan-tour/GPT0016-35X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 173,
+    name: "個人Q版",
+    description: "中國地方-廣島縣34-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-34-1",
+        img: "./images/A02-japan-tour/GPT0016-34/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-2",
+        img: "./images/A02-japan-tour/GPT0016-34/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-3",
+        img: "./images/A02-japan-tour/GPT0016-34/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-4",
+        img: "./images/A02-japan-tour/GPT0016-34/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-6",
+        img: "./images/A02-japan-tour/GPT0016-34/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-7",
+        img: "./images/A02-japan-tour/GPT0016-34/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-8",
+        img: "./images/A02-japan-tour/GPT0016-34/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-9",
+        img: "./images/A02-japan-tour/GPT0016-34/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-B",
+        img: "./images/A02-japan-tour/GPT0016-34/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-C",
+        img: "./images/A02-japan-tour/GPT0016-34/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-D",
+        img: "./images/A02-japan-tour/GPT0016-34/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-E",
+        img: "./images/A02-japan-tour/GPT0016-34/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-G",
+        img: "./images/A02-japan-tour/GPT0016-34/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-H",
+        img: "./images/A02-japan-tour/GPT0016-34/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-I",
+        img: "./images/A02-japan-tour/GPT0016-34/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34-J",
+        img: "./images/A02-japan-tour/GPT0016-34/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 174,
+    name: "個人Q版",
+    description: "中國地方-廣島縣34-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-34X-1",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-2",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-3",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-4",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-6",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-7",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-8",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-9",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-B",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-C",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-D",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-E",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-G",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-H",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-I",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-34X-J",
+        img: "./images/A02-japan-tour/GPT0016-34X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 171,
+    name: "個人Q版",
+    description: "中國地方-岡山縣33-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-33-1",
+        img: "./images/A02-japan-tour/GPT0016-33/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-2",
+        img: "./images/A02-japan-tour/GPT0016-33/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-3",
+        img: "./images/A02-japan-tour/GPT0016-33/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-4",
+        img: "./images/A02-japan-tour/GPT0016-33/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-6",
+        img: "./images/A02-japan-tour/GPT0016-33/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-7",
+        img: "./images/A02-japan-tour/GPT0016-33/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-8",
+        img: "./images/A02-japan-tour/GPT0016-33/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-9",
+        img: "./images/A02-japan-tour/GPT0016-33/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-B",
+        img: "./images/A02-japan-tour/GPT0016-33/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-C",
+        img: "./images/A02-japan-tour/GPT0016-33/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-D",
+        img: "./images/A02-japan-tour/GPT0016-33/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-E",
+        img: "./images/A02-japan-tour/GPT0016-33/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-G",
+        img: "./images/A02-japan-tour/GPT0016-33/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-H",
+        img: "./images/A02-japan-tour/GPT0016-33/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-I",
+        img: "./images/A02-japan-tour/GPT0016-33/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33-J",
+        img: "./images/A02-japan-tour/GPT0016-33/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 172,
+    name: "個人Q版",
+    description: "中國地方-岡山縣縣33-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-33X-1",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-2",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-3",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-4",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-6",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-7",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-8",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-9",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-B",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-C",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-D",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-E",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-G",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-H",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-I",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-33X-J",
+        img: "./images/A02-japan-tour/GPT0016-33X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 169,
+    name: "個人Q版",
+    description: "中國地方-島根縣32-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-32-1",
+        img: "./images/A02-japan-tour/GPT0016-32/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-2",
+        img: "./images/A02-japan-tour/GPT0016-32/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-3",
+        img: "./images/A02-japan-tour/GPT0016-32/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-4",
+        img: "./images/A02-japan-tour/GPT0016-32/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-6",
+        img: "./images/A02-japan-tour/GPT0016-32/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-7",
+        img: "./images/A02-japan-tour/GPT0016-32/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-8",
+        img: "./images/A02-japan-tour/GPT0016-32/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-9",
+        img: "./images/A02-japan-tour/GPT0016-32/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-B",
+        img: "./images/A02-japan-tour/GPT0016-32/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-C",
+        img: "./images/A02-japan-tour/GPT0016-32/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-D",
+        img: "./images/A02-japan-tour/GPT0016-32/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-E",
+        img: "./images/A02-japan-tour/GPT0016-32/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-G",
+        img: "./images/A02-japan-tour/GPT0016-32/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-H",
+        img: "./images/A02-japan-tour/GPT0016-32/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-I",
+        img: "./images/A02-japan-tour/GPT0016-32/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32-J",
+        img: "./images/A02-japan-tour/GPT0016-32/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 170,
+    name: "個人Q版",
+    description: "中國地方-島根縣32-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-32X-1",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-2",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-3",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-4",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-6",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-7",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-8",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-9",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-B",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-C",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-D",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-E",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-G",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-H",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-I",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-32X-J",
+        img: "./images/A02-japan-tour/GPT0016-32X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 167,
+    name: "個人Q版",
+    description: "中國地方-鳥取縣31-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-31-1",
+        img: "./images/A02-japan-tour/GPT0016-31/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-2",
+        img: "./images/A02-japan-tour/GPT0016-31/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-3",
+        img: "./images/A02-japan-tour/GPT0016-31/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-4",
+        img: "./images/A02-japan-tour/GPT0016-31/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-6",
+        img: "./images/A02-japan-tour/GPT0016-31/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-7",
+        img: "./images/A02-japan-tour/GPT0016-31/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-8",
+        img: "./images/A02-japan-tour/GPT0016-31/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-9",
+        img: "./images/A02-japan-tour/GPT0016-31/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-B",
+        img: "./images/A02-japan-tour/GPT0016-31/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-C",
+        img: "./images/A02-japan-tour/GPT0016-31/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-D",
+        img: "./images/A02-japan-tour/GPT0016-31/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-E",
+        img: "./images/A02-japan-tour/GPT0016-31/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-G",
+        img: "./images/A02-japan-tour/GPT0016-31/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-H",
+        img: "./images/A02-japan-tour/GPT0016-31/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-I",
+        img: "./images/A02-japan-tour/GPT0016-31/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31-J",
+        img: "./images/A02-japan-tour/GPT0016-31/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 168,
+    name: "個人Q版",
+    description: "中國地方-鳥取縣31-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-31X-1",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-2",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-3",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-4",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-6",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-7",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-8",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-9",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-B",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-C",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-D",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-E",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-G",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-H",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-I",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-31X-J",
+        img: "./images/A02-japan-tour/GPT0016-31X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 165,
+    name: "個人Q版",
+    description: "近畿地方-和歌山縣30-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-30-1",
+        img: "./images/A02-japan-tour/GPT0016-30/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-2",
+        img: "./images/A02-japan-tour/GPT0016-30/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-3",
+        img: "./images/A02-japan-tour/GPT0016-30/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-4",
+        img: "./images/A02-japan-tour/GPT0016-30/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-6",
+        img: "./images/A02-japan-tour/GPT0016-30/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-7",
+        img: "./images/A02-japan-tour/GPT0016-30/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-8",
+        img: "./images/A02-japan-tour/GPT0016-30/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-9",
+        img: "./images/A02-japan-tour/GPT0016-30/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-B",
+        img: "./images/A02-japan-tour/GPT0016-30/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-C",
+        img: "./images/A02-japan-tour/GPT0016-30/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-D",
+        img: "./images/A02-japan-tour/GPT0016-30/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-E",
+        img: "./images/A02-japan-tour/GPT0016-30/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-G",
+        img: "./images/A02-japan-tour/GPT0016-30/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-H",
+        img: "./images/A02-japan-tour/GPT0016-30/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-I",
+        img: "./images/A02-japan-tour/GPT0016-30/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30-J",
+        img: "./images/A02-japan-tour/GPT0016-30/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 166,
+    name: "個人Q版",
+    description: "近畿地方-和歌山縣30-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-30X-1",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-2",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-3",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-4",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-6",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-7",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-8",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-9",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-B",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-C",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-D",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-E",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-G",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-H",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-I",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-30X-J",
+        img: "./images/A02-japan-tour/GPT0016-30X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 163,
+    name: "個人Q版",
+    description: "近畿地方-奈良縣29-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-29-1",
+        img: "./images/A02-japan-tour/GPT0016-29/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-2",
+        img: "./images/A02-japan-tour/GPT0016-29/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-3",
+        img: "./images/A02-japan-tour/GPT0016-29/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-4",
+        img: "./images/A02-japan-tour/GPT0016-29/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-6",
+        img: "./images/A02-japan-tour/GPT0016-29/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-7",
+        img: "./images/A02-japan-tour/GPT0016-29/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-8",
+        img: "./images/A02-japan-tour/GPT0016-29/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-9",
+        img: "./images/A02-japan-tour/GPT0016-29/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-B",
+        img: "./images/A02-japan-tour/GPT0016-29/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-C",
+        img: "./images/A02-japan-tour/GPT0016-29/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-D",
+        img: "./images/A02-japan-tour/GPT0016-29/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-E",
+        img: "./images/A02-japan-tour/GPT0016-29/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-G",
+        img: "./images/A02-japan-tour/GPT0016-29/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-H",
+        img: "./images/A02-japan-tour/GPT0016-29/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-I",
+        img: "./images/A02-japan-tour/GPT0016-29/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29-J",
+        img: "./images/A02-japan-tour/GPT0016-29/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 164,
+    name: "個人Q版",
+    description: "近畿地方-奈良縣29-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-29X-1",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-2",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-3",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-4",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-6",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-7",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-8",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-9",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-B",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-C",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-D",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-E",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-G",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-H",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-I",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-29X-J",
+        img: "./images/A02-japan-tour/GPT0016-29X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 161,
+    name: "個人Q版",
+    description: "近畿地方-兵庫縣28-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-28-1",
+        img: "./images/A02-japan-tour/GPT0016-28/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-2",
+        img: "./images/A02-japan-tour/GPT0016-28/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-3",
+        img: "./images/A02-japan-tour/GPT0016-28/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-4",
+        img: "./images/A02-japan-tour/GPT0016-28/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-6",
+        img: "./images/A02-japan-tour/GPT0016-28/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-7",
+        img: "./images/A02-japan-tour/GPT0016-28/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-8",
+        img: "./images/A02-japan-tour/GPT0016-28/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-9",
+        img: "./images/A02-japan-tour/GPT0016-28/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-B",
+        img: "./images/A02-japan-tour/GPT0016-28/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-C",
+        img: "./images/A02-japan-tour/GPT0016-28/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-D",
+        img: "./images/A02-japan-tour/GPT0016-28/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-E",
+        img: "./images/A02-japan-tour/GPT0016-28/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-G",
+        img: "./images/A02-japan-tour/GPT0016-28/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-H",
+        img: "./images/A02-japan-tour/GPT0016-28/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-I",
+        img: "./images/A02-japan-tour/GPT0016-28/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28-J",
+        img: "./images/A02-japan-tour/GPT0016-28/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 162,
+    name: "個人Q版",
+    description: "近畿地方-兵庫縣28-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-28X-1",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-2",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-3",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-4",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-6",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-7",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-8",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-9",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-B",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-C",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-D",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-E",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-G",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-H",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-I",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-28X-J",
+        img: "./images/A02-japan-tour/GPT0016-28X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 159,
+    name: "個人Q版",
+    description: "近畿地方-大阪府27-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-27-1",
+        img: "./images/A02-japan-tour/GPT0016-27/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-2",
+        img: "./images/A02-japan-tour/GPT0016-27/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-3",
+        img: "./images/A02-japan-tour/GPT0016-27/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-4",
+        img: "./images/A02-japan-tour/GPT0016-27/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-6",
+        img: "./images/A02-japan-tour/GPT0016-27/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-7",
+        img: "./images/A02-japan-tour/GPT0016-27/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-8",
+        img: "./images/A02-japan-tour/GPT0016-27/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-9",
+        img: "./images/A02-japan-tour/GPT0016-27/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-B",
+        img: "./images/A02-japan-tour/GPT0016-27/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-C",
+        img: "./images/A02-japan-tour/GPT0016-27/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-D",
+        img: "./images/A02-japan-tour/GPT0016-27/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-E",
+        img: "./images/A02-japan-tour/GPT0016-27/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-G",
+        img: "./images/A02-japan-tour/GPT0016-27/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-H",
+        img: "./images/A02-japan-tour/GPT0016-27/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-I",
+        img: "./images/A02-japan-tour/GPT0016-27/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27-J",
+        img: "./images/A02-japan-tour/GPT0016-27/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 160,
+    name: "個人Q版",
+    description: "近畿地方-大阪府27-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-27X-1",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-2",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-3",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-4",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-6",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-7",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-8",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-9",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-B",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-C",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-D",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-E",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-G",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-H",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-I",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-27X-J",
+        img: "./images/A02-japan-tour/GPT0016-27X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 157,
+    name: "個人Q版",
+    description: "近畿地方-京都府26-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-26-1",
+        img: "./images/A02-japan-tour/GPT0016-26/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-2",
+        img: "./images/A02-japan-tour/GPT0016-26/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-3",
+        img: "./images/A02-japan-tour/GPT0016-26/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-4",
+        img: "./images/A02-japan-tour/GPT0016-26/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-6",
+        img: "./images/A02-japan-tour/GPT0016-26/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-7",
+        img: "./images/A02-japan-tour/GPT0016-26/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-8",
+        img: "./images/A02-japan-tour/GPT0016-26/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-9",
+        img: "./images/A02-japan-tour/GPT0016-26/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-B",
+        img: "./images/A02-japan-tour/GPT0016-26/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-C",
+        img: "./images/A02-japan-tour/GPT0016-26/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-D",
+        img: "./images/A02-japan-tour/GPT0016-26/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-E",
+        img: "./images/A02-japan-tour/GPT0016-26/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-G",
+        img: "./images/A02-japan-tour/GPT0016-26/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-H",
+        img: "./images/A02-japan-tour/GPT0016-26/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-I",
+        img: "./images/A02-japan-tour/GPT0016-26/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26-J",
+        img: "./images/A02-japan-tour/GPT0016-26/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 158,
+    name: "個人Q版",
+    description: "近畿地方-京都府26-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-26X-1",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-2",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-3",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-4",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-6",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-7",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-8",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-9",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-B",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-C",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-D",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-E",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-G",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-H",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-I",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-26X-J",
+        img: "./images/A02-japan-tour/GPT0016-26X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 155,
+    name: "個人Q版",
+    description: "近畿地方-滋賀縣25-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-25-1",
+        img: "./images/A02-japan-tour/GPT0016-25/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-2",
+        img: "./images/A02-japan-tour/GPT0016-25/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-3",
+        img: "./images/A02-japan-tour/GPT0016-25/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-4",
+        img: "./images/A02-japan-tour/GPT0016-25/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-6",
+        img: "./images/A02-japan-tour/GPT0016-25/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-7",
+        img: "./images/A02-japan-tour/GPT0016-25/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-8",
+        img: "./images/A02-japan-tour/GPT0016-25/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-9",
+        img: "./images/A02-japan-tour/GPT0016-25/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-B",
+        img: "./images/A02-japan-tour/GPT0016-25/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-C",
+        img: "./images/A02-japan-tour/GPT0016-25/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-D",
+        img: "./images/A02-japan-tour/GPT0016-25/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-E",
+        img: "./images/A02-japan-tour/GPT0016-25/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-G",
+        img: "./images/A02-japan-tour/GPT0016-25/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-H",
+        img: "./images/A02-japan-tour/GPT0016-25/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-I",
+        img: "./images/A02-japan-tour/GPT0016-25/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25-J",
+        img: "./images/A02-japan-tour/GPT0016-25/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 156,
+    name: "個人Q版",
+    description: "近畿地方-滋賀縣25-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-25X-1",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-2",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-3",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-4",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-6",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-7",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-8",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-9",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-B",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-C",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-D",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-E",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-G",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-H",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-I",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-25X-J",
+        img: "./images/A02-japan-tour/GPT0016-25X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 153,
+    name: "個人Q版",
+    description: "近畿地方-三重縣24-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-24-1",
+        img: "./images/A02-japan-tour/GPT0016-24/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-2",
+        img: "./images/A02-japan-tour/GPT0016-24/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-3",
+        img: "./images/A02-japan-tour/GPT0016-24/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-4",
+        img: "./images/A02-japan-tour/GPT0016-24/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-6",
+        img: "./images/A02-japan-tour/GPT0016-24/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-7",
+        img: "./images/A02-japan-tour/GPT0016-24/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-8",
+        img: "./images/A02-japan-tour/GPT0016-24/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-9",
+        img: "./images/A02-japan-tour/GPT0016-24/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-B",
+        img: "./images/A02-japan-tour/GPT0016-24/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-C",
+        img: "./images/A02-japan-tour/GPT0016-24/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-D",
+        img: "./images/A02-japan-tour/GPT0016-24/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-E",
+        img: "./images/A02-japan-tour/GPT0016-24/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-G",
+        img: "./images/A02-japan-tour/GPT0016-24/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-H",
+        img: "./images/A02-japan-tour/GPT0016-24/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-I",
+        img: "./images/A02-japan-tour/GPT0016-24/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24-J",
+        img: "./images/A02-japan-tour/GPT0016-24/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 154,
+    name: "個人Q版",
+    description: "近畿地方-三重縣24-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-24X-1",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-2",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-3",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-4",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-6",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-7",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-8",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-9",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-B",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-C",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-D",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-E",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-G",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-H",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-I",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-24X-J",
+        img: "./images/A02-japan-tour/GPT0016-24X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 151,
+    name: "個人Q版",
+    description: "中部地方-愛知縣23-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-23-1",
+        img: "./images/A02-japan-tour/GPT0016-23/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-2",
+        img: "./images/A02-japan-tour/GPT0016-23/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-3",
+        img: "./images/A02-japan-tour/GPT0016-23/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-4",
+        img: "./images/A02-japan-tour/GPT0016-23/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-6",
+        img: "./images/A02-japan-tour/GPT0016-23/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-7",
+        img: "./images/A02-japan-tour/GPT0016-23/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-8",
+        img: "./images/A02-japan-tour/GPT0016-23/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-9",
+        img: "./images/A02-japan-tour/GPT0016-23/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-B",
+        img: "./images/A02-japan-tour/GPT0016-23/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-C",
+        img: "./images/A02-japan-tour/GPT0016-23/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-D",
+        img: "./images/A02-japan-tour/GPT0016-23/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-E",
+        img: "./images/A02-japan-tour/GPT0016-23/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-G",
+        img: "./images/A02-japan-tour/GPT0016-23/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-H",
+        img: "./images/A02-japan-tour/GPT0016-23/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-I",
+        img: "./images/A02-japan-tour/GPT0016-23/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23-J",
+        img: "./images/A02-japan-tour/GPT0016-23/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 152,
+    name: "個人Q版",
+    description: "中部地方-愛知縣23-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-23X-1",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-2",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-3",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-4",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-6",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-7",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-8",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-9",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-B",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-C",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-D",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-E",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-G",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-H",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-I",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-23X-J",
+        img: "./images/A02-japan-tour/GPT0016-23X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 149,
+    name: "個人Q版",
+    description: "中部地方-靜岡縣22-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-22-1",
+        img: "./images/A02-japan-tour/GPT0016-22/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-2",
+        img: "./images/A02-japan-tour/GPT0016-22/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-3",
+        img: "./images/A02-japan-tour/GPT0016-22/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-4",
+        img: "./images/A02-japan-tour/GPT0016-22/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-6",
+        img: "./images/A02-japan-tour/GPT0016-22/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-7",
+        img: "./images/A02-japan-tour/GPT0016-22/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-8",
+        img: "./images/A02-japan-tour/GPT0016-22/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-9",
+        img: "./images/A02-japan-tour/GPT0016-22/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-B",
+        img: "./images/A02-japan-tour/GPT0016-22/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-C",
+        img: "./images/A02-japan-tour/GPT0016-22/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-D",
+        img: "./images/A02-japan-tour/GPT0016-22/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-E",
+        img: "./images/A02-japan-tour/GPT0016-22/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-G",
+        img: "./images/A02-japan-tour/GPT0016-22/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-H",
+        img: "./images/A02-japan-tour/GPT0016-22/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-I",
+        img: "./images/A02-japan-tour/GPT0016-22/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22-J",
+        img: "./images/A02-japan-tour/GPT0016-22/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 150,
+    name: "個人Q版",
+    description: "中部地方-靜岡縣22-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-22X-1",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-2",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-3",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-4",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-6",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-7",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-8",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-9",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-B",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-C",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-D",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-E",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-G",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-H",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-I",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-22X-J",
+        img: "./images/A02-japan-tour/GPT0016-22X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 147,
+    name: "個人Q版",
+    description: "中部地方-岐阜縣21-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-21-1",
+        img: "./images/A02-japan-tour/GPT0016-21/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-2",
+        img: "./images/A02-japan-tour/GPT0016-21/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-3",
+        img: "./images/A02-japan-tour/GPT0016-21/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-4",
+        img: "./images/A02-japan-tour/GPT0016-21/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-6",
+        img: "./images/A02-japan-tour/GPT0016-21/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-7",
+        img: "./images/A02-japan-tour/GPT0016-21/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-8",
+        img: "./images/A02-japan-tour/GPT0016-21/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-9",
+        img: "./images/A02-japan-tour/GPT0016-21/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-B",
+        img: "./images/A02-japan-tour/GPT0016-21/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-C",
+        img: "./images/A02-japan-tour/GPT0016-21/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-D",
+        img: "./images/A02-japan-tour/GPT0016-21/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-E",
+        img: "./images/A02-japan-tour/GPT0016-21/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-G",
+        img: "./images/A02-japan-tour/GPT0016-21/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-H",
+        img: "./images/A02-japan-tour/GPT0016-21/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-I",
+        img: "./images/A02-japan-tour/GPT0016-21/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21-J",
+        img: "./images/A02-japan-tour/GPT0016-21/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 148,
+    name: "個人Q版",
+    description: "中部地方-岐阜縣21-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-21X-1",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-2",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-3",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-4",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-6",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-7",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-8",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-9",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-B",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-C",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-D",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-E",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-G",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-H",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-I",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-21X-J",
+        img: "./images/A02-japan-tour/GPT0016-21X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 145,
+    name: "個人Q版",
+    description: "中部地方-長野縣20-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-20-1",
+        img: "./images/A02-japan-tour/GPT0016-20/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-2",
+        img: "./images/A02-japan-tour/GPT0016-20/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-3",
+        img: "./images/A02-japan-tour/GPT0016-20/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-4",
+        img: "./images/A02-japan-tour/GPT0016-20/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-6",
+        img: "./images/A02-japan-tour/GPT0016-20/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-7",
+        img: "./images/A02-japan-tour/GPT0016-20/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-8",
+        img: "./images/A02-japan-tour/GPT0016-20/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-9",
+        img: "./images/A02-japan-tour/GPT0016-20/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-B",
+        img: "./images/A02-japan-tour/GPT0016-20/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-C",
+        img: "./images/A02-japan-tour/GPT0016-20/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-D",
+        img: "./images/A02-japan-tour/GPT0016-20/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-E",
+        img: "./images/A02-japan-tour/GPT0016-20/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-G",
+        img: "./images/A02-japan-tour/GPT0016-20/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-H",
+        img: "./images/A02-japan-tour/GPT0016-20/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-I",
+        img: "./images/A02-japan-tour/GPT0016-20/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20-J",
+        img: "./images/A02-japan-tour/GPT0016-20/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 146,
+    name: "個人Q版",
+    description: "中部地方-長野縣20-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-20X-1",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-2",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-3",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-4",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-6",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-7",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-8",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-9",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-B",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-C",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-D",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-E",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-G",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-H",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-I",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-20X-J",
+        img: "./images/A02-japan-tour/GPT0016-20X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 143,
+    name: "個人Q版",
+    description: "中部地方-山梨縣19-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-19-1",
+        img: "./images/A02-japan-tour/GPT0016-19/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-2",
+        img: "./images/A02-japan-tour/GPT0016-19/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-3",
+        img: "./images/A02-japan-tour/GPT0016-19/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-4",
+        img: "./images/A02-japan-tour/GPT0016-19/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-6",
+        img: "./images/A02-japan-tour/GPT0016-19/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-7",
+        img: "./images/A02-japan-tour/GPT0016-19/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-8",
+        img: "./images/A02-japan-tour/GPT0016-19/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-9",
+        img: "./images/A02-japan-tour/GPT0016-19/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-B",
+        img: "./images/A02-japan-tour/GPT0016-19/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-C",
+        img: "./images/A02-japan-tour/GPT0016-19/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-D",
+        img: "./images/A02-japan-tour/GPT0016-19/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-E",
+        img: "./images/A02-japan-tour/GPT0016-19/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-G",
+        img: "./images/A02-japan-tour/GPT0016-19/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-H",
+        img: "./images/A02-japan-tour/GPT0016-19/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-I",
+        img: "./images/A02-japan-tour/GPT0016-19/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19-J",
+        img: "./images/A02-japan-tour/GPT0016-19/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 144,
+    name: "個人Q版",
+    description: "中部地方-山梨縣19-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-19X-1",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-2",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-3",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-4",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-6",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-7",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-8",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-9",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-B",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-C",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-D",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-E",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-G",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-H",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-I",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-19X-J",
+        img: "./images/A02-japan-tour/GPT0016-19X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 141,
+    name: "個人Q版",
+    description: "中部地方-福井縣18-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-18-1",
+        img: "./images/A02-japan-tour/GPT0016-18/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-2",
+        img: "./images/A02-japan-tour/GPT0016-18/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-3",
+        img: "./images/A02-japan-tour/GPT0016-18/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-4",
+        img: "./images/A02-japan-tour/GPT0016-18/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-6",
+        img: "./images/A02-japan-tour/GPT0016-18/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-7",
+        img: "./images/A02-japan-tour/GPT0016-18/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-8",
+        img: "./images/A02-japan-tour/GPT0016-18/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-9",
+        img: "./images/A02-japan-tour/GPT0016-18/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-B",
+        img: "./images/A02-japan-tour/GPT0016-18/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-C",
+        img: "./images/A02-japan-tour/GPT0016-18/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-D",
+        img: "./images/A02-japan-tour/GPT0016-18/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-E",
+        img: "./images/A02-japan-tour/GPT0016-18/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-G",
+        img: "./images/A02-japan-tour/GPT0016-18/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-H",
+        img: "./images/A02-japan-tour/GPT0016-18/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-I",
+        img: "./images/A02-japan-tour/GPT0016-18/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18-J",
+        img: "./images/A02-japan-tour/GPT0016-18/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 142,
+    name: "個人Q版",
+    description: "中部地方-福井縣18-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-18X-1",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-2",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-3",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-4",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-6",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-7",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-8",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-9",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-B",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-C",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-D",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-E",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-G",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-H",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-I",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-18X-J",
+        img: "./images/A02-japan-tour/GPT0016-18X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 139,
+    name: "個人Q版",
+    description: "中部地方-石川縣17-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-17-1",
+        img: "./images/A02-japan-tour/GPT0016-17/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-2",
+        img: "./images/A02-japan-tour/GPT0016-17/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-3",
+        img: "./images/A02-japan-tour/GPT0016-17/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-4",
+        img: "./images/A02-japan-tour/GPT0016-17/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-6",
+        img: "./images/A02-japan-tour/GPT0016-17/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-7",
+        img: "./images/A02-japan-tour/GPT0016-17/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-8",
+        img: "./images/A02-japan-tour/GPT0016-17/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-9",
+        img: "./images/A02-japan-tour/GPT0016-17/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-B",
+        img: "./images/A02-japan-tour/GPT0016-17/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-C",
+        img: "./images/A02-japan-tour/GPT0016-17/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-D",
+        img: "./images/A02-japan-tour/GPT0016-17/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-E",
+        img: "./images/A02-japan-tour/GPT0016-17/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-G",
+        img: "./images/A02-japan-tour/GPT0016-17/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-H",
+        img: "./images/A02-japan-tour/GPT0016-17/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-I",
+        img: "./images/A02-japan-tour/GPT0016-17/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17-J",
+        img: "./images/A02-japan-tour/GPT0016-17/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 140,
+    name: "個人Q版",
+    description: "中部地方-石川縣17-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-17X-1",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-2",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-3",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-4",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-6",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-7",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-8",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-9",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-B",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-C",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-D",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-E",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-G",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-H",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-I",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-17X-J",
+        img: "./images/A02-japan-tour/GPT0016-17X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 137,
+    name: "個人Q版",
+    description: "中部地方-富山縣16-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-16-1",
+        img: "./images/A02-japan-tour/GPT0016-16/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-2",
+        img: "./images/A02-japan-tour/GPT0016-16/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-3",
+        img: "./images/A02-japan-tour/GPT0016-16/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-4",
+        img: "./images/A02-japan-tour/GPT0016-16/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-6",
+        img: "./images/A02-japan-tour/GPT0016-16/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-7",
+        img: "./images/A02-japan-tour/GPT0016-16/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-8",
+        img: "./images/A02-japan-tour/GPT0016-16/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-9",
+        img: "./images/A02-japan-tour/GPT0016-16/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-B",
+        img: "./images/A02-japan-tour/GPT0016-16/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-C",
+        img: "./images/A02-japan-tour/GPT0016-16/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-D",
+        img: "./images/A02-japan-tour/GPT0016-16/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-E",
+        img: "./images/A02-japan-tour/GPT0016-16/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-G",
+        img: "./images/A02-japan-tour/GPT0016-16/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-H",
+        img: "./images/A02-japan-tour/GPT0016-16/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-I",
+        img: "./images/A02-japan-tour/GPT0016-16/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16-J",
+        img: "./images/A02-japan-tour/GPT0016-16/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 138,
+    name: "個人Q版",
+    description: "中部地方-富山縣16-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-16X-1",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-2",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-3",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-4",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-6",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-7",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-8",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-9",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-B",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-C",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-D",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-E",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-G",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-H",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-I",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-16X-J",
+        img: "./images/A02-japan-tour/GPT0016-16X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 135,
+    name: "個人Q版",
+    description: "中部地方-新潟縣15-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-15-1",
+        img: "./images/A02-japan-tour/GPT0016-15/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-2",
+        img: "./images/A02-japan-tour/GPT0016-15/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-3",
+        img: "./images/A02-japan-tour/GPT0016-15/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-4",
+        img: "./images/A02-japan-tour/GPT0016-15/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-6",
+        img: "./images/A02-japan-tour/GPT0016-15/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-7",
+        img: "./images/A02-japan-tour/GPT0016-15/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-8",
+        img: "./images/A02-japan-tour/GPT0016-15/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-9",
+        img: "./images/A02-japan-tour/GPT0016-15/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-B",
+        img: "./images/A02-japan-tour/GPT0016-15/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-C",
+        img: "./images/A02-japan-tour/GPT0016-15/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-D",
+        img: "./images/A02-japan-tour/GPT0016-15/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-E",
+        img: "./images/A02-japan-tour/GPT0016-15/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-G",
+        img: "./images/A02-japan-tour/GPT0016-15/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-H",
+        img: "./images/A02-japan-tour/GPT0016-15/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-I",
+        img: "./images/A02-japan-tour/GPT0016-15/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15-J",
+        img: "./images/A02-japan-tour/GPT0016-15/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 136,
+    name: "個人Q版",
+    description: "中部地方-新潟縣15-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-15X-1",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-2",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-3",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-4",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-6",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-7",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-8",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-9",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-B",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-C",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-D",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-E",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-G",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-H",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-I",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-15X-J",
+        img: "./images/A02-japan-tour/GPT0016-15X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 133,
+    name: "個人Q版",
+    description: "東北地方-神奈川縣14-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-14-1",
+        img: "./images/A02-japan-tour/GPT0016-14/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-2",
+        img: "./images/A02-japan-tour/GPT0016-14/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-3",
+        img: "./images/A02-japan-tour/GPT0016-14/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-4",
+        img: "./images/A02-japan-tour/GPT0016-14/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-6",
+        img: "./images/A02-japan-tour/GPT0016-14/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-7",
+        img: "./images/A02-japan-tour/GPT0016-14/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-8",
+        img: "./images/A02-japan-tour/GPT0016-14/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-9",
+        img: "./images/A02-japan-tour/GPT0016-14/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-B",
+        img: "./images/A02-japan-tour/GPT0016-14/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-C",
+        img: "./images/A02-japan-tour/GPT0016-14/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-D",
+        img: "./images/A02-japan-tour/GPT0016-14/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-E",
+        img: "./images/A02-japan-tour/GPT0016-14/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-G",
+        img: "./images/A02-japan-tour/GPT0016-14/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-H",
+        img: "./images/A02-japan-tour/GPT0016-14/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-I",
+        img: "./images/A02-japan-tour/GPT0016-14/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14-J",
+        img: "./images/A02-japan-tour/GPT0016-14/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 134,
+    name: "個人Q版",
+    description: "東北地方-神奈川縣14-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-14X-1",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-2",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-3",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-4",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-6",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-7",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-8",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-9",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-B",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-C",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-D",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-E",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-G",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-H",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-I",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-14X-J",
+        img: "./images/A02-japan-tour/GPT0016-14X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 131,
+    name: "個人Q版",
+    description: "東北地方-東京都13-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-13-1",
+        img: "./images/A02-japan-tour/GPT0016-13/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-2",
+        img: "./images/A02-japan-tour/GPT0016-13/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-3",
+        img: "./images/A02-japan-tour/GPT0016-13/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-4",
+        img: "./images/A02-japan-tour/GPT0016-13/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-6",
+        img: "./images/A02-japan-tour/GPT0016-13/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-7",
+        img: "./images/A02-japan-tour/GPT0016-13/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-8",
+        img: "./images/A02-japan-tour/GPT0016-13/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-9",
+        img: "./images/A02-japan-tour/GPT0016-13/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-B",
+        img: "./images/A02-japan-tour/GPT0016-13/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-C",
+        img: "./images/A02-japan-tour/GPT0016-13/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-D",
+        img: "./images/A02-japan-tour/GPT0016-13/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-E",
+        img: "./images/A02-japan-tour/GPT0016-13/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-G",
+        img: "./images/A02-japan-tour/GPT0016-13/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-H",
+        img: "./images/A02-japan-tour/GPT0016-13/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-I",
+        img: "./images/A02-japan-tour/GPT0016-13/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13-J",
+        img: "./images/A02-japan-tour/GPT0016-13/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 132,
+    name: "個人Q版",
+    description: "東北地方-東京都13-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-13X-1",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-2",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-3",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-4",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-6",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-7",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-8",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-9",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-B",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-C",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-D",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-E",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-G",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-H",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-I",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-13X-J",
+        img: "./images/A02-japan-tour/GPT0016-13X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 129,
+    name: "個人Q版",
+    description: "東北地方-千葉縣12-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-12-1",
+        img: "./images/A02-japan-tour/GPT0016-12/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-2",
+        img: "./images/A02-japan-tour/GPT0016-12/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-3",
+        img: "./images/A02-japan-tour/GPT0016-12/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-4",
+        img: "./images/A02-japan-tour/GPT0016-12/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-6",
+        img: "./images/A02-japan-tour/GPT0016-12/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-7",
+        img: "./images/A02-japan-tour/GPT0016-12/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-8",
+        img: "./images/A02-japan-tour/GPT0016-12/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-9",
+        img: "./images/A02-japan-tour/GPT0016-12/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-B",
+        img: "./images/A02-japan-tour/GPT0016-12/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-C",
+        img: "./images/A02-japan-tour/GPT0016-12/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-D",
+        img: "./images/A02-japan-tour/GPT0016-12/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-E",
+        img: "./images/A02-japan-tour/GPT0016-12/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-G",
+        img: "./images/A02-japan-tour/GPT0016-12/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-H",
+        img: "./images/A02-japan-tour/GPT0016-12/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-I",
+        img: "./images/A02-japan-tour/GPT0016-12/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12-J",
+        img: "./images/A02-japan-tour/GPT0016-12/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 130,
+    name: "個人Q版",
+    description: "東北地方-千葉縣12-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-12X-1",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-2",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-3",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-4",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-6",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-7",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-8",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-9",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-B",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-C",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-D",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-E",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-G",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-H",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-I",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-12X-J",
+        img: "./images/A02-japan-tour/GPT0016-12X/split_3_3.webp",
+      },
+    ],
+  },
+
+  {
+    id: 128,
+    name: "個人Q版",
+    description: "東北地方-埼玉縣11-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-11X-1",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-2",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-3",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-4",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-6",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-7",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-8",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-9",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-B",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-C",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-D",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-E",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-G",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-H",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-I",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11X-J",
+        img: "./images/A02-japan-tour/GPT0016-11X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 127,
+    name: "個人Q版",
+    description: "東北地方-埼玉縣11-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-11-1",
+        img: "./images/A02-japan-tour/GPT0016-11/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-2",
+        img: "./images/A02-japan-tour/GPT0016-11/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-3",
+        img: "./images/A02-japan-tour/GPT0016-11/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-4",
+        img: "./images/A02-japan-tour/GPT0016-11/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-6",
+        img: "./images/A02-japan-tour/GPT0016-11/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-7",
+        img: "./images/A02-japan-tour/GPT0016-11/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-8",
+        img: "./images/A02-japan-tour/GPT0016-11/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-9",
+        img: "./images/A02-japan-tour/GPT0016-11/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-B",
+        img: "./images/A02-japan-tour/GPT0016-11/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-C",
+        img: "./images/A02-japan-tour/GPT0016-11/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-D",
+        img: "./images/A02-japan-tour/GPT0016-11/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-E",
+        img: "./images/A02-japan-tour/GPT0016-11/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-G",
+        img: "./images/A02-japan-tour/GPT0016-11/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-H",
+        img: "./images/A02-japan-tour/GPT0016-11/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-I",
+        img: "./images/A02-japan-tour/GPT0016-11/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-11-J",
+        img: "./images/A02-japan-tour/GPT0016-11/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 126,
+    name: "個人Q版",
+    description: "東北地方-群馬縣10-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-10X-1",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-2",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-3",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-4",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-6",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-7",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-8",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-9",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-B",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-C",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-D",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-E",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-G",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-H",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-I",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10X-J",
+        img: "./images/A02-japan-tour/GPT0016-10X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 125,
+    name: "個人Q版",
+    description: "東北地方-群馬縣10-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-10-1",
+        img: "./images/A02-japan-tour/GPT0016-10/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-2",
+        img: "./images/A02-japan-tour/GPT0016-10/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-3",
+        img: "./images/A02-japan-tour/GPT0016-10/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-4",
+        img: "./images/A02-japan-tour/GPT0016-10/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-6",
+        img: "./images/A02-japan-tour/GPT0016-10/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-7",
+        img: "./images/A02-japan-tour/GPT0016-10/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-8",
+        img: "./images/A02-japan-tour/GPT0016-10/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-9",
+        img: "./images/A02-japan-tour/GPT0016-10/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-B",
+        img: "./images/A02-japan-tour/GPT0016-10/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-C",
+        img: "./images/A02-japan-tour/GPT0016-10/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-D",
+        img: "./images/A02-japan-tour/GPT0016-10/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-E",
+        img: "./images/A02-japan-tour/GPT0016-10/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-G",
+        img: "./images/A02-japan-tour/GPT0016-10/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-H",
+        img: "./images/A02-japan-tour/GPT0016-10/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-I",
+        img: "./images/A02-japan-tour/GPT0016-10/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-10-J",
+        img: "./images/A02-japan-tour/GPT0016-10/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 124,
+    name: "個人Q版",
+    description: "東北地方-栃木縣9-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-9X-1",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-2",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-3",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-4",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-6",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-7",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-8",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-9",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-B",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-C",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-D",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-E",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-G",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-H",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-I",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9X-J",
+        img: "./images/A02-japan-tour/GPT0016-9X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 123,
+    name: "個人Q版",
+    description: "東北地方-栃木縣9-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-9-1",
+        img: "./images/A02-japan-tour/GPT0016-9/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-2",
+        img: "./images/A02-japan-tour/GPT0016-9/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-3",
+        img: "./images/A02-japan-tour/GPT0016-9/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-4",
+        img: "./images/A02-japan-tour/GPT0016-9/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-6",
+        img: "./images/A02-japan-tour/GPT0016-9/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-7",
+        img: "./images/A02-japan-tour/GPT0016-9/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-8",
+        img: "./images/A02-japan-tour/GPT0016-9/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-9",
+        img: "./images/A02-japan-tour/GPT0016-9/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-B",
+        img: "./images/A02-japan-tour/GPT0016-9/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-C",
+        img: "./images/A02-japan-tour/GPT0016-9/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-D",
+        img: "./images/A02-japan-tour/GPT0016-9/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-E",
+        img: "./images/A02-japan-tour/GPT0016-9/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-G",
+        img: "./images/A02-japan-tour/GPT0016-9/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-H",
+        img: "./images/A02-japan-tour/GPT0016-9/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-I",
+        img: "./images/A02-japan-tour/GPT0016-9/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-9-J",
+        img: "./images/A02-japan-tour/GPT0016-9/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 122,
+    name: "個人Q版",
+    description: "東北地方-茨城縣8-2",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-8X-1",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-2",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-3",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-4",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-6",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-7",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-8",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-9",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-B",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-C",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-D",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-E",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-G",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-H",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-I",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8X-J",
+        img: "./images/A02-japan-tour/GPT0016-8X/split_3_3.webp",
+      },
+    ],
+  },
+  {
+    id: 121,
+    name: "個人Q版",
+    description: "東北地方-茨城縣8-1",
+    category: "日本景點系列",
+    stickers: [
+      {
+        id: "A02-japan-tour/GPT0016-8-1",
+        img: "./images/A02-japan-tour/GPT0016-8/split_0_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-2",
+        img: "./images/A02-japan-tour/GPT0016-8/split_0_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-3",
+        img: "./images/A02-japan-tour/GPT0016-8/split_0_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-4",
+        img: "./images/A02-japan-tour/GPT0016-8/split_0_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-6",
+        img: "./images/A02-japan-tour/GPT0016-8/split_1_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-7",
+        img: "./images/A02-japan-tour/GPT0016-8/split_1_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-8",
+        img: "./images/A02-japan-tour/GPT0016-8/split_1_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-9",
+        img: "./images/A02-japan-tour/GPT0016-8/split_1_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-B",
+        img: "./images/A02-japan-tour/GPT0016-8/split_2_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-C",
+        img: "./images/A02-japan-tour/GPT0016-8/split_2_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-D",
+        img: "./images/A02-japan-tour/GPT0016-8/split_2_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-E",
+        img: "./images/A02-japan-tour/GPT0016-8/split_2_3.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-G",
+        img: "./images/A02-japan-tour/GPT0016-8/split_3_0.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-H",
+        img: "./images/A02-japan-tour/GPT0016-8/split_3_1.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-I",
+        img: "./images/A02-japan-tour/GPT0016-8/split_3_2.webp",
+      },
+      {
+        id: "A02-japan-tour/GPT0016-8-J",
+        img: "./images/A02-japan-tour/GPT0016-8/split_3_3.webp",
+      },
+    ],
+  },
   {
     id: 120,
     name: "個人Q版",
