@@ -3361,5 +3361,85 @@ const promptsData = [
     date: "2026-07-11",
     url: "",
   },
+  {
+    id: 335,
+    title: "AI北海道道北~富良野",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P003-1.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>將附件三張照片人物合照以下日本北海道重要旅遊景點 為背景的GPT Image2.0提示詞~合照風格~休閒季節以春天為主，三位超過40年以上好友，先以下面四個地點為背景   1富良野薰衣草田 (夏季盛開的紫色花海，是北海道最具代表性的景色之一) 2美瑛拼布之路 (丘陵上的農田如拼布般多彩，景色優美) 3青池 (美瑛的夢幻景點，因礦物質使池水呈現神秘的藍色) 4四季彩之丘 (美瑛的花田公園，可欣賞到各種花卉組成的彩色地毯) ",
+    date: "2026-07-14",
+    url: "",
+  },
+  {
+    id: 336,
+    title: "AI北海道道北~四季彩之丘",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P003-2.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>將附件三張照片人物合照以下日本北海道重要旅遊景點 為背景的GPT Image2.0提示詞~合照風格~休閒季節以春天為主，三位超過40年以上好友，先以下面四個地點為背景   1富良野薰衣草田 (夏季盛開的紫色花海，是北海道最具代表性的景色之一) 2美瑛拼布之路 (丘陵上的農田如拼布般多彩，景色優美) 3青池 (美瑛的夢幻景點，因礦物質使池水呈現神秘的藍色) 4四季彩之丘 (美瑛的花田公園，可欣賞到各種花卉組成的彩色地毯) ",
+    date: "2026-07-14",
+    url: "",
+  },
+  {
+    id: 337,
+    title: "侏羅紀~1",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P003-3.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>將附件三張照片人物合照以侏羅紀公園電影場景為背景的GPT Image2.0提示詞~照片中人物各自逃命~畫面中恐龍追著照片人物跑幫我產生暴龍和迅猛龍為主的二張圖片",
+    date: "2026-07-14",
+    url: "",
+  },
+  {
+    id: 338,
+    title: "侏羅紀~1",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P003-4.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>將附件三張照片人物合照以侏羅紀公園電影場景為背景的GPT Image2.0提示詞~照片中人物各自逃命~畫面中恐龍追著照片人物跑幫我產生暴龍和迅猛龍為主的二張圖片",
+    date: "2026-07-14",
+    url: "",
+  },
+  {
+    id: 339,
+    title: "日本系列-九州~沖繩縣-47-2",
+    category: "Line",
+    image: "./images/L01-Line/A03-Retire/GPT0017-1.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>產生一組貼圖提示詞，用附件人物Q版墨鏡造型和關渡地區如陽明峰匯，好市多，淡江大橋等關渡著名景點為背景，以退休三年，好久不見得問候或關心話語都可以,再產生下一張4X4的16個貼圖提示詞，名稱用繁體中文鋼筆字體呈現   1.	好久不見！   2.	退休三年，一切安好～   3.	好久沒聯絡，學校還好嗎？   4.	最近好嗎？   5.	出來喝咖啡吧   6.	別來無恙   7.	這陣子在忙什麼呀？   8.	保重身體   9.	有空來我這邊坐坐   10.	有空來關渡走走   11.	一起去好市多   12.	下次來關渡走走   13.	天氣涼了，注意保暖   14.	加油，我挺你   15.	隨時歡迎來訪   16.	保持聯絡喔  ",
+    date: "2026-07-11",
+    url: "",
+  },
+  {
+    id: 340,
+    title: "日本九州~別府溫泉",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P004-1.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>將附件張照片人物合照以下日本福岡車站往別府專車的要旅遊景點 為背景的GPT Image2.0提示詞~合照風格~休閒季節以春天為主~福岡→別府經典組合(由布院金鳞湖＋由布院植物花园＋別府地獄巍湯)",
+    date: "2026-07-16",
+    url: "",
+  },
+  {
+    id: 341,
+    title: "日本九州~金麟湖",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P004-2.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>將附件張照片人物合照以下日本福岡車站往別府專車的要旅遊景點 為背景的GPT Image2.0提示詞~合照風格~休閒季節以春天為主~福岡→別府經典組合(由布院金鳞湖＋由布院植物花园＋別府地獄巍湯)",
+    date: "2026-07-16",
+    url: "",
+  },
+  {
+    id: 342,
+    title: "日本九州~由布院~歐洲村落",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P004-3.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>將附件張照片人物合照以下日本福岡車站往別府專車的要旅遊景點 為背景的GPT Image2.0提示詞~合照風格~休閒季節以春天為主~福岡→別府經典組合(由布院金鳞湖＋由布院植物花园＋別府地獄巍湯)",
+    date: "2026-07-16",
+    url: "",
+  },
 ];
 

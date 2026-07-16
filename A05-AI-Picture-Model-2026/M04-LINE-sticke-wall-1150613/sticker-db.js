@@ -3,150 +3,222 @@
 // 繁體中文說明：貼圖包與貼圖結構
 // ========================================
 const stickerPacks = [
+  {
+    id: 201,
+    name: "個人Q版",
+    description: "關渡景點-1",
+    category: "退休系列",
+    stickers: [
+      {
+        id: "A03-Retire/GPT0017-1-1",
+        img: "./images/A03-Retire/GPT0017-1/split_0_0.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-2",
+        img: "./images/A03-Retire/GPT0017-1/split_0_1.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-3",
+        img: "./images/A03-Retire/GPT0017-1/split_0_2.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-4",
+        img: "./images/A03-Retire/GPT0017-1/split_0_3.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-6",
+        img: "./images/A03-Retire/GPT0017-1/split_1_0.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-7",
+        img: "./images/A03-Retire/GPT0017-1/split_1_1.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-8",
+        img: "./images/A03-Retire/GPT0017-1/split_1_2.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-9",
+        img: "./images/A03-Retire/GPT0017-1/split_1_3.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-B",
+        img: "./images/A03-Retire/GPT0017-1/split_2_0.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-C",
+        img: "./images/A03-Retire/GPT0017-1/split_2_1.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-D",
+        img: "./images/A03-Retire/GPT0017-1/split_2_2.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-E",
+        img: "./images/A03-Retire/GPT0017-1/split_2_3.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-G",
+        img: "./images/A03-Retire/GPT0017-1/split_3_0.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-H",
+        img: "./images/A03-Retire/GPT0017-1/split_3_1.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-I",
+        img: "./images/A03-Retire/GPT0017-1/split_3_2.webp",
+      },
+      {
+        id: "A03-Retire/GPT0017-1-J",
+        img: "./images/A03-Retire/GPT0017-1/split_3_3.webp",
+      },
+    ],
+  },
 
-    {
-    "id": 199,
-    "name": "個人Q版",
-    "description": "沖繩地方-沖繩縣47-1",
-    "category": "日本景點系列",
-    "stickers": [
+  {
+    id: 199,
+    name: "個人Q版",
+    description: "沖繩地方-沖繩縣47-1",
+    category: "日本景點系列",
+    stickers: [
       {
-        "id": "A02-japan-tour/GPT0016-47-1",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_0_0.webp"
+        id: "A02-japan-tour/GPT0016-47-1",
+        img: "./images/A02-japan-tour/GPT0016-47/split_0_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-2",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_0_1.webp"
+        id: "A02-japan-tour/GPT0016-47-2",
+        img: "./images/A02-japan-tour/GPT0016-47/split_0_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-3",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_0_2.webp"
+        id: "A02-japan-tour/GPT0016-47-3",
+        img: "./images/A02-japan-tour/GPT0016-47/split_0_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-4",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_0_3.webp"
+        id: "A02-japan-tour/GPT0016-47-4",
+        img: "./images/A02-japan-tour/GPT0016-47/split_0_3.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-6",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_1_0.webp"
+        id: "A02-japan-tour/GPT0016-47-6",
+        img: "./images/A02-japan-tour/GPT0016-47/split_1_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-7",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_1_1.webp"
+        id: "A02-japan-tour/GPT0016-47-7",
+        img: "./images/A02-japan-tour/GPT0016-47/split_1_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-8",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_1_2.webp"
+        id: "A02-japan-tour/GPT0016-47-8",
+        img: "./images/A02-japan-tour/GPT0016-47/split_1_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-9",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_1_3.webp"
+        id: "A02-japan-tour/GPT0016-47-9",
+        img: "./images/A02-japan-tour/GPT0016-47/split_1_3.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-B",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_2_0.webp"
+        id: "A02-japan-tour/GPT0016-47-B",
+        img: "./images/A02-japan-tour/GPT0016-47/split_2_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-C",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_2_1.webp"
+        id: "A02-japan-tour/GPT0016-47-C",
+        img: "./images/A02-japan-tour/GPT0016-47/split_2_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-D",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_2_2.webp"
+        id: "A02-japan-tour/GPT0016-47-D",
+        img: "./images/A02-japan-tour/GPT0016-47/split_2_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-E",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_2_3.webp"
+        id: "A02-japan-tour/GPT0016-47-E",
+        img: "./images/A02-japan-tour/GPT0016-47/split_2_3.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-G",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_3_0.webp"
+        id: "A02-japan-tour/GPT0016-47-G",
+        img: "./images/A02-japan-tour/GPT0016-47/split_3_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-H",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_3_1.webp"
+        id: "A02-japan-tour/GPT0016-47-H",
+        img: "./images/A02-japan-tour/GPT0016-47/split_3_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-I",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_3_2.webp"
+        id: "A02-japan-tour/GPT0016-47-I",
+        img: "./images/A02-japan-tour/GPT0016-47/split_3_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47-J",
-        "img": "./images/A02-japan-tour/GPT0016-47/split_3_3.webp"
-      }
-    ]
+        id: "A02-japan-tour/GPT0016-47-J",
+        img: "./images/A02-japan-tour/GPT0016-47/split_3_3.webp",
+      },
+    ],
   },
   {
-    "id": 200,
-    "name": "個人Q版",
-    "description": "沖繩地方-沖繩縣47-2",
-    "category": "日本景點系列",
-    "stickers": [
+    id: 200,
+    name: "個人Q版",
+    description: "沖繩地方-沖繩縣47-2",
+    category: "日本景點系列",
+    stickers: [
       {
-        "id": "A02-japan-tour/GPT0016-47X-1",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_0.webp"
+        id: "A02-japan-tour/GPT0016-47X-1",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_0_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-2",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_1.webp"
+        id: "A02-japan-tour/GPT0016-47X-2",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_0_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-3",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_2.webp"
+        id: "A02-japan-tour/GPT0016-47X-3",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_0_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-4",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_0_3.webp"
+        id: "A02-japan-tour/GPT0016-47X-4",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_0_3.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-6",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_0.webp"
+        id: "A02-japan-tour/GPT0016-47X-6",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_1_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-7",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_1.webp"
+        id: "A02-japan-tour/GPT0016-47X-7",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_1_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-8",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_2.webp"
+        id: "A02-japan-tour/GPT0016-47X-8",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_1_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-9",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_1_3.webp"
+        id: "A02-japan-tour/GPT0016-47X-9",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_1_3.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-B",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_0.webp"
+        id: "A02-japan-tour/GPT0016-47X-B",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_2_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-C",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_1.webp"
+        id: "A02-japan-tour/GPT0016-47X-C",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_2_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-D",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_2.webp"
+        id: "A02-japan-tour/GPT0016-47X-D",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_2_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-E",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_2_3.webp"
+        id: "A02-japan-tour/GPT0016-47X-E",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_2_3.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-G",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_0.webp"
+        id: "A02-japan-tour/GPT0016-47X-G",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_3_0.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-H",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_1.webp"
+        id: "A02-japan-tour/GPT0016-47X-H",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_3_1.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-I",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_2.webp"
+        id: "A02-japan-tour/GPT0016-47X-I",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_3_2.webp",
       },
       {
-        "id": "A02-japan-tour/GPT0016-47X-J",
-        "img": "./images/A02-japan-tour/GPT0016-47X/split_3_3.webp"
-      }
-    ]
+        id: "A02-japan-tour/GPT0016-47X-J",
+        img: "./images/A02-japan-tour/GPT0016-47X/split_3_3.webp",
+      },
+    ],
   },
   {
     id: 197,
