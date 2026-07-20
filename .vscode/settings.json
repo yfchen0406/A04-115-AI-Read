@@ -1,0 +1,16 @@
+{
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/node_modules/**": true,
+    "**/.VSCodeCounter/**": true,
+    "**/A05-AI-Picture-Model-2026/**": true,
+    "**/L01-AI-Learn/**": true
+  },
+  "liveServer.settings.ignoreFiles": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.VSCodeCounter/**",
+    "**/A05-AI-Picture-Model-2026/**",
+    "**/L01-AI-Learn/**"
+  ]
+}

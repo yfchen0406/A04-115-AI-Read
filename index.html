@@ -32,11 +32,6 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
-  <!-- (ok)  google font link  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
-
   <!-- GSAP CDN 引入，另外splitTex套件引入 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 
@@ -134,31 +129,31 @@
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p2-1" src="/images/B03-banner/A02.webp" width="100%" title=""></a>
+                  <img id="p2-1" src="/images/B03-banner/A02.webp" width="100%" loading="lazy" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p3-1" src="/images/B03-banner/A03.webp" width="100%" title=""></a>
+                  <img id="p3-1" src="/images/B03-banner/A03.webp" width="100%" loading="lazy" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p4-1" src="/images/B03-banner/A04.webp" width="100%" title=""></a>
+                  <img id="p4-1" src="/images/B03-banner/A04.webp" width="100%" loading="lazy" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p5-1" src="/images/B03-banner/A05.webp" width="100%" title=""></a>
+                  <img id="p5-1" src="/images/B03-banner/A05.webp" width="100%" loading="lazy" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p6-1" src="/images/B03-banner/A06.webp" width="100%" title=""></a>
+                  <img id="p6-1" src="/images/B03-banner/A06.webp" width="100%" loading="lazy" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p7-1" src="/images/B03-banner/A07.webp" width="100%" title=""></a>
+                  <img id="p7-1" src="/images/B03-banner/A07.webp" width="100%" loading="lazy" title=""></a>
               </div>
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p8-1" src="/images/B03-banner/A08.webp" width="100%" title=""></a>
+                  <img id="p8-1" src="/images/B03-banner/A08.webp" width="100%" loading="lazy" title=""></a>
               </div>
               <!-- <div class="carousel-item">
                 <a href="" target="_blank">
@@ -271,6 +266,9 @@
   <!-- 這邊是導覽列，利用 jQuery 套用，ex01-nav.html load 就好! -->
   <div id="footer"></div>
 
+  <!-- 首頁與導覽列共用的卡片資料只載入一次，並先完成載入。 -->
+  <script src="/js/index-js/B01-index-marquee.js"></script>
+
   <!--  ##################       各區塊html 載入     ###################### -->
   <script>
     $(function () {
@@ -279,8 +277,6 @@
       $("#footer").load("ex-Comm/CX01-footer.html");
     });
   </script>
-  <script src="/js/V03-vue3.js"></script>
-  <script src="/js/index-js/B01-index-marquee.js"></script>
   <!-- 隨機選色底色顏色 -->
   <script>
     function setRandomDarkBackgroundColor() {
@@ -550,7 +546,9 @@
 
         // 更新計數器
         messageCount++;
-        counterElement.textContent = messageCount;
+        if (counterElement) {
+          counterElement.textContent = messageCount;
+        }
 
         // 顯示一條消息後，將其移動到容器的頂部
         vmarqueeElement.scrollTop = 0;

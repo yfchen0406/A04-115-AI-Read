@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本旅遊圖卡輪播</title>
+  <style>
+    /* ========== 1. 基本重置 ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0a0a0a;
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      user-select: none;
+    }
+
+    /* ========== 2. 圖片容器 ========== */
+    #image-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .page-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #0a0a0a;
+      will-change: opacity;
+      backface-visibility: hidden;
+    }
+
+    #img-current {
+      z-index: 2;
+    }
+
+    #img-next {
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ========== 3. 淡入淡出動畫 ========== */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .anim-fade-in {
+      animation: fade-in 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      z-index: 3;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .anim-fade-out {
+      animation: fade-out 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+    }
+
+    /* ========== 4. 控制列 ========== */
+    #controls-overlay {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      border-radius: 30px;
+      font-family: "Microsoft JhengHei", Arial, sans-serif;
+      text-align: center;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    body:hover #controls-overlay,
+    #controls-overlay:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #controls-overlay button {
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      border-radius: 20px;
+      transition: background-color 0.2s, transform 0.1s;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    #controls-overlay button:hover {
+      background-color: #007bff;
+      transform: scale(1.04);
+    }
+
+    #controls-overlay button:active {
+      transform: scale(0.95);
+    }
+
+    #index-display {
+      font-size: 0.95rem;
+      font-weight: bold;
+      min-width: 70px;
+      text-align: center;
+      color: #ddd;
+      letter-spacing: 0.3px;
+    }
+
+    #play-pause-btn {
+      background-color: #555 !important;
+    }
+
+    #play-pause-btn:hover {
+      background-color: #28a745 !important;
+    }
+
+    #tip {
+      font-size: 0.7rem;
+      opacity: 0.5;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      padding-left: 12px;
+      color: #aaa;
+    }
+
+    #effect-label {
+      font-size: 0.7rem;
+      color: #7af;
+      background: rgba(0, 40, 80, 0.5);
+      padding: 2px 14px;
+      border-radius: 30px;
+      border: 1px solid rgba(100, 180, 255, 0.2);
+      font-weight: normal;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* ========== 5. 指示點 ========== */
+    #carousel-indicator {
+      position: fixed;
+      bottom: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 99;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 80vw;
+      padding: 4px 8px;
+    }
+
+    body:hover #carousel-indicator,
+    #carousel-indicator:hover {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dot:hover {
+      transform: scale(1.3);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .dot.active {
+      background-color: #007bff;
+      box-shadow: 0 0 16px rgba(0, 123, 255, 0.6);
+      transform: scale(1.15);
+      border-color: rgba(0, 123, 255, 0.3);
+    }
+
+    /* ========== 6. 手機適配 ========== */
+    @media (max-width: 640px) {
+      #controls-overlay {
+        padding: 6px 12px;
+        gap: 6px;
+        bottom: 12px;
+        border-radius: 24px;
+        width: 94%;
+      }
+
+      #controls-overlay button {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+      }
+
+      #index-display {
+        font-size: 0.75rem;
+        min-width: 44px;
+      }
+
+      #tip {
+        display: none;
+      }
+
+      #effect-label {
+        font-size: 0.6rem;
+        padding: 1px 10px;
+      }
+
+      #carousel-indicator {
+        bottom: 62px;
+        gap: 5px;
+      }
+
+      .dot {
+        width: 7px;
+        height: 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ====== 圖片容器 ====== -->
+  <div id="image-container">
+    <img id="img-current" class="page-img" src="" alt="當前圖片" />
+    <img id="img-next" class="page-img" src="" alt="下一張圖片" />
+  </div>
+
+  <!-- ====== 指示點 ====== -->
+  <div id="carousel-indicator"></div>
+
+  <!-- ====== 控制列 ====== -->
+  <div id="controls-overlay">
+    <button id="prev-btn">◀ 上一張</button>
+    <span id="index-display">0 / 0</span>
+    <button id="next-btn">下一張 ▶</button>
+    <button id="play-pause-btn">⏸ 暫停</button>
+    <span id="effect-label">✦ 淡入淡出</span>
+    <div id="tip">滑鼠移開即隱藏</div>
+  </div>
+
+  <script>
+    // ============================================================
+    //  圖片資料庫
+    // ============================================================
+    const IMAGE_FILES = [
+
+      './images/N02-D-1-1.webp',
+
+      './images/N02-D-2-1.webp',
+      './images/N02-D-3-1.webp',
+      './images/N02-D-3-2A.webp',
+      './images/N02-D-3-2B.webp',
+      './images/N02-D-3-3.webp',
+      './images/N02-D-3-4.webp',
+
+      './images/N02-D-4-1.webp',
+      './images/N02-D-5-1.webp',
+      './images/N02-D-6-1.webp',
+      './images/N02-D-7-1.webp',
+      './images/N02-D-8-1.webp',
+      './images/N02-D-9-1.webp',
+
+    ];
+
+    // ============================================================
+    //  DOM 參照
+    // ============================================================
+    const imgCurrent = document.getElementById('img-current');
+    const imgNext = document.getElementById('img-next');
+    const indexDisplay = document.getElementById('index-display');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const indicatorContainer = document.getElementById('carousel-indicator');
+    const effectLabel = document.getElementById('effect-label');
+
+    const total = IMAGE_FILES.length;
+    let currentIndex = 0;
+    let isAnimating = false;
+    let isPlaying = true;
+    let autoTimer = null;
+    const INTERVAL_MS = 5000;
+
+    // ============================================================
+    //  工具函式
+    // ============================================================
+    function getNextIndex(i) { return (i + 1) % total; }
+
+    function getPrevIndex(i) { return (i - 1 + total) % total; }
+
+    function reflow(el) { void el.offsetHeight; }
+
+    // ============================================================
+    //  指示點
+    // ============================================================
+    function buildIndicators() {
+      indicatorContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+          if (isAnimating) return;
+          goToImage(i);
+          resetAutoPlay();
+        });
+        indicatorContainer.appendChild(dot);
+      }
+      updateIndicators();
+    }
+
+    function updateIndicators() {
+      const dots = indicatorContainer.querySelectorAll('.dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+
+    // ============================================================
+    //  核心顯示
+    // ============================================================
+    function updateDisplay() {
+      indexDisplay.textContent = `${currentIndex + 1} / ${total}`;
+      updateIndicators();
+      effectLabel.textContent = '✦ 淡入淡出';
+    }
+
+    // 無動畫跳轉
+    function goToImage(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      if (index === currentIndex) return;
+
+      currentIndex = index;
+      imgCurrent.style.transition = 'none';
+      imgCurrent.style.opacity = '1';
+      imgCurrent.src = IMAGE_FILES[currentIndex];
+      reflow(imgCurrent);
+
+      const nextIdx = getNextIndex(currentIndex);
+      imgNext.src = IMAGE_FILES[nextIdx];
+      imgNext.style.opacity = '0';
+      imgNext.className = 'page-img';
+
+      updateDisplay();
+    }
+
+    // ============================================================
+    //  淡入淡出轉場
+    // ============================================================
+    function transitionTo(newIndex) {
+      if (isAnimating || total < 2) return;
+      if (newIndex === currentIndex) return;
+
+      if (newIndex < 0) newIndex = total - 1;
+      if (newIndex >= total) newIndex = 0;
+
+      isAnimating = true;
+
+      // 設定下一張圖片
+      imgNext.src = IMAGE_FILES[newIndex];
+      imgNext.style.opacity = '1';
+      imgNext.className = 'page-img';
+      reflow(imgNext);
+
+      // 清除舊動畫
+      imgCurrent.className = 'page-img';
+      imgNext.className = 'page-img';
+      reflow(imgCurrent);
+      reflow(imgNext);
+
+      // 套用動畫
+      imgCurrent.classList.add('anim-fade-out');
+      imgNext.classList.add('anim-fade-in');
+
+      const oldIndex = currentIndex;
+      currentIndex = newIndex;
+      updateDisplay();
+
+      const onFinish = () => {
+        imgNext.removeEventListener('animationend', onFinish);
+
+        // 新圖片變成當前
+        imgCurrent.src = IMAGE_FILES[currentIndex];
+        imgCurrent.style.opacity = '1';
+        imgCurrent.className = 'page-img';
+
+        imgNext.style.opacity = '0';
+        imgNext.className = 'page-img';
+
+        isAnimating = false;
+
+        // 預載下一張
+        const nextIdx = getNextIndex(currentIndex);
+        imgNext.src = IMAGE_FILES[nextIdx];
+      };
+
+      imgNext.addEventListener('animationend', onFinish, { once: true });
+    }
+
+    // ============================================================
+    //  導航
+    // ============================================================
+    function goToPreviousImage() {
+      if (isAnimating) return;
+      transitionTo(getPrevIndex(currentIndex));
+      resetAutoPlay();
+    }
+
+    function goToNextImage() {
+      if (isAnimating) return;
+      transitionTo(getNextIndex(currentIndex));
+      resetAutoPlay();
+    }
+
+    // ============================================================
+    //  自動輪播
+    // ============================================================
+    function startAutoPlay() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = setInterval(() => {
+        goToNextImage();
+      }, INTERVAL_MS);
+      isPlaying = true;
+      playPauseBtn.textContent = '⏸ 暫停';
+    }
+
+    function stopAutoPlay() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+      isPlaying = false;
+      playPauseBtn.textContent = '▶ 播放';
+    }
+
+    function togglePlayPause() {
+      if (isPlaying) {
+        stopAutoPlay();
+      } else {
+        startAutoPlay();
+      }
+    }
+
+    function resetAutoPlay() {
+      if (isPlaying) {
+        if (autoTimer) {
+          clearInterval(autoTimer);
+          autoTimer = setInterval(() => {
+            goToNextImage();
+          }, INTERVAL_MS);
+        }
+      }
+    }
+
+    // ============================================================
+    //  事件綁定
+    // ============================================================
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToPreviousImage();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goToNextImage();
+    });
+
+    playPauseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlayPause();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goToPreviousImage();
+      } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        goToNextImage();
+      } else if (e.key === ' ' || e.key === 'Space') {
+        e.preventDefault();
+        togglePlayPause();
+      }
+    });
+
+    // ============================================================
+    //  初始化
+    // ============================================================
+    function init() {
+      if (total === 0) {
+        indexDisplay.textContent = '無圖片';
+        return;
+      }
+
+      buildIndicators();
+
+      currentIndex = 0;
+      imgCurrent.src = IMAGE_FILES[0];
+      imgCurrent.style.opacity = '1';
+      imgCurrent.className = 'page-img';
+
+      const nextIdx = getNextIndex(0);
+      imgNext.src = IMAGE_FILES[nextIdx];
+      imgNext.style.opacity = '0';
+      imgNext.className = 'page-img';
+
+      updateDisplay();
+      startAutoPlay();
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (isPlaying && autoTimer) {
+          clearInterval(autoTimer);
+          autoTimer = null;
+        }
+      } else {
+        if (isPlaying) {
+          if (autoTimer) clearInterval(autoTimer);
+          autoTimer = setInterval(() => {
+            goToNextImage();
+          }, INTERVAL_MS);
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+
+</body>
+
+</html>

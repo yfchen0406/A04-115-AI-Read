@@ -3441,5 +3441,95 @@ const promptsData = [
     date: "2026-07-16",
     url: "",
   },
+  {
+    id: 343,
+    title: "個人帥氣手繪風格~1",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P005-1.webp",
+    prompt:
+      "生成一張你想象中我這個「蘋果仁」的樣子、韓系插畫風、角色特徵鮮明、情緒自然表情、半身構圖、動態姿態、服裝細節精緻、手繪塗鴉風、潑墨筆觸、隨性線條、粉彩與墨色混合、漫畫草稿質感、白色簡約背景、周圍科學化元素點綴、氛圍感強、高細節、高品質。臉的細節要細緻一點",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 344,
+    title: "個人帥氣手繪風格~吐槽篇",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P005-2.webp",
+    prompt:
+      "將社群帳號截圖製作成紙張列印效果，畫面帶輕微陰影與紙張紋理。使用紅色原子筆手寫風格，在圖片上加入大量中文吐槽批註與塗鴉。包含箭頭、圈選、底線、放大重點、驚嘆號、問號、情緒表情（無語、翻白眼、問號臉）。風格像朋友或老師在旁邊邊看邊吐槽，語氣幽默、誇張、帶一點毒但不惡意攻擊。畫面稍亂但有重點，像隨手亂畫但其實很好笑的那種。",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 345,
+    title: "個人帥氣手繪風格~1",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P005-3.webp",
+    prompt:
+      "生成一張你想象中我這個老師的樣子、韓系插畫風、角色特徵鮮明、情緒自然表情、半身構圖、動態姿態、服裝細節精緻、手繪塗鴉風、潑墨筆觸、隨性線條、粉彩與墨色混合、漫畫草稿質感、白色簡約背景、周圍AI工具類元素點綴、氛圍感強、高細節、高品質。臉的細節要細緻一點",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 346,
+    title: "小胖和川哥的韓系風格~1",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P006-1.webp",
+    prompt:
+      "生成一張附件圖片、韓系插畫風、角色特徵鮮明、情緒自然表情、半身構圖、動態姿態、服裝細節精緻、手繪塗鴉風、潑墨筆觸、隨性線條、粉彩與墨色混合、漫畫草稿質感、白色簡約背景、周圍AI工具類元素點綴、氛圍感強、高細節、高品質。臉的細節要細緻一點",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 347,
+    title: "小胖和川哥的韓系風格~2",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P006-2.webp",
+    prompt:
+      "以附件圖片為列印效果，畫面帶輕微陰影與紙張紋理。使用紅色原子筆手寫風格，在圖片上加入大量中文吐槽批註與塗鴉。包含箭頭、圈選、底線、放大重點、驚嘆號、問號、情緒表情（無語、翻白眼、問號臉）。風格像朋友或老師在旁邊邊看邊吐槽，語氣幽默、誇張、帶一點毒但不惡意攻擊。畫面稍亂但有重點，像隨手亂畫但其實很好笑的那種。",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 348,
+    title: "小胖和川哥的韓系風格~2",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P006-3.webp",
+    prompt:
+      "請觀察照片中的元素，並為每個物件加上有意義的手繪風註解。      【畫面內容】   ・請填寫照片中的物品（例：冰奶茶、甜甜圈）      【描寫規則】   ・使用像白色筆畫的細手繪線條   ・一筆畫風格，隨性、略帶不均勻感   ・沿著物件外圍加上描邊輪廓   ・用箭頭或虛線做出視線引導      【文字規則】   ・手寫風格字體（偏日系可愛感,但要中文字）   ・句子簡短，像自言自語的小碎念   ・語氣偏日記感、帶一點情緒      【註解生成規則】   ・飲料 → 味道、溫度、心情（例：清爽、微甜、剛剛好）   ・食物 → 口感、好吃程度（例：鬆軟、超好吃）   ・空間 → 氛圍（例：很放鬆、喜歡這種感覺）   ・整體 → 一句總結（例：今天有點幸福～）      【裝飾】   ・適度加入熱氣、閃光、愛心、小表情等元素   ・不要過多，保留一些留白      【完成風格】   ・像 Instagram 限時動態、雜誌隨手筆記風   ・自然、有質感、帶點慵懶感   ",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 349,
+    title: "英雄本色~港式經典風格",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P006-4.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>幫我優畫一張圖片的提示詞，有三個人物照片附件，幫我產出一張香港著名電影【英雄本色】的劇照帥氣圖",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 350,
+    title: "英雄本色~現代改編都市版",
+    category: "Portrait",
+    image: "./images/P02-Portrait/P006-5.webp",
+    prompt:
+      "<span class='yf1'>利用Claude的prompt-master~</span>幫我優畫一張圖片的提示詞，有三個人物照片附件，幫我產出一張香港著名電影【英雄本色】的劇照帥氣圖",
+    date: "2026-07-17",
+    url: "",
+  },
+  {
+    id: 351,
+    title: "英雄本色~現代改編都市版",
+    category: "Portrait",
+    image: "./images/P02-Portrait/V001-1.mp4",
+    prompt:
+      "<span class='yf1'>使用編號349照片~</span>Three middle-aged Asian men in black leather trench coats and sunglasses stand in a rain-soaked Hong Kong-style alley at night, neon signs glowing on both sides. Static wide shot, slight slow dolly-in toward the group. Heavy rain falls continuously, droplets splashing on the wet reflective pavement. The center man exhales cigarette smoke slowly drifting upward and to the side. Subtle wind moves their coat collars and hair. All three blink naturally and shift weight slightly, maintaining a calm, intimidating stillness. Neon signs on the left flicker faintly. Background string lights sway gently in the wind. Cinematic film noir lighting, warm neon highlights against cool blue rain-shadow, shallow depth of field keeping the three men sharp while background alley blurs slightly. Duration 5 seconds, realistic physics, no camera shake.",
+    date: "2026-07-17",
+    url: "",
+  },
 ];
 

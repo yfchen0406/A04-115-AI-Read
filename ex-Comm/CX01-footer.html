@@ -49,11 +49,8 @@
     <span class="float-right fas fa-history yf-color-as1"> &nbsp;&nbsp;</span>
   </p>
 </footer>
-<script src="/js/V03-vue3.js"></script>
-<script src="/js/index-js/B01-index-marquee.js"></script>
 <!-- </footer> -->
-<!-- <script src="/ex-Comm/CX01-footer.js" type="module"></script> -->
-<script src="/ex-Comm/CX01-footer.js"></script>
+<!-- #footer1 已停用，不載入只供該區塊使用的 Vue 頁尾資料。 -->
 
 <script>
   // ###########  標籤往前數計時器-開始 - 可以用每一個地方  #############################
@@ -62,7 +59,6 @@
     var timer = null;
     var show = document.getElementById(idData);
     var target = new Date(countdownData);
-    console.log(target);
     var today = new Date();
     //    var timeold = (today.getTime() - target.getTime()); 這一段落是往前計數
     var timeold = (target.getTime() - today.getTime());
@@ -97,7 +93,6 @@
     var timer = null;
     var show = document.getElementById(idData);
     var target = new Date(countdownData);
-    console.log(target);
     var today = new Date();
     var timeold = (today.getTime() - target.getTime()); //這一段落是往前計數
 
@@ -132,7 +127,6 @@
     var timer = null;
     var show = document.getElementById(idData);
     var target = new Date(countdownData);
-    console.log(target);
     var today = new Date();
     var timeold = (today.getTime() - target.getTime()); //這一段落是往前計數
 
