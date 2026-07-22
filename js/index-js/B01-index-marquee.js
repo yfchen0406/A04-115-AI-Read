@@ -490,7 +490,7 @@ const cardsData = [
     link: "/A03-AI-Prompt-2026/A01-Index-AI-Prompt-1150309/A01-Index-AI-Prompt-1150309.html",
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-lightbulb",
-    enterName: "增廣見聞",
+    enterName: "Skill",
     disable: "",
   },
   {
@@ -505,13 +505,13 @@ const cardsData = [
   },
   {
     idName: "index-13",
-    title: "AI新技術",
+    title: "AI Agent",
     date: "2026.03.09起",
-    link: "/B01-Book/F06-0-2026-note-new.html",
+    link: "/C01-AI-Codex-2026/A01-Index-AI-Codex-2026/A01-Index-AI-Codex-1150721.html",
     iconColor: "rgb(201, 43, 64)",
-    iconClass: "fa-microchip",
-    enterName: "增廣見聞",
-    disable: "disabled",
+    iconClass: "fa-solid fa-robot",
+    enterName: "GPT Codex",
+    disable: "",
   },
   {
     idName: "index-13",
@@ -520,7 +520,7 @@ const cardsData = [
     link: "/L01-AI-Learn/A00-Index-AI-Learn-1150314/A00-Index-AI-Learn-1150314.html",
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-solid fa-chalkboard-user",
-    enterName: "增廣見聞",
+    enterName: "Vibe Coding",
     disable: "",
   },
   {
