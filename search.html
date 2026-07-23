@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>全站搜尋｜AI學苑</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, "Microsoft JhengHei", sans-serif; color: #18212f; background: #f5f7fb; }
+    body { margin: 0; }
+    main { max-width: 920px; margin: 0 auto; padding: 48px 20px 72px; }
+    h1 { margin: 0 0 10px; font-size: clamp(1.8rem, 5vw, 2.6rem); }
+    .intro { color: #526075; line-height: 1.7; }
+    form { display: flex; gap: 10px; margin: 28px 0 16px; }
+    input { min-width: 0; flex: 1; padding: 14px 16px; border: 1px solid #b8c2d1; border-radius: 10px; font: inherit; }
+    button { border: 0; border-radius: 10px; padding: 0 22px; background: #155eef; color: #fff; font: inherit; cursor: pointer; }
+    #result-summary { min-height: 1.5em; color: #526075; }
+    .result-card { padding: 20px 0; border-bottom: 1px solid #dce3ed; }
+    .result-title { color: #1049b7; font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+    .result-title:hover { text-decoration: underline; }
+    .result-path { margin: 7px 0; color: #198754; font-size: .9rem; overflow-wrap: anywhere; }
+    .result-snippet { margin: 0; line-height: 1.7; color: #354052; }
+    mark { background: #fff1a6; padding: 0 2px; }
+    .empty { padding: 24px 0; color: #526075; }
+    .back { color: #155eef; text-decoration: none; }
+    @media (max-width: 520px) { form { flex-direction: column; } button { min-height: 48px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="/index.html">← 返回首頁</a>
+    <h1>全站搜尋</h1>
+    <p class="intro">輸入關鍵字，搜尋 AI學苑所有已建立索引的網頁內容。</p>
+    <form id="site-search-form" role="search">
+      <input id="keyword" type="search" placeholder="例如：Python、退休、提示詞、旅遊" autocomplete="off" required autofocus>
+      <button type="submit">搜尋</button>
+    </form>
+    <p id="result-summary" aria-live="polite">輸入關鍵字開始搜尋。</p>
+    <section id="results" aria-live="polite"></section>
+  </main>
+  <script src="/js/site-search.js"></script>
+</body>
+</html>

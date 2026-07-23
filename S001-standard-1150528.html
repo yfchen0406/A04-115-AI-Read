@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title>放入網頁名稱</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ 
+
+
+</head>
+
+<body >
+  <!-- 這邊是 導覽列，利用 jQuery 套用，BX01-nav.html load 就好! -->
+  <div id="nav1"></div>
+
+ 
+  <div id="footer"></div>
+
+  <!-- 調整完成-->
+  <!--  ##################       各區塊html 載入     ###################### -->
+  <script>
+    $(function () {
+      $("#nav1").load("/C01-AI-Codex-2026/B01-ex-comm/BX02-nav-2026.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+
+
+
+
+  <!-- ####################################  套用資料區域結束  ##################################################### -->
+
+</body>
+
+</html>

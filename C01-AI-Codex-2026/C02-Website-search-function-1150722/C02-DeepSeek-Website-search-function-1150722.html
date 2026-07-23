@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.AI學苑~全站搜尋功能製作報告 ~ 115.07.22</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 (免費) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Google Font: Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== 全域 ===== */
+    * {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    body {
+      background-color: #f0f7fd;
+      /* 淺藍背景 */
+      color: #1a2b3c;
+      padding-top: 70px;
+      /* 給固定導覽列留空間 */
+    }
+
+    /* ===== 淺藍色系變數 ===== */
+    :root {
+      --sky-light: #e6f0fa;
+      --sky-mid: #b3d4f0;
+      --sky-blue: #6ea8d6;
+      --deep-blue: #2c5f8a;
+      --accent-gold: #d4a843;
+      --card-shadow: rgba(44, 95, 138, 0.10);
+    }
+
+    /* ===== 導覽列 (淺藍書卷風) ===== */
+    .navbar-sky {
+      background: linear-gradient(145deg, #d8e8f7 0%, #c0d8ed 100%);
+      border-bottom: 3px solid var(--sky-blue);
+      box-shadow: 0 4px 16px rgba(44, 95, 138, 0.15);
+    }
+
+    .navbar-sky .navbar-brand {
+      font-weight: 900;
+      color: var(--deep-blue);
+      letter-spacing: 2px;
+    }
+
+    .navbar-sky .navbar-brand i {
+      color: var(--accent-gold);
+      margin-right: 8px;
+    }
+
+    .navbar-sky .nav-link {
+      color: var(--deep-blue) !important;
+      font-weight: 500;
+      transition: 0.3s;
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+    }
+
+    .navbar-sky .nav-link:hover {
+      background: rgba(255, 255, 255, 0.5);
+      color: #1a3b5a !important;
+      box-shadow: 0 2px 8px rgba(44, 95, 138, 0.1);
+    }
+
+    .navbar-sky .nav-link i {
+      margin-right: 6px;
+      color: var(--accent-gold);
+    }
+
+    /* ===== 標題區 ===== */
+    .header-title {
+      background: linear-gradient(135deg, #ffffff 0%, #e6f0fa 100%);
+      border-bottom: 2px dashed var(--sky-blue);
+      padding: 2.2rem 1rem 1.8rem;
+      position: relative;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 4px 20px rgba(44, 95, 138, 0.08);
+    }
+
+    .header-title::after {
+      content: "✧  ✦  ✧";
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f0f7fd;
+      padding: 0 20px;
+      font-size: 1.4rem;
+      color: var(--sky-blue);
+      letter-spacing: 6px;
+    }
+
+    .header-title h1 {
+      font-weight: 900;
+      color: var(--deep-blue);
+      letter-spacing: 2px;
+    }
+
+    .header-title h1 i {
+      color: var(--accent-gold);
+      margin: 0 8px;
+    }
+
+    .header-title .sub-meta {
+      color: #2c5f8a;
+      font-size: 1.05rem;
+      background: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 30px;
+      backdrop-filter: blur(4px);
+    }
+
+    .header-title .sub-meta i {
+      color: var(--accent-gold);
+      margin: 0 4px;
+    }
+
+    /* ===== 手繪分隔線 ===== */
+    .hand-drawn-divider {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--sky-blue);
+      letter-spacing: 8px;
+      margin: 1.8rem 0;
+      user-select: none;
+      opacity: 0.6;
+    }
+
+    .hand-drawn-divider span {
+      background: #f0f7fd;
+      padding: 0 20px;
+    }
+
+    /* ===== 卡片通用 ===== */
+    .card-sky {
+      background: #ffffff;
+      border-radius: 24px 8px 24px 8px;
+      border: 1px solid rgba(110, 168, 214, 0.25);
+      box-shadow: 0 6px 24px var(--card-shadow);
+      padding: 1.5rem 1.2rem;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .card-sky:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(44, 95, 138, 0.15);
+      border-color: var(--sky-blue);
+    }
+
+    .card-sky .card-title {
+      font-weight: 700;
+      color: var(--deep-blue);
+      border-bottom: 2px solid var(--sky-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-sky .card-title i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+    }
+
+    /* ===== 清單樣式 ===== */
+    .list-hand {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .list-hand li {
+      padding: 0.6rem 0 0.6rem 2.2rem;
+      position: relative;
+      border-bottom: 1px dashed #d4e3f0;
+    }
+
+    .list-hand li:last-child {
+      border-bottom: none;
+    }
+
+    .list-hand li::before {
+      content: "✧";
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      color: var(--sky-blue);
+      font-size: 1.2rem;
+    }
+
+    .list-hand li i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* ===== 流程步驟 ===== */
+    .step-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem 1.5rem;
+      background: #eef6fc;
+      padding: 1rem 1.5rem;
+      border-radius: 60px 12px 60px 12px;
+      border-left: 6px solid var(--sky-blue);
+    }
+
+    .step-flow .step-item {
+      font-weight: 500;
+      color: var(--deep-blue);
+      background: white;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .step-flow .step-arrow {
+      color: var(--sky-blue);
+      font-size: 1.4rem;
+    }
+
+    /* ===== 表格 ===== */
+    .table-sky {
+      border-collapse: separate;
+      border-spacing: 0 8px;
+    }
+
+    .table-sky th {
+      background: var(--sky-light);
+      color: var(--deep-blue);
+      font-weight: 700;
+      border: none;
+      padding: 0.8rem 1rem;
+    }
+
+    .table-sky td {
+      background: white;
+      border: none;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 2px 6px rgba(44, 95, 138, 0.04);
+    }
+
+    .table-sky tr:first-child td:first-child {
+      border-radius: 12px 0 0 12px;
+    }
+
+    .table-sky tr:first-child td:last-child {
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* ===== 標籤 ===== */
+    .badge-sky {
+      background: var(--sky-blue);
+      color: white;
+      font-weight: 500;
+      padding: 0.3rem 1rem;
+      border-radius: 30px 6px 30px 6px;
+    }
+
+    /* ===== 頁腳 ===== */
+    .footer-sky {
+      background: linear-gradient(145deg, #c0d8ed, #a8c4df);
+      color: #1a2b3c;
+      border-top: 3px solid var(--sky-blue);
+      padding: 1.8rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer-sky a {
+      color: var(--deep-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-sky a:hover {
+      color: #1a3b5a;
+      text-decoration: underline;
+    }
+
+    .footer-sky .footer-icon {
+      color: var(--accent-gold);
+      margin: 0 4px;
+    }
+
+    /* ===== 手繪裝飾 ===== */
+    .doodle-wave {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--sky-blue);
+      opacity: 0.3;
+      letter-spacing: 4px;
+      margin: 0.5rem 0;
+    }
+
+    /* ===== 回到頂端 ===== */
+    #backTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--sky-blue);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 16px rgba(44, 95, 138, 0.3);
+      transition: 0.3s;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #backTop:hover {
+      background: var(--deep-blue);
+      transform: translateY(-3px);
+    }
+
+    /* ===== 響應式微調 ===== */
+    @media (max-width: 576px) {
+      .header-title h1 {
+        font-size: 1.6rem;
+      }
+
+      .step-flow {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 20px;
+      }
+
+      .step-flow .step-arrow {
+        transform: rotate(90deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================== 導覽列 (淺藍書卷風) ======================== -->
+  <nav class="navbar navbar-expand-lg navbar-sky fixed-top">
+    <div class="container">
+      <a class="navbar-brand" target="_blank" href="/search.html">
+        <i class="fas fa-feather-alt"></i> AI學苑全搜尋
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="切換導覽">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#purpose"><i class="fas fa-bullseye"></i> 目的</a></li>
+          <li class="nav-item"><a class="nav-link" href="#method"><i class="fas fa-sitemap"></i> 方法</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tools"><i class="fas fa-tools"></i> 工具</a></li>
+          <li class="nav-item"><a class="nav-link" href="#files"><i class="fas fa-file-code"></i> 檔案</a></li>
+          <li class="nav-item"><a class="nav-link" href="#workflow"><i class="fas fa-arrows-spin"></i> 流程</a></li>
+          <li class="nav-item"><a class="nav-link" href="#maintain"><i class="fas fa-rotate-right"></i> 維護</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== 標題區 ======================== -->
+  <header class="header-title text-center">
+    <div class="container">
+      <h1>
+        <i class="fas fa-search"></i>
+        2.AI學苑~全站搜尋功能製作報告
+        <i class="fas fa-search"></i>
+      </h1>
+      <div class="sub-meta mt-2">
+        <i class="fas fa-calendar-alt"></i> 製作日期：2026-07-23
+        <span class="mx-2">|</span>
+        <i class="fas fa-tag"></i> 版本 v1.0
+      </div>
+      <div class="hand-drawn-divider mt-3">
+        <span>✧ ✦ ✧ ✦ ✧</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================== 主內容 ======================== -->
+  <main class="container py-4">
+
+    <!-- 一、製作目的 -->
+    <section id="purpose" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-bullseye"></i> 製作目的</h3>
+        <p>為 <strong>AI學苑</strong> 網站建立一個「全站搜尋網頁」。使用者輸入關鍵字後，可找出關鍵字出現在哪些網頁，並直接點選結果前往該頁面。</p>
+        <div class="row g-3 mt-2">
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <i class="fas fa-file-alt text-primary me-2"></i> 大量 HTML 網頁與學習紀錄
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <i class="fas fa-tags text-primary me-2"></i> 涵蓋 AI・閱讀・退休・網頁設計・Python・提示詞
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <i class="fas fa-circle-check text-success me-2"></i> 免費・靜態・無需付費服務
+            </div>
+          </div>
+        </div>
+        <p class="mt-3 mb-0"><i class="fas fa-arrow-right text-primary me-2"></i> 完成後可透過 <code>/search.html</code>
+          開啟，導覽列也新增了搜尋圖示入口。</p>
+      </div>
+    </section>
+
+    <!-- 二、採用的方法 -->
+    <section id="method" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-sitemap"></i> 採用的方法</h3>
+        <p><strong>靜態搜尋索引</strong> 方式，而非瀏覽器即時掃描所有檔案。</p>
+        <div class="step-flow">
+          <span class="step-item"><i class="fas fa-file-code"></i> 所有 HTML</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fab fa-node-js"></i> Node.js 索引產生</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fas fa-database"></i> site-search-index.json</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fas fa-magnifying-glass"></i> search.html</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fas fa-link"></i> 結果連結至網頁</span>
+        </div>
+        <div class="row g-3 mt-3">
+          <div class="col-md-6"><i class="fas fa-check-circle text-success me-2"></i> 免費，無需資料庫或後端</div>
+          <div class="col-md-6"><i class="fas fa-check-circle text-success me-2"></i> 可在 Live Server 直接使用</div>
+          <div class="col-md-6"><i class="fas fa-check-circle text-success me-2"></i> 可部署到 Netlify / GitHub Pages</div>
+          <div class="col-md-6"><i class="fas fa-check-circle text-success me-2"></i> 搜尋資料只在使用時下載，不影響首頁速度</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 三、使用工具 -->
+    <section id="tools" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-tools"></i> 使用工具</h3>
+        <div class="table-responsive">
+          <table class="table table-sky">
+            <thead>
+              <tr>
+                <th>工具</th>
+                <th>用途</th>
+                <th>免費</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>VS Code</td>
+                <td>編輯網站、執行終端機</td>
+                <td><i class="fas fa-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>Live Server</td>
+                <td>本機預覽</td>
+                <td><i class="fas fa-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>Node.js</td>
+                <td>掃描 HTML 建立索引</td>
+                <td><i class="fas fa-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>JavaScript</td>
+                <td>搜尋、排序、顯示</td>
+                <td><i class="fas fa-check text-success"></i></td>
+              </tr>
+              <tr>
+                <td>HTML / CSS</td>
+                <td>介面與 RWD</td>
+                <td><i class="fas fa-check text-success"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mb-0 text-muted"><i class="fas fa-info-circle me-1"></i> 本次沒有使用付費 API 或外部搜尋服務。</p>
+      </div>
+    </section>
+
+    <!-- 四、建立的檔案 -->
+    <section id="files" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-file-code"></i> 建立的檔案</h3>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-file-html text-primary me-2"></i> search.html</h5>
+              <ul class="list-hand">
+                <li>搜尋輸入框與按鈕</li>
+                <li>結果數量提示</li>
+                <li>標題、路徑、摘要</li>
+                <li>關鍵字反白</li>
+                <li>返回首頁連結</li>
+                <li>RWD 手機排版</li>
+              </ul>
+              <code class="small">http://127.0.0.1:5500/search.html</code>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fab fa-js text-warning me-2"></i> js/site-search.js</h5>
+              <ul class="list-hand">
+                <li>載入索引 JSON</li>
+                <li>讀取關鍵字</li>
+                <li>搜尋標題、路徑、正文</li>
+                <li>標題命中優先排序</li>
+                <li>顯示摘要</li>
+                <li>黃色反白</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-cog text-secondary me-2"></i> tools/build-search-index.mjs</h5>
+              <ul class="list-hand">
+                <li>掃描所有 .html</li>
+                <li>排除 .git, .vscode, node_modules 等</li>
+                <li>擷取 title, 路徑, 正文</li>
+                <li>排除 script, style, 註解</li>
+                <li>產生索引檔</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-database text-info me-2"></i> data/site-search-index.json</h5>
+              <ul class="list-hand">
+                <li>收錄 <strong>224</strong> 個 HTML 網頁</li>
+                <li>大小約 <strong>1.72 MB</strong></li>
+                <li>僅在進入搜尋頁時下載</li>
+              </ul>
+              <p class="mb-0"><i class="fas fa-arrow-right me-1"></i> 另有導覽列 <code>CX01-nav.html</code> 新增放大鏡圖示。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 五、製作流程 -->
+    <section id="workflow" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-arrows-spin"></i> 製作流程</h3>
+        <ol class="list-hand">
+          <li><strong>統計網站網頁數量</strong> – 確認約 224 個 HTML，避免直接掃描造成緩慢。</li>
+          <li><strong>建立索引產生程式</strong> – 使用 Node.js 讀取每個 HTML，轉換為搜尋文字。</li>
+          <li><strong>建立搜尋頁</strong> – <code>search.html</code> 提供手機可用介面，顯示標題、路徑、摘要。</li>
+          <li><strong>建立前端搜尋邏輯</strong> – <code>site-search.js</code> 依序搜尋標題、路徑、正文。</li>
+          <li><strong>建立索引檔</strong> – 執行 <code>node tools/build-search-index.mjs</code> 產生 JSON。</li>
+          <li><strong>加入導覽列入口</strong> – 新增放大鏡圖示，從任何頁面前往搜尋。</li>
+        </ol>
+        <div class="bg-light p-3 rounded-3 mt-2">
+          <i class="fas fa-terminal text-dark me-2"></i> 終端機指令範例：
+          <code class="bg-white px-3 py-1 rounded">node tools/build-search-index.mjs</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 六、日後維護方式 -->
+    <section id="maintain" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-rotate-right"></i> 日後維護方式</h3>
+        <p>每當新增、修改或刪除 HTML 網頁後，都必須重新建立搜尋索引：</p>
+        <div class="step-flow mb-3" style="border-left-color: var(--accent-gold);">
+          <span class="step-item"><i class="fas fa-pen"></i> 新增/修改網頁</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fas fa-save"></i> 儲存 HTML</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fas fa-code"></i> 執行 build</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fas fa-refresh"></i> 重新整理 search.html</span>
+          <span class="step-arrow"><i class="fas fa-arrow-right"></i></span>
+          <span class="step-item"><i class="fas fa-check"></i> 測試新內容</span>
+        </div>
+        <p class="mb-0"><i class="fas fa-terminal me-2"></i> 每次執行：<code
+            class="bg-light px-3 py-1 rounded">node tools/build-search-index.mjs</code></p>
+      </div>
+    </section>
+
+    <!-- 七、測試方式 -->
+    <section class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-vial"></i> 測試方式</h3>
+        <p>建議測試關鍵字：</p>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="badge-sky">AI</span>
+          <span class="badge-sky">Python</span>
+          <span class="badge-sky">退休</span>
+          <span class="badge-sky">提示詞</span>
+          <span class="badge-sky">閱讀</span>
+        </div>
+        <ul class="list-hand">
+          <li>搜尋頁可以正常開啟</li>
+          <li>輸入關鍵字後有結果</li>
+          <li>結果數量合理</li>
+          <li>點選標題可前往正確網頁</li>
+          <li>手機寬度下操作正常</li>
+          <li>新增的文章可以被搜尋到</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 八、常見問題與除錯 -->
+    <section class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-circle-question"></i> 常見問題與除錯</h3>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item border-0 bg-transparent">
+            <h2 class="accordion-header" id="faq1">
+              <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse1">
+                <i class="fas fa-exclamation-triangle text-warning me-2"></i> 搜尋頁顯示「搜尋索引尚未建立」
+              </button>
+            </h2>
+            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">尚未產生 <code>data/site-search-index.json</code>。請執行
+                <code>node tools/build-search-index.mjs</code>。
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 bg-transparent">
+            <h2 class="accordion-header" id="faq2">
+              <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse2">
+                <i class="fas fa-circle-xmark text-danger me-2"></i> 新網頁搜尋不到
+              </button>
+            </h2>
+            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">通常是新增 HTML 後未更新索引。請重新執行 <code>node tools/build-search-index.mjs</code>
+                並重新整理搜尋頁。</div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 bg-transparent">
+            <h2 class="accordion-header" id="faq3">
+              <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse3">
+                <i class="fas fa-link text-info me-2"></i> 點選結果出現找不到頁面
+              </button>
+            </h2>
+            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">可能是 HTML 檔已改名或移動。重新建立索引即可。</div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 bg-transparent">
+            <h2 class="accordion-header" id="faq4">
+              <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse4">
+                <i class="fas fa-file-lock text-secondary me-2"></i> 直接雙擊 search.html 無法搜尋
+              </button>
+            </h2>
+            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">瀏覽器會限制本機檔案讀取 JSON。請使用 Live Server 開啟網站。</div>
+            </div>
+          </div>
+          <div class="accordion-item border-0 bg-transparent">
+            <h2 class="accordion-header" id="faq5">
+              <button class="accordion-button collapsed bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse5">
+                <i class="fas fa-arrow-trend-up text-primary me-2"></i> 搜尋索引越來越大
+              </button>
+            </h2>
+            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">若未來超過 5~10 MB，可考慮依主題分類索引，或改用 Pagefind 等工具。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 九、未來升級方向 -->
+    <section class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-rocket"></i> 未來升級方向</h3>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><span class="badge bg-primary">目前</span></h5>
+              <p class="small">免費、易維護、不需伺服器，可搜尋全站 HTML 內容。</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><span class="badge bg-secondary">第二階段</span></h5>
+              <ul class="list-hand small">
+                <li>依資料夾、年份篩選</li>
+                <li>僅搜尋標題或正文</li>
+                <li>搜尋歷史紀錄</li>
+                <li>顯示日期或標籤</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><span class="badge bg-info">第三階段</span></h5>
+              <p class="small">當頁數大幅增加時，可考慮 <strong>Pagefind</strong>，專為靜態網站全文搜尋設計，建立更有效率的索引。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 十、重點整理 -->
+    <section class="mb-5">
+      <div class="card-sky" style="border-left: 6px solid var(--accent-gold);">
+        <h3 class="card-title"><i class="fas fa-list-check"></i> 重點整理</h3>
+        <ul class="list-hand">
+          <li><i class="fas fa-check-circle text-success"></i> 已建立全站搜尋頁：<code>search.html</code></li>
+          <li><i class="fas fa-check-circle text-success"></i> 索引收錄 <strong>224</strong> 個 HTML 網頁</li>
+          <li><i class="fas fa-check-circle text-success"></i> 可搜尋標題、路徑、正文內容</li>
+          <li><i class="fas fa-check-circle text-success"></i> 結果可直接連至原始網頁</li>
+          <li><i class="fas fa-check-circle text-success"></i> 無需付費服務、資料庫或 API</li>
+          <li><i class="fas fa-rotate-right text-primary"></i> 網頁有異動時，請執行：<code
+              class="bg-light px-3 py-1 rounded">node tools/build-search-index.mjs</code></li>
+        </ul>
+        <p class="mt-2 mb-0"><i class="fas fa-lightbulb text-warning me-2"></i> 建議未來內容更多時，再升級為分類搜尋或 Pagefind。</p>
+      </div>
+    </section>
+
+    <!-- 手繪分隔 -->
+    <div class="hand-drawn-divider">
+      <span>✧ ✦ ✧ ✦ ✧</span>
+    </div>
+
+  </main>
+
+  <!-- ======================== 頁腳 ======================== -->
+  <footer class="footer-sky">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <span class="footer-icon"><i class="fas fa-feather-alt"></i></span>
+          AI學苑 · 全站搜尋功能
+          <span class="mx-2 text-muted">|</span>
+          <span class="small">製作報告 2026-07-23</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <span class="small">
+            <i class="fas fa-code footer-icon"></i>
+            以 <i class="fas fa-heart" style="color:#d4a843;"></i> 與淺藍打造
+            <span class="mx-2">·</span>
+            <i class="fas fa-magnifying-glass footer-icon"></i>
+            224 頁可搜尋
+          </span>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col text-center text-muted small">
+          <i class="fas fa-tag me-1"></i> 索引檔案：<code class="bg-white bg-opacity-50 px-2 py-1 rounded"
+            style="font-size:0.75rem;">data/site-search-index.json</code>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== 回到頂端 ======================== -->
+  <button id="backTop" title="回到頂端">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- 回到頂端功能 -->
+  <script>
+    const backBtn = document.getElementById('backTop');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 400) {
+        backBtn.style.display = 'flex';
+      } else {
+        backBtn.style.display = 'none';
+      }
+    });
+    backBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- 保留原架構的 jQuery 載入（但本頁未使用，可忽略） -->
+  <!-- 若需使用，可取消註解並確保路徑正確 -->
+  <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // 如果有需要載入 nav / footer 可在此呼叫
+        });
+    </script>
+    -->
+</body>
+
+</html>

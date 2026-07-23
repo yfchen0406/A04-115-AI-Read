@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1A.電子書書庫整理報告</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 (免費版) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Google Fonts: Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== 全域 ===== */
+    * {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    body {
+      background-color: #f7f0e8;
+      /* 暖米白底 */
+      color: #3d2c1b;
+    }
+
+    /* ===== 書香風格變數 ===== */
+    :root {
+      --ink-brown: #3d2c1b;
+      --paper-cream: #f7f0e8;
+      --book-spine: #8b6b4d;
+      --gold-accent: #b8943c;
+      --warm-shadow: rgba(120, 80, 50, 0.12);
+      --card-bg: #fefcf7;
+    }
+
+    /* ===== 導覽列 (深色書櫃風格) ===== */
+    .navbar-dark.bg-book {
+      background: #2a1f14 !important;
+      border-bottom: 3px solid #b8943c;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-dark .navbar-brand {
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #f0e2d0 !important;
+    }
+
+    .navbar-dark .navbar-brand i {
+      color: #d4b28c;
+      margin-right: 8px;
+    }
+
+    .navbar-dark .nav-link {
+      color: #d4c5b2 !important;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar-dark .nav-link:hover {
+      color: #f0e2d0 !important;
+      text-shadow: 0 0 6px rgba(184, 148, 60, 0.5);
+    }
+
+    .navbar-dark .nav-link i {
+      margin-right: 5px;
+      color: #b8943c;
+    }
+
+    /* ===== 標題區 ===== */
+    .header-title {
+      background: linear-gradient(145deg, #fcf6ed 0%, #f3e8da 100%);
+      border-bottom: 2px dashed #d4b28c;
+      padding: 2.5rem 1rem 2rem;
+      margin-top: 76px;
+      position: relative;
+    }
+
+    .header-title::after {
+      content: "✧";
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f7f0e8;
+      padding: 0 16px;
+      font-size: 1.6rem;
+      color: #b8943c;
+    }
+
+    .header-title h1 {
+      font-weight: 900;
+      color: #3d2c1b;
+      letter-spacing: 3px;
+    }
+
+    .header-title h1 i {
+      color: #b8943c;
+      margin: 0 10px;
+    }
+
+    .header-title .sub-meta {
+      color: #6b5340;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+    }
+
+    .header-title .sub-meta i {
+      color: #b8943c;
+      margin: 0 4px;
+    }
+
+    /* ===== 統計卡片 ===== */
+    .stat-card {
+      background: var(--card-bg);
+      border-radius: 20px 8px 20px 8px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 6px 24px var(--warm-shadow);
+      border-left: 5px solid #b8943c;
+      transition: 0.3s;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(120, 80, 50, 0.18);
+    }
+
+    .stat-card .stat-number {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #3d2c1b;
+      line-height: 1.2;
+    }
+
+    .stat-card .stat-label {
+      font-size: 1rem;
+      color: #6b5340;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .stat-card .stat-icon {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      font-size: 2.4rem;
+      color: rgba(184, 148, 60, 0.25);
+    }
+
+    /* ===== 通用卡片 ===== */
+    .book-card {
+      background: var(--card-bg);
+      border-radius: 16px 6px 16px 6px;
+      padding: 1.25rem 1rem;
+      box-shadow: 0 4px 16px var(--warm-shadow);
+      border: 1px solid #ede3d6;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .book-card:hover {
+      box-shadow: 0 8px 28px rgba(120, 80, 50, 0.16);
+      border-color: #d4b28c;
+    }
+
+    .book-card .card-title {
+      font-weight: 700;
+      color: #3d2c1b;
+      font-size: 1.05rem;
+    }
+
+    .book-card .card-count {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #b8943c;
+    }
+
+    .book-card .card-desc {
+      color: #6b5340;
+      font-size: 0.9rem;
+    }
+
+    /* ===== 子分類 ===== */
+    .sub-cat {
+      background: #fcf8f2;
+      border-radius: 12px 4px 12px 4px;
+      padding: 0.8rem 1.2rem;
+      border-left: 4px solid #b8943c;
+      margin-bottom: 0.6rem;
+      transition: 0.2s;
+    }
+
+    .sub-cat:hover {
+      background: #f8f0e6;
+    }
+
+    .sub-cat .sub-name {
+      font-weight: 600;
+      color: #3d2c1b;
+    }
+
+    .sub-cat .sub-count {
+      font-weight: 700;
+      color: #b8943c;
+      background: #ede3d6;
+      padding: 0 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== 規則列表 ===== */
+    .rule-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .rule-list li {
+      padding: 0.6rem 0 0.6rem 2rem;
+      position: relative;
+      border-bottom: 1px dashed #ede3d6;
+    }
+
+    .rule-list li:last-child {
+      border-bottom: none;
+    }
+
+    .rule-list li::before {
+      content: "✧";
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      color: #b8943c;
+      font-size: 1.2rem;
+    }
+
+    .rule-list li i {
+      color: #b8943c;
+      margin-right: 8px;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* ===== 建議區 ===== */
+    .tip-item {
+      background: #fcf8f2;
+      border-radius: 12px 4px 12px 4px;
+      padding: 1rem 1.2rem;
+      border-bottom: 3px solid #d4b28c;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .tip-item:hover {
+      background: #f8f0e6;
+      transform: translateY(-2px);
+    }
+
+    .tip-item .tip-icon {
+      font-size: 1.8rem;
+      color: #b8943c;
+      margin-right: 10px;
+    }
+
+    /* ===== Footer ===== */
+    footer.bg-book-footer {
+      background: #2a1f14;
+      color: #c4b5a2;
+      border-top: 3px solid #b8943c;
+      padding: 1.8rem 0;
+    }
+
+    footer.bg-book-footer a {
+      color: #d4b28c;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    footer.bg-book-footer a:hover {
+      color: #f0e2d0;
+    }
+
+    footer.bg-book-footer .footer-icon {
+      color: #b8943c;
+      margin: 0 4px;
+    }
+
+    /* ===== 手繪風格小裝飾 ===== */
+    .hand-drawn-divider {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #d4b28c;
+      letter-spacing: 6px;
+      margin: 1.2rem 0;
+      user-select: none;
+    }
+
+    .hand-drawn-divider span {
+      display: inline-block;
+      background: #f7f0e8;
+      padding: 0 16px;
+    }
+
+    .badge-book {
+      background: #b8943c;
+      color: #fefcf7;
+      font-weight: 500;
+      padding: 0.3rem 0.9rem;
+      border-radius: 30px 6px 30px 6px;
+      font-size: 0.8rem;
+    }
+
+    /* ===== 響應式微調 ===== */
+    @media (max-width: 576px) {
+      .stat-card .stat-number {
+        font-size: 2rem;
+      }
+
+      .header-title h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* ===== 回到頂端 ===== */
+    #backTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #b8943c;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 16px rgba(184, 148, 60, 0.35);
+      transition: 0.3s;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #backTop:hover {
+      background: #a07d32;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(184, 148, 60, 0.45);
+    }
+
+    /* ===== 書籤裝飾 ===== */
+    .bookmark-deco {
+      display: inline-block;
+      background: #b8943c;
+      color: #fefcf7;
+      padding: 0.1rem 1.2rem 0.1rem 0.8rem;
+      border-radius: 0 20px 20px 0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-left: -1.2rem;
+      position: relative;
+    }
+
+    .bookmark-deco::after {
+      content: "";
+      position: absolute;
+      right: -8px;
+      top: 0;
+      border-left: 8px solid #b8943c;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================== 導覽列 ======================== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-book fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="./我的電子書書庫.html">
+        <i class="fas fa-book-open"></i> 電子書庫
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="切換導覽">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#stats"><i class="fas fa-chart-simple"></i> 總覽</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories"><i class="fas fa-tags"></i> 分類</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sub13"><i class="fas fa-layer-group"></i> 子分類</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rules"><i class="fas fa-pen-fancy"></i> 清理規則</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tips"><i class="fas fa-lightbulb"></i> 建議</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== 標題區 ======================== -->
+  <header class="header-title text-center">
+    <div class="container">
+      <h1>
+        <i class="fas fa-feather-alt"></i>
+        1A.電子書書庫整理報告 115.07.22
+        <i class="fas fa-feather-alt"></i>
+      </h1>
+      <p class="sub-meta mt-2">
+        <i class="fas fa-calendar-alt"></i> 更新日期：2026-07-23
+        <span class="mx-3">|</span>
+        <i class="fas fa-folder-open"></i> 書庫位置：<code
+          class="text-dark bg-light px-2 py-1 rounded"><a href="./我的電子書書庫.html">S01-最新書籍-code整理</a></code>
+      </p>
+      <div class="hand-drawn-divider">
+        <span>✧ ✦ ✧ ✦ ✧</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================== 主內容 ======================== -->
+  <main class="container py-4">
+
+    <!-- ===== 一、整理目標與成果 (統計卡片) ===== -->
+    <section id="stats" class="mb-5">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center">
+            <div class="stat-icon"><i class="fas fa-book"></i></div>
+            <div class="stat-number">6,104</div>
+            <div class="stat-label"><i class="fas fa-book-open me-1"></i>電子書總數</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center">
+            <div class="stat-icon"><i class="fas fa-folder-tree"></i></div>
+            <div class="stat-number">16</div>
+            <div class="stat-label"><i class="fas fa-folder me-1"></i>主題分類</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center">
+            <div class="stat-icon"><i class="fas fa-sitemap"></i></div>
+            <div class="stat-number">8</div>
+            <div class="stat-label"><i class="fas fa-layer-group me-1"></i>第13類子類別</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card text-center">
+            <div class="stat-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="stat-number">695</div>
+            <div class="stat-label"><i class="fas fa-arrow-right me-1"></i>PDF待處理</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 額外亮點 -->
+      <div class="row mt-3 g-3">
+        <div class="col-md-6">
+          <div class="book-card d-flex align-items-center">
+            <i class="fas fa-check-circle text-success me-3" style="font-size:1.8rem;"></i>
+            <div>
+              <div class="fw-bold">apk.tw_ 前綴殘留：<span class="text-success">0</span></div>
+              <div class="text-muted small">暫存改名檔殘留：<span class="text-success">0</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="book-card d-flex align-items-center">
+            <i class="fas fa-users-cog text-warning me-3" style="font-size:1.8rem;"></i>
+            <div>
+              <div class="fw-bold">人工處理區：<span class="text-warning">98_PDF待人工處理</span></div>
+              <div class="text-muted small">同名 EPUB／PDF 的 PDF 檔集中區</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 二、分類架構與冊數 ===== -->
+    <section id="categories" class="mb-5">
+      <div class="d-flex align-items-center mb-3">
+        <h2 class="fw-bold mb-0" style="color:#3d2c1b;">
+          <i class="fas fa-tags me-2" style="color:#b8943c;"></i>分類架構與冊數
+        </h2>
+        <span class="badge-book ms-3">16 個主題</span>
+      </div>
+      <p class="text-muted small mb-3"><i class="fas fa-info-circle me-1"></i>點擊分類名稱可快速跳轉（此為靜態展示）</p>
+
+      <div class="row g-3">
+        <!-- 動態產生 16 個分類卡片 (資料來自報告) -->
+        <!-- 01 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">191</div>
+            <div class="card-title">01_AI程式與數位工具</div>
+            <div class="card-desc"><i class="fas fa-robot me-1"></i>AI・程式・資料</div>
+          </div>
+        </div>
+        <!-- 02 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">188</div>
+            <div class="card-title">02_科學科技與未來</div>
+            <div class="card-desc"><i class="fas fa-flask me-1"></i>科學・趨勢・未來</div>
+          </div>
+        </div>
+        <!-- 03 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">200</div>
+            <div class="card-title">03_學習閱讀與知識管理</div>
+            <div class="card-desc"><i class="fas fa-brain me-1"></i>學習・閱讀・筆記</div>
+          </div>
+        </div>
+        <!-- 04 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">266</div>
+            <div class="card-title">04_思考邏輯與決策</div>
+            <div class="card-desc"><i class="fas fa-chess-queen me-1"></i>邏輯・決策・模型</div>
+          </div>
+        </div>
+        <!-- 05 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">102</div>
+            <div class="card-title">05_語言寫作與表達</div>
+            <div class="card-desc"><i class="fas fa-pencil-alt me-1"></i>英文・寫作・簡報</div>
+          </div>
+        </div>
+        <!-- 06 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">226</div>
+            <div class="card-title">06_投資理財與交易</div>
+            <div class="card-desc"><i class="fas fa-chart-line me-1"></i>投資・股票・ETF</div>
+          </div>
+        </div>
+        <!-- 07 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">150</div>
+            <div class="card-title">07_經濟商業與行銷</div>
+            <div class="card-desc"><i class="fas fa-store me-1"></i>經濟・商業・策略</div>
+          </div>
+        </div>
+        <!-- 08 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">149</div>
+            <div class="card-title">08_管理領導與職場</div>
+            <div class="card-desc"><i class="fas fa-users me-1"></i>管理・領導・職場</div>
+          </div>
+        </div>
+        <!-- 09 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">153</div>
+            <div class="card-title">09_溝通談判與人際</div>
+            <div class="card-desc"><i class="fas fa-handshake me-1"></i>溝通・談判・人際</div>
+          </div>
+        </div>
+        <!-- 10 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">186</div>
+            <div class="card-title">10_歷史文明與世界</div>
+            <div class="card-desc"><i class="fas fa-landmark me-1"></i>歷史・文明・世界</div>
+          </div>
+        </div>
+        <!-- 11 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">197</div>
+            <div class="card-title">11_政治社會與國際</div>
+            <div class="card-desc"><i class="fas fa-globe-asia me-1"></i>政治・社會・戰略</div>
+          </div>
+        </div>
+        <!-- 12 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">204</div>
+            <div class="card-title">12_心理情緒與關係</div>
+            <div class="card-desc"><i class="fas fa-heart me-1"></i>心理・情緒・療癒</div>
+          </div>
+        </div>
+        <!-- 13 (特殊色) -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center" style="border-color:#b8943c; background:#fcf6ed;">
+            <div class="card-count" style="color:#8b6b4d;">2,925</div>
+            <div class="card-title" style="color:#8b6b4d;">13_哲學人生與個人成長</div>
+            <div class="card-desc"><i class="fas fa-leaf me-1"></i>已分 8 個子類</div>
+            <span class="badge bg-warning text-dark mt-1">最大類</span>
+          </div>
+        </div>
+        <!-- 14 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">117</div>
+            <div class="card-title">14_健康生活與運動</div>
+            <div class="card-desc"><i class="fas fa-heartbeat me-1"></i>健康・飲食・運動</div>
+          </div>
+        </div>
+        <!-- 15 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">133</div>
+            <div class="card-title">15_文學小說與藝術</div>
+            <div class="card-desc"><i class="fas fa-palette me-1"></i>文學・小說・創作</div>
+          </div>
+        </div>
+        <!-- 16 -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center">
+            <div class="card-count">22</div>
+            <div class="card-title">16_傳記人物與回憶錄</div>
+            <div class="card-desc"><i class="fas fa-user-tie me-1"></i>傳記・自傳・人物</div>
+          </div>
+        </div>
+        <!-- 98 待處理 (特殊) -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="book-card text-center" style="border-color:#c0392b; background:#fdf0ed;">
+            <div class="card-count" style="color:#c0392b;">695</div>
+            <div class="card-title" style="color:#c0392b;">98_PDF待人工處理</div>
+            <div class="card-desc"><i class="fas fa-file-pdf me-1"></i>同名EPUB/PDF移出</div>
+            <span class="badge bg-danger text-white mt-1">待處理</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 三、第13類細分類 ===== -->
+    <section id="sub13" class="mb-5">
+      <div class="d-flex align-items-center mb-3">
+        <h2 class="fw-bold mb-0" style="color:#3d2c1b;">
+          <i class="fas fa-sitemap me-2" style="color:#b8943c;"></i>第 13 類細分類
+        </h2>
+        <span class="badge-book ms-3">8 個子類別</span>
+      </div>
+      <p class="text-muted small mb-3"><i class="fas fa-info-circle me-1"></i>「08_其他人生與成長」共 2,233 本，建議日後再細分</p>
+
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center">
+            <span class="sub-name"><i class="fas fa-book me-2"></i>01_哲學思想與經典</span>
+            <span class="sub-count">117</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center">
+            <span class="sub-name"><i class="fas fa-compass me-2"></i>02_人生意義與價值</span>
+            <span class="sub-count">243</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center">
+            <span class="sub-name"><i class="fas fa-clock me-2"></i>03_習慣自律與效率</span>
+            <span class="sub-count">120</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center">
+            <span class="sub-name"><i class="fas fa-rocket me-2"></i>04_成功成長與職涯</span>
+            <span class="sub-count">64</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center">
+            <span class="sub-name"><i class="fas fa-spa me-2"></i>05_心態韌性與正念</span>
+            <span class="sub-count">46</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center">
+            <span class="sub-name"><i class="fas fa-hand-holding-heart me-2"></i>06_人性智慧與處世</span>
+            <span class="sub-count">60</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center">
+            <span class="sub-name"><i class="fas fa-coins me-2"></i>07_財富觀與自由人生</span>
+            <span class="sub-count">42</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="sub-cat d-flex justify-content-between align-items-center"
+            style="border-left-color:#a07d32; background:#f8f0e6;">
+            <span class="sub-name"><i class="fas fa-ellipsis-h me-2"></i>08_其他人生與成長</span>
+            <span class="sub-count" style="background:#d4b28c; color:#fff;">2,233</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3 p-3 bg-light rounded-3 border-start border-4 border-warning">
+        <i class="fas fa-lightbulb text-warning me-2"></i>
+        <strong>建議：</strong>「08_其他人生與成長」仍較大。未來可在實際閱讀時，逐步拆為「宗教靈性」、「勵志語錄」、「成功法則」等子類，不必一次大量搬動。
+      </div>
+    </section>
+
+    <!-- ===== 四、檔名清理規則 ===== -->
+    <section id="rules" class="mb-5">
+      <h2 class="fw-bold mb-3" style="color:#3d2c1b;">
+        <i class="fas fa-pen-fancy me-2" style="color:#b8943c;"></i>檔名清理規則
+      </h2>
+      <div class="book-card">
+        <ul class="rule-list">
+          <li><i class="fas fa-trash-alt"></i> 移除檔名中的 <code>apk.tw_</code> 來源標記</li>
+          <li><i class="fas fa-exchange-alt"></i> 將可辨識的簡體中文檔名轉換為繁體中文</li>
+          <li><i class="fas fa-cut"></i> 過長檔名保留書名核心，避免 Windows 路徑過長</li>
+          <li><i class="fas fa-copy"></i> 若改名後遇到同名檔，保留兩份檔案，不覆寫原檔</li>
+        </ul>
+        <div class="mt-2 p-3 bg-light rounded-3">
+          <p class="mb-0"><i class="fas fa-info-circle me-2" style="color:#b8943c;"></i>
+            <strong>「（重複檔 2）」</strong> 表示整理或改名後，目標資料夾中已有同名檔案。為避免任何一本書被覆寫，系統將後加入的檔案改為
+            <code>書名（重複檔 2）</code>。它只代表<strong>檔名衝突</strong>，不保證兩個檔案內容完全相同。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 五、同名 EPUB／PDF 處理 ===== -->
+    <section class="mb-5">
+      <h2 class="fw-bold mb-3" style="color:#3d2c1b;">
+        <i class="fas fa-file-export me-2" style="color:#b8943c;"></i>同名 EPUB／PDF 處理
+      </h2>
+      <div class="book-card">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 bg-success bg-opacity-10 rounded-3 text-center h-100">
+              <i class="fas fa-book-open text-success" style="font-size:2rem;"></i>
+              <div class="fw-bold mt-2">EPUB</div>
+              <div class="small">保留在原主題分類<br>作為主要閱讀版本</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-danger bg-opacity-10 rounded-3 text-center h-100">
+              <i class="fas fa-file-pdf text-danger" style="font-size:2rem;"></i>
+              <div class="fw-bold mt-2">PDF</div>
+              <div class="small">移至 <code>98_PDF待人工處理</code></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-info bg-opacity-10 rounded-3 text-center h-100">
+              <i class="fas fa-list-ul text-info" style="font-size:2rem;"></i>
+              <div class="fw-bold mt-2">對應清單</div>
+              <div class="small"><code>同名EPUB_PDF待處理清單.md</code></div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 p-3 bg-light rounded-3">
+          <p class="mb-0"><i class="fas fa-check-circle text-success me-2"></i>
+            本次移出的 PDF：<strong>695</strong> 個。此做法不會刪除 PDF，保留您日後依排版、掃描品質或註記需求自行決定是否保留。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 六、網站功能 ===== -->
+    <section class="mb-5">
+      <h2 class="fw-bold mb-3" style="color:#3d2c1b;">
+        <i class="fas fa-globe me-2" style="color:#b8943c;"></i>網站功能
+      </h2>
+      <div class="book-card">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <ul class="rule-list">
+              <li><i class="fas fa-logo me-2"></i> 標題旁顯示 SVG Logo 與最後修改日期</li>
+              <li><i class="fas fa-th-large me-2"></i> 17 個彩色分類按鈕（16 主題 + PDF 待處理）</li>
+              <li><i class="fas fa-sitemap me-2"></i> 第 13 類另有 8 個子分類快速跳轉按鈕</li>
+              <li><i class="fas fa-link me-2"></i> 分類按鈕採用標準頁內連結，離線亦可使用</li>
+              <li><i class="fas fa-search me-2"></i> 提供書名／檔名搜尋</li>
+              <li><i class="fas fa-arrow-up me-2"></i> 右下角「回到最頂端」按鈕</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 bg-light rounded-3 h-100 d-flex flex-column justify-content-center">
+              <p class="mb-1"><i class="fas fa-file-code me-2 text-warning"></i> 網站檔案：<code>我的電子書書庫.html</code></p>
+              <p class="mb-0 text-muted small"><i class="fas fa-info-circle me-1"></i> 離線開啟 HTML 時也可使用所有功能。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 七、資料夾整潔化 ===== -->
+    <section class="mb-5">
+      <h2 class="fw-bold mb-3" style="color:#3d2c1b;">
+        <i class="fas fa-folder-tree me-2" style="color:#b8943c;"></i>資料夾整潔化
+      </h2>
+      <div class="book-card">
+        <div class="table-responsive">
+          <table class="table table-hover table-borderless">
+            <thead class="table-light">
+              <tr>
+                <th style="width:30%;"><i class="fas fa-folder me-2"></i>位置</th>
+                <th><i class="fas fa-file me-2"></i>內容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>書庫管理/文件</code></td>
+                <td>分類清單、PDF 待處理清單與文字清單</td>
+              </tr>
+              <tr>
+                <td><code>書庫管理/工具</code></td>
+                <td>10 個整理、改名、網站更新工具</td>
+              </tr>
+              <tr>
+                <td><code>書庫管理/紀錄</code></td>
+                <td>最近一次重整作業的 JSON 紀錄</td>
+              </tr>
+              <tr>
+                <td><code>書庫管理/README.md</code></td>
+                <td>日後執行工具的說明</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted small mt-2"><i class="fas fa-check-circle text-success me-1"></i> 根目錄只保留書庫本體、網站、Logo 與原有
+          Excel 檔。</p>
+      </div>
+    </section>
+
+    <!-- ===== 八、後續建議 ===== -->
+    <section id="tips" class="mb-5">
+      <h2 class="fw-bold mb-3" style="color:#3d2c1b;">
+        <i class="fas fa-lightbulb me-2" style="color:#b8943c;"></i>後續建議
+      </h2>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3">
+          <div class="tip-item">
+            <div class="d-flex align-items-start">
+              <span class="tip-icon"><i class="fas fa-inbox"></i></span>
+              <div>
+                <div class="fw-bold">📥 新增書籍</div>
+                <div class="small text-muted">每次新增書籍先放入獨立來源資料夾，再使用整理工具匯入，避免混入網站或管理檔。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="tip-item">
+            <div class="d-flex align-items-start">
+              <span class="tip-icon"><i class="fas fa-book-reader"></i></span>
+              <div>
+                <div class="fw-bold">📖 優先閱讀 EPUB</div>
+                <div class="small text-muted">PDF 待處理區只在需要掃描版、原始排版或註記時再保留。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="tip-item">
+            <div class="d-flex align-items-start">
+              <span class="tip-icon"><i class="fas fa-pencil-alt"></i></span>
+              <div>
+                <div class="fw-bold">✏️ 閱讀筆記</div>
+                <div class="small text-muted">每完成一本書，在筆記中加上分類與 3~5 個關鍵字，未來搜尋更方便。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="tip-item">
+            <div class="d-flex align-items-start">
+              <span class="tip-icon"><i class="fas fa-sync-alt"></i></span>
+              <div>
+                <div class="fw-bold">🔄 定期檢查</div>
+                <div class="small text-muted">建議每季檢查一次「重複檔」與 <code>98_PDF待人工處理</code>，逐步決定保留版本。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 手繪分隔 ===== -->
+    <div class="hand-drawn-divider">
+      <span>✧ ✦ ✧ ✦ ✧</span>
+    </div>
+
+  </main>
+
+  <!-- ======================== Footer ======================== -->
+  <footer class="bg-book-footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <span class="footer-icon"><i class="fas fa-book-open"></i></span>
+          電子書書庫整理報告
+          <span class="mx-2 text-muted">|</span>
+          <span class="small">更新 2026-07-23</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <span class="small">
+            <i class="fas fa-code footer-icon"></i>
+            以 <i class="fas fa-heart" style="color:#b8943c;"></i> 與書香打造
+            <span class="mx-2">·</span>
+            <i class="fas fa-feather-alt footer-icon"></i>
+            6,104 本藏書
+          </span>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col text-center text-muted small">
+          <i class="fas fa-tag me-1"></i> 書庫位置：<code class="text-light bg-dark px-2 py-1 rounded"
+            style="font-size:0.75rem;">S01-最新書籍-code整理</code>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== 回到頂端 ======================== -->
+  <button id="backTop" title="回到頂端">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ======================== Bootstrap JS ======================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- ======================== 回到頂端功能 ======================== -->
+  <script>
+    const backBtn = document.getElementById('backTop');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 400) {
+        backBtn.style.display = 'flex';
+      } else {
+        backBtn.style.display = 'none';
+      }
+    });
+
+    backBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <!-- 調整完成-->
+  <!--  ##################       各區塊html 載入     ###################### -->
+
+</body>
+
+</html>
