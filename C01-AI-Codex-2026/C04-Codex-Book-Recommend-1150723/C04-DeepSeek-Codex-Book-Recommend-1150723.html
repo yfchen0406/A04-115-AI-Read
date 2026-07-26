@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.閱讀書籍建議報告 · 退休學習書單 ~ 115.07.23</title>
+  <style>
+    /* ----- 全局重置 & 字型 ----- */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'PingFang TC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+      background: #f8f6f2;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
+      padding: 2.5rem 2.8rem;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 1.8rem 1.2rem;
+        border-radius: 20px;
+      }
+
+      body {
+        padding: 1rem 0.6rem;
+      }
+    }
+
+    /* ----- 標題區 ----- */
+    .header {
+      border-bottom: 2px solid #eae6de;
+      padding-bottom: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1a2634;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .header h1 small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #7a8a9e;
+      background: #f0ede7;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      letter-spacing: 0.02em;
+    }
+
+    .header .sub {
+      margin-top: 0.6rem;
+      font-size: 1.05rem;
+      color: #4d5f73;
+      max-width: 80%;
+    }
+
+    @media (max-width: 640px) {
+      .header h1 {
+        font-size: 1.7rem;
+      }
+
+      .header .sub {
+        max-width: 100%;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* ----- 通用卡片 & 區塊 ----- */
+    .section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #1a2634;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title .badge {
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: #dce3ed;
+      color: #2c4058;
+      padding: 0.1rem 0.8rem;
+      border-radius: 40px;
+      letter-spacing: 0.03em;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: #3f5369;
+      margin-bottom: 1.2rem;
+      background: #f5f3ef;
+      padding: 0.8rem 1.2rem;
+      border-radius: 16px;
+      border-left: 4px solid #b7c4d4;
+    }
+
+    /* ----- 書單列表 (網格) ----- */
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.8rem 1.2rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    .book-grid li {
+      background: #faf9f6;
+      padding: 0.5rem 1rem 0.5rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.98rem;
+      font-weight: 450;
+      color: #1e2a3a;
+      border: 1px solid #ece8e0;
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .book-grid li::before {
+      content: "📘";
+      font-size: 0.9rem;
+      margin-right: 0.3rem;
+      opacity: 0.7;
+    }
+
+    .book-grid li:hover {
+      background: #f0ede5;
+      border-color: #cdc5b8;
+    }
+
+    /* 特殊標記 (層級) */
+    .book-grid .tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      background: #d4dce8;
+      color: #1f3349;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      margin-left: auto;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+
+    .book-grid .tag.first {
+      background: #c7d9c7;
+      color: #1f4020;
+    }
+
+    .book-grid .tag.second {
+      background: #d6cfb8;
+      color: #4d3f1f;
+    }
+
+    .book-grid .tag.third {
+      background: #d4d4d4;
+      color: #3d3d3d;
+    }
+
+    /* ----- 三欄分類 (第二輪) ----- */
+    .category-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .category-card {
+      background: #faf9f6;
+      border-radius: 20px;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #eae5dd;
+    }
+
+    .category-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #1a2634;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .category-card h3 span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #6f7f92;
+    }
+
+    .category-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .category-card ul li {
+      padding: 0.25rem 0 0.25rem 1.2rem;
+      font-size: 0.95rem;
+      border-bottom: 1px dashed #e3dfd7;
+      position: relative;
+    }
+
+    .category-card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .category-card ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #7d8b9e;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .category-row {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+    }
+
+    /* ----- 層級區塊 (先/再/後) ----- */
+    .level-block {
+      background: #fbfaf8;
+      border-radius: 20px;
+      padding: 1.2rem 1.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 6px solid #b7c4d4;
+    }
+
+    .level-block.highlight-first {
+      border-left-color: #6f9e7a;
+      background: #f6f9f4;
+    }
+
+    .level-block.highlight-second {
+      border-left-color: #c4b28c;
+      background: #faf8f2;
+    }
+
+    .level-block.highlight-third {
+      border-left-color: #a8b2be;
+      background: #f7f7f5;
+    }
+
+    .level-block .level-label {
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.4rem;
+    }
+
+    .level-block .level-label .count {
+      font-size: 0.85rem;
+      font-weight: 400;
+      background: #e4dfd7;
+      padding: 0.1rem 0.9rem;
+      border-radius: 40px;
+      color: #2d3f53;
+    }
+
+    .level-block .level-desc {
+      font-size: 0.95rem;
+      color: #4a5e74;
+      margin-bottom: 0.8rem;
+    }
+
+    .level-block .book-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0.2rem;
+    }
+
+    .level-block .book-list li {
+      font-size: 0.98rem;
+      background: #ffffff;
+      padding: 0.2rem 1rem 0.2rem 1.2rem;
+      border-radius: 40px;
+      border: 1px solid #e3ded6;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .level-block .book-list li::before {
+      content: "▹";
+      color: #7d8b9e;
+      margin-right: 0.2rem;
+    }
+
+    /* ----- 策略 & 延伸 ----- */
+    .strategy-box {
+      background: #f0f1f3;
+      border-radius: 20px;
+      padding: 1.4rem 1.8rem;
+      margin-top: 0.6rem;
+      border: 1px solid #dfe0e2;
+    }
+
+    .strategy-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .strategy-box strong {
+      color: #1f3349;
+    }
+
+    .extend-box {
+      background: #e9edf2;
+      border-radius: 20px;
+      padding: 1.2rem 1.8rem;
+      border: 1px solid #d0d7e0;
+      margin-top: 1.2rem;
+    }
+
+    .extend-box p {
+      margin-bottom: 0.2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3dfd7;
+      margin: 2rem 0 1.2rem;
+    }
+
+    /* 小工具 */
+    .text-muted {
+      color: #6b7d91;
+      font-size: 0.9rem;
+    }
+
+    .mt-1 {
+      margin-top: 0.6rem;
+    }
+
+    .flex-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.8rem;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- ====== HEADER ====== -->
+    <div class="header">
+      <h1>
+        📖 4.閱讀書籍建議報告 ~ 115.07.23
+        <small>退休學習 · 書單規劃</small>
+      </h1>
+      <div class="sub">
+        依據已讀書單與退休學習生活，推薦尚未閱讀的書籍，並分為不同用途與閱讀層級，方便安排閱讀計畫。
+      </div>
+    </div>
+
+    <!-- ====== 需求脈絡 ====== -->
+    <div class="section">
+      <div class="section-title">
+        📌 需求脈絡
+      </div>
+      <div class="section-desc">
+        您提供了電子書清單與過去閱讀紀錄，期望依照退休學習生活，推薦 <strong>10 本尚未閱讀</strong> 的書。
+        回應聚焦在 <strong>退休後閱讀、自我成長、AI／網頁學習</strong>，以及容易讀完且能帶來成就感的書。
+      </div>
+    </div>
+
+    <!-- ====== 第一輪推薦 ====== -->
+    <div class="section">
+      <div class="section-title">
+        🔹 第一輪推薦 · 10 本
+        <span class="badge">補足三面向</span>
+      </div>
+      <div class="section-desc">
+        避開重複或過於相近的內容，挑選 10 本符合目前生活階段與學習目標的書，涵蓋：
+        <strong>退休人生設計</strong>、<strong>學習方法與專注力</strong>、<strong>AI／網站學習思維工具</strong>。
+      </div>
+      <ul class="book-grid">
+        <li>第二座山</li>
+        <li>學習如何學習</li>
+        <li>原來如此的對話術</li>
+        <li>Make Time</li>
+        <li>Rework</li>
+        <li>Designing Your Life</li>
+        <li>The Psychology of Money</li>
+        <li>深度工作力</li>
+        <li>與成功有約</li>
+        <li>如何閱讀一本書</li>
+      </ul>
+    </div>
+
+    <!-- ====== 第二輪分類 ====== -->
+    <div class="section">
+      <div class="section-title">
+        🔸 第二輪 · 三大分類
+        <span class="badge">30 本書</span>
+      </div>
+      <div class="section-desc">
+        將推薦書目重新分為三個面向：退休生活、AI／網頁學習、以及最容易讀完且有成就感的書。
+      </div>
+
+      <div class="category-row">
+        <!-- 退休後閱讀 -->
+        <div class="category-card">
+          <h3>🧓 最適合退休後閱讀 <span>10 本</span></h3>
+          <ul>
+            <li>第二座山</li>
+            <li>人生4千個禮拜</li>
+            <li>第二曲線</li>
+            <li>被討厭的勇氣</li>
+            <li>與成功有約</li>
+            <li>Designing Your Life</li>
+            <li>The Psychology of Money</li>
+            <li>原來如此的對話術</li>
+            <li>如何閱讀一本書</li>
+            <li>Rework</li>
+          </ul>
+        </div>
+        <!-- AI / 網頁學習 -->
+        <div class="category-card">
+          <h3>🤖 最適合 AI／網頁學習 <span>10 本</span></h3>
+          <ul>
+            <li>深度工作力</li>
+            <li>Make Time</li>
+            <li>學習如何學習</li>
+            <li>Do Not Make Me Think</li>
+            <li>原子習慣</li>
+            <li>Rework</li>
+            <li>Designing Your Life</li>
+            <li>第二座山</li>
+            <li>與成功有約</li>
+            <li>The Psychology of Money</li>
+          </ul>
+        </div>
+        <!-- 最容易讀完 / 成就感 -->
+        <div class="category-card">
+          <h3>⚡ 最容易讀完・最有成就感 <span>10 本</span></h3>
+          <ul>
+            <li>原子習慣</li>
+            <li>學習如何學習</li>
+            <li>Do Not Make Me Think</li>
+            <li>Make Time</li>
+            <li>被討厭的勇氣</li>
+            <li>原來如此的對話術</li>
+            <li>Rework</li>
+            <li>深度工作力</li>
+            <li>如何閱讀一本書</li>
+            <li>Designing Your Life</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 第三輪層級排序 ====== -->
+    <div class="section">
+      <div class="section-title">
+        🧩 第三輪 · 閱讀層級
+        <span class="badge">先 3 · 再 7 · 後 20</span>
+      </div>
+      <div class="section-desc">
+        依實作順序安排：<strong>先用 3 本建立節奏，再用 7 本擴展至退休與 AI 學習，最後慢慢消化其餘 20 本</strong>。
+        降低開始門檻，保持持續閱讀的習慣。
+      </div>
+
+      <!-- 先讀 3 本 -->
+      <div class="level-block highlight-first">
+        <div class="level-label">
+          🥇 先讀 3 本
+          <span class="count">建立閱讀節奏</span>
+        </div>
+        <div class="level-desc">
+          容易切入、實用性高，直接對應日常目標：建立習慣、提升學習效率、理解網頁與使用者思維。
+        </div>
+        <ul class="book-list">
+          <li>原子習慣</li>
+          <li>學習如何學習</li>
+          <li>Do Not Make Me Think</li>
+        </ul>
+      </div>
+
+      <!-- 再讀 7 本 -->
+      <div class="level-block highlight-second">
+        <div class="level-label">
+          🥈 再讀 7 本
+          <span class="count">整合層 · 擴展視角</span>
+        </div>
+        <div class="level-desc">
+          把已建立的閱讀習慣，進一步延伸到時間管理、人生規劃、自我定位與退休後的長期方向。
+        </div>
+        <ul class="book-list">
+          <li>深度工作力</li>
+          <li>Make Time</li>
+          <li>第二座山</li>
+          <li>人生4千個禮拜</li>
+          <li>被討厭的勇氣</li>
+          <li>第二曲線</li>
+          <li>高效能人士的七個習慣</li>
+        </ul>
+      </div>
+
+      <!-- 後讀 20 本 -->
+      <div class="level-block highlight-third">
+        <div class="level-label">
+          🥉 後讀 20 本
+          <span class="count">延伸 · 深讀書單</span>
+        </div>
+        <div class="level-desc">
+          涵蓋人生、心理、AI、程式、網頁、理財與自我管理等面向。在穩定節奏後，依興趣與需求慢慢讀，不必急著一次完成。
+        </div>
+        <ul class="book-list" style="gap:0.3rem 0.8rem;">
+          <li>Rework</li>
+          <li>Designing Your Life</li>
+          <li>The Psychology of Money</li>
+          <li>如何閱讀一本書</li>
+          <li>原來如此的對話術</li>
+          <li>與成功有約</li>
+          <li>⋯⋯ 其餘延伸書目</li>
+        </ul>
+        <div class="text-muted" style="margin-top:0.4rem; font-size:0.9rem;">
+          💡 其餘 20 本可依興趣逐步選讀，包含人生、心理、AI、程式、理財等多元主題。
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 整體閱讀策略 ====== -->
+    <div class="section">
+      <div class="section-title">
+        🧭 整體閱讀策略
+      </div>
+      <div class="strategy-box">
+        <p>
+          <strong>📈 閱讀路線：</strong>
+          先建立「能讀完」的信心 → 再進入「能帶來思考」的內容 → 最後擴展到「能支撐退休後學習與創作」的長期書單。
+        </p>
+        <p>
+          此順序特別適合 <strong>退休學習生活</strong>，因為您同時有閱讀、英文、AI、新網站、職涯建議與自我成長等多重目標。
+        </p>
+      </div>
+    </div>
+
+    <!-- ====== 可持續延伸 ====== -->
+    <div class="section">
+      <div class="section-title">
+        🌱 可持續延伸的方向
+      </div>
+      <div class="extend-box">
+        <p>
+          <strong>📅 年度閱讀計畫：</strong> 將這份書單變成年度計畫，排成每月一本或每週固定頁數的形式。
+        </p>
+        <p>
+          <strong>🔗 與「每日一」目標結合：</strong> 讓閱讀、英文、AI 與網頁學習彼此互相支援，形成正向循環。
+        </p>
+        <p class="text-muted" style="margin-top:0.4rem;">
+          ✦ 可進一步將書單與筆記系統、共讀社群或學習日誌整合，深化退休後的學習質感。
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- ====== 簡易書單總覽 (補充) ====== -->
+    <div
+      style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:0.8rem 1.5rem; font-size:0.9rem; color:#4d5f73;">
+      <div><strong>📚 全書目數量</strong> 30 本</div>
+      <div><strong>🧓 退休</strong> 10 本 · <strong>🤖 AI／網頁</strong> 10 本 · <strong>⚡ 成就感</strong> 10 本</div>
+      <div><strong>📌 層級</strong> 先 3 · 再 7 · 後 20</div>
+    </div>
+
+    <div
+      style="margin-top:1.8rem; font-size:0.9rem; color:#7a8a9e; border-top:1px solid #eae6de; padding-top:1.2rem; text-align:center;">
+      依您的退休學習節奏，彈性調整閱讀順序 · 享受每一本書帶來的思考與樂趣
+    </div>
+
+  </div>
+
+</body>
+
+</html>

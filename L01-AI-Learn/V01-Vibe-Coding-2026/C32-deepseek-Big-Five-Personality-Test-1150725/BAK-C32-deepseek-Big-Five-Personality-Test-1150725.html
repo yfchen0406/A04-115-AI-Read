@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32.我的大五人格測試結果 ~ 115.07.25</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Font: Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== 全域 ===== */
+        * {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        body {
+            background-color: #f1f8fe;
+            color: #1a2b3c;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        /* ===== 淺藍色系 ===== */
+        :root {
+            --sky-light: #e3f0fa;
+            --sky-mid: #b3d4f0;
+            --sky-blue: #5a9bc7;
+            --deep-blue: #1f4a6e;
+            --accent-gold: #d4a843;
+            --card-shadow: rgba(31, 74, 110, 0.10);
+        }
+
+        /* ===== 標題區 ===== */
+        .header-title {
+            background: linear-gradient(135deg, #ffffff 0%, #e3f0fa 100%);
+            border-bottom: 2px dashed var(--sky-blue);
+            padding: 2rem 1rem 1.5rem;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 4px 20px rgba(31, 74, 110, 0.08);
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .header-title::after {
+            content: "✧  ✦  ✧";
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f1f8fe;
+            padding: 0 20px;
+            font-size: 1.4rem;
+            color: var(--sky-blue);
+            letter-spacing: 6px;
+        }
+        .header-title h1 {
+            font-weight: 900;
+            color: var(--deep-blue);
+            letter-spacing: 2px;
+        }
+        .header-title h1 i {
+            color: var(--accent-gold);
+            margin: 0 8px;
+        }
+        .header-title .sub-meta {
+            color: var(--deep-blue);
+            font-size: 1.0rem;
+            background: rgba(255,255,255,0.6);
+            display: inline-block;
+            padding: 0.2rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ===== 分頁導航 ===== */
+        .nav-pills-custom .nav-link {
+            color: var(--deep-blue);
+            background: rgba(255,255,255,0.7);
+            border-radius: 30px 6px 30px 6px;
+            margin: 0 4px;
+            font-weight: 500;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+        .nav-pills-custom .nav-link:hover {
+            background: #ffffff;
+            border-color: var(--sky-blue);
+            transform: translateY(-2px);
+        }
+        .nav-pills-custom .nav-link i {
+            color: var(--accent-gold);
+            margin-right: 6px;
+        }
+
+        /* ===== 卡片 ===== */
+        .card-sky {
+            background: #ffffff;
+            border-radius: 24px 8px 24px 8px;
+            border: 1px solid rgba(90, 155, 199, 0.25);
+            box-shadow: 0 6px 24px var(--card-shadow);
+            padding: 1.5rem 1.2rem;
+            transition: 0.3s;
+            height: 100%;
+        }
+        .card-sky:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(31, 74, 110, 0.15);
+            border-color: var(--sky-blue);
+        }
+        .card-sky .card-title {
+            font-weight: 700;
+            color: var(--deep-blue);
+            border-bottom: 2px solid var(--sky-light);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .card-sky .card-title i {
+            color: var(--accent-gold);
+            margin-right: 10px;
+        }
+
+        /* ===== 五因素標題 ===== */
+        .factor-title {
+            font-weight: 700;
+            color: var(--deep-blue);
+            font-size: 1.4rem;
+            border-left: 6px solid var(--sky-blue);
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .factor-title i {
+            color: var(--accent-gold);
+            margin-right: 10px;
+        }
+
+        /* ===== 子維度卡片 ===== */
+        .trait-item {
+            background: #f8fcff;
+            border-radius: 16px 4px 16px 4px;
+            padding: 1rem 1.2rem;
+            border-left: 4px solid var(--sky-blue);
+            margin-bottom: 0.8rem;
+            transition: 0.2s;
+        }
+        .trait-item:hover {
+            background: #eef6fc;
+        }
+        .trait-item .trait-name {
+            font-weight: 700;
+            color: var(--deep-blue);
+            font-size: 1.05rem;
+        }
+        .trait-item .trait-score {
+            font-weight: 700;
+            color: var(--accent-gold);
+            background: #ede3d6;
+            padding: 0 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        .trait-item .trait-desc {
+            color: #3d5a73;
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+            line-height: 1.6;
+        }
+        .trait-item .trait-level {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #5a7a8a;
+        }
+
+        /* ===== 手繪分隔 ===== */
+        .hand-drawn-divider {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--sky-blue);
+            letter-spacing: 8px;
+            margin: 2rem 0 1.5rem;
+            opacity: 0.4;
+            user-select: none;
+        }
+        .hand-drawn-divider span {
+            background: #f1f8fe;
+            padding: 0 20px;
+        }
+
+        /* ===== 頁腳 ===== */
+        .footer-sky {
+            background: linear-gradient(145deg, #b8d4eb, #a2c2dd);
+            color: #1a2b3c;
+            border-top: 3px solid var(--sky-blue);
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            border-radius: 40px 40px 0 0;
+        }
+        .footer-sky a {
+            color: var(--deep-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-sky a:hover {
+            color: #0d314b;
+            text-decoration: underline;
+        }
+        .footer-sky .footer-icon {
+            color: var(--accent-gold);
+            margin: 0 4px;
+        }
+
+        /* ===== 標籤 ===== */
+        .badge-level {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px 4px 30px 4px;
+        }
+        .badge-high {
+            background: #d4a843;
+            color: #fff;
+        }
+        .badge-neutral {
+            background: #8fa8b8;
+            color: #fff;
+        }
+        .badge-low {
+            background: #5a9bc7;
+            color: #fff;
+        }
+
+        /* ===== 返回頂端 ===== */
+        #backTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--sky-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 16px rgba(31, 74, 110, 0.3);
+            transition: 0.3s;
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        #backTop:hover {
+            background: var(--deep-blue);
+            transform: translateY(-3px);
+        }
+
+        /* ===== 響應式 ===== */
+        @media (max-width: 576px) {
+            .header-title h1 { font-size: 1.6rem; }
+            .factor-title { font-size: 1.2rem; }
+            .nav-pills-custom .nav-link {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        /* ===== 進度條自訂 ===== */
+        .progress-custom {
+            height: 22px;
+            border-radius: 30px;
+            background-color: #e9ecef;
+            overflow: hidden;
+        }
+        .progress-custom .progress-bar {
+            border-radius: 30px;
+            background: linear-gradient(90deg, #5a9bc7, #7fb5d9);
+            font-weight: 600;
+            font-size: 0.85rem;
+            line-height: 22px;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* ===== 長條圖 (子項目) ===== */
+        .sub-bar-group {
+            margin: 1rem 0 1.2rem;
+        }
+        .sub-bar-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.4rem;
+            gap: 8px;
+        }
+        .sub-bar-label {
+            width: 80px;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--deep-blue);
+            text-align: right;
+            padding-right: 6px;
+        }
+        .sub-bar-track {
+            flex: 1;
+            height: 18px;
+            background-color: #e9ecef;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        .sub-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #5a9bc7, #8fc1e0);
+            transition: width 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        .sub-bar-score {
+            width: 30px;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            text-align: left;
+        }
+        @media (max-width: 576px) {
+            .sub-bar-label {
+                width: 60px;
+                font-size: 0.75rem;
+            }
+            .sub-bar-score {
+                width: 24px;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* ===== 總結報告專用樣式 ===== */
+        .summary-block {
+            margin-bottom: 1.8rem;
+        }
+        .summary-block h4 {
+            color: var(--deep-blue);
+            font-weight: 700;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .summary-block p, .summary-block li {
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        .summary-block ul {
+            padding-left: 1.5rem;
+        }
+        .summary-block .highlight-box {
+            background: #f8fcff;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            border-left: 5px solid var(--accent-gold);
+            margin: 1rem 0;
+        }
+        .summary-block .keyword-tag {
+            display: inline-block;
+            background: var(--sky-light);
+            color: var(--deep-blue);
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            margin: 0.2rem 0.2rem;
+        }
+        .summary-block .divider-light {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--sky-mid), transparent);
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===== 標題區 ===== -->
+        <header class="header-title text-center">
+            <h1>
+                <i class="fas fa-feather-alt"></i>
+              32.我的大五人格測試結果 ~ 115.07.25
+                <i class="fas fa-feather-alt"></i>
+            </h1>
+            <div class="sub-meta mt-2">
+                <i class="fas fa-id-card"></i> 測試ID：<code>6a63ec4ad465c3440fb3c988</code>
+                <span class="mx-2">|</span>
+                <i class="far fa-calendar-alt"></i> 2026/7/25
+            </div>
+            <div class="hand-drawn-divider mt-2">
+                <span>✧  ✦  ✧  ✦  ✧</span>
+            </div>
+            <p class="mt-2 text-muted" style="font-size:0.95rem;">
+                <i class="fas fa-info-circle"></i> 免費開源大五人格特質測試 · 結果基於五因素模型
+            </p>
+        </header>
+
+        <!-- ===== 分頁導航 ===== -->
+        <nav class="nav nav-pills nav-pills-custom justify-content-center flex-wrap mb-4" style="gap: 6px;">
+            <a class="nav-link" href="#neuroticism"><i class="fas fa-brain"></i> 神經質</a>
+            <a class="nav-link" href="#extraversion"><i class="fas fa-users"></i> 外向性</a>
+            <a class="nav-link" href="#openness"><i class="fas fa-lightbulb"></i> 經驗開放性</a>
+            <a class="nav-link" href="#agreeableness"><i class="fas fa-handshake"></i> 親和性</a>
+            <a class="nav-link" href="#conscientiousness"><i class="fas fa-tasks"></i> 嚴謹性</a>
+            <!-- 新增總結報告分頁 -->
+            <a class="nav-link" href="#summary"><i class="fas fa-file-alt"></i> 總結報告</a>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- 一、神經質 -->
+        <!-- ============================================================ -->
+        <section id="neuroticism" class="mb-4">
+            <div class="factor-title">
+                <i class="fas fa-brain"></i> 神經質 (Neuroticism)
+            </div>
+            <div class="card-sky">
+                <!-- 總分與進度條 -->
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-md-6">
+                        <span class="fw-bold">總分：41 / 120</span>
+                        <span class="badge bg-secondary ms-2">34.2%</span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" role="progressbar" style="width: 34.2%;" aria-valuenow="41" aria-valuemin="0" aria-valuemax="120">34.2%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 長條圖：六個子項目 -->
+                <div class="sub-bar-group">
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">焦慮</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 40%;">8</div>
+                        </div>
+                        <span class="sub-bar-score">8</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">憤怒</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 20%;">4</div>
+                        </div>
+                        <span class="sub-bar-score">4</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">抑鬱</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 35%;">7</div>
+                        </div>
+                        <span class="sub-bar-score">7</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">自覺</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 40%;">8</div>
+                        </div>
+                        <span class="sub-bar-score">8</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">放縱</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 30%;">6</div>
+                        </div>
+                        <span class="sub-bar-score">6</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">脆弱</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 40%;">8</div>
+                        </div>
+                        <span class="sub-bar-score">8</span>
+                    </div>
+                </div>
+
+                <p><strong>神經質</strong>指的是經歷負面情緒的傾向。</p>
+                <p class="text-primary fw-bold">你的神經質得分較低。</p>
+
+                <!-- 原有子維度描述 -->
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">焦慮 <span class="trait-level">(Anxiety)</span></span>
+                        <span><span class="trait-score">8</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">焦慮個體的大腦「戰鬥或逃跑」系統過於容易和過於頻繁地被啟動。因此，高焦慮者經常感到有危險即將發生。他們可能害怕特定情況，也可能只是普遍地感到害怕。他們感到緊張、不安和神經質。低焦慮者通常冷靜且無所畏懼。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">憤怒 <span class="trait-level">(Anger)</span></span>
+                        <span><span class="trait-score">4</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">在憤怒方面得分高的人在事情不順心時會感到憤怒。他們對公平對待非常敏感，當感到被欺時會感到怨恨和痛苦。這個量表衡量的是感到憤怒的傾向；個體是否表達煩惱和敵意取決於他們的親和性水平。低分者不容易或不經常生氣。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">抑鬱 <span class="trait-level">(Depression)</span></span>
+                        <span><span class="trait-score">7</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">這個量表衡量的是感到悲傷、沮喪和氣餒的傾向。高分者缺乏能量，難以開始活動。低分者通常不會有這些抑鬱的感覺。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">自覺 <span class="trait-level">(Self-Consciousness)</span></span>
+                        <span><span class="trait-score">8</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">自覺的人對別人對自己的看法很敏感。他們對被拒絕和嘲笑的擔憂使他們在他人面前感到害羞和不舒服。他們容易尷尬，經常感到羞愧。他們對他人會批評或取笑自己的擔憂是誇大的和不現實的，但他們的笨拙和不安可能使這些擔憂成為自我實現的預言。相比之下，低分者並不會受到每個人都在觀看和評判自己的錯誤印象的困擾。他們在社交場合中不會感到緊張。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">放縱 <span class="trait-level">(Immoderation)</span></span>
+                        <span><span class="trait-score">6</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">放縱的人感到強烈的渴望和衝動，難以抗拒。他們傾向於追求短期的快樂和獎勵，而不是長期的後果。低分者不會經歷強烈的、不可抗拒的渴望，因此不會發現自己受到過度放縱的誘惑。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">脆弱 <span class="trait-level">(Vulnerability)</span></span>
+                        <span><span class="trait-score">8</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">在脆弱性上得分高的人在壓力或壓力下會經歷恐慌、混亂和無助。低分者在壓力下感到更穩定、自信和清晰的思考。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 二、外向性 -->
+        <!-- ============================================================ -->
+        <section id="extraversion" class="mb-4">
+            <div class="factor-title">
+                <i class="fas fa-users"></i> 外向性 (Extraversion)
+            </div>
+            <div class="card-sky">
+                <!-- 總分與進度條 -->
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-md-6">
+                        <span class="fw-bold">總分：63 / 120</span>
+                        <span class="badge bg-secondary ms-2">52.5%</span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" role="progressbar" style="width: 52.5%;" aria-valuenow="63" aria-valuemin="0" aria-valuemax="120">52.5%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 長條圖 -->
+                <div class="sub-bar-group">
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">友善</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 35%;">7</div>
+                        </div>
+                        <span class="sub-bar-score">7</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">合群性</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 20%;">4</div>
+                        </div>
+                        <span class="sub-bar-score">4</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">自信</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 75%;">15</div>
+                        </div>
+                        <span class="sub-bar-score">15</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">活動水平</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 65%;">13</div>
+                        </div>
+                        <span class="sub-bar-score">13</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">尋求刺激</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 30%;">6</div>
+                        </div>
+                        <span class="sub-bar-score">6</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">快樂</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 90%;">18</div>
+                        </div>
+                        <span class="sub-bar-score">18</span>
+                    </div>
+                </div>
+
+                <p><strong>外向性</strong>以明顯的與外部世界的接觸為特徵。</p>
+                <p>外向者喜歡與人相處，充滿活力，經常經歷極的情緒。他們傾向於熱情、行動導向，並且可能會對令人興奮的機會說「是！」或「我們走吧！」。在群體中，他們喜歡交談，表現自己，並吸引別人的注意。</p>
+                <p>內向者缺乏外向者的熱情、能量和活動水平。他們傾向於安靜、低調、深思熟慮，並脫離社會世界。他們缺乏社會參與不應被解釋為害羞或抑鬱；內向者只是需要比外向者更少的刺激，並且更喜歡獨處。</p>
+                <p class="text-primary fw-bold">你的外向性得分較低，表明你是內向、保守和安靜的。你享受孤獨和獨自活動。你的社交活動通常僅限於少數幾個親密的朋友。</p>
+
+                <!-- 原有子維度描述 -->
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">友善 <span class="trait-level">(Friendliness)</span></span>
+                        <span><span class="trait-score">7</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">友善的人真心喜歡別人，並公開表達對他人的積極感情。他們很快結交朋友，並且很容易形成親密的關係。友善得分低的人不一定冷漠和敵對，但他們不會主動接近他人，並且被認為是疏遠和保守的。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">合群性 <span class="trait-level">(Gregariousness)</span></span>
+                        <span><span class="trait-score">4</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">合群的人覺得與他人在一起令人愉快且有益。他們喜歡人群的興奮。低分者往往覺得被大人群壓倒，因此會積極避開大人群。他們不一定不喜歡有時與人相處，但他們對隱私和獨處的需求遠遠大於在這個量表上得分高的人。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">自信 <span class="trait-level">(Assertiveness)</span></span>
+                        <span><span class="trait-score">15</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">自信得分高的人喜歡發言、掌控並指揮他人的活動。他們傾向於在群體中成為領導者。低分者傾向於不多說話，他人控制群體的活動。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">活動水平 <span class="trait-level">(Activity Level)</span></span>
+                        <span><span class="trait-score">13</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">活躍的人過著快節奏、忙碌的生活。他們快速、充滿活力和積極地行動，並參與許多活動。在這個量表上得分低的人則遵循更慢和更悠閒、放鬆的節奏。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">尋求刺激 <span class="trait-level">(Excitement-Seeking)</span></span>
+                        <span><span class="trait-score">6</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">在這個量表上得分高的人，在沒有高水平刺激的情況下容易感到無聊。他們喜歡明亮的燈光和熙熙攘攘的環境。他們可能會冒險尋求刺激。低分者會被噪音和喧鬧所壓倒，並且不喜歡尋求刺激。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">快樂 <span class="trait-level">(Cheerfulness)</span></span>
+                        <span><span class="trait-score">18</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">這個量表衡量的是積極的情緒和感覺，而不是負面情緒（這是神經質領域的一部分）。在這個量表上得分高的人通常會經歷一系列積極的情緒，包括幸福、熱情、樂觀和喜悅。低分者不太容易有這樣充滿活力的高昂情緒。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 三、經驗開放性 -->
+        <!-- ============================================================ -->
+        <section id="openness" class="mb-4">
+            <div class="factor-title">
+                <i class="fas fa-lightbulb"></i> 經驗開放性 (Openness to Experience)
+            </div>
+            <div class="card-sky">
+                <!-- 總分與進度條 -->
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-md-6">
+                        <span class="fw-bold">總分：62 / 120</span>
+                        <span class="badge bg-secondary ms-2">51.7%</span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" role="progressbar" style="width: 51.7%;" aria-valuenow="62" aria-valuemin="0" aria-valuemax="120">51.7%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 長條圖 -->
+                <div class="sub-bar-group">
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">想像力</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 55%;">11</div>
+                        </div>
+                        <span class="sub-bar-score">11</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">藝術興趣</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 50%;">10</div>
+                        </div>
+                        <span class="sub-bar-score">10</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">情感性</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 60%;">12</div>
+                        </div>
+                        <span class="sub-bar-score">12</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">冒險精神</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 50%;">10</div>
+                        </div>
+                        <span class="sub-bar-score">10</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">智力</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 45%;">9</div>
+                        </div>
+                        <span class="sub-bar-score">9</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">自由主義</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 50%;">10</div>
+                        </div>
+                        <span class="sub-bar-score">10</span>
+                    </div>
+                </div>
+
+                <p><strong>經驗開放性</strong>描述了一種認知風格的維度，區分了富有想像力、創造力的人和腳踏實地、傳統的人。</p>
+                <p class="text-primary fw-bold">你的經驗開放性得分較低，表明你喜歡以簡單明瞭的方式思考。別人形容你腳踏實地、實際且保守。</p>
+
+                <!-- 原有子維度描述 -->
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">想像力 <span class="trait-level">(Imagination)</span></span>
+                        <span><span class="trait-score">11</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">對於富有想像力的人來說，現實世界往往過於平淡無奇。在這個量表上得分高的人使用幻想作為創造更豐富、更有趣世界的一種方式。低分者則更多地面向事實而非幻想。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">藝術興趣 <span class="trait-level">(Artistic Interests)</span></span>
+                        <span><span class="trait-score">10</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">在這個量表上得分高的人熱愛美，不論是在藝術還是自然中。他們容易被藝術和自然事件吸引和沉浸其中。他們不一定受過藝術訓練或有藝術天賦，儘管許多人會有。這個量表的定義特徵是對自然和人工美的興趣和欣賞。低分者缺乏美感和對藝術的興趣。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">情感性 <span class="trait-level">(Emotionality)</span></span>
+                        <span><span class="trait-score">12</span> <span class="badge badge-level badge-neutral">普通</span></span>
+                    </div>
+                    <div class="trait-desc">在情感性上得分高的人能夠很好地接觸和察覺自己的情感。低分者對自己的情感較少察覺，並且不傾向於公開表達情感。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">冒險精神 <span class="trait-level">(Adventurousness)</span></span>
+                        <span><span class="trait-score">10</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">在冒險精神上得分高的人渴望嘗試新活動，旅行到外國，體驗不同的事物。他們覺得熟悉和常規很無聊，會因為路徑不同而選擇新的回家路線。低分者對變化感到不舒服，更喜歡熟悉的常規。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">智力 <span class="trait-level">(Intellect)</span></span>
+                        <span><span class="trait-score">9</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">智力和藝術興趣是經驗開放性中最重要、最核心的兩個方面。在智力上得分高的人喜歡玩弄思想。他們對新奇和不尋常的想法持開放態度，喜歡辯論智力問題。他們喜歡談話、難題和腦筋急轉彎。在智力上得分低的人更喜歡與人或物打交道，而不是與想法打交道。他們認為智力活動是浪費時間。智力不應與智商等同。智力是一種智力風格，而不是智力能力，儘管在智力上得分高的人在標準智力測試中的得分略高於智力得分低的人。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">自由主義 <span class="trait-level">(Liberalism)</span></span>
+                        <span><span class="trait-score">10</span> <span class="badge badge-level badge-low">低</span></span>
+                    </div>
+                    <div class="trait-desc">心理自由主義指的是挑戰權威、傳統和傳統價值觀的準備。在其最極端的形式中，心理自由主義甚至可以代表對規則的公然敵對、對違法者的同情以及對模糊、混亂和無序的熱愛。心理保守主義者則更喜歡通過遵守傳統帶來的安全和穩定。心理自由主義和保守主義並不等同於政治立場，但確實傾向於將個人傾向於某些政黨。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 四、親和性 -->
+        <!-- ============================================================ -->
+        <section id="agreeableness" class="mb-4">
+            <div class="factor-title">
+                <i class="fas fa-handshake"></i> 親和性 (Agreeableness)
+            </div>
+            <div class="card-sky">
+                <!-- 總分與進度條 -->
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-md-6">
+                        <span class="fw-bold">總分：87 / 120</span>
+                        <span class="badge bg-secondary ms-2">72.5%</span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" role="progressbar" style="width: 72.5%;" aria-valuenow="87" aria-valuemin="0" aria-valuemax="120">72.5%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 長條圖 -->
+                <div class="sub-bar-group">
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">信任</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 60%;">12</div>
+                        </div>
+                        <span class="sub-bar-score">12</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">道德感</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 90%;">18</div>
+                        </div>
+                        <span class="sub-bar-score">18</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">利他主義</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 70%;">14</div>
+                        </div>
+                        <span class="sub-bar-score">14</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">合作</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 75%;">15</div>
+                        </div>
+                        <span class="sub-bar-score">15</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">謙虛</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 75%;">15</div>
+                        </div>
+                        <span class="sub-bar-score">15</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">同情心</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 65%;">13</div>
+                        </div>
+                        <span class="sub-bar-score">13</span>
+                    </div>
+                </div>
+
+                <p><strong>親和性</strong>反映了個體在合作和社會和諧方面的差異。親和的個體重視與他人相處融洽。</p>
+                <p>因此，他們體貼、友善、慷慨、樂於助人，並且願意與他人妥協自己的利益。親和的人也對人性持樂觀態度。他們相信人基本上是誠實、正派和值得信賴的。</p>
+                <p>不親和的人將自我利益置於與他人相處之上。他們通常不關心他人的福祉，因此不太可能為他人付出。有時他們對他人動機的懷疑使他們變得多疑、不友好和不合作。</p>
+                <p class="text-primary fw-bold">你的親和性得分很高，這表明你對他人的需求和福祉有強烈的興趣。你令人愉快、富有同情心且合作。</p>
+
+                <!-- 原有子維度描述 -->
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">信任 <span class="trait-level">(Trust)</span></span>
+                        <span><span class="trait-score">12</span> <span class="badge badge-level badge-neutral">普通</span></span>
+                    </div>
+                    <div class="trait-desc">具有高度信任的人認為大多數人是公平、誠實且懷有良好意圖的。低信任度的人則認為他人自私、狡猾且具有潛在危險。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">道德感 <span class="trait-level">(Morality)</span></span>
+                        <span><span class="trait-score">18</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">在這個量表上得分高的人認為與他人交往時不需要偽裝或操縱，因此他們坦率、直言不諱且真誠。得分低的人認為在社會關係中需要一定程度的欺騙。人們發現與這個量表上得分高的人相處相對容易。與得分低的人相處則相對困難一些。需要明確的是，得分低的人並非沒有原則或不道德；他們只是更加謹慎，不願意公開揭露全部真相。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">利他主義 <span class="trait-level">(Altruism)</span></span>
+                        <span><span class="trait-score">14</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">利他主義者發現幫助他人真正令人滿足。因此，他們通常願意幫助那些需要幫助的人。利他主義者認為，為他人做事是一種自我實現，而不是自我犧牲。在這個量表上得分低的人則不特別喜歡幫助那些需要幫助的人。對他們來說，求助請求感覺像是一種負擔，而不是自我實現的機會。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">合作 <span class="trait-level">(Cooperation)</span></span>
+                        <span><span class="trait-score">15</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">在這個量表上得分高的人不喜歡對抗。他們非常願意妥協或否定自己的需求以與他人和睦相處。在這個量表上得分低的人則更可能通過恐嚇他人來達到自己的目的。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">謙虛 <span class="trait-level">(Modesty)</span></span>
+                        <span><span class="trait-score">15</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">在這個量表上得分高的人不喜歡自己比其他人優越。在某些情況下，這種態度可能源於自信心或自尊心低。然而，一些自尊心高的人也認為不謙虛是不合適的。那些願意形容自己優越的人往往被他人視為令人討厭的自大者。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">同情心 <span class="trait-level">(Sympathy)</span></span>
+                        <span><span class="trait-score">13</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">在這個量表上得分高的人心地善良且富有同情心。他們能感同身受他人的痛苦，且容易被感動。得分低的人不會被人類的痛苦強烈地影響。他們以基於理性做出客觀判斷為榮。他們更關心真相和公正，而不是憐憫。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 五、嚴謹性 -->
+        <!-- ============================================================ -->
+        <section id="conscientiousness" class="mb-4">
+            <div class="factor-title">
+                <i class="fas fa-tasks"></i> 嚴謹性 (Conscientiousness)
+            </div>
+            <div class="card-sky">
+                <!-- 總分與進度條 -->
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-md-6">
+                        <span class="fw-bold">總分：104 / 120</span>
+                        <span class="badge bg-secondary ms-2">86.7%</span>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="progress progress-custom">
+                            <div class="progress-bar" role="progressbar" style="width: 86.7%;" aria-valuenow="104" aria-valuemin="0" aria-valuemax="120">86.7%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 長條圖 -->
+                <div class="sub-bar-group">
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">自我效能</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 85%;">17</div>
+                        </div>
+                        <span class="sub-bar-score">17</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">有條理</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 80%;">16</div>
+                        </div>
+                        <span class="sub-bar-score">16</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">責任感</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 80%;">16</div>
+                        </div>
+                        <span class="sub-bar-score">16</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">成就追求</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 95%;">19</div>
+                        </div>
+                        <span class="sub-bar-score">19</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">自律</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 90%;">18</div>
+                        </div>
+                        <span class="sub-bar-score">18</span>
+                    </div>
+                    <div class="sub-bar-item">
+                        <span class="sub-bar-label">審慎</span>
+                        <div class="sub-bar-track">
+                            <div class="sub-bar-fill" style="width: 90%;">18</div>
+                        </div>
+                        <span class="sub-bar-score">18</span>
+                    </div>
+                </div>
+
+                <p><strong>嚴謹性</strong>關注的是我們如何控制、調節和指導衝動。</p>
+                <p>衝動非本質上是壞的；有時時間限制需要快速決策，按照我們的第一衝動行事可能是有效的反應。此外，在玩樂而非工作時，隨性和衝動行事可以帶來樂趣。衝動的人可能被他人視為多彩、有趣和瘋狂的。</p>
+                <p>儘管如此，衝動行事會在多方面帶來麻煩。一些衝動是反社會的。不受控制的反社會行為不僅會傷害社會的其他成員，還可能導致對這些衝動行為的施害者進行報復。衝動行為的另一個問題是，它們通常帶來即時的滿足，但會產生不良的長期後果。</p>
+                <p>在嚴謹性量表上得分高的人事實上被他人視為聰明。高嚴謹性的好處是顯而易見的。嚴謹的人通過有目的的計劃和堅持達到高水平的成功。他們也被他人積極地看作聰明和可靠。負面的是，他們可能是強迫性的完美主義者和工作狂。此外，極度嚴謹的人可能被認為是刻板和無聊的。</p>
+                <p class="text-primary fw-bold">你的嚴謹性得分很高，這意味著你設立了明確的目標，並決心追求它們。人們認為你可靠且勤奮。</p>
+
+                <!-- 原有子維度描述 -->
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">自我效能 <span class="trait-level">(Self-Efficacy)</span></span>
+                        <span><span class="trait-score">17</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">自我效能描述了對自己完成事情能力的信心。高分者相信他們擁有成功所需的智慧（常識）、動力和自我控制。低分者則感到自己無法有效，可能覺得自己無法掌控生活。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">有條理 <span class="trait-level">(Orderliness)</span></span>
+                        <span><span class="trait-score">16</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">在有條理方面得分高的人非常有組織。他們喜歡按照常規和計劃生活。他們會列清單並做計劃。低分者往往是無組織和分散的。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">責任感 <span class="trait-level">(Dutifulness)</span></span>
+                        <span><span class="trait-score">16</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">這個量表反映了一個人的責任感和義務感的強度。在這個量表上得分高的人有強烈的道德義務感。低分者覺得契約、規則和規定過於限制。他們可能被認為是不可靠甚至是不負責任的。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">成就追求 <span class="trait-level">(Achievement-Striving)</span></span>
+                        <span><span class="trait-score">19</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">在這個量表上得分高的人努力追求卓越。他們渴望被認可為成功者，這讓他們在追求崇高目標的道路上保持正軌。他們通常有強烈的生活方向感，但極高的分數可能表明過於專注於工作。低分者滿足於以最少量的工作度過，可能被他人視為懶惰。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">自律 <span class="trait-level">(Self-Discipline)</span></span>
+                        <span><span class="trait-score">18</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">自律，即許多人所說的意志力，是指在困難或不愉快的任務中堅持到底的能力。擁有高度自律的人能克服開始任務的懶惰，並在面對干擾時保持正軌。那些自律性低的人會拖延，表現出糟糕的執行力，經常無法完成他們非常想完成的任務。</div>
+                </div>
+
+                <div class="trait-item">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <span class="trait-name">審慎 <span class="trait-level">(Cautiousness)</span></span>
+                        <span><span class="trait-score">18</span> <span class="badge badge-level badge-high">高</span></span>
+                    </div>
+                    <div class="trait-desc">審慎描述的是在行動前仔細考慮可能性的傾向。在審慎量表上得分高的人在做決策時會花時間思考。低分者往往會說出或做出第一個想到的事，而不考慮替代方案及其可能後果。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- 六、總結報告（新增） -->
+        <!-- ============================================================ -->
+        <section id="summary" class="mb-4">
+            <div class="factor-title">
+                <i class="fas fa-file-alt"></i> 總結報告
+            </div>
+            <div class="card-sky summary-block">
+
+                <!-- 一、人格畫像總覽 -->
+                <h4>一、人格畫像總覽</h4>
+                <p>根據您的測試結果，您的人格特質呈現出<strong>高度嚴謹、高度親和、內向且情緒穩定</strong>的鮮明組合。這是一類被稱為「<strong>沉靜的實幹家</strong>」或「<strong>可靠的守護者</strong>」型人格。</p>
+                <p>您不是那種在人群中光芒四射的焦點人物，但您是有深度、有原則、值得信賴的人。您用行動而非言語證明自己，用堅持而非激情達成目標。您不追求刺激，不渴望喧鬧，但在您選擇的領域裡，您會以令人敬佩的自律和責任感做到極致。</p>
+                <hr class="divider-light">
+
+                <!-- 二、五大維度詳細解讀（濃縮版） -->
+                <h4>二、五大維度詳細解讀</h4>
+
+                <div class="highlight-box">
+                    <h5>1. 神經質 —— 低分（情緒高度穩定）⭐ 核心優勢</h5>
+                    <p>您在負面情緒的體驗上得分較低，這意味著您擁有<strong>相當出色的情緒韌性</strong>。您不太容易被焦慮吞噬、被憤怒左右、或被悲傷拖垮。</p>
+                    <ul>
+                        <li><strong>焦慮 (8)</strong>：冷靜沉著，不易感到莫名的緊張或危險感。</li>
+                        <li><strong>憤怒 (4)</strong>：極難被激怒，對生活中的不如意非常包容。</li>
+                        <li><strong>抑鬱 (7)</strong>：很少陷入低落情緒，精力狀態良好。</li>
+                        <li><strong>脆弱 (8)</strong>：壓力情境下能保持頭腦清晰，不易慌亂。</li>
+                    </ul>
+                    <p><strong>這對您意味著</strong>：您具備一種寶貴的「心理盔甲」。在他人被壓力擊垮時，您能保持穩定；在危機來臨時，您能理性應對。這種特質讓您成為團隊中可以依靠的穩定力量。</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h5>2. 外向性 —— 低分（內向、安靜）</h5>
+                    <p>您屬於典型的內向者，但這<strong>不等於害羞或社交焦慮</strong>。您只是對社交刺激的需求較低，更享受獨處或與小圈子深交。</p>
+                    <ul>
+                        <li><strong>友善 (7)</strong>：不主動接近人，但並非冷漠，只是偏好保持距離。</li>
+                        <li><strong>合群性 (4)</strong>：不喜歡人群和喧鬧，對隱私和獨處有強烈需求。</li>
+                        <li><strong>自信 (15)</strong>：<strong>反差特質</strong>——雖然內向，但在必要時能強勢主導。</li>
+                        <li><strong>活動水平 (13)</strong>：生活節奏快，精力充沛，忙碌充實。</li>
+                        <li><strong>快樂 (18)</strong>：內心有豐富的積極情緒體驗，幸福感強。</li>
+                    </ul>
+                    <p><strong>關鍵洞察</strong>：您是一個「<strong>有領導力的內向者</strong>」。您不需要透過社交來獲取能量，但當需要站出來說話、掌控局面時，您完全具備這樣的能力。您的快樂源自內心而非外界的認可。</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h5>3. 經驗開放性 —— 低分（務實、傳統）</h5>
+                    <p>您偏好熟悉的路徑、清晰的思路和務實的方式。這並非缺乏想像力，而是您選擇將精力投入到<strong>看得見、摸得著的現實事務</strong>中。</p>
+                    <ul>
+                        <li><strong>想像力 (11)</strong>：面向事實而非幻想，腳踏實地。</li>
+                        <li><strong>藝術興趣 (10)</strong>：對美和藝術的關注度不高。</li>
+                        <li><strong>情感性 (12)</strong>：能感知情感但不沉溺其中。</li>
+                        <li><strong>冒險精神 (10)</strong>：不喜歡變化和不確定性，偏好常規。</li>
+                        <li><strong>智力 (9)</strong>：更願意與人或事打交道，而非抽象概念。</li>
+                        <li><strong>自由主義 (10)</strong>：尊重權威和傳統，偏好秩序與穩定。</li>
+                    </ul>
+                    <p><strong>這對您意味著</strong>：您是「<strong>務實的執行者</strong>」。別人還在空想和討論時，您已經在做了。您不追求新奇體驗，這使您能夠專注於深耕某一領域，成為真正有深度的人。</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h5>4. 親和性 —— 高分（溫暖、合作、利他）⭐ 核心優勢</h5>
+                    <p>這是您人格中最溫暖的部分。您真心關心他人，願意為他人付出，是那種<strong>別人遇到困難時會第一個想到的人</strong>。</p>
+                    <ul>
+                        <li><strong>道德感 (18)</strong>：坦率真誠，不虛偽不做作，令人感到可信。</li>
+                        <li><strong>利他主義 (14)</strong>：樂於助人，從幫助他人中獲得滿足感。</li>
+                        <li><strong>合作 (15)</strong>：避免對抗，願意妥協以維持和諧。</li>
+                        <li><strong>謙虛 (15)</strong>：不炫耀不張揚，不把自己置於他人之上。</li>
+                        <li><strong>同情心 (13)</strong>：心地善良，能感同身受他人的痛苦。</li>
+                        <li><strong>信任 (12)</strong>：對他人的信任度中等，不盲目也不多疑。</li>
+                    </ul>
+                    <p><strong>關鍵洞察</strong>：您的高親和性不是軟弱，而是一種<strong>有原則的善良</strong>。您不是那種被人利用的「老好人」，而是有清晰的道德底線，並願意為此真誠付出的人。您的謙虛與道德感讓您贏得真正的尊重而非僅僅是喜歡。</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h5>5. 嚴謹性 —— 高分（高度自律、目標導向）⭐ 核心優勢</h5>
+                    <p>這是您人格中最突出、最具生產力的特質。您的嚴謹性得分處於<strong>非常高的水平</strong>，這讓您在生活的各個領域都能取得實實在在的成就。</p>
+                    <ul>
+                        <li><strong>自我效能 (17)</strong>：對自身能力有充足的信心。</li>
+                        <li><strong>有條理 (16)</strong>：高度組織化，喜歡計畫和清單。</li>
+                        <li><strong>責任感 (16)</strong>：強烈的道德和義務感，極其可靠。</li>
+                        <li><strong>成就追求 (19)</strong>：追求卓越，渴望成功，目標明確。</li>
+                        <li><strong>自律 (18)</strong>：意志力極強，能堅持完成困難任務。</li>
+                        <li><strong>審慎 (18)</strong>：深思熟慮，不衝動，三思而後行。</li>
+                    </ul>
+                    <p><strong>這對您意味著</strong>：您擁有<strong>頂尖的執行力和自我管理能力</strong>。您設定目標、制定計畫、然後堅持不懈地執行。在他人拖延時您行動，在他人放棄時您堅持。您是最可靠的合作夥伴和最值得信賴的責任承擔者。</p>
+                </div>
+
+                <hr class="divider-light">
+
+                <!-- 三、綜合性格畫像 -->
+                <h4>三、綜合性格畫像</h4>
+                <p>綜合以上分析，您的性格可以用以下關鍵詞概括：</p>
+                <div style="text-align:center; margin:1rem 0;">
+                    <span class="keyword-tag">穩定</span>
+                    <span class="keyword-tag">自律</span>
+                    <span class="keyword-tag">善良</span>
+                    <span class="keyword-tag">務實</span>
+                    <span class="keyword-tag">可靠</span>
+                    <span class="keyword-tag">沉靜</span>
+                    <span class="keyword-tag">堅韌</span>
+                </div>
+                <p>您不是一個張揚的人，但您是一個<strong>有分量</strong>的人。您的情緒穩定性讓您成為風暴中的錨點；您的嚴謹性讓您成為目標的達成者；您的親和性讓您成為值得深交的朋友和同事。</p>
+                <p>您不需要人群中閃耀，但您在關鍵時刻從不缺席。您可能不是最快的人，但您是最穩的人；您可能不是最熱鬧的人，但您是最真誠的人。</p>
+
+                <hr class="divider-light">
+
+                <!-- 四、建議與提醒 -->
+                <h4>四、建議與提醒</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>✅ 充分發揮的優勢</h5>
+                        <ul>
+                            <li><strong>執行力領域</strong>：管理崗位、專案管理、任何需要長期堅持的工作</li>
+                            <li><strong>人際關係領域</strong>：教育、諮詢、需要真誠合作的團隊工作</li>
+                            <li><strong>獨立工作領域</strong>：需要深度專注和自律的自由職業、研究工作</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>⚠️ 需要注意的平衡點</h5>
+                        <ul>
+                            <li><strong>過度完美主義</strong>：偶爾的放鬆和「夠好」而非「完美」是可以接受的。</li>
+                            <li><strong>社交參與不足</strong>：刻意安排一些必要的社交接觸是值得的。</li>
+                            <li><strong>對新事物的抗拒</strong>：在快速變化的環境中，有時需要對不熟悉的事物保持一定的好奇心。</li>
+                            <li><strong>過度謙遜</strong>：學會為自己發聲，讓他人知道您的價值和成就。</li>
+                        </ul>
+                    </div>
+                </div>
+                <h5>💡 成長建議</h5>
+                <ul>
+                    <li><strong>主動建立少數深度關係</strong>：您不需要很多朋友，但值得花精力維護那幾段真正重要的關係。</li>
+                    <li><strong>嘗試「計畫內的即興」</strong>：在您的日程表中，定期留出一小段時間做一件計畫之外的事情。</li>
+                    <li><strong>學會委託與信任他人</strong>：您習慣於靠自己完成一切，但適當地放手也是一種能力。</li>
+                    <li><strong>認可自己的成就</strong>：定期回顧自己完成的事情，給自己應有的肯定。</li>
+                </ul>
+
+                <hr class="divider-light">
+
+                <!-- 五、結語 -->
+                <h4>五、結語</h4>
+                <p>您的人格是一幅<strong>沉靜而有力量</strong>的畫卷。您可能不是那種讓人一見難忘的類型，但您一定是那種<strong>相處越久、越讓人敬重</strong>的人。</p>
+                <p>世界需要光芒四射的激勵者，也需要像您這樣<strong>穩住根基的執行者</strong>。您以自律贏得自由，以善良贏得信任，以穩定贏得尊重。</p>
+                <p><strong>請珍惜並善用這份獨特的人格組合。您已經在路上了，而這條路，走得比大多數人都更堅實。</strong></p>
+
+                <div class="text-muted small mt-3" style="border-top:1px dashed #ccc; padding-top:1rem;">
+                    <i class="fas fa-info-circle"></i> 本報告由AI基於您的測試結果生成，僅供參考。人格測試是了解自我的工具之一，不代表全部真相。您的價值遠高於任何分數。
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 頁尾資訊 ===== -->
+        <div class="hand-drawn-divider">
+            <span>✧  ✦  ✧  ✦  ✧</span>
+        </div>
+
+        <div class="text-center text-muted small py-3">
+            <i class="fas fa-link"></i> 原始結果頁面：
+            <a href="https://bigfive-test.com/result/6a63ec4ad465c3440fb3c988" target="_blank" class="text-primary">
+                https://bigfive-test.com/result/6a63ec4ad465c3440fb3c988
+            </a>
+            <br>
+            <i class="far fa-copyright"></i> 2026 — B5 Holding AS
+        </div>
+
+    </div>
+
+    <!-- ===== 頁腳 ===== -->
+    <footer class="footer-sky">
+        <div class="container text-center">
+            <span class="footer-icon"><i class="fas fa-feather-alt"></i></span>
+            大五人格測試結果報告
+            <span class="mx-2 text-muted">|</span>
+            <span class="small">基於五因素模型 · 免費開源測試</span>
+            <div class="mt-1 small">
+                <i class="fas fa-tag me-1"></i> 測試ID：<code>6a63ec4ad465c3440fb3c988</code>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== 返回頂端按鈕 ===== -->
+    <button id="backTop" title="回到頂端">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- 返回頂端功能 -->
+    <script>
+        const backBtn = document.getElementById('backTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backBtn.style.display = 'flex';
+            } else {
+                backBtn.style.display = 'none';
+            }
+        });
+        backBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

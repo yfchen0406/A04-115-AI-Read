@@ -510,6 +510,7 @@ const cardsData = [
     link: "/C01-AI-Codex-2026/A01-Index-AI-Codex-2026/A01-Index-AI-Codex-1150721.html",
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-solid fa-robot",
+   // iconClass: "fa-brands fa-openai",
     enterName: "GPT Codex",
     disable: "",
   },

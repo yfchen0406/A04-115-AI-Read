@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.yfchen網站改版 · 全站搜尋與媒體封存計畫 (詳細版) ~ 115.07.23</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Google Font: Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== 全域 ===== */
+    * {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    body {
+      background-color: #f1f8fe;
+      color: #1a2b3c;
+      padding-top: 76px;
+    }
+
+    /* ===== 淺藍色系 ===== */
+    :root {
+      --sky-light: #e3f0fa;
+      --sky-mid: #b3d4f0;
+      --sky-blue: #5a9bc7;
+      --deep-blue: #1f4a6e;
+      --accent-gold: #d4a843;
+      --card-shadow: rgba(31, 74, 110, 0.10);
+    }
+
+    /* ===== 導覽列 ===== */
+    .navbar-sky {
+      background: linear-gradient(145deg, #d4e6f5 0%, #b8d4eb 100%);
+      border-bottom: 3px solid var(--sky-blue);
+      box-shadow: 0 4px 16px rgba(31, 74, 110, 0.15);
+    }
+
+    .navbar-sky .navbar-brand {
+      font-weight: 900;
+      color: var(--deep-blue);
+      letter-spacing: 2px;
+    }
+
+    .navbar-sky .navbar-brand i {
+      color: var(--accent-gold);
+      margin-right: 8px;
+    }
+
+    .navbar-sky .nav-link {
+      color: var(--deep-blue) !important;
+      font-weight: 500;
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+      transition: 0.3s;
+    }
+
+    .navbar-sky .nav-link:hover {
+      background: rgba(255, 255, 255, 0.5);
+      color: #0d314b !important;
+    }
+
+    .navbar-sky .nav-link i {
+      margin-right: 6px;
+      color: var(--accent-gold);
+    }
+
+    /* ===== 標題區 ===== */
+    .header-title {
+      background: linear-gradient(135deg, #ffffff 0%, #e3f0fa 100%);
+      border-bottom: 2px dashed var(--sky-blue);
+      padding: 2.2rem 1rem 1.8rem;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 4px 20px rgba(31, 74, 110, 0.08);
+      position: relative;
+    }
+
+    .header-title::after {
+      content: "✧  ✦  ✧";
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f1f8fe;
+      padding: 0 20px;
+      font-size: 1.4rem;
+      color: var(--sky-blue);
+      letter-spacing: 6px;
+    }
+
+    .header-title h1 {
+      font-weight: 900;
+      color: var(--deep-blue);
+      letter-spacing: 2px;
+    }
+
+    .header-title h1 i {
+      color: var(--accent-gold);
+      margin: 0 8px;
+    }
+
+    .header-title .sub-meta {
+      color: var(--deep-blue);
+      font-size: 1.05rem;
+      background: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      padding: 0.2rem 1.5rem;
+      border-radius: 30px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ===== 手繪分隔 ===== */
+    .hand-drawn-divider {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--sky-blue);
+      letter-spacing: 8px;
+      margin: 1.8rem 0;
+      opacity: 0.5;
+      user-select: none;
+    }
+
+    .hand-drawn-divider span {
+      background: #f1f8fe;
+      padding: 0 20px;
+    }
+
+    /* ===== 卡片 ===== */
+    .card-sky {
+      background: #ffffff;
+      border-radius: 24px 8px 24px 8px;
+      border: 1px solid rgba(90, 155, 199, 0.25);
+      box-shadow: 0 6px 24px var(--card-shadow);
+      padding: 1.5rem 1.2rem;
+      transition: 0.3s;
+      height: 100%;
+    }
+
+    .card-sky:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(31, 74, 110, 0.15);
+      border-color: var(--sky-blue);
+    }
+
+    .card-sky .card-title {
+      font-weight: 700;
+      color: var(--deep-blue);
+      border-bottom: 2px solid var(--sky-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-sky .card-title i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+    }
+
+    /* ===== 清單 ===== */
+    .list-hand {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .list-hand li {
+      padding: 0.5rem 0 0.5rem 2rem;
+      position: relative;
+      border-bottom: 1px dashed #d4e3f0;
+    }
+
+    .list-hand li:last-child {
+      border-bottom: none;
+    }
+
+    .list-hand li::before {
+      content: "✧";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      color: var(--sky-blue);
+      font-size: 1.2rem;
+    }
+
+    .list-hand li i {
+      color: var(--accent-gold);
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+
+    /* ===== 表格 ===== */
+    .table-sky {
+      border-collapse: separate;
+      border-spacing: 0 8px;
+    }
+
+    .table-sky th {
+      background: var(--sky-light);
+      color: var(--deep-blue);
+      font-weight: 700;
+      border: none;
+      padding: 0.8rem 1rem;
+    }
+
+    .table-sky td {
+      background: white;
+      border: none;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 2px 6px rgba(31, 74, 110, 0.04);
+    }
+
+    .table-sky tr:first-child td:first-child {
+      border-radius: 12px 0 0 12px;
+    }
+
+    .table-sky tr:first-child td:last-child {
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* ===== 流程步驟 ===== */
+    .step-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem 1.2rem;
+      background: #eef6fc;
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px 12px 60px 12px;
+      border-left: 6px solid var(--sky-blue);
+    }
+
+    .step-flow .step-item {
+      font-weight: 500;
+      color: var(--deep-blue);
+      background: white;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .step-flow .step-arrow {
+      color: var(--sky-blue);
+      font-size: 1.2rem;
+    }
+
+    /* ===== 標籤 ===== */
+    .badge-sky {
+      background: var(--sky-blue);
+      color: white;
+      font-weight: 500;
+      padding: 0.3rem 1rem;
+      border-radius: 30px 6px 30px 6px;
+    }
+
+    /* ===== 頁腳 ===== */
+    .footer-sky {
+      background: linear-gradient(145deg, #b8d4eb, #a2c2dd);
+      color: #1a2b3c;
+      border-top: 3px solid var(--sky-blue);
+      padding: 1.8rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer-sky a {
+      color: var(--deep-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-sky a:hover {
+      color: #0d314b;
+      text-decoration: underline;
+    }
+
+    .footer-sky .footer-icon {
+      color: var(--accent-gold);
+      margin: 0 4px;
+    }
+
+    /* ===== 回到頂端 ===== */
+    #backTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--sky-blue);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 16px rgba(31, 74, 110, 0.3);
+      transition: 0.3s;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #backTop:hover {
+      background: var(--deep-blue);
+      transform: translateY(-3px);
+    }
+
+    /* ===== 響應式 ===== */
+    @media (max-width: 576px) {
+      .header-title h1 {
+        font-size: 1.6rem;
+      }
+
+      .step-flow {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 20px;
+      }
+
+      .step-flow .step-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    /* ===== 額外強調 ===== */
+    .highlight-box {
+      background: #fcf8e8;
+      border-left: 6px solid var(--accent-gold);
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======================== 導覽列 ======================== -->
+  <nav class="navbar navbar-expand-lg navbar-sky fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-feather-alt"></i> 網站改版專案
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+        aria-controls="navMain" aria-expanded="false" aria-label="切換導覽">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#overview"><i class="fas fa-flag"></i> 概述</a></li>
+          <li class="nav-item"><a class="nav-link" href="#assessment"><i class="fas fa-chart-bar"></i> 評估</a></li>
+          <li class="nav-item"><a class="nav-link" href="#search"><i class="fas fa-search"></i> 全站搜尋</a></li>
+          <li class="nav-item"><a class="nav-link" href="#media"><i class="fas fa-image"></i> 媒體封存</a></li>
+          <li class="nav-item"><a class="nav-link" href="#performance"><i class="fas fa-rocket"></i> 瘦身</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dev"><i class="fas fa-code"></i> 開發環境</a></li>
+          <li class="nav-item"><a class="nav-link" href="#changelog"><i class="fas fa-clock"></i> 變更紀錄</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================== 標題區 ======================== -->
+  <header class="header-title text-center">
+    <div class="container">
+      <h1>
+        <i class="fas fa-sync-alt"></i>
+        3.yfchen網站改版 · 全站搜尋與媒體封存計畫 (詳細版)
+        <i class="fas fa-sync-alt"></i>
+      </h1>
+      <div class="sub-meta mt-2">
+        <i class="fas fa-calendar-alt"></i> 2026-07-23
+        <span class="mx-2">|</span>
+        <i class="fas fa-tag"></i> 全站搜尋 · 媒體封存 · 載入瘦身
+      </div>
+      <div class="hand-drawn-divider mt-3">
+        <span>✧ ✦ ✧ ✦ ✧</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================== 主內容 ======================== -->
+  <main class="container py-4">
+
+    <!-- ===== 一、改版目的與原則 ===== -->
+    <section id="overview" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-flag"></i> 一、改版目的與原則</h3>
+        <p><strong>對象：</strong><code>D:\A02-115-yfchen-test</code> 個人網站（累積多年退休生活、閱讀、旅遊、AI 學習、家庭與行政資料）。</p>
+        <p><strong>四大目標：</strong></p>
+        <ul class="list-hand">
+          <li><i class="fas fa-check-circle text-success"></i> 改善 VS Code 中 Live Server / Five Server 因大量檔案監看而開啟緩慢的問題。
+          </li>
+          <li><i class="fas fa-check-circle text-success"></i> 建立可跨資料夾搜尋的正式入口（全站搜尋）。</li>
+          <li><i class="fas fa-check-circle text-success"></i> 減少首頁和共用元件中不必要的圖片、字型與腳本載入。</li>
+          <li><i class="fas fa-check-circle text-success"></i> 防止大型原始媒體持續進入 Git，避免專案繼續膨脹。</li>
+        </ul>
+        <div class="highlight-box mt-3">
+          <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+          <strong>本次不做的事：</strong>不刪除任何文章、原始照片、影片或 PDF；不改寫既有 Git 歷史；不以最佳化圖片覆寫原檔。
+        </div>
+        <p class="mt-3 mb-0"><i class="fas fa-arrow-right text-primary me-2"></i> 完整規劃請參閱
+          <code>A03-PLAN.md</code>，本報告為執行結果與維護指引。</p>
+      </div>
+    </section>
+
+    <!-- ===== 二、問題評估結果 ===== -->
+    <section id="assessment" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-chart-bar"></i> 二、問題評估結果</h3>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-file-code"></i> 檔案量與 Git</h5>
+              <ul class="list-hand">
+                <li>約 <strong>4,729</strong> 個 HTML 檔案</li>
+                <li>大量圖片、影片、PDF 與舊資料</li>
+                <li>Git 歷史約 <strong>9.1 GB</strong></li>
+                <li>Pagefind 索引本身含大量小型檔案，需排除監看</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-server"></i> Live Server vs Five Server</h5>
+              <ul class="list-hand">
+                <li>Live Server 讀取 <code>liveServer.settings.ignoreFiles</code></li>
+                <li>Five Server 使用獨立的 <code>fiveServer.ignore</code></li>
+                <li>即使 Live Server 改善，Five Server 仍可能卡住</li>
+                <li>本次已分別設定排除規則</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3 mb-0"><i class="fas fa-info-circle text-primary me-2"></i> Pagefind 索引約 1.72 MB，收錄 4,095 個完整網頁（排除
+          206 個 HTML 片段）。</p>
+      </div>
+    </section>
+
+    <!-- ===== 三、全站搜尋功能 ===== -->
+    <section id="search" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-search"></i> 三、全站搜尋功能（Pagefind）</h3>
+        <p><strong>工具：</strong>Pagefind 靜態全文搜尋，無需資料庫或付費 API。<a href="https://pagefind.app/docs/" target="_blank"
+            class="text-primary">官方說明 <i class="fas fa-external-link-alt"></i></a></p>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <h5><i class="fas fa-check-circle text-success"></i> 搜尋頁與入口</h5>
+            <ul class="list-hand">
+              <li>正式搜尋頁：<code>S01-Search-1131012.html</code>（保留既有網址）</li>
+              <li>共用導覽列搜尋圖示已指向此頁</li>
+              <li>索引語言：繁體中文 (<code>zh-tw</code>)</li>
+              <li>收錄 4,095 個完整 HTML 網頁（排除約 206 個共用片段）</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5><i class="fas fa-file-alt"></i> 相關檔案</h5>
+            <ul class="list-hand">
+              <li><code>S01-Search-1131012.html</code> – 搜尋介面</li>
+              <li><code>pagefind.yml</code> – 設定檔（根目錄、輸出、語言）</li>
+              <li><code>pagefind/</code> – 自動產生的索引 (須隨網站部署)</li>
+              <li><code>tools/rebuild-pagefind.ps1</code> – 一鍵重建索引</li>
+              <li><code>reports/pagefind-build-history.csv</code> – 每次建立日期與頁數</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box mt-3">
+          <i class="fas fa-rotate-right text-primary me-2"></i>
+          <strong>日後更新搜尋：</strong>在網站根目錄執行 <code>./tools/rebuild-pagefind.ps1</code>，確認歷史紀錄新增一筆，並測試新文章可被找到。
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 四、媒體封存與最佳化 ===== -->
+    <section id="media" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-image"></i> 四、媒體封存與最佳化</h3>
+        <p><strong>核心觀念：</strong>原始媒體保留於 Git 專案外封存區，網站僅載入較小的 WebP 副本，原始檔永不刪除或覆寫。</p>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-archive text-warning"></i> 封存區</h5>
+              <ul class="list-hand">
+                <li>位置：<code>D:\網站原始媒體封存</code></li>
+                <li>保留完整相對路徑（例：<code>images/B03-banner/</code>）</li>
+                <li>首批已封存 4 張首頁原始輪播圖</li>
+                <li>封存紀錄：<code>reports/media-archive-log.csv</code></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-vector-square text-primary"></i> 最佳化副本</h5>
+              <ul class="list-hand">
+                <li>位置：<code>assets-optimized/images/B03-banner/</code></li>
+                <li>產生 480、960、1600 像素 WebP</li>
+                <li>首頁 4 張圖共 12 個檔案，合計約 0.69 MB</li>
+                <li>對照表：<code>reports/media-manifest.csv</code></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3">
+          <h5><i class="fas fa-tools"></i> 稽核與工具</h5>
+          <ul class="list-hand">
+            <li><code>reports/media-audit.csv</code> – 列出 792 個實際被網頁引用的媒體</li>
+            <li><code>tools/optimize-web-images.mjs</code> – 掃描引用、建立稽核表、產生 WebP 副本</li>
+            <li><code>tools/archive-optimized-originals.ps1</code> – 確認無頁面引用後才封存原始檔</li>
+          </ul>
+        </div>
+        <div class="highlight-box mt-3">
+          <i class="fas fa-arrow-right text-primary me-2"></i>
+          <strong>日後新增圖片建議流程：</strong><br>
+          ① 原始照片保存於封存區或暫放網站內 → ② 確認 HTML 引用 → ③ 執行 <code>npm run media:audit</code> → ④
+          產生最佳化（<code>npm run media:homepage</code>） → ⑤ 修改 HTML 改用 <code>assets-optimized/</code> 並加入
+          <code>srcset</code>、<code>loading="lazy"</code> → ⑥ 確認無頁面引用原圖後，執行封存工具。
+        </div>
+        <p class="mt-3 mb-0"><i class="fas fa-video me-2"></i> 大型影片建議使用封面與 <code>preload="metadata"</code>；大型 PDF
+          改為連結或縮圖開啟。</p>
+      </div>
+    </section>
+
+    <!-- ===== 五、首頁與共用元件瘦身 ===== -->
+    <section id="performance" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-rocket"></i> 五、首頁與共用元件載入瘦身</h3>
+        <ul class="list-hand">
+          <li><i class="fas fa-check-circle text-success"></i> 首頁輪播圖使用
+            <code>srcset</code>、<code>sizes</code>、<code>loading="lazy"</code>、<code>decoding="async"</code>，首張保留
+            <code>fetchpriority="high"</code></li>
+          <li><i class="fas fa-check-circle text-success"></i> <code>ex-Comm/CX01-footer.html</code> 移除已停用區塊的 Vue
+            資料檔，減少不必要的腳本</li>
+          <li><i class="fas fa-check-circle text-success"></i> <code>css/index.css</code> 移除重複字型匯入，修正第二個字型類別名稱</li>
+          <li><i class="fas fa-check-circle text-success"></i> 共用導覽列搜尋圖示統一指向正式搜尋頁 <code>S01-Search-1131012.html</code>
+          </li>
+        </ul>
+        <p class="mt-2 mb-0"><i class="fas fa-file-alt me-2"></i>
+          最佳化圖片位置：<code>assets-optimized/images/B03-banner/</code>，首頁已全面改用。</p>
+      </div>
+    </section>
+
+    <!-- ===== 六、開發環境與 Git 防膨脹 ===== -->
+    <section id="dev" class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-code"></i> 六、VS Code / Live Server / Five Server 與 Git 防膨脹</h3>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <h5><i class="fas fa-server"></i> 監看排除設定</h5>
+            <ul class="list-hand">
+              <li><code>.vscode/settings.json</code> 已同時設定
+                <code>files.watcherExclude</code>、<code>liveServer.settings.ignoreFiles</code> 和
+                <code>fiveServer.ignore</code></li>
+              <li>
+                排除：<code>.git/</code>、<code>node_modules/</code>、大型閱讀/旅遊/個人資料夾、<code>pagefind/</code>、<code>reports/</code>、<code>assets-optimized/.cache/</code>
+              </li>
+              <li>Five Server 使用獨立連接埠 <code>5501</code></li>
+              <li>修改設定後請執行 <code>Developer: Reload Window</code></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5><i class="fab fa-git-alt"></i> Git 防膨脹</h5>
+            <ul class="list-hand">
+              <li><code>.gitignore</code> 已排除封存區、暫存檔、可重新產生的報表</li>
+              <li>提交前檢查：<code>node tools/check-media-before-git.mjs</code>（檢查 >2 MB 的暫存檔案）</li>
+              <li><code>assets-optimized/</code> 中的最終 WebP 仍納入 Git（因是網站部署所需）</li>
+              <li>既有 9.1 GB 歷史不予改寫，未來另案處理</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box mt-3">
+          <i class="fas fa-info-circle text-primary me-2"></i>
+          <strong>伺服器使用方式：</strong> Live Server → <code>http://127.0.0.1:5500/index.html</code> ｜ Five Server →
+          <code>http://127.0.0.1:5501/index.html</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 七、本次新增、修改、產生與移動的檔案 ===== -->
+    <section class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-list-ul"></i> 七、本次檔案異動總覽</h3>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <h5><i class="fas fa-plus-circle text-success"></i> 新增工具與設定</h5>
+            <ul class="list-hand">
+              <li><code>package.json</code></li>
+              <li><code>package-lock.json</code></li>
+              <li><code>pagefind.yml</code></li>
+              <li><code>tools/rebuild-pagefind.ps1</code></li>
+              <li><code>tools/optimize-web-images.mjs</code></li>
+              <li><code>tools/check-media-before-git.mjs</code></li>
+              <li><code>tools/archive-optimized-originals.ps1</code></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5><i class="fas fa-pen-to-square text-warning"></i> 修改的網站與開發設定</h5>
+            <ul class="list-hand">
+              <li><code>index.html</code></li>
+              <li><code>S01-Search-1131012.html</code></li>
+              <li><code>ex-Comm/CX01-nav.html</code></li>
+              <li><code>ex-Comm/CX01-footer.html</code></li>
+              <li><code>css/index.css</code></li>
+              <li><code>.vscode/settings.json</code></li>
+              <li><code>.gitignore</code></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5><i class="fas fa-file-alt text-primary"></i> 新增/更新文件與報表</h5>
+            <ul class="list-hand">
+              <li><code>docs/全站搜尋與網站瘦身維護手冊.md</code></li>
+              <li><code>docs/網站變更紀錄.md</code></li>
+              <li><code>docs/2026-07-23-網站改版完整報告.md</code></li>
+              <li><code>reports/pagefind-build-history.csv</code></li>
+              <li><code>reports/media-audit.csv</code></li>
+              <li><code>reports/media-manifest.csv</code></li>
+              <li><code>reports/media-archive-log.csv</code></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row g-3 mt-2">
+          <div class="col-md-6">
+            <h5><i class="fas fa-file-archive"></i> 自動產生的網站資源</h5>
+            <ul class="list-hand">
+              <li><code>pagefind/</code> – 全站搜尋索引</li>
+              <li><code>assets-optimized/images/B03-banner/</code> – 首頁 4 張圖的 12 個 WebP 響應式版本</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5><i class="fas fa-archive"></i> 移至 Git 外封存區的原始媒體</h5>
+            <ul class="list-hand">
+              <li><code>images/B03-banner/A10-1.jpg</code></li>
+              <li><code>images/B03-banner/A12-1.jpg</code></li>
+              <li><code>images/B03-banner/A15-1.jpg</code></li>
+              <li><code>images/B03-banner/A16-1.jpg</code></li>
+              <li>封存至 <code>D:\網站原始媒體封存\images\B03-banner\</code></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 八、日常維護速查表 ===== -->
+    <section class="mb-5">
+      <div class="card-sky" style="border-left: 6px solid var(--accent-gold);">
+        <h3 class="card-title"><i class="fas fa-list-check"></i> 八、日常維護速查表</h3>
+        <div class="table-responsive">
+          <table class="table table-sky">
+            <thead>
+              <tr>
+                <th>您要做的事</th>
+                <th>必要操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>新增或修改文章 HTML</td>
+                <td>完成後執行 <code>./tools/rebuild-pagefind.ps1</code>，並檢查 <code>reports/pagefind-build-history.csv</code>
+                </td>
+              </tr>
+              <tr>
+                <td>新增首頁／高流量文章大圖</td>
+                <td>① 產生最佳化 WebP ② 修改 HTML 使用 <code>assets-optimized/</code> ③ 確認無引用後封存原圖</td>
+              </tr>
+              <tr>
+                <td>發布網站</td>
+                <td>確認包含 <code>pagefind/</code>、<code>assets-optimized/</code> 與修改後 HTML；無需上傳封存資料夾</td>
+              </tr>
+              <tr>
+                <td>準備 Git 提交</td>
+                <td>先執行 <code>node tools/check-media-before-git.mjs</code>，檢查是否有大型檔案誤入</td>
+              </tr>
+              <tr>
+                <td>Five Server 卡住</td>
+                <td>停止伺服器、重新載入 VS Code 視窗，再用 5501 開啟</td>
+              </tr>
+              <tr>
+                <td>搜尋找不到新文章</td>
+                <td>重建 Pagefind 索引，並確認文章是完整 HTML 文件（非共用片段）</td>
+              </tr>
+              <tr>
+                <td>媒體稽核</td>
+                <td>執行 <code>npm run media:audit</code> 更新 <code>reports/media-audit.csv</code></td>
+              </tr>
+              <tr>
+                <td>首頁圖片最佳化</td>
+                <td>執行 <code>npm run media:homepage</code> 產生新的 WebP 副本</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 九、建議的下一步 ===== -->
+    <section class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-arrow-right"></i> 九、建議的下一步</h3>
+        <ol class="list-hand">
+          <li>先維持目前首頁與搜尋功能穩定，使用一至兩週觀察載入情況。</li>
+          <li>從 <code>reports/media-audit.csv</code> 選擇「檔案大、首頁或常用文章有引用」的下一批圖片處理，分批進行，勿一次全部改寫。</li>
+          <li>選擇一個旅遊或閱讀分類的代表文章，示範性加入圖片響應式版本、影片封面與 PDF 縮圖連結，再將做法推廣至同類文章。</li>
+          <li>若未來要大幅縮小 Git 歷史，請先另做完整備份與獨立計畫（不混入日常維護）。</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 十、維護手冊摘要 ===== -->
+    <section class="mb-5">
+      <div class="card-sky">
+        <h3 class="card-title"><i class="fas fa-book"></i> 十、維護手冊摘要</h3>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-search"></i> 更新搜尋</h5>
+              <p><code>.\tools\rebuild-pagefind.ps1</code><br>查看 <code>reports/pagefind-build-history.csv</code></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-image"></i> 媒體稽核與最佳化</h5>
+              <p><code>npm run media:audit</code> (稽核)<br><code>npm run media:homepage</code> (首頁最佳化)</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bg-light p-3 rounded-3 h-100">
+              <h5><i class="fas fa-archive"></i> 原始媒體封存</h5>
+              <p>確認無頁面引用後執行 <code>.\tools\archive-optimized-originals.ps1</code><br>對照
+                <code>reports/media-archive-log.csv</code></p>
+            </div>
+          </div>
+        </div>
+        <div class="highlight-box mt-3">
+          <i class="fas fa-shield-alt text-primary me-2"></i>
+          <strong>Git 大檔檢查：</strong>提交前執行 <code>node tools/check-media-before-git.mjs</code>，避免 >2 MB 的原始媒體進入 Git。
+        </div>
+      </div>
+    </section>
+
+    <!-- 手繪分隔 -->
+    <div class="hand-drawn-divider">
+      <span>✧ ✦ ✧ ✦ ✧</span>
+    </div>
+
+  </main>
+
+  <!-- ======================== 頁腳 ======================== -->
+  <footer class="footer-sky">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <span class="footer-icon"><i class="fas fa-feather-alt"></i></span>
+          網站改版專案 · 詳細報告
+          <span class="mx-2 text-muted">|</span>
+          <span class="small">2026-07-23</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <span class="small">
+            <i class="fas fa-code footer-icon"></i>
+            以 <i class="fas fa-heart" style="color:#d4a843;"></i> 與淺藍打造
+            <span class="mx-2">·</span>
+            <i class="fas fa-search footer-icon"></i>
+            4,095 頁可搜尋
+          </span>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col text-center text-muted small">
+          <i class="fas fa-tag me-1"></i> 封存位置：<code class="bg-white bg-opacity-50 px-2 py-1 rounded"
+            style="font-size:0.75rem;">D:\網站原始媒體封存</code>
+          <span class="mx-2">·</span>
+          <i class="fas fa-file-alt me-1"></i> 完整變更紀錄：<code>docs/網站變更紀錄.md</code>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== 回到頂端 ======================== -->
+  <button id="backTop" title="回到頂端">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- 回到頂端功能 -->
+  <script>
+    const backBtn = document.getElementById('backTop');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 400) {
+        backBtn.style.display = 'flex';
+      } else {
+        backBtn.style.display = 'none';
+      }
+    });
+    backBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+
+</html>
