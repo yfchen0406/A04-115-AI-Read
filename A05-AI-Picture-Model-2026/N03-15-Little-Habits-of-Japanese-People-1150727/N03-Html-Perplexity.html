@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="slides-format" content="viewport">
+  <title>Perplexity~日本的15個生活小習慣</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-bg: #f7f3ea;
+      --color-bg-deep: #efe7d9;
+      --color-surface: #fffaf2;
+      --color-text: #4e4a43;
+      --color-text-secondary: #6c665d;
+      --color-text-muted: #8d877d;
+      --color-accent-1: #97c8b7;
+      --color-accent-2: #f6c8b1;
+      --color-accent-3: #90b8d8;
+      --color-glass-bg: rgba(255,255,255,0.62);
+      --color-glass-border: rgba(115,108,96,0.14);
+      --color-vignette: rgba(83,72,58,0.08);
+      --font-display: 'ZCOOL XiaoWei', serif;
+      --font-body: 'Zen Maru Gothic', sans-serif;
+    }
+  </style>
+  <style>
+    :root { --color-bg: #f7f3ea; --color-text: #4e4a43; --glow-color-rgb: 151,200,183; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { background: var(--color-bg); margin: 0; }
+    body { font-family: var(--font-body); color: var(--color-text); overflow: hidden; height: 100vh; width: 100vw; }
+    .deck { width: 100vw; height: 100vh; position: relative; }
+    .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, #f7f3ea 0%, #f3ecdf 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transform: scale(0.95); transition: opacity 0.7s ease, transform 0.7s ease; pointer-events: none; overflow: hidden; }
+    .slide.active { opacity: 1; transform: scale(1); pointer-events: all; }
+    .slide > .content { position: relative; z-index: 2; width: 100%; max-width: 1180px; padding: clamp(1.4rem, 3vw, 3rem); }
+    .nav-controls { position: fixed; bottom: 26px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 16px; z-index: 100; background: rgba(255,250,242,.78); backdrop-filter: blur(12px); padding: 10px 22px; border-radius: 40px; border: 1px solid rgba(115,108,96,0.14); box-shadow: 0 10px 30px rgba(128,116,98,0.12); }
+    .nav-btn { width: 40px; height: 40px; border: none; background: rgba(255,255,255,.65); color: #6fa996; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+    .nav-btn:hover { background: rgba(151,200,183,.22); }
+    .slide-dots { display: flex; gap: 8px; }
+    .slide-dots .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(115,108,96,0.18); cursor: pointer; transition: background 0.3s, transform 0.3s; }
+    .slide-dots .dot.active { background: #97c8b7; transform: scale(1.3); }
+    .slide-counter { font-size: 0.85rem; color: #8d877d; min-width: 54px; text-align: center; }
+    .reveal { opacity: 0; transform: translateY(20px); }
+    @keyframes float-slow { 0% { transform: translate(0, 0) scale(1);} 25% { transform: translate(40px,-35px) scale(1.08);} 50% { transform: translate(-28px,26px) scale(0.95);} 75% { transform: translate(30px,14px) scale(1.05);} 100% { transform: translate(0,0) scale(1);} }
+    @keyframes float-drift { 0% { transform: translate(0,0) scale(1) rotate(0deg);} 33% { transform: translate(-36px,-45px) scale(1.12) rotate(2deg);} 66% { transform: translate(26px,22px) scale(0.9) rotate(-2deg);} 100% { transform: translate(0,0) scale(1) rotate(0deg);} }
+    @keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-12px);} }
+    .gradient-mesh { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(70px); animation: float-slow 11s ease-in-out infinite; }
+    .blob:nth-child(2) { animation: float-drift 15s ease-in-out infinite; }
+    .blob:nth-child(3) { animation: float-slow 18s ease-in-out infinite reverse; }
+    .slide::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background-image: radial-gradient(rgba(255,255,255,.35) 0.8px, transparent 0.8px); background-size: 18px 18px; opacity: 0.14; }
+    .slide::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at center, transparent 55%, var(--color-vignette) 100%); }
+    .story-card { background: rgba(255,250,242,.82); border: 1px solid rgba(115,108,96,.12); border-radius: 28px; box-shadow: 0 16px 40px rgba(146,124,104,.10); backdrop-filter: blur(8px); }
+    .brush-title { color: #5f7f72; text-shadow: 0 2px 0 rgba(255,255,255,.35); }
+    .mini-label { letter-spacing: .18em; text-transform: uppercase; color: #8d877d; font-size: .8rem; }
+    .emoji-hero { font-size: 106px; margin-bottom: 1rem; animation: float 3.5s ease-in-out infinite; }
+    .section-badge { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:999px; background: linear-gradient(135deg, #97c8b7, #90b8d8); color: white; font-weight: 800; box-shadow: 0 8px 18px rgba(144,184,216,.25); }
+    .habit-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .habit-card { min-height: 208px; padding: 20px 18px; border-radius: 24px; background: rgba(255,255,255,.68); border: 1px solid rgba(115,108,96,.10); box-shadow: 0 12px 25px rgba(143,123,99,.08); }
+    .habit-card h3 { margin: 0 0 10px; font-size: 1.12rem; color: #577a6d; }
+    .habit-card p { margin: 0; font-size: .98rem; line-height: 1.6; color: #5f5a52; }
+    .timeline { display:grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 24px; }
+    .timeline-item { padding: 18px; border-radius: 24px; background: rgba(255,255,255,.66); border: 1px solid rgba(115,108,96,.10); min-height: 195px; }
+    .quote-box { border-left: 6px solid #f6c8b1; padding: 18px 22px; background: rgba(255,255,255,.6); border-radius: 18px; }
+    .table-like { display:grid; grid-template-columns: 1.1fr 1.2fr 1.3fr; gap: 14px; }
+    .table-like > div { padding: 16px 18px; border-radius: 20px; background: rgba(255,255,255,.7); border: 1px solid rgba(115,108,96,.10); }
+    .footer-note { color:#8d877d; font-size:.9rem; }
+    .deco-shape { position:absolute; border-radius:50%; opacity:.18; z-index:1; pointer-events:none; }
+    @media (max-width: 1100px) {
+      .habit-grid, .timeline, .table-like { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none;"></div>
+<div class="deck">
+
+  <div class="slide slide-1 active" data-slide="1">
+    <div class="gradient-mesh">
+      <div class="blob" style="width:460px;height:460px;top:-80px;right:-60px;background:#97c8b7;opacity:.18;"></div>
+      <div class="blob" style="width:320px;height:320px;bottom:-60px;left:-30px;background:#f6c8b1;opacity:.16;"></div>
+      <div class="blob" style="width:220px;height:220px;top:36%;left:12%;background:#90b8d8;opacity:.14;"></div>
+    </div>
+    <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1;"></canvas>
+    <div class="content text-center">
+      <div class="emoji-hero reveal">🍃</div>
+      <p class="mini-label reveal">Japanese cartoon storybook style</p>
+      <h1 class="font-display text-[clamp(2.6rem,5.6vw,4.8rem)] font-black brush-title tracking-tight mb-4 reveal">日本的15個生活小習慣</h1>
+      <p class="text-[clamp(1rem,1.8vw,1.35rem)] text-text-secondary reveal">藏在日常裡的長壽秘訣・用微調而不是激烈改造，慢慢找回身心節奏</p>
+      <div class="story-card max-w-[820px] mx-auto mt-8 p-7 reveal">
+        <p class="text-[1.05rem] leading-8 text-text-secondary">這份投影片依附件整理，將內容拆成核心觀點、五大主題與15個可執行習慣，適合做閱讀分享、生活講座或自我實踐筆記。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-2" data-slide="2">
+    <div class="gradient-mesh"><div class="blob" style="width:340px;height:340px;top:-70px;right:-60px;background:#97c8b7;opacity:.10"></div><div class="blob" style="width:240px;height:240px;bottom:-50px;left:-40px;background:#f6c8b1;opacity:.10"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Agenda</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-8 reveal">內容地圖</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="story-card p-6 reveal"><div class="flex gap-4 items-start"><span class="section-badge">1</span><div><h3 class="text-xl font-bold mb-2">核心精神</h3><p class="text-text-secondary leading-7">日本長壽祕訣不是昂貴補品，而是每天重複、低成本、可持續的微小習慣。</p></div></div></div>
+        <div class="story-card p-6 reveal"><div class="flex gap-4 items-start"><span class="section-badge">2</span><div><h3 class="text-xl font-bold mb-2">睡眠校準</h3><p class="text-text-secondary leading-7">從晚餐時間、晨光接觸到臥室功能，重新校準生理時鐘與修復品質。</p></div></div></div>
+        <div class="story-card p-6 reveal"><div class="flex gap-4 items-start"><span class="section-badge">3</span><div><h3 class="text-xl font-bold mb-2">精力管理</h3><p class="text-text-secondary leading-7">以喝水、午間休息、通風三件小事，換回清醒感、專注力與穩定能量。</p></div></div></div>
+        <div class="story-card p-6 reveal"><div class="flex gap-4 items-start"><span class="section-badge">4</span><div><h3 class="text-xl font-bold mb-2">空間與物品</h3><p class="text-text-secondary leading-7">整理不是家事技巧而已，更是減少未完成回圈與決策疲勞的心理管理。</p></div></div></div>
+        <div class="story-card p-6 reveal"><div class="flex gap-4 items-start"><span class="section-badge">5</span><div><h3 class="text-xl font-bold mb-2">覺察與情緒</h3><p class="text-text-secondary leading-7">透過餐前停頓、自然散步、睡前書寫，讓神經系統更容易回到平衡狀態。</p></div></div></div>
+        <div class="story-card p-6 reveal"><div class="flex gap-4 items-start"><span class="section-badge">6</span><div><h3 class="text-xl font-bold mb-2">實踐路徑</h3><p class="text-text-secondary leading-7">一次只挑一項開始，讓安靜的小改變，累積成可感受的生活品質提升。</p></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-3" data-slide="3">
+    <div class="gradient-mesh"><div class="blob" style="width:300px;height:300px;top:-70px;right:-60px;background:#90b8d8;opacity:.10"></div><div class="blob" style="width:260px;height:260px;bottom:-60px;left:-30px;background:#97c8b7;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Core viewpoint</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">核心觀點摘要</h2>
+      <div class="grid grid-cols-3 gap-5">
+        <div class="story-card p-6 reveal"><div class="text-4xl mb-3">🌱</div><h3 class="text-xl font-bold mb-2">微調勝過改造</h3><p class="leading-7 text-text-secondary">重點不是一次做完15件事，而是從每天可執行的小步驟開始，降低改變門檻。</p></div>
+        <div class="story-card p-6 reveal"><div class="text-4xl mb-3">🧠</div><h3 class="text-xl font-bold mb-2">身心彼此連動</h3><p class="leading-7 text-text-secondary">睡眠、空間、進食與心情不是分開的議題，而是共同影響專注與恢復力的系統。</p></div>
+        <div class="story-card p-6 reveal"><div class="text-4xl mb-3">🏡</div><h3 class="text-xl font-bold mb-2">日常就是保養</h3><p class="leading-7 text-text-secondary">最有力量的保健，不一定來自高投入，而是把家、作息與情緒都整理得更安穩。</p></div>
+      </div>
+      <div class="quote-box mt-6 reveal">
+        <p class="text-[1.08rem] leading-8 text-text-secondary">附件指出，這15個習慣的共同特質是「低成本、容易執行、可長期累積」。真正改變生活品質的，常常不是一次的大計畫，而是每天都做得到的小選擇。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-4" data-slide="4">
+    <div class="gradient-mesh"><div class="blob" style="width:430px;height:430px;top:-90px;right:-80px;background:#97c8b7;opacity:.12"></div><div class="blob" style="width:260px;height:260px;bottom:-50px;left:-20px;background:#f6c8b1;opacity:.10"></div></div>
+    <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1;"></canvas>
+    <div class="content text-center">
+      <p class="mini-label reveal">Chapter 1</p>
+      <div class="emoji-hero reveal" style="font-size:90px;">🌅</div>
+      <h2 class="font-display text-[clamp(2.3rem,4.8vw,4rem)] brush-title mb-4 reveal">睡眠與生理時鐘校準</h2>
+      <p class="max-w-[760px] mx-auto text-[1.12rem] leading-8 text-text-secondary reveal">這一組習慣聚焦在「何時吃、何時見光、如何讓臥室回到休息功能」，目標是讓身體更容易進入修復模式。</p>
+    </div>
+  </div>
+
+  <div class="slide slide-5" data-slide="5">
+    <div class="gradient-mesh"><div class="blob" style="width:310px;height:310px;top:-80px;right:-60px;background:#97c8b7;opacity:.08"></div><div class="blob" style="width:220px;height:220px;bottom:-30px;left:-30px;background:#90b8d8;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Habits 2・3・10</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">睡眠主題的3個習慣</h2>
+      <div class="habit-grid">
+        <div class="habit-card reveal"><h3>🍚 提早晚餐時間</h3><p>晚餐最好在睡前至少3小時吃完，避免消化與深度睡眠彼此拉扯，讓疲勞能真正被修復。</p></div>
+        <div class="habit-card reveal"><h3>☀️ 晨間五分鐘日光浴</h3><p>起床後先接觸自然光，再碰手機。早晨光線能校準生理時鐘，協助代謝與清醒節律更穩定。</p></div>
+        <div class="habit-card reveal"><h3>🛏️ 工作物品搬出臥室</h3><p>把筆電、工作筆記本與手機移出臥室，讓大腦重新把這個空間識別為休息與恢復的場所。</p></div>
+      </div>
+      <div class="story-card p-6 mt-6 reveal"><p class="leading-8 text-text-secondary">這三個習慣都在傳遞同一個訊息：睡眠品質不是只看「睡多久」，而是看整個晚間到清晨的節律是否一致。</p></div>
+    </div>
+  </div>
+
+  <div class="slide slide-6" data-slide="6">
+    <div class="gradient-mesh"><div class="blob" style="width:330px;height:330px;top:-70px;right:-70px;background:#f6c8b1;opacity:.08"></div><div class="blob" style="width:220px;height:220px;bottom:-40px;left:-30px;background:#97c8b7;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Why it matters</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">睡眠校準的關鍵邏輯</h2>
+      <div class="table-like">
+        <div class="reveal"><h3 class="text-lg font-bold mb-3">節點</h3><p class="leading-7 text-text-secondary">晚餐、晨光、臥室線索</p></div>
+        <div class="reveal"><h3 class="text-lg font-bold mb-3">作用機制</h3><p class="leading-7 text-text-secondary">降低身體在消化、刺激與修復之間的衝突，讓神經系統更容易切換到休息模式。</p></div>
+        <div class="reveal"><h3 class="text-lg font-bold mb-3">生活效果</h3><p class="leading-7 text-text-secondary">更穩定的入睡、較深的睡眠感受、白天起床後較不昏沉。</p></div>
+      </div>
+      <div class="grid grid-cols-2 gap-6 mt-6">
+        <div class="story-card p-6 reveal"><h3 class="text-xl font-bold mb-3">一句話提醒</h3><p class="leading-7 text-text-secondary">想改善睡眠，不只靠早睡，而要先讓身體知道「現在可以慢下來了」。</p></div>
+        <div class="story-card p-6 reveal"><h3 class="text-xl font-bold mb-3">適合的開始方式</h3><p class="leading-7 text-text-secondary">先從一件最容易的事情做起，例如晚餐提早30分鐘，或起床先站到陽台5分鐘。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-7" data-slide="7">
+    <div class="gradient-mesh"><div class="blob" style="width:420px;height:420px;top:-90px;right:-70px;background:#90b8d8;opacity:.12"></div><div class="blob" style="width:250px;height:250px;bottom:-50px;left:-10px;background:#97c8b7;opacity:.11"></div></div>
+    <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1;"></canvas>
+    <div class="content text-center">
+      <p class="mini-label reveal">Chapter 2</p>
+      <div class="emoji-hero reveal" style="font-size:90px;">☕</div>
+      <h2 class="font-display text-[clamp(2.3rem,4.8vw,4rem)] brush-title mb-4 reveal">日間精力與專注管理</h2>
+      <p class="max-w-[760px] mx-auto text-[1.12rem] leading-8 text-text-secondary reveal">白天的清醒感，不一定來自更用力，而可能來自更合時的喝水、休息與通風。</p>
+    </div>
+  </div>
+
+  <div class="slide slide-8" data-slide="8">
+    <div class="gradient-mesh"><div class="blob" style="width:320px;height:320px;top:-80px;right:-60px;background:#f6c8b1;opacity:.09"></div><div class="blob" style="width:240px;height:240px;bottom:-30px;left:-20px;background:#90b8d8;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Habits 4・5・8</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">精力管理的3個習慣</h2>
+      <div class="habit-grid">
+        <div class="habit-card reveal"><h3>💧 先喝溫開水，再喝咖啡</h3><p>起床後先補水，再把咖啡延後到醒來60到90分鐘後，有助減少下午明顯的體力崩落感。</p></div>
+        <div class="habit-card reveal"><h3>😌 中午靜心十分鐘</h3><p>午間閉目放鬆10到20分鐘，不一定要睡著，也能順應身體節律，讓認知表現重新回血。</p></div>
+        <div class="habit-card reveal"><h3>🌬️ 每日開窗通風十分鐘</h3><p>每天早上開窗換氣，降低封閉空間的悶滯感，為專注力創造更清爽的環境條件。</p></div>
+      </div>
+      <div class="story-card p-6 mt-6 reveal"><p class="leading-8 text-text-secondary">這一組習慣提醒我們：能量管理不只是靠意志撐住，而是幫大腦和身體創造更容易清醒的條件。</p></div>
+    </div>
+  </div>
+
+  <div class="slide slide-9" data-slide="9">
+    <div class="gradient-mesh"><div class="blob" style="width:300px;height:300px;top:-60px;right:-60px;background:#97c8b7;opacity:.08"></div><div class="blob" style="width:250px;height:250px;bottom:-40px;left:-30px;background:#f6c8b1;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Daily rhythm</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-4 reveal">一日節奏示意</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal"><h3 class="text-lg font-bold mb-3">起床後</h3><p class="leading-7 text-text-secondary">先喝溫開水，讓身體從睡眠模式平順轉醒。</p></div>
+        <div class="timeline-item reveal"><h3 class="text-lg font-bold mb-3">晨間</h3><p class="leading-7 text-text-secondary">接觸5分鐘自然光，幫生理時鐘對時。</p></div>
+        <div class="timeline-item reveal"><h3 class="text-lg font-bold mb-3">醒來60-90分</h3><p class="leading-7 text-text-secondary">再喝咖啡，避免一早就用刺激壓住身體節律。</p></div>
+        <div class="timeline-item reveal"><h3 class="text-lg font-bold mb-3">中午</h3><p class="leading-7 text-text-secondary">靜心10到20分鐘，給大腦一個短暫恢復區間。</p></div>
+        <div class="timeline-item reveal"><h3 class="text-lg font-bold mb-3">早晨居家</h3><p class="leading-7 text-text-secondary">開窗通風10分鐘，讓空氣流動也成為專注投資。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-10" data-slide="10">
+    <div class="gradient-mesh"><div class="blob" style="width:420px;height:420px;top:-90px;right:-70px;background:#97c8b7;opacity:.12"></div><div class="blob" style="width:250px;height:250px;bottom:-50px;left:-10px;background:#f6c8b1;opacity:.11"></div></div>
+    <div class="content text-center">
+      <p class="mini-label reveal">Chapter 3</p>
+      <div class="emoji-hero reveal" style="font-size:90px;">🏠</div>
+      <h2 class="font-display text-[clamp(2.3rem,4.8vw,4rem)] brush-title mb-4 reveal">空間即時整頓與視覺淨化</h2>
+      <p class="max-w-[760px] mx-auto text-[1.12rem] leading-8 text-text-secondary reveal">這些習慣把整理從「大掃除任務」改成「低負擔即時修復」，減少背景焦慮與注意力耗損。</p>
+    </div>
+  </div>
+
+  <div class="slide slide-11" data-slide="11">
+    <div class="gradient-mesh"><div class="blob" style="width:320px;height:320px;top:-80px;right:-60px;background:#90b8d8;opacity:.08"></div><div class="blob" style="width:240px;height:240px;bottom:-30px;left:-20px;background:#97c8b7;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Habits 1・7・15</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">整理主題的3個習慣</h2>
+      <div class="habit-grid">
+        <div class="habit-card reveal"><h3>🧺 兩分鐘法則</h3><p>能在兩分鐘內完成的家事，就立刻做。這樣能減少未完成事項在腦中持續掛著。</p></div>
+        <div class="habit-card reveal"><h3>🚰 清理水的周邊空間</h3><p>保持水槽、浴室檯面與水龍頭乾爽整潔，快速擦拭就能讓視覺與情緒同時降噪。</p></div>
+        <div class="habit-card reveal"><h3>🔁 一分鐘重置系統</h3><p>每晚花60秒整理最容易亂的三個角落，避免混亂堆積成更大的心理壓力。</p></div>
+      </div>
+      <div class="quote-box mt-6 reveal"><p class="leading-8 text-text-secondary">附件把整理視為一種「注意力保護機制」：空間乾淨，不只是看起來舒服，而是讓大腦少消耗在背景雜訊上。</p></div>
+    </div>
+  </div>
+
+  <div class="slide slide-12" data-slide="12">
+    <div class="gradient-mesh"><div class="blob" style="width:300px;height:300px;top:-70px;right:-70px;background:#f6c8b1;opacity:.09"></div><div class="blob" style="width:220px;height:220px;bottom:-30px;left:-30px;background:#90b8d8;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Space & attention</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">為什麼空間會影響心情</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="story-card p-7 reveal"><h3 class="text-xl font-bold mb-3">視覺雜亂</h3><p class="leading-8 text-text-secondary">越多未收好的角落，越容易形成持續性的背景刺激，使注意力分散、休息感下降。</p></div>
+        <div class="story-card p-7 reveal"><h3 class="text-xl font-bold mb-3">即時整頓</h3><p class="leading-8 text-text-secondary">把整理切成2分鐘、4秒鐘、60秒等極小單位，就能把壓力從週末大工程，改為日常低負擔維護。</p></div>
+      </div>
+      <div class="story-card p-7 mt-6 reveal"><h3 class="text-xl font-bold mb-3">可直接帶走的啟發</h3><p class="leading-8 text-text-secondary">不要追求一次整理完整個家，而是先守住最常看見、最常使用、最容易累積混亂的幾個關鍵點。</p></div>
+    </div>
+  </div>
+
+  <div class="slide slide-13" data-slide="13">
+    <div class="gradient-mesh"><div class="blob" style="width:430px;height:430px;top:-90px;right:-70px;background:#f6c8b1;opacity:.12"></div><div class="blob" style="width:250px;height:250px;bottom:-50px;left:-10px;background:#97c8b7;opacity:.11"></div></div>
+    <canvas class="particle-canvas-ambient" style="position:absolute;inset:0;z-index:1;"></canvas>
+    <div class="content text-center">
+      <p class="mini-label reveal">Chapter 4</p>
+      <div class="emoji-hero reveal" style="font-size:90px;">🧥</div>
+      <h2 class="font-display text-[clamp(2.3rem,4.8vw,4rem)] brush-title mb-4 reveal">物品減量與決策疲勞消除</h2>
+      <p class="max-w-[760px] mx-auto text-[1.12rem] leading-8 text-text-secondary reveal">少一點，不是匱乏，而是讓每天的尋找、選擇、收納和清理都變得更輕。</p>
+    </div>
+  </div>
+
+  <div class="slide slide-14" data-slide="14">
+    <div class="gradient-mesh"><div class="blob" style="width:310px;height:310px;top:-80px;right:-60px;background:#97c8b7;opacity:.08"></div><div class="blob" style="width:240px;height:240px;bottom:-30px;left:-20px;background:#f6c8b1;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Habits 11・12・14</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">減量主題的3個習慣</h2>
+      <div class="habit-grid">
+        <div class="habit-card reveal"><h3>👚 穿著現在的自己</h3><p>放下不再適合當下人生階段的衣物，讓衣櫃反映的是現在，而不是過去或想像中的自己。</p></div>
+        <div class="habit-card reveal"><h3>🏷️ 為每樣東西找一個家</h3><p>每件物品都有固定位置，用完放回，減少「東西到底在哪裡」帶來的認知耗損。</p></div>
+        <div class="habit-card reveal"><h3>📦 每個類別少擁有一點</h3><p>不是極端極簡，而是每個品類都微幅減量，讓收納、清掃、選擇都更省力。</p></div>
+      </div>
+      <div class="story-card p-6 mt-6 reveal"><p class="leading-8 text-text-secondary">這一組習慣的本質，是把「少」轉化成心理資源：少找東西、少決定、少內耗，生活自然更清爽。</p></div>
+    </div>
+  </div>
+
+  <div class="slide slide-15" data-slide="15">
+    <div class="gradient-mesh"><div class="blob" style="width:300px;height:300px;top:-70px;right:-60px;background:#90b8d8;opacity:.08"></div><div class="blob" style="width:250px;height:250px;bottom:-40px;left:-30px;background:#97c8b7;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Decision fatigue</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">從物品管理到心理減壓</h2>
+      <div class="grid grid-cols-3 gap-5">
+        <div class="story-card p-6 reveal"><div class="text-4xl mb-3">🧭</div><h3 class="text-xl font-bold mb-2">固定位置</h3><p class="leading-7 text-text-secondary">東西有家，找東西的次數與煩躁感就會下降。</p></div>
+        <div class="story-card p-6 reveal"><div class="text-4xl mb-3">🪶</div><h3 class="text-xl font-bold mb-2">輕量持有</h3><p class="leading-7 text-text-secondary">數量少一點，維護成本與視覺壓力也會一起變小。</p></div>
+        <div class="story-card p-6 reveal"><div class="text-4xl mb-3">🌼</div><h3 class="text-xl font-bold mb-2">自我尊重</h3><p class="leading-7 text-text-secondary">穿著現在的自己，是對當下狀態的接納，而不是勉強回到過去。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-16" data-slide="16">
+    <div class="gradient-mesh"><div class="blob" style="width:430px;height:430px;top:-90px;right:-70px;background:#90b8d8;opacity:.12"></div><div class="blob" style="width:250px;height:250px;bottom:-50px;left:-10px;background:#f6c8b1;opacity:.11"></div></div>
+    <div class="content text-center">
+      <p class="mini-label reveal">Chapter 5</p>
+      <div class="emoji-hero reveal" style="font-size:90px;">🌿</div>
+      <h2 class="font-display text-[clamp(2.3rem,4.8vw,4rem)] brush-title mb-4 reveal">覺察與情緒修復</h2>
+      <p class="max-w-[760px] mx-auto text-[1.12rem] leading-8 text-text-secondary reveal">真正的放鬆，不只是休息，而是讓感官、注意力與情緒重新接上生活。</p>
+    </div>
+  </div>
+
+  <div class="slide slide-17" data-slide="17">
+    <div class="gradient-mesh"><div class="blob" style="width:320px;height:320px;top:-80px;right:-60px;background:#97c8b7;opacity:.08"></div><div class="blob" style="width:240px;height:240px;bottom:-30px;left:-20px;background:#90b8d8;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Habits 6・9・13</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">情緒修復的3個習慣</h2>
+      <div class="habit-grid">
+        <div class="habit-card reveal"><h3>🙏 餐前停頓三十秒</h3><p>在第一口之前稍微停下來，從匆忙切換到接收與感謝，更容易感到飽足與滿足。</p></div>
+        <div class="habit-card reveal"><h3>🚶 十五分鐘無目的散步</h3><p>不帶耳機、不趕路、不為任務，只是走進自然與空氣裡，讓感官從室內節奏鬆開。</p></div>
+        <div class="habit-card reveal"><h3>✍️ 睡前記下三句話</h3><p>記下今天難忘的一刻、完成的一件事、明天期待的一件事，幫助注意力偏向正向經驗。</p></div>
+      </div>
+      <div class="story-card p-6 mt-6 reveal"><p class="leading-8 text-text-secondary">這一組習慣不是要求更努力正向，而是用很輕的方式，幫大腦重新看見可被珍惜的日常。</p></div>
+    </div>
+  </div>
+
+  <div class="slide slide-18" data-slide="18">
+    <div class="gradient-mesh"><div class="blob" style="width:310px;height:310px;top:-80px;right:-60px;background:#f6c8b1;opacity:.08"></div><div class="blob" style="width:240px;height:240px;bottom:-30px;left:-20px;background:#97c8b7;opacity:.08"></div></div>
+    <div class="content">
+      <p class="mini-label reveal">Practical note</p>
+      <h2 class="font-display text-[clamp(2rem,4vw,3rem)] brush-title mb-6 reveal">最值得帶走的實踐提醒</h2>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="story-card p-7 reveal"><h3 class="text-xl font-bold mb-3">不要一次全部做</h3><p class="leading-8 text-text-secondary">附件最後強調的是「選一個，今天開始」。生活改變靠累積，不靠意志衝刺。</p></div>
+        <div class="story-card p-7 reveal"><h3 class="text-xl font-bold mb-3">先選最不費力的一項</h3><p class="leading-8 text-text-secondary">例如餐前停30秒、早上開窗10分鐘、睡前寫三句話，成功率通常最高。</p></div>
+      </div>
+      <div class="story-card p-7 mt-6 reveal"><h3 class="text-xl font-bold mb-3">這15個習慣的共同框架</h3><p class="leading-8 text-text-secondary">少刺激、多節律；少混亂、多重置；少內耗、多覺察。這就是附件最核心的生活提案。</p></div>
+    </div>
+  </div>
+
+  <div class="slide slide-19" data-slide="19">
+    <div class="gradient-mesh"><div class="blob" style="width:460px;height:460px;top:-80px;right:-60px;background:#97c8b7;opacity:.18;"></div><div class="blob" style="width:320px;height:320px;bottom:-60px;left:-30px;background:#f6c8b1;opacity:.16;"></div><div class="blob" style="width:220px;height:220px;top:36%;left:12%;background:#90b8d8;opacity:.14;"></div></div>
+    <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1;"></canvas>
+    <div class="content text-center">
+      <div class="emoji-hero reveal">🌸</div>
+      <p class="mini-label reveal">Closing</p>
+      <h2 class="font-display text-[clamp(2.5rem,5vw,4.4rem)] brush-title mb-4 reveal">從一個小習慣開始</h2>
+      <div class="story-card max-w-[860px] mx-auto p-8 reveal">
+        <p class="text-[1.12rem] leading-9 text-text-secondary">附件結論指出，這15個習慣的核心不是激烈翻新生活，而是在神經科學與心理學基礎上，慢慢關掉背景噪音，讓身心重新回到穩定軌道。</p>
+        <p class="footer-note mt-4">「千里之行，始於足下。」</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav-controls">
+  <button class="nav-btn" onclick="changeSlide(-1)" aria-label="上一張">&#8249;</button>
+  <div class="slide-dots" id="dots"></div>
+  <button class="nav-btn" onclick="changeSlide(1)" aria-label="下一張">&#8250;</button>
+  <span class="slide-counter" id="counter">1 / 19</span>
+</div>
+<script>
+let current = 1;
+const total = document.querySelectorAll('.slide').length;
+const dotsContainer = document.getElementById('dots');
+const counter = document.getElementById('counter');
+for (let i = 1; i <= total; i++) { const dot = document.createElement('div'); dot.className = 'dot' + (i === 1 ? ' active' : ''); dot.onclick = () => goToSlide(i); dotsContainer.appendChild(dot); }
+function goToSlide(n) { const prev = document.querySelector('.slide.active'); const next = document.querySelector(`.slide[data-slide="${n}"]`); if (prev) prev.classList.remove('active'); if (next) { next.classList.add('active'); animateSlide(next); } current = n; updateNav(); }
+function changeSlide(dir) { let next = current + dir; if (next < 1) next = total; if (next > total) next = 1; goToSlide(next); }
+function updateNav() { document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i + 1 === current)); counter.textContent = current + ' / ' + total; }
+document.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); } });
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+document.addEventListener('touchend', (e) => { const diff = touchStartX - e.changedTouches[0].clientX; if (Math.abs(diff) > 50) changeSlide(diff > 0 ? 1 : -1); });
+function animateSlide(slide) { slide.querySelectorAll('.reveal').forEach((el, i) => { el.style.transition = 'none'; el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.offsetHeight; const delay = i * 0.08; el.style.transition = `opacity 0.35s ease ${delay}s, transform 0.35s ease ${delay}s`; el.style.opacity = '1'; el.style.transform = 'translateY(0px)'; }); }
+document.addEventListener('mousemove', (e) => { const spotlight = document.querySelector('.mouse-spotlight'); if (spotlight) { const rgb = getComputedStyle(document.documentElement).getPropertyValue('--glow-color-rgb').trim() || '151,200,183'; spotlight.style.background = `radial-gradient(560px circle at ${e.clientX}px ${e.clientY}px, rgba(${rgb}, 0.05), transparent 40%)`; }});
+window.initParticles = function(canvas, options) { if (!canvas) return; const ctx = canvas.getContext('2d'); canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; const interactive = options.interactive !== false; const count = options.count || (interactive ? 42 : 16); let mx = -1000, my = -1000; const rgb = getComputedStyle(document.documentElement).getPropertyValue('--glow-color-rgb').trim() || '151,200,183'; const [r,g,b] = rgb.split(',').map(Number); const particles = Array.from({ length: count }, () => ({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28, size: Math.random() * 2.2 + 0.8, alpha: Math.random() * 0.28 + 0.08 })); if (interactive) { canvas.addEventListener('mousemove', (e) => { const rect = canvas.getBoundingClientRect(); mx = e.clientX - rect.left; my = e.clientY - rect.top; }); canvas.addEventListener('mouseleave', () => { mx = -1000; my = -1000; }); }
+(function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p => { if (interactive) { const dx = p.x - mx, dy = p.y - my; const dist = Math.sqrt(dx*dx + dy*dy) || 1; if (dist < 120) { const force = (120 - dist) / 120 * 1.5; p.vx += (dx / dist) * force * 0.08; p.vy += (dy / dist) * force * 0.08; } } p.vx *= 0.98; p.vy *= 0.98; p.x += p.vx; p.y += p.vy; if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0; if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0; ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fillStyle = `rgba(${r},${g},${b},${p.alpha})`; ctx.fill(); }); requestAnimationFrame(animate); })(); };
+document.querySelectorAll('.particle-canvas').forEach(c => window.initParticles(c, { interactive: true, count: 42 }));
+document.querySelectorAll('.particle-canvas-ambient').forEach(c => window.initParticles(c, { interactive: false, count: 16 }));
+try { animateSlide(document.querySelector('.slide.active')); } catch(e) {}
+</script>
+</body>
+</html>

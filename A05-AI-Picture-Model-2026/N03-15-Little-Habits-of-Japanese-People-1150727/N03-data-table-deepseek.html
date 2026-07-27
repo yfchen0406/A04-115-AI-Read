@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本長壽健康生活習慣 15 選</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
+    </script>
+    <style>
+        /* ----- 全局重置 & 字體 ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f5f0;
+            font-family: 'Segoe UI', 'Helvetica Neue', 'PingFang TC', 'Microsoft YaHei', sans-serif;
+            padding: 2rem 1.5rem;
+            color: #2d2a24;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem 2rem 3rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ----- 標題區 ----- */
+        header {
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid #ece8e0;
+            padding-bottom: 1.2rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #1f1b16;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        header h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #8a7e6e;
+            margin-left: 0.75rem;
+        }
+
+        header .sub {
+            font-size: 1rem;
+            color: #6b5f4f;
+            margin-top: 0.25rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ----- 圖表區 ----- */
+        .chart-section {
+            margin-bottom: 3rem;
+        }
+
+        .chart-section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d2a24;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chart-section .chart-desc {
+            font-size: 0.9rem;
+            color: #7f7464;
+            margin-bottom: 1.2rem;
+        }
+
+        .chart-wrapper {
+            background: #fcfbf9;
+            border-radius: 16px;
+            padding: 1.5rem 1rem 0.8rem;
+            border: 1px solid #eeeae2;
+            position: relative;
+            height: 320px;
+        }
+
+        .chart-wrapper canvas {
+            width: 100% !important;
+            height: 100% !important;
+            max-height: 280px;
+        }
+
+        /* ----- 表格區 ----- */
+        .table-section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d2a24;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .table-section .table-desc {
+            font-size: 0.9rem;
+            color: #7f7464;
+            margin-bottom: 1.2rem;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid #e8e2d8;
+            background: #fcfbf9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 820px;
+        }
+
+        thead {
+            background: #ede8e0;
+        }
+
+        thead th {
+            padding: 0.9rem 0.8rem;
+            text-align: left;
+            font-weight: 600;
+            color: #2d2a24;
+            border-bottom: 2px solid #d6cec2;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+
+        thead th:first-child {
+            border-radius: 14px 0 0 0;
+        }
+        thead th:last-child {
+            border-radius: 0 14px 0 0;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #ece6dc;
+            transition: background 0.15s;
+        }
+
+        tbody tr:hover {
+            background: #f6f2eb;
+        }
+
+        tbody td {
+            padding: 0.8rem 0.8rem;
+            vertical-align: top;
+            color: #2d2a24;
+        }
+
+        /* 類別標籤 */
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            color: #fff;
+        }
+
+        .tag-sleep {
+            background: #4A90D9;
+        }
+        .tag-energy {
+            background: #50C878;
+        }
+        .tag-space {
+            background: #E88B3C;
+        }
+        .tag-declutter {
+            background: #E06060;
+        }
+        .tag-mindful {
+            background: #9B59B6;
+        }
+
+        /* 來源 */
+        .source-badge {
+            display: inline-block;
+            background: #e8e2d8;
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: #4d4438;
+            white-space: nowrap;
+        }
+
+        /* ----- 響應式 ----- */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 16px;
+            }
+            header h1 {
+                font-size: 1.5rem;
+                flex-wrap: wrap;
+            }
+            header h1 small {
+                font-size: 0.8rem;
+                margin-left: 0;
+            }
+            .chart-wrapper {
+                height: 260px;
+                padding: 0.8rem 0.4rem;
+            }
+            .chart-wrapper canvas {
+                max-height: 220px;
+            }
+            table {
+                font-size: 0.78rem;
+                min-width: 680px;
+            }
+            thead th,
+            tbody td {
+                padding: 0.5rem 0.5rem;
+            }
+            .tag {
+                font-size: 0.6rem;
+                padding: 0.1rem 0.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            .chart-wrapper {
+                height: 210px;
+            }
+            .chart-wrapper canvas {
+                max-height: 180px;
+            }
+            table {
+                font-size: 0.7rem;
+                min-width: 580px;
+            }
+            thead th,
+            tbody td {
+                padding: 0.35rem 0.35rem;
+            }
+        }
+
+        /* 自定義 Chart.js 工具提示字體 */
+        .chart-wrapper :deep(.chartjs-tooltip) {
+            font-family: inherit !important;
+        }
+
+        /* 腳註 */
+        .footer-note {
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #ece8e0;
+            font-size: 0.8rem;
+            color: #8a7e6e;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ====== 標題 ====== -->
+        <header>
+            <h1>
+                🌿 日本長壽健康生活習慣 15 選
+                <small>基於日本生活智慧</small>
+            </h1>
+            <div class="sub">彙整 15 項日常習慣，涵蓋睡眠、精力、空間、減量與正念五大面向</div>
+        </header>
+
+        <!-- ====== 圖表區 ====== -->
+        <section class="chart-section">
+            <h2>📊 執行時長／頻率分布</h2>
+            <div class="chart-desc">依習慣執行所需時間分組，觀察各時間區間的習慣數量</div>
+            <div class="chart-wrapper">
+                <canvas id="habitsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- ====== 表格區 ====== -->
+        <section class="table-section">
+            <h2>📋 完整習慣列表</h2>
+            <div class="table-desc">點擊表格列可檢視詳細做法與身心益處</div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width:80px;">習慣名稱</th>
+                            <th style="min-width:90px;">所屬類別</th>
+                            <th style="min-width:100px;">執行時長／頻率</th>
+                            <th style="min-width:180px;">具體做法與建議</th>
+                            <th style="min-width:180px;">對身心的益處</th>
+                            <th style="min-width:100px;">來源</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- 由 JavaScript 動態產生 -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="footer-note">
+            資料來源：日本的15個生活小習慣.docx &nbsp;·&nbsp; 圖表使用 Chart.js 繪製
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  1. 資料定義
+        // ============================================================
+        const habitsData = [{
+            name: '提早晚餐時間',
+            category: '睡眠與生理時鐘',
+            categoryKey: 'sleep',
+            duration: '睡前至少三小時',
+            detail: '在睡前至少三小時吃完晚餐，避免消化過程提升核心體溫。',
+            benefit: '確保體溫下降以進入深度睡眠，避免身體在修復與消化間掙扎，消除疲勞。'
+        }, {
+            name: '晨間五分鐘日光浴',
+            category: '睡眠與生理時鐘',
+            categoryKey: 'sleep',
+            duration: '5分鐘',
+            detail: '起床看手機前，先到戶外或陽台接觸自然光。',
+            benefit: '校準內在生理時鐘，調節皮脂醇與代謝。'
+        }, {
+            name: '將工作物品搬出臥室',
+            category: '睡眠與生理時鐘',
+            categoryKey: 'sleep',
+            duration: '持續性習慣',
+            detail: '移除臥室內的筆電、工作筆記與手機，嚴格定義臥室為修復場所。',
+            benefit: '避免大腦連結壓力與休息空間，讓神經系統關機並增加睡眠深度。'
+        }, {
+            name: '先喝溫開水，再喝咖啡',
+            category: '日間精力與專注管理',
+            categoryKey: 'energy',
+            duration: '醒後 60 到 90 分鐘',
+            detail: '起床先飲溫水，將咖啡延後至醒來一個半小時後再喝。',
+            benefit: '啟動消化與神經系統，讓大腦代謝腺苷，避免下午體力崩潰。'
+        }, {
+            name: '中午靜心十分鐘',
+            category: '日間精力與專注管理',
+            categoryKey: 'energy',
+            duration: '10 到 20 分鐘',
+            detail: '在午間安排短暫閉目放鬆，不一定要入睡。',
+            benefit: '順應超晝夜節律循環，提升認知能力與補給睡眠。'
+        }, {
+            name: '每日開窗通風十分鐘',
+            category: '日間精力與專注管理',
+            categoryKey: 'energy',
+            duration: '10分鐘',
+            detail: '每天早上開窗，讓室內空氣流通。',
+            benefit: '降低二氧化碳濃度，改善專注力下降與疲勞問題。'
+        }, {
+            name: '空間的「兩分鐘法則」',
+            category: '空間整頓',
+            categoryKey: 'space',
+            duration: '兩分鐘內',
+            detail: '若家事可在兩分鐘內完成（如折衣、收納），則隨手處理。',
+            benefit: '關閉大腦「未完成的回圈」，減少背景注意力無謂消耗。'
+        }, {
+            name: '清理水的周邊空間',
+            category: '空間整頓',
+            categoryKey: 'space',
+            duration: '4秒鐘',
+            detail: '隨手擦拭並保持水槽、浴室檯面與水龍頭乾爽整潔。',
+            benefit: '減少視覺雜亂對大腦注意力的佔用，換回內心平靜。'
+        }, {
+            name: '一分鐘的「重置系統」',
+            category: '空間整頓',
+            categoryKey: 'space',
+            duration: '1分鐘 (60秒)',
+            detail: '每晚將家中最易亂的三個角落（如玄關、沙發）恢復原狀。',
+            benefit: '防止混亂堆積成心理壓力，確保空間發揮休息功能。'
+        }, {
+            name: '穿著「現在的自己」',
+            category: '物品減量',
+            categoryKey: 'declutter',
+            duration: '整理時執行',
+            detail: '清理衣櫃，捨棄不再合適的衣服，穿著屬於現階段的衣物。',
+            benefit: '實踐心理「斷捨離」，放下對過去或虛擬自我的執著。'
+        }, {
+            name: '為每樣東西找一個「家」',
+            category: '物品減量',
+            categoryKey: 'declutter',
+            duration: '持續性習慣',
+            detail: '為每件物品設定固定位置，使用後隨即放回。',
+            benefit: '消除找尋物品的認知損耗，減少決策疲勞，換回心理資源。'
+        }, {
+            name: '每個類別少擁有一點',
+            category: '物品減量',
+            categoryKey: 'declutter',
+            duration: '持續性習慣',
+            detail: '讓廚具、保養品等各類別物品稍微減量。',
+            benefit: '減少收納、打掃與做決定的時間，獲得更多專注與休息空間。'
+        }, {
+            name: '餐前停頓三十秒',
+            category: '正念修復',
+            categoryKey: 'mindful',
+            duration: '30秒',
+            detail: '第一口飯前停頓，確認自己要開始進食的儀式感。',
+            benefit: '切換神經層面至接收狀態，更容易產生飽足感與滿足感。'
+        }, {
+            name: '十五分鐘無目的散步',
+            category: '正念修復',
+            categoryKey: 'mindful',
+            duration: '15分鐘',
+            detail: '不帶耳機、不為運動，純粹待在自然環境中感受感官信號。',
+            benefit: '有效降低血壓與皮脂醇。'
+        }, {
+            name: '睡前記下三句話',
+            category: '正念修復',
+            categoryKey: 'mindful',
+            duration: '2分鐘',
+            detail: '記錄不想忘記的瞬間、順利完成的事、及明天期待的事。',
+            benefit: '重新引導注意力塑造大腦認知的生活質地，提升正向情緒。'
+        }];
+
+        // 類別對應的 CSS class
+        const categoryTagMap = {
+            sleep: 'tag-sleep',
+            energy: 'tag-energy',
+            space: 'tag-space',
+            declutter: 'tag-declutter',
+            mindful: 'tag-mindful'
+        };
+
+        // 來源固定
+        const SOURCE = '日本的15個生活小習慣.docx';
+
+        // ============================================================
+        //  2. 渲染表格
+        // ============================================================
+        const tbody = document.getElementById('tableBody');
+
+        habitsData.forEach(item => {
+            const tr = document.createElement('tr');
+            const tagClass = categoryTagMap[item.categoryKey] || '';
+
+            tr.innerHTML = `
+                <td><strong>${item.name}</strong></td>
+                <td><span class="tag ${tagClass}">${item.category}</span></td>
+                <td>${item.duration}</td>
+                <td>${item.detail}</td>
+                <td>${item.benefit}</td>
+                <td><span class="source-badge">${SOURCE}</span></td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // ============================================================
+        //  3. 準備圖表資料 — 依執行時長分組
+        // ============================================================
+        //  分組規則：
+        //  - 秒級 (< 1分鐘)   : 4秒鐘, 30秒
+        //  - 分鐘級 (1~30分鐘) : 5分鐘, 10~20分鐘, 10分鐘, 兩分鐘內, 1分鐘, 15分鐘, 2分鐘
+        //  - 小時級 (>30分鐘)  : 睡前至少三小時, 醒後60~90分鐘
+        //  - 持續性習慣        : 持續性習慣
+        //  - 整理時執行        : 整理時執行
+
+        const durationGroups = {
+            '秒級 (< 1分鐘)': [],
+            '分鐘級 (1–30分鐘)': [],
+            '小時級 (> 30分鐘)': [],
+            '持續性習慣': [],
+            '整理時執行': []
+        };
+
+        habitsData.forEach(item => {
+            const d = item.duration;
+            if (d === '4秒鐘' || d === '30秒') {
+                durationGroups['秒級 (< 1分鐘)'].push(item.name);
+            } else if (d === '5分鐘' || d === '10 到 20 分鐘' || d === '10分鐘' ||
+                d === '兩分鐘內' || d === '1分鐘 (60秒)' || d === '15分鐘' || d === '2分鐘') {
+                durationGroups['分鐘級 (1–30分鐘)'].push(item.name);
+            } else if (d === '睡前至少三小時' || d === '醒後 60 到 90 分鐘') {
+                durationGroups['小時級 (> 30分鐘)'].push(item.name);
+            } else if (d === '持續性習慣') {
+                durationGroups['持續性習慣'].push(item.name);
+            } else if (d === '整理時執行') {
+                durationGroups['整理時執行'].push(item.name);
+            } else {
+                // 防護：若未匹配到，歸入「其他」
+                if (!durationGroups['其他']) durationGroups['其他'] = [];
+                durationGroups['其他'].push(item.name);
+            }
+        });
+
+        // 轉為 Chart.js 需要的格式
+        const groupLabels = Object.keys(durationGroups);
+        const groupCounts = groupLabels.map(key => durationGroups[key].length);
+        // 過濾掉數量為 0 的群組（此處沒有）
+        const filtered = groupLabels.map((label, idx) => ({
+            label,
+            count: groupCounts[idx],
+            items: durationGroups[label]
+        })).filter(g => g.count > 0);
+
+        const chartLabels = filtered.map(g => g.label);
+        const chartData = filtered.map(g => g.count);
+
+        // 自訂顏色
+        const colorPalette = [
+            '#E06060', // 秒級 - 紅
+            '#E88B3C', // 分鐘級 - 橙
+            '#4A90D9', // 小時級 - 藍
+            '#50C878', // 持續性 - 綠
+            '#9B59B6' // 整理時執行 - 紫
+        ];
+
+        const bgColors = chartLabels.map((_, i) => colorPalette[i % colorPalette.length]);
+        const borderColors = bgColors.map(c => c);
+
+        // ============================================================
+        //  4. 初始化 Chart.js 長條圖
+        // ============================================================
+        const ctx = document.getElementById('habitsChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartLabels,
+                datasets: [{
+                    label: '習慣數量',
+                    data: chartData,
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 2,
+                    borderRadius: 6,
+                    barPercentage: 0.65,
+                    categoryPercentage: 0.8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#2d2a24',
+                        titleColor: '#f0ebe3',
+                        bodyColor: '#f0ebe3',
+                        cornerRadius: 8,
+                        padding: 10,
+                        callbacks: {
+                            afterBody: function(context) {
+                                const idx = context[0].dataIndex;
+                                const groupKey = chartLabels[idx];
+                                const items = durationGroups[groupKey] || [];
+                                if (items.length === 0) return '';
+                                return '📌 ' + items.join('、');
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                            font: { size: 12 },
+                            color: '#5a4f40'
+                        },
+                        grid: {
+                            color: 'rgba(0,0,0,0.06)',
+                            drawBorder: false
+                        },
+                        title: {
+                            display: true,
+                            text: '習慣數量',
+                            color: '#6b5f4f',
+                            font: { size: 13, weight: '500' }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: { size: 12 },
+                            color: '#5a4f40',
+                            maxRotation: 20,
+                            minRotation: 0
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                // 在柱狀上顯示數值標籤
+                animation: {
+                    duration: 800
+                }
+            },
+            plugins: [{
+                id: 'customLabels',
+                afterDraw(chart) {
+                    const { ctx, data, chartArea: { top, bottom, left, right } } = chart;
+                    const meta = chart.getDatasetMeta(0);
+                    const bars = meta.data;
+
+                    ctx.save();
+                    ctx.font = '600 13px "Segoe UI", "Helvetica Neue", sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    bars.forEach((bar, i) => {
+                        const value = data.datasets[0].data[i];
+                        if (value === 0) return;
+                        const x = bar.x;
+                        const y = bar.y - 6;
+                        ctx.fillStyle = '#2d2a24';
+                        ctx.fillText(value, x, y);
+                    });
+                    ctx.restore();
+                }
+            }]
+        });
+    </script>
+</body>
+</html>
