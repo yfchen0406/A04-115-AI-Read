@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C004.NotebookLM + Claude 研究協作工作流 ~ 115.07.28!</title>
+  <!-- 使用 Google Font 的 Caveat 手寫／鋼筆字體 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ——— 全域重置 & 基礎 ——— */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f6ef;
+      /* 仿手稿紙背景 */
+      background-image:
+        linear-gradient(#e8e0d5 1px, transparent 1px),
+        linear-gradient(90deg, #e8e0d5 1px, transparent 1px);
+      background-size: 30px 30px;
+      background-position: -1px -1px;
+      font-family: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+      padding: 1.5rem;
+      color: #2d2a24;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* ——— 主卡片 ——— 改為「二邊留白」（修改 max-width） ——— */
+    .report-container {
+      width: 100%;
+      max-width: 1200px;  /* ← 這裡從 100% 改為 1200px，實現左右留白 */
+      background: #fefcf7;
+      padding: 2rem 2.5rem 3rem;
+      border-radius: 60px 20px 60px 20px;
+      box-shadow:
+        12px 12px 0 rgba(0, 0, 0, 0.08),
+        -6px -6px 0 rgba(0, 0, 0, 0.04),
+        inset 0 0 0 2px #d9d0c0,
+        inset 0 0 0 6px #f3ede4;
+      border: 3px solid #b8aa92;
+      position: relative;
+      transition: all 0.1s ease;
+    }
+
+    /* 手繪裝飾 — 模擬鉛筆線條 */
+    .report-container::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      border: 2px dashed #d6cdbb;
+      border-radius: 50px 12px 50px 12px;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    /* ——— 標題區域 ——— */
+    .header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .header h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #1f1b16;
+      text-shadow: 4px 4px 0 #e7dfd0;
+      display: inline-block;
+      padding: 0 1.2rem 0.3rem;
+      border-bottom: 5px wavy #b8aa92;
+      line-height: 1.2;
+    }
+
+    .header .sub {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #5f5543;
+      margin-top: 0.2rem;
+      background: #efe8db;
+      display: inline-block;
+      padding: 0.2rem 2rem;
+      border-radius: 40px;
+      transform: rotate(-1deg);
+      box-shadow: inset 0 -2px 0 #b8aa92;
+    }
+
+    /* ——— 附件圖片「連結」區域（僅顯示連結，無圖片） ——— */
+    .image-section {
+      margin: 0.5rem 0 2rem;
+      border: 4px dashed #d6cdbb;
+      border-radius: 50px 12px;
+      padding: 1.2rem 1.5rem;
+      background: #fcf9f3;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .image-section .link-wrapper {
+      display: inline-block;
+      font-size: 1.6rem;
+      font-weight: 600;
+      background: #efe8db;
+      padding: 0.6rem 2.2rem;
+      border-radius: 60px 12px;
+      border: 3px solid #b8aa92;
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.05);
+      transform: rotate(-0.5deg);
+      transition: all 0.1s ease;
+    }
+
+    .image-section .link-wrapper:hover {
+      transform: rotate(1deg) scale(1.02);
+      background: #e8dfce;
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .image-section a {
+      text-decoration: none;
+      color: #2d2419;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .image-section a .icon {
+      font-size: 2.2rem;
+    }
+
+    .image-section a .filename {
+      border-bottom: 3px wavy #b0926e;
+      padding-bottom: 0.1rem;
+    }
+
+    .image-section .hint {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #6b5f4b;
+      letter-spacing: 0.04em;
+    }
+
+    .image-section .hint a {
+      display: inline;
+      font-weight: 600;
+      color: #7f6b50;
+      text-decoration: underline wavy #b8aa92;
+    }
+
+    /* ——— 黃金法則 醒目 ——— */
+    .golden-rule-banner {
+      background: #f3ede4;
+      border-left: 8px solid #b0926e;
+      padding: 1rem 2rem;
+      border-radius: 40px 10px 40px 10px;
+      margin: 1.8rem 0 2.4rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2d2419;
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.05);
+      transform: rotate(0.5deg);
+      text-align: center;
+    }
+
+    .golden-rule-banner span {
+      background: #d9cdb8;
+      padding: 0.1rem 0.8rem;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    .golden-rule-banner .highlight {
+      background: #c9b89c;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      color: #1f1b16;
+    }
+
+    /* ——— 步驟卡片 ——— */
+    .step-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .step-card {
+      background: #fcf9f3;
+      border: 3px solid #cbbca6;
+      border-radius: 40px 12px 40px 12px;
+      padding: 1.6rem 2rem 1.8rem;
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.08s linear;
+      position: relative;
+    }
+
+    /* 每個步驟左上角編號 — 手繪圈 */
+    .step-number {
+      display: inline-block;
+      background: #f3ede4;
+      border: 3px solid #b8aa92;
+      border-radius: 60% 40% 60% 40%;
+      padding: 0.1rem 1rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #3d3227;
+      transform: rotate(-2deg);
+      margin-bottom: 0.3rem;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.04);
+      letter-spacing: 0.05em;
+    }
+
+    .step-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1f1b16;
+      margin: 0.2rem 0 0.4rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .step-title .badge {
+      font-size: 1.2rem;
+      font-weight: 400;
+      background: #ddd2c0;
+      padding: 0.1rem 1rem;
+      border-radius: 40px;
+      color: #2d2419;
+      transform: rotate(1deg);
+    }
+
+    .step-body {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      margin-top: 0.3rem;
+    }
+
+    .step-body .col {
+      flex: 1 1 200px;
+    }
+
+    .step-body ul,
+    .step-body .list {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .step-body ul li,
+    .list-item {
+      font-size: 1.3rem;
+      line-height: 1.7;
+      padding: 0.2rem 0 0.2rem 1.8rem;
+      position: relative;
+      font-weight: 400;
+      color: #3d3227;
+    }
+
+    .step-body ul li::before {
+      content: '✧';
+      position: absolute;
+      left: 0;
+      color: #b0926e;
+      font-size: 1.5rem;
+      top: 0.1rem;
+    }
+
+    .step-body .highlight-box {
+      background: #f3ede4;
+      border-radius: 30px 8px 30px 8px;
+      padding: 0.8rem 1.5rem;
+      margin: 0.4rem 0;
+      border-left: 6px solid #b8aa92;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1f1b16;
+    }
+
+    .step-body .output {
+      background: #efe8db;
+      border-radius: 40px 8px 40px 8px;
+      padding: 0.5rem 1.8rem;
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2d2419;
+      margin-top: 0.2rem;
+      border: 2px dashed #b8aa92;
+    }
+
+    /* ——— 流程圖（手繪箭頭） ——— */
+    .workflow-final {
+      margin: 2.6rem 0 1.2rem;
+      background: #f3ede4;
+      border-radius: 60px 12px 60px 12px;
+      padding: 1.5rem 1.8rem;
+      border: 3px solid #b8aa92;
+      box-shadow: inset 0 0 0 2px #e7dfd0;
+      text-align: center;
+    }
+
+    .workflow-final .flow-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem 1.2rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #2d2419;
+    }
+
+    .flow-item {
+      background: #fcf9f3;
+      padding: 0.3rem 1.8rem;
+      border-radius: 60px 10px 60px 10px;
+      border: 3px solid #b8aa92;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.04);
+      font-weight: 700;
+      transform: rotate(-0.5deg);
+    }
+
+    .flow-arrow {
+      font-size: 2.4rem;
+      color: #b0926e;
+      transform: rotate(2deg);
+      font-weight: 300;
+      padding: 0 0.1rem;
+    }
+
+    /* ——— WHY THIS WORKS (對應原圖) ——— */
+    .why-works {
+      margin: 2.2rem 0 1.5rem;
+      background: #f3ede4;
+      border-radius: 60px 12px;
+      padding: 1.8rem 2rem;
+      border: 3px solid #b8aa92;
+      box-shadow: inset 0 0 0 2px #e7dfd0;
+    }
+
+    .why-works h2 {
+      font-size: 2.2rem;
+      text-align: center;
+      border-bottom: 3px wavy #b8aa92;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      color: #1f1b16;
+    }
+
+    .why-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .why-grid .box {
+      flex: 1 1 200px;
+      background: #fcf9f3;
+      padding: 1.2rem 1.8rem;
+      border-radius: 40px 8px;
+      border: 3px solid #cbbca6;
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .why-grid .box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.2rem;
+      color: #2d2419;
+      border-bottom: 2px dotted #d6cdbb;
+      padding-bottom: 0.2rem;
+    }
+
+    .why-grid .box ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.2rem;
+    }
+
+    .why-grid .box ul li {
+      font-size: 1.3rem;
+      padding: 0.15rem 0 0.15rem 1.8rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .why-grid .box ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #b0926e;
+      font-size: 1.3rem;
+    }
+
+    /* ——— 頁尾 ——— */
+    .footer-note {
+      margin-top: 2.6rem;
+      text-align: right;
+      font-size: 1.4rem;
+      color: #6b5f4b;
+      border-top: 3px wavy #d6cdbb;
+      padding-top: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-note strong {
+      font-weight: 700;
+      color: #2d2419;
+    }
+
+    /* ——— 響應式 ——— */
+    @media (max-width: 680px) {
+      body {
+        padding: 0.8rem;
+      }
+
+      .report-container {
+        padding: 1.2rem 1rem 2rem;
+        border-radius: 30px 10px 30px 10px;
+      }
+
+      .report-container::before {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+      }
+
+      .header h1 {
+        font-size: 2.4rem;
+      }
+
+      .header .sub {
+        font-size: 1.2rem;
+      }
+
+      .step-title {
+        font-size: 1.8rem;
+      }
+
+      .step-body ul li,
+      .list-item {
+        font-size: 1.15rem;
+      }
+
+      .golden-rule-banner {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.2rem;
+      }
+
+      .workflow-final .flow-row {
+        font-size: 1.2rem;
+        gap: 0.3rem 0.6rem;
+      }
+
+      .flow-item {
+        padding: 0.2rem 1rem;
+        font-size: 1rem;
+      }
+
+      .flow-arrow {
+        font-size: 1.6rem;
+      }
+
+      .step-card {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .why-works {
+        padding: 1.2rem 1rem;
+      }
+
+      .why-works h2 {
+        font-size: 1.8rem;
+      }
+
+      .why-grid .box h3 {
+        font-size: 1.5rem;
+      }
+
+      .image-section .link-wrapper {
+        font-size: 1.3rem;
+        padding: 0.4rem 1.5rem;
+      }
+
+      .image-section a .icon {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .step-body {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .step-body .col {
+        flex: 1 1 auto;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+      }
+
+      .image-section {
+        padding: 0.8rem 0.8rem;
+      }
+    }
+
+    /* 小裝飾 — 手繪點綴 */
+    .doodle {
+      display: inline-block;
+      font-size: 1.8rem;
+      opacity: 0.3;
+      transform: rotate(8deg);
+      user-select: none;
+      margin: 0 0.2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="report-container">
+
+    <!-- ========== 標題 ========== -->
+    <div class="header">
+      <h1>📓 C004.NotebookLM + Claude 研究協作工作流 ~ 115.07.28!</h1>
+      <div class="sub">✦ 真正有效的研究協作工作流 ✦</div>
+    </div>
+
+    <!-- ========== 附件圖片「連結」區域（僅連結，無圖片） ========== -->
+    <div class="image-section">
+      <div class="link-wrapper">
+        <a href="AI-103.webp" target="_blank">
+          <span class="icon">🖼️</span>
+          <span class="filename">AI-103.jpg</span>
+          <span style="font-size:1.2rem; font-weight:400; color:#5f5543;">↗</span>
+        </a>
+      </div>
+      <div class="hint">
+        📎 點擊上方連結即可查看／下載原始圖片
+      </div>
+    </div>
+
+    <!-- ========== 黃金法則 ========== -->
+    <div class="golden-rule-banner">
+      ⚡ 黃金法則：<span>不要</span> 叫 Claude 做研究，<span>要</span> 叫 NotebookLM 做研究，<br />
+      然後 <span class="highlight">叫 Claude 思考</span>。
+    </div>
+
+    <!-- ========== 步驟區 ========== -->
+    <div class="step-grid">
+
+      <!-- STEP 1 -->
+      <div class="step-card">
+        <div class="step-number">STEP ❶</div>
+        <div class="step-title">
+          📂 餵養 NotebookLM
+          <span class="badge">上傳你的最佳來源</span>
+        </div>
+        <div class="step-body">
+          <div class="col">
+            <ul>
+              <li>📖 讀取每一份來源</li>
+              <li>🔗 自動找出跨文件關聯</li>
+              <li>📝 總結主題重點</li>
+              <li>🎯 僅使用你上傳的文件回答</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="highlight-box">✅ NotebookLM 產出：</div>
+            <div class="output">乾淨的研究合成摘要</div>
+            <div style="margin-top:0.4rem; font-size:1.2rem; color:#5f5543;">
+              ✦ 所有引用都來自原始文件 ✦
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step-card">
+        <div class="step-number">STEP ❷</div>
+        <div class="step-title">
+          🧠 傳送給 Claude
+          <span class="badge">貼上 NotebookLM 的合成結果</span>
+        </div>
+        <div class="step-body">
+          <div class="col">
+            <ul>
+              <li>🔍 找出弱論點</li>
+              <li>📐 改善結構</li>
+              <li>🧩 發現遺漏的觀點</li>
+              <li>⚡ 挑戰既有假設</li>
+              <li>💡 創造更強而有力的解釋</li>
+              <li>🚀 思考超越研究本身</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="highlight-box">🧠 Claude 產出：</div>
+            <div class="output">更好的推理 &amp; 更深層的洞察</div>
+            <div style="margin-top:0.4rem; font-size:1.2rem; color:#5f5543;">
+              ✦ 批判性思考 + 結構優化 ✦
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step-card">
+        <div class="step-number">STEP ❸</div>
+        <div class="step-title">
+          🔎 核實一切
+          <span class="badge">事實查核每個主張</span>
+        </div>
+        <div class="step-body">
+          <div class="col">
+            <ul>
+              <li>❓ 問 Claude：「哪些陳述需要驗證？」</li>
+              <li>📋 將那些陳述與 NotebookLM 比對</li>
+            </ul>
+            <div style="margin-top:0.5rem; font-size:1.3rem; font-weight:600; color:#2d2419;">
+              NotebookLM 確認：
+            </div>
+            <ul>
+              <li>📌 引述</li>
+              <li>📚 引用</li>
+              <li>📊 事實</li>
+              <li>📄 原始上下文</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="highlight-box" style="border-left-color:#b0926e;">
+              🛡️ 有效預防：
+            </div>
+            <ul>
+              <li>❌ 幻覺（Hallucinations）</li>
+              <li>❌ 假引用</li>
+              <li>❌ 無根據的主張</li>
+            </ul>
+            <div class="output" style="margin-top:0.6rem;">✅ 已查核的研究</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step-card">
+        <div class="step-number">STEP ❹</div>
+        <div class="step-title">
+          ✍️ 撰寫最終版本
+          <span class="badge">用 Claude 創造高品質內容</span>
+        </div>
+        <div class="step-body">
+          <div class="col">
+            <div style="font-size:1.3rem; font-weight:600; color:#2d2419; margin-bottom:0.2rem;">
+              可產出：
+            </div>
+            <ul>
+              <li>📝 部落格文章</li>
+              <li>📱 LinkedIn 貼文</li>
+              <li>📄 報告</li>
+              <li>📧 電子報</li>
+              <li>📚 研究論文</li>
+              <li>🤝 客戶交付物</li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="highlight-box">✨ 所有內容都是：</div>
+            <ul>
+              <li>✍️ 更好的文筆</li>
+              <li>📐 更好的組織</li>
+              <li>✅ 已驗證</li>
+              <li>🚀 可立即發布</li>
+            </ul>
+            <div class="output">📢 發布就緒的內容</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /step-grid -->
+
+    <!-- ========== 最終工作流 ========== -->
+    <div class="workflow-final">
+      <div style="font-size:1.5rem; font-weight:700; color:#1f1b16; margin-bottom:0.8rem;">
+        ⚙️ 最終工作流
+      </div>
+      <div class="flow-row">
+        <span class="flow-item">📂 來源</span>
+        <span class="flow-arrow">➜</span>
+        <span class="flow-item">📓 NotebookLM<br /><span style="font-size:0.8rem; font-weight:400;">閱讀 &amp;
+            合成</span></span>
+        <span class="flow-arrow">➜</span>
+        <span class="flow-item">🧠 Claude<br /><span style="font-size:0.8rem; font-weight:400;">推理 &amp;
+            改進</span></span>
+        <span class="flow-arrow">➜</span>
+        <span class="flow-item">🚀 發布</span>
+      </div>
+      <div style="margin-top:0.8rem; font-size:1.2rem; color:#5f5543; letter-spacing:0.06rem;">
+        ✦ 從原始資料到發布內容，一次到位 ✦
+      </div>
+    </div>
+
+    <!-- ========== 為什麼這有效？（對應原圖） ========== -->
+    <div class="why-works">
+      <h2>🌟 為什麼這有效？</h2>
+      <div class="why-grid">
+        <div class="box">
+          <h3>📓 NotebookLM 研究記憶</h3>
+          <ul>
+            <li>📖 讀取你的來源</li>
+            <li>📌 保留引用</li>
+            <li>🔗 發現連結</li>
+            <li>🚫 不捏造事實</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>🧠 Claude 思維引擎</h3>
+          <ul>
+            <li>🧠 更好的推理</li>
+            <li>✍️ 更好的寫作</li>
+            <li>📐 更好的結構</li>
+            <li>💡 更好的創造力</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 頁尾 ========== -->
+    <div class="footer-note">
+      <strong>By Adrees Al Automation</strong> ｜ 追蹤以獲得每日 AI 內容 ✦
+      <span class="doodle">✎</span> <span class="doodle">✐</span> <span class="doodle">✑</span>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
