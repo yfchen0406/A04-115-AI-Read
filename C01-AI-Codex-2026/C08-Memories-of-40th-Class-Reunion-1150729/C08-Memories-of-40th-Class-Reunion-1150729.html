@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="光武工專五專同學四十多年情誼的聚會回憶。">
+  <title>四十多年友誼｜同學聚會回憶</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="album">
+  <!--
+  THESIS: 讓一張張日常聚會照串成仍在延續的四十多年友誼，而非一次性的相簿。
+  OWN-WORLD: 深墨綠、校園舊刊黃與洗印照片的暖白；以年代標籤、邊註與相片格做閱讀結構。
+  STORY: 訪客先理解友誼的來處，再沿著近期相聚的節奏回看每一次餐桌與笑聲。
+  FIRST VIEWPORT: 左側是故事標題與閱讀入口，右側是可切換的當期記憶封面照片；時間軸由下方展開。
+  FORM: 校友年刊式的數位照片檔案，採用時間軸記憶方向；seed key 94ef7787。
+  -->
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="回到首頁">光武工專・同學紀錄</a>
+    <nav aria-label="主要導覽">
+      <a href="#story">這段友誼</a>
+      <a href="#timeline">聚會時間</a>
+      <a href="#gallery">照片回憶</a>
+    </nav>
+    <button class="theme-button" type="button" aria-label="切換網站風格" id="themeButton">風格：懷舊相簿</button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker">民國七十二年相識・仍在延續</p>
+        <h1 id="hero-title">四十多年後，<br>仍能一起坐下來。</h1>
+        <p class="hero-lead">從十五歲的工專學生，到今天各自走過人生不同階段的我們，照片留住了每一次吃飯、喝咖啡、聊天與笑聲。</p>
+        <a class="primary-link" href="#gallery">開始翻閱回憶 <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/hero-friendship-illustration.webp" alt="以同學聚會照片為參考繪製的手繪團聚插畫" id="heroImage">
+        <figcaption id="heroCaption">以聚會照片為參考繪製的手繪回憶插畫</figcaption>
+      </figure>
+      <div class="hero-side-note">15 歲相識<br>58 歲再聚</div>
+    </section>
+
+    <section class="story" id="story" aria-labelledby="story-title">
+      <p class="section-label">友誼的來處</p>
+      <div class="story-grid">
+        <h2 id="story-title">一張餐桌，<br>接住了四十多年的時光。</h2>
+        <div>
+          <p>民國七十二年，我們十五歲，帶著青澀與期待進入光武工專。從民國七十九年畢業至今，每個人走出不同的人生路；而今年三月，一場簡單的到家裡聚會，讓久違的同學情誼重新有了固定的節奏。</p>
+          <p>有時是家常飯菜，有時是外帶餐點；桌上有飲料、零食、咖啡，也有說不完的往事與笑聲。這些看似平凡的小事，因為有老同學陪伴，變得格外珍貴。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <p class="section-label">近期相聚</p>
+        <h2 id="timeline-title">今年的見面，<br>慢慢成為一種默契。</h2>
+      </div>
+      <ol class="timeline" id="timelineList"></ol>
+    </section>
+
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="gallery-heading">
+        <div>
+          <p class="section-label">照片回憶</p>
+          <h2 id="gallery-title">把相聚的日子，<br>一張張收好。</h2>
+        </div>
+        <label class="search-wrap" for="searchInput">
+          <span class="sr-only">搜尋活動或日期</span>
+          <input id="searchInput" type="search" placeholder="搜尋活動、月份或日期">
+        </label>
+      </div>
+      <div class="filter-row" id="filterRow" aria-label="篩選活動類型"></div>
+      <p class="result-count" id="resultCount"></p>
+      <div class="photo-grid" id="photoGrid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>這個網站存放的不只是聚會照片，更是一段跨越四十多年的友誼紀錄。</p>
+    <p>本機私人回憶網站・照片來源保留於原始資料夾</p>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="close-button" type="button" aria-label="關閉照片" id="closeLightbox">×</button>
+    <img id="lightboxImage" src="assets/photos/A01-1150304-三月第一次聚會/A01-1150304-1.webp" alt="三月第一次同學聚會照片">
+    <p id="lightboxCaption"></p>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
