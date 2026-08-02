@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9.意外插曲 · 讀書心得詳細建議</title>
+  <!-- 手寫字體 Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ----- 全局重置 & 基礎 ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #e7f2fa;
+      /* 淺藍背景 */
+      font-family: 'Patrick Hand', 'Segoe UI', cursive;
+      font-weight: 700;
+      /* 鋼筆粗體 */
+      color: #1c2a44;
+      padding: 2rem 1rem;
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    /* ----- 2:8:2 寬版容器 ----- */
+    .page-wrap {
+      width: 100%;
+      max-width: 1440px;
+      padding: 0 10%;
+      /* 左右各 10% = 2:8:2 的留白 */
+      margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+      .page-wrap {
+        padding: 0 6%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-wrap {
+        padding: 0 4%;
+      }
+
+      body {
+        padding: 1rem 0.5rem;
+      }
+    }
+
+    /* ----- 主卡片：手繪風格 ----- */
+    .main-card {
+      background: #fffcf2;
+      /* 淺黃白 */
+      border-radius: 32px 32px 28px 28px;
+      padding: 3rem 3.2rem;
+      position: relative;
+      /* 手繪雙層邊框 */
+      border: 3px dashed #b5d4e8;
+      box-shadow: 6px 8px 0 #f5e6a3, -2px -2px 0 #f5e6a3, 0 0 0 6px #fcf6e7;
+      transition: all 0.15s;
+    }
+
+    @media (max-width: 640px) {
+      .main-card {
+        padding: 1.8rem 1.2rem;
+        border-width: 2.5px;
+        box-shadow: 4px 5px 0 #f5e6a3, -1px -1px 0 #f5e6a3, 0 0 0 4px #fcf6e7;
+      }
+    }
+
+    /* 手繪裝飾角 */
+    .main-card::before,
+    .main-card::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 3px solid #b5d4e8;
+      border-radius: 50%;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .main-card::before {
+      top: -8px;
+      left: -8px;
+      width: 40px;
+      height: 40px;
+      border-color: #c5dff0;
+    }
+
+    .main-card::after {
+      bottom: -8px;
+      right: -8px;
+      width: 40px;
+      height: 40px;
+      border-color: #c5dff0;
+    }
+
+    /* ----- 標題區 ----- */
+    .page-title {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: #16243d;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(90deg,
+          #f5e6a3 0px, #f5e6a3 10px,
+          transparent 10px, transparent 16px);
+      border-radius: 4px;
+    }
+
+    .subhead {
+      font-family: 'Patrick Hand', cursive;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #3a5a7a;
+      margin-top: 0.6rem;
+      margin-bottom: 1.8rem;
+      padding-left: 0.2rem;
+      border-bottom: 2px dashed #d6e6f2;
+      padding-bottom: 0.8rem;
+    }
+
+    /* ----- 引言區塊 ----- */
+    .intro-block {
+      background: #f4fafd;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin-bottom: 2.6rem;
+      border-left: 6px solid #b5d4e8;
+      border-right: 2px dashed #d6e6f2;
+      border-top: 2px dashed #d6e6f2;
+      border-bottom: 2px dashed #d6e6f2;
+      font-size: 1.05rem;
+      color: #1e3347;
+      box-shadow: 3px 4px 0 #f5e6a3;
+    }
+
+    .intro-block strong {
+      color: #6a4f2e;
+      font-weight: 700;
+    }
+
+    /* ----- 章節標題 (h2) ----- */
+    h2 {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 0.8rem;
+      color: #16243d;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      border-bottom: 3px dashed #e2eef8;
+      padding-bottom: 0.2rem;
+    }
+
+    .section-number {
+      display: inline-block;
+      background: #b5d4e8;
+      color: #16243d;
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 60px;
+      padding: 0 0.9rem;
+      margin-right: 0.4rem;
+      letter-spacing: 0.02em;
+      box-shadow: 2px 3px 0 #f5e6a3;
+      transform: rotate(-1deg);
+    }
+
+    /* ----- 小標題 (h3, h4) ----- */
+    h3 {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.4rem;
+      color: #1e3347;
+    }
+
+    h4 {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-top: 1.4rem;
+      margin-bottom: 0.2rem;
+      color: #2a4a6a;
+    }
+
+    /* ----- 段落 & 清單 ----- */
+    p {
+      margin-bottom: 0.9rem;
+      color: #1e2c40;
+      font-weight: 700;
+    }
+
+    ul,
+    ol {
+      margin: 0.6rem 0 1.2rem 1.8rem;
+      padding-left: 0.2rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+      color: #1e2c40;
+      font-weight: 700;
+      list-style-position: outside;
+    }
+
+    ul li::marker {
+      color: #8cb4d6;
+      font-size: 1.2em;
+    }
+
+    ol li::marker {
+      color: #6a8fb0;
+      font-weight: 700;
+    }
+
+    /* ----- 範例框（手繪風格） ----- */
+    .example-box {
+      background: #f8fbf0;
+      border-radius: 18px;
+      padding: 1.4rem 1.8rem;
+      margin: 1.2rem 0 1.6rem 0;
+      border: 2.5px dashed #b5d4e8;
+      box-shadow: 4px 5px 0 #f5e6a3;
+      font-size: 0.98rem;
+      color: #1e2c40;
+      transition: 0.1s;
+    }
+
+    .example-box strong {
+      color: #6a4f2e;
+    }
+
+    .example-box pre {
+      font-family: 'Patrick Hand', cursive;
+      font-weight: 700;
+      white-space: pre-wrap;
+      margin: 0;
+      line-height: 1.9;
+      color: #1e2c40;
+    }
+
+    /* ----- 表格 (手繪風格) ----- */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.2rem 0 1.6rem 0;
+      border-radius: 18px;
+      border: 2.5px dashed #b5d4e8;
+      box-shadow: 4px 5px 0 #f5e6a3;
+      background: #fcf9f0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Patrick Hand', cursive;
+      font-weight: 700;
+      font-size: 0.96rem;
+      min-width: 320px;
+    }
+
+    th {
+      background: #e2eef8;
+      font-weight: 700;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      color: #16243d;
+      border-bottom: 2px dashed #b5d4e8;
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+    }
+
+    td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1.5px dashed #d6e6f2;
+      vertical-align: top;
+      color: #1e2c40;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ----- 引用 / 筆記小標 ----- */
+    .note {
+      background: #f4fafd;
+      border-radius: 16px;
+      padding: 0.8rem 1.4rem;
+      margin: 1.2rem 0;
+      border-left: 5px solid #f5e6a3;
+      font-size: 0.98rem;
+      color: #1e3347;
+      font-weight: 700;
+    }
+
+    .note strong {
+      color: #6a4f2e;
+    }
+
+    .quote-marker {
+      background: #f0f6fa;
+      padding: 0.1rem 0.6rem;
+      border-radius: 8px;
+      font-style: italic;
+      color: #3a5a7a;
+      border: 1.5px dashed #b5d4e8;
+    }
+
+    /* ----- 分隔線 (手繪波浪) ----- */
+    hr {
+      border: none;
+      margin: 2.6rem 0 1.8rem 0;
+      height: 18px;
+      background: repeating-linear-gradient(90deg,
+          #b5d4e8 0px, #b5d4e8 6px,
+          transparent 6px, transparent 12px,
+          #f5e6a3 12px, #f5e6a3 18px,
+          transparent 18px, transparent 24px);
+      border-radius: 12px;
+      opacity: 0.5;
+    }
+
+    /* ----- 特殊：核心頁面結尾 ----- */
+    .core-block {
+      background: #fcf6e7;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin: 1.8rem 0 1.2rem 0;
+      border: 3px dashed #b5d4e8;
+      box-shadow: 5px 6px 0 #f5e6a3, inset 0 0 0 4px #fcf6e7;
+    }
+
+    .core-block ul {
+      margin: 0.6rem 0 0.8rem 1.8rem;
+    }
+
+    .final-highlight {
+      background: #e2eef8;
+      border-radius: 18px;
+      padding: 1.2rem 1.8rem;
+      margin: 1.2rem 0;
+      text-align: center;
+      font-size: 1.1rem;
+      border: 2.5px dashed #b5d4e8;
+      box-shadow: 4px 5px 0 #f5e6a3;
+      color: #16243d;
+      font-weight: 700;
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+    }
+
+    /* ----- 頁尾 ----- */
+    .footer-note {
+      margin-top: 2.8rem;
+      padding-top: 1rem;
+      border-top: 3px dashed #d6e6f2;
+      font-size: 0.95rem;
+      color: #5a7a94;
+      text-align: right;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* ----- 手繪小裝飾 (漂浮) ----- */
+    .doodle {
+      display: inline-block;
+      font-size: 1.2rem;
+      opacity: 0.25;
+      user-select: none;
+      margin: 0 0.2rem;
+    }
+
+    /* ----- 響應式微調 ----- */
+    @media (max-width: 640px) {
+      .page-title {
+        font-size: 2.2rem;
+      }
+
+      .page-title::after {
+        height: 4px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .section-number {
+        font-size: 0.95rem;
+        padding: 0 0.7rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      .intro-block {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .example-box {
+        padding: 1rem 1.2rem;
+      }
+
+      .core-block {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .final-highlight {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-title {
+        font-size: 1.8rem;
+      }
+
+      .subhead {
+        font-size: 0.95rem;
+      }
+
+      .main-card {
+        padding: 1.2rem 0.8rem;
+      }
+
+      ul,
+      ol {
+        margin-left: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <div class="main-card">
+
+      <!-- ====== 標題 ====== -->
+      <h1 class="page-title">9.意外插曲，AI讀書心得建議(值得參考) ~ 115.07.31</h1>
+      <div class="subhead">
+        你目前的流程其實已經很完整：<br />
+        「閱讀 → NotebookLM 整理 → 撰寫心得 → Perplexity 轉成行動準則 → 圖片提示詞 → 投影片 → 網頁保存」<br />
+        真正可能缺少的，不是更多 AI 工具，而是「自己的思考主線、驗證機制與持續追蹤」。
+      </div>
+
+      <!-- ====== 引言 ====== -->
+      <div class="intro-block">
+        <strong>📘 這份建議</strong> 是為了幫助你從「書籍摘要＋AI分析」升級為「個人閱讀成果＋行動實驗」。<br />
+        每一項建議都保留原文完整內容，不增減一字。
+      </div>
+
+      <!-- ====== 一 ====== -->
+      <h2><span class="section-number">一</span> 最需要補強的是「自己的觀點」</h2>
+      <p>AI 很容易幫你整理得完整，但讀書心得可能變成「書籍摘要＋AI分析」，而不是你的閱讀成果。</p>
+      <p>建議每一本書都先回答以下五個問題：</p>
+      <ol>
+        <li>這本書主要在解決什麼問題？</li>
+        <li>哪一個觀念最觸動我？為什麼？</li>
+        <li>哪一個觀念與我的退休生活最有關？</li>
+        <li>哪一個觀念我不同意，或需要保留？</li>
+        <li>這本書改變了我什麼行動或想法？</li>
+      </ol>
+      <p>可以把心得主軸固定成：</p>
+      <div class="example-box">
+        <strong>書中觀念 → 我的經驗 → 我的判斷 → 我的行動</strong>
+      </div>
+      <p>這會比單純按照章節摘要更有個人特色。</p>
+
+      <!-- ====== 二 ====== -->
+      <h2><span class="section-number">二</span> 不要只做「逐章心得」，要增加全書整合</h2>
+      <p>逐章寫作容易變成每章各自獨立，讀完後卻看不出全書的核心價值。</p>
+      <p>建議增加一頁「全書核心地圖」，包括：</p>
+      <ul>
+        <li>全書要解決的核心問題</li>
+        <li>3～5個關鍵觀念</li>
+        <li>各觀念之間的關係</li>
+        <li>對你的退休學習、AI學習、英文學習、網頁建置或家庭支持有何幫助</li>
+        <li>哪些觀念可以立即實踐</li>
+        <li>哪些觀念仍需觀察</li>
+      </ul>
+      <p>可以用簡單的結構：</p>
+      <div class="example-box">
+        <pre>
+本書核心問題
+    ↓
+三個重要觀念
+    ↓
+與我的生活連結
+    ↓
+實際行動
+    ↓
+一個月後檢查結果</pre>
+      </div>
+
+      <!-- ====== 三 ====== -->
+      <h2><span class="section-number">三</span> 增加「原文證據」與「個人案例」</h2>
+      <p>你已經會提供畫線檔案給 NotebookLM，這是很好的做法。下一步可以要求每個重要觀點都分成三層：</p>
+
+      <h4>書中原意</h4>
+      <p>用自己的話整理，必要時附上章節或頁碼。</p>
+
+      <h4>我的理解</h4>
+      <p>說明你如何理解這個觀念，以及它和過去經驗的關係。</p>
+
+      <h4>我的應用</h4>
+      <p>說明你準備怎麼使用，而不是只說「我要努力實踐」。</p>
+
+      <p>例如：</p>
+      <div class="example-box">
+        <p><strong>書中提到</strong>，持續的小行動比短期大量努力更容易形成習慣。</p>
+        <p><strong>我理解為</strong>，退休學習不必每天完成大型專案，而是每天完成一個可見的小成果。</p>
+        <p><strong>因此我會將每日目標設定為</strong>：英文10分鐘、閱讀10分鐘、網頁修改一項、AI學習一項。</p>
+      </div>
+      <p>這樣才能清楚區分「作者的話、你的解讀、你的決定」。</p>
+
+      <!-- ====== 四 ====== -->
+      <h2><span class="section-number">四</span> 行動準則要改成可以追蹤的實驗</h2>
+      <p>Perplexity 幫你產出行動學習準則後，最好不要停留在建議層次，而是轉成「30天小實驗」。</p>
+      <p>每個行動準則都加入：</p>
+      <ul>
+        <li>行動內容</li>
+        <li>執行頻率</li>
+        <li>所需時間</li>
+        <li>完成標準</li>
+        <li>記錄方式</li>
+        <li>檢討日期</li>
+        <li>如果失敗，如何調整</li>
+      </ul>
+
+      <p>例如：</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>書中觀念</th>
+              <th>行動實驗</th>
+              <th>完成標準</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>小步驟累積成果</td>
+              <td>每天修改網頁一個小地方</td>
+              <td>每週完成5項修改</td>
+            </tr>
+            <tr>
+              <td>主動回顧學習</td>
+              <td>每週寫一次學習回顧</td>
+              <td>週日完成300字</td>
+            </tr>
+            <tr>
+              <td>刻意練習</td>
+              <td>每天練習5個英文句型</td>
+              <td>能自行造出5句例句</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>你目前設定的「每日一」目標，非常適合與讀書心得結合。每讀完一本書，可以選出一個最重要的小行動，連續實施30天。</p>
+
+      <!-- ====== 五 ====== -->
+      <h2><span class="section-number">五</span> 加入「閱讀前」與「閱讀後」的差異</h2>
+      <p>很多心得只記錄讀完後的想法，但更有價值的是呈現你的想法如何改變。</p>
+      <p>可以增加三個欄位：</p>
+
+      <h4>閱讀前</h4>
+      <ul>
+        <li>我為什麼想讀這本書？</li>
+        <li>我原本相信什麼？</li>
+        <li>我希望解決什麼問題？</li>
+      </ul>
+
+      <h4>閱讀中</h4>
+      <ul>
+        <li>哪些段落讓我停下來思考？</li>
+        <li>哪些內容與我的經驗相似？</li>
+        <li>哪些內容讓我疑惑或不同意？</li>
+      </ul>
+
+      <h4>閱讀後</h4>
+      <ul>
+        <li>我改變了什麼看法？</li>
+        <li>我準備採取什麼行動？</li>
+        <li>一個月後，我是否真的有所改變？</li>
+      </ul>
+
+      <p>這會讓讀書心得從「介紹一本書」提升為「記錄一次思考轉變」。</p>
+
+      <!-- ====== 六 ====== -->
+      <h2><span class="section-number">六</span> 為不同媒介建立一致的內容架構</h2>
+      <p>你會產出心得、圖片、投影片與網頁，建議先建立一份「母稿」，所有格式都從母稿延伸。</p>
+      <p>母稿可以包含：</p>
+      <ol>
+        <li>書籍基本資料</li>
+        <li>我的閱讀動機</li>
+        <li>全書核心問題</li>
+        <li>章節摘要</li>
+        <li>重要原文與頁碼</li>
+        <li>我的理解</li>
+        <li>我的生活連結</li>
+        <li>我的不同意見</li>
+        <li>行動學習準則</li>
+        <li>30天實驗</li>
+        <li>最終總結</li>
+        <li>圖片與投影片素材</li>
+      </ol>
+      <p>如此可以避免：</p>
+      <ul>
+        <li>網頁內容和投影片不一致</li>
+        <li>圖片只漂亮但沒有重點</li>
+        <li>AI產出的摘要互相矛盾</li>
+        <li>章節標題或觀點重複</li>
+        <li>行動建議沒有出現在最後總結</li>
+      </ul>
+
+      <!-- ====== 七 ====== -->
+      <h2><span class="section-number">七</span> 圖片不只作為裝飾，要有敘事功能</h2>
+      <p>每一段放插圖時，可以先判斷它屬於哪一種功能：</p>
+      <ul>
+        <li>解釋概念</li>
+        <li>表現生活情境</li>
+        <li>象徵心理轉變</li>
+        <li>對比錯誤與改善</li>
+        <li>呈現行動方法</li>
+        <li>引導讀者思考</li>
+      </ul>
+      <p>每張圖片最好都能回答：</p>
+      <div class="example-box">
+        <strong>如果拿掉這張圖，讀者會少理解什麼？</strong>
+      </div>
+      <p>如果答案是「沒有差別」，這張圖可能只是裝飾。</p>
+
+      <!-- ====== 八 ====== -->
+      <h2><span class="section-number">八</span> 投影片應該呈現「思考旅程」</h2>
+      <p>投影片不要只是把讀書心得分頁貼上去，建議使用以下順序：</p>
+      <ol>
+        <li>我為什麼讀這本書</li>
+        <li>這本書在討論什麼問題</li>
+        <li>書中最重要的三個觀念</li>
+        <li>哪個觀念最影響我</li>
+        <li>它如何連結我的退休生活</li>
+        <li>我原本的想法與現在的差異</li>
+        <li>我準備進行的30天行動</li>
+        <li>我希望一個月後看到什麼結果</li>
+        <li>這本書推薦給誰</li>
+        <li>我仍然保留哪些疑問</li>
+      </ol>
+      <p>這樣投影片會更像「個人學習分享」，而不是書籍簡介。</p>
+
+      <!-- ====== 九 ====== -->
+      <h2><span class="section-number">九</span> AI協作時要設計「角色分工」</h2>
+      <p>不同工具不要都要求它們做同樣的事，可以分工：</p>
+      <ul>
+        <li><strong>NotebookLM</strong>：忠於書籍內容，整理證據與章節</li>
+        <li><strong>ChatGPT/Codex</strong>：協助建立文章架構、修訂文字、製作網頁與投影片</li>
+        <li><strong>Perplexity</strong>：補充外部觀點與行動建議</li>
+        <li><strong>圖片生成工具</strong>：表現概念與生活情境</li>
+        <li><strong>你自己</strong>：做最後判斷、加入經驗、決定是否採用</li>
+      </ul>
+      <p>尤其要避免讓外部搜尋工具取代書籍原意。外部資料應該放在「延伸閱讀」或「補充觀點」，不要混入作者原本的主張。</p>
+
+      <!-- ====== 十 ====== -->
+      <h2><span class="section-number">十</span> 建議建立一份固定的讀書心得檢核表</h2>
+      <p>完成後，可以用以下問題自我檢查：</p>
+      <ul>
+        <li>是否清楚說明我為什麼讀這本書？</li>
+        <li>是否有我的生活經驗？</li>
+        <li>是否區分書中觀點與我的看法？</li>
+        <li>是否提供章節或頁碼依據？</li>
+        <li>是否寫出我不同意或尚未確定的地方？</li>
+        <li>是否將觀念轉成具體行動？</li>
+        <li>行動是否可以在30天內驗證？</li>
+        <li>圖片是否真的幫助理解？</li>
+        <li>投影片是否呈現思考變化？</li>
+        <li>網頁是否方便日後搜尋與回顧？</li>
+        <li>一個月後能否回來補寫實踐結果？</li>
+      </ul>
+
+      <hr />
+
+      <!-- ====== 結尾：核心頁面 ====== -->
+      <h2 style="border-bottom-color: #b5d4e8; border-bottom-width: 4px;">📌 我最建議你新增的核心頁面</h2>
+
+      <div class="core-block">
+        <p>你的「AI學苑」或個人學習網站中，每一本書除了放完整心得，還可以增加：</p>
+        <ul>
+          <li>閱讀前問題</li>
+          <li>一頁摘要</li>
+          <li>我的三個收穫</li>
+          <li>我的疑問與不同意見</li>
+          <li>30天行動實驗</li>
+          <li>執行紀錄</li>
+          <li>一個月後回顧</li>
+          <li>相關英文單字與句型</li>
+          <li>相關AI工具或網頁製作練習</li>
+          <li>圖片、投影片與延伸作品</li>
+        </ul>
+        <p>如此一來，讀書心得就不只是「讀完一本書的文章」，而會變成：</p>
+      </div>
+
+      <div class="final-highlight">
+        閱讀紀錄＋個人思考＋行動實驗＋作品展示＋長期學習資料庫
+      </div>
+
+      <p style="margin-top: 0.6rem;">這應該是你目前最值得升級的方向。</p>
+
+      <!-- ====== 頁尾 ====== -->
+      <div class="footer-note">
+        — 完整保留原文，無增減 —
+        <span style="display: inline-block; margin-left: 0.6rem; opacity: 0.3;">✧ 手繪筆記 ✧</span>
+      </div>
+
+    </div>
+    <!-- /main-card -->
+  </div>
+  <!-- /page-wrap -->
+
+</body>
+
+</html>
