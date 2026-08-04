@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>六月，七月，體重升降記｜2026 飲食筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root{
+    --paper:#E9E4D3;
+    --card:#FAF7EC;
+    --card-dim:#F2EEE0;
+    --ink:#26332C;
+    --ink-soft:#5C6659;
+    --red:#B5482C;
+    --red-soft:#B5482C22;
+    --green:#4C7A5E;
+    --green-soft:#4C7A5E1f;
+    --gold:#C99A2E;
+    --line: rgba(38,51,44,0.13);
+    --shadow: 0 1px 2px rgba(38,51,44,0.06), 0 18px 40px rgba(38,51,44,0.09);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image: radial-gradient(circle at 1px 1px, rgba(38,51,44,0.06) 1px, transparent 0);
+    background-size: 22px 22px;
+    color:var(--ink);
+    font-family:'標楷體','DFKai-SB','BiauKai','KaiTi',serif;
+    line-height:1.85;
+    padding: 40px 12px 100px;
+  }
+  .wrap{max-width:1280px;margin:0 auto;}
+  .page{
+    position:relative;
+    background:var(--card);
+    background-image: linear-gradient(var(--line) 1px, transparent 1px);
+    background-size: 100% 38px;
+    border-radius:3px;
+    box-shadow:var(--shadow);
+    padding: 48px 28px 48px 78px;
+  }
+  .page::before{
+    content:'';
+    position:absolute; left:60px; top:0; bottom:0; width:2px;
+    background:var(--red); opacity:.55;
+  }
+  .page::after{
+    content:'';
+    position:absolute; left:56px; top:0; bottom:0; width:10px;
+    background: repeating-linear-gradient(180deg, transparent 0 26px, rgba(38,51,44,0.10) 26px 27px);
+  }
+  @media (max-width:640px){
+    .page{padding:40px 16px 40px 46px;}
+    .page::before{left:22px;}
+    .page::after{display:none;}
+  }
+
+  .eyebrow{
+    font-family:'Roboto Mono', monospace;
+    font-size:12.5px; letter-spacing:.14em; color:var(--red);
+    text-transform:uppercase; font-weight:700; margin:0 0 10px;
+  }
+  h1.title{
+    font-family:'標楷體','DFKai-SB','BiauKai','KaiTi',serif; font-weight:900;
+    font-size: clamp(30px, 5vw, 46px);
+    margin: 0 0 14px; line-height:1.25; color:var(--ink);
+  }
+  .lede{ font-size:16.5px; color:var(--ink-soft); max-width:60ch; margin:0 0 30px;}
+
+  .stat-row{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px;}
+  .stat-card{
+    background:var(--card-dim); border:1px solid var(--line); border-radius:10px;
+    padding:16px 20px; min-width:150px; flex:1;
+  }
+  .stat-card .num{ font-family:'Roboto Mono',monospace; font-weight:700; font-size:26px;}
+  .stat-card .num.down{color:var(--green);}
+  .stat-card .num.up{color:var(--red);}
+  .stat-card .lbl{ font-size:12.5px; color:var(--ink-soft); margin-top:2px;}
+
+  .chart-box{
+    background:var(--card-dim); border:1px solid var(--line); border-radius:12px;
+    padding:20px 18px 12px; margin: 18px 0 34px; position:relative;
+  }
+  .chart-box .chart-title{
+    font-family:'標楷體','DFKai-SB','BiauKai','KaiTi',serif; font-weight:700; font-size:15.5px; margin-bottom:10px; color:var(--ink);
+  }
+  .chart-box canvas{max-width:100%;}
+  .chart-note{ font-size:12.5px; color:var(--ink-soft); margin-top:10px; border-top:1px dashed var(--line); padding-top:10px;}
+
+  section.block{ margin: 56px 0; position:relative;}
+  .marker{
+    position:absolute; left:-58px; top:2px;
+    width:34px; height:34px; border-radius:50%;
+    background:var(--red); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Roboto Mono',monospace; font-weight:700; font-size:14px;
+    box-shadow: 0 3px 8px rgba(181,72,44,0.35);
+  }
+  @media (max-width:640px){ .marker{left:-46px; width:28px;height:28px;font-size:12px;} }
+
+  h2.h{
+    font-family:'標楷體','DFKai-SB','BiauKai','KaiTi',serif; font-weight:700; font-size:25px;
+    margin: 0 0 6px; color:var(--ink);
+  }
+  h3.sub{
+    font-family:'標楷體','DFKai-SB','BiauKai','KaiTi',serif; font-weight:700; font-size:18.5px;
+    margin: 26px 0 8px; color:var(--red);
+    display:flex; align-items:center; gap:8px;
+  }
+  h3.sub .tag{
+    font-family:'Roboto Mono',monospace; font-size:11px; background:var(--red-soft);
+    color:var(--red); padding:2px 8px; border-radius:20px; font-weight:700;
+  }
+  p{ margin:0 0 14px; }
+  ul.notes{ margin:0 0 14px; padding-left:1.3em; }
+  ul.notes li{ margin-bottom:8px; }
+  b, strong{ background:linear-gradient(transparent 60%, var(--gold) 60%); font-weight:700; padding:0 1px;}
+  .kw{ color:var(--red); font-weight:700; }
+
+  table.cmp{ width:100%; border-collapse:collapse; margin:18px 0 8px; font-size:14.5px;}
+  table.cmp caption{ text-align:left; font-size:13px; color:var(--ink-soft); margin-bottom:8px;}
+  table.cmp th, table.cmp td{ padding:11px 10px; border-bottom:1px solid var(--line); text-align:left;}
+  table.cmp thead th{
+    font-family:'Roboto Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--ink-soft); border-bottom:2px solid var(--ink);
+  }
+  table.cmp td.num{ font-family:'Roboto Mono',monospace; }
+  table.cmp td.delta-up{ color:var(--red); font-weight:700; font-family:'Roboto Mono',monospace;}
+  table.cmp td.delta-down{ color:var(--green); font-weight:700; font-family:'Roboto Mono',monospace;}
+  .bar-cell{ display:flex; align-items:center; gap:8px; }
+  .bar-track{ flex:1; height:8px; background:var(--line); border-radius:4px; overflow:hidden; min-width:60px;}
+  .bar-fill{ height:100%; border-radius:4px; }
+
+  .action-list{ display:flex; flex-direction:column; gap:14px; margin-top:18px;}
+  .action{
+    background:var(--card-dim); border:1px solid var(--line); border-left:4px solid var(--red);
+    border-radius:8px; padding:16px 18px;
+  }
+  .action .num{
+    font-family:'Roboto Mono',monospace; color:var(--red); font-weight:700; font-size:13px; margin-bottom:4px; display:block;
+  }
+  .action p{margin:0;}
+
+  footer{ text-align:center; margin-top:40px; font-size:12.5px; color:var(--ink-soft); }
+  .legend-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="page">
+
+  <p class="eyebrow">退休生活・飲食筆記・2026 年 6 月—7 月</p>
+  <h1 class="title">六月，七月，<br>體重升降記</h1>
+  <p class="lede">逐日記錄 61 天的三餐、咖啡與零食、走路步數與體重，整理成這份筆記。文字部分完整保留六月與七月的分析原文，並加上圖表，讓數字自己說話。</p>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="num down">-2.2kg</div><div class="lbl">六月：105.5 → 103.3</div></div>
+    <div class="stat-card"><div class="num up">+1.5kg</div><div class="lbl">七月：103.5 → 105.0</div></div>
+    <div class="stat-card"><div class="num">2,972→2,463</div><div class="lbl">平均步數：六月→七月（－17%）</div></div>
+    <div class="stat-card"><div class="num">76.7%→54.8%</div><div class="lbl">步數達標率（&gt;2000步）</div></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">61 天走路步數 × 體重變化總覽</div>
+    <canvas id="heroChart" height="120"></canvas>
+    <div class="chart-note"><span class="legend-dot" style="background:#4C7A5E;"></span>走路步數（長條，虛線為 2000 步達標線）　<span class="legend-dot" style="background:#B5482C;"></span>體重（紅線，右側座標軸）。可以看到六月中下旬步數墊高的那幾週，體重曲線同步往下；七月中段步數持續偏低，體重也跟著往上彎。</div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="block">
+    <div class="marker">1</div>
+    <h2 class="h">飲食解析：藏在三餐裡的糖分</h2>
+
+    <h3 class="sub">六月 <span class="tag">JUN</span></h3>
+    <ul class="notes">
+      <li><strong>早餐</strong>：肯德基炸雞配沙士、森永冰淇淋、卡士達蛋糕、巧克力霜淇淋，這些是最直接的精緻糖來源；另外像布里歐吐司、蘿蔔糕、油飯本身澱粉量高，配上沙士等含糖飲料等於雙重負擔。</li>
+      <li><strong>中餐</strong>：出現一個明顯的「固定搭配」——<span class="kw">饅頭 + 巧克力牛奶</span>，整個 6/15 之後幾乎天天出現（六月共 13 天），饅頭是精緻澱粉，巧克力牛奶是液態糖，兩者疊加是這份紀錄裡最頻繁、最容易被忽略的隱藏糖分來源。叉燒包、布里歐吐司也屬於高油高糖組合。</li>
+      <li><strong>晚餐</strong>：相對健康（便當、生菜沙拉、清粥小菜居多），是三餐中糖分風險最低的一餐。</li>
+      <li><strong>咖啡與零食</strong>：無糖咖啡 23 天、微糖 7 天，但<span class="kw">OREO 出現 13 天</span>，幾乎與巧克力牛奶並列六月最大宗的額外糖分來源；月底(6/25-6/27)連續三天出現馬卡龍。</li>
+    </ul>
+
+    <h3 class="sub">七月 <span class="tag">JUL</span></h3>
+    <ul class="notes">
+      <li><strong>早餐</strong>：型態變得單一，大量出現香蕉、地瓜、饅頭、薯餅，精緻澱粉/根莖類比例升高，蛋白質明顯偏少。</li>
+      <li><strong>中餐</strong>：<span class="kw">饅頭+巧克力牛奶</span>組合延續（12 天），且巧克力蛋糕、馬卡龍持續出現；OREO 減少到 3 天，但被巧克力蛋糕（6 天）取代，糖分來源只是換了包裝，總量沒有真的下降。</li>
+      <li><strong>咖啡</strong>：雖然七月 31 天全部是無糖咖啡，值得肯定，但從 7/21 起連續 5 天份量從 500CC 增加到 <span class="kw">1000CC</span>，咖啡因攝取量倍增，這點與體重無直接關係，但也是生活習慣的變化，建議留意。</li>
+    </ul>
+
+    <div class="chart-box">
+      <div class="chart-title">高糖／精緻澱粉關鍵字出現天數：六月 vs 七月</div>
+      <canvas id="keywordChart" height="220"></canvas>
+      <div class="chart-note">「巧克力牛奶」在兩個月都維持在 12-13 天，是唯一沒有隨月份改變的項目；OREO 大幅下降，但蛋糕、饅頭反而上升，糖分來源只是換了種類。</div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="block">
+    <div class="marker">2</div>
+    <h2 class="h">六月 vs 七月對比</h2>
+    <table class="cmp">
+      <thead><tr><th>項目</th><th>6 月</th><th>7 月</th><th>變化</th></tr></thead>
+      <tbody>
+        <tr><td>平均體重</td><td class="num">104.54 kg</td><td class="num">104.77 kg</td><td class="delta-up">上升 0.23 kg</td></tr>
+        <tr><td>月初→月底體重</td><td class="num">105.5→103.3 kg</td><td class="num">103.5→105.0 kg</td><td class="delta-up">由降轉升</td></tr>
+        <tr>
+          <td>平均走路步數</td>
+          <td class="num"><div class="bar-cell">2,972<div class="bar-track"><div class="bar-fill" style="width:100%;background:#4C7A5E;"></div></div></div></td>
+          <td class="num"><div class="bar-cell">2,463<div class="bar-track"><div class="bar-fill" style="width:83%;background:#B5482C;"></div></div></div></td>
+          <td class="delta-up">減少約 17%</td>
+        </tr>
+        <tr>
+          <td>達標天數（&gt;2000步）</td>
+          <td class="num"><div class="bar-cell">23/30<div class="bar-track"><div class="bar-fill" style="width:76.7%;background:#4C7A5E;"></div></div></div></td>
+          <td class="num"><div class="bar-cell">17/31<div class="bar-track"><div class="bar-fill" style="width:54.8%;background:#B5482C;"></div></div></div></td>
+          <td class="delta-up">明顯下滑</td>
+        </tr>
+        <tr><td>含糖/精緻澱粉高頻食物（OREO+巧克力牛奶+蛋糕類）</td><td>出現頻率高，且集中月中</td><td>巧克力牛奶頻率不變，蛋糕類增加</td><td class="delta-up">沒有實質改善</td></tr>
+        <tr><td>無糖/微糖咖啡比例</td><td>無糖 76.7%、微糖 23.3%</td><td>無糖 100%</td><td class="delta-down">咖啡本身進步，但份量翻倍</td></tr>
+      </tbody>
+    </table>
+    <p>六月呈現「先鬆後緊」：月初步數低、體重高，中旬開始步數回升、體重緩降，月底達到 6-7 月最低點 103.3kg。七月則相反，步數持續走低，體重從低點一路反彈，月底回到 105kg 上下，等於把六月後半段的努力抵銷了大半。</p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="block">
+    <div class="marker">3</div>
+    <h2 class="h">關聯分析（僅描述資料呈現的現象）</h2>
+
+    <div class="chart-box">
+      <div class="chart-title">九週平均步數 × 平均體重</div>
+      <canvas id="weeklyChart" height="220"></canvas>
+      <div class="chart-note"><span class="legend-dot" style="background:#4C7A5E;"></span>週平均步數（長條，左軸）　<span class="legend-dot" style="background:#B5482C;"></span>週平均體重（紅線，右軸）</div>
+    </div>
+
+    <ol class="notes" style="padding-left:1.4em;">
+      <li><strong>步數與體重呈現同向連動</strong>：六月下半（6/15-6/28）步數維持在 3,200-3,700 步的較高水準，體重同期持續走低至 103.3-104kg；七月除了首尾兩週，中段（7/6-7/26）步數普遍落在 2,000-2,300 步，體重也在同期回升到 104.5-105.5kg。步數低的週，體重多半沒有下降甚至上升，這個對應關係在資料中相當一致。</li>
+      <li>飲食型態上，<strong>「饅頭+巧克力牛奶」這組固定午餐從六月中一路延續到七月底</strong>，出現頻率沒有隨體重變化而調整；換句話說，飲食內容在兩個月間沒有明顯改變，真正變化最大的是走路步數。</li>
+      <li><strong>週末步數反而高於平日</strong>（週末平均 3,133 步 vs 平日平均 2,564 步），這點和一般「週末容易鬆懈」的印象不同，紀錄顯示問題不在週末飲食失控，而在<strong>平日步數持續偏低</strong>，尤其七月 7/6-7/26 這三週最明顯。</li>
+    </ol>
+
+    <div class="chart-box">
+      <div class="chart-title">平日 vs 週末 平均步數</div>
+      <canvas id="weekdayChart" height="140"></canvas>
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="block">
+    <div class="marker">4</div>
+    <h2 class="h">總結與行動建議</h2>
+    <p>資料顯示的核心問題不是「意志力不夠」，而是兩個具體、可調整的習慣缺口：</p>
+
+    <div class="action-list">
+      <div class="action"><span class="num">01 — 換掉固定午餐組合</span><p><strong>把「饅頭+巧克力牛奶」的午餐組合換掉</strong>：這個組合連續出現超過 25 天，是整份紀錄裡最穩定的糖分來源。建議先從巧克力牛奶換成無糖豆漿或黑咖啡開始，饅頭份量減半、改配一顆水煮蛋或一份生菜，光是這一項調整，一個月能省下的精緻糖量就相當可觀。</p></div>
+      <div class="action"><span class="num">02 — 補回平日走路</span><p><strong>平日步數是七月體重反彈的關鍵，優先補回平日走路</strong>：七月 7/6-7/26 三週平日步數多半不到 2,300 步，正好對應體重回升期。建議把每日 2,000 步的門檻改成「平日優先達成」，例如固定安排上午或傍晚一段 20-30 分鐘散步，不要只靠採買或外出湊步數。</p></div>
+      <div class="action"><span class="num">03 — 零食用頻率控管</span><p><strong>零食用「頻率」控管，而不是完全禁止</strong>：OREO、馬卡龍、巧克力蛋糕輪流出現，代表嘴饞的需求一直都在，只是換了種類，總量沒有減少。與其禁止，不如固定一週安排 1-2 天當作「零食日」，其餘日子用無糖優格或水果取代，降低天天都有精緻糖零食的頻率。</p></div>
+      <div class="action"><span class="num">04 — 早餐避開甜點開場</span><p><strong>早餐避免用甜點或含糖飲料開場</strong>：六月早餐出現冰淇淋、卡士達蛋糕、炸雞配沙士的情況，一天一開始就攝取大量精緻糖，容易帶動全天食慾。建議固定早餐至少含一份蛋白質（蛋、豆漿、雞胸肉），減少單靠麵包澱粉打發的頻率。</p></div>
+      <div class="action"><span class="num">05 — 咖啡份量拉回 500CC</span><p><strong>咖啡份量從 1000CC 調回 500CC</strong>：雖然七月已全面無糖值得肯定，但月底連續 5 天份量翻倍，長期下來可能影響睡眠或造成心悸，建議維持無糖但份量拉回原本的 500CC。</p></div>
+    </div>
+
+    <p style="margin-top:22px;">七月的體重反彈主要卡在「平日走路量下滑」，只要把散步這件事排進固定時段，加上把午餐那組固定的饅頭巧克力牛奶換掉，八月要重新回到 103 字頭並不難。</p>
+  </section>
+
+  <footer>資料來源：115年6-7月.csv 個人飲食紀錄（2026 年 6 月 1 日－7 月 31 日，共 61 天）</footer>
+</div>
+</div>
+
+<script>
+const DAILY = [{"date": "06/01", "weekday": 0, "steps": 2081, "weight": 105.5, "breakfast": "半盒雞塊+薯泥", "lunch": "四片布里歐吐司+二個叉燒包", "dinner": "打拋豬", "coffee": "無糖咖啡500CC", "month": "06"}, {"date": "06/02", "weekday": 1, "steps": 832, "weight": 104.7, "breakfast": "肯德基二塊炸雞+沙士", "lunch": "一顆水煮蛋+二顆饅頭+一杯巧克力牛奶", "dinner": "關廟麵", "coffee": "無糖咖啡500CC+三包OREO", "month": "06"}, {"date": "06/03", "weekday": 2, "steps": 3941, "weight": 104.5, "breakfast": "好市多壽司+半瓶沙士", "lunch": "二顆饅頭+三顆蔥蛋一杯巧克力牛奶", "dinner": "蔥爆牛肉便當", "coffee": "無糖咖啡500CC+三包OREO", "month": "06"}, {"date": "06/04", "weekday": 3, "steps": 4614, "weight": 104.5, "breakfast": "森永冰淇淋+卡士達蛋糕", "lunch": "二顆饅頭+三顆蔥蛋一杯巧克力牛奶", "dinner": "宮保雞丁便當", "coffee": "無糖咖啡500CC", "month": "06"}, {"date": "06/05", "weekday": 4, "steps": 3557, "weight": 105.0, "breakfast": "擔仔麵+麻辣鴨血+臭豆腐", "lunch": "榮總醫院的清粥小菜(四個小菜)", "dinner": "魚片便當+玉米湯", "coffee": "無糖咖啡500CC", "month": "06"}, {"date": "06/06", "weekday": 5, "steps": 2825, "weight": 105.0, "breakfast": "好市多蘿蔔糕", "lunch": "楓糖吐司四片", "dinner": "生菜沙拉+煎鱸魚", "coffee": "無糖咖啡500CC", "month": "06"}, {"date": "06/07", "weekday": 6, "steps": 685, "weight": 105.0, "breakfast": "士林法國麵包沾咖哩", "lunch": "叉燒包+薯餅", "dinner": "二包涼麵", "coffee": "無糖咖啡500CC", "month": "06"}, {"date": "06/08", "weekday": 0, "steps": 1665, "weight": 104.5, "breakfast": "❌❌❌", "lunch": "六片吐司+咖啡", "dinner": "幾片蘋果", "coffee": "微糖咖啡約500CC+二包OREO", "month": "06"}, {"date": "06/09", "weekday": 1, "steps": 2843, "weight": 104.2, "breakfast": "20顆陳記水餃+沙士", "lunch": "自製蛋餅", "dinner": "半碗烤肉飯+沙士", "coffee": "微糖咖啡約500CC", "month": "06"}, {"date": "06/10", "weekday": 2, "steps": 3622, "weight": 104.2, "breakfast": "森永巧克力冰淇淋", "lunch": "三顆叉燒包", "dinner": "味丹泡麵", "coffee": "無糖咖啡500CC+二包OREO", "month": "06"}, {"date": "06/11", "weekday": 3, "steps": 3302, "weight": 104.2, "breakfast": "關廟麵+沙士", "lunch": "自製蛋餅", "dinner": "生菜沙拉+雞胸肉", "coffee": "微糖咖啡約500CC", "month": "06"}, {"date": "06/12", "weekday": 4, "steps": 3092, "weight": 104.2, "breakfast": "關渡油飯+沙士", "lunch": "三顆叉燒包", "dinner": "陳記水餃當鍋貼煮+沙士", "coffee": "微糖咖啡約500CC", "month": "06"}, {"date": "06/13", "weekday": 5, "steps": 2361, "weight": 104.0, "breakfast": "❌❌❌", "lunch": "麥當勞麥香魚", "dinner": "大葉高島屋溫野菜(很飽)", "coffee": "無糖咖啡500CC+二包OREO", "month": "06"}, {"date": "06/14", "weekday": 6, "steps": 2693, "weight": 104.0, "breakfast": "油飯+炒高麗菜", "lunch": "北海福座萊爾富三分一杯咖啡", "dinner": "辛拉麵半碗+土拓魚羹", "coffee": "無糖咖啡500CC+一包OREO", "month": "06"}, {"date": "06/15", "weekday": 0, "steps": 3880, "weight": 104.0, "breakfast": "三顆蔥蛋+森永巧克力冰淇淋", "lunch": "四片布里歐吐司+巧克力牛奶", "dinner": "生菜和雞胸肉", "coffee": "微糖咖啡約500CC+二包OREO", "month": "06"}, {"date": "06/16", "weekday": 1, "steps": 4541, "weight": 104.5, "breakfast": "IKEA美食街吃花蓮扁食+滷肉飯", "lunch": "麥當勞麥香雞套餐", "dinner": "半顆劉家肉粽", "coffee": "無糖咖啡500CC+一包OREO", "month": "06"}, {"date": "06/17", "weekday": 2, "steps": 1700, "weight": 104.5, "breakfast": "關廟麵三包", "lunch": "四片吐司塗奶油", "dinner": "香蕉二根+少量葡萄", "coffee": "無糖咖啡500CC+", "month": "06"}, {"date": "06/18", "weekday": 3, "steps": 1630, "weight": 105.0, "breakfast": "自製炒飯+沙士", "lunch": "叉燒包三顆+巧克力牛奶", "dinner": "老婆公司滷肉飯+沙士", "coffee": "微糖咖啡約500CC", "month": "06"}, {"date": "06/19", "weekday": 4, "steps": 2209, "weight": 105.0, "breakfast": "詣超給我的粽子", "lunch": "饅頭+巧克力牛奶", "dinner": "玉米湯", "coffee": "無糖咖啡500CC+", "month": "06"}, {"date": "06/20", "weekday": 5, "steps": 5884, "weight": 105.0, "breakfast": "大全連麻膳糖炒飯和鍋貼6顆", "lunch": "饅頭+巧克力牛奶", "dinner": "大全聯比薩+蘋果西打", "coffee": "無糖咖啡500CC+2包卡士達蛋糕", "month": "06"}, {"date": "06/21", "weekday": 6, "steps": 5765, "weight": 104.8, "breakfast": "好市多壽司", "lunch": "饅頭+巧克力牛奶", "dinner": "淡水石二鍋", "coffee": "無糖咖啡500CC+蛋糕", "month": "06"}, {"date": "06/22", "weekday": 0, "steps": 3340, "weight": 104.8, "breakfast": "好市多熱夠", "lunch": "饅頭+巧克力牛奶", "dinner": "老婆公司打拋豬", "coffee": "無糖咖啡500CC+蛋糕", "month": "06"}, {"date": "06/23", "weekday": 1, "steps": 874, "weight": 104.8, "breakfast": "巧克力蛋糕", "lunch": "饅頭+巧克力牛奶", "dinner": "老婆公司好吃雞肉飯", "coffee": "無糖咖啡500CC+2包卡士達蛋糕", "month": "06"}, {"date": "06/24", "weekday": 2, "steps": 3729, "weight": 105.2, "breakfast": "❌❌❌", "lunch": "地瓜包+水煮蛋+巧克力牛奶", "dinner": "關廟麵", "coffee": "微糖咖啡約500CC", "month": "06"}, {"date": "06/25", "weekday": 3, "steps": 2186, "weight": 104.9, "breakfast": "二顆滷蛋+四個馬卡龍", "lunch": "二顆叉燒包+巧克力牛奶", "dinner": "蒸蛋+煎豆腐", "coffee": "無糖咖啡約500CC+二包OREO", "month": "06"}, {"date": "06/26", "weekday": 4, "steps": 2316, "weight": 104.8, "breakfast": "榮總巧克力霜淇淋", "lunch": "四個馬卡龍", "dinner": "簡單一個蒸地瓜", "coffee": "無糖咖啡約500CC+一包OREO", "month": "06"}, {"date": "06/27", "weekday": 5, "steps": 6246, "weight": 104.2, "breakfast": "簡單一個蒸地瓜", "lunch": "四個馬卡龍", "dinner": "煎豆腐蛋", "coffee": "無糖咖啡約500CC+二包OREO", "month": "06"}, {"date": "06/28", "weekday": 6, "steps": 3957, "weight": 104.0, "breakfast": "簡單一個蒸地瓜", "lunch": "二顆水煮蛋", "dinner": "蒸魚+蔥蛋", "coffee": "無糖咖啡500CC+", "month": "06"}, {"date": "06/29", "weekday": 0, "steps": 735, "weight": 103.9, "breakfast": "簡單2個蒸地瓜", "lunch": "四個馬卡龍", "dinner": "便當中的煎鱸魚", "coffee": "無糖咖啡約500CC+二包OREO", "month": "06"}, {"date": "06/30", "weekday": 1, "steps": 2051, "weight": 103.3, "breakfast": "#NAME?", "lunch": "三顆叉燒包+巧克力牛奶", "dinner": "蒸地瓜", "coffee": "無糖咖啡約500CC+二包OREO", "month": "06"}, {"date": "07/01", "weekday": 2, "steps": 2570, "weight": 103.5, "breakfast": "#NAME?", "lunch": "巧克力蛋糕+巧克力牛奶", "dinner": "好市多熱狗+紅茶", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/02", "weekday": 3, "steps": 1291, "weight": 103.5, "breakfast": "自製炒飯", "lunch": "巧克力蛋糕+巧克力牛奶", "dinner": "老婆公司排骨便當", "coffee": "無糖咖啡約500CC+二包OREO", "month": "07"}, {"date": "07/03", "weekday": 4, "steps": 1173, "weight": 104.5, "breakfast": "肉粽~吃前詣超內湖買的", "lunch": "饅頭+巧克力牛奶", "dinner": "麥當勞星球杯套餐", "coffee": "無糖咖啡約500CC+二包OREO", "month": "07"}, {"date": "07/04", "weekday": 5, "steps": 4196, "weight": 104.5, "breakfast": "陳記水餃當鍋貼吃，15顆", "lunch": "鹹豆漿+二顆煎包", "dinner": "黃悶雞便當", "coffee": "無糖咖啡約500CC+二包OREO", "month": "07"}, {"date": "07/05", "weekday": 6, "steps": 4764, "weight": 104.5, "breakfast": "豆腐村豆腐鍋", "lunch": "二顆饅頭+巧克力牛奶", "dinner": "二根香蕉+愛文芒果", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/06", "weekday": 0, "steps": 2729, "weight": 104.2, "breakfast": "二根香蕉+二顆地瓜", "lunch": "二顆饅頭+巧克力牛奶", "dinner": "關渡臭豆腐", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/07", "weekday": 1, "steps": 3803, "weight": 104.5, "breakfast": "關廟麵二包", "lunch": "自製蛋餅", "dinner": "生菜+好市多壽司", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/08", "weekday": 2, "steps": 1823, "weight": 104.5, "breakfast": "自製炒飯", "lunch": "三片吐司+巧克力牛奶", "dinner": "老婆公司咖哩便當(一半)", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/09", "weekday": 3, "steps": 1149, "weight": 104.7, "breakfast": "維力炸醬麵", "lunch": "一個包子一個煎包", "dinner": "麥當勞大麥克套餐", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/10", "weekday": 4, "steps": 990, "weight": 104.7, "breakfast": "蒸豆腐+鱸魚+高麗菜+蝦仁", "lunch": "二顆饅頭+巧克力牛奶", "dinner": "關廟麵2包", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/11", "weekday": 5, "steps": 1076, "weight": 104.7, "breakfast": "正芬姐家部隊鍋", "lunch": "二顆饅頭+三片土司", "dinner": "好市多壽司+好市多沙拉", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/12", "weekday": 6, "steps": 2920, "weight": 104.5, "breakfast": "大全聯的海南雞飯", "lunch": "三片吐司", "dinner": "❌❌❌", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/13", "weekday": 0, "steps": 990, "weight": 104.3, "breakfast": "森永冰淇淋", "lunch": "巧克力蛋糕和一顆饅頭+巧克力牛奶", "dinner": "地瓜蔬菜飯", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/14", "weekday": 1, "steps": 3179, "weight": 104.5, "breakfast": "好市多熱狗和可樂", "lunch": "一大塊巧克力蛋糕", "dinner": "老婆公司宮保雞丁便當", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/15", "weekday": 2, "steps": 830, "weight": 104.5, "breakfast": "2顆饅頭", "lunch": "巧克力蛋糕+馬卡龍四個", "dinner": "老婆公司便當", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/16", "weekday": 3, "steps": 1764, "weight": 104.5, "breakfast": "關廟麵2包", "lunch": "饅頭+法國吐司", "dinner": "老婆公司好吃雞肉飯", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/17", "weekday": 4, "steps": 6017, "weight": 104.5, "breakfast": "17顆陳記煎餃", "lunch": "二片薯餅+地瓜包", "dinner": "古早味排骨飯便當", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/18", "weekday": 5, "steps": 552, "weight": 104.5, "breakfast": "劉家肉粽", "lunch": "老婆公司三明治", "dinner": "商城煎包三顆+地瓜", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/19", "weekday": 6, "steps": 2179, "weight": 104.5, "breakfast": "商城地瓜", "lunch": "三片土司", "dinner": "蒸鱸魚", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/20", "weekday": 0, "steps": 2121, "weight": 104.5, "breakfast": "四根香蕉", "lunch": "商城生煎包", "dinner": "老婆公司打拋豬肉販", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/21", "weekday": 1, "steps": 3258, "weight": 105.0, "breakfast": "劉家肉粽", "lunch": "三片土司", "dinner": "老婆公司咖哩飯", "coffee": "無糖咖啡1000CC+", "month": "07"}, {"date": "07/22", "weekday": 2, "steps": 2903, "weight": 105.5, "breakfast": "永峯炒飯", "lunch": "三片土司+二片薯餅", "dinner": "新光百貨丸龜烏龍麵", "coffee": "無糖咖啡1000CC+", "month": "07"}, {"date": "07/23", "weekday": 3, "steps": 739, "weight": 106.0, "breakfast": "二根香蕉", "lunch": "三片吐司", "dinner": "士林夜市滷肉飯+蚵仔煎+豬肝湯", "coffee": "無糖咖啡1000CC+", "month": "07"}, {"date": "07/24", "weekday": 4, "steps": 2357, "weight": 106.5, "breakfast": "饅頭+香蕉+肯德基", "lunch": "饅頭一顆", "dinner": "老婆公司便當(一半)", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/25", "weekday": 5, "steps": 3544, "weight": 106.0, "breakfast": "關渡油飯", "lunch": "饅頭一顆", "dinner": "❌❌❌", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/26", "weekday": 6, "steps": 475, "weight": 105.5, "breakfast": "涼麵一碗", "lunch": "好市多馬蛋糕", "dinner": "涼麵一碗", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/27", "weekday": 0, "steps": 4874, "weight": 104.9, "breakfast": "四包小餅乾", "lunch": "饅頭一顆", "dinner": "半碗打拋豬", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/28", "weekday": 1, "steps": 5354, "weight": 105.3, "breakfast": "二根香蕉", "lunch": "饅頭2顆+巧克力牛奶", "dinner": "好市多半個牛肉卷+半個海鮮卷", "coffee": "無糖咖啡500CC+", "month": "07"}, {"date": "07/29", "weekday": 2, "steps": 1365, "weight": 105.0, "breakfast": "關廟麵+杜老爺冰淇淋", "lunch": "地瓜包+水煮蛋+巧克力牛奶", "dinner": "半個排骨便當", "coffee": "無糖咖啡1000CC+", "month": "07"}, {"date": "07/30", "weekday": 3, "steps": 1383, "weight": 105.0, "breakfast": "四片薯餅", "lunch": "三片後片吐司+巧克力牛奶", "dinner": "滷肉便當", "coffee": "無糖咖啡1000CC+", "month": "07"}, {"date": "07/31", "weekday": 4, "steps": 3979, "weight": 105.0, "breakfast": "❌❌❌", "lunch": "四片後片吐司+巧克力牛奶", "dinner": "老婆公司便當", "coffee": "無糖咖啡500CC+", "month": "07"}];
+const WEEKLY = [{"label": "6/1-6/7", "avg_steps": 2648, "start_weight": 105.5, "end_weight": 105.0, "avg_weight": 104.89}, {"label": "6/8-6/14", "avg_steps": 2797, "start_weight": 104.5, "end_weight": 104.0, "avg_weight": 104.19}, {"label": "6/15-6/21", "avg_steps": 3658, "start_weight": 104.0, "end_weight": 104.8, "avg_weight": 104.69}, {"label": "6/22-6/28", "avg_steps": 3235, "start_weight": 104.8, "end_weight": 104.0, "avg_weight": 104.67}, {"label": "6/29-7/5", "avg_steps": 2397, "start_weight": 103.9, "end_weight": 104.5, "avg_weight": 103.96}, {"label": "7/6-7/12", "avg_steps": 2070, "start_weight": 104.2, "end_weight": 104.5, "avg_weight": 104.54}, {"label": "7/13-7/19", "avg_steps": 2216, "start_weight": 104.3, "end_weight": 104.5, "avg_weight": 104.47}, {"label": "7/20-7/26", "avg_steps": 2200, "start_weight": 104.5, "end_weight": 105.5, "avg_weight": 105.57}, {"label": "7/27-7/31", "avg_steps": 3391, "start_weight": 104.9, "end_weight": 105.0, "avg_weight": 105.04}];
+const KEYWORD = {"06": {"OREO": 13, "巧克力牛奶": 13, "沙士": 6, "馬卡龍": 4, "蛋糕": 5, "冰淇淋": 3, "饅頭": 8, "吐司": 5, "1000CC": 0}, "07": {"OREO": 3, "巧克力牛奶": 12, "沙士": 0, "馬卡龍": 1, "蛋糕": 6, "冰淇淋": 2, "饅頭": 12, "吐司": 6, "1000CC": 5}};
+const WEEKDAY = {"weekend_avg": 3133, "weekday_avg": 2564};
+
+Chart.defaults.font.family = "'標楷體','DFKai-SB','BiauKai','KaiTi',serif";
+Chart.defaults.color = '#5C6659';
+
+// Hero chart: daily steps bar + weight line
+const heroCtx = document.getElementById('heroChart').getContext('2d');
+new Chart(heroCtx, {
+  data: {
+    labels: DAILY.map(d => d.date),
+    datasets: [
+      {
+        type: 'bar',
+        label: '走路步數',
+        data: DAILY.map(d => d.steps),
+        backgroundColor: DAILY.map(d => d.steps >= 2000 ? '#4C7A5E88' : '#B5482C88'),
+        yAxisID: 'y',
+        borderRadius: 2,
+        barPercentage: 0.9,
+        categoryPercentage: 0.9
+      },
+      {
+        type: 'line',
+        label: '體重 (kg)',
+        data: DAILY.map(d => d.weight),
+        borderColor: '#B5482C',
+        backgroundColor: '#B5482C',
+        borderWidth: 2.5,
+        pointRadius: 0,
+        tension: 0.3,
+        yAxisID: 'y1'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: {mode:'index', intersect:false},
+    plugins: {
+      legend: {display:false},
+      tooltip: {
+        callbacks: {
+          afterBody: (items) => {
+            const idx = items[0].dataIndex;
+            const d = DAILY[idx];
+            return ['早:'+d.breakfast,'中:'+d.lunch,'晚:'+d.dinner,'飲:'+d.coffee];
+          }
+        }
+      }
+    },
+    scales: {
+      x: { ticks:{maxTicksLimit:12, font:{size:10}}, grid:{display:false} },
+      y: { position:'left', title:{display:true,text:'步數',font:{size:11}}, grid:{color:'#26332C10'} },
+      y1:{ position:'right', title:{display:true,text:'體重 kg',font:{size:11}}, min:100, max:108, grid:{display:false} }
+    }
+  }
+});
+
+// Keyword chart
+const kwLabels = Object.keys(KEYWORD['06']);
+const kwCtx = document.getElementById('keywordChart').getContext('2d');
+new Chart(kwCtx, {
+  type:'bar',
+  data:{
+    labels: kwLabels,
+    datasets:[
+      {label:'6月', data: kwLabels.map(k=>KEYWORD['06'][k]), backgroundColor:'#4C7A5E'},
+      {label:'7月', data: kwLabels.map(k=>KEYWORD['07'][k]), backgroundColor:'#B5482C'}
+    ]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,
+    plugins:{legend:{position:'top', labels:{boxWidth:12}}},
+    scales:{
+      x:{title:{display:true,text:'出現天數',font:{size:11}}, grid:{color:'#26332C10'}},
+      y:{grid:{display:false}}
+    }
+  }
+});
+
+// Weekly combo chart
+const wkCtx = document.getElementById('weeklyChart').getContext('2d');
+new Chart(wkCtx, {
+  data:{
+    labels: WEEKLY.map(w=>w.label),
+    datasets:[
+      {type:'bar', label:'週平均步數', data: WEEKLY.map(w=>w.avg_steps), backgroundColor:'#4C7A5E88', yAxisID:'y', borderRadius:3},
+      {type:'line', label:'週平均體重', data: WEEKLY.map(w=>w.avg_weight), borderColor:'#B5482C', backgroundColor:'#B5482C', borderWidth:2.5, pointRadius:4, pointBackgroundColor:'#B5482C', tension:0.25, yAxisID:'y1'}
+    ]
+  },
+  options:{
+    responsive:true,
+    plugins:{legend:{display:false}},
+    scales:{
+      x:{grid:{display:false}, ticks:{font:{size:10.5}}},
+      y:{position:'left', title:{display:true,text:'步數',font:{size:11}}, grid:{color:'#26332C10'}},
+      y1:{position:'right', title:{display:true,text:'體重 kg',font:{size:11}}, min:103, max:106, grid:{display:false}}
+    }
+  }
+});
+
+// Weekday vs weekend
+const wdCtx = document.getElementById('weekdayChart').getContext('2d');
+new Chart(wdCtx, {
+  type:'bar',
+  data:{
+    labels:['平日', '週末'],
+    datasets:[{
+      data:[WEEKDAY.weekday_avg, WEEKDAY.weekend_avg],
+      backgroundColor:['#B5482C','#4C7A5E'],
+      borderRadius:6,
+      barThickness:60
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true,
+    plugins:{legend:{display:false}, tooltip:{callbacks:{label:(c)=>c.raw+' 步'}}},
+    scales:{
+      x:{title:{display:true,text:'平均步數',font:{size:11}}, grid:{color:'#26332C10'}},
+      y:{grid:{display:false}, ticks:{font:{size:13}}}
+    }
+  }
+});
+</script>
+</body>
+</html>

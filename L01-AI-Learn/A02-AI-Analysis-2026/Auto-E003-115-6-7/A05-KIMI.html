@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 年 6–7 月減糖減重飲食分析報告</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-muted: #f5f5f5;
+      --surface-strong: #eeeeee;
+      --border: #e0e0e0;
+      --text-primary: #1a1a1a;
+      --text-secondary: #444444;
+      --text-tertiary: #888888;
+      --text-quaternary: #bbbbbb;
+      --accent-blue: #2563eb;
+      --accent-red: #dc2626;
+      --accent-green: #16a34a;
+      --accent-purple: #7c3aed;
+      --accent-gray: #6b7280;
+      --positive: #16a34a;
+      --danger: #dc2626;
+      --warning: #d97706;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --surface: #1a1a1a;
+        --surface-muted: #222222;
+        --surface-strong: #2a2a2a;
+        --border: #333333;
+        --text-primary: #f0f0f0;
+        --text-secondary: #b0b0b0;
+        --text-tertiary: #777777;
+        --text-quaternary: #555555;
+        --accent-blue: #60a5fa;
+        --accent-red: #f87171;
+        --accent-green: #4ade80;
+        --accent-purple: #a78bfa;
+        --accent-gray: #9ca3af;
+        --positive: #4ade80;
+        --danger: #f87171;
+        --warning: #fbbf24;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 32px;
+      border: 1px solid var(--border);
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    ul {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding-left: 18px;
+      margin: 0;
+    }
+    li { margin-bottom: 4px; }
+    .card {
+      background: var(--surface-muted);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .card-warning {
+      background: rgba(217, 119, 6, 0.08);
+      border-left: 3px solid var(--warning);
+    }
+    .card-positive {
+      background: rgba(22, 163, 74, 0.08);
+      text-align: center;
+    }
+    .action-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .num-circle {
+      background: var(--text-primary);
+      color: var(--surface);
+      font-weight: 700;
+      font-size: 13px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    th {
+      background: var(--surface-strong);
+      padding: 10px 8px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    th:first-child { text-align: left; border-radius: 6px 0 0 0; }
+    th:last-child { border-radius: 0 6px 0 0; }
+    td {
+      padding: 9px 8px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    td:first-child { text-align: left; font-weight: 500; }
+    tr:nth-child(odd) { background: var(--surface-muted); }
+    .up { color: var(--danger); }
+    .down { color: var(--positive); }
+    .chart-container {
+      margin-bottom: 28px;
+    }
+    .chart-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 16px; }
+      h1 { font-size: 18px; }
+      h2 { font-size: 15px; }
+      table { font-size: 12px; }
+      td, th { padding: 6px 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>2026 年 6–7 月減糖減重飲食分析報告</h1>
+  <p class="subtitle">記錄期間：2026/06/01 – 2026/07/31　｜　顧問：健康飲食顧問</p>
+
+  <!-- ===== 圖表 1：體重與步數趨勢 ===== -->
+  <div class="chart-container">
+    <div class="chart-title">📈 體重與走路步數雙軸趨勢圖</div>
+    <svg id="trendChart" viewBox="0 0 780 320"></svg>
+  </div>
+
+  <!-- ===== 圖表 2：糖分來源對比 ===== -->
+  <div class="chart-container">
+    <div class="chart-title">📊 六月 vs 七月 隱藏糖分來源頻率對比（天數）</div>
+    <svg id="sugarChart" viewBox="0 0 780 340"></svg>
+  </div>
+
+  <!-- ===== 圖表 3：每週統計 ===== -->
+  <div class="chart-container">
+    <div class="chart-title">📉 逐週平均體重與平均步數</div>
+    <svg id="weeklyChart" viewBox="0 0 780 280"></svg>
+  </div>
+
+  <!-- ===== 一、飲食解析 ===== -->
+  <h2>📋 一、飲食解析：隱藏糖分雷達</h2>
+  <p>以下根據每日三餐與咖啡零食欄位，標出實際出現的隱藏糖來源（非籠統分類）：</p>
+
+  <div class="card">
+    <h3>🥤 含糖飲料與調味乳</h3>
+    <ul>
+      <li><strong>沙士</strong>：6 月出現 6 天（6/2、6/3、6/5、6/9、6/11、6/12），7 月僅 7/4 鹹豆漿 1 天含糖飲料紀錄，<strong class="down">明顯減少</strong>。</li>
+      <li><strong>巧克力牛奶</strong>：6 月 13 天、7 月 12 天，幾乎每天中餐或晚餐後都會出現，是<strong>最穩定的隱藏糖來源</strong>。</li>
+      <li><strong>蘋果西打、可樂、紅茶</strong>：6 月 7/20 出現蘋果西打、7/1 紅茶、7/14 可樂，頻率不高但熱量集中。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🍰 甜點與零食</h3>
+    <ul>
+      <li><strong>森永冰淇淋 / 霜淇淋</strong>：6 月 4 天（6/4、6/10、6/15、6/26），7 月 7/13、7/29 共 2 天，<strong class="down">有進步</strong>。</li>
+      <li><strong>蛋糕 / 卡士達 / 馬卡龍</strong>：6 月 9 天，7 月 6 天；其中 6/20–6/23 連續四天都有蛋糕或卡士達蛋糕，7 月則分散。</li>
+      <li><strong>OREO</strong>：6 月高達 13 天（幾乎每兩天一次），7 月降至 4 天，<strong class="down">改善顯著</strong>。</li>
+      <li><strong>好市多馬蛋糕</strong>：7/26 出現一次。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🍞 精緻澱粉（早餐與中餐大宗）</h3>
+    <ul>
+      <li><strong>吐司 / 布里歐</strong>：6 月 6 天、7 月 5 天；常出現在中餐，一次 3–4 片，搭配楓糖或奶油。</li>
+      <li><strong>饅頭 / 叉燒包 / 包子 / 煎包</strong>：6 月 19 天、7 月 21 天，<strong>幾乎天天出現</strong>，是最頻繁的精緻澱粉。</li>
+      <li><strong>油飯 / 粽子 / 肉粽</strong>：兩個月各 4 天，6/12、6/14、6/16、6/19 與 7/3、7/18、7/21、7/25。</li>
+      <li><strong>水餃 / 煎餃</strong>：6 月 2 天、7 月 2 天，一次 15–20 顆，熱量與精緻澱粉皆高。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>☕ 咖啡糖分</h3>
+    <ul>
+      <li><strong>微糖咖啡</strong>：6 月 7 天（6/8、6/9、6/11、6/12、6/15、6/18、6/24），7 月<strong class="down">完全消失</strong>，全部改為無糖咖啡，這是<strong>非常值得肯定的改變</strong>。</li>
+      <li><strong>無糖咖啡</strong>：6 月 23 天（76.7%），7 月 31 天（100%）。</li>
+    </ul>
+  </div>
+
+  <div class="card card-warning">
+    <h3>⚠️ 特別注意：「看起來還好」的組合</h3>
+    <ul>
+      <li><strong>「饅頭 + 巧克力牛奶」</strong>：7 月幾乎每天中餐都出現，單看各自不過分，但組合起來就是<strong>精緻澱粉 + 含糖飲料</strong>的雙重組合。</li>
+      <li><strong>「三片土司 + 巧克力牛奶」</strong>：7/8、7/11、7/16、7/20、7/22、7/23 等，土司本身精緻澱粉，巧克力牛奶再補糖。</li>
+      <li><strong>「涼麵 + 馬蛋糕」</strong>：7/26 中餐與晚餐都是涼麵，還加上好市多馬蛋糕，當天步數僅 475，是兩個月中步數最低的一天。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 二、六月 vs 七月對比 ===== -->
+  <h2>📊 二、六月 vs 七月對比</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>六月（30 天）</th>
+        <th>七月（31 天）</th>
+        <th>變化</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>平均體重</td>
+        <td>104.5 kg</td>
+        <td>104.8 kg</td>
+        <td class="up">↑ +0.3 kg</td>
+      </tr>
+      <tr>
+        <td>體重變化趨勢</td>
+        <td>105.5 → 103.3 kg<br><span class="down">（-2.2 kg）</span></td>
+        <td>103.5 → 105.0 kg<br><span class="up">（+1.5 kg）</span></td>
+        <td class="up">七月回升</td>
+      </tr>
+      <tr>
+        <td>平均走路步數</td>
+        <td>2,972 步</td>
+        <td>2,463 步</td>
+        <td class="up">↓ -509 步</td>
+      </tr>
+      <tr>
+        <td>步數達標天數（>2000）</td>
+        <td>23 天（76.7%）</td>
+        <td>17 天（54.8%）</td>
+        <td class="up">↓ -6 天</td>
+      </tr>
+      <tr>
+        <td>甜點攝取頻率<br><span style="font-size:11px;color:var(--text-tertiary)">（冰淇淋/蛋糕/馬卡龍）</span></td>
+        <td>18 天（60.0%）</td>
+        <td>10 天（32.3%）</td>
+        <td class="down">↓ 大幅改善</td>
+      </tr>
+      <tr>
+        <td>OREO/餅乾頻率</td>
+        <td>13 天（43.3%）</td>
+        <td>4 天（12.9%）</td>
+        <td class="down">↓ 大幅改善</td>
+      </tr>
+      <tr>
+        <td>含糖飲料頻率<br><span style="font-size:11px;color:var(--text-tertiary)">（沙士/可樂/紅茶）</span></td>
+        <td>7 天（23.3%）</td>
+        <td>2 天（6.5%）</td>
+        <td class="down">↓ 大幅改善</td>
+      </tr>
+      <tr>
+        <td>微糖咖啡天數</td>
+        <td>7 天（23.3%）</td>
+        <td>0 天（0%）</td>
+        <td class="down">↓ 完全戒除</td>
+      </tr>
+      <tr>
+        <td>無糖咖啡天數</td>
+        <td>23 天（76.7%）</td>
+        <td>31 天（100%）</td>
+        <td class="down">↑ 100%</td>
+      </tr>
+      <tr>
+        <td>精緻澱粉頻率<br><span style="font-size:11px;color:var(--text-tertiary)">（吐司/饅頭/包子等）</span></td>
+        <td>19 天（63.3%）</td>
+        <td>21 天（67.7%）</td>
+        <td class="up">↑ 略增</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== 三、關聯分析 ===== -->
+  <h2>🔗 三、關聯分析：步數、飲食與體重</h2>
+  <p>根據 61 天資料，以下是可以直接觀察到的現象（非因果推論）：</p>
+
+  <div class="card">
+    <h4>1. 步數與體重的線性相關極弱</h4>
+    <p style="margin:0">兩者相關係數僅 <strong>-0.029</strong>，幾乎呈現無關。這不代表走路沒用，而是顯示<strong>「單靠步數無法抵銷飲食熱量」</strong>。例如 6/27 走了 6,246 步（全月最高），但當天體重仍維持 104.2 kg；7/28 走了 5,354 步，體重卻上升 0.4 kg。</p>
+  </div>
+
+  <div class="card">
+    <h4>2. 七月下旬出現「連續上升區間」</h4>
+    <p style="margin:0">7/21（105.0）→ 7/22（105.5）→ 7/23（106.0）→ 7/24（106.5），連續四天每天上升 0.5 kg，這四天平均步數僅 <strong>1,814 步</strong>，且飲食包含肉粽、咖哩飯、大麥克套餐、滷肉飯、蚵仔煎等高熱量組合。7/24 之後步數提升至 3,544 步，體重開始回落。</p>
+  </div>
+
+  <div class="card">
+    <h4>3. 六月後半「低糖 + 高步數」組合效果明顯</h4>
+    <p style="margin:0">6/24–6/30 這一週，甜點幾乎消失（僅 6/26 一個馬卡龍），同時平均步數 3,235 步，體重從 105.2 kg 降至 103.3 kg，是兩個月中<strong>最低體重</strong>。這段期間早餐多為蒸地瓜，中餐簡化為水煮蛋或少量馬卡龍。</p>
+  </div>
+
+  <div class="card">
+    <h4>4. 週末步數高，但部分週末飲食失控</h4>
+    <p style="margin:0">週末平均步數 3,133 步高於平日 2,564 步，但 7/26（週日）當天步數僅 475 步，飲食為涼麵 + 馬蛋糕 + 涼麵，是兩個月步數最低的一天。6/7（週日）步數 685 步，當天晚餐吃了二包涼麵。顯示<strong>「外出活動多的週末」與「宅家放縱的週末」差異極大</strong>。</p>
+  </div>
+
+  <div class="card">
+    <h4>5. 巧克力牛奶是「隱形冠軍」</h4>
+    <p style="margin:0">6 月 13 天、7 月 12 天，幾乎每天出現。即使 7 月大幅減少甜點與 OREO，巧克力牛奶的頻率幾乎不變。它可能成為<strong>「以為已經減糖，其實還在每天攝取」</strong>的盲點。</p>
+  </div>
+
+  <!-- ===== 四、總結與行動建議 ===== -->
+  <h2>✅ 四、總結與行動建議</h2>
+  <p>先說好消息：您 7 月完全戒掉了微糖咖啡、大幅減少 OREO 與甜點、含糖飲料也幾乎消失，這些都是實實在在的進步。但體重從 7 月初的 103.5 kg 回升到月底的 105.0 kg，表示<strong>「減掉的糖分被其他來源補上了」</strong>。以下五條建議，完全針對您的紀錄設計：</p>
+
+  <div class="action-card">
+    <div class="num-circle">1</div>
+    <div>
+      <h4 style="margin:0 0 4px 0">把「巧克力牛奶」換成「無糖豆漿或鮮奶」</h4>
+      <p style="margin:0">您的紀錄裡巧克力牛奶幾乎每天出現（6 月 13 天、7 月 12 天），這是 7 月體重回升最可能的隱藏推手。不用完全戒掉，但建議<strong>一週最多 3 天</strong>，其他天改喝無糖豆漿或鮮奶。</p>
+    </div>
+  </div>
+
+  <div class="action-card">
+    <div class="num-circle">2</div>
+    <div>
+      <h4 style="margin:0 0 4px 0">中餐的「饅頭 + 土司」二選一，不要雙主食</h4>
+      <p style="margin:0">7 月有 21 天出現精緻澱粉，常見組合是「二顆饅頭 + 三片土司」或「饅頭 + 巧克力牛奶」。建議中餐<strong>只選一種澱粉</strong>：要麼一顆饅頭，要麼一片土司，搭配蛋白質（蛋、豆腐、魚）與蔬菜，讓飽足感來自蛋白質而非精緻澱粉。</p>
+    </div>
+  </div>
+
+  <div class="action-card">
+    <div class="num-circle">3</div>
+    <div>
+      <h4 style="margin:0 0 4px 0">設定「週末最低步數 1,500 步」防線</h4>
+      <p style="margin:0">7/26（475 步）與 7/18（552 步）都是週末，當天飲食也明顯放縱。建議週末不管出門與否，<strong>手機設鬧鐘提醒下午四點前完成 1,500 步</strong>，這個小門檻能避免「宅一整天 + 吃兩包涼麵」的組合。</p>
+    </div>
+  </div>
+
+  <div class="action-card">
+    <div class="num-circle">4</div>
+    <div>
+      <h4 style="margin:0 0 4px 0">早餐避開「甜鹹混搭」陷阱</h4>
+      <p style="margin:0">6/4 早餐是「森永冰淇淋 + 卡士達蛋糕」，7/13 是「森永冰淇淋」，7/15 是「2 顆饅頭」，這些早餐的問題在於<strong>沒有蛋白質與蔬菜</strong>，全是精緻澱粉或甜點。建議早餐固定公式：「蛋或豆腐 + 一種澱粉 + 蔬菜」，例如蔥蛋 + 半顆饅頭 + 小黃瓜。</p>
+    </div>
+  </div>
+
+  <div class="action-card">
+    <div class="num-circle">5</div>
+    <div>
+      <h4 style="margin:0 0 4px 0">複製 6 月底的成功公式：蒸地瓜 + 簡單蛋白質</h4>
+      <p style="margin:0">6/24–6/30 是兩個月中體重最低的黃金週，關鍵在於早餐變成蒸地瓜、中餐簡化為水煮蛋或少量馬卡龍、晚餐吃魚或豆腐。這個模式不餓肚子、不花錢、準備簡單。建議<strong>每週至少三天套用這個公式</strong>，讓身體有機會回到 103 kg 區間。</p>
+    </div>
+  </div>
+
+  <div class="card card-positive">
+    <p style="margin:0;font-weight:600;color:var(--text-primary)">
+      💪 您已經證明可以戒掉微糖咖啡和 OREO，下一步只要鎖定「巧克力牛奶」與「雙主食」，103 kg 以下絕對不是夢。加油！
+    </p>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  const dates = [
+    "6/1","6/2","6/3","6/4","6/5","6/6","6/7","6/8","6/9","6/10","6/11","6/12","6/13","6/14","6/15","6/16","6/17","6/18","6/19","6/20","6/21","6/22","6/23","6/24","6/25","6/26","6/27","6/28","6/29","6/30",
+    "7/1","7/2","7/3","7/4","7/5","7/6","7/7","7/8","7/9","7/10","7/11","7/12","7/13","7/14","7/15","7/16","7/17","7/18","7/19","7/20","7/21","7/22","7/23","7/24","7/25","7/26","7/27","7/28","7/29","7/30","7/31"
+  ];
+  const weights = [
+    105.5,104.7,104.5,104.5,105.0,105.0,105.0,104.5,104.2,104.2,104.2,104.2,104.0,104.0,104.0,104.5,104.5,105.0,105.0,105.0,104.8,104.8,104.8,105.2,104.9,104.8,104.2,104.0,103.9,103.3,
+    103.5,103.5,104.5,104.5,104.5,104.2,104.5,104.5,104.7,104.7,104.7,104.5,104.3,104.5,104.5,104.5,104.5,104.5,104.5,104.5,105.0,105.5,106.0,106.5,106.0,105.5,104.9,105.3,105.0,105.0,105.0
+  ];
+  const steps = [
+    2081,832,3941,4614,3557,2825,685,1665,2843,3622,3302,3092,2361,2693,3880,4541,1700,1630,2209,5884,5765,3340,874,3729,2186,2316,6246,3957,735,2051,
+    2570,1291,1173,4196,4764,2729,3803,1823,1149,990,1076,2920,990,3179,830,1764,6017,552,2179,2121,3258,2903,739,2357,3544,475,4874,5354,1365,1383,3979
+  ];
+  const weekLabels = ["第1週","第2週","第3週","第4週","第5週","第6週","第7週","第8週","第9週"];
+  const weekWeights = [104.89,104.19,104.69,104.67,103.96,104.54,104.47,105.57,105.04];
+  const weekSteps = [2648,2797,3658,3235,2397,2070,2216,2200,3391];
+  const sugarLabels = ["含糖飲料","巧克力牛奶","冰淇淋/蛋糕","OREO/餅乾","精緻澱粉","油飯/粽子","泡麵/關廟麵","含糖醬料","炸物"];
+  const junSugar = [7,13,9,13,19,4,6,17,3];
+  const julSugar = [2,12,6,4,21,4,4,14,5];
+
+  const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const cChart1 = isDark ? '#60a5fa' : '#2563eb';
+  const cChart2 = isDark ? '#f87171' : '#dc2626';
+  const cTextSec = isDark ? '#b0b0b0' : '#444444';
+  const cTextTer = isDark ? '#777777' : '#888888';
+  const cBorder = isDark ? '#333333' : '#e0e0e0';
+
+  function drawTrendChart() {
+    const svg = document.getElementById('trendChart');
+    const w = 780, h = 320;
+    const padL = 50, padR = 50, padT = 30, padB = 50;
+    const chartW = w - padL - padR;
+    const chartH = h - padT - padB;
+    const minW = Math.min(...weights) - 0.5;
+    const maxW = Math.max(...weights) + 0.5;
+    const minS = 0, maxS = 7000;
+    let pathW = "", pathS = "";
+    const n = weights.length;
+    for (let i = 0; i < n; i++) {
+      const x = padL + (i / (n - 1)) * chartW;
+      const yW = padT + chartH - ((weights[i] - minW) / (maxW - minW)) * chartH;
+      const yS = padT + chartH - ((steps[i] - minS) / (maxS - minS)) * chartH;
+      pathW += (i === 0 ? "M" : "L") + x + "," + yW;
+      pathS += (i === 0 ? "M" : "L") + x + "," + yS;
+    }
+    let html = "";
+    for (let i = 0; i <= 5; i++) {
+      const y = padT + (i / 5) * chartH;
+      html += `<line x1="${padL}" y1="${y}" x2="${w-padR}" y2="${y}" stroke="${cBorder}" stroke-width="0.5" stroke-dasharray="3,3"/>`;
+    }
+    html += `<path d="${pathW}" fill="none" stroke="${cChart2}" stroke-width="2"/>`;
+    html += `<path d="${pathS}" fill="none" stroke="${cChart1}" stroke-width="2" stroke-dasharray="5,3"/>`;
+    for (let i = 0; i < n; i++) {
+      const x = padL + (i / (n - 1)) * chartW;
+      const y = padT + chartH - ((weights[i] - minW) / (maxW - minW)) * chartH;
+      html += `<circle cx="${x}" cy="${y}" r="2.5" fill="${cChart2}"/>`;
+    }
+    for (let i = 0; i < n; i++) {
+      const x = padL + (i / (n - 1)) * chartW;
+      const y = padT + chartH - ((steps[i] - minS) / (maxS - minS)) * chartH;
+      html += `<circle cx="${x}" cy="${y}" r="2" fill="${cChart1}"/>`;
+    }
+    for (let i = 0; i <= 5; i++) {
+      const val = minW + (maxW - minW) * (1 - i / 5);
+      const y = padT + (i / 5) * chartH;
+      html += `<text x="${padL-8}" y="${y+4}" text-anchor="end" font-size="11" fill="${cChart2}">${val.toFixed(1)}</text>`;
+    }
+    for (let i = 0; i <= 5; i++) {
+      const val = Math.round(maxS * (1 - i / 5));
+      const y = padT + (i / 5) * chartH;
+      html += `<text x="${w-padR+8}" y="${y+4}" text-anchor="start" font-size="11" fill="${cChart1}">${val}</text>`;
+    }
+    for (let i = 0; i < n; i += 5) {
+      const x = padL + (i / (n - 1)) * chartW;
+      html += `<text x="${x}" y="${h-padB+16}" text-anchor="middle" font-size="10" fill="${cTextTer}">${dates[i]}</text>`;
+    }
+    html += `<rect x="${padL}" y="8" width="12" height="3" fill="${cChart2}" rx="1"/>`;
+    html += `<text x="${padL+18}" y="13" font-size="12" fill="${cTextSec}">體重(kg)</text>`;
+    html += `<rect x="${padL+90}" y="8" width="12" height="3" fill="${cChart1}" rx="1"/>`;
+    html += `<text x="${padL+108}" y="13" font-size="12" fill="${cTextSec}">步數</text>`;
+    svg.innerHTML = html;
+  }
+
+  function drawSugarChart() {
+    const svg = document.getElementById('sugarChart');
+    const w = 780, h = 340;
+    const padL = 120, padR = 30, padT = 40, padB = 60;
+    const chartW = w - padL - padR;
+    const chartH = h - padT - padB;
+    const maxVal = Math.max(...junSugar, ...julSugar);
+    const barW = chartW / sugarLabels.length * 0.6;
+    const gap = chartW / sugarLabels.length;
+    let html = "";
+    for (let i = 0; i <= 5; i++) {
+      const y = padT + chartH - (i / 5) * chartH;
+      html += `<line x1="${padL}" y1="${y}" x2="${w-padR}" y2="${y}" stroke="${cBorder}" stroke-width="0.5"/>`;
+      html += `<text x="${padL-8}" y="${y+4}" text-anchor="end" font-size="11" fill="${cTextTer}">${Math.round(maxVal * i / 5)}</text>`;
+    }
+    for (let i = 0; i < sugarLabels.length; i++) {
+      const x = padL + i * gap + gap * 0.15;
+      const h1 = (junSugar[i] / maxVal) * chartH;
+      const h2 = (julSugar[i] / maxVal) * chartH;
+      const y1 = padT + chartH - h1;
+      const y2 = padT + chartH - h2;
+      html += `<rect x="${x}" y="${y1}" width="${barW*0.45}" height="${h1}" fill="${cChart1}" rx="3" opacity="0.85"/>`;
+      html += `<rect x="${x+barW*0.5}" y="${y2}" width="${barW*0.45}" height="${h2}" fill="${cChart2}" rx="3" opacity="0.85"/>`;
+      html += `<text x="${x+barW*0.22}" y="${y1-4}" text-anchor="middle" font-size="10" fill="${cChart1}">${junSugar[i]}</text>`;
+      html += `<text x="${x+barW*0.72}" y="${y2-4}" text-anchor="middle" font-size="10" fill="${cChart2}">${julSugar[i]}</text>`;
+      html += `<text x="${x+barW*0.5}" y="${h-padB+12}" text-anchor="middle" font-size="11" fill="${cTextSec}">${sugarLabels[i]}</text>`;
+    }
+    html += `<rect x="${padL}" y="12" width="14" height="10" fill="${cChart1}" rx="2" opacity="0.85"/>`;
+    html += `<text x="${padL+22}" y="21" font-size="12" fill="${cTextSec}">六月（30天）</text>`;
+    html += `<rect x="${padL+130}" y="12" width="14" height="10" fill="${cChart2}" rx="2" opacity="0.85"/>`;
+    html += `<text x="${padL+152}" y="21" font-size="12" fill="${cTextSec}">七月（31天）</text>`;
+    svg.innerHTML = html;
+  }
+
+  function drawWeeklyChart() {
+    const svg = document.getElementById('weeklyChart');
+    const w = 780, h = 280;
+    const padL = 50, padR = 50, padT = 30, padB = 40;
+    const chartW = w - padL - padR;
+    const chartH = h - padT - padB;
+    const minW = 103, maxW = 106;
+    const minS = 0, maxS = 7000;
+    const n = weekLabels.length;
+    let pathW = "", pathS = "";
+    for (let i = 0; i < n; i++) {
+      const x = padL + (i / (n - 1)) * chartW;
+      const yW = padT + chartH - ((weekWeights[i] - minW) / (maxW - minW)) * chartH;
+      const yS = padT + chartH - ((weekSteps[i] - minS) / (maxS - minS)) * chartH;
+      pathW += (i === 0 ? "M" : "L") + x + "," + yW;
+      pathS += (i === 0 ? "M" : "L") + x + "," + yS;
+    }
+    let html = "";
+    for (let i = 0; i <= 4; i++) {
+      const y = padT + (i / 4) * chartH;
+      html += `<line x1="${padL}" y1="${y}" x2="${w-padR}" y2="${y}" stroke="${cBorder}" stroke-width="0.5" stroke-dasharray="3,3"/>`;
+    }
+    html += `<path d="${pathW}" fill="none" stroke="${cChart2}" stroke-width="2.5"/>`;
+    html += `<path d="${pathS}" fill="none" stroke="${cChart1}" stroke-width="2" stroke-dasharray="6,4"/>`;
+    for (let i = 0; i < n; i++) {
+      const x = padL + (i / (n - 1)) * chartW;
+      const yW = padT + chartH - ((weekWeights[i] - minW) / (maxW - minW)) * chartH;
+      const yS = padT + chartH - ((weekSteps[i] - minS) / (maxS - minS)) * chartH;
+      html += `<circle cx="${x}" cy="${yW}" r="4" fill="${cChart2}"/>`;
+      html += `<text x="${x}" y="${yW-10}" text-anchor="middle" font-size="10" fill="${cChart2}" font-weight="500">${weekWeights[i].toFixed(1)}</text>`;
+      html += `<circle cx="${x}" cy="${yS}" r="3" fill="${cChart1}"/>`;
+      html += `<text x="${x}" y="${h-padB+16}" text-anchor="middle" font-size="11" fill="${cTextSec}">${weekLabels[i]}</text>`;
+    }
+    for (let i = 0; i <= 4; i++) {
+      const val = minW + (maxW - minW) * (1 - i / 4);
+      const y = padT + (i / 4) * chartH;
+      html += `<text x="${padL-8}" y="${y+4}" text-anchor="end" font-size="11" fill="${cChart2}">${val.toFixed(1)}</text>`;
+    }
+    for (let i = 0; i <= 4; i++) {
+      const val = Math.round(maxS * (1 - i / 4));
+      const y = padT + (i / 4) * chartH;
+      html += `<text x="${w-padR+8}" y="${y+4}" text-anchor="start" font-size="11" fill="${cChart1}">${val}</text>`;
+    }
+    html += `<rect x="${padL}" y="8" width="14" height="4" fill="${cChart2}" rx="1"/>`;
+    html += `<text x="${padL+20}" y="14" font-size="12" fill="${cTextSec}">平均體重(kg)</text>`;
+    html += `<rect x="${padL+130}" y="8" width="14" height="4" fill="${cChart1}" rx="1"/>`;
+    html += `<text x="${padL+150}" y="14" font-size="12" fill="${cTextSec}">平均步數</text>`;
+    svg.innerHTML = html;
+  }
+
+  drawTrendChart();
+  drawSugarChart();
+  drawWeeklyChart();
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    drawTrendChart();
+    drawSugarChart();
+    drawWeeklyChart();
+  });
+})();
+</script>
+</body>
+</html>

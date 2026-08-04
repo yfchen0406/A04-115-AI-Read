@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>115年6-7月健康報告｜減糖減重分析</title>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: #f5f7fa;
+            color: #1e2a3a;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 30px 35px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            border-left: 8px solid #3b8c6f;
+            padding-left: 20px;
+            margin-bottom: 0.5rem;
+            color: #1a3b2f;
+        }
+        .subhead {
+            color: #5a6b7c;
+            margin-bottom: 2rem;
+            padding-left: 28px;
+            font-size: 1.05rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2.2rem;
+            margin-bottom: 1rem;
+            color: #1e4d3a;
+            border-bottom: 3px solid #cfe3db;
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+            color: #2b5a47;
+        }
+        h4 {
+            font-size: 1.1rem;
+            margin-top: 1.2rem;
+            font-weight: 600;
+            color: #3d6b58;
+        }
+        p, li {
+            font-size: 1.02rem;
+            margin-bottom: 0.6rem;
+        }
+        ul, ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.98rem;
+        }
+        th {
+            background: #e6f0ec;
+            color: #1d3e31;
+            font-weight: 700;
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid #cbd8d1;
+        }
+        td {
+            padding: 10px 10px;
+            border: 1px solid #d5e0da;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background: #f9fbfa;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .chart-box {
+            background: #ffffff;
+            border: 1px solid #e2eae6;
+            border-radius: 16px;
+            padding: 18px 15px 10px 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+        }
+        .chart-box h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #1e4d3a;
+        }
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        .highlight-box {
+            background: #f0f7f4;
+            border-radius: 16px;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-left: 6px solid #3b8c6f;
+        }
+        .badge {
+            display: inline-block;
+            background: #3b8c6f;
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-right: 6px;
+        }
+        .footnote {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: #5f7a6b;
+            border-top: 1px solid #d5e0da;
+            padding-top: 20px;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 20px 15px; }
+            .chart-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>🍃 減糖減重・健康解析報告</h1>
+    <div class="subhead">📅 紀錄期間：2026 年 6 月 1 日 ～ 7 月 31 日 ｜ 對象：退休長者（男性）</div>
+
+    <!-- ========== 以下為完整文字報告（一字不刪） ========== -->
+    <p>好的，阿伯／阿姨，這份紀錄非常詳實，您辛苦了！我是您專屬的健康顧問。讓我們一起來看看這兩個月的飲食與生活紀錄，從中找到可以讓身體更輕鬆、體重更穩定的關鍵。</p>
+
+    <h2>一、【飲食解析】逐週拆解：那些藏在日常裡的「糖衣陷阱」</h2>
+    <p>您的飲食有個明顯的「節奏」：早餐偏精緻澱粉，午餐常是饅頭或吐司，晚餐則較多樣。但魔鬼藏在細節裡，我們逐週來看「隱藏糖」與「精緻澱粉」的具體來源。</p>
+
+    <h3>第一週（6/01-6/07）</h3>
+    <ul>
+        <li><strong>早餐</strong>：半盒雞塊（裹粉油炸）、肯德基炸雞（裹粉）、好市多壽司（飯加糖調味）、擔仔麵（羹湯含糖）－這些都是<strong>精緻澱粉與糖的組合</strong>。</li>
+        <li><strong>飲料點心</strong>：幾乎每天都有<strong>沙士</strong>（含糖碳酸飲料）、<strong>三包OREO</strong>（高糖高油夾心餅乾）。這週可說是「糖炸彈」週。</li>
+    </ul>
+
+    <h3>第二週（6/08-6/14）</h3>
+    <ul>
+        <li><strong>早餐</strong>：❌❌❌（跳過早餐，但午餐直接吃六片吐司，血糖波動大）、森永巧克力冰淇淋（早上吃冰，糖分直接吸收）。</li>
+        <li><strong>午晚餐</strong>：味丹泡麵（醬料包含糖與味精）、陳記水餃當鍋貼煎（油煎增加了油脂，但水餃皮仍是精緻澱粉）。</li>
+        <li><strong>咖啡</strong>：從「無糖」轉為「微糖」，且仍搭配OREO。</li>
+    </ul>
+
+    <h3>第三週（6/15-6/21）</h3>
+    <ul>
+        <li><strong>早餐</strong>：三顆蔥蛋＋森永冰淇淋（又是糖+油的組合）、IKEA滷肉飯（醬汁含糖）。</li>
+        <li><strong>點心</strong>：卡士達蛋糕、蛋糕頻繁出現，<strong>幾乎每天都有甜點</strong>，且多為奶油、精緻糖、白麵粉製成。</li>
+    </ul>
+
+    <h3>第四週（6/22-6/30）</h3>
+    <ul>
+        <li><strong>特色</strong>：開始出現「蒸地瓜」、「水煮蛋」等較單純的食物，但<strong>巧克力蛋糕、馬卡龍、OREO仍每天報到</strong>。</li>
+        <li><strong>6/30 體重降至 103.3</strong>，是這兩個月最低點，但當天早餐是 #NAME?（可能是指「自製」或「隨便吃」），仍搭配三顆叉燒包與巧克力牛奶。</li>
+    </ul>
+
+    <h3>第五～八週（7月全月）</h3>
+    <ul>
+        <li><strong>甜點頻率不減</strong>：幾乎每日都有「巧克力蛋糕」、「馬卡龍」、「OREO」或「冰淇淋」。</li>
+        <li><strong>飲料糖分升級</strong>：7/21-7/23 出現「無糖咖啡1000CC」，但同時搭配<strong>劉家肉粽、炒飯、烏龍麵、滷肉飯、蚵仔煎</strong>，這些都是高升糖指數的精緻澱粉。</li>
+        <li><strong>隱藏危機</strong>：「老婆公司便當」出現頻率高，但外食便當的<strong>主菜醬汁（宮保雞丁、打拋豬、咖哩）多半有加糖調味</strong>，且白飯量多，都是糖分來源。</li>
+    </ul>
+
+    <h2>二、【六月 vs 七月對比】數據會說話</h2>
+    <table>
+        <thead>
+            <tr><th>指標</th><th>六月 (6/1-6/30)</th><th>七月 (7/1-7/31)</th><th>變化</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>平均體重</strong></td><td>104.4 kg</td><td>104.9 kg</td><td><strong>+0.5 kg</strong></td></tr>
+            <tr><td><strong>體重變化趨勢</strong></td><td>從 105.5 → 103.3（-2.2kg），但月底微升</td><td>從 103.5 → 105.0（+1.5kg），且後半段明顯上升</td><td>六月有降，七月回升</td></tr>
+            <tr><td><strong>平均走路步數</strong></td><td>約 2,955 步</td><td>約 2,590 步</td><td><strong>減少約 365 步</strong></td></tr>
+            <tr><td><strong>步數 > 2000 達標天數</strong></td><td>17 天（56.7%）</td><td>17 天（54.8%）</td><td>持平，但七月後半較不穩定</td></tr>
+            <tr><td><strong>含糖飲料／精緻澱粉頻率</strong></td><td>約 70% 天數有至少一項（沙士、OREO、蛋糕、白吐司、饅頭）</td><td>約 85% 天數有至少一項（可樂、蛋糕、馬卡龍、烏龍麵、肉粽）</td><td><strong>七月更頻繁</strong></td></tr>
+            <tr><td><strong>無糖／微糖咖啡比例</strong></td><td>無糖約 70%，微糖約 30%</td><td>無糖約 90%，微糖約 10%</td><td>無糖比例提升（值得鼓勵！）</td></tr>
+        </tbody>
+    </table>
+    <p><strong>發現</strong>：雖然咖啡選擇更健康了，但<strong>體重卻上升</strong>，關鍵在於<strong>甜點與精緻澱粉不減反增</strong>，且步數略降，熱量盈餘增加。</p>
+
+    <h2>三、【關聯分析】步數、飲食與體重的三角關係</h2>
+    <p>從資料中，我們可以觀察到幾個現象（請注意，這是「相關」而非「因果」）：</p>
+    <ol>
+        <li><strong>步數低於 1,500 步的日子，隔天或當週體重常有微升</strong><br>例如：6/02（832步）隔日體重104.7 → 6/03 仍104.5，沒有下降；7/18（552步）後，體重從104.5升至105.0。<br>推測：活動量不足時，身體代謝較低，熱量更容易累積。</li>
+        <li><strong>飲食單純（如蒸地瓜＋水煮蛋）搭配步數中等（3000步左右）的週，體重明顯下降</strong><br>最明顯是6/24-6/30，這週體重從105.2降至103.3，是兩個月最佳表現。<br>當週飲食較簡單，較少油炸與甜點，且常出現「蒸地瓜」、「水煮蛋」、「煎豆腐」。</li>
+        <li><strong>七月後半（7/20-7/31）步數起伏大，且甜點、含糖飲料、精緻澱粉（粽子、炒飯、烏龍麵）頻繁，體重明顯上升</strong><br>這段期間體重從104.5爬升至105.0～106.5，是兩個月最高峰。<br>尤其7/23-7/24，步數分別僅739、2357，搭配士林夜市滷肉飯、蚵仔煎、豬肝湯，體重直接從105.5 → 106.5。</li>
+    </ol>
+
+    <h2>四、【總結與行動建議】給您的減糖行動準則</h2>
+    <p>親愛的阿伯／阿姨，您已經做得很好——願意記錄、願意嘗試無糖咖啡，這些都是進步。但我們要「對症下藥」，針對這份資料，我給您5個具體、可執行的行動：</p>
+    <ol>
+        <li><strong>「甜點配額制」：每週只吃兩次，且放在運動後</strong><br>您幾乎天天吃OREO、馬卡龍或蛋糕。請改成<strong>每週二、五</strong>可吃一次，且「走路超過5000步的那天」才能享用。這樣既能獎勵自己，又能控制總量。</li>
+        <li><strong>早餐「換掉一樣澱粉」</strong><br>您常吃饅頭、吐司、叉燒包，這些都是純白麵粉。請改成「一顆水煮蛋＋一杯無糖豆漿＋半顆地瓜」，或「自製蛋餅（用全麥餅皮）＋蔬菜」。減少血糖波動，飽足感更久。</li>
+        <li><strong>設定「週末散步日」：每週六、日務必走滿 3000 步</strong><br>從資料看，週末步數常偏低（尤其7/18僅552步），而體重也常在週末後上升。請安排「飯後散步」或「早上公園走兩圈」，把走路變成家庭活動。</li>
+        <li><strong>「咖啡配點心」改成「咖啡配堅果或水果」</strong><br>您常喝咖啡配OREO或蛋糕。請改為<strong>配5顆原味堅果</strong>或<strong>半根香蕉</strong>，一樣滿足口慾，但糖分與油脂品質完全不同。</li>
+        <li><strong>「沙士、可樂、蘋果汁」換成「氣泡水＋檸檬片」</strong><br>您一個月喝了好多次含糖飲料，這些是「液態糖」最快吸收。請買一罐氣泡水，擠入半顆檸檬，冰涼解渴又無糖，還能增加喝水樂趣。</li>
+    </ol>
+    <p style="margin-top: 1.2rem;">您已經踏出最難的一步：<strong>誠實記錄</strong>。接下來只要調整幾個「高頻率」的飲食節點，體重一定能穩定下降。我們不是要您什麼都不能吃，而是「換個方式吃」。下個月，我們再一起來檢視成果，加油！ 😊</p>
+
+    <!-- ========== 圖表區 ========== -->
+    <h2>📊 數據圖表呈現</h2>
+    <div class="chart-grid">
+        <div class="chart-box">
+            <h3>📈 每日體重趨勢（6/1 – 7/31）</h3>
+            <canvas id="weightChart" height="200"></canvas>
+        </div>
+        <div class="chart-box">
+            <h3>👣 每日走路步數趨勢</h3>
+            <canvas id="stepChart" height="200"></canvas>
+        </div>
+        <div class="chart-box full-width">
+            <h3>📊 六月 vs 七月 關鍵指標對比</h3>
+            <canvas id="compareChart" height="180"></canvas>
+        </div>
+    </div>
+
+    <div class="footnote">
+        ⚡ 資料來源：115年6-7月紀錄 ｜ 圖表使用 Chart.js 繪製
+    </div>
+
+</div>
+
+<script>
+    // ============================================================
+    // 1. 原始資料（從 CSV 中提取 日期、體重、步數）
+    //    手動整理為陣列（61筆，6/1 ~ 7/31）
+    // ============================================================
+    const raw = [
+        { date: '6/1', weight: 105.5, steps: 2081 },
+        { date: '6/2', weight: 104.7, steps: 832 },
+        { date: '6/3', weight: 104.5, steps: 3941 },
+        { date: '6/4', weight: 104.5, steps: 4614 },
+        { date: '6/5', weight: 105.0, steps: 3557 },
+        { date: '6/6', weight: 105.0, steps: 2825 },
+        { date: '6/7', weight: 105.0, steps: 685 },
+        { date: '6/8', weight: 104.5, steps: 1665 },
+        { date: '6/9', weight: 104.2, steps: 2843 },
+        { date: '6/10', weight: 104.2, steps: 3622 },
+        { date: '6/11', weight: 104.2, steps: 3302 },
+        { date: '6/12', weight: 104.2, steps: 3092 },
+        { date: '6/13', weight: 104.0, steps: 2361 },
+        { date: '6/14', weight: 104.0, steps: 2693 },
+        { date: '6/15', weight: 104.0, steps: 3880 },
+        { date: '6/16', weight: 104.5, steps: 4541 },
+        { date: '6/17', weight: 104.5, steps: 1700 },
+        { date: '6/18', weight: 105.0, steps: 1630 },
+        { date: '6/19', weight: 105.0, steps: 2209 },
+        { date: '6/20', weight: 105.0, steps: 5884 },
+        { date: '6/21', weight: 104.8, steps: 5765 },
+        { date: '6/22', weight: 104.8, steps: 3340 },
+        { date: '6/23', weight: 104.8, steps: 874 },
+        { date: '6/24', weight: 105.2, steps: 3729 },
+        { date: '6/25', weight: 104.9, steps: 2186 },
+        { date: '6/26', weight: 104.8, steps: 2316 },
+        { date: '6/27', weight: 104.2, steps: 6246 },
+        { date: '6/28', weight: 104.0, steps: 3957 },
+        { date: '6/29', weight: 103.9, steps: 735 },
+        { date: '6/30', weight: 103.3, steps: 2051 },
+        { date: '7/1', weight: 103.5, steps: 2570 },
+        { date: '7/2', weight: 103.5, steps: 1291 },
+        { date: '7/3', weight: 104.5, steps: 1173 },
+        { date: '7/4', weight: 104.5, steps: 4196 },
+        { date: '7/5', weight: 104.5, steps: 4764 },
+        { date: '7/6', weight: 104.2, steps: 2729 },
+        { date: '7/7', weight: 104.5, steps: 3803 },
+        { date: '7/8', weight: 104.5, steps: 1823 },
+        { date: '7/9', weight: 104.7, steps: 1149 },
+        { date: '7/10', weight: 104.7, steps: 990 },
+        { date: '7/11', weight: 104.7, steps: 1076 },
+        { date: '7/12', weight: 104.5, steps: 2920 },
+        { date: '7/13', weight: 104.3, steps: 990 },
+        { date: '7/14', weight: 104.5, steps: 3179 },
+        { date: '7/15', weight: 104.5, steps: 830 },
+        { date: '7/16', weight: 104.5, steps: 1764 },
+        { date: '7/17', weight: 104.5, steps: 6017 },
+        { date: '7/18', weight: 104.5, steps: 552 },
+        { date: '7/19', weight: 104.5, steps: 2179 },
+        { date: '7/20', weight: 104.5, steps: 2121 },
+        { date: '7/21', weight: 105.0, steps: 3258 },
+        { date: '7/22', weight: 105.5, steps: 2903 },
+        { date: '7/23', weight: 106.0, steps: 739 },
+        { date: '7/24', weight: 106.5, steps: 2357 },
+        { date: '7/25', weight: 106.0, steps: 3544 },
+        { date: '7/26', weight: 105.5, steps: 475 },
+        { date: '7/27', weight: 104.9, steps: 4874 },
+        { date: '7/28', weight: 105.3, steps: 5354 },
+        { date: '7/29', weight: 105.0, steps: 1365 },
+        { date: '7/30', weight: 105.0, steps: 1383 },
+        { date: '7/31', weight: 105.0, steps: 3979 }
+    ];
+
+    const labels = raw.map(d => d.date);
+    const weights = raw.map(d => d.weight);
+    const steps = raw.map(d => d.steps);
+
+    // ============================================================
+    // 2. 繪製體重折線圖
+    // ============================================================
+    const ctxWeight = document.getElementById('weightChart').getContext('2d');
+    new Chart(ctxWeight, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '體重 (kg)',
+                data: weights,
+                borderColor: '#2a7f5e',
+                backgroundColor: 'rgba(42, 127, 94, 0.08)',
+                borderWidth: 2.5,
+                pointRadius: 1.5,
+                pointBackgroundColor: '#1d5e45',
+                tension: 0.15,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => ctx.parsed.y + ' kg' } }
+            },
+            scales: {
+                y: { min: 102, max: 108, ticks: { stepSize: 0.5 } },
+                x: { ticks: { maxTicksLimit: 20, font: { size: 9 } } }
+            }
+        }
+    });
+
+    // ============================================================
+    // 3. 繪製步數折線圖
+    // ============================================================
+    const ctxStep = document.getElementById('stepChart').getContext('2d');
+    new Chart(ctxStep, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: '步數',
+                data: steps,
+                borderColor: '#c07a4a',
+                backgroundColor: 'rgba(192, 122, 74, 0.06)',
+                borderWidth: 2,
+                pointRadius: 1.5,
+                pointBackgroundColor: '#a8643a',
+                tension: 0.15,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => ctx.parsed.y + ' 步' } }
+            },
+            scales: {
+                y: { beginAtZero: true, ticks: { stepSize: 1000 } },
+                x: { ticks: { maxTicksLimit: 20, font: { size: 9 } } }
+            }
+        }
+    });
+
+    // ============================================================
+    // 4. 六月 vs 七月 對比柱狀圖
+    // ============================================================
+    // 計算各項指標（根據之前表格）
+    // 簡化：直接使用表格中的數值
+    const compareData = {
+        labels: ['平均體重 (kg)', '平均步數 (千步)', '達標天數 (>2000步)', '含糖/精緻澱粉頻率 (%)', '無糖咖啡比例 (%)'],
+        june: [104.4, 2.955, 17, 70, 70],
+        july: [104.9, 2.590, 17, 85, 90]
+    };
+
+    const ctxComp = document.getElementById('compareChart').getContext('2d');
+    new Chart(ctxComp, {
+        type: 'bar',
+        data: {
+            labels: compareData.labels,
+            datasets: [
+                {
+                    label: '六月',
+                    data: compareData.june,
+                    backgroundColor: 'rgba(58, 148, 113, 0.7)',
+                    borderColor: '#2a7f5e',
+                    borderWidth: 1.5
+                },
+                {
+                    label: '七月',
+                    data: compareData.july,
+                    backgroundColor: 'rgba(207, 136, 86, 0.7)',
+                    borderColor: '#b0764a',
+                    borderWidth: 1.5
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top', labels: { usePointStyle: true } }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { callback: function(value) { return value; } }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
