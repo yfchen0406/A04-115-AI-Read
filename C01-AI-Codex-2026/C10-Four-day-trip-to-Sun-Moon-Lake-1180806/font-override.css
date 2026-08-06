@@ -1,0 +1,13 @@
+/* 標題統一使用標楷體，保留溫潤且端正的旅行手冊感。 */
+:root {
+  --pen: "DFKai-SB", "BiauKai", "標楷體", serif;
+}
+
+.brand,
+.hero h1,
+.plan-intro h2,
+.day-heading h3,
+.spot-card h4 {
+  font-weight: 600;
+  letter-spacing: 0.035em;
+}

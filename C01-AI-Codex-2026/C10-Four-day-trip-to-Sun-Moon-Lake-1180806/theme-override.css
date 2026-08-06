@@ -1,0 +1,165 @@
+/* 淺藍與淺黃色系：三個版本以不同旅行手冊形式呈現。 */
+:root {
+  --ink: #36596b;
+  --green: #4e8298;
+  --moss: #7fa7b8;
+  --lake: #bfe7f2;
+  --paper: #fffdf1;
+  --sand: #fff1b8;
+  --coral: #e5a56d;
+  --line: #d5e6e9;
+}
+
+body { background: #fffdf1; color: #36596b; }
+.site-header { background: rgba(255, 253, 241, .94); border-bottom-color: #cfe7ed; }
+.brand { color: #4e8298; }
+.hero { background: linear-gradient(145deg, #d8f2f8 0%, #eef8eb 48%, #fff3bd 100%); }
+.hero:before { background: #86c6d2; box-shadow: 270px -36px 0 #a3d3bb, 590px 28px 0 #78afc2; }
+.hero:after { background: #ffe29a; }
+.hero h1 { color: #356b83; }
+.plan-tabs { background: #eef9fa; border-bottom-color: #d5e9ed; }
+.plan-tab:hover, .plan-tab.active { color: #356b83; border-bottom-color: #e5a56d; background: #fff9d8; }
+.plan-intro h2, .day-heading h3, .spot-card h4 { color: #356b83; }
+.version-tabs button, .day-tabs button, .spot-card, .timeline { border-color: #d5e6e9; background: #fffef8; }
+.version-tabs button.active, .day-tabs button.active { background: #69abc0; border-color: #69abc0; }
+.image-placeholder { background: linear-gradient(140deg, #d8f2f8, #fff3bd); border-color: #8fc9d7; }
+.image-placeholder:before { border-color: #91cddd; }
+.timeline { border-left-color: #e5b75d; }
+.day-note { background: #eef9e9; color: #3f6c6a; }
+.other-notes { background: #fffbe8; border-color: #eedca3; }
+footer { background: #5b9db2; color: #fffef4; }
+
+/* 版本一：湖畔明信片，留白、柔和水波與圓角。 */
+body[data-version="0"] .day-content { background: linear-gradient(135deg, rgba(218,243,248,.55), rgba(255,250,220,.4)); padding: 22px; border-radius: 24px; }
+body[data-version="0"] .spot-card { border-radius: 18px; box-shadow: 0 10px 24px rgba(79, 150, 170, .10); }
+body[data-version="0"] .day-heading span { color: #e0a661; }
+
+/* 版本二：旅行票卡拼貼，分段卡片與輕快黃色標籤。 */
+body[data-version="1"] .day-content { display: grid; grid-template-columns: 1fr; gap: 14px; }
+body[data-version="1"] .image-placeholder { border-radius: 6px 24px 6px 24px; }
+body[data-version="1"] .timeline, body[data-version="1"] .day-note, body[data-version="1"] .spot-card { border: 2px dashed #d2e4ce; border-radius: 8px; box-shadow: 5px 5px 0 #fff1b8; }
+body[data-version="1"] .spot-card h4 { display: inline-block; padding: 2px 9px; background: #fff1b8; border-radius: 3px; }
+
+/* 版本三：旅行筆記本，格線紙與沉靜藍色章節。 */
+body[data-version="2"] .day-content { padding: 28px; border: 1px solid #c9e3ec; border-radius: 4px; background-color: #fffef6; background-image: linear-gradient(#dff0f4 1px, transparent 1px), linear-gradient(90deg, #dff0f4 1px, transparent 1px); background-size: 26px 26px; }
+body[data-version="2"] .image-placeholder, body[data-version="2"] .timeline, body[data-version="2"] .spot-card, body[data-version="2"] .day-note { background-color: rgba(255,254,246,.93); }
+body[data-version="2"] .spot-card { border-left: 5px solid #78b9cc; border-radius: 3px; box-shadow: none; }
+body[data-version="2"] .day-heading { border-bottom: 2px solid #8ec7d6; padding-bottom: 9px; }
+
+@media (max-width: 720px) {
+  body[data-version="0"] .day-content, body[data-version="2"] .day-content { padding: 14px; }
+}
+
+/* 已放入的資訊圖表維持完整比例，不裁切邊緣與圖中文字。 */
+.image-placeholder { min-height: 0; aspect-ratio: 16 / 9; padding: 0; background: #edf9fb; }
+.image-placeholder img { position: relative; inset: auto; width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block; z-index: 2; }
+
+/* 向山騎車版：明亮、圓潤、多啦A夢式卡通旅行版面。 */
+body[data-plan="cycle"] { background: #eefaff; }
+body[data-plan="cycle"] .hero { background: linear-gradient(145deg, #91d8f2 0%, #c9f0fb 56%, #fff39b 100%); }
+body[data-plan="cycle"] .hero:before { background: #62bfe4; box-shadow: 270px -36px 0 #88d3ad, 590px 28px 0 #4fa8d2; }
+body[data-plan="cycle"] .hero:after { background: #ffd84e; }
+body[data-plan="cycle"] .hero h1, body[data-plan="cycle"] .plan-intro h2 { color: #1679b3; text-shadow: 2px 2px 0 #fff; }
+body[data-plan="cycle"] .plan-tabs { background: #c9f0fb; }
+body[data-plan="cycle"] .plan-tab.active { border-bottom-color: #e83e45; background: #fff6ae; color: #1679b3; }
+body[data-plan="cycle"] .version-tabs button.active, body[data-plan="cycle"] .day-tabs button.active { background: #178cc9; border-color: #178cc9; }
+body[data-plan="cycle"] .image-placeholder { border: 4px solid #168bc8; border-radius: 24px; background: #d7f5ff; box-shadow: 0 7px 0 #ffd84e; }
+body[data-plan="cycle"] .day-content { background: #f8feff; border: 3px solid #a8e3f5; border-radius: 24px; }
+body[data-plan="cycle"] .spot-card { border: 2px solid #a8e3f5; border-radius: 20px; box-shadow: 4px 5px 0 #fff0a1; }
+body[data-plan="cycle"] .spot-card h4 { color: #1679b3; }
+body[data-plan="cycle"] .timeline { border-left-color: #e83e45; background: #fffbe1; }
+body[data-plan="cycle"] .day-note { background: #e8f9ff; color: #1679b3; }
+body[data-plan="cycle"] .day-heading h3 { color: #1679b3; }
+
+/* 已載入圖片時只保留圖表本身，避免預留文字佔用右側空間。 */
+.image-placeholder:has(img) p { display: none; }
+
+/* 首頁主視覺縮短，讓讀者更快看到版本切換與封面圖。 */
+.hero { min-height: 300px; padding-top: 42px; padding-bottom: 40px; }
+.hero h1 { max-width: 920px; font-size: clamp(2.35rem, 4.35vw, 4.15rem); }
+.hero-copy { margin: 16px 0 16px; }
+
+@media (max-width: 720px) {
+  .hero { min-height: 260px; padding-top: 34px; padding-bottom: 32px; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 3rem); }
+}
+
+/* 手機直式閱讀：以單欄、易點選與完整圖表為優先。 */
+@media (max-width: 760px) {
+  .site-header { height: 54px; padding: 0 16px; font-size: .76rem; }
+  .brand { font-size: 1.7rem; }
+  .hero { min-height: 0; padding: 30px 20px 28px; }
+  .hero h1 { font-size: clamp(2rem, 8.7vw, 2.8rem); line-height: 1.28; }
+  .hero-copy { font-size: .94rem; line-height: 1.7; }
+  .travel-notes { gap: 7px; }
+  .travel-notes span { padding: 4px 9px; font-size: .74rem; }
+
+  .plan-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; overflow: visible; }
+  .plan-tab { min-width: 0; min-height: 72px; padding: 11px 12px; font-size: .9rem; text-align: center; }
+  .plan-tab small { display: block; margin-top: 2px; font-size: .68rem; }
+
+  .plan-panel { padding: 34px 14px 56px; }
+  .plan-intro h2 { font-size: clamp(2rem, 8vw, 2.75rem); line-height: 1.25; }
+  .plan-intro p:last-child { font-size: .88rem; }
+  .cover-slot { margin-top: 18px; }
+
+  .version-tabs { margin-top: 24px; gap: 8px; padding-bottom: 8px; }
+  .version-tabs button { min-width: 158px; min-height: 48px; padding: 8px 12px; font-size: .82rem; }
+  .day-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; overflow: visible; }
+  .day-tabs button { min-width: 0; min-height: 44px; padding: 7px 8px; font-size: .75rem; line-height: 1.35; white-space: normal; }
+
+  .day-content { margin-top: 22px; }
+  .image-placeholder { width: 100%; border-radius: 14px; }
+  .day-heading { margin: 28px 0 14px; }
+  .day-heading h3 { font-size: clamp(1.85rem, 8vw, 2.5rem); line-height: 1.3; }
+  .timeline, .day-note, .other-notes { padding: 14px 15px; font-size: .9rem; line-height: 1.75; }
+  .spot-grid { grid-template-columns: 1fr; gap: 13px; margin-top: 18px; }
+  .spot-card { padding: 18px; }
+  .spot-card h4 { font-size: 1.65rem; }
+  .spot-card dd { font-size: .88rem; }
+
+  body[data-version="0"] .day-content, body[data-version="2"] .day-content { padding: 13px; }
+  body[data-version="1"] .day-content { gap: 11px; }
+  body[data-plan="cycle"] .day-content { border-radius: 16px; }
+  footer { padding: 20px 16px; font-size: .72rem; line-height: 1.65; }
+}
+
+@media (max-width: 390px) {
+  .site-header > span { display: none; }
+  .hero h1 { font-size: 1.9rem; }
+  .plan-tab { font-size: .82rem; }
+  .version-tabs button { min-width: 145px; }
+}
+
+/* 文字層級：首頁標題最大；行程、日期標題次之；景點資料加大閱讀。 */
+.plan-intro h2 { font-size: clamp(2rem, 3.55vw, 3.25rem); line-height: 1.25; }
+.day-heading h3 { font-size: clamp(1.8rem, 3.1vw, 2.65rem); line-height: 1.3; }
+.day-heading span { font-size: .9rem; }
+.timeline, .day-note, .other-notes { font-size: 1.06rem; line-height: 1.9; }
+.spot-card h4 { font-size: 1.9rem; }
+.spot-card dt { font-size: .9rem; }
+.spot-card dd { font-size: 1.06rem; line-height: 1.9; }
+
+@media (max-width: 760px) {
+  .plan-intro h2 { font-size: clamp(1.8rem, 7.4vw, 2.5rem); }
+  .day-heading h3 { font-size: clamp(1.65rem, 7.1vw, 2.25rem); }
+  .timeline, .day-note, .other-notes { font-size: 1rem; }
+  .spot-card h4 { font-size: 1.7rem; }
+  .spot-card dt { font-size: .86rem; }
+  .spot-card dd { font-size: 1rem; }
+}
+
+/* 首頁重點與所有切換按鈕加大，方便閱讀與點選。 */
+.travel-notes span { padding: 8px 16px; font-size: 1.05rem; }
+.plan-tab { font-size: 1.08rem; }
+.plan-tab small { font-size: .92rem; }
+.version-tabs button { min-height: 50px; padding: 11px 18px; font-size: 1rem; }
+.day-tabs button { min-height: 46px; padding: 9px 16px; font-size: .95rem; }
+
+@media (max-width: 760px) {
+  .travel-notes span { padding: 7px 12px; font-size: .94rem; }
+  .plan-tab { font-size: .98rem; }
+  .plan-tab small { font-size: .78rem; }
+  .version-tabs button { font-size: .94rem; }
+  .day-tabs button { font-size: .86rem; }
+}

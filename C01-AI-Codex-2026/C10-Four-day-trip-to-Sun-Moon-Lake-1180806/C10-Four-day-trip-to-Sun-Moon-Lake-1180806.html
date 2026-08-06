@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="日月潭台中四天三夜自駕旅行：兩份完整三版本行程。" />
+  <title>日月潭台中四天三夜｜旅遊行程</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="font-override.css" />
+  <link rel="stylesheet" href="theme-override.css" />
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/F01-1-note.css">
+</head>
+
+<body class="yf-font1">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="回到網站開頭">湖畔行箋(規畫版)</a>
+    <span>日月潭・台中・四天三夜</span>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">2026.12.14 — 12.17</p>
+      <h1 id="hero-title">把四天三夜，走成一段慢慢回看的風景</h1>
+      <p class="hero-copy">從台北市關渡陽明峰匯社區自駕出發，選擇經典輕鬆、遊湖購物或深度文青的節奏；也可用單車親近向山與落羽松。</p>
+      <div class="travel-notes" aria-label="旅程重點">
+        <span>台北自駕出發</span><span>日月潭湖景遊船</span><span>台中文青散步</span><span>通霄海岸北返</span>
+      </div>
+    </section>
+
+    <nav class="plan-tabs yf-font1" aria-label="選擇行程規劃" role="tablist">
+      <button class="plan-tab active" id="plan-first" role="tab" aria-selected="true" aria-controls="plan-panel"
+        data-plan="first">第一次規劃<br /><small>湖景與城市慢遊</small></button>
+      <button class="plan-tab" id="plan-cycle" role="tab" aria-selected="false" aria-controls="plan-panel"
+        data-plan="cycle">第二次規劃<br /><small>向山落羽松騎車版</small></button>
+    </nav>
+
+    <section id="plan-panel" class="plan-panel" role="tabpanel" aria-labelledby="plan-first">
+      <div class="plan-intro">
+        <p class="eyebrow" id="plan-kicker"></p>
+        <h2 id="plan-title"></h2>
+        <p id="plan-period"></p>
+      </div>
+      <div id="cover-slot" class="cover-slot "></div>
+      <div class="version-tabs" id="version-tabs" aria-label="選擇行程版本"></div>
+      <div class="day-tabs" id="day-tabs" aria-label="選擇旅遊日期"></div>
+      <article id="day-content" class="day-content" aria-live="polite"></article>
+    </section>
+  </main>
+
+  <footer>行程資料依《第一次規劃優化版》與《向山落羽松環湖騎車版》完整整理。景點與交通營運資訊請於出發前再次確認。</footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
