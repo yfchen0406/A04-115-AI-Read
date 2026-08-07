@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="font-override.css" />
   <link rel="stylesheet" href="theme-override.css" />
+  <link rel="stylesheet" href="journey-ui.css" />
   <!-- 自己的CSS -->
   <link rel="stylesheet" href="/css/F01-1-note.css">
 </head>
@@ -47,6 +48,7 @@
 
     <section id="plan-panel" class="plan-panel" role="tabpanel" aria-labelledby="plan-first">
       <div class="plan-intro">
+        <nav class="journey-breadcrumb" id="journey-breadcrumb" aria-label="目前查閱位置"></nav>
         <p class="eyebrow" id="plan-kicker"></p>
         <h2 id="plan-title"></h2>
         <p id="plan-period"></p>
@@ -55,6 +57,7 @@
       <div class="version-tabs" id="version-tabs" aria-label="選擇行程版本"></div>
       <div class="day-tabs" id="day-tabs" aria-label="選擇旅遊日期"></div>
       <article id="day-content" class="day-content" aria-live="polite"></article>
+      <nav class="journey-actions" id="journey-actions" aria-label="當日快速操作"></nav>
     </section>
   </main>
 
@@ -65,11 +68,12 @@
       <button class="lightbox-close" type="button" data-lightbox-close aria-label="回到原始畫面">回到原始畫面</button>
       <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="查看上一張圖片">‹</button>
       <figure>
-        <img id="lightbox-image" src="" alt="" />
+        <img id="lightbox-image" src="images/A01-0.webp" alt="旅遊資訊圖表" />
         <figcaption id="lightbox-caption"></figcaption>
       </figure>
       <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="查看下一張圖片">›</button>
       <p class="lightbox-hint">可使用鍵盤 ← → 切換圖片，按 Esc 回到原始畫面</p>
+      <p class="lightbox-count" id="lightbox-count" aria-live="polite"></p>
     </div>
   </section>
   <script src="data.js"></script>
