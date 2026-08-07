@@ -39,6 +39,10 @@
         data-plan="first">第一次規劃<br /><small>湖景與城市慢遊</small></button>
       <button class="plan-tab" id="plan-cycle" role="tab" aria-selected="false" aria-controls="plan-panel"
         data-plan="cycle">第二次規劃<br /><small>向山落羽松騎車版</small></button>
+      <button class="plan-tab" id="plan-nantou1" role="tab" aria-selected="false" aria-controls="plan-panel"
+        data-plan="nantou1">南投推薦景點－1<br /><small>最初規劃旅遊地點</small></button>
+      <button class="plan-tab" id="plan-nantou2" role="tab" aria-selected="false" aria-controls="plan-panel"
+        data-plan="nantou2">南投推薦景點－2<br /><small>最初規劃旅遊地點</small></button>
     </nav>
 
     <section id="plan-panel" class="plan-panel" role="tabpanel" aria-labelledby="plan-first">
@@ -55,6 +59,19 @@
   </main>
 
   <footer>行程資料依《第一次規劃優化版》與《向山落羽松環湖騎車版》完整整理。景點與交通營運資訊請於出發前再次確認。</footer>
+  <section class="image-lightbox" id="image-lightbox" aria-hidden="true" aria-label="行程資訊圖表放大檢視">
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="回到原始畫面">回到原始畫面</button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="查看上一張圖片">‹</button>
+      <figure>
+        <img id="lightbox-image" src="" alt="" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="查看下一張圖片">›</button>
+      <p class="lightbox-hint">可使用鍵盤 ← → 切換圖片，按 Esc 回到原始畫面</p>
+    </div>
+  </section>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>

@@ -163,3 +163,38 @@ body[data-plan="cycle"] .day-heading h3 { color: #1679b3; }
   .version-tabs button { font-size: .94rem; }
   .day-tabs button { font-size: .86rem; }
 }
+
+/* 圖片滿版檢視：保留圖片原始比例，可在同一版本的五張圖間切換。 */
+.expandable-image { cursor: zoom-in; }
+.lightbox-open { overflow: hidden; }
+.image-lightbox { display: none; position: fixed; inset: 0; z-index: 100; padding: 26px; }
+.image-lightbox.is-open { display: grid; place-items: center; }
+.lightbox-backdrop { position: absolute; inset: 0; background: rgba(13, 35, 49, .88); }
+.lightbox-dialog { position: relative; z-index: 1; width: min(96vw, 1500px); height: min(94vh, 980px); display: grid; place-items: center; }
+.lightbox-dialog figure { width: 100%; height: 100%; margin: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; }
+.lightbox-dialog img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 12px; background: #eaf9fc; }
+.lightbox-dialog figcaption, .lightbox-hint { margin: 0; color: #fff; text-align: center; font-size: 1rem; }
+.lightbox-hint { font-size: .82rem; color: #d7edf5; }
+.lightbox-close { position: absolute; z-index: 3; top: 10px; right: 10px; border: 0; border-radius: 999px; padding: 10px 16px; color: #164b67; background: #fff5ad; font: 700 .95rem var(--sans); cursor: pointer; }
+.lightbox-nav { position: absolute; z-index: 3; top: 48%; width: 54px; height: 54px; border: 0; border-radius: 50%; color: #164b67; background: rgba(255,255,255,.94); font: 400 3rem/1 var(--sans); cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,.22); }
+.lightbox-prev { left: -10px; }
+.lightbox-next { right: -10px; }
+.lightbox-close:hover, .lightbox-nav:hover { background: #fff09a; }
+@media (max-width: 760px) {
+  .image-lightbox { padding: 12px; }
+  .lightbox-dialog { width: 100%; height: min(92vh, 780px); }
+  .lightbox-close { top: 0; right: 0; padding: 8px 12px; font-size: .82rem; }
+  .lightbox-nav { top: 45%; width: 44px; height: 44px; font-size: 2.4rem; }
+  .lightbox-prev { left: -4px; }
+  .lightbox-next { right: -4px; }
+  .lightbox-hint { font-size: .72rem; }
+}
+
+/* 南投推薦景點：獨立圖片牆，圖片下方保留原始檔名標題。 */
+.recommend-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.gallery-card { margin: 0; overflow: hidden; border: 2px solid #b9e0e9; border-radius: 18px; background: #fffef7; box-shadow: 0 8px 18px rgba(65, 123, 148, .12); }
+.gallery-card img { width: 100%; height: auto; display: block; object-fit: contain; background: #edf9fb; }
+.lightbox-dialog figcaption:empty { display: none; }
+@media (max-width: 760px) {
+  .recommend-gallery { grid-template-columns: 1fr; gap: 18px; margin-top: 20px; }
+}
