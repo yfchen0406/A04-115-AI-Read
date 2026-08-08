@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="font-override.css" />
   <link rel="stylesheet" href="theme-override.css" />
   <link rel="stylesheet" href="journey-ui.css" />
+  <link rel="stylesheet" href="third-plan.css" />
   <!-- 自己的CSS -->
   <link rel="stylesheet" href="/css/F01-1-note.css">
 </head>
@@ -27,7 +28,7 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">2026.12.14 — 12.17</p>
+      <p class="eyebrow">2026.12.13 — 12.16</p>
       <h1 id="hero-title">把四天三夜，走成一段慢慢回看的風景</h1>
       <p class="hero-copy">從台北市關渡陽明峰匯社區自駕出發，選擇經典輕鬆、遊湖購物或深度文青的節奏；也可用單車親近向山與落羽松。</p>
       <div class="travel-notes" aria-label="旅程重點">
@@ -36,7 +37,9 @@
     </section>
 
     <nav class="plan-tabs yf-font1" aria-label="選擇行程規劃" role="tablist">
-      <button class="plan-tab active" id="plan-first" role="tab" aria-selected="true" aria-controls="plan-panel"
+      <button class="plan-tab third-plan-tab active" id="plan-third" role="tab" aria-selected="true" aria-controls="third-plan-panel"
+        data-plan="third"><strong>第三次規劃</strong><br /><small>全家三代・三種版本（接近正式版）</small></button>
+      <button class="plan-tab" id="plan-first" role="tab" aria-selected="false" aria-controls="plan-panel"
         data-plan="first">第一次規劃<br /><small>湖景與城市慢遊</small></button>
       <button class="plan-tab" id="plan-cycle" role="tab" aria-selected="false" aria-controls="plan-panel"
         data-plan="cycle">第二次規劃<br /><small>向山落羽松騎車版</small></button>
@@ -46,7 +49,7 @@
         data-plan="nantou2">南投推薦景點－2<br /><small>最初規劃旅遊地點</small></button>
     </nav>
 
-    <section id="plan-panel" class="plan-panel" role="tabpanel" aria-labelledby="plan-first">
+    <section id="plan-panel" class="plan-panel" role="tabpanel" aria-labelledby="plan-first" hidden>
       <div class="plan-intro">
         <nav class="journey-breadcrumb" id="journey-breadcrumb" aria-label="目前查閱位置"></nav>
         <p class="eyebrow" id="plan-kicker"></p>
@@ -59,9 +62,16 @@
       <article id="day-content" class="day-content" aria-live="polite"></article>
       <nav class="journey-actions" id="journey-actions" aria-label="當日快速操作"></nav>
     </section>
+    <section id="third-plan-panel" class="plan-panel third-plan-panel" role="tabpanel" aria-labelledby="plan-third">
+      <div class="plan-intro">
+        <p class="eyebrow">規劃三｜全家三代・日月潭與台中慢遊</p>
+        <h2>第三次規劃（接近正式版）</h2>
+      </div>
+      <article id="third-plan-content" class="third-plan-content" aria-live="polite"></article>
+    </section>
   </main>
 
-  <footer>行程資料依《第一次規劃優化版》與《向山落羽松環湖騎車版》完整整理。景點與交通營運資訊請於出發前再次確認。</footer>
+  <footer>行程資料依《第一次規劃優化版》、《向山落羽松環湖騎車版》與《第三次規劃修正版》完整整理。景點與交通營運資訊請於出發前再次確認。</footer>
   <section class="image-lightbox" id="image-lightbox" aria-hidden="true" aria-label="行程資訊圖表放大檢視">
     <div class="lightbox-backdrop" data-lightbox-close></div>
     <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
@@ -78,6 +88,8 @@
   </section>
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script src="third-plan-data.js"></script>
+  <script src="third-plan.js"></script>
 </body>
 
 </html>

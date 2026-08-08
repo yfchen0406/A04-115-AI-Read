@@ -186,5 +186,5 @@
   planTabs.forEach(btn => btn.addEventListener('keydown', e => tabKeyboard(e,'.plan-tab', target => { state.plan=target.dataset.plan; state.version=0; state.day=0; render(); })));
   versionTabs.addEventListener('keydown', e => tabKeyboard(e,'#version-tabs button', target => { state.version=Number(target.dataset.version); state.day=0; render(); }));
   dayTabs.addEventListener('keydown', e => tabKeyboard(e,'#day-tabs button', target => { state.day=Number(target.dataset.day); render(); }));
-  render();
+  if (!document.querySelector('#plan-third')?.classList.contains('active')) render();
 })();
