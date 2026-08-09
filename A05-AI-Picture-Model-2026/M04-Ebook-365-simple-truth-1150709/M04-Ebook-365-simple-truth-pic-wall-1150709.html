@@ -647,33 +647,34 @@
       });
     }
 
-    async function prepareNextRandomSlide() {
+    function prepareNextRandomSlide() {
+      if (randomPreloadPromise) return;
+
       const nextIndex = Math.floor(Math.random() * data.length);
       const nextItem = data[nextIndex];
-      const isReady = await preloadAndDecodeImage(nextItem.image);
-
-      if (isReady && isRandomPlaying) {
-        preparedRandomSlide = { index: nextIndex };
-      }
+      randomPreloadPromise = preloadAndDecodeImage(nextItem.image)
+        .then((isReady) => {
+          if (isReady && isRandomPlaying) {
+            preparedRandomSlide = { index: nextIndex };
+          }
+        })
+        .finally(() => {
+          randomPreloadPromise = null;
+        });
     }
 
-    async function playNextRandom() {
+    function playNextRandom() {
       if (!isRandomPlaying) return;
 
-      if (!preparedRandomSlide) {
-        if (!randomPreloadPromise) randomPreloadPromise = prepareNextRandomSlide();
-        await randomPreloadPromise;
-        randomPreloadPromise = null;
-      }
-
-      if (!isRandomPlaying || !preparedRandomSlide) return;
-
-      currentIndex = preparedRandomSlide.index;
+      // 下一張尚未準備好時，立即顯示新的隨機圖片，不讓輪播停住。
+      currentIndex = preparedRandomSlide
+        ? preparedRandomSlide.index
+        : Math.floor(Math.random() * data.length);
       preparedRandomSlide = null;
       enterMainView();
 
-      // 在目前標題朗讀期間，於背景準備下一張隨機圖片。
-      randomPreloadPromise = prepareNextRandomSlide();
+      // 在目前標題朗讀期間，於背景準備下一張隨機圖片，不阻塞畫面切換。
+      prepareNextRandomSlide();
 
       const text = data[currentIndex].title;
       if (!text) {

@@ -1,0 +1,46 @@
+/* 已置入插圖後的放大主視覺與每日旅遊紀錄頁 */
+@media (min-width: 900px) {
+  .hero { grid-template-columns: minmax(0, .86fr) minmax(560px, 1.14fr); gap: clamp(2.4rem, 5vw, 5.5rem); }
+  .art-slot--hero { width: 100%; }
+  .art-slot--hero img { transform: scale(1.035); }
+}
+
+.journal-link { display: inline-flex; margin-top: .8rem; color: var(--maple); font-weight: 800; text-decoration: none; text-underline-offset: 4px; }
+.journal-link:hover, .journal-link:focus-visible { text-decoration: underline; }
+
+.day-journal .topbar { position: relative; }
+.journal-main { width: min(1160px, calc(100% - 2.2rem)); margin: 3rem auto 7rem; }
+.journal-banner { display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(1.4rem, 4vw, 3.4rem); background: var(--navy); color: var(--white); border-radius: 14px; }
+.journal-banner h1 { font-family: "DFKai-SB", "BiauKai", serif; font-size: clamp(2.2rem, 4.3vw, 4.1rem); line-height: 1.25; margin: 0 0 .8rem; }
+.journal-banner .kicker { color: #ffd27b; }
+.journal-banner p:last-of-type { color: #e3ecee; margin-bottom: 0; }
+.journal-banner .art-slot { box-shadow: 0 18px 34px rgb(0 0 0 / .18); }
+.journal-section { margin-top: 4.8rem; }
+.journal-section h2 { font-family: "DFKai-SB", "BiauKai", serif; font-size: clamp(1.9rem, 3.4vw, 2.8rem); color: var(--navy); margin: 0 0 .8rem; }
+.journal-summary { color: var(--muted); margin: 0 0 1.7rem; }
+.journal-timeline { max-width: 760px; }
+.journal-timeline .timeline { background: var(--white); border-radius: 14px; padding: 1.5rem 1.5rem 1rem 2.7rem; box-shadow: var(--shadow); }
+.photo-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.photo-heading p { margin: 0; color: var(--muted); }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.photo-slot { margin: 0; aspect-ratio: 4 / 3; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 12px; background: #d9e4e0; }
+.photo-slot img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.photo-slot figcaption { display: none; }
+.photo-slot.is-placeholder { background: linear-gradient(135deg, #e9efec, #ceded8); border: 1px dashed #839993; }
+.photo-slot.is-placeholder figcaption { display: grid; place-items: center; gap: .35rem; position: relative; z-index: 1; padding: .7rem; color: var(--navy); text-align: center; font-weight: 800; font-size: .9rem; }
+.photo-slot.is-placeholder figcaption small { font-family: ui-monospace, Consolas, monospace; font-weight: 500; color: var(--muted); font-size: .72rem; word-break: break-all; }
+.journal-notes { padding: 1.4rem; border-radius: 14px; background: #fff9e9; color: #705726; }
+.journal-notes h2 { font-family: inherit; font-size: 1.1rem; color: #705726; margin-bottom: .4rem; }
+.journal-notes p { margin: 0; }
+.day-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; }
+.day-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: .7rem 1rem; border-radius: 8px; background: var(--white); color: var(--navy); font-weight: 800; text-decoration: none; box-shadow: 0 8px 20px rgb(31 46 56 / .08); }
+.day-nav a:hover { color: var(--maple); }
+@media (max-width: 740px) {
+  .journal-main { width: calc(100% - 2rem); margin: 1.6rem auto 4rem; }
+  .journal-banner { grid-template-columns: 1fr; padding: 1.25rem; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+  .photo-heading { display: block; }
+  .photo-heading p { margin-top: .25rem; }
+  .journal-timeline .timeline { padding: 1.15rem 1rem .8rem 2.25rem; }
+  .day-nav { margin-top: 2.5rem; }
+}
