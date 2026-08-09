@@ -562,8 +562,6 @@
 
     let isRandomPlaying = false;
     let randomTimer = null;
-    let preparedRandomSlide = null;
-    let randomPreloadPromise = null;
 
     const searchContainer = document.getElementById('search-container');
     const searchInput = document.getElementById('search-input');
@@ -627,53 +625,15 @@
         btn.innerHTML = "🔀 隨機輪播";
         stopSpeech();
         clearTimeout(randomTimer);
-        preparedRandomSlide = null;
       }
     }
 
-    function preloadAndDecodeImage(src) {
-      return new Promise((resolve) => {
-        const preloadedImage = new Image();
-        preloadedImage.onload = async () => {
-          try {
-            if (preloadedImage.decode) await preloadedImage.decode();
-          } catch (error) {
-            // 圖片已可顯示時，即使預先解碼未完成也繼續輪播。
-          }
-          resolve(true);
-        };
-        preloadedImage.onerror = () => resolve(false);
-        preloadedImage.src = src;
-      });
-    }
-
-    async function prepareNextRandomSlide() {
-      const nextIndex = Math.floor(Math.random() * data.length);
-      const nextItem = data[nextIndex];
-      const isReady = await preloadAndDecodeImage(nextItem.image);
-
-      if (isReady && isRandomPlaying) {
-        preparedRandomSlide = { index: nextIndex };
-      }
-    }
-
-    async function playNextRandom() {
+    function playNextRandom() {
       if (!isRandomPlaying) return;
 
-      if (!preparedRandomSlide) {
-        if (!randomPreloadPromise) randomPreloadPromise = prepareNextRandomSlide();
-        await randomPreloadPromise;
-        randomPreloadPromise = null;
-      }
-
-      if (!isRandomPlaying || !preparedRandomSlide) return;
-
-      currentIndex = preparedRandomSlide.index;
-      preparedRandomSlide = null;
+      currentIndex = Math.floor(Math.random() * data.length);
       enterMainView();
-
-      // 在目前標題朗讀期間，於背景準備下一張隨機圖片。
-      randomPreloadPromise = prepareNextRandomSlide();
+      render();
 
       const text = data[currentIndex].title;
       if (!text) {
