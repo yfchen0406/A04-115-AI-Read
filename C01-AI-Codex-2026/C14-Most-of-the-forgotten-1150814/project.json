@@ -1,0 +1,13 @@
+{
+  "title": "【被遺忘的大多數】自然旁白響應式動態閱讀版",
+  "duration": 612.557,
+  "imageCount": 144,
+  "imageInterval": 4.254,
+  "audioAvailable": true,
+  "audioStatus": "已接入外部 TTS 實際旁白，音檔長度 10 分 12.56 秒；圖片依實際音檔平均分配。",
+  "animationRule": "同一段落固定運鏡方向，圖片以雙圖淡入淡出銜接，避免黑畫面與運鏡突然歸零。左上角段落標題在該段期間持續顯示；版面支援桌機、手機直立與橫放。",
+  "audioFile": "audio/narration-zhTW.mp3",
+  "audioSubtitleFile": "audio/narration-zhTW.srt",
+  "audioVoice": "zh-TW-YunJheNeural",
+  "audioRate": "-30%"
+}

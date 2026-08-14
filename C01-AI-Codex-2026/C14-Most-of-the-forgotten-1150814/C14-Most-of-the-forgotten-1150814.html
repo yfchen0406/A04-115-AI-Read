@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>【被遺忘的大多數】自然旁白響應式動態閱讀版</title>
+  <style>
+    :root{color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;background:#10161b;color:#fff;font-family:"Microsoft JhengHei",system-ui,sans-serif}#stage{width:100vw;height:100vh;position:relative;overflow:hidden;background:#17212a}#stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;will-change:transform,opacity}.visible{opacity:1!important}.fade-in{animation:fadeIn .7s ease-out forwards}.fade-out{animation:fadeOut .7s ease-out forwards}.motion-push{animation:motionPush 5s linear forwards}.motion-pull{animation:motionPull 5s linear forwards}.motion-pan-left{animation:motionPanLeft 5s linear forwards}.motion-pan-right{animation:motionPanRight 5s linear forwards}.motion-diagonal{animation:motionDiagonal 5s linear forwards}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{from{opacity:1}to{opacity:0}}@keyframes motionPush{from{transform:scale(1.035)}to{transform:scale(1.085) translate(-.8%,-.5%)}}@keyframes motionPull{from{transform:scale(1.085) translate(-.8%,-.5%)}to{transform:scale(1.035)}}@keyframes motionPanLeft{from{transform:scale(1.06) translate(1.1%,0)}to{transform:scale(1.06) translate(-1.1%,0)}}@keyframes motionPanRight{from{transform:scale(1.06) translate(-1.1%,0)}to{transform:scale(1.06) translate(1.1%,0)}}@keyframes motionDiagonal{from{transform:scale(1.05) translate(1%,1%)}to{transform:scale(1.075) translate(-1%,-1%)}}#placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:10vw;background:linear-gradient(135deg,#263b49,#11181d 60%,#6a4536);color:#f8e8d4;font-size:clamp(18px,2.4vw,36px);line-height:1.6;z-index:0}#shade{position:absolute;inset:auto 0 0;height:43%;background:linear-gradient(transparent,rgba(0,0,0,.88));pointer-events:none;z-index:2}#heading{position:absolute;top:3vh;left:4vw;max-width:78vw;padding:9px 18px;border-radius:999px;background:#0e2333dd;font-weight:700;font-size:clamp(15px,1.45vw,27px);z-index:3}#caption{position:absolute;bottom:10vh;left:4%;right:4%;min-height:12%;padding:14px 28px;border:2px solid #ffffffb8;border-radius:16px;background:#000c;font-weight:900;font-size:clamp(21px,2.25vw,42px);line-height:1.4;text-align:center;text-shadow:3px 3px #000,-3px -3px #000;z-index:3}#tools{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:8px;align-items:center;padding:8px 10px;border-radius:999px;background:#081016e8;z-index:5;transition:.25s}#tools.hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,16px)}button{font:700 16px "Microsoft JhengHei";padding:9px 15px;border:0;border-radius:999px;cursor:pointer}button:focus-visible{outline:3px solid #ffbf69;outline-offset:2px}#status{padding:8px 13px;white-space:nowrap}#bar{position:fixed;bottom:0;left:0;height:6px;background:#f28a3d;width:0;z-index:5}@media(max-width:600px){#caption{bottom:13vh;left:4%;right:4%;padding:12px 14px;font-size:clamp(18px,5vw,28px)}#tools{max-width:96vw;gap:4px;flex-wrap:wrap;justify-content:center}button{padding:8px 10px;font-size:14px}#status{font-size:12px;padding:5px}}
+    @media(max-width:600px){#caption{bottom:18vh}}
+    .motion-push.fade-in{animation:motionPush 5s linear forwards,fadeIn .7s ease-out forwards}.motion-pull.fade-in{animation:motionPull 5s linear forwards,fadeIn .7s ease-out forwards}.motion-pan-left.fade-in{animation:motionPanLeft 5s linear forwards,fadeIn .7s ease-out forwards}.motion-pan-right.fade-in{animation:motionPanRight 5s linear forwards,fadeIn .7s ease-out forwards}.motion-diagonal.fade-in{animation:motionDiagonal 5s linear forwards,fadeIn .7s ease-out forwards}
+    /* Responsive reading layout: title stays visible; captions and controls reflow by available height. */
+    html,body{width:100%;min-height:100%;overscroll-behavior:none}
+    #stage{height:100svh;height:100dvh;min-height:320px}
+    #heading{top:max(3vh,env(safe-area-inset-top));left:max(4vw,env(safe-area-inset-left));max-width:min(78vw,900px);padding:10px 18px;background:rgba(14,35,51,.87);box-shadow:0 8px 24px rgba(0,0,0,.26);backdrop-filter:blur(8px);font-size:clamp(15px,1.45vw,27px);line-height:1.3}
+    #caption{left:50%;right:auto;bottom:max(10vh,94px);width:min(92vw,1120px);min-height:0;transform:translateX(-50%);padding:13px clamp(16px,2.2vw,28px);font-size:clamp(20px,2.25vw,42px)}
+    #tools{bottom:max(18px,env(safe-area-inset-bottom));max-width:calc(100vw - 24px)}
+    button{min-height:44px;touch-action:manipulation}
+    @media (max-width:767px){
+      #heading{top:max(12px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));max-width:calc(100vw - max(24px,env(safe-area-inset-left) + env(safe-area-inset-right)));padding:8px 12px;font-size:clamp(14px,4.3vw,20px)}
+      #caption{bottom:calc(118px + env(safe-area-inset-bottom));width:calc(100vw - 24px);padding:11px 14px;font-size:clamp(18px,5.2vw,28px);line-height:1.35}
+      #tools{bottom:max(10px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:calc(100vw - 20px);gap:6px;padding:7px 8px;border-radius:16px}
+      #tools button{width:100%;padding:9px 6px;font-size:clamp(13px,3.8vw,16px)}
+      #status{grid-column:1/-1;min-width:0;padding:2px 4px;text-align:center;font-size:12px;white-space:normal}
+      #shade{height:54%}
+    }
+    @media (max-width:767px) and (orientation:landscape){
+      #heading{top:max(8px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));max-width:62vw;font-size:clamp(13px,2.8vw,18px)}
+      #caption{bottom:calc(68px + env(safe-area-inset-bottom));width:min(76vw,900px);padding:8px 14px;font-size:clamp(16px,3.1vw,23px)}
+      #tools{right:max(10px,env(safe-area-inset-right));left:auto;bottom:max(8px,env(safe-area-inset-bottom));transform:none;display:flex;width:auto;max-width:58vw;padding:5px 7px;border-radius:14px}
+      #tools.hidden{transform:translateY(16px)}
+      #tools button{width:auto;min-height:38px;padding:7px 10px;font-size:14px}
+      #status{display:none}
+      #shade{height:48%}
+    }
+    @media (min-width:768px) and (max-width:1023px) and (orientation:portrait){
+      #caption{bottom:112px;width:min(90vw,850px);font-size:clamp(23px,3.6vw,34px)}
+      #tools{bottom:18px}
+    }
+    @media (pointer:coarse){button:active{transform:scale(.97);background:#f1d6bd}}
+  </style>
+</head>
+<body>
+  <main id="stage" aria-label="自然旁白動態閱讀畫面">
+    <div id="placeholder">圖片載入中…</div>
+    <img id="imageA" src="assets/images/scene-001.webp" alt="手繪插畫畫面" class="visible">
+    <img id="imageB" src="assets/images/scene-002.webp" alt="手繪插畫畫面">
+    <div id="shade"></div><div id="heading"></div><div id="caption"></div>
+  </main>
+  <nav id="tools" aria-label="播放控制">
+    <button id="play">播放</button><button id="back">上一段</button><button id="next">下一段</button><span id="status">準備中</span>
+  </nav>
+  <div id="bar"></div>
+  <audio id="narrationAudio" preload="metadata" src="audio/narration-zhTW.mp3"></audio>
+  <script src="data.js"></script>
+  <script>
+    const D=window.READING_DATA||{project:{duration:720,imageCount:144,audioAvailable:false},captions:[],timeline:[]};
+    const stage=document.querySelector('#stage'),a=document.querySelector('#imageA'),b=document.querySelector('#imageB'),placeholder=document.querySelector('#placeholder'),caption=document.querySelector('#caption'),heading=document.querySelector('#heading'),tools=document.querySelector('#tools'),status=document.querySelector('#status'),bar=document.querySelector('#bar'),play=document.querySelector('#play'),audio=document.querySelector('#narrationAudio');
+    let playing=false,startedAt=0,elapsed=0,last=-1,active=a,standby=b,hideTimer=0;
+    const motionClass=m=>`motion-${m}`; const speech=window.speechSynthesis; let speechRun=0;
+    function stopSpeech(){speechRun++;if(speech)speech.cancel()}
+    function speakFrom(i,run){if(!speech||!playing||run!==speechRun||i>=D.captions.length)return;const u=new SpeechSynthesisUtterance(D.captions[i].text);u.lang='zh-TW';u.rate=.9;u.pitch=1;u.volume=1;const voices=speech.getVoices();u.voice=voices.find(v=>v.lang.toLowerCase().startsWith('zh-tw'))||voices.find(v=>v.lang.toLowerCase().startsWith('zh'))||null;u.onend=()=>setTimeout(()=>speakFrom(i+1,run),1250);speech.speak(u)}
+    function captionAt(t){return D.captions.find(x=>t>=x.start&&t<x.end)||D.captions[D.captions.length-1]}
+    function render(t){const i=Math.min(D.timeline.length-1,Math.max(0,D.timeline.findIndex(x=>t>=x.start&&t<x.end)));const row=D.timeline[i]||D.timeline[D.timeline.length-1];if(!row)return;if(i!==last){last=i;const next=row.image;standby.className='';standby.style.opacity='0';standby.onload=()=>{standby.className=motionClass(row.motion)+' fade-in';active.className='fade-out';const old=active;active=standby;standby=old;placeholder.hidden=true};standby.src=next}const c=captionAt(t);caption.textContent=c?.text||'';heading.textContent=row.heading||'';status.textContent=`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}　畫面 ${i+1}/${D.timeline.length}${D.project.audioAvailable?'':'　配音前估算'}`;bar.style.width=(t/D.project.duration*100)+'%'}
+    function tick(now){if(!playing)return;elapsed=D.project.audioAvailable&&!audio.paused?audio.currentTime:(now-startedAt)/1000;render(elapsed);if(elapsed>=D.project.duration||audio.ended){playing=false;stopSpeech();play.textContent='播放';showTools();return}requestAnimationFrame(tick)}
+    function showTools(){tools.classList.remove('hidden');clearTimeout(hideTimer);if(playing)hideTimer=setTimeout(()=>tools.classList.add('hidden'),2200)}
+    function start(){playing=true;play.textContent='暫停';startedAt=performance.now()-elapsed*1000;showTools();if(D.project.audioAvailable){audio.currentTime=elapsed;audio.play().catch(()=>{playing=false;play.textContent='播放';status.textContent='請按播放鍵允許音訊播放'})}else{stopSpeech();const run=speechRun;const i=D.captions.findIndex(x=>elapsed>=x.start&&elapsed<x.end);setTimeout(()=>speakFrom(Math.max(0,i),run),80)}requestAnimationFrame(tick)}
+    function jump(delta){elapsed=Math.min(D.project.duration-0.01,Math.max(0,elapsed+delta));if(D.project.audioAvailable){audio.currentTime=elapsed}else if(playing){stopSpeech();const run=speechRun;const i=D.captions.findIndex(x=>elapsed>=x.start&&elapsed<x.end);setTimeout(()=>speakFrom(Math.max(0,i),run),80)}render(elapsed);showTools()}
+    play.onclick=()=>{if(playing){playing=false;if(D.project.audioAvailable)audio.pause();stopSpeech();play.textContent='播放';showTools()}else start()};audio.onended=()=>{playing=false;elapsed=D.project.duration;render(elapsed);play.textContent='播放';showTools()};document.querySelector('#back').onclick=()=>jump(-5);document.querySelector('#next').onclick=()=>jump(5);document.addEventListener('mousemove',showTools);document.addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();play.click()}if(e.key==='ArrowRight')jump(5);if(e.key==='ArrowLeft')jump(-5)});render(0);
+  </script>
+</body>
+</html>
