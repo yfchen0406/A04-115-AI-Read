@@ -1134,7 +1134,7 @@ window.drivingPsychologyData = {
   "images": [
     {
       "id": "A00-Wife-Q",
-      "label": "妻子 Q 版",
+      "label": "老婆 Q 版",
       "prefix": "W",
       "scenes": {
         "0A": [
