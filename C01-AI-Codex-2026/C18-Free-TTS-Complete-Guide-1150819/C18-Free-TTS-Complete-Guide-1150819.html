@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>18. 免費 TTS 完全指南｜ElevenLabs × GPT 專案整合</title>
+<style>
+  :root {
+    --primary: #6C63FF;
+    --primary-dark: #5A52D5;
+    --accent: #FF6584;
+    --success: #00C9A7;
+    --warning: #FFC75F;
+    --danger: #FF6B6B;
+    --dark: #1E1E2F;
+    --dark2: #27293D;
+    --light: #F7F8FC;
+    --text: #3A3A5C;
+    --text-light: #9A9ABF;
+    --card-bg: #FFFFFF;
+    --radius: 16px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px 60px;
+  }
+  .hero h1 { font-size: 2.6rem; margin-bottom: 12px; }
+  .hero p { font-size: 1.15rem; opacity: .85; max-width: 640px; margin: 0 auto; }
+  .hero .badge-row { margin-top: 24px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .hero .badge {
+    background: rgba(255,255,255,.18);
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: .85rem;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--dark);
+    display: flex; justify-content: center; gap: 4px;
+    padding: 0 16px;
+    flex-wrap: wrap;
+  }
+  .nav a {
+    color: #ccc; text-decoration: none; padding: 14px 18px;
+    font-size: .92rem; transition: .2s;
+    border-bottom: 3px solid transparent;
+  }
+  .nav a:hover, .nav a.active { color: #fff; border-color: var(--primary); }
+
+  /* ===== SECTIONS ===== */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 64px 0; }
+  section:nth-child(even) { background: #fff; }
+  .section-tag {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: .75rem;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  section h2 { font-size: 1.9rem; margin-bottom: 8px; color: var(--dark); }
+  section h3 { font-size: 1.35rem; margin: 32px 0 12px; color: var(--dark); }
+  section > .container > p.lead { color: var(--text-light); margin-bottom: 32px; font-size: 1.05rem; }
+
+  /* ===== CARDS ===== */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 24px; margin-top: 24px; }
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    transition: transform .2s;
+    border-top: 4px solid var(--primary);
+  }
+  .card:hover { transform: translateY(-4px); }
+  .card.green  { border-top-color: var(--success); }
+  .card.orange { border-top-color: var(--warning); }
+  .card.red    { border-top-color: var(--danger); }
+  .card.accent { border-top-color: var(--accent); }
+  .card h4 { font-size: 1.15rem; margin-bottom: 8px; }
+  .card ul { padding-left: 20px; margin-top: 8px; }
+  .card li { margin-bottom: 4px; font-size: .95rem; }
+
+  /* ===== TABLE ===== */
+  .table-wrap { overflow-x: auto; margin: 24px 0; border-radius: var(--radius); box-shadow: 0 2px 16px rgba(0,0,0,.06); }
+  table { width: 100%; border-collapse: collapse; background: #fff; font-size: .92rem; }
+  thead { background: var(--dark); color: #fff; }
+  th, td { padding: 14px 16px; text-align: left; }
+  tbody tr:nth-child(even) { background: #f4f5fa; }
+  tbody tr:hover { background: #eef0ff; }
+  .tag-yes { color: var(--success); font-weight: 700; }
+  .tag-no  { color: var(--danger);  font-weight: 700; }
+
+  /* ===== CODE ===== */
+  .code-block {
+    background: var(--dark);
+    color: #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    overflow-x: auto;
+    font-family: "Fira Code", "Consolas", monospace;
+    font-size: .88rem;
+    line-height: 1.7;
+    margin: 16px 0;
+    position: relative;
+  }
+  .code-block .lang-tag {
+    position: absolute; top: 8px; right: 12px;
+    background: var(--primary); color: #fff;
+    font-size: .7rem; padding: 2px 10px; border-radius: 6px;
+  }
+  .code-block .cm { color: #6b7280; }
+  .code-block .kw { color: #c084fc; }
+  .code-block .str { color: #34d399; }
+  .code-block .fn { color: #60a5fa; }
+
+  /* ===== TIMELINE ===== */
+  .timeline { position: relative; padding-left: 32px; margin-top: 24px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 10px; top: 0; bottom: 0;
+    width: 3px; background: linear-gradient(to bottom, var(--primary), var(--accent));
+    border-radius: 2px;
+  }
+  .tl-item { position: relative; margin-bottom: 36px; }
+  .tl-item::before {
+    content: '';
+    position: absolute; left: -28px; top: 6px;
+    width: 14px; height: 14px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px var(--primary);
+  }
+  .tl-item h4 { font-size: 1.1rem; color: var(--dark); }
+  .tl-item p  { font-size: .95rem; color: var(--text-light); margin-top: 4px; }
+
+  /* ===== DECISION TREE ===== */
+  .tree { background: var(--dark); color: #e2e8f0; border-radius: var(--radius); padding: 28px; font-family: monospace; font-size: .9rem; line-height: 2; overflow-x: auto; margin: 24px 0; }
+  .tree .hl { color: var(--warning); font-weight: 700; }
+  .tree .ok { color: var(--success); }
+  .tree .no { color: var(--danger); }
+
+  /* ===== CALLOUT ===== */
+  .callout {
+    border-left: 5px solid var(--warning);
+    background: #FFF9E6;
+    padding: 18px 22px;
+    border-radius: 0 12px 12px 0;
+    margin: 20px 0;
+    font-size: .95rem;
+  }
+  .callout.danger { border-color: var(--danger); background: #FFF0F0; }
+  .callout.info   { border-color: var(--primary); background: #F0F0FF; }
+
+  /* ===== INFOGRAPHIC IMAGE ===== */
+  .ig-image {
+    margin: 36px 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(108, 99, 255, .15);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .ig-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(108, 99, 255, .25);
+  }
+  .ig-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .ig-caption {
+    background: var(--dark);
+    color: #ccc;
+    padding: 12px 20px;
+    font-size: .85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ig-caption .ig-num {
+    background: var(--primary);
+    color: #fff;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    color: #999;
+    text-align: center;
+    padding: 32px 20px;
+    font-size: .85rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.7rem; }
+    section h2 { font-size: 1.4rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .nav a { padding: 10px 12px; font-size: .82rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <h1>🎙️ 免費 TTS 完全指南</h1>
+  <p>ElevenLabs 免費方案解析 × GPT 專案整合 × 零成本語音合成替代方案</p>
+  <div class="badge-row">
+    <span class="badge">ElevenLabs</span>
+    <span class="badge">Edge-TTS</span>
+    <span class="badge">Coqui XTTS-v2</span>
+    <span class="badge">Azure Free</span>
+    <span class="badge">Deepgram</span>
+    <span class="badge">Fish Audio</span>
+  </div>
+</header>
+
+<!-- ==================== NAV ==================== -->
+<nav class="nav">
+  <a href="#sec1" class="active">ElevenLabs 解析</a>
+  <a href="#sec2">GPT 整合方案</a>
+  <a href="#sec3">免費 TTS 比較</a>
+  <a href="#sec4">零成本三大方案</a>
+  <a href="#sec5">程式碼範例</a>
+  <a href="#sec6">決策指南</a>
+</nav>
+
+<!-- ==================== SEC 1 ==================== -->
+<section id="sec1">
+  <div class="container">
+    <span class="section-tag">PART 1</span>
+    <h2>ElevenLabs 可以免費使用嗎？</h2>
+    <p class="lead">可以，但有限制。ElevenLabs 提供「Free Forever」方案，適合個人測試或輕量級使用。</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>📝 字數額度</h4>
+        <p>每月約 <strong>10,000 個字元</strong>（Characters），超出即停止生成。</p>
+      </div>
+      <div class="card orange">
+        <h4>🎭 語音數量</h4>
+        <p>可使用最多 <strong>3 個自訂語音</strong>（Custom Voices）。</p>
+      </div>
+      <div class="card red">
+        <h4>⚖️ 授權限制</h4>
+        <p>生成的音訊<strong>必須標註來源</strong>（Attribution Required），且<strong>不可用於商業用途</strong>。</p>
+      </div>
+      <div class="card accent">
+        <h4>🔒 功能限制</h4>
+        <p>無法使用 Turbo v2.5 模型、語音克隆進階功能，API 存取權限較低。</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      💡 <strong>建議：</strong>若您的 GPT 專案涉及商業應用、需要大量生成語音或要求高擬真度，建議至少升級至 <strong>Starter</strong> 或 <strong>Creator</strong> 方案以解鎖商業授權與更高額度。
+    </div>
+
+    <!-- ✅ 資訊圖表 1 -->
+    <div class="ig-image">
+      <img src="./G01-1.webp" alt="資訊圖表1：ElevenLabs Free vs Paid 方案比較">
+      <div class="ig-caption">
+        <span class="ig-num">1</span>
+        ElevenLabs Free vs Paid 方案比較 — Q版墨鏡角色擔任導覽員，左側免費方案 vs 右側付費方案
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEC 2 ==================== -->
+<section id="sec2">
+  <div class="container">
+    <span class="section-tag">PART 2</span>
+    <h2>可以放入 GPT 專案來使用嗎？</h2>
+    <p class="lead">這取決於您所指的「GPT 專案」具體形式，以下分三種情況說明：</p>
+
+    <div class="card-grid">
+      <div class="card green">
+        <h4>✅ 情況 A：API 整合到自開發 AI 應用</h4>
+        <p><strong>完全可以。</strong>這是 ElevenLabs 最核心的使用場景。</p>
+        <ul>
+          <li>透過 ElevenLabs API 將 TTS 串接到 LLM 應用</li>
+          <li>GPT 輸出文字 → 後端呼叫 API → 語音播放</li>
+        </ul>
+        <div class="callout danger" style="margin-top:12px">
+          ⚠️ 此方式<strong>必須使用付費方案</strong>，Free 方案對 API 呼叫有嚴格限制。
+        </div>
+      </div>
+      <div class="card orange">
+        <h4>⚠️ 情況 B：ChatGPT GPTs / Actions</h4>
+        <p><strong>間接可行，但有門檻。</strong></p>
+        <ul>
+          <li>GPTs 支援透過 Actions 連接外部 API</li>
+          <li>無法直接播放音訊，只能返回 URL</li>
+          <li>需自行架設中介伺服器處理 API Key</li>
+          <li>API 回應時間可能影響互動流暢度</li>
+        </ul>
+      </div>
+      <div class="card red">
+        <h4>❌ 情況 C：ChatGPT 對話視窗直接使用</h4>
+        <p><strong>不行。</strong></p>
+        <p>ChatGPT 原生語音功能使用 OpenAI 自家 TTS 模型，無法替換為 ElevenLabs 引擎。</p>
+      </div>
+    </div>
+
+    <!-- ✅ 資訊圖表 2 -->
+    <div class="ig-image">
+      <img src="./G01-2.webp" alt="資訊圖表2：GPT 專案整合三種情境流程圖">
+      <div class="ig-caption">
+        <span class="ig-num">2</span>
+        GPT 專案整合三種情境流程圖 — ✅自開發應用（綠）、⚠️GPTs/Actions（橘）、❌對話視窗（紅）
+      </div>
+    </div>
+
+    <h3>📊 Free vs Paid 快速比較</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>項目</th><th>Free 方案</th><th>付費方案 (Starter+)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>月字元額度</td><td>~10,000</td><td>30,000 ~ 數百萬</td></tr>
+          <tr><td>商業授權</td><td class="tag-no">❌ 需標註來源</td><td class="tag-yes">✅ 完整商業授權</td></tr>
+          <tr><td>API 存取</td><td>有限制</td><td class="tag-yes">✅ 完整支援</td></tr>
+          <tr><td>語音克隆</td><td class="tag-no">❌</td><td class="tag-yes">✅ 即時/專業克隆</td></tr>
+          <tr><td>整合 GPT 應用</td><td>僅限測試</td><td class="tag-yes">✅ 生產環境推薦</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEC 3 ==================== -->
+<section id="sec3">
+  <div class="container">
+    <span class="section-tag">PART 3</span>
+    <h2>像 ElevenLabs 的免費 TTS 替代方案</h2>
+    <p class="lead">適合透過 Codex / API 呼叫使用，以下為市場上最適合開發者免費試用的服務。</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>服務名稱</th><th>免費額度</th><th>音質</th><th>API 友善度</th><th>特色與限制</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>ElevenLabs</strong></td><td>10k 字元/月</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>業界標竿，需標註來源，不可商用</td></tr>
+          <tr><td><strong>Play.ht</strong></td><td>12.5k 字元/月</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>音色豐富，僅限非商用+標註</td></tr>
+          <tr><td><strong>Deepgram</strong></td><td>$200 USD 額度</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>開發者首選，支援 STT+TTS</td></tr>
+          <tr><td><strong>Azure TTS</strong></td><td>50萬字元/月</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>免費額度最大方，Neural Voice</td></tr>
+          <tr><td><strong>Google Cloud TTS</strong></td><td>400萬字元/月</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>WaveNet 額度極高，需綁信用卡</td></tr>
+          <tr><td><strong>Fish Audio</strong></td><td>每日免費額度</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>中文效果極佳，API 文檔清晰</td></tr>
+          <tr><td><strong>Edge-TTS</strong></td><td>完全免費無限</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>非官方，零成本但無 SLA</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ✅ 資訊圖表 3 -->
+    <div class="ig-image">
+      <img src="./G01-3.webp" alt="資訊圖表3：七大 TTS 服務免費額度與音質比較">
+      <div class="ig-caption">
+        <span class="ig-num">3</span>
+        七大 TTS 服務免費額度與音質比較 — 深色背景霓虹長條圖，Edge-TTS 標示 ∞ 無限
+      </div>
+    </div>
+
+    <h3>🔍 重點方案分析</h3>
+    <div class="card-grid">
+      <div class="card green">
+        <h4>🥇 Deepgram（開發者首選）</h4>
+        <ul>
+          <li>直接給 <strong>$200 USD</strong> 免費 Credit</li>
+          <li>Python / Node.js / Go 多語言 SDK</li>
+          <li>文件對 LLM 生成程式碼非常友好</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>🥈 Azure TTS（免費額度之王）</h4>
+        <ul>
+          <li>F0 Free Tier 每月 <strong>50 萬字元</strong></li>
+          <li>Azure SDK 是主流訓練資料，Codex 準確率高</li>
+          <li>需 Microsoft Azure 帳號</li>
+        </ul>
+      </div>
+      <div class="card accent">
+        <h4>🥉 Fish Audio（中文首選）</h4>
+        <ul>
+          <li>多語言與中文優化，聲音克隆門檻低</li>
+          <li>RESTful + WebSocket，OpenAPI Spec 完整</li>
+          <li>每日免費配額，適合持續小量測試</li>
+        </ul>
+      </div>
+      <div class="card orange">
+        <h4>🔓 Edge-TTS（零成本黑科技）</h4>
+        <ul>
+          <li><strong>完全免費、無需 API Key、無字數限制</strong></li>
+          <li>只需 <code>pip install edge-tts</code></li>
+        </ul>
+        <div class="callout danger" style="margin-top:8px">
+          ⚠️ 非官方途徑，微軟隨時可能封堵。<strong>嚴禁用於生產環境。</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEC 4 ==================== -->
+<section id="sec4">
+  <div class="container">
+    <span class="section-tag">PART 4</span>
+    <h2>🆓 只能用免費的？三大零成本方案</h2>
+    <p class="lead">真正免費、可程式化呼叫、無嚴格字數限制的 TTS 解決方案。</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <h4>🥇 Edge-TTS — 零成本、高品質、免註冊</h4>
+        <p>利用 Microsoft Edge 瀏覽器線上朗讀接口。完全免費、無需 API Key、300+ 種語音、中文效果極佳。Python 套件 <code>edge-tts</code> 即可使用。</p>
+      </div>
+      <div class="tl-item">
+        <h4>🥈 Coqui TTS / XTTS-v2 — 本地部署、完全離線</h4>
+        <p>開源免費（Apache 2.0），無限使用。支援多語言 + 聲音克隆（6 秒參考音訊）。建議 NVIDIA GPU 6GB+ VRAM。資料不出本機，隱私性極佳。</p>
+      </div>
+      <div class="tl-item">
+        <h4>🥉 Azure TTS Free Tier — 正規服務、每月 50 萬字元</h4>
+        <p>F0 Free Tier 永久免費，Neural Voice 品質穩定。需註冊 Azure 帳號 + 綁信用卡驗證（不會扣款）。Free Tier 不可商用，僅限測試/學習。</p>
+      </div>
+    </div>
+
+    <!-- ✅ 資訊圖表 4 -->
+    <div class="ig-image">
+      <img src="./G01-4.webp" alt="資訊圖表4：三大零成本方案對比儀表板">
+      <div class="ig-caption">
+        <span class="ig-num">4</span>
+        三大零成本方案對比儀表板 — Edge-TTS vs Coqui XTTS-v2 vs Azure Free，含雷達圖綜合評分
+      </div>
+    </div>
+
+    <h3>📊 三者對比總結</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>維度</th><th>Edge-TTS</th><th>Coqui XTTS-v2</th><th>Azure Free</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>免費程度</td><td class="tag-yes">⭐⭐⭐⭐⭐ 無限</td><td class="tag-yes">⭐⭐⭐⭐⭐ 無限</td><td>⭐⭐⭐ 月限50萬字</td></tr>
+          <tr><td>設定難度</td><td class="tag-yes">極低</td><td>中等（需GPU）</td><td>中等（需帳號）</td></tr>
+          <tr><td>音質</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐</td></tr>
+          <tr><td>穩定性</td><td class="tag-no">⚠️ 非官方</td><td class="tag-yes">✅ 本地自主</td><td class="tag-yes">✅ 官方 SLA</td></tr>
+          <tr><td>聲音克隆</td><td class="tag-no">❌</td><td class="tag-yes">✅ 支援</td><td class="tag-no">❌</td></tr>
+          <tr><td>適合場景</td><td>快速原型/Demo</td><td>隱私/大量生成</td><td>正規測試/初期上線</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEC 5 ==================== -->
+<section id="sec5">
+  <div class="container">
+    <span class="section-tag">PART 5</span>
+    <h2>💻 程式碼範例</h2>
+    <p class="lead">可直接複製使用的 Python 程式碼，也可作為 Codex / Copilot 的 Prompt 參考。</p>
+
+    <h3>🥇 Edge-TTS</h3>
+    <div class="code-block">
+      <span class="lang-tag">Python</span>
+<span class="cm"># pip install edge-tts</span>
+<span class="kw">import</span> edge_tts
+<span class="kw">import</span> asyncio
+
+<span class="kw">async def</span> <span class="fn">text_to_speech</span>(text: <span class="kw">str</span>, output_file: <span class="kw">str</span>,
+                        voice: <span class="kw">str</span> = <span class="str">"zh-CN-XiaoxiaoNeural"</span>):
+    communicate = edge_tts.<span class="fn">Communicate</span>(text, voice)
+    <span class="kw">await</span> communicate.<span class="fn">save</span>(output_file)
+
+<span class="cm"># 使用範例</span>
+asyncio.<span class="fn">run</span>(<span class="fn">text_to_speech</span>(<span class="str">"你好，這是免費語音合成測試"</span>, <span class="str">"output.mp3"</span>))
+    </div>
+
+    <h3>🥈 Coqui XTTS-v2</h3>
+    <div class="code-block">
+      <span class="lang-tag">Python</span>
+<span class="cm"># pip install TTS</span>
+<span class="kw">from</span> TTS.api <span class="kw">import</span> TTS
+
+<span class="cm"># 首次執行會自動下載模型</span>
+tts = <span class="fn">TTS</span>(model_name=<span class="str">"tts_models/multilingual/multi-dataset/xtts_v2"</span>)
+
+tts.<span class="fn">tts_to_file</span>(
+    text=<span class="str">"這是一個完全離線的免費語音合成"</span>,
+    language=<span class="str">"zh-cn"</span>,
+    file_path=<span class="str">"output.wav"</span>
+)
+    </div>
+
+    <h3>🥉 Azure TTS</h3>
+    <div class="code-block">
+      <span class="lang-tag">Python</span>
+<span class="cm"># pip install azure-cognitiveservices-speech</span>
+<span class="kw">import</span> azure.cognitiveservices.speech <span class="kw">as</span> speechsdk
+
+speech_config = speechsdk.<span class="fn">SpeechConfig</span>(
+    subscription=<span class="str">"YOUR_FREE_KEY"</span>,
+    region=<span class="str">"eastasia"</span>
+)
+synthesizer = speechsdk.<span class="fn">SpeechSynthesizer</span>(speech_config=speech_config)
+result = synthesizer.<span class="fn">speak_text_async</span>(<span class="str">"免費額度內的語音合成"</span>).<span class="fn">get</span>()
+    </div>
+
+    <!-- ✅ 資訊圖表 5 -->
+    <div class="ig-image">
+      <img src="./G01-5.webp" alt="資訊圖表5：三種方案技術架構與呼叫流程圖">
+      <div class="ig-caption">
+        <span class="ig-num">5</span>
+        三種方案技術架構與呼叫流程圖 — Edge-TTS（免Key）、Coqui（離線）、Azure（需金鑰）
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SEC 6 ==================== -->
+<section id="sec6">
+  <div class="container">
+    <span class="section-tag">PART 6</span>
+    <h2>🎯 決策指南：該選哪個方案？</h2>
+    <p class="lead">根據您的 GPT 專案需求，快速找到最適合的免費 TTS 方案。</p>
+
+    <div class="tree">
+您的 GPT 專案需求是什麼？<br>
+│<br>
+├─ 追求最高語音品質 + 少量測試<br>
+│&nbsp;&nbsp;&nbsp;└─ <span class="hl">→ ElevenLabs Free / Play.ht</span><br>
+│<br>
+├─ 需要大量測試 + 正式 API 體驗<br>
+│&nbsp;&nbsp;&nbsp;└─ <span class="hl">→ Deepgram（$200 credit）</span><br>
+│<br>
+├─ 長期免費 + 穩定商用級品質<br>
+│&nbsp;&nbsp;&nbsp;└─ <span class="hl">→ Azure TTS（F0 Tier）</span><br>
+│<br>
+├─ 中文為主 + 聲音克隆需求<br>
+│&nbsp;&nbsp;&nbsp;└─ <span class="hl">→ Fish Audio</span><br>
+│<br>
+├─ 純個人實驗 + 不想花錢註冊<br>
+│&nbsp;&nbsp;&nbsp;└─ <span class="ok">→ Edge-TTS ⚠️ 僅限測試</span><br>
+│<br>
+└─ 完全離線 + 隱私敏感 + 無限生成<br>
+&nbsp;&nbsp;&nbsp;&nbsp;└─ <span class="ok">→ Coqui XTTS-v2 本地部署</span>
+    </div>
+
+    <!-- ✅ 資訊圖表 6 -->
+    <div class="ig-image">
+      <img src="./G01-6.webp" alt="資訊圖表6：完整決策流程圖與最終建議路徑">
+      <div class="ig-caption">
+        <span class="ig-num">6</span>
+        完整決策流程圖與最終建議路徑 — 六條分支對應不同需求，底部三步驟：驗證→遷移→上線
+      </div>
+    </div>
+
+    <h3>⚠️ 重要提醒</h3>
+    <div class="card-grid">
+      <div class="card red">
+        <h4>🔑 API Key 安全</h4>
+        <p>使用 Codex/Copilot 生成程式碼時，確保 API Key 不會被硬編碼。請使用環境變數（<code>.env</code>）管理密鑰。</p>
+      </div>
+      <div class="card orange">
+        <h4>📜 授權注意</h4>
+        <p>幾乎所有免費 TTS API 都<strong>禁止商業使用</strong>且要求標註歸屬。若專案將對外發布或營利，請務必升級付費方案。</p>
+      </div>
+      <div class="card">
+        <h4>🔄 Codex 相容性</h4>
+        <p>上述所有服務皆基於 HTTP API，理論上相容任何能發送網路請求的環境。請確認您的系統支援標準 REST API 呼叫。</p>
+      </div>
+    </div>
+
+    <h3>🔑 最終建議</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <h4>Step 1：先從 Edge-TTS 開始</h4>
+        <p>5 分鐘內就能跑起來，驗證您的 GPT 專案流程是否可行。</p>
+      </div>
+      <div class="tl-item">
+        <h4>Step 2：長期穩定運行 → Coqui XTTS-v2</h4>
+        <p>遷移到本地部署，徹底擺脫外部依賴。</p>
+      </div>
+      <div class="tl-item">
+        <h4>Step 3：需要官方品質 → Azure Free Tier</h4>
+        <p>用量在 50 萬字/月以內，這是最安全的免費選項。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <p>🎙️ 免費 TTS 完全指南｜ElevenLabs × GPT 專案整合 × 零成本語音合成</p>
+  <p>本頁內容整理自 AI 對話紀錄，仅供學習參考。各服務方案與額度以官方最新公告為準。</p>
+  <p style="margin-top:8px; opacity:.6;">Built with ❤️ | 2026</p>
+</footer>
+
+</body>
+</html>
