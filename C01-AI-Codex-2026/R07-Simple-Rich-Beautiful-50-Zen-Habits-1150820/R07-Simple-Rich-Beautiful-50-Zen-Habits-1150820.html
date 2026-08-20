@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="《簡單豐盛美好：幸運一輩子的禪的50種習慣》Q版 yfchen 男聲手繪動態閱讀網頁" />
+  <title>簡單、豐盛、美好｜Q版男聲手繪動態閱讀版</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="cover-screen" id="cover" aria-label="閱讀封面">
+    <img class="cover-image" src="assets/covers/cover.webp" alt="Q版 yfchen 在明亮竹庭喝茶的手繪封面" />
+    <div class="cover-wash"></div>
+    <div class="cover-copy">
+      <p class="cover-kicker">禪意動態閱讀</p>
+      <h1>簡單、豐盛、美好</h1>
+      <p class="cover-subtitle">幸運一輩子的禪的50種習慣</p>
+      <button class="start-button" id="startButton" type="button">開始閱讀</button>
+    </div>
+  </section>
+
+  <main class="reading-app is-hidden" id="readingApp">
+    <section class="stage-wrap" aria-label="動態閱讀畫面">
+      <div class="stage" id="stage">
+        <img id="visualA" class="visual visual-a" src="assets/images/visual-001.webp" alt="Q版 yfchen 禪意手繪場景" />
+        <img id="visualB" class="visual visual-b" src="assets/images/visual-001.webp" alt="Q版 yfchen 禪意手繪場景" />
+        <div class="stage-shade"></div>
+        <div class="scene-badge" id="sceneBadge">SC—01</div>
+        <div class="scene-title" id="sceneTitle">為什麼生活越方便，心卻越忙？</div>
+        <div class="caption" id="caption" aria-live="polite">準備開始閱讀</div>
+      </div>
+    </section>
+    <section class="reading-info">
+      <div class="progress-row"><span id="currentTime">00:00</span><div class="progress-track"><div id="progressFill"></div></div><span id="totalTime">05:02</span></div>
+      <div class="controls" aria-label="播放控制">
+        <button id="previousButton" type="button">上一段</button>
+        <button id="playButton" class="play" type="button">播放旁白</button>
+        <button id="nextButton" type="button">下一段</button>
+        <label class="volume">音量 <input id="volume" type="range" min="0" max="1" step="0.05" value="1" /></label>
+      </div>
+      <div class="status" id="status">男聲｜Microsoft Edge YunJhe Neural｜圖片每約 5 秒切換</div>
+    </section>
+    <nav class="chapter-strip" aria-label="章節選擇" id="chapterStrip"></nav>
+  </main>
+  <audio id="voice" preload="metadata"></audio>
+  <script src="app-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

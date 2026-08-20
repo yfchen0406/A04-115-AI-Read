@@ -1,0 +1,25 @@
+/* 以 8 段 YunJhe MP3 播放旁白，依 61 個約五秒節點切換圖片；封面按下後才啟動音訊。 */
+(() => {
+  "use strict";
+  const data = window.READING_DATA; const voice = document.querySelector("#voice");
+  const visualA = document.querySelector("#visualA"); const visualB = document.querySelector("#visualB");
+  const caption = document.querySelector("#caption"); const sceneBadge = document.querySelector("#sceneBadge"); const sceneTitle = document.querySelector("#sceneTitle");
+  const playButton = document.querySelector("#playButton"); const status = document.querySelector("#status"); const currentTime = document.querySelector("#currentTime"); const progressFill = document.querySelector("#progressFill"); const chapterStrip = document.querySelector("#chapterStrip");
+  const cover = document.querySelector("#cover"); const readingApp = document.querySelector("#readingApp"); const startButton = document.querySelector("#startButton");
+  let activeBeat=-1, activeLayer=visualA, playing=false, currentScene=0, previewTime=0, started=false;
+  const format=v=>{const s=Math.max(0,Math.floor(v||0));return `${String(Math.floor(s/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`;};
+  const sceneStart=i=>data.sceneStarts[i]||0;
+  const findScene=t=>{for(let i=0;i<data.sceneDurations.length;i+=1)if(t<sceneStart(i)+data.sceneDurations[i])return i;return data.sceneDurations.length-1;};
+  const findBeat=t=>data.beats.findIndex(b=>t>=b.start&&t<b.end);
+  function renderBeat(time){const i=findBeat(time);if(i<0||i===activeBeat)return;activeBeat=i;const b=data.beats[i];const next=activeLayer===visualA?visualB:visualA;next.src=b.image;next.className=`visual ${activeLayer===visualA?"visual-b":"visual-a"} visible motion-${b.motion}`;activeLayer.classList.remove("visible");activeLayer=next;const scene=Number(b.scene_id)-1;sceneBadge.textContent=`SC—${b.scene_id}`;if(sceneTitle.textContent!==data.voiceover[scene].title){sceneTitle.classList.add("title-change");window.setTimeout(()=>{sceneTitle.textContent=data.voiceover[scene].title;sceneTitle.classList.remove("title-change");},250);} [...chapterStrip.children].forEach((x,n)=>x.classList.toggle("active",n===scene));}
+  function renderCaption(t){const c=data.captions.find(x=>t>=x.start&&t<x.end);caption.textContent=c?c.text:"";}
+  function globalTime(){return voice.readyState>0?sceneStart(currentScene)+voice.currentTime:previewTime;}
+  function update(){const t=Math.min(data.totalDuration,globalTime());currentTime.textContent=format(t);progressFill.style.width=`${t/data.totalDuration*100}%`;renderBeat(t);renderCaption(t);}
+  function loadScene(i,autoplay=false,offset=0){currentScene=Math.max(0,Math.min(data.voiceover.length-1,i));voice.src=`audio/scene-${String(currentScene+1).padStart(2,"0")}.mp3`;voice.load();voice.addEventListener("loadedmetadata",()=>{try{voice.currentTime=offset;}catch(e){}},{once:true});if(autoplay)voice.play().catch(()=>{status.textContent="請在瀏覽器允許播放旁白";});}
+  function jumpGlobal(t,autoplay=false){const target=Math.max(0,Math.min(data.totalDuration-.01,t));const s=findScene(target);previewTime=target;loadScene(s,autoplay,target-sceneStart(s));update();}
+  function togglePlay(){if(!started)return;if(!voice.src){loadScene(currentScene,true,Math.max(0,previewTime-sceneStart(currentScene)));return;}if(voice.paused)voice.play().catch(()=>{status.textContent="旁白播放需要瀏覽器播放權限";});else voice.pause();}
+  function buildChapters(){data.voiceover.forEach((row,i)=>{const b=document.createElement("button");b.type="button";b.textContent=`${String(i+1).padStart(2,"0")} ${row.title}`;b.addEventListener("click",()=>jumpGlobal(sceneStart(i),playing));chapterStrip.appendChild(b);});}
+  function startReading(){started=true;cover.classList.add("cover-exit");window.setTimeout(()=>{cover.remove();readingApp.classList.remove("is-hidden");loadScene(0,true,0);update();},550);}
+  voice.addEventListener("timeupdate",update);voice.addEventListener("play",()=>{playing=true;playButton.textContent="暫停旁白";status.textContent="男聲｜Microsoft Edge YunJhe Neural｜旁白播放中";});voice.addEventListener("pause",()=>{playing=false;playButton.textContent="播放旁白";});voice.addEventListener("ended",()=>{if(currentScene<data.voiceover.length-1)loadScene(currentScene+1,true,0);else{playing=false;playButton.textContent="重新播放";status.textContent="旁白播放完成";}});
+  document.querySelector("#previousButton").addEventListener("click",()=>jumpGlobal(sceneStart(Math.max(0,currentScene-1)),false));document.querySelector("#nextButton").addEventListener("click",()=>jumpGlobal(sceneStart(Math.min(data.voiceover.length-1,currentScene+1)),false));document.querySelector("#volume").addEventListener("input",e=>{voice.volume=Number(e.target.value);});document.querySelector(".progress-row").addEventListener("click",e=>{const r=e.currentTarget.getBoundingClientRect();jumpGlobal(((e.clientX-r.left)/r.width)*data.totalDuration,playing);});playButton.addEventListener("click",togglePlay);startButton.addEventListener("click",startReading);buildChapters();document.querySelector("#totalTime").textContent=format(data.totalDuration);visualA.classList.add("visible");
+})();

@@ -1,0 +1,31 @@
+:root { --paper:#f6f0de; --ink:#20251d; --tea:#a66a3f; --bamboo:#547a43; --gold:#d2a35d; --line:rgba(246,240,222,.3); --pen:"DFKai-SB","BiauKai","KaiTi","STKaiti",serif; }
+* { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; background:var(--ink); color:var(--paper); font-family:"Noto Serif TC","Source Han Serif TC","PMingLiU",serif; }
+button,input { font:inherit; } button { cursor:pointer; }
+.is-hidden { display:none; }
+.cover-screen { position:fixed; inset:0; z-index:20; overflow:hidden; background:#efe7cc; }
+.cover-image { width:100%; height:100%; object-fit:cover; object-position:center; }
+.cover-wash { position:absolute; inset:0; background:linear-gradient(90deg,rgba(250,245,228,.91) 0%,rgba(250,245,228,.64) 36%,rgba(250,245,228,.05) 72%),linear-gradient(0deg,rgba(26,36,25,.2),transparent 45%); }
+.cover-exit { animation:cover-exit .55s ease forwards; }
+.cover-copy { position:absolute; left:clamp(1.3rem,8vw,9rem); top:50%; transform:translateY(-50%); max-width:30rem; color:var(--ink); }
+.cover-kicker { margin:0 0 .75rem; color:var(--bamboo); letter-spacing:.22em; font:1rem var(--pen); }
+.cover-copy h1 { margin:0; font:900 clamp(2.6rem,7vw,6.7rem)/1.1 var(--pen); letter-spacing:.08em; text-shadow:1px 2px 0 rgba(255,255,255,.65); }
+.cover-subtitle { margin:1rem 0 1.8rem; font:1.25rem/1.6 var(--pen); letter-spacing:.08em; }
+.start-button { padding:.7rem 1.5rem; color:var(--paper); background:var(--bamboo); border:1px solid var(--bamboo); border-radius:999px; box-shadow:0 8px 22px rgba(35,54,28,.22); font:1.25rem var(--pen); transition:transform .3s,background .3s; }
+.start-button:hover { transform:translateY(-2px); background:#3e6234; }
+.reading-app { min-height:100svh; background:linear-gradient(180deg,#20291e,#171b16); }
+.stage-wrap { padding:clamp(.7rem,2vw,1.5rem); padding-bottom:0; }
+.stage { position:relative; width:min(1440px,100%); aspect-ratio:16/9; min-height:62svh; margin:auto; overflow:hidden; background:#273527; box-shadow:0 24px 80px rgba(0,0,0,.32); isolation:isolate; }
+.visual { position:absolute; inset:0; z-index:0; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.04); transition:opacity 1.3s ease; will-change:opacity,transform; }
+.visual.visible { opacity:1; }
+.visual.motion-push { animation:push 5s linear both; }.visual.motion-pull { animation:pull 5s linear both; }.visual.motion-pan-left { animation:pan-left 5s linear both; }.visual.motion-pan-right { animation:pan-right 5s linear both; }
+.stage-shade { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(12,18,12,.05) 38%,rgba(12,18,12,.82) 100%); pointer-events:none; }
+.scene-badge { position:absolute; left:clamp(1rem,4vw,4rem); top:clamp(1rem,4vw,4rem); z-index:2; padding:.3rem .55rem; color:var(--paper); border-left:3px solid var(--gold); font:.72rem ui-sans-serif,system-ui,sans-serif; letter-spacing:.18em; }
+.scene-title { position:absolute; left:clamp(1rem,4vw,4rem); top:clamp(1.2rem,7vw,6rem); z-index:2; max-width:13em; color:var(--paper); font:900 clamp(1.5rem,4vw,4rem)/1.35 var(--pen); letter-spacing:.08em; text-shadow:0 2px 12px rgba(0,0,0,.55); transition:opacity .7s,transform .7s; }
+.scene-title.title-change { opacity:0; transform:translateY(-10px); }
+.caption { position:absolute; left:50%; bottom:clamp(1rem,3vw,2.2rem); z-index:3; width:min(92%,60rem); transform:translateX(-50%); padding:.7rem 1rem; color:white; background:rgba(20,25,19,.76); border:1px solid var(--line); border-radius:.4rem; text-align:center; font-size:clamp(.95rem,1.6vw,1.35rem); line-height:1.55; text-shadow:0 1px 5px #000; backdrop-filter:blur(4px); }
+.reading-info { width:min(1440px,100%); margin:auto; padding:.9rem clamp(1rem,4vw,4rem) 1.2rem; background:#181e17; }.progress-row { display:flex; align-items:center; gap:.7rem; color:rgba(246,240,222,.72); font:.7rem ui-sans-serif,system-ui,sans-serif; }.progress-track { height:4px; flex:1; overflow:hidden; background:rgba(246,240,222,.2); }.progress-track div { width:0; height:100%; background:var(--gold); transition:width .2s linear; }.controls { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:.55rem; padding:.7rem 0; }.controls button { padding:.45rem .8rem; color:var(--paper); background:transparent; border:1px solid var(--line); border-radius:999px; }.controls .play { color:#172017; background:var(--paper); border-color:var(--paper); }.volume { display:flex; align-items:center; gap:.4rem; color:rgba(246,240,222,.7); font:.75rem ui-sans-serif,system-ui,sans-serif; }.volume input { accent-color:var(--gold); width:5rem; }.status { color:rgba(246,240,222,.6); text-align:center; font:.72rem ui-sans-serif,system-ui,sans-serif; letter-spacing:.06em; }.chapter-strip { width:min(1440px,100%); display:flex; gap:.4rem; overflow-x:auto; margin:auto; padding:.7rem clamp(1rem,4vw,4rem) 1.8rem; background:#181e17; }.chapter-strip button { flex:0 0 auto; padding:.4rem .75rem; color:rgba(246,240,222,.65); background:transparent; border:1px solid var(--line); border-radius:999px; }.chapter-strip button.active { color:#172017; background:var(--gold); border-color:var(--gold); }
+@keyframes push { from{transform:scale(1.04)} to{transform:scale(1.12)} } @keyframes pull { from{transform:scale(1.12)} to{transform:scale(1.04)} } @keyframes pan-left { from{transform:scale(1.08) translateX(2%)} to{transform:scale(1.08) translateX(-2%)} } @keyframes pan-right { from{transform:scale(1.08) translateX(-2%)} to{transform:scale(1.08) translateX(2%)} }
+@keyframes cover-exit { to { opacity:0; visibility:hidden; transform:scale(1.02); } }
+@media (max-width:760px) { .cover-copy { left:1.2rem; right:1.2rem; top:48%; }.cover-wash { background:linear-gradient(90deg,rgba(250,245,228,.9),rgba(250,245,228,.42)),linear-gradient(0deg,rgba(26,36,25,.22),transparent 55%); }.cover-copy h1 { font-size:clamp(2.3rem,12vw,4rem); }.cover-subtitle { font-size:1rem; }.stage { min-height:64svh; aspect-ratio:auto; }.scene-title { font-size:1.55rem; top:1rem; }.caption { font-size:.92rem; padding:.55rem .65rem; }.controls { gap:.35rem; }.controls button { font-size:.78rem; padding:.4rem .6rem; }.volume { width:100%; justify-content:center; } }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }

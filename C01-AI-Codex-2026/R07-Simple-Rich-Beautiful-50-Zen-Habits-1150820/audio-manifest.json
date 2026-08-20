@@ -1,0 +1,66 @@
+[
+  {
+    "scene_id": "01",
+    "file": "audio/scene-01.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 193
+  },
+  {
+    "scene_id": "02",
+    "file": "audio/scene-02.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 184
+  },
+  {
+    "scene_id": "03",
+    "file": "audio/scene-03.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 170
+  },
+  {
+    "scene_id": "04",
+    "file": "audio/scene-04.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 186
+  },
+  {
+    "scene_id": "05",
+    "file": "audio/scene-05.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 195
+  },
+  {
+    "scene_id": "06",
+    "file": "audio/scene-06.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 188
+  },
+  {
+    "scene_id": "07",
+    "file": "audio/scene-07.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 171
+  },
+  {
+    "scene_id": "08",
+    "file": "audio/scene-08.mp3",
+    "provider": "Microsoft Edge Neural TTS",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "text_length": 189
+  }
+]
