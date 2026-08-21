@@ -4205,5 +4205,25 @@ const promptsData = [
     date: "2026-08-19",
     url: "",
   },
+  {
+    id: 420,
+    title: "日本旅遊必須知道的六大新規-1",
+    category: "Map",
+    image: "./images/M01-Map/M010-1.webp",
+    prompt:
+      "<span class='yf3'>YT利用NotebookLM整理重點之後，讓Perplexity產生圖片提示詞</span>2026 年去日本旅遊必須知道的六大新規",
+    date: "2026-08-21",
+    url: "",
+  },
+  {
+    id: 422,
+    title: "日本旅遊必須知道的六大新規-2",
+    category: "Map",
+    image: "./images/M01-Map/M010-2.webp",
+    prompt:
+      "<span class='yf3'>YT利用NotebookLM整理重點之後，讓Perplexity產生圖片提示詞</span>2026 年去日本旅遊必須知道的六大新規",
+    date: "2026-08-21",
+    url: "",
+  },
 ];
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "S00 四階段 Word 三版本動態閱讀製作"
+  short_description: "輸入四份 Word 與主角圖，產出網站、影片與上傳包"
+  default_prompt: "請使用 S00 四階段 Word 三版本動態閱讀製作 Skill，以四份 Word 與主角參考圖建立三版本動態閱讀成果。"
