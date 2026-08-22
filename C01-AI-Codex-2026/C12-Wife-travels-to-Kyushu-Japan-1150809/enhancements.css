@@ -1,4 +1,27 @@
-/* 已置入插圖後的放大主視覺與每日旅遊紀錄頁 */
+.is-zoomable { cursor: zoom-in; }
+.is-zoomable:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+body.is-lightbox-open { overflow: hidden; }
+.image-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: clamp(1rem, 4vw, 3rem); background: rgb(8 25 37 / .88); }
+.image-lightbox[hidden] { display: none; }
+.image-lightbox-image { max-width: min(1200px, 94vw); max-height: 86vh; width: auto; height: auto; object-fit: contain; border-radius: 10px; box-shadow: 0 24px 70px rgb(0 0 0 / .4); cursor: zoom-out; }
+.image-lightbox-close { position: absolute; top: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; border: 1px solid rgb(255 255 255 / .5); border-radius: 50%; background: rgb(0 0 0 / .25); color: var(--white); font-size: 2rem; line-height: 1; cursor: pointer; }
+.image-lightbox-close:hover, .image-lightbox-close:focus-visible { background: var(--maple); }
+.image-lightbox-caption { position: absolute; left: 1rem; right: 1rem; bottom: .8rem; margin: 0; color: var(--white); text-align: center; font-size: .85rem; }/* 已置入插圖後的放大主視覺與每日旅遊紀錄頁 */.latest-rules-section { scroll-margin-top: 95px; }
+.latest-rules-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.latest-rules-images figure { margin: 0; overflow: hidden; border-radius: 14px; background: var(--white); box-shadow: 0 10px 25px rgb(31 46 56 / .08); }
+.latest-rules-images img { display: block; width: 100%; height: auto; }
+.latest-rules-images figcaption { padding: .55rem .85rem; color: var(--muted); font-size: .78rem; }
+.rules-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+.rules-summary article { display: grid; grid-template-columns: 2.2rem 1fr; gap: .7rem; align-items: start; padding: 1rem 1.1rem; background: var(--white); border-radius: 12px; box-shadow: 0 10px 25px rgb(31 46 56 / .07); }
+.rules-summary article > span { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--maple); color: var(--white); font-size: .72rem; font-weight: 800; }
+.rules-summary h3 { margin: 0 0 .25rem; color: var(--navy); font-size: 1rem; }
+.rules-summary p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }.trip-countdown { display: inline-flex; align-items: center; gap: .55rem; margin-left: auto; margin-right: clamp(.5rem, 2vw, 1.5rem); color: var(--navy); white-space: nowrap; }
+.countdown-label { color: var(--maple); font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
+.countdown-units { display: inline-flex; align-items: baseline; gap: .35rem; }
+.countdown-unit { display: inline-flex; align-items: baseline; gap: .1rem; }
+.countdown-unit strong { min-width: 1.25em; color: var(--navy); font-size: .95rem; font-variant-numeric: tabular-nums; text-align: right; }
+.countdown-unit small { color: var(--muted); font-size: .7rem; }
+.trip-countdown.is-ended .countdown-label { color: var(--muted); }
 @media (min-width: 900px) {
   .hero { grid-template-columns: minmax(0, .86fr) minmax(560px, 1.14fr); gap: clamp(2.4rem, 5vw, 5.5rem); }
   .art-slot--hero { width: 100%; }
@@ -35,7 +58,21 @@
 .day-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; }
 .day-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: .7rem 1rem; border-radius: 8px; background: var(--white); color: var(--navy); font-weight: 800; text-decoration: none; box-shadow: 0 8px 20px rgb(31 46 56 / .08); }
 .day-nav a:hover { color: var(--maple); }
-@media (max-width: 740px) {
+@media (max-width: 740px) {  .topbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; row-gap: .35rem; height: auto; min-height: 61px; padding: .65rem 1rem; }
+  .latest-rules-section { scroll-margin-top: 95px; }
+.latest-rules-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.latest-rules-images figure { margin: 0; overflow: hidden; border-radius: 14px; background: var(--white); box-shadow: 0 10px 25px rgb(31 46 56 / .08); }
+.latest-rules-images img { display: block; width: 100%; height: auto; }
+.latest-rules-images figcaption { padding: .55rem .85rem; color: var(--muted); font-size: .78rem; }
+.rules-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+.rules-summary article { display: grid; grid-template-columns: 2.2rem 1fr; gap: .7rem; align-items: start; padding: 1rem 1.1rem; background: var(--white); border-radius: 12px; box-shadow: 0 10px 25px rgb(31 46 56 / .07); }
+.rules-summary article > span { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--maple); color: var(--white); font-size: .72rem; font-weight: 800; }
+.rules-summary h3 { margin: 0 0 .25rem; color: var(--navy); font-size: 1rem; }
+.rules-summary p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }.trip-countdown { grid-column: 1 / -1; grid-row: 2; justify-content: center; margin: 0; }
+  .countdown-units { gap: .22rem; }
+  .countdown-unit strong { font-size: .83rem; }
+  .countdown-unit small, .countdown-label { font-size: .65rem; }
+  .latest-rules-images, .rules-summary { grid-template-columns: 1fr; }
   .journal-main { width: calc(100% - 2rem); margin: 1.6rem auto 4rem; }
   .journal-banner { grid-template-columns: 1fr; padding: 1.25rem; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
