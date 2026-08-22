@@ -73,7 +73,15 @@
       gap: 1rem;
       align-items: center;
       flex-wrap: wrap;
+      flex: 1;
+      justify-content: flex-end;
     }
+    .category-toolbar { width:100%; box-sizing:border-box; display:flex; flex-wrap:wrap; gap:.35rem .45rem; overflow:hidden; padding:.2rem 0 .35rem; margin-top:1rem; scrollbar-width:none; }
+    .category-toolbar::-webkit-scrollbar { display:none; }
+    .category-button { flex:0 0 auto; padding:.3rem .55rem; border:1px solid var(--border-color); border-radius:999px; background:var(--bg-color); color:var(--text-secondary); font:inherit; font-size:.74rem; line-height:1.25; cursor:pointer; transition:.2s; }
+    .category-button:hover, .category-button.active { border-color:var(--accent-color); }
+    .category-button.active { background:var(--accent-color); color:#fff; box-shadow:0 2px 6px rgba(59,130,246,.28); }
+    .category-select-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
     /* Inputs & Selects */
     input[type="text"],
@@ -415,7 +423,7 @@
       <div class="controls">
         <input type="text" id="searchInput" placeholder="搜尋提示詞..." onkeyup="filterCards()">
 
-        <select id="categoryFilter" onchange="filterCards()">
+        <select id="categoryFilter" class="category-select-hidden" onchange="filterCards()" aria-hidden="true" tabindex="-1">
           <option value="all">所有分類</option>
           <option value="3D">3D模型(3D)</option>
           <option value="Art">藝術風格(Art)</option>
@@ -441,6 +449,8 @@
 
         </select>
 
+
+
         <select id="sortSelect" onchange="sortCards()">
           <!-- 新增一個排序方式，其實很簡單 -->
           <option value="id_dsc">編號 (大到小)</option>
@@ -454,6 +464,31 @@
           <span id="themeIcon">☀️</span>
         </button>
       </div>
+
+      <nav class="category-toolbar" aria-label="提示詞分類">
+        <button type="button" class="category-button active" onclick="setCategory('all', this)">00｜所有分類｜ALL</button>
+        <button type="button" class="category-button" onclick="setCategory('3D', this)">01｜3D模型｜3D</button>
+        <button type="button" class="category-button" onclick="setCategory('Art', this)">02｜藝術風格｜Art</button>
+        <button type="button" class="category-button" onclick="setCategory('English', this)">03｜英文單字｜English</button>
+        <button type="button" class="category-button" onclick="setCategory('Fun', this)">04｜有趣生圖｜Fun</button>
+        <button type="button" class="category-button" onclick="setCategory('Festival', this)">05｜節慶生圖｜Festival</button>
+        <button type="button" class="category-button" onclick="setCategory('Golden', this)">06｜金句桌布｜Golden</button>
+        <button type="button" class="category-button" onclick="setCategory('Knowledge', this)">07｜知識學習｜Knowledge</button>
+        <button type="button" class="category-button" onclick="setCategory('Law', this)">08｜著名定律｜Law</button>
+        <button type="button" class="category-button" onclick="setCategory('Life', this)">09｜平常生活｜Life</button>
+        <button type="button" class="category-button" onclick="setCategory('Line', this)">10｜Line貼圖｜Line</button>
+        <button type="button" class="category-button" onclick="setCategory('Map', this)">11｜旅遊地圖｜Map</button>
+        <button type="button" class="category-button" onclick="setCategory('Mini', this)">12｜迷你分身｜Mini</button>
+        <button type="button" class="category-button" onclick="setCategory('Open', this)">13｜開機畫面｜Open</button>
+        <button type="button" class="category-button" onclick="setCategory('Portrait', this)">14｜人像攝影｜Portrait</button>
+        <button type="button" class="category-button" onclick="setCategory('Principle', this)">15｜人生道理｜Principle</button>
+        <button type="button" class="category-button" onclick="setCategory('Product', this)">16｜商品展示｜Product</button>
+        <button type="button" class="category-button" onclick="setCategory('Personal', this)">17｜個人目標｜Personal</button>
+        <button type="button" class="category-button" onclick="setCategory('Playmobil', this)">18｜摩比人玩具｜Playmobil</button>
+        <button type="button" class="category-button" onclick="setCategory('Q-ver', this)">19｜Q版人物｜Q-ver</button>
+        <button type="button" class="category-button" onclick="setCategory('Scene', this)">20｜場景設計｜Scene</button>
+        <button type="button" class="category-button" onclick="setCategory('Video', this)">21｜影片生成｜Video</button>
+      </nav>
     </div>
   </header>
 
@@ -478,6 +513,14 @@
 
   <script src="./js/data.js"></script>
   <script src="./js/script.js"></script>
+  <script>
+    function setCategory(category, button) {
+      document.getElementById('categoryFilter').value = category;
+      document.querySelectorAll('.category-button').forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+      filterCards();
+    }
+  </script>
 
 </body>
 

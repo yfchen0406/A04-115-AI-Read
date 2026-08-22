@@ -1,0 +1,26 @@
+[
+  {
+    "folder": "V2-手繪插畫Q版-明亮男聲",
+    "voice": "zh-TW-YunJheNeural",
+    "seconds": 884.28,
+    "segments": 25,
+    "word_boundaries": 1998,
+    "cues": 284
+  },
+  {
+    "folder": "V3-日式吉卜力感-明亮女聲",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "seconds": 896.472,
+    "segments": 25,
+    "word_boundaries": 1998,
+    "cues": 284
+  },
+  {
+    "folder": "V4-日式動漫-明亮女聲",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "seconds": 896.472,
+    "segments": 25,
+    "word_boundaries": 1998,
+    "cues": 284
+  }
+]

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>台灣青年的十道枷鎖｜三版本動態閱讀</title>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: #07101c;
+      color: #eef7ff;
+      font-family: system-ui, 'Noto Sans TC', sans-serif
+    }
+
+    .hero {
+      min-height: 58vh;
+      display: grid;
+      align-items: end;
+      padding: 7vw;
+      position: relative;
+      background: url('assets/covers/cover.webp') center/cover
+    }
+
+    .hero:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #07101ced, #07101c70 60%, #07101c33)
+    }
+
+    .copy {
+      position: relative;
+      z-index: 1;
+      max-width: 780px
+    }
+
+    .kicker {
+      color: #64e2c1;
+      letter-spacing: .18em;
+      font-weight: 800
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 6.8rem);
+      line-height: 1.04;
+      margin: .3em 0
+    }
+
+    .copy p {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: #d7e6f0
+    }
+
+    main {
+      width: min(1240px, 90vw);
+      margin: auto;
+      padding: 48px 0 72px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px
+    }
+
+    .card {
+      display: grid;
+      grid-template-rows: 180px 1fr;
+      background: #102234;
+      color: #eef7ff;
+      border: 1px solid #ffffff18;
+      border-radius: 22px;
+      overflow: hidden;
+      transition: transform .2s ease
+    }
+
+    .card:hover {
+      transform: translateY(-5px)
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover
+    }
+
+    .card-body {
+      padding: 22px
+    }
+
+    .card span {
+      color: #64e2c1;
+      font-size: .8rem;
+      letter-spacing: .12em
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      margin: .55em 0
+    }
+
+    .card p {
+      color: #a9bbca;
+      line-height: 1.6;
+      min-height: 3.2em
+    }
+
+    .youtube-link,
+    .enter-link {
+      display: block;
+      margin-top: 12px;
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-decoration: none
+    }
+
+    .youtube-link {
+      border: 1px dashed #64e2c1;
+      color: #64e2c1;
+      font-size: .88rem
+    }
+
+    .enter-link {
+      background: #ffd27c;
+      color: #07101c;
+      font-weight: 800;
+      text-align: center
+    }
+
+    .note {
+      margin-top: 32px;
+      color: #91a5b7;
+      line-height: 1.7
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="copy">
+      <div class="kicker">OFFLINE READING · THREE VISUAL WORLDS</div>
+      <h1>台灣青年的十道枷鎖</h1>
+      <p>同一份旁白與字幕，三種角色與畫風，重新走過每一個滿版畫面。</p>
+    </div>
+  </section>
+  <main>
+    <div class="grid">
+      <article class="card"><img src="handdrawn_male/assets/covers/cover.webp" alt="手繪插畫 Q版封面">
+        <div class="card-body"><span>手繪插畫 Q版</span>
+          <h2>V2-手繪插畫Q版-明亮男聲</h2>
+          <p>固定 A00-yfchen 主角</p><a class="youtube-link" href="https://youtu.be/o8Vkd6B92h4"
+            target="_blank" rel="noopener">YouTube 影片連結</a><a class="enter-link"
+            href="handdrawn_male/index.html">進入閱讀 →</a>
+        </div>
+      </article>
+      <article class="card"><img src="ghibli_female/assets/covers/cover.webp" alt="日式吉卜力感封面">
+        <div class="card-body"><span>日式吉卜力感手繪動畫</span>
+          <h2>V3-日式吉卜力感-明亮女聲</h2>
+          <p>固定女性主角</p><a class="youtube-link" href="https://youtu.be/E7PYYZoeQis" target="_blank"
+            rel="noopener">YouTube 影片連結</a><a class="enter-link" href="ghibli_female/index.html">進入閱讀 →</a>
+        </div>
+      </article>
+      <article class="card"><img src="anime_female/assets/covers/cover.webp" alt="明亮日式動漫封面">
+        <div class="card-body"><span>明亮日式動漫卡通</span>
+          <h2>V4-日式動漫-明亮女聲</h2>
+          <p>固定哆啦A夢主角</p><a class="youtube-link" href="https://youtu.be/7U5ppytqmpM" target="_blank"
+            rel="noopener">YouTube 影片連結</a><a class="enter-link" href="anime_female/index.html">進入閱讀 →</a>
+        </div>
+      </article>
+    </div>
+    <p class="note">YouTube 連結位於每個版本的「進入閱讀」按鈕上方；將 YOUR_VIDEO_ID_V2、V3、V4 替換為實際影片 ID。三個版本共用同步旁白與字幕時間軸。</p>
+  </main>
+</body>
+
+</html>
