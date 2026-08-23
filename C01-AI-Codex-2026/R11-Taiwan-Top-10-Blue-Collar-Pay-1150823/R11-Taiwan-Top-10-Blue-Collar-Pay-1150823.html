@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- font-awesome 6.2 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" rel="stylesheet">
+  <title>台灣十大高薪藍領職業全揭秘</title>
+  <style>
+    :root {
+      --ink: #26384a;
+      --pen: "Segoe Print", "DFKai-SB", "Microsoft JhengHei", sans-serif;
+      --gold: #e9a928
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: clamp(14px, 4vw, 48px);
+      font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(135deg, #fff7d8, #e4f8ff 52%, #fde5f1)
+    }
+
+    main {
+      width: min(1180px, 100%);
+      margin: auto
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    .site-cover {
+      padding: clamp(20px, 4vw, 52px);
+      border: 3px solid #f0c65f;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 20px 55px rgba(73, 105, 126, .2);
+      text-align: center
+    }
+
+    .cover-kicker,
+    .tag {
+      font-weight: 900;
+      color: #b67600
+    }
+
+    .cover-title {
+      margin: .2em 0 .15em;
+      font-family: var(--pen);
+      font-weight: 900;
+      font-size: clamp(2rem, 6vw, 5.2rem);
+      line-height: 1.2;
+      letter-spacing: .04em
+    }
+
+    .cover-subtitle {
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-weight: 700
+    }
+
+    .cover-characters {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(12px, 2vw, 24px);
+      margin: 28px 0
+    }
+
+    .character-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--ink);
+      border: 3px solid rgba(255, 198, 77, .82);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, .9);
+      box-shadow: 0 12px 30px rgba(73, 105, 126, .16);
+      transition: transform .2s
+    }
+
+    .character-card:hover {
+      transform: translateY(-5px)
+    }
+
+    .character-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block
+    }
+
+    .character-card span {
+      padding: 12px 8px;
+      font-family: var(--pen);
+      font-weight: 900;
+      font-size: clamp(.9rem, 1.8vw, 1.25rem)
+    }
+
+    .cover-button {
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 30px;
+      background: #f2b632;
+      color: #26384a;
+      font-size: 1.1rem;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #c88b19
+    }
+
+    .cover-button:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #c88b19
+    }
+
+    .intro {
+      margin: 28px 0 0
+    }
+
+    .intro h1 {
+      font-family: var(--pen);
+      font-weight: 900
+    }
+
+    .intro p,
+    .status {
+      line-height: 1.7
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px
+    }
+
+    .card {
+      display: block;
+      padding: 24px;
+      border: 2px solid #f0c65f;
+      border-radius: 18px;
+      color: var(--ink);
+      text-decoration: none;
+      background: rgba(255, 255, 255, .78);
+      transition: .2s
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: #fff
+    }
+
+    .card h2 {
+      font-family: var(--pen);
+      font-weight: 900;
+      margin: .5rem 0
+    }
+
+    .status {
+      padding: 14px 16px;
+      border-left: 5px solid #e9a928;
+      background: rgba(255, 255, 255, .65)
+    }
+
+    .status a {
+      color: #22658c;
+      font-weight: 800
+    }
+
+    @media(max-width:720px) {
+
+      .cover-characters,
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .character-card img {
+        aspect-ratio: 16/9
+      }
+    }
+
+    :root {
+      --v2: #e9a928;
+      --v3: #c66aa2;
+      --v4: #27a7c8
+    }
+
+    .site-cover {
+      min-height: 100svh;
+      padding: clamp(24px, 5vw, 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 0;
+      border-radius: 0
+    }
+
+    .character-card.v2,
+    .card.v2 {
+      --accent: var(--v2);
+      --surface: #fff4c9
+    }
+
+    .character-card.v3,
+    .card.v3 {
+      --accent: var(--v3);
+      --surface: #fde7f3
+    }
+
+    .character-card.v4,
+    .card.v4 {
+      --accent: var(--v4);
+      --surface: #def8ff
+    }
+
+    .character-card {
+      border-color: var(--accent);
+      background: var(--surface)
+    }
+
+    .card {
+      border-color: var(--accent);
+      background: var(--surface)
+    }
+
+    .cover-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 0 0 24px
+    }
+
+    .cover-links a {
+      padding: 10px 14px;
+      color: #26384a;
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 3px solid var(--accent)
+    }
+
+    .cover-links .v2 {
+      --accent: var(--v2)
+    }
+
+    .cover-links .v3 {
+      --accent: var(--v3)
+    }
+
+    .cover-links .v4 {
+      --accent: var(--v4)
+    }
+
+    .status {
+      display: none !important
+    }
+
+    @media(max-width:720px) {
+
+      .cover-characters,
+      .grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section id="siteCover" class="site-cover">
+      <p class="cover-kicker"></p>
+      <h1 class="cover-title">台灣十大高薪藍領職業全揭秘</h1>
+      <p class="cover-subtitle">三位主角｜三種畫風｜完整旁白與同步字幕</p>
+      <div class="cover-characters"><a class="character-card v2" href="v2/index.html"><img src="./v2-strict-000.webp"
+            alt="V2 手繪 Q 版主角"><span>V2 手繪 Q 版｜P00-yfchen</span></a><a class="character-card v3"
+          href="v3/index.html"><img src="./v3-strict-000.webp" alt="V3 日式卡通主角"><span>V3 日式卡通｜P01-20歲男生</span></a><a
+          class="character-card v4" href="v4/index.html"><img src="./v4-strict-000.webp" alt="V4 D 動漫多啦A夢主角"><span>V4 D
+            動漫｜P02-多啦A夢</span></a></div>
+      <nav class="cover-links">
+        <a class="v2" href="v2/index.html"><i style="color:red" class="fa-brands fa-youtube"></i> YT連結 ~ 手繪 Q 版</a>
+        <a class="v3" href="v3/index.html"><i style="color:red" class="fa-brands fa-youtube"></i> YT連結 ~ V3 日式卡通</a>
+        <a class="v4" href="v4/index.html"><i style="color:red"  class="fa-brands fa-youtube"></i> YT連結 ~ V4 D
+          動漫</a>
+      </nav>
+    </section>
+
+  </main>
+</body>
+
+</html>
