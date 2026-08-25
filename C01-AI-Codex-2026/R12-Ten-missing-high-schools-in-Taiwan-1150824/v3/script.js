@@ -1,0 +1,20 @@
+(()=>{
+  const d=window.APP_DATA||{};
+  const v=document.querySelector('#voice'),a=document.querySelector('#visualA'),b=document.querySelector('#visualB');
+  const cover=document.querySelector('#cover'),app=document.querySelector('#readingApp'),start=document.querySelector('#startButton'),play=document.querySelector('#playButton');
+  const prev=document.querySelector('#previousButton'),next=document.querySelector('#nextButton'),fill=document.querySelector('.progress-fill'),track=document.querySelector('.progress-track');
+  const now=document.querySelector('#currentTime'),total=document.querySelector('#totalTime'),caption=document.querySelector('#caption'),badge=document.querySelector('#sceneBadge'),title=document.querySelector('#sceneTitle'),status=document.querySelector('#status'),strip=document.querySelector('#chapterStrip'),volume=document.querySelector('#volume');
+  const beats=Array.isArray(d.timeline)?d.timeline:[],captions=Array.isArray(d.captions)?d.captions:beats.map(x=>({start:x.start,end:x.end,text:x.caption_text,section:x.section}));
+  let layer=a,active=-1,started=false,syncTimer=null;
+  const fmt=s=>{s=Math.max(0,Math.floor(Number(s)||0));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+  const findAt=(list,t)=>{if(!list.length)return -1;const time=Math.max(0,Math.min(Number(t)||0,Number(d.total_seconds)||0));let lo=0,hi=list.length-1;while(lo<=hi){const mid=(lo+hi)>>1,x=list[mid];if(time<x.start)hi=mid-1;else if(time>=x.end)lo=mid+1;else return mid;}return Math.max(0,Math.min(list.length-1,lo))};
+  const src=x=>`assets/images/scene-${String(x.image_scene_id||x.scene_id).padStart(3,'0')}.webp`;
+  const setCaption=x=>{const text=String(x?.text||x?.caption_text||'').trim();caption.textContent=text;caption.hidden=!text;caption.setAttribute('aria-hidden',String(!text));};
+  const renderImage=i=>{if(i<0||i>=beats.length)return;const x=beats[i];badge.textContent=`SC—${String(x.image_scene_id||x.scene_id).padStart(3,'0')}`;title.textContent=x.section||d.title||'';strip.querySelectorAll('button').forEach((el,j)=>el.classList.toggle('active',j===i));if(i===active)return;active=i;const n=layer===a?b:a;n.src=src(x);n.alt=`${x.scene_id} ${x.section||''}`;n.className=`visual visible motion-${x.motion||'slow-zoom-in'}`;layer.classList.remove('visible');layer=n;};
+  const sync=()=>{const t=Math.max(0,Number(v.currentTime)||0);now.textContent=fmt(t);total.textContent=fmt(v.duration||d.total_seconds);fill.style.width=`${d.total_seconds?Math.min(100,t/d.total_seconds*100):0}%`;renderImage(findAt(beats,t));setCaption(captions[findAt(captions,t)]);};
+  const seek=t=>{v.currentTime=Math.max(0,Math.min((v.duration||d.total_seconds)-.01,t));sync()};
+  const begin=()=>{if(started)return;started=true;cover.classList.add('is-exiting');setTimeout(()=>{cover.remove();app.classList.remove('is-hidden');v.src='audio/narration.mp3';v.load();sync();const p=v.play();if(p?.catch)p.catch(()=>status.textContent='請按「播放旁白」開始閱讀')},560)};
+  beats.forEach((x,i)=>{const q=document.createElement('button');q.type='button';q.textContent=String(i+1).padStart(3,'0');q.title=x.section||'';q.onclick=()=>seek(x.start);strip.appendChild(q)});
+  start.onclick=begin;play.onclick=()=>{if(!started)return begin();v.paused?v.play():v.pause()};prev.onclick=()=>seek((beats[Math.max(0,active-1)]||beats[0]).start);next.onclick=()=>seek((beats[Math.min(beats.length-1,active+1)]||beats[beats.length-1]).start);track.onclick=e=>{const r=track.getBoundingClientRect();seek(Math.max(0,Math.min(1,(e.clientX-r.left)/r.width))*d.total_seconds)};volume.oninput=()=>v.volume=Number(volume.value);
+  v.addEventListener('loadedmetadata',sync);v.addEventListener('timeupdate',sync);v.addEventListener('seeking',sync);v.addEventListener('play',()=>{play.textContent='暫停旁白';status.textContent=d.voice;if(!syncTimer)syncTimer=setInterval(sync,60)});v.addEventListener('pause',()=>{play.textContent='播放旁白';if(syncTimer){clearInterval(syncTimer);syncTimer=null}sync()});v.addEventListener('ended',()=>{play.textContent='重新播放';status.textContent='本版本閱讀完成';sync()});sync();
+})();
