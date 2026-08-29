@@ -1,13 +1,62 @@
 <!doctype html>
 <html lang="zh-Hant">
+
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="《99%的人輸在不會表達》三版本動態閱讀">
-<title>《99%的人輸在不會表達》｜動態閱讀</title><link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="《99%的人輸在不會表達》三版本動態閱讀">
+  <!-- font-awesome 7.3.1 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" rel="stylesheet">
+  <title>《99%的人輸在不會表達》｜動態閱讀</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body data-version="V4-日本動漫Q版男聲">
-<section class="cover-screen" id="cover"><img class="cover-image" src="assets/covers/cover-v4.webp" alt="動態閱讀封面"><div class="cover-wash"></div><div class="cover-copy"><p class="cover-kicker">OFFLINE READING · 日本動漫男聲</p><h1>《99%的人輸在不會表達》</h1><p class="cover-subtitle">旁白、字幕與時間軸同步；每張畫面依旁白節奏呈現單方向慢速動畫</p><button class="start-button" id="startButton" type="button">開始閱讀</button></div></section>
-<main class="reading-app is-hidden" id="readingApp"><header class="topbar"><div><div class="eyebrow">日本動漫男聲 · 滿版逐段動畫</div><h1>《99%的人輸在不會表達》</h1></div></header>
-<section class="stage-wrap"><div class="stage"><img id="visualA" class="visual visible" src="assets/images/frame-001.webp" alt="動態閱讀畫面"><img id="visualB" class="visual" src="assets/images/frame-001.webp" alt="動態閱讀畫面"><div class="scene-meta"><div class="scene-title" id="sceneTitle">準備開始閱讀</div></div><div class="caption" id="caption" aria-live="polite"></div></div></section>
-<section class="reading-info"><div class="progress-row"><span id="currentTime">00:00</span><div class="progress-track" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div><span id="totalTime">00:00</span></div><div class="controls"><button class="control-button secondary" id="previousButton" type="button">上一段</button><button class="control-button" id="playButton" type="button">播放旁白</button><button class="control-button secondary" id="nextButton" type="button">下一段</button><label class="volume">音量 <input id="volume" type="range" min="0" max="1" step=".05" value="1"></label></div><div class="status" id="status">按「開始閱讀」進入動態閱讀</div></section><nav class="chapter-strip" id="chapterStrip" aria-label="段落選擇"></nav></main>
-<audio id="voice" preload="metadata"></audio><script>window.PAGE_CONFIG={kind:"v4",label:"日本動漫男聲",voice:"B03-多啦A夢主角・YunJhe 男聲"};</script><script src="app-data.js"></script><script src="script.js"></script></body></html>
+  <section class="cover-screen" id="cover"><img class="cover-image" src="assets/covers/cover-v4.webp" alt="動態閱讀封面">
+    <div class="cover-wash"></div>
+    <div class="cover-copy">
+      <p class="cover-kicker">OFFLINE READING · 日本動漫男聲</p>
+      <h1>《99%的人輸在不會表達》</h1>
+      <p class="cover-subtitle">旁白、字幕與時間軸同步；每張畫面依旁白節奏呈現單方向慢速動畫</p><button class="start-button" id="startButton"
+        type="button">開始閱讀</button><button class="start-button" type="button"><a style="color:red" href="https://youtu.be/dyYyawJi1e0"><i style="color:red"
+              class="fa-brands fa-youtube"></i> YT 連結
+            →</a></button>
+    </div>
+  </section>
+  <main class="reading-app is-hidden" id="readingApp">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">日本動漫男聲 · 滿版逐段動畫</div>
+        <h1>《99%的人輸在不會表達》</h1>
+      </div>
+    </header>
+    <section class="stage-wrap">
+      <div class="stage"><img id="visualA" class="visual visible" src="assets/images/frame-001.webp" alt="動態閱讀畫面"><img
+          id="visualB" class="visual" src="assets/images/frame-001.webp" alt="動態閱讀畫面">
+        <div class="scene-meta">
+          <div class="scene-title" id="sceneTitle">準備開始閱讀</div>
+        </div>
+        <div class="caption" id="caption" aria-live="polite"></div>
+      </div>
+    </section>
+    <section class="reading-info">
+      <div class="progress-row"><span id="currentTime">00:00</span>
+        <div class="progress-track" id="progressTrack">
+          <div class="progress-fill" id="progressFill"></div>
+        </div><span id="totalTime">00:00</span>
+      </div>
+      <div class="controls"><button class="control-button secondary" id="previousButton"
+          type="button">上一段</button><button class="control-button" id="playButton" type="button">播放旁白</button><button
+          class="control-button secondary" id="nextButton" type="button">下一段</button><label class="volume">音量 <input
+            id="volume" type="range" min="0" max="1" step=".05" value="1"></label></div>
+      <div class="status" id="status">按「開始閱讀」進入動態閱讀</div>
+    </section>
+    <nav class="chapter-strip" id="chapterStrip" aria-label="段落選擇"></nav>
+  </main>
+  <audio id="voice" preload="metadata"></audio>
+  <script>window.PAGE_CONFIG = { kind: "v4", label: "日本動漫男聲", voice: "B03-多啦A夢主角・YunJhe 男聲" };</script>
+  <script src="app-data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
