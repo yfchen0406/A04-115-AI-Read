@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南港LaLaport 週六逛街攻略</title>
+    <!-- Google Fonts 鋼筆手寫字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    <!-- Font Awesome 圖標庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #faf8f5;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 20px;
+            color: #222;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        /* 主標題與副標題 */
+        .main-title {
+            font-family: 'ZCOOL KuaiLe', cursive;
+            font-weight: bold;
+            color: #000;
+            font-size: 3.2rem;
+            text-align: center;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+        .sub-title {
+            font-family: 'ZCOOL KuaiLe', cursive;
+            font-weight: bold;
+            color: #1e7bb0;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+        }
+        /* 卡片網格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 10px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            padding: 22px 22px 18px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #f0ebe4;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+        .card-title {
+            font-family: 'ZCOOL KuaiLe', cursive;
+            font-weight: bold;
+            color: #1e7bb0;
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+            border-bottom: 3px dashed #d4e2ed;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-title i {
+            color: #f7b731;
+            font-size: 1.5rem;
+        }
+        .card-content {
+            flex: 1;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .card-content ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+        .card-content li {
+            margin-bottom: 4px;
+        }
+        .card-content strong {
+            color: #1e7bb0;
+        }
+        .card-img-wrapper {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #f4f0ea;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e8e0d6;
+        }
+        .card-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .card-img-wrapper:hover img {
+            transform: scale(1.02);
+        }
+        /* 模態框（Lightbox） */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 85%;
+            background: #fff;
+            border-radius: 28px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            overflow: auto;
+            position: relative;
+            text-align: center;
+        }
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            border-radius: 16px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 2.5rem;
+            color: #333;
+            cursor: pointer;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+        .lightbox-close:hover {
+            background: #fff;
+            color: #000;
+            transform: rotate(90deg);
+        }
+        .lightbox-caption {
+            font-family: 'ZCOOL KuaiLe', cursive;
+            font-size: 1.3rem;
+            color: #1e7bb0;
+            margin-top: 12px;
+        }
+
+        /* 響應式 */
+        @media (max-width: 992px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .main-title { font-size: 2.6rem; }
+            .sub-title { font-size: 1.6rem; }
+        }
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .main-title { font-size: 2.2rem; }
+            .sub-title { font-size: 1.3rem; }
+            .card-title { font-size: 1.4rem; }
+        }
+
+        /* 小裝飾 */
+        .badge {
+            display: inline-block;
+            background: #f7b731;
+            color: #fff;
+            border-radius: 30px;
+            padding: 0 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .highlight {
+            background: #fef7e0;
+            padding: 0 6px;
+            border-radius: 6px;
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+     .home-button{position:fixed;top:18px;right:22px;z-index:2000!important;pointer-events:auto;opacity:1!important;filter:none!important;padding:.65rem 1rem;border-radius:999px;background:#1e5aa8;color:#fff;text-decoration:none;font-family:"Microsoft JhengHei",sans-serif;font-weight:700;box-shadow:0 6px 18px rgba(30,90,168,.2)} .home-button:hover{background:#17477f} h1,h2,h3,h4,h5,h6,.main-title,.section-title,.section-sub,.section-subtitle,.card-title,.hero-title,.hero-subtitle{font-family:"Microsoft JhengHei","Noto Sans TC",Arial,sans-serif !important;font-weight:800 !important}</style>
+</head>
+<body><a class="home-button" href="../index.html">← 回到主頁</a>
+<div class="container">
+    <!-- 主標題 & 副標題 -->
+    <h1 class="main-title">🛍️ 南港LaLaport 週六逛街攻略</h1>
+    <div class="sub-title">停車・逛街・美食 一次搞定</div>
+
+    <!-- 8 張卡片 -->
+    <div class="card-grid">
+
+        <!-- 卡片 1：停車資訊 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-parking"></i> 停車資訊總覽</div>
+            <div class="card-content">
+                <p><strong>汽車</strong> 假日 80元/時 · <strong>機車</strong> 10元/時</p>
+                <p><strong>折抵優惠：</strong>消費滿 1,000 元折 1 小時（最高 5 小時）；機車滿 200 元折 1 小時</p>
+                <p><strong>省錢替代：</strong>內湖機廠轉乘停車場（經貿一路265號）30元/時，經空橋步行 5 分鐘直達 2F</p>
+                <p><i class="fas fa-clock" style="color:#e67e22;"></i> 週六營業 11:00 – 22:00</p>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B01.webp" alt="停車資訊圖表">
+            </div>
+        </div>
+
+        <!-- 卡片 2：樓層總覽 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-layer-group"></i> 樓層總覽</div>
+            <div class="card-content">
+                <ul>
+                    <li><strong>B2-B5</strong> 停車場</li>
+                    <li><strong>B1</strong> 美食街・LOPIA 超市</li>
+                    <li><strong>1F</strong> 名品潮流（哈利波特・LEGO・橡子共和國）</li>
+                    <li><strong>2F</strong> 流行服飾（GAP・UNIQLO・NEW ERA）</li>
+                    <li><strong>3F</strong> 運動戶外・日韓潮流</li>
+                    <li><strong>4F</strong> 生活居家・淳久堂書店</li>
+                    <li><strong>5F</strong> 主題餐廳・威秀影城入口</li>
+                    <li><strong>6F</strong> 威秀影城・KidZania</li>
+                </ul>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B02.webp" alt="樓層總覽圖表">
+            </div>
+        </div>
+
+        <!-- 卡片 3：逛街動線 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-route"></i> 逛街動線建議 (3~4h)</div>
+            <div class="card-content">
+                <ul>
+                    <li><strong>11:00-12:00</strong> 1F 名品區（哈利波特・LEGO）</li>
+                    <li><strong>12:00-13:00</strong> 2F-3F 時尚服飾（NEW ERA・BEAMS）</li>
+                    <li><strong>13:00-14:30</strong> B1 美食街 或 5F 主題餐廳 用餐</li>
+                    <li><strong>14:30-15:00</strong> 4F 生活居家・中央廣場拍照</li>
+                </ul>
+                <p><i class="fas fa-lightbulb" style="color:#f1c40f;"></i> 建議開門即到，避開人潮</p>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B03.webp" alt="逛街動線圖表">
+            </div>
+        </div>
+
+        <!-- 卡片 4：必逛樓層 TOP5 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-trophy"></i> 必逛樓層 TOP 5</div>
+            <div class="card-content">
+                <ol>
+                    <li><strong>1F</strong> 哈利波特專賣店・LEGO 旗艦店</li>
+                    <li><strong>B1</strong> 美食街+LOPIA 超市</li>
+                    <li><strong>2F</strong> 流行名品（NEW ERA 客製・URBAN RESEARCH）</li>
+                    <li><strong>5F</strong> 主題餐廳（La Ohana・SAPPORO BONE）</li>
+                    <li><strong>3F</strong> 運動戶外・日韓潮流首店</li>
+                </ol>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B04.webp" alt="必逛樓層圖表">
+            </div>
+        </div>
+
+        <!-- 卡片 5：B1 美食街必吃 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-utensils"></i> B1 美食街必吃</div>
+            <div class="card-content">
+                <ul>
+                    <li><strong>林聰明沙鍋魚頭</strong> – 嘉義三代老店，北部首店</li>
+                    <li><strong>鰻鰻EXPRESS</strong> – 炭火直烤活鰻，高 CP 值</li>
+                    <li><strong>茶嶋咖哩</strong> – 昭和復古風咖哩</li>
+                    <li><strong>味穗</strong> – 大阪心齋橋章魚燒</li>
+                    <li><strong>LOPIA 超市</strong> – A5 和牛串・握壽司</li>
+                </ul>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B05.webp" alt="B1美食圖表">
+            </div>
+        </div>
+
+        <!-- 卡片 6：5F 主題餐廳 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-glass-cheers"></i> 5F 約會主題餐廳</div>
+            <div class="card-content">
+                <ul>
+                    <li><strong>La Ohana</strong> – 夏威夷度假風，Huli Huli 烤雞</li>
+                    <li><strong>SAPPORO BONE</strong> – 北海道燒烤排餐，海外首店</li>
+                    <li><strong>金子半之助</strong> – 日本第一天丼</li>
+                    <li><strong>韓美膳</strong> – 韓式料理，海外第一店</li>
+                </ul>
+                <p><i class="fas fa-heart" style="color:#e74c3c;"></i> 氣氛佳，適合情侶約會</p>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B06.webp" alt="5F餐廳圖表">
+            </div>
+        </div>
+
+        <!-- 卡片 7：貼心提醒 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-info-circle"></i> 貼心小提醒</div>
+            <div class="card-content">
+                <ul>
+                    <li><i class="fas fa-clock"></i> 週六人潮多，建議 11:00 開門即到</li>
+                    <li><i class="fas fa-receipt"></i> 保留消費發票，離場前折抵停車</li>
+                    <li><i class="fas fa-mobile-alt"></i> 下載官方 APP 享會員優惠</li>
+                    <li><i class="fas fa-chair"></i> 走道寬敞設休息椅，逛累可歇腳</li>
+                </ul>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B07.webp" alt="提醒圖表">
+            </div>
+        </div>
+
+        <!-- 卡片 8：綜合攻略封面 -->
+        <div class="card">
+            <div class="card-title"><i class="fas fa-map-signs"></i> 綜合攻略總覽</div>
+            <div class="card-content">
+                <p>📌 一次掌握停車、樓層、動線、美食與必逛重點。</p>
+                <p>🛒 1F 哈利波特 & LEGO 絕對不能錯過！</p>
+                <p>🍜 B1 林聰明沙鍋魚頭、5F La Ohana 浪漫約會。</p>
+                <p>🚗 善用折抵優惠，最高省 5 小時停車費。</p>
+                <p><span class="badge">週六限定</span> 提早出發，開心暢玩！</p>
+            </div>
+            <div class="card-img-wrapper" onclick="openLightbox(this)">
+                <img src="images/B08.webp" alt="攻略總覽圖表">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        <i class="fas fa-pen-fancy"></i> 鋼筆手繪風格・資訊圖表 ｜ 點擊圖片可放大檢視
+    </div>
+</div>
+
+<!-- 燈箱（Lightbox） -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation();">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <img id="lightbox-img" src="" alt="放大圖">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+</div>
+
+<script>
+    // 開啟燈箱
+    function openLightbox(wrapper) {
+        const img = wrapper.querySelector('img');
+        if (!img) return;
+        const src = img.getAttribute('src');
+        const alt = img.getAttribute('alt') || '圖片';
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox-caption').textContent = alt;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // 關閉燈箱
+    function closeLightbox(event) {
+        // 如果點擊的是背景或關閉按鈕則關閉
+        const lightbox = document.getElementById('lightbox');
+        if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // 按下 ESC 鍵關閉
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

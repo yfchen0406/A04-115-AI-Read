@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LaLaport 南港・夫妻逛街攻略</title>
+  <style>
+    :root{
+      --ink:#111827;
+      --blue:#1e5aa8;
+      --sky:#eaf4ff;
+      --cream:#fff8e8;
+      --paper:#fffdf8;
+      --line:#dbe7f3;
+      --muted:#617083;
+      --accent:#f4c95d;
+      --green:#dff3df;
+      --shadow:0 14px 30px rgba(32,58,87,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(244,201,93,.20), transparent 24%),
+        radial-gradient(circle at 90% 0%, rgba(79,141,219,.14), transparent 26%),
+        linear-gradient(180deg,#f7fbff 0%,#fffdf7 48%,#f7fbff 100%);
+      font-family:"DFKai-SB","BiauKai","標楷體","Noto Serif TC","Microsoft JhengHei",serif;
+      line-height:1.75;
+    }
+    a{color:inherit}
+    .wrap{width:min(1180px,92vw);margin:auto}
+    header{
+      position:relative;
+      overflow:hidden;
+      padding:72px 0 54px;
+    }
+    header:before,header:after{
+      content:"";
+      position:absolute;border:2px solid rgba(30,90,168,.18);
+      border-radius:48% 52% 62% 38%;
+      width:340px;height:180px;transform:rotate(-7deg);
+    }
+    header:before{right:-70px;top:20px}
+    header:after{left:-120px;bottom:-60px}
+    .eyebrow{
+      display:inline-flex;gap:.55rem;align-items:center;
+      padding:.45rem .9rem;border:1px solid #bfd6ee;border-radius:999px;
+      background:rgba(255,255,255,.78);backdrop-filter:blur(8px);
+      font-size:.95rem;color:#355d86;
+    }
+    h1{
+      margin:18px 0 12px;
+      font-family:"Segoe Print","Bradley Hand","DFKai-SB","標楷體",cursive;
+      font-size:clamp(2.5rem,5vw,5.2rem);
+      line-height:1.03;
+      font-weight:900;
+      letter-spacing:.02em;
+      color:#111;
+      text-shadow:1px 1px 0 #fff;
+    }
+    .subtitle{
+      max-width:860px;
+      font-family:"Segoe Print","Bradley Hand","DFKai-SB","標楷體",cursive;
+      font-size:clamp(1.18rem,2.1vw,1.65rem);
+      font-weight:800;
+      color:var(--blue);
+      margin:0 0 24px;
+    }
+    .quick{
+      display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;
+    }
+    .pill{
+      background:white;border:1px solid var(--line);box-shadow:0 6px 18px rgba(31,79,122,.08);
+      border-radius:16px;padding:10px 14px;font-weight:700;
+    }
+    nav{
+      position:sticky;top:0;z-index:30;
+      background:rgba(250,253,255,.88);backdrop-filter:blur(12px);
+      border-block:1px solid #dbe8f4;
+    }
+    nav .wrap{display:flex;gap:8px;overflow:auto;padding:10px 0}
+    nav a{
+      white-space:nowrap;text-decoration:none;padding:8px 12px;border-radius:12px;
+      color:#244766;font-weight:800;
+    }
+    nav a:hover{background:#e9f3ff}
+    section{padding:52px 0}
+    .section-title{
+      margin:0 0 8px;
+      font-family:"Segoe Print","Bradley Hand","DFKai-SB","標楷體",cursive;
+      font-size:clamp(1.8rem,3vw,2.8rem);
+      font-weight:900;color:var(--blue);
+    }
+    .lead{color:var(--muted);max-width:850px;margin:0 0 26px}
+    .paper{
+      background:rgba(255,255,255,.9);border:1px solid #e4edf5;border-radius:28px;
+      box-shadow:var(--shadow);padding:28px;position:relative;overflow:hidden;
+    }
+    .paper:after{
+      content:"";position:absolute;inset:10px;border:1px dashed rgba(30,90,168,.14);
+      border-radius:21px;pointer-events:none;
+    }
+    .grid2{display:grid;grid-template-columns:1.08fr .92fr;gap:26px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .stat{
+      padding:18px;border-radius:22px;background:linear-gradient(145deg,#fff,#f0f7ff);
+      border:1px solid #dbe9f6;
+    }
+    .stat b{display:block;font-size:1.5rem;color:#153f6d}
+    .note{
+      background:#fff7d8;border-left:6px solid var(--accent);padding:16px 18px;border-radius:14px;
+    }
+    table{width:100%;border-collapse:collapse;margin-top:14px;overflow:hidden}
+    th,td{padding:12px 10px;border-bottom:1px solid #e6edf4;text-align:left}
+    th{background:#edf6ff;color:#164e80}
+    .rank{
+      display:grid;grid-template-columns:68px 1fr;gap:14px;align-items:start;
+      padding:16px 0;border-bottom:1px dashed #d7e2ed;
+    }
+    .badge{
+      width:58px;height:58px;border-radius:18px;background:#e8f3ff;border:1px solid #c7def4;
+      display:grid;place-items:center;font-weight:900;color:#1b5b96;
+    }
+    .gallery{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+    }
+    .img-slot{
+      min-height:0;aspect-ratio:16/10;border-radius:24px;border:2px dashed #9ebfe2;padding:0;
+      background:
+        linear-gradient(135deg,rgba(234,244,255,.9),rgba(255,249,230,.85)),
+        repeating-linear-gradient(45deg,rgba(30,90,168,.04) 0 8px,transparent 8px 16px);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      padding:24px;cursor:pointer;transition:.2s;position:relative;overflow:hidden;
+    }
+    .img-slot:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(30,90,168,.13)}
+    .img-slot img{position:relative;inset:auto;display:block;width:100%;height:auto;object-fit:contain}
+    .img-slot span{font-size:2rem}
+    .img-slot small{color:#4d6d8b;margin-top:6px}
+    .timeline{position:relative;padding-left:34px}
+    .timeline:before{
+      content:"";position:absolute;left:11px;top:4px;bottom:4px;width:3px;background:#b8d4ed;border-radius:999px
+    }
+    .step{position:relative;margin:0 0 22px}
+    .step:before{
+      content:"";position:absolute;left:-30px;top:.4rem;width:16px;height:16px;border-radius:50%;
+      background:#fff;border:4px solid #3a79b7
+    }
+    .step h3{margin:0;color:#204f7b}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{
+      border:1px solid #dfeaf4;background:white;border-radius:22px;padding:20px;
+      box-shadow:0 8px 20px rgba(50,74,98,.08)
+    }
+    .card h3{margin-top:0;color:#214f7c}
+    .recommend{border-top:8px solid #f2d27c}
+    .backtop{
+      position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:16px;border:0;
+      background:#1e5aa8;color:#fff;font-size:1.2rem;box-shadow:var(--shadow);cursor:pointer
+    }
+    footer{padding:32px 0 70px;text-align:center;color:#667789}
+    .modal{
+      position:fixed;inset:0;background:rgba(5,15,28,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:30px;
+    }
+    .modal.open{display:flex}
+    .modal img{width:min(95vw,1400px);height:auto;max-height:88vh;object-fit:contain;border-radius:18px;box-shadow:0 20px 70px rgba(0,0,0,.45)}
+    .modal button{
+      position:absolute;top:20px;right:24px;background:white;border:0;border-radius:999px;width:44px;height:44px;font-size:1.4rem;cursor:pointer
+    }
+    @media (max-width:900px){
+      .grid2,.grid3,.stats,.gallery,.cards{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .grid2,.grid3,.stats,.gallery,.cards{grid-template-columns:1fr}
+      header{padding-top:46px}
+      .paper{padding:20px}
+    }
+   .home-button{position:fixed;top:18px;right:22px;z-index:50;padding:.65rem 1rem;border-radius:999px;background:#1e5aa8;color:#fff;text-decoration:none;font-family:"Microsoft JhengHei",sans-serif;font-weight:700;box-shadow:0 6px 18px rgba(30,90,168,.2)} .home-button:hover{background:#17477f}</style>
+</head>
+<body><a class="home-button" href="../index.html">← 回到主頁</a>
+<header id="top">
+  <div class="wrap">
+    <div class="eyebrow">🛍️ 週六夫妻半日逛街筆記</div>
+    <h1>Mitsui Shopping Park LaLaport 南港</h1>
+    <p class="subtitle">停車 × 精華樓層 × 美食 × 3～4 小時動線，一次整理成好走、好吃、好逛的百貨攻略。</p>
+    <div class="quick">
+      <div class="pill">📍 台北市南港區經貿二路131號</div>
+      <div class="pill">🕚 週六 11:00～22:00</div>
+      <div class="pill">🚗 假日停車 $80／小時</div>
+      <div class="pill">⭐ 主攻 B1・1F・3F・4F・5F</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#overview">總覽</a><a href="#parking">停車</a><a href="#floors">樓層精華</a>
+    <a href="#food">美食</a><a href="#route">3～4小時動線</a><a href="#gallery">六張圖片</a>
+    <a href="#tips">實用提醒</a>
+  </div>
+</nav>
+
+<main>
+<section id="overview">
+  <div class="wrap">
+    <h2 class="section-title">快速總覽</h2>
+    <p class="lead">如果只有 3～4 小時，不建議從 B1 一層一層全掃。這份規劃改用「精華導向」：先逛特色品牌、提早吃午餐，再走最值得停留的 3F、4F，最後回 B1 採買。</p>
+    <div class="stats">
+      <div class="stat"><b>約 329</b>店舖／櫃位</div>
+      <div class="stat"><b>B2～B5</b>地下停車場</div>
+      <div class="stat"><b>約 2,378</b>汽車格</div>
+      <div class="stat"><b>10:40～10:50</b>建議抵達</div>
+    </div>
+  </div>
+</section>
+
+<section id="parking">
+  <div class="wrap">
+    <h2 class="section-title">停車資訊｜週六先處理好這件事</h2>
+    <div class="grid2">
+      <div class="paper">
+        <h3>🚗 汽車停車</h3>
+        <table>
+          <tr><th>項目</th><th>資訊</th></tr>
+          <tr><td>平日</td><td>$60／小時</td></tr>
+          <tr><td>假日（週六）</td><td><strong>$80／小時</strong></td></tr>
+          <tr><td>消費折抵</td><td>每消費 $1,000 折 1 小時</td></tr>
+          <tr><td>最高優惠</td><td>最多 5 小時（含聯名卡優惠）</td></tr>
+          <tr><td>停車層</td><td>B2～B5</td></tr>
+          <tr><td>開放</td><td>24 小時</td></tr>
+          <tr><td>停車管理中心</td><td>02-2653-8155</td></tr>
+        </table>
+      </div>
+      <div class="paper">
+        <h3>🧾 停 4 小時怎麼算？</h3>
+        <table>
+          <tr><th>消費金額</th><th>4 小時停車費概念</th></tr>
+          <tr><td>$0</td><td>$320</td></tr>
+          <tr><td>$1,000</td><td>約 $240</td></tr>
+          <tr><td>$2,000</td><td>約 $160</td></tr>
+          <tr><td>$3,000</td><td>約 $80</td></tr>
+          <tr><td>$4,000</td><td>可折 4 小時</td></tr>
+        </table>
+        <div class="note">建議 10:40～10:50 抵達；停好車後拍下「B幾樓＋區域＋柱號」，離場會省很多時間。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="floors">
+  <div class="wrap">
+    <h2 class="section-title">樓層精華｜不要平均分配時間</h2>
+    <div class="paper">
+      <div class="rank"><div class="badge">🥇 4F</div><div><h3>最值得慢慢逛</h3><p>主打日本書店、角色商品、生活雜貨。推薦 JUNKUDO 淳久堂、橡子共和國、任天堂授權商品區。建議留 35～45 分鐘。</p></div></div>
+      <div class="rank"><div class="badge">🥈 B1</div><div><h3>最後一站最實用</h3><p>LOPIA、日本食品、甜點、伴手禮與生活家電。建議最後 30～40 分鐘再逛，避免提著食品走完全館。</p></div></div>
+      <div class="rank"><div class="badge">🥉 3F</div><div><h3>生活雜貨＋戶外休閒</h3><p>HANDS、Snow Peak、HOBBY INN，以及運動休閒品牌。適合夫妻一起逛，建議 30～40 分鐘。</p></div></div>
+      <div class="rank"><div class="badge">1F</div><div><h3>特色品牌集中</h3><p>Harry Potter 魔法之地、土屋鞄製造所、能作、BOSE、Samsung、Aesop、LUSH 等。建議 25～30 分鐘。</p></div></div>
+      <div class="rank"><div class="badge">5F</div><div><h3>美食主戰區</h3><p>非常適合直接解決午餐；如果不想排正式餐廳，美食街控制 40～50 分鐘最省時間。</p></div></div>
+      <div class="rank"><div class="badge">2F</div><div><h3>服飾美妝快速掃過</h3><p>若這趟沒有特別想買衣服，可安排 15～20 分鐘甚至略過，把時間留給 3F、4F、B1。</p></div></div>
+      <div class="rank"><div class="badge">6F</div><div><h3>有指定餐廳再上去</h3><p>若決定吃漢來上海湯包，再安排 6F；否則本次 3～4 小時行程可不特別停留。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="food">
+  <div class="wrap">
+    <h2 class="section-title">美食推薦｜先決定吃法，再決定樓層</h2>
+    <div class="cards">
+      <article class="card recommend"><h3>La Ohana｜5F</h3><p>夏威夷風格料理，氣氛輕鬆，適合夫妻坐下來慢慢吃。若希望兼顧逛街效率，11:45 左右提早用餐最順。</p></article>
+      <article class="card recommend"><h3>漢來上海湯包｜6F</h3><p>如果偏好中式、湯包、麵點與分享型餐點，這家相對符合台灣口味，適合當本次主餐。</p></article>
+      <article class="card recommend"><h3>SALT & STONE｜1F 戶外區</h3><p>西式料理，整體較有約會感。如果希望逛街之外保留一點「夫妻約會」氛圍，可以優先考慮。</p></article>
+      <article class="card recommend"><h3>Café Kitsuné｜1F</h3><p>品牌與空間感都有特色，適合下午短暫休息、喝咖啡，不建議逛街時間有限時坐太久。</p></article>
+      <article class="card recommend"><h3>武蔵野森珈琲 Diner｜4F</h3><p>逛完 4F 書店與角色商店後直接休息，動線非常自然。</p></article>
+      <article class="card recommend"><h3>5F 美食街｜效率派</h3><p>京都勝牛、彌生軒、太陽蕃茄拉麵、黑毛屋、金子半之助、大阪王將、丸亀製麵等，想把午餐控制在 40～50 分鐘時最適合。</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="route">
+  <div class="wrap">
+    <h2 class="section-title">3～4 小時精華動線</h2>
+    <div class="grid2">
+      <div class="paper">
+        <div class="timeline">
+          <div class="step"><h3>10:40｜進停車場</h3><p>B2～B5 停車，拍照記錄區域與柱號。</p></div>
+          <div class="step"><h3>11:00–11:30｜1F</h3><p>哈利波特、土屋鞄、能作與特色品牌。</p></div>
+          <div class="step"><h3>11:30–11:45｜2F</h3><p>快速看服飾、美妝；沒興趣就直接上樓。</p></div>
+          <div class="step"><h3>11:45–12:40｜5F／6F 午餐</h3><p>刻意避開 12:00 後的餐廳尖峰。</p></div>
+          <div class="step"><h3>12:40–13:15｜3F</h3><p>HANDS、Snow Peak、生活休閒。</p></div>
+          <div class="step"><h3>13:15–14:00｜4F</h3><p>淳久堂、橡子共和國、任天堂授權商品區。</p></div>
+          <div class="step"><h3>14:00–14:15｜短休息</h3><p>1F／4F 咖啡，視體力決定是否停留。</p></div>
+          <div class="step"><h3>14:15–14:50｜B1</h3><p>LOPIA、日本食品、甜點與伴手禮。</p></div>
+          <div class="step"><h3>15:00｜離場</h3><p>完成停車折抵後回停車場。</p></div>
+        </div>
+      </div>
+      <div class="paper">
+        <h3>如果只剩 3 小時</h3>
+        <p><strong>1F 25 分 → 5F 午餐 50 分 → 3F 30 分 → 4F 40 分 → B1 35 分</strong></p>
+        <div class="note">2F 可以直接略過；6F 除非已決定吃指定餐廳，否則也可略過。</div>
+        <h3 style="margin-top:24px">必逛清單</h3>
+        <p>Harry Potter 魔法之地、土屋鞄／能作、HANDS、Snow Peak、JUNKUDO 淳久堂、橡子共和國、任天堂授權商品區、5F 美食區、B1 食品甜點區、LOPIA。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2 class="section-title">六張圖片專區</h2>
+    <p class="lead">以下六格已預留給你之後放入六張資訊圖表或現場照片；點擊已有圖片的格子可放大。將每格中的圖片路徑改成你的檔名即可。</p>
+    <div class="gallery">
+      <div class="img-slot" data-src=""><span>🖼️</span><strong>圖 1｜快速總覽</strong><small>建議放商場外觀＋本次重點</small></div>
+      <div class="img-slot" data-src=""><span>🅿️</span><strong>圖 2｜停車資訊</strong><small>停車費、折抵、B2～B5</small></div>
+      <div class="img-slot" data-src=""><span>🧭</span><strong>圖 3｜3～4小時動線</strong><small>時間軸與最佳順序</small></div>
+      <div class="img-slot" data-src=""><span>🏬</span><strong>圖 4｜樓層精華</strong><small>B1、1F、3F、4F、5F</small></div>
+      <div class="img-slot" data-src=""><span>🍜</span><strong>圖 5｜餐廳推薦</strong><small>正式餐廳＋咖啡＋美食街</small></div>
+      <div class="img-slot" data-src=""><span>✅</span><strong>圖 6｜實用提醒</strong><small>停車、拍照、休息、採買</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="wrap">
+    <h2 class="section-title">實用提醒｜讓這趟逛起來更輕鬆</h2>
+    <div class="grid3">
+      <div class="card"><h3>提早 20 分鐘到</h3><p>11:00 開門前完成停車，最能避開假日停車與電梯尖峰。</p></div>
+      <div class="card"><h3>午餐提早吃</h3><p>11:45 左右就開始用餐，比 12:15 才找餐廳省下大量排隊時間。</p></div>
+      <div class="card"><h3>B1 最後逛</h3><p>食品、甜點與 LOPIA 放在回程前，才不用整路提著戰利品。</p></div>
+      <div class="card"><h3>穿舒服的鞋</h3><p>商場面積大，3～4 小時實際步行量不小，舒適比穿搭更重要。</p></div>
+      <div class="card"><h3>記錄停車位置</h3><p>拍下 B 樓層、區域與柱號，比只記「停在 B3」可靠得多。</p></div>
+      <div class="card"><h3>展覽日要更早</h3><p>若南港展覽館同日有大型活動，建議提早出發並預留周邊塞車時間。</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">LaLaport 南港｜夫妻半日逛街攻略網頁</div>
+</footer>
+
+<button class="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到頂端">↑</button>
+
+<div class="modal" id="modal">
+  <button onclick="closeModal()">×</button>
+  <img id="modalImg" alt="放大圖片">
+</div>
+
+<script>
+  // 使用方式：
+  // 1. 將六張圖片放在與 HTML 同一資料夾的 images/ 目錄。
+  // 2. 將下列檔名改成你的實際圖片檔名。
+  const galleryImages = [
+    "images/G01.webp",
+    "images/G02.webp",
+    "images/G03.webp",
+    "images/G04.webp",
+    "images/G05.webp",
+    "images/G06.webp"
+  ];
+
+  document.querySelectorAll(".img-slot").forEach((slot,i)=>{
+    const src = galleryImages[i];
+    if(src){
+      slot.innerHTML = "";
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = slot.innerText.trim();
+      img.loading = "lazy";
+      slot.appendChild(img);
+      slot.dataset.src = src;
+    }
+    slot.addEventListener("click",()=>{
+      const s = slot.dataset.src;
+      if(!s) return;
+      document.getElementById("modalImg").src = s;
+      document.getElementById("modal").classList.add("open");
+    });
+  });
+
+  function closeModal(){
+    document.getElementById("modal").classList.remove("open");
+    document.getElementById("modalImg").src = "";
+  }
+  document.getElementById("modal").addEventListener("click",(e)=>{
+    if(e.target.id==="modal") closeModal();
+  });
+  document.addEventListener("keydown",(e)=>{ if(e.key==="Escape") closeModal(); });
+</script>
+</body>
+</html>

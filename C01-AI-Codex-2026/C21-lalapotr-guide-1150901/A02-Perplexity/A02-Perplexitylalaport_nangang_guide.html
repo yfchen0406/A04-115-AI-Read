@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaLaport 南港夫妻逛街攻略</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Ma+Shan+Zheng&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: linear-gradient(180deg, #faf6ee 0%, #f3ecd9 100%);
+  color: #2b2b2b;
+  line-height: 1.8;
+}
+
+.hero {
+  position: relative;
+  padding: 70px 20px 90px;
+  text-align: center;
+  background: radial-gradient(circle at 20% 20%, #fff8e8 0%, transparent 45%),
+              radial-gradient(circle at 80% 80%, #eaf3ea 0%, transparent 50%),
+              #faf3e2;
+  border-bottom: 6px solid #1a1a1a;
+  overflow: hidden;
+}
+
+.hero::before, .hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+.hero::before {
+  width: 260px; height: 260px;
+  background: #2f5d3a;
+  top: -80px; left: -80px;
+}
+.hero::after {
+  width: 200px; height: 200px;
+  background: #8a2b2b;
+  bottom: -60px; right: -60px;
+}
+
+.main-title {
+  font-family: 'Ma Shan Zheng', 'Noto Sans TC', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
+  color: #111111;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.sub-title {
+  font-family: 'Ma Shan Zheng', 'Noto Sans TC', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-top: 18px;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  margin-top: 26px;
+  display: inline-flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag span {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #1a1a1acc;
+  backdrop-filter: blur(6px);
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+nav a {
+  color: #f3ecd9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+nav a:hover { background: #1d4ed8; color: #fff; }
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 22px 100px;
+}
+
+section.block {
+  margin-bottom: 64px;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'Ma Shan Zheng', 'Noto Sans TC', sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-weight: 900;
+  color: #111;
+  border-left: 8px solid #1d4ed8;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  font-family: 'Ma Shan Zheng', 'Noto Sans TC', sans-serif;
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-left: 24px;
+  margin-bottom: 26px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fffdf8;
+  border: 2px solid #1a1a1a;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 rgba(0,0,0,0.1); }
+
+.card h4 {
+  color: #8a2b2b;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.card p, .card li { font-size: 0.92rem; color: #333; }
+.card ul { padding-left: 18px; margin-top: 6px; }
+
+.timeline {
+  border-left: 3px dashed #1d4ed8;
+  margin-left: 12px;
+  padding-left: 26px;
+}
+.timeline-item { position: relative; margin-bottom: 26px; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 14px; height: 14px;
+  background: #1d4ed8;
+  border-radius: 50%;
+  border: 3px solid #faf6ee;
+}
+.timeline-time { font-weight: 900; color: #1d4ed8; font-size: 1rem; }
+.timeline-desc { margin-top: 4px; }
+
+table.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: #fffdf8;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+}
+table.info-table th, table.info-table td {
+  border: 1px solid #ddd4b8;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.92rem;
+}
+table.info-table th {
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 700;
+}
+table.info-table tr:nth-child(even) { background: #f6f0df; }
+
+.note-box {
+  background: #eaf3ea;
+  border-left: 6px solid #2f5d3a;
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-top: 18px;
+  font-size: 0.92rem;
+}
+.note-box b { color: #2f5d3a; }
+
+.disclaimer {
+  background: #fbeaea;
+  border-left: 6px solid #8a2b2b;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: #6b2020;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 10px;
+}
+
+.gallery-item {
+  position: relative;
+  border: 3px solid #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+  cursor: pointer;`r`n  z-index: 2;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.gallery-item:hover { transform: scale(1.02); }
+
+.gallery-item .placeholder-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(45deg, #f6f0df, #f6f0df 10px, #eee5c8 10px, #eee5c8 20px);
+  color: #8a7b4f;
+  text-align: center;
+  padding: 10px;
+  gap: 8px;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+.gallery-item.has-img .placeholder-box { display: none; }
+.gallery-item.has-img img { display: block; }
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26,26,26,0.75);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.upload-btn {
+  font-size: 0.75rem;
+  background: #1d4ed8;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 14px;
+  cursor: pointer;`r`n  z-index: 2;
+  display: inline-block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.88);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.modal.active { display: flex; }
+.modal-stage { position: relative; display: inline-block; max-width: 92vw; max-height: 88vh; }
+.modal-stage img {
+  display: block; max-width: 92vw; max-height: 88vh; border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.modal-close {
+  position: absolute;
+  top: -18px; right: -18px;
+  color: #fff;
+  font-size: 2.4rem;
+  cursor: pointer;`r`n  z-index: 2;
+  font-weight: 700;
+}
+
+.tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.tag-list span {
+  background: #1d4ed8;
+  color: #fff;
+  font-size: 0.78rem;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.floor-badge {
+  display: inline-block;
+  background: #8a2b2b;
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b6b6b;
+  font-size: 0.85rem;
+  border-top: 2px solid #1a1a1a20;
+}
+
+input[type=file] { display: none; }
+ .home-button{position:fixed;top:18px;right:22px;z-index:2000!important;pointer-events:auto;opacity:1!important;filter:none!important;padding:.65rem 1rem;border-radius:999px;background:#1e5aa8;color:#fff;text-decoration:none;font-family:"Microsoft JhengHei",sans-serif;font-weight:700;box-shadow:0 6px 18px rgba(30,90,168,.2)} .home-button:hover{background:#17477f} h1,h2,h3,h4,h5,h6,.main-title,.section-title,.section-sub,.section-subtitle,.card-title,.hero-title,.hero-subtitle{font-family:"Microsoft JhengHei","Noto Sans TC",Arial,sans-serif !important;font-weight:800 !important}</style>
+</head>
+<body><a class="home-button" href="../index.html">← 回到主頁</a>
+
+<nav>
+  <a href="#hero">首頁</a>
+  <a href="#parking">停車資訊</a>
+  <a href="#route">逛街動線</a>
+  <a href="#floor1">1F-3F</a>
+  <a href="#floor4">4F 生活雜貨</a>
+  <a href="#floor5">5F 美食街</a>
+  <a href="#floor6">6F 主題餐廳</a>
+  <a href="#basement">B1 超市</a>
+  <a href="#schedule">完整時間表</a>
+  <a href="#gallery">情境圖集</a>
+</nav>
+
+<div class="hero" id="hero">
+  <div class="main-title">南港 LaLaport 夫妻逛街攻略</div>
+  <div class="sub-title">週六 3–4 小時，一次逛透停車、樓層、美食與動線</div>
+  <div class="hero-tag">
+    <span>台北市南港區經貿二路131號</span>
+    <span>南港軟體園區站 2號出口</span>
+    <span>建議 10:30 前抵達</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <section class="block" id="parking">
+    <div class="section-title">停車資訊</div>
+    <div class="section-sub">自駕前必看：入口、動線與折抵提醒</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>停車場入口</h4>
+        <p>主要入口為<b>西側（西1、西2、西3）</b>及<b>東1入口</b>，建議由經貿二路方向進入，依現場指標選擇最近的入口。</p>
+      </div>
+      <div class="card">
+        <h4>建議抵達時間</h4>
+        <p>週六人潮較多，建議<b>10:30前</b>抵達，較容易找到車位；避開午餐與下午尖峰時段。</p>
+      </div>
+      <div class="card">
+        <h4>消費折抵</h4>
+        <p>消費達一定金額可折抵停車費，實際折抵標準與收費金額，請以<b>當日商場官方公告及現場說明</b>為準。</p>
+      </div>
+      <div class="card">
+        <h4>車位客滿備案</h4>
+        <p>若西側車位已滿，可嘗試<b>東1入口</b>，步行至商場約3–5分鐘；亦可改搭捷運前往。</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <b>備案交通：</b>南港軟體園區站 2號出口，步行約3分鐘；南港展覽館站，步行約5分鐘。若停車場一時客滿，可先繞行或改採大眾交通。
+    </div>
+    <div class="disclaimer">
+      停車收費金額、折抵條件與入口編號可能隨商場管理調整，出發前建議以官方網站或現場公告為最終依據。
+    </div>
+  </section>
+
+  <section class="block" id="route">
+    <div class="section-title">3–4 小時黃金逛街動線</div>
+    <div class="section-sub">依樓層規劃，時間分配一次看懂</div>
+
+    <table class="info-table">
+      <tr><th>時間</th><th>樓層</th><th>重點區域</th><th>建議活動</th></tr>
+      <tr><td>0–30 分</td><td>1F</td><td>人氣品牌、主題商店</td><td>拍照、快速巡禮</td></tr>
+      <tr><td>30–75 分</td><td>2F–3F</td><td>服飾、運動品牌、鞋款</td><td>試穿、挑選穿搭</td></tr>
+      <tr><td>75–105 分</td><td>4F</td><td>生活雜貨、親子用品</td><td>慢逛、咖啡休息</td></tr>
+      <tr><td>105–135 分</td><td>5F</td><td>美食街、親子娛樂</td><td>午餐或輕食</td></tr>
+      <tr><td>135–180 分</td><td>6F</td><td>主題餐廳</td><td>正式用餐、約會時光</td></tr>
+      <tr><td>最後 30–45 分</td><td>B1</td><td>日系超市、伴手禮</td><td>採買、外帶甜點</td></tr>
+    </table>
+
+    <div class="note-box">
+      <b>彈性提醒：</b>若想避開排隊，可先逛 1F–4F，13:30 後再用餐；全程建議保留約 30 分鐘彈性時間給試穿、排隊與休息。
+    </div>
+  </section>
+
+  <section class="block" id="floor1">
+    <div class="section-title">1F–3F 最值得逛的區域</div>
+    <div class="section-sub">品牌服飾、鞋款與配件精選</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="floor-badge">1F</div>
+        <h4>人氣旗艦與主題店</h4>
+        <p>適合先逛：特色主題店、精品配件、潮流品牌，是拍照打卡與感受商場氛圍的最佳起點。</p>
+        <div class="tag-list"><span>拍照打卡</span><span>精品配件</span></div>
+      </div>
+      <div class="card">
+        <div class="floor-badge">2F</div>
+        <h4>日常服飾與質感穿搭</h4>
+        <p>適合挑選上衣、褲子、外套等日常穿搭；建議各自挑選幾件想試穿的單品，再互相給意見。</p>
+        <div class="tag-list"><span>服飾</span><span>穿搭</span></div>
+      </div>
+      <div class="card">
+        <div class="floor-badge">3F</div>
+        <h4>運動休閒與鞋款</h4>
+        <p>運動鞋、休閒服與機能配件重點樓層。退休生活選鞋建議以好走、支撐性與透氣度為優先。</p>
+        <div class="tag-list"><span>運動鞋</span><span>休閒服</span></div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <b>夫妻逛街小任務：</b>男主角找一雙適合走路或旅行的好走鞋；女主角挑一件舒服又有精神的上衣或外套；再一起選一件作為週末紀念的小物。
+    </div>
+  </section>
+
+  <section class="block" id="floor4">
+    <div class="section-title">4F 生活雜貨與療癒休息</div>
+    <div class="section-sub">居家用品、玩具與下午茶補給站</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>生活雜貨</h4>
+        <p>文具、收納、餐廚與清潔小物齊全，適合挑選退休生活用品、旅行收納或送禮小物。</p>
+      </div>
+      <div class="card">
+        <h4>玩具與興趣區</h4>
+        <p>模型、動漫與遊戲周邊，適合看看親子禮物靈感，只看真正有興趣的主題即可。</p>
+      </div>
+      <div class="card">
+        <h4>下午茶休息</h4>
+        <p>逛約45分鐘後建議坐下休息20–30分鐘，來一份舒芙蕾鬆餅或咖啡再出發。</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      不必每間店都進去，看到真正有興趣的再慢慢看，把體力留給最想吃的餐廳與最後的超市採買。
+    </div>
+  </section>
+
+  <section class="block" id="floor5">
+    <div class="section-title">5F 美食街快速吃法</div>
+    <div class="section-sub">想吃什麼，就這樣選</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>台式暖胃派：林聰明沙鍋魚頭</h4>
+        <p>適合想吃熱湯、台式風味，兩人可分食主食搭配湯品。</p>
+      </div>
+      <div class="card">
+        <h4>日式定食派：京都勝牛</h4>
+        <p>炸牛排、白飯、味噌湯的定食儀式感，熟度可依喜好選擇。</p>
+      </div>
+      <div class="card">
+        <h4>輕鬆蛋包飯派：蘋果樹蛋包飯</h4>
+        <p>口味多達40幾種，適合想吃得溫和、可共享的組合。</p>
+      </div>
+      <div class="card">
+        <h4>肉食排餐派：SAPPORO BONE</h4>
+        <p>北海道炭烤排餐，適合把這一餐當成逛街日的主餐。</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <b>週六排隊策略：</b>11:00–11:30 提早用餐較順；13:30後尖峰稍緩；熱門店排隊超過20分鐘可改選同樓層其他店，保留逛街時間。
+    </div>
+  </section>
+
+  <section class="block" id="floor6">
+    <div class="section-title">6F 主題餐廳約會晚餐</div>
+    <div class="section-sub">坐下來好好吃的正式選擇</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>勝勢豬排</h4>
+        <p>厚切豬排、定食、白飯與高麗菜絲，適合想要穩定不踩雷的日式正餐。</p>
+      </div>
+      <div class="card">
+        <h4>金子半之助</h4>
+        <p>天丼名店，喜歡天婦羅與醬汁風味、想吃上桌快速主食的首選。</p>
+      </div>
+      <div class="card">
+        <h4>黑毛屋</h4>
+        <p>和牛料理，適合逛街後想慢慢吃、共享鍋物並好好聊天的時刻。</p>
+      </div>
+      <div class="card">
+        <h4>饗麻饗辣 PLUS</h4>
+        <p>火鍋吃到飽，活蝦、和牛、海鮮與甜點近百款，適合食量大、時間充裕的假日。</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <b>決策提示：</b>只有45–60分鐘選天丼或豬排；想慢慢聊1–1.5小時選黑毛屋；食量大想吃多種類選饗麻饗辣 PLUS。
+    </div>
+    <div class="disclaimer">
+      假日熱門餐廳通常需要候位，餐廳營業時間、訂位規則與價格請以店家及商場當日公告為準。
+    </div>
+  </section>
+
+  <section class="block" id="basement">
+    <div class="section-title">B1 超市與伴手禮採買</div>
+    <div class="section-sub">逛完街，帶一點幸福回家</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>LOPIA 日系超市</h4>
+        <p>生鮮蔬果、肉品、海鮮、熟食與日式零食齊全，適合買當天晚餐食材或旅行零食。</p>
+      </div>
+      <div class="card">
+        <h4>兩人採買清單</h4>
+        <ul>
+          <li>一盒可分享的水果或甜點</li>
+          <li>隔天早餐的麵包或熟食</li>
+          <li>少量日系零食或飲料</li>
+          <li>今晚可直接加菜的熟食</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>外帶小吃與甜點</h4>
+        <p>台式湯品、日式餐點、烘焙與巧克力，適合外帶給家人或隔天享用。</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      離場前確認：停車折抵是否完成、購物袋與手機是否帶齊、記得停車樓層與出口方向；冷藏商品放最後才買。
+    </div>
+  </section>
+
+  <section class="block" id="schedule">
+    <div class="section-title">完整時間表</div>
+    <div class="section-sub">一張表看懂週六約會全程</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-time">10:30　抵達與停車</div>
+        <div class="timeline-desc">依現場指標入場，拍下停車位置，確認今天想逛的樓層與用餐方向。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">10:45–11:20　1F 快速巡禮</div>
+        <div class="timeline-desc">看主題店、拍照，感受商場氛圍，喜歡的店先記位置不急著買。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">11:20–12:10　2F–3F 服飾與鞋款</div>
+        <div class="timeline-desc">挑選日常服飾、運動休閒與好走鞋，互相提供試穿意見。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:10–12:40　4F 生活雜貨與休息</div>
+        <div class="timeline-desc">看居家小物或文具，喝咖啡、吃甜點補充體力。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:40–13:40　5F 或 6F 用餐</div>
+        <div class="timeline-desc">想快速用餐選5F美食街；想坐下慢慢吃選6F主題餐廳，候位過久就換店。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">13:40–14:20　B1 超市與伴手禮</div>
+        <div class="timeline-desc">逛LOPIA超市，買少量熟食、甜點或隔日早餐，冷藏商品最後買。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">14:20–14:30　離場確認</div>
+        <div class="timeline-desc">完成停車折抵，確認停車樓層與出口，提著今天的戰利品回家。</div>
+      </div>
+    </div>
+
+    <div class="card-grid" style="margin-top:30px;">
+      <div class="card">
+        <h4>夫妻約會三原則</h4>
+        <ul>
+          <li>不趕行程，保留聊天與休息時間</li>
+          <li>只買真正喜歡、用得到的東西</li>
+          <li>排隊超過20分鐘就啟動備案</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>今日必做清單</h4>
+        <ul>
+          <li>拍一張夫妻合照</li>
+          <li>選一件實用小物</li>
+          <li>吃一份想念的料理</li>
+          <li>帶一樣小小伴手禮回家</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="gallery">
+    <div class="section-title">情境圖集</div>
+    <div class="section-sub">八張手繪風格資訊圖，點擊可放大瀏覽</div>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+</div>
+
+<div class="modal" id="imgModal">
+  <div class="modal-stage">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" alt="放大圖片">
+  </div>
+</div>
+
+<footer>
+  南港 LaLaport 夫妻逛街攻略｜資訊僅供行程參考，實際停車費、營業時間與餐廳資訊請以官方公告為準。
+</footer>
+
+<script>
+var galleryTitles = [
+  "01．停車與抵達",
+  "02．黃金逛街動線",
+  "03．1F–3F 服飾鞋款",
+  "04．4F 生活雜貨",
+  "05．5F 美食街",
+  "06．6F 主題餐廳",
+  "07．B1 超市採買",
+  "08．完整時間表"
+];
+
+var galleryImages = ["images/A01.webp","images/A02.webp","images/A03.webp","images/A04.webp","images/A05.webp","images/A06.webp","images/A07.webp","images/A08.webp"];
+
+function buildGallery() {
+  var grid = document.getElementById('galleryGrid');
+  var html = '';
+  for (var i = 0; i < galleryTitles.length; i++) {
+    html += ''
+      + '<div class="gallery-item has-img" data-index="' + i + '" onclick="openModal(this)">'
+      + '<div class="placeholder-box">'
+      + '<div>' + galleryTitles[i] + '</div>'
+      + '<label class="upload-btn" onclick="event.stopPropagation()">上傳圖片'
+      + '<input type="file" accept="image/*" onchange="handleUpload(event, this)">'
+      + '</label>'
+      + '</div>'
+      + '<img src="' + galleryImages[i] + '" alt="' + galleryTitles[i] + '">'
+      + '<div class="gallery-caption">' + galleryTitles[i] + '</div>'
+      + '</div>';
+  }
+  grid.innerHTML = html;
+}
+
+function handleUpload(event, labelEl) {
+  var file = event.target.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var item = labelEl.closest('.gallery-item');
+    var img = item.querySelector('img');
+    img.src = e.target.result;
+    item.classList.add('has-img');
+  };
+  reader.readAsDataURL(file);
+}
+
+function openModal(item) {
+  var img = item.querySelector('img');
+  if (!item.classList.contains('has-img')) return;
+  document.getElementById('modalImg').src = img.src;
+  document.getElementById('imgModal').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('imgModal').classList.remove('active');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  buildGallery();
+  document.getElementById('imgModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+});
+</script>
+
+</body>
+</html>
