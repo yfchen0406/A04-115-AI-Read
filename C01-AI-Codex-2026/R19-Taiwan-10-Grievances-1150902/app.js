@@ -1,0 +1,16 @@
+(()=>{
+const d=window.READER_DATA,a=document.querySelector('#audio'),img=document.querySelector('#sceneImage'),stage=document.querySelector('#stage'),subtitle=document.querySelector('#subtitle'),title=document.querySelector('#stageChapter'),seek=document.querySelector('#seek'),play=document.querySelector('#play'),status=document.querySelector('#status'),metrics=document.querySelector('#metrics'),list=document.querySelector('#chapterList');
+let visualIndex=-1,captionIndex=-1,raf=0;
+const fmt=x=>{x=Math.floor(Math.max(0,x||0));return String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')};
+const at=(items,t)=>{let lo=0,hi=items.length-1;while(lo<=hi){const m=(lo+hi)>>1,s=items[m];if(t<s.start)hi=m-1;else if(t>=s.end)lo=m+1;else return m}return Math.min(items.length-1,Math.max(0,lo))};
+function renderVisual(i,force=false){if(!force&&i===visualIndex)return;const s=d.visualScenes[i];visualIndex=i;img.src=s.image;img.alt='第 '+s.id+' 鏡：'+s.chapter;stage.className='stage motion-'+s.motion;stage.style.setProperty('--scene-duration',Math.max(.1,s.end-s.start)+'s');title.textContent=s.chapter;[1,2].forEach(o=>{if(d.visualScenes[i+o])new Image().src=d.visualScenes[i+o].image});[...list.children].forEach(button=>button.classList.toggle('active',button.dataset.chapter===s.chapter))}
+function renderCaption(i,force=false){if(!force&&i===captionIndex)return;captionIndex=i;subtitle.textContent=d.captions[i].text}
+function render(){const t=Math.min(d.totalDuration,a.currentTime||0);renderVisual(at(d.visualScenes,t));renderCaption(at(d.captions,t));seek.value=t;status.textContent=a.ended?'旁白播放完成':a.paused?'已暫停':'旁白播放中';metrics.textContent=fmt(t)+' / '+fmt(d.totalDuration)+' · 第 '+String(captionIndex+1).padStart(2,'0')+' 行 / '+d.captions.length}
+function loop(){cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{render();if(!a.paused&&!a.ended)loop()})}
+function seekTo(t,playAfter){const target=Math.max(0,Math.min(d.totalDuration-.01,t));const resume=playAfter??!a.paused;a.currentTime=target;renderVisual(at(d.visualScenes,target),true);renderCaption(at(d.captions,target),true);render();if(resume)a.play().then(loop).catch(()=>status.textContent='播放需要使用者點選')}
+play.onclick=()=>a.paused?a.play().then(loop):a.pause();
+document.querySelector('#back').onclick=()=>seekTo(d.captions[Math.max(0,at(d.captions,a.currentTime)-1)].start,true);
+document.querySelector('#forward').onclick=()=>seekTo(d.captions[Math.min(d.captions.length-1,at(d.captions,a.currentTime)+1)].start,true);
+seek.oninput=e=>seekTo(Number(e.target.value),false);a.ontimeupdate=render;a.onplay=()=>{play.textContent='暫停旁白';loop()};a.onpause=()=>{play.textContent='播放旁白';cancelAnimationFrame(raf);render()};a.onended=render;seek.max=d.totalDuration;
+d.chapters.forEach(c=>{const b=document.createElement('button');b.dataset.chapter=c.title;b.textContent=c.title+' · '+c.count+' 鏡';b.onclick=()=>{seekTo(c.start,true);document.querySelector('.reader').scrollIntoView({behavior:'smooth'})};list.appendChild(b)});renderVisual(0,true);renderCaption(0,true);render();
+})();
