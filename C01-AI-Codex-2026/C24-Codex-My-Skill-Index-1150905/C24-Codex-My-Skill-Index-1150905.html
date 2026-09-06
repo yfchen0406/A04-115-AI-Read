@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="yfchen 的 Codex Skill 路徑索引與快速查找工具">
+  <title>Skill Index｜技能路徑索引</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="回到頁首">
+        <span class="brand-mark">S</span>
+        <span><b>SKILL INDEX</b><small>個人技能路徑索引</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="status"><i></i> 可搜尋資料庫</span>
+        <button id="themeToggle" class="icon-button" type="button" aria-label="切換顯示模式">☼</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro">
+        <div class="intro-copy">
+          <p class="eyebrow">PERSONAL WORKSPACE · 2026</p>
+          <h1>C24. 我的 Skill<br><em>路徑索引</em></h1>
+          <p class="lead">集中整理系統內建、個人與專案、程式開發、影片製作，以及 Remotion／Notion 相關技能的位置。輸入關鍵字，即刻找到要使用的 Skill。</p>
+          <div class="search-wrap">
+            <span class="search-icon">⌕</span>
+            <input id="searchInput" type="search" placeholder="搜尋名稱、分類或路徑…" autocomplete="off">
+            <kbd>⌘ K</kbd>
+          </div>
+          <div class="quick-stats"><span><strong id="resultCount">0</strong> 個技能</span><span class="dot-sep">•</span><span><strong id="categoryCount">0</strong> 個分類</span></div>
+        </div>
+        <div class="intro-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="orb-core">SKILL<br><span>MAP</span></div>
+          <span class="float-tag tag-a">BUILD</span><span class="float-tag tag-b">LEARN</span><span class="float-tag tag-c">CREATE</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="技能索引">
+        <aside class="sidebar">
+          <div class="side-heading"><span>目錄分類</span><button id="clearFilter" type="button">清除</button></div>
+          <nav id="categoryNav" class="category-nav"></nav>
+          <div class="side-note"><span class="note-icon">⌁</span><p>點擊任一分類，快速聚焦相關技能。點擊路徑右側按鈕，可複製完整位置。</p></div>
+        </aside>
+        <section class="results-panel">
+          <div class="results-head"><div><p class="eyebrow">SKILL DIRECTORY</p><h2 id="sectionTitle">全部技能</h2></div><span id="activeFilter" class="filter-pill">全部</span></div>
+          <div id="results" class="results-grid"></div>
+          <div id="emptyState" class="empty-state" hidden><span>⌕</span><h3>找不到相符的技能</h3><p>換個關鍵字，或清除目前的分類篩選。</p></div>
+        </section>
+      </section>
+    </main>
+    <footer><span>yfchen · Personal Skill Index</span><span id="lastUpdated">SOURCE · 貼上的 Markdown</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite">已複製路徑</div>
+  <script src="./app.js"></script>
+</body>
+</html>

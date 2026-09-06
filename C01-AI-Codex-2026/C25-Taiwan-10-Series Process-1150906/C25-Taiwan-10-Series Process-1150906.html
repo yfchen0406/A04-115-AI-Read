@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#eaf7ff" />
+<title>台灣十大系列｜AI 製作流程</title>
+<style>
+:root{--bg:#f4fbff;--panel:#fff;--line:#cfe9f8;--sky:#dff4ff;--sky2:#eefaff;--blue:#2478a8;--deep:#123f59;--cyan:#61c5ec;--ink:#173042;--muted:#668293;--accent:#7dd3fc;--shadow:0 18px 50px rgba(47,126,166,.10);--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 0,#dff6ff 0,transparent 28%),linear-gradient(180deg,#f7fcff,#edf8fe 55%,#f8fcff)}
+button{font:inherit}.app{min-height:100vh}.topbar{position:sticky;top:0;z-index:50;background:rgba(247,252,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(180,222,243,.8)}.topbar-inner{max-width:1480px;margin:auto;padding:12px 22px;display:flex;align-items:center;gap:14px}.brand{display:flex;align-items:center;gap:12px;min-width:max-content}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,#72d2f7,#e4f8ff);box-shadow:inset 0 0 0 1px #b7e5f7;display:grid;place-items:center;font-weight:900;color:#0c648f}.brand h1{font-size:17px;margin:0;color:var(--deep)}.brand small{display:block;color:var(--muted);margin-top:2px}.nav-scroll{overflow:auto;display:flex;gap:8px;margin-left:auto;padding-bottom:2px}.nav-btn{white-space:nowrap;border:1px solid var(--line);background:#fff;color:#3f677c;border-radius:999px;padding:9px 13px;cursor:pointer;font-weight:700}.nav-btn:hover,.nav-btn.active{background:#dff5ff;color:#0b6c9c;border-color:#9cdcf7}.hero{max-width:1480px;margin:24px auto 0;padding:0 22px}.hero-card{position:relative;overflow:hidden;background:linear-gradient(135deg,#e6f7ff 0,#fff 60%,#e9f8ff);border:1px solid #cbe9f7;border-radius:30px;padding:38px;box-shadow:var(--shadow)}.hero-card:after{content:"AI";position:absolute;right:32px;top:-16px;font-size:150px;font-weight:1000;color:rgba(85,190,232,.10);letter-spacing:-10px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#237ba7;font-weight:800;font-size:13px}.hero h2{font-size:clamp(28px,4vw,54px);line-height:1.12;margin:18px 0 12px;color:#123f59;letter-spacing:-.04em;max-width:850px}.hero p{font-size:18px;line-height:1.8;color:#557488;max-width:860px;margin:0}.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.chip{background:#fff;border:1px solid var(--line);padding:8px 11px;border-radius:12px;color:#407083;font-weight:700;font-size:13px}.layout{max-width:1480px;margin:20px auto 70px;padding:0 22px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:20px}.sidebar{position:sticky;top:86px;align-self:start;background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:0 12px 35px rgba(40,121,160,.07)}.side-title{padding:8px 9px 12px;font-weight:900;color:#335f75;font-size:13px}.side-btn{width:100%;text-align:left;border:0;background:transparent;padding:11px;border-radius:12px;cursor:pointer;color:#537589;font-weight:750;margin:2px 0}.side-btn:hover,.side-btn.active{background:#e4f6ff;color:#116f9c}.content{min-width:0}.page{display:none;animation:fade .22s ease}.page.active{display:block}@keyframes fade{from{opacity:.4;transform:translateY(3px)}to{opacity:1;transform:none}}.page-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin:2px 0 18px}.page-head h3{font-size:30px;margin:0;color:#154b67}.page-head p{margin:5px 0 0;color:var(--muted);line-height:1.7}.section-card{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:18px;box-shadow:0 12px 34px rgba(36,114,153,.07)}.section-card h4{font-size:20px;margin:0 0 14px;color:#165876}.section-card h5{font-size:16px;margin:20px 0 9px;color:#276b8a}.lead{font-size:17px;line-height:1.9}.list{margin:0;padding-left:22px;line-height:1.9}.list li{margin:5px 0}.notice{border-left:4px solid #53bae5;background:#ecf9ff;border-radius:12px;padding:14px 16px;line-height:1.8;margin:14px 0}.warning{border-left-color:#f0b454;background:#fff9e9}.prompt{position:relative;background:#102b3a;color:#dceff8;border-radius:18px;padding:22px;margin:14px 0;overflow:auto;box-shadow:inset 0 0 0 1px rgba(145,216,245,.18)}.prompt pre{font-family:"Microsoft JhengHei",sans-serif;white-space:pre-wrap;word-break:break-word;line-height:1.85;margin:0;font-size:14px}.copy{position:absolute;right:12px;top:12px;border:1px solid #477c92;background:#173c4e;color:#dff7ff;border-radius:10px;padding:7px 10px;cursor:pointer}.copy.done{background:#1c765b}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.flow-step{position:relative;background:linear-gradient(180deg,#fff,#f3fbff);border:1px solid var(--line);border-radius:18px;padding:18px;min-height:155px}.step-no{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;background:#d7f2ff;color:#0b6c9c;font-weight:900;margin-bottom:15px}.flow-step strong{display:block;color:#174f69;font-size:17px}.flow-step p{color:#678292;line-height:1.65;font-size:14px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}.stat b{font-size:27px;color:#1778a7}.stat span{display:block;margin-top:5px;color:#658294;font-size:13px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px}table{border-collapse:collapse;width:100%;min-width:760px;background:#fff}th,td{border-bottom:1px solid #e1eff6;padding:12px 14px;text-align:left;vertical-align:top;line-height:1.65}th{background:#eaf8ff;color:#245f7b;font-size:13px}td{font-size:14px}.progress-item{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:14px;padding:15px 0;border-bottom:1px dashed #d8eaf3}.progress-item:last-child{border-bottom:0}.code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#eff8fc;border-radius:9px;padding:4px 7px;font-size:12px;color:#356176}.status{padding:6px 9px;border-radius:999px;background:#e7f7ff;color:#176d98;font-weight:800;font-size:12px}.status.thinking{background:#fff3d8;color:#8b650f}.footer{max-width:1480px;margin:0 auto 40px;padding:0 22px;color:#78909e;font-size:13px;text-align:center}.mobile-menu{display:none}.kicker{color:#2384b1;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.08em}.formula{font-size:20px;font-weight:900;color:#22698c;background:#eefaff;border:1px dashed #9edcf5;padding:16px;border-radius:14px;text-align:center}.tag-grid{display:flex;flex-wrap:wrap;gap:8px}.tag{padding:8px 10px;border-radius:10px;background:#edf9ff;border:1px solid #cbeafb;color:#326f8d;font-weight:750;font-size:13px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.sidebar{display:none}.flow,.stats{grid-template-columns:1fr 1fr}.hero-card{padding:28px}.nav-scroll{display:none}.mobile-menu{display:inline-flex;margin-left:auto;border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:11px;color:#236683;font-weight:800}.topbar.open .nav-scroll{display:flex;position:absolute;left:15px;right:15px;top:68px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow);flex-wrap:wrap}}
+@media(max-width:650px){.flow,.stats,.two-col{grid-template-columns:1fr}.hero{padding:0 14px}.hero-card{padding:23px;border-radius:22px}.hero h2{font-size:32px}.hero p{font-size:16px}.layout{padding:0 14px}.section-card{padding:18px;border-radius:17px}.page-head h3{font-size:25px}.brand small{display:none}.topbar-inner{padding:10px 14px}.progress-item{grid-template-columns:1fr;gap:7px}.status{width:max-content}.hero-card:after{font-size:100px}}
+@media print{.topbar,.sidebar,.mobile-menu,.copy{display:none!important}.hero{margin-top:0}.layout{display:block}.page{display:block!important}.section-card{break-inside:avoid;box-shadow:none}.prompt{background:#f5f9fb;color:#173042;border:1px solid #ccdfe9}.footer{margin-top:20px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar" id="topbar"><div class="topbar-inner">
+  <div class="brand"><div class="logo">AI</div><div><h1>台灣十大系列製作流程</h1><small>AI Content Production Workflow</small></div></div>
+  <button class="mobile-menu" onclick="document.getElementById('topbar').classList.toggle('open')">☰ 分頁</button>
+  <nav class="nav-scroll" aria-label="主選單">
+    <button class="nav-btn active" data-page="overview">流程總覽</button><button class="nav-btn" data-page="claude">1. Claude 提示詞</button><button class="nav-btn" data-page="script">2. GPT 劇本</button><button class="nav-btn" data-page="voice">3. 旁白與字幕</button><button class="nav-btn" data-page="image">4. 圖片提示詞</button><button class="nav-btn" data-page="projects">製作進度</button>
+  </nav>
+</div></header>
+<section class="hero"><div class="hero-card">
+  <span class="eyebrow">✦ AI Workflow Knowledge Base</span>
+  <h2>從選題、劇本、旁白到 AI 生圖的一站式製作流程</h2>
+  <p>將「台灣十大」系列內容生產拆成可重複執行的四大階段，集中管理提示詞、語音分鏡規格、Excel 欄位與圖片生成規則。</p>
+  <div class="chips"><span class="chip">繁體中文</span><span class="chip">Claude → GPT</span><span class="chip">5 秒 / 10 秒分鏡</span><span class="chip">AI 圖片提示詞</span><span class="chip">淺藍 AI 視覺</span></div>
+</div></section>
+<main class="layout">
+<aside class="sidebar"><div class="side-title">頁面導覽</div>
+<button class="side-btn active" data-page="overview">◎ 流程總覽</button><button class="side-btn" data-page="claude">01 Claude 產出提示詞</button><button class="side-btn" data-page="script">02 GPT 產出劇本</button><button class="side-btn" data-page="voice">03 GPT 旁白與字幕</button><button class="side-btn" data-page="image">04 GPT 圖片提示詞</button><button class="side-btn" data-page="projects">◌ 目前製作進度</button>
+</aside>
+<div class="content">
+<section class="page active" id="overview">
+<div class="page-head"><div><div class="kicker">Workflow Overview</div><h3>流程總覽</h3><p>以 AI 工具串接內容研究、腳本、分鏡與影像生成。</p></div></div>
+<div class="stats"><div class="stat"><b>4</b><span>主要製作階段</span></div><div class="stat"><b>5</b><span>生成式 AI 交叉使用</span></div><div class="stat"><b>2</b><span>旁白分鏡版本</span></div><div class="stat"><b>8</b><span>Excel 固定欄位</span></div></div>
+<div class="section-card"><h4>四階段 AI 製作管線</h4><div class="flow">
+<div class="flow-step"><div class="step-no">01</div><strong>Claude 產出提示詞</strong><p>先選題、建立初稿提示詞，再由 Claude 優化成結構化指令，交給多個生成式 AI 使用。</p></div>
+<div class="flow-step"><div class="step-no">02</div><strong>GPT 產出劇本</strong><p>依選定主題產出長篇劇本，重點控制字數與最終語音長度。</p></div>
+<div class="flow-step"><div class="step-no">03</div><strong>GPT 旁白與字幕</strong><p>產出 A / B 兩種分鏡粒度，旁白與字幕一致，並形成可後製的 Excel。</p></div>
+<div class="flow-step"><div class="step-no">04</div><strong>GPT 圖片提示詞</strong><p>固定 Q 版墨鏡主角外觀，依每鏡事件客製化動作、構圖與光線。</p></div>
+</div></div>
+<div class="section-card"><h4>核心製作邏輯</h4><div class="formula">選題 → 提示詞優化 → 長篇劇本 → 旁白／字幕 → 分鏡 Excel → AI 圖片提示詞 → 生圖／動畫後製</div></div>
+<div class="section-card"><h4>資料庫與 AI 工具</h4><div class="two-col"><div><h5>選題來源</h5><p class="lead">透過既有網頁連結選擇「台灣十大 OOOO」題目，原始資料記載目前約有 <b>260 題</b>，並持續增加。</p></div><div><h5>交叉使用模型</h5><div class="tag-grid"><span class="tag">DeepSeek</span><span class="tag">千問</span><span class="tag">Perplexity</span><span class="tag">Claude</span><span class="tag">ChatGPT / GPT</span></div></div></div></div>
+</section>
+
+<section class="page" id="claude">
+<div class="page-head"><div><div class="kicker">Stage 01</div><h3>Claude 產出提示詞</h3><p>由選題開始，先形成初稿，再透過 prompt-master 優化。</p></div></div>
+<div class="section-card"><h4>選題與初稿</h4><ul class="list"><li>先選題：台灣十大 OOOO。</li><li>透過網頁連結產生題目，目前約有 260 題，持續增加中。</li><li>初稿交給 Claude 優化。</li></ul></div>
+<div class="section-card"><h4>原始提示詞</h4><div class="prompt"><button class="copy">複製</button><pre>/prompt-master 優化下列提示詞，並且當我強調文章的吸引人和說服和考證性與正確性，讓讀者有同樣的感受的心情
+
+幫我產生【台灣十大「最容易因AI失去工作優勢的職業」】這個題目，你幫我找出這「十大因AI失去工作優勢的職業」，寫出一篇【5000】字以上的文章，要有開頭吸引與鉤子，排名從第十名往前排論述，要有充分理由證據，要有結尾說服力，有考證依據，最好可以找出實際案例，必須足夠後續轉換成20-25分鐘的語音旁白
+
+給我輸出的md格式檔案
+
+我會分別給DeepSeek、千問、Perplexity、Claude和ChatGPT/GPT，共五個生成式AI使用</pre></div></div>
+<div class="section-card"><h4>Claude 優化版本 → 放入 GPT</h4><div class="prompt"><button class="copy">複製</button><pre>[角色任務]
+你是一位深耕台灣勞動市場與AI趨勢的資深產業分析師與內容主筆，擅長撰寫兼具數據論證與情感渲染力的深度報導。
+
+[背景資訊]
+這篇文章將發布於個人學習網站，目標讀者是對AI衝擊職涯感到好奇或焦慮的台灣一般大眾（非技術背景）。文章最終會轉換成20-25分鐘的語音旁白，因此需要口語化、有節奏感、適合朗讀的長句與段落安排。文章核心情緒是：讓讀者對「AI正在改變工作型態」產生真實的緊張感與說服力，而非單純資訊羅列。
+
+[具體指令]
+1. 撰寫一篇繁體中文文章，主題為「台灣十大最容易因AI失去工作優勢的職業」，全文5000字以上。
+2. 開頭需有強烈鉤子（例如具體情境、數據衝擊、真實案例懸念），在前150字內抓住讀者注意力。
+3. 內文依「第10名→第1名」倒數排序論述，每個職業需包含：
+   - 為何容易被AI取代／失去優勢的具體理由
+   - 支持理由的數據、研究或產業報告依據
+   - 至少一個實際案例或真實事件佐證
+4. 結尾需總結全文脈絡並提出具說服力的行動觀點或反思，呼應開頭的情緒鉤子。
+5. 全文語氣需兼顧「吸引力」「說服力」與「考證嚴謹度」，讓讀者讀完後產生與作者相同的危機感或啟發感。
+6. 段落長度與句子節奏需適合口語朗讀，避免過長的複合子句與條列式內容主導全文。
+
+[約束條件]
+- 字數：5000字以上，且整體篇幅需可轉換成20-25分鐘語音（以每分鐘約200-220字中文語速估算）。
+- 僅使用你有把握為真的數據、案例與研究依據；若無法確認真實性，請明確標註「〔待查證〕」，不可虛構統計數字、引用或人名。
+- 職業排名限定在台灣就業市場脈絡下，須考量台灣產業結構與勞動現況。
+- 使用繁體中文，避免簡體用語與非台灣慣用詞彙。
+- 全文以文章格式直接輸出，不要條列大綱、不要附加額外說明或前言。</pre></div></div>
+</section>
+
+<section class="page" id="script">
+<div class="page-head"><div><div class="kicker">Stage 02</div><h3>GPT 產出劇本</h3><p>劇本字數直接影響最終語音長度，是這一階段最重要的控制點。</p></div></div>
+<div class="section-card"><h4>字數與語音長度</h4><div class="two-col"><div class="notice"><b>4000 字</b><br>約 20–25 分鐘</div><div class="notice warning"><b>5000 字</b><br>約超過 30 分鐘</div></div><p>原始資料指定劇本輸出為「mde 格式檔案」。本網頁照原文保留此記錄。</p></div>
+</section>
+
+<section class="page" id="voice">
+<div class="page-head"><div><div class="kicker">Stage 03</div><h3>GPT 產出旁白和字幕</h3><p>同一份劇本可採「直接轉旁白」或「修改後再轉旁白」兩種方式。</p></div></div>
+<div class="section-card"><h4>兩種處理方式</h4><ol class="list"><li>用劇本直接、不改變內容轉成旁白。</li><li>先修改劇本，再轉成旁白。</li></ol></div>
+<div class="section-card"><h4>Claude 優化前提示詞</h4><div class="prompt"><button class="copy">複製</button><pre>/prompt-master ，優化下面提示詞
+
+以附件原劇本直接改成旁白，下面內容還是要遵循，可以重新計算需要多少分鏡 十大從最後一名往前排到第一名，
+製作二個版本，一個版本
+
+- A版~分鏡卡搭語音檔上限每5秒換一張圖片後續會動畫單一方向移動效果
+- B版~分鏡卡搭語音檔上限每10秒換一張圖片後續會動畫單一方向移動效果
+
+二個版本都必須遵守，旁白和字幕內容要一致，要加上主要章節主題，幫我產生下列excel檔案 編號｜時間碼｜章節｜對應旁白／字幕｜分鏡卡內容｜鏡位建議｜畫面長度｜AI圖片提示詞 最重要是【分鏡卡】和【圖片提示詞】，依據旁白場景段落都需要不一樣，才會讓提示詞有都所不同~這一點最重要，才不會生圖時每張都很類似
+直接給我二個版本的excel檔案</pre></div></div>
+<div class="section-card"><h4>Claude 優化後完整提示詞</h4><div class="prompt"><button class="copy">複製</button><pre>&lt;role&gt;
+你是專業的影片旁白編劇兼分鏡師，同時具備 Excel 資料整理能力，專精「十大排行」類型旁白影片的分鏡規劃與 AI 生圖提示詞設計。
+&lt;/role&gt;
+
+&lt;context&gt;
+附件為原始劇本（十大排名主題）。呈現順序為倒數計時式：從第10名（最後一名）依序講到第1名。需產出可直接用於配音與生圖的分鏡規劃，供影片後製使用。
+&lt;/context&gt;
+
+&lt;task&gt;
+1. 將附件原劇本直接改寫為旁白稿，僅調整為口語化、適合朗讀的敘述，不更動原始內容與順序。
+2. 先計算旁白總秒數（依朗讀速度估算或字數推算），據此計算兩版本各自所需分鏡數：
+   - A版：每則語音片段上限5秒切一張圖，圖片間套用單一方向位移動畫
+   - B版：每則語音片段上限10秒切一張圖，圖片間套用單一方向位移動畫
+3. A版與B版的旁白／字幕內容必須逐字一致，僅分鏡切分粒度不同。
+4. 每個分鏡標示所屬章節主題（第10名～第1名）。
+5. 【最重要】分鏡卡內容與 AI 圖片提示詞必須依旁白場景段落各自客製化，禁止套模板、禁止重複相似描述——人物、構圖、光線、氛圍需隨段落明確轉換，確保生圖結果彼此可辨識不雷同。
+&lt;/task&gt;
+
+&lt;output_format&gt;
+產出兩個 Excel 檔案（A版.xlsx、B版.xlsx），欄位固定：
+編號｜時間碼｜章節｜對應旁白／字幕｜分鏡卡內容｜鏡位建議｜畫面長度｜AI圖片提示詞
+
+- 時間碼：如 00:00-00:05
+- 畫面長度：A版固定≤5秒，B版固定≤10秒
+- AI圖片提示詞：以繁體中文撰寫，含場景/主體/構圖/光線/風格關鍵字，每則需與其他分鏡明顯不同
+&lt;/output_format&gt;
+
+&lt;constraints&gt;
+- 直接輸出兩個完成檔案，不需先詢問確認
+- 不得省略任一分鏡，不得合併相似段落以偷懶
+- 兩版本旁白文字不可有出入
+- AI圖片提示詞一律使用繁體中文，不得混用英文撰寫
+&lt;/constraints&gt;</pre></div></div>
+<div class="section-card"><h4>A / B 版規格比較</h4><div class="table-wrap"><table><thead><tr><th>項目</th><th>A 版</th><th>B 版</th></tr></thead><tbody><tr><td>單鏡語音上限</td><td>≤ 5 秒</td><td>≤ 10 秒</td></tr><tr><td>圖片切換</td><td>約每 5 秒一張</td><td>約每 10 秒一張</td></tr><tr><td>圖片動畫</td><td>單一方向位移</td><td>單一方向位移</td></tr><tr><td>旁白／字幕</td><td colspan="2">逐字一致，只調整分鏡切分粒度</td></tr><tr><td>章節</td><td colspan="2">第 10 名 → 第 1 名</td></tr></tbody></table></div></div>
+<div class="section-card"><h4>Excel 固定欄位</h4><div class="tag-grid"><span class="tag">編號</span><span class="tag">時間碼</span><span class="tag">章節</span><span class="tag">對應旁白／字幕</span><span class="tag">分鏡卡內容</span><span class="tag">鏡位建議</span><span class="tag">畫面長度</span><span class="tag">AI圖片提示詞</span></div><div class="notice"><b>最重要：</b>分鏡卡與 AI 圖片提示詞必須跟著旁白場景變化，各鏡要明顯不同，避免生成圖片高度相似。</div></div>
+</section>
+
+<section class="page" id="image">
+<div class="page-head"><div><div class="kicker">Stage 04</div><h3>GPT 產生圖片提示詞</h3><p>以固定主角建立系列辨識度，但每鏡的事件、構圖與光線必須保持差異。</p></div></div>
+<div class="section-card"><h4>目前使用的提示詞</h4><div class="prompt"><button class="copy">複製</button><pre>幫我修改提示詞內容 以【C01-yfchen.png】圖片Q版墨鏡造型為主角，手繪插畫風格圖片，以明亮色系為主可以更換服裝，完整圖片提示詞</pre></div><div class="notice warning">原始資料註記：這部分「沒有優化」。</div></div>
+<div class="section-card"><h4>圖片提示詞注意重點</h4><ol class="list"><li>以【C01-yfchen.png】為唯一主角外觀參考。</li><li>Q版墨鏡造型。</li><li>明亮色系手繪插畫風格。</li><li>可依情境更換服裝。</li><li>保留原本每鏡的場景、事件、構圖與光線差異。</li><li>標題直接使用編號 <span class="code"># 1</span> ～ <span class="code"># 550</span>。</li><li>強化主角動作與事件關聯，避免只站著擺拍。</li><li>圖片內不生成字幕、標題、Logo、浮水印等。</li></ol></div>
+<div class="section-card"><h4>視覺一致性 vs. 分鏡差異性</h4><div class="two-col"><div class="notice"><b>固定不變</b><br>C01-yfchen 外觀、Q版墨鏡、明亮手繪插畫風格。</div><div class="notice"><b>每鏡改變</b><br>服裝、事件動作、場景、構圖、光線與氛圍。</div></div></div>
+</section>
+
+<section class="page" id="projects">
+<div class="page-head"><div><div class="kicker">Production Queue</div><h3>目前製作進度</h3><p>依附件最下方記錄，整理目前三個「台灣十大」AI 主題項目。</p></div></div>
+<div class="section-card"><div class="progress-item"><span class="code">R025-1150908</span><div><b>台灣十大「無法被AI取代的工作或職業」</b></div><span class="status">排程項目</span></div><div class="progress-item"><span class="code">R024-1150907</span><div><b>台灣十大「AI時代最容易被留下的人」</b></div><span class="status">排程項目</span></div><div class="progress-item"><span class="code">R023-1150906</span><div><b>台灣十大「最容易因AI失去工作優勢的職業」</b></div><span class="status thinking">思考中</span></div></div>
+</section>
+</div></main>
+<footer class="footer">台灣十大系列製作流程 · AI Content Workflow · 單檔 HTML，可直接部署至網站空間</footer>
+</div>
+<script>
+const buttons=[...document.querySelectorAll('[data-page]')];
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));buttons.forEach(b=>b.classList.toggle('active',b.dataset.page===id));history.replaceState(null,'','#'+id);window.scrollTo({top:document.querySelector('.hero').offsetTop-12,behavior:'smooth'});document.getElementById('topbar').classList.remove('open')}
+buttons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+if(location.hash&&document.querySelector(location.hash)) showPage(location.hash.slice(1));
+document.querySelectorAll('.copy').forEach(btn=>btn.addEventListener('click',async()=>{const text=btn.nextElementSibling.innerText;try{await navigator.clipboard.writeText(text);btn.textContent='已複製';btn.classList.add('done');setTimeout(()=>{btn.textContent='複製';btn.classList.remove('done')},1400)}catch(e){btn.textContent='請手動複製'}}));
+</script>
+</body></html>
