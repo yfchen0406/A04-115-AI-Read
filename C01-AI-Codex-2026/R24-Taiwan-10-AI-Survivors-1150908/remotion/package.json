@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {"preview": "remotion studio src/index.ts", "render": "remotion render src/index.ts Reading out/reading.mp4"},
+  "dependencies": {"@remotion/cli": "^4.0.0", "@remotion/media": "^4.0.0", "remotion": "^4.0.0", "react": "^18.0.0", "react-dom": "^18.0.0"},
+  "type": "module"
+}

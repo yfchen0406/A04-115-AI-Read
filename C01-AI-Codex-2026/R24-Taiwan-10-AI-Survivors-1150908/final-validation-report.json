@@ -1,0 +1,22 @@
+{
+  "title": "台灣十大「AI時代最容易被留下的人」",
+  "webp_count": 480,
+  "audio_count": 2,
+  "checks": [
+    {
+      "label": "YunJhe",
+      "segments": 240,
+      "duration": 1530.336,
+      "timeline_contiguous": true,
+      "caption_max_two_lines": true
+    },
+    {
+      "label": "HsiaoChen",
+      "segments": 240,
+      "duration": 1629.264,
+      "timeline_contiguous": true,
+      "caption_max_two_lines": true
+    }
+  ],
+  "remotion_source": true
+}
