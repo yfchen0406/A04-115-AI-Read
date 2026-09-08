@@ -1,0 +1,23 @@
+{
+  "source_workbook": "B版-先選這版.xlsx",
+  "scene_count": 153,
+  "tts_service": "Microsoft Edge TTS via edge-tts",
+  "voices": [
+    {
+      "label": "YunJhe",
+      "voice": "zh-TW-YunJheNeural",
+      "audio": "Chinese-Taiwan-YunJhe.mp3",
+      "bytes": 6646412,
+      "duration": 1107.696,
+      "segments": 153
+    },
+    {
+      "label": "HsiaoChen",
+      "voice": "zh-TW-HsiaoChenNeural",
+      "audio": "Chinese-Taiwan-HsiaoChen.mp3",
+      "bytes": 7168700,
+      "duration": 1194.744,
+      "segments": 153
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+(()=>{
+const d=window.READER_DATA,a=document.querySelector('#audio'),img=document.querySelector('#sceneImage'),stage=document.querySelector('#stage'),subtitle=document.querySelector('#subtitle'),title=document.querySelector('#stageChapter'),seek=document.querySelector('#seek'),play=document.querySelector('#play'),status=document.querySelector('#status'),metrics=document.querySelector('#metrics'),list=document.querySelector('#chapterList');
+const total=Number(d.totalDuration??d.duration??0);let visualIndex=-1,captionIndex=-1,activeChapter='',introTimer=0,raf=0;
+const clamp=value=>Math.max(0,Math.min(total-.01,Number(value)||0));
+const fmt=value=>{const s=Math.floor(Math.max(0,value||0));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+const at=(items,time)=>{let low=0,high=items.length-1;while(low<=high){const middle=(low+high)>>1,item=items[middle];if(time<item.start)high=middle-1;else if(time>=item.end)low=middle+1;else return middle}return Math.min(items.length-1,Math.max(0,low))};
+const captionAt=time=>{let low=0,high=d.captions.length-1;while(low<=high){const middle=(low+high)>>1,cue=d.captions[middle];if(time<cue.start)high=middle-1;else if(time>=cue.end)low=middle+1;else return middle}return -1;};
+const announceChapter=chapter=>{if(chapter===activeChapter)return;activeChapter=chapter;title.textContent=chapter;clearTimeout(introTimer);title.classList.remove('chapter-intro');void title.offsetWidth;title.classList.add('chapter-intro');introTimer=setTimeout(()=>title.classList.remove('chapter-intro'),1600)};
+const renderVisual=(index,force=false)=>{if(!force&&index===visualIndex)return;visualIndex=index;const scene=d.visualScenes[index];img.src=scene.image;img.alt='第 '+scene.id+' 鏡';stage.className='stage motion-'+scene.motion;stage.style.setProperty('--scene-duration',Math.max(.1,scene.end-scene.start)+'s');announceChapter(scene.chapter);for(let n=1;n<3;n++){const next=d.visualScenes[index+n];if(next)new Image().src=next.image}[...list.children].forEach(button=>button.classList.toggle('active',button.dataset.chapter===scene.chapter))};
+const renderCaption=(index,force=false)=>{if(!force&&index===captionIndex)return;captionIndex=index;subtitle.textContent=d.captions[index]?.text||''};
+const renderAt=(time,forcedVisual=null)=>{const t=clamp(time);renderVisual(forcedVisual??at(d.visualScenes,t));renderCaption(captionAt(t));seek.value=String(t);status.textContent=a.ended?'旁白播放完成':a.paused?'已暫停':'旁白播放中';metrics.textContent=fmt(t)+' / '+fmt(total)+' · 第 '+String(captionIndex+1).padStart(3,'0')+' 段'};
+const render=()=>renderAt(a.currentTime||0);
+const loop=()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{render();if(!a.paused&&!a.ended)loop()})};
+const seekTo=(time,playAfter=!a.paused,sceneIndex=null)=>{const target=clamp(time),visual=sceneIndex===null?at(d.visualScenes,target):sceneIndex;a.currentTime=target;renderAt(target,visual);if(playAfter)a.play().then(loop).catch(()=>status.textContent='播放需要使用者點選')};
+seek.max=String(total);
+play.addEventListener('click',()=>a.paused?a.play().then(loop).catch(()=>{}):a.pause());
+document.querySelector('#back').addEventListener('click',()=>seekTo(d.captions[Math.max(0,at(d.captions,a.currentTime)-1)].start,true));
+document.querySelector('#forward').addEventListener('click',()=>seekTo(d.captions[Math.min(d.captions.length-1,at(d.captions,a.currentTime)+1)].start,true));
+seek.addEventListener('input',event=>seekTo(Number(event.target.value),false));
+a.addEventListener('loadedmetadata',render);a.addEventListener('durationchange',render);a.addEventListener('timeupdate',render);a.addEventListener('seeking',render);a.addEventListener('seeked',render);a.addEventListener('play',()=>{play.textContent='暫停旁白';loop();render()});a.addEventListener('pause',()=>{play.textContent='播放旁白';cancelAnimationFrame(raf);render()});a.addEventListener('ended',render);
+d.chapters.forEach(chapter=>{const button=document.createElement('button');const index=at(d.visualScenes,chapter.start);button.type='button';button.dataset.chapter=chapter.title;button.textContent=chapter.title+' · '+chapter.count+' 鏡';button.addEventListener('click',()=>{seekTo(d.visualScenes[index].start,true,index);document.querySelector('.reader').scrollIntoView({behavior:'smooth',block:'start'})});list.appendChild(button)});
+renderVisual(0,true);renderCaption(0,true);render();
+})();
