@@ -510,7 +510,7 @@ const cardsData = [
     link: "/C01-AI-Codex-2026/A01-Index-AI-Codex-2026/A01-Index-AI-Codex-1150721.html",
     iconColor: "rgb(201, 43, 64)",
     iconClass: "fa-solid fa-robot",
-   // iconClass: "fa-brands fa-openai",
+    // iconClass: "fa-brands fa-openai",
     enterName: "GPT Codex",
     disable: "",
   },
@@ -536,13 +536,13 @@ const cardsData = [
   },
   {
     idName: "index-13",
-    title: "AI影片",
-    date: "2026.03.09起",
-    link: "/B01-Book/F06-0-2026-note-new.html",
+    title: "AI閱讀",
+    date: "2026.09.09起",
+    link: "/B01-Book-Journal-2026/A01-Index-Book-Journal-2026/A01-Index-Book-Journal-1150909.html",
     iconColor: "rgb(201, 43, 64)",
-    iconClass: "fa-video",
+    iconClass: "fa-book-journal-whills",
     enterName: "增廣見聞",
-    disable: "disabled",
+    disable: "",
   },
   // // 2026 不更動
   // {
