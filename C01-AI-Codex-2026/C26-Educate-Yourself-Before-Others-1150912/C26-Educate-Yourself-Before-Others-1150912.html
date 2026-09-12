@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C26.《教育別人先教育自己》歌曲製作網站</title>
+  <style>
+    :root {
+      --bg1: #f8fbff;
+      --bg2: #fff9ef;
+      --ink: #16324f;
+      --muted: #506276;
+      --brand: #2878ff;
+      --brand2: #ff8f2d;
+      --brand3: #6dcf77;
+      --brand4: #ff5f9e;
+      --card: #ffffffee;
+      --line: #d8e4f0;
+      --shadow: 0 12px 30px rgba(30, 73, 118, .12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--bg1) 0%, #fffdf8 40%, var(--bg2) 100%);
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1480px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 20px 0 10px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+      overflow: hidden;
+    }
+
+    .hero-main {
+      padding: 24px 28px;
+      background:
+        radial-gradient(circle at top right, rgba(255, 206, 123, .45), transparent 32%),
+        radial-gradient(circle at left bottom, rgba(61, 144, 255, .18), transparent 32%),
+        linear-gradient(135deg, #ffffff, #fff8ef);
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      background: #eef5ff;
+      border-radius: 999px;
+      color: #2455a4;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.16;
+      letter-spacing: .5px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid #e8edf4;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .mini {
+      background: #fff;
+      border: 1px solid #eef2f7;
+      border-radius: 18px;
+      padding: 14px 16px;
+    }
+
+    .mini b {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .mini p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .yt-wrap {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+    }
+
+    .yt-wrap h2 {
+      margin: 2px 0 0;
+      font-size: 26px;
+    }
+
+    .yt-wrap p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .yt-form {
+      display: grid;
+      grid-template-columns: 1fr 116px;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .yt-form input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d7e4ef;
+      border-radius: 16px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .yt-form button {
+      border: 0;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ff7a22, #ff4b6e);
+      color: #fff;
+      font-weight: 800;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .yt-box {
+      aspect-ratio: 16/9;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #eaf2ff, #fff4e9);
+      border: 1px dashed #bfd3e6;
+      position: relative;
+    }
+
+    .yt-placeholder,
+    .yt-box iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yt-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #69809a;
+      padding: 16px;
+      gap: 8px;
+    }
+
+    .yt-placeholder .icon {
+      font-size: 54px;
+    }
+
+    .yt-tip {
+      font-size: 13px;
+      color: #6f8194;
+      background: #f4f8fc;
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .tabs-shell {
+      margin: 18px 0 30px;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 9;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px;
+      background: rgba(248, 251, 255, .88);
+      backdrop-filter: blur(8px);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .75);
+    }
+
+    .tab-btn {
+      border: 0;
+      cursor: pointer;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #fff;
+      color: #335;
+      font-weight: 800;
+      font-size: 15px;
+      box-shadow: 0 3px 10px rgba(50, 90, 140, .08);
+    }
+
+    .tab-btn.active {
+      color: #fff;
+      background: linear-gradient(135deg, #2f8cff, #6a63ff);
+    }
+
+    .tab-panel {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid #f0f4f9;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .step-card {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid #edf2f7;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, #fafcff);
+    }
+
+    .step-card .num {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: #fff;
+      font-size: 24px;
+      background: linear-gradient(135deg, #ff9a2f, #ff5f88);
+    }
+
+    .step-card h3 {
+      margin: 0 0 5px;
+      font-size: 20px;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      border: 1px solid #eef3f8;
+    }
+
+    .highlight-item .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-top: 8px;
+      background: linear-gradient(135deg, #31b4ff, #6bdd88);
+      flex: 0 0 auto;
+    }
+
+    .highlight-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .image-frame {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid #eef2f6;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+    .full-image img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e7eef6;
+    }
+
+    .article-wrap {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .side-card {
+      position: sticky;
+      top: 84px;
+      align-self: start;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 14px;
+      color: #345;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .toc a:hover {
+      background: #f3f8ff;
+    }
+
+    .article {
+      background: #fff;
+      border-radius: 26px;
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid #eef3f8;
+    }
+
+    .article h1,
+    .article h2,
+    .article h3,
+    .article h4 {
+      scroll-margin-top: 90px;
+    }
+
+    .article h1 {
+      font-size: 38px;
+    }
+
+    .article h2 {
+      margin-top: 26px;
+      font-size: 30px;
+    }
+
+    .article h3 {
+      margin-top: 18px;
+      font-size: 22px;
+    }
+
+    .article h4 {
+      margin-top: 14px;
+      font-size: 18px;
+    }
+
+    .article p,
+    .article li {
+      font-size: 16px;
+      color: #243d56;
+    }
+
+    .article ul {
+      padding-left: 22px;
+    }
+
+    .article hr {
+      border: none;
+      border-top: 1px solid #e8eff6;
+      margin: 28px 0;
+    }
+
+    .article blockquote {
+      margin: 20px 0;
+      padding: 14px 18px;
+      border-left: 4px solid #67a8ff;
+      background: #f6fbff;
+      color: #325;
+      border-radius: 0 16px 16px 0;
+    }
+
+    .article aside {
+      white-space: pre-wrap;
+      margin: 18px 0;
+      padding: 20px;
+      background: #fff9ef;
+      border: 1px solid #f4dfbf;
+      border-radius: 20px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #4b3a20;
+      overflow: auto;
+    }
+
+    .article img {
+      max-width: 80px;
+      display: none;
+    }
+
+    .download-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .download-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid #dbe6f1;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-weight: 800;
+    }
+
+    .footer {
+      margin: 26px 0 40px;
+      background: linear-gradient(135deg, #1e4a80, #2a6db7);
+      color: #fff;
+      border-radius: 28px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .footer h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+
+    .footer p {
+      margin: 0;
+      opacity: .95;
+    }
+
+    @media (max-width: 1120px) {
+
+      .hero-grid,
+      .overview-grid,
+      .article-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-note {
+        grid-template-columns: 1fr;
+      }
+
+      .side-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 16px, 1480px);
+      }
+
+      .hero-main {
+        padding: 20px;
+      }
+
+      .card,
+      .article {
+        padding: 20px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .yt-form {
+        grid-template-columns: 1fr;
+      }
+
+      .tabs {
+        padding: 10px;
+        gap: 8px;
+      }
+
+      .tab-btn {
+        flex: 1 1 calc(50% - 8px);
+      }
+
+      .article h1 {
+        font-size: 30px;
+      }
+
+      .article h2 {
+        font-size: 24px;
+      }
+    }
+
+    .yt-minimal {
+      padding: 0;
+      background: #fff;
+    }
+
+    .yt-video-slot {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0f172a;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      min-height: 320px;
+    }
+
+    .yt-video-slot iframe,
+    .yt-video-slot video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="panel hero-main">
+          <div class="eyebrow">🎵 AI 音樂創作紀錄｜明亮分頁版網頁</div>
+          <h2>C26.《教育別人先教育自己》~ 歌曲製作完整網站</h2>
+          <!-- <p class="subtitle">整合修飾後文章內容、製作流程資訊圖表，以及 YouTube 歌曲影片嵌入區，方便後續做成個人網頁展示。</p> -->
+          <div class="hero-tags">
+            <span class="tag">繁體中文</span>
+            <span class="tag">分頁式版型</span>
+            <span class="tag">明亮色系</span>
+            <span class="tag">現代卡片式設計</span>
+            <span class="tag">資訊圖表整合</span>
+          </div>
+          <div class="hero-note">
+            <div class="mini"><b>內容完整保留</b>
+              <p>依照修飾後文件內容製作，文章結構完整呈現，方便閱讀與展示。</p>
+            </div>
+            <div class="mini"><b>YouTube 留白區</b>
+              <p>頁首保留影片嵌入位置，只要貼上連結即可預覽歌曲影片。</p>
+            </div>
+            <div class="mini"><b>適合後續擴充</b>
+              <p>可再加入 MP4、歌詞、更多圖片、心得補充與其他 AI 作品頁面。</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel yt-wrap yt-minimal">
+          <!-- =========================================================
+               YouTube 影片位置
+               請將你的 YouTube iframe 嵌入碼貼在下方 yt-video-slot 內。
+               例如：
+               <iframe width="100%" height="100%"
+                 src="https://www.youtube.com/embed/你的影片ID"
+                 title="YouTube video player"
+                 frameborder="0"
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                 allowfullscreen></iframe>
+               ========================================================= -->
+          <div id="yt-video-slot" class="yt-video-slot">
+            <iframe width="1337" height="752" src="https://www.youtube.com/embed/9uyPVqT-hE0" title="R100-教育別人教育自己"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tabs-shell">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="overview">網站總覽</button>
+        <button class="tab-btn" data-tab="process">製作流程</button>
+        <button class="tab-btn" data-tab="article">完整文章</button>
+        <button class="tab-btn" data-tab="infographic">資訊圖表</button>
+        <button class="tab-btn" data-tab="download">檔案下載</button>
+      </div>
+
+      <section id="overview" class="tab-panel active">
+        <div class="overview-grid">
+          <div class="card">
+            <h2>網站總覽</h2>
+            <p class="lead">這個頁面把你的《教育別人先教育自己》歌曲製作紀錄，整理成一個適合展示、閱讀與後續延伸的分頁式網站。整體採用明亮色系、卡片式排版與較緊密的資訊編排，讓內容豐富但不顯空白。</p>
+            <div class="steps-grid">
+              <article class="step-card">
+                <div class="num">1</div>
+                <div>
+                  <h3>GPT 生歌詞</h3>
+                  <p>把真實生活事件改寫成歌詞，保留故事感、節奏感與反省意味。</p>
+                </div>
+              </article>
+              <article class="step-card">
+                <div class="num">2</div>
+                <div>
+                  <h3>ACE-Step 文生音樂</h3>
+                  <p>將歌詞轉為可播放歌曲，並搭配適合的華語流行曲風標籤。</p>
+                </div>
+              </article>
+              <article class="step-card">
+                <div class="num">3</div>
+                <div>
+                  <h3>字幕校正</h3>
+                  <p>先用工具產生時間碼，再交由 GPT 微調，讓歌詞與歌聲同步。</p>
+                </div>
+              </article>
+              <article class="step-card">
+                <div class="num">4</div>
+                <div>
+                  <h3>Arena 製作封面</h3>
+                  <p>依歌曲情境生成主視覺，呈現一家三口的互動與故事感。</p>
+                </div>
+              </article>
+              <article class="step-card">
+                <div class="num">5</div>
+                <div>
+                  <h3>整合成影片</h3>
+                  <p>把歌曲、字幕與封面合成 MP4，形成完整歌曲作品。</p>
+                </div>
+              </article>
+              <article class="step-card">
+                <div class="num">6</div>
+                <div>
+                  <h3>上傳 YouTube</h3>
+                  <p>完成發布與分享，並可延伸嵌入個人網頁展示。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="card">
+            <h2>這次學到的重點</h2>
+            <div class="highlight-list">
+              <div class="highlight-item"><span class="dot"></span>
+                <p><strong>生活故事也能變成創作素材：</strong> 真實事件往往最有情境感，也更容易轉成歌曲與影像內容。</p>
+              </div>
+              <div class="highlight-item"><span class="dot"></span>
+                <p><strong>歌詞、音樂、字幕、封面要互相配合：</strong> 不是單一工具好就夠，而是整體流程要串起來。</p>
+              </div>
+              <div class="highlight-item"><span class="dot"></span>
+                <p><strong>字幕同步度會直接影響觀看體驗：</strong> 有時間碼的字幕檔，比單靠字數推算精準許多。</p>
+              </div>
+              <div class="highlight-item"><span class="dot"></span>
+                <p><strong>AI 工具串接後能形成完整創作流程：</strong> 從歌詞到影片，都能逐步完成屬於自己的作品。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="tab-panel">
+        <div class="card">
+          <h2>歌曲製作流程資訊圖表</h2>
+          <p class="lead">以下為本次製作流程的 16:9 資訊圖表，將整體步驟由 GPT 生歌詞、ACE-Step 文生音樂、字幕校正、Arena 製作封面，到整合成影片與上傳
+            YouTube，完整整理為一張視覺化流程圖。</p>
+          <div class="image-frame"><img src="assets/infographic.png" alt="《教育別人先教育自己》歌曲製作流程資訊圖表"></div>
+        </div>
+      </section>
+
+      <section id="article" class="tab-panel">
+        <div class="article-wrap">
+          <aside class="card side-card">
+            <h3>文章導覽</h3>
+            <nav class="toc">
+              <a href="#top-article">文章開頭</a>
+              <a href="#前言">前言</a>
+              <a href="#製作流程簡單說明">製作流程簡單說明</a>
+              <a href="#一GPT-生歌詞">一、GPT 生歌詞</a>
+              <a href="#二ComfyUI-的-Audio-ACE-Step-15-模型文生音樂">二、ComfyUI 文生音樂</a>
+              <a href="#三校正字幕">三、校正字幕</a>
+              <a href="#四製作封面">四、製作封面</a>
+              <a href="#五GPT-轉成影片">五、GPT 轉成影片</a>
+              <a href="#六上傳-YT">六、上傳 YT</a>
+              <a href="#小結">小結</a>
+            </nav>
+          </aside>
+          <article class="article" id="top-article">
+            <h1>《教育別人先教育自己》歌曲製作紀錄｜1150911</h1>
+            <h2>前言</h2>
+            <p>最近因為兒子在一個多月內連續收到兩張罰單，本來想好好提醒他騎車要更小心，沒想到自己也收到一張「右轉未打方向燈」的民眾檢舉罰單。老婆一句「要教育別人之前，先教育自己」，反而成了這次創作最核心的靈感。</p>
+            <p>過去我大多做梗圖，這一次想換個方式，嘗試把生活中的小插曲轉化成一首歌，也順便把近期研究的 AI
+              工具整合進來，做一次完整的歌曲製作練習。這次不只是寫歌詞，還包含音樂生成、字幕校正、封面製作、影片輸出，以及最後上傳到 YouTube 的流程。</p>
+            <p>另外，這次也順便研究了 ComfyUI。雖然本地端模型安裝會占用不少空間，但對於想深入了解 AI
+              生成流程的人來說，確實是一個值得投入的工具。以下就把這次的實作過程整理下來，方便後續回顧，也可作為下次再製作類似作品時的參考。</p>
+            <p>&gt; 說明：以下涉及 **歌詞、提示詞、提示詞生成結果** 的內容，皆依原始版本保留，不做更動；本次僅針對文章敘述與結構進行修飾整理。</p>
+            <hr>
+            <h2>製作流程簡單說明</h2>
+            <p>這次的歌曲製作流程，大致可以分成以下幾個步驟：</p>
+            <p>1. 使用 GPT 生成歌詞。 </p>
+            <p>2. 使用 ComfyUI 的 Audio ACE-Step 1.5 模型生成歌曲。 </p>
+            <p>3. 透過其他工具產出字幕檔，再交由 GPT 協助校正。 </p>
+            <p>4. 使用 Arena 生成封面圖片。 </p>
+            <p>5. 將歌曲、字幕與封面整合成影片。 </p>
+            <p>6. 最後上傳至 YouTube。 </p>
+            <p>以下依序記錄每一個步驟。</p>
+            <hr>
+            <h2>一、GPT 生歌詞</h2>
+            <p>這一步的目標，是先把真實生活中的事件轉化成一首具有故事性、節奏感與反轉趣味的歌曲。因為這首歌後續要交給 AI 音樂模型生成，所以在一開始就希望歌詞具備以下幾個特點：</p>
+            <ul>
+              <li>內容具體，能清楚交代事件經過。 </li>
+              <li>句子長度盡量對稱，方便後續譜曲。 </li>
+              <li>整體長度控制在約 2～3 分鐘，適合生成完整歌曲。 </li>
+              <li>保留家庭互動的幽默感，也要有最後的反省意味。 </li>
+            </ul>
+            <h3>提示詞</h3>
+            <ul>
+              <li>
+                你幫我做寫一首歌詞，我要送到AI產生音樂年填詞用，主要歌詞內容為，一開始兒子開車超速被開罰單，正準備要好好教育他的當下，自己也收到右轉沒有打方向燈的民眾檢舉罰單，老婆說了要教育別人之前先教育自己，以這樣的內容幫我寫出歌詞，句子要對稱，前後字數要一樣多，歌曲約2--3分鐘
+              </li>
+            </ul>
+            <h3>生成結果</h3>
+            <p>&lt;aside&gt;</p>
+            <p>&lt;img
+              src=&quot;notion://custom_emoji/fbc952e1-56a8-46e1-b768-3b42d393905a/167532fb-1095-8056-99a9-007a67568a34&quot;
+              alt=&quot;notion://custom_emoji/fbc952e1-56a8-46e1-b768-3b42d393905a/167532fb-1095-8056-99a9-007a67568a34&quot;
+              width=&quot;40px&quot; /&gt;</p>
+            <p>[Verse 1]</p>
+            <p>兒子騎車一路飛奔</p>
+            <p>紅單一張跟著上門</p>
+            <p>限速標誌明明在前</p>
+            <p>油門卻催快了一點</p>
+            <p>我拿罰單坐在桌前</p>
+            <p>準備好好跟他談談</p>
+            <p>騎車安全不是玩笑</p>
+            <p>規矩本來就該記牢</p>
+            <p>[Verse 2]</p>
+            <p>我正準備開口訓人</p>
+            <p>手機忽然震了一聲</p>
+            <p>打開通知仔細一看</p>
+            <p>我的名字也在上面</p>
+            <p>開車右轉忘了打燈</p>
+            <p>民眾檢舉證據完整</p>
+            <p>照片拍得清清楚楚</p>
+            <p>這回換我低頭無語</p>
+            <p>[Chorus]</p>
+            <p>老婆笑著看我一眼</p>
+            <p>教育別人先看自己</p>
+            <p>話才剛剛說到一半</p>
+            <p>自己罰單已經來臨</p>
+            <p>兒子坐在旁邊偷笑</p>
+            <p>我的氣勢瞬間歸零</p>
+            <p>原來人生最好一課</p>
+            <p>先從自己開始反省</p>
+            <p>[Verse 3]</p>
+            <p>本想教他騎車慢點</p>
+            <p>結果自己也犯規定</p>
+            <p>超速固然真的不對</p>
+            <p>轉彎燈號也不能省</p>
+            <p>騎車開車都要小心</p>
+            <p>每個動作都有責任</p>
+            <p>今天我們各拿一張</p>
+            <p>誰也不用笑誰半天</p>
+            <p>[Chorus]</p>
+            <p>老婆笑著看我一眼</p>
+            <p>教育別人先看自己</p>
+            <p>話才剛剛說到一半</p>
+            <p>自己罰單已經來臨</p>
+            <p>兒子坐在旁邊偷笑</p>
+            <p>我的氣勢瞬間歸零</p>
+            <p>原來人生最好一課</p>
+            <p>先從自己開始反省</p>
+            <p>[Bridge]</p>
+            <p>有時我們看見別人</p>
+            <p>總是容易說得認真</p>
+            <p>輪到自己犯了錯誤</p>
+            <p>才知規矩不分身分</p>
+            <p>父親不是永遠正確</p>
+            <p>孩子也會提醒大人</p>
+            <p>一家三口笑著約定</p>
+            <p>以後上路都要小心</p>
+            <p>[Final Chorus]</p>
+            <p>老婆笑著看我一眼</p>
+            <p>教育別人先看自己</p>
+            <p>一張超速一張轉彎</p>
+            <p>兩張罰單換來提醒</p>
+            <p>兒子以後騎慢一點</p>
+            <p>爸爸轉彎記得打燈</p>
+            <p>原來最好家庭教育</p>
+            <p>不是說教而是同行</p>
+            <p>[Outro]</p>
+            <p>紅單雖然讓人心疼</p>
+            <p>這堂課卻值得記得</p>
+            <p>教育別人並不困難</p>
+            <p>先管自己才是真本</p>
+            <p>&lt;/aside&gt;</p>
+            <p>這份歌詞完整保留了事件的起承轉合，也把家庭中的幽默與反省自然串聯起來，作為後續音樂生成的基礎非常適合。</p>
+            <hr>
+            <h2>二、ComfyUI 的 Audio ACE-Step 1.5 模型：文生音樂</h2>
+            <p>歌詞完成後，下一步就是把文字交給 AI 音樂模型，生成真正可播放的歌曲。這次使用的是 **ComfyUI 的 Audio ACE-Step 1.5 模型**。</p>
+            <p>這一步讓我最大的感受是：本地端模型雖然很自由，但安裝與運行確實比較占空間。不過，能夠把歌詞、曲風與演唱感覺整合在同一個流程中，對研究 AI 音樂來說很有價值。</p>
+            <h3>安裝心得</h3>
+            <ul>
+              <li>安裝過程中，最明顯的感受就是這部分會占用不少硬碟空間。 </li>
+              <li>不過一旦安裝完成，後續測試不同曲風、不同參數時會方便許多。 </li>
+            </ul>
+            <h3>GPT 設定曲風</h3>
+            <p>這一步是請 GPT 協助整理出適合貼入 ACE-Step 1.5 XL 的曲風標籤，讓模型更容易生成符合歌曲情境的作品。</p>
+            <h4>提示詞</h4>
+            <ul>
+              <li>我要給 ACE-Step 1.5 XL 生成歌曲，你覺得上述歌詞要搭配那一種曲風，你直接給我可以輸入到ComfyUI 中 ACE-Step 1.5 XL 模型的標籤內容即可</li>
+            </ul>
+            <h4>生成結果</h4>
+            <ul>
+              <li>Mandopop, Chinese pop, acoustic pop, folk pop, lighthearted, humorous storytelling, warm family vibe,
+                catchy chorus, male vocal, middle-aged male vocal, conversational singing, natural vocal, emotional but
+                playful, uplifting, warm, acoustic guitar, piano, light drums, bass, hand percussion, clean arrangement,
+                melodic, easy listening, mid-tempo, 100 BPM, major key, verse chorus structure, memorable hook, clear
+                vocal, Taiwanese Mandarin style, everyday life story, family comedy, reflective ending, warm ending</li>
+            </ul>
+            <p>這一串標籤雖然看起來偏技術性，但實際上很實用，直接貼回 ComfyUI 模型即可。</p>
+            <h3>曲風另外一個版本</h3>
+            <p>如果 ACE-Step 有「Style / Prompt」欄位，也可以改用下面這個版本，描述會更完整一些：</p>
+            <ul>
+              <li>Lighthearted Mandarin pop with acoustic folk elements, humorous everyday-life storytelling about a
+                father and son, warm family atmosphere, playful verses with a catchy and memorable chorus, middle-aged
+                male vocal with natural conversational delivery, acoustic guitar, piano, light drums, bass and subtle
+                hand percussion, clean and bright arrangement, mid-tempo around 100 BPM, uplifting major-key melody,
+                slightly comedic timing, warm emotional development, ending with gentle reflection and family warmth,
+                Taiwanese Mandarin pop style</li>
+            </ul>
+            <hr>
+            <h2>三、校正字幕</h2>
+            <p>歌曲生成完成後，接下來最重要的工作之一，就是讓歌詞字幕與實際歌聲對齊。這一步看似簡單，但實際上非常關鍵，因為只要字幕稍微跑掉，整體觀看體驗就會明顯下降。</p>
+            <p>一開始我曾直接請 GPT 依照歌詞字數去推算字幕時間，結果很快就發現這樣的校正方式不夠準確。原因在於：真正的演唱節奏、間奏長度、換氣點與字詞拉長，往往都不是單靠字數就能精準推估。</p>
+            <p>後來改用另外一個桌面程式 **【memo】** 先產生字幕檔案，再交給 GPT 協助校正，就明顯準確許多。這樣的做法比較接近「先取得時間碼，再進行微調」，因此歌詞與畫面也更容易搭配。</p>
+            <h3>字幕校正心得</h3>
+            <ul>
+              <li>只靠歌詞字數估算字幕時間，容易產生累積誤差。 </li>
+              <li>若能先透過外部工具產生字幕時間碼，再讓 GPT 協助修正，效果會更穩定。 </li>
+              <li>歌詞影片要好看，字幕同步度非常重要。 </li>
+            </ul>
+            <hr>
+            <h2>四、製作封面</h2>
+            <p>有了歌曲之後，還需要一張能夠呼應歌曲主題的封面。這次我使用 **Arena** 來生成圖片，目標是做出一張兼具故事感、人物互動與家庭溫度的主視覺。</p>
+            <p>整張圖的核心情境，就是把歌曲的主要事件濃縮在同一個畫面中：爸爸原本正要教育兒子，卻看到自己也收到罰單；媽媽在一旁點出重點；兒子則在旁邊偷笑。這樣的構圖很適合用來做歌曲封面，也很能傳達這首歌的主題。</p>
+            <h3>提示詞（給 Arena，直接生圖）</h3>
+            <ul>
+              <li>
+                標題文字「教育別人先教育自己」置於畫面最上方，手繪插畫風格，溫暖水彩質感，16:9橫幅構圖，整體以明亮色系為主。畫面主角是爸爸(附件1墨鏡)，坐在客廳木桌前，一手拿著手機，螢幕顯示自己右轉未打燈的檢舉罰單通知，另一手邊桌上攤著兒子(附件3)超速的罰單，表情從嚴肅轉為驚訝尷尬，額頭冒著汗滴符號，圓框眼鏡下方露出無語的神情，穿著格紋襯衫。配角媽媽(附件2)站在爸爸身旁，笑瞇瞇地用手指輕點桌上兩張罰單，表情俏皮得意，像是在說教育別人先看自己。配角兒子坐在桌子另一側，安全帽放在腿上，摀著嘴偷笑，眼神調皮又帶著一點釋懷，三人之間的氣氛從緊張逐漸轉為溫馨和解，背景暖黃色燈光，牆上掛著全家福畫框，窗外隱約可見摩托車與汽車停在門口，象徵今天一家兩人各自違規的小故事。畫面中所有文字皆為繁體中文，字體為手寫鋼筆字體，標題以外不需要額外文字說明，畫面中不要出現任何英文字母。整體畫風可愛溫馨，線條柔和，色彩明亮飽和，呈現一家三口從說教到互相提醒、同行成長的溫暖氛圍。
+              </li>
+            </ul>
+            <hr>
+            <h2>五、GPT 轉成影片</h2>
+            <p>當歌曲、字幕與封面都準備完成後，最後就可以把這三項素材整合成一支完整的歌曲影片。這一步的重點在於：</p>
+            <ul>
+              <li>音樂檔作為主軸。 </li>
+              <li>字幕檔負責同步顯示歌詞。 </li>
+              <li>封面圖作為影片主視覺。 </li>
+            </ul>
+            <p>只要這三者配合得當，就能快速做出一支完整的歌曲 MP4 影片。對於個人創作來說，這樣的流程已經相當實用，也很適合後續上傳到 YouTube 或嵌入到個人網頁中展示。</p>
+            <hr>
+            <h2>六、上傳 YT</h2>
+            <p>影片完成後，最後一步就是上傳到 YouTube。這不只是單純發布作品，也等於把整個 AI 製作流程真正完成。</p>
+            <p>未來如果要延伸應用，還可以進一步做以下幾件事：</p>
+            <ul>
+              <li>在 YouTube 說明欄補上歌曲創作背景。 </li>
+              <li>在個人網頁中嵌入影片，結合文章、封面與歌詞展示。 </li>
+              <li>累積成自己的 AI 音樂創作作品集。 </li>
+            </ul>
+            <hr>
+            <h2>小結</h2>
+            <p>這次的作品，雖然起點只是生活中的一個小插曲，卻意外成了一次很完整的 AI 創作練習。從 GPT 寫歌詞、ComfyUI 生成歌曲、字幕校正、封面製作，到最後輸出影片與上傳
+              YouTube，整個流程串起來之後，不只是完成一首歌，也讓我更熟悉 AI 工具之間如何互相配合。</p>
+            <p>更有趣的是，這首歌的主題本身也很有意思：原本是要教育孩子，最後卻變成提醒自己。某種程度上，這不只是歌詞內容，也是生活中的真實寫照。透過這次創作，把這段經歷留下來，反而讓這句「教育別人先教育自己」更有感。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="infographic" class="tab-panel">
+        <div class="card full-image">
+          <h2>資訊圖表單獨檢視</h2>
+          <p class="lead">如果你想單獨查看這張圖，可以在這一頁放大瀏覽。後續也能再加入下載按鈕、列印版或更多同系列圖表。</p>
+          <img src="./C26-1.webp" alt="歌曲製作流程資訊圖表大圖">
+        </div>
+      </section>
+
+      <section id="download" class="tab-panel">
+        <div class="card">
+          <h2>檔案下載</h2>
+          <p class="lead">以下提供本頁相關檔案，方便你後續備份、修改或交給其他工具進一步製作。</p>
+          <div class="download-box">
+            <a href="./C26-Educate-Yourself-Before-Others-1150912.html" download>📄 下載 index.html</a>
+            <a href="./Doc.md" download>📝 下載AI修飾版文章 .md</a>
+            <a href="./C26-1.webp" download>🖼️ 下載資訊圖表 .png</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="footer">
+      <h3>後續可再延伸的方向</h3>
+      <p>如果你下一步要我繼續做，我可以再幫你把這個網站補上：MP4 本地影片版、歌詞專頁、更多圖片卡片區、返回頂端按鈕、手機版優化、以及符合你個人網站習慣的導覽列樣式。</p>
+    </section>
+  </div>
+
+  <script>
+    const btns = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }); 
+  </script>
+</body>
+
+</html>

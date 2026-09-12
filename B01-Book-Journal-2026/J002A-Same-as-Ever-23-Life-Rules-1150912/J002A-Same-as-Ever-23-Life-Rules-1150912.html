@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="《一如既往》23條生活守則：摩根．豪瑟的人性法則資訊圖表與生活解讀。">
+  <title>《一如既往》23條生活守則</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="side-nav-toggle" id="sideNavToggle" aria-label="開啟章節導覽">章節</button>
+  <aside class="side-nav" id="sideNav" aria-label="章節側邊導覽">
+    <div class="side-nav-head">
+      <div><small>CHAPTER</small><strong>章節導覽</strong></div>
+      <button id="sideNavClose" aria-label="關閉章節導覽">×</button>
+    </div>
+    <nav id="sideNavList"></nav>
+  </aside>
+  <header class="hero hero-cover" id="top">
+    <div class="hero-inner hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badge">BOOK NOTES · 讀書專題</div>
+        <p class="eyebrow">Morgan Housel · Same as Ever</p>
+        <h1>《一如既往》<br><span>23條生活守則</span></h1>
+        <p class="hero-quote">世界一直改變，人性卻一如既往。</p>
+        <p class="lead">與其費力猜測未來會怎麼變，不如先看懂那些一直沒有改變的人性。從風險、期望、成長到誘因，整理成 23 條可直接帶回生活使用的法則。</p>
+        <div class="hero-tags">
+          <span>23 條法則</span><span>4 大主題</span><span>4 種圖片版本</span><span>上圖下文</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#categories">開始閱讀</a>
+          <a class="btn ghost" href="#rules">23條總覽</a>
+          <button class="btn image-switch active" data-view="infographic" type="button">資訊圖表</button>
+          <button class="btn image-switch" data-view="concept" type="button">意象圖表</button>
+          <button class="btn image-switch" data-view="simpleConcept" type="button">簡單意象</button>
+          <button class="btn image-switch" data-view="handdrawn" type="button">手繪插畫</button>
+        </div>
+      </div>
+      <aside class="hero-summary" aria-label="專題摘要">
+        <p class="summary-kicker">READING MAP</p>
+        <h2>先看懂不變的人性，再面對變動的世界</h2>
+        <div class="summary-list">
+          <div><b>01</b><span>風險、意外與不確定性</span></div>
+          <div><b>02</b><span>人性、期望與情緒</span></div>
+          <div><b>03</b><span>成長、極限與長期思維</span></div>
+          <div><b>04</b><span>決策、誘因與歷史印記</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro section">
+      <div class="section-head">
+        <span class="section-no">00</span>
+        <div><p class="kicker">閱讀方式</p><h2>一張圖先看懂，再往下讀深一點</h2></div>
+      </div>
+      <div class="intro-grid">
+        <p>這個網頁把《一如既往》的23章整理成23條生活守則。每一條先用16:9資訊圖表抓住重點，再透過文字說明補上核心解釋、書中案例、生活情境與行動建議。</p>
+        <p>四大分類分別處理：風險與意外、人性與情緒、成長與長期思維、決策與歷史印記。你可以依目前遇到的問題直接跳到相關分類。</p>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-head">
+        <span class="section-no">01</span>
+        <div><p class="kicker">CATEGORY</p><h2>四大法則分類</h2></div>
+      </div>
+      <div id="categoryCards" class="category-grid"></div>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="section-head">
+        <span class="section-no">02</span>
+        <div><p class="kicker">23 RULES</p><h2>23條生活守則總覽</h2></div>
+      </div>
+      <div class="toolbar">
+        <button class="filter active" data-filter="all">全部</button>
+        <button class="filter" data-filter="risk">風險與意外</button>
+        <button class="filter" data-filter="mind">人性與情緒</button>
+        <button class="filter" data-filter="growth">成長與長期</button>
+        <button class="filter" data-filter="decision">決策與誘因</button>
+      </div>
+      <div id="ruleGrid" class="rule-grid"></div>
+    </section>
+
+    <section id="ruleDetails" class="details"></section>
+  </main>
+
+  <a class="back-top" href="#top" aria-label="回到頂端">↑</a>
+
+  <footer>
+    <p>《一如既往》23條生活守則 · 個人讀書整理</p>
+    <p>圖片資料夾：assets/images/infographic/、assets/images/concept/、assets/images/simple-concept/、assets/images/handdrawn/</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
