@@ -1,9 +1,18 @@
 export const arr_article = [
- 
   {
     title_id: "n2",
     title: "前言~與其一直猜未來，不如先看懂不變的人性",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-003.webp", dec2: "" },
+          { pic1: "./images/v2/v2-003.webp", dec2: "" },
+          { pic1: "./images/v3/v3-003.webp", dec2: "" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n2-1",
@@ -26,6 +35,12 @@ export const arr_article = [
           },
           {
             d1: "所以問題可能不是「我們預測得不夠準」，而是有些事情，本來就很難預測。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-004.webp", dec2: "" },
+              { pic1: "./images/v2/v2-004.webp", dec2: "" },
+              { pic1: "./images/v3/v3-004.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -46,6 +61,12 @@ export const arr_article = [
           { d1: "幾百年前的人如此，今天的人如此，未來的人大概也差不多。" },
           {
             d1: "如果我們能先理解這些「不太會變的人性」，面對再大的環境變化，也比較不容易被牽著走。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-005.webp", dec2: "" },
+              { pic1: "./images/v2/v2-005.webp", dec2: "" },
+              { pic1: "./images/v3/v3-005.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -63,8 +84,13 @@ export const arr_article = [
           },
           {
             d1: "讀懂這些規律，不代表我們可以預測未來，而是能讓自己在遇到變化時，更穩、更有餘裕。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-006.webp", dec2: "" },
+              { pic1: "./images/v2/v2-006.webp", dec2: "" },
+              { pic1: "./images/v3/v3-006.webp", dec2: "" },
+            ],
           },
-        
         ],
       },
     ],
@@ -72,7 +98,17 @@ export const arr_article = [
   {
     title_id: "n3",
     title: "作者~摩根．豪瑟與他看待金錢、人性與世界的方法",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-007.webp", dec2: "" },
+          { pic1: "./images/v2/v2-007.webp", dec2: "" },
+          { pic1: "./images/v3/v3-007.webp", dec2: "" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n3-1",
@@ -87,7 +123,15 @@ export const arr_article = [
           {
             d1: "他真正關心的是：<strong>人在面對金錢、風險、成功與失敗時，為什麼會做出那些決定？</strong>",
           },
-          { d1: "這也是他的文章和一般財經分析很不一樣的地方。" },
+          {
+            d1: "這也是他的文章和一般財經分析很不一樣的地方。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-008.webp", dec2: "" },
+              { pic1: "./images/v2/v2-008.webp", dec2: "" },
+              { pic1: "./images/v3/v3-008.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -102,6 +146,12 @@ export const arr_article = [
           { d1: "它不只談金錢，也談歷史、商業、社會、人際關係與人生選擇。" },
           {
             d1: "如果說《致富心態》是在問「人為什麼會這樣用錢」，那麼《一如既往》更像是在問：「人為什麼一直都是這個樣子？」",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-009.webp", dec2: "" },
+              { pic1: "./images/v2/v2-009.webp", dec2: "" },
+              { pic1: "./images/v3/v3-009.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -117,8 +167,15 @@ export const arr_article = [
           {
             d1: "這些故事看起來彼此無關，最後卻會指向同一件事：<strong>環境一直在變，人性卻常常一如既往。</strong>",
           },
-          { d1: "這也是這本書最好讀、也最值得慢慢想的地方。" },
-        
+          {
+            d1: "這也是這本書最好讀、也最值得慢慢想的地方。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-010.webp", dec2: "" },
+              { pic1: "./images/v2/v2-010.webp", dec2: "" },
+              { pic1: "./images/v3/v3-010.webp", dec2: "" },
+            ],
+          },
         ],
       },
     ],
@@ -126,7 +183,17 @@ export const arr_article = [
   {
     title_id: "n4",
     title: "一、意外才是常態",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-011.webp", dec2: "" },
+          { pic1: "./images/v2/v2-011.webp", dec2: "" },
+          { pic1: "./images/v3/v3-011.webp", dec2: "" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n5",
@@ -137,7 +204,15 @@ export const arr_article = [
       { d1: "但豪瑟提醒我們，真正危險的風險，往往不是這些已經想得到的事情。" },
       { d1: "<strong>真正的風險，是你根本沒有想到它會發生。</strong>" },
       { d1: "因為沒有想到，所以也沒有準備。" },
-      { d1: "一旦突然出現，衝擊通常特別大。" },
+      {
+        d1: "一旦突然出現，衝擊通常特別大。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-012.webp", dec2: "" },
+          { pic1: "./images/v2/v2-012.webp", dec2: "" },
+          { pic1: "./images/v3/v3-012.webp", dec2: "" },
+        ],
+      },
     ],
     c1s: [
       {
@@ -160,6 +235,12 @@ export const arr_article = [
           },
           {
             d1: "這段經驗讓他深刻明白：人生最重要的轉折，有時根本不在我們的計畫裡。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-013.webp", dec2: "" },
+              { pic1: "./images/v2/v2-013.webp", dec2: "" },
+              { pic1: "./images/v3/v3-013.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -177,6 +258,12 @@ export const arr_article = [
           { d1: "NASA 可以準備幾百種風險，卻不可能把所有意外都事先列出來。" },
           {
             d1: "這也說明：<strong>最難處理的，永遠是那些沒有人想過的情況。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-014.webp", dec2: "" },
+              { pic1: "./images/v2/v2-014.webp", dec2: "" },
+              { pic1: "./images/v3/v3-014.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -194,6 +281,12 @@ export const arr_article = [
           { d1: "負債也不要算到剛剛好。" },
           {
             d1: "這些看起來不夠有效率，但真正遇到意外時，這些「多留一點」的空間往往就是保命的空間。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-015.webp", dec2: "" },
+              { pic1: "./images/v2/v2-015.webp", dec2: "" },
+              { pic1: "./images/v3/v3-015.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -214,6 +307,12 @@ export const arr_article = [
           },
           {
             d1: "<strong>留有餘裕不是膽小，而是承認自己不可能知道所有事情。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-016.webp", dec2: "" },
+              { pic1: "./images/v2/v2-016.webp", dec2: "" },
+              { pic1: "./images/v3/v3-016.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -224,8 +323,15 @@ export const arr_article = [
           { d1: "準備足以支應一段時間生活的緊急備用金。" },
           { d1: "借錢與負債時，不要把自己可以承擔的額度用到百分之百。" },
           { d1: "時間安排不要塞滿，替突發狀況留一點空白。" },
-          { d1: "定期問自己：「如果收入突然中斷一段時間，我撐得住嗎？」" },
-        
+          {
+            d1: "定期問自己：「如果收入突然中斷一段時間，我撐得住嗎？」",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-017.webp", dec2: "" },
+              { pic1: "./images/v2/v2-017.webp", dec2: "" },
+              { pic1: "./images/v3/v3-017.webp", dec2: "" },
+            ],
+          },
         ],
       },
     ],
@@ -233,7 +339,17 @@ export const arr_article = [
   {
     title_id: "n6",
     title: "二、幸福不只看你擁有多少",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-018.webp", dec2: "" },
+          { pic1: "./images/v2/v2-018.webp", dec2: "" },
+          { pic1: "./images/v3/v3-018.webp", dec2: "" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n7",
@@ -245,7 +361,15 @@ export const arr_article = [
       { d1: "但現實並沒有這麼簡單。" },
       { d1: "因為當生活條件變好，我們的期望也會跟著提高。" },
       { d1: "有時候，期望增加的速度甚至比收入還快。" },
-      { d1: "最後就會出現一個奇怪現象：明明擁有得更多，卻沒有比較滿足。" },
+      {
+        d1: "最後就會出現一個奇怪現象：明明擁有得更多，卻沒有比較滿足。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-019.webp", dec2: "" },
+          { pic1: "./images/v2/v2-019.webp", dec2: "" },
+          { pic1: "./images/v3/v3-019.webp", dec2: "" },
+        ],
+      },
     ],
     c1s: [
       {
@@ -260,6 +384,12 @@ export const arr_article = [
           },
           {
             d1: "所以，一個人能不能滿足，不只看他有多少，也要看他拿自己和什麼比較。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-020.webp", dec2: "" },
+              { pic1: "./images/v2/v2-020.webp", dec2: "" },
+              { pic1: "./images/v3/v3-020.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -282,7 +412,15 @@ export const arr_article = [
           {
             d1: "我們很容易拿自己的日常生活，去比較別人精心挑選過的高光時刻。",
           },
-          { d1: "期望自然越拉越高。" },
+          {
+            d1: "期望自然越拉越高。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-021.webp", dec2: "" },
+              { pic1: "./images/v2/v2-021.webp", dec2: "" },
+              { pic1: "./images/v3/v3-021.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -294,7 +432,15 @@ export const arr_article = [
           {
             d1: "當別人的豪宅、名車、旅行與成功每天出現在眼前，我們很容易把極少數人的生活誤認為「正常標準」。",
           },
-          { d1: "這時候，即使自己的生活其實已經不差，仍然會產生不足感。" },
+          {
+            d1: "這時候，即使自己的生活其實已經不差，仍然會產生不足感。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-022.webp", dec2: "" },
+              { pic1: "./images/v2/v2-022.webp", dec2: "" },
+              { pic1: "./images/v3/v3-022.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -313,6 +459,12 @@ export const arr_article = [
           },
           {
             d1: "能夠好好吃飯、好好睡覺、有自己的時間，也有人可以說話，其實已經是很大的幸福。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-023.webp", dec2: "" },
+              { pic1: "./images/v2/v2-023.webp", dec2: "" },
+              { pic1: "./images/v3/v3-023.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -323,8 +475,15 @@ export const arr_article = [
           { d1: "少看會讓自己不斷比較、焦慮的社群內容。" },
           { d1: "買東西前問自己：這是我真正需要，還是只是怕輸給別人？" },
           { d1: "經常想想自己已經擁有的事情，而不是只盯著缺少的部分。" },
-          { d1: "為自己設定「夠了」的標準，不讓欲望永遠往上加碼。" },
-        
+          {
+            d1: "為自己設定「夠了」的標準，不讓欲望永遠往上加碼。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-024.webp", dec2: "" },
+              { pic1: "./images/v2/v2-024.webp", dec2: "" },
+              { pic1: "./images/v3/v3-024.webp", dec2: "" },
+            ],
+          },
         ],
       },
     ],
@@ -332,7 +491,17 @@ export const arr_article = [
   {
     title_id: "n8",
     title: "三、人不是只靠理性做決定",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-025.webp", dec2: "" },
+          { pic1: "./images/v2/v2-025.webp", dec2: "" },
+          { pic1: "./images/v3/v3-025.webp", dec2: "" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n9",
@@ -342,7 +511,15 @@ export const arr_article = [
       { d1: "但真實世界不是這樣運作。" },
       { d1: "人會被情緒影響，也會被故事打動。" },
       { d1: "一個冰冷的數字可能很正確，卻未必能讓人採取行動。" },
-      { d1: "一個有畫面、有情感的故事，反而可能改變人的想法。" },
+      {
+        d1: "一個有畫面、有情感的故事，反而可能改變人的想法。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-026.webp", dec2: "" },
+          { pic1: "./images/v2/v2-026.webp", dec2: "" },
+          { pic1: "./images/v3/v3-026.webp", dec2: "" },
+        ],
+      },
     ],
     c1s: [
       {
@@ -358,7 +535,15 @@ export const arr_article = [
           {
             d1: "真正打動群眾的，不是一連串統計數字，而是一幅大家可以想像的未來畫面。",
           },
-          { d1: "故事讓人產生情緒，而情緒會讓人記住。" },
+          {
+            d1: "故事讓人產生情緒，而情緒會讓人記住。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-027.webp", dec2: "" },
+              { pic1: "./images/v2/v2-027.webp", dec2: "" },
+              { pic1: "./images/v3/v3-027.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -371,7 +556,15 @@ export const arr_article = [
           },
           { d1: "但有人提醒他，其中少了一個最重要的數字：「越南人的感受」。" },
           { d1: "人的意志、恐懼、信念與忍耐力，很難被完整放進試算表。" },
-          { d1: "如果只相信看得到的數據，就可能漏掉真正決定結果的因素。" },
+          {
+            d1: "如果只相信看得到的數據，就可能漏掉真正決定結果的因素。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-028.webp", dec2: "" },
+              { pic1: "./images/v2/v2-028.webp", dec2: "" },
+              { pic1: "./images/v3/v3-028.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -385,7 +578,15 @@ export const arr_article = [
           {
             d1: "所以我們不能因為一件事「邏輯上應該如此」，就假設大家一定會照理性行動。",
           },
-          { d1: "看懂人的情緒，有時比多看十張圖表更重要。" },
+          {
+            d1: "看懂人的情緒，有時比多看十張圖表更重要。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-029.webp", dec2: "" },
+              { pic1: "./images/v2/v2-029.webp", dec2: "" },
+              { pic1: "./images/v3/v3-029.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -401,6 +602,12 @@ export const arr_article = [
           },
           {
             d1: "<strong>先理解人，再講道理，往往比只證明自己是對的更有用。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-030.webp", dec2: "" },
+              { pic1: "./images/v2/v2-030.webp", dec2: "" },
+              { pic1: "./images/v3/v3-030.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -411,8 +618,15 @@ export const arr_article = [
           { d1: "簡報或溝通時，先講一個具體案例，再補上數據。" },
           { d1: "聽到很吸引人的投資故事時，提醒自己再看看實際資料。" },
           { d1: "和家人爭執時，先處理情緒，再討論對錯。" },
-          { d1: "遇到別人做出看似不理性的行為時，先想想背後可能有什麼情緒。" },
-        
+          {
+            d1: "遇到別人做出看似不理性的行為時，先想想背後可能有什麼情緒。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-031.webp", dec2: "" },
+              { pic1: "./images/v2/v2-031.webp", dec2: "" },
+              { pic1: "./images/v3/v3-031.webp", dec2: "" },
+            ],
+          },
         ],
       },
     ],
@@ -420,7 +634,17 @@ export const arr_article = [
   {
     title_id: "n10",
     title: "四、太多、太快、太順，都可能藏著風險",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-032.webp", dec2: "" },
+          { pic1: "./images/v2/v2-032.webp", dec2: "" },
+          { pic1: "./images/v3/v3-032.webp", dec2: "" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n11",
@@ -430,7 +654,15 @@ export const arr_article = [
       { d1: "經濟長期穩定，大家就敢借更多錢。" },
       { d1: "投資市場一直上漲，大家就會覺得風險消失了。" },
       { d1: "公司業績一直成長，就會想開更多店、做更大的投資。" },
-      { d1: "問題是，真正的危機往往就藏在這種「一切都很好」的感覺裡。" },
+      {
+        d1: "問題是，真正的危機往往就藏在這種「一切都很好」的感覺裡。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-033.webp", dec2: "" },
+          { pic1: "./images/v2/v2-033.webp", dec2: "" },
+          { pic1: "./images/v3/v3-033.webp", dec2: "" },
+        ],
+      },
     ],
     c1s: [
       {
@@ -446,6 +678,12 @@ export const arr_article = [
           { d1: "所以，危險不一定出現在大家都很害怕的時候。" },
           {
             d1: "有時候，真正需要小心的，反而是大家都覺得「不會有事」的時候。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-034.webp", dec2: "" },
+              { pic1: "./images/v2/v2-034.webp", dec2: "" },
+              { pic1: "./images/v3/v3-034.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -459,7 +697,15 @@ export const arr_article = [
           { d1: "但速度太快後，品質、服務與品牌體驗開始受到影響。" },
           { d1: "最後，公司不得不關閉大量門市，重新調整方向。" },
           { d1: "這提醒我們：<strong>成長不是越快越好。</strong>" },
-          { d1: "當速度超過一個系統能承受的程度，好事也可能變壞事。" },
+          {
+            d1: "當速度超過一個系統能承受的程度，好事也可能變壞事。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-035.webp", dec2: "" },
+              { pic1: "./images/v2/v2-035.webp", dec2: "" },
+              { pic1: "./images/v3/v3-035.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -473,7 +719,15 @@ export const arr_article = [
           },
           { d1: "最後，他反而因為身體承受不了這種極端成長而早逝。" },
           { d1: "自然界告訴我們一件事：任何東西都有適合自己的尺度。" },
-          { d1: "超過那個尺度，優勢可能開始變成負擔。" },
+          {
+            d1: "超過那個尺度，優勢可能開始變成負擔。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-036.webp", dec2: "" },
+              { pic1: "./images/v2/v2-036.webp", dec2: "" },
+              { pic1: "./images/v3/v3-036.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -488,7 +742,15 @@ export const arr_article = [
           {
             d1: "一個人長期不休息，最後可能不是多完成幾件事，而是直接失去工作的能力。",
           },
-          { d1: "所以我越來越覺得，<strong>適可而止也是一種能力。</strong>" },
+          {
+            d1: "所以我越來越覺得，<strong>適可而止也是一種能力。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-037.webp", dec2: "" },
+              { pic1: "./images/v2/v2-037.webp", dec2: "" },
+              { pic1: "./images/v3/v3-037.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -498,8 +760,15 @@ export const arr_article = [
           { d1: "市場很順的時候，反而檢查一次自己的風險。" },
           { d1: "達成原本目標後，不要因為貪心而無限加碼。" },
           { d1: "每週保留真正沒有任務的空白時間。" },
-          { d1: "不把金錢、行程與體力全部使用到極限。" },
-        
+          {
+            d1: "不把金錢、行程與體力全部使用到極限。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-038.webp", dec2: "" },
+              { pic1: "./images/v2/v2-038.webp", dec2: "" },
+              { pic1: "./images/v3/v3-038.webp", dec2: "" },
+            ],
+          },
         ],
       },
     ],
@@ -507,7 +776,17 @@ export const arr_article = [
   {
     title_id: "n12",
     title: "五、真正的大改變，通常來自很慢的累積",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-039.webp", dec2: "" },
+          { pic1: "./images/v2/v2-039.webp", dec2: "" },
+          { pic1: "./images/v3/v3-039.webp", dec2: "" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n13",
@@ -518,7 +797,15 @@ export const arr_article = [
       { d1: "一家公司可以幾天之內倒閉。" },
       { d1: "一個人的名聲，也可能因為一件事瞬間崩掉。" },
       { d1: "但是很多真正重要的好事，都發生得非常慢。" },
-      { d1: "慢到我們每天根本感覺不到。" },
+      {
+        d1: "慢到我們每天根本感覺不到。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-040.webp", dec2: "" },
+          { pic1: "./images/v2/v2-040.webp", dec2: "" },
+          { pic1: "./images/v3/v3-040.webp", dec2: "" },
+        ],
+      },
     ],
     c1s: [
       {
@@ -533,7 +820,15 @@ export const arr_article = [
           { d1: "因為平均每年的進步很小。" },
           { d1: "每一年只進步一點點，看起來不驚人。" },
           { d1: "可是經過幾十年累積，結果就非常巨大。" },
-          { d1: "這就是複利最迷人的地方。" },
+          {
+            d1: "這就是複利最迷人的地方。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-041.webp", dec2: "" },
+              { pic1: "./images/v2/v2-041.webp", dec2: "" },
+              { pic1: "./images/v3/v3-041.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -547,7 +842,15 @@ export const arr_article = [
             d1: "但醫療進步、生活品質改善、科技效率提升，常常是一年一點點地發生。",
           },
           { d1: "如果只看每天的新聞，我們很容易誤以為世界一直在變壞。" },
-          { d1: "如果把時間拉長，往往會看到另一個完全不同的世界。" },
+          {
+            d1: "如果把時間拉長，往往會看到另一個完全不同的世界。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-042.webp", dec2: "" },
+              { pic1: "./images/v2/v2-042.webp", dec2: "" },
+              { pic1: "./images/v3/v3-042.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -559,7 +862,15 @@ export const arr_article = [
           { d1: "電燈不是某一天突然從零出現。" },
           { d1: "在愛迪生之前，已經有許多研究者累積了重要發現。" },
           { d1: "愛迪生是在前人的基礎上，再往前推一步。" },
-          { d1: "很多改變世界的成果，都是這樣出現的。" },
+          {
+            d1: "很多改變世界的成果，都是這樣出現的。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-043.webp", dec2: "" },
+              { pic1: "./images/v2/v2-043.webp", dec2: "" },
+              { pic1: "./images/v3/v3-043.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -574,6 +885,12 @@ export const arr_article = [
           { d1: "如果每次遇到不順就放棄，就等不到複利真正發生。" },
           {
             d1: "所以長期思維不是一句口號，而是願意忍受過程中的反覆與不舒服。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-044.webp", dec2: "" },
+              { pic1: "./images/v2/v2-044.webp", dec2: "" },
+              { pic1: "./images/v3/v3-044.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -590,6 +907,12 @@ export const arr_article = [
           { d1: "年紀越大越能體會：人生真正可靠的成長，很少是突然跳上去的。" },
           {
             d1: "大部分時候，它是慢慢累積，累積到某一天，你才發現自己已經走了很遠。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-045.webp", dec2: "" },
+              { pic1: "./images/v2/v2-045.webp", dec2: "" },
+              { pic1: "./images/v3/v3-045.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -600,8 +923,15 @@ export const arr_article = [
           { d1: "少追逐每天都在變的消息，多讀長期仍然有用的知識。" },
           { d1: "投資、學習、運動都選擇自己能長期做下去的方法。" },
           { d1: "不追求每一天都很厲害，只追求不要輕易中斷。" },
-          { d1: "固定做一件微小但正向的事，讓時間幫你放大成果。" },
-        
+          {
+            d1: "固定做一件微小但正向的事，讓時間幫你放大成果。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-046.webp", dec2: "" },
+              { pic1: "./images/v2/v2-046.webp", dec2: "" },
+              { pic1: "./images/v3/v3-046.webp", dec2: "" },
+            ],
+          },
         ],
       },
     ],
@@ -609,7 +939,17 @@ export const arr_article = [
   {
     title_id: "n14",
     title: "六、每個人的選擇，背後都有他的利益與過去",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-047.webp", dec2: "" },
+          { pic1: "./images/v2/v2-047.webp", dec2: "" },
+          { pic1: "./images/v3/v3-047.webp", dec2: "" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n15",
@@ -619,7 +959,15 @@ export const arr_article = [
       { d1: "有時候答案不是這個人特別壞，也不是他完全沒有理性。" },
       { d1: "可能只是因為他面前有很強的誘因。" },
       { d1: "另一種情況，是他的過去和我們完全不同。" },
-      { d1: "一個人曾經經歷過什麼，會長期影響他怎麼看金錢、安全與風險。" },
+      {
+        d1: "一個人曾經經歷過什麼，會長期影響他怎麼看金錢、安全與風險。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-048.webp", dec2: "" },
+          { pic1: "./images/v2/v2-048.webp", dec2: "" },
+          { pic1: "./images/v3/v3-048.webp", dec2: "" },
+        ],
+      },
     ],
     c1s: [
       {
@@ -635,7 +983,15 @@ export const arr_article = [
           },
           { d1: "人很會替符合自己利益的事情找理由。" },
           { d1: "這就是誘因可怕的地方。" },
-          { d1: "它不一定直接逼你做錯事，而是讓你慢慢相信自己做的是對的。" },
+          {
+            d1: "它不一定直接逼你做錯事，而是讓你慢慢相信自己做的是對的。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-049.webp", dec2: "" },
+              { pic1: "./images/v2/v2-049.webp", dec2: "" },
+              { pic1: "./images/v3/v3-049.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -646,7 +1002,15 @@ export const arr_article = [
           { d1: "一場嚴重洪水差點淹死實驗室裡的狗。" },
           { d1: "即使狗後來活下來，行為卻出現巨大改變。" },
           { d1: "原本建立好的制約反應消失，個性也和以前不一樣。" },
-          { d1: "身體活下來了，但經歷留下了深刻印記。" },
+          {
+            d1: "身體活下來了，但經歷留下了深刻印記。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-050.webp", dec2: "" },
+              { pic1: "./images/v2/v2-050.webp", dec2: "" },
+              { pic1: "./images/v3/v3-050.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -659,7 +1023,15 @@ export const arr_article = [
           { d1: "後來即使環境已經變好，他們的習慣也不一定會跟著改變。" },
           { d1: "因為對他們來說，風險不是課本上的概念，而是真正痛過的記憶。" },
           { d1: "下一代如果沒有同樣經歷，就很容易覺得上一代「太保守」。" },
-          { d1: "但換個角度想，那其實是過去留下的疤痕。" },
+          {
+            d1: "但換個角度想，那其實是過去留下的疤痕。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-051.webp", dec2: "" },
+              { pic1: "./images/v2/v2-051.webp", dec2: "" },
+              { pic1: "./images/v3/v3-051.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -671,7 +1043,15 @@ export const arr_article = [
           { d1: "兩邊都覺得對方不懂。" },
           { d1: "但很多時候，真正的差異不是知識，而是人生經驗。" },
           { d1: "活在不同年代的人，看到的風險自然不同。" },
-          { d1: "如果只爭論誰對誰錯，往往永遠沒有答案。" },
+          {
+            d1: "如果只爭論誰對誰錯，往往永遠沒有答案。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-052.webp", dec2: "" },
+              { pic1: "./images/v2/v2-052.webp", dec2: "" },
+              { pic1: "./images/v3/v3-052.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -689,7 +1069,15 @@ export const arr_article = [
           },
           { d1: "明白這些之後，面對不同意見時，我會比較願意先問一句：" },
           { d1: "<strong>「你以前經歷過什麼，讓你現在這樣想？」</strong>" },
-          { d1: "這句話常常比「你怎麼這麼不合理」更有用。" },
+          {
+            d1: "這句話常常比「你怎麼這麼不合理」更有用。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-053.webp", dec2: "" },
+              { pic1: "./images/v2/v2-053.webp", dec2: "" },
+              { pic1: "./images/v3/v3-053.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -701,8 +1089,13 @@ export const arr_article = [
           { d1: "面對長輩的保守與焦慮，多一點理解，不急著貼上落伍標籤。" },
           {
             d1: "重大決策時，提醒自己：我現在相信的事情，是因為證據，還是因為我希望它對我有利？",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-054.webp", dec2: "" },
+              { pic1: "./images/v2/v2-054.webp", dec2: "" },
+              { pic1: "./images/v3/v3-054.webp", dec2: "" },
+            ],
           },
-        
         ],
       },
     ],
@@ -710,14 +1103,32 @@ export const arr_article = [
   {
     title_id: "n16",
     title: "七、六大核心觀念整理",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-055.webp", dec2: "" },
+          { pic1: "./images/v2/v2-055.webp", dec2: "" },
+          { pic1: "./images/v3/v3-055.webp", dec2: "" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n16-1",
         d1: "1.意外才是常態",
         c2s: [
           { d1: "真正的風險，通常不是已經想到的事，而是完全沒想到的事。" },
-          { d1: "與其追求完美預測，不如替人生留下足夠的安全空間。" },
+          {
+            d1: "與其追求完美預測，不如替人生留下足夠的安全空間。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-056.webp", dec2: "" },
+              { pic1: "./images/v2/v2-056.webp", dec2: "" },
+              { pic1: "./images/v3/v3-056.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -725,7 +1136,15 @@ export const arr_article = [
         d1: "2.幸福取決於期望與現實的距離",
         c2s: [
           { d1: "擁有更多不一定更快樂。" },
-          { d1: "如果期望增加得更快，得到再多也可能永遠不滿足。" },
+          {
+            d1: "如果期望增加得更快，得到再多也可能永遠不滿足。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-057.webp", dec2: "" },
+              { pic1: "./images/v2/v2-057.webp", dec2: "" },
+              { pic1: "./images/v3/v3-057.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -733,7 +1152,15 @@ export const arr_article = [
         d1: "3.世界不是完全靠理性運作",
         c2s: [
           { d1: "人會被情緒與故事影響。" },
-          { d1: "數據很重要，但不能忽略那些難以量化的人性。" },
+          {
+            d1: "數據很重要，但不能忽略那些難以量化的人性。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-058.webp", dec2: "" },
+              { pic1: "./images/v2/v2-058.webp", dec2: "" },
+              { pic1: "./images/v3/v3-058.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -741,7 +1168,15 @@ export const arr_article = [
         d1: "4.太多、太快、太順都可能帶來反效果",
         c2s: [
           { d1: "穩定太久容易讓人放鬆警戒。" },
-          { d1: "成長超過能承受的速度，優勢也可能變成問題。" },
+          {
+            d1: "成長超過能承受的速度，優勢也可能變成問題。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-059.webp", dec2: "" },
+              { pic1: "./images/v2/v2-059.webp", dec2: "" },
+              { pic1: "./images/v3/v3-059.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -749,7 +1184,15 @@ export const arr_article = [
         d1: "5.真正的大成果通常來自長期累積",
         c2s: [
           { d1: "壞消息很快，好消息很慢。" },
-          { d1: "每天很小的進步，經過時間累積，可能比一次爆發更有力量。" },
+          {
+            d1: "每天很小的進步，經過時間累積，可能比一次爆發更有力量。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-060.webp", dec2: "" },
+              { pic1: "./images/v2/v2-060.webp", dec2: "" },
+              { pic1: "./images/v3/v3-060.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -758,8 +1201,15 @@ export const arr_article = [
         c2s: [
           { d1: "利益會改變立場。" },
           { d1: "創傷會留下長期痕跡。" },
-          { d1: "看懂別人的經歷，才能真正理解他的選擇。" },
-        
+          {
+            d1: "看懂別人的經歷，才能真正理解他的選擇。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-061.webp", dec2: "" },
+              { pic1: "./images/v2/v2-061.webp", dec2: "" },
+              { pic1: "./images/v3/v3-061.webp", dec2: "" },
+            ],
+          },
         ],
       },
     ],
@@ -767,7 +1217,17 @@ export const arr_article = [
   {
     title_id: "n17",
     title: "結論~世界一直變，但人性一如既往",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-062.webp", dec2: "" },
+          { pic1: "./images/v2/v2-062.webp", dec2: "" },
+          { pic1: "./images/v3/v3-062.webp", dec2: "" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n17-1",
@@ -778,7 +1238,15 @@ export const arr_article = [
           { d1: "AI 會取代哪些工作？" },
           { d1: "房價還會不會漲？" },
           { d1: "投資市場會不會崩盤？" },
-          { d1: "這些問題當然重要，但沒有人能長期準確回答。" },
+          {
+            d1: "這些問題當然重要，但沒有人能長期準確回答。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-063.webp", dec2: "" },
+              { pic1: "./images/v2/v2-063.webp", dec2: "" },
+              { pic1: "./images/v3/v3-063.webp", dec2: "" },
+            ],
+          },
         ],
       },
       {
@@ -794,6 +1262,12 @@ export const arr_article = [
           { d1: "我們無法一天看到複利的成果，但可以把時間拉長。" },
           {
             d1: "我們也無法要求每個人和自己一樣思考，但可以理解彼此不同的誘因與生命經驗。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-064.webp", dec2: "" },
+              { pic1: "./images/v2/v2-064.webp", dec2: "" },
+              { pic1: "./images/v3/v3-064.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -815,6 +1289,12 @@ export const arr_article = [
           },
           {
             d1: "<strong>關於理解：</strong>當我不同意一個人時，我有沒有先理解他曾經經歷過什麼？",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-065.webp", dec2: "" },
+              { pic1: "./images/v2/v2-065.webp", dec2: "" },
+              { pic1: "./images/v3/v3-065.webp", dec2: "" },
+            ],
           },
         ],
       },
@@ -838,8 +1318,14 @@ export const arr_article = [
           { d1: "這也正是《一如既往》最值得帶走的提醒：" },
           {
             d1: "<strong>我們不需要知道所有未來，只需要更了解那些始終不變的人。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-066.webp", dec2: "" },
+              { pic1: "./images/v2/v2-066.webp", dec2: "" },
+              { pic1: "./images/v3/v3-066.webp", dec2: "" },
+            ],
           },
-        
+
           {
             d1: "本文依據《一如既往：人性不變法則》原始讀書心得內容重新整理，以白話、短段落與條列方式呈現；保留原有六大核心觀念、主要案例與讀書心得主軸。",
           },

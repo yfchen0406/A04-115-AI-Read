@@ -1,0 +1,4148 @@
+{
+  "title": "原子習慣",
+  "audio": "assets/audio/旁白_A_20260913_153002.mp3",
+  "duration": 1284.88,
+  "scenes": [
+    {
+      "id": 1,
+      "sceneId": "scene-001",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 1.5,
+      "end": 9.263,
+      "duration": 7.763,
+      "narration": "你有沒有過這樣的經驗？",
+      "subtitle": "你有沒有過這樣的經驗？",
+      "image": "assets/images/scenes/001.webp",
+      "visualBeat": "人物停下手邊動作，面對與「你有沒有過這樣的經驗？」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "你有沒有過這樣的經驗？",
+          "start": 1.5,
+          "end": 9.263
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "sceneId": "scene-002",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 9.263,
+      "end": 22.9,
+      "duration": 13.637,
+      "narration": "每到了新的一年，我們總是懷抱著滿腔熱血，列出一長串雄心勃勃的新年目標：例如今年要瘦十公斤、要讀完二十本書，或是要徹底改變生活作息。",
+      "subtitle": "每到了新的一年，我們總是懷抱著滿腔熱血，列出一長串雄心勃勃的新年目標：例如今年要瘦十公斤、要讀完二十本書，或是要徹底改變生活作息。",
+      "image": "assets/images/scenes/002.webp",
+      "visualBeat": "居家書桌前，年曆、體重計、成疊書籍與運動鞋同時出現，人物興奮列下多個新年目標",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "每到了新的一年，我們總是懷抱著滿腔熱血，列出一長串雄心勃勃的新年目標：例如今年要瘦十公斤、要讀完二十本書，或是要徹底改變生活作息。",
+          "start": 9.263,
+          "end": 22.9
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "sceneId": "scene-003",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 23.08,
+      "end": 31.166,
+      "duration": 8.086,
+      "narration": "然而，過了兩三個星期之後，熱情逐漸退去，我們又不知不覺回到了原本的生活軌道上。",
+      "subtitle": "然而，過了兩三個星期之後，熱情逐漸退去，我們又不知不覺回到了原本的生活軌道上。",
+      "image": "assets/images/scenes/003.webp",
+      "visualBeat": "幾週後同一空間變得凌亂，未使用的運動器材積灰、書本闔上，人物疲倦回到舊習慣",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "然而，過了兩三個星期之後，熱情逐漸退去，我們又不知不覺回到了原本的生活軌道上。",
+          "start": 23.08,
+          "end": 31.166
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "sceneId": "scene-004",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 31.166,
+      "end": 35.52,
+      "duration": 4.354,
+      "narration": "為什麼我們明明渴望改變，卻總是半途而廢呢？",
+      "subtitle": "為什麼我們明明渴望改變，卻總是半途而廢呢？",
+      "image": "assets/images/scenes/004.webp",
+      "visualBeat": "人物停下手邊動作，面對與「為什麼我們明明渴望改變，卻總是半途而廢呢？」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "為什麼我們明明渴望改變，卻總是半途而廢呢？",
+          "start": 31.166,
+          "end": 35.52
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "sceneId": "scene-005",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 35.7,
+      "end": 37.632,
+      "duration": 1.932,
+      "narration": "問題究竟出在哪裡？",
+      "subtitle": "問題究竟出在哪裡？",
+      "image": "assets/images/scenes/005.webp",
+      "visualBeat": "人物停下手邊動作，面對與「問題究竟出在哪裡？」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "問題究竟出在哪裡？",
+          "start": 35.7,
+          "end": 37.632
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "sceneId": "scene-006",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 37.632,
+      "end": 44.93,
+      "duration": 7.298,
+      "narration": "我們常常過度高估決定性瞬間的重要性，卻輕視了每天做點微小改善的價值。",
+      "subtitle": "我們常常過度高估決定性瞬間的重要性，卻輕視了每天做點微小改善的價值。",
+      "image": "assets/images/scenes/006.webp",
+      "visualBeat": "把「我們常常過度高估決定性瞬間的重要性，卻輕視了每天做點微小改善的價值。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "我們常常過度高估決定性瞬間的重要性，卻輕視了每天做點微小改善的價值。",
+          "start": 37.632,
+          "end": 44.93
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "sceneId": "scene-007",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 44.93,
+      "end": 50.94,
+      "duration": 6.01,
+      "narration": "我們總以為想要達成非凡的成就，就必須做出驚天動地的壯舉。",
+      "subtitle": "我們總以為想要達成非凡的成就，就必須做出驚天動地的壯舉。",
+      "image": "assets/images/scenes/007.webp",
+      "visualBeat": "把「我們總以為想要達成非凡的成就，就必須做出驚天動地的壯舉。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "我們總以為想要達成非凡的成就，就必須做出驚天動地的壯舉。",
+          "start": 44.93,
+          "end": 50.94
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "sceneId": "scene-008",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 51.12,
+      "end": 58.081,
+      "duration": 6.961,
+      "narration": "但事實上，真正徹底改變人生的，往往是那些在當下毫不起眼的百分之一改善。",
+      "subtitle": "但事實上，真正徹底改變人生的，往往是那些在當下毫不起眼的百分之一改善。",
+      "image": "assets/images/scenes/008.webp",
+      "visualBeat": "兩條從同一起點微幅分岔的人生路徑，一側階梯緩慢向上、一側逐步向下",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "但事實上，真正徹底改變人生的，往往是那些在當下毫不起眼的百分之一改善。",
+          "start": 51.12,
+          "end": 58.081
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "sceneId": "scene-009",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 58.081,
+      "end": 65.24,
+      "duration": 7.159,
+      "narration": "如果每天進步百分之一，持續一年之後，累積的成果會讓你成長三十七點七八倍。",
+      "subtitle": "如果每天進步百分之一，持續一年之後，累積的成果會讓你成長三十七點七八倍。",
+      "image": "assets/images/scenes/009.webp",
+      "visualBeat": "兩條從同一起點微幅分岔的人生路徑，一側階梯緩慢向上、一側逐步向下",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "如果每天進步百分之一，持續一年之後，累積的成果會讓你成長三十七點七八倍。",
+          "start": 58.081,
+          "end": 65.24
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "sceneId": "scene-010",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 65.42,
+      "end": 72.104,
+      "duration": 6.684,
+      "narration": "相反地，如果每天退步百分之一，一年之後你的能力會衰退到趨近於零。",
+      "subtitle": "相反地，如果每天退步百分之一，一年之後你的能力會衰退到趨近於零。",
+      "image": "assets/images/scenes/010.webp",
+      "visualBeat": "兩條從同一起點微幅分岔的人生路徑，一側階梯緩慢向上、一側逐步向下",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "相反地，如果每天退步百分之一，一年之後你的能力會衰退到趨近於零。",
+          "start": 65.42,
+          "end": 72.104
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "sceneId": "scene-011",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 72.104,
+      "end": 80.46000000000001,
+      "duration": 8.356,
+      "narration": "這就像飛機起飛時，如果機首航向南偏轉了三點五度，最後降落的地點將會相差幾百英里。",
+      "subtitle": "這就像飛機起飛時，如果機首航向南偏轉了三點五度，最後降落的地點將會相差幾百英里。",
+      "image": "assets/images/scenes/011.webp",
+      "visualBeat": "飛機起飛後形成兩條只差微小角度的航線，最後抵達完全不同的城市",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "這就像飛機起飛時，如果機首航向南偏轉了三點五度，最後降落的地點將會相差幾百英里。",
+          "start": 72.104,
+          "end": 80.46
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "sceneId": "scene-012",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 80.64,
+      "end": 86.092,
+      "duration": 5.452,
+      "narration": "日常習慣的微小改變，會將你的人生引導到截然不同的目的地。",
+      "subtitle": "日常習慣的微小改變，會將你的人生引導到截然不同的目的地。",
+      "image": "assets/images/scenes/012.webp",
+      "visualBeat": "把「日常習慣的微小改變，會將你的人生引導到截然不同的目的地。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "日常習慣的微小改變，會將你的人生引導到截然不同的目的地。",
+          "start": 80.64,
+          "end": 86.092
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "sceneId": "scene-013",
+      "chapterId": 1,
+      "chapterTitle": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "start": 86.092,
+      "end": 93.88,
+      "duration": 7.788,
+      "narration": "今天我們就透過詹姆斯．克利爾的經典著作《原子習慣》，一起解開行為改變的終極祕密。",
+      "subtitle": "今天我們就透過詹姆斯．克利爾的經典著作《原子習慣》，一起解開行為改變的終極祕密。",
+      "image": "assets/images/scenes/013.webp",
+      "visualBeat": "把「今天我們就透過詹姆斯．克利爾的經典著作《原子習慣》，一起解開行為改變的終極祕密。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "今天我們就透過詹姆斯．克利爾的經典著作《原子習慣》，一起解開行為改變的終極祕密。",
+          "start": 86.092,
+          "end": 93.88
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "sceneId": "scene-014",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 94.06,
+      "end": 106.53999999999999,
+      "duration": 12.48,
+      "narration": "說起作者詹姆斯．克利爾，他研究習慣的起點，源自於人生中一場突如其來的致命災難。",
+      "subtitle": "說起作者詹姆斯．克利爾，他研究習慣的起點，源自於人生中一場突如其來的致命災難。",
+      "image": "assets/images/scenes/014.webp",
+      "visualBeat": "把「說起作者詹姆斯．克利爾，他研究習慣的起點，源自於人生中一場突如其來的致命災難。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "說起作者詹姆斯．克利爾，他研究習慣的起點，源自於人生中一場突如其來的致命災難。",
+          "start": 94.06,
+          "end": 106.54
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "sceneId": "scene-015",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 106.72,
+      "end": 113.036,
+      "duration": 6.316,
+      "narration": "高中二年級的最後一天，他不幸被同學揮脫的棒球棒迎面擊中面部。",
+      "subtitle": "高中二年級的最後一天，他不幸被同學揮脫的棒球棒迎面擊中面部。",
+      "image": "assets/images/scenes/015.webp",
+      "visualBeat": "高中棒球場意外瞬間，脫手球棒飛向少年面部，隊友驚訝，停在撞擊前一刻",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "高中二年級的最後一天，他不幸被同學揮脫的棒球棒迎面擊中面部。",
+          "start": 106.72,
+          "end": 113.036
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "sceneId": "scene-016",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 113.036,
+      "end": 122.72,
+      "duration": 9.684,
+      "narration": "那次撞擊極其猛烈，導致他的鼻梁斷裂、顱部多處骨折，兩個眼窩也完全破碎，甚至一度陷入人工昏迷。",
+      "subtitle": "那次撞擊極其猛烈，導致他的鼻梁斷裂、顱部多處骨折，兩個眼窩也完全破碎，甚至一度陷入人工昏迷。",
+      "image": "assets/images/scenes/016.webp",
+      "visualBeat": "把「那次撞擊極其猛烈，導致他的鼻梁斷裂、顱部多處骨折，兩個眼窩也完全破碎，甚至一度陷入人工昏迷」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "那次撞擊極其猛烈，導致他的鼻梁斷裂、顱部多處骨折，兩個眼窩也完全破碎，甚至一度陷入人工昏迷。",
+          "start": 113.036,
+          "end": 122.72
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "sceneId": "scene-017",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 122.9,
+      "end": 128.244,
+      "duration": 5.344,
+      "narration": "這場嚴重的傷勢，差點摧毀了他的運動員生涯與人生。",
+      "subtitle": "這場嚴重的傷勢，差點摧毀了他的運動員生涯與人生。",
+      "image": "assets/images/scenes/017.webp",
+      "visualBeat": "把「這場嚴重的傷勢，差點摧毀了他的運動員生涯與人生。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "這場嚴重的傷勢，差點摧毀了他的運動員生涯與人生。",
+          "start": 122.9,
+          "end": 128.244
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "sceneId": "scene-018",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 128.244,
+      "end": 133.142,
+      "duration": 4.898,
+      "narration": "在漫長的復原過程中，克利爾沒有等待奇蹟發生。",
+      "subtitle": "在漫長的復原過程中，克利爾沒有等待奇蹟發生。",
+      "image": "assets/images/scenes/018.webp",
+      "visualBeat": "把「在漫長的復原過程中，克利爾沒有等待奇蹟發生。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "在漫長的復原過程中，克利爾沒有等待奇蹟發生。",
+          "start": 128.244,
+          "end": 133.142
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "sceneId": "scene-019",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 133.142,
+      "end": 141.38,
+      "duration": 8.238,
+      "narration": "他在丹尼森大學就讀期間，從小處著手，建立了規律的睡眠、讀書與重量訓練習慣。",
+      "subtitle": "他在丹尼森大學就讀期間，從小處著手，建立了規律的睡眠、讀書與重量訓練習慣。",
+      "image": "assets/images/scenes/019.webp",
+      "visualBeat": "大學生活日常：規律睡眠、閱讀與重量訓練，人物透過小習慣逐步恢復",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "他在丹尼森大學就讀期間，從小處著手，建立了規律的睡眠、讀書與重量訓練習慣。",
+          "start": 133.142,
+          "end": 141.38
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "sceneId": "scene-020",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 141.56,
+      "end": 154.71800000000002,
+      "duration": 13.158,
+      "narration": "憑藉著這些微小的習慣，他不僅重返棒球場被選為隊長，大四那年更入選全美明星陣容，並榮獲該校最高學業獎項「總統獎章」。",
+      "subtitle": "憑藉著這些微小的習慣，他不僅重返棒球場被選為隊長，大四那年更入選全美明星陣容，並榮獲該校最高學業獎項「總統獎章」。",
+      "image": "assets/images/scenes/020.webp",
+      "visualBeat": "棒球隊長在球場頒獎，球衣、獎章與隊友共同呈現長期習慣累積成果",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "憑藉著這些微小的習慣，他不僅重返棒球場被選為隊長，大四那年更入選全美明星陣容，並榮獲該校最高學業獎項「總統獎章」。",
+          "start": 141.56,
+          "end": 154.718
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "sceneId": "scene-021",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 154.71800000000002,
+      "end": 160.72,
+      "duration": 6.002,
+      "narration": "這段經驗讓他深刻體會到，生命的品質取決於習慣的品質。",
+      "subtitle": "這段經驗讓他深刻體會到，生命的品質取決於習慣的品質。",
+      "image": "assets/images/scenes/021.webp",
+      "visualBeat": "把「這段經驗讓他深刻體會到，生命的品質取決於習慣的品質。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "這段經驗讓他深刻體會到，生命的品質取決於習慣的品質。",
+          "start": 154.718,
+          "end": 160.72
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "sceneId": "scene-022",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 160.9,
+      "end": 169.413,
+      "duration": 8.513,
+      "narration": "到了二零一二年，他開始在網站發表習慣研究文章，電子報訂閱人數快速成長到五十萬人。",
+      "subtitle": "到了二零一二年，他開始在網站發表習慣研究文章，電子報訂閱人數快速成長到五十萬人。",
+      "image": "assets/images/scenes/022.webp",
+      "visualBeat": "人物在筆電前持續寫習慣文章，背景信封與讀者剪影逐步增加",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "到了二零一二年，他開始在網站發表習慣研究文章，電子報訂閱人數快速成長到五十萬人。",
+          "start": 160.9,
+          "end": 169.413
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "sceneId": "scene-023",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 169.413,
+      "end": 177.5,
+      "duration": 8.087,
+      "narration": "克利爾寫這本書真正想解決的核心問題是：為什麼我們試圖改變習慣時總是如此掙扎？",
+      "subtitle": "克利爾寫這本書真正想解決的核心問題是：為什麼我們試圖改變習慣時總是如此掙扎？",
+      "image": "assets/images/scenes/023.webp",
+      "visualBeat": "人物停下手邊動作，面對與「克利爾寫這本書真正想解決的核心問題是：為什麼我們試圖改變習慣」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "克利爾寫這本書真正想解決的核心問題是：為什麼我們試圖改變習慣時總是如此掙扎？",
+          "start": 169.413,
+          "end": 177.5
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "sceneId": "scene-024",
+      "chapterId": 2,
+      "chapterTitle": "第一章｜James Clear 與這本書真正想解決的問題",
+      "start": 177.68,
+      "end": 183.409,
+      "duration": 5.729,
+      "narration": "答案是，我們試圖改變的東西不對，而且改變的方式也錯了。",
+      "subtitle": "答案是，我們試圖改變的東西不對，而且改變的方式也錯了。",
+      "image": "assets/images/scenes/024.webp",
+      "visualBeat": "把「答案是，我們試圖改變的東西不對，而且改變的方式也錯了。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "答案是，我們試圖改變的東西不對，而且改變的方式也錯了。",
+          "start": 177.68,
+          "end": 183.409
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "sceneId": "scene-025",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 183.409,
+      "end": 195.08,
+      "duration": 11.671,
+      "narration": "但問題來了，如果微小的改變這麼有效，為什麼我們平時總是感覺不到呢？",
+      "subtitle": "但問題來了，如果微小的改變這麼有效，為什麼我們平時總是感覺不到呢？",
+      "image": "assets/images/scenes/025.webp",
+      "visualBeat": "人物停下手邊動作，面對與「但問題來了，如果微小的改變這麼有效，為什麼我們平時總是感覺不」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "但問題來了，如果微小的改變這麼有效，為什麼我們平時總是感覺不到呢？",
+          "start": 183.409,
+          "end": 195.08
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "sceneId": "scene-026",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 195.26,
+      "end": 199.019,
+      "duration": 3.759,
+      "narration": "因為成果往往存在著極大的延遲性。",
+      "subtitle": "因為成果往往存在著極大的延遲性。",
+      "image": "assets/images/scenes/026.webp",
+      "visualBeat": "把「因為成果往往存在著極大的延遲性。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "因為成果往往存在著極大的延遲性。",
+          "start": 195.26,
+          "end": 199.019
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "sceneId": "scene-027",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 199.019,
+      "end": 202.308,
+      "duration": 3.289,
+      "narration": "習慣是自我改善這件事的複利。",
+      "subtitle": "習慣是自我改善這件事的複利。",
+      "image": "assets/images/scenes/027.webp",
+      "visualBeat": "把「習慣是自我改善這件事的複利。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "習慣是自我改善這件事的複利。",
+          "start": 199.019,
+          "end": 202.308
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "sceneId": "scene-028",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 202.308,
+      "end": 210.06,
+      "duration": 7.752,
+      "narration": "就如同錢財透過複利加倍，習慣的效果也會在重複執行的過程中成倍放大。",
+      "subtitle": "就如同錢財透過複利加倍，習慣的效果也會在重複執行的過程中成倍放大。",
+      "image": "assets/images/scenes/028.webp",
+      "visualBeat": "把「就如同錢財透過複利加倍，習慣的效果也會在重複執行的過程中成倍放大。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "就如同錢財透過複利加倍，習慣的效果也會在重複執行的過程中成倍放大。",
+          "start": 202.308,
+          "end": 210.06
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "sceneId": "scene-029",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 210.24,
+      "end": 216.61599999999999,
+      "duration": 6.376,
+      "narration": "你的財產是財務習慣的滯後指標，你的體重是飲食習慣的滯後指標。",
+      "subtitle": "你的財產是財務習慣的滯後指標，你的體重是飲食習慣的滯後指標。",
+      "image": "assets/images/scenes/029.webp",
+      "visualBeat": "把「你的財產是財務習慣的滯後指標，你的體重是飲食習慣的滯後指標。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "你的財產是財務習慣的滯後指標，你的體重是飲食習慣的滯後指標。",
+          "start": 210.24,
+          "end": 216.616
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "sceneId": "scene-030",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 216.61599999999999,
+      "end": 222.779,
+      "duration": 6.163,
+      "narration": "想像你面前的桌上擺著一個冰塊，房間裡的溫度是華氏二十五度。",
+      "subtitle": "想像你面前的桌上擺著一個冰塊，房間裡的溫度是華氏二十五度。",
+      "image": "assets/images/scenes/030.webp",
+      "visualBeat": "木桌上的冰塊與溫度計，光線逐步變暖，冰塊在臨界溫度開始融化",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "想像你面前的桌上擺著一個冰塊，房間裡的溫度是華氏二十五度。",
+          "start": 216.616,
+          "end": 222.779
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "sceneId": "scene-031",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 222.779,
+      "end": 231.28,
+      "duration": 8.501,
+      "narration": "溫度開始以極其緩慢的速度上升：二十六度、二十七度、二十八度，冰塊看起來毫無變化。",
+      "subtitle": "溫度開始以極其緩慢的速度上升：二十六度、二十七度、二十八度，冰塊看起來毫無變化。",
+      "image": "assets/images/scenes/031.webp",
+      "visualBeat": "木桌上的冰塊與溫度計，光線逐步變暖，冰塊在臨界溫度開始融化",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "溫度開始以極其緩慢的速度上升：二十六度、二十七度、二十八度，冰塊看起來毫無變化。",
+          "start": 222.779,
+          "end": 231.28
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "sceneId": "scene-032",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 231.46,
+      "end": 237.421,
+      "duration": 5.961,
+      "narration": "直到溫度升到華氏三十二度，也就是攝氏零度時，冰塊開始融化了。",
+      "subtitle": "直到溫度升到華氏三十二度，也就是攝氏零度時，冰塊開始融化了。",
+      "image": "assets/images/scenes/032.webp",
+      "visualBeat": "木桌上的冰塊與溫度計，光線逐步變暖，冰塊在臨界溫度開始融化",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "直到溫度升到華氏三十二度，也就是攝氏零度時，冰塊開始融化了。",
+          "start": 231.46,
+          "end": 237.421
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "sceneId": "scene-033",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 237.421,
+      "end": 243.58,
+      "duration": 6.159,
+      "narration": "一度之別，表面上與先前的增溫幅度沒有差異，卻啟動了劇烈的相變。",
+      "subtitle": "一度之別，表面上與先前的增溫幅度沒有差異，卻啟動了劇烈的相變。",
+      "image": "assets/images/scenes/033.webp",
+      "visualBeat": "把「一度之別，表面上與先前的增溫幅度沒有差異，卻啟動了劇烈的相變。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "一度之別，表面上與先前的增溫幅度沒有差異，卻啟動了劇烈的相變。",
+          "start": 237.421,
+          "end": 243.58
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "sceneId": "scene-034",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 243.76,
+      "end": 247.268,
+      "duration": 3.508,
+      "narration": "這就是所謂的「潛伏之力的停滯期」。",
+      "subtitle": "這就是所謂的「潛伏之力的停滯期」。",
+      "image": "assets/images/scenes/034.webp",
+      "visualBeat": "把「這就是所謂的「潛伏之力的停滯期」。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "這就是所謂的「潛伏之力的停滯期」。",
+          "start": 243.76,
+          "end": 247.268
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "sceneId": "scene-035",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 247.268,
+      "end": 255.523,
+      "duration": 8.255,
+      "narration": "人們常期待進步是線性的，前幾週或幾個月看不到效果就感到挫折，陷入了「失望之谷」。",
+      "subtitle": "人們常期待進步是線性的，前幾週或幾個月看不到效果就感到挫折，陷入了「失望之谷」。",
+      "image": "assets/images/scenes/035.webp",
+      "visualBeat": "人物走在看似平坦的山谷，地下卻有持續累積的上升曲線，遠處才突然突破",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "人們常期待進步是線性的，前幾週或幾個月看不到效果就感到挫折，陷入了「失望之谷」。",
+          "start": 247.268,
+          "end": 255.523
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "sceneId": "scene-036",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 255.523,
+      "end": 261.92,
+      "duration": 6.397,
+      "narration": "就像竹子前五年在地底衍生廣大根系，隨後在六週內暴長至九十呎高；",
+      "subtitle": "就像竹子前五年在地底衍生廣大根系，隨後在六週內暴長至九十呎高；",
+      "image": "assets/images/scenes/036.webp",
+      "visualBeat": "竹林剖面，地面多年幾乎無變化，地下根系龐大，另一側竹子突然拔高",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "就像竹子前五年在地底衍生廣大根系，隨後在六週內暴長至九十呎高；",
+          "start": 255.523,
+          "end": 261.92
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "sceneId": "scene-037",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 262.1,
+      "end": 270.323,
+      "duration": 8.223,
+      "narration": "石匠敲打石頭一百下沒有裂縫，第一百一下石頭斷裂，是先前每一擊共同促成的。",
+      "subtitle": "石匠敲打石頭一百下沒有裂縫，第一百一下石頭斷裂，是先前每一擊共同促成的。",
+      "image": "assets/images/scenes/037.webp",
+      "visualBeat": "工匠反覆敲擊巨石，表面細裂紋逐漸累積，下一擊即將裂開",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "石匠敲打石頭一百下沒有裂縫，第一百一下石頭斷裂，是先前每一擊共同促成的。",
+          "start": 262.1,
+          "end": 270.323
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "sceneId": "scene-038",
+      "chapterId": 3,
+      "chapterTitle": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "start": 270.323,
+      "end": 273.52,
+      "duration": 3.197,
+      "narration": "只要堅持夠久，突破終會到來。",
+      "subtitle": "只要堅持夠久，突破終會到來。",
+      "image": "assets/images/scenes/038.webp",
+      "visualBeat": "把「只要堅持夠久，突破終會到來。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "只要堅持夠久，突破終會到來。",
+          "start": 270.323,
+          "end": 273.52
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "sceneId": "scene-039",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 273.52,
+      "end": 277.86,
+      "duration": 4.34,
+      "narration": "",
+      "subtitle": "",
+      "image": "assets/images/scenes/039.webp",
+      "visualBeat": "把「」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "",
+          "start": 273.52,
+          "end": 277.86
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "sceneId": "scene-040",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 278.04,
+      "end": 287.551,
+      "duration": 9.511,
+      "narration": "知道微小習慣會產生複利之後，下一個問題就來了：我們該如何確保自己持續朝對的方向前進？",
+      "subtitle": "知道微小習慣會產生複利之後，下一個問題就來了：我們該如何確保自己持續朝對的方向前進？",
+      "image": "assets/images/scenes/040.webp",
+      "visualBeat": "人物停下手邊動作，面對與「知道微小習慣會產生複利之後，下一個問題就來了：我們該如何確保」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "知道微小習慣會產生複利之後，下一個問題就來了：我們該如何確保自己持續朝對的方向前進？",
+          "start": 278.04,
+          "end": 287.551
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "sceneId": "scene-041",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 287.551,
+      "end": 292.76,
+      "duration": 5.209,
+      "narration": "大多數人第一個想到的，就是設定一個明確的目標。",
+      "subtitle": "大多數人第一個想到的，就是設定一個明確的目標。",
+      "image": "assets/images/scenes/041.webp",
+      "visualBeat": "把「大多數人第一個想到的，就是設定一個明確的目標。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "大多數人第一個想到的，就是設定一個明確的目標。",
+          "start": 287.551,
+          "end": 292.76
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "sceneId": "scene-042",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 292.94,
+      "end": 303.657,
+      "duration": 10.717,
+      "narration": "創作《呆伯特》的漫畫家史考特．亞當斯曾說：目標是你想要達到的成果，而系統是讓你達到那些成果的過程。",
+      "subtitle": "創作《呆伯特》的漫畫家史考特．亞當斯曾說：目標是你想要達到的成果，而系統是讓你達到那些成果的過程。",
+      "image": "assets/images/scenes/042.webp",
+      "visualBeat": "把「創作《呆伯特》的漫畫家史考特．亞當斯曾說：目標是你想要達到的成果，而系統是讓你達到那些成果」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "創作《呆伯特》的漫畫家史考特．亞當斯曾說：目標是你想要達到的成果，而系統是讓你達到那些成果的過程。",
+          "start": 292.94,
+          "end": 303.657
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "sceneId": "scene-043",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 303.657,
+      "end": 306.5,
+      "duration": 2.843,
+      "narration": "專注於目標存在著四大盲點。",
+      "subtitle": "專注於目標存在著四大盲點。",
+      "image": "assets/images/scenes/043.webp",
+      "visualBeat": "把「專注於目標存在著四大盲點。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "專注於目標存在著四大盲點。",
+          "start": 303.657,
+          "end": 306.5
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "sceneId": "scene-044",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 306.68,
+      "end": 317.98,
+      "duration": 11.3,
+      "narration": "第一，贏家與輸家往往擁有相同的目標，例如所有參賽的奧運選手都想奪得金牌，因此光是設定目標並不能讓你勝出。",
+      "subtitle": "第一，贏家與輸家往往擁有相同的目標，例如所有參賽的奧運選手都想奪得金牌，因此光是設定目標並不能讓你勝出。",
+      "image": "assets/images/scenes/044.webp",
+      "visualBeat": "多位奧運選手都望向同一面金牌，背後卻呈現各自不同的訓練系統",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "第一，贏家與輸家往往擁有相同的目標，例如所有參賽的奧運選手都想奪得金牌，因此光是設定目標並不能讓你勝出。",
+          "start": 306.68,
+          "end": 317.98
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "sceneId": "scene-045",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 317.98,
+      "end": 321.24,
+      "duration": 3.26,
+      "narration": "第二，達成目標只是暫時的改變。",
+      "subtitle": "第二，達成目標只是暫時的改變。",
+      "image": "assets/images/scenes/045.webp",
+      "visualBeat": "把「第二，達成目標只是暫時的改變。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "第二，達成目標只是暫時的改變。",
+          "start": 317.98,
+          "end": 321.24
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "sceneId": "scene-046",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 321.42,
+      "end": 331.032,
+      "duration": 9.612,
+      "narration": "當你憑藉一時衝動清理乾淨混亂的房間，如果背後邋遢的習慣不改，要不了多久房間又會堆滿雜物。",
+      "subtitle": "當你憑藉一時衝動清理乾淨混亂的房間，如果背後邋遢的習慣不改，要不了多久房間又會堆滿雜物。",
+      "image": "assets/images/scenes/046.webp",
+      "visualBeat": "房間被一次整理乾淨，但生活動線仍保留隨手亂放習慣，暗示系統沒有改變",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "當你憑藉一時衝動清理乾淨混亂的房間，如果背後邋遢的習慣不改，要不了多久房間又會堆滿雜物。",
+          "start": 321.42,
+          "end": 331.032
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "sceneId": "scene-047",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 331.032,
+      "end": 338.46,
+      "duration": 7.428,
+      "narration": "第三，目標會限制你的快樂，讓人陷入「只要達成目標我就會快樂」的陷阱；",
+      "subtitle": "第三，目標會限制你的快樂，讓人陷入「只要達成目標我就會快樂」的陷阱；",
+      "image": "assets/images/scenes/047.webp",
+      "visualBeat": "把「第三，目標會限制你的快樂，讓人陷入「只要達成目標我就會快樂」的陷阱；」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "第三，目標會限制你的快樂，讓人陷入「只要達成目標我就會快樂」的陷阱；",
+          "start": 331.032,
+          "end": 338.46
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "sceneId": "scene-048",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 338.64,
+      "end": 345.5,
+      "duration": 6.86,
+      "narration": "第四，目標容易引發溜溜球效應，衝過終點線後便失去了繼續前進的動力。",
+      "subtitle": "第四，目標容易引發溜溜球效應，衝過終點線後便失去了繼續前進的動力。",
+      "image": "assets/images/scenes/048.webp",
+      "visualBeat": "跑者越過終點後沒有停下，而是沿著仍在延伸的道路繼續前進",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "第四，目標容易引發溜溜球效應，衝過終點線後便失去了繼續前進的動力。",
+          "start": 338.64,
+          "end": 345.5
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "sceneId": "scene-049",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 345.5,
+      "end": 351.32,
+      "duration": 5.82,
+      "narration": "設定目標是為了贏得比賽，建立系統則是為了持續待在比賽裡。",
+      "subtitle": "設定目標是為了贏得比賽，建立系統則是為了持續待在比賽裡。",
+      "image": "assets/images/scenes/049.webp",
+      "visualBeat": "把「設定目標是為了贏得比賽，建立系統則是為了持續待在比賽裡。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "設定目標是為了贏得比賽，建立系統則是為了持續待在比賽裡。",
+          "start": 345.5,
+          "end": 351.32
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "sceneId": "scene-050",
+      "chapterId": 4,
+      "chapterTitle": "第三章｜別只追目標，先設計你的系統",
+      "start": 351.5,
+      "end": 356.614,
+      "duration": 5.114,
+      "narration": "決定你成功或失敗的不是你的目標，而是你的系統。",
+      "subtitle": "決定你成功或失敗的不是你的目標，而是你的系統。",
+      "image": "assets/images/scenes/050.webp",
+      "visualBeat": "把「決定你成功或失敗的不是你的目標，而是你的系統。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "決定你成功或失敗的不是你的目標，而是你的系統。",
+          "start": 351.5,
+          "end": 356.614
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "sceneId": "scene-051",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 356.614,
+      "end": 366.62,
+      "duration": 10.006,
+      "narration": "如果系統這麼重要，那我們該從哪裡開始重新設計系統呢？",
+      "subtitle": "如果系統這麼重要，那我們該從哪裡開始重新設計系統呢？",
+      "image": "assets/images/scenes/051.webp",
+      "visualBeat": "人物停下手邊動作，面對與「如果系統這麼重要，那我們該從哪裡開始重新設計系統呢？」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "如果系統這麼重要，那我們該從哪裡開始重新設計系統呢？",
+          "start": 356.614,
+          "end": 366.62
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "sceneId": "scene-052",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 366.8,
+      "end": 377.88,
+      "duration": 11.08,
+      "narration": "這就牽涉到行為改變的三個層次：結果的改變、過程的改變，以及最深層的「身份認同型習慣，也就是 identity-based habits」。",
+      "subtitle": "這就牽涉到行為改變的三個層次：結果的改變、過程的改變，以及最深層的「身份認同型習慣，也就是 identity-based habits」。",
+      "image": "assets/images/scenes/052.webp",
+      "visualBeat": "三層同心結構：外層成果、中層日常流程、核心人物身份剪影",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "這就牽涉到行為改變的三個層次：結果的改變、過程的改變，以及最深層的「身份認同型習慣，也就是 identity-based habits」。",
+          "start": 366.8,
+          "end": 377.88
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "sceneId": "scene-053",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 378.06,
+      "end": 386.743,
+      "duration": 8.683,
+      "narration": "大多數人改變習慣時，焦點都放在結果上，例如「我要減重十公斤」或「我要寫一本書」。",
+      "subtitle": "大多數人改變習慣時，焦點都放在結果上，例如「我要減重十公斤」或「我要寫一本書」。",
+      "image": "assets/images/scenes/053.webp",
+      "visualBeat": "把「大多數人改變習慣時，焦點都放在結果上，例如「我要減重十公斤」或「我要寫一本書」。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "大多數人改變習慣時，焦點都放在結果上，例如「我要減重十公斤」或「我要寫一本書」。",
+          "start": 378.06,
+          "end": 386.743
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "sceneId": "scene-054",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 386.743,
+      "end": 394.34000000000003,
+      "duration": 7.597,
+      "narration": "但最持久的改變，是從改變身份認同開始，焦點放在「你想成為什麼樣的人」。",
+      "subtitle": "但最持久的改變，是從改變身份認同開始，焦點放在「你想成為什麼樣的人」。",
+      "image": "assets/images/scenes/054.webp",
+      "visualBeat": "人物停下手邊動作，面對與「但最持久的改變，是從改變身份認同開始，焦點放在「你想成為什麼」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "但最持久的改變，是從改變身份認同開始，焦點放在「你想成為什麼樣的人」。",
+          "start": 386.743,
+          "end": 394.34
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "sceneId": "scene-055",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 394.52,
+      "end": 402.949,
+      "duration": 8.429,
+      "narration": "當遞菸給兩個人時，第一個人說「不用了，我在戒菸」，他依然認為自己是個吸菸者；",
+      "subtitle": "當遞菸給兩個人時，第一個人說「不用了，我在戒菸」，他依然認為自己是個吸菸者；",
+      "image": "assets/images/scenes/055.webp",
+      "visualBeat": "把「當遞菸給兩個人時，第一個人說「不用了，我在戒菸」，他依然認為自己是個吸菸者；」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "當遞菸給兩個人時，第一個人說「不用了，我在戒菸」，他依然認為自己是個吸菸者；",
+          "start": 394.52,
+          "end": 402.949
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "sceneId": "scene-056",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 402.949,
+      "end": 409.15999999999997,
+      "duration": 6.211,
+      "narration": "第二個人說「不用了，我不抽菸」，他的身份已經徹底轉變了。",
+      "subtitle": "第二個人說「不用了，我不抽菸」，他的身份已經徹底轉變了。",
+      "image": "assets/images/scenes/056.webp",
+      "visualBeat": "聚會中有人遞菸，人物平靜擺手拒絕，神情篤定，呈現身份已改變",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "第二個人說「不用了，我不抽菸」，他的身份已經徹底轉變了。",
+          "start": 402.949,
+          "end": 409.16
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "sceneId": "scene-057",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 409.34000000000003,
+      "end": 414.374,
+      "duration": 5.034,
+      "narration": "企業家布萊恩．克拉克從小就有緊張時咬指甲的惡習。",
+      "subtitle": "企業家布萊恩．克拉克從小就有緊張時咬指甲的惡習。",
+      "image": "assets/images/scenes/057.webp",
+      "visualBeat": "修甲桌前人物欣賞健康整潔指甲，手不再靠近嘴邊",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "企業家布萊恩．克拉克從小就有緊張時咬指甲的惡習。",
+          "start": 409.34,
+          "end": 414.374
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "sceneId": "scene-058",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 414.374,
+      "end": 427.38,
+      "duration": 13.006,
+      "narration": "某天他靠意志力讓指甲長出來後去修指甲，修甲師傅誇讚他的指甲非常健康迷人，這讓他對自己的指甲產生了自豪感，從此再也沒咬過指甲。",
+      "subtitle": "某天他靠意志力讓指甲長出來後去修指甲，修甲師傅誇讚他的指甲非常健康迷人，這讓他對自己的指甲產生了自豪感，從此再也沒咬過指甲。",
+      "image": "assets/images/scenes/058.webp",
+      "visualBeat": "把「某天他靠意志力讓指甲長出來後去修指甲，修甲師傅誇讚他的指甲非常健康迷人，這讓他對自己的指甲」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "某天他靠意志力讓指甲長出來後去修指甲，修甲師傅誇讚他的指甲非常健康迷人，這讓他對自己的指甲產生了自豪感，從此再也沒咬過指甲。",
+          "start": 414.374,
+          "end": 427.38
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "sceneId": "scene-059",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 427.56,
+      "end": 433.136,
+      "duration": 5.576,
+      "narration": "你的每一個行動都像是一張選票，投給你想要成為的那種人。",
+      "subtitle": "你的每一個行動都像是一張選票，投給你想要成為的那種人。",
+      "image": "assets/images/scenes/059.webp",
+      "visualBeat": "透明投票箱裡累積每日行動票卡，人物每天投入一張，未來身份逐漸清晰",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "你的每一個行動都像是一張選票，投給你想要成為的那種人。",
+          "start": 427.56,
+          "end": 433.136
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "sceneId": "scene-060",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 433.136,
+      "end": 435.82,
+      "duration": 2.684,
+      "narration": "寫一頁書，你就是寫作的人；",
+      "subtitle": "寫一頁書，你就是寫作的人；",
+      "image": "assets/images/scenes/060.webp",
+      "visualBeat": "把「寫一頁書，你就是寫作的人；」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "寫一頁書，你就是寫作的人；",
+          "start": 433.136,
+          "end": 435.82
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "sceneId": "scene-061",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 435.82,
+      "end": 438.711,
+      "duration": 2.891,
+      "narration": "去健身一次，你就是運動的人。",
+      "subtitle": "去健身一次，你就是運動的人。",
+      "image": "assets/images/scenes/061.webp",
+      "visualBeat": "把「去健身一次，你就是運動的人。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "去健身一次，你就是運動的人。",
+          "start": 435.82,
+          "end": 438.711
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "sceneId": "scene-062",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 438.711,
+      "end": 444.08,
+      "duration": 5.369,
+      "narration": "不需要百分之百的得票率，只要讓好習慣獲得多數票即可。",
+      "subtitle": "不需要百分之百的得票率，只要讓好習慣獲得多數票即可。",
+      "image": "assets/images/scenes/062.webp",
+      "visualBeat": "把「不需要百分之百的得票率，只要讓好習慣獲得多數票即可。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "不需要百分之百的得票率，只要讓好習慣獲得多數票即可。",
+          "start": 438.711,
+          "end": 444.08
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "sceneId": "scene-063",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 444.26,
+      "end": 450.66,
+      "duration": 6.4,
+      "narration": "就像克利爾一位減重一百磅的朋友，整天自問「一個健康的人會怎麼做？",
+      "subtitle": "就像克利爾一位減重一百磅的朋友，整天自問「一個健康的人會怎麼做？",
+      "image": "assets/images/scenes/063.webp",
+      "visualBeat": "人物停下手邊動作，面對與「就像克利爾一位減重一百磅的朋友，整天自問「一個健康的人會怎麼」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "就像克利爾一位減重一百磅的朋友，整天自問「一個健康的人會怎麼做？",
+          "start": 444.26,
+          "end": 450.66
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "sceneId": "scene-064",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 450.66,
+      "end": 451.06,
+      "duration": 0.4,
+      "narration": "」。",
+      "subtitle": "」。",
+      "image": "assets/images/scenes/064.webp",
+      "visualBeat": "把「」。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "」。",
+          "start": 450.66,
+          "end": 451.06
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "sceneId": "scene-065",
+      "chapterId": 5,
+      "chapterTitle": "第四章｜真正持久的改變，是身份改變",
+      "start": 451.06,
+      "end": 455.65999999999997,
+      "duration": 4.6,
+      "narration": "先決定你想成為誰，再用每天的小勝利向自己證明。",
+      "subtitle": "先決定你想成為誰，再用每天的小勝利向自己證明。",
+      "image": "assets/images/scenes/065.webp",
+      "visualBeat": "把「先決定你想成為誰，再用每天的小勝利向自己證明。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "先決定你想成為誰，再用每天的小勝利向自己證明。",
+          "start": 451.06,
+          "end": 455.66
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "sceneId": "scene-066",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 455.65999999999997,
+      "end": 459.86,
+      "duration": 4.2,
+      "narration": "",
+      "subtitle": "",
+      "image": "assets/images/scenes/066.webp",
+      "visualBeat": "把「」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "",
+          "start": 455.66,
+          "end": 459.86
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "sceneId": "scene-067",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 460.04,
+      "end": 467.745,
+      "duration": 7.705,
+      "narration": "那麼，當我們決定要成為某種人之後，大腦究竟是如何把一個行為變成自動化的習慣呢？",
+      "subtitle": "那麼，當我們決定要成為某種人之後，大腦究竟是如何把一個行為變成自動化的習慣呢？",
+      "image": "assets/images/scenes/067.webp",
+      "visualBeat": "人物停下手邊動作，面對與「那麼，當我們決定要成為某種人之後，大腦究竟是如何把一個行為變」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "那麼，當我們決定要成為某種人之後，大腦究竟是如何把一個行為變成自動化的習慣呢？",
+          "start": 460.04,
+          "end": 467.745
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "sceneId": "scene-068",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 467.745,
+      "end": 473.08,
+      "duration": 5.335,
+      "narration": "早在在一八九八年，心理學家桑代克做過一個貓咪迷籠實驗。",
+      "subtitle": "早在在一八九八年，心理學家桑代克做過一個貓咪迷籠實驗。",
+      "image": "assets/images/scenes/068.webp",
+      "visualBeat": "早期心理學實驗室，貓在迷籠中探索並壓到操作桿，籠門打開、外面有食物",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "早在在一八九八年，心理學家桑代克做過一個貓咪迷籠實驗。",
+          "start": 467.745,
+          "end": 473.08
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "sceneId": "scene-069",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 473.26,
+      "end": 482.62,
+      "duration": 9.36,
+      "narration": "他把貓放進設計有操作桿的籠子裡，起初貓在籠內混亂探索，碰巧壓到操作桿逃出並獲得食物。",
+      "subtitle": "他把貓放進設計有操作桿的籠子裡，起初貓在籠內混亂探索，碰巧壓到操作桿逃出並獲得食物。",
+      "image": "assets/images/scenes/069.webp",
+      "visualBeat": "把「他把貓放進設計有操作桿的籠子裡，起初貓在籠內混亂探索，碰巧壓到操作桿逃出並獲得食物。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "他把貓放進設計有操作桿的籠子裡，起初貓在籠內混亂探索，碰巧壓到操作桿逃出並獲得食物。",
+          "start": 473.26,
+          "end": 482.62
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "sceneId": "scene-070",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 482.62,
+      "end": 488.86,
+      "duration": 6.24,
+      "narration": "經過多次試驗後，貓逃脫的時間從平均一分半縮短至六點三秒。",
+      "subtitle": "經過多次試驗後，貓逃脫的時間從平均一分半縮短至六點三秒。",
+      "image": "assets/images/scenes/070.webp",
+      "visualBeat": "把「經過多次試驗後，貓逃脫的時間從平均一分半縮短至六點三秒。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "經過多次試驗後，貓逃脫的時間從平均一分半縮短至六點三秒。",
+          "start": 482.62,
+          "end": 488.86
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "sceneId": "scene-071",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 489.04,
+      "end": 493.484,
+      "duration": 4.444,
+      "narration": "桑代克發現：帶來可喜後果的行為會被重複。",
+      "subtitle": "桑代克發現：帶來可喜後果的行為會被重複。",
+      "image": "assets/images/scenes/071.webp",
+      "visualBeat": "把「桑代克發現：帶來可喜後果的行為會被重複。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "桑代克發現：帶來可喜後果的行為會被重複。",
+          "start": 489.04,
+          "end": 493.484
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "sceneId": "scene-072",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 493.484,
+      "end": 503.04,
+      "duration": 9.556,
+      "narration": "大腦為了以最少能量解決生活問題，會建立包含四個步驟的習慣迴路：提示、渴望、回應、獎賞。",
+      "subtitle": "大腦為了以最少能量解決生活問題，會建立包含四個步驟的習慣迴路：提示、渴望、回應、獎賞。",
+      "image": "assets/images/scenes/072.webp",
+      "visualBeat": "把「大腦為了以最少能量解決生活問題，會建立包含四個步驟的習慣迴路：提示、渴望、回應、獎賞。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "大腦為了以最少能量解決生活問題，會建立包含四個步驟的習慣迴路：提示、渴望、回應、獎賞。",
+          "start": 493.484,
+          "end": 503.04
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "sceneId": "scene-073",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 503.22,
+      "end": 506.601,
+      "duration": 3.381,
+      "narration": "我們用一個日常案例來串起這四個步驟。",
+      "subtitle": "我們用一個日常案例來串起這四個步驟。",
+      "image": "assets/images/scenes/073.webp",
+      "visualBeat": "把「我們用一個日常案例來串起這四個步驟。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "我們用一個日常案例來串起這四個步驟。",
+          "start": 503.22,
+          "end": 506.601
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "sceneId": "scene-074",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 506.601,
+      "end": 509.794,
+      "duration": 3.193,
+      "narration": "當你走進昏暗的房間，這是「提示」；",
+      "subtitle": "當你走進昏暗的房間，這是「提示」；",
+      "image": "assets/images/scenes/074.webp",
+      "visualBeat": "人物走入昏暗房間，門口亮光與室內黑暗對比，視線尋找牆上開關",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "當你走進昏暗的房間，這是「提示」；",
+          "start": 506.601,
+          "end": 509.794
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "sceneId": "scene-075",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 509.794,
+      "end": 512.799,
+      "duration": 3.005,
+      "narration": "你想要看得見事物，這是「渴望」；",
+      "subtitle": "你想要看得見事物，這是「渴望」；",
+      "image": "assets/images/scenes/075.webp",
+      "visualBeat": "把「你想要看得見事物，這是「渴望」；」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "你想要看得見事物，這是「渴望」；",
+          "start": 509.794,
+          "end": 512.799
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "sceneId": "scene-076",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 512.799,
+      "end": 516.18,
+      "duration": 3.381,
+      "narration": "你伸手按下牆上的開關，這是「回應」；",
+      "subtitle": "你伸手按下牆上的開關，這是「回應」；",
+      "image": "assets/images/scenes/076.webp",
+      "visualBeat": "手指按下燈開關的近景，背景房間正要亮起",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "你伸手按下牆上的開關，這是「回應」；",
+          "start": 512.799,
+          "end": 516.18
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "sceneId": "scene-077",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 516.36,
+      "end": 520.129,
+      "duration": 3.769,
+      "narration": "燈亮了，房間被照亮，這是「獎賞」。",
+      "subtitle": "燈亮了，房間被照亮，這是「獎賞」。",
+      "image": "assets/images/scenes/077.webp",
+      "visualBeat": "房間瞬間被暖光照亮，人物放鬆，物件輪廓清楚浮現",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "燈亮了，房間被照亮，這是「獎賞」。",
+          "start": 516.36,
+          "end": 520.129
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "sceneId": "scene-078",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 520.129,
+      "end": 526.338,
+      "duration": 6.209,
+      "narration": "提示引起渴望，渴望激發回應，回應提供獎賞，獎賞滿足渴望。",
+      "subtitle": "提示引起渴望，渴望激發回應，回應提供獎賞，獎賞滿足渴望。",
+      "image": "assets/images/scenes/078.webp",
+      "visualBeat": "把「提示引起渴望，渴望激發回應，回應提供獎賞，獎賞滿足渴望。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "提示引起渴望，渴望激發回應，回應提供獎賞，獎賞滿足渴望。",
+          "start": 520.129,
+          "end": 526.338
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "sceneId": "scene-079",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 526.338,
+      "end": 534.32,
+      "duration": 7.982,
+      "narration": "這個神經學回饋迴路在毫秒間完成，重複多次後，就成為不假思索的自動化習慣。",
+      "subtitle": "這個神經學回饋迴路在毫秒間完成，重複多次後，就成為不假思索的自動化習慣。",
+      "image": "assets/images/scenes/079.webp",
+      "visualBeat": "把「這個神經學回饋迴路在毫秒間完成，重複多次後，就成為不假思索的自動化習慣。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "這個神經學回饋迴路在毫秒間完成，重複多次後，就成為不假思索的自動化習慣。",
+          "start": 526.338,
+          "end": 534.32
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "sceneId": "scene-080",
+      "chapterId": 6,
+      "chapterTitle": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "start": 534.5,
+      "end": 547.78,
+      "duration": 13.28,
+      "narration": "基於這四個步驟，作者提出了打造好習慣的「行為改變四法則」：讓提示顯而易見、讓習慣有吸引力、讓行動輕而易舉、讓獎賞令人滿足。",
+      "subtitle": "基於這四個步驟，作者提出了打造好習慣的「行為改變四法則」：讓提示顯而易見、讓習慣有吸引力、讓行動輕而易舉、讓獎賞令人滿足。",
+      "image": "assets/images/scenes/080.webp",
+      "visualBeat": "把「基於這四個步驟，作者提出了打造好習慣的「行為改變四法則」：讓提示顯而易見、讓習慣有吸引力、」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "基於這四個步驟，作者提出了打造好習慣的「行為改變四法則」：讓提示顯而易見、讓習慣有吸引力、讓行動輕而易舉、讓獎賞令人滿足。",
+          "start": 534.5,
+          "end": 547.78
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "sceneId": "scene-081",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 547.96,
+      "end": 558.129,
+      "duration": 10.169,
+      "narration": "了解了習慣迴路之後，我們來看第一法則：如何讓提示顯而易見。",
+      "subtitle": "了解了習慣迴路之後，我們來看第一法則：如何讓提示顯而易見。",
+      "image": "assets/images/scenes/081.webp",
+      "visualBeat": "把「了解了習慣迴路之後，我們來看第一法則：如何讓提示顯而易見。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "了解了習慣迴路之後，我們來看第一法則：如何讓提示顯而易見。",
+          "start": 547.96,
+          "end": 558.129
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "sceneId": "scene-082",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 558.129,
+      "end": 567.0,
+      "duration": 8.871,
+      "narration": "日本新幹線鐵路系統採用一套名為「指差確認」的安全程序，司機會手指號誌大聲喊出指令。",
+      "subtitle": "日本新幹線鐵路系統採用一套名為「指差確認」的安全程序，司機會手指號誌大聲喊出指令。",
+      "image": "assets/images/scenes/082.webp",
+      "visualBeat": "新幹線駕駛艙，司機手指號誌並大聲確認，儀表與軌道延伸",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "日本新幹線鐵路系統採用一套名為「指差確認」的安全程序，司機會手指號誌大聲喊出指令。",
+          "start": 558.129,
+          "end": 567.0
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "sceneId": "scene-083",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 567.18,
+      "end": 575.646,
+      "duration": 8.466,
+      "narration": "這套看似愚蠢的儀式，將無意識的自動化習慣拉回有意識層次，減少了百分之八十五的錯誤。",
+      "subtitle": "這套看似愚蠢的儀式，將無意識的自動化習慣拉回有意識層次，減少了百分之八十五的錯誤。",
+      "image": "assets/images/scenes/083.webp",
+      "visualBeat": "把「這套看似愚蠢的儀式，將無意識的自動化習慣拉回有意識層次，減少了百分之八十五的錯誤。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "這套看似愚蠢的儀式，將無意識的自動化習慣拉回有意識層次，減少了百分之八十五的錯誤。",
+          "start": 567.18,
+          "end": 575.646
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "sceneId": "scene-084",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 575.646,
+      "end": 577.092,
+      "duration": 1.446,
+      "narration": "改變始於覺察。",
+      "subtitle": "改變始於覺察。",
+      "image": "assets/images/scenes/084.webp",
+      "visualBeat": "把「改變始於覺察。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "改變始於覺察。",
+          "start": 575.646,
+          "end": 577.092
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "sceneId": "scene-085",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 577.092,
+      "end": 583.7,
+      "duration": 6.608,
+      "narration": "你可以製作一張「習慣記分卡」，列出每日習慣，標示好習慣與壞習慣。",
+      "subtitle": "你可以製作一張「習慣記分卡」，列出每日習慣，標示好習慣與壞習慣。",
+      "image": "assets/images/scenes/085.webp",
+      "visualBeat": "桌面攤開每日習慣清單，人物逐項檢視早起、閱讀、滑手機等行為",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "你可以製作一張「習慣記分卡」，列出每日習慣，標示好習慣與壞習慣。",
+          "start": 577.092,
+          "end": 583.7
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "sceneId": "scene-086",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 583.88,
+      "end": 592.078,
+      "duration": 8.198,
+      "narration": "接著，運用「實施意圖」擬訂計畫，公式是：我會於某個時間，在某個地點進行某個行為。",
+      "subtitle": "接著，運用「實施意圖」擬訂計畫，公式是：我會於某個時間，在某個地點進行某個行為。",
+      "image": "assets/images/scenes/086.webp",
+      "visualBeat": "人物在行事曆上把時間、地點與行為排成具體計畫，旁邊放對應物件",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "接著，運用「實施意圖」擬訂計畫，公式是：我會於某個時間，在某個地點進行某個行為。",
+          "start": 583.88,
+          "end": 592.078
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "sceneId": "scene-087",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 592.078,
+      "end": 600.48,
+      "duration": 8.402,
+      "narration": "另一個極具威力的技巧是「習慣堆疊」，公式是：做完目前的習慣之後，我會執行新的習慣。",
+      "subtitle": "另一個極具威力的技巧是「習慣堆疊」，公式是：做完目前的習慣之後，我會執行新的習慣。",
+      "image": "assets/images/scenes/087.webp",
+      "visualBeat": "咖啡沖好後，人物自然接著坐下靜心，一個既有行為銜接新行為",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "另一個極具威力的技巧是「習慣堆疊」，公式是：做完目前的習慣之後，我會執行新的習慣。",
+          "start": 592.078,
+          "end": 600.48
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "sceneId": "scene-088",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 600.66,
+      "end": 607.92,
+      "duration": 7.26,
+      "narration": "例如「倒好咖啡之後，我會靜心一分鐘」，利用舊習慣的慣性帶動新習慣。",
+      "subtitle": "例如「倒好咖啡之後，我會靜心一分鐘」，利用舊習慣的慣性帶動新習慣。",
+      "image": "assets/images/scenes/088.webp",
+      "visualBeat": "把「例如「倒好咖啡之後，我會靜心一分鐘」，利用舊習慣的慣性帶動新習慣。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "例如「倒好咖啡之後，我會靜心一分鐘」，利用舊習慣的慣性帶動新習慣。",
+          "start": 600.66,
+          "end": 607.92
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "sceneId": "scene-089",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 607.92,
+      "end": 611.44,
+      "duration": 3.52,
+      "narration": "此外，環境設計比意志力更加可靠。",
+      "subtitle": "此外，環境設計比意志力更加可靠。",
+      "image": "assets/images/scenes/089.webp",
+      "visualBeat": "把「此外，環境設計比意志力更加可靠。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "此外，環境設計比意志力更加可靠。",
+          "start": 607.92,
+          "end": 611.44
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "sceneId": "scene-090",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 611.44,
+      "end": 622.22,
+      "duration": 10.78,
+      "narration": "麻省總醫院的桑代克醫師透過改變冷飲櫃擺設，在不對員工說話的情況下，讓水銷量大幅增加、可樂銷量下降。",
+      "subtitle": "麻省總醫院的桑代克醫師透過改變冷飲櫃擺設，在不對員工說話的情況下，讓水銷量大幅增加、可樂銷量下降。",
+      "image": "assets/images/scenes/090.webp",
+      "visualBeat": "醫院餐廳冷飲櫃重新擺設，水放在最醒目位置，可樂退到不顯眼處",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "麻省總醫院的桑代克醫師透過改變冷飲櫃擺設，在不對員工說話的情況下，讓水銷量大幅增加、可樂銷量下降。",
+          "start": 611.44,
+          "end": 622.22
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "sceneId": "scene-091",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 622.4,
+      "end": 630.295,
+      "duration": 7.895,
+      "narration": "想要多吃蘋果就把蘋果放在餐桌中央的大碗裡，想要練習吉他就把吉他立在客廳中央。",
+      "subtitle": "想要多吃蘋果就把蘋果放在餐桌中央的大碗裡，想要練習吉他就把吉他立在客廳中央。",
+      "image": "assets/images/scenes/091.webp",
+      "visualBeat": "明亮客廳中，蘋果碗放在餐桌中央，吉他立在沙發旁伸手可及",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "想要多吃蘋果就把蘋果放在餐桌中央的大碗裡，想要練習吉他就把吉他立在客廳中央。",
+          "start": 622.4,
+          "end": 630.295
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "sceneId": "scene-092",
+      "chapterId": 7,
+      "chapterTitle": "第六章｜第一法則：讓提示顯而易見",
+      "start": 630.295,
+      "end": 636.32,
+      "duration": 6.025,
+      "narration": "打造一個空間、一個用途的穩定環境，讓好習慣的提示無所不在。",
+      "subtitle": "打造一個空間、一個用途的穩定環境，讓好習慣的提示無所不在。",
+      "image": "assets/images/scenes/092.webp",
+      "visualBeat": "把「打造一個空間、一個用途的穩定環境，讓好習慣的提示無所不在。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "打造一個空間、一個用途的穩定環境，讓好習慣的提示無所不在。",
+          "start": 630.295,
+          "end": 636.32
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "sceneId": "scene-093",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 636.5,
+      "end": 645.93,
+      "duration": 9.43,
+      "narration": "如果提示已經很明顯了，但我們還是提不起勁去執行，該怎麼辦？",
+      "subtitle": "如果提示已經很明顯了，但我們還是提不起勁去執行，該怎麼辦？",
+      "image": "assets/images/scenes/093.webp",
+      "visualBeat": "人物停下手邊動作，面對與「如果提示已經很明顯了，但我們還是提不起勁去執行，該怎麼辦？」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "如果提示已經很明顯了，但我們還是提不起勁去執行，該怎麼辦？",
+          "start": 636.5,
+          "end": 645.93
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "sceneId": "scene-094",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 645.93,
+      "end": 649.62,
+      "duration": 3.69,
+      "narration": "這就帶出了第二法則：讓習慣有吸引力。",
+      "subtitle": "這就帶出了第二法則：讓習慣有吸引力。",
+      "image": "assets/images/scenes/094.webp",
+      "visualBeat": "把「這就帶出了第二法則：讓習慣有吸引力。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "這就帶出了第二法則：讓習慣有吸引力。",
+          "start": 645.93,
+          "end": 649.62
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "sceneId": "scene-095",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 649.8,
+      "end": 657.469,
+      "duration": 7.669,
+      "narration": "科學研究顯示，驅動我們採取行動的，是對獎賞的預期，而非獎賞的實現本身。",
+      "subtitle": "科學研究顯示，驅動我們採取行動的，是對獎賞的預期，而非獎賞的實現本身。",
+      "image": "assets/images/scenes/095.webp",
+      "visualBeat": "把「科學研究顯示，驅動我們採取行動的，是對獎賞的預期，而非獎賞的實現本身。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "科學研究顯示，驅動我們採取行動的，是對獎賞的預期，而非獎賞的實現本身。",
+          "start": 649.8,
+          "end": 657.469
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "sceneId": "scene-096",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 657.469,
+      "end": 664.48,
+      "duration": 7.011,
+      "narration": "當我們期待獎賞時，大腦的多巴胺濃度就會飆升，激發強烈的行動欲望。",
+      "subtitle": "當我們期待獎賞時，大腦的多巴胺濃度就會飆升，激發強烈的行動欲望。",
+      "image": "assets/images/scenes/096.webp",
+      "visualBeat": "人物尚未得到獎賞就因期待而眼神發亮，前方出現喜愛活動的象徵",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "當我們期待獎賞時，大腦的多巴胺濃度就會飆升，激發強烈的行動欲望。",
+          "start": 657.469,
+          "end": 664.48
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "sceneId": "scene-097",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 664.66,
+      "end": 671.828,
+      "duration": 7.168,
+      "narration": "都柏林的電機系學生拜恩非常喜歡看線上影集，但又覺得自己運動量不足。",
+      "subtitle": "都柏林的電機系學生拜恩非常喜歡看線上影集，但又覺得自己運動量不足。",
+      "image": "assets/images/scenes/097.webp",
+      "visualBeat": "把「都柏林的電機系學生拜恩非常喜歡看線上影集，但又覺得自己運動量不足。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "都柏林的電機系學生拜恩非常喜歡看線上影集，但又覺得自己運動量不足。",
+          "start": 664.66,
+          "end": 671.828
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "sceneId": "scene-098",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 671.828,
+      "end": 681.82,
+      "duration": 9.992,
+      "narration": "他改造了健身自行車，寫程式限制只有在踩踏速度達到標準時影集才會播放，速度慢下來節目就會暫停。",
+      "subtitle": "他改造了健身自行車，寫程式限制只有在踩踏速度達到標準時影集才會播放，速度慢下來節目就會暫停。",
+      "image": "assets/images/scenes/098.webp",
+      "visualBeat": "學生踩自製健身自行車，前方影集螢幕會隨踩踏速度播放或暫停",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "他改造了健身自行車，寫程式限制只有在踩踏速度達到標準時影集才會播放，速度慢下來節目就會暫停。",
+          "start": 671.828,
+          "end": 681.82
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "sceneId": "scene-099",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 682.0,
+      "end": 688.716,
+      "duration": 6.716,
+      "narration": "拜恩使用的是「誘惑捆綁」策略，將想要做的事與需要做的事綁在一起。",
+      "subtitle": "拜恩使用的是「誘惑捆綁」策略，將想要做的事與需要做的事綁在一起。",
+      "image": "assets/images/scenes/099.webp",
+      "visualBeat": "把「拜恩使用的是「誘惑捆綁」策略，將想要做的事與需要做的事綁在一起。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "拜恩使用的是「誘惑捆綁」策略，將想要做的事與需要做的事綁在一起。",
+          "start": 682.0,
+          "end": 688.716
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "sceneId": "scene-100",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 688.716,
+      "end": 693.752,
+      "duration": 5.036,
+      "narration": "結合習慣堆疊：做完目前的習慣後，執行需要的習慣；",
+      "subtitle": "結合習慣堆疊：做完目前的習慣後，執行需要的習慣；",
+      "image": "assets/images/scenes/100.webp",
+      "visualBeat": "咖啡沖好後，人物自然接著坐下靜心，一個既有行為銜接新行為",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "結合習慣堆疊：做完目前的習慣後，執行需要的習慣；",
+          "start": 688.716,
+          "end": 693.752
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "sceneId": "scene-101",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 693.752,
+      "end": 697.32,
+      "duration": 3.568,
+      "narration": "做完需要的習慣後，執行想要的習慣。",
+      "subtitle": "做完需要的習慣後，執行想要的習慣。",
+      "image": "assets/images/scenes/101.webp",
+      "visualBeat": "把「做完需要的習慣後，執行想要的習慣。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "做完需要的習慣後，執行想要的習慣。",
+          "start": 693.752,
+          "end": 697.32
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "sceneId": "scene-102",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 697.5,
+      "end": 704.471,
+      "duration": 6.971,
+      "narration": "同時，人類天生會模仿三種群體的習慣：親近的人、多數的人與有力的人。",
+      "subtitle": "同時，人類天生會模仿三種群體的習慣：親近的人、多數的人與有力的人。",
+      "image": "assets/images/scenes/102.webp",
+      "visualBeat": "把「同時，人類天生會模仿三種群體的習慣：親近的人、多數的人與有力的人。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "同時，人類天生會模仿三種群體的習慣：親近的人、多數的人與有力的人。",
+          "start": 697.5,
+          "end": 704.471
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "sceneId": "scene-103",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 704.471,
+      "end": 711.02,
+      "duration": 6.549,
+      "narration": "加入一個把你想要的行為視為常態的群體，習慣就會變得極具吸引力。",
+      "subtitle": "加入一個把你想要的行為視為常態的群體，習慣就會變得極具吸引力。",
+      "image": "assets/images/scenes/103.webp",
+      "visualBeat": "把「加入一個把你想要的行為視為常態的群體，習慣就會變得極具吸引力。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "加入一個把你想要的行為視為常態的群體，習慣就會變得極具吸引力。",
+          "start": 704.471,
+          "end": 711.02
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "sceneId": "scene-104",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 711.2,
+      "end": 714.008,
+      "duration": 2.808,
+      "narration": "最後，試著重新框架你的心態。",
+      "subtitle": "最後，試著重新框架你的心態。",
+      "image": "assets/images/scenes/104.webp",
+      "visualBeat": "把「最後，試著重新框架你的心態。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "最後，試著重新框架你的心態。",
+          "start": 711.2,
+          "end": 714.008
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "sceneId": "scene-105",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 714.008,
+      "end": 720.226,
+      "duration": 6.218,
+      "narration": "把「我今天必須運動」改為「我今天可以運動」，將負擔轉化為機會。",
+      "subtitle": "把「我今天必須運動」改為「我今天可以運動」，將負擔轉化為機會。",
+      "image": "assets/images/scenes/105.webp",
+      "visualBeat": "把「把「我今天必須運動」改為「我今天可以運動」，將負擔轉化為機會。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "把「我今天必須運動」改為「我今天可以運動」，將負擔轉化為機會。",
+          "start": 714.008,
+          "end": 720.226
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "sceneId": "scene-106",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 720.226,
+      "end": 725.04,
+      "duration": 4.814,
+      "narration": "坐輪椅的人說：我沒有被輪椅限制，我是被輪椅解放。",
+      "subtitle": "坐輪椅的人說：我沒有被輪椅限制，我是被輪椅解放。",
+      "image": "assets/images/scenes/106.webp",
+      "visualBeat": "使用輪椅的人順暢穿過無障礙坡道到開闊戶外，呈現自由而非限制",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "坐輪椅的人說：我沒有被輪椅限制，我是被輪椅解放。",
+          "start": 720.226,
+          "end": 725.04
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "sceneId": "scene-107",
+      "chapterId": 8,
+      "chapterTitle": "第七章｜第二法則：讓它有吸引力",
+      "start": 725.22,
+      "end": 728.426,
+      "duration": 3.206,
+      "narration": "轉念能讓困難習慣變得誘人。",
+      "subtitle": "轉念能讓困難習慣變得誘人。",
+      "image": "assets/images/scenes/107.webp",
+      "visualBeat": "把「轉念能讓困難習慣變得誘人。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "轉念能讓困難習慣變得誘人。",
+          "start": 725.22,
+          "end": 728.426
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "sceneId": "scene-108",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 728.426,
+      "end": 739.275,
+      "duration": 10.849,
+      "narration": "當習慣有了吸引力，接下來關鍵就是如何跨出第一步。",
+      "subtitle": "當習慣有了吸引力，接下來關鍵就是如何跨出第一步。",
+      "image": "assets/images/scenes/108.webp",
+      "visualBeat": "把「當習慣有了吸引力，接下來關鍵就是如何跨出第一步。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "當習慣有了吸引力，接下來關鍵就是如何跨出第一步。",
+          "start": 728.426,
+          "end": 739.275
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "sceneId": "scene-109",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 739.275,
+      "end": 743.22,
+      "duration": 3.945,
+      "narration": "這就是第三法則：讓行動輕而易舉。",
+      "subtitle": "這就是第三法則：讓行動輕而易舉。",
+      "image": "assets/images/scenes/109.webp",
+      "visualBeat": "把「這就是第三法則：讓行動輕而易舉。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "這就是第三法則：讓行動輕而易舉。",
+          "start": 739.275,
+          "end": 743.22
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "sceneId": "scene-110",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 743.4,
+      "end": 752.836,
+      "duration": 9.436,
+      "narration": "佛羅里達大學的尤斯曼教授將攝影班學生分為兩組：量組的成績看照片數量，交一百張拿高分；",
+      "subtitle": "佛羅里達大學的尤斯曼教授將攝影班學生分為兩組：量組的成績看照片數量，交一百張拿高分；",
+      "image": "assets/images/scenes/110.webp",
+      "visualBeat": "兩組學生對照，一組大量拍攝反覆練習，一組只盯著一張照片追求完美",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "佛羅里達大學的尤斯曼教授將攝影班學生分為兩組：量組的成績看照片數量，交一百張拿高分；",
+          "start": 743.4,
+          "end": 752.836
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "sceneId": "scene-111",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 752.836,
+      "end": 756.88,
+      "duration": 4.044,
+      "narration": "質組整學期只需交一張近乎完美的照片。",
+      "subtitle": "質組整學期只需交一張近乎完美的照片。",
+      "image": "assets/images/scenes/111.webp",
+      "visualBeat": "把「質組整學期只需交一張近乎完美的照片。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "質組整學期只需交一張近乎完美的照片。",
+          "start": 752.836,
+          "end": 756.88
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "sceneId": "scene-112",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 757.06,
+      "end": 761.117,
+      "duration": 4.057,
+      "narration": "期末時，最傑出的作品全出自量組。",
+      "subtitle": "期末時，最傑出的作品全出自量組。",
+      "image": "assets/images/scenes/112.webp",
+      "visualBeat": "把「期末時，最傑出的作品全出自量組。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "期末時，最傑出的作品全出自量組。",
+          "start": 757.06,
+          "end": 761.117
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "sceneId": "scene-113",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 761.117,
+      "end": 769.737,
+      "duration": 8.62,
+      "narration": "因為量組在大量實作中精進了技術，而質組只忙著思索完美，最後徒勞無功。",
+      "subtitle": "因為量組在大量實作中精進了技術，而質組只忙著思索完美，最後徒勞無功。",
+      "image": "assets/images/scenes/113.webp",
+      "visualBeat": "把「因為量組在大量實作中精進了技術，而質組只忙著思索完美，最後徒勞無功。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "因為量組在大量實作中精進了技術，而質組只忙著思索完美，最後徒勞無功。",
+          "start": 761.117,
+          "end": 769.737
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "sceneId": "scene-114",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 769.737,
+      "end": 773.54,
+      "duration": 3.803,
+      "narration": "精通習慣由重複開始，而非完美。",
+      "subtitle": "精通習慣由重複開始，而非完美。",
+      "image": "assets/images/scenes/114.webp",
+      "visualBeat": "把「精通習慣由重複開始，而非完美。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "精通習慣由重複開始，而非完美。",
+          "start": 769.737,
+          "end": 773.54
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "sceneId": "scene-115",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 773.72,
+      "end": 778.366,
+      "duration": 4.646,
+      "narration": "習慣的養成取決於執行的頻率，而非時間的長短。",
+      "subtitle": "習慣的養成取決於執行的頻率，而非時間的長短。",
+      "image": "assets/images/scenes/115.webp",
+      "visualBeat": "把「習慣的養成取決於執行的頻率，而非時間的長短。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "習慣的養成取決於執行的頻率，而非時間的長短。",
+          "start": 773.72,
+          "end": 778.366
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "sceneId": "scene-116",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 778.366,
+      "end": 781.111,
+      "duration": 2.745,
+      "narration": "人類天性遵循最小努力原則。",
+      "subtitle": "人類天性遵循最小努力原則。",
+      "image": "assets/images/scenes/116.webp",
+      "visualBeat": "岔路口一條平坦短路、一條陡峭複雜長路，人物本能走向低阻力路徑",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "人類天性遵循最小努力原則。",
+          "start": 778.366,
+          "end": 781.111
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "sceneId": "scene-117",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 781.111,
+      "end": 784.912,
+      "duration": 3.801,
+      "narration": "想要讓好習慣發生，就必須降低摩擦力；",
+      "subtitle": "想要讓好習慣發生，就必須降低摩擦力；",
+      "image": "assets/images/scenes/117.webp",
+      "visualBeat": "把「想要讓好習慣發生，就必須降低摩擦力；」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "想要讓好習慣發生，就必須降低摩擦力；",
+          "start": 781.111,
+          "end": 784.912
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "sceneId": "scene-118",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 784.912,
+      "end": 788.08,
+      "duration": 3.168,
+      "narration": "想要避免壞習慣，就增加摩擦力。",
+      "subtitle": "想要避免壞習慣，就增加摩擦力。",
+      "image": "assets/images/scenes/118.webp",
+      "visualBeat": "把「想要避免壞習慣，就增加摩擦力。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "想要避免壞習慣，就增加摩擦力。",
+          "start": 784.912,
+          "end": 788.08
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "sceneId": "scene-119",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 788.26,
+      "end": 793.75,
+      "duration": 5.49,
+      "narration": "例如想去健身房，就把健身房選在上下班順路經過的地方。",
+      "subtitle": "例如想去健身房，就把健身房選在上下班順路經過的地方。",
+      "image": "assets/images/scenes/119.webp",
+      "visualBeat": "下班通勤路線旁就是健身房入口，人物順路推門進去",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "例如想去健身房，就把健身房選在上下班順路經過的地方。",
+          "start": 788.26,
+          "end": 793.75
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "sceneId": "scene-120",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 793.75,
+      "end": 801.14,
+      "duration": 7.39,
+      "narration": "針對拖延，最有效的武器是「兩分鐘法則」：新習慣的開始應該花不到兩分鐘。",
+      "subtitle": "針對拖延，最有效的武器是「兩分鐘法則」：新習慣的開始應該花不到兩分鐘。",
+      "image": "assets/images/scenes/120.webp",
+      "visualBeat": "把「針對拖延，最有效的武器是「兩分鐘法則」：新習慣的開始應該花不到兩分鐘。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "針對拖延，最有效的武器是「兩分鐘法則」：新習慣的開始應該花不到兩分鐘。",
+          "start": 793.75,
+          "end": 801.14
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "sceneId": "scene-121",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 801.32,
+      "end": 804.106,
+      "duration": 2.786,
+      "narration": "想每晚讀書，縮減為讀一頁；",
+      "subtitle": "想每晚讀書，縮減為讀一頁；",
+      "image": "assets/images/scenes/121.webp",
+      "visualBeat": "睡前床邊燈下，人物只翻開一本書讀一頁，強調極低啟動門檻",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "想每晚讀書，縮減為讀一頁；",
+          "start": 801.32,
+          "end": 804.106
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "sceneId": "scene-122",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 804.106,
+      "end": 807.535,
+      "duration": 3.429,
+      "narration": "想跑五公里，縮減為綁好跑鞋鞋帶。",
+      "subtitle": "想跑五公里，縮減為綁好跑鞋鞋帶。",
+      "image": "assets/images/scenes/122.webp",
+      "visualBeat": "玄關處人物彎腰綁好跑鞋鞋帶，門外是清晨步道",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "想跑五公里，縮減為綁好跑鞋鞋帶。",
+          "start": 804.106,
+          "end": 807.535
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "sceneId": "scene-123",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 807.535,
+      "end": 809.892,
+      "duration": 2.357,
+      "narration": "先標準化，才能最佳化。",
+      "subtitle": "先標準化，才能最佳化。",
+      "image": "assets/images/scenes/123.webp",
+      "visualBeat": "把「先標準化，才能最佳化。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "先標準化，才能最佳化。",
+          "start": 807.535,
+          "end": 809.892
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "sceneId": "scene-124",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 809.892,
+      "end": 812.678,
+      "duration": 2.786,
+      "narration": "你還可以善用「承諾機制」。",
+      "subtitle": "你還可以善用「承諾機制」。",
+      "image": "assets/images/scenes/124.webp",
+      "visualBeat": "把「你還可以善用「承諾機制」。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "你還可以善用「承諾機制」。",
+          "start": 809.892,
+          "end": 812.678
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "sceneId": "scene-125",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 812.678,
+      "end": 824.68,
+      "duration": 12.002,
+      "narration": "正如法國文豪雨果為了對抗拖延，請助理把他所有衣服鎖進大櫃子裡，只穿披巾待在書房寫作，最終提早完成了《鐘樓怪人》。",
+      "subtitle": "正如法國文豪雨果為了對抗拖延，請助理把他所有衣服鎖進大櫃子裡，只穿披巾待在書房寫作，最終提早完成了《鐘樓怪人》。",
+      "image": "assets/images/scenes/125.webp",
+      "visualBeat": "十九世紀書房，作家披簡單披巾專注寫作，遠處上鎖大衣櫃",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "正如法國文豪雨果為了對抗拖延，請助理把他所有衣服鎖進大櫃子裡，只穿披巾待在書房寫作，最終提早完成了《鐘樓怪人》。",
+          "start": 812.678,
+          "end": 824.68
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "sceneId": "scene-126",
+      "chapterId": 9,
+      "chapterTitle": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "start": 824.86,
+      "end": 829.629,
+      "duration": 4.769,
+      "narration": "一次性的選擇與自動化工具，能讓好習慣成為必然。",
+      "subtitle": "一次性的選擇與自動化工具，能讓好習慣成為必然。",
+      "image": "assets/images/scenes/126.webp",
+      "visualBeat": "把「一次性的選擇與自動化工具，能讓好習慣成為必然。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "一次性的選擇與自動化工具，能讓好習慣成為必然。",
+          "start": 824.86,
+          "end": 829.629
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "sceneId": "scene-127",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 829.629,
+      "end": 845.18,
+      "duration": 15.551,
+      "narration": "前三個法則增加了我們這一次執行行為的機率，而第四法則「讓獎賞令人滿足」，則決定了我們下一次是否會重複這個行為。",
+      "subtitle": "前三個法則增加了我們這一次執行行為的機率，而第四法則「讓獎賞令人滿足」，則決定了我們下一次是否會重複這個行為。",
+      "image": "assets/images/scenes/127.webp",
+      "visualBeat": "把「前三個法則增加了我們這一次執行行為的機率，而第四法則「讓獎賞令人滿足」，則決定了我們下一次」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "前三個法則增加了我們這一次執行行為的機率，而第四法則「讓獎賞令人滿足」，則決定了我們下一次是否會重複這個行為。",
+          "start": 829.629,
+          "end": 845.18
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "sceneId": "scene-128",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 845.36,
+      "end": 862.0,
+      "duration": 16.64,
+      "narration": "一九九零年代公衛研究員盧比在巴基斯坦推廣洗手，他提供帶有濃郁香氣且容易起泡的香皂，讓洗手體驗變得極具愉悅感，成功使當地兒童下痢發生率降低了百分之五十二。",
+      "subtitle": "一九九零年代公衛研究員盧比在巴基斯坦推廣洗手，他提供帶有濃郁香氣且容易起泡的香皂，讓洗手體驗變得極具愉悅感，成功使當地兒童下痢發生率降低了百分之五十二。",
+      "image": "assets/images/scenes/128.webp",
+      "visualBeat": "社區洗手站，兒童使用容易起泡且有香氣的香皂愉快洗手",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "一九九零年代公衛研究員盧比在巴基斯坦推廣洗手，他提供帶有濃郁香氣且容易起泡的香皂，讓洗手體驗變得極具愉悅感，成功使當地兒童下痢發生率降低了百分之五十二。",
+          "start": 845.36,
+          "end": 862.0
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "sceneId": "scene-129",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 862.18,
+      "end": 870.296,
+      "duration": 8.116,
+      "narration": "行為改變的基本原則是：帶來即時獎賞的行為會被重複，帶來即時懲罰的行為會被避免。",
+      "subtitle": "行為改變的基本原則是：帶來即時獎賞的行為會被重複，帶來即時懲罰的行為會被避免。",
+      "image": "assets/images/scenes/129.webp",
+      "visualBeat": "把「行為改變的基本原則是：帶來即時獎賞的行為會被重複，帶來即時懲罰的行為會被避免。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "行為改變的基本原則是：帶來即時獎賞的行為會被重複，帶來即時懲罰的行為會被避免。",
+          "start": 862.18,
+          "end": 870.296
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "sceneId": "scene-130",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 870.296,
+      "end": 874.458,
+      "duration": 4.162,
+      "narration": "好習慣的代價在當下，壞習慣的代價在未來。",
+      "subtitle": "好習慣的代價在當下，壞習慣的代價在未來。",
+      "image": "assets/images/scenes/130.webp",
+      "visualBeat": "把「好習慣的代價在當下，壞習慣的代價在未來。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "好習慣的代價在當下，壞習慣的代價在未來。",
+          "start": 870.296,
+          "end": 874.458
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "sceneId": "scene-131",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 874.458,
+      "end": 878.62,
+      "duration": 4.162,
+      "narration": "因此，我們必須為好習慣加上即時的滿足感。",
+      "subtitle": "因此，我們必須為好習慣加上即時的滿足感。",
+      "image": "assets/images/scenes/131.webp",
+      "visualBeat": "把「因此，我們必須為好習慣加上即時的滿足感。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "因此，我們必須為好習慣加上即時的滿足感。",
+          "start": 874.458,
+          "end": 878.62
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "sceneId": "scene-132",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 878.8,
+      "end": 894.24,
+      "duration": 15.44,
+      "narration": "二十三歲的股票經紀人德斯米德運用「迴紋針策略」：桌上擺兩個罐子，放了一百二十個迴紋針，每打一通拜訪電話就移一顆，十八個月內為公司賺進五百萬美元。",
+      "subtitle": "二十三歲的股票經紀人德斯米德運用「迴紋針策略」：桌上擺兩個罐子，放了一百二十個迴紋針，每打一通拜訪電話就移一顆，十八個月內為公司賺進五百萬美元。",
+      "image": "assets/images/scenes/132.webp",
+      "visualBeat": "辦公桌兩個透明罐與大量迴紋針，每打一通電話就移動一枚",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "二十三歲的股票經紀人德斯米德運用「迴紋針策略」：桌上擺兩個罐子，放了一百二十個迴紋針，每打一通拜訪電話就移一顆，十八個月內為公司賺進五百萬美元。",
+          "start": 878.8,
+          "end": 894.24
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "sceneId": "scene-133",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 894.42,
+      "end": 897.098,
+      "duration": 2.678,
+      "narration": "視覺上的進步測量非常管用。",
+      "subtitle": "視覺上的進步測量非常管用。",
+      "image": "assets/images/scenes/133.webp",
+      "visualBeat": "把「視覺上的進步測量非常管用。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "視覺上的進步測量非常管用。",
+          "start": 894.42,
+          "end": 897.098
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "sceneId": "scene-134",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 897.098,
+      "end": 906.78,
+      "duration": 9.682,
+      "narration": "班傑明．富蘭克林追蹤十三項美德，喜劇演員史菲德採用月曆打勾法，堅守「不要中斷連續紀錄」的原則。",
+      "subtitle": "班傑明．富蘭克林追蹤十三項美德，喜劇演員史菲德採用月曆打勾法，堅守「不要中斷連續紀錄」的原則。",
+      "image": "assets/images/scenes/134.webp",
+      "visualBeat": "牆上月曆形成連續勾選鏈，人物看著不中斷紀錄保持動力",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "班傑明．富蘭克林追蹤十三項美德，喜劇演員史菲德採用月曆打勾法，堅守「不要中斷連續紀錄」的原則。",
+          "start": 897.098,
+          "end": 906.78
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "sceneId": "scene-135",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 906.96,
+      "end": 913.046,
+      "duration": 6.086,
+      "narration": "如果生活難免出現干擾，請務必守住簡單原則：不要錯過兩次。",
+      "subtitle": "如果生活難免出現干擾，請務必守住簡單原則：不要錯過兩次。",
+      "image": "assets/images/scenes/135.webp",
+      "visualBeat": "把「如果生活難免出現干擾，請務必守住簡單原則：不要錯過兩次。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "如果生活難免出現干擾，請務必守住簡單原則：不要錯過兩次。",
+          "start": 906.96,
+          "end": 913.046
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "sceneId": "scene-136",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 913.046,
+      "end": 918.263,
+      "duration": 5.217,
+      "narration": "錯過一次是意外，錯過兩次就是另一項壞習慣的開始。",
+      "subtitle": "錯過一次是意外，錯過兩次就是另一項壞習慣的開始。",
+      "image": "assets/images/scenes/136.webp",
+      "visualBeat": "把「錯過一次是意外，錯過兩次就是另一項壞習慣的開始。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "錯過一次是意外，錯過兩次就是另一項壞習慣的開始。",
+          "start": 913.046,
+          "end": 918.263
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "sceneId": "scene-137",
+      "chapterId": 10,
+      "chapterTitle": "第九章｜第四法則：讓大腦立刻感到值得",
+      "start": 918.263,
+      "end": 923.48,
+      "duration": 5.217,
+      "narration": "在狀態不佳的日子做最小版本的習慣，也能維繫複利。",
+      "subtitle": "在狀態不佳的日子做最小版本的習慣，也能維繫複利。",
+      "image": "assets/images/scenes/137.webp",
+      "visualBeat": "把「在狀態不佳的日子做最小版本的習慣，也能維繫複利。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "在狀態不佳的日子做最小版本的習慣，也能維繫複利。",
+          "start": 918.263,
+          "end": 923.48
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "sceneId": "scene-138",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 923.66,
+      "end": 933.519,
+      "duration": 9.859,
+      "narration": "如果我們想戒除深惡痛絕的壞習慣，該怎麼做呢？",
+      "subtitle": "如果我們想戒除深惡痛絕的壞習慣，該怎麼做呢？",
+      "image": "assets/images/scenes/138.webp",
+      "visualBeat": "人物停下手邊動作，面對與「如果我們想戒除深惡痛絕的壞習慣，該怎麼做呢？」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "如果我們想戒除深惡痛絕的壞習慣，該怎麼做呢？",
+          "start": 923.66,
+          "end": 933.519
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "sceneId": "scene-139",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 933.519,
+      "end": 938.86,
+      "duration": 5.341,
+      "narration": "方法非常簡單，就是把行為改變四大法則全部反過來操作。",
+      "subtitle": "方法非常簡單，就是把行為改變四大法則全部反過來操作。",
+      "image": "assets/images/scenes/139.webp",
+      "visualBeat": "把「方法非常簡單，就是把行為改變四大法則全部反過來操作。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "方法非常簡單，就是把行為改變四大法則全部反過來操作。",
+          "start": 933.519,
+          "end": 938.86
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "sceneId": "scene-140",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 939.04,
+      "end": 941.893,
+      "duration": 2.853,
+      "narration": "第一反轉：讓提示隱而不現。",
+      "subtitle": "第一反轉：讓提示隱而不現。",
+      "image": "assets/images/scenes/140.webp",
+      "visualBeat": "把「第一反轉：讓提示隱而不現。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "第一反轉：讓提示隱而不現。",
+          "start": 939.04,
+          "end": 941.893
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "sceneId": "scene-141",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 941.893,
+      "end": 954.4,
+      "duration": 12.507,
+      "narration": "越戰期間高達百分之二十的美軍對海洛因嚴重成癮，但退伍返鄉離開誘惑環境後，高達百分之九十的人在一夕之間自動戒除毒癮。",
+      "subtitle": "越戰期間高達百分之二十的美軍對海洛因嚴重成癮，但退伍返鄉離開誘惑環境後，高達百分之九十的人在一夕之間自動戒除毒癮。",
+      "image": "assets/images/scenes/141.webp",
+      "visualBeat": "退伍士兵離開充滿誘惑的軍營環境返回家庭街區，舊線索遠去",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "越戰期間高達百分之二十的美軍對海洛因嚴重成癮，但退伍返鄉離開誘惑環境後，高達百分之九十的人在一夕之間自動戒除毒癮。",
+          "start": 941.893,
+          "end": 954.4
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "sceneId": "scene-142",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 954.58,
+      "end": 958.461,
+      "duration": 3.881,
+      "narration": "想少看手機，就把手機放進另一個房間。",
+      "subtitle": "想少看手機，就把手機放進另一個房間。",
+      "image": "assets/images/scenes/142.webp",
+      "visualBeat": "工作桌只留書本與電腦，手機被放到另一房間抽屜",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "想少看手機，就把手機放進另一個房間。",
+          "start": 954.58,
+          "end": 958.461
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "sceneId": "scene-143",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 958.461,
+      "end": 961.48,
+      "duration": 3.019,
+      "narration": "第二反轉：讓習慣毫無吸引力。",
+      "subtitle": "第二反轉：讓習慣毫無吸引力。",
+      "image": "assets/images/scenes/143.webp",
+      "visualBeat": "把「第二反轉：讓習慣毫無吸引力。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "第二反轉：讓習慣毫無吸引力。",
+          "start": 958.461,
+          "end": 961.48
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "sceneId": "scene-144",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 961.48,
+      "end": 972.26,
+      "duration": 10.78,
+      "narration": "亞倫．卡爾在輕鬆戒菸法中，透過重新框架香菸的本質，讓讀者看清抽菸毫無好處，從而徹底消除對香菸的渴望。",
+      "subtitle": "亞倫．卡爾在輕鬆戒菸法中，透過重新框架香菸的本質，讓讀者看清抽菸毫無好處，從而徹底消除對香菸的渴望。",
+      "image": "assets/images/scenes/144.webp",
+      "visualBeat": "香菸被拆解成焦油、氣味與代價的象徵，人物由渴望轉為嫌惡",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "亞倫．卡爾在輕鬆戒菸法中，透過重新框架香菸的本質，讓讀者看清抽菸毫無好處，從而徹底消除對香菸的渴望。",
+          "start": 961.48,
+          "end": 972.26
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "sceneId": "scene-145",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 972.44,
+      "end": 975.282,
+      "duration": 2.842,
+      "narration": "第三反轉：讓行動困難無比。",
+      "subtitle": "第三反轉：讓行動困難無比。",
+      "image": "assets/images/scenes/145.webp",
+      "visualBeat": "把「第三反轉：讓行動困難無比。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "第三反轉：讓行動困難無比。",
+          "start": 972.44,
+          "end": 975.282
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "sceneId": "scene-146",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 975.282,
+      "end": 978.342,
+      "duration": 3.06,
+      "narration": "增加執行壞習慣的阻力與步驟。",
+      "subtitle": "增加執行壞習慣的阻力與步驟。",
+      "image": "assets/images/scenes/146.webp",
+      "visualBeat": "把「增加執行壞習慣的阻力與步驟。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "增加執行壞習慣的阻力與步驟。",
+          "start": 975.282,
+          "end": 978.342
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "sceneId": "scene-147",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 978.342,
+      "end": 987.96,
+      "duration": 9.618,
+      "narration": "例如每次看完電視就把插頭拔掉、拿出遙控器電池，或是使用定時器在晚上十點自動切斷網路電源。",
+      "subtitle": "例如每次看完電視就把插頭拔掉、拿出遙控器電池，或是使用定時器在晚上十點自動切斷網路電源。",
+      "image": "assets/images/scenes/147.webp",
+      "visualBeat": "客廳電視關閉，插頭拔掉、遙控器電池取出，時鐘指向晚上十點",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "例如每次看完電視就把插頭拔掉、拿出遙控器電池，或是使用定時器在晚上十點自動切斷網路電源。",
+          "start": 978.342,
+          "end": 987.96
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "sceneId": "scene-148",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 988.14,
+      "end": 991.505,
+      "duration": 3.365,
+      "narration": "第四反轉：讓後果立即令人不滿。",
+      "subtitle": "第四反轉：讓後果立即令人不滿。",
+      "image": "assets/images/scenes/148.webp",
+      "visualBeat": "把「第四反轉：讓後果立即令人不滿。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "第四反轉：讓後果立即令人不滿。",
+          "start": 988.14,
+          "end": 991.505
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "sceneId": "scene-149",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 991.505,
+      "end": 1004.74,
+      "duration": 13.235,
+      "narration": "羅潔．費雪曾建議將核彈密碼封進膠囊植入志願者心臟旁，讓總統發射核彈時必須親手殺死志願者，以此帶來立即且巨大的個人代價。",
+      "subtitle": "羅潔．費雪曾建議將核彈密碼封進膠囊植入志願者心臟旁，讓總統發射核彈時必須親手殺死志願者，以此帶來立即且巨大的個人代價。",
+      "image": "assets/images/scenes/149.webp",
+      "visualBeat": "高壓決策室中，發射按鈕與真實的人命代價形成強烈道德阻力",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "羅潔．費雪曾建議將核彈密碼封進膠囊植入志願者心臟旁，讓總統發射核彈時必須親手殺死志願者，以此帶來立即且巨大的個人代價。",
+          "start": 991.505,
+          "end": 1004.74
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "sceneId": "scene-150",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 1004.92,
+      "end": 1013.195,
+      "duration": 8.275,
+      "narration": "找一位問責夥伴，或是擬訂一份「習慣契約」，規定沒做到時必須支付罰款或公開受罰。",
+      "subtitle": "找一位問責夥伴，或是擬訂一份「習慣契約」，規定沒做到時必須支付罰款或公開受罰。",
+      "image": "assets/images/scenes/150.webp",
+      "visualBeat": "兩位朋友簽署習慣契約，桌上有罰款信封與公開打卡板",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "找一位問責夥伴，或是擬訂一份「習慣契約」，規定沒做到時必須支付罰款或公開受罰。",
+          "start": 1004.92,
+          "end": 1013.195
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "sceneId": "scene-151",
+      "chapterId": 11,
+      "chapterTitle": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "start": 1013.195,
+      "end": 1019.56,
+      "duration": 6.365,
+      "narration": "當壞習慣帶來立即且公開的社交痛苦時，壞習慣自然就會失去力量。",
+      "subtitle": "當壞習慣帶來立即且公開的社交痛苦時，壞習慣自然就會失去力量。",
+      "image": "assets/images/scenes/151.webp",
+      "visualBeat": "把「當壞習慣帶來立即且公開的社交痛苦時，壞習慣自然就會失去力量。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "當壞習慣帶來立即且公開的社交痛苦時，壞習慣自然就會失去力量。",
+          "start": 1013.195,
+          "end": 1019.56
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "sceneId": "scene-152",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1019.74,
+      "end": 1029.844,
+      "duration": 10.104,
+      "narration": "當你建立了系統並開始執行後，下一個考驗就來了。",
+      "subtitle": "當你建立了系統並開始執行後，下一個考驗就來了。",
+      "image": "assets/images/scenes/152.webp",
+      "visualBeat": "把「當你建立了系統並開始執行後，下一個考驗就來了。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "當你建立了系統並開始執行後，下一個考驗就來了。",
+          "start": 1019.74,
+          "end": 1029.844
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "sceneId": "scene-153",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1029.844,
+      "end": 1036.58,
+      "duration": 6.736,
+      "narration": "在自我精進的道路上，最難的往往不是開始，而是新鮮感消失後的無聊。",
+      "subtitle": "在自我精進的道路上，最難的往往不是開始，而是新鮮感消失後的無聊。",
+      "image": "assets/images/scenes/153.webp",
+      "visualBeat": "清晨空蕩舉重館，運動員沒有觀眾仍反覆做同樣基本訓練",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "在自我精進的道路上，最難的往往不是開始，而是新鮮感消失後的無聊。",
+          "start": 1029.844,
+          "end": 1036.58
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "sceneId": "scene-154",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1036.76,
+      "end": 1042.607,
+      "duration": 5.847,
+      "narration": "這就牽涉到「黃金姑娘原則，也就是 Goldilocks Rule」。",
+      "subtitle": "這就牽涉到「黃金姑娘原則，也就是 Goldilocks Rule」。",
+      "image": "assets/images/scenes/154.webp",
+      "visualBeat": "攀岩者挑戰略高於目前能力的岩壁，難度剛好需要專注但可完成",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "這就牽涉到「黃金姑娘原則，也就是 Goldilocks Rule」。",
+          "start": 1036.76,
+          "end": 1042.607
+        }
+      ]
+    },
+    {
+      "id": 155,
+      "sceneId": "scene-155",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1042.607,
+      "end": 1051.56,
+      "duration": 8.953,
+      "narration": "當執行的任務恰好位在當下能力的邊緣，超出目前能力約百分之四時，人會感受最高度的動力並進入心流狀態。",
+      "subtitle": "當執行的任務恰好位在當下能力的邊緣，超出目前能力約百分之四時，人會感受最高度的動力並進入心流狀態。",
+      "image": "assets/images/scenes/155.webp",
+      "visualBeat": "把「當執行的任務恰好位在當下能力的邊緣，超出目前能力約百分之四時，人會感受最高度的動力並進入心」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "當執行的任務恰好位在當下能力的邊緣，超出目前能力約百分之四時，人會感受最高度的動力並進入心流狀態。",
+          "start": 1042.607,
+          "end": 1051.56
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "sceneId": "scene-156",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1051.74,
+      "end": 1060.257,
+      "duration": 8.517,
+      "narration": "喜劇演員史帝夫．馬丁每年僅為表演增加一到兩分鐘新素材，保持恰到好處的挑戰。",
+      "subtitle": "喜劇演員史帝夫．馬丁每年僅為表演增加一到兩分鐘新素材，保持恰到好處的挑戰。",
+      "image": "assets/images/scenes/156.webp",
+      "visualBeat": "小劇場彩排中，喜劇演員每次只新增一小段素材，逐步提升難度",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "喜劇演員史帝夫．馬丁每年僅為表演增加一到兩分鐘新素材，保持恰到好處的挑戰。",
+          "start": 1051.74,
+          "end": 1060.257
+        }
+      ]
+    },
+    {
+      "id": 157,
+      "sceneId": "scene-157",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1060.257,
+      "end": 1076.14,
+      "duration": 15.883,
+      "narration": "當克利爾請教頂尖舉重教練菁英與一般人的差別時，教練回答：到了某個時間點，一切都歸結到誰能處理每天訓練的無聊，一次又一次反覆做著相同的動作。",
+      "subtitle": "當克利爾請教頂尖舉重教練菁英與一般人的差別時，教練回答：到了某個時間點，一切都歸結到誰能處理每天訓練的無聊，一次又一次反覆做著相同的動作。",
+      "image": "assets/images/scenes/157.webp",
+      "visualBeat": "清晨空蕩舉重館，運動員沒有觀眾仍反覆做同樣基本訓練",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "當克利爾請教頂尖舉重教練菁英與一般人的差別時，教練回答：到了某個時間點，一切都歸結到誰能處理每天訓練的無聊，一次又一次反覆做著相同的動作。",
+          "start": 1060.257,
+          "end": 1076.14
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "sceneId": "scene-158",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1076.32,
+      "end": 1079.78,
+      "duration": 3.46,
+      "narration": "成功最大的威脅不是失敗，而是無聊。",
+      "subtitle": "成功最大的威脅不是失敗，而是無聊。",
+      "image": "assets/images/scenes/158.webp",
+      "visualBeat": "清晨空蕩舉重館，運動員沒有觀眾仍反覆做同樣基本訓練",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "成功最大的威脅不是失敗，而是無聊。",
+          "start": 1076.32,
+          "end": 1079.78
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "sceneId": "scene-159",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1079.78,
+      "end": 1092.4,
+      "duration": 12.62,
+      "narration": "任何人都能在熱情高漲時努力打拚，但專業人士與業餘者的差別，在於專業人士能在討厭、無聊、筋疲力盡時，依然挺身繼續執行既定行程。",
+      "subtitle": "任何人都能在熱情高漲時努力打拚，但專業人士與業餘者的差別，在於專業人士能在討厭、無聊、筋疲力盡時，依然挺身繼續執行既定行程。",
+      "image": "assets/images/scenes/159.webp",
+      "visualBeat": "清晨空蕩舉重館，運動員沒有觀眾仍反覆做同樣基本訓練",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "任何人都能在熱情高漲時努力打拚，但專業人士與業餘者的差別，在於專業人士能在討厭、無聊、筋疲力盡時，依然挺身繼續執行既定行程。",
+          "start": 1079.78,
+          "end": 1092.4
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "sceneId": "scene-160",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1092.58,
+      "end": 1099.18,
+      "duration": 6.6,
+      "narration": "為了避免自滿並維持覺察，我們需要「習慣加刻意練習等於精通」的公式。",
+      "subtitle": "為了避免自滿並維持覺察，我們需要「習慣加刻意練習等於精通」的公式。",
+      "image": "assets/images/scenes/160.webp",
+      "visualBeat": "把「為了避免自滿並維持覺察，我們需要「習慣加刻意練習等於精通」的公式。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "為了避免自滿並維持覺察，我們需要「習慣加刻意練習等於精通」的公式。",
+          "start": 1092.58,
+          "end": 1099.18
+        }
+      ]
+    },
+    {
+      "id": 161,
+      "sceneId": "scene-161",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1099.18,
+      "end": 1106.18,
+      "duration": 7.0,
+      "narration": "帕特．萊里總教練在湖人隊推行追蹤進步百分之一的系統，幫助球員持續精進。",
+      "subtitle": "帕特．萊里總教練在湖人隊推行追蹤進步百分之一的系統，幫助球員持續精進。",
+      "image": "assets/images/scenes/161.webp",
+      "visualBeat": "兩條從同一起點微幅分岔的人生路徑，一側階梯緩慢向上、一側逐步向下",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "帕特．萊里總教練在湖人隊推行追蹤進步百分之一的系統，幫助球員持續精進。",
+          "start": 1099.18,
+          "end": 1106.18
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "sceneId": "scene-162",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1106.36,
+      "end": 1113.98,
+      "duration": 7.62,
+      "narration": "克利爾每年都會進行年度審核與誠實報告，反省什麼很順利、什麼不順利。",
+      "subtitle": "克利爾每年都會進行年度審核與誠實報告，反省什麼很順利、什麼不順利。",
+      "image": "assets/images/scenes/162.webp",
+      "visualBeat": "年末書桌攤開年度回顧筆記，左右整理順利與不順利內容",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "克利爾每年都會進行年度審核與誠實報告，反省什麼很順利、什麼不順利。",
+          "start": 1106.36,
+          "end": 1113.98
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "sceneId": "scene-163",
+      "chapterId": 12,
+      "chapterTitle": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "start": 1113.98,
+      "end": 1121.6,
+      "duration": 7.62,
+      "narration": "定期照鏡子檢視舊習慣，才能在周遭環境變動時彈性調整身份，持續進化。",
+      "subtitle": "定期照鏡子檢視舊習慣，才能在周遭環境變動時彈性調整身份，持續進化。",
+      "image": "assets/images/scenes/163.webp",
+      "visualBeat": "把「定期照鏡子檢視舊習慣，才能在周遭環境變動時彈性調整身份，持續進化。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "定期照鏡子檢視舊習慣，才能在周遭環境變動時彈性調整身份，持續進化。",
+          "start": 1113.98,
+          "end": 1121.6
+        }
+      ]
+    },
+    {
+      "id": 164,
+      "sceneId": "scene-164",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1121.78,
+      "end": 1132.705,
+      "duration": 10.925,
+      "narration": "說了這麼多理論，我們究竟該如何把《原子習慣》真正落實到每天的真實生活裡呢？",
+      "subtitle": "說了這麼多理論，我們究竟該如何把《原子習慣》真正落實到每天的真實生活裡呢？",
+      "image": "assets/images/scenes/164.webp",
+      "visualBeat": "人物停下手邊動作，面對與「說了這麼多理論，我們究竟該如何把《原子習慣》真正落實到每天的」相關的具體生活選擇，畫面形成問題與抉擇張力",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "說了這麼多理論，我們究竟該如何把《原子習慣》真正落實到每天的真實生活裡呢？",
+          "start": 1121.78,
+          "end": 1132.705
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "sceneId": "scene-165",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1132.705,
+      "end": 1135.58,
+      "duration": 2.875,
+      "narration": "讓我們看幾個最小可執行的例子。",
+      "subtitle": "讓我們看幾個最小可執行的例子。",
+      "image": "assets/images/scenes/165.webp",
+      "visualBeat": "把「讓我們看幾個最小可執行的例子。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "讓我們看幾個最小可執行的例子。",
+          "start": 1132.705,
+          "end": 1135.58
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "sceneId": "scene-166",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1135.76,
+      "end": 1140.271,
+      "duration": 4.511,
+      "narration": "在閱讀方面：最小版本是每晚睡前讀一頁書。",
+      "subtitle": "在閱讀方面：最小版本是每晚睡前讀一頁書。",
+      "image": "assets/images/scenes/166.webp",
+      "visualBeat": "睡前床邊燈下，人物只翻開一本書讀一頁，強調極低啟動門檻",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "在閱讀方面：最小版本是每晚睡前讀一頁書。",
+          "start": 1135.76,
+          "end": 1140.271
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "sceneId": "scene-167",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1140.271,
+      "end": 1145.91,
+      "duration": 5.639,
+      "narration": "將書本放在枕頭正中央作為顯眼提示，降低拿書的阻力。",
+      "subtitle": "將書本放在枕頭正中央作為顯眼提示，降低拿書的阻力。",
+      "image": "assets/images/scenes/167.webp",
+      "visualBeat": "把「將書本放在枕頭正中央作為顯眼提示，降低拿書的阻力。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "將書本放在枕頭正中央作為顯眼提示，降低拿書的阻力。",
+          "start": 1140.271,
+          "end": 1145.91
+        }
+      ]
+    },
+    {
+      "id": 168,
+      "sceneId": "scene-168",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1145.91,
+      "end": 1157.64,
+      "duration": 11.73,
+      "narration": "在 AI 工具學習方面：早上打開電腦瀏覽器時，預設自動開啟 AI 工具分頁，每天輸入一個測試指令，並上記錄打卡。",
+      "subtitle": "在 AI 工具學習方面：早上打開電腦瀏覽器時，預設自動開啟 AI 工具分頁，每天輸入一個測試指令，並上記錄打卡。",
+      "image": "assets/images/scenes/168.webp",
+      "visualBeat": "早晨電腦開機後自動打開 AI 工具，人物輸入一個測試指令並打卡",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "在 AI 工具學習方面：早上打開電腦瀏覽器時，預設自動開啟 AI 工具分頁，每天輸入一個測試指令，並上記錄打卡。",
+          "start": 1145.91,
+          "end": 1157.64
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "sceneId": "scene-169",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1157.82,
+      "end": 1169.511,
+      "duration": 11.691,
+      "narration": "在英文學習方面：通勤戴上耳機踏出家門時，按下廣播播放鍵收聽一分鐘英文 Podcast，利用誘惑捆綁搭配通勤。",
+      "subtitle": "在英文學習方面：通勤戴上耳機踏出家門時，按下廣播播放鍵收聽一分鐘英文 Podcast，利用誘惑捆綁搭配通勤。",
+      "image": "assets/images/scenes/169.webp",
+      "visualBeat": "通勤者戴耳機走向捷運入口，按下英文 Podcast 播放鍵",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "在英文學習方面：通勤戴上耳機踏出家門時，按下廣播播放鍵收聽一分鐘英文 Podcast，利用誘惑捆綁搭配通勤。",
+          "start": 1157.82,
+          "end": 1169.511
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "sceneId": "scene-170",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1169.511,
+      "end": 1180.54,
+      "duration": 11.029,
+      "narration": "在網頁設計方面：每天下午開工第一件事，打開設計專案檔微調一個元件的 CSS 樣式，將成果拍照存入作品集。",
+      "subtitle": "在網頁設計方面：每天下午開工第一件事，打開設計專案檔微調一個元件的 CSS 樣式，將成果拍照存入作品集。",
+      "image": "assets/images/scenes/170.webp",
+      "visualBeat": "人物打開網頁專案只微調一個元件 CSS，手機拍下成果存入作品集",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "在網頁設計方面：每天下午開工第一件事，打開設計專案檔微調一個元件的 CSS 樣式，將成果拍照存入作品集。",
+          "start": 1169.511,
+          "end": 1180.54
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "sceneId": "scene-171",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1180.72,
+      "end": 1192.612,
+      "duration": 11.892,
+      "narration": "在寫作輸出方面：早晨喝完第一口咖啡後，立刻打開寫作視窗寫下一句話，運用迴紋針策略每寫滿一百字移動一枚迴紋針。",
+      "subtitle": "在寫作輸出方面：早晨喝完第一口咖啡後，立刻打開寫作視窗寫下一句話，運用迴紋針策略每寫滿一百字移動一枚迴紋針。",
+      "image": "assets/images/scenes/171.webp",
+      "visualBeat": "辦公桌兩個透明罐與大量迴紋針，每打一通電話就移動一枚",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "在寫作輸出方面：早晨喝完第一口咖啡後，立刻打開寫作視窗寫下一句話，運用迴紋針策略每寫滿一百字移動一枚迴紋針。",
+          "start": 1180.72,
+          "end": 1192.612
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "sceneId": "scene-172",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1192.612,
+      "end": 1200.76,
+      "duration": 8.148,
+      "narration": "在運動方面：下班回家脫下皮鞋時，立刻換上擺在玄關的運動服，做一下伏地挺身。",
+      "subtitle": "在運動方面：下班回家脫下皮鞋時，立刻換上擺在玄關的運動服，做一下伏地挺身。",
+      "image": "assets/images/scenes/172.webp",
+      "visualBeat": "人物回家在玄關換上運動服，立刻只做一下伏地挺身",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "在運動方面：下班回家脫下皮鞋時，立刻換上擺在玄關的運動服，做一下伏地挺身。",
+          "start": 1192.612,
+          "end": 1200.76
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "sceneId": "scene-173",
+      "chapterId": 13,
+      "chapterTitle": "第十二章｜把《原子習慣》真正用進生活",
+      "start": 1200.94,
+      "end": 1204.254,
+      "duration": 3.314,
+      "narration": "記住，重點是先標準化，才能最佳化。",
+      "subtitle": "記住，重點是先標準化，才能最佳化。",
+      "image": "assets/images/scenes/173.webp",
+      "visualBeat": "把「記住，重點是先標準化，才能最佳化。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "記住，重點是先標準化，才能最佳化。",
+          "start": 1200.94,
+          "end": 1204.254
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "sceneId": "scene-174",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1204.254,
+      "end": 1213.22,
+      "duration": 8.966,
+      "narration": "古希臘有一個著名的「堆垛悖論」：一枚硬幣可以讓人致富嗎？",
+      "subtitle": "古希臘有一個著名的「堆垛悖論」：一枚硬幣可以讓人致富嗎？",
+      "image": "assets/images/scenes/174.webp",
+      "visualBeat": "桌上一枚硬幣逐步堆成高高硬幣堆，呈現微小累積成為巨大結果",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "古希臘有一個著名的「堆垛悖論」：一枚硬幣可以讓人致富嗎？",
+          "start": 1204.254,
+          "end": 1213.22
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "sceneId": "scene-175",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1213.4,
+      "end": 1219.897,
+      "duration": 6.497,
+      "narration": "給某人一枚硬幣顯然不會讓他變富有，但如果再加一枚、再加一枚呢？",
+      "subtitle": "給某人一枚硬幣顯然不會讓他變富有，但如果再加一枚、再加一枚呢？",
+      "image": "assets/images/scenes/175.webp",
+      "visualBeat": "桌上一枚硬幣逐步堆成高高硬幣堆，呈現微小累積成為巨大結果",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "給某人一枚硬幣顯然不會讓他變富有，但如果再加一枚、再加一枚呢？",
+          "start": 1213.4,
+          "end": 1219.897
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "sceneId": "scene-176",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1219.897,
+      "end": 1225.765,
+      "duration": 5.868,
+      "narration": "到了某個時間點，你不得不承認，一枚硬幣確實可以讓人致富。",
+      "subtitle": "到了某個時間點，你不得不承認，一枚硬幣確實可以讓人致富。",
+      "image": "assets/images/scenes/176.webp",
+      "visualBeat": "桌上一枚硬幣逐步堆成高高硬幣堆，呈現微小累積成為巨大結果",
+      "camera": "斜角透視，以道路、走廊、桌面或器材形成引導線",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "到了某個時間點，你不得不承認，一枚硬幣確實可以讓人致富。",
+          "start": 1219.897,
+          "end": 1225.765
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "sceneId": "scene-177",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1225.765,
+      "end": 1228.28,
+      "duration": 2.515,
+      "narration": "原子習慣也是相同的道理。",
+      "subtitle": "原子習慣也是相同的道理。",
+      "image": "assets/images/scenes/177.webp",
+      "visualBeat": "把「原子習慣也是相同的道理。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "低角度廣角，前景框景、中景主體、後景延伸",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "原子習慣也是相同的道理。",
+          "start": 1225.765,
+          "end": 1228.28
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "sceneId": "scene-178",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1228.46,
+      "end": 1237.464,
+      "duration": 9.004,
+      "narration": "一個微小的改變不會立刻顛覆你的人生，但當這些小改變層層疊加，人生的天秤就會開始傾斜。",
+      "subtitle": "一個微小的改變不會立刻顛覆你的人生，但當這些小改變層層疊加，人生的天秤就會開始傾斜。",
+      "image": "assets/images/scenes/178.webp",
+      "visualBeat": "人物每次往天秤正面一側放一粒沙，直到某一刻整個天秤明顯傾斜",
+      "camera": "高角度俯視，利用桌面或空間動線形成幾何構圖",
+      "motion": "pan-right",
+      "subtitleParts": [
+        {
+          "text": "一個微小的改變不會立刻顛覆你的人生，但當這些小改變層層疊加，人生的天秤就會開始傾斜。",
+          "start": 1228.46,
+          "end": 1237.464
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "sceneId": "scene-179",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1237.464,
+      "end": 1247.54,
+      "duration": 10.076,
+      "narration": "每一次微小的進步，都像是在天秤正面那一端放上一粒沙子，直到抵達轉捩點，系統的重量便會為你所用。",
+      "subtitle": "每一次微小的進步，都像是在天秤正面那一端放上一粒沙子，直到抵達轉捩點，系統的重量便會為你所用。",
+      "image": "assets/images/scenes/179.webp",
+      "visualBeat": "人物每次往天秤正面一側放一粒沙，直到某一刻整個天秤明顯傾斜",
+      "camera": "肩後視角，跟隨主體視線看向關鍵物件",
+      "motion": "up",
+      "subtitleParts": [
+        {
+          "text": "每一次微小的進步，都像是在天秤正面那一端放上一粒沙子，直到抵達轉捩點，系統的重量便會為你所用。",
+          "start": 1237.464,
+          "end": 1247.54
+        }
+      ]
+    },
+    {
+      "id": 180,
+      "sceneId": "scene-180",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1247.72,
+      "end": 1262.68,
+      "duration": 14.96,
+      "narration": "回顧全書的核心邏輯：身份認同為我們指引北極星，系統取代了虛幻的目標，環境提供了隱形推力，而行為改變四大法則則掌握了大腦的神經解題迴路。",
+      "subtitle": "回顧全書的核心邏輯：身份認同為我們指引北極星，系統取代了虛幻的目標，環境提供了隱形推力，而行為改變四大法則則掌握了大腦的神經解題迴路。",
+      "image": "assets/images/scenes/180.webp",
+      "visualBeat": "夜色航行意象中以北極星定方向，腳下由每日習慣磚塊鋪成道路",
+      "camera": "中景側拍，保留人物動作與環境資訊",
+      "motion": "down",
+      "subtitleParts": [
+        {
+          "text": "回顧全書的核心邏輯：身份認同為我們指引北極星，系統取代了虛幻的目標，環境提供了隱形推力，而行為改變四大法則則掌握了大腦的神經解題迴路。",
+          "start": 1247.72,
+          "end": 1262.68
+        }
+      ]
+    },
+    {
+      "id": 181,
+      "sceneId": "scene-181",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1262.86,
+      "end": 1271.632,
+      "duration": 8.772,
+      "narration": "成功不是一個拿來達成的目標，也不是一條跨越的終點線，而是一個永不停止精煉與改善的連續過程。",
+      "subtitle": "成功不是一個拿來達成的目標，也不是一條跨越的終點線，而是一個永不停止精煉與改善的連續過程。",
+      "image": "assets/images/scenes/181.webp",
+      "visualBeat": "跑者越過終點後沒有停下，而是沿著仍在延伸的道路繼續前進",
+      "camera": "長焦壓縮構圖，以前後景距離強化對比",
+      "motion": "zoom-in",
+      "subtitleParts": [
+        {
+          "text": "成功不是一個拿來達成的目標，也不是一條跨越的終點線，而是一個永不停止精煉與改善的連續過程。",
+          "start": 1262.86,
+          "end": 1271.632
+        }
+      ]
+    },
+    {
+      "id": 182,
+      "sceneId": "scene-182",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1271.632,
+      "end": 1276.7,
+      "duration": 5.068,
+      "narration": "你不需要在今天改變一切，你需要的只是踏出最小的一步。",
+      "subtitle": "你不需要在今天改變一切，你需要的只是踏出最小的一步。",
+      "image": "assets/images/scenes/182.webp",
+      "visualBeat": "把「你不需要在今天改變一切，你需要的只是踏出最小的一步。」轉譯成一個具體生活事件，主角正在執行與這句旁白直接相關的動作，場景物件與人物反應共同說明概念",
+      "camera": "近景特寫，聚焦手部操作、表情或關鍵物件",
+      "motion": "zoom-out",
+      "subtitleParts": [
+        {
+          "text": "你不需要在今天改變一切，你需要的只是踏出最小的一步。",
+          "start": 1271.632,
+          "end": 1276.7
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "sceneId": "scene-183",
+      "chapterId": 14,
+      "chapterTitle": "結語｜你每天都在替未來的自己投票",
+      "start": 1276.88,
+      "end": 1284.88,
+      "duration": 8.0,
+      "narration": "今天花兩分鐘，做一個微小的選擇，為你渴望成為的那個未來自己，投下關鍵的一票。",
+      "subtitle": "今天花兩分鐘，做一個微小的選擇，為你渴望成為的那個未來自己，投下關鍵的一票。",
+      "image": "assets/images/scenes/183.webp",
+      "visualBeat": "人物做一個微小行動，同時將象徵選票投入透明箱，遠處映出未來自己",
+      "camera": "對稱式正面構圖，利用場景秩序呈現系統感",
+      "motion": "pan-left",
+      "subtitleParts": [
+        {
+          "text": "今天花兩分鐘，做一個微小的選擇，為你渴望成為的那個未來自己，投下關鍵的一票。",
+          "start": 1276.88,
+          "end": 1284.88
+        }
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "id": 1,
+      "title": "開場｜真正改變人生的，往往小到你今天根本感覺不到",
+      "sceneStart": 1,
+      "sceneEnd": 13,
+      "start": 1.5,
+      "end": 93.88
+    },
+    {
+      "id": 2,
+      "title": "第一章｜James Clear 與這本書真正想解決的問題",
+      "sceneStart": 14,
+      "sceneEnd": 24,
+      "start": 94.06,
+      "end": 183.409
+    },
+    {
+      "id": 3,
+      "title": "第二章｜每天一點點，為什麼最後會差這麼多",
+      "sceneStart": 25,
+      "sceneEnd": 38,
+      "start": 183.409,
+      "end": 273.52
+    },
+    {
+      "id": 4,
+      "title": "第三章｜別只追目標，先設計你的系統",
+      "sceneStart": 39,
+      "sceneEnd": 50,
+      "start": 273.52,
+      "end": 356.614
+    },
+    {
+      "id": 5,
+      "title": "第四章｜真正持久的改變，是身份改變",
+      "sceneStart": 51,
+      "sceneEnd": 65,
+      "start": 356.614,
+      "end": 455.65999999999997
+    },
+    {
+      "id": 6,
+      "title": "第五章｜一個習慣，是怎麼在大腦裡形成的",
+      "sceneStart": 66,
+      "sceneEnd": 80,
+      "start": 455.65999999999997,
+      "end": 547.78
+    },
+    {
+      "id": 7,
+      "title": "第六章｜第一法則：讓提示顯而易見",
+      "sceneStart": 81,
+      "sceneEnd": 92,
+      "start": 547.96,
+      "end": 636.32
+    },
+    {
+      "id": 8,
+      "title": "第七章｜第二法則：讓它有吸引力",
+      "sceneStart": 93,
+      "sceneEnd": 107,
+      "start": 636.5,
+      "end": 728.426
+    },
+    {
+      "id": 9,
+      "title": "第八章｜第三法則：讓它簡單到很難拒絕",
+      "sceneStart": 108,
+      "sceneEnd": 126,
+      "start": 728.426,
+      "end": 829.629
+    },
+    {
+      "id": 10,
+      "title": "第九章｜第四法則：讓大腦立刻感到值得",
+      "sceneStart": 127,
+      "sceneEnd": 137,
+      "start": 829.629,
+      "end": 923.48
+    },
+    {
+      "id": 11,
+      "title": "第十章｜如果要戒掉壞習慣，就把四大法則全部反過來",
+      "sceneStart": 138,
+      "sceneEnd": 151,
+      "start": 923.66,
+      "end": 1019.56
+    },
+    {
+      "id": 12,
+      "title": "第十一章｜最難的不是開始，而是無聊之後仍然繼續",
+      "sceneStart": 152,
+      "sceneEnd": 163,
+      "start": 1019.74,
+      "end": 1121.6
+    },
+    {
+      "id": 13,
+      "title": "第十二章｜把《原子習慣》真正用進生活",
+      "sceneStart": 164,
+      "sceneEnd": 173,
+      "start": 1121.78,
+      "end": 1204.254
+    },
+    {
+      "id": 14,
+      "title": "結語｜你每天都在替未來的自己投票",
+      "sceneStart": 174,
+      "sceneEnd": 183,
+      "start": 1204.254,
+      "end": 1284.88
+    }
+  ],
+  "sourceTimecode": "原子習慣_旁白字幕_完整分鏡表.xlsx"
+}
