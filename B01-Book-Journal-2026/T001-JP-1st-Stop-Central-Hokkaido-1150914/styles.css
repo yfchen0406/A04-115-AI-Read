@@ -72,3 +72,131 @@
   .reader .subtitle{font-size:clamp(.95rem,4vw,1.35rem);padding:8px 10px}
 }
 
+
+
+/* Portrait-first homepage: keep the 16:9 cover intact and move controls below it */
+@media (max-width:760px){
+  .home .hero{
+    display:block;
+    min-height:0;
+    background:#101315;
+  }
+  .home .hero>img{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border-radius:0;
+    box-shadow:none;
+  }
+  .home .hero-copy{
+    position:static;
+    inset:auto;
+    display:block;
+    padding:18px 14px max(24px,env(safe-area-inset-bottom));
+    background:#101315;
+    text-align:center;
+  }
+  .home .hero-copy h1{
+    color:#fff;
+    font-size:clamp(1.45rem,6vw,2.1rem);
+    line-height:1.25;
+    background:transparent;
+    padding:0;
+    margin:0 0 16px;
+    text-shadow:none;
+  }
+  .home .tabs.voice-links{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    width:min(100%,420px);
+    margin:0 auto 12px;
+  }
+  .home .voice-links a{
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:10px 8px;
+    font-size:clamp(.82rem,3.6vw,1rem);
+    line-height:1.2;
+    white-space:nowrap;
+  }
+  .home .voice-links .yt-icon{
+    width:20px;
+    height:20px;
+    flex:none;
+  }
+  .home .tabs.planner-links{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    width:min(100%,420px);
+    margin:0 auto;
+  }
+  .home .planner-links a{
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 8px;
+    font-size:clamp(.88rem,4vw,1.05rem);
+    white-space:nowrap;
+  }
+}
+
+
+
+/* Keep the homepage title above the characters on wide screens */
+@media (min-width:761px){
+  .home .hero-copy h1{
+    transform:translateY(-10vh);
+  }
+}
+
+
+
+/* Move the wide-screen homepage title farther above the characters */
+@media (min-width:761px){
+  .home .hero-copy h1{
+    transform:translateY(-18vh);
+  }
+}
+
+
+
+/* Final wide-screen title position: keep the full title clear of the characters */
+@media (min-width:761px){
+  .home .hero-copy h1{
+    transform:translateY(-28vh);
+  }
+}
+
+
+/* Per-image motion for both female and male readers */
+.reader .stage img{
+  transform-origin:center center;
+  will-change:transform;
+  animation-duration:var(--motion-duration, 6s);
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:1;
+  animation-fill-mode:both;
+}
+@keyframes motion-push{from{transform:scale(1)}to{transform:scale(1.10)}}
+@keyframes motion-pull{from{transform:scale(1.10)}to{transform:scale(1)}}
+@keyframes motion-up{from{transform:scale(1.08) translateY(2%)}to{transform:scale(1.08) translateY(-2%)}}
+@keyframes motion-down{from{transform:scale(1.08) translateY(-2%)}to{transform:scale(1.08) translateY(2%)}}
+@keyframes motion-left{from{transform:scale(1.08) translateX(2%)}to{transform:scale(1.08) translateX(-2%)}}
+@keyframes motion-right{from{transform:scale(1.08) translateX(-2%)}to{transform:scale(1.08) translateX(2%)}}
+.reader .stage img.motion-push{animation-name:motion-push}
+.reader .stage img.motion-pull{animation-name:motion-pull}
+.reader .stage img.motion-up{animation-name:motion-up}
+.reader .stage img.motion-down{animation-name:motion-down}
+.reader .stage img.motion-left{animation-name:motion-left}
+.reader .stage img.motion-right{animation-name:motion-right}
+@media (prefers-reduced-motion:reduce){
+  .reader .stage img{animation:none!important;transform:none!important}
+}

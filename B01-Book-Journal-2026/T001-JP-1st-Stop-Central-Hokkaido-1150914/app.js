@@ -9,6 +9,8 @@ const timeline = document.querySelector("#timeline");
 const playButton = document.querySelector("#play");
 const chapterList = document.querySelector("#chapterList");
 const pad = (value) => String(value).padStart(3, "0");
+const motionNames = ["push", "pull", "up", "down", "left", "right"];
+const motionFor = (id) => motionNames[((id * 9301 + 49297) % 233280) % motionNames.length];
 const formatSeconds = (value) => Number(value).toFixed(2) + " 秒";
 let pendingSeek = null;
 let seekSequence = 0;
@@ -39,6 +41,11 @@ function renderAt(time, force = false) {
   const timeLabel = "畫面 " + pad(scene.id) + "｜" + formatSeconds(safeTime) + " / " + formatSeconds(d.totalDuration);
   if (force || sceneNumber !== sceneIndex) {
     sceneIndex = sceneNumber;
+    const motion = motionFor(scene.id);
+    const motionDuration = Math.max(0.1, scene.end - scene.start);
+    image.className = "motion-" + motion;
+    image.style.setProperty("--motion-duration", motionDuration + "s");
+    image.style.animationDelay = (-Math.max(0, safeTime - scene.start)) + "s";
     image.src = scene.image;
     image.alt = "Frame " + pad(scene.id);
     stageTitle.textContent = scene.chapter;
@@ -113,3 +120,5 @@ d.chapters.forEach((chapter) => {
   chapterList.appendChild(button);
 });
 render(true);
+
+
