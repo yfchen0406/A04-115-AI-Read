@@ -53,3 +53,22 @@
 .home .planner-links{margin-top:16px}
 
 .yt-link{display:inline-flex;align-items:center;gap:7px}.yt-icon{width:22px;height:22px;display:block}
+
+
+/* Mobile portrait and landscape layout */
+@media(max-width:760px){
+  .home .hero{min-height:100svh;display:flex;align-items:center;overflow:hidden}
+  .home .hero>img{height:auto;min-height:0;aspect-ratio:16/9;object-fit:cover}
+  .home .hero-copy{padding:16px}
+  .home .hero-copy h1{font-size:clamp(1.5rem,8vw,2.5rem);padding:8px 12px;margin-bottom:18px}
+  .home .tabs{gap:8px;margin-top:16px}
+  .home .tabs a{padding:10px 12px;font-size:.9rem}
+  .reader{padding:10px}
+  .reader h1{font-size:clamp(1.5rem,6vw,2.4rem)}
+  .reader .controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .reader .controls button{padding:9px 8px;white-space:nowrap}
+  .reader #timeline{grid-column:1/-1;order:0;width:100%;min-width:0}
+  .reader #metrics{grid-column:1/-1;order:1}
+  .reader .subtitle{font-size:clamp(.95rem,4vw,1.35rem);padding:8px 10px}
+}
+
