@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="日本旅遊第2站～京都＆宇治｜女聲B動態閱讀">
+  <title>京都＆宇治｜女聲B動態閱讀</title>
+  <link rel="stylesheet" href="../styles.css?v=20260915-6">
+</head>
+<body class="reading">
+  <main class="reader">
+    <section class="stage" id="stage" aria-live="polite">
+      <img id="sceneImage" src="../assets/images/T02-001.webp" alt="京都宇治第1鏡">
+      <div class="stage-title" id="stageChapter"></div>
+      <div class="chapter-intro" id="chapterIntro"></div>
+      <div class="subtitle" id="subtitle"></div>
+      <div class="missing-note" id="missingNote" hidden>第191–245鏡圖片待補</div>
+    </section>
+    <section class="player" aria-label="旁白播放控制">
+      <audio id="audio" preload="metadata" src="audio/narration-female.mp3"></audio>
+      <input id="seek" type="range" min="0" max="1" step="0.001" value="0" aria-label="旁白進度">
+      <div class="controls">
+        <button id="back" type="button">上一段字幕</button>
+        <button id="play" type="button">播放旁白</button>
+        <button id="forward" type="button">下一段字幕</button>
+      </div>
+      <div class="status"><span id="status">準備播放</span><span id="metrics"></span></div>
+    </section>
+    <section class="chapters">
+      <p>章節索引</p>
+      <h2>從京都開始，慢慢走進宇治</h2>
+      <div class="chapter-list" id="chapterList"></div>
+    </section>
+    <footer><a href="../index.html">回到封面</a>　｜　女聲B・字幕時間軸 850 Cue</footer>
+  </main>
+  <script src="data/timeline-cue-sync-20260915.js"></script>
+  <script src="app-sync-v2.js"></script>
+</body>
+</html>
+
+
+
