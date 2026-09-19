@@ -4831,5 +4831,73 @@ const promptsData = [
     date: "2026-09-07",
     url: "",
   },
+  {
+    id: 485,
+    title: "頂級咖啡品味之道",
+    category: "Product",
+    image: "./images/P01-Product/P02-0.webp",
+    prompt:
+      "附件圖片人物Q版墨鏡造型，坐在一家裝潢氣氛高檔的咖啡店，品味喝著咖啡，檢視剛剛上述內容所列擺放在店內的七台頂級自動咖啡機，展現出自我高檔品味咖啡的風格，16:9比例，繁體中文呈現 取一個和內容的標題，優雅高上有品味，手繪插畫風格，16:9比例，繁體中文呈現",
+    date: "2026-09-18",
+    url: "",
+  },
+  {
+    id: 486,
+    title: "頂級咖啡機~JURA GAGA 10.",
+    category: "Product",
+    image: "./images/P01-Product/P02-1.webp",
+    prompt:
+      "製作一張詳細的資訊圖表，呈現【JURA GAGA 10】 這類全自動咖啡機的運作方式與流程。 從咖啡豆槽，到研磨、到秤重，還有水箱、鍋爐等等。 我想從技術與視覺上了解整個流程。",
+    date: "2026-09-18",
+    url: "",
+  },
+  {
+    id: 487,
+    title: "頂級咖啡機~JURA Z 10.",
+    category: "Product",
+    image: "./images/P01-Product/P02-2.webp",
+    prompt:
+      "製作一張詳細的資訊圖表，呈現【JURA Z10 】 這類全自動咖啡機的運作方式與流程。 從咖啡豆槽，到研磨、到秤重，還有水箱、鍋爐等等。 我想從技術與視覺上了解整個流程。 16:9比例，繁體中文呈現",
+    date: "2026-09-18",
+    url: "",
+  },
+  {
+    id: 488,
+    title: "頂級咖啡機~JURA J8 twin",
+    category: "Product",
+    image: "./images/P01-Product/P02-3.webp",
+    prompt:
+      "製作一張詳細的資訊圖表，呈現【JURA J8 twin 】 這類全自動咖啡機的運作方式與流程。 從咖啡豆槽，到研磨、到秤重，還有水箱、鍋爐等等。 我想從技術與視覺上了解整個流程。 16:9比例，繁體中文呈現",
+    date: "2026-09-18",
+    url: "",
+  },
+  {
+    id: 489,
+    title: "JURA全自動咖啡機運作原理與流程",
+    category: "Product",
+    image: "./images/P01-Product/P02-4.webp",
+    prompt:
+      "製作一張詳細的資訊圖表，呈現【JURA】 這類全自動咖啡機的運作方式與流程。 從咖啡豆槽，到研磨、到秤重，還有水箱、鍋爐等等。 我想從技術與視覺上了解整個流程。 16:9比例，繁體中文呈現",
+    date: "2026-09-18",
+    url: "",
+  },
+  {
+    id: 490,
+    title: "頂級咖啡機資訊",
+    category: "Product",
+    image: "./images/P01-Product/P02-5.webp",
+    prompt: "",
+    date: "2026-09-18",
+    url: "<span class='yf3'>說明~先蒐集資訊再生成資料圖表",
+  },
+  {
+    id: 490,
+    title: "iPhone 插解圖",
+    category: "Product",
+    image: "./images/P01-Product/P03-1.webp",
+    prompt: "",
+    date: "2026-09-18",
+    url: "<span class='yf3'>",
+  },
 ];
 

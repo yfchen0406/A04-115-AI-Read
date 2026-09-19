@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentType": "source",
+  "metadata": {
+    "title": "1368個單字就夠了",
+    "author": "王樂平",
+    "language": "zh",
+    "date": "2014-09-30T16:00:00+00:00",
+    "identifier": "cfc02eb7-9187-49a1-b0bc-ccfbcaa24680",
+    "sourceEpub": "1368個單字就夠了 - 王樂平.epub"
+  },
+  "toc": [
+    {
+      "id": "num_1",
+      "playOrder": 1,
+      "title": "版權資訊",
+      "src": "text/part0001.html#UGI0-0d4f933481e740a18f91db07cf279c9e",
+      "parentId": null
+    },
+    {
+      "id": "num_2",
+      "playOrder": 2,
+      "title": "前言",
+      "src": "text/part0002.html#1T140-0d4f933481e740a18f91db07cf279c9e",
+      "parentId": null
+    },
+    {
+      "id": "num_3",
+      "playOrder": 3,
+      "title": "上篇 為什麼只需要1368個單詞？",
+      "src": "text/part0003_split_000.html#2RHM0-0d4f933481e740a18f91db07cf279c9e",
+      "parentId": null
+    },
+    {
+      "id": "num_4",
+      "playOrder": 4,
+      "title": "如何解決1368個單詞外的表達問題？",
+      "src": "text/part0003_split_001.html",
+      "parentId": "num_3"
+    },
+    {
+      "id": "num_5",
+      "playOrder": 5,
+      "title": "為什麼要先學這1368個單詞？",
+      "src": "text/part0003_split_002.html",
+      "parentId": "num_3"
+    },
+    {
+      "id": "num_6",
+      "playOrder": 6,
+      "title": "中篇 它們都是哪些詞？",
+      "src": "text/part0004_split_000.html#3Q280-0d4f933481e740a18f91db07cf279c9e",
+      "parentId": null
+    },
+    {
+      "id": "num_7",
+      "playOrder": 7,
+      "title": "那些物，那些人，那些事——名詞",
+      "src": "text/part0004_split_001.html",
+      "parentId": "num_6"
+    },
+    {
+      "id": "num_8",
+      "playOrder": 8,
+      "title": "有的單純，有的世故——動詞",
+      "src": "text/part0004_split_002.html",
+      "parentId": "num_6"
+    },
+    {
+      "id": "num_9",
+      "playOrder": 9,
+      "title": "讓感覺飛起來：形容詞",
+      "src": "text/part0004_split_003.html",
+      "parentId": "num_6"
+    },
+    {
+      "id": "num_10",
+      "playOrder": 10,
+      "title": "英語的靈魂：介詞",
+      "src": "text/part0004_split_004.html",
+      "parentId": "num_6"
+    },
+    {
+      "id": "num_11",
+      "playOrder": 11,
+      "title": "英語的配角：副詞及其他",
+      "src": "text/part0004_split_005.html",
+      "parentId": "num_6"
+    },
+    {
+      "id": "num_12",
+      "playOrder": 12,
+      "title": "攻無不克的1368個單詞",
+      "src": "text/part0004_split_006.html",
+      "parentId": "num_6"
+    },
+    {
+      "id": "num_13",
+      "playOrder": 13,
+      "title": "下篇 如何掌握這1368個單詞？",
+      "src": "text/part0005_split_000.html#4OIQ0-0d4f933481e740a18f91db07cf279c9e",
+      "parentId": null
+    },
+    {
+      "id": "num_14",
+      "playOrder": 14,
+      "title": "怎麼學？",
+      "src": "text/part0005_split_001.html",
+      "parentId": "num_13"
+    },
+    {
+      "id": "num_15",
+      "playOrder": 15,
+      "title": "怎麼練？",
+      "src": "text/part0005_split_002.html",
+      "parentId": "num_13"
+    },
+    {
+      "id": "num_16",
+      "playOrder": 16,
+      "title": "後記",
+      "src": "text/part0006.html#5N3C0-0d4f933481e740a18f91db07cf279c9e",
+      "parentId": null
+    },
+    {
+      "id": "num_17",
+      "playOrder": 17,
+      "title": "1368個單詞",
+      "src": "text/part0007_split_000.html#6LJU0-0d4f933481e740a18f91db07cf279c9e",
+      "parentId": null
+    }
+  ],
+  "spine": [
+    "titlepage.xhtml",
+    "text/part0000.html",
+    "text/part0001.html",
+    "text/part0002.html",
+    "text/part0003_split_000.html",
+    "text/part0003_split_001.html",
+    "text/part0003_split_002.html",
+    "text/part0004_split_000.html",
+    "text/part0004_split_001.html",
+    "text/part0004_split_002.html",
+    "text/part0004_split_003.html",
+    "text/part0004_split_004.html",
+    "text/part0004_split_005.html",
+    "text/part0004_split_006.html",
+    "text/part0005_split_000.html",
+    "text/part0005_split_001.html",
+    "text/part0005_split_002.html",
+    "text/part0006.html",
+    "text/part0007_split_000.html",
+    "text/part0007_split_001.html",
+    "text/part0007_split_002.html",
+    "text/part0007_split_003.html",
+    "text/part0007_split_004.html",
+    "text/part0007_split_005.html",
+    "text/part0007_split_006.html",
+    "text/part0007_split_007.html",
+    "text/part0007_split_008.html"
+  ],
+  "statistics": {
+    "xhtmlChapters": 27,
+    "wordEntries": 1368,
+    "tocEntries": 17,
+    "sourceImages": 4
+  }
+}

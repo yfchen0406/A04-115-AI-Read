@@ -1,0 +1,4593 @@
+{
+  "schemaVersion": "1.1.0",
+  "contentType": "generated",
+  "source": {
+    "book": "1368個單字就夠了 - 王樂平.epub",
+    "wordCount": 1368,
+    "chapterCount": 27
+  },
+  "schedule": {
+    "dayCount": 96,
+    "averageWordsPerDay": 14.25,
+    "minWordsPerDay": 14,
+    "maxWordsPerDay": 15
+  },
+  "days": [
+    {
+      "id": "day-01",
+      "day": 1,
+      "title": "第 01 天｜時間類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0001",
+        "word-0002",
+        "word-0003",
+        "word-0004",
+        "word-0005",
+        "word-0006",
+        "word-0007",
+        "word-0008",
+        "word-0009",
+        "word-0010",
+        "word-0011",
+        "word-0012",
+        "word-0013",
+        "word-0014",
+        "word-0015"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-01-01",
+        "quiz-01-02",
+        "quiz-01-03",
+        "quiz-01-04",
+        "quiz-01-05",
+        "quiz-01-06",
+        "quiz-01-07",
+        "quiz-01-08",
+        "quiz-01-09",
+        "quiz-01-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-02",
+      "day": 2,
+      "title": "第 02 天｜時間類、氣候類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0016",
+        "word-0017",
+        "word-0018",
+        "word-0019",
+        "word-0020",
+        "word-0021",
+        "word-0022",
+        "word-0023",
+        "word-0024",
+        "word-0025",
+        "word-0026",
+        "word-0027",
+        "word-0028",
+        "word-0029",
+        "word-0030"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-02-01",
+        "quiz-02-02",
+        "quiz-02-03",
+        "quiz-02-04",
+        "quiz-02-05",
+        "quiz-02-06",
+        "quiz-02-07",
+        "quiz-02-08",
+        "quiz-02-09",
+        "quiz-02-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-03",
+      "day": 3,
+      "title": "第 03 天｜氣候類、自然類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0031",
+        "word-0032",
+        "word-0033",
+        "word-0034",
+        "word-0035",
+        "word-0036",
+        "word-0037",
+        "word-0038",
+        "word-0039",
+        "word-0040",
+        "word-0041",
+        "word-0042",
+        "word-0043",
+        "word-0044",
+        "word-0045"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-03-01",
+        "quiz-03-02",
+        "quiz-03-03",
+        "quiz-03-04",
+        "quiz-03-05",
+        "quiz-03-06",
+        "quiz-03-07",
+        "quiz-03-08",
+        "quiz-03-09",
+        "quiz-03-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-04",
+      "day": 4,
+      "title": "第 04 天｜自然類、植物類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0046",
+        "word-0047",
+        "word-0048",
+        "word-0049",
+        "word-0050",
+        "word-0051",
+        "word-0052",
+        "word-0053",
+        "word-0054",
+        "word-0055",
+        "word-0056",
+        "word-0057",
+        "word-0058",
+        "word-0059",
+        "word-0060"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-04-01",
+        "quiz-04-02",
+        "quiz-04-03",
+        "quiz-04-04",
+        "quiz-04-05",
+        "quiz-04-06",
+        "quiz-04-07",
+        "quiz-04-08",
+        "quiz-04-09",
+        "quiz-04-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-05",
+      "day": 5,
+      "title": "第 05 天｜動物類、昆蟲類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0061",
+        "word-0062",
+        "word-0063",
+        "word-0064",
+        "word-0065",
+        "word-0066",
+        "word-0067",
+        "word-0068",
+        "word-0069",
+        "word-0070",
+        "word-0071",
+        "word-0072",
+        "word-0073",
+        "word-0074",
+        "word-0075"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-05-01",
+        "quiz-05-02",
+        "quiz-05-03",
+        "quiz-05-04",
+        "quiz-05-05",
+        "quiz-05-06",
+        "quiz-05-07",
+        "quiz-05-08",
+        "quiz-05-09",
+        "quiz-05-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-06",
+      "day": 6,
+      "title": "第 06 天｜昆蟲類、其他生物",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0076",
+        "word-0077",
+        "word-0078",
+        "word-0079",
+        "word-0080",
+        "word-0081",
+        "word-0082",
+        "word-0083",
+        "word-0084",
+        "word-0085",
+        "word-0086",
+        "word-0087",
+        "word-0088",
+        "word-0089",
+        "word-0090"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-06-01",
+        "quiz-06-02",
+        "quiz-06-03",
+        "quiz-06-04",
+        "quiz-06-05",
+        "quiz-06-06",
+        "quiz-06-07",
+        "quiz-06-08",
+        "quiz-06-09",
+        "quiz-06-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-07",
+      "day": 7,
+      "title": "第 07 天｜地點類、機構類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0091",
+        "word-0092",
+        "word-0093",
+        "word-0094",
+        "word-0095",
+        "word-0096",
+        "word-0097",
+        "word-0098",
+        "word-0099",
+        "word-0100",
+        "word-0101",
+        "word-0102",
+        "word-0103",
+        "word-0104",
+        "word-0105"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-07-01",
+        "quiz-07-02",
+        "quiz-07-03",
+        "quiz-07-04",
+        "quiz-07-05",
+        "quiz-07-06",
+        "quiz-07-07",
+        "quiz-07-08",
+        "quiz-07-09",
+        "quiz-07-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-08",
+      "day": 8,
+      "title": "第 08 天｜食品類、餐飲類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0106",
+        "word-0107",
+        "word-0108",
+        "word-0109",
+        "word-0110",
+        "word-0111",
+        "word-0112",
+        "word-0113",
+        "word-0114",
+        "word-0115",
+        "word-0116",
+        "word-0117",
+        "word-0118",
+        "word-0119",
+        "word-0120"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-08-01",
+        "quiz-08-02",
+        "quiz-08-03",
+        "quiz-08-04",
+        "quiz-08-05",
+        "quiz-08-06",
+        "quiz-08-07",
+        "quiz-08-08",
+        "quiz-08-09",
+        "quiz-08-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-09",
+      "day": 9,
+      "title": "第 09 天｜蔬菜類、水果類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0121",
+        "word-0122",
+        "word-0123",
+        "word-0124",
+        "word-0125",
+        "word-0126",
+        "word-0127",
+        "word-0128",
+        "word-0129",
+        "word-0130",
+        "word-0131",
+        "word-0132",
+        "word-0133",
+        "word-0134",
+        "word-0135"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-09-01",
+        "quiz-09-02",
+        "quiz-09-03",
+        "quiz-09-04",
+        "quiz-09-05",
+        "quiz-09-06",
+        "quiz-09-07",
+        "quiz-09-08",
+        "quiz-09-09",
+        "quiz-09-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-10",
+      "day": 10,
+      "title": "第 10 天｜食材類、飲料類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0136",
+        "word-0137",
+        "word-0138",
+        "word-0139",
+        "word-0140",
+        "word-0141",
+        "word-0142",
+        "word-0143",
+        "word-0144",
+        "word-0145",
+        "word-0146",
+        "word-0147",
+        "word-0148",
+        "word-0149",
+        "word-0150"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-10-01",
+        "quiz-10-02",
+        "quiz-10-03",
+        "quiz-10-04",
+        "quiz-10-05",
+        "quiz-10-06",
+        "quiz-10-07",
+        "quiz-10-08",
+        "quiz-10-09",
+        "quiz-10-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-11",
+      "day": 11,
+      "title": "第 11 天｜疾病類、房屋類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0151",
+        "word-0152",
+        "word-0153",
+        "word-0154",
+        "word-0155",
+        "word-0156",
+        "word-0157",
+        "word-0158",
+        "word-0159",
+        "word-0160",
+        "word-0161",
+        "word-0162",
+        "word-0163",
+        "word-0164",
+        "word-0165"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-11-01",
+        "quiz-11-02",
+        "quiz-11-03",
+        "quiz-11-04",
+        "quiz-11-05",
+        "quiz-11-06",
+        "quiz-11-07",
+        "quiz-11-08",
+        "quiz-11-09",
+        "quiz-11-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-12",
+      "day": 12,
+      "title": "第 12 天｜傢俱類、服裝類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0166",
+        "word-0167",
+        "word-0168",
+        "word-0169",
+        "word-0170",
+        "word-0171",
+        "word-0172",
+        "word-0173",
+        "word-0174",
+        "word-0175",
+        "word-0176",
+        "word-0177",
+        "word-0178",
+        "word-0179",
+        "word-0180"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-12-01",
+        "quiz-12-02",
+        "quiz-12-03",
+        "quiz-12-04",
+        "quiz-12-05",
+        "quiz-12-06",
+        "quiz-12-07",
+        "quiz-12-08",
+        "quiz-12-09",
+        "quiz-12-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-13",
+      "day": 13,
+      "title": "第 13 天｜服裝類、首飾類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0181",
+        "word-0182",
+        "word-0183",
+        "word-0184",
+        "word-0185",
+        "word-0186",
+        "word-0187",
+        "word-0188",
+        "word-0189",
+        "word-0190",
+        "word-0191",
+        "word-0192",
+        "word-0193",
+        "word-0194",
+        "word-0195"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-13-01",
+        "quiz-13-02",
+        "quiz-13-03",
+        "quiz-13-04",
+        "quiz-13-05",
+        "quiz-13-06",
+        "quiz-13-07",
+        "quiz-13-08",
+        "quiz-13-09",
+        "quiz-13-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-14",
+      "day": 14,
+      "title": "第 14 天｜交通類、車輛類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0196",
+        "word-0197",
+        "word-0198",
+        "word-0199",
+        "word-0200",
+        "word-0201",
+        "word-0202",
+        "word-0203",
+        "word-0204",
+        "word-0205",
+        "word-0206",
+        "word-0207",
+        "word-0208",
+        "word-0209",
+        "word-0210"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-14-01",
+        "quiz-14-02",
+        "quiz-14-03",
+        "quiz-14-04",
+        "quiz-14-05",
+        "quiz-14-06",
+        "quiz-14-07",
+        "quiz-14-08",
+        "quiz-14-09",
+        "quiz-14-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-15",
+      "day": 15,
+      "title": "第 15 天｜路橋類、裝置類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0211",
+        "word-0212",
+        "word-0213",
+        "word-0214",
+        "word-0215",
+        "word-0216",
+        "word-0217",
+        "word-0218",
+        "word-0219",
+        "word-0220",
+        "word-0221",
+        "word-0222",
+        "word-0223",
+        "word-0224",
+        "word-0225"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-15-01",
+        "quiz-15-02",
+        "quiz-15-03",
+        "quiz-15-04",
+        "quiz-15-05",
+        "quiz-15-06",
+        "quiz-15-07",
+        "quiz-15-08",
+        "quiz-15-09",
+        "quiz-15-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-16",
+      "day": 16,
+      "title": "第 16 天｜裝置類、容器類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0226",
+        "word-0227",
+        "word-0228",
+        "word-0229",
+        "word-0230",
+        "word-0231",
+        "word-0232",
+        "word-0233",
+        "word-0234",
+        "word-0235",
+        "word-0236",
+        "word-0237",
+        "word-0238",
+        "word-0239",
+        "word-0240"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-16-01",
+        "quiz-16-02",
+        "quiz-16-03",
+        "quiz-16-04",
+        "quiz-16-05",
+        "quiz-16-06",
+        "quiz-16-07",
+        "quiz-16-08",
+        "quiz-16-09",
+        "quiz-16-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-17",
+      "day": 17,
+      "title": "第 17 天｜材料類、日常用品類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0241",
+        "word-0242",
+        "word-0243",
+        "word-0244",
+        "word-0245",
+        "word-0246",
+        "word-0247",
+        "word-0248",
+        "word-0249",
+        "word-0250",
+        "word-0251",
+        "word-0252",
+        "word-0253",
+        "word-0254",
+        "word-0255"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-17-01",
+        "quiz-17-02",
+        "quiz-17-03",
+        "quiz-17-04",
+        "quiz-17-05",
+        "quiz-17-06",
+        "quiz-17-07",
+        "quiz-17-08",
+        "quiz-17-09",
+        "quiz-17-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-18",
+      "day": 18,
+      "title": "第 18 天｜日常用品類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0256",
+        "word-0257",
+        "word-0258",
+        "word-0259",
+        "word-0260",
+        "word-0261",
+        "word-0262",
+        "word-0263",
+        "word-0264",
+        "word-0265",
+        "word-0266",
+        "word-0267",
+        "word-0268",
+        "word-0269",
+        "word-0270"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-18-01",
+        "quiz-18-02",
+        "quiz-18-03",
+        "quiz-18-04",
+        "quiz-18-05",
+        "quiz-18-06",
+        "quiz-18-07",
+        "quiz-18-08",
+        "quiz-18-09",
+        "quiz-18-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-19",
+      "day": 19,
+      "title": "第 19 天｜日常用品類、數量",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0271",
+        "word-0272",
+        "word-0273",
+        "word-0274",
+        "word-0275",
+        "word-0276",
+        "word-0277",
+        "word-0278",
+        "word-0279",
+        "word-0280",
+        "word-0281",
+        "word-0282",
+        "word-0283",
+        "word-0284",
+        "word-0285"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-19-01",
+        "quiz-19-02",
+        "quiz-19-03",
+        "quiz-19-04",
+        "quiz-19-05",
+        "quiz-19-06",
+        "quiz-19-07",
+        "quiz-19-08",
+        "quiz-19-09",
+        "quiz-19-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-20",
+      "day": 20,
+      "title": "第 20 天｜數量、單位",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0286",
+        "word-0287",
+        "word-0288",
+        "word-0289",
+        "word-0290",
+        "word-0291",
+        "word-0292",
+        "word-0293",
+        "word-0294",
+        "word-0295",
+        "word-0296",
+        "word-0297",
+        "word-0298",
+        "word-0299",
+        "word-0300"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-20-01",
+        "quiz-20-02",
+        "quiz-20-03",
+        "quiz-20-04",
+        "quiz-20-05",
+        "quiz-20-06",
+        "quiz-20-07",
+        "quiz-20-08",
+        "quiz-20-09",
+        "quiz-20-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-21",
+      "day": 21,
+      "title": "第 21 天｜事情、家庭角色類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0301",
+        "word-0302",
+        "word-0303",
+        "word-0304",
+        "word-0305",
+        "word-0306",
+        "word-0307",
+        "word-0308",
+        "word-0309",
+        "word-0310",
+        "word-0311",
+        "word-0312",
+        "word-0313",
+        "word-0314",
+        "word-0315"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-21-01",
+        "quiz-21-02",
+        "quiz-21-03",
+        "quiz-21-04",
+        "quiz-21-05",
+        "quiz-21-06",
+        "quiz-21-07",
+        "quiz-21-08",
+        "quiz-21-09",
+        "quiz-21-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-22",
+      "day": 22,
+      "title": "第 22 天｜社會角色類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0316",
+        "word-0317",
+        "word-0318",
+        "word-0319",
+        "word-0320",
+        "word-0321",
+        "word-0322",
+        "word-0323",
+        "word-0324",
+        "word-0325",
+        "word-0326",
+        "word-0327",
+        "word-0328",
+        "word-0329",
+        "word-0330"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-22-01",
+        "quiz-22-02",
+        "quiz-22-03",
+        "quiz-22-04",
+        "quiz-22-05",
+        "quiz-22-06",
+        "quiz-22-07",
+        "quiz-22-08",
+        "quiz-22-09",
+        "quiz-22-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-23",
+      "day": 23,
+      "title": "第 23 天｜社會角色類、職業類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0331",
+        "word-0332",
+        "word-0333",
+        "word-0334",
+        "word-0335",
+        "word-0336",
+        "word-0337",
+        "word-0338",
+        "word-0339",
+        "word-0340",
+        "word-0341",
+        "word-0342",
+        "word-0343",
+        "word-0344",
+        "word-0345"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-23-01",
+        "quiz-23-02",
+        "quiz-23-03",
+        "quiz-23-04",
+        "quiz-23-05",
+        "quiz-23-06",
+        "quiz-23-07",
+        "quiz-23-08",
+        "quiz-23-09",
+        "quiz-23-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-24",
+      "day": 24,
+      "title": "第 24 天｜群體類、話語類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-019",
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_000.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0346",
+        "word-0347",
+        "word-0348",
+        "word-0349",
+        "word-0350",
+        "word-0351",
+        "word-0352",
+        "word-0353",
+        "word-0354",
+        "word-0355",
+        "word-0356",
+        "word-0357",
+        "word-0358",
+        "word-0359",
+        "word-0360"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-24-01",
+        "quiz-24-02",
+        "quiz-24-03",
+        "quiz-24-04",
+        "quiz-24-05",
+        "quiz-24-06",
+        "quiz-24-07",
+        "quiz-24-08",
+        "quiz-24-09",
+        "quiz-24-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-25",
+      "day": 25,
+      "title": "第 25 天｜話語類、文字類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0361",
+        "word-0362",
+        "word-0363",
+        "word-0364",
+        "word-0365",
+        "word-0366",
+        "word-0367",
+        "word-0368",
+        "word-0369",
+        "word-0370",
+        "word-0371",
+        "word-0372",
+        "word-0373",
+        "word-0374"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-25-01",
+        "quiz-25-02",
+        "quiz-25-03",
+        "quiz-25-04",
+        "quiz-25-05",
+        "quiz-25-06",
+        "quiz-25-07",
+        "quiz-25-08",
+        "quiz-25-09",
+        "quiz-25-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-26",
+      "day": 26,
+      "title": "第 26 天｜文字類、資訊類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0375",
+        "word-0376",
+        "word-0377",
+        "word-0378",
+        "word-0379",
+        "word-0380",
+        "word-0381",
+        "word-0382",
+        "word-0383",
+        "word-0384",
+        "word-0385",
+        "word-0386",
+        "word-0387",
+        "word-0388"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-26-01",
+        "quiz-26-02",
+        "quiz-26-03",
+        "quiz-26-04",
+        "quiz-26-05",
+        "quiz-26-06",
+        "quiz-26-07",
+        "quiz-26-08",
+        "quiz-26-09",
+        "quiz-26-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-27",
+      "day": 27,
+      "title": "第 27 天｜資訊類、狀態類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0389",
+        "word-0390",
+        "word-0391",
+        "word-0392",
+        "word-0393",
+        "word-0394",
+        "word-0395",
+        "word-0396",
+        "word-0397",
+        "word-0398",
+        "word-0399",
+        "word-0400",
+        "word-0401",
+        "word-0402"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-27-01",
+        "quiz-27-02",
+        "quiz-27-03",
+        "quiz-27-04",
+        "quiz-27-05",
+        "quiz-27-06",
+        "quiz-27-07",
+        "quiz-27-08",
+        "quiz-27-09",
+        "quiz-27-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-28",
+      "day": 28,
+      "title": "第 28 天｜行為類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0403",
+        "word-0404",
+        "word-0405",
+        "word-0406",
+        "word-0407",
+        "word-0408",
+        "word-0409",
+        "word-0410",
+        "word-0411",
+        "word-0412",
+        "word-0413",
+        "word-0414",
+        "word-0415",
+        "word-0416"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-28-01",
+        "quiz-28-02",
+        "quiz-28-03",
+        "quiz-28-04",
+        "quiz-28-05",
+        "quiz-28-06",
+        "quiz-28-07",
+        "quiz-28-08",
+        "quiz-28-09",
+        "quiz-28-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-29",
+      "day": 29,
+      "title": "第 29 天｜行為類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0417",
+        "word-0418",
+        "word-0419",
+        "word-0420",
+        "word-0421",
+        "word-0422",
+        "word-0423",
+        "word-0424",
+        "word-0425",
+        "word-0426",
+        "word-0427",
+        "word-0428",
+        "word-0429",
+        "word-0430"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-29-01",
+        "quiz-29-02",
+        "quiz-29-03",
+        "quiz-29-04",
+        "quiz-29-05",
+        "quiz-29-06",
+        "quiz-29-07",
+        "quiz-29-08",
+        "quiz-29-09",
+        "quiz-29-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-30",
+      "day": 30,
+      "title": "第 30 天｜行為類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0431",
+        "word-0432",
+        "word-0433",
+        "word-0434",
+        "word-0435",
+        "word-0436",
+        "word-0437",
+        "word-0438",
+        "word-0439",
+        "word-0440",
+        "word-0441",
+        "word-0442",
+        "word-0443",
+        "word-0444"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-30-01",
+        "quiz-30-02",
+        "quiz-30-03",
+        "quiz-30-04",
+        "quiz-30-05",
+        "quiz-30-06",
+        "quiz-30-07",
+        "quiz-30-08",
+        "quiz-30-09",
+        "quiz-30-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-31",
+      "day": 31,
+      "title": "第 31 天｜行為類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0445",
+        "word-0446",
+        "word-0447",
+        "word-0448",
+        "word-0449",
+        "word-0450",
+        "word-0451",
+        "word-0452",
+        "word-0453",
+        "word-0454",
+        "word-0455",
+        "word-0456",
+        "word-0457",
+        "word-0458"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-31-01",
+        "quiz-31-02",
+        "quiz-31-03",
+        "quiz-31-04",
+        "quiz-31-05",
+        "quiz-31-06",
+        "quiz-31-07",
+        "quiz-31-08",
+        "quiz-31-09",
+        "quiz-31-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-32",
+      "day": 32,
+      "title": "第 32 天｜行為類、活動類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0459",
+        "word-0460",
+        "word-0461",
+        "word-0462",
+        "word-0463",
+        "word-0464",
+        "word-0465",
+        "word-0466",
+        "word-0467",
+        "word-0468",
+        "word-0469",
+        "word-0470",
+        "word-0471",
+        "word-0472"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-32-01",
+        "quiz-32-02",
+        "quiz-32-03",
+        "quiz-32-04",
+        "quiz-32-05",
+        "quiz-32-06",
+        "quiz-32-07",
+        "quiz-32-08",
+        "quiz-32-09",
+        "quiz-32-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-33",
+      "day": 33,
+      "title": "第 33 天｜活動類、思想類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0473",
+        "word-0474",
+        "word-0475",
+        "word-0476",
+        "word-0477",
+        "word-0478",
+        "word-0479",
+        "word-0480",
+        "word-0481",
+        "word-0482",
+        "word-0483",
+        "word-0484",
+        "word-0485",
+        "word-0486"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-33-01",
+        "quiz-33-02",
+        "quiz-33-03",
+        "quiz-33-04",
+        "quiz-33-05",
+        "quiz-33-06",
+        "quiz-33-07",
+        "quiz-33-08",
+        "quiz-33-09",
+        "quiz-33-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-34",
+      "day": 34,
+      "title": "第 34 天｜思想類、整體類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0487",
+        "word-0488",
+        "word-0489",
+        "word-0490",
+        "word-0491",
+        "word-0492",
+        "word-0493",
+        "word-0494",
+        "word-0495",
+        "word-0496",
+        "word-0497",
+        "word-0498",
+        "word-0499",
+        "word-0500"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-34-01",
+        "quiz-34-02",
+        "quiz-34-03",
+        "quiz-34-04",
+        "quiz-34-05",
+        "quiz-34-06",
+        "quiz-34-07",
+        "quiz-34-08",
+        "quiz-34-09",
+        "quiz-34-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-35",
+      "day": 35,
+      "title": "第 35 天｜其他類",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0501",
+        "word-0502",
+        "word-0503",
+        "word-0504",
+        "word-0505",
+        "word-0506",
+        "word-0507",
+        "word-0508",
+        "word-0509",
+        "word-0510",
+        "word-0511",
+        "word-0512",
+        "word-0513",
+        "word-0514"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-35-01",
+        "quiz-35-02",
+        "quiz-35-03",
+        "quiz-35-04",
+        "quiz-35-05",
+        "quiz-35-06",
+        "quiz-35-07",
+        "quiz-35-08",
+        "quiz-35-09",
+        "quiz-35-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-36",
+      "day": 36,
+      "title": "第 36 天｜其他類、核心詞",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-020",
+        "chapter-021"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_001.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_002.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0515",
+        "word-0516",
+        "word-0517",
+        "word-0518",
+        "word-0519",
+        "word-0520",
+        "word-0521",
+        "word-0522",
+        "word-0523",
+        "word-0524",
+        "word-0525",
+        "word-0526",
+        "word-0527",
+        "word-0528"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-36-01",
+        "quiz-36-02",
+        "quiz-36-03",
+        "quiz-36-04",
+        "quiz-36-05",
+        "quiz-36-06",
+        "quiz-36-07",
+        "quiz-36-08",
+        "quiz-36-09",
+        "quiz-36-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-37",
+      "day": 37,
+      "title": "第 37 天｜身體",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-021"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_002.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0529",
+        "word-0530",
+        "word-0531",
+        "word-0532",
+        "word-0533",
+        "word-0534",
+        "word-0535",
+        "word-0536",
+        "word-0537",
+        "word-0538",
+        "word-0539",
+        "word-0540",
+        "word-0541",
+        "word-0542"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-37-01",
+        "quiz-37-02",
+        "quiz-37-03",
+        "quiz-37-04",
+        "quiz-37-05",
+        "quiz-37-06",
+        "quiz-37-07",
+        "quiz-37-08",
+        "quiz-37-09",
+        "quiz-37-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-38",
+      "day": 38,
+      "title": "第 38 天｜身體",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-021"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_002.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0543",
+        "word-0544",
+        "word-0545",
+        "word-0546",
+        "word-0547",
+        "word-0548",
+        "word-0549",
+        "word-0550",
+        "word-0551",
+        "word-0552",
+        "word-0553",
+        "word-0554",
+        "word-0555",
+        "word-0556"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-38-01",
+        "quiz-38-02",
+        "quiz-38-03",
+        "quiz-38-04",
+        "quiz-38-05",
+        "quiz-38-06",
+        "quiz-38-07",
+        "quiz-38-08",
+        "quiz-38-09",
+        "quiz-38-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-39",
+      "day": 39,
+      "title": "第 39 天｜身體、精神",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-021"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_002.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0557",
+        "word-0558",
+        "word-0559",
+        "word-0560",
+        "word-0561",
+        "word-0562",
+        "word-0563",
+        "word-0564",
+        "word-0565",
+        "word-0566",
+        "word-0567",
+        "word-0568",
+        "word-0569",
+        "word-0570"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-39-01",
+        "quiz-39-02",
+        "quiz-39-03",
+        "quiz-39-04",
+        "quiz-39-05",
+        "quiz-39-06",
+        "quiz-39-07",
+        "quiz-39-08",
+        "quiz-39-09",
+        "quiz-39-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-40",
+      "day": 40,
+      "title": "第 40 天｜力量、動物",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-021"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_002.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0571",
+        "word-0572",
+        "word-0573",
+        "word-0574",
+        "word-0575",
+        "word-0576",
+        "word-0577",
+        "word-0578",
+        "word-0579",
+        "word-0580",
+        "word-0581",
+        "word-0582",
+        "word-0583",
+        "word-0584"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-40-01",
+        "quiz-40-02",
+        "quiz-40-03",
+        "quiz-40-04",
+        "quiz-40-05",
+        "quiz-40-06",
+        "quiz-40-07",
+        "quiz-40-08",
+        "quiz-40-09",
+        "quiz-40-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-41",
+      "day": 41,
+      "title": "第 41 天｜其他、形狀",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-021",
+        "chapter-022"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_002.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_003.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0585",
+        "word-0586",
+        "word-0587",
+        "word-0588",
+        "word-0589",
+        "word-0590",
+        "word-0591",
+        "word-0592",
+        "word-0593",
+        "word-0594",
+        "word-0595",
+        "word-0596",
+        "word-0597",
+        "word-0598"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-41-01",
+        "quiz-41-02",
+        "quiz-41-03",
+        "quiz-41-04",
+        "quiz-41-05",
+        "quiz-41-06",
+        "quiz-41-07",
+        "quiz-41-08",
+        "quiz-41-09",
+        "quiz-41-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-42",
+      "day": 42,
+      "title": "第 42 天｜位置、品質",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-022"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_003.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0599",
+        "word-0600",
+        "word-0601",
+        "word-0602",
+        "word-0603",
+        "word-0604",
+        "word-0605",
+        "word-0606",
+        "word-0607",
+        "word-0608",
+        "word-0609",
+        "word-0610",
+        "word-0611",
+        "word-0612"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-42-01",
+        "quiz-42-02",
+        "quiz-42-03",
+        "quiz-42-04",
+        "quiz-42-05",
+        "quiz-42-06",
+        "quiz-42-07",
+        "quiz-42-08",
+        "quiz-42-09",
+        "quiz-42-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-43",
+      "day": 43,
+      "title": "第 43 天｜其他屬性、數量",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-022"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_003.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0613",
+        "word-0614",
+        "word-0615",
+        "word-0616",
+        "word-0617",
+        "word-0618",
+        "word-0619",
+        "word-0620",
+        "word-0621",
+        "word-0622",
+        "word-0623",
+        "word-0624",
+        "word-0625",
+        "word-0626"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-43-01",
+        "quiz-43-02",
+        "quiz-43-03",
+        "quiz-43-04",
+        "quiz-43-05",
+        "quiz-43-06",
+        "quiz-43-07",
+        "quiz-43-08",
+        "quiz-43-09",
+        "quiz-43-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-44",
+      "day": 44,
+      "title": "第 44 天｜數量、類別",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-022"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_003.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0627",
+        "word-0628",
+        "word-0629",
+        "word-0630",
+        "word-0631",
+        "word-0632",
+        "word-0633",
+        "word-0634",
+        "word-0635",
+        "word-0636",
+        "word-0637",
+        "word-0638",
+        "word-0639",
+        "word-0640"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-44-01",
+        "quiz-44-02",
+        "quiz-44-03",
+        "quiz-44-04",
+        "quiz-44-05",
+        "quiz-44-06",
+        "quiz-44-07",
+        "quiz-44-08",
+        "quiz-44-09",
+        "quiz-44-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-45",
+      "day": 45,
+      "title": "第 45 天｜方式、原因",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-022"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_003.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0641",
+        "word-0642",
+        "word-0643",
+        "word-0644",
+        "word-0645",
+        "word-0646",
+        "word-0647",
+        "word-0648",
+        "word-0649",
+        "word-0650",
+        "word-0651",
+        "word-0652",
+        "word-0653",
+        "word-0654"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-45-01",
+        "quiz-45-02",
+        "quiz-45-03",
+        "quiz-45-04",
+        "quiz-45-05",
+        "quiz-45-06",
+        "quiz-45-07",
+        "quiz-45-08",
+        "quiz-45-09",
+        "quiz-45-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-46",
+      "day": 46,
+      "title": "第 46 天｜過程、本源詞",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-022",
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_003.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0655",
+        "word-0656",
+        "word-0657",
+        "word-0658",
+        "word-0659",
+        "word-0660",
+        "word-0661",
+        "word-0662",
+        "word-0663",
+        "word-0664",
+        "word-0665",
+        "word-0666",
+        "word-0667",
+        "word-0668"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-46-01",
+        "quiz-46-02",
+        "quiz-46-03",
+        "quiz-46-04",
+        "quiz-46-05",
+        "quiz-46-06",
+        "quiz-46-07",
+        "quiz-46-08",
+        "quiz-46-09",
+        "quiz-46-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-47",
+      "day": 47,
+      "title": "第 47 天｜終點位置、相互位置",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0669",
+        "word-0670",
+        "word-0671",
+        "word-0672",
+        "word-0673",
+        "word-0674",
+        "word-0675",
+        "word-0676",
+        "word-0677",
+        "word-0678",
+        "word-0679",
+        "word-0680",
+        "word-0681",
+        "word-0682"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-47-01",
+        "quiz-47-02",
+        "quiz-47-03",
+        "quiz-47-04",
+        "quiz-47-05",
+        "quiz-47-06",
+        "quiz-47-07",
+        "quiz-47-08",
+        "quiz-47-09",
+        "quiz-47-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-48",
+      "day": 48,
+      "title": "第 48 天｜相互位置、運動軌跡",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0683",
+        "word-0684",
+        "word-0685",
+        "word-0686",
+        "word-0687",
+        "word-0688",
+        "word-0689",
+        "word-0690",
+        "word-0691",
+        "word-0692",
+        "word-0693",
+        "word-0694",
+        "word-0695",
+        "word-0696"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-48-01",
+        "quiz-48-02",
+        "quiz-48-03",
+        "quiz-48-04",
+        "quiz-48-05",
+        "quiz-48-06",
+        "quiz-48-07",
+        "quiz-48-08",
+        "quiz-48-09",
+        "quiz-48-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-49",
+      "day": 49,
+      "title": "第 49 天｜運動軌跡、速度",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0697",
+        "word-0698",
+        "word-0699",
+        "word-0700",
+        "word-0701",
+        "word-0702",
+        "word-0703",
+        "word-0704",
+        "word-0705",
+        "word-0706",
+        "word-0707",
+        "word-0708",
+        "word-0709",
+        "word-0710"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-49-01",
+        "quiz-49-02",
+        "quiz-49-03",
+        "quiz-49-04",
+        "quiz-49-05",
+        "quiz-49-06",
+        "quiz-49-07",
+        "quiz-49-08",
+        "quiz-49-09",
+        "quiz-49-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-50",
+      "day": 50,
+      "title": "第 50 天｜力量、空間",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0711",
+        "word-0712",
+        "word-0713",
+        "word-0714",
+        "word-0715",
+        "word-0716",
+        "word-0717",
+        "word-0718",
+        "word-0719",
+        "word-0720",
+        "word-0721",
+        "word-0722",
+        "word-0723",
+        "word-0724"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-50-01",
+        "quiz-50-02",
+        "quiz-50-03",
+        "quiz-50-04",
+        "quiz-50-05",
+        "quiz-50-06",
+        "quiz-50-07",
+        "quiz-50-08",
+        "quiz-50-09",
+        "quiz-50-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-51",
+      "day": 51,
+      "title": "第 51 天｜空間、時間",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0725",
+        "word-0726",
+        "word-0727",
+        "word-0728",
+        "word-0729",
+        "word-0730",
+        "word-0731",
+        "word-0732",
+        "word-0733",
+        "word-0734",
+        "word-0735",
+        "word-0736",
+        "word-0737",
+        "word-0738"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-51-01",
+        "quiz-51-02",
+        "quiz-51-03",
+        "quiz-51-04",
+        "quiz-51-05",
+        "quiz-51-06",
+        "quiz-51-07",
+        "quiz-51-08",
+        "quiz-51-09",
+        "quiz-51-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-52",
+      "day": 52,
+      "title": "第 52 天｜整體與部分、形狀",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0739",
+        "word-0740",
+        "word-0741",
+        "word-0742",
+        "word-0743",
+        "word-0744",
+        "word-0745",
+        "word-0746",
+        "word-0747",
+        "word-0748",
+        "word-0749",
+        "word-0750",
+        "word-0751",
+        "word-0752"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-52-01",
+        "quiz-52-02",
+        "quiz-52-03",
+        "quiz-52-04",
+        "quiz-52-05",
+        "quiz-52-06",
+        "quiz-52-07",
+        "quiz-52-08",
+        "quiz-52-09",
+        "quiz-52-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-53",
+      "day": 53,
+      "title": "第 53 天｜行為、系動詞",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0753",
+        "word-0754",
+        "word-0755",
+        "word-0756",
+        "word-0757",
+        "word-0758",
+        "word-0759",
+        "word-0760",
+        "word-0761",
+        "word-0762",
+        "word-0763",
+        "word-0764",
+        "word-0765",
+        "word-0766"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-53-01",
+        "quiz-53-02",
+        "quiz-53-03",
+        "quiz-53-04",
+        "quiz-53-05",
+        "quiz-53-06",
+        "quiz-53-07",
+        "quiz-53-08",
+        "quiz-53-09",
+        "quiz-53-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-54",
+      "day": 54,
+      "title": "第 54 天｜系動詞、看",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-023",
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_004.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0767",
+        "word-0768",
+        "word-0769",
+        "word-0770",
+        "word-0771",
+        "word-0772",
+        "word-0773",
+        "word-0774",
+        "word-0775",
+        "word-0776",
+        "word-0777",
+        "word-0778",
+        "word-0779",
+        "word-0780"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-54-01",
+        "quiz-54-02",
+        "quiz-54-03",
+        "quiz-54-04",
+        "quiz-54-05",
+        "quiz-54-06",
+        "quiz-54-07",
+        "quiz-54-08",
+        "quiz-54-09",
+        "quiz-54-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-55",
+      "day": 55,
+      "title": "第 55 天｜說",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0781",
+        "word-0782",
+        "word-0783",
+        "word-0784",
+        "word-0785",
+        "word-0786",
+        "word-0787",
+        "word-0788",
+        "word-0789",
+        "word-0790",
+        "word-0791",
+        "word-0792",
+        "word-0793",
+        "word-0794"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-55-01",
+        "quiz-55-02",
+        "quiz-55-03",
+        "quiz-55-04",
+        "quiz-55-05",
+        "quiz-55-06",
+        "quiz-55-07",
+        "quiz-55-08",
+        "quiz-55-09",
+        "quiz-55-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-56",
+      "day": 56,
+      "title": "第 56 天｜說、想",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0795",
+        "word-0796",
+        "word-0797",
+        "word-0798",
+        "word-0799",
+        "word-0800",
+        "word-0801",
+        "word-0802",
+        "word-0803",
+        "word-0804",
+        "word-0805",
+        "word-0806",
+        "word-0807",
+        "word-0808"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-56-01",
+        "quiz-56-02",
+        "quiz-56-03",
+        "quiz-56-04",
+        "quiz-56-05",
+        "quiz-56-06",
+        "quiz-56-07",
+        "quiz-56-08",
+        "quiz-56-09",
+        "quiz-56-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-57",
+      "day": 57,
+      "title": "第 57 天｜想",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0809",
+        "word-0810",
+        "word-0811",
+        "word-0812",
+        "word-0813",
+        "word-0814",
+        "word-0815",
+        "word-0816",
+        "word-0817",
+        "word-0818",
+        "word-0819",
+        "word-0820",
+        "word-0821",
+        "word-0822"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-57-01",
+        "quiz-57-02",
+        "quiz-57-03",
+        "quiz-57-04",
+        "quiz-57-05",
+        "quiz-57-06",
+        "quiz-57-07",
+        "quiz-57-08",
+        "quiz-57-09",
+        "quiz-57-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-58",
+      "day": 58,
+      "title": "第 58 天｜想、感覺",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0823",
+        "word-0824",
+        "word-0825",
+        "word-0826",
+        "word-0827",
+        "word-0828",
+        "word-0829",
+        "word-0830",
+        "word-0831",
+        "word-0832",
+        "word-0833",
+        "word-0834",
+        "word-0835",
+        "word-0836"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-58-01",
+        "quiz-58-02",
+        "quiz-58-03",
+        "quiz-58-04",
+        "quiz-58-05",
+        "quiz-58-06",
+        "quiz-58-07",
+        "quiz-58-08",
+        "quiz-58-09",
+        "quiz-58-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-59",
+      "day": 59,
+      "title": "第 59 天｜感覺、自然現象",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0837",
+        "word-0838",
+        "word-0839",
+        "word-0840",
+        "word-0841",
+        "word-0842",
+        "word-0843",
+        "word-0844",
+        "word-0845",
+        "word-0846",
+        "word-0847",
+        "word-0848",
+        "word-0849",
+        "word-0850"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-59-01",
+        "quiz-59-02",
+        "quiz-59-03",
+        "quiz-59-04",
+        "quiz-59-05",
+        "quiz-59-06",
+        "quiz-59-07",
+        "quiz-59-08",
+        "quiz-59-09",
+        "quiz-59-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-60",
+      "day": 60,
+      "title": "第 60 天｜自然現象、人體行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0851",
+        "word-0852",
+        "word-0853",
+        "word-0854",
+        "word-0855",
+        "word-0856",
+        "word-0857",
+        "word-0858",
+        "word-0859",
+        "word-0860",
+        "word-0861",
+        "word-0862",
+        "word-0863",
+        "word-0864"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-60-01",
+        "quiz-60-02",
+        "quiz-60-03",
+        "quiz-60-04",
+        "quiz-60-05",
+        "quiz-60-06",
+        "quiz-60-07",
+        "quiz-60-08",
+        "quiz-60-09",
+        "quiz-60-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-61",
+      "day": 61,
+      "title": "第 61 天｜人體行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0865",
+        "word-0866",
+        "word-0867",
+        "word-0868",
+        "word-0869",
+        "word-0870",
+        "word-0871",
+        "word-0872",
+        "word-0873",
+        "word-0874",
+        "word-0875",
+        "word-0876",
+        "word-0877",
+        "word-0878"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-61-01",
+        "quiz-61-02",
+        "quiz-61-03",
+        "quiz-61-04",
+        "quiz-61-05",
+        "quiz-61-06",
+        "quiz-61-07",
+        "quiz-61-08",
+        "quiz-61-09",
+        "quiz-61-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-62",
+      "day": 62,
+      "title": "第 62 天｜人體行為、生活行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0879",
+        "word-0880",
+        "word-0881",
+        "word-0882",
+        "word-0883",
+        "word-0884",
+        "word-0885",
+        "word-0886",
+        "word-0887",
+        "word-0888",
+        "word-0889",
+        "word-0890",
+        "word-0891",
+        "word-0892"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-62-01",
+        "quiz-62-02",
+        "quiz-62-03",
+        "quiz-62-04",
+        "quiz-62-05",
+        "quiz-62-06",
+        "quiz-62-07",
+        "quiz-62-08",
+        "quiz-62-09",
+        "quiz-62-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-63",
+      "day": 63,
+      "title": "第 63 天｜生活行為、社會行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0893",
+        "word-0894",
+        "word-0895",
+        "word-0896",
+        "word-0897",
+        "word-0898",
+        "word-0899",
+        "word-0900",
+        "word-0901",
+        "word-0902",
+        "word-0903",
+        "word-0904",
+        "word-0905",
+        "word-0906"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-63-01",
+        "quiz-63-02",
+        "quiz-63-03",
+        "quiz-63-04",
+        "quiz-63-05",
+        "quiz-63-06",
+        "quiz-63-07",
+        "quiz-63-08",
+        "quiz-63-09",
+        "quiz-63-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-64",
+      "day": 64,
+      "title": "第 64 天｜社會行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0907",
+        "word-0908",
+        "word-0909",
+        "word-0910",
+        "word-0911",
+        "word-0912",
+        "word-0913",
+        "word-0914",
+        "word-0915",
+        "word-0916",
+        "word-0917",
+        "word-0918",
+        "word-0919",
+        "word-0920"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-64-01",
+        "quiz-64-02",
+        "quiz-64-03",
+        "quiz-64-04",
+        "quiz-64-05",
+        "quiz-64-06",
+        "quiz-64-07",
+        "quiz-64-08",
+        "quiz-64-09",
+        "quiz-64-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-65",
+      "day": 65,
+      "title": "第 65 天｜社會行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0921",
+        "word-0922",
+        "word-0923",
+        "word-0924",
+        "word-0925",
+        "word-0926",
+        "word-0927",
+        "word-0928",
+        "word-0929",
+        "word-0930",
+        "word-0931",
+        "word-0932",
+        "word-0933",
+        "word-0934"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-65-01",
+        "quiz-65-02",
+        "quiz-65-03",
+        "quiz-65-04",
+        "quiz-65-05",
+        "quiz-65-06",
+        "quiz-65-07",
+        "quiz-65-08",
+        "quiz-65-09",
+        "quiz-65-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-66",
+      "day": 66,
+      "title": "第 66 天｜社會行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0935",
+        "word-0936",
+        "word-0937",
+        "word-0938",
+        "word-0939",
+        "word-0940",
+        "word-0941",
+        "word-0942",
+        "word-0943",
+        "word-0944",
+        "word-0945",
+        "word-0946",
+        "word-0947",
+        "word-0948"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-66-01",
+        "quiz-66-02",
+        "quiz-66-03",
+        "quiz-66-04",
+        "quiz-66-05",
+        "quiz-66-06",
+        "quiz-66-07",
+        "quiz-66-08",
+        "quiz-66-09",
+        "quiz-66-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-67",
+      "day": 67,
+      "title": "第 67 天｜社會行為、運動",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0949",
+        "word-0950",
+        "word-0951",
+        "word-0952",
+        "word-0953",
+        "word-0954",
+        "word-0955",
+        "word-0956",
+        "word-0957",
+        "word-0958",
+        "word-0959",
+        "word-0960",
+        "word-0961",
+        "word-0962"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-67-01",
+        "quiz-67-02",
+        "quiz-67-03",
+        "quiz-67-04",
+        "quiz-67-05",
+        "quiz-67-06",
+        "quiz-67-07",
+        "quiz-67-08",
+        "quiz-67-09",
+        "quiz-67-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-68",
+      "day": 68,
+      "title": "第 68 天｜工作、學習",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0963",
+        "word-0964",
+        "word-0965",
+        "word-0966",
+        "word-0967",
+        "word-0968",
+        "word-0969",
+        "word-0970",
+        "word-0971",
+        "word-0972",
+        "word-0973",
+        "word-0974",
+        "word-0975",
+        "word-0976"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-68-01",
+        "quiz-68-02",
+        "quiz-68-03",
+        "quiz-68-04",
+        "quiz-68-05",
+        "quiz-68-06",
+        "quiz-68-07",
+        "quiz-68-08",
+        "quiz-68-09",
+        "quiz-68-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-69",
+      "day": 69,
+      "title": "第 69 天｜事物之間的關係、事物的發展變化",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-024",
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_005.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0977",
+        "word-0978",
+        "word-0979",
+        "word-0980",
+        "word-0981",
+        "word-0982",
+        "word-0983",
+        "word-0984",
+        "word-0985",
+        "word-0986",
+        "word-0987",
+        "word-0988",
+        "word-0989",
+        "word-0990"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-69-01",
+        "quiz-69-02",
+        "quiz-69-03",
+        "quiz-69-04",
+        "quiz-69-05",
+        "quiz-69-06",
+        "quiz-69-07",
+        "quiz-69-08",
+        "quiz-69-09",
+        "quiz-69-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-70",
+      "day": 70,
+      "title": "第 70 天｜大小、高低",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-0991",
+        "word-0992",
+        "word-0993",
+        "word-0994",
+        "word-0995",
+        "word-0996",
+        "word-0997",
+        "word-0998",
+        "word-0999",
+        "word-1000",
+        "word-1001",
+        "word-1002",
+        "word-1003",
+        "word-1004"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-70-01",
+        "quiz-70-02",
+        "quiz-70-03",
+        "quiz-70-04",
+        "quiz-70-05",
+        "quiz-70-06",
+        "quiz-70-07",
+        "quiz-70-08",
+        "quiz-70-09",
+        "quiz-70-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-71",
+      "day": 71,
+      "title": "第 71 天｜粗細、寬窄",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1005",
+        "word-1006",
+        "word-1007",
+        "word-1008",
+        "word-1009",
+        "word-1010",
+        "word-1011",
+        "word-1012",
+        "word-1013",
+        "word-1014",
+        "word-1015",
+        "word-1016",
+        "word-1017",
+        "word-1018"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-71-01",
+        "quiz-71-02",
+        "quiz-71-03",
+        "quiz-71-04",
+        "quiz-71-05",
+        "quiz-71-06",
+        "quiz-71-07",
+        "quiz-71-08",
+        "quiz-71-09",
+        "quiz-71-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-72",
+      "day": 72,
+      "title": "第 72 天｜事物與空間、時間",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1019",
+        "word-1020",
+        "word-1021",
+        "word-1022",
+        "word-1023",
+        "word-1024",
+        "word-1025",
+        "word-1026",
+        "word-1027",
+        "word-1028",
+        "word-1029",
+        "word-1030",
+        "word-1031",
+        "word-1032"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-72-01",
+        "quiz-72-02",
+        "quiz-72-03",
+        "quiz-72-04",
+        "quiz-72-05",
+        "quiz-72-06",
+        "quiz-72-07",
+        "quiz-72-08",
+        "quiz-72-09",
+        "quiz-72-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-73",
+      "day": 73,
+      "title": "第 73 天｜質地、力量",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1033",
+        "word-1034",
+        "word-1035",
+        "word-1036",
+        "word-1037",
+        "word-1038",
+        "word-1039",
+        "word-1040",
+        "word-1041",
+        "word-1042",
+        "word-1043",
+        "word-1044",
+        "word-1045",
+        "word-1046"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-73-01",
+        "quiz-73-02",
+        "quiz-73-03",
+        "quiz-73-04",
+        "quiz-73-05",
+        "quiz-73-06",
+        "quiz-73-07",
+        "quiz-73-08",
+        "quiz-73-09",
+        "quiz-73-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-74",
+      "day": 74,
+      "title": "第 74 天｜力量、狀態",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1047",
+        "word-1048",
+        "word-1049",
+        "word-1050",
+        "word-1051",
+        "word-1052",
+        "word-1053",
+        "word-1054",
+        "word-1055",
+        "word-1056",
+        "word-1057",
+        "word-1058",
+        "word-1059",
+        "word-1060"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-74-01",
+        "quiz-74-02",
+        "quiz-74-03",
+        "quiz-74-04",
+        "quiz-74-05",
+        "quiz-74-06",
+        "quiz-74-07",
+        "quiz-74-08",
+        "quiz-74-09",
+        "quiz-74-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-75",
+      "day": 75,
+      "title": "第 75 天｜亮度、味道",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1061",
+        "word-1062",
+        "word-1063",
+        "word-1064",
+        "word-1065",
+        "word-1066",
+        "word-1067",
+        "word-1068",
+        "word-1069",
+        "word-1070",
+        "word-1071",
+        "word-1072",
+        "word-1073",
+        "word-1074"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-75-01",
+        "quiz-75-02",
+        "quiz-75-03",
+        "quiz-75-04",
+        "quiz-75-05",
+        "quiz-75-06",
+        "quiz-75-07",
+        "quiz-75-08",
+        "quiz-75-09",
+        "quiz-75-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-76",
+      "day": 76,
+      "title": "第 76 天｜身體、行為",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1075",
+        "word-1076",
+        "word-1077",
+        "word-1078",
+        "word-1079",
+        "word-1080",
+        "word-1081",
+        "word-1082",
+        "word-1083",
+        "word-1084",
+        "word-1085",
+        "word-1086",
+        "word-1087",
+        "word-1088"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-76-01",
+        "quiz-76-02",
+        "quiz-76-03",
+        "quiz-76-04",
+        "quiz-76-05",
+        "quiz-76-06",
+        "quiz-76-07",
+        "quiz-76-08",
+        "quiz-76-09",
+        "quiz-76-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-77",
+      "day": 77,
+      "title": "第 77 天｜心智、態度",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1089",
+        "word-1090",
+        "word-1091",
+        "word-1092",
+        "word-1093",
+        "word-1094",
+        "word-1095",
+        "word-1096",
+        "word-1097",
+        "word-1098",
+        "word-1099",
+        "word-1100",
+        "word-1101",
+        "word-1102"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-77-01",
+        "quiz-77-02",
+        "quiz-77-03",
+        "quiz-77-04",
+        "quiz-77-05",
+        "quiz-77-06",
+        "quiz-77-07",
+        "quiz-77-08",
+        "quiz-77-09",
+        "quiz-77-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-78",
+      "day": 78,
+      "title": "第 78 天｜情感、心情",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1103",
+        "word-1104",
+        "word-1105",
+        "word-1106",
+        "word-1107",
+        "word-1108",
+        "word-1109",
+        "word-1110",
+        "word-1111",
+        "word-1112",
+        "word-1113",
+        "word-1114",
+        "word-1115",
+        "word-1116"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-78-01",
+        "quiz-78-02",
+        "quiz-78-03",
+        "quiz-78-04",
+        "quiz-78-05",
+        "quiz-78-06",
+        "quiz-78-07",
+        "quiz-78-08",
+        "quiz-78-09",
+        "quiz-78-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-79",
+      "day": 79,
+      "title": "第 79 天｜心情、難度",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1117",
+        "word-1118",
+        "word-1119",
+        "word-1120",
+        "word-1121",
+        "word-1122",
+        "word-1123",
+        "word-1124",
+        "word-1125",
+        "word-1126",
+        "word-1127",
+        "word-1128",
+        "word-1129",
+        "word-1130"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-79-01",
+        "quiz-79-02",
+        "quiz-79-03",
+        "quiz-79-04",
+        "quiz-79-05",
+        "quiz-79-06",
+        "quiz-79-07",
+        "quiz-79-08",
+        "quiz-79-09",
+        "quiz-79-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-80",
+      "day": 80,
+      "title": "第 80 天｜安全性、其他",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1131",
+        "word-1132",
+        "word-1133",
+        "word-1134",
+        "word-1135",
+        "word-1136",
+        "word-1137",
+        "word-1138",
+        "word-1139",
+        "word-1140",
+        "word-1141",
+        "word-1142",
+        "word-1143",
+        "word-1144"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-80-01",
+        "quiz-80-02",
+        "quiz-80-03",
+        "quiz-80-04",
+        "quiz-80-05",
+        "quiz-80-06",
+        "quiz-80-07",
+        "quiz-80-08",
+        "quiz-80-09",
+        "quiz-80-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-81",
+      "day": 81,
+      "title": "第 81 天｜品質（好）、品質（壞）",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1145",
+        "word-1146",
+        "word-1147",
+        "word-1148",
+        "word-1149",
+        "word-1150",
+        "word-1151",
+        "word-1152",
+        "word-1153",
+        "word-1154",
+        "word-1155",
+        "word-1156",
+        "word-1157",
+        "word-1158"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-81-01",
+        "quiz-81-02",
+        "quiz-81-03",
+        "quiz-81-04",
+        "quiz-81-05",
+        "quiz-81-06",
+        "quiz-81-07",
+        "quiz-81-08",
+        "quiz-81-09",
+        "quiz-81-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-82",
+      "day": 82,
+      "title": "第 82 天｜其他、特殊性",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1159",
+        "word-1160",
+        "word-1161",
+        "word-1162",
+        "word-1163",
+        "word-1164",
+        "word-1165",
+        "word-1166",
+        "word-1167",
+        "word-1168",
+        "word-1169",
+        "word-1170",
+        "word-1171",
+        "word-1172"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-82-01",
+        "quiz-82-02",
+        "quiz-82-03",
+        "quiz-82-04",
+        "quiz-82-05",
+        "quiz-82-06",
+        "quiz-82-07",
+        "quiz-82-08",
+        "quiz-82-09",
+        "quiz-82-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-83",
+      "day": 83,
+      "title": "第 83 天｜普遍性、重要性",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1173",
+        "word-1174",
+        "word-1175",
+        "word-1176",
+        "word-1177",
+        "word-1178",
+        "word-1179",
+        "word-1180",
+        "word-1181",
+        "word-1182",
+        "word-1183",
+        "word-1184",
+        "word-1185",
+        "word-1186"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-83-01",
+        "quiz-83-02",
+        "quiz-83-03",
+        "quiz-83-04",
+        "quiz-83-05",
+        "quiz-83-06",
+        "quiz-83-07",
+        "quiz-83-08",
+        "quiz-83-09",
+        "quiz-83-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-84",
+      "day": 84,
+      "title": "第 84 天｜關聯性、軌跡",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-025",
+        "chapter-026"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_006.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_007.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1187",
+        "word-1188",
+        "word-1189",
+        "word-1190",
+        "word-1191",
+        "word-1192",
+        "word-1193",
+        "word-1194",
+        "word-1195",
+        "word-1196",
+        "word-1197",
+        "word-1198",
+        "word-1199",
+        "word-1200"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-84-01",
+        "quiz-84-02",
+        "quiz-84-03",
+        "quiz-84-04",
+        "quiz-84-05",
+        "quiz-84-06",
+        "quiz-84-07",
+        "quiz-84-08",
+        "quiz-84-09",
+        "quiz-84-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-85",
+      "day": 85,
+      "title": "第 85 天｜軌跡、起點",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-026"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_007.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1201",
+        "word-1202",
+        "word-1203",
+        "word-1204",
+        "word-1205",
+        "word-1206",
+        "word-1207",
+        "word-1208",
+        "word-1209",
+        "word-1210",
+        "word-1211",
+        "word-1212",
+        "word-1213",
+        "word-1214"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-85-01",
+        "quiz-85-02",
+        "quiz-85-03",
+        "quiz-85-04",
+        "quiz-85-05",
+        "quiz-85-06",
+        "quiz-85-07",
+        "quiz-85-08",
+        "quiz-85-09",
+        "quiz-85-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-86",
+      "day": 86,
+      "title": "第 86 天｜點、點與點",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-026"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_007.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1215",
+        "word-1216",
+        "word-1217",
+        "word-1218",
+        "word-1219",
+        "word-1220",
+        "word-1221",
+        "word-1222",
+        "word-1223",
+        "word-1224",
+        "word-1225",
+        "word-1226",
+        "word-1227",
+        "word-1228"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-86-01",
+        "quiz-86-02",
+        "quiz-86-03",
+        "quiz-86-04",
+        "quiz-86-05",
+        "quiz-86-06",
+        "quiz-86-07",
+        "quiz-86-08",
+        "quiz-86-09",
+        "quiz-86-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-87",
+      "day": 87,
+      "title": "第 87 天｜點與空間、從屬",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-026"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_007.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1229",
+        "word-1230",
+        "word-1231",
+        "word-1232",
+        "word-1233",
+        "word-1234",
+        "word-1235",
+        "word-1236",
+        "word-1237",
+        "word-1238",
+        "word-1239",
+        "word-1240",
+        "word-1241",
+        "word-1242"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-87-01",
+        "quiz-87-02",
+        "quiz-87-03",
+        "quiz-87-04",
+        "quiz-87-05",
+        "quiz-87-06",
+        "quiz-87-07",
+        "quiz-87-08",
+        "quiz-87-09",
+        "quiz-87-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-88",
+      "day": 88,
+      "title": "第 88 天｜因果、其他",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-026",
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_007.html",
+          "contentType": "source"
+        },
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1243",
+        "word-1244",
+        "word-1245",
+        "word-1246",
+        "word-1247",
+        "word-1248",
+        "word-1249",
+        "word-1250",
+        "word-1251",
+        "word-1252",
+        "word-1253",
+        "word-1254",
+        "word-1255",
+        "word-1256"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-88-01",
+        "quiz-88-02",
+        "quiz-88-03",
+        "quiz-88-04",
+        "quiz-88-05",
+        "quiz-88-06",
+        "quiz-88-07",
+        "quiz-88-08",
+        "quiz-88-09",
+        "quiz-88-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-89",
+      "day": 89,
+      "title": "第 89 天｜位置、方向",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1257",
+        "word-1258",
+        "word-1259",
+        "word-1260",
+        "word-1261",
+        "word-1262",
+        "word-1263",
+        "word-1264",
+        "word-1265",
+        "word-1266",
+        "word-1267",
+        "word-1268",
+        "word-1269",
+        "word-1270"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-89-01",
+        "quiz-89-02",
+        "quiz-89-03",
+        "quiz-89-04",
+        "quiz-89-05",
+        "quiz-89-06",
+        "quiz-89-07",
+        "quiz-89-08",
+        "quiz-89-09",
+        "quiz-89-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-90",
+      "day": 90,
+      "title": "第 90 天｜程度、強調",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1271",
+        "word-1272",
+        "word-1273",
+        "word-1274",
+        "word-1275",
+        "word-1276",
+        "word-1277",
+        "word-1278",
+        "word-1279",
+        "word-1280",
+        "word-1281",
+        "word-1282",
+        "word-1283",
+        "word-1284"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-90-01",
+        "quiz-90-02",
+        "quiz-90-03",
+        "quiz-90-04",
+        "quiz-90-05",
+        "quiz-90-06",
+        "quiz-90-07",
+        "quiz-90-08",
+        "quiz-90-09",
+        "quiz-90-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-91",
+      "day": 91,
+      "title": "第 91 天｜頻率、順序",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1285",
+        "word-1286",
+        "word-1287",
+        "word-1288",
+        "word-1289",
+        "word-1290",
+        "word-1291",
+        "word-1292",
+        "word-1293",
+        "word-1294",
+        "word-1295",
+        "word-1296",
+        "word-1297",
+        "word-1298"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-91-01",
+        "quiz-91-02",
+        "quiz-91-03",
+        "quiz-91-04",
+        "quiz-91-05",
+        "quiz-91-06",
+        "quiz-91-07",
+        "quiz-91-08",
+        "quiz-91-09",
+        "quiz-91-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-92",
+      "day": 92,
+      "title": "第 92 天｜引導、因果",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1299",
+        "word-1300",
+        "word-1301",
+        "word-1302",
+        "word-1303",
+        "word-1304",
+        "word-1305",
+        "word-1306",
+        "word-1307",
+        "word-1308",
+        "word-1309",
+        "word-1310",
+        "word-1311",
+        "word-1312"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-92-01",
+        "quiz-92-02",
+        "quiz-92-03",
+        "quiz-92-04",
+        "quiz-92-05",
+        "quiz-92-06",
+        "quiz-92-07",
+        "quiz-92-08",
+        "quiz-92-09",
+        "quiz-92-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-93",
+      "day": 93,
+      "title": "第 93 天｜順序、數量",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1313",
+        "word-1314",
+        "word-1315",
+        "word-1316",
+        "word-1317",
+        "word-1318",
+        "word-1319",
+        "word-1320",
+        "word-1321",
+        "word-1322",
+        "word-1323",
+        "word-1324",
+        "word-1325",
+        "word-1326"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-93-01",
+        "quiz-93-02",
+        "quiz-93-03",
+        "quiz-93-04",
+        "quiz-93-05",
+        "quiz-93-06",
+        "quiz-93-07",
+        "quiz-93-08",
+        "quiz-93-09",
+        "quiz-93-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-94",
+      "day": 94,
+      "title": "第 94 天｜指代、代詞",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1327",
+        "word-1328",
+        "word-1329",
+        "word-1330",
+        "word-1331",
+        "word-1332",
+        "word-1333",
+        "word-1334",
+        "word-1335",
+        "word-1336",
+        "word-1337",
+        "word-1338",
+        "word-1339",
+        "word-1340"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-94-01",
+        "quiz-94-02",
+        "quiz-94-03",
+        "quiz-94-04",
+        "quiz-94-05",
+        "quiz-94-06",
+        "quiz-94-07",
+        "quiz-94-08",
+        "quiz-94-09",
+        "quiz-94-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-95",
+      "day": 95,
+      "title": "第 95 天｜冠詞、感嘆詞",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1341",
+        "word-1342",
+        "word-1343",
+        "word-1344",
+        "word-1345",
+        "word-1346",
+        "word-1347",
+        "word-1348",
+        "word-1349",
+        "word-1350",
+        "word-1351",
+        "word-1352",
+        "word-1353",
+        "word-1354"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-95-01",
+        "quiz-95-02",
+        "quiz-95-03",
+        "quiz-95-04",
+        "quiz-95-05",
+        "quiz-95-06",
+        "quiz-95-07",
+        "quiz-95-08",
+        "quiz-95-09",
+        "quiz-95-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    },
+    {
+      "id": "day-96",
+      "day": 96,
+      "title": "第 96 天｜數詞",
+      "objective": "依原書分類閱讀與熟悉今日核心詞彙。",
+      "chapterIds": [
+        "chapter-027"
+      ],
+      "readingSections": [
+        {
+          "sourceFile": "text/part0007_split_008.html",
+          "contentType": "source"
+        }
+      ],
+      "readingProgress": 0,
+      "wordIds": [
+        "word-1355",
+        "word-1356",
+        "word-1357",
+        "word-1358",
+        "word-1359",
+        "word-1360",
+        "word-1361",
+        "word-1362",
+        "word-1363",
+        "word-1364",
+        "word-1365",
+        "word-1366",
+        "word-1367",
+        "word-1368"
+      ],
+      "practiceIds": [],
+      "quizIds": [
+        "quiz-96-01",
+        "quiz-96-02",
+        "quiz-96-03",
+        "quiz-96-04",
+        "quiz-96-05",
+        "quiz-96-06",
+        "quiz-96-07",
+        "quiz-96-08",
+        "quiz-96-09",
+        "quiz-96-10"
+      ],
+      "contentType": "source",
+      "scheduleType": "generated"
+    }
+  ]
+}

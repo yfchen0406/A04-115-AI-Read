@@ -1,0 +1,1809 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentType": "source",
+  "sourceChapter": "text/part0003_split_001.html",
+  "skills": [
+    {
+      "id": "skill-one",
+      "title": "Skill One｜挑個大的",
+      "sourceChapter": "text/part0003_split_001.html",
+      "sourceBlocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Skill One挑個大的",
+          "class": "bodycontent-third-title"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "英語就像一棵大楊樹",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "買菜、買水果一般都是挑個大的，說英語也是這樣。為了系統性地說明這個道理，我準備換一個比喻，不說買菜，說種樹。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "前面提到了，英語的詞彙多達幾十萬個，如果把英語這門語言比喻成一棵參天大樹的話，就說是楊樹吧，那麼這幾十萬個單詞就是這棵樹上的葉子，多到數不清。但是，這些樹葉並不是一開始就長出來的。種樹一開始只是栽棵小樹苗，幾乎沒有葉子，先是紮根生芽，然後樹幹長出枝杈，枝杈又長出樹枝，這些樹枝又長出更小的枝條，最後在這些枝條上才長出一片片迎風招展的樹葉。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "語言也是同理。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "猴子剛從樹上下來變成人的時候，說不了幾個字，支支吾吾無非就是你、我、吃、睡、食物等；到後來發現這些詞不夠用了，就再發明一些新的詞；而隨著交往的擴大、活動的增加，又需要更新的詞補充進來……就這樣一直加啊加，加到奴隸社會，加到約克王朝，加到工業革命，加到美國獨立，一直加到現在，就變成了這麼一棵枝繁葉茂的語言大樹。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "所以說，雖然單詞的數量龐大，但還是有規律可循的。這個規律就是，無論單詞量有多大，總有那麼一些詞是最先發明的，而其他的詞都是在這些詞的基礎上，逐漸開枝散葉長出來的。這就好比一棵大樹，最初的這些詞就是樹的主幹、次主幹，然後才長出樹枝、更小的樹枝以及樹葉。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "幸運的是，這些主幹、次主幹，甚至一些樹枝，依然保持著它的原始功能，不但能夠給長在它上面的樹枝提供養分，還能為那些長在它上面的最末端的樹葉提供養分。也就是說，這些最初的單詞依然有著強大的表達功能，不但能代替其他單詞，而且能代替很多由其發展而來的單詞。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "拿語言學的專業術語來說，這些最初形成的詞叫上義詞，而在這些詞的基礎上創造的詞叫下義詞。為了形象一點，我們管這些最初的枝幹叫大詞，而由此生成的叫小詞。所以才說要挑個大的。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "一個頂一百個",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "以前面那個例子來說，get就是inherit的上義詞，inherit就是get的下義詞，get是大詞，inherit是小詞。它們的區別就在於，大詞可以代替小詞使用，而小詞卻不可以逆向代替大詞。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "既然我們管get叫大詞，那它到底“大”在哪裡呢？它“大”就“大”在除了剛才說的inherit之外，還可以代替很多很多的小詞，請看下面的例子。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I get a lot of E-mails every day.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我每天都收到很多郵件。（代替receive）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "The policeman finally got him.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "警察最終抓住了他。（代替catch）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I'll get the doctor.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我去叫醫生。（代替call）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Let's get some fresh air.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "讓我們呼吸一下新鮮空氣。（代替breathe）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "She gets$19 an hour.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "她一小時掙19美元。（代替earn）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "He didn't get the joke.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "他沒聽懂這個笑話。（代替understand）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "We need to get the four-twenty bus if were going to be there by six.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "要想六點鐘到的話，我們得搭乘四點二十的那班公交車。（代替ride）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Can you get the phone, please？I'm making dinner.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "請接下電話好嗎，我在做飯。（代替answer）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I'm going to get you for that, you little brat！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我要為此懲罰你，小搗蛋！（代替punish）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "That stupid dog tried to get me.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "那條蠢狗試圖襲擊我。（代替attack）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I'll get dinner if you get the movie.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你要是請看電影的話我就請吃晚飯。（代替treat）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "What time will we get there?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我們到那兒得幾點了？（代替arrive）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "以上代替的小詞多嗎？不多，只有12個，get還可以代替下面的詞（不再給例句）：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "persuade, convince, induce, influence, sway, entice, coax, incite, impel, wheedle, manage, fix, succeed, arrange, contrive, wangle, annoy, upset, anger, bother, disturb, trouble, bug, irritate, aggravate, gall, madden, exasperate, nettle, vex, irk, rile, pique, buy, obtain, gain, acquire, win, land, score, achieve, net, secure, attain, reap, glean, procure, collect, net, realize, gross, reap, fetch, bring, collect, prepare, cook, follow, notice, appreciate, perceive, grasp, comprehend, fathom, develop, contract, experience, sustain, undergo, grab, capture, trap, seize, nail, collar, nab, apprehend, contact, reach, puzzle, confuse, baffle, bewilder, confound, perplex, mystify, stump, beat, flummox, nonplus, touch, affect, excite, stir, stimulate, arouse.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再加上上面的算多嗎？也不多，一共才108個。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "那麼get到底能代替多少個小詞？不知道，無數個。現在開始覺得這個大詞夠“大”了嗎？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "上面這些詞，大部分都是R詞彙表中所沒有的。說實話，上面這些小詞我也有很多不認識或不會用。But, it doesn't matter.（不過沒關係。）我會用get，這就夠了。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "大家可以想像一下，有一個天平，左邊的秤盤裡只放了一個詞get，右邊的秤盤裡則密密麻麻擠了100多個單詞，哪一個能量更大？哪一個可以更輕鬆地帶回家？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "以上只是舉了一個單詞做例子，和get並肩齊名的大詞還有have, give, take, make。在我看來，這幾個單詞就是那棵大楊樹最大的幾個樹杈，你要是不會用它們，或者把它們當小柴火棍燒了，那就太可惜了，簡直是暴殄天物！但這就是事實，我們過去學的英語很多都是把這些真正的大詞視作草芥，而拼著命地去背那些八竿子打不著，甚至一輩子都用不著的小詞。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "think有很多種",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "下面我再舉一個例子，說明大詞的重要作用。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "think這個單詞大家都熟悉吧？它也是個大詞，只不過很多人意識不到。先說一個課堂上的例子吧！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "在進行思維訓練的時候，有一堂課是讓學員用網路上隨機摘取的社會新聞進行思維轉換練習（關於這個練習的具體設計請參看後面的章節），其中有一個社會新聞的標題是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "姐妹倆懷疑老公有外遇相約跳橋自殺",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "要求學員用口語化的英語講述這個新聞。有的學員就卡在“懷疑”這個詞上了，他們的第一反應就是：嗯，以前學過“懷疑”這個詞。然後就在大腦中進行搜尋，最後有個學員就找到了“doubt”這個詞，Two sisters doubted……其實這個地方應該用suspect。這兩個詞都有“懷疑”的意思，但前者是說懷疑某事不存在或某人說的話是假的，後者是說懷疑某件不好的事有可能發生但沒有確切證據。這個問題的關鍵在於，如果你不確定哪個詞正確，或者是在乾脆就沒學過“懷疑”這個詞的情況下，你是完全可以用think來代替，因為think就是這兩個詞的上義詞，“懷疑”這事首先就是大腦裡“想”出來的。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "其實所有需要大腦工作的行為都可以歸結為think。除了上面兩個詞外，還有如consider（考慮），suppose（假設），guess（猜想），believe（相信），anticipate（預測），judge（判斷），ponder（斟酌），contemplate（沉思）等。但這些詞並不需要大家都記住。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "有人說，你的意思我懂了，那要怎麼去學這些大詞呢？為啥你舉的這些例子我看著非常簡單，但輪到我就不會用了呢？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這就涉及思維轉換的問題，以及如何循序漸進地提升口語能力的問題。樹葉好摘，想一下子摟到碗口粗的樹幹就得下番功夫了。別急，後面的章節會告訴你如何培養自己的英語思維模式，我這裡只是先告訴你一些要點，幫你把學英語的思路釐清一下。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "有的人會說了，照你的說法，那些小詞都沒用嘍？那還發明這些小詞幹什麼？別急，後面的章節會告訴你這些小詞有什麼用，要如何去學，如何去用。我只想提醒一下的是，對咱們這些口語都還說不利索的初學者來說，首先要解決的是流暢溝通的問題。要是走都走不穩當，咱先別考慮跑成嗎？過去你花了那麼多時間背那麼多小詞，跑起來了嗎？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "剛才舉的是動詞的例子，為了說得更全面，我再分別從名詞和形容詞中各拿一個例子來做說明。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "有感覺的都是feeling",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "先說名詞feeling。這個詞很多人只知道把它當感情來講，事實上，漢語中相當一部分與感知相關的詞都可以用這個詞來表達。請看下面的例子：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I didn't mean to hurt your feelings.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我無意傷害你的感情。（感情，代替emotion）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I still have feelings for her.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我依然愛著她。（愛情，代替love）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "You have no feelings for others.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你這人沒有同情心。（同情，代替sympathy）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I got the feeling that he didn't like me much.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我覺得他不是很喜歡我。（印象，代替impression）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I don't have any strong feelings about it.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "對這事我沒啥感覺。（觀點，代替opinion）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Who care about my feeling?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "誰會考慮我的感受？（態度，代替attitude）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "She has a wonderful feeling for colors.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "她對色彩很有感覺。（悟性，代替understanding）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I had a strange feeling in my neck.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我脖子梗怪怪的，不大舒服。（感覺，代替sensation）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I've lost all feeling in my legs.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我腿上沒感覺了。（知覺，代替sense）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "看明白了嗎？無論是肉體上的感受，還是情感上的感受，統統都可以用feeling來表達。其秘密就在於feeling這個單詞本身，它是從動詞feel轉化過來的，而feel則是指人類對外界事物的感覺，無論是精神的還是肉體的，無論是積極的還是消極的。只有隨著語言的發展才進一步細分為不同的feeling。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這就叫大詞——上義詞。不是硬性規定出來的，而是有道理可講的。我們學英語就是要遵循這些客觀規律，需要有人幫你把這些大詞找出來，作為第一批要掌握的詞彙。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "bad不都是“壞”的意思",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再舉一個形容詞的例子：bad。大家都知道這個詞是“壞”的意思，那麼它都有哪些下義詞呢？請看例句。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I thought it was a very bad article.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我覺得這文章寫得很爛。（劣質的，代替inferior）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Smoking gives you bad breath.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "抽菸會讓你有難聞的口氣。（難聞的，代替unpleasant）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "You're a bad liar.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你好可憐，謊也不會撒。（可憐的，代替poor）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "He had a bad accident.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "他發生了嚴重的事故。（嚴重的，代替serious）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "It is a bad time to call him.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這個時間給他打電話不大合適。（不合適的，代替inappropriate）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I don't think I am a bad person.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我認為我不是壞人。（邪惡的，代替evil）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "You are a bad boy.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你是個調皮小子。（調皮的，代替naughty）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Too much work is bad for your health.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "拼命工作有害健康。（有害的，代替harmful）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I've got a bad back.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我背很疼。（疼痛的，代替painful）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "She felt bad about leaving him.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "離開他，她覺得愧疚。（內疚的，代替guilty）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I'm afraid I'm feeling pretty bad.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我覺得病得很厲害。（生病的，代替ill）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "除了以上這些下義詞外，我還想特別指出另外三個下義詞：rotten, rancid, sour。這三個詞都是指“食物壞了”的意思，但在搭配上卻各有不同。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "rotten是指食物腐爛了，所以你可以說The apple is rotten.而rancid是指含有脂肪的食物酸敗了，所以你可以說The butter is rancid.Sour則是指牛奶等不新鮮了，所以你可以說The milk is sour.但在表示“壞了”這個意思時，這些詞相互之間不可以混搭。如果你說The apple is sour.那就變成“這個蘋果是酸的”的意思了。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "但是，神奇的是，所有的這些食物都可以和bad搭配，都可以用“食物名+be+bad”的句式表達食物變質的意思。所以，這個例子也進一步說明了，大詞有多麼重要，它可以幫初學者減輕多少負擔！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "說到食物，還有一種最容易掌握的大詞，那就是名詞的自然分類。上面所舉的幾個例子，無論是動詞get和think，還是名詞feeling，或者是形容詞bad，都還需要學習者通過訓練來掌握。但像一些天然的分類，比如說自然界的各種生物，可以分為animal（動物），plant（植物），動物中又可以分為bird（鳥），fish（魚），insect（昆蟲）等，它們的上下義詞是非常明顯的，上一個類別的詞就是下一個類別的大詞，比較容易理解和掌握。在表達精確度要求不高的情況下，完全可以用這些大詞來代替具體的詞。這個會在後面講名詞的時候具體介紹。",
+          "class": "bodycontent-text"
+        }
+      ],
+      "practice": {
+        "contentType": "generated",
+        "prompt": "閱讀原理與案例後，使用今日單字重新說一次。",
+        "status": "available"
+      },
+      "quiz": {
+        "contentType": "generated",
+        "status": "available"
+      },
+      "contentType": "source"
+    },
+    {
+      "id": "skill-two",
+      "title": "Skill Two｜揀實心的",
+      "sourceChapter": "text/part0003_split_001.html",
+      "sourceBlocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Skill Two揀實心的",
+          "class": "bodycontent-third-title"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "“重要”有四種說法",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "在上一個章節中，“挑個大的”幫我們解決了那些不在R詞彙表的小詞的表達問題，那麼這第二個技巧“揀實心的”又是什麼意思呢？它又能幫我們解決什麼問題呢？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "先給大家講一個例子來說明什麼是“實心的詞”，什麼是“空心的詞”。比如說，我們想表達這樣一個意思：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這是一個重要的決定。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "通常情況下，我們會說成是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "It is an important decision.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "當然這種說法沒有任何問題，但這句話在口語中還可以表達為：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "It is a big decision.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "在這個例子中，important就叫“空心詞”，而big就是“實心詞”。因為後者是我們可以直接體驗到的，生活中有很多big的東西，什麼big house, big car, big city，我們通過肉眼就可以感知到什麼是big。而important這個詞則是頭腦中的概念，看不見，摸不著。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "所以，專業地說，“實心詞”其實就是指具體的概念，而空心詞則是指抽象的概念。任何語言，不僅僅是英語和漢語，都會把一些具體的概念轉移用到描述抽象事物上去，這是一種比喻，專業術語叫隱喻，隱含的比喻。在前面這個例子中，decision這個抽象概念就被暗暗地比喻成一座房子或者別的具體的東西，所以可以用big代替important形容它的重要性。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "反過來說，啥叫重要？什麼樣的東西重要？當然，我們可以創造出像important這樣的詞專門表達這個意思，但從另一個角度考慮，重要的東西一定有它的具體特點——一些可以被感知的特點，要麼大，要麼高，要麼數量多，要麼位置靠前。所以，我們除了可以用big來代替important外，還可以用其他具體概念來代替它，比如下面這兩個例子：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "If it means that much to you, I'll go find something else.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "要是它對你那麼重要，我就再去找找別的東西吧！（從數量角度說明事物的重要性）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "For him, family comes before everything.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "對他來說，家庭比什麼都重要。（從位置角度說明事物的重要性）",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "從以上例句可以看出，一個簡單的“重要”的概念，我們就可以生出四種不同的表達方式，除important外，其他三種分別從大小、數量、位置來描述，都是非常具體、形象的。這就給我們的表達提供了更多的選擇，在我們不知道某個概念對應的最直接的詞或最直接的短語時，就可以通過這種方式來解決問題。事實上，英語中有很多抽象概念並沒有一個專門的詞彙來與之對應，也是需要用這些具體的詞通過比喻來實現的。所以，這就是我們學習英語的第二個重要的技能，學會用具體的R詞彙表達抽象的概念，也就是說，用實心詞來表達抽象的概念。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "size不光是尺寸的意思",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再給大家舉一個例子，size這個詞，大家都知道是“尺寸”的意思，是一個很具體的實心詞了，對吧？我們買鞋、買衣服甚至買房子都需要講究它的尺寸，但如果我們把這個定義延伸到一些抽象的概念上，就會發現原來它可以如此輕鬆地解決一些問題。請嘗試用英語表達以下句子：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "沒人意識到問題的嚴重性。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "她很清楚任務的艱鉅性。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "他欠了那麼多錢，把我們給嚇到了。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "頭兩句的“嚴重性”和“艱鉅性”都屬於抽象概念，一般初學者很難找到合適的詞來表達，最後一句中的“他欠了那麼多錢”雖然可以用一個從句來表達，但不夠簡潔。事實上，這三句話都是可以用size這個詞來表達的，我們來看參考譯文：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Nobody realized the size of the problem.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "She knows the size of the task.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "We were shocked at the size of his debts.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "size在這三句話裡，是不是有四兩撥千斤的感覺？這就是實心詞的魅力所在。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "為什麼實心詞可以用來代替空心詞？簡單來說，其實是因為世界是相通的，無論是外面客觀世界的概念，還是內心主觀世界的概念，都有一一對應的關係。拿前面的size來說，不光是有形的房子或衣服有這個屬性，無形的債務或各種問題也有這個屬性。英語中當然有一些專門的詞來表達抽象概念的這些屬性，但那些大多用在比較正式的場合，也就是我們通常所說的書面語。既然我們現在要學的是口語，那為什麼不用輕鬆一點、大家都容易理解的方式來表達呢？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "從詞性來看，形容詞和介詞經常被用作抽象概念。這一內容我會在下面的章節介紹這兩種詞彙時特別講解。",
+          "class": "bodycontent-text"
+        }
+      ],
+      "practice": {
+        "contentType": "generated",
+        "prompt": "閱讀原理與案例後，使用今日單字重新說一次。",
+        "status": "available"
+      },
+      "quiz": {
+        "contentType": "generated",
+        "status": "available"
+      },
+      "contentType": "source"
+    },
+    {
+      "id": "skill-three",
+      "title": "Skill Three｜捏軟乎的",
+      "sourceChapter": "text/part0003_split_001.html",
+      "sourceBlocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Skill Three捏軟乎的",
+          "class": "bodycontent-third-title"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這話聽上去怎麼像是在說“揀軟柿子捏”啊？沒錯，就是這個意思，因為軟的好欺負。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "前面說了，同一件事可以有不同的說法。如果你想用的那個說法在R詞彙表中一時找不到順手的單詞，大詞也沒有，實心詞也找不到，千萬別隨便找個詞湊合！而是要迅速地轉換一下表達的角度，換個自己有把握的角度。這就叫“捏軟乎的”。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "舉個例子吧！比如說，你想表達下面這個意思：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我喜歡吃瘦肉。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "很多人腦子裡的第一反應會是thin這個詞，“瘦”的意思嘛！但又不是很有把握，因為我們以前只是在說“他長得很瘦”的時候用到這個詞，但不曉得說“瘦肉”是不是也可以用這個詞。好啦，既然沒把握，就不要“霸王硬上弓”啦，你要是說成I like to eat thin meat.可就鬧笑話了！那怎麼辦呢？其實準確的表達應該是lean meat, lean是指含脂肪比較少的肉，但這個詞並不在R詞彙表中，所以這時我們就要換一個說法，“瘦”不會說，你還不會說“肥”嗎？喜歡吃瘦肉，反過來講不就是“不喜歡吃肥肉”嗎？fat這個詞你是有把握的啊！除了胖之外，我們都知道它有“脂肪”的意思，那這個肥肉的表達是有把握的啦！所以，這句話你就可以靈機一動說成是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I don't like fat meat.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再舉個類似的例子。你想跟老外說，“這個土豆是生的”。“生”（raw）這個詞不會說，不會說就不要勉強嘛！“生”不會，“熟”我還不會嗎？我說它沒煮過不就可以了嗎？所以，這話就可以說成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "This potato is not cooked.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這就是我們要講的轉換角度第一招：“正著不會反著說”。還有其他兩招分別是：“我不會說你來說”和“人不會說東西說”。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "正著不會反著說",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "先說第一招，“正著不會反著說”。其實這招很好理解，就是用反義詞嘛！沒錯，這世界原本就很簡單，上有天下有地，人分男女，獸有公母，陰的反面就是陽，善的對手就是惡。只要把你會說的那個詞否定掉就是你不會說的那個意思了。這招雖然比較簡單，但我這兒還是有幾個詞需要強調一下。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "一是keep的用法。這個詞在英語中經常用來進行否定表達的，可以用來代替很多漢語中相反的概念，只是因為我們不大熟悉這個詞的用法，所以用起來並不是很順手。比方說，我們漢語習慣說“零錢不用找了”。這個“找”字很多人一時反應不過來怎麼說，其實就可以用keep進行反向表達，“不用找”的意思就是“可以留著”，所以可以說成是：You can keep the change.或You can keep it.這其實也是最地道的英語表達。還有下面的例子：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Keep it to yourself.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這事不能對別人說。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "He keeps something from his wife.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "他對妻子隱瞞了些什麼。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "The baby keeps us up all night.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "寶寶鬧騰得我們一夜沒睡。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "二是off的用法。off也是我們很不習慣用的一個詞，但這個詞的能量非常大，在後面的章節會有詳細說明，這裡先就其否定詞的作用讓大家一窺斑豹。舉個例子，我們買東西的時候經常會碰到打折的產品，比如說，“所有的襯衫打八折”。當然我們可以用discount這個詞，但這個詞並不在我們的R詞彙表之上，那如何通過off這個詞來解決呢？很簡單，你只要說：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "All the shirts are 20%off.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "什麼意思？就是說所有襯衫的價格會去掉20%。其實這種表達比起用discount來還更簡潔一些，因為discount是名詞，你還必須加一個動詞才能把意思說完整。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "還有另外一個類似的例子。你去理髮的時候（尤其是男士），一般理髮師會問你：“要留多長啊？”這個“留”字，很多人又不知道怎麼說了，但用了off這個詞，問題就一下子解決了：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "How much do you want your hair off?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "off的否定作用還可以幫你解決以下問題：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "His free throw shooting was off.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "他罰球沒有罰中。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "He rides bicycle with his hands off the handle.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "他騎車的時候不扶車把。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "以上兩個例子其實也說明了英語和漢語在看問題角度上的一個差別，一個正著看，另一個反著看。掌握了這個規律也有助於我們把英語說得更加靈活。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "我不會說你來說",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "轉換角度第二招：“我不會說你來說”。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這是什麼意思呢？大家還記得本章節剛開始時的那個例句嗎？“小兒子繼承了她所有的財產。”一共有四個說法，其中前兩個是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Her youngest son got all her property.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "She gave all the property to her youngest son.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這兩句話就是“我不會說你來說”的體現。我們說話的很多時候是在表達兩個人之間關於某種事物的所有關係，這個事物可能是具體的，也可能是抽象的。既可以表達為一個人給了另一個人某種東西，反過來也可以表達為另一個人從這個人手裡得到了某種東西。也就是說，如果“我”做主語不好表達，那就換成以“你”來做主語。就這個例句而言，當事人分別是她的小兒子和她，要表達的是這兩人之間對財產的所有關係。她把財產給了小兒子，也就等於小兒子從她那裡得到了她的財產。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再舉一個類似的例子：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "銀行批給了我30萬元按揭貸款。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "如果你不知道mortgage（按揭）怎麼說的話，那就換成是當事人的另一方，以“我”為主語來表達，變成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I borrowed 300，000 yuan from the bank.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "問題輕鬆解決。再給一個抽象的例子：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你把感冒傳染給了我。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "如果infect（傳染）不會說，你可以換個角度以“我”做主語，說成是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I got the cold from you.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "當然，如果你知道infect還有個大詞可以代替的話，這句也可以說成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "You gave me the cold.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "類似的例子還有，你問商家：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你們這兒可以刷卡嗎？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "如果“刷卡”不會說，那就換成“我”做主語，變成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Can I use bank card?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "人不會說東西說",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "轉換角度第三招，“人不會說東西說”。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "如果我不會說的事情換成你還是不會說怎麼辦？那就只能用最後一招了，讓“東西替你開口表達”！繼續引用前面的例句：小兒子繼承了她所有的財產。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "All her property goes to her youngest son.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "在這句話中，主語既不是“小兒子”也不是“她”，而是變成了“財產”這個第三者。按說財產是個沒有生命的東西，既沒長腳也沒長腿，怎麼能讓它go呢？這就是英語和漢語之間一個非常大的區別，也是我們要重點掌握的一個表達技巧。漢語習慣於從人的角度，以人做主語來表達，但英語卻經常轉換角度，以物做主語進行表達。這樣做的好處就是：可以讓英語說得更簡單一些，因為有些事情不好從人的角度來表述或者不需要知道是誰做的事情。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "go是這一類詞的典型代表。比如在頒獎典禮上，嘉賓經常要說一句：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "獲獎的是XXX。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "漢語用的是人做主語，英語當然也可以直接說成是：The winner is XXX.但在很多場合下，是用獎品做主語，說成下面這個樣子：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "The award goes to XXX.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "獎品變成一個會走路的東西了。生活中，我們也有大量類似的用法，比如：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "My headache just doesn't go.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我的頭疼老是好不了。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I don't know where all my money goes！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我不知道錢都花到哪兒去了！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Where do these plates go?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這些盤子要放在哪兒呀？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我們後面有個章節是專門介紹動詞go的，大家可以參考。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "除了go之外，經常用來以物做主語的典型動詞還有come, bring, say, speak, wait, stay, stop等動詞，如：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "This dress comes in three colors.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這條裙子有三種顏色。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "What brings you here today?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "今天什麼風把你給吹來了？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "What do these figures say?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這些數字說明了什麼？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Her success speaks for itself.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "她的成功說明了一切。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "The paperwork can stay till tomorrow.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "案頭工作可以明天再做。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "My hat wont stay.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "我的帽子老戴不住。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Your responsibility doesn't stop here.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你該乾的事還沒幹完呢！",
+          "class": "bodycontent-text"
+        }
+      ],
+      "practice": {
+        "contentType": "generated",
+        "prompt": "閱讀原理與案例後，使用今日單字重新說一次。",
+        "status": "available"
+      },
+      "quiz": {
+        "contentType": "generated",
+        "status": "available"
+      },
+      "contentType": "source"
+    },
+    {
+      "id": "skill-four",
+      "title": "Skill Four｜自產自用",
+      "sourceChapter": "text/part0003_split_001.html",
+      "sourceBlocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Skill Four自產自用",
+          "class": "bodycontent-third-title"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "終於說到這個終極殺手了！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "為什麼說它是終極殺手？意思就是說，如果前面所說的三個技巧都歇菜了，都沒辦法搞定你想表達的東西，OK，我們就用這一招，所有的全擺平！這一招就是超級無敵奪命手，這一招就是風雨雷電乾坤大挪移！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "有人說了，這麼厲害？為什麼會這麼厲害？這麼厲害是有它深層原因的，待會兒向大家解釋。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "獸醫、頻率、優先權",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "所謂的“自產自用”到底是什麼意思呢？其實很簡單，就是說如果有個詞你不知道，或沒記住，乾脆就用解釋的方法把你想說的意思表達出來，自己生產自己用。先舉幾個簡單的例子。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "你想表達“獸醫”這個意思，但不知道vet這個詞，R詞彙表中也沒有，最直接的解決辦法就是說成a doctor for the animals，因為獸醫也是醫生，你只要說明是為動物治病的醫生就可以了。你想說“義大利麵”，但把pasta這個詞給忘了，是不是可以說成是Italian noodle？因為義大利麵也是面，你知道noodle這個詞，也知道義大利怎麼說，問題就解決了。再比如，你要跟老外介紹說“那個人是我同事”，結果colleague這個詞一時想不起來了，但你可以說成He is someone in my company.或者是He is someone from work.因為所謂的同事，就是指你們在同一家公司工作嘛！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "有人說了，你說的這些簡單了點，我也會。那我就告訴你複雜一點的。比如說，日本是個地震多發的國家，你想問這樣一個問題：“日本地震發生的頻率是多少？”結果腦子裡一時不知道頻率frequency這個詞了，所以你就說不出：What is the frequency of earthquake in Japan?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "但是，你完全可以這樣問：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "How often does earthquake happen in Japan?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "啥叫頻率？不就是多長時間發生一次嗎？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再舉個高階一點的例子。你偶爾學了priority這個詞（“優先”的意思），感覺很厲害，但是到了真正要表達的時候，卻把這個詞給忘了，怎麼辦？話還得說啊。同樣道理，你只要把這個詞結合句子解釋一下就可以了。priority在詞典中的解釋是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "something that you think is more important than other things and should be done first.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "比如說，你想說的是，“結婚是頭等大事”，本來可以說：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Getting married is the first priority.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "現在把priority給忘了，不要緊，這句話可以解釋成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Getting married is more important than other things and should be done first.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "清楚不？通順不？流暢不？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "求婚、走私、上訴",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "又有人說了，你舉的好像都是名詞的例子，其他詞彙是不是也可以用這種方式來解決？當然可以。我再給你們舉一些動詞和形容詞的例子。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "先說個大家最熟悉的吧！比如說，你同事把你得罪了，你跟他說：你應該向我道歉。你腦子裡的第一反應肯定是apologize，但這個詞不在R詞彙表裡，怎麼辦呢？很簡單：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "You should say sorry to me.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "因為apologize=say sorry。依此類推，你說“歡迎某人”，不一定要說greet somebody，只要說say hello to somebody。你說“接受請求”，不一定非得用accept，可以說say yes to something。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "propose（求婚）這個詞也是很多學員之前就背下來的，但是，不用這個詞完全可以非常輕鬆愉快地把事兒說明白。比如，我昨晚向她求婚了：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I asked her to marry me last night.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "因為牛津詞典對propose這個詞的解釋就是to ask somebody to marry you。你幾乎不需要做什麼改變就可以直接把它用在句子裡。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "如果把上面這句話再加一點內容，變成：我昨晚向她求婚，她答應了。那麼再用上剛剛前面說的那個accept的表達，就可以說成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "I asked her to marry me last night and she said yes.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "多神奇啊！原本是兩個複雜單詞的表述——propose和accept，輕鬆愉快地用一個小學生都會的ask和say就解決了！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再說點難的。smuggle（走私）這個詞，聽上去很複雜，似乎沒那麼容易解釋。其實仔細一想也簡單，所謂“走私”，不就是“把一些東西或人從一個國家偷偷帶到另一個國家”嘛，只不過這種行為是不合法的，所以需要加上secretly或illegally說明一下。比如，他往中國走私武器。就可以說成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "He takes weapons into China illegally.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再說個更專業的：appeal（上訴）。這是個法律術語，夠專業了吧？其實解釋起來並不難：to ask the court to change the decision。只不過這個要求比較正式，需加個formally修飾一下。“他要求上訴”這句話就可以說成：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "He formally asked the court to change their decision.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "裸體、慢性病",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "形容詞也同樣如此。形容詞是用來描述事物在某一方面的性質或狀態的，你只要把這個性質或狀態說明白就可以了。我就不說簡單的了，直接舉幾個有點難度的例子。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "比如說，naked（赤裸的）這個詞，R詞彙表中沒有，其實這個詞很好解釋，什麼叫裸體？不就是啥也沒穿嗎？你說“她赤身裸體”，就是“她什麼衣服也沒穿”的意思。而且可以用不同的句式來表達：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "She wears nothing.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "She has nothing on.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "There're no clothes on her.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "隨便挑！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再說一個詞chronic（慢性的），一般用來形容疾病，這個詞對初學者來說比較專業、比較陌生。啥叫慢性病？不就是說這個病“會拖延很長時間”嗎？所以，你說“這是個慢性病”的時候，你只要說：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "This disease will last for a long time.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "就足以讓對方明白你說的是什麼意思了。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "以老帶新說英語",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "好了，例子舉得差不多了，說到這兒，大家應該比較清楚這個“自產自用”招數的厲害了吧？它幾乎無所不能。有人可能還有點擔心，你這個招數聽上去雖然很管用，但會不會不規範啊？老外會這樣說嗎？我可以很負責任地告訴你，以上給你舉的所有例子不但在表達上沒有任何問題，有一些還非常地道，在native speakers中使用的場合比它所解釋的詞彙還要多。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "為什麼會這樣？為什麼很多詞都可以用解釋的方式來表達？其實說起來很簡單。前面說過，詞彙的生成與發展就像一棵大樹，最初就是一個樹幹加一些樹枝，後來越長越大，就不斷有新枝葉生出來。關鍵在於後面新生的枝葉都是長在前面的樹幹與樹枝上的。也就是說，新增加的詞彙都是用本來就存在的那些老詞解釋出來的。一開始還只是解釋，說得多了，就覺得不如發明個新詞來替代它，這樣可以讓和它相關的一些表達變得更省力一些。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "就拿smuggle（走私）這個詞來說，今天你說一句：Someone takes something to somewhere secretly.明天他說一句：Someone brings something to somewhere illegally.後來大家一合計，嗯，乾脆咱就給這種行為發明一個新詞吧！多省力。大家說，好！於是，smuggle這個詞就誕生了。至於為啥叫smuggle而不是叫muggle或者其他什麼詞，咱就不考究了，也可能當初有個經常走私的人就叫smuggle，嘿嘿！",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "所以說，既然大部分詞都是這樣誕生的，那這些詞就都是可以用已知的詞來解釋的，那麼從理論上來講，大部分用到這些詞的句子也都是可以用解釋的方式來表達的。這是這種“自產自用”的招數非常神奇的重要原因，也從根本上論證了為什麼我們可以用1368個單詞說流利的英語這個結論。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "當然，並不是說所有的詞彙都要用這種方式來表達，那這樣的話新詞的發明就沒有意義了。而且，我們的R詞彙表中所選擇的也不都是那些用來解釋其他詞彙的最基礎的詞彙，也包括一些雖然可以用其他詞彙來解釋，但是解釋起來會比較複雜，或者說大家更習慣用的詞彙。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "比如說：interview（面試）這個詞，它的名詞形式在牛津詞典中的解釋是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "a formal meeting at which somebody is asked questions to see if they are suitable for a particular job, or for a course of study at a college, university, etc.",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "它包含的資訊特別多，既涉及場合，也涉及目的，所以，用解釋的方式來代替這個詞用起來就會非常彆扭，也沒必要。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "再比如，動詞marry（結婚），在詞典中的解釋是：to take someone as your husband or wife。雖然這種解釋非常簡單，用在句子裡代替marry這個詞也很順暢，但marry是個經常用到的詞，而且不難記，所以這個詞就需要被收錄到R詞彙表中。其實在現實生活中，這兩種說法都會用到，比如在結婚儀式上，主持人就是這樣問的：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "Jack, would you like to take Sarah as your wife?",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "以不變應萬變",
+          "class": "sigil_not_in_toc"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "除了解決口語表達問題外，“自產自用”的另一個現實意義是，英語單詞比漢語詞彙要難學得多、難記得多，學會解釋能幫我們省掉很多記單詞的麻煩。這不僅僅是對初學者，即使是對英語水平較高的人也有現實意義。那麼，英語單詞難記在哪裡呢？簡單來說，就是漢語的很多詞是可以直接看出意思來的，而英語單詞只是一系列字母的組合，除了詞綴能表達些許意思外，基本看不出它的詞義。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "打個比方，我們說“車”，車分轎車、卡車、火車、吊車、計程車、救護車、公共汽車、廂式貨車，等等。漢語很簡單，“車”字前面加一個修飾性的詞，基本就能猜出這個車是用來幹什麼的了。而英語對應的單詞則沒這個功能：car, truck, train, crane, taxi, ambulance, bus, van等一類車一個名字，而且相互之間看不出任何的關聯。也就是說，你要記住它們必須一個一個單獨記。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "這種現象並不是偶然的，而是在很多名詞上體現出來的。再比方說“酒”，我們漢語只要在“酒”前面加一個修飾性的詞就可以變成：白酒、啤酒、葡萄酒、香檳酒等，而英語則分別是：liquor, beer, wine, champagne。關於“肉”，我們只要說：豬肉、牛肉、雞肉、羊肉。而英語則要說：pork, beef, chicken, mutton。關於樹，我們只要說：松樹、橡樹、榆樹、柳樹……反正都是樹。而英語則要說：pine, oak, elm, willow。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "不光是這些具體事物的名稱，還有一些抽象的概念英語也有這個特點。比如，我們管大學裡不同年級的學生分別叫大一生、大二生、大三生、大四生，通俗易懂，簡單明瞭。而英語則要叫：freshman, sophomore, junior, senior。我們說裁判，只要在裁判前面加上相關的專案就可以，如足球裁判、網球裁判。而英語則要區分為referee和umpire。",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "也不光是名詞，動詞也有這樣的特點。就拿“看”和“說”這兩個動作來講，可以分出很多不同的“看法”和“說法”。“看”可以分為：凝視，窺視，掃視，怒視。“說”可以分為：小聲說，大聲說，含糊地說，不耐煩地說。我們漢語是隻要拿出一個“視”字和一個“說”字，前面加上修飾性的詞就可以了，而英語則每個都對應著一個詞，分別是：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "看：stare peep glance glare",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "說：whisper shout mumble snap",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "怎麼樣？是不是覺得英語很變態？從這一點上來講，英語的造詞能力真不如我們的漢語。一個老外只要掌握1000多個漢字就可以看懂大部分中文文章，而一個美國的高中生有著30000多的詞彙量，閱讀的時候還得隨身帶著一本大詞典。作為一個外語學習者，我們背3000個單詞都累得頭昏腦漲，眼冒金星，想要達到美國高中生的詞彙量是不是比登天還難？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "所以，要是沒有個妥當的辦法幫我們解決這個問題，怎麼才能做到無往而不勝呢？",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "其實，就前面舉的這些例子，我們都可以通過解釋的方法來解決。比較熟悉的那些單詞就不說了。crane（吊車）可不可以說成是a tall machine used to lift heavy things？mutton（羊肉）可不可以說成是the meat of a sheep？Sophomore（大二學生）可不可以說成是the student in the second year at a university？至於裁判，無論是哪項運動的，先統統用一個judge打頭，然後說明是哪項運動的裁判。而“看”和“說”則可以輕鬆地分別用一個look和speak打頭的短語搞定：",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "stare（凝視）：to look at somebody/something for a long time",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "peep（窺視）：to look at somebody/something secretly",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "glance（掃視）：to look at something/somebody quickly",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "glare（怒視）：to look at somebody/something angrily",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "whisper（小聲說）：to speak quietly to somebody",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "shout（大聲說）：to speak loudly to somebody",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "mumble（含糊地說）：not to speak something clearly",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "snap（不耐煩地說）：to speak something impatiently",
+          "class": "bodycontent-text"
+        },
+        {
+          "type": "paragraph",
+          "level": null,
+          "text": "其實，用解釋的方法就相當於是用我們漢語中最小單位的字來造詞，只要把英語中那些最小單位的詞掌握了，啥東西都可以用它們解釋出來。這就是我們精選這1368個單詞的意義，它們就像是活躍在英語這幢摩天大樓中的藍色小精靈，無處不在，無所不能。至於這些可愛的小精靈都是哪些詞彙？我們將在後面的章節中分門別類地一個一個介紹出場。",
+          "class": "bodycontent-text"
+        }
+      ],
+      "practice": {
+        "contentType": "generated",
+        "prompt": "閱讀原理與案例後，使用今日單字重新說一次。",
+        "status": "available"
+      },
+      "quiz": {
+        "contentType": "generated",
+        "status": "available"
+      },
+      "contentType": "source"
+    }
+  ]
+}
