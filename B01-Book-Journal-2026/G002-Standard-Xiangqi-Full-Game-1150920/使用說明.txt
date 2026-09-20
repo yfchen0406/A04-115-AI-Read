@@ -1,0 +1,1 @@
+上傳整個資料夾內容到支援 HTTP response headers 的靜態網站；若主機支援 _headers，會自動啟用 NNUE WASM。困難 AI 思考時間約 3 秒，普通 AI 約 0.9 秒。若瀏覽器不支援則回退內建搜尋。雙擊本機 index.html 可看介面，但瀏覽器可能限制正式引擎。Fairy-Stockfish 依 GPL-3.0 授權，請保留 engine/AUTHORS、engine/Copying.txt 與 engine/README.txt。
