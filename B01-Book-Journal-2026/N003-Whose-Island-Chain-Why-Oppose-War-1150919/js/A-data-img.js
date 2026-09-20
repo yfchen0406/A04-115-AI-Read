@@ -20,6 +20,15 @@ export const arr_article = [
       },
       {
         d1: "當所有人都在討論如何面對戰爭時，這本書選擇先問一個更根本的問題——我們能不能避免走到戰爭那一步？",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-002.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-002.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-002.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-002.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-002.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-002.webp", dec2: "Cheat Sheet" },
+        ],
       },
     ],
   },
@@ -44,18 +53,53 @@ export const arr_article = [
       },
       {
         d1: "這種多人書寫方式，也意味著讀者不必把全書當成一套必須完全接受的答案，而可以把十篇文章視為十個觀察戰爭與和平的窗口，在彼此不同的論述之間建立自己的判斷。",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-003.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-003.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-003.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-003.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-003.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-003.webp", dec2: "Cheat Sheet" },
+        ],
       },
     ],
   },
   {
     title_id: "n3",
     title: "PART 1：第一島鏈上的反戰與台灣有事？",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-004.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-004.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-004.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-004.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-004.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-004.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n4",
     title: "1.帝國夾縫還是帝國黑手？台灣與沖繩的和平威脅（作者：張鈞凱）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-005.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-005.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-005.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-005.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-005.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-005.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n4-1",
@@ -72,6 +116,15 @@ export const arr_article = [
           },
           {
             d1: "這種結構本質上是殖民主義與父權宰制的延伸，強制將沖繩定型為被犧牲的角色。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-006.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-006.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-006.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-006.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-006.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-006.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -93,6 +146,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：沖繩用血淚築成的在地反戰教育，揭示了盲目備戰只會將人民推向集體玉碎的深淵。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-007.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-007.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-007.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-007.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-007.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-007.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -111,6 +173,15 @@ export const arr_article = [
           },
           {
             d1: "台灣論者表面上對沖繩表達同情，實際上卻扮演著美帝軍事說客，這是一種極度傲慢與偽善的政治慾望。<strong>結論：假借「帝國夾縫」之名的弱者同情，掩蓋了要沖繩承擔美軍基地以護衛台灣的父權宰制本質。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-008.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-008.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-008.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-008.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-008.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-008.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -129,6 +200,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：唯有台沖人民共同推動「島鏈無事」，才能擺脫美帝將東亞邊緣島嶼當作戰場肉盾的悲慘宿命。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-009.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-009.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-009.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-009.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-009.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-009.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -138,7 +218,20 @@ export const arr_article = [
     title_id: "n5",
     title:
       "2. 在第一島鏈上反戰：從台灣「反戰聲明」到日本「台灣有事」論（作者：傅大為）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-010.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-010.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-010.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-010.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-010.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-010.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n5-1",
@@ -158,6 +251,15 @@ export const arr_article = [
           },
           {
             d1: "這段歷史因此成為理解今日「台灣有事即日本有事」論述的重要背景。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-011.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-011.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-011.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-011.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-011.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-011.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -179,6 +281,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者以「左翼中立島」提出另一種安全想像，希望台灣降低對大國軍事戰略的依附，透過交流與政治自主尋找和平空間。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-012.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-012.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-012.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-012.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-012.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-012.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -200,6 +311,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者認為，「台灣有事」不只是台海議題，也與日本戰後安全體制及再軍事化爭論密切相連。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-013.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-013.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-013.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-013.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-013.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-013.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -221,6 +341,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者試圖以跨國、跨政治光譜的和平連帶，重新思考第一島鏈人民如何取得更大的安全與政治自主性。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-014.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-014.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-014.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-014.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-014.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-014.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -229,13 +358,39 @@ export const arr_article = [
   {
     title_id: "n6",
     title: "PART 2：美國因素及其反制、翻牆與重生",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-015.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-015.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-015.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-015.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-015.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-015.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
   },
   {
     title_id: "n7",
     title:
       "3. 面對川普，如何不受統治？從娜歐蜜．克萊恩的抵抗觀念談起（作者：鍾秀梅）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-016.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-016.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-016.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-016.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-016.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-016.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n7-1",
@@ -255,6 +410,15 @@ export const arr_article = [
           },
           {
             d1: "社會若能建立穩固的基層網絡，就比較有能力抵抗危機政治帶來的權力集中。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-017.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-017.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-017.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-017.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-017.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-017.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -276,6 +440,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者認為，具有氣候正義、經濟平等與公共關懷的替代願景，才能使社會運動由防守走向積極建構。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-018.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-018.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-018.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-018.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-018.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-018.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -297,6 +470,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者認為，理解川普主義不能只批判其政治表象，也必須理解其背後的經濟不平等與群眾失落。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-019.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-019.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-019.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-019.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-019.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-019.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -318,6 +500,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：基層互助顯示，政治抵抗除了選舉與大型示威，也可以透過日常社區組織累積長期的社會韌性。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-020.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-020.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-020.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-020.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-020.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-020.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -327,7 +518,20 @@ export const arr_article = [
     title_id: "n8",
     title:
       "4. 希望殺得死嗎？新委內瑞拉的誕生、成就與美國的干預（作者：馮建三）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-021.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-021.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-021.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-021.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-021.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-021.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n8-1",
@@ -345,7 +549,18 @@ export const arr_article = [
           {
             d1: "同一個政治事件，如果分別被稱為「干預」、「制裁」、「執法」或「侵略」，會形成截然不同的公共印象。",
           },
-          { d1: "因此，作者希望讀者同時檢視國際政治中的權力關係與媒體敘事。" },
+          {
+            d1: "因此，作者希望讀者同時檢視國際政治中的權力關係與媒體敘事。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-022.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-022.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-022.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-022.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-022.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-022.webp", dec2: "Cheat Sheet" },
+            ],
+          },
         ],
       },
       {
@@ -362,6 +577,15 @@ export const arr_article = [
           { d1: "作者特別重視新憲法與基層參與所形成的政治主體性。" },
           {
             d1: "<strong>結論：作者將玻利瓦爾革命視為透過資源重分配與政治參與，重新建立底層人民社會權利的一次重要實驗。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-023.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-023.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-023.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-023.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-023.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-023.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -383,6 +607,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者主張，理解委內瑞拉危機必須同時考察內部治理、國際制裁與媒體框架，而不能只採取單一歸因。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-024.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-024.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-024.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-024.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-024.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-024.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -404,6 +637,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者以公社自治及拉丁美洲左翼政治經驗說明，即使面臨強大外部壓力，人民仍可能持續探索不同的社會發展道路。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-025.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-025.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-025.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-025.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-025.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-025.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -412,7 +654,20 @@ export const arr_article = [
   {
     title_id: "n9",
     title: "5. 翻牆看世界：洞見台灣的「防衛思覺失調」（作者：盧倩儀）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-026.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-026.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-026.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-026.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-026.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-026.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n9-1",
@@ -430,7 +685,18 @@ export const arr_article = [
           {
             d1: "並以具有批判意味的<strong>「防衛思覺失調」</strong>概念，描述作者所認為的台灣安全論述矛盾：高度警戒中國，卻較少以同樣標準檢視美國。",
           },
-          { d1: "本章因此提出「翻牆看世界」，要求讀者跨越既有資訊框架。" },
+          {
+            d1: "本章因此提出「翻牆看世界」，要求讀者跨越既有資訊框架。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-027.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-027.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-027.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-027.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-027.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-027.webp", dec2: "Cheat Sheet" },
+            ],
+          },
         ],
       },
       {
@@ -449,6 +715,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：本章希望打破單向度的冷戰視角，要求以一致的批判標準觀察所有大國。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-028.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-028.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-028.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-028.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-028.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-028.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -470,6 +745,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：四層次分析法的目的，是把平面的國際新聞重新放回權力結構、制度與人民行動之中理解。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-029.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-029.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-029.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-029.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-029.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-029.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -487,16 +771,55 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者提醒，在引進國際AI與國防科技時，台灣也需要建立資料自主、民主監督與風險評估能力。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-030.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-030.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-030.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-030.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-030.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-030.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
     ],
   },
-  { title_id: "n10", title: "PART 3：台灣內部的再批判", t1: [] },
+  {
+    title_id: "n10",
+    title: "PART 3：台灣內部的再批判",
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-031.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-031.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-031.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-031.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-031.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-031.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
+  },
   {
     title_id: "n11",
     title: "6. 仇恨與和平，毀滅與希望（作者：郭力昕）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-032.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-032.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-032.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-032.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-032.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-032.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n11-1",
@@ -512,7 +835,18 @@ export const arr_article = [
           {
             d1: "作者進一步將問題帶回台灣知識界，討論全球學術體系與英語知識霸權造成的<strong>「學術自我殖民」</strong>。",
           },
-          { d1: "本章因此同時批判國族仇恨與知識依附。" },
+          {
+            d1: "本章因此同時批判國族仇恨與知識依附。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-033.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-033.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-033.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-033.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-033.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-033.webp", dec2: "Cheat Sheet" },
+            ],
+          },
         ],
       },
       {
@@ -529,6 +863,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者認為，台灣需要保留不同安全與和平觀點辯論的空間，避免政治標籤取代實質論證。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-034.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-034.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-034.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-034.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-034.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-034.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -550,6 +893,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者主張，文化主體性的重要條件，是既能吸收外來文化，也能保持對強權與主流文化的批判距離。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-035.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-035.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-035.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-035.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-035.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-035.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -569,6 +921,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者期待透過亞洲知識連帶與新世代文化實踐，逐步建立更具自主性的思想與公共討論空間。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-036.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-036.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-036.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-036.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-036.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-036.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -577,7 +938,20 @@ export const arr_article = [
   {
     title_id: "n12",
     title: "7. 在冷戰意識形態籠罩下匍匐前行（作者：郭耀中）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-037.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-037.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-037.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-037.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-037.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-037.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n12-1",
@@ -594,6 +968,15 @@ export const arr_article = [
           },
           {
             d1: "因此，本章不只討論戰爭，也討論誰有能力定義戰爭，以及哪些聲音能夠進入公共領域。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-038.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-038.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-038.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-038.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-038.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-038.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -613,6 +996,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者透過挺巴運動提醒讀者，理解國際衝突需要更完整的歷史脈絡與更多元的資訊來源。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-039.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-039.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-039.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-039.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-039.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-039.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -630,6 +1022,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者認為，知識自主不只需要言論自由，也需要降低學術市場化與政治標籤對研究者造成的結構性壓力。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-040.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-040.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-040.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-040.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-040.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-040.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -647,6 +1048,15 @@ export const arr_article = [
           { d1: "作者最終希望建立以反帝、反殖與人民和平為中心的跨國連帶。" },
           {
             d1: "<strong>結論：重新把歷史帶回國際政治分析，是作者認為突破冷戰敵我框架、重新建立反戰論述的重要起點。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-041.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-041.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-041.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-041.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-041.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-041.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -656,7 +1066,20 @@ export const arr_article = [
     title_id: "n13",
     title:
       "8. 當防衛成為排他：台灣「戰時主體性」的陷阱與女性主義反戰路線之爭（作者：王顥中）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-042.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-042.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-042.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-042.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-042.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-042.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n13-1",
@@ -674,6 +1097,15 @@ export const arr_article = [
           },
           {
             d1: "本章核心問題因此是：追求國家安全時，如何避免犧牲社會內部弱勢者的權利？",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-043.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-043.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-043.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-043.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-043.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-043.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -691,6 +1123,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：本章提醒，女性主義面對戰爭時，必須同時處理抵抗侵略與反對軍事化兩項可能存在張力的課題。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-044.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-044.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-044.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-044.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-044.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-044.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -708,6 +1149,15 @@ export const arr_article = [
           { d1: "作者因此反對把戰爭威脅簡單理解為促進社會團結的機會。" },
           {
             d1: "<strong>結論：南斯拉夫經驗提醒人們，軍事化不只改變國防政策，也可能深入重塑性別關係、自由與日常社會秩序。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-045.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-045.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-045.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-045.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-045.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-045.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -729,17 +1179,56 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：本章主張，任何防衛政策都應同時接受人權與民主原則檢驗，避免安全焦慮轉化為對特定群體的排除。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-046.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-046.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-046.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-046.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-046.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-046.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
     ],
   },
-  { title_id: "n14", title: "PART 4：兩岸未來的遠景？", t1: [] },
+  {
+    title_id: "n14",
+    title: "PART 4：兩岸未來的遠景？",
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-047.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-047.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-047.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-047.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-047.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-047.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
+  },
   {
     title_id: "n15",
     title:
       "9. 金門模式或是烏克蘭模式？台海與世界未來的兩種可能性（作者：馮建三）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-048.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-048.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-048.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-048.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-048.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-048.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n15-1",
@@ -755,7 +1244,18 @@ export const arr_article = [
           {
             d1: "前者代表作者所主張的協商、交流與政治整合路徑；後者則代表大國競爭、安全困境與代理人戰爭的風險。",
           },
-          { d1: "這兩種模式構成作者思考台海未來的核心對照框架。" },
+          {
+            d1: "這兩種模式構成作者思考台海未來的核心對照框架。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-049.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-049.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-049.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-049.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-049.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-049.webp", dec2: "Cheat Sheet" },
+            ],
+          },
         ],
       },
       {
@@ -772,6 +1272,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者將金門從戰地前線轉向交流節點的歷史，視為思考兩岸和平路徑的一項重要案例。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-050.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-050.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-050.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-050.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-050.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-050.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -789,6 +1298,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：作者藉烏克蘭戰爭提醒台灣，在強化防衛的同時，也必須評估安全困境與大國競爭可能造成的戰爭升級風險。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-051.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-051.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-051.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-051.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-051.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-051.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -806,6 +1324,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：本章提出以政治協商降低安全困境的路線，並進一步追問台灣應如何在國防、安全與民生資源之間取得平衡。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-052.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-052.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-052.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-052.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-052.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-052.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -814,7 +1341,20 @@ export const arr_article = [
   {
     title_id: "n16",
     title: "10. 安全化、平台化與和平新聞學（作者：羅世宏）",
-    t1: [],
+    t1: [
+      {
+        d1: "",
+        col: "col-sm-4",
+        p2: [
+          { pic1: "./images/v1/v1-053.webp", dec2: "個人Q版" },
+          { pic1: "./images/v5/v5-053.webp", dec2: "Flash Card" },
+          { pic1: "./images/v6/v6-053.webp", dec2: "Mind Map" },
+          { pic1: "./images/v2/v2-053.webp", dec2: "魯夫" },
+          { pic1: "./images/v3/v3-053.webp", dec2: "多啦A夢~3D動漫" },
+          { pic1: "./images/v4/v4-053.webp", dec2: "Cheat Sheet" },
+        ],
+      },
+    ],
     c1s: [
       {
         id2: "n16-1",
@@ -834,6 +1374,15 @@ export const arr_article = [
           },
           {
             d1: "新聞因而不只是傳遞資訊，也可能成為避免衝突升級的重要公共制度。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-054.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-054.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-054.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-054.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-054.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-054.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -853,6 +1402,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：平台演算法與安全化語言可能形成相互強化的循環，使衝突性內容擴張，而和平與降溫論述更難被看見。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-055.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-055.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-055.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-055.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-055.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-055.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -872,6 +1430,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：本章主張，不應把戰爭視為唯一可能的未來，而應持續檢驗那些把衝突描述為不可避免的敘事。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-056.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-056.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-056.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-056.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-056.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-056.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -892,6 +1459,15 @@ export const arr_article = [
           },
           {
             d1: "<strong>結論：羅世宏以「冷卻劑新聞學」與多層次民主防護機制，提出另一種安全想像——真正的安全能力不只有軍事嚇阻，也包括資訊品質、溝通能力、民主制度與避免衝突失控的能力。</strong>",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-057.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-057.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-057.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-057.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-057.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-057.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -922,6 +1498,15 @@ export const arr_article = [
           },
           {
             d1: "其中令人印象深刻的「犧牲體系」概念，從沖繩承擔美軍基地的歷史到台灣身處大國競爭前線，不斷提醒我們在討論國家安全時，不能只看抽象的地緣戰略，更要追問一旦衝突發生，究竟是誰承擔戰爭真正的代價。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-058.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-058.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-058.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-058.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-058.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-058.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -940,6 +1525,15 @@ export const arr_article = [
           },
           {
             d1: "真正重要的是不讓任何政治敘事成為唯一答案，無論是「備戰才能避戰」還是「對話帶來和平」，都應接受事實與現實條件的持續檢驗。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-059.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-059.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-059.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-059.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-059.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-059.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },
@@ -964,6 +1558,15 @@ export const arr_article = [
           },
           {
             d1: "畢竟和平從來不是一句口號，而是一種需要比戰爭更多耐心、智慧與勇氣的選擇。",
+            col: "col-sm-4",
+            p2: [
+              { pic1: "./images/v1/v1-060.webp", dec2: "個人Q版" },
+              { pic1: "./images/v5/v5-060.webp", dec2: "Flash Card" },
+              { pic1: "./images/v6/v6-060.webp", dec2: "Mind Map" },
+              { pic1: "./images/v2/v2-060.webp", dec2: "魯夫" },
+              { pic1: "./images/v3/v3-060.webp", dec2: "多啦A夢~3D動漫" },
+              { pic1: "./images/v4/v4-060.webp", dec2: "Cheat Sheet" },
+            ],
           },
         ],
       },

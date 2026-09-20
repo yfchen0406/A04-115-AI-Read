@@ -237,14 +237,14 @@
           <li class="page-item"><a class="page-link yf-font1 yf5" href="./N003-06-Auto-PPT-GPT-Doraemon.html"
               target="_blank">多啦A夢</a>
           </li>
-          <!-- <li class="page-item"><a class="page-link yf-font1 yf3" href="./N002-07-Auto-PPT-GPT-One-page.html"
-              target="_blank">Cheat Sheet</a>
-          </li> -->
-          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N003-08-Auto-PPT-GPT-Flash-Card.html"
+          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N003-07-Auto-PPT-GPT-Flash-Card.html"
               target="_blank">Flash Card</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N003-09-Auto-PPT-GPT-Mind-Map.html"
+          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N003-08-Auto-PPT-GPT-Mind-Map.html"
               target="_blank">Mind </a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font1 yf3" href="./N003-09-Auto-PPT-GPT-Flow-Chart.html"
+              target="_blank">Flow Chart</a>
           </li>
           <!-- <li class="page-item"><a class="page-link yf-font1 yf3" href="./B143-07-Auto-PPT-GPT-Luffy.html"
               target="_blank">魯夫Q版</a>
@@ -297,7 +297,7 @@
 
               <div class="col-sm-4">
                 <ul class="">
-                  <li v-for="(item,index) in data.slice(0, Math.ceil(data.length / 3) +2 )" :key="index"
+                  <li v-for="(item,index) in data.slice(0, Math.ceil(data.length / 3) +1 )" :key="index"
                     class="text-primary">
                     <a :href="'#' + item.title_id" style="text-decoration: none;" v-html="item.title"
                       class="yf-font1"></a>
@@ -312,7 +312,7 @@
 
               <div class="col-sm-4">
                 <ul>
-                  <li v-for="(item,index) in data.slice(Math.ceil(data.length / 3)+2, Math.ceil(data.length / 3) * 2  )"
+                  <li v-for="(item,index) in data.slice(Math.ceil(data.length / 3)+1, Math.ceil(data.length / 3) * 2  )"
                     :key="index" class="text-primary">
                     <a :href="'#' + item.title_id" style="text-decoration: none;" v-html="item.title"
                       class="yf-font1"></a>
