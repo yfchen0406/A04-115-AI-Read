@@ -1,0 +1,1 @@
+直接雙擊 index.html 即可開啟。所有 JavaScript、CSS、棋子圖片與背景圖均已內嵌。真人房間與 Google Sheet 若受 file:// 限制，請使用正式網站或 Live Server。
