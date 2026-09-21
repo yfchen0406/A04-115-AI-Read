@@ -155,11 +155,168 @@
 
   <style>
     /* 道德經原文／白話譯文：只新增功能，不改原網頁架構 */
-    .tao-source-tools{display:flex;gap:.5rem;flex-wrap:wrap;margin:.45rem 0 .7rem 2rem;}
-    .tao-source-btn{border:1px solid #6c757d;background:#fff;border-radius:999px;padding:.3rem .8rem;font-size:1rem;cursor:pointer;}
-    .tao-source-btn:hover{background:#f1f3f5;}
-    .tao-source-panel{margin:.35rem 0 1rem 2rem;padding:.8rem 1rem;border-left:4px solid #6c757d;background:#fafafa;font-size:1.05rem;line-height:1.9;white-space:normal;}
-    .tao-source-label{font-weight:700;margin-bottom:.35rem;}
+    .tao-source-tools {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin: .45rem 0 .7rem 2rem;
+    }
+
+    .tao-source-btn {
+      border: 1px solid #6c757d;
+      background: #fff;
+      border-radius: 999px;
+      padding: .3rem .8rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .tao-source-btn.original {
+      color: #0d6efd;
+      border-color: #0d6efd;
+    }
+
+    .tao-source-btn.translation {
+      color: #198754;
+      border-color: #198754;
+    }
+
+    .tao-source-btn:hover {
+      background: #f1f3f5;
+    }
+
+    .tao-source-panel {
+      margin: .35rem 0 1rem 2rem;
+      padding: .8rem 1rem;
+      background: #fafafa;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      white-space: normal;
+    }
+
+    .tao-source-panel.original {
+      color: #0d6efd;
+      border-left: 4px solid #0d6efd;
+      background: #f5f9ff;
+    }
+
+    .tao-source-panel.translation {
+      color: #198754;
+      border-left: 4px solid #198754;
+      background: #f4fbf7;
+    }
+
+    .tao-source-label {
+      font-weight: 700;
+      margin-bottom: .35rem;
+    }
+
+    .tao-source-panel .tao-golden-quote {
+      color: #dc3545 !important;
+      font-weight: 800;
+      background: #fff1f1;
+      padding: 0 .08em;
+      border-radius: .15em;
+    }
+
+    /* 六組角色圖片按鈕與放大檢視：僅新增功能，不更動既有網頁架構 */
+    .tao-character-tools {
+      display: flex;
+      gap: .45rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .tao-source-tools .tao-character-tools {
+      margin: 0;
+    }
+
+    .tao-character-tools.standalone {
+      margin: .45rem 0 .7rem 2rem;
+    }
+
+    .tao-character-btn {
+      border: 1px solid #6f42c1;
+      background: #fff;
+      color: #6f42c1;
+      border-radius: 999px;
+      padding: .3rem .72rem;
+      font-size: 1rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .tao-character-btn:hover {
+      background: #f6f0ff;
+    }
+
+    .tao-image-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(0, 0, 0, .88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+    }
+
+    .tao-image-modal-inner {
+      position: relative;
+      max-width: 96vw;
+      max-height: 94vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tao-image-modal img {
+      display: block;
+      max-width: 94vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 0 28px rgba(0, 0, 0, .5);
+    }
+
+    .tao-image-close {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .72);
+      color: #fff;
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 100000;
+    }
+
+    .tao-image-close:hover {
+      background: #dc3545;
+    }
+
+    @media (max-width:768px) {
+      .tao-image-modal {
+        padding: 1rem
+      }
+
+      .tao-image-close {
+        top: 10px;
+        right: 10px
+      }
+
+      .tao-character-btn {
+        font-size: .92rem;
+        padding: .28rem .6rem
+      }
+    }
   </style>
 </head>
 
@@ -169,7 +326,7 @@
 
   <!-- *************************************************************************** -->
   <header class="text-center p1 " style="margin-top: 75px;">
-    <h1 class="text-info yf-font1">N004.《當道德經成為必修課：八十一個老子人生智慧必修學分！》 ~ 115.09.20</h1>
+    <h1 class="text-info yf-font1">N004.《當道德經成為必修課：八十一個老子人生智慧必修學分！》(加註原文) ~ 115.09.20</h1>
     <p class="yf-color-as1 yf-font1"></p>
   </header>
   <!-- ############################################################################ -->
@@ -237,24 +394,25 @@
           <!-- <li class="page-item"><a class="page-link yf-font1 yf3" href="./B143-02-Auto-PPT-GPT-wife.html"
               target="_blank">老婆Q版</a>
           </li> -->
-          <li class="page-item"><a class="page-link yf-font1 yf3" href="./N003-01-Auto-PPT-GPT-info-fong.html"
+          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N004-01-Auto-PPT-GPT-Lao-Tzu.html"
+              target="_blank">老子</a>
+          </li>
+          <li class="page-item"><a class="page-link yf-font1 yf3" href="./N004-02-Auto-PPT-GPT-info-fong.html"
               target="_blank">個人Q版</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N003-04-Auto-PPT-GPT-Luffy.html"
-              target="_blank">魯夫</a>
-          </li>
-          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N003-06-Auto-PPT-GPT-Doraemon.html"
+          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N004-03-Auto-PPT-GPT-Doraemon.html"
               target="_blank">多啦A夢</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N003-07-Auto-PPT-GPT-Flash-Card.html"
-              target="_blank">Flash Card</a>
+          <li class="page-item"><a class="page-link yf-font1 yf3" href="./N004-04-Auto-PPT-GPT-Totoro.html"
+              target="_blank">Totoro</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N003-08-Auto-PPT-GPT-Mind-Map.html"
-              target="_blank">Mind </a>
+          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N004-05-Auto-PPT-GPT-Luffy.html"
+              target="_blank">魯夫</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf3" href="./N003-09-Auto-PPT-GPT-Flow-Chart.html"
-              target="_blank">Flow Chart</a>
+          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N004-06-Auto-PPT-GPT-Bird.html"
+              target="_blank">紅鶴 </a>
           </li>
+
           <!-- <li class="page-item"><a class="page-link yf-font1 yf3" href="./B143-07-Auto-PPT-GPT-Luffy.html"
               target="_blank">魯夫Q版</a>
           </li>
@@ -402,16 +560,31 @@
             <!-- 每個必修學分：EPUB 對應章節原文／譯文 -->
             <template v-if="item.sourceOriginal && item.sourceTranslation">
               <div class="tao-source-tools">
-                <button type="button" class="tao-source-btn" @click="toggleSource(item.title_id, 'original')">📜 {{ isSourceOpen(item.title_id, 'original') ? '收合原文' : '查看原文' }}</button>
-                <button type="button" class="tao-source-btn" @click="toggleSource(item.title_id, 'translation')">💡 {{ isSourceOpen(item.title_id, 'translation') ? '收合白話解釋' : '查看白話解釋' }}</button>
+                <button type="button" class="tao-source-btn original"
+                  @click="toggleSource(item.title_id, 'original')">📜 {{ isSourceOpen(item.title_id, 'original') ?
+                  '收合原文' : '查看原文' }}</button>
+                <button type="button" class="tao-source-btn translation"
+                  @click="toggleSource(item.title_id, 'translation')">💡 {{ isSourceOpen(item.title_id, 'translation') ?
+                  '收合白話解釋' : '查看白話解釋' }}</button>
+                <div class="tao-character-tools">
+                  <button v-for="role in imageRoles" :key="role.folder" type="button" class="tao-character-btn"
+                    @click="openCharacterImage(index, role)">{{ role.label }}</button>
+                </div>
               </div>
-              <div v-if="isSourceOpen(item.title_id, 'original')" class="tao-source-panel">
-                <div class="tao-source-label">《道德經》原文</div><div>{{ item.sourceOriginal }}</div>
+              <div v-if="isSourceOpen(item.title_id, 'original')" class="tao-source-panel original">
+                <div class="tao-source-label">《道德經》原文</div>
+                <div v-html="highlightOriginal(item)"></div>
               </div>
-              <div v-if="isSourceOpen(item.title_id, 'translation')" class="tao-source-panel">
-                <div class="tao-source-label">原文白話解釋（EPUB 譯文）</div><div>{{ item.sourceTranslation }}</div>
+              <div v-if="isSourceOpen(item.title_id, 'translation')" class="tao-source-panel translation">
+                <div class="tao-source-label">原文白話解釋（EPUB 譯文）</div>
+                <div v-html="highlightTranslation(item)"></div>
               </div>
             </template>
+            <!-- 前言、作者、結論沒有原文／白話按鈕，六個角色按鈕獨立放在下一排 -->
+            <div v-if="!(item.sourceOriginal && item.sourceTranslation)" class="tao-character-tools standalone">
+              <button v-for="role in imageRoles" :key="role.folder" type="button" class="tao-character-btn"
+                @click="openCharacterImage(index, role)">{{ role.label }}</button>
+            </div>
             <h5>
               <ul>
                 <ul>
@@ -1011,6 +1184,13 @@
             </h6> -->
             <hr>
           </div>
+
+          <div v-if="imageModal.open" class="tao-image-modal" @click.self="closeCharacterImage">
+            <button type="button" class="tao-image-close" aria-label="關閉圖片" @click="closeCharacterImage">×</button>
+            <div class="tao-image-modal-inner">
+              <img :src="imageModal.src" :alt="imageModal.alt">
+            </div>
+          </div>
         </div>
 
 
@@ -1087,14 +1267,100 @@
       setup() {
         const data = ref([...arr_article]);
         const sourceOpen = reactive({});
+        const imageRoles = [
+          { label: '老子', folder: 'V1' },
+          { label: '個人Q版', folder: 'V2' },
+          { label: '多啦A夢', folder: 'V3' },
+          { label: 'Totoro', folder: 'V4' },
+          { label: '魯夫', folder: 'V5' },
+          { label: '紅鶴', folder: 'V6' },
+        ];
+        const imageModal = reactive({ open: false, src: '', alt: '' });
+        const openCharacterImage = (index, role) => {
+          const number = String(index + 2).padStart(3, '0');
+          imageModal.src = `./images/${role.folder}/${role.folder}-${number}.webp`;
+          imageModal.alt = `${role.label}｜${data.value[index]?.title || ''}`;
+          imageModal.open = true;
+          document.body.style.overflow = 'hidden';
+        };
+        const closeCharacterImage = () => {
+          imageModal.open = false; imageModal.src = ''; imageModal.alt = '';
+          document.body.style.overflow = '';
+        };
         const toggleSource = (id, kind) => {
           const key = `${id}-${kind}`;
           sourceOpen[key] = !sourceOpen[key];
         };
         const isSourceOpen = (id, kind) => !!sourceOpen[`${id}-${kind}`];
+        const esc = (text = '') => String(text).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+        const compact = (text = '') => String(text).replace(/\s+/g, '');
+        const normalizeText = (text = '') => String(text).replace(/\s+/g, '');
+        const quoteClauses = (quote = '') => {
+          const parts = String(quote).match(/[^。！？；]+[。！？；]?/g) || [];
+          return parts.map(x => x.trim()).filter(x => normalizeText(x).length >= 2);
+        };
+        const findRangeIgnoringSpaces = (source, needle, fromIndex = 0) => {
+          const src = String(source || '');
+          const ndl = normalizeText(needle);
+          if (!ndl) return null;
+          let compactSrc = '', map = [];
+          for (let i = 0; i < src.length; i++) {
+            if (!/\s/.test(src[i])) { compactSrc += src[i]; map.push(i); }
+          }
+          let compactFrom = 0;
+          while (compactFrom < map.length && map[compactFrom] < fromIndex) compactFrom++;
+          const pos = compactSrc.indexOf(ndl, compactFrom);
+          if (pos < 0) return null;
+          return [map[pos], map[pos + ndl.length - 1] + 1];
+        };
+        const renderRanges = (text, ranges) => {
+          if (!ranges.length) return esc(text);
+          const merged = ranges.sort((a, b) => a[0] - b[0]).reduce((acc, r) => {
+            if (!acc.length || r[0] > acc[acc.length - 1][1]) acc.push([...r]);
+            else acc[acc.length - 1][1] = Math.max(acc[acc.length - 1][1], r[1]);
+            return acc;
+          }, []);
+          let out = '', last = 0;
+          for (const [a, b] of merged) {
+            out += esc(text.slice(last, a));
+            out += '<span class="tao-golden-quote">' + esc(text.slice(a, b)) + '</span>';
+            last = b;
+          }
+          return out + esc(text.slice(last));
+        };
+        const highlightOriginal = (item) => {
+          const src = item.sourceOriginal || '';
+          const clauses = quoteClauses(item.sourceQuote || '');
+          if (!clauses.length) return esc(src);
+          const ranges = [];
+          for (const clause of clauses) {
+            const r = findRangeIgnoringSpaces(src, clause, 0);
+            if (r) ranges.push(r);
+          }
+          return renderRanges(src, ranges);
+        };
+        const highlightTranslation = (item) => {
+          const trans = item.sourceTranslation || '', orig = item.sourceOriginal || '';
+          const clauses = quoteClauses(item.sourceQuote || '');
+          if (!trans || !orig || !clauses.length) return esc(trans);
+          const oCompact = normalizeText(orig);
+          const tParts = trans.match(/[^。！？；]+[。！？；]?/g) || [trans];
+          const offsets = []; let cursor = 0;
+          for (const p of tParts) { offsets.push([cursor, cursor + p.length]); cursor += p.length; }
+          const chosen = new Set();
+          for (const clause of clauses) {
+            const c = normalizeText(clause); const pos = oCompact.indexOf(c);
+            if (pos < 0) continue;
+            const ratio = (pos + c.length / 2) / Math.max(1, oCompact.length);
+            chosen.add(Math.min(tParts.length - 1, Math.max(0, Math.floor(ratio * tParts.length))));
+          }
+          const ranges = [...chosen].map(i => offsets[i]);
+          return renderRanges(trans, ranges);
+        };
 
         return {
-          data, sourceOpen, toggleSource, isSourceOpen,
+          data, sourceOpen, toggleSource, isSourceOpen, highlightOriginal, highlightTranslation,
+          imageRoles, imageModal, openCharacterImage, closeCharacterImage,
         };
       }
     }).mount('#a1-1')
