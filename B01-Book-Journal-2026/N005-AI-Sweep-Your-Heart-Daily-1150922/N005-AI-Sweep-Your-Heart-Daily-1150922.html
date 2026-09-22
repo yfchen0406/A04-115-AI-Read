@@ -152,6 +152,20 @@
   </style>
 
 
+
+  <style>
+    /* 三角色標題圖片按鈕：僅新增功能，不改原網頁架構 */
+    .title-role-buttons { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 16px 34px; }
+    .title-role-btn { border:0; border-radius:8px; padding:7px 14px; font-weight:700; cursor:pointer; box-shadow:0 2px 5px rgba(0,0,0,.16); }
+    .title-role-btn.v1 { background:#0d6efd; color:#fff; }
+    .title-role-btn.v2 { background:#198754; color:#fff; }
+    .title-role-btn.v3 { background:#6f42c1; color:#fff; }
+    .title-image-modal { position:fixed; inset:0; z-index:99999; background:rgba(0,0,0,.88); display:flex; align-items:center; justify-content:center; padding:28px; }
+    .title-image-modal-inner { position:relative; max-width:96vw; max-height:94vh; }
+    .title-image-modal img { display:block; max-width:96vw; max-height:90vh; width:auto; height:auto; object-fit:contain; border-radius:8px; box-shadow:0 8px 32px rgba(0,0,0,.55); background:#fff; }
+    .title-image-close { position:absolute; top:10px; right:10px; width:46px; height:46px; border:0; border-radius:50%; background:rgba(0,0,0,.78); color:#fff; font-size:32px; line-height:42px; font-weight:700; cursor:pointer; z-index:2; }
+    @media (max-width:576px){ .title-role-buttons{margin-left:0}.title-role-btn{padding:6px 10px}.title-image-modal{padding:10px}.title-image-close{top:6px;right:6px} }
+  </style>
 </head>
 
 <body id="n0" class="bg-dark" onload="updateCounter()">
@@ -228,16 +242,16 @@
           <!-- <li class="page-item"><a class="page-link yf-font1 yf3" href="./B143-02-Auto-PPT-GPT-wife.html"
               target="_blank">老婆Q版</a>
           </li> -->
-          <li class="page-item"><a class="page-link yf-font1 yf3" href="./N003-01-Auto-PPT-GPT-info-fong.html"
+          <li class="page-item"><a class="page-link yf-font1 yf3" href="./N005-01-Auto-PPT-GPT-info-fong.html"
               target="_blank">個人Q版</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N003-04-Auto-PPT-GPT-Luffy.html"
-              target="_blank">魯夫</a>
+          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N005-06-Auto-PPT-GPT-boy.html"
+              target="_blank">Totoro</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N003-06-Auto-PPT-GPT-Doraemon.html"
-              target="_blank">多啦A夢</a>
+          <li class="page-item"><a class="page-link yf-font1 yf5" href="./N005-04-Auto-PPT-GPT-Tororo.html"
+              target="_blank">小悟和尚</a>
           </li>
-          <li class="page-item"><a class="page-link yf-font1 yf1" href="./N003-07-Auto-PPT-GPT-Flash-Card.html"
+          <!-- <li class="page-item"><a class="page-link yf-font1 yf1" href="./N003-07-Auto-PPT-GPT-Flash-Card.html"
               target="_blank">Flash Card</a>
           </li>
           <li class="page-item"><a class="page-link yf-font1 yf5" href="./N003-08-Auto-PPT-GPT-Mind-Map.html"
@@ -245,7 +259,7 @@
           </li>
           <li class="page-item"><a class="page-link yf-font1 yf3" href="./N003-09-Auto-PPT-GPT-Flow-Chart.html"
               target="_blank">Flow Chart</a>
-          </li>
+          </li> -->
           <!-- <li class="page-item"><a class="page-link yf-font1 yf3" href="./B143-07-Auto-PPT-GPT-Luffy.html"
               target="_blank">魯夫Q版</a>
           </li>
@@ -390,6 +404,11 @@
               </span>
               <a href="#n0"><i class="fa-solid fa-backward yf-color-as1 "></i></a>
             </h2>
+            <div class="title-role-buttons">
+              <button type="button" class="title-role-btn v1" @click="openTitleImage('V1', index)">個人Q版</button>
+              <button type="button" class="title-role-btn v2" @click="openTitleImage('V2', index)">小悟和尚</button>
+              <button type="button" class="title-role-btn v3" @click="openTitleImage('V3', index)">Totoro</button>
+            </div>
             <h5>
               <ul>
                 <ul>
@@ -1065,10 +1084,24 @@
       setup() {
         const data = ref([...arr_article]);
 
-
+        const openTitleImage = (version, index) => {
+          const imageNo = String(index + 2).padStart(2, '0');
+          const src = `./images/${version}/${version}-${imageNo}.webp`;
+          const oldModal = document.getElementById('title-image-modal');
+          if (oldModal) oldModal.remove();
+          const modal = document.createElement('div');
+          modal.id = 'title-image-modal';
+          modal.className = 'title-image-modal';
+          modal.innerHTML = `<div class="title-image-modal-inner"><button type="button" class="title-image-close" aria-label="關閉">×</button><img src="${src}" alt="${data.value[index]?.title || ''}"></div>`;
+          const close = () => modal.remove();
+          modal.querySelector('.title-image-close').addEventListener('click', close);
+          modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+          document.body.appendChild(modal);
+        };
 
         return {
           data,
+          openTitleImage,
 
         };
       }
