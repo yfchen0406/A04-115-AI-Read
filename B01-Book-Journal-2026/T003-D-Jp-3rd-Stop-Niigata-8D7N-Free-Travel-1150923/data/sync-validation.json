@@ -1,0 +1,260 @@
+{
+  "sceneCount": 147,
+  "captionCount": 440,
+  "firstSceneStart": 1.5,
+  "lastSceneEnd": 1872.78,
+  "firstCaptionStart": 1.5,
+  "lastCaptionEnd": 1872.78,
+  "chapters": 10,
+  "sceneTimeGaps": [
+    {
+      "afterScene": 1,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 4,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 7,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 12,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 13,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 14,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 19,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 20,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 23,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 26,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 27,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 28,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 29,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 30,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 31,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 33,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 34,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 35,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 36,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 37,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 38,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 39,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 40,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 41,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 42,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 49,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 54,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 56,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 57,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 60,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 69,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 70,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 71,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 72,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 92,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 93,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 94,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 98,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 99,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 100,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 101,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 102,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 110,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 111,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 112,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 113,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 115,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 121,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 126,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 127,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 128,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 129,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 130,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 131,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 136,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 139,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 140,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 141,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 144,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 145,
+      "gapSeconds": 0.18
+    },
+    {
+      "afterScene": 146,
+      "gapSeconds": 0.18
+    }
+  ],
+  "missingImages": 0,
+  "sourceAudio": "旁白_B_20260923_080946_新潟發音修正版.mp3",
+  "audioDurationSeconds": 1872.78,
+  "timeBase": "Excel scene timecodes are authoritative for image/chapter boundaries; exact source SRT intervals remain subtitle cues driven by the same Remotion frame clock.",
+  "sourceAudioSha256": "3EC0072AA33C7C15D36003A5660BF85AC233D23C054047EADFA4FBB5CB7AD1D8"
+}
