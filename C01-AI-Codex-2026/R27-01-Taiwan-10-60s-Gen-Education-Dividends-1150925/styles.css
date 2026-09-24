@@ -118,7 +118,7 @@ a { color: inherit; }
   .cover-start-copy small { max-width: 16rem; text-align: center; }
   .frame-chapter { top: 2.5%; left: 2.5%; max-width: 91%; padding: .28em .45em; font-size: clamp(11px, 3.6vw, 20px); }
   .frame-intro { font-size: clamp(20px, 6vw, 39px); }
-  .frame-subtitle { right: 4%; bottom: 2.2%; left: 4%; font-size: clamp(12px, 3.4vw, 21px); -webkit-text-stroke: .8px rgba(0, 0, 0, .95); }
+  .frame-subtitle { right: 4%; bottom: 2.2%; left: 4%; font-size: clamp(18px, 5vw, 30px); -webkit-text-stroke: .8px rgba(0, 0, 0, .95); }
   .player-panel { padding: .48rem .55rem .68rem; }
   .seek-row { grid-template-columns: 2.8rem minmax(0, 1fr) 2.8rem; gap: .3rem; }
   .time-readout { font-size: .65rem; }
