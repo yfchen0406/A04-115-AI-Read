@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "coverTitle": true,
+  "stage16x9": true,
+  "playPauseResume": true,
+  "sliderSeekPositions": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90
+  ],
+  "allChapterIndexesVisited": 16,
+  "sliderSeekContinuedFrames": 604,
+  "chapterSeekContinuedFrames": 606,
+  "seekDragResumed": true,
+  "fullscreenChecked": true,
+  "sceneImageLoaded": true,
+  "mobileLayout": {
+    "stageWidth": 375.21875,
+    "stageHeight": 211.046875,
+    "chapterColumns": 1,
+    "horizontalOverflow": false
+  },
+  "mp3RangeResponses": 3,
+  "pageErrors": []
+}

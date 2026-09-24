@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <title>11本 AI 書籍 × 12週 AI 工作流學習地圖｜道奇藍手繪版</title>
+  <style>
+    :root {
+      --blue: #1e90ff;
+      --blue2: #0b67c2;
+      --blue3: #eaf5ff;
+      --yellow: #fff3a6;
+      --yellow2: #ffd84d;
+      --ink: #17324d;
+      --paper: #fffef7;
+      --muted: #60758a;
+      --line: #0d5ea8
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: #e9f4ff;
+      color: var(--ink);
+      font-family: "DFKai-SB", "BiauKai", "Noto Sans TC", system-ui, sans-serif;
+      line-height: 1.72
+    }
+
+    .app {
+      max-width: 1480px;
+      margin: auto;
+      background: var(--paper);
+      min-height: 100vh;
+      box-shadow: 0 0 34px #0b67c22b
+    }
+
+    .hero {
+      min-height: 360px;
+      padding: 46px 6% 38px;
+      background: linear-gradient(125deg, #1e90ff 0%, #65b9ff 42%, #fff3a6 100%);
+      border-bottom: 5px solid #0b67c2;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.12;
+      margin: 12px 0;
+      color: #073d78;
+      text-shadow: 2px 2px 0 #fff9
+    }
+
+    .hero p {
+      max-width: 900px;
+      font-size: 18px;
+      background: #ffffffc9;
+      padding: 14px 18px;
+      border: 2px solid #0b67c2;
+      border-radius: 18px
+    }
+
+    .hero .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border: 2px solid #0b67c2;
+      border-radius: 16px;
+      background: var(--yellow);
+      margin: 3px;
+      font-weight: 700
+    }
+
+    .hero-chibi {
+      position: absolute;
+      right: 4%;
+      bottom: -8px;
+      width: min(310px, 25vw);
+      filter: drop-shadow(7px 9px 0 #ffffff80)
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 4%;
+      top: 26px;
+      background: #fff;
+      border: 3px solid #0b67c2;
+      border-radius: 22px;
+      padding: 10px 15px;
+      transform: rotate(2deg);
+      font-weight: 700
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #0b67c2;
+      padding: 10px 2%;
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 6px;
+      border-bottom: 4px solid var(--yellow2)
+    }
+
+    .tabs button {
+      min-width: 0;
+      border: 2px solid #fff;
+      border-radius: 12px;
+      background: #1e90ff;
+      color: #fff;
+      padding: 9px 4px;
+      font: 700 13px/1.25 inherit;
+      cursor: pointer;
+      white-space: normal
+    }
+
+    .tabs button:hover,
+    .tabs button.active {
+      background: var(--yellow);
+      color: #073d78;
+      border-color: #073d78;
+      box-shadow: 2px 3px 0 #073d78
+    }
+
+    main {
+      padding: 28px 4.5% 75px
+    }
+
+    .page {
+      display: none
+    }
+
+    .page.active {
+      display: block
+    }
+
+    .page h2 {
+      font-size: 34px;
+      color: #0b67c2;
+      border-bottom: 5px double #1e90ff;
+      padding-bottom: 9px
+    }
+
+    .note,
+    .card,
+    .infographic,
+    .quick-info {
+      border: 2px solid #0b67c2;
+      border-radius: 20px;
+      background: #fff;
+      padding: 18px;
+      box-shadow: 5px 6px 0 #1e90ff20;
+      margin: 18px 0
+    }
+
+    .note {
+      background: linear-gradient(100deg, var(--yellow), #fff)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #0b67c2
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border: 1.5px solid #0b67c2;
+      border-radius: 14px;
+      background: var(--yellow);
+      margin: 2px
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 20px 0
+    }
+
+    .flow span {
+      padding: 10px 14px;
+      border: 2px solid #0b67c2;
+      border-radius: 14px;
+      background: #eaf5ff
+    }
+
+    .flow b {
+      font-size: 22px;
+      color: #0b67c2
+    }
+
+    .infographic {
+      background: linear-gradient(180deg, #fff, #f4faff);
+      border-width: 3px;
+      position: relative
+    }
+
+    .infographic:before {
+      content: "手繪資訊卡";
+      position: absolute;
+      right: 18px;
+      top: -14px;
+      background: var(--yellow);
+      border: 2px solid #0b67c2;
+      padding: 2px 10px;
+      transform: rotate(2deg)
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #fff;
+      font-size: 15px;
+      border: 2px solid #0b67c2;
+      border-radius: 14px;
+      overflow: hidden
+    }
+
+    th,
+    td {
+      border-right: 1px solid #7ebeff;
+      border-bottom: 1px solid #7ebeff;
+      padding: 10px;
+      vertical-align: top
+    }
+
+    th {
+      background: #1e90ff;
+      color: #fff
+    }
+
+    tr:nth-child(even) td {
+      background: #fffdf0
+    }
+
+    .week {
+      border-left: 9px solid #1e90ff;
+      padding: 3px 0 3px 18px;
+      margin: 26px 0
+    }
+
+    .week:nth-of-type(even) {
+      border-color: #ffd84d
+    }
+
+    .big {
+      font-size: 22px;
+      font-weight: bold
+    }
+
+    .quote {
+      font-size: 21px;
+      padding: 18px 24px;
+      border-left: 7px solid #1e90ff;
+      background: #fff6bd
+    }
+
+    .quick-info {
+      background: linear-gradient(135deg, #eaf5ff 0%, #fff 62%, #fff7bd 100%);
+      border: 3px solid #0b67c2;
+      position: relative;
+      overflow: hidden
+    }
+
+    .quick-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px
+    }
+
+    .quick-head small {
+      font-family: Arial, sans-serif;
+      letter-spacing: 1px;
+      color: #0b67c2;
+      font-weight: 800
+    }
+
+    .quick-head h3 {
+      font-size: 26px;
+      margin: 3px 0;
+      color: #073d78
+    }
+
+    .page-chibi {
+      width: 118px;
+      height: 104px;
+      object-fit: cover;
+      object-position: center;
+      filter: drop-shadow(3px 4px 0 #ffd84d)
+    }
+
+    .mini-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 10px;
+      margin-top: 8px
+    }
+
+    .mini-step {
+      min-height: 84px;
+      background: #fff;
+      border: 2px solid #1e90ff;
+      border-radius: 16px;
+      padding: 10px;
+      display: flex;
+      gap: 9px;
+      align-items: center
+    }
+
+    .mini-step span {
+      display: grid;
+      place-items: center;
+      min-width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: var(--yellow);
+      border: 2px solid #0b67c2;
+      font: bold 12px Arial
+    }
+
+    .mini-step b {
+      font-size: 15px
+    }
+
+    .master-visual {
+      margin: 24px 0;
+      border: 4px solid #0b67c2;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fff
+    }
+
+    .master-visual img {
+      width: 100%;
+      display: block
+    }
+
+    .master-caption {
+      padding: 10px 16px;
+      background: var(--yellow);
+      font-weight: 700;
+      color: #073d78
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 3px dashed #1e90ff;
+      color: var(--muted);
+      background: #eaf5ff
+    }
+
+    .top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      border: 3px solid #0b67c2;
+      background: var(--yellow);
+      color: #073d78;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      cursor: pointer;
+      font-size: 22px;
+      font-weight: bold
+    }
+
+    .photo-note {
+      display: none
+    }
+
+    @media(max-width:1050px) {
+      .tabs {
+        grid-template-columns: repeat(6, 1fr)
+      }
+
+      .hero-chibi {
+        opacity: .75;
+        width: 220px
+      }
+    }
+
+    @media(max-width:700px) {
+      .tabs {
+        grid-template-columns: repeat(3, 1fr);
+        position: relative
+      }
+
+      .hero {
+        padding-top: 75px
+      }
+
+      .hero-chibi {
+        width: 160px;
+        opacity: .5
+      }
+
+      .hero-note {
+        font-size: 12px
+      }
+
+      .page h2 {
+        font-size: 28px
+      }
+
+      main {
+        padding: 18px 3%
+      }
+
+      table {
+        font-size: 13px;
+        display: block;
+        overflow: auto
+      }
+
+      .quick-head h3 {
+        font-size: 22px
+      }
+
+      .page-chibi {
+        width: 90px;
+        height: 80px
+      }
+    }
+
+    @media print {
+
+      .tabs,
+      .top {
+        display: none
+      }
+
+      .page {
+        display: block;
+        page-break-before: always
+      }
+
+      .app {
+        box-shadow: none
+      }
+    }
+
+    .page-infographic {
+      margin: 20px 0 30px;
+      padding: 22px;
+      border: 4px solid #0b67c2;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #eaf5ff 0%, #fff 52%, #fff3a6 100%);
+      box-shadow: 8px 9px 0 #1e90ff26;
+      position: relative
+    }
+
+    .page-infographic .ig-label {
+      display: inline-block;
+      background: #ffd84d;
+      color: #073d78;
+      border: 2px solid #0b67c2;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-weight: 900;
+      transform: rotate(-1deg)
+    }
+
+    .page-infographic h3 {
+      font-size: 28px;
+      color: #073d78;
+      margin: 10px 0 16px
+    }
+
+    .ig-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      align-items: stretch
+    }
+
+    .ig-node {
+      background: #fff;
+      border: 2px solid #1e90ff;
+      border-radius: 18px;
+      padding: 14px;
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative
+    }
+
+    .ig-node .num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #ffd84d;
+      border: 2px solid #0b67c2;
+      font: 900 14px Arial;
+      margin-bottom: 7px
+    }
+
+    .ig-node b {
+      color: #0b67c2;
+      font-size: 17px
+    }
+
+    .ig-node small {
+      color: #49647e;
+      margin-top: 5px
+    }
+
+    .ig-bottom {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #073d78;
+      color: #fff;
+      border-radius: 15px;
+      font-weight: 700
+    }
+
+    .ig-chibi {
+      position: absolute;
+      right: 18px;
+      top: 12px;
+      width: 82px;
+      height: 82px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ffd84d;
+      background: #fff
+    }
+
+    .page-infographic h3 {
+      padding-right: 95px
+    }
+
+    @media(max-width:700px) {
+      .ig-chibi {
+        width: 64px;
+        height: 64px
+      }
+
+      .page-infographic h3 {
+        font-size: 23px;
+        padding-right: 70px
+      }
+
+      .ig-flow {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    .infographic-slot {
+      margin: 20px 0 28px;
+      border: 4px dashed #1e90ff;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #eaf5ff, #fff9cf);
+      padding: 14px;
+      box-shadow: 7px 8px 0 #0b67c218
+    }
+
+    .infographic-slot .slot-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      font-weight: 900;
+      color: #073d78;
+      margin: 0 0 10px
+    }
+
+    .infographic-slot img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 16px;
+      border: 2px solid #9dceff
+    }
+
+    .infographic-slot .slot-note {
+      font-size: 14px;
+      color: #49647e;
+      margin: 8px 4px 0
+    }
+
+    .page-infographic {
+      display: none !important
+    }
+
+    .hero-chibi,
+    .page-chibi,
+    .ig-chibi {
+      object-fit: contain;
+      background: transparent
+    }
+
+    .character-help {
+      font-size: 13px;
+      background: #fff7bd;
+      border: 1px dashed #0b67c2;
+      border-radius: 12px;
+      padding: 7px 10px;
+      display: inline-block;
+      margin-top: 8px
+    }
+
+    .hero-image-wrap {
+      min-height: 0 !important;
+      padding: 0 !important;
+      background: #dff0ff !important;
+      border-bottom: 5px solid #0b67c2;
+      overflow: hidden
+    }
+
+    .hero-banner-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: cover
+    }
+
+    .hero-chibi,
+    .hero-note,
+    .character-help {
+      display: none !important
+    }
+
+    @media(max-width:700px) {
+      .hero-image-wrap {
+        padding: 0 !important
+      }
+
+      .hero-banner-image {
+        width: 100%;
+        height: auto
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="app">
+    <header class="hero hero-image-wrap"><img class="hero-banner-image" src="images/hero-banner.webp"
+        alt="11本AI書籍到Book-to-Media System 網頁主視覺橫幅" /></header>
+    <nav class="tabs" id="tabs"></nav>
+    <main>
+      <section class="page active" data-title="01 對話起點">
+        <h2>01｜對話起點：從 11 本 AI 書開始</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 1 頁｜快速資訊圖表</span><span>infographic-01.webp</span></div><img
+            alt="01 對話起點 快速資訊圖表" src="images/infographic-01.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>專案總覽：從 11 本書走向一套 AI 生產系統</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>11本書</b><small>辨識書籍、出版資訊與主題</small></div>
+            <div class="ig-node"><span class="num">02</span><b>閱讀策略</b><small>精讀、選讀、工具書分流</small></div>
+            <div class="ig-node"><span class="num">03</span><b>12週實作</b><small>每週留下可用成果</small></div>
+            <div class="ig-node"><span class="num">04</span><b>最終整合</b><small>Book-to-Media System v1.0</small></div>
+          </div>
+          <div class="ig-bottom">★ 不是讀完就結束，而是把知識轉成 Prompt、Agent、程式與工作流。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 01 QUICK INFOGRAPHIC</small>
+              <h3>對話發展脈絡</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>11 本書</b></div>
+            <div class="mini-step"><span>02</span><b>出版與內容</b></div>
+            <div class="mini-step"><span>03</span><b>閱讀策略</b></div>
+            <div class="mini-step"><span>04</span><b>實作工作流</b></div>
+            <div class="mini-step"><span>05</span><b>12 週計畫</b></div>
+            <div class="mini-step"><span>06</span><b>Book-to-Media</b></div>
+          </div>
+        </div>
+        <div class="note"><b>最初需求：</b>從截圖辨識書籍，查出版日期，並說明每本書主要內容。後續上傳 ZIP，目標逐漸從「查書」轉成「建立自己的 AI 工作系統」。</div>
+        <div class="infographic">
+          <div class="flow"><span>📚 11 本 AI 書</span><b>→</b><span>🔎 出版與內容</span><b>→</b><span>🧭
+              閱讀地圖</span><b>→</b><span>🛠 實作</span><b>→</b><span>🤖 Agent</span><b>→</b><span>🎬 Book-to-Media</span>
+          </div>
+        </div>
+        <h3>這次對話最後形成的核心觀念</h3>
+        <p class="quote">不是「讀完 11 本書」，而是「11 本書 → 抽出方法 → 去除重複 → 整合 SOP → 做成 Prompt → 再做成 Agent」。</p>
+      </section>
+      <section class="page" data-title="02 11本書">
+        <h2>02｜11 本書：出版資訊與主要內容</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 2 頁｜快速資訊圖表</span><span>infographic-02.webp</span></div><img
+            alt="02 11本書 快速資訊圖表" src="images/infographic-02.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>11 本 AI 書籍：五大能力群</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>Prompt</b><small>大量提示詞與提示工程</small></div>
+            <div class="ig-node"><span class="num">02</span><b>Research</b><small>研究、查證與來源比較</small></div>
+            <div class="ig-node"><span class="num">03</span><b>Agent</b><small>任務拆解與自動化</small></div>
+            <div class="ig-node"><span class="num">04</span><b>Excel / Python</b><small>結構化資料與程式處理</small></div>
+            <div class="ig-node"><span class="num">05</span><b>Content</b><small>腳本、影片與內容生產</small></div>
+          </div>
+          <div class="ig-bottom">★ 11 本書不是同等精讀：先辨識各書功能，再決定投入時間。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 02 QUICK INFOGRAPHIC</small>
+              <h3>11 本書快速分類</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>Prompt 類 5 本</b></div>
+            <div class="mini-step"><span>02</span><b>研究 1 本</b></div>
+            <div class="mini-step"><span>03</span><b>Agent 1 本</b></div>
+            <div class="mini-step"><span>04</span><b>Excel/AI 1 本</b></div>
+            <div class="mini-step"><span>05</span><b>Content 2 本</b></div>
+            <div class="mini-step"><span>06</span><b>Senior 入門 1 本</b></div>
+          </div>
+        </div>
+        <p>以下保留本次對話中整理出的書單。部分獨立出版書籍公開書目資料有限，因此精確日期未完全確認。</p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>書名</th>
+              <th>出版資訊</th>
+              <th>主要內容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><b>1000 ChatGPT Prompts for Business Owners</b><br />Mardouli Mustapha</td>
+              <td>2026；精確日期未確認</td>
+              <td>企業主與創業者 Prompt 大全：商業規劃、行銷、銷售、客服、內容與生產力。</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><b>The Ultimate ChatGPT Prompt Book</b><br />Elijah Moonsamy</td>
+              <td>2026；精確日期未確認</td>
+              <td>1,000+ Prompt，涵蓋生產力、行銷、寫作、商業成長與內容創作。</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><b>How to Use ChatGPT for Research and Fact Checking</b><br />Taylor Brooks</td>
+              <td>2026-02-03</td>
+              <td>研究問題拆解、來源評估、交叉驗證、衝突資訊、降低 AI 幻覺與可重複查證流程。</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><b>How to Make Money with ChatGPT</b><br />Elijah Moonsamy</td>
+              <td>2026；精確日期未確認</td>
+              <td>AI 副業、內容策略、數位產品、自由工作、行銷與商業系統。</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><b>ChatGPT Agents for Beginners</b><br />Taylor Brooks</td>
+              <td>2026</td>
+              <td>No-code Agent：目標拆解、任務序列、輸出、測試修正、研究助手、規劃與批次工作。</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><b>The Ultimate AI Prompt Collection V1_Master</b><br />Ismaiel Mahmoud</td>
+              <td>2026；正式書目不足</td>
+              <td>大型 AI Prompt 範本資料庫，偏查詢與套用。</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><b>The Patient Guide to AI for Seniors</b><br />Nova Impact</td>
+              <td>2026-06-10 前後（版本可能不同）</td>
+              <td>銀髮與 AI 初學者：ChatGPT、Gemini、Claude、日常應用、防詐、隱私與錯誤辨識。</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><b>Learning Generative AI Tools for Excel</b><br />Angelica Lo Duca</td>
+              <td>2026-05-19；線上版資料另標 2026-04</td>
+              <td>Excel＋ChatGPT＋Copilot＋生成式 AI；資料處理、分析、視覺化、Macro/VBA、Python。</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><b>The Ultimate ChatGPT Prompt Book</b><br />Igor Pogany</td>
+              <td>2026-01-13</td>
+              <td>750+ Prompts、100+ Cheat Sheets、Prompt Formula；工作、研究、學習、創意與生活。</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td><b>Life Hacks for ChatGPT Beginners</b><br />Stanley Lieber</td>
+              <td>2026-05-12（美國版）</td>
+              <td>501 個生活 Prompt：家庭、旅行、購物、工作、親子、興趣等。</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td><b>AI Content Creation with ChatGPT</b><br />Elijah Moonsamy</td>
+              <td>2026；精確日期未確認</td>
+              <td>內容企劃、文章、社群、腳本、行銷與批次內容生產工作流。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="page" data-title="03 閱讀策略">
+        <h2>03｜閱讀策略：精讀、選讀、工具書</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 3 頁｜快速資訊圖表</span><span>infographic-03.webp</span></div><img
+            alt="03 閱讀策略 快速資訊圖表" src="images/infographic-03.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>閱讀策略：精讀 5 本，其餘當資料庫</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>精讀</b><small>Agent／Research／Excel／Content</small></div>
+            <div class="ig-node"><span class="num">02</span><b>Prompt核心</b><small>選一至兩本建立方法論</small></div>
+            <div class="ig-node"><span class="num">03</span><b>選章閱讀</b><small>商業、內容、副業類</small></div>
+            <div class="ig-node"><span class="num">04</span><b>查詢使用</b><small>大型 Prompt Collection</small></div>
+            <div class="ig-node"><span class="num">05</span><b>產出導向</b><small>每讀一章做一個作品</small></div>
+          </div>
+          <div class="ig-bottom">★ 判斷標準不是「書好不好」，而是「能不能直接改善目前 AI 工作流程」。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 03 QUICK INFOGRAPHIC</small>
+              <h3>三層閱讀策略</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>精讀核心 4 本</b></div>
+            <div class="mini-step"><span>02</span><b>選章 3 本</b></div>
+            <div class="mini-step"><span>03</span><b>工具書 4 本；時間集中在能直接轉成作品的內容</b></div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🔴 精讀核心</h3>
+            <p><b>#3 Research &amp; Fact Checking</b><br /><b>#5 ChatGPT Agents</b><br /><b>#8 Generative AI for
+                Excel</b><br /><b>#9 Prompt Book — Pogany</b></p>
+            <p>形成研究、Agent、資料處理與 Prompt 四項基礎能力。</p>
+          </div>
+          <div class="card">
+            <h3>🟡 選章閱讀</h3>
+            <p><b>#2 Prompt Book — Moonsamy</b><br /><b>#4 Make Money with ChatGPT</b><br /><b>#11 AI Content
+                Creation</b></p>
+            <p>挑與 Workflow、影片腳本、內容自動化有關的章節。</p>
+          </div>
+          <div class="card">
+            <h3>⚪ 當資料庫</h3>
+            <p><b>#1、#6、#7、#10</b></p>
+            <p>遇到需求再查；不需要逐頁從頭讀完。</p>
+          </div>
+        </div>
+        <div class="infographic">
+          <h3>能力鏈</h3>
+          <div class="flow"><span>Prompt 設計</span><b>→</b><span>研究與查證</span><b>→</b><span>Agent /
+              Workflow</span><b>→</b><span>Excel / Python</span><b>→</b><span>Content Creation</span></div>
+        </div>
+      </section>
+      <section class="page" data-title="04 重複內容">
+        <h2>04｜11 本之間的重複內容</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 4 頁｜快速資訊圖表</span><span>infographic-04.webp</span></div><img
+            alt="04 重複內容 快速資訊圖表" src="images/infographic-04.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>去除重複：把 11 本濃縮成 5 種知識模組</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>Prompt大全</b><small>多本高度重複</small></div>
+            <div class="ig-node"><span class="num">02</span><b>ChatGPT基礎</b><small>初學內容快速略讀</small></div>
+            <div class="ig-node"><span class="num">03</span><b>Content</b><small>保留 Workflow / Video /
+                Automation</small></div>
+            <div class="ig-node"><span class="num">04</span><b>Research</b><small>低重複、高價值</small></div>
+            <div class="ig-node"><span class="num">05</span><b>Agent+Excel</b><small>直接進入實作</small></div>
+          </div>
+          <div class="ig-bottom">★ 重複內容不重讀；改造成可搜尋的 Prompt Reference Library。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 04 QUICK INFOGRAPHIC</small>
+              <h3>重複內容怎麼處理</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>Prompt 大全整併成資料庫</b></div>
+            <div class="mini-step"><span>02</span><b>基礎教學快速略讀</b></div>
+            <div class="mini-step"><span>03</span><b>Content 以 #11 為主教材</b></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Prompt 大全高度重疊</h3>
+          <p>#1、#2、#6、#9、#10 大量涵蓋 Prompt 範例、寫作、生產力、行銷、研究、生活、工作、學習與創意。策略：<b>不要五本都從頭讀，整併成自己的 Prompt Reference Library。</b>
+          </p>
+        </div>
+        <div class="card">
+          <h3>ChatGPT 基礎教學重疊</h3>
+          <p>#7、#10、#2、#9 都包含「什麼是 ChatGPT、如何開始、怎麼問、AI 會犯錯、隱私」等。以目前學習深度可快速略讀；但防詐、隱私與 AI 錯誤辨識仍值得看。</p>
+        </div>
+        <div class="card">
+          <h3>Content Creation 重疊</h3>
+          <p>#11、#4、#2 都涉及社群、行銷、Blog、Copywriting、Automation、Scaling。保留 #11 作為主要內容工作流教材，其餘交叉查閱。</p>
+        </div>
+      </section>
+      <section class="page" data-title="05 必讀章節">
+        <h2>05｜最值得精讀的章節</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 5 頁｜快速資訊圖表</span><span>infographic-05.webp</span></div><img
+            alt="05 必讀章節 快速資訊圖表" src="images/infographic-05.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>必讀章節：只抓能轉成工具的內容</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>Prompt</b><small>Anatomy／Advanced／AI OS</small></div>
+            <div class="ig-node"><span class="num">02</span><b>Research</b><small>Sources／Conflict／Workflow</small>
+            </div>
+            <div class="ig-node"><span class="num">03</span><b>Agent</b><small>Goals／Tasks／Testing／Scaling</small></div>
+            <div class="ig-node"><span class="num">04</span><b>Excel</b><small>Advanced／Macro／Python</small></div>
+            <div class="ig-node"><span class="num">05</span><b>Content</b><small>Workflow／YouTube／Automation</small>
+            </div>
+          </div>
+          <div class="ig-bottom">★ 核心原則：章節必須能對應到一個實作成果。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 05 QUICK INFOGRAPHIC</small>
+              <h3>必讀章節能力圖</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>Prompt</b></div>
+            <div class="mini-step"><span>02</span><b>Research</b></div>
+            <div class="mini-step"><span>03</span><b>Agent</b></div>
+            <div class="mini-step"><span>04</span><b>Excel/Python</b></div>
+            <div class="mini-step"><span>05</span><b>Content；每章都對應一個可交付成果</b></div>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>書籍</th>
+              <th>章節</th>
+              <th>要帶走的能力</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ChatGPT Agents for Beginners</td>
+              <td>Ch.2 Goals, Tasks, Outputs<br />Ch.4 Content Research Assistant<br />Ch.5 Planning &amp; Task
+                Batching<br />Ch.7 Testing, Refining, Scaling<br />Ch.8 Templates</td>
+              <td>任務拆解、Agent 實作、批次處理、測試除錯與可重複模板。</td>
+            </tr>
+            <tr>
+              <td>Research &amp; Fact Checking</td>
+              <td>Ch.2–5、Ch.7</td>
+              <td>研究要求、Prompt Patterns、來源可信度、衝突資訊、研究 SOP。</td>
+            </tr>
+            <tr>
+              <td>Generative AI Tools for Excel</td>
+              <td>Ch.2–4、Ch.6–10、Ch.12</td>
+              <td>ChatGPT＋Excel、進階資料操作、Copilot、Python＋Excel＋AI。</td>
+            </tr>
+            <tr>
+              <td>Prompt Book — Moonsamy</td>
+              <td>Ch.2、Ch.9、Ch.11、Ch.12</td>
+              <td>好 Prompt 的結構、研究、進階 Prompt、Personal AI Operating System。</td>
+            </tr>
+            <tr>
+              <td>AI Content Creation</td>
+              <td>Ch.2、Ch.4、Ch.7</td>
+              <td>Content Workflow、YouTube/Video Scripts、Automation &amp; Scaling。</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="page" data-title="06 四大實作">
+        <h2>06｜四個最重要的實作工作流</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 6 頁｜快速資訊圖表</span><span>infographic-06.webp</span></div><img
+            alt="06 四大實作 快速資訊圖表" src="images/infographic-06.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>四大工作流：把閱讀立即落地</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>Research Agent</b><small>搜尋→查證→衝突處理</small></div>
+            <div class="ig-node"><span class="num">02</span><b>EPUB說書</b><small>書籍→大綱→旁白→TTS</small></div>
+            <div class="ig-node"><span class="num">03</span><b>SRT→Excel</b><small>字幕→切鏡→分鏡→提示詞</small></div>
+            <div class="ig-node"><span class="num">04</span><b>Image Batch</b><small>Excel→ComfyUI→QC→重試</small></div>
+          </div>
+          <div class="ig-bottom">★ 四條工作流最後會合流成 Book-to-Media System。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 06 QUICK INFOGRAPHIC</small>
+              <h3>四大工作流</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>Research Agent</b></div>
+            <div class="mini-step"><span>02</span><b>EPUB</b></div>
+            <div class="mini-step"><span>03</span><b>說書影片</b></div>
+            <div class="mini-step"><span>04</span><b>SRT</b></div>
+            <div class="mini-step"><span>05</span><b>Excel Storyboard</b></div>
+            <div class="mini-step"><span>06</span><b>ComfyUI Image Batch</b></div>
+          </div>
+        </div>
+        <div class="infographic">
+          <h3>① Research Agent</h3>
+          <div class="flow">
+            <span>研究題目</span><b>→</b><span>搜尋來源</span><b>→</b><span>可信度</span><b>→</b><span>交叉比對</span><b>→</b><span>矛盾偵測</span><b>→</b><span>Fact
+              Check</span><b>→</b><span>研究報告</span></div>
+        </div>
+        <div class="infographic">
+          <h3>② EPUB → 說書影片 Agent</h3>
+          <div class="flow">
+            <span>EPUB</span><b>→</b><span>章節分析</span><b>→</b><span>說書旁白</span><b>→</b><span>TTS</span><b>→</b><span>SRT</span><b>→</b><span>Excel
+              分鏡</span><b>→</b><span>AI 圖片</span><b>→</b><span>影片</span><b>→</b><span>動態網頁</span></div>
+        </div>
+        <div class="infographic">
+          <h3>③ SRT → Excel Storyboard Agent</h3>
+          <div class="flow"><span>MP3＋SRT＋MD</span><b>→</b><span>Python 解析</span><b>→</b><span>8–12
+              秒切鏡</span><b>→</b><span>章節判斷</span><b>→</b><span>分鏡卡</span><b>→</b><span>Image
+              Prompt</span><b>→</b><span>openpyxl</span><b>→</b><span>Storyboard.xlsx</span></div>
+        </div>
+        <div class="infographic">
+          <h3>④ Image Batch Agent</h3>
+          <div class="flow"><span>Excel Prompt</span><b>→</b><span>每批 10 張</span><b>→</b><span>ComfyUI
+              API</span><b>→</b><span>001.webp…</span><b>→</b><span>QC</span><b>→</b><span>失敗重試</span><b>→</b><span>續跑</span>
+          </div>
+        </div>
+      </section>
+      <section class="page" data-title="07 12週總表">
+        <h2>07｜12 週 AI 工作流學習計畫</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 7 頁｜快速資訊圖表</span><span>infographic-07.webp</span></div><img
+            alt="07 12週總表 快速資訊圖表" src="images/infographic-07.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>12 週路線：每兩週建立一層能力</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>W1–2</b><small>Prompt Template + Library</small></div>
+            <div class="ig-node"><span class="num">02</span><b>W3–4</b><small>Research + Fact Check</small></div>
+            <div class="ig-node"><span class="num">03</span><b>W5–6</b><small>Agent + Testing</small></div>
+            <div class="ig-node"><span class="num">04</span><b>W7–8</b><small>Excel + Python</small></div>
+            <div class="ig-node"><span class="num">05</span><b>W9–10</b><small>Content + ComfyUI</small></div>
+            <div class="ig-node"><span class="num">06</span><b>W11–12</b><small>Video + System Integration</small></div>
+          </div>
+          <div class="ig-bottom">★ 每週約 6–8 小時：閱讀 2 小時、實驗 1–2 小時、專案實作 3–4 小時。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 07 QUICK INFOGRAPHIC</small>
+              <h3>12 週路線</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>W1–2 Prompt</b></div>
+            <div class="mini-step"><span>02</span><b>W3–4 Research</b></div>
+            <div class="mini-step"><span>03</span><b>W5–6 Agent</b></div>
+            <div class="mini-step"><span>04</span><b>W7–8 Excel/Python</b></div>
+            <div class="mini-step"><span>05</span><b>W9–12 Media Pipeline</b></div>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>週</th>
+              <th>主題</th>
+              <th>閱讀</th>
+              <th>實作</th>
+              <th>交付成果</th>
+              <th>驗收</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>W1</td>
+              <td>Prompt 基礎架構</td>
+              <td>Prompt Anatomy</td>
+              <td>拆解既有提示詞</td>
+              <td>Prompt-Template.md</td>
+              <td>可套 5 種任務</td>
+            </tr>
+            <tr>
+              <td>W2</td>
+              <td>進階 Prompt</td>
+              <td>Advanced Prompt / Personal AI</td>
+              <td>整理常用 Prompt</td>
+              <td>My-Prompt-Library.md</td>
+              <td>≥20 個可直接使用</td>
+            </tr>
+            <tr>
+              <td>W3</td>
+              <td>AI Research</td>
+              <td>Research Ch.2–4</td>
+              <td>研究真實主題</td>
+              <td>Research-Agent.md</td>
+              <td>重要事實可追溯</td>
+            </tr>
+            <tr>
+              <td>W4</td>
+              <td>Fact Checking</td>
+              <td>Research Ch.5、7</td>
+              <td>衝突來源＋SOP</td>
+              <td>Research-Workflow.md</td>
+              <td>能處理矛盾與未知</td>
+            </tr>
+            <tr>
+              <td>W5</td>
+              <td>Agent 基礎</td>
+              <td>Agents Ch.2、4</td>
+              <td>Goal→Tasks→Output</td>
+              <td>Research-Agent-v1.md</td>
+              <td>完成多階段研究</td>
+            </tr>
+            <tr>
+              <td>W6</td>
+              <td>Agent 強化</td>
+              <td>Agents Ch.7、8</td>
+              <td>Testing/Retry/QC</td>
+              <td>Agent-Template.md</td>
+              <td>失敗能重試</td>
+            </tr>
+            <tr>
+              <td>W7</td>
+              <td>Excel＋AI</td>
+              <td>Excel Ch.2–4</td>
+              <td>AI＋Excel 分鏡</td>
+              <td>Storyboard.xlsx</td>
+              <td>時間碼欄位正確</td>
+            </tr>
+            <tr>
+              <td>W8</td>
+              <td>Python＋Excel</td>
+              <td>Excel Ch.12</td>
+              <td>SRT→Python→Excel</td>
+              <td>srt_to_storyboard.py</td>
+              <td>換 SRT 仍可執行</td>
+            </tr>
+            <tr>
+              <td>W9</td>
+              <td>AI Content</td>
+              <td>Content Ch.2、4、7</td>
+              <td>EPUB→說書稿→TTS/SRT</td>
+              <td>Book-to-Script.md</td>
+              <td>可換不同 EPUB</td>
+            </tr>
+            <tr>
+              <td>W10</td>
+              <td>ComfyUI</td>
+              <td>Agent＋Prompt</td>
+              <td>Excel→API 批次產圖</td>
+              <td>Image-Batch-Agent</td>
+              <td>編號、續跑、重試</td>
+            </tr>
+            <tr>
+              <td>W11</td>
+              <td>Video Pipeline</td>
+              <td>整合</td>
+              <td>圖＋MP3＋SRT→MP4</td>
+              <td>Video-Pipeline</td>
+              <td>字幕／無字幕雙版</td>
+            </tr>
+            <tr>
+              <td>W12</td>
+              <td>系統整合</td>
+              <td>不增加新書</td>
+              <td>EPUB→最終成品</td>
+              <td>Book-to-Media v1.0</td>
+              <td>換書不必重寫系統</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="page" data-title="08 W1-W4">
+        <h2>08｜W1–W4：Prompt 與 Research</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 8 頁｜快速資訊圖表</span><span>infographic-08.webp</span></div><img
+            alt="08 W1-W4 快速資訊圖表" src="images/infographic-08.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>W1–W4：Prompt → Research</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>W1</b><small>七段式 Prompt Template</small></div>
+            <div class="ig-node"><span class="num">02</span><b>W2</b><small>My AI Prompt Library</small></div>
+            <div class="ig-node"><span class="num">03</span><b>W3</b><small>Research Agent</small></div>
+            <div class="ig-node"><span class="num">04</span><b>W4</b><small>Fact Check + Research SOP</small></div>
+          </div>
+          <div class="ig-bottom">★ 第一階段完成後，AI 不只會回答，也開始能依固定研究流程工作。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 08 QUICK INFOGRAPHIC</small>
+              <h3>W1–W4 快速圖</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>Prompt 七段式</b></div>
+            <div class="mini-step"><span>02</span><b>個人 Prompt Library</b></div>
+            <div class="mini-step"><span>03</span><b>Research Workflow</b></div>
+            <div class="mini-step"><span>04</span><b>Fact Checking SOP</b></div>
+          </div>
+        </div>
+        <div class="week">
+          <h3>W1–W2｜Prompt 模組化</h3>
+          <p>固定七段式：<b>角色任務 → 背景資訊 → 輸入資料 → 具體步驟 → 約束條件 → 輸出格式 → 驗收標準</b>。</p>
+          <p>建立 <code>My-AI-Prompt-Library.md</code>，分類
+            BOOK、RESEARCH、SCRIPT、SRT、STORYBOARD、IMAGE、CODEX、COMFYUI、VIDEO、WEB。</p>
+        </div>
+        <div class="week">
+          <h3>W3–W4｜Research Workflow</h3>
+          <div class="flow"><span>Research Question</span><b>→</b><span>Primary / Secondary
+              Sources</span><b>→</b><span>Credibility</span><b>→</b><span>Cross-check</span><b>→</b><span>Conflict
+              Detection</span><b>→</b><span>Uncertainty</span><b>→</b><span>Citation</span></div>
+          <p>W4 刻意使用互相矛盾的來源，驗證 Agent 能否區分「確定、有爭議、無法證實」。</p>
+        </div>
+      </section>
+      <section class="page" data-title="09 W5-W8">
+        <h2>09｜W5–W8：Agent、Excel、Python</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 9 頁｜快速資訊圖表</span><span>infographic-09.webp</span></div><img
+            alt="09 W5-W8 快速資訊圖表" src="images/infographic-09.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>W5–W8：Agent → Excel → Python</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>W5</b><small>Goal→Task→Output</small></div>
+            <div class="ig-node"><span class="num">02</span><b>W6</b><small>Test→Retry→QC→Scale</small></div>
+            <div class="ig-node"><span class="num">03</span><b>W7</b><small>AI + Excel Storyboard</small></div>
+            <div class="ig-node"><span class="num">04</span><b>W8</b><small>SRT Parser + openpyxl</small></div>
+          </div>
+          <div class="ig-bottom">★ 驗收：換另一份 SRT，不改主程式也能重新輸出 Storyboard.xlsx。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 09 QUICK INFOGRAPHIC</small>
+              <h3>W5–W8 快速圖</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>Agent 任務控制</b></div>
+            <div class="mini-step"><span>02</span><b>Retry/QC</b></div>
+            <div class="mini-step"><span>03</span><b>Excel 分鏡</b></div>
+            <div class="mini-step"><span>04</span><b>Python 自動輸出 Storyboard.xlsx</b></div>
+          </div>
+        </div>
+        <div class="week">
+          <h3>W5–W6｜從 Prompt 到 Agent</h3>
+          <p>Prompt 是「幫我完成 X」；Agent 則是：理解 → 規劃 → 執行 → 檢查 → 修正 → 繼續 → 驗收 → Output。</p>
+          <p>核心工程概念：Testing、Error Handling、Retry、Logging、Quality Control、Scaling。</p>
+        </div>
+        <div class="week">
+          <h3>W7–W8｜SRT → Storyboard.xlsx</h3>
+          <p><b>Input：</b>narration.mp3、subtitle.srt、book.md</p>
+          <div class="flow"><span>SRT Parser</span><b>→</b><span>Timestamp</span><b>→</b><span>8–12
+              秒合併</span><b>→</b><span>Chapter</span><b>→</b><span>Storyboard</span><b>→</b><span>Shot
+              Type</span><b>→</b><span>Image Prompt</span><b>→</b><span>Excel Writer</span></div>
+          <p><b>驗收：</b>更換另一個 SRT，不修改 Python 主程式，仍可重新產生 Excel。</p>
+        </div>
+      </section>
+      <section class="page" data-title="10 W9-W12">
+        <h2>10｜W9–W12：內容、ComfyUI、影片與總整合</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 10 頁｜快速資訊圖表</span><span>infographic-10.webp</span></div><img
+            alt="10 W9-W12 快速資訊圖表" src="images/infographic-10.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>W9–W12：內容、圖片、影片到系統整合</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>W9</b><small>EPUB→Script→TTS/SRT</small></div>
+            <div class="ig-node"><span class="num">02</span><b>W10</b><small>ComfyUI Batch Agent</small></div>
+            <div class="ig-node"><span class="num">03</span><b>W11</b><small>FFmpeg Video Pipeline</small></div>
+            <div class="ig-node"><span class="num">04</span><b>W12</b><small>換一本 EPUB 全流程重跑</small></div>
+          </div>
+          <div class="ig-bottom">★ 第 12 週不再增加新工具，只做整合、測試與修正。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 10 QUICK INFOGRAPHIC</small>
+              <h3>W9–W12 快速圖</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>EPUB</b></div>
+            <div class="mini-step"><span>02</span><b>說書稿</b></div>
+            <div class="mini-step"><span>03</span><b>TTS/SRT</b></div>
+            <div class="mini-step"><span>04</span><b>ComfyUI 批次生圖</b></div>
+            <div class="mini-step"><span>05</span><b>Video Pipeline</b></div>
+            <div class="mini-step"><span>06</span><b>系統整合</b></div>
+          </div>
+        </div>
+        <div class="week">
+          <h3>W9｜EPUB → 說書專案</h3>
+          <div class="flow"><span>EPUB</span><b>→</b><span>Book
+              Analysis</span><b>→</b><span>Outline</span><b>→</b><span>20–30 分鐘旁白</span><b>→</b><span>TTS-ready
+              Script</span><b>→</b><span>MP3</span><b>→</b><span>SRT</span></div>
+          <p>QC：章節完整、避免虛構、適合 TTS、字幕與旁白一致。</p>
+        </div>
+        <div class="week">
+          <h3>W10｜ComfyUI Image Batch Agent</h3>
+          <p>Storyboard.xlsx → 001–010 → ComfyUI API → 檢查檔名 → 失敗 Retry → 011–020……。支援中斷續跑與只重跑失敗項目。</p>
+        </div>
+        <div class="week">
+          <h3>W11｜Video Pipeline</h3>
+          <p>輸入 cover.webp、圖片／影片、narration.mp3、subtitles.srt、BGM，使用 Codex / Python / FFmpeg 組合。</p>
+          <p>固定輸出：<b>book-subtitle.mp4</b>、<b>book-clean.mp4</b>、<b>book-youtube.srt</b>。</p>
+        </div>
+        <div class="week">
+          <h3>W12｜Book-to-Media System v1.0</h3>
+          <p><b>本週不增加新工具。</b>拿一本沒有參與開發的新 EPUB 做真正壓力測試。</p>
+        </div>
+      </section>
+      <section class="page" data-title="11 最終系統">
+        <h2>11｜畢業作品：Book-to-Media System v1.0</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 11 頁｜快速資訊圖表</span><span>infographic-11.webp</span></div><img
+            alt="11 最終系統 快速資訊圖表" src="images/infographic-11.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>Book-to-Media System v1.0：一站式管線</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>EPUB</b><small>書籍輸入</small></div>
+            <div class="ig-node"><span class="num">02</span><b>Research</b><small>分析與 Fact Check</small></div>
+            <div class="ig-node"><span class="num">03</span><b>Script</b><small>心得／大綱／旁白</small></div>
+            <div class="ig-node"><span class="num">04</span><b>Audio</b><small>TTS + MP3 + SRT</small></div>
+            <div class="ig-node"><span class="num">05</span><b>Storyboard</b><small>Python + Excel</small></div>
+            <div class="ig-node"><span class="num">06</span><b>Visual</b><small>ComfyUI 批次生圖</small></div>
+            <div class="ig-node"><span class="num">07</span><b>Video</b><small>FFmpeg / Codex</small></div>
+            <div class="ig-node"><span class="num">08</span><b>Publish</b><small>字幕版／無字幕版／網頁</small></div>
+          </div>
+          <div class="ig-bottom">★ 真正驗收：只更換 EPUB 與少量設定，就能重新執行整條管線。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 11 QUICK INFOGRAPHIC</small>
+              <h3>最終系統一眼看懂</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>EPUB</b></div>
+            <div class="mini-step"><span>02</span><b>Research</b></div>
+            <div class="mini-step"><span>03</span><b>Script</b></div>
+            <div class="mini-step"><span>04</span><b>TTS/SRT</b></div>
+            <div class="mini-step"><span>05</span><b>Excel</b></div>
+            <div class="mini-step"><span>06</span><b>ComfyUI</b></div>
+            <div class="mini-step"><span>07</span><b>FFmpeg</b></div>
+            <div class="mini-step"><span>08</span><b>Web</b></div>
+          </div>
+        </div>
+        <div class="infographic">
+          <div class="flow"><span>📕 EPUB</span><b>→</b><span>🔎 Research</span><b>→</b><span>📝 Outline /
+              Review</span><b>→</b><span>🎙 Narration</span><b>→</b><span>🔊 TTS</span><b>→</b><span>💬
+              SRT</span><b>→</b><span>📊 Python / Excel</span><b>→</b><span>🎨 ComfyUI</span><b>→</b><span>🎬
+              FFmpeg</span><b>→</b><span>🌐 動態網頁</span></div>
+        </div>
+        <div class="note"><span class="big">最終驗收問題：</span><br />「今天換另一本 EPUB，需要重做整套程式嗎？」<br /><br />如果答案是：<b>不用，只需要更換
+            EPUB 與少量設定</b>，系統才真正完成。</div>
+        <h3>學習時間建議</h3>
+        <p>每週約 6–8 小時：閱讀 2 小時＋跟書實驗 1–2 小時＋自己的專案實作 3–4 小時。重點是每週留下可重複使用的成果，而不是追求看完多少頁。</p>
+      </section>
+      <section class="page" data-title="12 核心結論">
+        <h2>12｜整段對話的核心結論</h2>
+        <div class="infographic-slot">
+          <div class="slot-title"><span>第 12 頁｜快速資訊圖表</span><span>infographic-12.webp</span></div><img
+            alt="12 核心結論 快速資訊圖表" src="images/infographic-12.webp" />
+          <div class="slot-note">此位置已預留。將您生成的 16:9 資訊圖覆蓋到 images 資料夾中相同檔名，即會自動顯示。</div>
+        </div>
+        <div class="page-infographic"><span class="ig-label">本頁快速資訊圖</span><img
+            alt="Q版人物配角（請自行替換 images/character-q.webp）" class="ig-chibi" src="images/character-q.webp" />
+          <h3>最後留下的不是讀書筆記，而是自己的 AI 工作系統</h3>
+          <div class="ig-flow">
+            <div class="ig-node"><span class="num">01</span><b>Prompt Library</b><small>可重複提示模板</small></div>
+            <div class="ig-node"><span class="num">02</span><b>Research Agent</b><small>可靠研究 SOP</small></div>
+            <div class="ig-node"><span class="num">03</span><b>Automation</b><small>SRT／Excel／圖片批次</small></div>
+            <div class="ig-node"><span class="num">04</span><b>Media Pipeline</b><small>影片與字幕自動化</small></div>
+            <div class="ig-node"><span class="num">05</span><b>System v1.0</b><small>可替換輸入、持續擴充</small></div>
+          </div>
+          <div class="ig-bottom">★ 12 週前是分散工具；12 週後是一套自己理解、自己維護、可以重跑的系統。</div>
+        </div>
+        <div class="quick-info">
+          <div class="quick-head">
+            <div><small>PAGE 12 QUICK INFOGRAPHIC</small>
+              <h3>核心結論</h3>
+            </div><img alt="Q版人物配角（請自行替換 images/character-q.webp）" class="page-chibi" src="images/character-q.webp" />
+          </div>
+          <div class="mini-flow">
+            <div class="mini-step"><span>01</span><b>不追求讀完 11 本；追求每讀一章就留下可重複使用的 Prompt、Agent、程式或工作流</b></div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>以前</h3>
+            <p>很多分散的 AI 操作：Prompt、Codex、Excel、ComfyUI、字幕、分鏡、影片、網頁各自處理。</p>
+          </div>
+          <div class="card">
+            <h3>12 週後的目標</h3>
+            <p>一套自己設計、自己理解、可以換資料重跑、可以持續修改的 AI 生產系統。</p>
+          </div>
+        </div>
+        <p class="quote">閱讀不是終點。每讀一個核心章節，就做一個小實驗；每做一個實驗，就留下可以重複使用的檔案。最後讓所有檔案變成同一條工作流。</p>
+        <h3>這 11 本書的最佳角色</h3>
+        <p><b>不是 11 個待完成的閱讀任務，而是 11 個零件庫。</b> Prompt 書提供模板；Research 書提供查證；Agent 書提供任務控制；Excel 書提供資料與 Python；Content
+          書提供內容生產。最後由您自己的專案把它們組裝起來。</p>
+      </section>
+    </main>
+    <div class="footer">整理日期：2026-09-24｜道奇藍 × 淺黃色｜12 分頁並排導覽｜12 張資訊圖預留位置｜資料夾離線版</div>
+  </div><button class="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <script>const pages = [...document.querySelectorAll('.page')], tabs = document.getElementById('tabs'); pages.forEach((p, i) => { let b = document.createElement('button'); b.textContent = p.dataset.title; b.onclick = () => { pages.forEach(x => x.classList.remove('active'));[...tabs.children].forEach(x => x.classList.remove('active')); p.classList.add('active'); b.classList.add('active'); window.scrollTo({ top: document.querySelector('.hero').offsetHeight, behavior: 'smooth' }); location.hash = 'p' + (i + 1) }; if (i === 0) b.classList.add('active'); tabs.appendChild(b) }); let n = parseInt(location.hash.replace('#p', '')); if (n > 0 && n <= pages.length) tabs.children[n - 1].click();</script>
+</body>
+
+</html>

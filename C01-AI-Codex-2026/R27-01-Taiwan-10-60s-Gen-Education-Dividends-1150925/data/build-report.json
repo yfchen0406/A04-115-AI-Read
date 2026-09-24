@@ -1,0 +1,20 @@
+{
+  "sceneCount": 152,
+  "sceneIdsContinuous": true,
+  "chapterCount": 16,
+  "sourceSrtCueCount": 334,
+  "displaySubtitleCount": 330,
+  "subtitleTextMatchesSrt": true,
+  "audioDurationSeconds": 1593.26,
+  "excelLastSceneEndSeconds": 1593.26,
+  "audioToExcelDurationDriftSeconds": 0.0,
+  "fps": 30,
+  "durationFrames": 47798,
+  "excelSceneGaps": 53,
+  "maxExcelSceneGapSeconds": 0.18000000000006366,
+  "imageSlotCount": 152,
+  "webpFiles": 152,
+  "imageAssetsArePlaceholders": false,
+  "sourceImagesFound": 152,
+  "masterTimelineSource": "Remotion frame; frame / fps => seconds"
+}

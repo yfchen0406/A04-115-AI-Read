@@ -1,0 +1,303 @@
+{
+  "status": "passed",
+  "durationSeconds": 1593.26,
+  "elapsedSeconds": 1620.4,
+  "finalFrame": 47797,
+  "expectedFinalFrame": 47797,
+  "finalImage": "152.webp",
+  "finalChapter": "15｜結尾｜努力是真的，時代也是真的",
+  "checkpointCount": 27,
+  "audioResponses": [
+    {
+      "status": 206,
+      "bytes": "14323892"
+    },
+    {
+      "status": 206,
+      "bytes": "12226740"
+    },
+    {
+      "status": 206,
+      "bytes": "10129588"
+    },
+    {
+      "status": 206,
+      "bytes": "5935284"
+    }
+  ],
+  "pageErrors": [],
+  "checkpoints": [
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 60,
+      "masterSeconds": 60,
+      "audioSeconds": 60,
+      "remotionFrame": 1800,
+      "driftSeconds": -0.013,
+      "image": "005.webp",
+      "chapter": "00｜冷開場｜以前是學生搶學校，現在有些學校開始搶學生"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 120,
+      "masterSeconds": 120,
+      "audioSeconds": 120,
+      "remotionFrame": 3600,
+      "driftSeconds": -0.027,
+      "image": "010.webp",
+      "chapter": "00｜冷開場｜以前是學生搶學校，現在有些學校開始搶學生"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 180.1,
+      "masterSeconds": 180.033,
+      "audioSeconds": 180.033,
+      "remotionFrame": 5401,
+      "driftSeconds": -0.017,
+      "image": "015.webp",
+      "chapter": "01｜世代座標｜他們剛好出生在教育大轉彎的路口"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 240.1,
+      "masterSeconds": 240.033,
+      "audioSeconds": 240.033,
+      "remotionFrame": 7201,
+      "driftSeconds": -0.026,
+      "image": "020.webp",
+      "chapter": "01｜世代座標｜他們剛好出生在教育大轉彎的路口"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 300.1,
+      "masterSeconds": 300.067,
+      "audioSeconds": 300.067,
+      "remotionFrame": 9002,
+      "driftSeconds": -0.011,
+      "image": "026.webp",
+      "chapter": "02｜十大怎麼排｜不是官方排行榜，而是把時代重新算一次"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 360.1,
+      "masterSeconds": 360.067,
+      "audioSeconds": 360.067,
+      "remotionFrame": 10802,
+      "driftSeconds": -0.02,
+      "image": "032.webp",
+      "chapter": "03｜第十名｜成年後還能重新回到學習現場"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 420.1,
+      "masterSeconds": 420.067,
+      "audioSeconds": 420.067,
+      "remotionFrame": 12602,
+      "driftSeconds": -0.033,
+      "image": "038.webp",
+      "chapter": "04｜第九名｜女性教育機會一步一步追上來"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 480.1,
+      "masterSeconds": 480.1,
+      "audioSeconds": 480.1,
+      "remotionFrame": 14403,
+      "driftSeconds": -0.017,
+      "image": "044.webp",
+      "chapter": "04｜第九名｜女性教育機會一步一步追上來"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 540.1,
+      "masterSeconds": 540.1,
+      "audioSeconds": 540.1,
+      "remotionFrame": 16203,
+      "driftSeconds": -0.031,
+      "image": "049.webp",
+      "chapter": "05｜第八名｜高中與高職，把國中後的人生道路往前延伸"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 600.1,
+      "masterSeconds": 600.133,
+      "audioSeconds": 600.133,
+      "remotionFrame": 18004,
+      "driftSeconds": -0.015,
+      "image": "055.webp",
+      "chapter": "06｜第七名｜五專與專科，曾經是另一條重要的向上通道"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 660.2,
+      "masterSeconds": 660.133,
+      "audioSeconds": 660.133,
+      "remotionFrame": 19804,
+      "driftSeconds": -0.035,
+      "image": "060.webp",
+      "chapter": "07｜第六名｜技職教育，剛好碰上台灣需要大量技術人才的年代"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 720.2,
+      "masterSeconds": 720.167,
+      "audioSeconds": 720.167,
+      "remotionFrame": 21605,
+      "driftSeconds": -0.018,
+      "image": "066.webp",
+      "chapter": "07｜第六名｜技職教育，剛好碰上台灣需要大量技術人才的年代"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 780.2,
+      "masterSeconds": 780.167,
+      "audioSeconds": 780.167,
+      "remotionFrame": 23405,
+      "driftSeconds": -0.023,
+      "image": "073.webp",
+      "chapter": "08｜第五名｜大專校院開始增加，但真正的大普及還在後面"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 840.2,
+      "masterSeconds": 840.167,
+      "audioSeconds": 840.167,
+      "remotionFrame": 25205,
+      "driftSeconds": -0.036,
+      "image": "079.webp",
+      "chapter": "09｜第四名｜高等教育從菁英型走向大眾型"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 900.2,
+      "masterSeconds": 900.2,
+      "audioSeconds": 900.2,
+      "remotionFrame": 27006,
+      "driftSeconds": -0.021,
+      "image": "085.webp",
+      "chapter": "09｜第四名｜高等教育從菁英型走向大眾型"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 960.2,
+      "masterSeconds": 960.2,
+      "audioSeconds": 960.2,
+      "remotionFrame": 28806,
+      "driftSeconds": -0.036,
+      "image": "091.webp",
+      "chapter": "10｜第三名｜教育程度提高，剛好遇上台灣產業升級"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1020.2,
+      "masterSeconds": 1020.233,
+      "audioSeconds": 1020.233,
+      "remotionFrame": 30607,
+      "driftSeconds": -0.014,
+      "image": "097.webp",
+      "chapter": "10｜第三名｜教育程度提高，剛好遇上台灣產業升級"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1080.3,
+      "masterSeconds": 1080.233,
+      "audioSeconds": 1080.233,
+      "remotionFrame": 32407,
+      "driftSeconds": -0.028,
+      "image": "103.webp",
+      "chapter": "11｜第二名｜高中、高職、五專、專科與大學，形成一座多層次教育階梯"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1140.3,
+      "masterSeconds": 1140.233,
+      "audioSeconds": 1140.233,
+      "remotionFrame": 34207,
+      "driftSeconds": -0.04,
+      "image": "109.webp",
+      "chapter": "11｜第二名｜高中、高職、五專、專科與大學，形成一座多層次教育階梯"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1200.3,
+      "masterSeconds": 1200.267,
+      "audioSeconds": 1200.267,
+      "remotionFrame": 36008,
+      "driftSeconds": -0.025,
+      "image": "114.webp",
+      "chapter": "12｜第一名｜九年國民教育，讓整個世代先站上同一個基礎"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1260.3,
+      "masterSeconds": 1260.267,
+      "audioSeconds": 1260.267,
+      "remotionFrame": 37808,
+      "driftSeconds": -0.035,
+      "image": "120.webp",
+      "chapter": "13｜紅利不等於人人受惠｜同一個年代，也有完全不同的人生"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1320.3,
+      "masterSeconds": 1320.3,
+      "audioSeconds": 1320.3,
+      "remotionFrame": 39609,
+      "driftSeconds": -0.021,
+      "image": "126.webp",
+      "chapter": "13｜紅利不等於人人受惠｜同一個年代，也有完全不同的人生"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1380.3,
+      "masterSeconds": 1380.3,
+      "audioSeconds": 1380.3,
+      "remotionFrame": 41409,
+      "driftSeconds": -0.038,
+      "image": "132.webp",
+      "chapter": "14｜二零二六年的巨大反差｜從學生搶學校，到部分學校搶學生"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1440.3,
+      "masterSeconds": 1440.3,
+      "audioSeconds": 1440.3,
+      "remotionFrame": 43209,
+      "driftSeconds": -0.043,
+      "image": "138.webp",
+      "chapter": "14｜二零二六年的巨大反差｜從學生搶學校，到部分學校搶學生"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1500.4,
+      "masterSeconds": 1500.333,
+      "audioSeconds": 1500.333,
+      "remotionFrame": 45010,
+      "driftSeconds": -0.036,
+      "image": "144.webp",
+      "chapter": "15｜結尾｜努力是真的，時代也是真的"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1560.4,
+      "masterSeconds": 1560.333,
+      "audioSeconds": 1560.333,
+      "remotionFrame": 46810,
+      "driftSeconds": -0.045,
+      "image": "149.webp",
+      "chapter": "15｜結尾｜努力是真的，時代也是真的"
+    },
+    {
+      "event": "playback_checkpoint",
+      "elapsedSeconds": 1620.4,
+      "masterSeconds": 1593.233,
+      "audioSeconds": 1593.233,
+      "remotionFrame": 47797,
+      "driftSeconds": -27.155,
+      "image": "152.webp",
+      "chapter": "15｜結尾｜努力是真的，時代也是真的"
+    }
+  ],
+  "maximumSampledDriftBeforeCompletionSeconds": 0.045,
+  "completionObservationDelaySeconds": 27.1
+}

@@ -123,12 +123,12 @@
               <!-- 退休第1-1張  -->
               <div class="carousel-item active">
                 <a href="" target="_blank">
-                  <img id="p1-1" src="/images/B03-banner/A07.webp" width="100%" title="AI提示詞"></a>
+                  <img id="p1-1" src="/images/B03-banner/A15.webp" width="100%" title="AI提示詞"></a>
               </div>
               <!-- 2024第2-1張  -->
               <div class="carousel-item">
                 <a href="" target="_blank">
-                  <img id="p2-1" src="/images/B03-banner/A08.webp" width="100%" title="AI提示詞"></a>
+                  <img id="p2-1" src="/images/B03-banner/A16.webp" width="100%" title="AI提示詞"></a>
               </div>
               <!-- 2024第3-1張  -->
               <!-- <div class="carousel-item">
@@ -196,7 +196,26 @@
         </div>
         <br>
         <hr> -->
-
+        <!-- <h2 id="1-5" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
+        <h2 id="1-5" class=" yf-font1"><i class="fa-solid fa-scale-balanced"></i>
+          <strong class="yf-code2">五年級黃金時代</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-5" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
         <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
         <h2 id="1-2" class=" yf-font1"><i class="fa-solid fa-robot"></i>
           <strong class="yf-code2"> GPT Codex 相關</strong>
@@ -242,7 +261,7 @@
 
         <!-- <h2 id="1-4" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
         <h2 id="1-4" class=" yf-font1"><i class="fa-solid fa-scale-balanced"></i>
-          <strong class="yf-code2"> 現實社會</strong>
+          <strong class="yf-code2">台灣十大系列</strong>
         </h2>
         <div class="container-fluid">
           <div id="a1-4" class="row" style="align-items: flex-start;">
@@ -260,6 +279,7 @@
         </div>
         <br>
         <hr>
+
 
         <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
         <h2 id="1-1" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
@@ -354,11 +374,12 @@
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
-          /*          {
-                      pic1: '/A03-AI-Prompt-2026/P003-Gemini-Gems-1150430//P003-Gemini-Gems-1150430.html',
-                      pic1s: './images/P003-1.webp',
-                      dec1: 'P003. Gemini Gem 整理 ~ 持續更新 ~ 115.04.30',
-                    },*/
+          // R027-1. 五年級生的黃金時代系列 1-台灣十大「五年級生從教育普及與升學擴張得到的時代紅利」 ~ 115.09.28
+          {
+            pic1: '/C01-AI-Codex-2026/R27-01-Taiwan-10-60s-Gen-Education-Dividends-1150925/index.html',
+            pic1s: './images/R027-1.webp',
+            dec1: 'R027-1. 五年級生的黃金時代系列 1 ~ 台灣十大「五年級生從教育普及與升學擴張得到的時代紅利」 ~ 115.09.25',
+          },
 
 
 
@@ -375,6 +396,12 @@
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
+          // C27.11本AI書籍到Book-to-Media System ~ 115.09.24
+          {
+            pic1: '/C01-AI-Codex-2026/C27-AI_11Books_Learning_Map_Website_Final-1150924/C27-AI_11Books_Learning_Map_Website_Final-1150924.html',
+            pic1s: './images/G027-1.webp',
+            dec1: 'C27.11本AI書籍到Book-to-Media System ~ 115.09.24',
+          },
 
           // C26. 《教育別人先教育自己》歌曲製作紀錄 ~ 115.09.12
           {
@@ -923,7 +950,7 @@
   <script>
     function updateCounter() {
       // 112.10.05 移除之前舊資料
-      const arr1 = ['A07', 'A08',];
+      const arr1 = ['A15', 'A16'];
 
       const randomNum = Math.floor(Math.random() * arr1.length);
       const arr_ok = shuffleArray(arr1)

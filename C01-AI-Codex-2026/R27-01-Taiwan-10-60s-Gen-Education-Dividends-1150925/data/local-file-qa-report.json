@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "home": "file://",
+  "navigation": "relative reading.html",
+  "coverImage": true,
+  "readerImage": true,
+  "playerStarted": true,
+  "pageErrors": []
+}

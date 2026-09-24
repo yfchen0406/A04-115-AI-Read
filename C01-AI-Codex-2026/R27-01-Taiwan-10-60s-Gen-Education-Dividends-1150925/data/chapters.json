@@ -1,0 +1,146 @@
+[
+  {
+    "id": "00",
+    "title": "00｜冷開場｜以前是學生搶學校，現在有些學校開始搶學生",
+    "displayTitle": "冷開場｜以前是學生搶學校，現在有些學校開始搶學生",
+    "startSeconds": 1.5,
+    "startFrame": 45,
+    "firstSceneId": "001",
+    "sceneCount": 12
+  },
+  {
+    "id": "01",
+    "title": "01｜世代座標｜他們剛好出生在教育大轉彎的路口",
+    "displayTitle": "世代座標｜他們剛好出生在教育大轉彎的路口",
+    "startSeconds": 153.5,
+    "startFrame": 4605,
+    "firstSceneId": "013",
+    "sceneCount": 9
+  },
+  {
+    "id": "02",
+    "title": "02｜十大怎麼排｜不是官方排行榜，而是把時代重新算一次",
+    "displayTitle": "十大怎麼排｜不是官方排行榜，而是把時代重新算一次",
+    "startSeconds": 253.15,
+    "startFrame": 7595,
+    "firstSceneId": "022",
+    "sceneCount": 6
+  },
+  {
+    "id": "03",
+    "title": "03｜第十名｜成年後還能重新回到學習現場",
+    "displayTitle": "第十名｜成年後還能重新回到學習現場",
+    "startSeconds": 316.082,
+    "startFrame": 9482,
+    "firstSceneId": "028",
+    "sceneCount": 10
+  },
+  {
+    "id": "04",
+    "title": "04｜第九名｜女性教育機會一步一步追上來",
+    "displayTitle": "第九名｜女性教育機會一步一步追上來",
+    "startSeconds": 412.687,
+    "startFrame": 12381,
+    "firstSceneId": "038",
+    "sceneCount": 8
+  },
+  {
+    "id": "05",
+    "title": "05｜第八名｜高中與高職，把國中後的人生道路往前延伸",
+    "displayTitle": "第八名｜高中與高職，把國中後的人生道路往前延伸",
+    "startSeconds": 498.869,
+    "startFrame": 14966,
+    "firstSceneId": "046",
+    "sceneCount": 7
+  },
+  {
+    "id": "06",
+    "title": "06｜第七名｜五專與專科，曾經是另一條重要的向上通道",
+    "displayTitle": "第七名｜五專與專科，曾經是另一條重要的向上通道",
+    "startSeconds": 573.72,
+    "startFrame": 17212,
+    "firstSceneId": "053",
+    "sceneCount": 7
+  },
+  {
+    "id": "07",
+    "title": "07｜第六名｜技職教育，剛好碰上台灣需要大量技術人才的年代",
+    "displayTitle": "第六名｜技職教育，剛好碰上台灣需要大量技術人才的年代",
+    "startSeconds": 656.78,
+    "startFrame": 19703,
+    "firstSceneId": "060",
+    "sceneCount": 10
+  },
+  {
+    "id": "08",
+    "title": "08｜第五名｜大專校院開始增加，但真正的大普及還在後面",
+    "displayTitle": "第五名｜大專校院開始增加，但真正的大普及還在後面",
+    "startSeconds": 745.165,
+    "startFrame": 22355,
+    "firstSceneId": "070",
+    "sceneCount": 9
+  },
+  {
+    "id": "09",
+    "title": "09｜第四名｜高等教育從菁英型走向大眾型",
+    "displayTitle": "第四名｜高等教育從菁英型走向大眾型",
+    "startSeconds": 836.94,
+    "startFrame": 25108,
+    "firstSceneId": "079",
+    "sceneCount": 10
+  },
+  {
+    "id": "10",
+    "title": "10｜第三名｜教育程度提高，剛好遇上台灣產業升級",
+    "displayTitle": "第三名｜教育程度提高，剛好遇上台灣產業升級",
+    "startSeconds": 936.5,
+    "startFrame": 28095,
+    "firstSceneId": "089",
+    "sceneCount": 10
+  },
+  {
+    "id": "11",
+    "title": "11｜第二名｜高中、高職、五專、專科與大學，形成一座多層次教育階梯",
+    "displayTitle": "第二名｜高中、高職、五專、專科與大學，形成一座多層次教育階梯",
+    "startSeconds": 1041.14,
+    "startFrame": 31234,
+    "firstSceneId": "099",
+    "sceneCount": 11
+  },
+  {
+    "id": "12",
+    "title": "12｜第一名｜九年國民教育，讓整個世代先站上同一個基礎",
+    "displayTitle": "第一名｜九年國民教育，讓整個世代先站上同一個基礎",
+    "startSeconds": 1143.46,
+    "startFrame": 34304,
+    "firstSceneId": "110",
+    "sceneCount": 10
+  },
+  {
+    "id": "13",
+    "title": "13｜紅利不等於人人受惠｜同一個年代，也有完全不同的人生",
+    "displayTitle": "紅利不等於人人受惠｜同一個年代，也有完全不同的人生",
+    "startSeconds": 1255.3,
+    "startFrame": 37659,
+    "firstSceneId": "120",
+    "sceneCount": 11
+  },
+  {
+    "id": "14",
+    "title": "14｜二零二六年的巨大反差｜從學生搶學校，到部分學校搶學生",
+    "displayTitle": "二零二六年的巨大反差｜從學生搶學校，到部分學校搶學生",
+    "startSeconds": 1369.704,
+    "startFrame": 41091,
+    "firstSceneId": "131",
+    "sceneCount": 9
+  },
+  {
+    "id": "15",
+    "title": "15｜結尾｜努力是真的，時代也是真的",
+    "displayTitle": "結尾｜努力是真的，時代也是真的",
+    "startSeconds": 1461.178,
+    "startFrame": 43835,
+    "firstSceneId": "140",
+    "sceneCount": 13
+  }
+]
