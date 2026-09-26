@@ -13,7 +13,7 @@
 <div class="container">
 <header><h1>🚀 GPT 隱藏指令快速查閱表</h1><p>用提示詞切換 ChatGPT 的思考、表達與視覺化整理方式</p></header>
 <div class="search-box"><input id="searchInput" type="search" placeholder="🔍 搜尋指令名稱、功能或關鍵字…"></div>
-<div class="filter-tabs"><button class="filter-tab active" data-filter="all">全部</button><button class="filter-tab" data-filter="challenge">🎯 思考挑戰類</button><button class="filter-tab" data-filter="thinking">🧠 深度思考類</button><button class="filter-tab" data-filter="expression">💬 表達角色類</button><button class="filter-tab" data-filter="handwritten">✍️ 手寫視覺類</button></div>
+<div class="filter-tabs"><button class="filter-tab active" data-filter="all">全部</button><button class="filter-tab" data-filter="challenge">🎯 思考挑戰類</button><button class="filter-tab" data-filter="thinking">🧠 深度思考類</button><button class="filter-tab" data-filter="expression">💬 表達角色類</button><button class="filter-tab" data-filter="handwritten">✍️ 手寫視覺類</button><button class="filter-tab" data-filter="writing">✏️ 寫作與語氣</button><button class="filter-tab" data-filter="thinking">🔎 思考與研究</button><button class="filter-tab" data-filter="career">🎓 職涯與學習</button><button class="filter-tab" data-filter="tone">🔊 語調與聲音</button><button class="filter-tab" data-filter="social">📣 社群與行銷</button><button class="filter-tab" data-filter="business">📈 商業與成長</button><button class="filter-tab" data-filter="critical">🧠 批判思考</button><button class="filter-tab" data-filter="structure">▦ 結構與格式</button></div>
 <div class="commands-grid" id="commandsGrid">
 <div class="command-card challenge" data-category="challenge"><div class="command-name">🛡️ REDTEAM</div><div class="command-desc">紅隊演練，扮演反方找漏洞、戳盲點，適合創業計畫、投資決策和提案審核。</div><div class="command-usage"><strong>用法：</strong>REDTEAM 我想開一家咖啡廳，這是我的計畫…</div><span class="tag">思考挑戰類</span></div>
 <div class="command-card challenge" data-category="challenge"><div class="command-name">⚠️ TRUTHMODE</div><div class="command-desc">要求 AI 減少討好與外交辭令，直接給出清楚、坦率的判斷。</div><div class="command-usage"><strong>用法：</strong>TRUTHMODE 我這個創業點子真的可行嗎？</div><span class="tag">思考挑戰類</span></div>
@@ -46,6 +46,7 @@
 </div>
 <footer>📌 社群提示詞整理｜本頁面可離線使用，建議加入書籤快速查閱</footer>
 </div>
+<script src="gpt-commands.js"></script>
 <script>
 const input=document.getElementById('searchInput'),cards=[...document.querySelectorAll('.command-card')],tabs=[...document.querySelectorAll('.filter-tab')];let active='all';
 function apply(){const q=input.value.trim().toLowerCase();let n=0;cards.forEach(c=>{const ok=(active==='all'||c.dataset.category===active)&&(!q||c.textContent.toLowerCase().includes(q));c.style.display=ok?'block':'none';if(ok)n++});document.querySelector('.no-results')?.remove();if(!n){const x=document.createElement('div');x.className='no-results';x.textContent='🔍 找不到符合的內容，請嘗試其他關鍵字或分類';document.getElementById('commandsGrid').append(x)}}

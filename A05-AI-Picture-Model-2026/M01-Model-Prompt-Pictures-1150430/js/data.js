@@ -4899,5 +4899,55 @@ const promptsData = [
     date: "2026-09-18",
     url: "<span class='yf3'>",
   },
+  {
+    id: 491,
+    title: "中秋節祝賀圖~1",
+    category: "Festival",
+    image: "./images/F02-Festival/F005-1.webp",
+    prompt:
+      "<span class='yf3'>現在生圖越來越簡單，所有提示詞除非特殊不然先不留",
+    date: "2026-09-25",
+    url: "",
+  },
+  {
+    id: 492,
+    title: "中秋節祝賀圖~1",
+    category: "Festival",
+    image: "./images/F02-Festival/F005-2.webp",
+    prompt:
+      "<span class='yf3'>現在生圖越來越簡單，所有提示詞除非特殊不然先不留",
+    date: "2026-09-25",
+    url: "",
+  },
+  {
+    id: 493,
+    title: "中秋節祝賀圖~1",
+    category: "Festival",
+    image: "./images/F02-Festival/F005-3.webp",
+    prompt:
+      "<span class='yf3'>現在生圖越來越簡單，所有提示詞除非特殊不然先不留",
+    date: "2026-09-25",
+    url: "",
+  },
+  {
+    id: 494,
+    title: "中秋節祝賀圖~1",
+    category: "Festival",
+    image: "./images/F02-Festival/F005-4.webp",
+    prompt:
+      "<span class='yf3'>現在生圖越來越簡單，所有提示詞除非特殊不然先不留",
+    date: "2026-09-25",
+    url: "",
+  },
+  {
+    id: 495,
+    title: "中秋節祝賀圖~1",
+    category: "Festival",
+    image: "./images/F02-Festival/F005-5.webp",
+    prompt:
+      "<span class='yf3'>現在生圖越來越簡單，所有提示詞除非特殊不然先不留",
+    date: "2026-09-25",
+    url: "",
+  },
 ];
 
