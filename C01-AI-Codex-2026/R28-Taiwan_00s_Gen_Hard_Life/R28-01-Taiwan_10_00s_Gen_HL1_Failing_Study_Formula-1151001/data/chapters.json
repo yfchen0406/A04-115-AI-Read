@@ -1,0 +1,189 @@
+[
+  {
+    "id": "00",
+    "title": "00｜開場｜畢業證書還保證什麼？",
+    "displayTitle": "開場｜畢業證書還保證什麼？",
+    "startSeconds": 1.5,
+    "indexStartSeconds": 1.5,
+    "endSeconds": 89.52,
+    "firstSceneId": "001",
+    "lastSceneId": "007",
+    "sceneCount": 7
+  },
+  {
+    "id": "01",
+    "title": "01｜九年級生的世代座標｜另一個世界",
+    "displayTitle": "九年級生的世代座標｜另一個世界",
+    "startSeconds": 89.7,
+    "indexStartSeconds": 89.7,
+    "endSeconds": 185.4,
+    "firstSceneId": "008",
+    "lastSceneId": "015",
+    "sceneCount": 8
+  },
+  {
+    "id": "02",
+    "title": "02｜我們從小相信的讀書成功公式｜一張舊地圖",
+    "displayTitle": "我們從小相信的讀書成功公式｜一張舊地圖",
+    "startSeconds": 185.58,
+    "indexStartSeconds": 185.58,
+    "endSeconds": 247.88,
+    "firstSceneId": "016",
+    "lastSceneId": "020",
+    "sceneCount": 5
+  },
+  {
+    "id": "03",
+    "title": "03｜十大怎麼排｜四個檢查點",
+    "displayTitle": "十大怎麼排｜四個檢查點",
+    "startSeconds": 247.88,
+    "indexStartSeconds": 247.88,
+    "endSeconds": 291.027,
+    "firstSceneId": "021",
+    "lastSceneId": "024",
+    "sceneCount": 4
+  },
+  {
+    "id": "04",
+    "title": "04｜第10名｜大學文憑從稀缺優勢變成常見配備｜人人都有的門票",
+    "displayTitle": "第10名｜大學文憑從稀缺優勢變成常見配備｜人人都有的門票",
+    "startSeconds": 291.027,
+    "indexStartSeconds": 291.027,
+    "endSeconds": 361.257,
+    "firstSceneId": "025",
+    "lastSceneId": "030",
+    "sceneCount": 6
+  },
+  {
+    "id": "05",
+    "title": "05｜第9名｜畢業不等於找到方向｜校園到職場的空白",
+    "displayTitle": "第9名｜畢業不等於找到方向｜校園到職場的空白",
+    "startSeconds": 361.257,
+    "indexStartSeconds": 361.257,
+    "endSeconds": 415.72,
+    "firstSceneId": "031",
+    "lastSceneId": "035",
+    "sceneCount": 5
+  },
+  {
+    "id": "06",
+    "title": "06｜第8名｜青年失業率仍高於成熟年齡層｜第一份工作不好接",
+    "displayTitle": "第8名｜青年失業率仍高於成熟年齡層｜第一份工作不好接",
+    "startSeconds": 415.72,
+    "indexStartSeconds": 415.72,
+    "endSeconds": 480.94,
+    "firstSceneId": "036",
+    "lastSceneId": "041",
+    "sceneCount": 6
+  },
+  {
+    "id": "07",
+    "title": "07｜第7名｜大學起薪不是高薪保證｜3萬多元的現實起點",
+    "displayTitle": "第7名｜大學起薪不是高薪保證｜3萬多元的現實起點",
+    "startSeconds": 481.12,
+    "indexStartSeconds": 481.12,
+    "endSeconds": 550.56,
+    "firstSceneId": "042",
+    "lastSceneId": "047",
+    "sceneCount": 6
+  },
+  {
+    "id": "08",
+    "title": "08｜第6名｜同學歷不同產業，報酬開始分流｜科系與產業定價",
+    "displayTitle": "第6名｜同學歷不同產業，報酬開始分流｜科系與產業定價",
+    "startSeconds": 550.74,
+    "indexStartSeconds": 550.74,
+    "endSeconds": 620.493,
+    "firstSceneId": "048",
+    "lastSceneId": "053",
+    "sceneCount": 6
+  },
+  {
+    "id": "09",
+    "title": "09｜第5名｜學歷之外還要證明能力｜從知道到做到",
+    "displayTitle": "第5名｜學歷之外還要證明能力｜從知道到做到",
+    "startSeconds": 620.493,
+    "indexStartSeconds": 620.493,
+    "endSeconds": 683.256,
+    "firstSceneId": "054",
+    "lastSceneId": "058",
+    "sceneCount": 5
+  },
+  {
+    "id": "10",
+    "title": "10｜第4名｜第一份工作會產生職涯複利｜起薪不是終點",
+    "displayTitle": "第4名｜第一份工作會產生職涯複利｜起薪不是終點",
+    "startSeconds": 683.256,
+    "indexStartSeconds": 683.256,
+    "endSeconds": 743.954,
+    "firstSceneId": "059",
+    "lastSceneId": "063",
+    "sceneCount": 5
+  },
+  {
+    "id": "11",
+    "title": "11｜第3名｜薪資成長追的是生活成本｜工作只是第一關",
+    "displayTitle": "第3名｜薪資成長追的是生活成本｜工作只是第一關",
+    "startSeconds": 743.954,
+    "indexStartSeconds": 743.954,
+    "endSeconds": 801.024,
+    "firstSceneId": "064",
+    "lastSceneId": "068",
+    "sceneCount": 5
+  },
+  {
+    "id": "12",
+    "title": "12｜第2名｜好工作與買得起房已是兩件事｜住宅門檻",
+    "displayTitle": "第2名｜好工作與買得起房已是兩件事｜住宅門檻",
+    "startSeconds": 801.024,
+    "indexStartSeconds": 801.024,
+    "endSeconds": 885.132,
+    "firstSceneId": "069",
+    "lastSceneId": "075",
+    "sceneCount": 7
+  },
+  {
+    "id": "13",
+    "title": "13｜第1名｜一條路走到底的成功公式失效｜標準答案消失",
+    "displayTitle": "第1名｜一條路走到底的成功公式失效｜標準答案消失",
+    "startSeconds": 885.132,
+    "indexStartSeconds": 885.132,
+    "endSeconds": 963.32,
+    "firstSceneId": "076",
+    "lastSceneId": "082",
+    "sceneCount": 7
+  },
+  {
+    "id": "14",
+    "title": "14｜真正失效的是什麼｜不是讀書，是等號",
+    "displayTitle": "真正失效的是什麼｜不是讀書，是等號",
+    "startSeconds": 963.32,
+    "indexStartSeconds": 963.32,
+    "endSeconds": 1013.809,
+    "firstSceneId": "083",
+    "lastSceneId": "086",
+    "sceneCount": 4
+  },
+  {
+    "id": "15",
+    "title": "15｜九年級生的新公式｜能力組合",
+    "displayTitle": "九年級生的新公式｜能力組合",
+    "startSeconds": 1013.809,
+    "indexStartSeconds": 1013.809,
+    "endSeconds": 1069.92,
+    "firstSceneId": "087",
+    "lastSceneId": "091",
+    "sceneCount": 5
+  },
+  {
+    "id": "16",
+    "title": "16｜結尾｜畢業證書是一張入場券",
+    "displayTitle": "結尾｜畢業證書是一張入場券",
+    "startSeconds": 1069.92,
+    "indexStartSeconds": 1069.92,
+    "endSeconds": 1134.92,
+    "firstSceneId": "092",
+    "lastSceneId": "096",
+    "sceneCount": 5
+  }
+]

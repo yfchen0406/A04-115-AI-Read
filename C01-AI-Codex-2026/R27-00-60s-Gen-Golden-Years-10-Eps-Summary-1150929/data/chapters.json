@@ -1,0 +1,189 @@
+[
+  {
+    "id": "00",
+    "title": "00｜冷開場｜如果早出生20年，他們還會走上同樣的人生嗎？",
+    "displayTitle": "冷開場｜如果早出生20年，他們還會走上同樣的人生嗎？",
+    "startSeconds": 1.5,
+    "indexStartSeconds": 1.5,
+    "endSeconds": 95.931,
+    "firstSceneId": "001",
+    "lastSceneId": "009",
+    "sceneCount": 9
+  },
+  {
+    "id": "01",
+    "title": "01｜世代座標｜1961～1970出生的一代，剛好走過台灣變化最快的60年",
+    "displayTitle": "世代座標｜1961～1970出生的一代，剛好走過台灣變化最快的60年",
+    "startSeconds": 95.931,
+    "indexStartSeconds": 95.931,
+    "endSeconds": 188.467,
+    "firstSceneId": "010",
+    "lastSceneId": "018",
+    "sceneCount": 9
+  },
+  {
+    "id": "02",
+    "title": "02｜這10集怎麼看｜不是最好命排行榜，而是一條人生與時代交會的時間軸",
+    "displayTitle": "這10集怎麼看｜不是最好命排行榜，而是一條人生與時代交會的時間軸",
+    "startSeconds": 188.467,
+    "indexStartSeconds": 188.467,
+    "endSeconds": 264.446,
+    "firstSceneId": "019",
+    "lastSceneId": "025",
+    "sceneCount": 7
+  },
+  {
+    "id": "03",
+    "title": "03｜第1集｜教育普及與升學擴張：人生往上走的樓梯變長了",
+    "displayTitle": "第1集｜教育普及與升學擴張：人生往上走的樓梯變長了",
+    "startSeconds": 264.446,
+    "indexStartSeconds": 264.446,
+    "endSeconds": 344.96,
+    "firstSceneId": "026",
+    "lastSceneId": "034",
+    "sceneCount": 9
+  },
+  {
+    "id": "04",
+    "title": "04｜第2集｜產業與經濟起飛：走出校門時，列車剛好正在加速",
+    "displayTitle": "第2集｜產業與經濟起飛：走出校門時，列車剛好正在加速",
+    "startSeconds": 345.14,
+    "indexStartSeconds": 345.14,
+    "endSeconds": 430.82,
+    "firstSceneId": "035",
+    "lastSceneId": "042",
+    "sceneCount": 8
+  },
+  {
+    "id": "05",
+    "title": "05｜第3集｜穩定工作年代：真正能累積人生的，是沒有被頻繁中斷的時間",
+    "displayTitle": "第3集｜穩定工作年代：真正能累積人生的，是沒有被頻繁中斷的時間",
+    "startSeconds": 431.0,
+    "indexStartSeconds": 431.0,
+    "endSeconds": 507.52,
+    "firstSceneId": "043",
+    "lastSceneId": "050",
+    "sceneCount": 8
+  },
+  {
+    "id": "06",
+    "title": "06｜第4集｜房地產時代：有些家庭買下房子，也買進後來30年的城市發展",
+    "displayTitle": "第4集｜房地產時代：有些家庭買下房子，也買進後來30年的城市發展",
+    "startSeconds": 507.7,
+    "indexStartSeconds": 507.7,
+    "endSeconds": 594.64,
+    "firstSceneId": "051",
+    "lastSceneId": "058",
+    "sceneCount": 8
+  },
+  {
+    "id": "07",
+    "title": "07｜第5集｜城市建設：沒有搬家，生活圈卻自己一路升級",
+    "displayTitle": "第5集｜城市建設：沒有搬家，生活圈卻自己一路升級",
+    "startSeconds": 594.82,
+    "indexStartSeconds": 594.82,
+    "endSeconds": 670.854,
+    "firstSceneId": "059",
+    "lastSceneId": "065",
+    "sceneCount": 7
+  },
+  {
+    "id": "08",
+    "title": "08｜第6集｜全民健保與醫療進步：疾病逐漸從巨大風險變成可以長期管理",
+    "displayTitle": "第6集｜全民健保與醫療進步：疾病逐漸從巨大風險變成可以長期管理",
+    "startSeconds": 670.854,
+    "indexStartSeconds": 670.854,
+    "endSeconds": 758.44,
+    "firstSceneId": "066",
+    "lastSceneId": "075",
+    "sceneCount": 10
+  },
+  {
+    "id": "09",
+    "title": "09｜第7集｜高儲蓄年代：工作所得慢慢變成退休以前的安全墊",
+    "displayTitle": "第7集｜高儲蓄年代：工作所得慢慢變成退休以前的安全墊",
+    "startSeconds": 758.62,
+    "indexStartSeconds": 758.62,
+    "endSeconds": 843.422,
+    "firstSceneId": "076",
+    "lastSceneId": "083",
+    "sceneCount": 8
+  },
+  {
+    "id": "10",
+    "title": "10｜第8集｜紙本到AI：他們完整走過知識取得成本大幅下降的年代",
+    "displayTitle": "第8集｜紙本到AI：他們完整走過知識取得成本大幅下降的年代",
+    "startSeconds": 843.422,
+    "indexStartSeconds": 843.422,
+    "endSeconds": 945.302,
+    "firstSceneId": "084",
+    "lastSceneId": "094",
+    "sceneCount": 11
+  },
+  {
+    "id": "11",
+    "title": "11｜第9集｜退休制度成熟：工作還沒結束，就開始有制度替退休做準備",
+    "displayTitle": "第9集｜退休制度成熟：工作還沒結束，就開始有制度替退休做準備",
+    "startSeconds": 945.302,
+    "indexStartSeconds": 945.302,
+    "endSeconds": 1037.502,
+    "firstSceneId": "095",
+    "lastSceneId": "103",
+    "sceneCount": 9
+  },
+  {
+    "id": "12",
+    "title": "12｜第10集｜長壽與退休時間：工作結束以後，人生可能還有下一個章節",
+    "displayTitle": "第10集｜長壽與退休時間：工作結束以後，人生可能還有下一個章節",
+    "startSeconds": 1037.502,
+    "indexStartSeconds": 1037.502,
+    "endSeconds": 1139.852,
+    "firstSceneId": "104",
+    "lastSceneId": "113",
+    "sceneCount": 10
+  },
+  {
+    "id": "13",
+    "title": "13｜十種紅利其實是一件事｜教育、工作、房子、城市、健康、財務與退休彼此相連",
+    "displayTitle": "十種紅利其實是一件事｜教育、工作、房子、城市、健康、財務與退休彼此相連",
+    "startSeconds": 1139.852,
+    "indexStartSeconds": 1139.852,
+    "endSeconds": 1222.978,
+    "firstSceneId": "114",
+    "lastSceneId": "120",
+    "sceneCount": 7
+  },
+  {
+    "id": "14",
+    "title": "14｜紅利不等於人人受惠｜同一個年代，也可能走出完全不同的人生",
+    "displayTitle": "紅利不等於人人受惠｜同一個年代，也可能走出完全不同的人生",
+    "startSeconds": 1222.978,
+    "indexStartSeconds": 1222.978,
+    "endSeconds": 1299.923,
+    "firstSceneId": "121",
+    "lastSceneId": "128",
+    "sceneCount": 8
+  },
+  {
+    "id": "15",
+    "title": "15｜2026年的交叉點｜他們從追趕時代的人，走到重新安排人生的人",
+    "displayTitle": "2026年的交叉點｜他們從追趕時代的人，走到重新安排人生的人",
+    "startSeconds": 1299.923,
+    "indexStartSeconds": 1299.923,
+    "endSeconds": 1384.54,
+    "firstSceneId": "129",
+    "lastSceneId": "137",
+    "sceneCount": 9
+  },
+  {
+    "id": "16",
+    "title": "16｜系列總結｜人的努力是真的，時代也是真的",
+    "displayTitle": "系列總結｜人的努力是真的，時代也是真的",
+    "startSeconds": 1384.72,
+    "indexStartSeconds": 1384.72,
+    "endSeconds": 1484.96,
+    "firstSceneId": "138",
+    "lastSceneId": "147",
+    "sceneCount": 10
+  }
+]

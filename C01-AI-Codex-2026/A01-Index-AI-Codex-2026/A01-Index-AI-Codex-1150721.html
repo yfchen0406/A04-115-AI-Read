@@ -196,6 +196,29 @@
         </div>
         <br>
         <hr> -->
+        <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
+        <h2 id="1-6" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
+          <strong class="yf-code2">九年級生的高難度人生</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-6" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+
+
         <!-- <h2 id="1-5" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
         <h2 id="1-5" class=" yf-font1"><i class="fa-solid fa-scale-balanced"></i>
           <strong class="yf-code2">五年級生的黃金時代</strong>
@@ -370,6 +393,42 @@
   <script type="module">
     import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
     // AI提示詞
+    const app6 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+        
+          // R028-03.九年級生的高難度人生 03 ~ 台灣十大「九年級生進職場後才發現AI改掉的規則」 ~ 115.10.01
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-03-Taiwan_10_00s_Gen_AI-Changed_Rules-1151003/index.html',
+            pic1s: './images/R028-3G.webp',
+            dec1: 'R028-03.九年級生的高難度人生 03 ~ 台灣十大「九年級生進職場後才發現AI改掉的規則」 ~ 115.10.01',
+          },
+          // R028-02.九年級生的高難度人生 02 ~ 台灣十大「九年級生一生可能需要重新學習最多次的領域」 ~ 115.10.01
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-02-Taiwan_10_00s_Gen_Most_Relearned_Fields-1151002/index.html',
+            pic1s: './images/R028-2G.webp',
+            dec1: 'R028-02.九年級生的高難度人生 02 ~ 台灣十大「九年級生一生可能需要重新學習最多次的領域」 ~ 115.10.01',
+          },
+          // R028-01.九年級生的高難度人生 01 ~ 台灣十大「九年級生正在失效的讀書成功公式」 ~ 115.10.01
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-01-Taiwan_10_00s_Gen_HL1_Failing_Study_Formula-1151001/index.html',
+            pic1s: './images/R028-1G.webp',
+            dec1: 'R028-01.九年級生的高難度人生 01 ~ 台灣十大「九年級生正在失效的讀書成功公式」 ~ 115.10.01',
+          },
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-6')
+
+
     const app5 = createApp({
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
@@ -928,22 +987,7 @@
 
 
 
-    const app6 = createApp({
-      setup() {
-        // 使用 ref 定義響應式狀態（陣列）
-        const arr = ref([
 
-
-
-
-        ]);
-
-        // 返回數據和方法
-        return {
-          arr,
-        };
-      }
-    }).mount('#a1-6')
 
     const app7 = createApp({
       setup() {
