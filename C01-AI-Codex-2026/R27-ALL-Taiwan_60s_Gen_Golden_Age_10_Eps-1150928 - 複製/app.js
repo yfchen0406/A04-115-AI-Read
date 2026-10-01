@@ -1,0 +1,1 @@
+const topBtn=document.getElementById('topBtn');addEventListener('scroll',()=>topBtn.classList.toggle('show',scrollY>700));topBtn.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));document.querySelectorAll('.nav-pill').forEach(a=>a.addEventListener('click',()=>document.querySelectorAll('.nav-pill').forEach(x=>x.classList.toggle('active',x===a))));
