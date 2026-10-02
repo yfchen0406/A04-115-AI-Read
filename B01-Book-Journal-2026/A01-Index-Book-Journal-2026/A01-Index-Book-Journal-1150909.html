@@ -521,6 +521,13 @@
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
 
+          // G003.2026台北市長民調紀錄~持續更新 ~ 115.10.02
+          {
+            pic1: '/B01-Book-Journal-2026/G003-2026_Taipei_Mayor_Poll_Feature-1151002/poll_2026_taipei.html',
+            pic1s: './images/G003-2.webp',
+            dec1: 'G003.2026台北市長民調紀錄~持續更新 ~ 115.10.02!',
+          },
+
           // G002.Q萌標準象棋對戰(全盤) ~ 115.09.21
           {
             pic1: '/B01-Book-Journal-2026/G002-Standard-Xiangqi-Full-Game-1150920/index.html',
@@ -700,7 +707,7 @@
   <script>
     function updateCounter() {
       // 112.10.05 移除之前舊資料
-      const arr1 = [ 'A17', 'A18', 'A19', 'A20'];
+      const arr1 = ['A17', 'A18', 'A19', 'A20'];
       // const arr1 = ['A15', 'A16', 'A17', 'A18', 'A19', 'A20'];
 
       const randomNum = Math.floor(Math.random() * arr1.length);

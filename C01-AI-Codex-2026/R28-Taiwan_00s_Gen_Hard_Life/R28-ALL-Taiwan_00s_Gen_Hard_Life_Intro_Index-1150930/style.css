@@ -59,3 +59,13 @@ main{width:min(1640px,95vw)}
 }
 
 .pending .episode-head{filter:saturate(.55);opacity:.92}.pending .episode-copy{color:#66716b}.placeholder-link{cursor:default;background:#566b60;border-color:#566b60}.placeholder-link:hover{background:#566b60;border-color:#566b60;transform:none}
+
+/* Episode link buttons: URLs are placeholders for later replacement. */
+.episode-actions{margin:.78rem auto 0;width:min(98%,760px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}
+.episode-action{display:flex;align-items:center;justify-content:center;gap:.38rem;min-height:44px;padding:.58rem .55rem;border-radius:10px;border:2px solid rgba(28,43,35,.22);text-decoration:none;font-weight:900;line-height:1.25;text-align:center;box-shadow:0 5px 12px rgba(38,51,45,.12);transition:transform .18s,filter .18s;white-space:nowrap}
+.episode-action:hover{transform:translateY(-2px);filter:brightness(.96)}
+.web-link{background:#d7b94b;color:#26332d}
+.yt-caption{background:#c73b3b;color:#fff}
+.yt-no-caption{background:#50645a;color:#fff}
+.yt-icon{display:inline-grid;place-items:center;width:23px;height:17px;border-radius:5px;background:#fff;color:#d22626;font-family:Arial,sans-serif;font-size:10px;line-height:1;flex:0 0 auto}
+@media(max-width:720px){.episode-actions{grid-template-columns:1fr}.episode-action{white-space:normal}}
