@@ -1,0 +1,189 @@
+[
+  {
+    "id": "00",
+    "title": "00｜開場｜你以為畢業了，其實只是換了一種考試",
+    "displayTitle": "開場｜你以為畢業了，其實只是換了一種考試",
+    "startSeconds": 1.5,
+    "indexStartSeconds": 1.5,
+    "endSeconds": 119.617,
+    "firstSceneId": "001",
+    "lastSceneId": "010",
+    "sceneCount": 10
+  },
+  {
+    "id": "01",
+    "title": "01｜九年級生的時間跨度｜職涯很長，工具壽命卻愈來愈短",
+    "displayTitle": "九年級生的時間跨度｜職涯很長，工具壽命卻愈來愈短",
+    "startSeconds": 119.617,
+    "indexStartSeconds": 119.617,
+    "endSeconds": 206.78,
+    "firstSceneId": "011",
+    "lastSceneId": "019",
+    "sceneCount": 9
+  },
+  {
+    "id": "02",
+    "title": "02｜什麼叫技能折舊？｜不是歸零，而是原本的做法不再夠用",
+    "displayTitle": "什麼叫技能折舊？｜不是歸零，而是原本的做法不再夠用",
+    "startSeconds": 206.96,
+    "indexStartSeconds": 206.96,
+    "endSeconds": 279.158,
+    "firstSceneId": "020",
+    "lastSceneId": "027",
+    "sceneCount": 8
+  },
+  {
+    "id": "03",
+    "title": "03｜十大怎麼排？｜技術週期、產業轉型、再訓練頻率",
+    "displayTitle": "十大怎麼排？｜技術週期、產業轉型、再訓練頻率",
+    "startSeconds": 279.158,
+    "indexStartSeconds": 279.158,
+    "endSeconds": 364.061,
+    "firstSceneId": "028",
+    "lastSceneId": "036",
+    "sceneCount": 9
+  },
+  {
+    "id": "04",
+    "title": "04｜第10名｜零售與服務業｜不是只學會服務，而是一直學新的服務方式",
+    "displayTitle": "第10名｜零售與服務業｜不是只學會服務，而是一直學新的服務方式",
+    "startSeconds": 364.061,
+    "indexStartSeconds": 364.061,
+    "endSeconds": 448.546,
+    "firstSceneId": "037",
+    "lastSceneId": "044",
+    "sceneCount": 8
+  },
+  {
+    "id": "05",
+    "title": "05｜第9名｜金融、會計與法遵｜數字沒有變，規則與工具一直變",
+    "displayTitle": "第9名｜金融、會計與法遵｜數字沒有變，規則與工具一直變",
+    "startSeconds": 448.546,
+    "indexStartSeconds": 448.546,
+    "endSeconds": 538.524,
+    "firstSceneId": "045",
+    "lastSceneId": "053",
+    "sceneCount": 9
+  },
+  {
+    "id": "06",
+    "title": "06｜第8名｜內容、設計與行銷｜作品還沒過時，製作流程先過時",
+    "displayTitle": "第8名｜內容、設計與行銷｜作品還沒過時，製作流程先過時",
+    "startSeconds": 538.524,
+    "indexStartSeconds": 538.524,
+    "endSeconds": 624.412,
+    "firstSceneId": "054",
+    "lastSceneId": "061",
+    "sceneCount": 8
+  },
+  {
+    "id": "07",
+    "title": "07｜第7名｜製造與智慧機械｜從操作機器，到理解自動化系統",
+    "displayTitle": "第7名｜製造與智慧機械｜從操作機器，到理解自動化系統",
+    "startSeconds": 624.412,
+    "indexStartSeconds": 624.412,
+    "endSeconds": 711.96,
+    "firstSceneId": "062",
+    "lastSceneId": "070",
+    "sceneCount": 9
+  },
+  {
+    "id": "08",
+    "title": "08｜第6名｜能源、淨零與碳管理｜政策時間表直接走到2050",
+    "displayTitle": "第6名｜能源、淨零與碳管理｜政策時間表直接走到2050",
+    "startSeconds": 712.14,
+    "indexStartSeconds": 712.14,
+    "endSeconds": 809.48,
+    "firstSceneId": "071",
+    "lastSceneId": "079",
+    "sceneCount": 9
+  },
+  {
+    "id": "09",
+    "title": "09｜第5名｜醫療、健康與照護｜人不會消失，但照護方式會改變",
+    "displayTitle": "第5名｜醫療、健康與照護｜人不會消失，但照護方式會改變",
+    "startSeconds": 809.66,
+    "indexStartSeconds": 809.66,
+    "endSeconds": 899.749,
+    "firstSceneId": "080",
+    "lastSceneId": "087",
+    "sceneCount": 8
+  },
+  {
+    "id": "10",
+    "title": "10｜第4名｜資安｜你學會防守的那一天，新的攻擊已經在路上",
+    "displayTitle": "第4名｜資安｜你學會防守的那一天，新的攻擊已經在路上",
+    "startSeconds": 899.749,
+    "indexStartSeconds": 899.749,
+    "endSeconds": 975.06,
+    "firstSceneId": "088",
+    "lastSceneId": "094",
+    "sceneCount": 7
+  },
+  {
+    "id": "11",
+    "title": "11｜第3名｜資料、雲端與數據分析｜同樣是資料，十年後可能完全不是同一種工作",
+    "displayTitle": "第3名｜資料、雲端與數據分析｜同樣是資料，十年後可能完全不是同一種工作",
+    "startSeconds": 975.06,
+    "indexStartSeconds": 975.06,
+    "endSeconds": 1060.08,
+    "firstSceneId": "095",
+    "lastSceneId": "103",
+    "sceneCount": 9
+  },
+  {
+    "id": "12",
+    "title": "12｜第2名｜軟體、AI與數位開發｜你用來工作的工具，本身就是最容易被更新的工具",
+    "displayTitle": "第2名｜軟體、AI與數位開發｜你用來工作的工具，本身就是最容易被更新的工具",
+    "startSeconds": 1060.08,
+    "indexStartSeconds": 1060.08,
+    "endSeconds": 1155.48,
+    "firstSceneId": "104",
+    "lastSceneId": "112",
+    "sceneCount": 9
+  },
+  {
+    "id": "13",
+    "title": "13｜第1名｜AI應用與人機協作｜不是AI工作者才要學AI，而是很多工作都要重新學怎麼工作",
+    "displayTitle": "第1名｜AI應用與人機協作｜不是AI工作者才要學AI，而是很多工作都要重新學怎麼工作",
+    "startSeconds": 1155.66,
+    "indexStartSeconds": 1155.66,
+    "endSeconds": 1277.26,
+    "firstSceneId": "113",
+    "lastSceneId": "123",
+    "sceneCount": 11
+  },
+  {
+    "id": "14",
+    "title": "14｜真正的壓力｜不是沒有技能，而是「學一次、用一生」愈來愈難",
+    "displayTitle": "真正的壓力｜不是沒有技能，而是「學一次、用一生」愈來愈難",
+    "startSeconds": 1277.44,
+    "indexStartSeconds": 1277.44,
+    "endSeconds": 1371.692,
+    "firstSceneId": "124",
+    "lastSceneId": "133",
+    "sceneCount": 10
+  },
+  {
+    "id": "15",
+    "title": "15｜什麼能力比較不容易歸零？｜不要只追工具，要累積可以帶走的東西",
+    "displayTitle": "什麼能力比較不容易歸零？｜不要只追工具，要累積可以帶走的東西",
+    "startSeconds": 1371.692,
+    "indexStartSeconds": 1371.692,
+    "endSeconds": 1447.076,
+    "firstSceneId": "134",
+    "lastSceneId": "142",
+    "sceneCount": 9
+  },
+  {
+    "id": "16",
+    "title": "16｜結尾｜真正不能停止更新的，也許不是履歷，而是自己",
+    "displayTitle": "結尾｜真正不能停止更新的，也許不是履歷，而是自己",
+    "startSeconds": 1447.076,
+    "indexStartSeconds": 1447.076,
+    "endSeconds": 1562.46,
+    "firstSceneId": "143",
+    "lastSceneId": "154",
+    "sceneCount": 12
+  }
+]

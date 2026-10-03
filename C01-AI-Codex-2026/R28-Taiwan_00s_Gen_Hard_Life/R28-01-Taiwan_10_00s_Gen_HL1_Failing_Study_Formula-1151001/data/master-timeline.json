@@ -2,8 +2,8 @@
   "title": "台灣十大「九年級生正在失效的讀書成功公式」",
   "episode": 1,
   "fps": 30,
-  "durationSeconds": 1134.92,
-  "durationFrames": 34048,
+  "durationSeconds": 1134.984,
+  "durationFrames": 34050,
   "masterClock": "audio.currentTime",
   "masterClockDerivation": "The official HTMLAudioElement currentTime is the sole playback master clock. Scene intervals come from Excel; cue text and cue intervals come from SRT; the Remotion Player is frame-sought from that clock.",
   "timeSources": {
@@ -14,18 +14,18 @@
   },
   "sourceEndTimes": {
     "excelLastSceneEndSeconds": 1134.92,
-    "audioDurationSeconds": 1134.92,
+    "audioDurationSeconds": 1134.984,
     "lastSubtitleEndSeconds": 1134.92
   },
   "imageCount": 96,
   "imageAssets": {
-    "status": "placeholder",
+    "status": "complete",
     "imageCount": 96,
     "playbackCount": 96,
-    "providedSceneCount": 0,
-    "placeholderSceneCount": 96,
+    "providedSceneCount": 96,
+    "placeholderSceneCount": 0,
     "cover": "images/R028-01-cover.webp",
-    "note": "0 provided scene illustrations and 96 placeholders are mapped by ID."
+    "note": "All 96 provided scene illustrations are mapped by ID and converted to 1280x720 WebP."
   },
   "scenes": [
     {
