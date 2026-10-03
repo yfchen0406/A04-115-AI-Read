@@ -18,3 +18,7 @@
 
 ## 按鈕樣式更新
 每張封面下方三個按鈕已依參考圖改為置中橫排：藍色「完整網頁」、綠色「YT連結(有字幕)」、灰色「YT連結(無字幕)」，連結目前保留 `#` 待補。
+
+
+## YouTube連結修正
+已填入有效YouTube網址的按鈕可直接開啟新分頁。以後只需在 index.html 將相應按鈕的 href="#" 改成 https://youtu.be/... 或 https://www.youtube.com/watch?v=...，yt-links.js 會自動啟用，不需修改 data-url-placeholder 或程式。空白或 # 不會誤連結。

@@ -16,7 +16,7 @@
 
 - 首頁封面使用 R028-03G-cover.webp，維持原始比例。
 - 第 3 集播放版有 167 個圖片槽位；正式分鏡美術尚未提供時顯示「圖片待補」。原始 Excel 的第 17 章及其語音、字幕、圖片已從播放版排除。
-- YouTube 字幕版與無字幕版按鈕保留；網址尚未提供，因此保持停用。網址可在 src/data/config.json 的 youtubeWithSubtitles、youtubeWithoutSubtitles 設定。
+- 首頁 YouTube 按鈕已連結字幕版（dJWW9MQvCE8）與無字幕版（aCIkGQNz88Y）；網址設定於 src/data/config.json。
 - reports/timeline-validation.json 記錄 Excel、字幕、音訊長度及槽位檢查；reports/chapter-index-browser-qa.json 記錄離線章節逐項檢查；reports/scene-image-qa.json 記錄圖片素材狀態。
 
 ## 時間軸備註
