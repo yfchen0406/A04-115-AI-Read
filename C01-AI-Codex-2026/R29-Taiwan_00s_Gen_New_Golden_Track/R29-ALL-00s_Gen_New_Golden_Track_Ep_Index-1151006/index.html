@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <title>九年級生的黃金新賽道系列｜索引</title>
+  <style>
+    :root {
+      --sky: #8eaa9b;
+      --sky-deep: #2f7656;
+      --sky-soft: #edf5f0;
+      --sun: #c7d8cf;
+      --sun-soft: #edf4f0;
+      --cream: #f8faf9;
+      --red: #2f7656;
+      --ink: #26332d;
+      --text: #46564e;
+      --muted: #74827b;
+      --line: #cbd7d1;
+      --white: #fff;
+      --shadow: 0 14px 34px rgba(45, 91, 69, .10)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: linear-gradient(180deg, #f0f6f2 0, #fafcfb 18%, #f2f6f4 55%, #e8f0ec 100%);
+      font-family: "DFKai-SB", "BiauKai", "KaiTi", "Noto Serif TC", "PMingLiU", serif;
+      line-height: 1.72
+    }
+
+    .hero {
+      min-height: 455px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #a9c1b4 0, #c8d7cf 46%, #e8efeb 100%)
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 16% 18%, rgba(255, 255, 255, .82) 0 5%, transparent 6%), radial-gradient(circle at 82% 20%, rgba(255, 255, 255, .72) 0 7%, transparent 8%), linear-gradient(172deg, transparent 0 48%, rgba(69, 104, 86, .55) 49% 58%, transparent 59%);
+      opacity: .75
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 8px;
+      background: var(--red)
+    }
+
+    .hero-inner {
+      width: min(1480px, 96vw);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2.5rem 1rem
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255, 255, 255, .9);
+      border: 2px solid var(--sun);
+      padding: .35rem 1rem;
+      border-radius: 999px;
+      font-weight: 900;
+      color: var(--red)
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 1;
+      margin: .45rem 0;
+      color: var(--ink);
+      font-weight: 900;
+      text-shadow: 3px 3px 0 rgba(255, 255, 255, .82)
+    }
+
+    .lead {
+      max-width: 1050px;
+      margin: 1rem auto 0;
+      font-size: 1.22rem;
+      background: rgba(255, 255, 255, .88);
+      padding: .9rem 1.3rem;
+      border: 2px solid rgba(47, 101, 75, .18);
+      border-left: 9px solid var(--red);
+      border-radius: 16px;
+      text-align: left
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: .8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.25rem
+    }
+
+    .btn {
+      padding: .72rem 1.25rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 2px solid var(--ink)
+    }
+
+    .primary {
+      background: var(--sun);
+      color: var(--ink)
+    }
+
+    .secondary {
+      background: #fff;
+      color: var(--red)
+    }
+
+    .series-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 250, 248, .96);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--sun)
+    }
+
+    .nav-inner {
+      width: min(1500px, 98vw);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: .62rem 0;
+      overflow-x: auto
+    }
+
+    .nav-inner>span {
+      font-weight: 900;
+      white-space: nowrap;
+      color: var(--ink);
+      margin-right: .35rem
+    }
+
+    .nav-pill {
+      min-width: 44px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--ink);
+      background: #fff;
+      border: 2px solid var(--sun);
+      border-radius: 9px;
+      padding: .2rem .55rem;
+      font-weight: 900
+    }
+
+    .nav-pill:hover {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red)
+    }
+
+    main {
+      width: min(1500px, 97vw);
+      margin: auto
+    }
+
+    .intro {
+      padding: 3.2rem .5rem 1.4rem;
+      text-align: center
+    }
+
+    .intro h2 {
+      font-size: 2.3rem;
+      color: var(--ink);
+      margin: 0
+    }
+
+    .intro h2:after {
+      content: "";
+      display: block;
+      width: 150px;
+      height: 7px;
+      background: var(--sun);
+      margin: .45rem auto;
+      border-radius: 9px
+    }
+
+    .intro p {
+      max-width: 950px;
+      margin: 1rem auto
+    }
+
+    .theme-strip {
+      display: flex;
+      gap: .5rem;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .theme-strip span {
+      background: var(--sun-soft);
+      border: 1px solid var(--line);
+      padding: .28rem .75rem;
+      border-radius: 999px;
+      font-weight: 800
+    }
+
+    .episode {
+      scroll-margin-top: 74px;
+      background: rgba(255, 255, 255, .96);
+      border: 2px solid #cbd8d1;
+      border-radius: 20px;
+      margin: 1.5rem 0 2.35rem;
+      box-shadow: var(--shadow);
+      overflow: hidden
+    }
+
+    .episode-head {
+      padding: 1.15rem 1.4rem;
+      background: linear-gradient(100deg, var(--sun) 0, #cbd6d0 66%, #fff 100%);
+      border-bottom: 3px solid var(--red);
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem
+    }
+
+    .episode-head h2 {
+      margin: 0;
+      color: var(--red);
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.35;
+      font-weight: 900
+    }
+
+    .ep-no {
+      background: var(--ink);
+      color: #fff;
+      padding: .27rem .68rem;
+      border-radius: 7px;
+      font-weight: 900;
+      white-space: nowrap
+    }
+
+    .episode-grid {
+      display: grid;
+      grid-template-columns: minmax(560px, 1.42fr) minmax(430px, .98fr);
+      gap: 1.15rem;
+      padding: 1rem;
+      align-items: start
+    }
+
+    .image-slot {
+      margin: 0;
+      position: sticky;
+      top: 78px;
+      align-self: start;
+      width: 100%
+    }
+
+    .image-slot picture {
+      display: block;
+      width: 100%
+    }
+
+    .image-slot .episode-link {
+      margin: .72rem auto 0;
+      display: flex;
+      width: min(92%, 520px);
+      justify-content: center;
+      align-items: center;
+      text-align: center
+    }
+
+    .image-slot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 12px;
+      border: 3px solid var(--sun);
+      background: var(--cream);
+      box-shadow: 0 9px 22px rgba(65, 52, 25, .12)
+    }
+
+    .episode-copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column
+    }
+
+    .summary {
+      font-size: 1rem;
+      line-height: 1.55;
+      background: #eef5f1;
+      border-left: 7px solid var(--red);
+      padding: .72rem .9rem;
+      border-radius: 0 10px 10px 0;
+      margin-top: 0
+    }
+
+    .opening,
+    .ending {
+      padding: .58rem .78rem;
+      border-radius: 9px
+    }
+
+    .opening {
+      background: #f1f6f3;
+      border-left: 4px solid var(--sky)
+    }
+
+    .ending {
+      background: #e8f1ec;
+      border-left: 4px solid var(--red)
+    }
+
+    .ranking {
+      list-style: none;
+      padding: 0;
+      margin: .55rem 0;
+      display: grid;
+      gap: .12rem
+    }
+
+    .ranking li {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: .65rem;
+      align-items: start;
+      padding: .34rem .55rem;
+      border-bottom: 1px dashed #c6d0ca
+    }
+
+    .rank {
+      color: var(--red);
+      font-weight: 900;
+      background: #eaf2ee;
+      text-align: center;
+      border-radius: 7px;
+      padding: .06rem .22rem;
+      border: 1px solid #b7c3bc
+    }
+
+    .ranking li:last-child {
+      background: linear-gradient(90deg, #eff5f2, #fff)
+    }
+
+    .ranking li:last-child .rank {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red)
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      background: linear-gradient(90deg, #2d3b35, #416653);
+      color: white;
+      padding: 2rem 4vw;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 7px solid var(--sun)
+    }
+
+    #topBtn {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: var(--red);
+      color: white;
+      font-size: 1.4rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: .2s
+    }
+
+    #topBtn.show {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    @media(max-width:980px) {
+      main {
+        width: min(100%, 96vw)
+      }
+
+      .episode-grid {
+        grid-template-columns: 1fr
+      }
+
+      .image-slot {
+        position: static;
+        max-width: 820px;
+        margin: auto
+      }
+
+      .episode-head {
+        flex-direction: column
+      }
+
+      .hero {
+        min-height: 420px
+      }
+
+      .ranking li {
+        grid-template-columns: 64px 1fr
+      }
+
+      .nav-inner {
+        justify-content: flex-start
+      }
+    }
+
+    .episode-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .58rem 1rem;
+      background: var(--sky-deep);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 9px;
+      border: 2px solid var(--sky-deep);
+      font-weight: 900;
+      box-shadow: 0 5px 12px rgba(19, 127, 196, .16);
+      transition: .18s
+    }
+
+    .episode-link:hover {
+      background: var(--red);
+      border-color: var(--red);
+      transform: translateY(-1px)
+    }
+
+    @media(max-width:980px) {
+      .image-slot {
+        position: static
+      }
+
+      .image-slot img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain
+      }
+
+      .image-slot .episode-link {
+        margin: .7rem auto 0;
+        width: min(94%, 520px)
+      }
+    }
+
+    .summary-chapters .rank {
+      min-width: 42px
+    }
+
+    .summary-chapters li:last-child {
+      background: linear-gradient(90deg, #eff5f2, #fff)
+    }
+
+    /* 2026-09-29 EP00 layout refinement: reduce side whitespace and keep chapter captions on one line */
+    main {
+      width: min(1760px, 99vw)
+    }
+
+    .nav-inner {
+      width: min(1760px, 99vw)
+    }
+
+    #ep-00 .episode-grid {
+      grid-template-columns: minmax(520px, .88fr) minmax(760px, 1.12fr);
+      gap: .8rem;
+      padding: .75rem
+    }
+
+    #ep-00 .summary-chapters li {
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: .45rem;
+      padding: .28rem .42rem
+    }
+
+    #ep-00 .summary-chapters li>span:last-child {
+      white-space: nowrap;
+      font-size: clamp(.72rem, .78vw, .92rem);
+      letter-spacing: -.025em;
+      line-height: 1.42
+    }
+
+    #ep-00 .summary {
+      font-size: .96rem
+    }
+
+    @media(max-width:1320px) {
+      #ep-00 .episode-grid {
+        grid-template-columns: minmax(430px, .78fr) minmax(700px, 1.22fr)
+      }
+
+      #ep-00 .summary-chapters li>span:last-child {
+        font-size: .72rem
+      }
+    }
+
+    @media(max-width:1120px) {
+      #ep-00 .episode-grid {
+        grid-template-columns: 1fr
+      }
+
+      #ep-00 .image-slot {
+        position: static;
+        max-width: 820px;
+        margin: auto
+      }
+
+      #ep-00 .summary-chapters li>span:last-child {
+        white-space: normal;
+        font-size: .9rem
+      }
+    }
+
+    /* v3 correction: keep a modest, intentional side margin instead of edge-to-edge */
+    main {
+      width: min(1640px, 95vw)
+    }
+
+    .nav-inner {
+      width: min(1640px, 95vw)
+    }
+
+    #ep-00 .episode-grid {
+      grid-template-columns: minmax(500px, .84fr) minmax(780px, 1.16fr);
+      gap: 1rem;
+      padding: 1rem
+    }
+
+    #ep-00 .summary-chapters li>span:last-child {
+      white-space: nowrap;
+      font-size: clamp(.73rem, .77vw, .9rem);
+      letter-spacing: -.025em
+    }
+
+    @media(max-width:1320px) {
+      main {
+        width: 94vw
+      }
+
+      .nav-inner {
+        width: 94vw
+      }
+
+      #ep-00 .episode-grid {
+        grid-template-columns: minmax(420px, .75fr) minmax(700px, 1.25fr)
+      }
+    }
+
+    @media(max-width:1120px) {
+      main {
+        width: 94vw
+      }
+
+      .nav-inner {
+        width: 94vw
+      }
+
+      #ep-00 .episode-grid {
+        grid-template-columns: 1fr
+      }
+
+      #ep-00 .summary-chapters li>span:last-child {
+        white-space: normal;
+        font-size: .9rem
+      }
+    }
+
+    /* 2026-09-29 v4: EP00 uses exactly the same image/text column layout as EP01–EP10. */
+    #ep-00 .episode-grid {
+      grid-template-columns: minmax(560px, 1.42fr) minmax(430px, .98fr);
+      gap: 1.15rem;
+      padding: 1rem;
+      align-items: start;
+    }
+
+    #ep-00 .image-slot {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+    }
+
+    #ep-00 .image-slot picture,
+    #ep-00 .image-slot img {
+      width: 100%;
+    }
+
+    /* Keep EP00 chapter lines compact without shrinking its cover column. */
+    #ep-00 .summary-chapters li {
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: .35rem;
+      padding: .26rem .35rem;
+    }
+
+    #ep-00 .summary-chapters li>span:last-child {
+      white-space: nowrap;
+      font-size: clamp(.68rem, .70vw, .84rem);
+      letter-spacing: -.035em;
+      line-height: 1.38;
+    }
+
+    @media(max-width:1120px) {
+      #ep-00 .episode-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #ep-00 .image-slot {
+        position: static;
+        max-width: 820px;
+        margin: auto;
+      }
+
+      #ep-00 .summary-chapters li>span:last-child {
+        white-space: normal;
+        font-size: .9rem;
+      }
+    }
+
+    .pending .episode-head {
+      filter: saturate(.55);
+      opacity: .92
+    }
+
+    .pending .episode-copy {
+      color: #66716b
+    }
+
+    .placeholder-link {
+      cursor: default;
+      background: #566b60;
+      border-color: #566b60
+    }
+
+    .placeholder-link:hover {
+      background: #566b60;
+      border-color: #566b60;
+      transform: none
+    }
+
+
+    .full-narration {
+      margin-top: 24px;
+      border: 1px solid rgba(50, 80, 65, .22);
+      border-radius: 14px;
+      background: rgba(247, 250, 247, .82);
+      overflow: hidden
+    }
+
+    .full-narration summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      font-weight: 800;
+      color: #254b39;
+      background: rgba(84, 115, 94, .10)
+    }
+
+    .narration-body {
+      padding: 8px 18px 20px
+    }
+
+    .narration-heading {
+      margin: 26px 0 10px;
+      font-size: 1.08rem;
+      color: #244637
+    }
+
+    .narration-p {
+      margin: 0 0 11px;
+      line-height: 1.85;
+      color: #37433d
+    }
+
+    .narration-body .narration-heading:first-child {
+      margin-top: 12px
+    }
+
+    /* Screenshot-matched centered 3-button style */
+    .episode-actions {
+      margin: .9rem auto 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .episode-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .32rem;
+      min-width: 170px;
+      min-height: 48px;
+      padding: .62rem 1.15rem;
+      border: 0;
+      border-radius: 9px;
+      color: #fff !important;
+      text-decoration: none;
+      font-weight: 900;
+      font-family: "DFKai-SB", "BiauKai", "KaiTi", serif;
+      font-size: 1rem;
+      letter-spacing: .02em;
+      text-align: center;
+      box-shadow: 0 7px 13px rgba(36, 54, 48, .16);
+      white-space: nowrap;
+    }
+
+    .web-link {
+      background: #2388c5;
+      color: #fff !important
+    }
+
+    .yt-caption {
+      background: #2e8b64;
+      color: #fff !important
+    }
+
+    .yt-no-caption {
+      background: #61717b;
+      color: #fff !important
+    }
+
+    .yt-play {
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1;
+      color: #fff;
+      flex: 0 0 auto
+    }
+
+    .episode-action:hover {
+      transform: translateY(-1px);
+      filter: brightness(.96)
+    }
+
+    @media(max-width:720px) {
+      .episode-actions {
+        gap: 8px
+      }
+
+      .episode-action {
+        min-width: 0;
+        flex: 1 1 180px;
+        white-space: normal
+      }
+    }
+  </style>
+
+  <style id="series-index-theme">
+    :root{--sky:#b9efed;--sky-deep:#169da0;--sky-soft:#e8fbfa;--sun:#ff9c43;--sun-soft:#fff0df;--cream:#f8ffff;--red:#f4773d;--ink:#142d32;--text:#405b60;--muted:#718a8f;--line:#cde9e7;--white:#fff;--shadow:0 14px 34px rgba(27,118,121,.13)}
+    body{background:linear-gradient(180deg,#e4faf8 0,#fbffff 21%,#effbfa 64%,#e4f5f2 100%);font-family:"DFKai-SB","BiauKai","KaiTi","Noto Serif TC","PMingLiU",serif}
+    .hero{background:linear-gradient(180deg,#9fe5e4 0,#c9f2ed 48%,#f4fffa 100%)}
+    .hero:before{background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.82) 0 5%,transparent 6%),radial-gradient(circle at 83% 16%,rgba(255,255,255,.76) 0 7%,transparent 8%),radial-gradient(ellipse at 88% 95%,rgba(255,157,67,.34) 0 14%,transparent 15%),linear-gradient(172deg,transparent 0 58%,rgba(53,182,176,.34) 59% 70%,transparent 71%);opacity:.88}
+    .hero h1{color:#111c1d;text-shadow:2px 3px 0 rgba(255,255,255,.9);font-family:"DFKai-SB","BiauKai","KaiTi","Noto Serif TC",serif;font-weight:1000;letter-spacing:.015em}
+    .hero .hero-subtitle{margin:.85rem auto .25rem;color:#ed5b88;font-size:clamp(1.25rem,3vw,2.15rem);font-weight:1000;text-shadow:1px 2px 0 rgba(255,255,255,.88);letter-spacing:.04em}
+    .hero .lead{border-left:8px solid var(--sun);border-color:rgba(22,157,160,.18);border-left-color:var(--sun);background:rgba(255,255,255,.86);color:#29494d}
+    .hero:after{background:linear-gradient(90deg,#ff9b43,#ffb35a,#f4773d)}
+    .episode{border-color:#c4e8e5}
+    .episode-head{background:linear-gradient(100deg,#ffd29e 0,#d9f6f2 66%,#fff 100%);border-bottom-color:#f4773d}
+    .episode-head h2{color:#b74e26}
+    .ep-no{background:#174b50}
+    .summary{background:#effbfa;border-left-color:#f4773d}
+    .opening{background:#f1fcfb;border-left-color:#2aaeb0}
+    .ending{background:#fff4e9;border-left-color:#ff9b43}
+    .rank-intro{display:grid;gap:.25rem;background:#fff8ef;border:1px solid #f5d8b8;border-radius:10px;padding:.55rem .7rem;color:#405b60;line-height:1.45}
+    .rank-intro strong{color:#b74e26}
+    .ranking li{border-bottom-color:#d4e9e6}
+    .rank{color:#b74e26;background:#eaf9f7;border-color:#badfdc}
+    .ranking li:last-child .rank{background:#f4773d;border-color:#f4773d}
+    .episode-actions{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .web-link{background:#ffca87;color:#27383a;border-color:#e7a856}
+    .yt-caption{background:#2aaeb0;color:#fff;border-color:#188d91}
+    .yt-no-caption{background:#536d70;color:#fff;border-color:#405a5d}
+    footer{background:linear-gradient(90deg,#16494e,#238e91);border-top-color:#ff9c43}
+    #topBtn{background:#f4773d}
+    .episode-action[data-url-placeholder="true"]{opacity:.93;cursor:pointer}
+    .toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,12px);padding:.65rem 1rem;border-radius:999px;background:#173f43;color:white;font-weight:800;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:720px){.episode-actions{grid-template-columns:1fr}.hero .lead{text-align:center}}
+  </style>
+
+</head>
+
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">2001–2010 出生世代・10 集系列索引</p>
+      <h1>九年級生的黃金新賽道系列～索引</h1>
+      <p class="hero-subtitle">未來新選擇～科技變遷與世代新路</p>
+      <p class="lead">從 AI、自主學習、青年新工作與創業出發，延伸到跨國人生、人口變化、健康科技、綠色產業與一生的新選擇。每一集整理一個值得理解的趨勢，也提醒觀眾看見機會背後的條件。</p>
+      <div class="hero-actions"><a class="btn primary" href="#ep-00">開始閱讀</a><a class="btn secondary" href="#series-map">查看 11 個章節</a></div>
+    </div>
+  </header>
+  <nav aria-label="11集導覽" class="series-nav" id="series-map">
+    <div class="nav-inner"><span>快速導覽</span><a class="nav-pill" href="#ep-00">00</a><a class="nav-pill"
+        href="#ep-01">01</a><a class="nav-pill" href="#ep-02">02</a><a class="nav-pill" href="#ep-03">03</a><a
+        class="nav-pill" href="#ep-04">04</a><a class="nav-pill" href="#ep-05">05</a><a class="nav-pill"
+        href="#ep-06">06</a><a class="nav-pill" href="#ep-07">07</a><a class="nav-pill" href="#ep-08">08</a><a
+        class="nav-pill" href="#ep-09">09</a><a class="nav-pill" href="#ep-10">10</a></div>
+  </nav>
+  <main>
+    <section class="intro" id="series-map">
+      <h2>一條從科技工具走向人生選擇的探索路線</h2>
+      <p>本系列以 2001–2010 年出生者為觀察範圍。2026 年約 15–25 歲，實際年齡依生日而異。各集使用的人口、勞動、教育、健康與產業資料母體不同；整體統計不等於九年級生專屬數據，趨勢也不構成個人結果保證。</p>
+      <div class="theme-strip"><span>AI</span><span>學習</span><span>工作</span><span>創業</span><span>全球</span><span>人口</span><span>健康</span><span>綠色轉型</span><span>人生選擇</span></div>
+    </section>
+    <section class="episode" id="ep-00">
+      <div class="episode-head"><span class="ep-no">EP 00</span><h2>九年級生的黃金新賽道｜10 集系列摘要介紹</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-00.webp" type="image/webp" /><img alt="九年級生黃金新賽道系列摘要封面" src="images/episode-00.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第00集網頁連結" class="episode-action web-link" href="#" data-link-key="ep00-web">完整網頁 ↗</a>
+            <a aria-label="第00集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep00-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第00集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep00-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">以 2001–2010 年出生世代為觀察範圍，將 10 集串成一段從工具與學習、工作與創業，走向全球移動、人口、健康與綠色轉型的探索旅程。各集引用的統計母體不同，並非九年級生專屬數據。</p>
+          <p class="opening"><strong>本集提問：</strong>如果 AI、人口與環境都在變，九年級生這一生會遇到哪些新選擇？</p>
+          <div class="rank-intro"><strong>系列路線</strong><span>本總覽不另創跨集排名；依原系列第1集至第10集順序串連。</span></div>
+          <ol class="ranking summary-chapters"><li><span class="rank">01</span><span>第1集｜AI 工作方式：工具如何進入日常工作</span></li>
+<li><span class="rank">02</span><span>第2集｜自主學習入口：知識如何更容易取得</span></li>
+<li><span class="rank">03</span><span>第3集｜青年新工作：技能需求如何移動</span></li>
+<li><span class="rank">04</span><span>第4集｜職涯規則：工作路徑如何變得多元</span></li>
+<li><span class="rank">05</span><span>第5集｜創業入口：小型想法如何開始測試</span></li>
+<li><span class="rank">06</span><span>第6集｜跨國人生：學習、工作與生活如何跨境</span></li>
+<li><span class="rank">07</span><span>第7集｜人口機會：青年稀缺可能帶來什麼條件</span></li>
+<li><span class="rank">08</span><span>第8集｜健康與長壽：管理如何從青年開始累積</span></li>
+<li><span class="rank">09</span><span>第9集｜綠色產業：淨零如何連到職涯中段</span></li>
+<li><span class="rank">10</span><span>第10集｜時代機會：把趨勢接回一生的選擇</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>這 10 集描繪趨勢與可探索的方向；選擇仍要回到每個人的能力、資源、責任與生活條件。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-01">
+      <div class="episode-head"><span class="ep-no">EP 01</span><h2>台灣十大「九年級生到2030最可能習以為常的AI工作方式」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-01.webp" type="image/webp" /><img alt="第1集：AI 工作方式封面插畫" src="images/episode-01.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第01集網頁連結" class="episode-action web-link" href="/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-01-Taiwan_10_00s_Gen_2030_AI_Work_Norms-1151005/index.html" data-link-key="ep01-web">完整網頁 ↗</a>
+            <a aria-label="第01集YT連結有字幕" class="episode-action yt-caption" href="https://youtu.be/yyvFhMmIHLQ" data-link-key="ep01-yt-caption"><span aria-hidden="" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第01集YT連結無字幕" class="episode-action yt-no-caption" href="https://youtu.be/XOSHlXa_GjU" data-link-key="ep01-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">從跨語言溝通、文字與資料整理，到流程自動化和人機協作，觀察 AI 如何進入工作流程；曝險或推估都不等於工作必然消失。</p>
+          <p class="opening"><strong>本集提問：</strong>2030 年前，AI 會以什麼方式進入每天的工作？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>企業導入率、職務曝險、工作流程變化。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>AI 協助跨語言溝通與內容轉換</span></li>
+<li><span class="rank">第九名</span><span>AI 協助撰寫與修改日常工作文字</span></li>
+<li><span class="rank">第八名</span><span>AI 成為企業知識與文件的搜尋入口</span></li>
+<li><span class="rank">第七名</span><span>AI 協助整理資料、抓出趨勢與製作報表</span></li>
+<li><span class="rank">第六名</span><span>AI 處理服務流程的第一線詢問與分流</span></li>
+<li><span class="rank">第五名</span><span>AI 將例行行政步驟串成自動化流程</span></li>
+<li><span class="rank">第四名</span><span>AI 代理接手有範圍、有檢查點的任務</span></li>
+<li><span class="rank">第三名</span><span>人與 AI 以分工方式共同完成一項工作</span></li>
+<li><span class="rank">第二名</span><span>工作者用自然語言指揮工具、資料與任務</span></li>
+<li><span class="rank">第一名</span><span>先思考工作目標，再安排人與 AI 的協作流程</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>AI 可以接手部分步驟，目標設定、查核與負責仍需要人。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-02">
+      <div class="episode-head"><span class="ep-no">EP 02</span><h2>台灣十大「九年級生比上一代多出的自主學習入口」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-02.webp" type="image/webp" /><img alt="第2集：自主學習入口封面插畫" src="images/episode-02.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第02集網頁連結" class="episode-action web-link" href="/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-02-Taiwan_10_00s_Gen_Self-Learning_Portals-1151005/index.html" data-link-key="ep02-web">完整網頁 ↗</a>
+            <a aria-label="第02集YT連結有字幕" class="episode-action yt-caption" href="https://youtu.be/u8KnV0NH1f4" data-link-key="ep02-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第02集YT連結無字幕" class="episode-action yt-no-caption" href="https://youtu.be/Wxbi9WljPW0" data-link-key="ep02-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">數位圖書館、開放課程、影音、社群、搜尋與 AI 助理擴大知識入口；入口增加不等於學會，仍需要練習、查證和可近的設備與網路。</p>
+          <p class="opening"><strong>本集提問：</strong>遇到不懂的事，今天可以從多少個入口開始學？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>普及時間、使用率、成本、資源量。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>數位圖書館與電子書</span></li>
+<li><span class="rank">第九名</span><span>MOOC 與大學開放課程</span></li>
+<li><span class="rank">第八名</span><span>政府開放資料與公共資料集</span></li>
+<li><span class="rank">第七名</span><span>線上社群、問答平台與同儕共學</span></li>
+<li><span class="rank">第六名</span><span>線上教學影片與影音示範</span></li>
+<li><span class="rank">第五名</span><span>搜尋引擎與跨網站資訊檢索</span></li>
+<li><span class="rank">第四名</span><span>互動練習、題庫與適性學習平台</span></li>
+<li><span class="rank">第三名</span><span>手機與行動網路帶來的隨身學習</span></li>
+<li><span class="rank">第二名</span><span>整合式教育入口與單一登入資源網</span></li>
+<li><span class="rank">第一名</span><span>生成式 AI 學習助理與對話式學習</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>入口可以打開知識，真正帶得走的能力仍要靠持續練習。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-03">
+      <div class="episode-head"><span class="ep-no">EP 03</span><h2>台灣十大「2030前最可能增加的青年新工作」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-03.webp" type="image/webp" /><img alt="第3集：青年新工作封面插畫" src="images/episode-03.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第03集網頁連結" class="episode-action web-link" href="#" data-link-key="ep03-web">完整網頁 ↗</a>
+            <a aria-label="第03集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep03-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第03集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep03-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">從循環經濟、能源診斷、數位健康、雲端資安，到智慧製造、晶片與 AI 應用，辨認可能增加的職務方向，同時區分實際職缺和預測。</p>
+          <p class="opening"><strong>本集提問：</strong>當產業和技能需求改變，青年可能走進哪些新職務？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>職缺成長、薪資、產業投資、人才缺口。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>資源循環與再生料品質技術人員</span></li>
+<li><span class="rank">第九名</span><span>節能診斷與能源績效驗證工程師</span></li>
+<li><span class="rank">第八名</span><span>智慧建築與電力設備維運技術人員</span></li>
+<li><span class="rank">第七名</span><span>醫療數位化與健康服務專案人才</span></li>
+<li><span class="rank">第六名</span><span>照護、復能與健康支持專業人員</span></li>
+<li><span class="rank">第五名</span><span>雲端、網路與資安維運專業人員</span></li>
+<li><span class="rank">第四名</span><span>工程測試、驗證與技術顧問</span></li>
+<li><span class="rank">第三名</span><span>智慧製造、機器人與自動化整合工程師</span></li>
+<li><span class="rank">第二名</span><span>積體電路設計、韌體與晶片系統工程師</span></li>
+<li><span class="rank">第一名</span><span>人工智慧應用工程師與產業整合人才</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>看懂趨勢能增加準備方向，但職缺和錄取仍取決於條件。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-04">
+      <div class="episode-head"><span class="ep-no">EP 04</span><h2>台灣十大「九年級生最可能告別的傳統職涯規則」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-04.webp" type="image/webp" /><img alt="第4集：職涯規則轉變封面插畫" src="images/episode-04.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第04集網頁連結" class="episode-action web-link" href="#" data-link-key="ep04-web">完整網頁 ↗</a>
+            <a aria-label="第04集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep04-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第04集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep04-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">檢視單一職稱、固定升遷階梯和技能用一輩子的職涯想像；規則變得多元，不代表穩定任職失去價值。</p>
+          <p class="opening"><strong>本集提問：</strong>如果不必在同一家公司待到退休，什麼才算職涯穩定？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>平均年資、工作轉換、非典型就業。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>第一份工作決定一生職涯方向</span></li>
+<li><span class="rank">第九名</span><span>換過工作就代表不夠穩定</span></li>
+<li><span class="rank">第八名</span><span>一家公司裡只有一條標準升遷階梯</span></li>
+<li><span class="rank">第七名</span><span>待得夠久就自然升遷、加薪</span></li>
+<li><span class="rank">第六名</span><span>學會一套技能，就能做完整個職涯</span></li>
+<li><span class="rank">第五名</span><span>只有公司安排的課程才算職場學習</span></li>
+<li><span class="rank">第四名</span><span>只有全職、長期、單一雇主才算真正工作</span></li>
+<li><span class="rank">第三名</span><span>工作必須在固定地點、固定時間完成</span></li>
+<li><span class="rank">第二名</span><span>一個人只能有一份工作、一種收入來源</span></li>
+<li><span class="rank">第一名</span><span>職涯穩定只能由雇主和職稱保證</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>職涯不只有一種規則，穩定也可以由能力與支持共同建立。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-05">
+      <div class="episode-head"><span class="ep-no">EP 05</span><h2>台灣十大「九年級生比上一代更低門檻的創業入口」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-05.webp" type="image/webp" /><img alt="第5集：低門檻創業封面插畫" src="images/episode-05.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第05集網頁連結" class="episode-action web-link" href="#" data-link-key="ep05-web">完整網頁 ↗</a>
+            <a aria-label="第05集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep05-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第05集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep05-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">從一站式開辦、雲端、無程式碼工具、電商、金流、物流到 AI，觀察小型創業如何先測試想法；入口較低不表示營運沒有成本與責任。</p>
+          <p class="opening"><strong>本集提問：</strong>今天開始一門小生意，入口真的比上一代更容易了嗎？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>設立成本、所需時間、工具費用、企業數。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>一站式企業開辦與商工資料查詢</span></li>
+<li><span class="rank">第九名</span><span>雲端運算與線上儲存</span></li>
+<li><span class="rank">第八名</span><span>無程式碼網站、表單與自動化工具</span></li>
+<li><span class="rank">第七名</span><span>社群內容與官方訊息帳號</span></li>
+<li><span class="rank">第六名</span><span>電商與交易市集</span></li>
+<li><span class="rank">第五名</span><span>訂閱式電商開店服務</span></li>
+<li><span class="rank">第四名</span><span>數位金流服務</span></li>
+<li><span class="rank">第三名</span><span>整合式物流與履約服務</span></li>
+<li><span class="rank">第二名</span><span>生成式 AI 與自動化工具</span></li>
+<li><span class="rank">第一名</span><span>組合雲端、AI、平台與服務的一人公司營運系統</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>工具讓試錯更容易開始，能否持續經營仍需面對成本與責任。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-06">
+      <div class="episode-head"><span class="ep-no">EP 06</span><h2>台灣十大「九年級生最可能擁有的跨國人生選項」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-06.webp" type="image/webp" /><img alt="第6集：跨國人生選項封面插畫" src="images/episode-06.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第06集網頁連結" class="episode-action web-link" href="#" data-link-key="ep06-web">完整網頁 ↗</a>
+            <a aria-label="第06集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep06-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第06集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep06-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">從短期交流、留學和海外見習，到跨國受僱、遠距合作、移居與返台銜接，呈現不同人生階段可能並存的跨境選項。</p>
+          <p class="opening"><strong>本集提問：</strong>如果工作不再只綁在一個城市，青年會有哪些選擇？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>移動人數、工作型態、教育交流。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>長期移居或申請海外居留</span></li>
+<li><span class="rank">第九名</span><span>直接應徵海外雇主</span></li>
+<li><span class="rank">第八名</span><span>跨國企業內部轉調或海外派駐</span></li>
+<li><span class="rank">第七名</span><span>跨國遠距受僱</span></li>
+<li><span class="rank">第六名</span><span>跨境自由接案與專案合作</span></li>
+<li><span class="rank">第五名</span><span>度假打工與青年交流簽證</span></li>
+<li><span class="rank">第四名</span><span>海外學習或工作後返台銜接</span></li>
+<li><span class="rank">第三名</span><span>海外實習、研修與青年見習</span></li>
+<li><span class="rank">第二名</span><span>海外學位留學</span></li>
+<li><span class="rank">第一名</span><span>大學交換、雙聯學位與短期教育交流</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>跨國選項增加，仍要依資格、資源、家庭與生活條件做選擇。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-07">
+      <div class="episode-head"><span class="ep-no">EP 07</span><h2>台灣十大「九年級生到了30歲最可能擁有的人口紅利」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-07.webp" type="image/webp" /><img alt="第7集：青年稀缺與人口機會封面插畫" src="images/episode-07.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第07集網頁連結" class="episode-action web-link" href="#" data-link-key="ep07-web">完整網頁 ↗</a>
+            <a aria-label="第07集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep07-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第07集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep07-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">探討青年人口變化如何在特定技能、招聘和接班情境增加部分人的選擇；人口稀缺不保證人人加薪、升遷或更容易就業。</p>
+          <p class="opening"><strong>本集提問：</strong>青年人數變少，30 歲就更容易談薪或升遷嗎？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>青年人口占比、職缺、薪資、升遷。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>求職者更需要看懂產業差異，而不是只看「缺人」兩個字</span></li>
+<li><span class="rank">第九名</span><span>跨產業轉職的入口可能增加</span></li>
+<li><span class="rank">第八名</span><span>技能訓練可能成為青年與企業共同投資的籌碼</span></li>
+<li><span class="rank">第七名</span><span>年輕員工可能更早承接跨職能專案責任</span></li>
+<li><span class="rank">第六名</span><span>職務內容可能比職稱更快擴大</span></li>
+<li><span class="rank">第五名</span><span>人才稀缺可能讓雇主更重視留才條件</span></li>
+<li><span class="rank">第四名</span><span>掌握專業技能的人可能有更清楚的薪資協商空間</span></li>
+<li><span class="rank">第三名</span><span>資深同事的知識與工作任務需要傳承</span></li>
+<li><span class="rank">第二名</span><span>企業接班與中階管理的入口可能提早打開</span></li>
+<li><span class="rank">第一名</span><span>讓可證明的能力更有機會轉成選擇權</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>人口變化帶來可能性，能力、制度與職場條件決定能否接住。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-08">
+      <div class="episode-head"><span class="ep-no">EP 08</span><h2>台灣十大「九年級生可能成為最早從青年就管理長壽的一代」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-08.webp" type="image/webp" /><img alt="第8集：健康科技與長壽封面插畫" src="images/episode-08.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第08集網頁連結" class="episode-action web-link" href="#" data-link-key="ep08-web">完整網頁 ↗</a>
+            <a aria-label="第08集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep08-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第08集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep08-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">從健康紀錄、數位資訊與預防服務，思考健康管理能否提早而連續；科技不取代醫療專業，也不保證延壽。</p>
+          <p class="opening"><strong>本集提問：</strong>健康管理從 20 歲開始，可能改變什麼？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>健康科技普及、餘命、預防服務。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>穿戴與手機健康紀錄</span></li>
+<li><span class="rank">第九名</span><span>官方健康資訊的數位入口</span></li>
+<li><span class="rank">第八名</span><span>線上查詢預防接種紀錄</span></li>
+<li><span class="rank">第七名</span><span>健康存摺中的個人就醫資料</span></li>
+<li><span class="rank">第六名</span><span>健檢後的風險評估與衛教諮詢</span></li>
+<li><span class="rank">第五名</span><span>符合條件時使用通訊診療</span></li>
+<li><span class="rank">第四名</span><span>從 30 歲開始使用成人預防保健</span></li>
+<li><span class="rank">第三名</span><span>把健檢數字接到生活建議</span></li>
+<li><span class="rank">第二名</span><span>預防服務的數位提醒與健康幣</span></li>
+<li><span class="rank">第一名</span><span>讓健康紀錄與預防照護逐年接起來</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>長壽管理要靠可信資料、可近服務、專業支持和能持續的生活條件。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-09">
+      <div class="episode-head"><span class="ep-no">EP 09</span><h2>台灣十大「九年級生到2040最可能看到成熟的綠色產業」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-09.webp" type="image/webp" /><img alt="第9集：綠色轉型與新產業封面插畫" src="images/episode-09.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第09集網頁連結" class="episode-action web-link" href="#" data-link-key="ep09-web">完整網頁 ↗</a>
+            <a aria-label="第09集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep09-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第09集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep09-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">把淨零政策時程連到 2040 職涯中段，觀察綠色產業的政策、投資、產值與人才訊號，以及成熟仍面臨的技術與社會條件。</p>
+          <p class="opening"><strong>本集提問：</strong>到 2040 年，哪些綠色技術可能成為穩定產業？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>政策時程、投資、產值、人才。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>氫能與低碳燃料</span></li>
+<li><span class="rank">第九名</span><span>碳捕捉、利用與封存</span></li>
+<li><span class="rank">第八名</span><span>永續農業、森林與自然解方</span></li>
+<li><span class="rank">第七名</span><span>綠色金融與碳管理服務</span></li>
+<li><span class="rank">第六名</span><span>低碳建築與既有建物改造</span></li>
+<li><span class="rank">第五名</span><span>電動運具、充電服務與電池循環</span></li>
+<li><span class="rank">第四名</span><span>循環經濟與再生材料</span></li>
+<li><span class="rank">第三名</span><span>工業節能與低碳製程</span></li>
+<li><span class="rank">第二名</span><span>電網升級、智慧調度與儲能</span></li>
+<li><span class="rank">第一名</span><span>再生能源及其供應鏈</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>產業機會要由政策落實、投資、技術與人才共同形成。</p>
+        </div>
+      </div>
+    </section>
+    <section class="episode" id="ep-10">
+      <div class="episode-head"><span class="ep-no">EP 10</span><h2>台灣十大「九年級生這一生最值得期待的十個時代機會」</h2></div>
+      <div class="episode-grid">
+        <figure class="image-slot">
+          <picture><source srcset="images/episode-10.webp" type="image/webp" /><img alt="第10集：2050 未來人生新可能封面插畫" src="images/episode-10.webp" loading="lazy" /></picture>
+          <div class="episode-actions">
+            <a aria-label="第10集網頁連結" class="episode-action web-link" href="#" data-link-key="ep10-web">完整網頁 ↗</a>
+            <a aria-label="第10集YT連結有字幕" class="episode-action yt-caption" href="#" data-link-key="ep10-yt-caption"><span aria-hidden="true" class="yt-play">▶</span> YT連結(有字幕) ↗</a>
+            <a aria-label="第10集YT連結無字幕" class="episode-action yt-no-caption" href="#" data-link-key="ep10-yt-clean"><span aria-hidden="true" class="yt-play">▶</span> YT連結(無字幕) ↗</a>
+          </div>
+        </figure>
+        <div class="episode-copy">
+          <p class="summary">總結 AI、長壽、綠色轉型、全球連結與人口變化，回到一個核心：值得期待的是選項增加，並能按自身條件累積能力、參與和選擇。</p>
+          <p class="opening"><strong>本集提問：</strong>九年級生這一生，會遇見哪些時代變化與新選擇？</p>
+          <div class="rank-intro"><strong>十大項目</strong><span>影響人口、持續年數、可及性、成長潛力。名次依原章節資料，屬該集的分析架構，不代表保證結果。</span></div>
+          <ol class="ranking"><li><span class="rank">第十名</span><span>跨境學習與工作協作</span></li>
+<li><span class="rank">第九名</span><span>數位公共服務與開放資料</span></li>
+<li><span class="rank">第八名</span><span>輔助科技與友善服務</span></li>
+<li><span class="rank">第七名</span><span>持續學習與技能轉換</span></li>
+<li><span class="rank">第六名</span><span>小規模數位創作與創業</span></li>
+<li><span class="rank">第五名</span><span>綠色轉型與氣候調適</span></li>
+<li><span class="rank">第四名</span><span>從成年早期開始的預防健康管理</span></li>
+<li><span class="rank">第三名</span><span>長照與跨世代服務創新</span></li>
+<li><span class="rank">第二名</span><span>人工智慧協作擴大個人與小團隊能力</span></li>
+<li><span class="rank">第一名</span><span>長壽人生中的多階段選擇</span></li></ol>
+          <p class="ending"><strong>本集收束：</strong>趨勢不替任何人寫好答案；值得期待的是選項增加，且人生仍可由自己選擇。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><span>《九年級生的黃金新賽道》系列索引</span><span>未來新選擇・科技變遷與世代新路</span></footer><button aria-label="回到頂端" id="topBtn">↑</button><button aria-label="回到頂端" id="topBtn">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite">連結網址將於後續補上</div>
+  <script src="./links.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
