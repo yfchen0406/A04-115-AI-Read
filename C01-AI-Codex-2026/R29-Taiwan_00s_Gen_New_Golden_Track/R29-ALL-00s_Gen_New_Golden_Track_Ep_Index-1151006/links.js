@@ -15,8 +15,16 @@ window.SERIES_LINKS = {
     ytCaption: "https://youtu.be/u8KnV0NH1f4",
     ytClean: "https://youtu.be/Wxbi9WljPW0",
   },
-  ep03: { web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-03-Taiwan_10_New_Youth_Jobs_2030-1151005/index.html", ytCaption: "", ytClean: "" },
-  ep04: { web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-04-Taiwan_10_00s_Gen_Career_Rules_End-1151005/index.html", ytCaption: "", ytClean: "" },
+  ep03: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-03-Taiwan_10_New_Youth_Jobs_2030-1151005/index.html",
+    ytCaption: "https://youtu.be/opGONhFaqrg",
+    ytClean: "https://youtu.be/4Vqn8Gprjn0",
+  },
+  ep04: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-04-Taiwan_10_00s_Gen_Career_Rules_End-1151005/index.html",
+    ytCaption: "",
+    ytClean: "",
+  },
   ep05: { web: "", ytCaption: "", ytClean: "" },
   ep06: { web: "", ytCaption: "", ytClean: "" },
   ep07: { web: "", ytCaption: "", ytClean: "" },
