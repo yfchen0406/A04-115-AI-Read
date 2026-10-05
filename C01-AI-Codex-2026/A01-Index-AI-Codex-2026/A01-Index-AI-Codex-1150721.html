@@ -197,8 +197,28 @@
         <br>
         <hr> -->
         <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
+        <h2 id="1-7" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
+          <strong class="yf-code2 text-danger">九年級生的黃金新賽道</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-7" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
         <h2 id="1-6" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
-          <strong class="yf-code2">九年級生的高難度人生</strong>
+          <strong class="yf-code2 text-success">九年級生的高難度人生</strong>
         </h2>
         <div class="container-fluid">
           <div id="a1-6" class="row" style="align-items: flex-start;">
@@ -221,7 +241,7 @@
 
         <!-- <h2 id="1-5" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
         <h2 id="1-5" class=" yf-font1"><i class="fa-solid fa-scale-balanced"></i>
-          <strong class="yf-code2">五年級生的黃金時代</strong>
+          <strong class="yf-code2 text-danger">五年級生的黃金時代</strong>
         </h2>
         <div class="container-fluid">
           <div id="a1-5" class="row" style="align-items: flex-start;">
@@ -392,6 +412,95 @@
 
   <script type="module">
     import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+    // 《台灣九年級生的黃金新賽道》
+    const app7 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+          // R029-ALL.九年級生的黃金新賽道 ~ 各集索引 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-ALL-00s_Gen_New_Golden_Track_Ep_Index-1151006/index.html',
+            pic1s: './images/R029-index.webp',
+            dec1: 'R029-ALL.九年級生的黃金新賽道 ~ 各集索引 ~ 115.10.05',
+          },
+          // R029-00.九年級生的黃金新賽道 00 ~ 10集-摘要介紹 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-00-00s_Gen_New_Golden_Track_10_Eps_Summary-1151006/index.html',
+            pic1s: './images/R029-00P.webp',
+            dec1: 'R029-00.九年級生的黃金新賽道 00 ~ 10集-摘要介紹 ~ 115.10.05',
+          },
+          // R029-01.九年級生的黃金新賽道 01 ~ 台灣十大「九年級生到2030最可能習以為常的AI工作方式」 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-01-Taiwan_10_00s_Gen_2030_AI_Work_Norms-1151005/index.html',
+            pic1s: './images/R029-01P.webp',
+            dec1: 'R029-01.九年級生的黃金新賽道 01 ~ 台灣十大「九年級生到2030最可能習以為常的AI工作方式」 ~ 115.10.05',
+          },
+          // R029-02.九年級生的黃金新賽道 02 ~ 台灣十大「九年級生比上一代多出的自主學習入口」 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-02-Taiwan_10_00s_Gen_Self-Learning_Portals-1151005/index.html',
+            pic1s: './images/R029-02P.webp',
+            dec1: 'R029-02.九年級生的黃金新賽道 02 ~ 台灣十大「九年級生比上一代多出的自主學習入口」 ~ 115.10.05',
+          },
+          // R029-03.九年級生的黃金新賽道 03 ~ 台灣十大「2030前最可能增加的青年新工作」 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-03-Taiwan_10_New_Youth_Jobs_2030-1151005/index.html',
+            pic1s: './images/R029-03P.webp',
+            dec1: 'R029-03.九年級生的黃金新賽道 03 ~ 台灣十大「2030前最可能增加的青年新工作」 ~ 115.10.05',
+          },
+          // R029-04.九年級生的黃金新賽道 04 ~ 台灣十大「九年級生最可能告別的傳統職涯規則」 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-04-Taiwan_10_00s_Gen_Career_Rules_End-1151005/index.html',
+            pic1s: './images/R029-04P.webp',
+            dec1: 'R029-04.九年級生的黃金新賽道 04 ~ 台灣十大「九年級生最可能告別的傳統職涯規則」 ~ 115.10.05',
+          },
+          // R029-05.九年級生的黃金新賽道 05 ~ 台灣十大「九年級生比上一代更低門檻的創業入口」 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-05-Taiwan_10_00s_Gen_Low-Barrier_Startup-1151005/index.html',
+            pic1s: './images/R029-05P.webp',
+            dec1: 'R029-05.九年級生的黃金新賽道 05 ~ 台灣十大「九年級生比上一代更低門檻的創業入口」 ~ 115.10.05',
+          },
+          // R029-06.九年級生的黃金新賽道 06 ~ 台灣十大「九年級生最可能擁有的跨國人生選項」 ~ 115.10.06
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-06-Taiwan_10_00s_Gen_Global_Life_Options-1151006/index.html',
+            pic1s: './images/R029-06P.webp',
+            dec1: 'R029-06.九年級生的黃金新賽道 06 ~ 台灣十大「九年級生最可能擁有的跨國人生選項」 ~ 115.10.06',
+          },
+          // R029-07.九年級生的黃金新賽道 07 ~ 台灣十大「九年級生到了30歲最可能擁有的人口紅利」 ~ 115.10.06
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-07-Taiwan_10_00s_Gen_30_Demographic_Dividend-1151006/index.html',
+            pic1s: './images/R029-07P.webp',
+            dec1: 'R029-07.九年級生的黃金新賽道 07 ~ 台灣十大「九年級生到了30歲最可能擁有的人口紅利」 ~ 115.10.06',
+          },
+          // R029-08.九年級生的黃金新賽道 08 ~ 台灣十大「九年級生可能成為最早從青年就管理長壽的一代」 ~ 115.10.06
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-08-Taiwan_10_00s_Gen_Youth_Longevity_Pioneers-1151006/index.html',
+            pic1s: './images/R029-08P.webp',
+            dec1: 'R029-08.九年級生的黃金新賽道 08 ~ 台灣十大「九年級生可能成為最早從青年就管理長壽的一代」 ~ 115.10.06',
+          },
+          // R029-09.九年級生的黃金新賽道 09 ~ 台灣十大「九年級生到2040最可能看到成熟的綠色產業」 ~ 115.10.06
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-09-Taiwan_10_00s_Gen_2040_Green_Industry-1151006/index.html',
+            pic1s: './images/R029-09P.webp',
+            dec1: 'R029-09.九年級生的黃金新賽道 09 ~ 台灣十大「九年級生到2040最可能看到成熟的綠色產業」 ~ 115.10.06',
+          },
+          // R029-10.九年級生的黃金新賽道 10 ~ 台灣十大「九年級生這一生最值得期待的十個時代機會」 ~ 115.10.06
+          {
+            pic1: '/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-10-Taiwan_10_00s_Gen_Best_Era_Opportunities-1151006/index.html',
+            pic1s: './images/R029-10P.webp',
+            dec1: 'R029-10.九年級生的黃金新賽道 10 ~ 台灣十大「九年級生這一生最值得期待的十個時代機會」 ~ 115.10.06',
+          },
+
+
+        ]);
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-7')
+
     // AI提示詞
     const app6 = createApp({
       setup() {
@@ -409,65 +518,6 @@
             pic1s: './images/R028-00G.webp',
             dec1: 'R028-00.九年級生的高難度人生 00 ~ 10集-摘要介紹 ~ 115.10.11',
           },
-
-          //  R028-10.九年級生的高難度人生 10 ~ 台灣十大「九年級生這一生最可能承擔的時代代價」 ~ 115.10.10
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-10-Taiwan_10_00s_Gen_Lifetime_Era_Cost-1151010/index.html',
-            pic1s: './images/R028-10G.webp',
-            dec1: 'R028-10.九年級生的高難度人生 10 ~ 台灣十大「九年級生這一生最可能承擔的時代代價」 ~ 115.10.10',
-          },
-          //  R028-09.九年級生的高難度人生 09 ~ 台灣十大「2050年九年級生可能付出的氣候帳單」 ~ 115.10.09
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-09-Taiwan_10_00s_Gen_2050_Climate_Bill-1151009/index.html',
-            pic1s: './images/R028-9G.webp',
-            dec1: 'R028-09.九年級生的高難度人生 09 ~ 台灣十大「2050年九年級生可能付出的氣候帳單」 ~ 115.10.09',
-          },
-          //  R028-08.九年級生的高難度人生 08 ~ 台灣十大「九年級生從青春期就比上一代多承受的數位壓力」 ~ 115.10.08
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-08-Taiwan_10_00s_Gen_Teen_Digital_Pressure-1151008/index.html',
-            pic1s: './images/R028-8G.webp',
-            dec1: 'R028-08.九年級生的高難度人生 08 ~ 台灣十大「九年級生從青春期就比上一代多承受的數位壓力」 ~ 115.10.08',
-          },
-
-          //  R028-07.九年級生的高難度人生 07 ~ 台灣十大「九年級生可能成為史上扶養壓力最重世代的原因」 ~ 115.10.07
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-07-Taiwan_10_00s_Gen_Heaviest_Care_Burden_Reasons-1151007/index.html',
-            pic1s: './images/R028-7G.webp',
-            dec1: 'R028-07.九年級生的高難度人生 07 ~ 台灣十大「九年級生可能成為史上扶養壓力最重世代的原因」 ~ 115.10.07',
-          },
-
-          //  R028-06.九年級生的高難度人生 06 ~ 台灣十大「九年級生成年後才真正看見的家庭起跑線」 ~ 115.10.06
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-06-Taiwan_10_00s_Gen_Adult_Family_Start_Line-1151006/index.html',
-            pic1s: './images/R028-6G.webp',
-            dec1: 'R028-06.九年級生的高難度人生 06 ~ 台灣十大「九年級生成年後才真正看見的家庭起跑線」 ~ 115.10.06',
-          },
-
-          // R028-05.九年級生的高難度人生 05 ~ 台灣十大「九年級生第一次買房最需要跨過的門檻」 ~ 115.10.05
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-05-Taiwan_10_00s_Gen_First_Home_Hurdles-1151005/index.html',
-            pic1s: './images/R028-5G.webp',
-            dec1: 'R028-05.九年級生的高難度人生 05 ~ 台灣十大「九年級生第一次買房最需要跨過的門檻」 ~ 115.10.05',
-          },
-
-          // R028-04.九年級生的高難度人生 04 ~ 台灣十大「九年級生進社會後最有感的十種生活成本」 ~ 115.10.04
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-04-Taiwan_10_00s_Gen_Living_Costs-1151004/index.html',
-            pic1s: './images/R028-4G.webp',
-            dec1: 'R028-04.九年級生的高難度人生 04 ~ 台灣十大「九年級生進社會後最有感的十種生活成本」 ~ 115.10.04',
-          },
-          // R028-03.九年級生的高難度人生 03 ~ 台灣十大「九年級生進職場後才發現AI改掉的規則」 ~ 115.10.01
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-03-Taiwan_10_00s_Gen_AI-Changed_Rules-1151003/index.html',
-            pic1s: './images/R028-3G.webp',
-            dec1: 'R028-03.九年級生的高難度人生 03 ~ 台灣十大「九年級生進職場後才發現AI改掉的規則」 ~ 115.10.01',
-          },
-          // R028-02.九年級生的高難度人生 02 ~ 台灣十大「九年級生一生可能需要重新學習最多次的領域」 ~ 115.10.01
-          {
-            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-02-Taiwan_10_00s_Gen_Most_Relearned_Fields-1151002/index.html',
-            pic1s: './images/R028-2G.webp',
-            dec1: 'R028-02.九年級生的高難度人生 02 ~ 台灣十大「九年級生一生可能需要重新學習最多次的領域」 ~ 115.10.01',
-          },
           // R028-01.九年級生的高難度人生 01 ~ 台灣十大「九年級生正在失效的讀書成功公式」 ~ 115.10.01
           {
             pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-01-Taiwan_10_00s_Gen_HL1_Failing_Study_Formula-1151001/index.html',
@@ -475,6 +525,63 @@
             dec1: 'R028-01.九年級生的高難度人生 01 ~ 台灣十大「九年級生正在失效的讀書成功公式」 ~ 115.10.01',
           },
 
+          // R028-02.九年級生的高難度人生 02 ~ 台灣十大「九年級生一生可能需要重新學習最多次的領域」 ~ 115.10.01
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-02-Taiwan_10_00s_Gen_Most_Relearned_Fields-1151002/index.html',
+            pic1s: './images/R028-2G.webp',
+            dec1: 'R028-02.九年級生的高難度人生 02 ~ 台灣十大「九年級生一生可能需要重新學習最多次的領域」 ~ 115.10.01',
+          },
+          // R028-03.九年級生的高難度人生 03 ~ 台灣十大「九年級生進職場後才發現AI改掉的規則」 ~ 115.10.01
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-03-Taiwan_10_00s_Gen_AI-Changed_Rules-1151003/index.html',
+            pic1s: './images/R028-3G.webp',
+            dec1: 'R028-03.九年級生的高難度人生 03 ~ 台灣十大「九年級生進職場後才發現AI改掉的規則」 ~ 115.10.01',
+          },
+          // R028-04.九年級生的高難度人生 04 ~ 台灣十大「九年級生進社會後最有感的十種生活成本」 ~ 115.10.04
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-04-Taiwan_10_00s_Gen_Living_Costs-1151004/index.html',
+            pic1s: './images/R028-4G.webp',
+            dec1: 'R028-04.九年級生的高難度人生 04 ~ 台灣十大「九年級生進社會後最有感的十種生活成本」 ~ 115.10.04',
+          },
+          // R028-05.九年級生的高難度人生 05 ~ 台灣十大「九年級生第一次買房最需要跨過的門檻」 ~ 115.10.05
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-05-Taiwan_10_00s_Gen_First_Home_Hurdles-1151005/index.html',
+            pic1s: './images/R028-5G.webp',
+            dec1: 'R028-05.九年級生的高難度人生 05 ~ 台灣十大「九年級生第一次買房最需要跨過的門檻」 ~ 115.10.05',
+          },
+          //  R028-06.九年級生的高難度人生 06 ~ 台灣十大「九年級生成年後才真正看見的家庭起跑線」 ~ 115.10.06
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-06-Taiwan_10_00s_Gen_Adult_Family_Start_Line-1151006/index.html',
+            pic1s: './images/R028-6G.webp',
+            dec1: 'R028-06.九年級生的高難度人生 06 ~ 台灣十大「九年級生成年後才真正看見的家庭起跑線」 ~ 115.10.06',
+          },
+          //  R028-07.九年級生的高難度人生 07 ~ 台灣十大「九年級生可能成為史上扶養壓力最重世代的原因」 ~ 115.10.07
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-07-Taiwan_10_00s_Gen_Heaviest_Care_Burden_Reasons-1151007/index.html',
+            pic1s: './images/R028-7G.webp',
+            dec1: 'R028-07.九年級生的高難度人生 07 ~ 台灣十大「九年級生可能成為史上扶養壓力最重世代的原因」 ~ 115.10.07',
+          },
+
+          //  R028-08.九年級生的高難度人生 08 ~ 台灣十大「九年級生從青春期就比上一代多承受的數位壓力」 ~ 115.10.08
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-08-Taiwan_10_00s_Gen_Teen_Digital_Pressure-1151008/index.html',
+            pic1s: './images/R028-8G.webp',
+            dec1: 'R028-08.九年級生的高難度人生 08 ~ 台灣十大「九年級生從青春期就比上一代多承受的數位壓力」 ~ 115.10.08',
+          },
+          //  R028-09.九年級生的高難度人生 09 ~ 台灣十大「2050年九年級生可能付出的氣候帳單」 ~ 115.10.09
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-09-Taiwan_10_00s_Gen_2050_Climate_Bill-1151009/index.html',
+            pic1s: './images/R028-9G.webp',
+            dec1: 'R028-09.九年級生的高難度人生 09 ~ 台灣十大「2050年九年級生可能付出的氣候帳單」 ~ 115.10.09',
+          },
+
+
+          //  R028-10.九年級生的高難度人生 10 ~ 台灣十大「九年級生這一生最可能承擔的時代代價」 ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R28-Taiwan_00s_Gen_Hard_Life/R28-10-Taiwan_10_00s_Gen_Lifetime_Era_Cost-1151010/index.html',
+            pic1s: './images/R028-10G.webp',
+            dec1: 'R028-10.九年級生的高難度人生 10 ~ 台灣十大「九年級生這一生最可能承擔的時代代價」 ~ 115.10.10',
+          },
         ]);
 
         // 返回數據和方法
@@ -502,58 +609,11 @@
             dec1: 'R027-A. 五年級的黃金歲月10集-摘要介紹 ~ 115.09.29',
           },
 
-          // R027-10. 五年級生的黃金時代系列 10 ~ 五年級生的黃金時代-台灣十大「五年級生享受到父母那一代沒有的長壽與退休時間紅利」~ 115.09.28
+          // R027-1. 五年級生的黃金時代系列 1-台灣十大「五年級生從教育普及與升學擴張得到的時代紅利」 ~ 115.09.28
           {
-            pic1: '/C01-AI-Codex-2026/R27-10-Taiwan-10-60s-Gen-GA10-Longevity-Retirement-Dividend-1150928/index.html',
-            pic1s: './images/R027-10.webp',
-            dec1: 'R027-10. 五年級生的黃金時代系列 10 ~ 五年級生的黃金時代-台灣十大「五年級生享受到父母那一代沒有的長壽與退休時間紅利」~ 115.09.28',
-          },
-
-          //  R027-9. 五年級生的黃金時代系列 9 ~ 五年級生的黃金時代-台灣十大「五年級生享受到退休制度逐步成熟的時代紅利」~ 115.09.28
-          {
-            pic1: '/C01-AI-Codex-2026/R27-09-Taiwan-10-60s-Gen-GA9-Retirement-Dividend-1150928/index.html',
-            pic1s: './images/R027-9.webp',
-            dec1: 'R027-9. 五年級生的黃金時代系列 9 ~ 五年級生的黃金時代-台灣十大「五年級生享受到退休制度逐步成熟的時代紅利」~ 115.09.28',
-          },
-
-          // R027-8. 五年級生的黃金時代系列 8 ~ 五年級生的黃金時代-台灣十大「五年級生從紙本世界一路享受到AI時代的知識紅利」~ 115.09.28
-          {
-            pic1: '/C01-AI-Codex-2026/R27-08-Taiwan-10-60s-Gen-GA8-Print-to-AI-Knowledge-Dividend-1150928/index.html',
-            pic1s: './images/R027-8.webp',
-            dec1: 'R027-8. 五年級生的黃金時代系列 8 ~ 五年級生的黃金時代-台灣十大「五年級生從紙本世界一路享受到AI時代的知識紅利」~ 115.09.28',
-          },
-
-          //  R027-7. 五年級生的黃金時代系列 7 ~ 五年級生的黃金時代-台灣十大「五年級生從高儲蓄年代得到的財務紅利」~ 115.09.28
-          {
-            pic1: '/C01-AI-Codex-2026/R27-07-Taiwan-10-60s-Gen-GA7-High-Savings-Dividend-1150928/index.html',
-            pic1s: './images/R027-7.webp',
-            dec1: 'R027-7. 五年級生的黃金時代系列 7 ~ 五年級生的黃金時代-台灣十大「五年級生從高儲蓄年代得到的財務紅利」~ 115.09.28',
-          },
-
-          //  R027 - 6. 五年級生的黃金時代系列 6 ~五年級生的黃金時代 - 台灣十大「五年級生享受到全民健保與醫療進步的紅利」~115.09.28
-          {
-            pic1: '/C01-AI-Codex-2026/R27-06-Taiwan-10-60s-Gen-GA6-NHI-Med-Dividend-1150928/index.html',
-            pic1s: './images/R027-6.webp',
-            dec1: 'R027-6. 五年級生的黃金時代系列 6 ~ 五年級生的黃金時代 - 台灣十大「五年級生享受到全民健保與醫療進步的紅利」~115.09.28',
-          },
-
-          // R027-5. 五年級生的黃金時代系列 5 ~ 五年級生的黃金時代-台灣十大「五年級生享受到城市一路發展到家門口的建設紅利」~ 115.09.27
-          {
-            pic1: '/C01-AI-Codex-2026/R27-05-Taiwan-10-60s-Gen-Urban-Development-Dividend-1150927/index.html',
-            pic1s: './images/R027-5A.webp',
-            dec1: 'R027-5. 五年級生的黃金時代系列 5 ~ 五年級生的黃金時代-台灣十大「五年級生享受到城市一路發展到家門口的建設紅利」~ 115.09.27',
-          },
-          //  R027-4. 五年級生的黃金時代系列 3 ~ 台灣十大「五年級生享受到的房地產時代紅利」~ 115.09.26
-          {
-            pic1: '/C01-AI-Codex-2026/R27-04-Taiwan-10-60s-Gen-Real-Estate-Era-Dividend-1150926/index.html',
-            pic1s: './images/R027-4.webp',
-            dec1: 'R027-4. 五年級生的黃金時代系列 4 ~ 台灣十大「五年級生享受到的房地產時代紅利」~ 115.09.26',
-          },
-          //   R027-3. 五年級生的黃金時代系列 3 ~ 台灣十大「五年級生享受到穩定工作年代的紅利」~ 115.09.26
-          {
-            pic1: '/C01-AI-Codex-2026/R27-03-Taiwan-10-60s-Gen-Stable-Job-Dividend-1150925/index.html',
-            pic1s: './images/R027-3C.webp',
-            dec1: 'R027-3. 五年級生的黃金時代系列 3 ~ 台灣十大「五年級生享受到穩定工作年代的紅利」~ 115.09.26',
+            pic1: '/C01-AI-Codex-2026/R27-01-Taiwan-10-60s-Gen-Education-Dividends-1150925/index.html',
+            pic1s: './images/R027-1.webp',
+            dec1: 'R027-1. 五年級生的黃金時代系列 1 ~ 台灣十大「五年級生從教育普及與升學擴張得到的時代紅利」 ~ 115.09.25',
           },
           //  R027-2. 五年級生的黃金時代系列 2 ~ 台灣十大「五年級生享受到穩定工作年代的紅利」~ 115.09.25
           {
@@ -561,13 +621,54 @@
             pic1s: './images/R027-2.webp',
             dec1: 'R027-2. 五年級生的黃金時代系列 2 ~ 台灣十大「五年級生享受到穩定工作年代的紅利」~ 115.09.25',
           },
-          // R027-1. 五年級生的黃金時代系列 1-台灣十大「五年級生從教育普及與升學擴張得到的時代紅利」 ~ 115.09.28
+          //   R027-3. 五年級生的黃金時代系列 3 ~ 台灣十大「五年級生享受到穩定工作年代的紅利」~ 115.09.26
           {
-            pic1: '/C01-AI-Codex-2026/R27-01-Taiwan-10-60s-Gen-Education-Dividends-1150925/index.html',
-            pic1s: './images/R027-1.webp',
-            dec1: 'R027-1. 五年級生的黃金時代系列 1 ~ 台灣十大「五年級生從教育普及與升學擴張得到的時代紅利」 ~ 115.09.25',
+            pic1: '/C01-AI-Codex-2026/R27-03-Taiwan-10-60s-Gen-Stable-Job-Dividend-1150925/index.html',
+            pic1s: './images/R027-3C.webp',
+            dec1: 'R027-3. 五年級生的黃金時代系列 3 ~ 台灣十大「五年級生享受到穩定工作年代的紅利」~ 115.09.26',
           },
-
+          //  R027-4. 五年級生的黃金時代系列 3 ~ 台灣十大「五年級生享受到的房地產時代紅利」~ 115.09.26
+          {
+            pic1: '/C01-AI-Codex-2026/R27-04-Taiwan-10-60s-Gen-Real-Estate-Era-Dividend-1150926/index.html',
+            pic1s: './images/R027-4.webp',
+            dec1: 'R027-4. 五年級生的黃金時代系列 4 ~ 台灣十大「五年級生享受到的房地產時代紅利」~ 115.09.26',
+          },
+          // R027-5. 五年級生的黃金時代系列 5 ~ 五年級生的黃金時代-台灣十大「五年級生享受到城市一路發展到家門口的建設紅利」~ 115.09.27
+          {
+            pic1: '/C01-AI-Codex-2026/R27-05-Taiwan-10-60s-Gen-Urban-Development-Dividend-1150927/index.html',
+            pic1s: './images/R027-5A.webp',
+            dec1: 'R027-5. 五年級生的黃金時代系列 5 ~ 五年級生的黃金時代-台灣十大「五年級生享受到城市一路發展到家門口的建設紅利」~ 115.09.27',
+          },
+          //  R027 - 6. 五年級生的黃金時代系列 6 ~五年級生的黃金時代 - 台灣十大「五年級生享受到全民健保與醫療進步的紅利」~115.09.28
+          {
+            pic1: '/C01-AI-Codex-2026/R27-06-Taiwan-10-60s-Gen-GA6-NHI-Med-Dividend-1150928/index.html',
+            pic1s: './images/R027-6.webp',
+            dec1: 'R027-6. 五年級生的黃金時代系列 6 ~ 五年級生的黃金時代 - 台灣十大「五年級生享受到全民健保與醫療進步的紅利」~115.09.28',
+          },
+          //  R027-7. 五年級生的黃金時代系列 7 ~ 五年級生的黃金時代-台灣十大「五年級生從高儲蓄年代得到的財務紅利」~ 115.09.28
+          {
+            pic1: '/C01-AI-Codex-2026/R27-07-Taiwan-10-60s-Gen-GA7-High-Savings-Dividend-1150928/index.html',
+            pic1s: './images/R027-7.webp',
+            dec1: 'R027-7. 五年級生的黃金時代系列 7 ~ 五年級生的黃金時代-台灣十大「五年級生從高儲蓄年代得到的財務紅利」~ 115.09.28',
+          },
+          // R027-8. 五年級生的黃金時代系列 8 ~ 五年級生的黃金時代-台灣十大「五年級生從紙本世界一路享受到AI時代的知識紅利」~ 115.09.28
+          {
+            pic1: '/C01-AI-Codex-2026/R27-08-Taiwan-10-60s-Gen-GA8-Print-to-AI-Knowledge-Dividend-1150928/index.html',
+            pic1s: './images/R027-8.webp',
+            dec1: 'R027-8. 五年級生的黃金時代系列 8 ~ 五年級生的黃金時代-台灣十大「五年級生從紙本世界一路享受到AI時代的知識紅利」~ 115.09.28',
+          },
+          //  R027-9. 五年級生的黃金時代系列 9 ~ 五年級生的黃金時代-台灣十大「五年級生享受到退休制度逐步成熟的時代紅利」~ 115.09.28
+          {
+            pic1: '/C01-AI-Codex-2026/R27-09-Taiwan-10-60s-Gen-GA9-Retirement-Dividend-1150928/index.html',
+            pic1s: './images/R027-9.webp',
+            dec1: 'R027-9. 五年級生的黃金時代系列 9 ~ 五年級生的黃金時代-台灣十大「五年級生享受到退休制度逐步成熟的時代紅利」~ 115.09.28',
+          },
+          // R027-10. 五年級生的黃金時代系列 10 ~ 五年級生的黃金時代-台灣十大「五年級生享受到父母那一代沒有的長壽與退休時間紅利」~ 115.09.28
+          {
+            pic1: '/C01-AI-Codex-2026/R27-10-Taiwan-10-60s-Gen-GA10-Longevity-Retirement-Dividend-1150928/index.html',
+            pic1s: './images/R027-10.webp',
+            dec1: 'R027-10. 五年級生的黃金時代系列 10 ~ 五年級生的黃金時代-台灣十大「五年級生享受到父母那一代沒有的長壽與退休時間紅利」~ 115.09.28',
+          },
 
 
         ]);
@@ -1045,24 +1146,7 @@
 
 
 
-    const app7 = createApp({
-      setup() {
-        // 使用 ref 定義響應式狀態（陣列）
-        const arr = ref([
 
-
-
-
-
-
-
-        ]);
-        // 返回數據和方法
-        return {
-          arr,
-        };
-      }
-    }).mount('#a1-7')
 
     const app8 = createApp({
       setup() {
