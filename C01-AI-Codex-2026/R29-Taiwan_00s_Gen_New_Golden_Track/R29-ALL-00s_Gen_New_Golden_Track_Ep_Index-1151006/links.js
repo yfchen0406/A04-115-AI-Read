@@ -22,8 +22,8 @@ window.SERIES_LINKS = {
   },
   ep04: {
     web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-04-Taiwan_10_00s_Gen_Career_Rules_End-1151005/index.html",
-    ytCaption: "",
-    ytClean: "",
+    ytCaption: "https://youtu.be/l1s_z_9mDpE",
+    ytClean: "https://youtu.be/dMMM-U-7hsY",
   },
   ep05: { web: "", ytCaption: "", ytClean: "" },
   ep06: { web: "", ytCaption: "", ytClean: "" },
