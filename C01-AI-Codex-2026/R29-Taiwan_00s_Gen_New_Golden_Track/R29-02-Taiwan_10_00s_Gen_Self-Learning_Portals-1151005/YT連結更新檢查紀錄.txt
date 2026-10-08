@@ -1,0 +1,11 @@
+YouTube 有字幕：https://youtu.be/u8KnV0NH1f4
+YouTube 無字幕：https://youtu.be/Wxbi9WljPW0
+更新範圍：僅此副本的 real-mode/index.html、real-mode/reading.html、real-mode/assets/main.js 與 real-mode/README.txt。
+檢查結果：兩個設定頁與執行程式均有正確網址；真實模式程式不再含 YouTube 首頁暫代網址。
+原始動態網站資料夾、原雙動態資料夾及先前 ZIP 均保留原樣。
+驗證方式：檢查副本檔案與打包後 ZIP 內的連結文字；未執行瀏覽器按鈕點擊。
+
+章節修正：僅 real-mode 副本章節索引增加 70 毫秒音訊前導；Chrome file:// 逐章測試 14/14 通過，跨界同步 1–30 毫秒。逐章紀錄見 QA-章節索引修正.md。
+
+2026-10-08 真實模式 YouTube 連結更新：有字幕 https://youtu.be/0KpNiknIumY；無字幕 https://youtu.be/G11uCgPlD6A。更新範圍僅 real-mode/index.html、real-mode/reading.html、real-mode/assets/main.js、real-mode/README.txt；原始動態網站與根目錄的既有 YouTube 連結保留。
+2026-10-08 修正主首頁的『YT連結真實模式』：index.html、reading.html、assets/main.js 的 youtubeRealModeWithSubtitles / youtubeRealModeWithoutSubtitles 改為 0KpNiknIumY / G11uCgPlD6A；執行程式保留 HTML 已設定的 EPISODE_SETTINGS。一般模式的 YT 連結維持原值。
