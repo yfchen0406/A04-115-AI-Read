@@ -6,5 +6,5 @@
 時間與內容：data/storyboard.json（Excel 時間碼主表）、data/source.srt、data/chapters.json。
 旁白：audio/narration.mp3 為 96 kbps CBR 播放副本；點選章節會跳至 Excel 起點。
 YouTube 原版：有字幕 https://youtu.be/GcqUmaf3ERE；無字幕 https://youtu.be/ZBN2MJVd0_4。
-真實模式 YouTube 按鈕已加入；對應影片網址補齊後即可連結。
+真實模式 YouTube：有字幕 https://youtu.be/6aHhCwGyqN4；無字幕 https://youtu.be/9pYLKjJguGw。
 網站閱讀可離線使用；YouTube 連結需要網路。
