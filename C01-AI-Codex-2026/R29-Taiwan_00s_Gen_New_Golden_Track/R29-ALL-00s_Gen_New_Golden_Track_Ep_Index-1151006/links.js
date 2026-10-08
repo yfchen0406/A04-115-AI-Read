@@ -1,9 +1,9 @@
 /* 後續只要在這份設定填入網址；留空時按鈕會提示「網址待補」。 */
 window.SERIES_LINKS = {
   ep00: {
-    web: "",
-    ytCaption: "",
-    ytClean: "",
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-00-00s_Gen_New_Golden_Track_10_Eps_Summary-1151006/index.html",
+    ytCaption: "https://youtu.be/GcqUmaf3ERE",
+    ytClean: "https://youtu.be/ZBN2MJVd0_4",
   },
   ep01: {
     web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-01-Taiwan_10_00s_Gen_2030_AI_Work_Norms-1151005/index.html",
@@ -25,12 +25,36 @@ window.SERIES_LINKS = {
     ytCaption: "https://youtu.be/l1s_z_9mDpE",
     ytClean: "https://youtu.be/dMMM-U-7hsY",
   },
-  ep05: { web: "", ytCaption: "", ytClean: "" },
-  ep06: { web: "", ytCaption: "", ytClean: "" },
-  ep07: { web: "", ytCaption: "", ytClean: "" },
-  ep08: { web: "", ytCaption: "", ytClean: "" },
-  ep09: { web: "", ytCaption: "", ytClean: "" },
-  ep10: { web: "", ytCaption: "", ytClean: "" },
+  ep05: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-05-Taiwan_10_00s_Gen_Low-Barrier_Startup-1151005/index.html",
+    ytCaption: "https://youtu.be/tz03Cy_DD0I",
+    ytClean: "https://youtu.be/tz03Cy_DD0I",
+  },
+  ep06: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-06-Taiwan_10_00s_Gen_Global_Life_Options-1151006/index.html",
+    ytCaption: "https://youtu.be/6Zq8-RRGvjI",
+    ytClean: "https://youtu.be/5xUk7uBKDx8",
+  },
+  ep07: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-07-Taiwan_10_00s_Gen_30_Demographic_Dividend-1151006/index.html",
+    ytCaption: "https://youtu.be/dxPt-EdSm4k",
+    ytClean: "https://youtu.be/5ZXaFrcwH7w",
+  },
+  ep08: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-08-Taiwan_10_00s_Gen_Youth_Longevity_Pioneers-1151006/index.html",
+    ytCaption: "https://youtu.be/18TQesGq94c",
+    ytClean: "https://youtu.be/Ry3PO2zK-1c",
+  },
+  ep09: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-09-Taiwan_10_00s_Gen_2040_Green_Industry-1151006/index.html",
+    ytCaption: "https://youtu.be/gTSb_SVtqkc",
+    ytClean: "https://youtu.be/A6FcD5aWg1o",
+  },
+  ep10: {
+    web: "/C01-AI-Codex-2026/R29-Taiwan_00s_Gen_New_Golden_Track/R29-10-Taiwan_10_00s_Gen_Best_Era_Opportunities-1151006/index.html",
+    ytCaption: "https://youtu.be/3dif7G-xRXk",
+    ytClean: "https://youtu.be/glxgOzrPXO4",
+  },
 };
 (function(){
   function init(){

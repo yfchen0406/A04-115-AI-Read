@@ -1,0 +1,1023 @@
+{
+  "imageCount": 145,
+  "playbackCount": 145,
+  "providedCount": 145,
+  "placeholderCount": 0,
+  "assets": [
+    {
+      "id": "001",
+      "path": "images/001.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00001.webp"
+    },
+    {
+      "id": "002",
+      "path": "images/002.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00002.webp"
+    },
+    {
+      "id": "003",
+      "path": "images/003.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00003.webp"
+    },
+    {
+      "id": "004",
+      "path": "images/004.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00004.webp"
+    },
+    {
+      "id": "005",
+      "path": "images/005.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00005.webp"
+    },
+    {
+      "id": "006",
+      "path": "images/006.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00006.webp"
+    },
+    {
+      "id": "007",
+      "path": "images/007.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00007.webp"
+    },
+    {
+      "id": "008",
+      "path": "images/008.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00008.webp"
+    },
+    {
+      "id": "009",
+      "path": "images/009.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00009.webp"
+    },
+    {
+      "id": "010",
+      "path": "images/010.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00010.webp"
+    },
+    {
+      "id": "011",
+      "path": "images/011.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00011.webp"
+    },
+    {
+      "id": "012",
+      "path": "images/012.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00012.webp"
+    },
+    {
+      "id": "013",
+      "path": "images/013.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00013.webp"
+    },
+    {
+      "id": "014",
+      "path": "images/014.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00014.webp"
+    },
+    {
+      "id": "015",
+      "path": "images/015.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00015.webp"
+    },
+    {
+      "id": "016",
+      "path": "images/016.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00016.webp"
+    },
+    {
+      "id": "017",
+      "path": "images/017.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00017.webp"
+    },
+    {
+      "id": "018",
+      "path": "images/018.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00018.webp"
+    },
+    {
+      "id": "019",
+      "path": "images/019.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00019.webp"
+    },
+    {
+      "id": "020",
+      "path": "images/020.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00020.webp"
+    },
+    {
+      "id": "021",
+      "path": "images/021.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00021.webp"
+    },
+    {
+      "id": "022",
+      "path": "images/022.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00022.webp"
+    },
+    {
+      "id": "023",
+      "path": "images/023.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00023.webp"
+    },
+    {
+      "id": "024",
+      "path": "images/024.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00024.webp"
+    },
+    {
+      "id": "025",
+      "path": "images/025.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00025.webp"
+    },
+    {
+      "id": "026",
+      "path": "images/026.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00026.webp"
+    },
+    {
+      "id": "027",
+      "path": "images/027.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00027.webp"
+    },
+    {
+      "id": "028",
+      "path": "images/028.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00028.webp"
+    },
+    {
+      "id": "029",
+      "path": "images/029.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00029.webp"
+    },
+    {
+      "id": "030",
+      "path": "images/030.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00030.webp"
+    },
+    {
+      "id": "031",
+      "path": "images/031.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00031.webp"
+    },
+    {
+      "id": "032",
+      "path": "images/032.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00032.webp"
+    },
+    {
+      "id": "033",
+      "path": "images/033.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00033.webp"
+    },
+    {
+      "id": "034",
+      "path": "images/034.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00034.webp"
+    },
+    {
+      "id": "035",
+      "path": "images/035.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00035.webp"
+    },
+    {
+      "id": "036",
+      "path": "images/036.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00036.webp"
+    },
+    {
+      "id": "037",
+      "path": "images/037.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00037.webp"
+    },
+    {
+      "id": "038",
+      "path": "images/038.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00038.webp"
+    },
+    {
+      "id": "039",
+      "path": "images/039.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00039.webp"
+    },
+    {
+      "id": "040",
+      "path": "images/040.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00040.webp"
+    },
+    {
+      "id": "041",
+      "path": "images/041.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00041.webp"
+    },
+    {
+      "id": "042",
+      "path": "images/042.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00042.webp"
+    },
+    {
+      "id": "043",
+      "path": "images/043.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00043.webp"
+    },
+    {
+      "id": "044",
+      "path": "images/044.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00044.webp"
+    },
+    {
+      "id": "045",
+      "path": "images/045.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00045.webp"
+    },
+    {
+      "id": "046",
+      "path": "images/046.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00046.webp"
+    },
+    {
+      "id": "047",
+      "path": "images/047.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00047.webp"
+    },
+    {
+      "id": "048",
+      "path": "images/048.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00048.webp"
+    },
+    {
+      "id": "049",
+      "path": "images/049.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00049.webp"
+    },
+    {
+      "id": "050",
+      "path": "images/050.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00050.webp"
+    },
+    {
+      "id": "051",
+      "path": "images/051.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00051.webp"
+    },
+    {
+      "id": "052",
+      "path": "images/052.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00052.webp"
+    },
+    {
+      "id": "053",
+      "path": "images/053.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00053.webp"
+    },
+    {
+      "id": "054",
+      "path": "images/054.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00054.webp"
+    },
+    {
+      "id": "055",
+      "path": "images/055.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00055.webp"
+    },
+    {
+      "id": "056",
+      "path": "images/056.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00056.webp"
+    },
+    {
+      "id": "057",
+      "path": "images/057.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00057.webp"
+    },
+    {
+      "id": "058",
+      "path": "images/058.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00058.webp"
+    },
+    {
+      "id": "059",
+      "path": "images/059.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00059.webp"
+    },
+    {
+      "id": "060",
+      "path": "images/060.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00060.webp"
+    },
+    {
+      "id": "061",
+      "path": "images/061.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00061.webp"
+    },
+    {
+      "id": "062",
+      "path": "images/062.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00062.webp"
+    },
+    {
+      "id": "063",
+      "path": "images/063.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00063.webp"
+    },
+    {
+      "id": "064",
+      "path": "images/064.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00064.webp"
+    },
+    {
+      "id": "065",
+      "path": "images/065.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00065.webp"
+    },
+    {
+      "id": "066",
+      "path": "images/066.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00066.webp"
+    },
+    {
+      "id": "067",
+      "path": "images/067.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00067.webp"
+    },
+    {
+      "id": "068",
+      "path": "images/068.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00068.webp"
+    },
+    {
+      "id": "069",
+      "path": "images/069.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00069.webp"
+    },
+    {
+      "id": "070",
+      "path": "images/070.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00070.webp"
+    },
+    {
+      "id": "071",
+      "path": "images/071.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00071.webp"
+    },
+    {
+      "id": "072",
+      "path": "images/072.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00072.webp"
+    },
+    {
+      "id": "073",
+      "path": "images/073.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00073.webp"
+    },
+    {
+      "id": "074",
+      "path": "images/074.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00074.webp"
+    },
+    {
+      "id": "075",
+      "path": "images/075.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00075.webp"
+    },
+    {
+      "id": "076",
+      "path": "images/076.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00076.webp"
+    },
+    {
+      "id": "077",
+      "path": "images/077.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00077.webp"
+    },
+    {
+      "id": "078",
+      "path": "images/078.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00078.webp"
+    },
+    {
+      "id": "079",
+      "path": "images/079.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00079.webp"
+    },
+    {
+      "id": "080",
+      "path": "images/080.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00080.webp"
+    },
+    {
+      "id": "081",
+      "path": "images/081.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00081.webp"
+    },
+    {
+      "id": "082",
+      "path": "images/082.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00082.webp"
+    },
+    {
+      "id": "083",
+      "path": "images/083.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00083.webp"
+    },
+    {
+      "id": "084",
+      "path": "images/084.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00084.webp"
+    },
+    {
+      "id": "085",
+      "path": "images/085.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00085.webp"
+    },
+    {
+      "id": "086",
+      "path": "images/086.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00086.webp"
+    },
+    {
+      "id": "087",
+      "path": "images/087.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00087.webp"
+    },
+    {
+      "id": "088",
+      "path": "images/088.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00088.webp"
+    },
+    {
+      "id": "089",
+      "path": "images/089.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00089.webp"
+    },
+    {
+      "id": "090",
+      "path": "images/090.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00090.webp"
+    },
+    {
+      "id": "091",
+      "path": "images/091.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00091.webp"
+    },
+    {
+      "id": "092",
+      "path": "images/092.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00092.webp"
+    },
+    {
+      "id": "093",
+      "path": "images/093.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00093.webp"
+    },
+    {
+      "id": "094",
+      "path": "images/094.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00094.webp"
+    },
+    {
+      "id": "095",
+      "path": "images/095.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00095.webp"
+    },
+    {
+      "id": "096",
+      "path": "images/096.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00096.webp"
+    },
+    {
+      "id": "097",
+      "path": "images/097.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00097.webp"
+    },
+    {
+      "id": "098",
+      "path": "images/098.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00098.webp"
+    },
+    {
+      "id": "099",
+      "path": "images/099.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00099.webp"
+    },
+    {
+      "id": "100",
+      "path": "images/100.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00100.webp"
+    },
+    {
+      "id": "101",
+      "path": "images/101.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00101.webp"
+    },
+    {
+      "id": "102",
+      "path": "images/102.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00102.webp"
+    },
+    {
+      "id": "103",
+      "path": "images/103.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00103.webp"
+    },
+    {
+      "id": "104",
+      "path": "images/104.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00104.webp"
+    },
+    {
+      "id": "105",
+      "path": "images/105.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00105.webp"
+    },
+    {
+      "id": "106",
+      "path": "images/106.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00106.webp"
+    },
+    {
+      "id": "107",
+      "path": "images/107.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00107.webp"
+    },
+    {
+      "id": "108",
+      "path": "images/108.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00108.webp"
+    },
+    {
+      "id": "109",
+      "path": "images/109.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00109.webp"
+    },
+    {
+      "id": "110",
+      "path": "images/110.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00110.webp"
+    },
+    {
+      "id": "111",
+      "path": "images/111.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00111.webp"
+    },
+    {
+      "id": "112",
+      "path": "images/112.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00112.webp"
+    },
+    {
+      "id": "113",
+      "path": "images/113.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00113.webp"
+    },
+    {
+      "id": "114",
+      "path": "images/114.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00114.webp"
+    },
+    {
+      "id": "115",
+      "path": "images/115.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00115.webp"
+    },
+    {
+      "id": "116",
+      "path": "images/116.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00116.webp"
+    },
+    {
+      "id": "117",
+      "path": "images/117.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00117.webp"
+    },
+    {
+      "id": "118",
+      "path": "images/118.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00118.webp"
+    },
+    {
+      "id": "119",
+      "path": "images/119.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00119.webp"
+    },
+    {
+      "id": "120",
+      "path": "images/120.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00120.webp"
+    },
+    {
+      "id": "121",
+      "path": "images/121.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00121.webp"
+    },
+    {
+      "id": "122",
+      "path": "images/122.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00122.webp"
+    },
+    {
+      "id": "123",
+      "path": "images/123.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00123.webp"
+    },
+    {
+      "id": "124",
+      "path": "images/124.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00124.webp"
+    },
+    {
+      "id": "125",
+      "path": "images/125.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00125.webp"
+    },
+    {
+      "id": "126",
+      "path": "images/126.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00126.webp"
+    },
+    {
+      "id": "127",
+      "path": "images/127.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00127.webp"
+    },
+    {
+      "id": "128",
+      "path": "images/128.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00128.webp"
+    },
+    {
+      "id": "129",
+      "path": "images/129.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00129.webp"
+    },
+    {
+      "id": "130",
+      "path": "images/130.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00130.webp"
+    },
+    {
+      "id": "131",
+      "path": "images/131.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00131.webp"
+    },
+    {
+      "id": "132",
+      "path": "images/132.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00132.webp"
+    },
+    {
+      "id": "133",
+      "path": "images/133.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00133.webp"
+    },
+    {
+      "id": "134",
+      "path": "images/134.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00134.webp"
+    },
+    {
+      "id": "135",
+      "path": "images/135.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00135.webp"
+    },
+    {
+      "id": "136",
+      "path": "images/136.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00136.webp"
+    },
+    {
+      "id": "137",
+      "path": "images/137.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00137.webp"
+    },
+    {
+      "id": "138",
+      "path": "images/138.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00138.webp"
+    },
+    {
+      "id": "139",
+      "path": "images/139.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00139.webp"
+    },
+    {
+      "id": "140",
+      "path": "images/140.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00140.webp"
+    },
+    {
+      "id": "141",
+      "path": "images/141.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00141.webp"
+    },
+    {
+      "id": "142",
+      "path": "images/142.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00142.webp"
+    },
+    {
+      "id": "143",
+      "path": "images/143.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00143.webp"
+    },
+    {
+      "id": "144",
+      "path": "images/144.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00144.webp"
+    },
+    {
+      "id": "145",
+      "path": "images/145.webp",
+      "inPlaybackTimeline": true,
+      "status": "provided",
+      "sourceFile": "A03_2030前青年新工作_001-145_00145.webp"
+    }
+  ]
+}

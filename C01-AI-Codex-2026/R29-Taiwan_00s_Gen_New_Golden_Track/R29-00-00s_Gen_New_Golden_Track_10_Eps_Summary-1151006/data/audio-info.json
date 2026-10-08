@@ -1,0 +1,32 @@
+{
+  "sourceFile": "A00-旁白_C-男聲-溫暖療癒_20261004_221305.mp3",
+  "sourceSha256": "8211620a375d67f29edf58ec2c313969378d46f35d11330aa1af95de0671f6fe",
+  "sourceBitrateDistributionKbps": {
+    "64": 22768,
+    "8": 420,
+    "160": 703,
+    "80": 5996,
+    "56": 4890,
+    "112": 2196,
+    "96": 1896,
+    "128": 1573,
+    "144": 406,
+    "48": 654,
+    "40": 128,
+    "32": 24,
+    "24": 12,
+    "16": 9
+  },
+  "playbackFile": "audio/narration.mp3",
+  "playbackSha256": "5ff1bb20c99c87a0de1f1aa32b4879f1e03bde7be6667de86aadee88186631fe",
+  "playbackCodec": "MP3 CBR",
+  "playbackBitrateKbps": 96,
+  "playbackBitrateDistributionKbps": {
+    "96": 41675
+  },
+  "sampleRateHz": 24000,
+  "channels": 1,
+  "sourceDurationSeconds": 1000.2,
+  "playbackDurationSeconds": 1000.2,
+  "sourcePreserved": true
+}

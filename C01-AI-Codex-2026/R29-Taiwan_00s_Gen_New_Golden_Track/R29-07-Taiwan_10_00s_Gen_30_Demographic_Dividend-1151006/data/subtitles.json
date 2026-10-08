@@ -1,0 +1,4326 @@
+{
+  "cues": [
+    {
+      "id": "S001",
+      "sequence": 1,
+      "startTimecode": "00:00:01,500",
+      "endTimecode": "00:00:11,615",
+      "startSeconds": 1.5,
+      "endSeconds": 11.615,
+      "text": "如果一個世代的人數變少，到了 30 歲，會不會反而更容易找到工作、談到理想薪資，甚至提早接下重要職務？",
+      "displayText": "如果一個世代的人數變少，到了 30 歲，會不會反而更容易找到工作、談到理想薪資，甚至提早接下重要職務？",
+      "displaySegments": [
+        {
+          "text": "如果一個世代的人數變少，到了 30 歲，會不會反而更容易找到工作、談到理想薪資，甚至提早接下重要職務？",
+          "startSeconds": 1.5,
+          "endSeconds": 11.615,
+          "id": "S001-01",
+          "cueId": "S001",
+          "sequence": 1,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 45,
+      "endFrame": 348
+    },
+    {
+      "id": "S002",
+      "sequence": 2,
+      "startTimecode": "00:00:11,615",
+      "endTimecode": "00:00:18,220",
+      "startSeconds": 11.615,
+      "endSeconds": 18.22,
+      "text": "這聽起來像是一種時代紅利，但人口減少真的會自動變成個人的優勢嗎？",
+      "displayText": "這聽起來像是一種時代紅利，但人口減少真的會自動變成個人的優勢嗎？",
+      "displaySegments": [
+        {
+          "text": "這聽起來像是一種時代紅利，但人口減少真的會自動變成個人的優勢嗎？",
+          "startSeconds": 11.615,
+          "endSeconds": 18.22,
+          "id": "S002-01",
+          "cueId": "S002",
+          "sequence": 2,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 348,
+      "endFrame": 547
+    },
+    {
+      "id": "S003",
+      "sequence": 3,
+      "startTimecode": "00:00:18,400",
+      "endTimecode": "00:00:32,840",
+      "startSeconds": 18.4,
+      "endSeconds": 32.84,
+      "text": "今天我們要談的，不是「年輕人變少，所以人人都能加薪升官」這種簡單答案，而是更實際的問題：當企業需要的人才不好找，哪些青年可能因此多出職涯選擇？",
+      "displayText": "今天我們要談的，不是「年輕人變少，所以人人都能加薪升官」這種簡單答案，而是更實際的問題：當企業需要的人才不好找，哪些青年可能因此多出職涯選擇？",
+      "displaySegments": [
+        {
+          "text": "今天我們要談的，不是「年輕人變少，所以人人都能加薪升官」這種簡單答案，而是更實際的問題：當企業需要的人才不好找，哪些青年可能因此多出職涯選擇？",
+          "startSeconds": 18.4,
+          "endSeconds": 32.84,
+          "id": "S003-01",
+          "cueId": "S003",
+          "sequence": 3,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 552,
+      "endFrame": 985
+    },
+    {
+      "id": "S004",
+      "sequence": 4,
+      "startTimecode": "00:00:33,020",
+      "endTimecode": "00:00:38,577",
+      "startSeconds": 33.02,
+      "endSeconds": 38.577,
+      "text": "又有哪些條件，決定這個機會最後能不能落在自己身上？",
+      "displayText": "又有哪些條件，決定這個機會最後能不能落在自己身上？",
+      "displaySegments": [
+        {
+          "text": "又有哪些條件，決定這個機會最後能不能落在自己身上？",
+          "startSeconds": 33.02,
+          "endSeconds": 38.577,
+          "id": "S004-01",
+          "cueId": "S004",
+          "sequence": 4,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 991,
+      "endFrame": 1157
+    },
+    {
+      "id": "S005",
+      "sequence": 5,
+      "startTimecode": "00:00:38,577",
+      "endTimecode": "00:00:44,134",
+      "startSeconds": 38.577,
+      "endSeconds": 44.134,
+      "text": "本系列把 2001 年到 2010 年出生者稱為九年級生。",
+      "displayText": "本系列把 2001 年到 2010 年出生者稱為九年級生。",
+      "displaySegments": [
+        {
+          "text": "本系列把 2001 年到 2010 年出生者稱為九年級生。",
+          "startSeconds": 38.577,
+          "endSeconds": 44.134,
+          "id": "S005-01",
+          "cueId": "S005",
+          "sequence": 5,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 1157,
+      "endFrame": 1324
+    },
+    {
+      "id": "S006",
+      "sequence": 6,
+      "startTimecode": "00:00:44,134",
+      "endTimecode": "00:00:48,580",
+      "startSeconds": 44.134,
+      "endSeconds": 48.58,
+      "text": "到了 2026 年，這群人約 15 歲到 25 歲；",
+      "displayText": "到了 2026 年，這群人約 15 歲到 25 歲；",
+      "displaySegments": [
+        {
+          "text": "到了 2026 年，這群人約 15 歲到 25 歲；",
+          "startSeconds": 44.134,
+          "endSeconds": 48.58,
+          "id": "S006-01",
+          "cueId": "S006",
+          "sequence": 6,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 1324,
+      "endFrame": 1457
+    },
+    {
+      "id": "S007",
+      "sequence": 7,
+      "startTimecode": "00:00:48,760",
+      "endTimecode": "00:01:02,480",
+      "startSeconds": 48.76,
+      "endSeconds": 62.48,
+      "text": "但「到了 30 歲」並不是同一年，2001 年出生者約在 2031 年滿 30 歲，2010 年出生者約在 2040 年滿 30 歲，實際時間還要看生日。",
+      "displayText": "但「到了 30 歲」並不是同一年，2001 年出生者約在 2031 年滿 30 歲，2010 年出生者約在 2040 年滿 30 歲，實際時間還要看生日。",
+      "displaySegments": [
+        {
+          "text": "但「到了 30 歲」並不是同一年，2001 年出生者約在 2031 年滿 30 歲，2010 年出生者約在 2040 年滿 30 歲，實際時間還要看生日。",
+          "startSeconds": 48.76,
+          "endSeconds": 62.48,
+          "id": "S007-01",
+          "cueId": "S007",
+          "sequence": 7,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 1463,
+      "endFrame": 1874
+    },
+    {
+      "id": "S008",
+      "sequence": 8,
+      "startTimecode": "00:01:02,660",
+      "endTimecode": "00:01:18,220",
+      "startSeconds": 62.66,
+      "endSeconds": 78.22,
+      "text": "所以，這集看的不是某一個 2030 年的瞬間，而是 2031 年到 2040 年，這個世代陸續進入 30 歲上下職涯階段時，可能面對的人口與工作環境。",
+      "displayText": "所以，這集看的不是某一個 2030 年的瞬間，而是 2031 年到 2040 年，這個世代陸續進入 30 歲上下職涯階段時，可能面對的人口與工作環境。",
+      "displaySegments": [
+        {
+          "text": "所以，這集看的不是某一個 2030 年的瞬間，而是 2031 年到 2040 年，這個世代陸續進入 30 歲上下職涯階段時，可能面對的人口與工作環境。",
+          "startSeconds": 62.66,
+          "endSeconds": 78.22,
+          "id": "S008-01",
+          "cueId": "S008",
+          "sequence": 8,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 1880,
+      "endFrame": 2347
+    },
+    {
+      "id": "S009",
+      "sequence": 9,
+      "startTimecode": "00:01:18,400",
+      "endTimecode": "00:01:23,682",
+      "startSeconds": 78.4,
+      "endSeconds": 83.682,
+      "text": "今天的統計可以提供線索，不能直接當成他們未來的實況。",
+      "displayText": "今天的統計可以提供線索，不能直接當成他們未來的實況。",
+      "displaySegments": [
+        {
+          "text": "今天的統計可以提供線索，不能直接當成他們未來的實況。",
+          "startSeconds": 78.4,
+          "endSeconds": 83.682,
+          "id": "S009-01",
+          "cueId": "S009",
+          "sequence": 9,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 2352,
+      "endFrame": 2510
+    },
+    {
+      "id": "S010",
+      "sequence": 10,
+      "startTimecode": "00:01:23,682",
+      "endTimecode": "00:01:27,136",
+      "startSeconds": 83.682,
+      "endSeconds": 87.136,
+      "text": "我們也先釐清「人口紅利」這個說法。",
+      "displayText": "我們也先釐清「人口紅利」這個說法。",
+      "displaySegments": [
+        {
+          "text": "我們也先釐清「人口紅利」這個說法。",
+          "startSeconds": 83.682,
+          "endSeconds": 87.136,
+          "id": "S010-01",
+          "cueId": "S010",
+          "sequence": 10,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 2510,
+      "endFrame": 2614
+    },
+    {
+      "id": "S011",
+      "sequence": 11,
+      "startTimecode": "00:01:27,136",
+      "endTimecode": "00:01:33,840",
+      "startSeconds": 87.136,
+      "endSeconds": 93.84,
+      "text": "人口學上的人口紅利，通常是指人口年齡結構改變對整體經濟帶來的影響；",
+      "displayText": "人口學上的人口紅利，通常是指人口年齡結構改變對整體經濟帶來的影響；",
+      "displaySegments": [
+        {
+          "text": "人口學上的人口紅利，通常是指人口年齡結構改變對整體經濟帶來的影響；",
+          "startSeconds": 87.136,
+          "endSeconds": 93.84,
+          "id": "S011-01",
+          "cueId": "S011",
+          "sequence": 11,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 2614,
+      "endFrame": 2815
+    },
+    {
+      "id": "S012",
+      "sequence": 12,
+      "startTimecode": "00:01:34,020",
+      "endTimecode": "00:01:48,980",
+      "startSeconds": 94.02,
+      "endSeconds": 108.98,
+      "text": "本集把它用在職涯脈絡，指的是青年相對稀缺時，部分人可能因技能需求、招募競爭或接班需求，得到更多選擇、議價或承擔責任的機會。",
+      "displayText": "本集把它用在職涯脈絡，指的是青年相對稀缺時，部分人可能因技能需求、招募競爭或接班需求，得到更多選擇、議價或承擔責任的機會。",
+      "displaySegments": [
+        {
+          "text": "本集把它用在職涯脈絡，指的是青年相對稀缺時，部分人可能因技能需求、招募競爭或接班需求，得到更多選擇、議價或承擔責任的機會。",
+          "startSeconds": 94.02,
+          "endSeconds": 108.98,
+          "id": "S012-01",
+          "cueId": "S012",
+          "sequence": 12,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 2821,
+      "endFrame": 3269
+    },
+    {
+      "id": "S013",
+      "sequence": 13,
+      "startTimecode": "00:01:49,160",
+      "endTimecode": "00:01:51,423",
+      "startSeconds": 109.16,
+      "endSeconds": 111.423,
+      "text": "這不保證所有人都受益。",
+      "displayText": "這不保證所有人都受益。",
+      "displaySegments": [
+        {
+          "text": "這不保證所有人都受益。",
+          "startSeconds": 109.16,
+          "endSeconds": 111.423,
+          "id": "S013-01",
+          "cueId": "S013",
+          "sequence": 13,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 3275,
+      "endFrame": 3343
+    },
+    {
+      "id": "S014",
+      "sequence": 14,
+      "startTimecode": "00:01:51,423",
+      "endTimecode": "00:02:00,886",
+      "startSeconds": 111.423,
+      "endSeconds": 120.886,
+      "text": "產業景氣、所在縣市、技能是否符合需求、教育訓練、企業制度、家庭照顧與勞動條件，都會影響結果。",
+      "displayText": "產業景氣、所在縣市、技能是否符合需求、教育訓練、企業制度、家庭照顧與勞動條件，都會影響結果。",
+      "displaySegments": [
+        {
+          "text": "產業景氣、所在縣市、技能是否符合需求、教育訓練、企業制度、家庭照顧與勞動條件，都會影響結果。",
+          "startSeconds": 111.423,
+          "endSeconds": 120.886,
+          "id": "S014-01",
+          "cueId": "S014",
+          "sequence": 14,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 3343,
+      "endFrame": 3627
+    },
+    {
+      "id": "S015",
+      "sequence": 15,
+      "startTimecode": "00:02:00,886",
+      "endTimecode": "00:02:07,880",
+      "startSeconds": 120.886,
+      "endSeconds": 127.88,
+      "text": "職缺多，也不一定代表雇主找不到人，更不能直接推論每個年輕人都能升遷。",
+      "displayText": "職缺多，也不一定代表雇主找不到人，更不能直接推論每個年輕人都能升遷。",
+      "displaySegments": [
+        {
+          "text": "職缺多，也不一定代表雇主找不到人，更不能直接推論每個年輕人都能升遷。",
+          "startSeconds": 120.886,
+          "endSeconds": 127.88,
+          "id": "S015-01",
+          "cueId": "S015",
+          "sequence": 15,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 3627,
+      "endFrame": 3836
+    },
+    {
+      "id": "S016",
+      "sequence": 16,
+      "startTimecode": "00:02:08,060",
+      "endTimecode": "00:02:17,206",
+      "startSeconds": 128.06,
+      "endSeconds": 137.206,
+      "text": "國發會在 2026 年發布最新人口推估，範圍是 2026 年到 2075 年。",
+      "displayText": "國發會在 2026 年發布最新人口推估，範圍是 2026 年到 2075 年。",
+      "displaySegments": [
+        {
+          "text": "國發會在 2026 年發布最新人口推估，範圍是 2026 年到 2075 年。",
+          "startSeconds": 128.06,
+          "endSeconds": 137.206,
+          "id": "S016-01",
+          "cueId": "S016",
+          "sequence": 16,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 3842,
+      "endFrame": 4116
+    },
+    {
+      "id": "S017",
+      "sequence": 17,
+      "startTimecode": "00:02:17,206",
+      "endTimecode": "00:02:27,460",
+      "startSeconds": 137.206,
+      "endSeconds": 147.46,
+      "text": "以中推估來看，15 歲到 64 歲工作年齡人口占總人口比例，從 2026 年的 67.",
+      "displayText": "以中推估來看，15 歲到 64 歲工作年齡人口占總人口比例，從 2026 年的 67.",
+      "displaySegments": [
+        {
+          "text": "以中推估來看，15 歲到 64 歲工作年齡人口占總人口比例，從 2026 年的 67.",
+          "startSeconds": 137.206,
+          "endSeconds": 147.46,
+          "id": "S017-01",
+          "cueId": "S017",
+          "sequence": 17,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 4116,
+      "endFrame": 4424
+    },
+    {
+      "id": "S018",
+      "sequence": 18,
+      "startTimecode": "00:02:27,640",
+      "endTimecode": "00:02:31,385",
+      "startSeconds": 147.64,
+      "endSeconds": 151.385,
+      "text": "9%，到 2035 年估計為 64.",
+      "displayText": "9%，到 2035 年估計為 64.",
+      "displaySegments": [
+        {
+          "text": "9%，到 2035 年估計為 64.",
+          "startSeconds": 147.64,
+          "endSeconds": 151.385,
+          "id": "S018-01",
+          "cueId": "S018",
+          "sequence": 18,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 4429,
+      "endFrame": 4542
+    },
+    {
+      "id": "S019",
+      "sequence": 19,
+      "startTimecode": "00:02:31,385",
+      "endTimecode": "00:02:34,632",
+      "startSeconds": 151.385,
+      "endSeconds": 154.632,
+      "text": "4%，2045 年則為 57.",
+      "displayText": "4%，2045 年則為 57.",
+      "displaySegments": [
+        {
+          "text": "4%，2045 年則為 57.",
+          "startSeconds": 151.385,
+          "endSeconds": 154.632,
+          "id": "S019-01",
+          "cueId": "S019",
+          "sequence": 19,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 4542,
+      "endFrame": 4639
+    },
+    {
+      "id": "S020",
+      "sequence": 20,
+      "startTimecode": "00:02:34,632",
+      "endTimecode": "00:02:35,381",
+      "startSeconds": 154.632,
+      "endSeconds": 155.381,
+      "text": "9%。",
+      "displayText": "9%。",
+      "displaySegments": [
+        {
+          "text": "9%。",
+          "startSeconds": 154.632,
+          "endSeconds": 155.381,
+          "id": "S020-01",
+          "cueId": "S020",
+          "sequence": 20,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 4639,
+      "endFrame": 4661
+    },
+    {
+      "id": "S021",
+      "sequence": 21,
+      "startTimecode": "00:02:35,381",
+      "endTimecode": "00:02:44,120",
+      "startSeconds": 155.381,
+      "endSeconds": 164.12,
+      "text": "這是廣義工作年齡人口，不是九年級生人口，也不是可直接聘用的勞動力人數。",
+      "displayText": "這是廣義工作年齡人口，不是九年級生人口，也不是可直接聘用的勞動力人數。",
+      "displaySegments": [
+        {
+          "text": "這是廣義工作年齡人口，不是九年級生人口，也不是可直接聘用的勞動力人數。",
+          "startSeconds": 155.381,
+          "endSeconds": 164.12,
+          "id": "S021-01",
+          "cueId": "S021",
+          "sequence": 21,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 4661,
+      "endFrame": 4924
+    },
+    {
+      "id": "S022",
+      "sequence": 22,
+      "startTimecode": "00:02:44,300",
+      "endTimecode": "00:02:50,256",
+      "startSeconds": 164.3,
+      "endSeconds": 170.256,
+      "text": "勞動部的青年勞動統計則提供另一個觀察角度。",
+      "displayText": "勞動部的青年勞動統計則提供另一個觀察角度。",
+      "displaySegments": [
+        {
+          "text": "勞動部的青年勞動統計則提供另一個觀察角度。",
+          "startSeconds": 164.3,
+          "endSeconds": 170.256,
+          "id": "S022-01",
+          "cueId": "S022",
+          "sequence": 22,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 4929,
+      "endFrame": 5108
+    },
+    {
+      "id": "S023",
+      "sequence": 23,
+      "startTimecode": "00:02:50,256",
+      "endTimecode": "00:03:03,020",
+      "startSeconds": 170.256,
+      "endSeconds": 183.02,
+      "text": "2025 年，15 歲到 29 歲民間人口約 354 萬人，較 2015 年減少約 97 萬人，減幅約 21%。",
+      "displayText": "2025 年，15 歲到 29 歲民間人口約 354 萬人，較 2015 年減少約 97 萬人，減幅約 21%。",
+      "displaySegments": [
+        {
+          "text": "2025 年，15 歲到 29 歲民間人口約 354 萬人，較 2015 年減少約 97 萬人，減幅約 21%。",
+          "startSeconds": 170.256,
+          "endSeconds": 183.02,
+          "id": "S023-01",
+          "cueId": "S023",
+          "sequence": 23,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 5108,
+      "endFrame": 5491
+    },
+    {
+      "id": "S024",
+      "sequence": 24,
+      "startTimecode": "00:03:03,200",
+      "endTimecode": "00:03:13,853",
+      "startSeconds": 183.2,
+      "endSeconds": 193.853,
+      "text": "同一期間，青年勞動力減少約 17 萬人，幅度約 8%，小於民間人口降幅，因為在學與求職參與狀態不同。",
+      "displayText": "同一期間，青年勞動力減少約 17 萬人，幅度約 8%，小於民間人口降幅，因為在學與求職參與狀態不同。",
+      "displaySegments": [
+        {
+          "text": "同一期間，青年勞動力減少約 17 萬人，幅度約 8%，小於民間人口降幅，因為在學與求職參與狀態不同。",
+          "startSeconds": 183.2,
+          "endSeconds": 193.853,
+          "id": "S024-01",
+          "cueId": "S024",
+          "sequence": 24,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 5496,
+      "endFrame": 5816
+    },
+    {
+      "id": "S025",
+      "sequence": 25,
+      "startTimecode": "00:03:13,853",
+      "endTimecode": "00:03:24,960",
+      "startSeconds": 193.853,
+      "endSeconds": 204.96,
+      "text": "接下來的十大，是依青年人口占比、職缺、薪資和升遷四個面向，整理有資料支持或有清楚限制的職涯可能性。",
+      "displayText": "接下來的十大，是依青年人口占比、職缺、薪資和升遷四個面向，整理有資料支持或有清楚限制的職涯可能性。",
+      "displaySegments": [
+        {
+          "text": "接下來的十大，是依青年人口占比、職缺、薪資和升遷四個面向，整理有資料支持或有清楚限制的職涯可能性。",
+          "startSeconds": 193.853,
+          "endSeconds": 204.96,
+          "id": "S025-01",
+          "cueId": "S025",
+          "sequence": 25,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 5816,
+      "endFrame": 6149
+    },
+    {
+      "id": "S026",
+      "sequence": 26,
+      "startTimecode": "00:03:25,140",
+      "endTimecode": "00:03:30,231",
+      "startSeconds": 205.14,
+      "endSeconds": 210.231,
+      "text": "這不是官方排行榜，也不是預測哪個職業一定最好；",
+      "displayText": "這不是官方排行榜，也不是預測哪個職業一定最好；",
+      "displaySegments": [
+        {
+          "text": "這不是官方排行榜，也不是預測哪個職業一定最好；",
+          "startSeconds": 205.14,
+          "endSeconds": 210.231,
+          "id": "S026-01",
+          "cueId": "S026",
+          "sequence": 26,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 6154,
+      "endFrame": 6307
+    },
+    {
+      "id": "S027",
+      "sequence": 27,
+      "startTimecode": "00:03:30,231",
+      "endTimecode": "00:03:35,985",
+      "startSeconds": 210.231,
+      "endSeconds": 215.985,
+      "text": "資料口徑不一，我們不做虛構分數，而是逐項看證據強弱。",
+      "displayText": "資料口徑不一，我們不做虛構分數，而是逐項看證據強弱。",
+      "displaySegments": [
+        {
+          "text": "資料口徑不一，我們不做虛構分數，而是逐項看證據強弱。",
+          "startSeconds": 210.231,
+          "endSeconds": 215.985,
+          "id": "S027-01",
+          "cueId": "S027",
+          "sequence": 27,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 6307,
+      "endFrame": 6480
+    },
+    {
+      "id": "S028",
+      "sequence": 28,
+      "startTimecode": "00:03:35,985",
+      "endTimecode": "00:03:48,380",
+      "startSeconds": 215.985,
+      "endSeconds": 228.38,
+      "text": "青年人口占比看人口推估和實際年齡資料，職缺看企業當下招募，薪資看不同職類和年資的統計，升遷則要找直接的職涯資料。",
+      "displayText": "青年人口占比看人口推估和實際年齡資料，職缺看企業當下招募，薪資看不同職類和年資的統計，升遷則要找直接的職涯資料。",
+      "displaySegments": [
+        {
+          "text": "青年人口占比看人口推估和實際年齡資料，職缺看企業當下招募，薪資看不同職類和年資的統計，升遷則要找直接的職涯資料。",
+          "startSeconds": 215.985,
+          "endSeconds": 228.38,
+          "id": "S028-01",
+          "cueId": "S028",
+          "sequence": 28,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 6480,
+      "endFrame": 6851
+    },
+    {
+      "id": "S029",
+      "sequence": 29,
+      "startTimecode": "00:03:48,560",
+      "endTimecode": "00:03:53,509",
+      "startSeconds": 228.56,
+      "endSeconds": 233.509,
+      "text": "四個面向互相補充，但不能把它們當成同一種數字。",
+      "displayText": "四個面向互相補充，但不能把它們當成同一種數字。",
+      "displaySegments": [
+        {
+          "text": "四個面向互相補充，但不能把它們當成同一種數字。",
+          "startSeconds": 228.56,
+          "endSeconds": 233.509,
+          "id": "S029-01",
+          "cueId": "S029",
+          "sequence": 29,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 6857,
+      "endFrame": 7005
+    },
+    {
+      "id": "S030",
+      "sequence": 30,
+      "startTimecode": "00:03:53,509",
+      "endTimecode": "00:03:59,964",
+      "startSeconds": 233.509,
+      "endSeconds": 239.964,
+      "text": "第十名，求職者更需要看懂產業差異，而不是只看「缺人」兩個字。",
+      "displayText": "第十名，求職者更需要看懂產業差異，而不是只看「缺人」兩個字。",
+      "displaySegments": [
+        {
+          "text": "第十名，求職者更需要看懂產業差異，而不是只看「缺人」兩個字。",
+          "startSeconds": 233.509,
+          "endSeconds": 239.964,
+          "id": "S030-01",
+          "cueId": "S030",
+          "sequence": 30,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 7005,
+      "endFrame": 7199
+    },
+    {
+      "id": "S031",
+      "sequence": 31,
+      "startTimecode": "00:03:59,964",
+      "endTimecode": "00:04:13,520",
+      "startSeconds": 239.964,
+      "endSeconds": 253.52,
+      "text": "人口變少可能讓企業更積極招募，但同一行業可能同時有很多職缺、快速補人，也可能因流動率高而一直在補人，真正的工作品質卻沒有改善。",
+      "displayText": "人口變少可能讓企業更積極招募，但同一行業可能同時有很多職缺、快速補人，也可能因流動率高而一直在補人，真正的工作品質卻沒有改善。",
+      "displaySegments": [
+        {
+          "text": "人口變少可能讓企業更積極招募，但同一行業可能同時有很多職缺、快速補人，也可能因流動率高而一直在補人，真正的工作品質卻沒有改善。",
+          "startSeconds": 239.964,
+          "endSeconds": 253.52,
+          "id": "S031-01",
+          "cueId": "S031",
+          "sequence": 31,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 7199,
+      "endFrame": 7606
+    },
+    {
+      "id": "S032",
+      "sequence": 32,
+      "startTimecode": "00:04:13,700",
+      "endTimecode": "00:04:21,740",
+      "startSeconds": 253.7,
+      "endSeconds": 261.74,
+      "text": "勞動部 2026 年 6 月底職位空缺調查，估計工業及服務業有 29.",
+      "displayText": "勞動部 2026 年 6 月底職位空缺調查，估計工業及服務業有 29.",
+      "displaySegments": [
+        {
+          "text": "勞動部 2026 年 6 月底職位空缺調查，估計工業及服務業有 29.",
+          "startSeconds": 253.7,
+          "endSeconds": 261.74,
+          "id": "S032-01",
+          "cueId": "S032",
+          "sequence": 32,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 7611,
+      "endFrame": 7852
+    },
+    {
+      "id": "S033",
+      "sequence": 33,
+      "startTimecode": "00:04:21,740",
+      "endTimecode": "00:04:24,956",
+      "startSeconds": 261.74,
+      "endSeconds": 264.956,
+      "text": "6 萬個職缺，職缺率為 3.",
+      "displayText": "6 萬個職缺，職缺率為 3.",
+      "displaySegments": [
+        {
+          "text": "6 萬個職缺，職缺率為 3.",
+          "startSeconds": 261.74,
+          "endSeconds": 264.956,
+          "id": "S033-01",
+          "cueId": "S033",
+          "sequence": 33,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 7852,
+      "endFrame": 7949
+    },
+    {
+      "id": "S034",
+      "sequence": 34,
+      "startTimecode": "00:04:24,956",
+      "endTimecode": "00:04:29,780",
+      "startSeconds": 264.956,
+      "endSeconds": 269.78,
+      "text": "3%，全時職缺平均對外招募時間約 3.",
+      "displayText": "3%，全時職缺平均對外招募時間約 3.",
+      "displaySegments": [
+        {
+          "text": "3%，全時職缺平均對外招募時間約 3.",
+          "startSeconds": 264.956,
+          "endSeconds": 269.78,
+          "id": "S034-01",
+          "cueId": "S034",
+          "sequence": 34,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 7949,
+      "endFrame": 8093
+    },
+    {
+      "id": "S035",
+      "sequence": 35,
+      "startTimecode": "00:04:29,960",
+      "endTimecode": "00:04:30,799",
+      "startSeconds": 269.96,
+      "endSeconds": 270.799,
+      "text": "1 個月。",
+      "displayText": "1 個月。",
+      "displaySegments": [
+        {
+          "text": "1 個月。",
+          "startSeconds": 269.96,
+          "endSeconds": 270.799,
+          "id": "S035-01",
+          "cueId": "S035",
+          "sequence": 35,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 8099,
+      "endFrame": 8124
+    },
+    {
+      "id": "S036",
+      "sequence": 36,
+      "startTimecode": "00:04:30,799",
+      "endTimecode": "00:04:36,669",
+      "startSeconds": 270.799,
+      "endSeconds": 276.669,
+      "text": "這些是當期職缺，不是青年專屬，也不是全部職缺都難以補足；",
+      "displayText": "這些是當期職缺，不是青年專屬，也不是全部職缺都難以補足；",
+      "displaySegments": [
+        {
+          "text": "這些是當期職缺，不是青年專屬，也不是全部職缺都難以補足；",
+          "startSeconds": 270.799,
+          "endSeconds": 276.669,
+          "id": "S036-01",
+          "cueId": "S036",
+          "sequence": 36,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 8124,
+      "endFrame": 8300
+    },
+    {
+      "id": "S037",
+      "sequence": 37,
+      "startTimecode": "00:04:36,669",
+      "endTimecode": "00:04:41,490",
+      "startSeconds": 276.669,
+      "endSeconds": 281.49,
+      "text": "勞動部特別提醒，職缺與勞動力短缺不是同一概念。",
+      "displayText": "勞動部特別提醒，職缺與勞動力短缺不是同一概念。",
+      "displaySegments": [
+        {
+          "text": "勞動部特別提醒，職缺與勞動力短缺不是同一概念。",
+          "startSeconds": 276.669,
+          "endSeconds": 281.49,
+          "id": "S037-01",
+          "cueId": "S037",
+          "sequence": 37,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 8300,
+      "endFrame": 8445
+    },
+    {
+      "id": "S038",
+      "sequence": 38,
+      "startTimecode": "00:04:41,490",
+      "endTimecode": "00:04:53,440",
+      "startSeconds": 281.49,
+      "endSeconds": 293.44,
+      "text": "情境化案例：一位 30 歲左右的求職者收到兩份工作邀請，一份待遇較好但工時不清楚，另一份薪資一般、訓練和排班制度透明。",
+      "displayText": "情境化案例：一位 30 歲左右的求職者收到兩份工作邀請，一份待遇較好但工時不清楚，另一份薪資一般、訓練和排班制度透明。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一位 30 歲左右的求職者收到兩份工作邀請，一份待遇較好但工時不清楚，另一份薪資一般、訓練和排班制度透明。",
+          "startSeconds": 281.49,
+          "endSeconds": 293.44,
+          "id": "S038-01",
+          "cueId": "S038",
+          "sequence": 38,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 8445,
+      "endFrame": 8803
+    },
+    {
+      "id": "S039",
+      "sequence": 39,
+      "startTimecode": "00:04:53,620",
+      "endTimecode": "00:05:00,939",
+      "startSeconds": 293.62,
+      "endSeconds": 300.939,
+      "text": "他不只問「哪裡缺人」，還比較薪資、工作內容、主管支持和長期發展。",
+      "displayText": "他不只問「哪裡缺人」，還比較薪資、工作內容、主管支持和長期發展。",
+      "displaySegments": [
+        {
+          "text": "他不只問「哪裡缺人」，還比較薪資、工作內容、主管支持和長期發展。",
+          "startSeconds": 293.62,
+          "endSeconds": 300.939,
+          "id": "S039-01",
+          "cueId": "S039",
+          "sequence": 39,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 8809,
+      "endFrame": 9028
+    },
+    {
+      "id": "S040",
+      "sequence": 40,
+      "startTimecode": "00:05:00,939",
+      "endTimecode": "00:05:05,972",
+      "startSeconds": 300.939,
+      "endSeconds": 305.972,
+      "text": "資訊更透明，才有可能把市場選項變成個人選擇。",
+      "displayText": "資訊更透明，才有可能把市場選項變成個人選擇。",
+      "displaySegments": [
+        {
+          "text": "資訊更透明，才有可能把市場選項變成個人選擇。",
+          "startSeconds": 300.939,
+          "endSeconds": 305.972,
+          "id": "S040-01",
+          "cueId": "S040",
+          "sequence": 40,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 9028,
+      "endFrame": 9179
+    },
+    {
+      "id": "S041",
+      "sequence": 41,
+      "startTimecode": "00:05:05,972",
+      "endTimecode": "00:05:09,860",
+      "startSeconds": 305.972,
+      "endSeconds": 309.86,
+      "text": "第九名，跨產業轉職的入口可能增加。",
+      "displayText": "第九名，跨產業轉職的入口可能增加。",
+      "displaySegments": [
+        {
+          "text": "第九名，跨產業轉職的入口可能增加。",
+          "startSeconds": 305.972,
+          "endSeconds": 309.86,
+          "id": "S041-01",
+          "cueId": "S041",
+          "sequence": 41,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 9179,
+      "endFrame": 9296
+    },
+    {
+      "id": "S042",
+      "sequence": 42,
+      "startTimecode": "00:05:10,040",
+      "endTimecode": "00:05:22,777",
+      "startSeconds": 310.04,
+      "endSeconds": 322.777,
+      "text": "當某些行業青年就業人數增加，另一些行業減少，人口紅利未必表現為每個領域都缺人，而可能是人才在不同產業之間重新流動。",
+      "displayText": "當某些行業青年就業人數增加，另一些行業減少，人口紅利未必表現為每個領域都缺人，而可能是人才在不同產業之間重新流動。",
+      "displaySegments": [
+        {
+          "text": "當某些行業青年就業人數增加，另一些行業減少，人口紅利未必表現為每個領域都缺人，而可能是人才在不同產業之間重新流動。",
+          "startSeconds": 310.04,
+          "endSeconds": 322.777,
+          "id": "S042-01",
+          "cueId": "S042",
+          "sequence": 42,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 9301,
+      "endFrame": 9683
+    },
+    {
+      "id": "S043",
+      "sequence": 43,
+      "startTimecode": "00:05:22,777",
+      "endTimecode": "00:05:33,280",
+      "startSeconds": 322.777,
+      "endSeconds": 333.28,
+      "text": "勞動部比較 2015 年和 2025 年的青年就業資料，醫療保健及社會工作服務業青年就業人數增加約 2.",
+      "displayText": "勞動部比較 2015 年和 2025 年的青年就業資料，醫療保健及社會工作服務業青年就業人數增加約 2.",
+      "displaySegments": [
+        {
+          "text": "勞動部比較 2015 年和 2025 年的青年就業資料，醫療保健及社會工作服務業青年就業人數增加約 2.",
+          "startSeconds": 322.777,
+          "endSeconds": 333.28,
+          "id": "S043-01",
+          "cueId": "S043",
+          "sequence": 43,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 9683,
+      "endFrame": 9998
+    },
+    {
+      "id": "S044",
+      "sequence": 44,
+      "startTimecode": "00:05:33,460",
+      "endTimecode": "00:05:36,660",
+      "startSeconds": 333.46,
+      "endSeconds": 336.66,
+      "text": "3 萬人，營建工程業增加約 2.",
+      "displayText": "3 萬人，營建工程業增加約 2.",
+      "displaySegments": [
+        {
+          "text": "3 萬人，營建工程業增加約 2.",
+          "startSeconds": 333.46,
+          "endSeconds": 336.66,
+          "id": "S044-01",
+          "cueId": "S044",
+          "sequence": 44,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 10004,
+      "endFrame": 10100
+    },
+    {
+      "id": "S045",
+      "sequence": 45,
+      "startTimecode": "00:05:36,660",
+      "endTimecode": "00:05:41,231",
+      "startSeconds": 336.66,
+      "endSeconds": 341.231,
+      "text": "9 萬人，專業、科學及技術服務業增加約 1.",
+      "displayText": "9 萬人，專業、科學及技術服務業增加約 1.",
+      "displaySegments": [
+        {
+          "text": "9 萬人，專業、科學及技術服務業增加約 1.",
+          "startSeconds": 336.66,
+          "endSeconds": 341.231,
+          "id": "S045-01",
+          "cueId": "S045",
+          "sequence": 45,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 10100,
+      "endFrame": 10237
+    },
+    {
+      "id": "S046",
+      "sequence": 46,
+      "startTimecode": "00:05:41,231",
+      "endTimecode": "00:05:42,146",
+      "startSeconds": 341.231,
+      "endSeconds": 342.146,
+      "text": "4 萬人；",
+      "displayText": "4 萬人；",
+      "displaySegments": [
+        {
+          "text": "4 萬人；",
+          "startSeconds": 341.231,
+          "endSeconds": 342.146,
+          "id": "S046-01",
+          "cueId": "S046",
+          "sequence": 46,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 10237,
+      "endFrame": 10264
+    },
+    {
+      "id": "S047",
+      "sequence": 47,
+      "startTimecode": "00:05:42,146",
+      "endTimecode": "00:05:46,260",
+      "startSeconds": 342.146,
+      "endSeconds": 346.26,
+      "text": "製造業青年就業人數則減少約 19 萬人。",
+      "displayText": "製造業青年就業人數則減少約 19 萬人。",
+      "displaySegments": [
+        {
+          "text": "製造業青年就業人數則減少約 19 萬人。",
+          "startSeconds": 342.146,
+          "endSeconds": 346.26,
+          "id": "S047-01",
+          "cueId": "S047",
+          "sequence": 47,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 10264,
+      "endFrame": 10388
+    },
+    {
+      "id": "S048",
+      "sequence": 48,
+      "startTimecode": "00:05:46,440",
+      "endTimecode": "00:05:54,973",
+      "startSeconds": 346.44,
+      "endSeconds": 354.973,
+      "text": "這是行業就業人數變化，不等於未來職缺成長預測，而且前後期行業分類有所調整。",
+      "displayText": "這是行業就業人數變化，不等於未來職缺成長預測，而且前後期行業分類有所調整。",
+      "displaySegments": [
+        {
+          "text": "這是行業就業人數變化，不等於未來職缺成長預測，而且前後期行業分類有所調整。",
+          "startSeconds": 346.44,
+          "endSeconds": 354.973,
+          "id": "S048-01",
+          "cueId": "S048",
+          "sequence": 48,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 10393,
+      "endFrame": 10649
+    },
+    {
+      "id": "S049",
+      "sequence": 49,
+      "startTimecode": "00:05:54,973",
+      "endTimecode": "00:06:05,120",
+      "startSeconds": 354.973,
+      "endSeconds": 365.12,
+      "text": "情境化案例：一位原本在門市工作的青年，透過技能訓練轉向醫療行政、營建專案支援或技術服務。",
+      "displayText": "情境化案例：一位原本在門市工作的青年，透過技能訓練轉向醫療行政、營建專案支援或技術服務。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一位原本在門市工作的青年，透過技能訓練轉向醫療行政、營建專案支援或技術服務。",
+          "startSeconds": 354.973,
+          "endSeconds": 365.12,
+          "id": "S049-01",
+          "cueId": "S049",
+          "sequence": 49,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 10649,
+      "endFrame": 10954
+    },
+    {
+      "id": "S050",
+      "sequence": 50,
+      "startTimecode": "00:06:05,300",
+      "endTimecode": "00:06:10,172",
+      "startSeconds": 365.3,
+      "endSeconds": 370.172,
+      "text": "他需要把原有溝通、排程和顧客服務能力，轉換成新產業能辨識的專業技能。",
+      "displayText": "他需要把原有溝通、排程和顧客服務能力，轉換成新產業能辨識的專業技能。",
+      "displaySegments": [
+        {
+          "text": "他需要把原有溝通、排程和顧客服務能力，轉換成新產業能辨識的專業技能。",
+          "startSeconds": 365.3,
+          "endSeconds": 370.172,
+          "id": "S050-01",
+          "cueId": "S050",
+          "sequence": 50,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 10959,
+      "endFrame": 11105
+    },
+    {
+      "id": "S051",
+      "sequence": 51,
+      "startTimecode": "00:06:10,172",
+      "endTimecode": "00:06:13,038",
+      "startSeconds": 370.172,
+      "endSeconds": 373.038,
+      "text": "產業變動帶來入口，也帶來重新學習的成本。",
+      "displayText": "產業變動帶來入口，也帶來重新學習的成本。",
+      "displaySegments": [
+        {
+          "text": "產業變動帶來入口，也帶來重新學習的成本。",
+          "startSeconds": 370.172,
+          "endSeconds": 373.038,
+          "id": "S051-01",
+          "cueId": "S051",
+          "sequence": 51,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 11105,
+      "endFrame": 11191
+    },
+    {
+      "id": "S052",
+      "sequence": 52,
+      "startTimecode": "00:06:13,038",
+      "endTimecode": "00:06:16,620",
+      "startSeconds": 373.038,
+      "endSeconds": 376.62,
+      "text": "第八名，技能訓練可能成為青年與企業共同投資的籌碼。",
+      "displayText": "第八名，技能訓練可能成為青年與企業共同投資的籌碼。",
+      "displaySegments": [
+        {
+          "text": "第八名，技能訓練可能成為青年與企業共同投資的籌碼。",
+          "startSeconds": 373.038,
+          "endSeconds": 376.62,
+          "id": "S052-01",
+          "cueId": "S052",
+          "sequence": 52,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 11191,
+      "endFrame": 11299
+    },
+    {
+      "id": "S053",
+      "sequence": 53,
+      "startTimecode": "00:06:16,800",
+      "endTimecode": "00:06:21,238",
+      "startSeconds": 376.8,
+      "endSeconds": 381.238,
+      "text": "若人才較難補足，企業可能更重視培訓和留任；",
+      "displayText": "若人才較難補足，企業可能更重視培訓和留任；",
+      "displaySegments": [
+        {
+          "text": "若人才較難補足，企業可能更重視培訓和留任；",
+          "startSeconds": 376.8,
+          "endSeconds": 381.238,
+          "id": "S053-01",
+          "cueId": "S053",
+          "sequence": 53,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 11304,
+      "endFrame": 11437
+    },
+    {
+      "id": "S054",
+      "sequence": 54,
+      "startTimecode": "00:06:21,238",
+      "endTimecode": "00:06:28,000",
+      "startSeconds": 381.238,
+      "endSeconds": 388.0,
+      "text": "但訓練機會不會自動平均分配，青年仍需要時間、課程資訊和主管支持。",
+      "displayText": "但訓練機會不會自動平均分配，青年仍需要時間、課程資訊和主管支持。",
+      "displaySegments": [
+        {
+          "text": "但訓練機會不會自動平均分配，青年仍需要時間、課程資訊和主管支持。",
+          "startSeconds": 381.238,
+          "endSeconds": 388.0,
+          "id": "S054-01",
+          "cueId": "S054",
+          "sequence": 54,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 11437,
+      "endFrame": 11640
+    },
+    {
+      "id": "S055",
+      "sequence": 55,
+      "startTimecode": "00:06:28,000",
+      "endTimecode": "00:06:40,680",
+      "startSeconds": 388.0,
+      "endSeconds": 400.68,
+      "text": "勞動部的 2025 年青年勞動統計指出，15 歲到 29 歲青年近一年參加教育訓練的比率為 72%，其中以專門知識及技術訓練最常見。",
+      "displayText": "勞動部的 2025 年青年勞動統計指出，15 歲到 29 歲青年近一年參加教育訓練的比率為 72%，其中以專門知識及技術訓練最常見。",
+      "displaySegments": [
+        {
+          "text": "勞動部的 2025 年青年勞動統計指出，15 歲到 29 歲青年近一年參加教育訓練的比率為 72%，其中以專門知識及技術訓練最常見。",
+          "startSeconds": 388.0,
+          "endSeconds": 400.68,
+          "id": "S055-01",
+          "cueId": "S055",
+          "sequence": 55,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 11640,
+      "endFrame": 12020
+    },
+    {
+      "id": "S056",
+      "sequence": 56,
+      "startTimecode": "00:06:40,860",
+      "endTimecode": "00:06:51,236",
+      "startSeconds": 400.86,
+      "endSeconds": 411.236,
+      "text": "這說明職場學習正在發生，卻不能證明稀缺人口直接造成訓練增加，也不代表每一門課都能換成升遷或加薪。",
+      "displayText": "這說明職場學習正在發生，卻不能證明稀缺人口直接造成訓練增加，也不代表每一門課都能換成升遷或加薪。",
+      "displaySegments": [
+        {
+          "text": "這說明職場學習正在發生，卻不能證明稀缺人口直接造成訓練增加，也不代表每一門課都能換成升遷或加薪。",
+          "startSeconds": 400.86,
+          "endSeconds": 411.236,
+          "id": "S056-01",
+          "cueId": "S056",
+          "sequence": 56,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 12026,
+      "endFrame": 12337
+    },
+    {
+      "id": "S057",
+      "sequence": 57,
+      "startTimecode": "00:06:51,236",
+      "endTimecode": "00:07:02,260",
+      "startSeconds": 411.236,
+      "endSeconds": 422.26,
+      "text": "情境化案例：一位設備技術員利用公司提供的訓練，學會新型設備維護與故障判讀，之後能獨立處理更複雜的工作。",
+      "displayText": "情境化案例：一位設備技術員利用公司提供的訓練，學會新型設備維護與故障判讀，之後能獨立處理更複雜的工作。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一位設備技術員利用公司提供的訓練，學會新型設備維護與故障判讀，之後能獨立處理更複雜的工作。",
+          "startSeconds": 411.236,
+          "endSeconds": 422.26,
+          "id": "S057-01",
+          "cueId": "S057",
+          "sequence": 57,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 12337,
+      "endFrame": 12668
+    },
+    {
+      "id": "S058",
+      "sequence": 58,
+      "startTimecode": "00:07:02,440",
+      "endTimecode": "00:07:12,760",
+      "startSeconds": 422.44,
+      "endSeconds": 432.76,
+      "text": "訓練的價值不只在證書，而在能否把知識用在實際問題上，也要看雇主是否提供練習與職務空間。",
+      "displayText": "訓練的價值不只在證書，而在能否把知識用在實際問題上，也要看雇主是否提供練習與職務空間。",
+      "displaySegments": [
+        {
+          "text": "訓練的價值不只在證書，而在能否把知識用在實際問題上，也要看雇主是否提供練習與職務空間。",
+          "startSeconds": 422.44,
+          "endSeconds": 432.76,
+          "id": "S058-01",
+          "cueId": "S058",
+          "sequence": 58,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 12673,
+      "endFrame": 12983
+    },
+    {
+      "id": "S059",
+      "sequence": 59,
+      "startTimecode": "00:07:12,760",
+      "endTimecode": "00:07:22,600",
+      "startSeconds": 432.76,
+      "endSeconds": 442.6,
+      "text": "若課程要下班後自費完成，或訓練後沒有機會實際操作，投入成本就可能由青年單方面承擔。",
+      "displayText": "若課程要下班後自費完成，或訓練後沒有機會實際操作，投入成本就可能由青年單方面承擔。",
+      "displaySegments": [
+        {
+          "text": "若課程要下班後自費完成，或訓練後沒有機會實際操作，投入成本就可能由青年單方面承擔。",
+          "startSeconds": 432.76,
+          "endSeconds": 442.6,
+          "id": "S059-01",
+          "cueId": "S059",
+          "sequence": 59,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 12983,
+      "endFrame": 13278
+    },
+    {
+      "id": "S060",
+      "sequence": 60,
+      "startTimecode": "00:07:22,780",
+      "endTimecode": "00:07:27,851",
+      "startSeconds": 442.78,
+      "endSeconds": 447.851,
+      "text": "公平的培訓安排，也包括可用的時間和後續職涯路徑。",
+      "displayText": "公平的培訓安排，也包括可用的時間和後續職涯路徑。",
+      "displaySegments": [
+        {
+          "text": "公平的培訓安排，也包括可用的時間和後續職涯路徑。",
+          "startSeconds": 442.78,
+          "endSeconds": 447.851,
+          "id": "S060-01",
+          "cueId": "S060",
+          "sequence": 60,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 13283,
+      "endFrame": 13436
+    },
+    {
+      "id": "S061",
+      "sequence": 61,
+      "startTimecode": "00:07:27,851",
+      "endTimecode": "00:07:32,499",
+      "startSeconds": 447.851,
+      "endSeconds": 452.499,
+      "text": "第七名，年輕員工可能更早承接跨職能專案責任。",
+      "displayText": "第七名，年輕員工可能更早承接跨職能專案責任。",
+      "displaySegments": [
+        {
+          "text": "第七名，年輕員工可能更早承接跨職能專案責任。",
+          "startSeconds": 447.851,
+          "endSeconds": 452.499,
+          "id": "S061-01",
+          "cueId": "S061",
+          "sequence": 61,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 13436,
+      "endFrame": 13575
+    },
+    {
+      "id": "S062",
+      "sequence": 62,
+      "startTimecode": "00:07:32,499",
+      "endTimecode": "00:07:39,260",
+      "startSeconds": 452.499,
+      "endSeconds": 459.26,
+      "text": "當團隊人數有限，企業有時需要同一位員工協調客戶、數據和現場流程。",
+      "displayText": "當團隊人數有限，企業有時需要同一位員工協調客戶、數據和現場流程。",
+      "displaySegments": [
+        {
+          "text": "當團隊人數有限，企業有時需要同一位員工協調客戶、數據和現場流程。",
+          "startSeconds": 452.499,
+          "endSeconds": 459.26,
+          "id": "S062-01",
+          "cueId": "S062",
+          "sequence": 62,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 13575,
+      "endFrame": 13778
+    },
+    {
+      "id": "S063",
+      "sequence": 63,
+      "startTimecode": "00:07:39,440",
+      "endTimecode": "00:07:48,903",
+      "startSeconds": 459.44,
+      "endSeconds": 468.903,
+      "text": "這可能累積管理經驗，也可能只是工作量增加，所以要問清楚責任、資源和報酬是否同步。",
+      "displayText": "這可能累積管理經驗，也可能只是工作量增加，所以要問清楚責任、資源和報酬是否同步。",
+      "displaySegments": [
+        {
+          "text": "這可能累積管理經驗，也可能只是工作量增加，所以要問清楚責任、資源和報酬是否同步。",
+          "startSeconds": 459.44,
+          "endSeconds": 468.903,
+          "id": "S063-01",
+          "cueId": "S063",
+          "sequence": 63,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 13783,
+      "endFrame": 14067
+    },
+    {
+      "id": "S064",
+      "sequence": 64,
+      "startTimecode": "00:07:48,903",
+      "endTimecode": "00:07:58,840",
+      "startSeconds": 468.903,
+      "endSeconds": 478.84,
+      "text": "目前官方統計沒有直接回答「九年級生幾歲開始帶專案」或「因缺青年而提早升遷」這類問題。",
+      "displayText": "目前官方統計沒有直接回答「九年級生幾歲開始帶專案」或「因缺青年而提早升遷」這類問題。",
+      "displaySegments": [
+        {
+          "text": "目前官方統計沒有直接回答「九年級生幾歲開始帶專案」或「因缺青年而提早升遷」這類問題。",
+          "startSeconds": 468.903,
+          "endSeconds": 478.84,
+          "id": "S064-01",
+          "cueId": "S064",
+          "sequence": 64,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 14067,
+      "endFrame": 14365
+    },
+    {
+      "id": "S065",
+      "sequence": 65,
+      "startTimecode": "00:07:59,020",
+      "endTimecode": "00:08:08,534",
+      "startSeconds": 479.02,
+      "endSeconds": 488.534,
+      "text": "因此，這一名的升遷證據不足，人口結構和企業招募資料只能當間接背景，不能寫成確定趨勢。",
+      "displayText": "因此，這一名的升遷證據不足，人口結構和企業招募資料只能當間接背景，不能寫成確定趨勢。",
+      "displaySegments": [
+        {
+          "text": "因此，這一名的升遷證據不足，人口結構和企業招募資料只能當間接背景，不能寫成確定趨勢。",
+          "startSeconds": 479.02,
+          "endSeconds": 488.534,
+          "id": "S065-01",
+          "cueId": "S065",
+          "sequence": 65,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 14371,
+      "endFrame": 14656
+    },
+    {
+      "id": "S066",
+      "sequence": 66,
+      "startTimecode": "00:08:08,534",
+      "endTimecode": "00:08:18,500",
+      "startSeconds": 488.534,
+      "endSeconds": 498.5,
+      "text": "情境化案例：一位青年被安排協調新服務上線，負責排進度、處理部門溝通，也要向主管回報風險。",
+      "displayText": "情境化案例：一位青年被安排協調新服務上線，負責排進度、處理部門溝通，也要向主管回報風險。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一位青年被安排協調新服務上線，負責排進度、處理部門溝通，也要向主管回報風險。",
+          "startSeconds": 488.534,
+          "endSeconds": 498.5,
+          "id": "S066-01",
+          "cueId": "S066",
+          "sequence": 66,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 14656,
+      "endFrame": 14955
+    },
+    {
+      "id": "S067",
+      "sequence": 67,
+      "startTimecode": "00:08:18,680",
+      "endTimecode": "00:08:25,471",
+      "startSeconds": 498.68,
+      "endSeconds": 505.471,
+      "text": "他可以藉此累積專案經驗，但最好確認決策權、工時和績效評估方式。",
+      "displayText": "他可以藉此累積專案經驗，但最好確認決策權、工時和績效評估方式。",
+      "displaySegments": [
+        {
+          "text": "他可以藉此累積專案經驗，但最好確認決策權、工時和績效評估方式。",
+          "startSeconds": 498.68,
+          "endSeconds": 505.471,
+          "id": "S067-01",
+          "cueId": "S067",
+          "sequence": 67,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 14960,
+      "endFrame": 15164
+    },
+    {
+      "id": "S068",
+      "sequence": 68,
+      "startTimecode": "00:08:25,471",
+      "endTimecode": "00:08:28,758",
+      "startSeconds": 505.471,
+      "endSeconds": 508.758,
+      "text": "多接一項責任，不必然等於升遷；",
+      "displayText": "多接一項責任，不必然等於升遷；",
+      "displaySegments": [
+        {
+          "text": "多接一項責任，不必然等於升遷；",
+          "startSeconds": 505.471,
+          "endSeconds": 508.758,
+          "id": "S068-01",
+          "cueId": "S068",
+          "sequence": 68,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 15164,
+      "endFrame": 15263
+    },
+    {
+      "id": "S069",
+      "sequence": 69,
+      "startTimecode": "00:08:28,758",
+      "endTimecode": "00:08:32,920",
+      "startSeconds": 508.758,
+      "endSeconds": 512.92,
+      "text": "能留下成果，才有機會成為下一步的依據。",
+      "displayText": "能留下成果，才有機會成為下一步的依據。",
+      "displaySegments": [
+        {
+          "text": "能留下成果，才有機會成為下一步的依據。",
+          "startSeconds": 508.758,
+          "endSeconds": 512.92,
+          "id": "S069-01",
+          "cueId": "S069",
+          "sequence": 69,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 15263,
+      "endFrame": 15388
+    },
+    {
+      "id": "S070",
+      "sequence": 70,
+      "startTimecode": "00:08:33,100",
+      "endTimecode": "00:08:37,154",
+      "startSeconds": 513.1,
+      "endSeconds": 517.154,
+      "text": "第六名，職務內容可能比職稱更快擴大。",
+      "displayText": "第六名，職務內容可能比職稱更快擴大。",
+      "displaySegments": [
+        {
+          "text": "第六名，職務內容可能比職稱更快擴大。",
+          "startSeconds": 513.1,
+          "endSeconds": 517.154,
+          "id": "S070-01",
+          "cueId": "S070",
+          "sequence": 70,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 15393,
+      "endFrame": 15515
+    },
+    {
+      "id": "S071",
+      "sequence": 71,
+      "startTimecode": "00:08:37,154",
+      "endTimecode": "00:08:47,740",
+      "startSeconds": 517.154,
+      "endSeconds": 527.74,
+      "text": "人口結構改變會讓企業重新設計流程，部分青年可能同時接觸數位工具、顧客服務、品質管理或現場協作。",
+      "displayText": "人口結構改變會讓企業重新設計流程，部分青年可能同時接觸數位工具、顧客服務、品質管理或現場協作。",
+      "displaySegments": [
+        {
+          "text": "人口結構改變會讓企業重新設計流程，部分青年可能同時接觸數位工具、顧客服務、品質管理或現場協作。",
+          "startSeconds": 517.154,
+          "endSeconds": 527.74,
+          "id": "S071-01",
+          "cueId": "S071",
+          "sequence": 71,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 15515,
+      "endFrame": 15832
+    },
+    {
+      "id": "S072",
+      "sequence": 72,
+      "startTimecode": "00:08:47,920",
+      "endTimecode": "00:08:55,396",
+      "startSeconds": 527.92,
+      "endSeconds": 535.396,
+      "text": "這種「工作內容長出新枝」的機會，往往不會立刻反映在一個正式的新職稱上。",
+      "displayText": "這種「工作內容長出新枝」的機會，往往不會立刻反映在一個正式的新職稱上。",
+      "displaySegments": [
+        {
+          "text": "這種「工作內容長出新枝」的機會，往往不會立刻反映在一個正式的新職稱上。",
+          "startSeconds": 527.92,
+          "endSeconds": 535.396,
+          "id": "S072-01",
+          "cueId": "S072",
+          "sequence": 72,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 15838,
+      "endFrame": 16062
+    },
+    {
+      "id": "S073",
+      "sequence": 73,
+      "startTimecode": "00:08:55,396",
+      "endTimecode": "00:08:59,668",
+      "startSeconds": 535.396,
+      "endSeconds": 539.668,
+      "text": "但任務增加也可能變成無償加班或職責模糊。",
+      "displayText": "但任務增加也可能變成無償加班或職責模糊。",
+      "displaySegments": [
+        {
+          "text": "但任務增加也可能變成無償加班或職責模糊。",
+          "startSeconds": 535.396,
+          "endSeconds": 539.668,
+          "id": "S073-01",
+          "cueId": "S073",
+          "sequence": 73,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 16062,
+      "endFrame": 16190
+    },
+    {
+      "id": "S074",
+      "sequence": 74,
+      "startTimecode": "00:08:59,668",
+      "endTimecode": "00:09:09,280",
+      "startSeconds": 539.668,
+      "endSeconds": 549.28,
+      "text": "青年要學會記錄工作成果、確認誰負責決策、哪些任務需要訓練，以及職務擴張是否納入薪資和考核。",
+      "displayText": "青年要學會記錄工作成果、確認誰負責決策、哪些任務需要訓練，以及職務擴張是否納入薪資和考核。",
+      "displaySegments": [
+        {
+          "text": "青年要學會記錄工作成果、確認誰負責決策、哪些任務需要訓練，以及職務擴張是否納入薪資和考核。",
+          "startSeconds": 539.668,
+          "endSeconds": 549.28,
+          "id": "S074-01",
+          "cueId": "S074",
+          "sequence": 74,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 16190,
+      "endFrame": 16478
+    },
+    {
+      "id": "S075",
+      "sequence": 75,
+      "startTimecode": "00:09:09,460",
+      "endTimecode": "00:09:15,956",
+      "startSeconds": 549.46,
+      "endSeconds": 555.956,
+      "text": "企業若只把人力不足轉嫁給現有人員，這就不是紅利，而是負擔。",
+      "displayText": "企業若只把人力不足轉嫁給現有人員，這就不是紅利，而是負擔。",
+      "displaySegments": [
+        {
+          "text": "企業若只把人力不足轉嫁給現有人員，這就不是紅利，而是負擔。",
+          "startSeconds": 549.46,
+          "endSeconds": 555.956,
+          "id": "S075-01",
+          "cueId": "S075",
+          "sequence": 75,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 16484,
+      "endFrame": 16679
+    },
+    {
+      "id": "S076",
+      "sequence": 76,
+      "startTimecode": "00:09:15,956",
+      "endTimecode": "00:09:25,140",
+      "startSeconds": 555.956,
+      "endSeconds": 565.14,
+      "text": "情境化案例：一位小型企業的行銷助理，逐漸參與顧客資料分析、網路客服和廣告成效追蹤。",
+      "displayText": "情境化案例：一位小型企業的行銷助理，逐漸參與顧客資料分析、網路客服和廣告成效追蹤。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一位小型企業的行銷助理，逐漸參與顧客資料分析、網路客服和廣告成效追蹤。",
+          "startSeconds": 555.956,
+          "endSeconds": 565.14,
+          "id": "S076-01",
+          "cueId": "S076",
+          "sequence": 76,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 16679,
+      "endFrame": 16954
+    },
+    {
+      "id": "S077",
+      "sequence": 77,
+      "startTimecode": "00:09:25,320",
+      "endTimecode": "00:09:30,984",
+      "startSeconds": 565.32,
+      "endSeconds": 570.984,
+      "text": "他若能把流程改善成效量化，可能爭取更清楚的職務定位；",
+      "displayText": "他若能把流程改善成效量化，可能爭取更清楚的職務定位；",
+      "displaySegments": [
+        {
+          "text": "他若能把流程改善成效量化，可能爭取更清楚的職務定位；",
+          "startSeconds": 565.32,
+          "endSeconds": 570.984,
+          "id": "S077-01",
+          "cueId": "S077",
+          "sequence": 77,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 16960,
+      "endFrame": 17130
+    },
+    {
+      "id": "S078",
+      "sequence": 78,
+      "startTimecode": "00:09:30,984",
+      "endTimecode": "00:09:36,865",
+      "startSeconds": 570.984,
+      "endSeconds": 576.865,
+      "text": "如果只是多做幾項零散工作，則需要和主管談清楚優先順序。",
+      "displayText": "如果只是多做幾項零散工作，則需要和主管談清楚優先順序。",
+      "displaySegments": [
+        {
+          "text": "如果只是多做幾項零散工作，則需要和主管談清楚優先順序。",
+          "startSeconds": 570.984,
+          "endSeconds": 576.865,
+          "id": "S078-01",
+          "cueId": "S078",
+          "sequence": 78,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 17130,
+      "endFrame": 17306
+    },
+    {
+      "id": "S079",
+      "sequence": 79,
+      "startTimecode": "00:09:36,865",
+      "endTimecode": "00:09:41,440",
+      "startSeconds": 576.865,
+      "endSeconds": 581.44,
+      "text": "第五名，人才稀缺可能讓雇主更重視留才條件。",
+      "displayText": "第五名，人才稀缺可能讓雇主更重視留才條件。",
+      "displaySegments": [
+        {
+          "text": "第五名，人才稀缺可能讓雇主更重視留才條件。",
+          "startSeconds": 576.865,
+          "endSeconds": 581.44,
+          "id": "S079-01",
+          "cueId": "S079",
+          "sequence": 79,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 17306,
+      "endFrame": 17443
+    },
+    {
+      "id": "S080",
+      "sequence": 80,
+      "startTimecode": "00:09:41,620",
+      "endTimecode": "00:09:50,882",
+      "startSeconds": 581.62,
+      "endSeconds": 590.882,
+      "text": "薪資只是其中之一，工作時間、訓練、彈性排班、主管溝通和職涯發展也會影響員工是否留下。",
+      "displayText": "薪資只是其中之一，工作時間、訓練、彈性排班、主管溝通和職涯發展也會影響員工是否留下。",
+      "displaySegments": [
+        {
+          "text": "薪資只是其中之一，工作時間、訓練、彈性排班、主管溝通和職涯發展也會影響員工是否留下。",
+          "startSeconds": 581.62,
+          "endSeconds": 590.882,
+          "id": "S080-01",
+          "cueId": "S080",
+          "sequence": 80,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 17449,
+      "endFrame": 17726
+    },
+    {
+      "id": "S081",
+      "sequence": 81,
+      "startTimecode": "00:09:50,882",
+      "endTimecode": "00:09:58,380",
+      "startSeconds": 590.882,
+      "endSeconds": 598.38,
+      "text": "真正有利的情況，是企業把留才做成制度，而不是只在招不到人時短期加碼。",
+      "displayText": "真正有利的情況，是企業把留才做成制度，而不是只在招不到人時短期加碼。",
+      "displaySegments": [
+        {
+          "text": "真正有利的情況，是企業把留才做成制度，而不是只在招不到人時短期加碼。",
+          "startSeconds": 590.882,
+          "endSeconds": 598.38,
+          "id": "S081-01",
+          "cueId": "S081",
+          "sequence": 81,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 17726,
+      "endFrame": 17951
+    },
+    {
+      "id": "S082",
+      "sequence": 82,
+      "startTimecode": "00:09:58,560",
+      "endTimecode": "00:10:07,990",
+      "startSeconds": 598.56,
+      "endSeconds": 607.99,
+      "text": "勞動部 2026 年的職缺調查顯示，不同行業的職缺率、招募時間和員工流動情況並不相同。",
+      "displayText": "勞動部 2026 年的職缺調查顯示，不同行業的職缺率、招募時間和員工流動情況並不相同。",
+      "displaySegments": [
+        {
+          "text": "勞動部 2026 年的職缺調查顯示，不同行業的職缺率、招募時間和員工流動情況並不相同。",
+          "startSeconds": 598.56,
+          "endSeconds": 607.99,
+          "id": "S082-01",
+          "cueId": "S082",
+          "sequence": 82,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 17957,
+      "endFrame": 18240
+    },
+    {
+      "id": "S083",
+      "sequence": 83,
+      "startTimecode": "00:10:07,990",
+      "endTimecode": "00:10:18,800",
+      "startSeconds": 607.99,
+      "endSeconds": 618.8,
+      "text": "以住宿業為例，職缺率和招募時間都相對較高，但勞動部也指出，高流動率可能是職缺率偏高的原因之一。",
+      "displayText": "以住宿業為例，職缺率和招募時間都相對較高，但勞動部也指出，高流動率可能是職缺率偏高的原因之一。",
+      "displaySegments": [
+        {
+          "text": "以住宿業為例，職缺率和招募時間都相對較高，但勞動部也指出，高流動率可能是職缺率偏高的原因之一。",
+          "startSeconds": 607.99,
+          "endSeconds": 618.8,
+          "id": "S083-01",
+          "cueId": "S083",
+          "sequence": 83,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 18240,
+      "endFrame": 18564
+    },
+    {
+      "id": "S084",
+      "sequence": 84,
+      "startTimecode": "00:10:18,980",
+      "endTimecode": "00:10:26,163",
+      "startSeconds": 618.98,
+      "endSeconds": 626.163,
+      "text": "這提醒我們，招募困難有時不是缺少青年，而是工作條件讓人留不下來。",
+      "displayText": "這提醒我們，招募困難有時不是缺少青年，而是工作條件讓人留不下來。",
+      "displaySegments": [
+        {
+          "text": "這提醒我們，招募困難有時不是缺少青年，而是工作條件讓人留不下來。",
+          "startSeconds": 618.98,
+          "endSeconds": 626.163,
+          "id": "S084-01",
+          "cueId": "S084",
+          "sequence": 84,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 18569,
+      "endFrame": 18785
+    },
+    {
+      "id": "S085",
+      "sequence": 85,
+      "startTimecode": "00:10:26,163",
+      "endTimecode": "00:10:34,020",
+      "startSeconds": 626.163,
+      "endSeconds": 634.02,
+      "text": "情境化案例：一家店面原本反覆招人，後來改善排班、訓練和升任店長的標準。",
+      "displayText": "情境化案例：一家店面原本反覆招人，後來改善排班、訓練和升任店長的標準。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一家店面原本反覆招人，後來改善排班、訓練和升任店長的標準。",
+          "startSeconds": 626.163,
+          "endSeconds": 634.02,
+          "id": "S085-01",
+          "cueId": "S085",
+          "sequence": 85,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 18785,
+      "endFrame": 19021
+    },
+    {
+      "id": "S086",
+      "sequence": 86,
+      "startTimecode": "00:10:34,200",
+      "endTimecode": "00:10:43,155",
+      "startSeconds": 634.2,
+      "endSeconds": 643.155,
+      "text": "對青年而言，能否獲得穩定班表、合理工時與明確發展，比一時的招募獎金更能影響職涯。",
+      "displayText": "對青年而言，能否獲得穩定班表、合理工時與明確發展，比一時的招募獎金更能影響職涯。",
+      "displaySegments": [
+        {
+          "text": "對青年而言，能否獲得穩定班表、合理工時與明確發展，比一時的招募獎金更能影響職涯。",
+          "startSeconds": 634.2,
+          "endSeconds": 643.155,
+          "id": "S086-01",
+          "cueId": "S086",
+          "sequence": 86,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 19026,
+      "endFrame": 19295
+    },
+    {
+      "id": "S087",
+      "sequence": 87,
+      "startTimecode": "00:10:43,155",
+      "endTimecode": "00:10:49,200",
+      "startSeconds": 643.155,
+      "endSeconds": 649.2,
+      "text": "雇主競爭人才，若轉化成更好的制度，員工才可能真正受益。",
+      "displayText": "雇主競爭人才，若轉化成更好的制度，員工才可能真正受益。",
+      "displaySegments": [
+        {
+          "text": "雇主競爭人才，若轉化成更好的制度，員工才可能真正受益。",
+          "startSeconds": 643.155,
+          "endSeconds": 649.2,
+          "id": "S087-01",
+          "cueId": "S087",
+          "sequence": 87,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 19295,
+      "endFrame": 19476
+    },
+    {
+      "id": "S088",
+      "sequence": 88,
+      "startTimecode": "00:10:49,380",
+      "endTimecode": "00:10:55,833",
+      "startSeconds": 649.38,
+      "endSeconds": 655.833,
+      "text": "第四名，掌握專業技能的人可能有更清楚的薪資協商空間。",
+      "displayText": "第四名，掌握專業技能的人可能有更清楚的薪資協商空間。",
+      "displaySegments": [
+        {
+          "text": "第四名，掌握專業技能的人可能有更清楚的薪資協商空間。",
+          "startSeconds": 649.38,
+          "endSeconds": 655.833,
+          "id": "S088-01",
+          "cueId": "S088",
+          "sequence": 88,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 19481,
+      "endFrame": 19675
+    },
+    {
+      "id": "S089",
+      "sequence": 89,
+      "startTimecode": "00:10:55,833",
+      "endTimecode": "00:11:08,740",
+      "startSeconds": 655.833,
+      "endSeconds": 668.74,
+      "text": "勞動部 2024 年調查 15 歲到 29 歲、受僱且參加相關保險的本國籍青年，約 41%在應徵現職時曾提出薪資期望。",
+      "displayText": "勞動部 2024 年調查 15 歲到 29 歲、受僱且參加相關保險的本國籍青年，約 41%在應徵現職時曾提出薪資期望。",
+      "displaySegments": [
+        {
+          "text": "勞動部 2024 年調查 15 歲到 29 歲、受僱且參加相關保險的本國籍青年，約 41%在應徵現職時曾提出薪資期望。",
+          "startSeconds": 655.833,
+          "endSeconds": 668.74,
+          "id": "S089-01",
+          "cueId": "S089",
+          "sequence": 89,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 19675,
+      "endFrame": 20062
+    },
+    {
+      "id": "S090",
+      "sequence": 90,
+      "startTimecode": "00:11:08,920",
+      "endTimecode": "00:11:18,182",
+      "startSeconds": 668.92,
+      "endSeconds": 678.182,
+      "text": "這不是談薪一定成功的比例，但顯示一部分青年已開始把薪資行情放進求職對話。",
+      "displayText": "這不是談薪一定成功的比例，但顯示一部分青年已開始把薪資行情放進求職對話。",
+      "displaySegments": [
+        {
+          "text": "這不是談薪一定成功的比例，但顯示一部分青年已開始把薪資行情放進求職對話。",
+          "startSeconds": 668.92,
+          "endSeconds": 678.182,
+          "id": "S090-01",
+          "cueId": "S090",
+          "sequence": 90,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 20068,
+      "endFrame": 20345
+    },
+    {
+      "id": "S091",
+      "sequence": 91,
+      "startTimecode": "00:11:18,182",
+      "endTimecode": "00:11:29,760",
+      "startSeconds": 678.182,
+      "endSeconds": 689.76,
+      "text": "勞動部 2025 年青年勞動統計另顯示，納入勞退新制的青年全時工作者，年底平均月提繳工資約 4.",
+      "displayText": "勞動部 2025 年青年勞動統計另顯示，納入勞退新制的青年全時工作者，年底平均月提繳工資約 4.",
+      "displaySegments": [
+        {
+          "text": "勞動部 2025 年青年勞動統計另顯示，納入勞退新制的青年全時工作者，年底平均月提繳工資約 4.",
+          "startSeconds": 678.182,
+          "endSeconds": 689.76,
+          "id": "S091-01",
+          "cueId": "S091",
+          "sequence": 91,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 20345,
+      "endFrame": 20693
+    },
+    {
+      "id": "S092",
+      "sequence": 92,
+      "startTimecode": "00:11:29,940",
+      "endTimecode": "00:11:30,896",
+      "startSeconds": 689.94,
+      "endSeconds": 690.896,
+      "text": "2 萬元；",
+      "displayText": "2 萬元；",
+      "displaySegments": [
+        {
+          "text": "2 萬元；",
+          "startSeconds": 689.94,
+          "endSeconds": 690.896,
+          "id": "S092-01",
+          "cueId": "S092",
+          "sequence": 92,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 20698,
+      "endFrame": 20727
+    },
+    {
+      "id": "S093",
+      "sequence": 93,
+      "startTimecode": "00:11:30,896",
+      "endTimecode": "00:11:32,090",
+      "startSeconds": 690.896,
+      "endSeconds": 692.09,
+      "text": "其中 27.",
+      "displayText": "其中 27.",
+      "displaySegments": [
+        {
+          "text": "其中 27.",
+          "startSeconds": 690.896,
+          "endSeconds": 692.09,
+          "id": "S093-01",
+          "cueId": "S093",
+          "sequence": 93,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 20727,
+      "endFrame": 20763
+    },
+    {
+      "id": "S094",
+      "sequence": 94,
+      "startTimecode": "00:11:32,090",
+      "endTimecode": "00:11:36,390",
+      "startSeconds": 692.09,
+      "endSeconds": 696.39,
+      "text": "2% 的月提繳工資在 3 萬元以下，38.",
+      "displayText": "2% 的月提繳工資在 3 萬元以下，38.",
+      "displaySegments": [
+        {
+          "text": "2% 的月提繳工資在 3 萬元以下，38.",
+          "startSeconds": 692.09,
+          "endSeconds": 696.39,
+          "id": "S094-01",
+          "cueId": "S094",
+          "sequence": 94,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 20763,
+      "endFrame": 20892
+    },
+    {
+      "id": "S095",
+      "sequence": 95,
+      "startTimecode": "00:11:36,390",
+      "endTimecode": "00:11:38,540",
+      "startSeconds": 696.39,
+      "endSeconds": 698.54,
+      "text": "5% 在 4 萬元以上。",
+      "displayText": "5% 在 4 萬元以上。",
+      "displaySegments": [
+        {
+          "text": "5% 在 4 萬元以上。",
+          "startSeconds": 696.39,
+          "endSeconds": 698.54,
+          "id": "S095-01",
+          "cueId": "S095",
+          "sequence": 95,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 20892,
+      "endFrame": 20956
+    },
+    {
+      "id": "S096",
+      "sequence": 96,
+      "startTimecode": "00:11:38,540",
+      "endTimecode": "00:11:47,140",
+      "startSeconds": 698.54,
+      "endSeconds": 707.14,
+      "text": "這是提繳工資級距，不是所有青年實領薪資，也不能外推成 30 歲時的保證待遇。",
+      "displayText": "這是提繳工資級距，不是所有青年實領薪資，也不能外推成 30 歲時的保證待遇。",
+      "displaySegments": [
+        {
+          "text": "這是提繳工資級距，不是所有青年實領薪資，也不能外推成 30 歲時的保證待遇。",
+          "startSeconds": 698.54,
+          "endSeconds": 707.14,
+          "id": "S096-01",
+          "cueId": "S096",
+          "sequence": 96,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 20956,
+      "endFrame": 21214
+    },
+    {
+      "id": "S097",
+      "sequence": 97,
+      "startTimecode": "00:11:47,320",
+      "endTimecode": "00:11:58,120",
+      "startSeconds": 707.32,
+      "endSeconds": 718.12,
+      "text": "同一調查中，青年表示曾在現職獲得加薪者約 72%，常見原因包含公司全面調薪和個人表現良好。",
+      "displayText": "同一調查中，青年表示曾在現職獲得加薪者約 72%，常見原因包含公司全面調薪和個人表現良好。",
+      "displaySegments": [
+        {
+          "text": "同一調查中，青年表示曾在現職獲得加薪者約 72%，常見原因包含公司全面調薪和個人表現良好。",
+          "startSeconds": 707.32,
+          "endSeconds": 718.12,
+          "id": "S097-01",
+          "cueId": "S097",
+          "sequence": 97,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 21220,
+      "endFrame": 21544
+    },
+    {
+      "id": "S098",
+      "sequence": 98,
+      "startTimecode": "00:11:58,120",
+      "endTimecode": "00:12:03,520",
+      "startSeconds": 718.12,
+      "endSeconds": 723.52,
+      "text": "這些是調查中的經驗，不代表人口變少造成加薪。",
+      "displayText": "這些是調查中的經驗，不代表人口變少造成加薪。",
+      "displaySegments": [
+        {
+          "text": "這些是調查中的經驗，不代表人口變少造成加薪。",
+          "startSeconds": 718.12,
+          "endSeconds": 723.52,
+          "id": "S098-01",
+          "cueId": "S098",
+          "sequence": 98,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 21544,
+      "endFrame": 21706
+    },
+    {
+      "id": "S099",
+      "sequence": 99,
+      "startTimecode": "00:12:03,700",
+      "endTimecode": "00:12:12,241",
+      "startSeconds": 723.7,
+      "endSeconds": 732.241,
+      "text": "要有談判空間，仍需要了解市場行情、拿得出工作成果，也要看雇主的薪酬制度。",
+      "displayText": "要有談判空間，仍需要了解市場行情、拿得出工作成果，也要看雇主的薪酬制度。",
+      "displaySegments": [
+        {
+          "text": "要有談判空間，仍需要了解市場行情、拿得出工作成果，也要看雇主的薪酬制度。",
+          "startSeconds": 723.7,
+          "endSeconds": 732.241,
+          "id": "S099-01",
+          "cueId": "S099",
+          "sequence": 99,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 21711,
+      "endFrame": 21967
+    },
+    {
+      "id": "S100",
+      "sequence": 100,
+      "startTimecode": "00:12:12,241",
+      "endTimecode": "00:12:21,020",
+      "startSeconds": 732.241,
+      "endSeconds": 741.02,
+      "text": "談薪不只是提出一個數字，也可以詢問薪資級距、獎金條件、調薪週期和職務責任。",
+      "displayText": "談薪不只是提出一個數字，也可以詢問薪資級距、獎金條件、調薪週期和職務責任。",
+      "displaySegments": [
+        {
+          "text": "談薪不只是提出一個數字，也可以詢問薪資級距、獎金條件、調薪週期和職務責任。",
+          "startSeconds": 732.241,
+          "endSeconds": 741.02,
+          "id": "S100-01",
+          "cueId": "S100",
+          "sequence": 100,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 21967,
+      "endFrame": 22231
+    },
+    {
+      "id": "S101",
+      "sequence": 101,
+      "startTimecode": "00:12:21,200",
+      "endTimecode": "00:12:28,132",
+      "startSeconds": 741.2,
+      "endSeconds": 748.132,
+      "text": "若雇主不能立即調薪，仍可談訓練、職務發展或重新檢視的時間點。",
+      "displayText": "若雇主不能立即調薪，仍可談訓練、職務發展或重新檢視的時間點。",
+      "displaySegments": [
+        {
+          "text": "若雇主不能立即調薪，仍可談訓練、職務發展或重新檢視的時間點。",
+          "startSeconds": 741.2,
+          "endSeconds": 748.132,
+          "id": "S101-01",
+          "cueId": "S101",
+          "sequence": 101,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 22236,
+      "endFrame": 22444
+    },
+    {
+      "id": "S102",
+      "sequence": 102,
+      "startTimecode": "00:12:28,132",
+      "endTimecode": "00:12:42,920",
+      "startSeconds": 748.132,
+      "endSeconds": 762.92,
+      "text": "情境化案例：一位資料分析師在年度面談前，整理自己改善的流程、節省的時間和新學會的工具，再參考相近職類薪資，和主管討論職責與待遇。",
+      "displayText": "情境化案例：一位資料分析師在年度面談前，整理自己改善的流程、節省的時間和新學會的工具，再參考相近職類薪資，和主管討論職責與待遇。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一位資料分析師在年度面談前，整理自己改善的流程、節省的時間和新學會的工具，再參考相近職類薪資，和主管討論職責與待遇。",
+          "startSeconds": 748.132,
+          "endSeconds": 762.92,
+          "id": "S102-01",
+          "cueId": "S102",
+          "sequence": 102,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 22444,
+      "endFrame": 22888
+    },
+    {
+      "id": "S103",
+      "sequence": 103,
+      "startTimecode": "00:12:43,100",
+      "endTimecode": "00:12:52,209",
+      "startSeconds": 763.1,
+      "endSeconds": 772.209,
+      "text": "若公司沒有加薪預算，談話也能釐清升級條件或下一步職務，而不是只憑「年輕人不好找」作為理由。",
+      "displayText": "若公司沒有加薪預算，談話也能釐清升級條件或下一步職務，而不是只憑「年輕人不好找」作為理由。",
+      "displaySegments": [
+        {
+          "text": "若公司沒有加薪預算，談話也能釐清升級條件或下一步職務，而不是只憑「年輕人不好找」作為理由。",
+          "startSeconds": 763.1,
+          "endSeconds": 772.209,
+          "id": "S103-01",
+          "cueId": "S103",
+          "sequence": 103,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 22893,
+      "endFrame": 23166
+    },
+    {
+      "id": "S104",
+      "sequence": 104,
+      "startTimecode": "00:12:52,209",
+      "endTimecode": "00:12:56,460",
+      "startSeconds": 772.209,
+      "endSeconds": 776.46,
+      "text": "第三名，資深同事的知識與工作任務需要傳承。",
+      "displayText": "第三名，資深同事的知識與工作任務需要傳承。",
+      "displaySegments": [
+        {
+          "text": "第三名，資深同事的知識與工作任務需要傳承。",
+          "startSeconds": 772.209,
+          "endSeconds": 776.46,
+          "id": "S104-01",
+          "cueId": "S104",
+          "sequence": 104,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 23166,
+      "endFrame": 23294
+    },
+    {
+      "id": "S105",
+      "sequence": 105,
+      "startTimecode": "00:12:56,640",
+      "endTimecode": "00:13:04,235",
+      "startSeconds": 776.64,
+      "endSeconds": 784.235,
+      "text": "國發會最新推估指出，台灣工作年齡人口占比將持續下降，而高齡人口占比上升。",
+      "displayText": "國發會最新推估指出，台灣工作年齡人口占比將持續下降，而高齡人口占比上升。",
+      "displaySegments": [
+        {
+          "text": "國發會最新推估指出，台灣工作年齡人口占比將持續下降，而高齡人口占比上升。",
+          "startSeconds": 776.64,
+          "endSeconds": 784.235,
+          "id": "S105-01",
+          "cueId": "S105",
+          "sequence": 105,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 23299,
+      "endFrame": 23527
+    },
+    {
+      "id": "S106",
+      "sequence": 106,
+      "startTimecode": "00:13:04,235",
+      "endTimecode": "00:13:09,720",
+      "startSeconds": 784.235,
+      "endSeconds": 789.72,
+      "text": "勞動部也記錄到部分行業青年就業人數與職缺狀況的變化。",
+      "displayText": "勞動部也記錄到部分行業青年就業人數與職缺狀況的變化。",
+      "displaySegments": [
+        {
+          "text": "勞動部也記錄到部分行業青年就業人數與職缺狀況的變化。",
+          "startSeconds": 784.235,
+          "endSeconds": 789.72,
+          "id": "S106-01",
+          "cueId": "S106",
+          "sequence": 106,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 23527,
+      "endFrame": 23692
+    },
+    {
+      "id": "S107",
+      "sequence": 107,
+      "startTimecode": "00:13:09,900",
+      "endTimecode": "00:13:18,188",
+      "startSeconds": 789.9,
+      "endSeconds": 798.188,
+      "text": "這些資料使知識傳承成為重要議題，但沒有直接證明特定企業會因此讓青年升遷。",
+      "displayText": "這些資料使知識傳承成為重要議題，但沒有直接證明特定企業會因此讓青年升遷。",
+      "displaySegments": [
+        {
+          "text": "這些資料使知識傳承成為重要議題，但沒有直接證明特定企業會因此讓青年升遷。",
+          "startSeconds": 789.9,
+          "endSeconds": 798.188,
+          "id": "S107-01",
+          "cueId": "S107",
+          "sequence": 107,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 23697,
+      "endFrame": 23946
+    },
+    {
+      "id": "S108",
+      "sequence": 108,
+      "startTimecode": "00:13:18,188",
+      "endTimecode": "00:13:30,620",
+      "startSeconds": 798.188,
+      "endSeconds": 810.62,
+      "text": "情境化案例：一位新進工程師與即將退休的資深技師共同處理設備維修，除了學操作，也把故障判斷步驟整理成工作手冊。",
+      "displayText": "情境化案例：一位新進工程師與即將退休的資深技師共同處理設備維修，除了學操作，也把故障判斷步驟整理成工作手冊。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一位新進工程師與即將退休的資深技師共同處理設備維修，除了學操作，也把故障判斷步驟整理成工作手冊。",
+          "startSeconds": 798.188,
+          "endSeconds": 810.62,
+          "id": "S108-01",
+          "cueId": "S108",
+          "sequence": 108,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 23946,
+      "endFrame": 24319
+    },
+    {
+      "id": "S109",
+      "sequence": 109,
+      "startTimecode": "00:13:30,800",
+      "endTimecode": "00:13:34,040",
+      "startSeconds": 810.8,
+      "endSeconds": 814.04,
+      "text": "傳承需要時間、信任和正式安排；",
+      "displayText": "傳承需要時間、信任和正式安排；",
+      "displaySegments": [
+        {
+          "text": "傳承需要時間、信任和正式安排；",
+          "startSeconds": 810.8,
+          "endSeconds": 814.04,
+          "id": "S109-01",
+          "cueId": "S109",
+          "sequence": 109,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 24324,
+      "endFrame": 24421
+    },
+    {
+      "id": "S110",
+      "sequence": 110,
+      "startTimecode": "00:13:34,040",
+      "endTimecode": "00:13:43,112",
+      "startSeconds": 814.04,
+      "endSeconds": 823.112,
+      "text": "如果只有把責任交出去，沒有師徒訓練與交接工時，青年承擔的就可能是風險，而非發展機會。",
+      "displayText": "如果只有把責任交出去，沒有師徒訓練與交接工時，青年承擔的就可能是風險，而非發展機會。",
+      "displaySegments": [
+        {
+          "text": "如果只有把責任交出去，沒有師徒訓練與交接工時，青年承擔的就可能是風險，而非發展機會。",
+          "startSeconds": 814.04,
+          "endSeconds": 823.112,
+          "id": "S110-01",
+          "cueId": "S110",
+          "sequence": 110,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 24421,
+      "endFrame": 24693
+    },
+    {
+      "id": "S111",
+      "sequence": 111,
+      "startTimecode": "00:13:43,112",
+      "endTimecode": "00:13:48,080",
+      "startSeconds": 823.112,
+      "endSeconds": 828.08,
+      "text": "第二名，企業接班與中階管理的入口可能提早打開。",
+      "displayText": "第二名，企業接班與中階管理的入口可能提早打開。",
+      "displaySegments": [
+        {
+          "text": "第二名，企業接班與中階管理的入口可能提早打開。",
+          "startSeconds": 823.112,
+          "endSeconds": 828.08,
+          "id": "S111-01",
+          "cueId": "S111",
+          "sequence": 111,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 24693,
+      "endFrame": 24842
+    },
+    {
+      "id": "S112",
+      "sequence": 112,
+      "startTimecode": "00:13:48,260",
+      "endTimecode": "00:13:58,088",
+      "startSeconds": 828.26,
+      "endSeconds": 838.088,
+      "text": "企業世代交替時，工作不只是接一個職稱，還包括客戶關係、現場判斷、人員管理和制度記憶。",
+      "displayText": "企業世代交替時，工作不只是接一個職稱，還包括客戶關係、現場判斷、人員管理和制度記憶。",
+      "displaySegments": [
+        {
+          "text": "企業世代交替時，工作不只是接一個職稱，還包括客戶關係、現場判斷、人員管理和制度記憶。",
+          "startSeconds": 828.26,
+          "endSeconds": 838.088,
+          "id": "S112-01",
+          "cueId": "S112",
+          "sequence": 112,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 24848,
+      "endFrame": 25143
+    },
+    {
+      "id": "S113",
+      "sequence": 113,
+      "startTimecode": "00:13:58,088",
+      "endTimecode": "00:14:06,980",
+      "startSeconds": 838.088,
+      "endSeconds": 846.98,
+      "text": "對具備專業與溝通能力的青年，這可能是參與經營、帶領小組或接下關鍵客戶的機會。",
+      "displayText": "對具備專業與溝通能力的青年，這可能是參與經營、帶領小組或接下關鍵客戶的機會。",
+      "displaySegments": [
+        {
+          "text": "對具備專業與溝通能力的青年，這可能是參與經營、帶領小組或接下關鍵客戶的機會。",
+          "startSeconds": 838.088,
+          "endSeconds": 846.98,
+          "id": "S113-01",
+          "cueId": "S113",
+          "sequence": 113,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 25143,
+      "endFrame": 25409
+    },
+    {
+      "id": "S114",
+      "sequence": 114,
+      "startTimecode": "00:14:07,160",
+      "endTimecode": "00:14:13,720",
+      "startSeconds": 847.16,
+      "endSeconds": 853.72,
+      "text": "不過，官方資料中缺少全台一致的青年接班率或 30 歲主管比例。",
+      "displayText": "不過，官方資料中缺少全台一致的青年接班率或 30 歲主管比例。",
+      "displaySegments": [
+        {
+          "text": "不過，官方資料中缺少全台一致的青年接班率或 30 歲主管比例。",
+          "startSeconds": 847.16,
+          "endSeconds": 853.72,
+          "id": "S114-01",
+          "cueId": "S114",
+          "sequence": 114,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 25415,
+      "endFrame": 25612
+    },
+    {
+      "id": "S115",
+      "sequence": 115,
+      "startTimecode": "00:14:13,720",
+      "endTimecode": "00:14:20,280",
+      "startSeconds": 853.72,
+      "endSeconds": 860.28,
+      "text": "人口老化能提示企業需要規劃交接，不能直接證明青年就會接班。",
+      "displayText": "人口老化能提示企業需要規劃交接，不能直接證明青年就會接班。",
+      "displaySegments": [
+        {
+          "text": "人口老化能提示企業需要規劃交接，不能直接證明青年就會接班。",
+          "startSeconds": 853.72,
+          "endSeconds": 860.28,
+          "id": "S115-01",
+          "cueId": "S115",
+          "sequence": 115,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 25612,
+      "endFrame": 25808
+    },
+    {
+      "id": "S116",
+      "sequence": 116,
+      "startTimecode": "00:14:20,460",
+      "endTimecode": "00:14:27,576",
+      "startSeconds": 860.46,
+      "endSeconds": 867.576,
+      "text": "企業規模、家族治理、專業資格和個人意願，都會影響誰能接下責任。",
+      "displayText": "企業規模、家族治理、專業資格和個人意願，都會影響誰能接下責任。",
+      "displaySegments": [
+        {
+          "text": "企業規模、家族治理、專業資格和個人意願，都會影響誰能接下責任。",
+          "startSeconds": 860.46,
+          "endSeconds": 867.576,
+          "id": "S116-01",
+          "cueId": "S116",
+          "sequence": 116,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 25814,
+      "endFrame": 26027
+    },
+    {
+      "id": "S117",
+      "sequence": 117,
+      "startTimecode": "00:14:27,576",
+      "endTimecode": "00:14:35,380",
+      "startSeconds": 867.576,
+      "endSeconds": 875.38,
+      "text": "中小企業可能缺少完整的接班制度，大型組織則可能有明確年資與升遷階梯；",
+      "displayText": "中小企業可能缺少完整的接班制度，大型組織則可能有明確年資與升遷階梯；",
+      "displaySegments": [
+        {
+          "text": "中小企業可能缺少完整的接班制度，大型組織則可能有明確年資與升遷階梯；",
+          "startSeconds": 867.576,
+          "endSeconds": 875.38,
+          "id": "S117-01",
+          "cueId": "S117",
+          "sequence": 117,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 26027,
+      "endFrame": 26261
+    },
+    {
+      "id": "S118",
+      "sequence": 118,
+      "startTimecode": "00:14:35,560",
+      "endTimecode": "00:14:39,307",
+      "startSeconds": 875.56,
+      "endSeconds": 879.307,
+      "text": "青年稀缺帶來的空間不會平均分布。",
+      "displayText": "青年稀缺帶來的空間不會平均分布。",
+      "displaySegments": [
+        {
+          "text": "青年稀缺帶來的空間不會平均分布。",
+          "startSeconds": 875.56,
+          "endSeconds": 879.307,
+          "id": "S118-01",
+          "cueId": "S118",
+          "sequence": 118,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 26267,
+      "endFrame": 26379
+    },
+    {
+      "id": "S119",
+      "sequence": 119,
+      "startTimecode": "00:14:39,307",
+      "endTimecode": "00:14:45,863",
+      "startSeconds": 879.307,
+      "endSeconds": 885.863,
+      "text": "能不能獲得導師、決策權和正式培訓，往往比空缺本身更重要。",
+      "displayText": "能不能獲得導師、決策權和正式培訓，往往比空缺本身更重要。",
+      "displaySegments": [
+        {
+          "text": "能不能獲得導師、決策權和正式培訓，往往比空缺本身更重要。",
+          "startSeconds": 879.307,
+          "endSeconds": 885.863,
+          "id": "S119-01",
+          "cueId": "S119",
+          "sequence": 119,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 26379,
+      "endFrame": 26576
+    },
+    {
+      "id": "S120",
+      "sequence": 120,
+      "startTimecode": "00:14:45,863",
+      "endTimecode": "00:14:58,040",
+      "startSeconds": 885.863,
+      "endSeconds": 898.04,
+      "text": "情境化案例：一間中小企業開始安排年輕主管參與供應商協調和團隊管理，同時讓資深經理逐步交接客戶與營運判斷。",
+      "displayText": "情境化案例：一間中小企業開始安排年輕主管參與供應商協調和團隊管理，同時讓資深經理逐步交接客戶與營運判斷。",
+      "displaySegments": [
+        {
+          "text": "情境化案例：一間中小企業開始安排年輕主管參與供應商協調和團隊管理，同時讓資深經理逐步交接客戶與營運判斷。",
+          "startSeconds": 885.863,
+          "endSeconds": 898.04,
+          "id": "S120-01",
+          "cueId": "S120",
+          "sequence": 120,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 26576,
+      "endFrame": 26941
+    },
+    {
+      "id": "S121",
+      "sequence": 121,
+      "startTimecode": "00:14:58,220",
+      "endTimecode": "00:15:05,258",
+      "startSeconds": 898.22,
+      "endSeconds": 905.258,
+      "text": "真正的接班不是把工作丟給下一代，而是交付權限、訓練、資源和合理報酬。",
+      "displayText": "真正的接班不是把工作丟給下一代，而是交付權限、訓練、資源和合理報酬。",
+      "displaySegments": [
+        {
+          "text": "真正的接班不是把工作丟給下一代，而是交付權限、訓練、資源和合理報酬。",
+          "startSeconds": 898.22,
+          "endSeconds": 905.258,
+          "id": "S121-01",
+          "cueId": "S121",
+          "sequence": 121,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 26947,
+      "endFrame": 27158
+    },
+    {
+      "id": "S122",
+      "sequence": 122,
+      "startTimecode": "00:15:05,258",
+      "endTimecode": "00:15:10,433",
+      "startSeconds": 905.258,
+      "endSeconds": 910.433,
+      "text": "對青年來說，也要判斷自己是否想走管理或經營這條路。",
+      "displayText": "對青年來說，也要判斷自己是否想走管理或經營這條路。",
+      "displaySegments": [
+        {
+          "text": "對青年來說，也要判斷自己是否想走管理或經營這條路。",
+          "startSeconds": 905.258,
+          "endSeconds": 910.433,
+          "id": "S122-01",
+          "cueId": "S122",
+          "sequence": 122,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 27158,
+      "endFrame": 27313
+    },
+    {
+      "id": "S123",
+      "sequence": 123,
+      "startTimecode": "00:15:10,433",
+      "endTimecode": "00:15:14,780",
+      "startSeconds": 910.433,
+      "endSeconds": 914.78,
+      "text": "第一名，讓可證明的能力更有機會轉成選擇權。",
+      "displayText": "第一名，讓可證明的能力更有機會轉成選擇權。",
+      "displaySegments": [
+        {
+          "text": "第一名，讓可證明的能力更有機會轉成選擇權。",
+          "startSeconds": 910.433,
+          "endSeconds": 914.78,
+          "id": "S123-01",
+          "cueId": "S123",
+          "sequence": 123,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 27313,
+      "endFrame": 27443
+    },
+    {
+      "id": "S124",
+      "sequence": 124,
+      "startTimecode": "00:15:14,960",
+      "endTimecode": "00:15:26,424",
+      "startSeconds": 914.96,
+      "endSeconds": 926.424,
+      "text": "能解決產業問題、持續學習、理解薪資行情、清楚說明成果的人，可能在招募、轉職和承接任務時擁有較好的談判位置。",
+      "displayText": "能解決產業問題、持續學習、理解薪資行情、清楚說明成果的人，可能在招募、轉職和承接任務時擁有較好的談判位置。",
+      "displaySegments": [
+        {
+          "text": "能解決產業問題、持續學習、理解薪資行情、清楚說明成果的人，可能在招募、轉職和承接任務時擁有較好的談判位置。",
+          "startSeconds": 914.96,
+          "endSeconds": 926.424,
+          "id": "S124-01",
+          "cueId": "S124",
+          "sequence": 124,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 27449,
+      "endFrame": 27793
+    },
+    {
+      "id": "S125",
+      "sequence": 125,
+      "startTimecode": "00:15:26,424",
+      "endTimecode": "00:15:37,240",
+      "startSeconds": 926.424,
+      "endSeconds": 937.24,
+      "text": "這項判斷不是一個直接統計出來的排名結果，而是由人口推估、職缺、薪資和青年就業資料共同形成的趨勢推論。",
+      "displayText": "這項判斷不是一個直接統計出來的排名結果，而是由人口推估、職缺、薪資和青年就業資料共同形成的趨勢推論。",
+      "displaySegments": [
+        {
+          "text": "這項判斷不是一個直接統計出來的排名結果，而是由人口推估、職缺、薪資和青年就業資料共同形成的趨勢推論。",
+          "startSeconds": 926.424,
+          "endSeconds": 937.24,
+          "id": "S125-01",
+          "cueId": "S125",
+          "sequence": 125,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 27793,
+      "endFrame": 28117
+    },
+    {
+      "id": "S126",
+      "sequence": 126,
+      "startTimecode": "00:15:37,420",
+      "endTimecode": "00:15:39,900",
+      "startSeconds": 937.42,
+      "endSeconds": 939.9,
+      "text": "人口稀缺只是環境條件；",
+      "displayText": "人口稀缺只是環境條件；",
+      "displaySegments": [
+        {
+          "text": "人口稀缺只是環境條件；",
+          "startSeconds": 937.42,
+          "endSeconds": 939.9,
+          "id": "S126-01",
+          "cueId": "S126",
+          "sequence": 126,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 28123,
+      "endFrame": 28197
+    },
+    {
+      "id": "S127",
+      "sequence": 127,
+      "startTimecode": "00:15:39,900",
+      "endTimecode": "00:15:49,822",
+      "startSeconds": 939.9,
+      "endSeconds": 949.822,
+      "text": "能力能否被看見，企業制度是否公平，勞動者是否有選擇和保障，決定了它能不能變成個人的紅利。",
+      "displayText": "能力能否被看見，企業制度是否公平，勞動者是否有選擇和保障，決定了它能不能變成個人的紅利。",
+      "displaySegments": [
+        {
+          "text": "能力能否被看見，企業制度是否公平，勞動者是否有選擇和保障，決定了它能不能變成個人的紅利。",
+          "startSeconds": 939.9,
+          "endSeconds": 949.822,
+          "id": "S127-01",
+          "cueId": "S127",
+          "sequence": 127,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 28197,
+      "endFrame": 28495
+    },
+    {
+      "id": "S128",
+      "sequence": 128,
+      "startTimecode": "00:15:49,822",
+      "endTimecode": "00:16:00,420",
+      "startSeconds": 949.822,
+      "endSeconds": 960.42,
+      "text": "若青年受限於地域、照顧責任、健康、交通或教育資源，帳面上的職缺再多，也未必是可實際取得的機會。",
+      "displayText": "若青年受限於地域、照顧責任、健康、交通或教育資源，帳面上的職缺再多，也未必是可實際取得的機會。",
+      "displaySegments": [
+        {
+          "text": "若青年受限於地域、照顧責任、健康、交通或教育資源，帳面上的職缺再多，也未必是可實際取得的機會。",
+          "startSeconds": 949.822,
+          "endSeconds": 960.42,
+          "id": "S128-01",
+          "cueId": "S128",
+          "sequence": 128,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 28495,
+      "endFrame": 28813
+    },
+    {
+      "id": "S129",
+      "sequence": 129,
+      "startTimecode": "00:16:00,600",
+      "endTimecode": "00:16:06,051",
+      "startSeconds": 960.6,
+      "endSeconds": 966.051,
+      "text": "制度與支持系統，會影響人口趨勢如何落到每個人的生活裡。",
+      "displayText": "制度與支持系統，會影響人口趨勢如何落到每個人的生活裡。",
+      "displaySegments": [
+        {
+          "text": "制度與支持系統，會影響人口趨勢如何落到每個人的生活裡。",
+          "startSeconds": 960.6,
+          "endSeconds": 966.051,
+          "id": "S129-01",
+          "cueId": "S129",
+          "sequence": 129,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 28818,
+      "endFrame": 28982
+    },
+    {
+      "id": "S130",
+      "sequence": 130,
+      "startTimecode": "00:16:06,051",
+      "endTimecode": "00:16:13,320",
+      "startSeconds": 966.051,
+      "endSeconds": 973.32,
+      "text": "回到開場：九年級生到了 30 歲，會不會更容易找到工作、談薪、接下重要職務？",
+      "displayText": "回到開場：九年級生到了 30 歲，會不會更容易找到工作、談薪、接下重要職務？",
+      "displaySegments": [
+        {
+          "text": "回到開場：九年級生到了 30 歲，會不會更容易找到工作、談薪、接下重要職務？",
+          "startSeconds": 966.051,
+          "endSeconds": 973.32,
+          "id": "S130-01",
+          "cueId": "S130",
+          "sequence": 130,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 28982,
+      "endFrame": 29200
+    },
+    {
+      "id": "S131",
+      "sequence": 131,
+      "startTimecode": "00:16:13,500",
+      "endTimecode": "00:16:21,675",
+      "startSeconds": 973.5,
+      "endSeconds": 981.675,
+      "text": "有些人可能會，但機會會集中在特定產業、地區和技能，也會受到景氣和制度影響。",
+      "displayText": "有些人可能會，但機會會集中在特定產業、地區和技能，也會受到景氣和制度影響。",
+      "displaySegments": [
+        {
+          "text": "有些人可能會，但機會會集中在特定產業、地區和技能，也會受到景氣和制度影響。",
+          "startSeconds": 973.5,
+          "endSeconds": 981.675,
+          "id": "S131-01",
+          "cueId": "S131",
+          "sequence": 131,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 29205,
+      "endFrame": 29450
+    },
+    {
+      "id": "S132",
+      "sequence": 132,
+      "startTimecode": "00:16:21,675",
+      "endTimecode": "00:16:27,420",
+      "startSeconds": 981.675,
+      "endSeconds": 987.42,
+      "text": "人口結構告訴我們市場正在變化，卻不替每個人保證結果。",
+      "displayText": "人口結構告訴我們市場正在變化，卻不替每個人保證結果。",
+      "displaySegments": [
+        {
+          "text": "人口結構告訴我們市場正在變化，卻不替每個人保證結果。",
+          "startSeconds": 981.675,
+          "endSeconds": 987.42,
+          "id": "S132-01",
+          "cueId": "S132",
+          "sequence": 132,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 29450,
+      "endFrame": 29623
+    },
+    {
+      "id": "S133",
+      "sequence": 133,
+      "startTimecode": "00:16:27,600",
+      "endTimecode": "00:16:46,800",
+      "startSeconds": 987.6,
+      "endSeconds": 1006.8,
+      "text": "到了 2031 年到 2040 年，九年級生陸續走到 30 歲，最值得準備的或許不是等待別人退休，而是累積能被驗證的專業、溝通與協作能力，學會比較工作條件，也為自己保留轉換方向的空間。",
+      "displayText": "到了 2031 年到 2040 年，九年級生陸續走到 30 歲，最值得準備的或許不是等待別人退休，而是累積能被驗證的專業、溝通與協作能力，學會比較工作條件，也為自己保留轉換方向的空間。",
+      "displaySegments": [
+        {
+          "text": "到了 2031 年到 2040 年，九年級生陸續走到 30 歲，最值得準備的或許不是等待別人退休，而是累積能被驗證的專業、溝通與協作能力，學會比較工作條件，也為自己保留轉換方向的空間。",
+          "startSeconds": 987.6,
+          "endSeconds": 1006.8,
+          "id": "S133-01",
+          "cueId": "S133",
+          "sequence": 133,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 29628,
+      "endFrame": 30204
+    },
+    {
+      "id": "S134",
+      "sequence": 134,
+      "startTimecode": "00:16:46,980",
+      "endTimecode": "00:16:49,456",
+      "startSeconds": 1006.98,
+      "endSeconds": 1009.456,
+      "text": "青年稀缺可能帶來一扇門；",
+      "displayText": "青年稀缺可能帶來一扇門；",
+      "displaySegments": [
+        {
+          "text": "青年稀缺可能帶來一扇門；",
+          "startSeconds": 1006.98,
+          "endSeconds": 1009.456,
+          "id": "S134-01",
+          "cueId": "S134",
+          "sequence": 134,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 30209,
+      "endFrame": 30284
+    },
+    {
+      "id": "S135",
+      "sequence": 135,
+      "startTimecode": "00:16:49,456",
+      "endTimecode": "00:16:56,060",
+      "startSeconds": 1009.456,
+      "endSeconds": 1016.06,
+      "text": "真正能走進去的，是準備好、看得懂條件，也能選擇適合自己道路的人。",
+      "displayText": "真正能走進去的，是準備好、看得懂條件，也能選擇適合自己道路的人。",
+      "displaySegments": [
+        {
+          "text": "真正能走進去的，是準備好、看得懂條件，也能選擇適合自己道路的人。",
+          "startSeconds": 1009.456,
+          "endSeconds": 1016.06,
+          "id": "S135-01",
+          "cueId": "S135",
+          "sequence": 135,
+          "segmentIndex": 1
+        }
+      ],
+      "startFrame": 30284,
+      "endFrame": 30482
+    }
+  ],
+  "displaySegments": [
+    {
+      "text": "如果一個世代的人數變少，到了 30 歲，會不會反而更容易找到工作、談到理想薪資，甚至提早接下重要職務？",
+      "startSeconds": 1.5,
+      "endSeconds": 11.615,
+      "id": "S001-01",
+      "cueId": "S001",
+      "sequence": 1,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這聽起來像是一種時代紅利，但人口減少真的會自動變成個人的優勢嗎？",
+      "startSeconds": 11.615,
+      "endSeconds": 18.22,
+      "id": "S002-01",
+      "cueId": "S002",
+      "sequence": 2,
+      "segmentIndex": 1
+    },
+    {
+      "text": "今天我們要談的，不是「年輕人變少，所以人人都能加薪升官」這種簡單答案，而是更實際的問題：當企業需要的人才不好找，哪些青年可能因此多出職涯選擇？",
+      "startSeconds": 18.4,
+      "endSeconds": 32.84,
+      "id": "S003-01",
+      "cueId": "S003",
+      "sequence": 3,
+      "segmentIndex": 1
+    },
+    {
+      "text": "又有哪些條件，決定這個機會最後能不能落在自己身上？",
+      "startSeconds": 33.02,
+      "endSeconds": 38.577,
+      "id": "S004-01",
+      "cueId": "S004",
+      "sequence": 4,
+      "segmentIndex": 1
+    },
+    {
+      "text": "本系列把 2001 年到 2010 年出生者稱為九年級生。",
+      "startSeconds": 38.577,
+      "endSeconds": 44.134,
+      "id": "S005-01",
+      "cueId": "S005",
+      "sequence": 5,
+      "segmentIndex": 1
+    },
+    {
+      "text": "到了 2026 年，這群人約 15 歲到 25 歲；",
+      "startSeconds": 44.134,
+      "endSeconds": 48.58,
+      "id": "S006-01",
+      "cueId": "S006",
+      "sequence": 6,
+      "segmentIndex": 1
+    },
+    {
+      "text": "但「到了 30 歲」並不是同一年，2001 年出生者約在 2031 年滿 30 歲，2010 年出生者約在 2040 年滿 30 歲，實際時間還要看生日。",
+      "startSeconds": 48.76,
+      "endSeconds": 62.48,
+      "id": "S007-01",
+      "cueId": "S007",
+      "sequence": 7,
+      "segmentIndex": 1
+    },
+    {
+      "text": "所以，這集看的不是某一個 2030 年的瞬間，而是 2031 年到 2040 年，這個世代陸續進入 30 歲上下職涯階段時，可能面對的人口與工作環境。",
+      "startSeconds": 62.66,
+      "endSeconds": 78.22,
+      "id": "S008-01",
+      "cueId": "S008",
+      "sequence": 8,
+      "segmentIndex": 1
+    },
+    {
+      "text": "今天的統計可以提供線索，不能直接當成他們未來的實況。",
+      "startSeconds": 78.4,
+      "endSeconds": 83.682,
+      "id": "S009-01",
+      "cueId": "S009",
+      "sequence": 9,
+      "segmentIndex": 1
+    },
+    {
+      "text": "我們也先釐清「人口紅利」這個說法。",
+      "startSeconds": 83.682,
+      "endSeconds": 87.136,
+      "id": "S010-01",
+      "cueId": "S010",
+      "sequence": 10,
+      "segmentIndex": 1
+    },
+    {
+      "text": "人口學上的人口紅利，通常是指人口年齡結構改變對整體經濟帶來的影響；",
+      "startSeconds": 87.136,
+      "endSeconds": 93.84,
+      "id": "S011-01",
+      "cueId": "S011",
+      "sequence": 11,
+      "segmentIndex": 1
+    },
+    {
+      "text": "本集把它用在職涯脈絡，指的是青年相對稀缺時，部分人可能因技能需求、招募競爭或接班需求，得到更多選擇、議價或承擔責任的機會。",
+      "startSeconds": 94.02,
+      "endSeconds": 108.98,
+      "id": "S012-01",
+      "cueId": "S012",
+      "sequence": 12,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這不保證所有人都受益。",
+      "startSeconds": 109.16,
+      "endSeconds": 111.423,
+      "id": "S013-01",
+      "cueId": "S013",
+      "sequence": 13,
+      "segmentIndex": 1
+    },
+    {
+      "text": "產業景氣、所在縣市、技能是否符合需求、教育訓練、企業制度、家庭照顧與勞動條件，都會影響結果。",
+      "startSeconds": 111.423,
+      "endSeconds": 120.886,
+      "id": "S014-01",
+      "cueId": "S014",
+      "sequence": 14,
+      "segmentIndex": 1
+    },
+    {
+      "text": "職缺多，也不一定代表雇主找不到人，更不能直接推論每個年輕人都能升遷。",
+      "startSeconds": 120.886,
+      "endSeconds": 127.88,
+      "id": "S015-01",
+      "cueId": "S015",
+      "sequence": 15,
+      "segmentIndex": 1
+    },
+    {
+      "text": "國發會在 2026 年發布最新人口推估，範圍是 2026 年到 2075 年。",
+      "startSeconds": 128.06,
+      "endSeconds": 137.206,
+      "id": "S016-01",
+      "cueId": "S016",
+      "sequence": 16,
+      "segmentIndex": 1
+    },
+    {
+      "text": "以中推估來看，15 歲到 64 歲工作年齡人口占總人口比例，從 2026 年的 67.",
+      "startSeconds": 137.206,
+      "endSeconds": 147.46,
+      "id": "S017-01",
+      "cueId": "S017",
+      "sequence": 17,
+      "segmentIndex": 1
+    },
+    {
+      "text": "9%，到 2035 年估計為 64.",
+      "startSeconds": 147.64,
+      "endSeconds": 151.385,
+      "id": "S018-01",
+      "cueId": "S018",
+      "sequence": 18,
+      "segmentIndex": 1
+    },
+    {
+      "text": "4%，2045 年則為 57.",
+      "startSeconds": 151.385,
+      "endSeconds": 154.632,
+      "id": "S019-01",
+      "cueId": "S019",
+      "sequence": 19,
+      "segmentIndex": 1
+    },
+    {
+      "text": "9%。",
+      "startSeconds": 154.632,
+      "endSeconds": 155.381,
+      "id": "S020-01",
+      "cueId": "S020",
+      "sequence": 20,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這是廣義工作年齡人口，不是九年級生人口，也不是可直接聘用的勞動力人數。",
+      "startSeconds": 155.381,
+      "endSeconds": 164.12,
+      "id": "S021-01",
+      "cueId": "S021",
+      "sequence": 21,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部的青年勞動統計則提供另一個觀察角度。",
+      "startSeconds": 164.3,
+      "endSeconds": 170.256,
+      "id": "S022-01",
+      "cueId": "S022",
+      "sequence": 22,
+      "segmentIndex": 1
+    },
+    {
+      "text": "2025 年，15 歲到 29 歲民間人口約 354 萬人，較 2015 年減少約 97 萬人，減幅約 21%。",
+      "startSeconds": 170.256,
+      "endSeconds": 183.02,
+      "id": "S023-01",
+      "cueId": "S023",
+      "sequence": 23,
+      "segmentIndex": 1
+    },
+    {
+      "text": "同一期間，青年勞動力減少約 17 萬人，幅度約 8%，小於民間人口降幅，因為在學與求職參與狀態不同。",
+      "startSeconds": 183.2,
+      "endSeconds": 193.853,
+      "id": "S024-01",
+      "cueId": "S024",
+      "sequence": 24,
+      "segmentIndex": 1
+    },
+    {
+      "text": "接下來的十大，是依青年人口占比、職缺、薪資和升遷四個面向，整理有資料支持或有清楚限制的職涯可能性。",
+      "startSeconds": 193.853,
+      "endSeconds": 204.96,
+      "id": "S025-01",
+      "cueId": "S025",
+      "sequence": 25,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這不是官方排行榜，也不是預測哪個職業一定最好；",
+      "startSeconds": 205.14,
+      "endSeconds": 210.231,
+      "id": "S026-01",
+      "cueId": "S026",
+      "sequence": 26,
+      "segmentIndex": 1
+    },
+    {
+      "text": "資料口徑不一，我們不做虛構分數，而是逐項看證據強弱。",
+      "startSeconds": 210.231,
+      "endSeconds": 215.985,
+      "id": "S027-01",
+      "cueId": "S027",
+      "sequence": 27,
+      "segmentIndex": 1
+    },
+    {
+      "text": "青年人口占比看人口推估和實際年齡資料，職缺看企業當下招募，薪資看不同職類和年資的統計，升遷則要找直接的職涯資料。",
+      "startSeconds": 215.985,
+      "endSeconds": 228.38,
+      "id": "S028-01",
+      "cueId": "S028",
+      "sequence": 28,
+      "segmentIndex": 1
+    },
+    {
+      "text": "四個面向互相補充，但不能把它們當成同一種數字。",
+      "startSeconds": 228.56,
+      "endSeconds": 233.509,
+      "id": "S029-01",
+      "cueId": "S029",
+      "sequence": 29,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第十名，求職者更需要看懂產業差異，而不是只看「缺人」兩個字。",
+      "startSeconds": 233.509,
+      "endSeconds": 239.964,
+      "id": "S030-01",
+      "cueId": "S030",
+      "sequence": 30,
+      "segmentIndex": 1
+    },
+    {
+      "text": "人口變少可能讓企業更積極招募，但同一行業可能同時有很多職缺、快速補人，也可能因流動率高而一直在補人，真正的工作品質卻沒有改善。",
+      "startSeconds": 239.964,
+      "endSeconds": 253.52,
+      "id": "S031-01",
+      "cueId": "S031",
+      "sequence": 31,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部 2026 年 6 月底職位空缺調查，估計工業及服務業有 29.",
+      "startSeconds": 253.7,
+      "endSeconds": 261.74,
+      "id": "S032-01",
+      "cueId": "S032",
+      "sequence": 32,
+      "segmentIndex": 1
+    },
+    {
+      "text": "6 萬個職缺，職缺率為 3.",
+      "startSeconds": 261.74,
+      "endSeconds": 264.956,
+      "id": "S033-01",
+      "cueId": "S033",
+      "sequence": 33,
+      "segmentIndex": 1
+    },
+    {
+      "text": "3%，全時職缺平均對外招募時間約 3.",
+      "startSeconds": 264.956,
+      "endSeconds": 269.78,
+      "id": "S034-01",
+      "cueId": "S034",
+      "sequence": 34,
+      "segmentIndex": 1
+    },
+    {
+      "text": "1 個月。",
+      "startSeconds": 269.96,
+      "endSeconds": 270.799,
+      "id": "S035-01",
+      "cueId": "S035",
+      "sequence": 35,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這些是當期職缺，不是青年專屬，也不是全部職缺都難以補足；",
+      "startSeconds": 270.799,
+      "endSeconds": 276.669,
+      "id": "S036-01",
+      "cueId": "S036",
+      "sequence": 36,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部特別提醒，職缺與勞動力短缺不是同一概念。",
+      "startSeconds": 276.669,
+      "endSeconds": 281.49,
+      "id": "S037-01",
+      "cueId": "S037",
+      "sequence": 37,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一位 30 歲左右的求職者收到兩份工作邀請，一份待遇較好但工時不清楚，另一份薪資一般、訓練和排班制度透明。",
+      "startSeconds": 281.49,
+      "endSeconds": 293.44,
+      "id": "S038-01",
+      "cueId": "S038",
+      "sequence": 38,
+      "segmentIndex": 1
+    },
+    {
+      "text": "他不只問「哪裡缺人」，還比較薪資、工作內容、主管支持和長期發展。",
+      "startSeconds": 293.62,
+      "endSeconds": 300.939,
+      "id": "S039-01",
+      "cueId": "S039",
+      "sequence": 39,
+      "segmentIndex": 1
+    },
+    {
+      "text": "資訊更透明，才有可能把市場選項變成個人選擇。",
+      "startSeconds": 300.939,
+      "endSeconds": 305.972,
+      "id": "S040-01",
+      "cueId": "S040",
+      "sequence": 40,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第九名，跨產業轉職的入口可能增加。",
+      "startSeconds": 305.972,
+      "endSeconds": 309.86,
+      "id": "S041-01",
+      "cueId": "S041",
+      "sequence": 41,
+      "segmentIndex": 1
+    },
+    {
+      "text": "當某些行業青年就業人數增加，另一些行業減少，人口紅利未必表現為每個領域都缺人，而可能是人才在不同產業之間重新流動。",
+      "startSeconds": 310.04,
+      "endSeconds": 322.777,
+      "id": "S042-01",
+      "cueId": "S042",
+      "sequence": 42,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部比較 2015 年和 2025 年的青年就業資料，醫療保健及社會工作服務業青年就業人數增加約 2.",
+      "startSeconds": 322.777,
+      "endSeconds": 333.28,
+      "id": "S043-01",
+      "cueId": "S043",
+      "sequence": 43,
+      "segmentIndex": 1
+    },
+    {
+      "text": "3 萬人，營建工程業增加約 2.",
+      "startSeconds": 333.46,
+      "endSeconds": 336.66,
+      "id": "S044-01",
+      "cueId": "S044",
+      "sequence": 44,
+      "segmentIndex": 1
+    },
+    {
+      "text": "9 萬人，專業、科學及技術服務業增加約 1.",
+      "startSeconds": 336.66,
+      "endSeconds": 341.231,
+      "id": "S045-01",
+      "cueId": "S045",
+      "sequence": 45,
+      "segmentIndex": 1
+    },
+    {
+      "text": "4 萬人；",
+      "startSeconds": 341.231,
+      "endSeconds": 342.146,
+      "id": "S046-01",
+      "cueId": "S046",
+      "sequence": 46,
+      "segmentIndex": 1
+    },
+    {
+      "text": "製造業青年就業人數則減少約 19 萬人。",
+      "startSeconds": 342.146,
+      "endSeconds": 346.26,
+      "id": "S047-01",
+      "cueId": "S047",
+      "sequence": 47,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這是行業就業人數變化，不等於未來職缺成長預測，而且前後期行業分類有所調整。",
+      "startSeconds": 346.44,
+      "endSeconds": 354.973,
+      "id": "S048-01",
+      "cueId": "S048",
+      "sequence": 48,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一位原本在門市工作的青年，透過技能訓練轉向醫療行政、營建專案支援或技術服務。",
+      "startSeconds": 354.973,
+      "endSeconds": 365.12,
+      "id": "S049-01",
+      "cueId": "S049",
+      "sequence": 49,
+      "segmentIndex": 1
+    },
+    {
+      "text": "他需要把原有溝通、排程和顧客服務能力，轉換成新產業能辨識的專業技能。",
+      "startSeconds": 365.3,
+      "endSeconds": 370.172,
+      "id": "S050-01",
+      "cueId": "S050",
+      "sequence": 50,
+      "segmentIndex": 1
+    },
+    {
+      "text": "產業變動帶來入口，也帶來重新學習的成本。",
+      "startSeconds": 370.172,
+      "endSeconds": 373.038,
+      "id": "S051-01",
+      "cueId": "S051",
+      "sequence": 51,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第八名，技能訓練可能成為青年與企業共同投資的籌碼。",
+      "startSeconds": 373.038,
+      "endSeconds": 376.62,
+      "id": "S052-01",
+      "cueId": "S052",
+      "sequence": 52,
+      "segmentIndex": 1
+    },
+    {
+      "text": "若人才較難補足，企業可能更重視培訓和留任；",
+      "startSeconds": 376.8,
+      "endSeconds": 381.238,
+      "id": "S053-01",
+      "cueId": "S053",
+      "sequence": 53,
+      "segmentIndex": 1
+    },
+    {
+      "text": "但訓練機會不會自動平均分配，青年仍需要時間、課程資訊和主管支持。",
+      "startSeconds": 381.238,
+      "endSeconds": 388.0,
+      "id": "S054-01",
+      "cueId": "S054",
+      "sequence": 54,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部的 2025 年青年勞動統計指出，15 歲到 29 歲青年近一年參加教育訓練的比率為 72%，其中以專門知識及技術訓練最常見。",
+      "startSeconds": 388.0,
+      "endSeconds": 400.68,
+      "id": "S055-01",
+      "cueId": "S055",
+      "sequence": 55,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這說明職場學習正在發生，卻不能證明稀缺人口直接造成訓練增加，也不代表每一門課都能換成升遷或加薪。",
+      "startSeconds": 400.86,
+      "endSeconds": 411.236,
+      "id": "S056-01",
+      "cueId": "S056",
+      "sequence": 56,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一位設備技術員利用公司提供的訓練，學會新型設備維護與故障判讀，之後能獨立處理更複雜的工作。",
+      "startSeconds": 411.236,
+      "endSeconds": 422.26,
+      "id": "S057-01",
+      "cueId": "S057",
+      "sequence": 57,
+      "segmentIndex": 1
+    },
+    {
+      "text": "訓練的價值不只在證書，而在能否把知識用在實際問題上，也要看雇主是否提供練習與職務空間。",
+      "startSeconds": 422.44,
+      "endSeconds": 432.76,
+      "id": "S058-01",
+      "cueId": "S058",
+      "sequence": 58,
+      "segmentIndex": 1
+    },
+    {
+      "text": "若課程要下班後自費完成，或訓練後沒有機會實際操作，投入成本就可能由青年單方面承擔。",
+      "startSeconds": 432.76,
+      "endSeconds": 442.6,
+      "id": "S059-01",
+      "cueId": "S059",
+      "sequence": 59,
+      "segmentIndex": 1
+    },
+    {
+      "text": "公平的培訓安排，也包括可用的時間和後續職涯路徑。",
+      "startSeconds": 442.78,
+      "endSeconds": 447.851,
+      "id": "S060-01",
+      "cueId": "S060",
+      "sequence": 60,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第七名，年輕員工可能更早承接跨職能專案責任。",
+      "startSeconds": 447.851,
+      "endSeconds": 452.499,
+      "id": "S061-01",
+      "cueId": "S061",
+      "sequence": 61,
+      "segmentIndex": 1
+    },
+    {
+      "text": "當團隊人數有限，企業有時需要同一位員工協調客戶、數據和現場流程。",
+      "startSeconds": 452.499,
+      "endSeconds": 459.26,
+      "id": "S062-01",
+      "cueId": "S062",
+      "sequence": 62,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這可能累積管理經驗，也可能只是工作量增加，所以要問清楚責任、資源和報酬是否同步。",
+      "startSeconds": 459.44,
+      "endSeconds": 468.903,
+      "id": "S063-01",
+      "cueId": "S063",
+      "sequence": 63,
+      "segmentIndex": 1
+    },
+    {
+      "text": "目前官方統計沒有直接回答「九年級生幾歲開始帶專案」或「因缺青年而提早升遷」這類問題。",
+      "startSeconds": 468.903,
+      "endSeconds": 478.84,
+      "id": "S064-01",
+      "cueId": "S064",
+      "sequence": 64,
+      "segmentIndex": 1
+    },
+    {
+      "text": "因此，這一名的升遷證據不足，人口結構和企業招募資料只能當間接背景，不能寫成確定趨勢。",
+      "startSeconds": 479.02,
+      "endSeconds": 488.534,
+      "id": "S065-01",
+      "cueId": "S065",
+      "sequence": 65,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一位青年被安排協調新服務上線，負責排進度、處理部門溝通，也要向主管回報風險。",
+      "startSeconds": 488.534,
+      "endSeconds": 498.5,
+      "id": "S066-01",
+      "cueId": "S066",
+      "sequence": 66,
+      "segmentIndex": 1
+    },
+    {
+      "text": "他可以藉此累積專案經驗，但最好確認決策權、工時和績效評估方式。",
+      "startSeconds": 498.68,
+      "endSeconds": 505.471,
+      "id": "S067-01",
+      "cueId": "S067",
+      "sequence": 67,
+      "segmentIndex": 1
+    },
+    {
+      "text": "多接一項責任，不必然等於升遷；",
+      "startSeconds": 505.471,
+      "endSeconds": 508.758,
+      "id": "S068-01",
+      "cueId": "S068",
+      "sequence": 68,
+      "segmentIndex": 1
+    },
+    {
+      "text": "能留下成果，才有機會成為下一步的依據。",
+      "startSeconds": 508.758,
+      "endSeconds": 512.92,
+      "id": "S069-01",
+      "cueId": "S069",
+      "sequence": 69,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第六名，職務內容可能比職稱更快擴大。",
+      "startSeconds": 513.1,
+      "endSeconds": 517.154,
+      "id": "S070-01",
+      "cueId": "S070",
+      "sequence": 70,
+      "segmentIndex": 1
+    },
+    {
+      "text": "人口結構改變會讓企業重新設計流程，部分青年可能同時接觸數位工具、顧客服務、品質管理或現場協作。",
+      "startSeconds": 517.154,
+      "endSeconds": 527.74,
+      "id": "S071-01",
+      "cueId": "S071",
+      "sequence": 71,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這種「工作內容長出新枝」的機會，往往不會立刻反映在一個正式的新職稱上。",
+      "startSeconds": 527.92,
+      "endSeconds": 535.396,
+      "id": "S072-01",
+      "cueId": "S072",
+      "sequence": 72,
+      "segmentIndex": 1
+    },
+    {
+      "text": "但任務增加也可能變成無償加班或職責模糊。",
+      "startSeconds": 535.396,
+      "endSeconds": 539.668,
+      "id": "S073-01",
+      "cueId": "S073",
+      "sequence": 73,
+      "segmentIndex": 1
+    },
+    {
+      "text": "青年要學會記錄工作成果、確認誰負責決策、哪些任務需要訓練，以及職務擴張是否納入薪資和考核。",
+      "startSeconds": 539.668,
+      "endSeconds": 549.28,
+      "id": "S074-01",
+      "cueId": "S074",
+      "sequence": 74,
+      "segmentIndex": 1
+    },
+    {
+      "text": "企業若只把人力不足轉嫁給現有人員，這就不是紅利，而是負擔。",
+      "startSeconds": 549.46,
+      "endSeconds": 555.956,
+      "id": "S075-01",
+      "cueId": "S075",
+      "sequence": 75,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一位小型企業的行銷助理，逐漸參與顧客資料分析、網路客服和廣告成效追蹤。",
+      "startSeconds": 555.956,
+      "endSeconds": 565.14,
+      "id": "S076-01",
+      "cueId": "S076",
+      "sequence": 76,
+      "segmentIndex": 1
+    },
+    {
+      "text": "他若能把流程改善成效量化，可能爭取更清楚的職務定位；",
+      "startSeconds": 565.32,
+      "endSeconds": 570.984,
+      "id": "S077-01",
+      "cueId": "S077",
+      "sequence": 77,
+      "segmentIndex": 1
+    },
+    {
+      "text": "如果只是多做幾項零散工作，則需要和主管談清楚優先順序。",
+      "startSeconds": 570.984,
+      "endSeconds": 576.865,
+      "id": "S078-01",
+      "cueId": "S078",
+      "sequence": 78,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第五名，人才稀缺可能讓雇主更重視留才條件。",
+      "startSeconds": 576.865,
+      "endSeconds": 581.44,
+      "id": "S079-01",
+      "cueId": "S079",
+      "sequence": 79,
+      "segmentIndex": 1
+    },
+    {
+      "text": "薪資只是其中之一，工作時間、訓練、彈性排班、主管溝通和職涯發展也會影響員工是否留下。",
+      "startSeconds": 581.62,
+      "endSeconds": 590.882,
+      "id": "S080-01",
+      "cueId": "S080",
+      "sequence": 80,
+      "segmentIndex": 1
+    },
+    {
+      "text": "真正有利的情況，是企業把留才做成制度，而不是只在招不到人時短期加碼。",
+      "startSeconds": 590.882,
+      "endSeconds": 598.38,
+      "id": "S081-01",
+      "cueId": "S081",
+      "sequence": 81,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部 2026 年的職缺調查顯示，不同行業的職缺率、招募時間和員工流動情況並不相同。",
+      "startSeconds": 598.56,
+      "endSeconds": 607.99,
+      "id": "S082-01",
+      "cueId": "S082",
+      "sequence": 82,
+      "segmentIndex": 1
+    },
+    {
+      "text": "以住宿業為例，職缺率和招募時間都相對較高，但勞動部也指出，高流動率可能是職缺率偏高的原因之一。",
+      "startSeconds": 607.99,
+      "endSeconds": 618.8,
+      "id": "S083-01",
+      "cueId": "S083",
+      "sequence": 83,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這提醒我們，招募困難有時不是缺少青年，而是工作條件讓人留不下來。",
+      "startSeconds": 618.98,
+      "endSeconds": 626.163,
+      "id": "S084-01",
+      "cueId": "S084",
+      "sequence": 84,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一家店面原本反覆招人，後來改善排班、訓練和升任店長的標準。",
+      "startSeconds": 626.163,
+      "endSeconds": 634.02,
+      "id": "S085-01",
+      "cueId": "S085",
+      "sequence": 85,
+      "segmentIndex": 1
+    },
+    {
+      "text": "對青年而言，能否獲得穩定班表、合理工時與明確發展，比一時的招募獎金更能影響職涯。",
+      "startSeconds": 634.2,
+      "endSeconds": 643.155,
+      "id": "S086-01",
+      "cueId": "S086",
+      "sequence": 86,
+      "segmentIndex": 1
+    },
+    {
+      "text": "雇主競爭人才，若轉化成更好的制度，員工才可能真正受益。",
+      "startSeconds": 643.155,
+      "endSeconds": 649.2,
+      "id": "S087-01",
+      "cueId": "S087",
+      "sequence": 87,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第四名，掌握專業技能的人可能有更清楚的薪資協商空間。",
+      "startSeconds": 649.38,
+      "endSeconds": 655.833,
+      "id": "S088-01",
+      "cueId": "S088",
+      "sequence": 88,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部 2024 年調查 15 歲到 29 歲、受僱且參加相關保險的本國籍青年，約 41%在應徵現職時曾提出薪資期望。",
+      "startSeconds": 655.833,
+      "endSeconds": 668.74,
+      "id": "S089-01",
+      "cueId": "S089",
+      "sequence": 89,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這不是談薪一定成功的比例，但顯示一部分青年已開始把薪資行情放進求職對話。",
+      "startSeconds": 668.92,
+      "endSeconds": 678.182,
+      "id": "S090-01",
+      "cueId": "S090",
+      "sequence": 90,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部 2025 年青年勞動統計另顯示，納入勞退新制的青年全時工作者，年底平均月提繳工資約 4.",
+      "startSeconds": 678.182,
+      "endSeconds": 689.76,
+      "id": "S091-01",
+      "cueId": "S091",
+      "sequence": 91,
+      "segmentIndex": 1
+    },
+    {
+      "text": "2 萬元；",
+      "startSeconds": 689.94,
+      "endSeconds": 690.896,
+      "id": "S092-01",
+      "cueId": "S092",
+      "sequence": 92,
+      "segmentIndex": 1
+    },
+    {
+      "text": "其中 27.",
+      "startSeconds": 690.896,
+      "endSeconds": 692.09,
+      "id": "S093-01",
+      "cueId": "S093",
+      "sequence": 93,
+      "segmentIndex": 1
+    },
+    {
+      "text": "2% 的月提繳工資在 3 萬元以下，38.",
+      "startSeconds": 692.09,
+      "endSeconds": 696.39,
+      "id": "S094-01",
+      "cueId": "S094",
+      "sequence": 94,
+      "segmentIndex": 1
+    },
+    {
+      "text": "5% 在 4 萬元以上。",
+      "startSeconds": 696.39,
+      "endSeconds": 698.54,
+      "id": "S095-01",
+      "cueId": "S095",
+      "sequence": 95,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這是提繳工資級距，不是所有青年實領薪資，也不能外推成 30 歲時的保證待遇。",
+      "startSeconds": 698.54,
+      "endSeconds": 707.14,
+      "id": "S096-01",
+      "cueId": "S096",
+      "sequence": 96,
+      "segmentIndex": 1
+    },
+    {
+      "text": "同一調查中，青年表示曾在現職獲得加薪者約 72%，常見原因包含公司全面調薪和個人表現良好。",
+      "startSeconds": 707.32,
+      "endSeconds": 718.12,
+      "id": "S097-01",
+      "cueId": "S097",
+      "sequence": 97,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這些是調查中的經驗，不代表人口變少造成加薪。",
+      "startSeconds": 718.12,
+      "endSeconds": 723.52,
+      "id": "S098-01",
+      "cueId": "S098",
+      "sequence": 98,
+      "segmentIndex": 1
+    },
+    {
+      "text": "要有談判空間，仍需要了解市場行情、拿得出工作成果，也要看雇主的薪酬制度。",
+      "startSeconds": 723.7,
+      "endSeconds": 732.241,
+      "id": "S099-01",
+      "cueId": "S099",
+      "sequence": 99,
+      "segmentIndex": 1
+    },
+    {
+      "text": "談薪不只是提出一個數字，也可以詢問薪資級距、獎金條件、調薪週期和職務責任。",
+      "startSeconds": 732.241,
+      "endSeconds": 741.02,
+      "id": "S100-01",
+      "cueId": "S100",
+      "sequence": 100,
+      "segmentIndex": 1
+    },
+    {
+      "text": "若雇主不能立即調薪，仍可談訓練、職務發展或重新檢視的時間點。",
+      "startSeconds": 741.2,
+      "endSeconds": 748.132,
+      "id": "S101-01",
+      "cueId": "S101",
+      "sequence": 101,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一位資料分析師在年度面談前，整理自己改善的流程、節省的時間和新學會的工具，再參考相近職類薪資，和主管討論職責與待遇。",
+      "startSeconds": 748.132,
+      "endSeconds": 762.92,
+      "id": "S102-01",
+      "cueId": "S102",
+      "sequence": 102,
+      "segmentIndex": 1
+    },
+    {
+      "text": "若公司沒有加薪預算，談話也能釐清升級條件或下一步職務，而不是只憑「年輕人不好找」作為理由。",
+      "startSeconds": 763.1,
+      "endSeconds": 772.209,
+      "id": "S103-01",
+      "cueId": "S103",
+      "sequence": 103,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第三名，資深同事的知識與工作任務需要傳承。",
+      "startSeconds": 772.209,
+      "endSeconds": 776.46,
+      "id": "S104-01",
+      "cueId": "S104",
+      "sequence": 104,
+      "segmentIndex": 1
+    },
+    {
+      "text": "國發會最新推估指出，台灣工作年齡人口占比將持續下降，而高齡人口占比上升。",
+      "startSeconds": 776.64,
+      "endSeconds": 784.235,
+      "id": "S105-01",
+      "cueId": "S105",
+      "sequence": 105,
+      "segmentIndex": 1
+    },
+    {
+      "text": "勞動部也記錄到部分行業青年就業人數與職缺狀況的變化。",
+      "startSeconds": 784.235,
+      "endSeconds": 789.72,
+      "id": "S106-01",
+      "cueId": "S106",
+      "sequence": 106,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這些資料使知識傳承成為重要議題，但沒有直接證明特定企業會因此讓青年升遷。",
+      "startSeconds": 789.9,
+      "endSeconds": 798.188,
+      "id": "S107-01",
+      "cueId": "S107",
+      "sequence": 107,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一位新進工程師與即將退休的資深技師共同處理設備維修，除了學操作，也把故障判斷步驟整理成工作手冊。",
+      "startSeconds": 798.188,
+      "endSeconds": 810.62,
+      "id": "S108-01",
+      "cueId": "S108",
+      "sequence": 108,
+      "segmentIndex": 1
+    },
+    {
+      "text": "傳承需要時間、信任和正式安排；",
+      "startSeconds": 810.8,
+      "endSeconds": 814.04,
+      "id": "S109-01",
+      "cueId": "S109",
+      "sequence": 109,
+      "segmentIndex": 1
+    },
+    {
+      "text": "如果只有把責任交出去，沒有師徒訓練與交接工時，青年承擔的就可能是風險，而非發展機會。",
+      "startSeconds": 814.04,
+      "endSeconds": 823.112,
+      "id": "S110-01",
+      "cueId": "S110",
+      "sequence": 110,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第二名，企業接班與中階管理的入口可能提早打開。",
+      "startSeconds": 823.112,
+      "endSeconds": 828.08,
+      "id": "S111-01",
+      "cueId": "S111",
+      "sequence": 111,
+      "segmentIndex": 1
+    },
+    {
+      "text": "企業世代交替時，工作不只是接一個職稱，還包括客戶關係、現場判斷、人員管理和制度記憶。",
+      "startSeconds": 828.26,
+      "endSeconds": 838.088,
+      "id": "S112-01",
+      "cueId": "S112",
+      "sequence": 112,
+      "segmentIndex": 1
+    },
+    {
+      "text": "對具備專業與溝通能力的青年，這可能是參與經營、帶領小組或接下關鍵客戶的機會。",
+      "startSeconds": 838.088,
+      "endSeconds": 846.98,
+      "id": "S113-01",
+      "cueId": "S113",
+      "sequence": 113,
+      "segmentIndex": 1
+    },
+    {
+      "text": "不過，官方資料中缺少全台一致的青年接班率或 30 歲主管比例。",
+      "startSeconds": 847.16,
+      "endSeconds": 853.72,
+      "id": "S114-01",
+      "cueId": "S114",
+      "sequence": 114,
+      "segmentIndex": 1
+    },
+    {
+      "text": "人口老化能提示企業需要規劃交接，不能直接證明青年就會接班。",
+      "startSeconds": 853.72,
+      "endSeconds": 860.28,
+      "id": "S115-01",
+      "cueId": "S115",
+      "sequence": 115,
+      "segmentIndex": 1
+    },
+    {
+      "text": "企業規模、家族治理、專業資格和個人意願，都會影響誰能接下責任。",
+      "startSeconds": 860.46,
+      "endSeconds": 867.576,
+      "id": "S116-01",
+      "cueId": "S116",
+      "sequence": 116,
+      "segmentIndex": 1
+    },
+    {
+      "text": "中小企業可能缺少完整的接班制度，大型組織則可能有明確年資與升遷階梯；",
+      "startSeconds": 867.576,
+      "endSeconds": 875.38,
+      "id": "S117-01",
+      "cueId": "S117",
+      "sequence": 117,
+      "segmentIndex": 1
+    },
+    {
+      "text": "青年稀缺帶來的空間不會平均分布。",
+      "startSeconds": 875.56,
+      "endSeconds": 879.307,
+      "id": "S118-01",
+      "cueId": "S118",
+      "sequence": 118,
+      "segmentIndex": 1
+    },
+    {
+      "text": "能不能獲得導師、決策權和正式培訓，往往比空缺本身更重要。",
+      "startSeconds": 879.307,
+      "endSeconds": 885.863,
+      "id": "S119-01",
+      "cueId": "S119",
+      "sequence": 119,
+      "segmentIndex": 1
+    },
+    {
+      "text": "情境化案例：一間中小企業開始安排年輕主管參與供應商協調和團隊管理，同時讓資深經理逐步交接客戶與營運判斷。",
+      "startSeconds": 885.863,
+      "endSeconds": 898.04,
+      "id": "S120-01",
+      "cueId": "S120",
+      "sequence": 120,
+      "segmentIndex": 1
+    },
+    {
+      "text": "真正的接班不是把工作丟給下一代，而是交付權限、訓練、資源和合理報酬。",
+      "startSeconds": 898.22,
+      "endSeconds": 905.258,
+      "id": "S121-01",
+      "cueId": "S121",
+      "sequence": 121,
+      "segmentIndex": 1
+    },
+    {
+      "text": "對青年來說，也要判斷自己是否想走管理或經營這條路。",
+      "startSeconds": 905.258,
+      "endSeconds": 910.433,
+      "id": "S122-01",
+      "cueId": "S122",
+      "sequence": 122,
+      "segmentIndex": 1
+    },
+    {
+      "text": "第一名，讓可證明的能力更有機會轉成選擇權。",
+      "startSeconds": 910.433,
+      "endSeconds": 914.78,
+      "id": "S123-01",
+      "cueId": "S123",
+      "sequence": 123,
+      "segmentIndex": 1
+    },
+    {
+      "text": "能解決產業問題、持續學習、理解薪資行情、清楚說明成果的人，可能在招募、轉職和承接任務時擁有較好的談判位置。",
+      "startSeconds": 914.96,
+      "endSeconds": 926.424,
+      "id": "S124-01",
+      "cueId": "S124",
+      "sequence": 124,
+      "segmentIndex": 1
+    },
+    {
+      "text": "這項判斷不是一個直接統計出來的排名結果，而是由人口推估、職缺、薪資和青年就業資料共同形成的趨勢推論。",
+      "startSeconds": 926.424,
+      "endSeconds": 937.24,
+      "id": "S125-01",
+      "cueId": "S125",
+      "sequence": 125,
+      "segmentIndex": 1
+    },
+    {
+      "text": "人口稀缺只是環境條件；",
+      "startSeconds": 937.42,
+      "endSeconds": 939.9,
+      "id": "S126-01",
+      "cueId": "S126",
+      "sequence": 126,
+      "segmentIndex": 1
+    },
+    {
+      "text": "能力能否被看見，企業制度是否公平，勞動者是否有選擇和保障，決定了它能不能變成個人的紅利。",
+      "startSeconds": 939.9,
+      "endSeconds": 949.822,
+      "id": "S127-01",
+      "cueId": "S127",
+      "sequence": 127,
+      "segmentIndex": 1
+    },
+    {
+      "text": "若青年受限於地域、照顧責任、健康、交通或教育資源，帳面上的職缺再多，也未必是可實際取得的機會。",
+      "startSeconds": 949.822,
+      "endSeconds": 960.42,
+      "id": "S128-01",
+      "cueId": "S128",
+      "sequence": 128,
+      "segmentIndex": 1
+    },
+    {
+      "text": "制度與支持系統，會影響人口趨勢如何落到每個人的生活裡。",
+      "startSeconds": 960.6,
+      "endSeconds": 966.051,
+      "id": "S129-01",
+      "cueId": "S129",
+      "sequence": 129,
+      "segmentIndex": 1
+    },
+    {
+      "text": "回到開場：九年級生到了 30 歲，會不會更容易找到工作、談薪、接下重要職務？",
+      "startSeconds": 966.051,
+      "endSeconds": 973.32,
+      "id": "S130-01",
+      "cueId": "S130",
+      "sequence": 130,
+      "segmentIndex": 1
+    },
+    {
+      "text": "有些人可能會，但機會會集中在特定產業、地區和技能，也會受到景氣和制度影響。",
+      "startSeconds": 973.5,
+      "endSeconds": 981.675,
+      "id": "S131-01",
+      "cueId": "S131",
+      "sequence": 131,
+      "segmentIndex": 1
+    },
+    {
+      "text": "人口結構告訴我們市場正在變化，卻不替每個人保證結果。",
+      "startSeconds": 981.675,
+      "endSeconds": 987.42,
+      "id": "S132-01",
+      "cueId": "S132",
+      "sequence": 132,
+      "segmentIndex": 1
+    },
+    {
+      "text": "到了 2031 年到 2040 年，九年級生陸續走到 30 歲，最值得準備的或許不是等待別人退休，而是累積能被驗證的專業、溝通與協作能力，學會比較工作條件，也為自己保留轉換方向的空間。",
+      "startSeconds": 987.6,
+      "endSeconds": 1006.8,
+      "id": "S133-01",
+      "cueId": "S133",
+      "sequence": 133,
+      "segmentIndex": 1
+    },
+    {
+      "text": "青年稀缺可能帶來一扇門；",
+      "startSeconds": 1006.98,
+      "endSeconds": 1009.456,
+      "id": "S134-01",
+      "cueId": "S134",
+      "sequence": 134,
+      "segmentIndex": 1
+    },
+    {
+      "text": "真正能走進去的，是準備好、看得懂條件，也能選擇適合自己道路的人。",
+      "startSeconds": 1009.456,
+      "endSeconds": 1016.06,
+      "id": "S135-01",
+      "cueId": "S135",
+      "sequence": 135,
+      "segmentIndex": 1
+    }
+  ]
+}
