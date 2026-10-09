@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#173b2e">
   <meta name="description" content="台灣九年級生的黃金新賽道第9集：同步播放原速旁白、Excel分鏡、SRT字幕與14章索引。">
-  <title>台灣十大「九年級生到2040最可能看到成熟的綠色產業」</title>
-  <link rel="stylesheet" href="./assets/main.css">
+  <title>真實模式同步閱讀｜台灣十大「九年級生到2040最可能看到成熟的綠色產業」</title>
+  <link rel="stylesheet" href="../assets/main.css">
   <script>
 // 真實模式 YouTube 網址：在本頁下方兩個空字串填入您的網址後儲存、重新整理。
 // youtubeRealModeWithSubtitles：有字幕；youtubeRealModeWithoutSubtitles：無字幕。
 window.EPISODE_SETTINGS = {
   "links": {
-    "home": "./index.html",
-    "reading": "./reading.html",
-    "realMode": "./real-mode/reading.html",
+    "home": "../index.html",
+    "reading": "../reading.html",
+    "realMode": "./reading.html",
     "chapters": "#chapter-index",
     "youtubeWithSubtitles": "https://youtu.be/gTSb_SVtqkc",
     "youtubeWithoutSubtitles": "https://youtu.be/A6FcD5aWg1o",
@@ -22,16 +22,17 @@ window.EPISODE_SETTINGS = {
     "youtubeRealModeWithoutSubtitles": "https://youtu.be/1jugxNUL96E"
   },
   "assets": {
-    "base": "./",
+    "base": "../",
     "coverImage": "images/cover.webp",
-    "sceneImagePattern": "images/{id}.webp",
+    "sceneImagePattern": "real-mode/images/{id}.webp",
     "narrationAudio": "audio/narration.mp3"
-  }
+  },
+  "mode": "real"
 };
   </script>
-  <script defer src="./assets/main.js"></script>
+  <script defer src="../assets/main.js"></script>
 </head>
-<body>
+<body data-page="reader" data-mode="real">
   <div id="root"></div>
 </body>
 </html>
