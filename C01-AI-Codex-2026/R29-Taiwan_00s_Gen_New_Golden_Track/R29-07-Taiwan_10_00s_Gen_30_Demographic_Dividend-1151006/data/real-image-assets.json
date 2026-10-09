@@ -1,0 +1,623 @@
+{
+  "imageCount": 123,
+  "format": "WebP",
+  "dimensions": "1280x720",
+  "sourceSet": "outputs/photorealistic-001-123",
+  "assets": [
+    {
+      "id": "001",
+      "path": "real-images/001.webp",
+      "source": "outputs/photorealistic-001-123/001.webp"
+    },
+    {
+      "id": "002",
+      "path": "real-images/002.webp",
+      "source": "outputs/photorealistic-001-123/002.webp"
+    },
+    {
+      "id": "003",
+      "path": "real-images/003.webp",
+      "source": "outputs/photorealistic-001-123/003.webp"
+    },
+    {
+      "id": "004",
+      "path": "real-images/004.webp",
+      "source": "outputs/photorealistic-001-123/004.webp"
+    },
+    {
+      "id": "005",
+      "path": "real-images/005.webp",
+      "source": "outputs/photorealistic-001-123/005.webp"
+    },
+    {
+      "id": "006",
+      "path": "real-images/006.webp",
+      "source": "outputs/photorealistic-001-123/006.webp"
+    },
+    {
+      "id": "007",
+      "path": "real-images/007.webp",
+      "source": "outputs/photorealistic-001-123/007.webp"
+    },
+    {
+      "id": "008",
+      "path": "real-images/008.webp",
+      "source": "outputs/photorealistic-001-123/008.webp"
+    },
+    {
+      "id": "009",
+      "path": "real-images/009.webp",
+      "source": "outputs/photorealistic-001-123/009.webp"
+    },
+    {
+      "id": "010",
+      "path": "real-images/010.webp",
+      "source": "outputs/photorealistic-001-123/010.webp"
+    },
+    {
+      "id": "011",
+      "path": "real-images/011.webp",
+      "source": "outputs/photorealistic-001-123/011.webp"
+    },
+    {
+      "id": "012",
+      "path": "real-images/012.webp",
+      "source": "outputs/photorealistic-001-123/012.webp"
+    },
+    {
+      "id": "013",
+      "path": "real-images/013.webp",
+      "source": "outputs/photorealistic-001-123/013.webp"
+    },
+    {
+      "id": "014",
+      "path": "real-images/014.webp",
+      "source": "outputs/photorealistic-001-123/014.webp"
+    },
+    {
+      "id": "015",
+      "path": "real-images/015.webp",
+      "source": "outputs/photorealistic-001-123/015.webp"
+    },
+    {
+      "id": "016",
+      "path": "real-images/016.webp",
+      "source": "outputs/photorealistic-001-123/016.webp"
+    },
+    {
+      "id": "017",
+      "path": "real-images/017.webp",
+      "source": "outputs/photorealistic-001-123/017.webp"
+    },
+    {
+      "id": "018",
+      "path": "real-images/018.webp",
+      "source": "outputs/photorealistic-001-123/018.webp"
+    },
+    {
+      "id": "019",
+      "path": "real-images/019.webp",
+      "source": "outputs/photorealistic-001-123/019.webp"
+    },
+    {
+      "id": "020",
+      "path": "real-images/020.webp",
+      "source": "outputs/photorealistic-001-123/020.webp"
+    },
+    {
+      "id": "021",
+      "path": "real-images/021.webp",
+      "source": "outputs/photorealistic-001-123/021.webp"
+    },
+    {
+      "id": "022",
+      "path": "real-images/022.webp",
+      "source": "outputs/photorealistic-001-123/022.webp"
+    },
+    {
+      "id": "023",
+      "path": "real-images/023.webp",
+      "source": "outputs/photorealistic-001-123/023.webp"
+    },
+    {
+      "id": "024",
+      "path": "real-images/024.webp",
+      "source": "outputs/photorealistic-001-123/024.webp"
+    },
+    {
+      "id": "025",
+      "path": "real-images/025.webp",
+      "source": "outputs/photorealistic-001-123/025.webp"
+    },
+    {
+      "id": "026",
+      "path": "real-images/026.webp",
+      "source": "outputs/photorealistic-001-123/026.webp"
+    },
+    {
+      "id": "027",
+      "path": "real-images/027.webp",
+      "source": "outputs/photorealistic-001-123/027.webp"
+    },
+    {
+      "id": "028",
+      "path": "real-images/028.webp",
+      "source": "outputs/photorealistic-001-123/028.webp"
+    },
+    {
+      "id": "029",
+      "path": "real-images/029.webp",
+      "source": "outputs/photorealistic-001-123/029.webp"
+    },
+    {
+      "id": "030",
+      "path": "real-images/030.webp",
+      "source": "outputs/photorealistic-001-123/030.webp"
+    },
+    {
+      "id": "031",
+      "path": "real-images/031.webp",
+      "source": "outputs/photorealistic-001-123/031.webp"
+    },
+    {
+      "id": "032",
+      "path": "real-images/032.webp",
+      "source": "outputs/photorealistic-001-123/032.webp"
+    },
+    {
+      "id": "033",
+      "path": "real-images/033.webp",
+      "source": "outputs/photorealistic-001-123/033.webp"
+    },
+    {
+      "id": "034",
+      "path": "real-images/034.webp",
+      "source": "outputs/photorealistic-001-123/034.webp"
+    },
+    {
+      "id": "035",
+      "path": "real-images/035.webp",
+      "source": "outputs/photorealistic-001-123/035.webp"
+    },
+    {
+      "id": "036",
+      "path": "real-images/036.webp",
+      "source": "outputs/photorealistic-001-123/036.webp"
+    },
+    {
+      "id": "037",
+      "path": "real-images/037.webp",
+      "source": "outputs/photorealistic-001-123/037.webp"
+    },
+    {
+      "id": "038",
+      "path": "real-images/038.webp",
+      "source": "outputs/photorealistic-001-123/038.webp"
+    },
+    {
+      "id": "039",
+      "path": "real-images/039.webp",
+      "source": "outputs/photorealistic-001-123/039.webp"
+    },
+    {
+      "id": "040",
+      "path": "real-images/040.webp",
+      "source": "outputs/photorealistic-001-123/040.webp"
+    },
+    {
+      "id": "041",
+      "path": "real-images/041.webp",
+      "source": "outputs/photorealistic-001-123/041.webp"
+    },
+    {
+      "id": "042",
+      "path": "real-images/042.webp",
+      "source": "outputs/photorealistic-001-123/042.webp"
+    },
+    {
+      "id": "043",
+      "path": "real-images/043.webp",
+      "source": "outputs/photorealistic-001-123/043.webp"
+    },
+    {
+      "id": "044",
+      "path": "real-images/044.webp",
+      "source": "outputs/photorealistic-001-123/044.webp"
+    },
+    {
+      "id": "045",
+      "path": "real-images/045.webp",
+      "source": "outputs/photorealistic-001-123/045.webp"
+    },
+    {
+      "id": "046",
+      "path": "real-images/046.webp",
+      "source": "outputs/photorealistic-001-123/046.webp"
+    },
+    {
+      "id": "047",
+      "path": "real-images/047.webp",
+      "source": "outputs/photorealistic-001-123/047.webp"
+    },
+    {
+      "id": "048",
+      "path": "real-images/048.webp",
+      "source": "outputs/photorealistic-001-123/048.webp"
+    },
+    {
+      "id": "049",
+      "path": "real-images/049.webp",
+      "source": "outputs/photorealistic-001-123/049.webp"
+    },
+    {
+      "id": "050",
+      "path": "real-images/050.webp",
+      "source": "outputs/photorealistic-001-123/050.webp"
+    },
+    {
+      "id": "051",
+      "path": "real-images/051.webp",
+      "source": "outputs/photorealistic-001-123/051.webp"
+    },
+    {
+      "id": "052",
+      "path": "real-images/052.webp",
+      "source": "outputs/photorealistic-001-123/052.webp"
+    },
+    {
+      "id": "053",
+      "path": "real-images/053.webp",
+      "source": "outputs/photorealistic-001-123/053.webp"
+    },
+    {
+      "id": "054",
+      "path": "real-images/054.webp",
+      "source": "outputs/photorealistic-001-123/054.webp"
+    },
+    {
+      "id": "055",
+      "path": "real-images/055.webp",
+      "source": "outputs/photorealistic-001-123/055.webp"
+    },
+    {
+      "id": "056",
+      "path": "real-images/056.webp",
+      "source": "outputs/photorealistic-001-123/056.webp"
+    },
+    {
+      "id": "057",
+      "path": "real-images/057.webp",
+      "source": "outputs/photorealistic-001-123/057.webp"
+    },
+    {
+      "id": "058",
+      "path": "real-images/058.webp",
+      "source": "outputs/photorealistic-001-123/058.webp"
+    },
+    {
+      "id": "059",
+      "path": "real-images/059.webp",
+      "source": "outputs/photorealistic-001-123/059.webp"
+    },
+    {
+      "id": "060",
+      "path": "real-images/060.webp",
+      "source": "outputs/photorealistic-001-123/060.webp"
+    },
+    {
+      "id": "061",
+      "path": "real-images/061.webp",
+      "source": "outputs/photorealistic-001-123/061.webp"
+    },
+    {
+      "id": "062",
+      "path": "real-images/062.webp",
+      "source": "outputs/photorealistic-001-123/062.webp"
+    },
+    {
+      "id": "063",
+      "path": "real-images/063.webp",
+      "source": "outputs/photorealistic-001-123/063.webp"
+    },
+    {
+      "id": "064",
+      "path": "real-images/064.webp",
+      "source": "outputs/photorealistic-001-123/064.webp"
+    },
+    {
+      "id": "065",
+      "path": "real-images/065.webp",
+      "source": "outputs/photorealistic-001-123/065.webp"
+    },
+    {
+      "id": "066",
+      "path": "real-images/066.webp",
+      "source": "outputs/photorealistic-001-123/066.webp"
+    },
+    {
+      "id": "067",
+      "path": "real-images/067.webp",
+      "source": "outputs/photorealistic-001-123/067.webp"
+    },
+    {
+      "id": "068",
+      "path": "real-images/068.webp",
+      "source": "outputs/photorealistic-001-123/068.webp"
+    },
+    {
+      "id": "069",
+      "path": "real-images/069.webp",
+      "source": "outputs/photorealistic-001-123/069.webp"
+    },
+    {
+      "id": "070",
+      "path": "real-images/070.webp",
+      "source": "outputs/photorealistic-001-123/070.webp"
+    },
+    {
+      "id": "071",
+      "path": "real-images/071.webp",
+      "source": "outputs/photorealistic-001-123/071.webp"
+    },
+    {
+      "id": "072",
+      "path": "real-images/072.webp",
+      "source": "outputs/photorealistic-001-123/072.webp"
+    },
+    {
+      "id": "073",
+      "path": "real-images/073.webp",
+      "source": "outputs/photorealistic-001-123/073.webp"
+    },
+    {
+      "id": "074",
+      "path": "real-images/074.webp",
+      "source": "outputs/photorealistic-001-123/074.webp"
+    },
+    {
+      "id": "075",
+      "path": "real-images/075.webp",
+      "source": "outputs/photorealistic-001-123/075.webp"
+    },
+    {
+      "id": "076",
+      "path": "real-images/076.webp",
+      "source": "outputs/photorealistic-001-123/076.webp"
+    },
+    {
+      "id": "077",
+      "path": "real-images/077.webp",
+      "source": "outputs/photorealistic-001-123/077.webp"
+    },
+    {
+      "id": "078",
+      "path": "real-images/078.webp",
+      "source": "outputs/photorealistic-001-123/078.webp"
+    },
+    {
+      "id": "079",
+      "path": "real-images/079.webp",
+      "source": "outputs/photorealistic-001-123/079.webp"
+    },
+    {
+      "id": "080",
+      "path": "real-images/080.webp",
+      "source": "outputs/photorealistic-001-123/080.webp"
+    },
+    {
+      "id": "081",
+      "path": "real-images/081.webp",
+      "source": "outputs/photorealistic-001-123/081.webp"
+    },
+    {
+      "id": "082",
+      "path": "real-images/082.webp",
+      "source": "outputs/photorealistic-001-123/082.webp"
+    },
+    {
+      "id": "083",
+      "path": "real-images/083.webp",
+      "source": "outputs/photorealistic-001-123/083.webp"
+    },
+    {
+      "id": "084",
+      "path": "real-images/084.webp",
+      "source": "outputs/photorealistic-001-123/084.webp"
+    },
+    {
+      "id": "085",
+      "path": "real-images/085.webp",
+      "source": "outputs/photorealistic-001-123/085.webp"
+    },
+    {
+      "id": "086",
+      "path": "real-images/086.webp",
+      "source": "outputs/photorealistic-001-123/086.webp"
+    },
+    {
+      "id": "087",
+      "path": "real-images/087.webp",
+      "source": "outputs/photorealistic-001-123/087.webp"
+    },
+    {
+      "id": "088",
+      "path": "real-images/088.webp",
+      "source": "outputs/photorealistic-001-123/088.webp"
+    },
+    {
+      "id": "089",
+      "path": "real-images/089.webp",
+      "source": "outputs/photorealistic-001-123/089.webp"
+    },
+    {
+      "id": "090",
+      "path": "real-images/090.webp",
+      "source": "outputs/photorealistic-001-123/090.webp"
+    },
+    {
+      "id": "091",
+      "path": "real-images/091.webp",
+      "source": "outputs/photorealistic-001-123/091.webp"
+    },
+    {
+      "id": "092",
+      "path": "real-images/092.webp",
+      "source": "outputs/photorealistic-001-123/092.webp"
+    },
+    {
+      "id": "093",
+      "path": "real-images/093.webp",
+      "source": "outputs/photorealistic-001-123/093.webp"
+    },
+    {
+      "id": "094",
+      "path": "real-images/094.webp",
+      "source": "outputs/photorealistic-001-123/094.webp"
+    },
+    {
+      "id": "095",
+      "path": "real-images/095.webp",
+      "source": "outputs/photorealistic-001-123/095.webp"
+    },
+    {
+      "id": "096",
+      "path": "real-images/096.webp",
+      "source": "outputs/photorealistic-001-123/096.webp"
+    },
+    {
+      "id": "097",
+      "path": "real-images/097.webp",
+      "source": "outputs/photorealistic-001-123/097.webp"
+    },
+    {
+      "id": "098",
+      "path": "real-images/098.webp",
+      "source": "outputs/photorealistic-001-123/098.webp"
+    },
+    {
+      "id": "099",
+      "path": "real-images/099.webp",
+      "source": "outputs/photorealistic-001-123/099.webp"
+    },
+    {
+      "id": "100",
+      "path": "real-images/100.webp",
+      "source": "outputs/photorealistic-001-123/100.webp"
+    },
+    {
+      "id": "101",
+      "path": "real-images/101.webp",
+      "source": "outputs/photorealistic-001-123/101.webp"
+    },
+    {
+      "id": "102",
+      "path": "real-images/102.webp",
+      "source": "outputs/photorealistic-001-123/102.webp"
+    },
+    {
+      "id": "103",
+      "path": "real-images/103.webp",
+      "source": "outputs/photorealistic-001-123/103.webp"
+    },
+    {
+      "id": "104",
+      "path": "real-images/104.webp",
+      "source": "outputs/photorealistic-001-123/104.webp"
+    },
+    {
+      "id": "105",
+      "path": "real-images/105.webp",
+      "source": "outputs/photorealistic-001-123/105.webp"
+    },
+    {
+      "id": "106",
+      "path": "real-images/106.webp",
+      "source": "outputs/photorealistic-001-123/106.webp"
+    },
+    {
+      "id": "107",
+      "path": "real-images/107.webp",
+      "source": "outputs/photorealistic-001-123/107.webp"
+    },
+    {
+      "id": "108",
+      "path": "real-images/108.webp",
+      "source": "outputs/photorealistic-001-123/108.webp"
+    },
+    {
+      "id": "109",
+      "path": "real-images/109.webp",
+      "source": "outputs/photorealistic-001-123/109.webp"
+    },
+    {
+      "id": "110",
+      "path": "real-images/110.webp",
+      "source": "outputs/photorealistic-001-123/110.webp"
+    },
+    {
+      "id": "111",
+      "path": "real-images/111.webp",
+      "source": "outputs/photorealistic-001-123/111.webp"
+    },
+    {
+      "id": "112",
+      "path": "real-images/112.webp",
+      "source": "outputs/photorealistic-001-123/112.webp"
+    },
+    {
+      "id": "113",
+      "path": "real-images/113.webp",
+      "source": "outputs/photorealistic-001-123/113.webp"
+    },
+    {
+      "id": "114",
+      "path": "real-images/114.webp",
+      "source": "outputs/photorealistic-001-123/114.webp"
+    },
+    {
+      "id": "115",
+      "path": "real-images/115.webp",
+      "source": "outputs/photorealistic-001-123/115.webp"
+    },
+    {
+      "id": "116",
+      "path": "real-images/116.webp",
+      "source": "outputs/photorealistic-001-123/116.webp"
+    },
+    {
+      "id": "117",
+      "path": "real-images/117.webp",
+      "source": "outputs/photorealistic-001-123/117.webp"
+    },
+    {
+      "id": "118",
+      "path": "real-images/118.webp",
+      "source": "outputs/photorealistic-001-123/118.webp"
+    },
+    {
+      "id": "119",
+      "path": "real-images/119.webp",
+      "source": "outputs/photorealistic-001-123/119.webp"
+    },
+    {
+      "id": "120",
+      "path": "real-images/120.webp",
+      "source": "outputs/photorealistic-001-123/120.webp"
+    },
+    {
+      "id": "121",
+      "path": "real-images/121.webp",
+      "source": "outputs/photorealistic-001-123/121.webp"
+    },
+    {
+      "id": "122",
+      "path": "real-images/122.webp",
+      "source": "outputs/photorealistic-001-123/122.webp"
+    },
+    {
+      "id": "123",
+      "path": "real-images/123.webp",
+      "source": "outputs/photorealistic-001-123/123.webp"
+    }
+  ]
+}
