@@ -197,6 +197,26 @@
         <br>
         <hr> -->
         <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
+        <h2 id="1-8" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
+          <strong class="yf-code2 text-success">台灣高中少子化生存戰</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-8" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
         <h2 id="1-7" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
           <strong class="yf-code2 text-danger">九年級生的黃金新賽道</strong>
         </h2>
@@ -216,6 +236,7 @@
         </div>
         <br>
         <hr>
+
         <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
         <h2 id="1-6" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
           <strong class="yf-code2 text-success">九年級生的高難度人生</strong>
@@ -412,6 +433,100 @@
 
   <script type="module">
     import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+    // 台灣高中少子化生存戰
+
+    const app8 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+          // R030-ALL.九年級生的黃金新賽道 ~ 各集索引 ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-ALL-TW_HS_Low_Birth_Survival_Index-1151010/index.html',
+            pic1s: './images/R030-all.webp',
+            dec1: 'R030-ALL.九年級生的黃金新賽道 ~ 各集索引 ~ 115.10.10',
+          },
+          // R030-00.台灣高中少子化生存戰 00 ~ 10集-摘要介紹 ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-00-TW_HS_Low_Birth_Survival_10_Eps-1151009/index.html',
+            pic1s: './images/R030-00.webp',
+            dec1: 'R030-00.台灣高中少子化生存戰 00 ~ 10集-摘要介紹 ~ 115.10.10',
+          },
+          // R030-01.台灣高中少子化生存戰 01 ~ 高中招生不足，哪些學校最先面臨危機？ ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-01-HS_Enrollment_Crisis_First-1151009/index.html',
+            pic1s: './images/R030-01.webp',
+            dec1: 'R030-01.台灣高中少子化生存戰 01 ~ 高中招生不足，哪些學校最先面臨危機？ ~ 115.10.10',
+          },
+
+          // R030-02.台灣高中少子化生存戰 02 ~ 公立高中是否也開始感受到招生壓力？ ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-02-Public_HS_Enrollment_Pressure-1151009/index.html',
+            pic1s: './images/R030-02.webp',
+            dec1: 'R030-02.台灣高中少子化生存戰 02 ~ 公立高中是否也開始感受到招生壓力？ ~ 115.10.10',
+          },
+          // R030-03.台灣高中少子化生存戰 03 ~ 私立高中為何可能率先面臨經營困境？ ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-03-Why_Private_HS_Crisis_First-1151009/index.html',
+            pic1s: './images/R030-03.webp',
+            dec1: 'R030-03.台灣高中少子化生存戰 03 ~ 私立高中為何可能率先面臨經營困境？ ~ 115.10.10',
+          },
+          // R030-04.台灣高中少子化生存戰 04 ~ 高中減班如何改變教師工作與編制？ ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-04-HS_Class_Cuts_Teacher_Staffing-1151009/index.html',
+            pic1s: './images/R030-04.webp',
+            dec1: 'R030-04.台灣高中少子化生存戰 04 ~ 高中減班如何改變教師工作與編制？ ~ 115.10.10',
+          },
+
+          // R030-05.台灣高中少子化生存戰 05 ~ 正式教師與代理教師誰受到的影響更大？ ~ 115.10.10
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-05-Regular_vs_Substitute_Teacher_Impact-1151009/index.html',
+            pic1s: './images/R030-05.webp',
+            dec1: 'R030-05.台灣高中少子化生存戰 05 ~ 正式教師與代理教師誰受到的影響更大？ ~ 115.10.10',
+          },
+          // R030-06.台灣高中少子化生存戰 06 ~ 學生變少，為何教師行政負擔不一定減輕？ ~ 115.10.11
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-06-Fewer_Students_Teacher_Admin_Not_Less-1151010/index.html',
+            pic1s: './images/R030-06.webp',
+            dec1: 'R030-06.台灣高中少子化生存戰 06 ~ 學生變少，為何教師行政負擔不一定減輕？ ~ 115.10.11',
+          },
+          // R030-07.台灣高中少子化生存戰 07 ~ 學校招生不足，教育品質會變好還是變差？ ~ 115.10.11
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-07-Low_Enrollment_Quality_Better_or_Worse-1151010/index.html',
+            pic1s: './images/R030-07.webp',
+            dec1: 'R030-07.台灣高中少子化生存戰 07 ~ 學校招生不足，教育品質會變好還是變差？ ~ 115.10.11',
+          },
+
+          // R030-08.台灣高中少子化生存戰 08 ~ 高中減班、整併與退場如何影響教育現場？ ~ 115.10.11
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-08-HS_Cuts_Mergers_Closures_Impact-1151010/index.html',
+            pic1s: './images/R030-08.webp',
+            dec1: 'R030-08.台灣高中少子化生存戰 08 ~ 高中減班、整併與退場如何影響教育現場？ ~ 115.10.11',
+          },
+          // R030-09.台灣高中少子化生存戰 09 ~ 高中教育資源與經費應如何重新分配？ ~ 115.10.11
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-09-HS_Edu_Resources_Funding_Reallocation-1151010/index.html',
+            pic1s: './images/R030-09.webp',
+            dec1: 'R030-09.台灣高中少子化生存戰 09 ~ 高中教育資源與經費應如何重新分配？ ~ 115.10.11',
+          },
+          // R030-10.台灣高中少子化生存戰 10 ~ 未來10年，台灣高中需要什麼新的生存模式？ ~ 115.10.11
+          {
+            pic1: '/C01-AI-Codex-2026/R30-TW_HS_Low_Birth_Survival/R30-10-TW_HS_10Y_New_Survival_Model-1151010/index.html',
+            pic1s: './images/R030-10.webp',
+            dec1: 'R030-10.台灣高中少子化生存戰 10 ~ 未來10年，台灣高中需要什麼新的生存模式？ ~ 115.10.11',
+          },
+
+
+
+        ]);
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-8')
+
+
 
     // 《台灣九年級生的黃金新賽道》
     const app7 = createApp({
@@ -1143,25 +1258,6 @@
     }).mount('#a1-4')
 
 
-
-
-
-
-
-    const app8 = createApp({
-      setup() {
-        // 使用 ref 定義響應式狀態（陣列）
-        const arr = ref([
-
-
-
-        ]);
-        // 返回數據和方法
-        return {
-          arr,
-        };
-      }
-    }).mount('#a1-8')
 
 
 
