@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#173b2e">
+<title>同步閱讀｜第10集：未來轉型篇</title>
+<link rel="stylesheet" href="./assets/site.css">
+<script>window.EPISODE_SETTINGS={audio:"./audio/narration.mp3",fps:30};</script>
+<script defer src="./assets/timeline-data.js"></script>
+<script defer src="./assets/app.js"></script>
+</head>
+<body data-page="reader">
+<main class="reader" id="reader">
+  <header class="reader-head">
+    <a class="back" href="./index.html">← 首頁</a>
+    <div class="reader-heading">
+      <small id="chapter-title">第 01 章｜人口轉折與轉型契機</small>
+      <h1>台灣高中少子化生存戰</h1>
+    </div>
+    <span class="reader-count">14 章・168 節</span>
+  </header>
+
+  <section class="stage" aria-label="分鏡、字幕與播放控制">
+    <div class="stage-topbar" id="stage-chapter">01｜人口轉折與轉型契機</div>
+    <div class="stage-visual">
+      <img id="scene-image" src="./images/001.webp" alt="分鏡 001 插圖">
+      <div class="chapter-toast" id="chapter-toast" aria-live="polite"></div>
+      <div class="caption" id="caption" aria-live="polite"></div>
+    </div>
+    <section class="controls" aria-label="播放控制">
+      <div class="transport">
+        <span id="elapsed">00:00.000</span>
+        <input id="seek" type="range" min="0" max="873768" value="0" step="1" aria-label="播放進度">
+        <span id="duration">00:14:33.768</span>
+      </div>
+      <div class="subcontrols">
+        <div class="control-buttons">
+          <button type="button" id="play">播放</button>
+          <button type="button" id="restart">重新播放</button>
+          <button type="button" id="fullscreen">全螢幕</button>
+          <label class="volume-control" for="volume">音量<input id="volume" type="range" min="0" max="1" value="0.8" step="0.01" aria-label="音量"></label>
+        </div>
+        <span id="timeline-status">時間軸依 Excel 表格時間</span>
+      </div>
+    </section>
+  </section>
+
+  <section class="chapter-section" aria-label="章節索引">
+    <span class="chapter-label">CHAPTER INDEX</span>
+    <div class="chapter-heading-row">
+      <h2>章節索引</h2>
+      <button class="index-toggle" id="toggle-index" aria-expanded="true" type="button">收合章節</button>
+    </div>
+    <nav class="chapter-list" id="chapter-list"></nav>
+  </section>
+  <audio id="audio" preload="metadata" src="./audio/narration.mp3"></audio>
+</main>
+</body>
+</html>
