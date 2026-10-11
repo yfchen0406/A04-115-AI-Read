@@ -10,6 +10,7 @@ const activities = [
   { id:'a06', group:'每月同學聚會', date:'115 年 8 月 5 日', short:'八月份第六次聚會~川哥、小胖加上我自己', folder:'A06-1150805-八月份第六次聚餐', photos:['A06-1150805-1','A06-1150805-2','A06-1--準備午餐','A06-2-專業煎餃','A06-3-精心調配醬汁5','A06-4-獨立門醬汁','A06-5-飯後甜點','A06-6-原本週一菜單','A06-7-預計週三開心聚餐','A06-8-週二更換聚餐菜單','A06-9-因為更換菜單我變成詐騙師','A06-10-另外一位詐騙師','A06-11-貨真價實的詐騙師'] },
   { id:'a07', group:'每月同學聚會', date:'115 年 8 月 24 日', short:'八月份第七次聚會', folder:'A07-1150824-八月份第七次聚會', photos:['A01-正芬姐公司的衣服送三件給川董','A02-川董生日小胖也來慶祝-好市多買中餐','A03-公務繁重的川董依然忙碌接電話','A04-簡單採購幾樣餐點','A05-好市多鮭魚壽司和蝦仁炒飯','A06-川董生日開心聚餐'] },
   { id:'a08', group:'每月同學聚會', date:'115 年 9 月 16 日', short:'九月份聚會－今年第八次', folder:'A08-1150916-九月份聚會-今年第八次', photos:['A01-買好午餐準備用餐川董依然忙碌','A02-用餐前合照、壽司和烤雞','A03-加上宜蘭蒜味肉羹，芭樂汁，還有紅豆湯和飯後咖啡','A04-酒足飯堡的小胖，躺在沙發睡著了'] },
+  { id:'a09', group:'每月同學聚會', date:'115 年 10 月 6 日', short:'十月份聚會－今年第九次', folder:'A09-1151006-十月份聚會-今年第九次', photos:['A01-今天聚會前有點感冒，結果聚會結束到醫院看診為A流','A02-聚會討論議題一-2026台北市長選舉','A03-討論議題二-五年級和九年級時代不同所得到服利','A04-關廟麵加餛飩','A05-聚餐前先拿乖乖照相，就是要他們乖乖','A06-每人都一大碗關廟麵，不過他們辣椒放太多','A07-看起來我的手藝不錯','A08-正芬姐送的制服，下次都要穿這件來'] },
   { id:'b04', group:'川哥相聚', date:'115 年 7 月 14 日', short:'川哥七月份到好市多吃熱狗後回家喝咖啡', folder:'B03-1150714-川哥七月份到好市多吃熱夠後回家喝咖啡', photos:['B03-1150714-1','B03-1150714-2','B03-1150714-3'] },
   { id:'b05', group:'川哥相聚', date:'115 年 7 月 24 日', short:'川哥七月份中午買肯德基來家裡享用', folder:'B04-1150724-川哥七月份中午買肯德基來家裡享用', photos:['S__26173455_0','S__26173456_0','S__26173457_0','S__26173458_0','S__26173459_0'] },
   { id:'b06', group:'川哥相聚', date:'115 年 8 月 18 日', short:'川哥到家來品嚐yfc廣東粥', folder:'B05-1150818-川哥到家來品嚐yfc廣東粥', photos:['B05-1-裝忙的川哥','B05-2-進電梯也要裝忙','B05-3-284熱天進門先喝沙士','B05-4-靜靜等待廣東粥完成','B05-5-廣東粥上桌','B05-6-川董認真品嚐','B05A-1-一早的廣東粥菜單','B05A-2-一早的廣東粥菜單','B05A-4-一早的廣東粥菜單','B05A-5-一早的廣東粥菜單','B05A-6-一早的廣東粥菜單','B05A-7-小胖是好市多限定版','B05A-8-小胖是好市多限定版','B05A-9-小胖是好市多限定版'] },
@@ -37,6 +38,14 @@ const photoCaptions = {
   'A02-用餐前合照、壽司和烤雞': '用餐前合照、壽司和烤雞',
   'A03-加上宜蘭蒜味肉羹，芭樂汁，還有紅豆湯和飯後咖啡': '加上宜蘭蒜味肉羹、芭樂汁，還有紅豆湯和飯後咖啡',
   'A04-酒足飯堡的小胖，躺在沙發睡著了': '酒足飯堡的小胖，躺在沙發睡著了',
+  'A01-今天聚會前有點感冒，結果聚會結束到醫院看診為A流': '今天聚會前有點感冒，結果聚會結束到醫院看診為A流',
+  'A02-聚會討論議題一-2026台北市長選舉': '聚會討論議題一－2026台北市長選舉',
+  'A03-討論議題二-五年級和九年級時代不同所得到服利': '討論議題二－五年級和九年級時代不同所得到服利',
+  'A04-關廟麵加餛飩': '關廟麵加餛飩',
+  'A05-聚餐前先拿乖乖照相，就是要他們乖乖': '聚餐前先拿乖乖照相，就是要他們乖乖',
+  'A06-每人都一大碗關廟麵，不過他們辣椒放太多': '每人都一大碗關廟麵，不過他們辣椒放太多',
+  'A07-看起來我的手藝不錯': '看起來我的手藝不錯',
+  'A08-正芬姐送的制服，下次都要穿這件來': '正芬姐送的制服，下次都要穿這件來',
   'B05-1-裝忙的川哥': '裝忙的川哥',
   'B05-2-進電梯也要裝忙': '進電梯也要裝忙',
   'B05-3-284熱天進門先喝沙士': '284熱天進門先喝沙士',
@@ -58,10 +67,13 @@ const photoGrid = document.querySelector('#photoGrid');
 const filterRow = document.querySelector('#filterRow');
 const resultCount = document.querySelector('#resultCount');
 const searchInput = document.querySelector('#searchInput');
+const journalSection = document.querySelector('#journal');
+const journalLink = document.querySelector('#journalLink');
 const lightbox = document.querySelector('#lightbox');
 const lightboxImage = document.querySelector('#lightboxImage');
 const lightboxCaption = document.querySelector('#lightboxCaption');
 let activeFilter = '全部';
+let selectedActivityId = null;
 
 const dateValue = date => {
   const match = date.match(/(\d+) 年 (\d+) 月 (\d+) 日/);
@@ -81,10 +93,12 @@ function renderPhotos() {
   });
   resultCount.textContent = `顯示 ${items.length} 張照片`;
   photoGrid.innerHTML = items.map(({a,p,index}) => { const caption = photoCaptions[p] || `第 ${index+1} 張照片`; return `<button class="photo-card" type="button" data-image="${photoPath(a,p)}" data-caption="${a.date}・${a.short}・${caption}"><figure><img loading="lazy" src="${photoPath(a,p)}" alt="${a.short}：${caption}"><figcaption><strong>${caption}</strong>${a.date}・${a.short}</figcaption></figure></button>`; }).join('');
+  journalSection.hidden = selectedActivityId !== 'a08';
 }
 function showActivity(activityId) {
   const activity = activities.find(a => a.id === activityId);
   if (!activity) return;
+  selectedActivityId = activityId;
   activeFilter = '全部';
   searchInput.value = activity.short;
   filterRow.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === activeFilter)));
@@ -101,8 +115,9 @@ timelineList.addEventListener('keydown', e => {
   const item = e.target.closest('.timeline-item');
   if (item) showActivity(item.dataset.activityId);
 });
-filterRow.addEventListener('click', e => { const button = e.target.closest('button'); if (!button) return; activeFilter = button.dataset.filter; filterRow.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b === button))); renderPhotos(); });
-searchInput.addEventListener('input', renderPhotos);
+filterRow.addEventListener('click', e => { const button = e.target.closest('button'); if (!button) return; selectedActivityId = null; activeFilter = button.dataset.filter; filterRow.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b === button))); renderPhotos(); });
+searchInput.addEventListener('input', () => { selectedActivityId = null; renderPhotos(); });
+journalLink.addEventListener('click', e => { e.preventDefault(); showActivity('a08'); journalSection.scrollIntoView({behavior:'smooth', block:'start'}); });
 photoGrid.addEventListener('click', e => { const button = e.target.closest('.photo-card'); if (!button) return; lightboxImage.src = button.dataset.image; lightboxImage.alt = button.dataset.caption; lightboxCaption.textContent = button.dataset.caption; lightbox.showModal(); });
 document.querySelector('#closeLightbox').addEventListener('click', () => lightbox.close());
 lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
