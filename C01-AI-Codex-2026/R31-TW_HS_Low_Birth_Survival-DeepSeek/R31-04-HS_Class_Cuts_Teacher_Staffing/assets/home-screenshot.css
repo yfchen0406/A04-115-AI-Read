@@ -1,0 +1,17 @@
+/* Match the supplied 588 px homepage button row while preserving smaller-phone wrapping. */
+@media (min-width: 577px) and (max-width: 760px) {
+  .cover-hero-copy {
+    width: 100%;
+    padding: 1rem 0.5rem 2rem;
+  }
+
+  .cover-hero-copy .hero-actions {
+    flex-wrap: nowrap;
+    gap: 0.7rem;
+  }
+
+  .cover-hero-copy .hero-actions > a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
