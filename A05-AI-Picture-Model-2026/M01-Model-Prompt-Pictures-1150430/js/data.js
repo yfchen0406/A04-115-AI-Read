@@ -5136,5 +5136,124 @@ const promptsData = [
     date: "2026-09-28",
     url: "",
   },
+  {
+    id: 516,
+    title: "光啟高中長照醫事菁英班~1",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K005-1.webp",
+    prompt:
+      "<span class='yf3'>「光啟高中長照醫事菁英班」的招生策略、家長意願與優劣勢分析。",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 517,
+    title: "光啟高中長照醫事菁英班~2",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K005-2.webp",
+    prompt:
+      "<span class='yf3'>「光啟高中長照醫事菁英班」的招生策略、家長意願與優劣勢分析。",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 518,
+    title: "光啟高中長照醫事菁英班~3",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K005-3.webp",
+    prompt:
+      "<span class='yf3'>「光啟高中長照醫事菁英班」的招生策略、家長意願與優劣勢分析。",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 519,
+    title: "光啟高中長照醫事菁英班~4",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K005-4.webp",
+    prompt:
+      "<span class='yf3'>「光啟高中長照醫事菁英班」的招生策略、家長意願與優劣勢分析。",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 520,
+    title: "光啟高中長照醫事菁英班~5",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K005-5.webp",
+    prompt:
+      "<span class='yf3'>「光啟高中長照醫事菁英班」的招生策略、家長意願與優劣勢分析。",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 521,
+    title: "陳氏家風~第二版",
+    category: "Fun",
+    image: "./images/F01-Fun/F014-1.webp",
+    prompt:
+      "<span class='yf3'>一張帶有強烈反諷與幽默意味的圖，背景是古典山水，但內容是現代人常見的「推卸責任」心態，兩個小孩拿著「錯」字牌，男主則是一副理所當然的樣子。",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 522,
+    title: "職場委屈與夫妻間的幽默療癒",
+    category: "Life",
+    image: "./images/L02-Life/L027-1.webp",
+    prompt:
+      "<span class='yf3'>一張四格漫畫，講述老婆在職場被老前輩欺負，老公用幽默的方式在想像中幫她反擊，最後結論是「家是避風港」",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 533,
+    title: "留給孩子最珍貴的遺產",
+    category: "Principle",
+    image: "./images/P04-principle/Pr005-1.webp",
+    prompt:
+      "<span class='yf3'>以家風作為立身之本~~這是一張非常正經的教育與哲理圖，探討父母能留給孩子最重要的東西是「精神價值」而非「金錢」。",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 534,
+    title: "高中教師崗位的七大問題",
+    category: "Personal",
+    image: "./images/P04-Personal/P004-1.webp",
+    prompt:
+      "<span class='yf3'>特別適合正在規劃職業生涯、考慮是否成為教師的人作為參考指南",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 535,
+    title: "七個關鍵問題流程圖",
+    category: "Personal",
+    image: "./images/P04-Personal/P004-2.webp",
+    prompt: "<span class='yf3'>深入分析教師行業的薪資結構、優缺點以及行業現狀",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 536,
+    title: "【天道酬勤】是最大的謊言 / 時代的機會",
+    category: "Principle",
+    image: "./images/P04-principle/Pr006-1.webp",
+    prompt:
+      "<span class='yf3'>揭示【努力是必要條件，而非充分條件】的現實，並反駁【天道酬勤】的傳統觀念~~取自張琦的《認知破局》",
+    date: "2026-10-17",
+    url: "",
+  },
+  {
+    id: 537,
+    title: "商業案例與營銷分析",
+    category: "Knowledge",
+    image: "./images/K01-Knowledge/K006-1.webp",
+    prompt:
+      "<span class='yf3'>深入分析經典的商業營銷案例：品牌溢價、情感營銷、稀缺性~~取自張琦的《認知破局》",
+    date: "2026-10-17",
+    url: "",
+  },
 ];
 
