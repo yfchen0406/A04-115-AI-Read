@@ -1,0 +1,36 @@
+/* Episode layer: retains the C02/A70 reader layout and supplies this episode's image layers. */
+[hidden]{display:none!important}
+.home-hero>img{object-fit:cover;object-position:center}
+.home-hero .hero-copy{align-self:flex-end}
+.hero-summary{max-width:52rem}
+.stage-wrap{position:relative;overflow:hidden;background:#101820}
+.stage-art{position:absolute;inset:0;overflow:hidden;background:#101820}
+.stage-art .frame-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:center;will-change:transform,opacity}
+.frame-art-previous{opacity:0;z-index:0}
+.frame-art-current{opacity:1;z-index:1}
+.frame-chapter,.frame-intro,.frame-subtitle{z-index:3;pointer-events:none;font-family:DFKai-SB,BiauKai,KaiTi,"Noto Serif TC",serif;font-weight:900}
+.frame-chapter{top:3.2%;right:auto;left:3.2%;max-width:88%;padding:.35em .68em;border-radius:.28em;background:#071821a9;color:#fff;font-size:clamp(16px,2.4vw,42px);line-height:1.25;text-shadow:0 2px 5px #000,0 0 3px #000}
+.frame-intro{top:50%;left:50%;width:88%;max-width:88%;transform:translate(-50%,-50%);color:#fff200;font-size:clamp(30px,5.1vw,92px);line-height:1.3;text-align:center;text-shadow:0 4px 9px #000,0 0 18px #000;-webkit-text-stroke:1px #1119}
+.frame-intro[style*="display: none"]{display:none!important}
+.frame-subtitle{right:3.5%;bottom:4.2%;left:3.5%;display:flex;align-items:center;justify-content:center;max-width:93%;overflow:hidden;color:#fff;font-size:clamp(16px,2.2vw,36px);line-height:1.3;text-align:center;white-space:nowrap;text-shadow:0 2px 5px #000,0 0 10px #000;-webkit-text-stroke:1px #111;paint-order:stroke fill}
+#subtitle-text{display:inline-block;flex:none;max-width:none;white-space:nowrap;transform:scaleX(var(--subtitle-scale,1));transform-origin:center center}
+.poetry-highlight{color:#ffff00;text-shadow:0 2px 5px #000,0 0 12px #000;-webkit-text-stroke:1px #111}
+.cover-start{z-index:5}
+.reader-shell:fullscreen{display:flex;flex-direction:column;width:100vw;height:100vh;background:#101820}
+.reader-shell:fullscreen .stage-wrap{flex:1;width:100%;max-height:none;aspect-ratio:auto}
+.reader-shell:fullscreen .player-panel{flex:none}
+.seek-slider{touch-action:none}
+.chapter-button.active{border-color:var(--gold);background:#fff3d5;box-shadow:0 0 0 2px #e2a94333}
+.playback-status{flex-wrap:wrap;gap:.5rem 1.1rem}
+.sync-debug-toggle{display:block;margin:1rem auto;padding:.45rem .8rem;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer}
+.sync-debug{max-width:1000px;margin:0 auto;padding:.5rem 1rem;color:#52605a;font-size:.82rem;line-height:1.7}
+.sync-debug p{margin:.35rem 0}
+.playback-error{overflow-wrap:anywhere;color:#8a321c}
+@media(max-width:760px){
+  .frame-chapter{font-size:clamp(13px,3vw,22px)}
+  .frame-intro{font-size:clamp(24px,6vw,44px)}
+  .frame-subtitle{right:2%;bottom:6%;left:2%;font-size:clamp(14px,3.4vw,20px)}
+  .reader-shell:fullscreen .stage-wrap{width:100%}
+  .reader-header{grid-template-columns:auto minmax(0,1fr)}
+  .reader-duration{grid-column:2}
+}

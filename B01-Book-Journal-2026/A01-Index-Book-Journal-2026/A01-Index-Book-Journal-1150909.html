@@ -199,10 +199,30 @@
         <hr> -->
         <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
         <h2 id="1-5" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
-          <strong class="yf-code2"> 歷史回憶</strong>
+          <strong class="yf-code2"> 古代詩詞</strong>
         </h2>
         <div class="container-fluid">
           <div id="a1-5" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-6" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 商業迷因</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-6" class="row" style="align-items: flex-start;">
             <div class="col-sm-2 p-1" v-for="item in arr">
               <figure>
                 <a :href="item.pic1" target="_blank">
@@ -435,18 +455,7 @@
             pic1s: './images/S001/B09-1-4X3.webp',
             dec1: 'S009. 題西林壁~(手繪插畫中國古風??鏡) ~ 115.10.20!',
           },
-          // H001.Blockbuster 百視達：拒絕收購Netflix的代價 ~ 115.10.15
-          {
-            pic1: '/B01-Book-Journal-2026/H001-The-Rise-and-Fal-of-Blockbuster-1151015/index.html',
-            pic1s: './images/H001-1.webp',
-            dec1: 'H001.Blockbuster 百視達：拒絕收購Netflix的代價 ~ 115.10.15!',
-          },
-          // H001A.Blockbuster 百視達：拒絕收購Netflix的代價(日式卡通版438鏡) ~ 115.10.16!
-          {
-            pic1: '/B01-Book-Journal-2026/H001-A-438--The-Rise-and-Fal-of-Blockbuster-1151016/index.html',
-            pic1s: './images/H001-2.webp',
-            dec1: 'H001A.Blockbuster 百視達：拒絕收購Netflix的代價(日式卡通版438鏡) ~ 115.10.16!',
-          },
+
 
 
 
@@ -712,7 +721,18 @@
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
-
+          // H001.Blockbuster 百視達：拒絕收購Netflix的代價 ~ 115.10.15
+          {
+            pic1: '/B01-Book-Journal-2026/H001-The-Rise-and-Fal-of-Blockbuster-1151015/index.html',
+            pic1s: './images/H001-1.webp',
+            dec1: 'H001.Blockbuster 百視達：拒絕收購Netflix的代價 ~ 115.10.15!',
+          },
+          // H001A.Blockbuster 百視達：拒絕收購Netflix的代價(日式卡通版438鏡) ~ 115.10.16!
+          {
+            pic1: '/B01-Book-Journal-2026/H001-A-438--The-Rise-and-Fal-of-Blockbuster-1151016/index.html',
+            pic1s: './images/H001-2.webp',
+            dec1: 'H001A.Blockbuster 百視達：拒絕收購Netflix的代價(日式卡通版438鏡) ~ 115.10.16!',
+          },
 
 
 

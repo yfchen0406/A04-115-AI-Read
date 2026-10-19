@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="跟著蘇軾走進廬山，讀《題西林壁》，從不同位置看見山勢與觀看的限制。">
+  <title>蘇軾《題西林壁》｜動態閱讀</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/episode.css">
+  <script>
+    // TODO：正式影片網址提供後，只需更新這兩個設定值。
+    window.EPISODE_SETTINGS = {
+      links: {
+        home: './index.html',
+        reading: './reading.html',
+        youtubeWithSubtitles: 'https://www.youtube.com/',
+        youtubeWithoutSubtitles: 'https://www.youtube.com/'
+      },
+      assets: {
+        base: './',
+        coverImage: 'assets/images/cover.webp',
+        sceneImagePattern: 'assets/images/{id}.webp',
+        narrationAudio: 'assets/audio/narration.mp3'
+      }
+    };
+  </script>
+  <script defer src="./data/timeline-runtime.js"></script>
+  <script defer src="./assets/js/timeline-core.js"></script>
+  <script defer src="./assets/js/home.js"></script>
+</head>
+<body data-page="home">
+  <main class="hero home-hero" aria-label="題西林壁首頁">
+    <img src="./assets/images/cover.webp" alt="《題西林壁》封面：廬山山勢與蘇軾">
+    <span class="hero-shade cover-hero-shade" aria-hidden="true"></span>
+    <section class="hero-copy cover-hero-copy">
+      <p class="eyebrow">蘇東坡詩詞・動態閱讀</p>
+      <h1>題西林壁</h1>
+      <p class="hero-summary">跟著蘇軾走進廬山，從不同位置看見山勢，也重新思考觀看與理解。</p>
+      <nav class="hero-actions" aria-label="作品入口">
+        <a class="start-link" id="start-reading" href="./reading.html">開始閱讀 <b aria-hidden="true">→</b></a>
+        <a class="youtube-link" id="youtube-with" target="_blank" rel="noopener noreferrer">YT 連結（有字幕）</a>
+        <a class="youtube-link" id="youtube-without" target="_blank" rel="noopener noreferrer">YT 連結（無字幕）</a>
+      </nav>
+      <p class="hero-meta" id="hero-meta">旁白 4 分 47 秒・21 張分鏡・5 個章節</p>
+    </section>
+  </main>
+</body>
+</html>
