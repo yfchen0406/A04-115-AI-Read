@@ -9,3 +9,6 @@
 .playback-error{overflow-wrap:anywhere}
 .debug-jump{display:flex;flex-wrap:wrap;gap:.5rem;padding:0 1rem 1rem;align-items:center;font-size:.85rem}.debug-jump input{max-width:9rem;padding:.45rem}.debug-jump button{padding:.5rem .9rem;cursor:pointer}
 @media(max-width:760px){.hero>img{object-fit:contain}.hero{background:#173b2e}.hero-copy.cover-hero-copy{width:100%}.hero-actions{gap:.5rem}.start-link,.youtube-link{font-size:.83rem;min-height:44px;padding:.6rem .85rem}}
+
+.subtitle-line{pointer-events:none}.subtitle-poetry{padding:7px 16px;border-radius:10px;background:rgba(3,12,15,.55);box-shadow:0 3px 14px #0008}
+
