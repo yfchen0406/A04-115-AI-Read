@@ -1,0 +1,11 @@
+/* A70 2026-10-12 template classes and full-bleed structure retained. */
+[hidden]{display:none!important}
+.reader-header .back-link{cursor:pointer;color:var(--ink)}
+.chapter-button.active{color:var(--ink)}
+.stage-wrap>div{display:block!important}
+.seek-slider{touch-action:none}
+.hero>img{object-fit:cover;object-position:center}
+.hero-copy.cover-hero-copy{align-self:flex-end}
+.playback-error{overflow-wrap:anywhere}
+.debug-jump{display:flex;flex-wrap:wrap;gap:.5rem;padding:0 1rem 1rem;align-items:center;font-size:.85rem}.debug-jump input{max-width:9rem;padding:.45rem}.debug-jump button{padding:.5rem .9rem;cursor:pointer}
+@media(max-width:760px){.hero>img{object-fit:contain}.hero{background:#173b2e}.hero-copy.cover-hero-copy{width:100%}.hero-actions{gap:.5rem}.start-link,.youtube-link{font-size:.83rem;min-height:44px;padding:.6rem .85rem}}
