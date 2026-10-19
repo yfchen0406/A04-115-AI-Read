@@ -1,0 +1,6 @@
+/* Original Su Shi verse cues are highlighted in bright yellow for contrast. */
+.frame-subtitle.poem-subtitle {
+  color: #fff200;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000,
+    -2px 2px 0 #000, 2px 2px 0 #000, 0 3px 8px #000;
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《念奴嬌·赤壁懷古》旁白、分鏡、章節與字幕同步閱讀。">
+  <title>念奴嬌·赤壁懷古｜動態劇本閱讀</title>
+  <link rel="stylesheet" href="./css/a70-template.css">
+  <link rel="stylesheet" href="./css/app.css">
+  <link rel="stylesheet" href="./css/poem-highlight.css">
+  <script>
+    // YouTube links live here once. Replace these temporary entry points with the official URLs.
+    window.EPISODE_SETTINGS = {
+      links: {
+        youtubeWithSubtitles: 'https://youtu.be/vo0YlHMFPZ8', // TODO: replace with the official subtitled video URL.
+        youtubeWithoutSubtitles: 'https://youtu.be/vo0YlHMFPZ8' // TODO: replace with the official clean video URL.
+      },
+      assets: {
+        coverImage: './assets/images/cover.webp',
+        narrationAudio: './assets/audio/narration.mp3'
+      }
+    };
+  </script>
+  <script defer src="./data/timeline-data.js"></script>
+  <script defer src="./js/app.js"></script>
+</head>
+<body>
+  <main id="home-page" class="home-page">
+    <section class="hero cover-hero" aria-labelledby="home-title">
+      <img class="cover-image" src="./assets/images/cover.webp" alt="《念奴嬌·赤壁懷古》封面">
+      <div class="hero-shade cover-hero-shade"></div>
+      <div class="hero-copy cover-hero-copy">
+        <p class="eyebrow">千年後，我們仍記得蘇東坡</p>
+        <h1 id="home-title">念奴嬌·赤壁懷古</h1>
+        <p class="home-description">依 Excel 分鏡時間，閱讀旁白、章節與字幕。</p>
+        <nav class="home-actions" aria-label="首頁連結">
+          <a class="home-button primary" href="#reading">開始閱讀</a>
+          <a class="home-button" data-youtube="subtitles" target="_blank" rel="noopener">YT連結(有字幕)</a>
+          <a class="home-button" data-youtube="clean" target="_blank" rel="noopener">YT連結(無字幕)</a>
+        </nav>
+        <p class="temporary-link-note">YouTube 連結目前是暫時入口，正式影片網址尚待填入。</p>
+      </div>
+    </section>
+  </main>
+
+  <main id="reader-page" class="reader-page" hidden>
+    <header class="reader-header">
+      <a class="back-link" href="#home">← 首頁</a>
+      <div><p class="eyebrow">千年後，我們仍記得蘇東坡</p><h1>念奴嬌·赤壁懷古</h1></div>
+      <span class="reader-duration">22 鏡・5 章</span>
+    </header>
+    <section class="reader-shell" aria-label="旁白與分鏡同步播放器">
+      <div class="stage-wrap" id="stage-wrap">
+        <div class="stage-art" aria-hidden="true">
+          <img class="frame-art frame-art-a" alt="">
+          <img class="frame-art frame-art-b" alt="">
+          <div class="frame-shade"></div>
+        </div>
+        <div class="frame-chapter" id="frame-chapter"></div>
+        <div class="frame-intro" id="frame-intro" aria-live="polite"></div>
+        <div class="frame-subtitle" id="frame-subtitle" aria-live="polite"></div>
+        <button class="cover-start" id="cover-start" type="button" aria-label="開始播放旁白與同步閱讀">
+          <img src="./assets/images/cover.webp" alt="">
+          <span class="cover-shade"></span>
+          <span class="cover-start-copy"><b aria-hidden="true">▶</b><strong>開始閱讀</strong><small>22 個分鏡・5 個章節・原速旁白</small></span>
+        </button>
+        <audio id="master-audio" preload="metadata"></audio>
+      </div>
+      <div class="player-panel">
+        <div class="seek-row">
+          <span class="time-readout" id="time-current">00:00</span>
+          <input id="seek-slider" class="seek-slider" aria-label="播放時間滑桿" type="range" min="0" max="302520" step="1" value="0">
+          <span class="time-readout" id="time-total">05:02</span>
+        </div>
+        <div class="control-row">
+          <button id="prev-chapter" type="button">上一章</button>
+          <button id="prev-scene" type="button">前一鏡</button>
+          <button id="play-toggle" class="play-control" type="button" aria-label="播放">播放</button>
+          <button id="next-scene" type="button">下一鏡</button>
+          <button id="next-chapter" type="button">下一章</button>
+          <label class="volume-control"><span>音量</span><input id="volume-control" type="range" min="0" max="1" step="0.01" value="1" aria-label="音量"></label>
+        </div>
+      </div>
+    </section>
+    <section class="chapter-section" id="chapter-index">
+      <h2>章節索引</h2>
+      <div class="chapter-list" id="chapter-list"></div>
+    </section>
+    <footer class="reader-footer">畫面與章節依 Excel 時間碼，字幕依原始 SRT，旁白以 MP3 播放時鐘為準。章節首句定位目前依 SRT 時碼暫定。</footer>
+  </main>
+</body>
+</html>

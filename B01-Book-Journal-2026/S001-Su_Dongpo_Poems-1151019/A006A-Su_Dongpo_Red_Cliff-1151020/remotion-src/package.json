@@ -1,0 +1,20 @@
+{
+  "name": "nienu-jiao-red-cliff-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts --public-dir ../assets",
+    "render": "remotion render src/index.ts NianNuJiaoRedCliff out/NianNuJiaoRedCliff.mp4 --public-dir ../assets"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/media": "4.0.534",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.534"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "typescript": "5.9.3"
+  }
+}

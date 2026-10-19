@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d35">
+  <meta name="description" content="依照旁白、字幕與分鏡時間同步閱讀《定風波·莫聽穿林打葉聲》。">
+  <title>定風波·莫聽穿林打葉聲｜同步閱讀</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <link rel="stylesheet" href="./assets/site.css">
+  <script>window.EPISODE_SETTINGS={links:{home:'./index.html',reading:'./reading.html',youtubeWithSubtitles:'https://www.youtube.com/',youtubeWithoutSubtitles:'https://www.youtube.com/'},assets:{coverImage:'./assets/images/cover.webp',narrationAudio:'./assets/audio/narration.mp3'}};</script>
+  <script defer src="./data/timeline.js"></script>
+  <script defer src="./assets/player.js"></script>
+</head>
+<body data-page="reader">
+  <main class="reader-page" id="reader">
+    <header class="reader-header">
+      <a class="back-link" href="./index.html" aria-label="回首頁">⌂ 回首頁</a>
+      <h1>定風波·莫聽穿林打葉聲</h1>
+      <div class="reader-duration">離線動態閱讀</div>
+    </header>
+    <section class="reader-shell">
+      <div class="stage-wrap">
+        <img id="visual-a" src="./assets/images/IMG001.webp" alt="蘇東坡場景插畫 IMG001">
+        <img id="visual-b" class="visual-b" src="./assets/images/IMG002.webp" alt="蘇東坡場景插畫 IMG002">
+        <div class="frame-chapter" id="chapter-label"></div>
+        <div class="frame-intro" id="chapter-intro" aria-live="polite"></div>
+        <div class="frame-subtitle" id="subtitle" aria-live="polite"></div>
+      </div>
+      <div class="player-panel">
+        <div class="seek-row"><span class="time-readout" id="current-time">00:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="播放進度"><span class="time-readout" id="total-time">04:58</span></div>
+        <div class="control-row"><button class="play-control" id="play">播放</button><button id="back-10">倒退 10 秒</button><button id="forward-10">前進 10 秒</button><label class="volume-control">音量 <input id="volume" type="range" min="0" max="1" step="0.01" value="1"></label><button id="fullscreen">全螢幕</button></div>
+        <div class="playback-status"><span id="status">音訊尚未播放</span><span>時間軸依分鏡 Excel</span></div>
+        <audio id="audio" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+      </div>
+    </section>
+    <section class="chapter-section" id="chapter-index">
+      <h2>章節索引</h2>
+      <div class="chapter-list" id="chapter-list"></div>
+      <aside class="notice">本集使用 22 張依分鏡製作的場景插畫。旁白來源為 MP3，字幕文字與時間沿用 SRT，鏡頭切點依 Excel 核定時間碼。</aside>
+    </section>
+    <footer class="reader-footer">章節按鈕從該章第一句旁白起播；畫面、字幕與章節依同一時間軸更新。</footer>
+  </main>
+</body>
+</html>

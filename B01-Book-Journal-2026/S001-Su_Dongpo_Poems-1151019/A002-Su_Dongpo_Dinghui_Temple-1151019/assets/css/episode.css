@@ -1,0 +1,14 @@
+/* A70 2026-10-12 正式交付版的 main.css 為基底；本檔只補本集靜態影像及單行字幕。 */
+.stage-art{position:absolute;inset:0;overflow:hidden;background:#294a4d}
+.stage-art .frame-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:center;will-change:transform,opacity}
+.frame-art-previous{opacity:0;z-index:0}.frame-art-current{opacity:1;z-index:1}
+.frame-chapter,.frame-intro,.frame-subtitle{z-index:3;pointer-events:none}
+.frame-chapter{top:3.2%;left:3.2%;right:auto;max-width:88%;background:#071821a9}
+.frame-intro{top:44%;transform:translate(-50%,-50%);font-size:clamp(30px,4.6vw,76px);display:none}
+.frame-subtitle{right:1%;bottom:5.1%;left:1%;max-width:98%;font-size:clamp(18px,2vw,36px);white-space:nowrap;overflow:hidden;line-height:1.3;-webkit-text-stroke:1.4px #111;text-shadow:0 2px 5px #000,0 0 10px #000}
+.frame-subtitle.poem-highlight{color:#FFD700;-webkit-text-fill-color:#FFD700;text-shadow:0 0 7px rgba(255,215,0,.7),0 2px 5px #000,0 0 10px #000}
+.cover-start{z-index:5}.stage-wrap:fullscreen{aspect-ratio:auto;width:100vw;height:100vh}.stage-wrap:fullscreen .frame-subtitle{bottom:6%}
+.hero>img{opacity:1}.hero-shade.cover-hero-shade{background:linear-gradient(0deg,rgba(9,31,43,.84),rgba(9,31,43,.08) 25%,transparent 55%)}
+.hero-copy.cover-hero-copy{padding:clamp(1rem,3vw,2.5rem);align-self:flex-end}
+.hero-actions{justify-content:flex-start}.playback-error[hidden],.sync-debug[hidden]{display:none}
+@media(max-width:760px){.reader-header{grid-template-columns:auto minmax(0,1fr)}.reader-duration{grid-column:2}.frame-chapter{font-size:clamp(13px,3vw,23px)}.frame-intro{font-size:clamp(24px,5vw,45px)}.frame-subtitle{bottom:7%;font-size:20px}.control-row{justify-content:center}}
