@@ -43,10 +43,13 @@
     const introOpacity = introActive
       ? Math.min(1, chapterElapsedMs / 320, (2000 - chapterElapsedMs) / 320)
       : 0;
+    const chapterOpacity = chapterElapsedMs < 0
+      ? 1
+      : clamp((chapterElapsedMs - 1680) / 320, 0, 1);
     return {
       ms, sceneIndex, chapterIndex, scene, chapter, subtitle,
       nextScene: transitioning ? nextScene : null,
-      transitioning, transitionProgress, introActive, introOpacity,
+      transitioning, transitionProgress, introActive, introOpacity, chapterOpacity,
     };
   }
 

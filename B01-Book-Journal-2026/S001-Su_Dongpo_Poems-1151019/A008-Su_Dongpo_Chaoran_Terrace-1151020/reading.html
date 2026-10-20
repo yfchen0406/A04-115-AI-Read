@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《望江南·超然臺作》同步旁白、字幕、分鏡圖片與章節索引。">
+  <title>望江南·超然臺作｜閱讀播放器</title>
+  <link rel="stylesheet" href="./assets/a70-template.css">
+  <link rel="stylesheet" href="./assets/episode.css">
+  <script src="./data/timeline.js"></script>
+  <script defer src="./assets/player.js"></script>
+</head>
+<body data-page="reader">
+  <main class="reader-page">
+    <header class="reader-header">
+      <a class="back-link" href="./index.html">回首頁</a>
+      <div>
+        <p class="eyebrow">蘇東坡詩詞・動態閱讀</p>
+        <h1>《望江南·超然臺作》</h1>
+      </div>
+      <span class="reader-duration" id="duration-label">05:30</span>
+    </header>
+    <section class="reader-shell" aria-label="動態閱讀播放器">
+      <div class="stage-wrap" id="stage">
+        <img class="scene-layer scene-current" id="scene-current" alt="">
+        <img class="scene-layer scene-next" id="scene-next" alt="">
+        <div class="frame-shade"></div>
+        <div class="frame-chapter" id="chapter-corner" aria-live="polite"></div>
+        <div class="frame-intro" id="chapter-center" aria-live="polite"></div>
+        <div class="frame-subtitle" id="subtitle" aria-live="polite"></div>
+        <button class="cover-start" id="cover-start" type="button" aria-label="開始播放旁白">
+          <img src="./assets/images/cover.webp" alt="">
+          <span class="cover-shade"></span>
+          <span class="cover-start-copy"><b>▶</b><strong>開始播放</strong><small>旁白、字幕與分鏡將同步呈現</small></span>
+        </button>
+        <audio class="master-audio" id="master-audio" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+      </div>
+      <div class="player-panel">
+        <div class="seek-row">
+          <span class="time-readout" id="time-current">00:00</span>
+          <input class="seek-slider" id="seek-slider" type="range" min="0" max="330300" step="1" value="0" aria-label="播放進度">
+          <span class="time-readout" id="time-total">05:30</span>
+        </div>
+        <div class="control-row">
+          <button class="play-control" id="play-toggle" type="button">播放</button>
+          <button id="restart" type="button">從頭播放</button>
+          <label class="volume-control"><span>音量</span><input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="音量"></label>
+          <button id="fullscreen" type="button">全螢幕</button>
+          <span class="playback-status" id="playback-status" aria-live="polite">已暫停</span>
+        </div>
+        <p class="playback-error" id="playback-error" hidden></p>
+      </div>
+    </section>
+    <section class="chapter-section" id="chapter-index">
+      <p class="eyebrow">篇章導覽</p>
+      <h2>章節索引</h2>
+      <div class="chapter-list" id="chapter-list"></div>
+    </section>
+    <footer class="reader-footer">
+      <p>分鏡與章節定位依 Excel；字幕文字及時間依原始 SRT；播放時鐘依 MP3 的 audio.currentTime。</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -103,7 +103,8 @@
     const intro = $('frame-intro');
     intro.textContent = state.introActive ? state.chapter.title : '';
     intro.style.display = state.introActive ? 'block' : 'none'; intro.style.opacity = String(state.introOpacity);
-    $('frame-chapter').textContent = state.introActive ? '' : state.chapter.title;
+    $('frame-chapter').textContent = state.chapter.title;
+    $('frame-chapter').style.opacity = String(state.chapterOpacity);
     const subtitle = $('subtitle-text'); const value = state.subtitle ? state.subtitle.text.replace(/\s*\n\s*/g, ' ') : '';
     if (subtitle.textContent !== value) { subtitle.replaceChildren(...subtitleNodes(value)); fitSubtitle(); }
     $('time-now').textContent = core.formatTime(state.ms);
