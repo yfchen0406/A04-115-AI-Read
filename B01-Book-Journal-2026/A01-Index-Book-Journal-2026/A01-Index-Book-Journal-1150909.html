@@ -198,8 +198,28 @@
         <br>
         <hr> -->
         <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-7" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 蘇軾名作三十</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-7" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
         <h2 id="1-5" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
-          <strong class="yf-code2"> 古代詩詞</strong>
+          <strong class="yf-code2"> 古風詩詞</strong>
         </h2>
         <div class="container-fluid">
           <div id="a1-5" class="row" style="align-items: flex-start;">
@@ -390,6 +410,235 @@
   <script type="module">
     import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
     // AI提示詞
+    const app7 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+          // S002-01 第01集《飲湖上初晴後雨二首·其二》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-01-Su_Dongpo_West_Lake-1151022/index.html',
+            pic1s: './images/S002/01.webp',
+            dec1: 'S002-01 第01集《飲湖上初晴後雨二首·其二》~ 115.10.22!',
+          },
+
+         // S002-02 第02集《六月二十七日望湖樓醉書五絕·其一》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-02-Drunk_on_West_Lake-1151022/index.html',
+            pic1s: './images/S002/02.webp',
+            dec1: 'S002-02 第02集《六月二十七日望湖樓醉書五絕·其一》~ 115.10.22!',
+          },
+
+          // S002-03 第03集《惠崇春江晚景二首·其二》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-03-Spring_River_at_Dusk-1151022/index.html',
+            pic1s: './images/S002/03.webp',
+            dec1: 'S002-03 第03集《惠崇春江晚景二首·其二》~ 115.10.22!',
+          },
+
+          // S002-04 第04集《春宵》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-04-Spring_Night-1151022/index.html',
+            pic1s: './images/S002/04.webp',
+            dec1: 'S002-04 第04集《春宵》~ 115.10.22!',
+          },
+
+          // S002-05 第05集《海棠》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-05-Begonia-1151022/index.html',
+            pic1s: './images/S002/05.webp',
+            dec1: 'S002-05 第05集《海棠》~ 115.10.22!',
+          },
+
+          // S002-06 第06集《花影》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-06-Flower_Shadow-1151022/index.html',
+            pic1s: './images/S002/06.webp',
+            dec1: 'S002-06 第06集《花影》~ 115.10.22!',
+          },
+
+          // S002-07 第07集《琴詩》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-07-The_Poem-1151022/index.html',
+            pic1s: './images/S002/07.webp',
+            dec1: 'S002-07 第07集《琴詩》~ 115.10.22!',
+          },
+
+          // S002-08 第08集《洗兒戲作》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-08-Washing_Child-1151022/index.html',
+            pic1s: './images/S002/08.webp',
+            dec1: 'S002-08 第08集《洗兒戲作》~ 115.10.22!',
+          },
+
+          // S002-09 第09集《寒食雨二首·其一》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-09-Cold_Food_Rain-1151022/index.html',
+            pic1s: './images/S002/09.webp',
+            dec1: 'S002-09 第09集《寒食雨二首·其一》~ 115.10.22!',
+          },
+
+          // S002-10 第10集《有美堂暴雨》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-10-Rain_at_Youmei_Hall-1151022/index.html',
+            pic1s: './images/S002/10.webp',
+            dec1: 'S002-10 第10集《有美堂暴雨》~ 115.10.22!',
+          },
+
+          // S002-11 第11集《百步洪二首·其一》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-11-Baibu_Flood-1151022/index.html',
+            pic1s: './images/S002/11.webp',
+            dec1: 'S002-11 第11集《百步洪二首·其一》~ 115.10.22!',
+          },
+
+          // S002-12 第12集《石鐘山記》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-12-The_Stone_Bell_Mountain-1151022/index.html',
+            pic1s: './images/S002/12.webp',
+            dec1: 'S002-12 第12集《石鐘山記》~ 115.10.22!',
+          },
+
+          // S002-13 第13集《前赤壁賦》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-13-First_Red_Cliff_Rhapsody-1151022/index.html',
+            pic1s: './images/S002/13.webp',
+            dec1: 'S002-13 第13集《前赤壁賦》~ 115.10.22!',
+          },
+
+          // S002-14 第14集《後赤壁賦》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-14-Second_Red_Cliff_Rhapsody-1151022/index.html',
+            pic1s: './images/S002/14.webp',
+            dec1: 'S002-14 第14集《後赤壁賦》~ 115.10.22!',
+          },
+
+          // S002-15 第15集《記承天寺夜遊》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-15-Night_Visit_to_Chengtian_Temple-1151022/index.html',
+            pic1s: './images/S002/15.webp',
+            dec1: 'S002-15 第15集《記承天寺夜遊》~ 115.10.22!',
+          },
+
+          // S002-16 第16集《臨江仙·夜歸臨皋》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-16-River_Immortal_Night_Return-1151022/index.html',
+            pic1s: './images/S002/16.webp',
+            dec1: 'S002-16 第16集《臨江仙·夜歸臨皋》~ 115.10.22!',
+          },
+
+          // S002-17 第17集《浣溪沙·遊蘄水清泉寺》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-17-Clear_Stream_Temple-1151022/index.html',
+            pic1s: './images/S002/17.webp',
+            dec1: 'S002-17 第17集《浣溪沙·遊蘄水清泉寺》~ 115.10.22!',
+          },
+
+          // S002-18 第18集《浣溪沙·細雨斜風作曉寒》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-18-Spring_Cold_Morning-1151022/index.html',
+            pic1s: './images/S002/18.webp',
+            dec1: 'S002-18 第18集《浣溪沙·細雨斜風作曉寒》~ 115.10.22!',
+          },
+
+          // S002-19 第19集《西江月·世事一場大夢》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-19-Moon_over_Xijiang-1151022/index.html',
+            pic1s: './images/S002/19.webp',
+            dec1: 'S002-19 第19集《西江月·世事一場大夢》~ 115.10.22!',
+          },
+
+          // S002-20 第20集《行香子·述懷》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-20-Xingxiangzi_Reflections-1151022/index.html',
+            pic1s: './images/S002/20.webp',
+            dec1: 'S002-20 第20集《行香子·述懷》~ 115.10.22!',
+          },
+
+          // S002-21 第21集《臨江仙·送錢穆父》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-21-River_Immortal_Seeing_Mu-Fu-1151022/index.html',
+            pic1s: './images/S002/21.webp',
+            dec1: 'S002-21 第21集《臨江仙·送錢穆父》~ 115.10.22!',
+          },
+
+          // S002-22 第22集《水龍吟·次韻章質夫楊花詞》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-22-Dragon_Song_Poplar_Blossoms-1151022/index.html',
+            pic1s: './images/S002/22.webp',
+            dec1: 'S002-22 第22集《水龍吟·次韻章質夫楊花詞》~ 115.10.22!',
+          },
+
+          // S002-23 第23集《賀新郎·乳燕飛華屋》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-23-Young_Swallows_Fly-1151022/index.html',
+            pic1s: './images/S002/23.webp',
+            dec1: 'S002-23 第23集《賀新郎·乳燕飛華屋》~ 115.10.22!',
+          },
+
+          // S002-24 第24集《念奴嬌·赤壁懷古》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-24-Niannujiao_Remembering_Red_Cliff-1151022/index.html',
+            pic1s: './images/S002/24.webp',
+            dec1: 'S002-24 第24集《念奴嬌·赤壁懷古》~ 115.10.22!',
+          },
+
+          // S002-25 第25集《江城子·別徐州》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-25-Jiangchengzi_Leaving_Xuzhou-1151022/index.html',
+            pic1s: './images/S002/25.webp',
+            dec1: 'S002-25 第25集《江城子·別徐州》~ 115.10.22!',
+          },
+
+          // S002-26 第26集《八聲甘州·寄參寥子》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-26-Basheng_Ganzhou_For_Canliao-1151022/index.html',
+            pic1s: './images/S002/26.webp',
+            dec1: 'S002-26 第26集《八聲甘州·寄參寥子》~ 115.10.22!',
+          },
+
+          // S002-27 第27集《南鄉子·重九涵輝樓呈徐君猷》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-27-Nanxiangzi_At_Huiguang_Tower-1151022/index.html',
+            pic1s: './images/S002/27.webp',
+            dec1: 'S002-27 第27集《南鄉子·重九涵輝樓呈徐君猷》~ 115.10.22!',
+          },
+
+          // S002-28 第28集《西江月·照野彌彌淺浪》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-28-Moon_over_Xijiang_Shallow_Waves-1151022/index.html',
+            pic1s: './images/S002/28.webp',
+            dec1: 'S002-28 第28集《西江月·照野彌彌淺浪》~ 115.10.22!',
+          },
+
+          // S002-29 第29集《定風波·南海歸贈王定國侍人寓娘》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-29-Calming_the_Waves_Return_from_South_Sea-1151022/index.html',
+            pic1s: './images/S002/29.webp',
+            dec1: 'S002-29 第29集《定風波·南海歸贈王定國侍人寓娘》~ 115.10.22!',
+          },
+
+          // S002-30 第30集《卜算子·黃州定慧院寓居作》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-30-Bu_Suazi_Dwelling_in_Huangzhou-1151022/index.html',
+            pic1s: './images/S002/30.webp',
+            dec1: 'S002-30 第30集《卜算子·黃州定慧院寓居作》~ 115.10.22!',
+          },
+
+   
+
+
+
+
+        ]);
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-7')
+
+// 古風詩詞
+
     const app5 = createApp({
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
@@ -745,24 +994,7 @@
       }
     }).mount('#a1-6')
 
-    const app7 = createApp({
-      setup() {
-        // 使用 ref 定義響應式狀態（陣列）
-        const arr = ref([
 
-
-
-
-
-
-
-        ]);
-        // 返回數據和方法
-        return {
-          arr,
-        };
-      }
-    }).mount('#a1-7')
 
     const app8 = createApp({
       setup() {

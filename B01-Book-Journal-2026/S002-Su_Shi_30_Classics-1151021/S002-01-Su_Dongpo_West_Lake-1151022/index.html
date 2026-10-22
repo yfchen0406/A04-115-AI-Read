@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="離線閱讀蘇東坡《飲湖上初晴後雨二首·其二》，欣賞完整封面並跟隨旁白、字幕與分鏡同步閱讀。">
+  <title>飲湖上初晴後雨二首·其二｜蘇東坡動態劇本</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <link rel="stylesheet" href="./assets/series-home.css">
+  <script>window.EPISODE_SETTINGS = {
+    links: { home: './index.html', reading: './reading.html', chapters: './reading.html#chapter-index', youtubeWithSubtitles: 'https://www.youtube.com/', youtubeWithoutSubtitles: 'https://www.youtube.com/' },
+    assets: { base: './', coverImage: 'assets/images/cover.webp', sceneImagePattern: 'assets/images/IMG{id}.webp', narrationAudio: 'assets/audio/narration.mp3' }
+  };</script>
+  <script defer src="./assets/main.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <section class="gallery-section" id="all-covers" aria-labelledby="covers-heading">
+    <div class="section-heading">
+      <div><p class="eyebrow">SU DONGPO · 30 CLASSIC WORKS</p><h2 id="covers-heading">蘇東坡名作三十・全集封面</h2></div>
+      <p class="section-note">點選封面可放大瀏覽。第 01 集已提供同步閱讀，其餘集數封面先行展示。</p>
+    </div>
+    <div class="cover-grid" id="cover-grid" aria-label="三十集封面"></div>
+  </section>
+  <dialog class="cover-dialog" aria-label="封面放大瀏覽">
+    <button class="dialog-close" type="button" aria-label="關閉">×</button>
+    <button class="dialog-nav dialog-prev" type="button" aria-label="上一張封面">‹</button>
+    <figure><img class="dialog-image" alt=""><figcaption class="dialog-caption"></figcaption></figure>
+    <button class="dialog-nav dialog-next" type="button" aria-label="下一張封面">›</button>
+    <a class="dialog-reading" href="./reading.html" hidden>開始第 01 集同步閱讀</a>
+  </dialog>
+  <script defer src="./assets/series-home.js"></script>
+</body>
+</html>
