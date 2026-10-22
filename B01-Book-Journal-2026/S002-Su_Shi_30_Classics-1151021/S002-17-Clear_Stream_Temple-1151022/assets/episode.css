@@ -1,0 +1,15 @@
+/* Episode-specific image and caption behavior; page layout comes from C03 main.css. */
+.video-composition{position:absolute;inset:0;overflow:hidden;background:#21382d}
+.frame-art{position:absolute;inset:0;overflow:hidden;background:#21382d}
+.frame-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform,opacity;transition:opacity .48s ease}
+.frame-art>.frame-shade{z-index:1;pointer-events:none}
+.frame-intro,.frame-chapter,.frame-subtitle{z-index:2}
+.frame-chapter.is-centered{top:50%;left:50%;right:auto;max-width:90%;transform:translate(-50%,-50%);border:0;background:transparent;color:#fff200;text-align:center}
+.frame-chapter.is-corner{top:3%;left:3.2%;right:auto;max-width:80%;transform:none;border:1px solid rgba(255,255,255,.35);background:#07182185;color:#fff;text-align:left}
+.frame-subtitle .poem{color:#fff200;-webkit-text-stroke:1px rgba(0,0,0,.95);paint-order:stroke fill}
+.art-missing{position:absolute;inset:0;z-index:0;display:grid;place-items:center;background:#e9ece7;color:#516257;font:900 clamp(22px,3vw,52px) var(--kai)}
+.art-missing[hidden],.cover-start[hidden]{display:none!important}
+.cover-start.is-hidden{opacity:0;pointer-events:none}
+.cover-start{z-index:4;transition:opacity .25s ease}
+.playback-status{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.2rem;margin-top:.5rem;color:#e7f0f1;font-size:.75rem}
+@media(max-width:760px){.frame-chapter.is-centered{top:50%;left:50%;right:auto;max-width:90%}.frame-chapter.is-corner{top:3%;left:3.2%;right:auto;max-width:80%}}
