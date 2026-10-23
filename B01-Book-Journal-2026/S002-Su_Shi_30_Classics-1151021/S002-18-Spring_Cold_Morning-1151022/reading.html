@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《浣溪沙·細雨斜風作曉寒》第18集；依照原始字幕與旁白同步閱讀。">
+  <title>《浣溪沙·細雨斜風作曉寒》第18集｜同步閱讀</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <script>window.EPISODE_SETTINGS = {
+    links: { home: './index.html', reading: './reading.html', chapters: '#chapter-index' },
+    assets: { base: './', coverImage: 'assets/images/cover.webp', sceneImagePattern: 'assets/images/IMG{id}.webp', narrationAudio: 'assets/audio/narration.mp3' }
+  };</script>
+  <script defer src="./assets/main.js"></script>
+</head>
+<body data-page="reader"><aside id="route-help" hidden role="alert" style="position:fixed;z-index:99999;top:12px;left:12px;right:12px;max-width:760px;margin:0 auto;padding:16px 18px;border:2px solid #9b3b20;border-radius:12px;background:#fff8ed;color:#24211c;box-shadow:0 8px 28px #0004;font:16px/1.55 system-ui,sans-serif"><strong id="route-help-title"></strong><p style="margin:6px 0 10px">可使用備援入口繼續操作；下方會顯示頁面錯誤資訊。</p><a id="route-help-link" href="./reading.html" style="display:inline-block;padding:8px 14px;border-radius:8px;background:#173b2e;color:white;font-weight:700"></a><details style="margin-top:8px"><summary>查看錯誤資訊</summary><pre id="route-help-detail" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details></aside><div id="root"></div><script>
+(()=>{
+  const readerPage=document.body.dataset.page==="reader";
+  const panel=document.getElementById("route-help");
+  const title=document.getElementById("route-help-title");
+  const link=document.getElementById("route-help-link");
+  const detail=document.getElementById("route-help-detail");
+  title.textContent=readerPage?"閱讀頁啟動遇到問題":"閱讀頁尚未開啟";
+  link.href=readerPage?"./index.html":"./reading.html";
+  link.textContent=readerPage?"返回系列首頁":"直接進入閱讀頁";
+  function show(message){detail.textContent=message;panel.hidden=false;}
+  window.addEventListener("error",event=>show("網頁載入錯誤："+(event.message||event.target?.src||"未知錯誤")+(event.filename?"\n來源："+event.filename:"")));
+  window.addEventListener("unhandledrejection",event=>show("頁面程式錯誤："+String(event.reason?.message||event.reason||"未知錯誤")));
+  if(!readerPage){
+    document.addEventListener("click",event=>{
+      if(!event.target.closest("a.start-link"))return;
+      window.setTimeout(()=>{
+        if(!document.querySelector(".reader-page"))show("首頁按鈕已觸發，但閱讀頁尚未完成切換。可點上方備援入口直接進入。網址列目前為："+location.href);
+      },1800);
+    },true);
+  }
+  window.setTimeout(()=>{
+    if(!document.querySelector("#root")?.firstElementChild)show("網頁程式未完成啟動。請用備援入口開啟另一頁；若仍無法進入，請截圖此訊息。網址列："+location.href);
+  },8000);
+})();
+</script></body>
+</html>

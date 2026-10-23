@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d3b">
+  <title>行香子·述懷｜蘇軾</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <script>
+    // YouTube 影片網址請填在下面兩個空字串，其他設定不必更動。
+    window.EPISODE_SETTINGS = {
+      links: {
+        youtubeWithSubtitles: "", // 有字幕影片網址，例如 https://www.youtube.com/watch?v=影片ID
+        youtubeWithoutSubtitles: "" // 無字幕影片網址
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const youtubeHost = host => host === "youtube.com" || host.endsWith(".youtube.com") || host === "youtu.be";
+      document.querySelectorAll("[data-youtube]").forEach(button => {
+        const key = button.dataset.youtube;
+        const value = window.EPISODE_SETTINGS.links[key];
+        let target = null;
+        try {
+          const parsed = new URL(value);
+          if (parsed.protocol === "https:" && youtubeHost(parsed.hostname)) target = parsed.href;
+        } catch (_) {}
+
+        if (target) {
+          button.href = target;
+          button.target = "_blank";
+          button.rel = "noopener noreferrer";
+        } else {
+          button.href = "#";
+          button.addEventListener("click", event => {
+            event.preventDefault();
+            alert("請在 index.html 的 window.EPISODE_SETTINGS.links 區段填入此按鈕的 YouTube 影片網址。");
+          });
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <main class="hero">
+    <img src="./assets/images/cover.webp" alt="行香子·述懷封面">
+    <div class="hero-shade cover-hero-shade"></div>
+    <section class="hero-copy cover-hero-copy">
+      <p class="eyebrow">千古東坡・第二十集</p>
+      <h1>行香子<em>·述懷</em></h1>
+      <p class="hero-summary">幾時歸去，作個閒人。對一張琴，一壺酒，一溪雲。</p>
+      <div class="hero-actions">
+        <a class="start-link" href="./reading.html">開始閱讀</a>
+        <a class="youtube-link" href="#" data-youtube="youtubeWithSubtitles">YT連結(有字幕)</a>
+        <a class="youtube-link" href="#" data-youtube="youtubeWithoutSubtitles">YT連結(無字幕)</a>
+      </div>
+      <p class="hero-meta">蘇軾詞作｜離線動態閱讀｜全片 7 分 10 秒</p>
+      <p class="cover-caption">45 個分鏡插圖已備妥；YouTube 網址可在本頁設定。</p>
+    </section>
+  </main>
+</body>
+</html>
