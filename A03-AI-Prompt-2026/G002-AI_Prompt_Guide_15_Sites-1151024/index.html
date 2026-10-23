@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="15個AI圖像與影片提示詞網站精選導航，附網站封面、分類搜尋及原始連結。">
+  <title>AI 提示詞資源導航｜15 個精選網站</title>
+  <style>
+    :root {
+      --blue: #1e90ff;
+      --navy: #132a49;
+      --yellow: #ffe38a;
+      --ink: #1a2c46;
+      --muted: #60738c;
+      --line: #dbe7f5;
+      --bg: #f3f7fd
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      color: var(--ink);
+      background: var(--bg)
+    }
+
+    header {
+      background: linear-gradient(120deg, #102b50, #1767b4 65%, #278cde);
+      color: #fff;
+      padding: 60px 22px 48px
+    }
+
+    .wrap {
+      max-width: 1360px;
+      margin: auto
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .14em
+    }
+
+    h1 {
+      font-size: clamp(30px, 4.2vw, 54px);
+      line-height: 1.22;
+      margin: 12px 0
+    }
+
+    header p {
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 830px;
+      color: #e6f1ff
+    }
+
+    .stats {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px
+    }
+
+    .stat {
+      background: #ffffff19;
+      border: 1px solid #ffffff40;
+      border-radius: 12px;
+      padding: 10px 18px
+    }
+
+    .stat strong {
+      color: var(--yellow)
+    }
+
+    main {
+      padding: 32px 20px 65px
+    }
+
+    .tools {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 30px #204f8410;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 22px
+    }
+
+    .search {
+      flex: 2;
+      min-width: 240px
+    }
+
+    input,
+    select {
+      width: 100%;
+      font: inherit;
+      border: 1px solid #bed2e9;
+      border-radius: 11px;
+      padding: 13px 14px;
+      background: #fff;
+      color: var(--ink)
+    }
+
+    input:focus,
+    select:focus {
+      outline: 3px solid #1e90ff33;
+      border-color: var(--blue)
+    }
+
+    .select {
+      flex: 1;
+      min-width: 180px
+    }
+
+    .count {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 20px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px
+    }
+
+    .card {
+      min-width: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      overflow: hidden;
+      box-shadow: 0 5px 24px #1b4c8312;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px #1b4c8328
+    }
+
+    .picture {
+      background: #101725;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+      min-height: 300px;
+      cursor: zoom-in;
+      border: 0;
+      width: 100%
+    }
+
+    .picture img {
+      height: 330px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      box-shadow: 0 5px 20px #0004
+    }
+
+    .content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      flex: 1
+    }
+
+    .top {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .num {
+      background: var(--blue);
+      color: #fff;
+      border-radius: 9px;
+      padding: 6px 9px;
+      font-weight: 800
+    }
+
+    .cat {
+      background: #e8f3ff;
+      color: #1465ac;
+      border-radius: 30px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 750
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 0;
+      overflow-wrap: anywhere
+    }
+
+    .desc {
+      line-height: 1.8;
+      color: #485d76;
+      margin: 0;
+      flex: 1
+    }
+
+    .url {
+      font-size: 12px;
+      color: #51728e;
+      word-break: break-all;
+      background: #f4f8fd;
+      border-radius: 9px;
+      padding: 10px
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      border: 1px solid #c5d9ed;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 14px;
+      font-weight: 750;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #fff;
+      color: #175d9c
+    }
+
+    .primary {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+      flex: 1
+    }
+
+    .btn:hover {
+      filter: brightness(.94)
+    }
+
+    .empty {
+      text-align: center;
+      padding: 60px;
+      color: var(--muted)
+    }
+
+    footer {
+      text-align: center;
+      background: #102b50;
+      color: #d8e8fc;
+      padding: 28px 18px;
+      font-size: 13px;
+      line-height: 1.9
+    }
+
+    dialog {
+      border: 0;
+      border-radius: 18px;
+      background: #101725;
+      color: white;
+      max-height: 94vh;
+      max-width: min(94vw, 800px);
+      padding: 20px;
+      box-shadow: 0 25px 80px #0008
+    }
+
+    dialog::backdrop {
+      background: #000b
+    }
+
+    dialog img {
+      display: block;
+      max-width: 100%;
+      max-height: 78vh;
+      margin: auto;
+      object-fit: contain
+    }
+
+    .dialogbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 10px
+    }
+
+    .dialogbar button {
+      cursor: pointer;
+      background: #fff;
+      border: 0;
+      border-radius: 8px;
+      padding: 7px 13px;
+      font-size: 18px
+    }
+
+    @media(max-width:1000px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media(max-width:650px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .picture img {
+        height: 320px
+      }
+
+      header {
+        padding-top: 42px
+      }
+
+      .tools {
+        padding: 14px
+      }
+
+      .search,
+      .select {
+        flex-basis: 100%
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .card {
+        transition: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">AI CREATIVE PROMPT DIRECTORY · 2026</div>
+      <h1>AI 提示詞資源導航<br>15 個精選網站</h1>
+      <p>圖像生成、影片創作、提示詞畫廊與開源專案，一次收藏。使用原始 15 張網站介紹卡片，點選即可放大預覽或前往對應網站。</p>
+      <div class="stats">
+        <div class="stat"><strong>15</strong> 個精選資源</div>
+        <div class="stat"><strong>15</strong> 張原始圖片</div>
+        <div class="stat">搜尋 · 分類 · 連結</div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="tools" aria-label="搜尋與篩選">
+      <div class="search"><input id="search" type="search" placeholder="搜尋網站、模型或用途，例如 Nano Banana、肖像、GitHub"
+          aria-label="搜尋資源"></div>
+      <div class="select"><select id="category" aria-label="選擇類別">
+          <option value="">所有類別</option>
+        </select></div><button class="btn" id="reset">清除篩選</button>
+    </section>
+    <p class="count" id="count" aria-live="polite"></p>
+    <section class="grid" id="cards" aria-label="資源卡片"></section>
+    <div class="empty" id="empty" hidden>找不到符合條件的網站，請調整搜尋字詞。</div>
+  </main>
+  <dialog id="preview" aria-label="圖片放大預覽">
+    <div class="dialogbar"><strong id="previewTitle"></strong><button id="closePreview" aria-label="關閉預覽">✕</button>
+    </div><img id="previewImg" alt="網站卡片放大圖">
+  </dialog>
+  <footer>AI 提示詞資源導航｜圖片來自使用者提供的 A01～A15 卡片<br>網站內容與服務可能變動；卡片敘述依提供資料整理，連結依附件標示，未保證各站即時可用。</footer>
+  <script>
+    const resources = [{ "id": 1, "name": "AIART.PICS", "description": "12,000+ 個 AI 提示詞，涵蓋 Gemini、ChatGPT、Midjourney 與 Stable Diffusion 的多種創作場景。", "url": "https://aiart.pics", "category": "圖像提示詞", "tags": "Gemini ChatGPT Midjourney Stable Diffusion", "image": "images/A01.webp" }, { "id": 2, "name": "MeiGen", "description": "GPT 圖像 2、Nano Banana 與 Seedance 影片提示詞，方便複製並應用於創作。", "url": "https://meigen.ai", "category": "圖像與影片", "tags": "GPT Image 2 Nano Banana Seedance", "image": "images/A02.webp" }, { "id": 3, "name": "YouMind", "description": "圖片、影片與網頁的 AI 提示詞資源庫，適合跨媒體創作與靈感探索。", "url": "https://youmind.com/prompts", "category": "綜合資源", "tags": "圖片 影片 網頁", "image": "images/A03.webp" }, { "id": 4, "name": "GPT Image 2 Prompt Collection", "description": "精選約 490 個提示詞，提供中英文搜尋、分類篩選與一鍵複製。", "url": "https://davidwuw0811-boop.github.io/awesome-gpt-image2-prompts/", "category": "圖像提示詞", "tags": "中文 英文 搜尋 分類", "image": "images/A04.webp" }, { "id": 5, "name": "Banana Pro AI", "description": "GPT Image 2 提示詞庫，涵蓋肖像、產品、標誌及社群媒體等主題。", "url": "https://pixomi.ai/banana-prompts/", "category": "圖像提示詞", "tags": "肖像 產品 標誌 社群", "image": "images/A05.webp" }, { "id": 6, "name": "cuty.ai", "description": "高品質 GPT Image 2 圖像畫廊，提供參考圖與提示詞複製功能。", "url": "https://www.cuty.ai/prompts/gpt-image-2", "category": "圖像提示詞", "tags": "參考圖片 複製", "image": "images/A06.webp" }, { "id": 7, "name": "Leader Prompt Gallery", "description": "Midjourney 與 GPT 圖像提示詞畫廊，涵蓋肖像、海報及電子商務。", "url": "https://leaderai.top", "category": "圖像提示詞", "tags": "Midjourney 肖像 海報 電商", "image": "images/A07.webp" }, { "id": 8, "name": "GPT-Image2 Prompt Gallery", "description": "熱門視覺案例與可重用提示詞，提供視覺篩選及 GitHub 參考連結。", "url": "https://gpt-image2.canghe.ai", "category": "圖像提示詞", "tags": "熱門案例 GitHub", "image": "images/A08.webp" }, { "id": 9, "name": "Cyberbara", "description": "依照 GPT Image 2 相關作品整理的提示詞庫，採多圖片輪播展示。", "url": "https://cyberbara.com/zh/gpt-image-2", "category": "圖像提示詞", "tags": "輪播 多圖片", "image": "images/A09.webp" }, { "id": 10, "name": "2slides", "description": "精選約 226 個案例，涵蓋肖像、貼紙、UI Mockups 與資訊圖表等類別。", "url": "https://2slides.com/zh-CN/products/gpt-image-2", "category": "設計與簡報", "tags": "肖像 貼紙 UI 資訊圖表", "image": "images/A10.webp" }, { "id": 11, "name": "Image2.im", "description": "GPT Image 2 提示詞預覽，涵蓋產品廣告、貼紙、肖像、UI 與社群貼文。", "url": "https://image2.im/gpt-image-2-prompts", "category": "圖像提示詞", "tags": "產品廣告 貼紙 肖像 UI", "image": "images/A11.webp" }, { "id": 12, "name": "lovimg.com", "description": "為創作者提供 AI 圖像提示詞與畫廊式靈感瀏覽。", "url": "https://lovimg.com", "category": "圖像提示詞", "tags": "創作者 畫廊", "image": "images/A12.webp" }, { "id": 13, "name": "Sifu Yik Image Prompts", "description": "Sifu Yik 整理的熱門圖像提示詞與創作工具資源。", "url": "https://sifuyik.substack.com/t/image-prompt", "category": "創作者資源", "tags": "熱門提示詞 工具", "image": "images/A13.webp" }, { "id": 14, "name": "awesome-gpt-image-2", "description": "GitHub 開源精選 GPT Image 2 提示詞專案，方便瀏覽與社群參考。", "url": "https://github.com/useneospark/awesome-gpt-image-2", "category": "開源專案", "tags": "GitHub 開源 社群", "image": "images/A14.webp" }, { "id": 15, "name": "LocalBanana", "description": "視覺意圖創作工作室，提供大量精選提示詞與圖像、姿勢、場景參考。", "url": "https://www.localbanana.io/", "category": "圖像提示詞", "tags": "姿勢 場景 Cosplay", "image": "images/A15.webp" }];
+    const cards = document.getElementById('cards'), search = document.getElementById('search'), category = document.getElementById('category'), count = document.getElementById('count'), empty = document.getElementById('empty'), preview = document.getElementById('preview');
+    for (const c of [...new Set(resources.map(x => x.category))]) { const o = document.createElement('option'); o.value = c; o.textContent = c; category.append(o) }
+    function el(tag, cls, txt) { const x = document.createElement(tag); if (cls) x.className = cls; if (txt !== undefined) x.textContent = txt; return x }
+    function render() {
+      const q = search.value.trim().toLocaleLowerCase(), cat = category.value; const list = resources.filter(x => (!cat || x.category === cat) && [x.name, x.description, x.url, x.category, x.tags].join(' ').toLocaleLowerCase().includes(q)); cards.replaceChildren(); count.textContent = `顯示 ${list.length} / ${resources.length} 個網站`; empty.hidden = list.length > 0;
+      for (const r of list) { const card = el('article', 'card'); const picture = el('button', 'picture'); picture.type = 'button'; picture.title = '放大預覽 ' + r.name; const img = el('img'); img.src = r.image; img.alt = `第 ${r.id} 張：${r.name} 原始網站介紹圖片`; img.loading = 'lazy'; picture.append(img); picture.addEventListener('click', () => { document.getElementById('previewTitle').textContent = `${String(r.id).padStart(2, '0')} · ${r.name}`; const big = document.getElementById('previewImg'); big.src = r.image; big.alt = img.alt; preview.showModal() }); const content = el('div', 'content'); const top = el('div', 'top'); top.append(el('span', 'num', String(r.id).padStart(2, '0')), el('span', 'cat', r.category)); content.append(top, el('h2', '', r.name), el('p', 'desc', r.description), el('div', 'url', r.url)); const actions = el('div', 'actions'); const visit = el('a', 'btn primary', '↗ 前往網站'); visit.href = r.url; visit.target = '_blank'; visit.rel = 'noopener noreferrer'; const copy = el('button', 'btn', '複製網址'); copy.type = 'button'; copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(r.url); copy.textContent = '✓ 已複製'; setTimeout(() => copy.textContent = '複製網址', 1600) } catch { const t = document.createElement('textarea'); t.value = r.url; document.body.append(t); t.select(); document.execCommand('copy'); t.remove(); copy.textContent = '✓ 已複製'; setTimeout(() => copy.textContent = '複製網址', 1600) } }); actions.append(visit, copy); content.append(actions); card.append(picture, content); cards.append(card) }
+    }
+    search.addEventListener('input', render); category.addEventListener('change', render); document.getElementById('reset').addEventListener('click', () => { search.value = ''; category.value = ''; render(); search.focus() }); document.getElementById('closePreview').addEventListener('click', () => preview.close()); preview.addEventListener('click', e => { if (e.target === preview) preview.close() }); render();
+  </script>
+</body>
+
+</html>
