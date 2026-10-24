@@ -74,6 +74,7 @@
 </div>
 <script src="gpt-commands.js"></script>
 <script src="p01-p09-commands.js"></script>
+<script src="additional-commands.js"></script>
 <script>
 const input=document.getElementById('searchInput'),cards=[...document.querySelectorAll('.command-card')],tabs=[...document.querySelectorAll('.filter-tab')];let active='all';tabs.forEach(t=>{const badge=t.querySelector('.filter-count');if(badge){const f=t.dataset.filter;badge.textContent=String(f==='all'?cards.length:cards.filter(c=>c.dataset.category===f).length)}});
 function apply(){const q=input.value.trim().toLowerCase();let n=0;cards.forEach(c=>{const ok=(active==='all'||c.dataset.category===active)&&(!q||c.textContent.toLowerCase().includes(q));c.style.display=ok?'block':'none';if(ok)n++});document.querySelector('.no-results')?.remove();if(!n){const x=document.createElement('div');x.className='no-results';x.textContent='🔍 找不到符合的內容，請嘗試其他關鍵字或分類';document.getElementById('commandsGrid').append(x)}}

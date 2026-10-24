@@ -1,3 +1,34 @@
+<!-- 下拉式選單 -->
+<style>
+  /* 導覽列下拉選單：限制高度並顯示右側垂直捲軸 */
+  #collapsibleNavbar .dropdown-menu {
+    max-height: min(75vh, 620px);
+    overflow-y: auto;
+    overflow-x: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: auto;
+    scrollbar-color: #888 #f1f1f1;
+  }
+
+  #collapsibleNavbar .dropdown-menu::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+  }
+
+  #collapsibleNavbar .dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  #collapsibleNavbar .dropdown-menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 7px;
+    border: 2px solid #f1f1f1;
+  }
+
+  #collapsibleNavbar .dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #666;
+  }
+</style>
 <nav class="navbar navbar-expand-sm yf-bg-color-as3 navbar-dark fixed-top">
   <!-- <a class="navbar-brand" href="../../index.html"><span class="yf-color-pr1 yf-header-font">
       <span style="font-family: Times New Roman, Times, serif"><i class="fa-solid fa-book"></i></span></span></a> -->
@@ -42,79 +73,83 @@
             target="_self">P005. Claude AI 簡單介紹 ~ 115.04.14</a>
         </div>
       </li> -->
-        <!-- GPT Codex -->
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle text-primary " href="#" id="navbardrop" data-toggle="dropdown">
-            GPT Codex</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C01-My-Ebook-1150721/C01-DeepSeek-My-Ebook-1150721.html" target="_blank">C01A.電子書書庫整理報告
-              115.07.22(DeepSeek)!</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C02-Website-search-function-1150722/C02-DeepSeek-Website-search-function-1150722.html"
-              target="_blank">C02.AI學苑~全站搜尋功能製作報告 ~ 115.07.22</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C03-yfchen-web-search-function-1150723/C03-DeepSeek-yfchen-web-search-function-1150723.html"
-              target="_blank">C03.yfchen網站改版 · 全站搜尋與媒體封存計畫 (詳細版) ~ 115.07.23</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C04-Codex-Book-Recommend-1150723/C04-DeepSeek-Codex-Book-Recommend-1150723.html"
-              target="_blank">C04.閱讀書籍建議報告 · 退休學習書單 ~ 115.07.23</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C05-AI-Fortune-Retirement-Analysis-1150726/C05-AI-Fortune-Retirement-Analysis-1150726.html"
-              target="_blank">C05.AI運勢解盤與退休理財分析 ~ 115.07.26</a>
-        
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C06-Codex-Projec-and-Skill-Report-1150726/skill-project-report.html"
-              target="_blank">C06.Codex 退休學習中樞|專案和Skills報告 ~ 115.07.26</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C07-Codex-Book-Report-Tips-1150729/C07-Codex-Book-Report-Tips-1150729.html"
-              target="_blank">C07.閱讀，成為我的改變｜讀書心得升級指南 ~ 115.07.27</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C08-Memories-of-40th-Class-Reunion-1150729/C08-Memories-of-40th-Class-Reunion-1150729.html"
-              target="_blank">C08.四十多年友誼，同學聚會回憶 ~ 115.07.29</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C09-The-output-of-reading-experience-1150731/C09-The-output-of-reading-experience-1150731-DeepSeek.html"
-              target="_blank">C09.意外插曲，AI讀書心得建議(值得參考) ~ 115.07.31</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C10-Four-day-trip-to-Sun-Moon-Lake-1180806/C10-Four-day-trip-to-Sun-Moon-Lake-1180806.html"
-              target="_blank">C10.日月潭台中四天三夜｜旅遊行程(最新版、三代出遊) ~115.08.08</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C11-Director-Sichuan-handed-over-work-1150807/C11-Director-Sichuan-handed-over-work-1150807.html"
-              target="_blank">C11.川董交代測量工件裝入籃子的網頁 ~ 115.08.07</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C11A-Director-Sichuan-handed-over-work-1150825/C11A-Director-Sichuan-handed-over-work-1150825.html"
-              target="_blank">C11A.工件放置圓形籃計算結果 ~ 115.08.25</a>
-        
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C12-Wife-travels-to-Kyushu-Japan-1150809/C12-Wife-travels-to-Kyushu-Japan-1150809.html"
-              target="_blank">C12.老婆年底公司旅遊~南北九州紅葉賞五日｜旅遊行程手冊 ~ 115.11.14</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C18-Free-TTS-Complete-Guide-1150819/C18-Free-TTS-Complete-Guide-1150819.html"
-              target="_blank">C18. 免費 TTS 完全指南｜ElevenLabs × GPT 專案整合 ~ 115.08.19</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C19-gpt-hidden-commands-updated-1150822/C19-gpt-hidden-commands-updated.html"
-              target="_blank">C19.GPT 隱藏指令快速查閱表(不斷更新中) ~ 115.08.22</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C20-personal-computer-1150825/C20-personal-computer-1150825.html"
-              target="_blank">C20.健身教練工作 × 偶爾遊戲電腦組裝與費用試算 ~ 115.08.25</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C21-lalapotr-guide-1150901/C21-lalapotr-guide-1150901.html"
-              target="_blank">C21.南港lalaport攻略 ~ 115.09.01</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C24-Codex-My-Skill-Index-1150905/C24-Codex-My-Skill-Index-1150905.html"
-              target="_blank">C24.我的 GPT Codex Skill 路徑索引 ~ 115.09.05</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C26-Educate-Yourself-Before-Others-1150912/C26-Educate-Yourself-Before-Others-1150912.html"
-              target="_blank">C26.《教育別人先教育自己》歌曲製作紀錄 ~ 115.09.12</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C27-AI_11Books_Learning_Map_Website_Final-1150924/C27-AI_11Books_Learning_Map_Website_Final-1150924.html"
-              target="_blank">C27.11本AI書籍到Book-to-Media System ~ 115.09.24</a>
-            <a class="dropdown-item yf-color-pr1"
-              href="/C01-AI-Codex-2026/C28-AI_Learning_Mindset-1151012/C28-AI_Learning_Mindset-1151012.html"
-              target="_blank">C28.AI持續學習的方法與心態 ~ 115.11.12</a>
-        
-          </div>
-        </li>
+      <!-- GPT Codex -->
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle text-primary " href="#" id="navbardrop" data-toggle="dropdown">
+          GPT Codex</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C01-My-Ebook-1150721/C01-DeepSeek-My-Ebook-1150721.html"
+            target="_blank">C01A.電子書書庫整理報告
+            115.07.22(DeepSeek)!</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C02-Website-search-function-1150722/C02-DeepSeek-Website-search-function-1150722.html"
+            target="_blank">C02.AI學苑~全站搜尋功能製作報告 ~ 115.07.22</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C03-yfchen-web-search-function-1150723/C03-DeepSeek-yfchen-web-search-function-1150723.html"
+            target="_blank">C03.yfchen網站改版 · 全站搜尋與媒體封存計畫 (詳細版) ~ 115.07.23</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C04-Codex-Book-Recommend-1150723/C04-DeepSeek-Codex-Book-Recommend-1150723.html"
+            target="_blank">C04.閱讀書籍建議報告 · 退休學習書單 ~ 115.07.23</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C05-AI-Fortune-Retirement-Analysis-1150726/C05-AI-Fortune-Retirement-Analysis-1150726.html"
+            target="_blank">C05.AI運勢解盤與退休理財分析 ~ 115.07.26</a>
+
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C06-Codex-Projec-and-Skill-Report-1150726/skill-project-report.html"
+            target="_blank">C06.Codex 退休學習中樞|專案和Skills報告 ~ 115.07.26</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C07-Codex-Book-Report-Tips-1150729/C07-Codex-Book-Report-Tips-1150729.html"
+            target="_blank">C07.閱讀，成為我的改變｜讀書心得升級指南 ~ 115.07.27</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C08-Memories-of-40th-Class-Reunion-1150729/C08-Memories-of-40th-Class-Reunion-1150729.html"
+            target="_blank">C08.四十多年友誼，同學聚會回憶 ~ 115.07.29</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C09-The-output-of-reading-experience-1150731/C09-The-output-of-reading-experience-1150731-DeepSeek.html"
+            target="_blank">C09.意外插曲，AI讀書心得建議(值得參考) ~ 115.07.31</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C10-Four-day-trip-to-Sun-Moon-Lake-1180806/C10-Four-day-trip-to-Sun-Moon-Lake-1180806.html"
+            target="_blank">C10.日月潭台中四天三夜｜旅遊行程(最新版、三代出遊) ~115.08.08</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C11-Director-Sichuan-handed-over-work-1150807/C11-Director-Sichuan-handed-over-work-1150807.html"
+            target="_blank">C11.川董交代測量工件裝入籃子的網頁 ~ 115.08.07</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C11A-Director-Sichuan-handed-over-work-1150825/C11A-Director-Sichuan-handed-over-work-1150825.html"
+            target="_blank">C11A.工件放置圓形籃計算結果 ~ 115.08.25</a>
+
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C12-Wife-travels-to-Kyushu-Japan-1150809/C12-Wife-travels-to-Kyushu-Japan-1150809.html"
+            target="_blank">C12.老婆年底公司旅遊~南北九州紅葉賞五日｜旅遊行程手冊 ~ 115.11.14</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C18-Free-TTS-Complete-Guide-1150819/C18-Free-TTS-Complete-Guide-1150819.html"
+            target="_blank">C18. 免費 TTS 完全指南｜ElevenLabs × GPT 專案整合 ~ 115.08.19</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C19-gpt-hidden-commands-updated-1150822/C19-gpt-hidden-commands-updated.html"
+            target="_blank">C19.GPT 隱藏指令快速查閱表(不斷更新中) ~ 115.08.22</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C20-personal-computer-1150825/C20-personal-computer-1150825.html"
+            target="_blank">C20.健身教練工作 × 偶爾遊戲電腦組裝與費用試算 ~ 115.08.25</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C21-lalapotr-guide-1150901/C21-lalapotr-guide-1150901.html"
+            target="_blank">C21.南港lalaport攻略 ~ 115.09.01</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C24-Codex-My-Skill-Index-1150905/C24-Codex-My-Skill-Index-1150905.html"
+            target="_blank">C24.我的 GPT Codex Skill 路徑索引 ~ 115.09.05</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C26-Educate-Yourself-Before-Others-1150912/C26-Educate-Yourself-Before-Others-1150912.html"
+            target="_blank">C26.《教育別人先教育自己》歌曲製作紀錄 ~ 115.09.12</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C27-AI_11Books_Learning_Map_Website_Final-1150924/C27-AI_11Books_Learning_Map_Website_Final-1150924.html"
+            target="_blank">C27.11本AI書籍到Book-to-Media System ~ 115.09.24</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C28-AI_Learning_Mindset-1151012/C28-AI_Learning_Mindset-1151012.html"
+            target="_blank">C28.AI持續學習的方法與心態 ~ 115.10.12</a>
+          <a class="dropdown-item yf-color-pr1"
+            href="/C01-AI-Codex-2026/C29-OpenAI_Codex_18_Use_Cases-1151024/index.html"
+            target="_blank">C29.OpenAI Codex 18 大實戰應用 ~ 115.10.24</a>
+
+        </div>
+      </li>
       <!-- 台灣高中少子化生存戰 -->
       <li class="nav-item dropdown ">
         <a class="nav-link dropdown-toggle text-success" href="#" id="navbardrop" data-toggle="dropdown">
@@ -336,7 +371,7 @@
 
         </div>
       </li>
-    
+
 
       <!-- AI生圖學歷史 -->
       <li class="nav-item dropdown ">

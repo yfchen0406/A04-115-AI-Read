@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenAI Codex｜18 大實戰應用完整解析</title>
+  <meta name="description" content="Codex 18 大實戰應用：逐項解釋、實例、可複製提示詞及學習路線">
+  <style>
+    :root {
+      --blue: #1e90ff;
+      --navy: #0c1931;
+      --card: #142641;
+      --line: #35577a;
+      --yellow: #ffdc73;
+      --text: #f5f8ff;
+      --muted: #c2d2e7
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, "Noto Sans TC", sans-serif;
+      background: linear-gradient(150deg, #071326, #102b50 50%, #071326);
+      color: var(--text);
+      line-height: 1.7
+    }
+
+    a {
+      color: #9bd0ff
+    }
+
+    header {
+      padding: 52px 20px 36px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, #185d9a55, transparent 70%)
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 54px);
+      margin: 0
+    }
+
+    h1 span {
+      color: var(--yellow)
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 850px;
+      margin: 16px auto
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 20px;
+      background: #ffffff0b
+    }
+
+    .stat strong {
+      color: var(--yellow);
+      font-size: 22px
+    }
+
+    .section {
+      margin: 36px auto
+    }
+
+    .section h2 {
+      border-left: 5px solid var(--yellow);
+      padding-left: 14px
+    }
+
+    .intro {
+      background: #142641;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px
+    }
+
+    .note {
+      border-left: 4px solid #ffc260;
+      background: #382a1d;
+      padding: 13px 18px;
+      border-radius: 8px
+    }
+
+    .original {
+      display: block;
+      max-width: 520px;
+      width: 100%;
+      margin: 18px auto;
+      border-radius: 12px;
+      cursor: zoom-in
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0
+    }
+
+    .toolbar input,
+    .toolbar select {
+      background: #0c1b32;
+      border: 1px solid #527aa4;
+      color: white;
+      padding: 12px;
+      border-radius: 9px;
+      font: inherit
+    }
+
+    .toolbar input {
+      flex: 1;
+      min-width: 200px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px
+    }
+
+    .card {
+      background: linear-gradient(160deg, #1b3454, #10213a);
+      border: 1px solid #3a719f;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column
+    }
+
+    .cardhead {
+      padding: 18px 18px 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .num {
+      background: linear-gradient(130deg, #ff8b27, #ffcf58);
+      color: #17253a;
+      border-radius: 10px;
+      padding: 3px 10px;
+      font-size: 22px;
+      font-weight: 900
+    }
+
+    .tag {
+      color: #a4d7ff;
+      font-size: 12px;
+      border: 1px solid #4478a6;
+      border-radius: 99px;
+      padding: 2px 8px
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin: 0
+    }
+
+    .body {
+      padding: 0 18px 18px;
+      flex: 1
+    }
+
+    .body p {
+      margin: 9px 0
+    }
+
+    .small {
+      color: #bed1e7;
+      font-size: 14px
+    }
+
+    .prompt {
+      background: #07172a;
+      border: 1px solid #34516c;
+      padding: 12px;
+      border-radius: 9px;
+      font-size: 14px;
+      margin-top: 12px
+    }
+
+    .copy {
+      margin-top: 10px;
+      background: var(--blue);
+      border: 0;
+      color: #fff;
+      border-radius: 8px;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: 700
+    }
+
+    .copy:hover {
+      background: #0875df
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px
+    }
+
+    .step {
+      background: #132c4b;
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--line)
+    }
+
+    .step b {
+      color: var(--yellow)
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 12px
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: #000e;
+      display: none;
+      place-items: center;
+      z-index: 10;
+      padding: 20px
+    }
+
+    .modal.open {
+      display: grid
+    }
+
+    .modal img {
+      max-height: 92vh;
+      max-width: 95vw;
+      object-fit: contain
+    }
+
+    .close {
+      position: absolute;
+      right: 24px;
+      top: 12px;
+      color: #fff;
+      background: none;
+      border: 0;
+      font-size: 38px;
+      cursor: pointer
+    }
+
+    @media(max-width:900px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+    }
+
+    @media(max-width:640px) {
+
+      .grid,
+      .steps {
+        grid-template-columns: 1fr
+      }
+
+      .wrap {
+        padding: 0 14px
+      }
+
+      header {
+        padding-top: 30px
+      }
+    }
+
+    .cardimage {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1.38;
+      object-fit: fill;
+      background: #08172c;
+      border-bottom: 1px solid #3a719f;
+      cursor: zoom-in
+    }
+
+    .cardimage:focus-visible {
+      outline: 3px solid #ffdc73;
+      outline-offset: -3px
+    }
+
+    .modal img {
+      border-radius: 10px
+    }
+
+    .imagehint {
+      font-size: 12px;
+      color: #bed1e7;
+      padding: 3px 18px 0
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <h1>OpenAI Codex <span>18 大實戰應用</span></h1>
+      <p class="lead">從想法到成果：專案規劃、程式開發、資料分析、網站部署與工作流程自動化。逐項解釋圖片中的 18 個能力，並提供可直接複製的實作指令。</p>
+      <div class="stats">
+        <div class="stat"><strong>18</strong> 個應用</div>
+        <div class="stat"><strong>6</strong> 大領域</div>
+        <div class="stat"><strong>18</strong> 組實作提示詞</div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="section intro">
+      <h2>使用方式</h2>
+      <p>Codex 不只是回答程式問題，而是能在具備專案存取與執行權限時，協助讀取程式、修改檔案、執行指令、測試與交付成果的開發代理。最實用的工作模式是：<b>描述需求 → 確認計畫 → 執行開發 → 驗證結果</b>。</p>
+ 
+    </section>
+    <section class="section">
+      <h2>18 項應用｜詳細說明與實作提示詞</h2>
+      <div class="toolbar"><input id="search" type="search" placeholder="搜尋：網站、除錯、Excel、API、部署…"
+          aria-label="搜尋應用"><select id="filter" aria-label="依領域篩選">
+          <option value="">全部領域</option>
+          <option>規劃</option>
+          <option>開發</option>
+          <option>網站</option>
+          <option>資料</option>
+          <option>內容</option>
+          <option>自動化</option>
+        </select></div>
+      <p id="count" class="small" aria-live="polite"></p>
+      <div class="grid" id="cards"></div>
+    </section>
+    <section class="section">
+      <h2>建議學習路線</h2>
+      <div class="steps">
+        <div class="step"><b>第一階段｜入門</b>
+          <p>01 專案規劃 → 02 建立專案 → 03 程式碼生成 → 07 網站開發</p>
+        </div>
+        <div class="step"><b>第二階段｜品質</b>
+          <p>04 功能開發 → 05 除錯修正 → 06 測試自動化 → 14 介面優化</p>
+        </div>
+        <div class="step"><b>第三階段｜進階</b>
+          <p>08 資料處理 → 12 API 串接 → 16 專案重構 → 17 工作流程自動化 → 15 部署上線</p>
+        </div>
+      </div>
+    </section>
+    <section class="section intro">
+      <h2>適合大型獨立資料夾網站的實戰策略</h2>
+      <p>先讓 Codex 掃描專案並輸出檔案清單、失效連結、重複樣式與圖片路徑報告；接著挑選一個資料夾作為試點，完成修改與測試後，再逐批套用至其他資料夾。每一批都保留備份與差異紀錄，避免一次重構影響整個網站。</p><button
+        class="copy" id="copyplan">複製網站整理總提示詞</button>
+    </section>
+  </main>
+  <footer>Codex 18 大實戰應用｜教學整理與互動導航｜依使用者提供圖片製作</footer>
+  <div id="modal" class="modal" role="dialog" aria-label="原始圖片放大預覽"><button class="close" id="close"
+      aria-label="關閉">×</button><img src="codex18-reference.jpg" alt="Codex 18 大實戰應用原圖"></div>
+  <script>
+    const items = [{ "id": 1, "title": "專案規劃", "summary": "將想法轉換成可執行的開發計畫與任務清單", "example": "例如：為 AI 學習網站制定功能需求、頁面架構、開發優先順序。", "prompt": "請先分析目前網站的資料夾與頁面，提出分階段改善計畫、驗收標準與風險；先不要修改檔案。", "category": "規劃" }, { "id": 2, "title": "建立專案", "summary": "建立完整專案檔案與資料夾結構", "example": "例如：建立 index.html、style.css、app.js、README.md。", "prompt": "請建立一個可直接在瀏覽器執行的靜態網站專案，包含首頁、樣式、互動腳本與使用說明。", "category": "規劃" }, { "id": 3, "title": "程式碼生成", "summary": "依需求產生可執行的程式碼", "example": "例如：產生卡片式資源導覽、搜尋與篩選功能。", "prompt": "請依現有 HTML 架構新增卡片搜尋與分類篩選功能，保留原有導覽列與頁尾。", "category": "開發" }, { "id": 4, "title": "功能開發", "summary": "在既有專案加入新功能並整合", "example": "例如：為網站加入收藏、圖片放大與分頁。", "prompt": "請先找出相關程式檔，再加入收藏功能；避免影響原有功能，完成後列出修改檔案。", "category": "開發" }, { "id": 5, "title": "除錯修正", "summary": "定位錯誤原因並修復程式", "example": "例如：修正 Netlify 部署後圖片路徑錯誤。", "prompt": "請檢查圖片路徑、大小寫、瀏覽器主控台錯誤與相對路徑，找出根因並最小幅度修正。", "category": "開發" }, { "id": 6, "title": "測試自動化", "summary": "建立測試並確認功能正常", "example": "例如：測試搜尋、導覽、按鈕與響應式版面。", "prompt": "請為主要互動功能建立測試清單，能自動化的部分加入測試，回報通過、失敗與未驗證項目。", "category": "開發" }, { "id": 7, "title": "網站開發", "summary": "製作具有響應式版面的網站", "example": "例如：建立 AI 提示詞卡片導航網站。", "prompt": "請以道奇藍與淺黃色設計響應式卡片網站，支援桌面與手機，並保留既有內容。", "category": "網站" }, { "id": 8, "title": "資料處理", "summary": "讀取、清理、分析與視覺化資料", "example": "例如：整理 Excel 分鏡表、產出統計圖。", "prompt": "請檢查 Excel 欄位、重複資料與缺漏時間碼，產生資料品質報告與統計摘要。", "category": "資料" }, { "id": 9, "title": "工具開發", "summary": "建立實用的小工具或應用程式", "example": "例如：批次檢查圖片檔名與路徑。", "prompt": "請建立一個在本機使用的檔案檢查工具，列出遺失圖片、重複檔名與錯誤連結。", "category": "資料" }, { "id": 10, "title": "文件產製", "summary": "自動建立說明文件與技術手冊", "example": "例如：替網站產生 README 與操作指南。", "prompt": "請閱讀現有程式，建立 README，包含資料夾用途、部署步驟、維護方法與常見問題。", "category": "內容" }, { "id": 11, "title": "內容轉換", "summary": "將文字、圖片、影音等轉換為適合的格式", "example": "例如：將 Markdown 轉為網站所需的 JS 資料。", "prompt": "請將 Markdown 轉換成指定 JS 資料結構，保留原文與標題層級，並檢查資料筆數。", "category": "內容" }, { "id": 12, "title": "API 串接", "summary": "整合外部服務與自動化流程", "example": "例如：串接經授權的資料 API 更新內容。", "prompt": "請先閱讀 API 文件與權限要求，設計安全的串接方式，金鑰使用環境變數。", "category": "資料" }, { "id": 13, "title": "資料庫應用", "summary": "設計與操作資料庫、查詢與分析", "example": "例如：建立提示詞收藏資料庫。", "prompt": "請設計網站資源資料表、欄位、索引與基本查詢，並提供資料備份方案。", "category": "資料" }, { "id": 14, "title": "介面優化", "summary": "改善使用者介面與使用體驗", "example": "例如：調整卡片間距、手機版閱讀性。", "prompt": "請檢查網頁的文字對比、卡片排版、手機版溢出與鍵盤操作，提出並實作改善。", "category": "網站" }, { "id": 15, "title": "部署上線", "summary": "協助將專案部署到雲端服務", "example": "例如：將靜態網站部署至 Netlify。", "prompt": "請檢查部署設定、入口檔案與資源路徑，提供 Netlify 上線步驟與部署後驗收清單。", "category": "網站" }, { "id": 16, "title": "專案重構", "summary": "整理並優化既有程式碼、提升可維護性", "example": "例如：將重複的網頁樣式抽出共用。", "prompt": "請先建立重構計畫與影響範圍，再分批整理重複 CSS/JS，確保外觀與功能不變。", "category": "規劃" }, { "id": 17, "title": "工作流程自動化", "summary": "將重複工作串成可執行流程", "example": "例如：批次產生頁面索引、檢查圖片並產生報告。", "prompt": "請設計可重複執行的檢查流程，涵蓋檔案命名、連結、圖片及輸出報告。", "category": "自動化" }, { "id": 18, "title": "學習與教學", "summary": "產生教學範例與練習專案", "example": "例如：製作 HTML/CSS/JS 的循序學習教材。", "prompt": "請將這個網站拆解成初級到進階的教學單元，每單元包含概念、練習與驗收。", "category": "內容" }]; const cards = document.querySelector('#cards'), search = document.querySelector('#search'), filter = document.querySelector('#filter'); function render() { const q = search.value.trim().toLowerCase(), cat = filter.value; const visible = items.filter(x => (!cat || x.category === cat) && [x.title, x.summary, x.example, x.prompt, x.category].join(' ').toLowerCase().includes(q)); cards.replaceChildren(); visible.forEach(x => { const article = document.createElement('article'); article.className = 'card'; const pic = document.createElement('img'); pic.className = 'cardimage'; pic.src = 'images/codex-' + String(x.id).padStart(2, '0') + '.jpg'; pic.alt = String(x.id).padStart(2, '0') + ' ' + x.title + '：原始資訊圖卡片'; pic.loading = 'lazy'; pic.tabIndex = 0; pic.title = '點擊放大此卡片圖片'; pic.addEventListener('click', () => showImage(pic.src, pic.alt)); pic.addEventListener('keydown', e => { if (e.key === 'Enter') showImage(pic.src, pic.alt) }); const head = document.createElement('div'); head.className = 'cardhead'; const n = document.createElement('span'); n.className = 'num'; n.textContent = String(x.id).padStart(2, '0'); const h = document.createElement('h3'); h.textContent = x.title; head.append(n, h); const body = document.createElement('div'); body.className = 'body'; const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = x.category; const summary = document.createElement('p'); summary.textContent = x.summary; const example = document.createElement('p'); example.className = 'small'; example.textContent = x.example; const prompt = document.createElement('div'); prompt.className = 'prompt'; prompt.textContent = '可複製提示詞：' + x.prompt; const btn = document.createElement('button'); btn.className = 'copy'; btn.textContent = '複製提示詞'; btn.addEventListener('click', () => copy(x.prompt, btn)); body.append(tag, summary, example, prompt, btn); article.append(pic, head, body); cards.append(article) }); document.querySelector('#count').textContent = '顯示 ' + visible.length + ' / 18 項應用' } async function copy(t, b) { try { await navigator.clipboard.writeText(t) } catch (e) { const a = document.createElement('textarea'); a.value = t; document.body.append(a); a.select(); document.execCommand('copy'); a.remove() } const old = b.textContent; b.textContent = '已複製 ✓'; setTimeout(() => b.textContent = old, 1500) } search.addEventListener('input', render); filter.addEventListener('change', render); render(); document.querySelector('#copyplan').addEventListener('click', e => copy('請先掃描我的網站專案（每個單元為獨立資料夾），列出資料夾結構、重複 CSS/JS、圖片路徑、失效連結與維護風險。第一階段只提出整理報告與分批改善計畫，不修改檔案。經我確認後，先選一個資料夾試做，保留原有導覽列、頁尾、版面與內容；每次修改後執行檢查，列出異動檔案、測試結果與復原方法。', e.target)); const modal = document.querySelector('#modal'); function showImage(src, alt) { const target = modal.querySelector('img'); target.src = src; target.alt = alt; modal.classList.add('open') } document.querySelector('#original').onclick = () => showImage('codex18-reference.jpg', 'Codex 18 大實戰應用原始圖片'); document.querySelector('#close').onclick = () => modal.classList.remove('open'); modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open') }); document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open') });</script>
+</body>
+
+</html>
