@@ -7,12 +7,18 @@
   <meta name="description" content="離線閱讀蘇東坡《六月二十七日望湖樓醉書五絕·其一》，跟隨旁白、字幕與分鏡同步欣賞西湖驟雨。">
   <title>六月二十七日望湖樓醉書｜蘇東坡動態劇本</title>
   <link rel="stylesheet" href="./assets/main.css">
+  <style>
+    .motion-entry{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:50px;padding:.8rem 1.25rem;border:1px solid rgba(255,255,255,.72);border-radius:999px;background:rgba(12,35,44,.52);color:#fff;font-weight:900;text-decoration:none;transition:transform .2s ease,background .2s ease}
+    .motion-entry:hover{transform:translateY(-2px);background:#315346}
+    .motion-entry:focus-visible{outline:3px solid #e2a943;outline-offset:3px}
+  </style>
   <!-- TODO：正式有字幕／無字幕影片網址尚未提供；先依要求使用 YouTube 首頁暫時入口。 -->
   <script>window.EPISODE_SETTINGS = {
     links: { home: './index.html', reading: './reading.html', chapters: './reading.html#chapter-index', youtubeWithSubtitles: 'https://youtu.be/UGx6WJjrHtg', youtubeWithoutSubtitles: 'https://youtu.be/UGx6WJjrHtg' },
     assets: { base: './', coverImage: 'assets/images/cover.webp', sceneImagePattern: 'assets/images/IMG{id}.webp', narrationAudio: 'assets/audio/narration.mp3' }
   };</script>
   <script defer src="./assets/main.js"></script>
+  <script defer src="./assets/motion-home.js"></script>
 </head>
 <body><div id="root"></div></body>
 </html>

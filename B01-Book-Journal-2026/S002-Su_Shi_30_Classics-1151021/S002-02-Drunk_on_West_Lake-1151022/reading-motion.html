@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《六月二十七日望湖樓醉書五絕·其一》動畫特效版，沿用原圖、旁白、字幕與時間軸。">
+  <title>動畫特效版｜《六月二十七日望湖樓醉書五絕·其一》</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <link rel="stylesheet" href="./assets/motion.css">
+</head>
+<body>
+  <main class="motion-page">
+    <header class="motion-header">
+      <a class="back-link" href="./reading.html">← 返回原版</a>
+      <div><p class="eyebrow">千年之後，我們仍記得蘇東坡，第02集</p><h1>《六月二十七日望湖樓醉書五絕·其一》</h1></div>
+      <span class="motion-count">52 鏡 · 7 章</span>
+    </header>
+    <section class="motion-shell" aria-label="旁白、字幕、分鏡與動畫特效同步播放器">
+      <div class="motion-stage" id="motion-stage">
+        <img class="motion-image" id="motion-image" src="./assets/images/IMG001.webp" alt="西湖荷葉間的小舟">
+        <div class="motion-effect" id="motion-effect" aria-hidden="true"></div>
+        <div class="motion-chapter" id="motion-chapter"></div>
+        <div class="poem-layer" id="poem-layer" aria-live="off"></div>
+        <div class="motion-subtitle" id="motion-subtitle" aria-live="polite"></div>
+        <audio class="motion-audio" id="motion-audio" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+        <button class="motion-cover" id="motion-cover" type="button" aria-label="開始播放動畫特效版">
+          <img src="./assets/images/cover.webp" alt="本集封面">
+          <span class="motion-cover-shade"></span>
+          <span class="motion-cover-copy"><b aria-hidden="true">▶</b><strong>開始閱讀動畫特效版</strong><small>52 個分鏡 · 7 個章節 · 原速旁白</small></span>
+        </button>
+      </div>
+      <div class="motion-controls">
+        <div class="motion-seek-row"><span id="motion-current">00:00</span><input id="motion-seek" aria-label="旁白時間" type="range" min="0" max="471.36" step="0.01" value="0"><span id="motion-duration">07:51</span></div>
+        <div class="motion-control-row">
+          <button id="prev-chapter" type="button">上一章</button><button id="prev-scene" type="button">前一鏡</button>
+          <button id="play-pause" class="motion-play" type="button">播放</button><button id="next-scene" type="button">下一鏡</button><button id="next-chapter" type="button">下一章</button>
+          <button id="mute-toggle" type="button">靜音</button><label class="motion-volume">音量 <input id="motion-volume" aria-label="音量" type="range" min="0" max="1" step="0.01" value="1"></label>
+          <button id="fullscreen-toggle" type="button">全螢幕</button><button id="restart" type="button">從頭重播</button>
+        </div>
+        <p class="motion-status" id="motion-status">尚未播放 · 第 001 鏡</p>
+      </div>
+    </section>
+    <section class="motion-chapters" id="motion-chapters" aria-labelledby="motion-chapter-heading">
+      <p class="eyebrow">CHAPTER INDEX</p><h2 id="motion-chapter-heading">章節索引</h2><div class="motion-chapter-list" id="motion-chapter-list"></div>
+    </section>
+    <footer class="motion-footer">動畫特效版使用原始 MP3 作唯一主時鐘；分鏡時間依 Excel、字幕依原始 SRT。原版入口保留於頁面頂端。</footer>
+  </main>
+  <script src="./assets/motion-timeline.js" defer></script>
+  <script src="./assets/motion.js" defer></script>
+</body>
+</html>

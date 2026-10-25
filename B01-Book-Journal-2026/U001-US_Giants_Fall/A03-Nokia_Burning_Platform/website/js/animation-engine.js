@@ -34,10 +34,10 @@
     candidates.sort((a,b)=>(b.priority||0)-(a.priority||0)||a.startMs-b.startMs);
     const cue=candidates[0];if(!cue){clear();return}
     if(activeId!==cue.id)build(cue);
-    const p=Math.max(0,Math.min(1,(ms-cue.startMs)/Math.max(1,cue.endMs-cue.startMs))),reduced=cfg.respectReducedMotion&&window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,fadeIn=.14,fadeOut=.2;
-    const alpha=reduced?1:(p<fadeIn?p/fadeIn:(p>1-fadeOut?(1-p)/fadeOut:1));root.hidden=false;root.style.setProperty('--cue-alpha',String(Math.max(0,Math.min(1,alpha))));root.style.setProperty('--cue-lift',reduced?'0px':`${(1-p)*7}px`);root.style.setProperty('--cue-progress',String(p));
+    const p=Math.max(0,Math.min(1,(ms-cue.startMs)/Math.max(1,cue.endMs-cue.startMs))),reduced=cfg.respectReducedMotion&&window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,fadeIn=.14,fadeOut=.2;const glossMs=Math.min(550,Math.max(1,(cue.endMs-cue.startMs)*.12)),glossProgress=Math.max(0,Math.min(1,(ms-cue.startMs)/glossMs)),gloss=reduced||!window.SHOT_EFFECTS_CONFIG?.enabled||window.SHOT_EFFECTS_CONFIG?.titleGlossEnabled===false?0:(ms<=cue.startMs+glossMs?Math.sin(Math.PI*glossProgress):0);
+    const alpha=reduced?1:(p<fadeIn?p/fadeIn:(p>1-fadeOut?(1-p)/fadeOut:1));root.hidden=false;root.style.setProperty('--cue-alpha',String(Math.max(0,Math.min(1,alpha))));root.style.setProperty('--cue-lift',reduced?'0px':`${(1-p)*7}px`);root.style.setProperty('--cue-progress',String(p));root.classList.toggle('title-gloss',gloss>.01);root.style.setProperty('--cue-title-gloss',String(gloss*.18));root.style.setProperty('--cue-title-position',`${100-glossProgress*100}%`);
     if(nodes?.note)nodes.note.dataset.verified=String(Boolean(cue.verified));
   }
-  function clear(){if(activeId===null&&root.hidden)return;root.hidden=true;root.className='semantic-animation';root.removeAttribute('data-cue-id');root.removeAttribute('aria-label');for(const name of ['--cue-alpha','--cue-lift','--cue-progress','--semantic-accent','--semantic-text','--semantic-muted','--semantic-danger'])root.style.removeProperty(name);root.replaceChildren();activeId=null;nodes=null}
+  function clear(){if(activeId===null&&root.hidden)return;root.hidden=true;root.className='semantic-animation';root.removeAttribute('data-cue-id');root.removeAttribute('aria-label');for(const name of ['--cue-alpha','--cue-lift','--cue-progress','--semantic-accent','--semantic-text','--semantic-muted','--semantic-danger','--cue-title-gloss','--cue-title-position'])root.style.removeProperty(name);root.replaceChildren();activeId=null;nodes=null}
   window.SemanticAnimationEngine={render,clear,types:[...allowed]};
 })();

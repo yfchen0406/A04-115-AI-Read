@@ -23,52 +23,32 @@
   function renderHome() {
     const root = document.getElementById('home-root');
     const readHref = settings.links.reading || './reading.html';
+    const effectsHref = settings.links.effects || './reading-effects.html';
     const withSubs = settings.links.youtubeWithSubtitles || '#';
     const withoutSubs = settings.links.youtubeWithoutSubtitles || '#';
     const episodeTitle = timeline.title.replace(/^《|》$/g, '');
-    const sceneCards = timeline.scenes.map((scene) => {
-      const imageNumber = String(scene.id).padStart(3, '0');
-      const chapter = timeline.chapters.find((item) => String(item.id) === String(scene.chapterId));
-      const chapterTitle = chapter?.title || '分鏡';
-      return `<a class="scene-card" href="${readHref}?scene=${imageNumber}" aria-label="開啟第 ${imageNumber} 鏡：${chapterTitle}">
-        <img src="${assetUrl(scene.imagePath)}" alt="第 ${imageNumber} 鏡：${chapterTitle}" loading="lazy">
-        <span class="scene-card-placeholder" hidden>IMG${imageNumber}<small>圖片暫時無法載入</small></span>
-        <span class="scene-card-caption"><b>IMG${imageNumber}</b><span>${chapterTitle}</span></span>
-      </a>`;
-    }).join('');
+    root.className = 'home-page';
     root.innerHTML = `
-      <div class="home-layout">
-        <section class="hero cover-hero" aria-label="${episodeTitle}">
-          <img class="cover-image" src="${coverUrl}" alt="千年之後，我們仍記得蘇東坡，東坡名作三十，第3集封面。">
-          <div class="hero-fallback" hidden aria-live="polite"><div><p>封面圖片暫時無法載入</p><h2>${episodeTitle}</h2><span>請確認網站圖片素材完整後重新整理。</span></div></div>
-          <div class="hero-shade cover-hero-shade"></div>
-          <div class="hero-copy cover-hero-copy">
-            <h1 id="main-title" class="visually-hidden">${episodeTitle}</h1>
-            <div class="hero-actions" aria-label="本集快速入口">
-              <a class="start-link" href="${readHref}">開始閱讀 <b aria-hidden="true">→</b></a>
-              <a class="youtube-link" href="${withSubs}" target="_blank" rel="noopener noreferrer" aria-label="YT連結（有字幕）"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.9 6.3-3.9-6.3-3.9z"/></svg> YT連結（有字幕）</a>
-              <a class="youtube-link" href="${withoutSubs}" target="_blank" rel="noopener noreferrer" aria-label="YT連結（無字幕）"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.9 6.3-3.9-6.3-3.9z"/></svg> YT連結（無字幕）</a>
-            </div>
-            <p class="hero-meta">${timeline.scenes.length} 個分鏡 · ${timeline.chapters.length} 個章節 · 原速旁白 · Remotion 同步播放</p>
+      <section class="hero cover-hero" aria-labelledby="main-title">
+        <img class="cover-image" src="${coverUrl}" alt="《${episodeTitle}》第 03 集封面：蘇東坡與早春江景。">
+        <div class="hero-fallback" hidden aria-live="polite"><div><p>千年之後，我們仍記得蘇東坡・東坡名作三十・第 03 集</p><h2>${episodeTitle}</h2><span>封面圖片暫時無法載入，仍可從下方入口開始閱讀。</span></div></div>
+        <div class="hero-shade cover-hero-shade"></div>
+        <div class="hero-copy cover-hero-copy">
+          <h1 id="main-title">${episodeTitle}</h1>
+          <div class="hero-actions" aria-label="本集入口">
+            <a class="start-link" href="${readHref}">開始閱讀 <b aria-hidden="true">→</b></a>
+            <a class="youtube-link" href="${withSubs}" target="_blank" rel="noopener noreferrer" aria-label="YT連結（有字幕）"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.9 6.3-3.9-6.3-3.9z"/></svg> YT連結（有字幕）</a>
+            <a class="youtube-link" href="${withoutSubs}" target="_blank" rel="noopener noreferrer" aria-label="YT連結（無字幕）"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.9 6.3-3.9-6.3-3.9z"/></svg> YT連結（無字幕）</a>
+            <a class="motion-entry" href="${effectsHref}">動畫特效版 <span aria-hidden="true">✦</span></a>
           </div>
-        </section>
-      </div>
-      <section class="scene-gallery" id="scene-gallery" aria-labelledby="scene-gallery-title">
-        <div class="scene-gallery-heading"><div><p class="eyebrow">SCENE GALLERY</p><h2 id="scene-gallery-title">本集分鏡圖片</h2></div><span>${timeline.scenes.length} 張圖片</span></div>
-        <div class="scene-grid">${sceneCards}</div>
+          <p class="hero-meta">${timeline.scenes.length} 個分鏡 · ${timeline.chapters.length} 個章節 · 原速旁白 · 共用時間軸同步播放</p>
+        </div>
       </section>`;
     const coverImage = root.querySelector('.cover-image');
     coverImage.addEventListener('error', () => {
       coverImage.classList.add('cover-image-failed');
       root.querySelector('.hero-fallback').hidden = false;
     }, {once:true});
-    root.querySelectorAll('.scene-card img').forEach((image) => {
-      image.addEventListener('error', () => {
-        image.hidden = true;
-        image.parentElement.classList.add('scene-card-missing');
-        image.parentElement.querySelector('.scene-card-placeholder').hidden = false;
-      }, {once:true});
-    });
   }
 
   const chapterAt = (ms) => [...timeline.chapters].reverse().find((chapter) => ms >= chapter.startMs) || timeline.chapters[0];
@@ -234,5 +214,6 @@
 
   if(page==='reader')renderReader();else renderHome();
 })();
+
 
 
