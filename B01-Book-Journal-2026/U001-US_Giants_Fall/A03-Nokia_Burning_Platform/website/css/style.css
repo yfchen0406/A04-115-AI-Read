@@ -19,3 +19,9 @@
 @media(max-width:760px){.control-line{gap:5px;overflow-x:auto;padding-bottom:4px}.control-line #seek{min-width:76px}.control-line .volume{margin-left:2px}.control-line .volume input{width:54px}.playback-title{padding:0 0 2px;font-size:clamp(20px,5vw,30px)}}
 
 
+/* Playback heading: keep the home link in the far-left column. */
+.playback-header{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:16px;padding:20px 0 18px}
+.back-home{margin:0;justify-self:start}
+.playback-heading{min-width:0}
+.playback-heading .eyebrow{margin-top:2px}
+@media(max-width:560px){.playback-header{grid-template-columns:auto minmax(0,1fr);gap:10px;padding-top:16px}.back-home{padding:6px 9px;font-size:12px}.playback-title{font-size:clamp(18px,4.6vw,26px)}}

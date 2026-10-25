@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10191e">
+<title>巨頭的殞落｜第05集 A05-Sears</title>
+<style>
+:root{color-scheme:dark;--gold:#e3bb57;--ink:#f5f4ef;--ink-dark:#17242b}*{box-sizing:border-box}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}html,body{width:100%;min-height:100%;margin:0;background:#090f15;color:var(--ink);font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif}.cover-page{min-height:100svh;display:grid;place-items:center;padding:0;background:#090f15}.cover-frame{position:relative;width:min(100vw,calc(100svh * 16 / 9));aspect-ratio:16/9;overflow:hidden;background:#111}.cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.cover-actions{position:absolute;z-index:2;left:clamp(16px,3.4vw,30px);bottom:clamp(16px,3.4vw,28px);display:flex;flex-wrap:wrap;align-items:center;gap:8px;width:max-content;max-width:calc(100% - 32px);padding:10px;border:1px solid #ffffff55;border-radius:17px;background:#07111be8;box-shadow:0 8px 24px #0008;backdrop-filter:blur(9px)}.cover-button{display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:9px 15px;border:1px solid #a9b3bb;border-radius:999px;background:#182833;color:#f7f8f9;font-size:14px;font-weight:700;line-height:1.25;text-align:center;text-decoration:none;white-space:nowrap;transition:transform .16s,border-color .16s,background .16s}.cover-button:hover,.cover-button:focus-visible{transform:translateY(-1px);border-color:var(--gold);background:#263a48;outline:3px solid #e3bb5780;outline-offset:2px}.cover-button.primary{border-color:var(--gold);background:var(--gold);color:#17242b}.cover-button.primary:hover,.cover-button.primary:focus-visible{background:#f0cc6c}.cover-button[aria-disabled="true"]{cursor:not-allowed;opacity:.82}.cover-button[aria-disabled="true"]:hover{transform:none;border-color:#a9b3bb;background:#182833}@media(max-width:560px){.cover-page{place-items:start center}.cover-frame{width:100vw;margin-top:0}.cover-actions{left:12px;bottom:12px;gap:6px;max-width:calc(100% - 24px);padding:8px;border-radius:14px}.cover-button{min-height:40px;padding:8px 11px;font-size:12px}}@media(max-width:380px){.cover-actions{right:12px;width:auto}.cover-button{flex:1 1 auto}}
+</style>
+</head>
+<body>
+<main class="cover-page">
+<section class="cover-frame" aria-label="第05集封面">
+<h1 class="sr-only">巨頭的殞落｜第05集｜A05-Sears 西爾斯：被資本家掏空的零售帝國</h1>
+<img class="cover-image" src="cover.webp" alt="巨頭的殞落；第05集｜A05-Sears 西爾斯：被資本家掏空的零售帝國">
+<nav class="cover-actions" aria-label="首頁連結">
+<a class="cover-button primary" href="dynamic-story/index.html?effects=1">進入動態敘事</a>
+<a class="cover-button youtube-link" id="youtubeShortUrl" href="#youtube-short-url-not-set" aria-disabled="true" title="請先在 index.html 填入 YouTube 短網址">YouTube 影片（短網址）</a>
+<a class="cover-button youtube-link" id="youtubeStandardUrl" href="#youtube-standard-url-not-set" aria-disabled="true" title="請先在 index.html 填入 YouTube 標準網址">YouTube 影片（標準網址）</a>
+</nav>
+</section>
+</main>
+<script>
+// Fill these fields with the corresponding YouTube video URLs when they are ready.
+const youtubeLinks = {
+  shortUrl: "",
+  standardUrl: ""
+};
+function validYouTubeUrl(value) {
+  try {
+    const url = new URL(value.trim());
+    return url.protocol === "https:" && (url.hostname === "youtu.be" || url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com") || url.hostname === "youtube-nocookie.com" || url.hostname.endsWith(".youtube-nocookie.com")) ? url.href : "";
+  } catch { return ""; }
+}
+[
+  ["youtubeShortUrl", youtubeLinks.shortUrl],
+  ["youtubeStandardUrl", youtubeLinks.standardUrl]
+].forEach(([id, value]) => {
+  const link = document.getElementById(id);
+  const url = validYouTubeUrl(value);
+  if (!url) {
+    link.addEventListener("click", event => event.preventDefault());
+    return;
+  }
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.removeAttribute("aria-disabled");
+  link.removeAttribute("title");
+});
+</script>
+</body>
+</html>
