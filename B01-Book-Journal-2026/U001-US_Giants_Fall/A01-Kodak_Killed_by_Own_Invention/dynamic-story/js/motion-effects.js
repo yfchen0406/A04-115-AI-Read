@@ -1,0 +1,17 @@
+window.MOTION_CONFIG={enabled:true,maxZoom:0.022,maxPanX:0.45,maxPanY:0.30,holdRatio:0.15};
+window.MOTION_EFFECTS=[{"id":"IMG001","type":"zoom-in"},{"id":"IMG002","type":"pan-lr"},{"id":"IMG003","type":"zoom-out"},{"id":"IMG004","type":"pan-rl"},{"id":"IMG005","type":"pan-up"},{"id":"IMG006","type":"hold-push"},{"id":"IMG007","type":"zoom-in"},{"id":"IMG008","type":"pan-lr"},{"id":"IMG009","type":"zoom-out"},{"id":"IMG010","type":"pan-rl"},{"id":"IMG011","type":"pan-up"},{"id":"IMG012","type":"hold-push"},{"id":"IMG013","type":"zoom-in"},{"id":"IMG014","type":"pan-lr"},{"id":"IMG015","type":"zoom-out"},{"id":"IMG016","type":"pan-rl"},{"id":"IMG017","type":"pan-up"},{"id":"IMG018","type":"hold-push"},{"id":"IMG019","type":"zoom-in"},{"id":"IMG020","type":"pan-lr"},{"id":"IMG021","type":"zoom-out"},{"id":"IMG022","type":"pan-rl"},{"id":"IMG023","type":"pan-up"},{"id":"IMG024","type":"hold-push"},{"id":"IMG025","type":"zoom-in"},{"id":"IMG026","type":"pan-lr"},{"id":"IMG027","type":"zoom-out"},{"id":"IMG028","type":"pan-rl"},{"id":"IMG029","type":"pan-up"},{"id":"IMG030","type":"hold-push"},{"id":"IMG031","type":"zoom-in"},{"id":"IMG032","type":"pan-lr"},{"id":"IMG033","type":"zoom-out"},{"id":"IMG034","type":"pan-rl"},{"id":"IMG035","type":"pan-up"},{"id":"IMG036","type":"hold-push"},{"id":"IMG037","type":"zoom-in"},{"id":"IMG038","type":"pan-lr"},{"id":"IMG039","type":"zoom-out"},{"id":"IMG040","type":"pan-rl"},{"id":"IMG041","type":"pan-up"},{"id":"IMG042","type":"hold-push"},{"id":"IMG043","type":"zoom-in"},{"id":"IMG044","type":"pan-lr"},{"id":"IMG045","type":"zoom-out"},{"id":"IMG046","type":"pan-rl"},{"id":"IMG047","type":"pan-up"},{"id":"IMG048","type":"hold-push"},{"id":"IMG049","type":"zoom-in"},{"id":"IMG050","type":"pan-lr"},{"id":"IMG051","type":"zoom-out"},{"id":"IMG052","type":"pan-rl"},{"id":"IMG053","type":"pan-up"},{"id":"IMG054","type":"hold-push"},{"id":"IMG055","type":"zoom-in"},{"id":"IMG056","type":"pan-lr"},{"id":"IMG057","type":"zoom-out"},{"id":"IMG058","type":"pan-rl"},{"id":"IMG059","type":"pan-up"},{"id":"IMG060","type":"hold-push"},{"id":"IMG061","type":"zoom-in"},{"id":"IMG062","type":"pan-lr"},{"id":"IMG063","type":"zoom-out"},{"id":"IMG064","type":"pan-rl"},{"id":"IMG065","type":"pan-up"},{"id":"IMG066","type":"hold-push"},{"id":"IMG067","type":"zoom-in"},{"id":"IMG068","type":"pan-lr"},{"id":"IMG069","type":"zoom-out"},{"id":"IMG070","type":"pan-rl"},{"id":"IMG071","type":"pan-up"},{"id":"IMG072","type":"hold-push"},{"id":"IMG073","type":"zoom-in"},{"id":"IMG074","type":"pan-lr"},{"id":"IMG075","type":"zoom-out"},{"id":"IMG076","type":"pan-rl"}];
+window.motionTransformAt=function(type,progress,enabled=true,reduced=false){
+  const clamp=(v,min=0,max=1)=>Math.max(min,Math.min(max,v));
+  if(!enabled||reduced)return {scale:1,x:0,y:0};
+  const p=clamp(progress),ease=t=>0.5-0.5*Math.cos(Math.PI*clamp(t));
+  const z=window.MOTION_CONFIG.maxZoom,x=window.MOTION_CONFIG.maxPanX,y=window.MOTION_CONFIG.maxPanY;
+  switch(type){
+    case 'zoom-in':return {scale:1+z*ease(p),x:0,y:0};
+    case 'zoom-out':return {scale:1+z*(1-ease(p)),x:0,y:0};
+    case 'pan-lr':return {scale:1.015,x:x*(2*ease(p)-1),y:0};
+    case 'pan-rl':return {scale:1.015,x:x*(1-2*ease(p)),y:0};
+    case 'pan-up':return {scale:1.015,x:0,y:y*(1-2*ease(p))};
+    case 'hold-push':{const h=window.MOTION_CONFIG.holdRatio;return {scale:1+z*ease(p<=h?0:(p-h)/(1-h)),x:0,y:0};}
+    default:return {scale:1+z*ease(p),x:0,y:0};
+  }
+};
