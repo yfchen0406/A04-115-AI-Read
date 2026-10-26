@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《海棠》動畫特效版，依原旁白、字幕與分鏡時間同步播放。">
+  <title>動畫特效版｜蘇東坡《海棠》</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <link rel="stylesheet" href="./assets/motion.css">
+  <script defer src="./data/motion-timeline.js"></script>
+  <script defer src="./assets/motion.js"></script>
+</head>
+<body class="motion-page">
+  <main class="reader-page motion-reader">
+    <header class="reader-header motion-header">
+      <a class="back-link" href="./index.html">← 返回原版首頁</a>
+      <div>
+        <p class="eyebrow">《海棠》｜獨立特效播放</p>
+        <h1>動畫特效版</h1>
+      </div>
+      <a class="back-link" href="./reading.html">原版閱讀</a>
+    </header>
+    <section class="reader-shell motion-shell" id="motion-shell" aria-label="動畫特效版播放">
+      <div class="motion-stage" id="motion-stage">
+        <img class="motion-frame" id="motion-frame" src="./assets/images/cover.webp" alt="" aria-hidden="true">
+        <img class="motion-previous" id="motion-previous" alt="" aria-hidden="true">
+        <div class="motion-effect" id="motion-effect" aria-hidden="true"></div>
+        <div class="motion-chapter" id="motion-chapter"></div>
+        <div class="motion-intro" id="motion-intro" aria-hidden="true"></div>
+        <div class="motion-poem" id="motion-poem" aria-live="off"></div>
+        <div class="motion-subtitle" id="motion-subtitle" aria-live="off"></div>
+        <button class="motion-start" id="motion-start" type="button">
+          <span class="motion-start-icon" aria-hidden="true">▶</span>
+          <strong>開始播放</strong>
+          <small>旁白、字幕、分鏡與特效同步</small>
+        </button>
+        <audio id="motion-audio" class="master-audio" src="./assets/audio/narration.mp3" preload="metadata"></audio>
+      </div>
+      <div class="player-panel motion-panel">
+        <div class="seek-row">
+          <span class="time-readout" id="motion-current-time">00:00</span>
+          <input class="seek-slider" id="motion-seek" type="range" min="0" max="434.88" step="0.001" value="0" aria-label="播放時間">
+          <span class="time-readout" id="motion-duration">07:14</span>
+        </div>
+        <div class="control-row">
+          <button id="motion-prev-chapter" type="button">上一章</button>
+          <button id="motion-prev-scene" type="button">前一鏡</button>
+          <button class="play-control" id="motion-play" type="button" aria-label="播放">播放</button>
+          <button id="motion-next-scene" type="button">下一鏡</button>
+          <button id="motion-next-chapter" type="button">下一章</button>
+          <button id="motion-mute" type="button">靜音</button>
+          <label class="volume-control"><span>音量</span><input id="motion-volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="音量"></label>
+          <button id="motion-fullscreen" type="button">全螢幕</button>
+          <button id="motion-restart" type="button">從頭重播</button>
+        </div>
+        <div class="playback-status">
+          <span id="motion-status">尚未播放</span>
+          <span>播放速度 1.0×</span>
+          <span id="motion-scene-status">分鏡 001 / 058</span>
+        </div>
+        <p class="playback-error" id="motion-error" role="status" hidden></p>
+      </div>
+    </section>
+    <section class="chapter-section motion-chapters" aria-labelledby="motion-chapter-heading">
+      <p class="eyebrow">CHAPTER INDEX</p>
+      <h2 id="motion-chapter-heading">章節索引</h2>
+      <div class="chapter-list" id="motion-chapter-list"></div>
+    </section>
+    <p class="motion-note">此頁沿用原版 MP3、字幕、WebP 圖片與時間軸；動畫及原句均以獨立網頁圖層呈現。<a href="./reading.html">返回原版閱讀</a></p>
+  </main>
+</body>
+</html>

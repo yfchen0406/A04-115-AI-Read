@@ -4,15 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#173b2e">
-  <meta name="description" content="離線閱讀蘇東坡《海棠》，跟隨旁白、字幕與分鏡同步欣賞海棠夜色與惜花情懷。">
+  <meta name="description" content="離線閱讀蘇東坡《海棠》，跟隨旁白、字幕與分鏡同步播放。">
   <title>海棠｜蘇東坡動態劇本</title>
   <link rel="stylesheet" href="./assets/main.css">
-  <!-- TODO：正式有字幕／無字幕影片網址尚未提供；先依要求使用 YouTube 首頁暫時入口。 -->
-  <script>window.EPISODE_SETTINGS = {
-    links: { home: './index.html', reading: './reading.html', chapters: './reading.html#chapter-index', youtubeWithSubtitles: 'https://youtu.be/ey6Y9j7JS8Y', youtubeWithoutSubtitles: 'https://youtu.be/ey6Y9j7JS8Y' },
-    assets: { base: './', coverImage: 'assets/images/cover.webp', sceneImagePattern: 'assets/images/IMG{id}.webp', narrationAudio: 'assets/audio/narration.mp3' }
-  };</script>
-  <script defer src="./assets/main.js"></script>
+  <link rel="stylesheet" href="./assets/motion-entry.css">
 </head>
-<body><div id="root"></div></body>
+<body>
+  <main class="home-page">
+    <section class="hero" aria-label="蘇東坡《海棠》">
+      <img class="cover-image" src="./assets/images/cover.webp" alt="蘇東坡《海棠》影片封面">
+      <div class="hero-shade cover-hero-shade"></div>
+      <div class="hero-copy cover-hero-copy">
+        <h1 id="main-title">海棠</h1>
+        <nav class="hero-actions" aria-label="播放與影片連結">
+          <a class="start-link" href="./reading.html">開始閱讀 <b aria-hidden="true">→</b></a>
+          <!-- 有字幕 YouTube：將 href 的網址換成有字幕影片的完整網址。 -->
+          <a class="youtube-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YT連結（有字幕）">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.9 6.3-3.9-6.3-3.9z"/></svg>
+            YT連結（有字幕）
+          </a>
+          <!-- 無字幕 YouTube：將 href 的網址換成無字幕影片的完整網址。 -->
+          <a class="youtube-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer" aria-label="YT連結（無字幕）">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.9 6.3-3.9-6.3-3.9z"/></svg>
+            YT連結（無字幕）
+          </a>
+          <a class="start-link motion-entry-link" href="./motion.html">動畫特效版 ✦</a>
+        </nav>
+        <p class="hero-meta">58 個分鏡 · 7 個章節 · 原速旁白</p>
+      </div>
+      <span class="cover-caption">蘇東坡《海棠》</span>
+    </section>
+  </main>
+</body>
 </html>

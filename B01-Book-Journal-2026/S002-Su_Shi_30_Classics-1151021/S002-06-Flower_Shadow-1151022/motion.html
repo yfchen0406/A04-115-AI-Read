@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#14232d">
+  <meta name="description" content="沿用《花影》原始旁白、字幕與時間軸的動畫特效閱讀版。">
+  <title>《花影》動畫特效版｜蘇東坡名作三十</title>
+  <link rel="stylesheet" href="./assets/motion.css">
+</head>
+<body>
+  <main class="motion-page">
+    <header class="motion-header">
+      <a class="series-link" href="./index.html">← 本集首頁</a>
+      <div class="heading-copy"><p class="series-name">千年之後，我們仍記得蘇東坡・東坡名作三十・第 06 集</p><h1>《花影》</h1></div>
+      <p class="episode-stats">43 鏡・7 章</p>
+    </header>
+    <div class="mode-bar"><span>動畫特效版｜原圖、旁白、字幕與時間軸沿用原版</span><a class="original-link" href="./reading.html">← 返回原版閱讀</a></div>
+    <section class="motion-player" aria-label="動畫特效同步播放器">
+      <div class="stage" id="stage" data-effect="01">
+        <img class="motion-image" id="scene-image" alt="《花影》分鏡畫面" src="./assets/images/IMG001.webp">
+        <div class="light-layer" aria-hidden="true"></div>
+        <div class="grain-layer" aria-hidden="true"></div>
+        <div class="chapter-label" id="chapter-label"></div>
+        <div class="poem-overlay" id="poem-overlay" aria-live="polite"></div>
+        <div class="caption" id="caption" aria-live="polite"></div>
+        <div class="loading" id="loading">正在載入原始時間軸…</div>
+      </div>
+      <audio id="narration" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+      <div class="controls">
+        <div class="transport-row">
+          <button id="play" class="control-button play-button" type="button" aria-label="播放"><span class="play-icon" aria-hidden="true"></span><span class="play-label">播放</span></button>
+          <button id="restart" class="control-button" type="button">重新播放</button>
+          <span class="time-readout"><span id="current-time">00:00</span> / <span id="duration">06:19</span></span>
+          <button id="previous-scene" class="control-button scene-nav" type="button">上一鏡</button>
+          <input id="seek" class="seek-slider" type="range" min="0" max="379.9" step="0.01" value="0" aria-label="播放位置">
+          <button id="next-scene" class="control-button scene-nav" type="button">下一鏡</button>
+          <button id="previous-chapter" class="control-button chapter-nav" type="button">上一章</button>
+          <button id="next-chapter" class="control-button chapter-nav" type="button">下一章</button>
+          <label class="volume-control"><span>音量</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.85" aria-label="音量"></label>
+          <button id="mute" class="control-button mute-button" type="button">靜音</button>
+          <label class="caption-toggle"><input id="captions-toggle" type="checkbox" checked><span>字幕</span></label>
+        </div>
+        <p class="status" id="status">以原始 MP3 播放時間同步圖片特效、字幕與詩句。</p>
+      </div>
+    </section>
+    <nav class="chapters" id="chapters" aria-label="章節跳轉"></nav>
+    <p class="motion-note">原版圖片、旁白、字幕、章節及時間軸均沿用；本頁只在播放時加入非破壞性動畫與獨立文字圖層。詩句採後製疊字，確保原文正確。</p>
+  </main>
+  <script src="./data/motion-data.js"></script>
+  <script src="./assets/motion.js"></script>
+</body>
+</html>

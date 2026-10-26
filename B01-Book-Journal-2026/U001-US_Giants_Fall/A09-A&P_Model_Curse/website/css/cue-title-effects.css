@@ -1,0 +1,30 @@
+.semantic-animation .cue-title {
+  --cue-title-color: #f7f6ef;
+}
+
+.semantic-animation.style-question .cue-title,
+.semantic-animation .cue-value {
+  --cue-title-color: var(--semantic-accent, #f4d479);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .semantic-animation.title-gloss .cue-title,
+  .semantic-animation.title-gloss .cue-value {
+    color: transparent;
+    background-image: linear-gradient(
+      105deg,
+      var(--cue-title-color) 0%,
+      var(--cue-title-color) 43%,
+      rgba(255, 248, 213, var(--cue-title-gloss, 0)) 49%,
+      rgba(255, 255, 255, var(--cue-title-gloss, 0)) 51%,
+      var(--cue-title-color) 58%,
+      var(--cue-title-color) 100%
+    );
+    background-position: var(--cue-title-position, 100%) 50%;
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+  }
+}

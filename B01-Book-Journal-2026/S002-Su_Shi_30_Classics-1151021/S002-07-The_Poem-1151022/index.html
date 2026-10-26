@@ -1,19 +1,26 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#173b2e"><meta name="description" content="離線閱讀蘇東坡《琴詩》，跟隨旁白、字幕與分鏡同步體會四句詩的反問。"><title>千年之後，我們仍記得蘇東坡，東坡名作三十，第7集｜《琴詩》</title><link rel="stylesheet" href="./assets/main.css"><script>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173b2e">
+<meta name="description" content="蘇東坡《琴詩》第07集：依 Excel 分鏡時間碼同步旁白、字幕與分鏡。"><title>蘇東坡《琴詩》｜千古東坡第07集</title>
+<link rel="stylesheet" href="./assets/main.css">
+<script>
+/* 首頁連結設定：請將下方兩個空字串替換為對應的 YouTube 完整網址。 */
 window.EPISODE_SETTINGS = {
   links: {
+    youtubeWithSubtitles: '', // 有字幕版 YouTube 網址
+    youtubeWithoutSubtitles: '', // 無字幕版 YouTube 網址
     home: './index.html',
     reading: './reading.html',
-    chapters: './reading.html#chapter-index',
-    // 請將兩個值替換成各自完整的 YouTube 影片網址。
-    youtubeWithSubtitles: 'https://youtu.be/V4x86YMqzGs',
-    youtubeWithoutSubtitles: 'https://youtu.be/V4x86YMqzGs'
+    chapters: '#chapter-index',
+    realMode: ''
   },
   assets: {
     base: './',
-    coverImage: 'assets/images/cover.webp',
-    sceneImagePattern: 'assets/images/IMG{id}.webp',
-    narrationAudio: 'assets/audio/narration.mp3'
+    coverImage: 'images/cover.webp',
+    sceneImagePattern: 'images/{id}.webp',
+    narrationAudio: 'audio/narration.mp3',
+    subtitleSource: 'subtitles/narration.srt',
+    imageSlots: 59
   }
 };
-</script><script defer src="./assets/main.js"></script></head><body><div id="root"></div></body></html>
+</script>
+<script defer src="./assets/main.js"></script><script defer src="./assets/effects-entry.js"></script></head><body><div id="root"></div></body></html>

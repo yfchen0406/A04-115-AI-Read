@@ -4,14 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#173b2e">
-  <meta name="description" content="離線閱讀蘇東坡《海棠》，跟隨旁白、字幕與分鏡同步欣賞海棠夜色與惜花情懷。">
-  <title>千年之後，我們仍記得蘇東坡，東坡名作三十，第05集</title>
+  <meta name="description" content="離線閱讀蘇東坡《海棠》，跟隨原旁白、字幕與分鏡同步播放。">
+  <title>分鏡同步閱讀｜蘇東坡《海棠》</title>
   <link rel="stylesheet" href="./assets/main.css">
-  <script>window.EPISODE_SETTINGS = {
-    links: { home: './index.html', reading: './reading.html', chapters: '#chapter-index' },
-    assets: { base: './', coverImage: 'assets/images/cover.webp', sceneImagePattern: 'assets/images/IMG{id}.webp', narrationAudio: 'assets/audio/narration.mp3' }
-  };</script>
-  <script defer src="./assets/main.js"></script>
+  <link rel="stylesheet" href="./assets/motion.css">
+  <script defer src="./data/motion-timeline.js"></script>
+  <script defer src="./assets/motion.js"></script>
 </head>
-<body data-page="reader"><div id="root"></div></body>
+<body class="motion-page reading-player-page">
+  <main class="reader-page motion-reader">
+    <header class="reader-header motion-header">
+      <a class="back-link" href="./index.html">← 返回首頁</a>
+      <div>
+        <p class="eyebrow">蘇東坡名作三十｜第05集《海棠》</p>
+        <h1>分鏡同步閱讀</h1>
+      </div>
+      <a class="back-link" href="./motion.html">動畫特效版 ✦</a>
+    </header>
+    <section class="reader-shell motion-shell" id="motion-shell" aria-label="旁白與分鏡同步播放">
+      <div class="motion-stage" id="motion-stage">
+        <img class="motion-frame" id="motion-frame" src="./assets/images/IMG001.webp" alt="海棠夜色分鏡 001" aria-hidden="true" decoding="async">
+        <img class="motion-previous" id="motion-previous" alt="" aria-hidden="true">
+        <div class="motion-effect" id="motion-effect" aria-hidden="true"></div>
+        <div class="motion-chapter" id="motion-chapter"></div>
+        <div class="motion-intro" id="motion-intro" aria-hidden="true"></div>
+        <div class="motion-poem" id="motion-poem" aria-live="off"></div>
+        <div class="motion-subtitle" id="motion-subtitle" aria-live="off"></div>
+        <button class="motion-start" id="motion-start" type="button">
+          <span class="motion-start-icon" aria-hidden="true">▶</span>
+          <strong>開始閱讀與播放</strong>
+          <small>旁白、字幕、分鏡同步</small>
+        </button>
+        <audio id="motion-audio" class="master-audio" src="./assets/audio/narration.mp3" preload="metadata"></audio>
+      </div>
+      <div class="player-panel motion-panel">
+        <div class="seek-row">
+          <span class="time-readout" id="motion-current-time">00:00</span>
+          <input class="seek-slider" id="motion-seek" type="range" min="0" max="434.88" step="0.001" value="0" aria-label="播放時間">
+          <span class="time-readout" id="motion-duration">07:14</span>
+        </div>
+        <div class="control-row">
+          <button id="motion-prev-chapter" type="button">上一章</button>
+          <button id="motion-prev-scene" type="button">前一鏡</button>
+          <button class="play-control" id="motion-play" type="button" aria-label="播放">播放</button>
+          <button id="motion-next-scene" type="button">下一鏡</button>
+          <button id="motion-next-chapter" type="button">下一章</button>
+          <button id="motion-mute" type="button">靜音</button>
+          <label class="volume-control"><span>音量</span><input id="motion-volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="音量"></label>
+          <button id="motion-fullscreen" type="button">全螢幕</button>
+          <button id="motion-restart" type="button">從頭重播</button>
+        </div>
+        <div class="playback-status">
+          <span id="motion-status">尚未播放</span>
+          <span>播放速度 1.0×</span>
+          <span id="motion-scene-status">分鏡 001 / 058</span>
+        </div>
+        <p class="playback-error" id="motion-error" role="status" hidden></p>
+      </div>
+    </section>
+    <section class="chapter-section motion-chapters" aria-labelledby="motion-chapter-heading">
+      <p class="eyebrow">CHAPTER INDEX</p>
+      <h2 id="motion-chapter-heading">章節索引</h2>
+      <div class="chapter-list" id="motion-chapter-list"></div>
+    </section>
+    <p class="motion-note">本頁直接使用 HTML 圖片元素顯示分鏡，沿用原旁白、字幕及 58 鏡時間軸。<a href="./motion.html">開啟動畫特效版</a></p>
+  </main>
+</body>
 </html>

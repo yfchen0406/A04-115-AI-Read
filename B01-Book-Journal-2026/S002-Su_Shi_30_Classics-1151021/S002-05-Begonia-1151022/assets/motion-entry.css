@@ -1,0 +1,10 @@
+.hero-actions .motion-entry-link {
+  background: rgba(11, 35, 45, 0.38);
+  border-color: rgba(255, 255, 255, 0.78);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.hero-actions .motion-entry-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+}

@@ -1,0 +1,1 @@
+window.ANIMATION_CONFIG = {"episode":{"id":"A09-AP","series":"巨頭的殞落"},"enabled":true,"respectReducedMotion":true,"safePositions":["top-left","top-center","top-right","side-left","side-right"],"defaultPosition":"top-right","themeColors":{"accent":"#e3bb57","text":"#f7f6ef","muted":"#b5c0c1","danger":"#d47b63"}};

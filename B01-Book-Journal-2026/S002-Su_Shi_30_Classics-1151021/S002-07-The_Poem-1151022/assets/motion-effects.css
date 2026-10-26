@@ -1,0 +1,15 @@
+.motion-version-nav{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin:0 0 .55rem;padding:.65rem .85rem;border:1px solid #d7e3e3;border-radius:.75rem;background:#f8fbf8;color:#244338}
+.motion-version-label{font-size:.78rem;font-weight:900;letter-spacing:.08em;color:#426b57}
+.motion-return-link{display:inline-flex;align-items:center;min-height:40px;padding:.5rem .85rem;border:1px solid #b8cfc9;border-radius:999px;background:#fff;color:#173b2e;font-size:.82rem;font-weight:900;text-decoration:none}
+.motion-return-link:hover{background:#ffe9b5}
+.motion-effect-canvas{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none}
+.video-composition .frame-chapter{z-index:3}
+.motion-poem-layer{position:absolute;z-index:5;display:none;align-items:center;justify-content:center;max-width:52%;padding:1.1% 1.8%;border:1px solid rgba(255,231,175,.72);border-radius:.5em;background:rgba(11,30,38,.84);color:#fff0bf;font-family:var(--kai);font-size:clamp(18px,2.15vw,42px);font-weight:900;line-height:1.45;letter-spacing:.035em;text-align:center;text-shadow:0 2px 4px #000,-1px 0 #14242a,1px 0 #14242a,0 0 8px rgba(0,0,0,.85);box-shadow:0 5px 22px rgba(0,0,0,.32);pointer-events:none;transform:translateY(7px);opacity:0;transition:opacity .36s ease,transform .36s ease}
+.motion-poem-layer.is-visible{display:flex;opacity:1;transform:translateY(0)}
+.motion-poem-layer[data-lines="2"]{white-space:pre-line}
+.motion-poem-layer[data-placement="right-text"]{top:37%;right:3%;width:38%;max-width:38%;min-height:27%}
+.motion-poem-layer[data-placement="right-sky"]{top:14%;right:4%;width:48%}
+.motion-poem-layer[data-placement="upper-middle"]{top:13%;left:40%;width:55%;max-width:55%}
+.motion-poem-layer[data-placement="upper-right"]{top:13%;right:4%;width:46%;max-width:46%}
+@media(max-width:760px){.motion-version-nav{margin:.25rem 0 .4rem;padding:.45rem .6rem}.motion-version-label{font-size:.67rem}.motion-return-link{min-height:34px;padding:.4rem .65rem;font-size:.74rem}.motion-poem-layer{max-width:58%;padding:1.2% 1.8%;font-size:clamp(12px,3vw,17px);line-height:1.35}.motion-poem-layer[data-placement="right-text"]{top:38%;right:2%;width:40%;max-width:40%}.motion-poem-layer[data-placement="right-sky"]{top:14%;right:3%;width:51%}.motion-poem-layer[data-placement="upper-middle"]{top:13%;left:40%;width:56%;max-width:56%}.motion-poem-layer[data-placement="upper-right"]{top:13%;right:3%;width:49%;max-width:49%}}
+@media(prefers-reduced-motion:reduce){.motion-poem-layer{transition:none;transform:none}.motion-effect-canvas{display:none}}
