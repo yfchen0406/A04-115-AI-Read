@@ -1,0 +1,43 @@
+(()=>{
+  const cfg=window.ANIMATION_CONFIG||{}, cues=Array.isArray(window.ANIMATION_CUES)?window.ANIMATION_CUES:[];
+  const root=document.getElementById('semanticAnimation');
+  if(!root)return;
+  const typeLabel={"year-timeline":"年份","number-counter":"數值","before-after":"前後對照","capital-flow":"資金流向","breaking-news":"重大消息","map-expansion":"地域變化","product-evolution":"產品演進","decision-fork":"決策岔路","reveal-question":"問題揭露","key-phrase":"核心句","evidence-card":"資料卡","emotional-pause":"情緒留白"};
+  const allowed=new Set(Object.keys(typeLabel)),safePositions=new Set(cfg.safePositions||[]);
+  let activeId=null,nodes=null;
+  function text(tag,cls,value){const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=value||'';return el}
+  function addPanels(cue,body){if(!Array.isArray(cue.panels)||!cue.panels.length)return;const box=document.createElement('div');box.className='cue-panels';cue.panels.forEach(item=>{const panel=document.createElement('div');panel.className='cue-panel';panel.append(text('span','cue-panel-label',item.label),text('strong','cue-panel-text',item.text));box.append(panel)});body.append(box)}
+  function addFlows(cue,body){if(!Array.isArray(cue.flows)||!cue.flows.length)return;const box=document.createElement('div');box.className='cue-flow';cue.flows.forEach((flow,i)=>{if(i)box.append(text('span','cue-flow-arrow','→'));box.append(text('span','cue-flow-node',flow.from||''),text('span','cue-flow-label',flow.label||''),text('span','cue-flow-node',flow.to||''))});body.append(box)}
+  function addMapPoints(cue,body){if(!Array.isArray(cue.mapPoints)||!cue.mapPoints.length)return;const box=document.createElement('div');box.className='cue-map-points';cue.mapPoints.forEach(point=>{const item=text('span','cue-map-point',point.label);item.title=`${point.lat}, ${point.lon}`;box.append(item)});body.append(box)}
+  function build(cue){
+    const position=safePositions.has(cue.position)?cue.position:(cfg.defaultPosition||'top-right');
+    root.className=`semantic-animation type-${cue.type} position-${position} style-${cue.style||'documentary'}`;
+    root.replaceChildren();
+    const badge=text('span','cue-type',typeLabel[cue.type]||'重點提示'),body=document.createElement('div');body.className='cue-body';
+    if(cue.type==='number-counter'&&cue.valueText)body.append(text('strong','cue-value',cue.valueText));else body.append(text('strong','cue-title',cue.title));
+    if(cue.subtitle)body.append(text('span','cue-subtitle',cue.subtitle));
+    addPanels(cue,body);addFlows(cue,body);addMapPoints(cue,body);
+    let disclosure=cue.disclosure;
+    if(!disclosure&&cue.type==='evidence-card'&&!cue.sourceUrl)disclosure='資料示意｜沒有原始文件連結';
+    if(!disclosure)disclosure=cue.verified?'來源已核對':'字幕提及｜尚未外部核實';
+    const note=text('small','cue-disclosure',disclosure),meter=document.createElement('span');meter.className='cue-meter';meter.setAttribute('aria-hidden','true');meter.append(document.createElement('i'));
+    if(cue.type==='key-phrase'){root.append(body);if(cue.underlineMs!==0)root.append(meter)}else{root.append(badge,body,note,meter)}
+    if(cue.sourceUrl){const a=text('a','cue-source','來源');a.href=cue.sourceUrl;a.target='_blank';a.rel='noopener noreferrer';root.append(a)}
+    root.dataset.cueId=cue.id;root.setAttribute('aria-label',cue.type==='key-phrase'?cue.title:[cue.title,cue.subtitle,disclosure].filter(Boolean).join('，'));
+    nodes={note:cue.type==='key-phrase'?null:note};activeId=cue.id;
+    const colors=cfg.themeColors||{};root.style.setProperty('--semantic-accent',colors.accent||'#e3bb57');root.style.setProperty('--semantic-text',colors.text||'#f7f6ef');root.style.setProperty('--semantic-muted',colors.muted||'#b5c0c1');root.style.setProperty('--semantic-danger',colors.danger||'#d47b63');
+  }
+  function render(timeSeconds,chapterTitleVisible=false){
+    const ms=Math.round(Math.max(0,Number(timeSeconds)||0)*1000);
+    if(window.EffectsControl?.isEnabled?.()===false||!cfg.enabled||(cfg.hideDuringChapterTitle&&chapterTitleVisible)){clear();return}
+    const candidates=cues.filter(c=>c&&c.enabled&&allowed.has(c.type)&&cfg.types?.[c.type]!==false&&ms>=c.startMs&&ms<c.endMs&&!(c.type==='map-expansion'&&(!c.verified||!Array.isArray(c.mapPoints)||!c.mapPoints.length||!c.mapPoints.every(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon)))));
+    candidates.sort((a,b)=>(b.priority||0)-(a.priority||0)||a.startMs-b.startMs);
+    const cue=candidates[0];if(!cue){clear();return}
+    if(activeId!==cue.id)build(cue);
+    const p=Math.max(0,Math.min(1,(ms-cue.startMs)/Math.max(1,cue.endMs-cue.startMs))),reduced=cfg.respectReducedMotion&&window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,fadeIn=.14,fadeOut=.2;const glossMs=Math.min(550,Math.max(1,(cue.endMs-cue.startMs)*.12)),glossProgress=Math.max(0,Math.min(1,(ms-cue.startMs)/glossMs)),gloss=reduced||!window.SHOT_EFFECTS_CONFIG?.enabled||window.SHOT_EFFECTS_CONFIG?.titleGlossEnabled===false?0:(ms<=cue.startMs+glossMs?Math.sin(Math.PI*glossProgress):0);
+    const alpha=reduced?1:(cue.type==='key-phrase'?Math.min(1,(ms-cue.startMs)/Math.max(1,cue.enterMs||180),(cue.endMs-ms)/Math.max(1,cue.exitMs||250)):(p<fadeIn?p/fadeIn:(p>1-fadeOut?(1-p)/fadeOut:1)));root.hidden=false;root.style.setProperty('--cue-alpha','0');if(window.EffectsLayout?.placeText(root,cue,timeSeconds)===false)return;root.style.setProperty('--cue-alpha',String(Math.max(0,Math.min(1,alpha))));root.style.setProperty('--cue-lift',reduced?'0px':String((1-p)*(cue.liftPx??(cue.type==='key-phrase'?0:7)))+'px');root.style.setProperty('--cue-progress',String(p));root.style.setProperty('--cue-underline-progress',String(reduced?1:Math.max(0,Math.min(1,(ms-cue.startMs)/Math.max(1,cue.underlineMs||280)))));root.classList.toggle('title-gloss',gloss>.01);root.style.setProperty('--cue-title-gloss',String(gloss*.18));root.style.setProperty('--cue-title-position',`${100-glossProgress*100}%`);
+    if(nodes?.note)nodes.note.dataset.verified=String(Boolean(cue.verified));
+  }
+  function clear(){if(activeId===null&&root.hidden)return;root.hidden=true;root.className='semantic-animation';root.removeAttribute('data-cue-id');root.removeAttribute('aria-label');delete root.dataset.suppressedReason;root.style.removeProperty('top');for(const name of ['--cue-alpha','--cue-lift','--cue-progress','--semantic-accent','--semantic-text','--semantic-muted','--semantic-danger','--cue-title-gloss','--cue-title-position','--cue-underline-progress'])root.style.removeProperty(name);root.replaceChildren();activeId=null;nodes=null}
+  window.SemanticAnimationEngine={render,clear,types:[...allowed]};
+})();

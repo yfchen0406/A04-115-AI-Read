@@ -1,0 +1,8 @@
+/* Added layers only; original image, caption, chapter and control styles are untouched. */
+.approved-light{position:absolute;inset:0;z-index:1;pointer-events:none;clip-path:inset(0 0 26% 0);overflow:hidden}
+.approved-light-space{position:absolute;inset:0;transform-origin:50% 50%;pointer-events:none}
+.approved-light-mark{position:absolute;display:block;pointer-events:none;will-change:opacity}
+.approved-text{position:absolute;z-index:3;max-height:none;border:0;box-shadow:inset 3px 0 #e3bb57;border-radius:3px;background:rgb(0 0 0 / .48);color:#f7f6ef;font-family:DFKai-SB,BiauKai,"KaiTi","Noto Serif TC",serif;font-weight:700;line-height:1.25;text-align:left;word-break:break-all;line-break:anywhere;overflow-wrap:anywhere;pointer-events:none;will-change:opacity,transform}
+.approved-light[hidden],.approved-text[hidden]{display:none!important}
+@media(max-width:760px){.approved-light{display:none!important}.approved-text{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.approved-light{display:none!important}.approved-text{transform:none!important;will-change:auto}}

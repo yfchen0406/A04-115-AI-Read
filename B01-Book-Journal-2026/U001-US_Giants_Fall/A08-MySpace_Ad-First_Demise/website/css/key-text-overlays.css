@@ -1,0 +1,12 @@
+.key-text-overlays{position:absolute;z-index:3;inset:0;overflow:hidden;pointer-events:none}
+.key-text-overlays[hidden]{display:none}
+.key-text-overlay{position:absolute;width:max-content;max-width:74%;padding:8px 14px;border:1px solid #ffffff38;border-radius:10px;background:rgba(8,14,20,.78);box-shadow:0 4px 18px #0007;backdrop-filter:blur(5px);font-weight:800;line-height:1.45;text-align:center;text-shadow:0 2px 7px #000;white-space:normal;opacity:0;will-change:opacity,transform}
+.key-text-overlay[hidden]{display:none}
+.key-text-mobile-host{display:none}
+@media(max-width:1024px){
+  .key-text-mobile-host{display:block;min-height:176px;padding:12px 14px;box-sizing:border-box;background:#111c25;border-top:1px solid #ffffff20}
+  .key-text-mobile-host[hidden]{display:none}
+  .key-text-mobile-host .key-text-overlays{position:relative;inset:auto;min-height:152px;overflow:visible}
+  .key-text-mobile-host .key-text-overlay{position:relative;left:auto!important;top:auto!important;width:100%;max-width:100%!important;box-sizing:border-box;padding:10px 12px;font-size:15px!important;line-height:1.4;overflow-wrap:anywhere;white-space:normal;text-align:left;transform:none!important;will-change:opacity}
+}
+@media(prefers-reduced-motion:reduce){.key-text-overlay{will-change:auto}}
