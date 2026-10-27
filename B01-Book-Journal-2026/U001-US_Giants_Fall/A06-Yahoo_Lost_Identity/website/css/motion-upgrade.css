@@ -1,0 +1,3 @@
+.motion-edition .caption{white-space:normal;overflow-wrap:anywhere;word-break:normal}
+.motion-toggle[aria-pressed="true"]{color:#e3bb57;border-color:#e3bb57}.motion-toggle[aria-pressed="false"]{color:var(--muted)}
+@media(max-width:760px){.motion-edition .chapter-center{place-items:start center;align-content:start;padding:11px 12px;font-size:clamp(14px,2vw,22px)}}

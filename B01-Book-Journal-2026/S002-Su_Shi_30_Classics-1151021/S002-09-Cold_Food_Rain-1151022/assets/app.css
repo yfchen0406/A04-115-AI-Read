@@ -20,7 +20,35 @@ body{background:var(--episode-cream);color:var(--episode-ink)}
 .episode-hero-copy.cover-hero-copy .episode-actions a{min-height:50px;padding:.78rem 1.25rem;border:0;border-radius:999px;background:#fff;color:#17212a;box-shadow:0 2px 10px #0002;font-size:1rem;font-weight:750;line-height:1;text-decoration:none;white-space:nowrap}
 .episode-hero-copy.cover-hero-copy .episode-actions .start-link{background:#fff}
 .episode-hero-copy.cover-hero-copy .episode-actions .start-link::after{content:"→";margin-left:.2rem;font-size:1.1em}
-.episode-hero-copy.cover-hero-copy .episode-actions .youtube-link{display:inline-flex;gap:.5rem;background:#ffe8ad;color:#17212a}
+.episode-hero-copy.cover-hero-copy .episode-actions .youtube-link{display:inline-flex;gap:.5rem;background:#fff;color:#17212a}
+.episode-hero-copy.cover-hero-copy .episode-actions .motion-link{border:1px solid #ffffff99;background:#162d37aa;color:#fff;box-shadow:none}
+.episode-hero-copy.cover-hero-copy .episode-actions a:focus-visible{outline:3px solid #ffe36e;outline-offset:3px}
 .yt-icon{display:inline-flex;width:1.35rem;height:1rem;align-items:center;justify-content:center;flex:none;color:#f00}
 .yt-icon svg{display:block;width:100%;height:100%;fill:currentColor}
 @media(max-width:760px){.episode-hero-copy.cover-hero-copy .episode-actions{justify-content:flex-start;gap:.4rem}.episode-hero-copy.cover-hero-copy .episode-actions a{min-height:42px;padding:.62rem .85rem;font-size:.78rem}}
+
+/* 獨立動畫特效版：特效層與詩句層完全疊於原圖，不改原圖或原字幕。 */
+.motion-page-nav{display:flex;align-items:center;gap:.8rem;margin:-.4rem 0 .8rem 4.5rem;color:#557061;font-size:.8rem;font-weight:800}
+.motion-page-nav a{color:#315b45;text-decoration:none}
+.motion-page-nav a:hover{text-decoration:underline}
+.motion-reader .reader-header h1{color:#173b2e}
+.motion-art{position:absolute;z-index:2;inset:0;overflow:hidden;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--fx-x,50%) var(--fx-y,50%),rgba(var(--fx-tone,255,238,190),.34),transparent 34%);mix-blend-mode:screen}
+.motion-art[data-effect="shadow"]{background:radial-gradient(ellipse at var(--fx-x,50%) var(--fx-y,50%),rgba(22,35,22,.24),transparent 50%);mix-blend-mode:multiply}
+.motion-art[data-effect="paper"]{background:linear-gradient(120deg,transparent 28%,rgba(255,242,194,.28) 47%,transparent 67%);background-size:220% 100%;background-position:var(--fx-position,0%) 0;mix-blend-mode:screen}
+.motion-art[data-effect="ink"]{background:radial-gradient(ellipse at var(--fx-x,50%) var(--fx-y,50%),rgba(70,48,35,.28),transparent 40%);mix-blend-mode:multiply}
+.motion-art[data-effect="twilight"]{background:radial-gradient(ellipse at var(--fx-x,50%) var(--fx-y,50%),rgba(171,195,237,.3),transparent 48%);mix-blend-mode:screen}
+.motion-art[data-effect="warm"]{background:radial-gradient(ellipse at var(--fx-x,50%) var(--fx-y,50%),rgba(255,193,95,.3),transparent 42%);mix-blend-mode:screen}
+.motion-particle{position:absolute;display:block;width:7px;height:4px;border-radius:100% 0 100% 0;background:rgba(255,248,220,.86);filter:blur(.25px);box-shadow:0 0 5px rgba(255,248,220,.5)}
+.motion-particle.dust{width:3px;height:3px;border-radius:50%;background:rgba(255,239,188,.85);box-shadow:0 0 4px rgba(255,239,188,.4)}
+.motion-particle.fluff{width:8px;height:3px;background:rgba(255,255,248,.92)}
+.motion-water{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.motion-water ellipse{fill:none;stroke:rgba(230,249,255,.8);stroke-width:.22;filter:drop-shadow(0 0 .45px rgba(255,255,255,.6))}
+.poem-overlay{position:absolute;z-index:4;max-width:72%;padding:.22em .42em;border-radius:.28em;color:#fff5c8;font-family:var(--episode-kai);font-size:clamp(18px,2.5vw,42px);font-weight:900;line-height:1.55;letter-spacing:.04em;white-space:pre-line;text-shadow:-1.5px -1.5px 0 #173b2e,1.5px -1.5px 0 #173b2e,-1.5px 1.5px 0 #173b2e,1.5px 1.5px 0 #173b2e,0 3px 8px #071821; background:rgba(12,36,43,.2);pointer-events:none;will-change:opacity,transform}
+.poem-overlay.verse-upper-left{top:16%;left:5%;max-width:70%}
+.poem-overlay.verse-upper-right{top:14%;right:5%;max-width:63%;text-align:right}
+.poem-overlay.verse-upper-mid-left{top:13%;left:27%;max-width:30%;text-align:left}
+.poem-overlay.verse-upper-left-safe{top:13%;left:4%;max-width:20%;text-align:left;background:rgba(12,36,43,.28)}
+@media(max-width:760px){.motion-page-nav{margin:-.25rem 0 .55rem 3.1rem;font-size:.72rem}.poem-overlay{max-width:88%;font-size:clamp(12px,3.6vw,20px);line-height:1.45;padding:.18em .3em}.poem-overlay.verse-upper-left{top:17%;left:4%;max-width:82%}.poem-overlay.verse-upper-right{top:15%;right:4%;max-width:78%}}
+@media(max-width:760px){.poem-overlay.verse-upper-mid-left{top:15%;left:27%;max-width:36%}.poem-overlay.verse-upper-left-safe{top:15%;left:4%;max-width:24%}}
+@media(prefers-reduced-motion:reduce){.motion-art{display:none}.motion-reader .poem-overlay{transform:none!important;opacity:1!important}}
+

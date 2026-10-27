@@ -13,3 +13,13 @@ body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a
 
 /* 首頁封面：滿版背景、左下標題與三個清楚可見的操作按鈕 */
 .hero{min-height:100svh;align-items:stretch}.hero>img{object-fit:cover}.cover-hero-copy{display:flex;flex-direction:column;justify-content:flex-end;align-self:stretch;width:100%;padding:clamp(1.25rem,4vw,3.5rem)}.cover-hero-copy h1{margin:0 0 1rem;color:#ffe2a0;font-size:clamp(2.6rem,7vw,6.5rem);line-height:1.08;text-shadow:0 3px 14px rgba(0,0,0,.85)}.cover-hero-copy .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}.cover-hero-copy .start-link,.cover-hero-copy .youtube-link{min-height:48px;padding:.72rem 1.15rem;box-shadow:0 2px 12px rgba(0,0,0,.25)}@media(max-width:560px){.cover-hero-copy{padding:1rem}.cover-hero-copy h1{margin-bottom:.75rem;font-size:clamp(2.25rem,11vw,3.5rem)}.cover-hero-copy .hero-actions{gap:.5rem}.cover-hero-copy .start-link,.cover-hero-copy .youtube-link{min-height:44px;padding:.62rem .82rem;font-size:.82rem}}
+
+/* 首頁封面：滿版鋪滿，標題與三個入口固定在左下角。 */
+.hero{align-items:flex-end;min-height:100svh}
+.hero>img{object-fit:cover}
+.hero .cover-hero-copy{align-self:flex-end;margin-top:auto;padding:clamp(1.25rem,4vw,3.5rem)}
+.hero .cover-hero-copy h1{color:#f6d47d}
+.hero .cover-hero-copy .hero-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.9rem}
+.hero .cover-hero-copy .hero-actions a{min-height:48px}
+.hero-shade.cover-hero-shade{background:linear-gradient(0deg,rgba(5,20,30,.84) 0%,rgba(5,20,30,.36) 32%,transparent 67%),linear-gradient(90deg,rgba(5,20,30,.16),transparent 76%)}
+@media(max-width:760px){.hero{align-items:flex-end}.hero .cover-hero-copy{padding:1rem 1.1rem 1.5rem}.hero .cover-hero-copy h1{font-size:clamp(2.15rem,10vw,3.5rem)}.hero .cover-hero-copy .hero-actions{gap:.5rem}.hero .cover-hero-copy .hero-actions a{min-height:44px;padding:.65rem .9rem;font-size:.84rem}}

@@ -14,8 +14,8 @@
 <nav class="cover-actions" aria-label="首頁連結">
 <a class="cover-button primary" href="website/index.html">進入動態敘事</a>
 <!-- 請將下方兩個 href="" 分別填入完整 YouTube 網址；支援 youtube.com 與 youtu.be。 -->
-<a id="youtubeVideo1" class="cover-button" href="" target="_blank" rel="noopener noreferrer" data-youtube-link>YouTube 影片（一）</a>
-<a id="youtubeVideo2" class="cover-button" href="" target="_blank" rel="noopener noreferrer" data-youtube-link>YouTube 影片（二）</a>
+<a id="youtubeVideo1" class="cover-button" href="https://youtu.be/s1890iAapLM" target="_blank" rel="noopener noreferrer" data-youtube-link>YouTube 影片（一）</a>
+<a id="youtubeVideo2" class="cover-button" href="https://youtu.be/s1890iAapLM" target="_blank" rel="noopener noreferrer" data-youtube-link>YouTube 影片（二）</a>
 </nav></section></main>
 <script>
 document.querySelectorAll('[data-youtube-link]').forEach(link=>{const raw=link.getAttribute('href').trim();let valid=false;try{const url=new URL(raw);valid=['youtube.com','www.youtube.com','m.youtube.com','youtu.be','youtube-nocookie.com','www.youtube-nocookie.com'].includes(url.hostname)&&['https:','http:'].includes(url.protocol)}catch{}if(!valid){link.setAttribute('aria-disabled','true');link.tabIndex=-1;link.addEventListener('click',event=>event.preventDefault())}});

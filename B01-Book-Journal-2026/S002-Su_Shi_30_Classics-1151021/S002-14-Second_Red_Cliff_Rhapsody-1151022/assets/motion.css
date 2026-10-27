@@ -1,0 +1,12 @@
+.motion-version .reader-header{grid-template-columns:auto minmax(0,1fr) auto auto}
+.motion-version .reader-header .original-version-link{grid-column:4}
+.motion-effect-canvas,.motion-quote-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.motion-effect-canvas{z-index:1}
+.motion-quote-layer{z-index:4;overflow:hidden}
+.motion-version .stage-wrap{container-type:inline-size}
+.motion-quote-card{position:absolute;display:flex;align-items:center;justify-content:center;padding:1.1% 1.6%;border:1px solid rgba(255,255,255,.28);border-radius:14px;background:rgba(12,22,32,.82);color:#fff2a8;font-family:var(--kai);font-size:clamp(12px,min(3.35cqw,var(--quote-font-limit,64px)),64px);font-weight:900;line-height:1.42;text-align:center;white-space:pre-line;-webkit-text-stroke:1px #14202b;paint-order:stroke fill;text-shadow:0 2px 5px #000;box-shadow:0 8px 22px rgba(0,0,0,.18);opacity:var(--quote-progress,1);transform:translateY(calc((1 - var(--quote-progress,1))*12px));transition:opacity .08s linear,transform .08s linear}
+.motion-quote-card:lang(zh-Hant){letter-spacing:.03em}
+.motion-load-error{position:fixed;z-index:10000;right:1rem;bottom:1rem;max-width:24rem;padding:.8rem 1rem;border-radius:.6rem;background:#173b2e;color:white;box-shadow:0 4px 18px #0004}
+.motion-version .reader-page:before{content:"動畫特效版";display:inline-block;margin:.15rem 0 .45rem;padding:.28rem .65rem;border-radius:999px;background:#173b2e;color:#fff2a8;font-size:.76rem;font-weight:900;letter-spacing:.08em}
+@media(max-width:760px){.motion-version .reader-header{grid-template-columns:auto minmax(0,1fr) auto}.motion-version .reader-header .original-version-link{grid-column:3;grid-row:1}.motion-quote-card{padding:1.2% 1.8%;border-radius:8px;font-size:clamp(10px,min(3.4cqw,var(--quote-font-limit,24px)),24px);-webkit-text-stroke:.55px #14202b;line-height:1.34}}
+@media(prefers-reduced-motion:reduce){.motion-quote-card{transition:none;transform:none}}

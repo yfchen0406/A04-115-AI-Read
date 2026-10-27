@@ -24,3 +24,12 @@ body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a
 .home-page .hero{position:relative!important;display:flex!important;flex-direction:column!important;width:100%!important;min-height:0!important;height:auto!important;overflow:visible!important}
 .home-page .hero>img:not(.cover-image-failed){position:relative!important;inset:auto!important;order:0!important;display:block!important;width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;opacity:1!important}
 .home-page .hero-actions{position:absolute!important;left:clamp(.75rem,4vw,2rem)!important;bottom:clamp(.75rem,3vw,1.5rem)!important;z-index:3!important;margin:0!important}
+
+/* Keep the homepage title over the full-screen cover instead of in a separate header band. */
+.home-page .hero{position:relative!important;display:flex!important;flex-direction:row!important;align-items:center!important;width:100%!important;height:100svh!important;min-height:100svh!important;overflow:hidden!important}
+.home-page .hero>img:not(.cover-image-failed){position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+.home-page .hero-shade{display:block!important}
+.home-page .hero-copy.cover-hero-copy{position:absolute!important;inset:0!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;width:100%!important;max-width:none!important;padding:clamp(1.5rem,8vw,7rem)!important;background:transparent!important}
+.home-page .cover-hero-copy #main-title{display:block!important;max-width:12em!important;margin:0!important;font-size:clamp(2.5rem,8vw,6.5rem)!important;line-height:1.2!important}
+.home-page .hero-meta{display:block!important;margin:.8rem 0 0!important}
+.home-page .hero-actions{left:clamp(1rem,4vw,3rem)!important;bottom:clamp(1rem,4vh,2.5rem)!important}

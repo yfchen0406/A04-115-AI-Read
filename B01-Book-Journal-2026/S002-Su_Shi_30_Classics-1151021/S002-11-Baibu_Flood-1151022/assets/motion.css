@@ -1,0 +1,29 @@
+/* Additive styles for the optional motion edition. */
+.motion-entry-link{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:50px;padding:.8rem 1.2rem;border:1px solid rgba(255,255,255,.68);border-radius:999px;background:rgba(12,38,48,.4);color:#fff;font-weight:900;text-decoration:none;box-shadow:none;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.motion-entry-link:hover{transform:translateY(-2px);background:rgba(25,68,76,.82);border-color:#fff}
+.motion-entry-link:focus-visible{outline:3px solid #e2a943;outline-offset:3px}
+body[data-motion-mode="true"] .stage-wrap{position:relative}
+body[data-motion-mode="true"] .frame-art{scale:var(--motion-scale,1.012)!important;translate:var(--motion-x,0%) var(--motion-y,0%)!important;transform-origin:var(--motion-origin,50% 50%)!important;will-change:scale,translate}
+.motion-runtime{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none;visibility:visible}
+.motion-runtime.is-covered{visibility:hidden}
+.motion-fx{position:absolute;inset:0;overflow:hidden;--focus-x:50%;--focus-y:50%;--motion-wash:none;--motion-blend:screen}
+.motion-wash,.motion-sweep,.motion-focus,.motion-veil{position:absolute;pointer-events:none}
+.motion-wash{inset:-14%;background:var(--motion-wash);opacity:var(--wash-alpha,0);mix-blend-mode:var(--motion-blend,screen);filter:blur(10px);transform:translate3d(var(--fx-x,0%),var(--fx-y,0%),0);will-change:transform,opacity}
+.motion-sweep{inset:-30% -40%;background:linear-gradient(115deg,transparent 44%,rgba(255,245,210,.52) 49%,transparent 54%);opacity:var(--sweep-alpha,0);transform:translate3d(var(--fx-x,0%),var(--fx-y,0%),0);mix-blend-mode:screen}
+.motion-focus{left:var(--focus-left,50%);top:var(--focus-top,50%);width:22%;height:18%;border:1px solid rgba(255,229,160,.7);border-radius:.4rem;box-shadow:0 0 26px rgba(255,220,142,.18),inset 0 0 22px rgba(255,235,183,.08);opacity:var(--focus-alpha,0);transform:translate(-50%,-50%);transition:opacity .18s ease}
+.motion-veil{inset:0;background:rgba(7,18,26,var(--veil-alpha,0))}
+.motion-poem-card{position:absolute;top:16%;right:4.5%;display:grid;gap:.2em;width:min(48%,760px);max-width:90%;padding:clamp(.45rem,1.2vw,1.15rem) clamp(.65rem,1.55vw,1.5rem);border:1px solid rgba(255,230,172,.78);border-radius:.55rem;background:rgba(7,25,34,.78);color:#fff0bd;font-family:var(--kai,serif);font-size:clamp(16px,2.18vw,42px);font-weight:900;line-height:1.48;text-align:center;text-shadow:0 2px 5px rgba(0,0,0,.94),0 0 12px rgba(255,234,183,.28);box-shadow:0 8px 30px rgba(0,0,0,.28);opacity:0;transform:translateY(6px);transition:opacity .14s ease,transform .14s ease;z-index:4}
+.motion-poem-card.is-active{opacity:1;transform:translateY(0)}
+.motion-poem-card.is-baked-text{background:rgba(7,23,31,.96);border-color:rgba(255,229,165,.9)}
+.motion-poem-line{display:block;white-space:nowrap}
+body[data-motion-mode="true"] .frame-intro{z-index:3}
+body[data-motion-mode="true"] .frame-subtitle{z-index:5}
+@media(max-width:760px){.motion-entry-link{min-height:46px;padding:.67rem .88rem;font-size:.86rem}.motion-poem-card{top:14%;right:3%;width:min(53%,520px);padding:.35rem .5rem;font-size:clamp(13px,3.5vw,21px);line-height:1.38;border-radius:.35rem}.motion-poem-line{white-space:normal}.motion-focus{width:28%;height:22%}}
+@media(prefers-reduced-motion:reduce){.motion-entry-link,.motion-poem-card{transition:none!important}.motion-runtime .motion-wash,.motion-runtime .motion-sweep,.motion-runtime .motion-focus{display:none!important}body[data-motion-mode="true"] .frame-art{scale:1.012!important;translate:0 0!important}}
+
+
+/* Match the reference screenshot: four actions on one baseline, anchored to the cover bottom. */
+body:not([data-motion-mode='true']) .cover-hero-copy{position:absolute;right:0;bottom:4px;left:0;align-self:auto;width:100%;max-width:none;padding:0 16px}
+body:not([data-motion-mode='true']) .cover-hero-copy .hero-actions{display:flex;flex-wrap:nowrap;justify-content:flex-start;align-items:center;gap:10px;margin:0}
+body:not([data-motion-mode='true']) .cover-hero-copy .hero-actions>a{flex:0 0 auto;white-space:nowrap}
+@media(max-width:760px){body:not([data-motion-mode='true']) .cover-hero-copy{padding:0 12px 4px}body:not([data-motion-mode='true']) .cover-hero-copy .hero-actions{flex-wrap:wrap;gap:8px}}

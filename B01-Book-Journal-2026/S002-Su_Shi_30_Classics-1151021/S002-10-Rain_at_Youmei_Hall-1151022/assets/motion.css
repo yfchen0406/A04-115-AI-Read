@@ -1,0 +1,81 @@
+.motion-effect-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.motion-effect-layer[hidden] { display: none !important; }
+
+.motion-effect-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .96;
+}
+
+.motion-verse {
+  position: absolute;
+  top: var(--verse-y, 15%);
+  left: var(--verse-x, 28%);
+  width: var(--verse-w, 66%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .08em;
+  padding: .38em .7em;
+  border: 1px solid rgba(255, 241, 184, .42);
+  border-radius: .42em;
+  background: rgba(8, 23, 32, .56);
+  color: #fff1b8;
+  font-family: var(--kai, "DFKai-SB", "BiauKai", "KaiTi", serif);
+  font-size: clamp(22px, 3.5vw, 62px);
+  font-weight: 900;
+  line-height: 1.24;
+  text-align: center;
+  text-shadow: 0 2px 2px #071821, 0 0 8px rgba(0,0,0,.95);
+  -webkit-text-stroke: 1px rgba(10, 24, 32, .9);
+  paint-order: stroke fill;
+  box-shadow: 0 4px 20px rgba(0,0,0,.18);
+}
+
+.motion-verse[hidden] { display: none !important; }
+
+.motion-verse-line { display: block; white-space: nowrap; }
+
+.motion-return-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  margin: .15rem 0 .75rem;
+  padding: .55rem 1rem;
+  border: 1px solid rgba(23, 59, 46, .24);
+  border-radius: 999px;
+  background: #fff;
+  color: #173b2e;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.motion-return-link:hover { background: #ffe9b5; }
+.motion-return-link:focus-visible { outline: 3px solid #e2a943; outline-offset: 3px; }
+
+@media (max-width: 600px) {
+  .motion-verse {
+    top: max(14%, var(--verse-y, 15%));
+    left: max(24%, var(--verse-x, 28%));
+    width: min(72%, var(--verse-w, 66%));
+    gap: .12em;
+    padding: .42em .48em;
+    border-radius: .32em;
+    font-size: clamp(19px, 5vw, 30px);
+    line-height: 1.25;
+  }
+
+  .motion-return-link { min-height: 38px; margin-bottom: .5rem; font-size: .9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-effect-canvas { opacity: .65; }
+}

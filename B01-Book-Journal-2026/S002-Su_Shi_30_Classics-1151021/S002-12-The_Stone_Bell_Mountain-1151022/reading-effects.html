@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《石鐘山記》動畫特效版｜沿用原旁白、字幕與分鏡時間軸。">
+  <title>《石鐘山記》｜動畫特效版</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <link rel="stylesheet" href="./assets/effects.css">
+  <script>window.EPISODE_SETTINGS={assets:{base:'./',sceneImagePattern:'assets/images/IMG{id}.webp',narrationAudio:'assets/audio/narration.mp3'}};</script>
+  <script defer src="./assets/effects-timeline.js"></script>
+  <script defer src="./assets/effects-player.js"></script>
+</head>
+<body data-page="effects">
+  <main class="reader-page effects-page">
+    <header class="reader-header effects-header">
+      <a class="back-link" href="./reading.html">返回原版</a>
+      <div><p class="eyebrow">蘇東坡古文導讀</p><h1>《石鐘山記》｜動畫特效版</h1></div>
+      <span class="reader-duration">7 分 04 秒</span>
+    </header>
+    <section class="reader-shell effects-shell" aria-label="動畫特效播放器">
+      <div class="stage-wrap effects-stage" id="effects-stage">
+        <div class="motion-layer" id="motion-layer">
+          <img id="scene-image" class="effects-art" alt="石鐘山記分鏡畫面" draggable="false">
+          <svg id="visual-effect" class="visual-effect" viewBox="0 0 100 56.25" preserveAspectRatio="none" aria-hidden="true"></svg>
+        </div>
+        <div class="frame-chapter" id="chapter-title"></div>
+        <div class="poem-quote" id="poem-quote" aria-live="polite"></div>
+        <div class="frame-subtitle" id="subtitle-text" aria-live="polite"></div>
+      </div>
+      <audio id="narration-audio" class="master-audio" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+      <div class="player-panel effects-panel">
+        <div class="control-row effects-control-row">
+          <button class="play-control" id="play-control" type="button">播放</button>
+          <button id="restart-control" type="button">重新播放</button>
+          <span class="time-readout" id="current-time">00:00</span><span class="time-readout duration-readout" id="duration-time">/ 07:04</span>
+          <button id="previous-scene-control" type="button">上一鏡</button>
+          <input class="seek-slider" id="seek-slider" type="range" min="0" max="424.84" step="0.01" value="0" aria-label="影片時間滑桿">
+          <button id="next-scene-control" type="button">下一鏡</button>
+          <button id="previous-chapter-control" type="button">上一章</button>
+          <button id="next-chapter-control" type="button">下一章</button>
+          <label class="volume-control"><span>音量</span><input id="volume-control" type="range" min="0" max="1" step="0.01" value="0.9" aria-label="音量"></label>
+          <button id="mute-control" type="button">靜音</button>
+          <label class="subtitle-control"><input id="subtitles-toggle" type="checkbox" checked><span>字幕</span></label>
+          <span class="playback-status" id="scene-status" aria-live="polite">IMG001</span>
+        </div>
+      </div>
+    </section>
+    <section class="chapter-section" id="chapter-index"><h2>章節索引</h2><div class="chapter-list" id="chapter-list"></div></section>
+    <footer class="reader-footer">動畫效果直接依播放時間計算；拖曳、暫停與跳章後會同步更新。<br><a href="./index.html">回到首頁</a>　·　<a href="./reading.html">開啟原版閱讀</a></footer>
+  </main>
+</body>
+</html>

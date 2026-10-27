@@ -8,3 +8,4 @@
 .debug-explainer{line-height:1.7}
 .scene-error{position:absolute;inset:0;z-index:4;display:grid;place-items:center;padding:2rem;background:#182e32;color:#fff;text-align:center}
 @media(max-width:760px){.scene-placeholder-tag{top:2.8rem;right:.45rem;padding:.25rem .45rem}.frame-subtitle{right:2%;left:2%;bottom:2%;font-size:clamp(14px,2.6vw,22px)}}
+.hero-actions .effect-link{border-color:rgba(255,255,255,.72)!important;background:rgba(11,31,42,.38)!important;color:#fff!important;box-shadow:none!important}.hero-actions .effect-link:hover{background:rgba(255,255,255,.16)!important}

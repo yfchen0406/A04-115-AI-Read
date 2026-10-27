@@ -1,0 +1,12 @@
+.hero-actions .motion-link {
+  border-color: rgba(255, 255, 255, .6);
+  background: rgba(9, 31, 43, .48);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .2);
+}
+
+.hero-actions .motion-link:hover {
+  border-color: rgba(255, 255, 255, .85);
+  background: rgba(9, 31, 43, .78);
+  color: #ffe9b5;
+}

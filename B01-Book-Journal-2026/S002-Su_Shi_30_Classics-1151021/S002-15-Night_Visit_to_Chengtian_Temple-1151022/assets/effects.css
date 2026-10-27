@@ -1,0 +1,16 @@
+.effect-link{border-color:#f4d992;background:linear-gradient(135deg,#fff4d4,#f4dc9b);color:#183b49;box-shadow:0 3px 16px #070f1930}
+.effect-link:hover{background:#ffe6a4}
+.effect-layer{position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;mix-blend-mode:screen;transition:none;background:radial-gradient(ellipse var(--fx-rx) var(--fx-ry) at var(--fx-x) var(--fx-y),rgba(255,239,189,var(--fx-alpha)),transparent 100%);will-change:background-position,opacity}
+.effect-layer[data-kind="shadow"]{mix-blend-mode:multiply;background:radial-gradient(ellipse var(--fx-rx-wide) var(--fx-ry) at var(--fx-x) var(--fx-y),rgba(10,23,34,var(--fx-alpha)),transparent 100%)}
+.effect-layer[data-kind="warm"]{background:radial-gradient(ellipse var(--fx-rx-wide) var(--fx-ry-wide) at var(--fx-x) var(--fx-y),rgba(255,197,112,var(--fx-alpha)),transparent 100%)}
+.effect-layer[data-kind="drift"]{background:radial-gradient(ellipse var(--fx-rx-wide) var(--fx-ry-narrow) at var(--fx-x) var(--fx-y),rgba(196,224,235,var(--fx-alpha)),transparent 100%)}
+.quote-overlay{position:absolute;z-index:6;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:clamp(5px,1.1vw,15px);border:1px solid rgba(255,242,184,.32);border-radius:.32em;background:rgba(12,25,39,.72);color:#fff2b8;font-family:var(--kai);font-size:clamp(14px,1.85vw,31px);font-weight:900;line-height:1.5;text-align:center;text-shadow:0 2px 3px #101a2a,-1px 0 #101a2a,1px 0 #101a2a,0 0 8px #101a2a;white-space:pre-line;opacity:0;transform:translateY(6px);transition:opacity .16s ease,transform .16s ease;pointer-events:none;-webkit-text-stroke:.35px #101a2a;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+.quote-overlay.is-visible{opacity:1;transform:translateY(0)}
+.quote-overlay[data-short="true"]{transition-duration:.08s}
+.reader-header .effect-return{justify-self:end;font-weight:800}
+.reader-header{grid-template-columns:auto minmax(0,1fr) auto auto}
+.reader-shell:fullscreen .quote-overlay{font-size:clamp(18px,1.85vw,34px)}
+.reader-shell:fullscreen .effect-layer{position:absolute}
+.effect-mode .frame-subtitle{right:3.5%;bottom:2.5%;left:3.5%;max-width:93%;white-space:normal;overflow:visible;text-overflow:initial;display:block;max-height:22%;font-size:clamp(12px,1.8vw,32px);line-height:1.25;padding:.18em .45em;background:linear-gradient(90deg,transparent,#07182188 8%,#07182188 92%,transparent)}
+@media(max-width:760px){.reader-header{grid-template-columns:auto minmax(0,1fr);}.reader-header .effect-return{grid-column:1/-1;justify-self:start;margin-left:.1rem}.quote-overlay{font-size:clamp(10px,2.3vw,17px);line-height:1.35;padding:3px 5px}.effect-mode .frame-subtitle{right:2%;bottom:2%;left:2%;max-height:24%;font-size:clamp(9px,2vw,15px);line-height:1.2;padding:.12em .28em}}
+@media(prefers-reduced-motion:reduce){.effect-layer{display:none!important}.quote-overlay,.quote-overlay.is-visible{transform:none;transition:opacity .08s linear}.effect-mode .scene-layer{transform:none!important}}

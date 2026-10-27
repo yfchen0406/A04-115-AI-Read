@@ -4,3 +4,67 @@
 body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a[href*="yyvFhMmIHLQ"],.reader-page a[href*="XOSHlXa_GjU"]{display:none!important}
 
 .frame-subtitle .poem-highlight{color:#fff200}
+
+.hero-actions .effects-home-link{border-color:rgba(255,255,255,.68);background:rgba(15,43,54,.62);color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.hero-actions .effects-home-link:hover{transform:translateY(-2px);background:rgba(15,43,54,.84)}
+
+/* Align both player pages to the compact, single-row control layout. */
+body[data-page="reader"] .player-panel{display:flex;flex-wrap:nowrap;align-items:center;gap:.35rem;overflow-x:auto;padding:.42rem .55rem;scrollbar-width:thin}
+body[data-page="reader"] .seek-row,body[data-page="reader"] .control-row{display:contents}
+body[data-page="reader"] .seek-row .time-readout:first-child{order:3}
+body[data-page="reader"] .seek-row .time-readout:last-child{order:4}
+body[data-page="reader"] .seek-row .time-readout:last-child:before{content:"/ ";color:#aab7bd}
+body[data-page="reader"] .seek-row .seek-slider{order:6;flex:1 1 160px;width:auto;min-width:120px;height:34px}
+body[data-page="reader"] .control-row>button{flex:0 0 auto;min-height:35px;padding:.38rem .58rem;font-size:.75rem;white-space:nowrap}
+body[data-page="reader"] .control-row>button:nth-child(1){order:8}
+body[data-page="reader"] .control-row>button:nth-child(2){order:5}
+body[data-page="reader"] .control-row>button:nth-child(3){order:1}
+body[data-page="reader"] .control-row>button:nth-child(4){order:7}
+body[data-page="reader"] .control-row>button:nth-child(5){order:9}
+body[data-page="reader"] .control-row>button:nth-child(6){order:11}
+body[data-page="reader"] .control-row>button:nth-child(8){order:13}
+body[data-page="reader"] .control-row>button:nth-child(9){order:2}
+body[data-page="reader"] .control-row .volume-control{order:10;flex:0 0 auto;max-width:none;gap:.3rem;font-size:.72rem}
+body[data-page="reader"] .control-row .volume-control input{width:72px}
+body[data-page="reader"] .control-row .subtitle-control{order:14}
+body[data-page="reader"] .control-row .subtitle-control{display:inline-flex}
+body[data-page="reader"] .player-panel .playback-status{display:none}
+body[data-page="reader"] .player-panel .playback-error{flex:1 0 100%}
+body[data-page="effects"] .effects-panel{display:flex;flex-wrap:nowrap;align-items:center;gap:.35rem;overflow-x:auto;padding:.42rem .55rem;scrollbar-width:thin}
+body[data-page="effects"] .effects-control-row{display:flex;flex:1 0 auto;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:.35rem;margin:0}
+body[data-page="effects"] .effects-control-row button{flex:0 0 auto;min-height:35px;padding:.38rem .58rem;font-size:.75rem;white-space:nowrap}
+body[data-page="effects"] .effects-control-row .play-control{min-width:0}
+body[data-page="effects"] .effects-control-row .time-readout{flex:0 0 auto;font-size:.72rem}
+body[data-page="effects"] .effects-control-row .duration-readout{margin-left:-.3rem;color:#aab7bd}
+body[data-page="effects"] .effects-control-row .seek-slider{flex:1 1 160px;width:auto;min-width:120px;height:34px}
+body[data-page="effects"] .effects-control-row .volume-control{flex:0 0 auto;max-width:none;gap:.3rem;font-size:.72rem}
+body[data-page="effects"] .effects-control-row .volume-control input{width:72px}
+body[data-page="effects"] .effects-control-row .subtitle-control{flex:0 0 auto}
+.subtitle-control{display:inline-flex;align-items:center;gap:.25rem;flex:0 0 auto;color:#fff;font-size:.72rem;font-weight:800;white-space:nowrap;cursor:pointer}
+.subtitle-control input{width:14px;height:14px;margin:0;accent-color:#9dcaff}
+body.subtitles-hidden .frame-subtitle{visibility:hidden!important}
+@media(max-width:760px){body[data-page="reader"] .player-panel,body[data-page="effects"] .effects-panel{gap:.25rem;padding:.38rem .42rem}body[data-page="reader"] .control-row>button,body[data-page="effects"] .effects-control-row button{min-height:33px;padding:.32rem .45rem;font-size:.69rem}body[data-page="reader"] .seek-row .seek-slider,body[data-page="effects"] .effects-control-row .seek-slider{min-width:105px;flex-basis:130px;height:30px}body[data-page="reader"] .control-row .volume-control input,body[data-page="effects"] .effects-control-row .volume-control input{width:58px}body[data-page="reader"] .seek-row .time-readout,body[data-page="effects"] .effects-control-row .time-readout{font-size:.66rem}}
+/* Single-line playback toolbar aligned to the supplied reference */
+body[data-page="reader"] .player-panel{display:flex;flex-wrap:nowrap;align-items:center;gap:.4rem;overflow-x:auto;white-space:nowrap;background:#17262d;color:#eef4f5;padding:.55rem .65rem}
+body[data-page="reader"] .player-panel .seek-row,body[data-page="reader"] .player-panel .control-row{display:contents}
+body[data-page="reader"] .player-panel .control-row button{flex:0 0 auto;min-height:35px;padding:.38rem .58rem;font-size:.75rem}
+body[data-page="reader"] .player-panel .control-row .play-control{order:1}
+body[data-page="reader"] .player-panel .control-row button:nth-of-type(9){order:2}
+body[data-page="reader"] .player-panel .seek-row .time-readout:first-child{order:3}
+body[data-page="reader"] .player-panel .seek-row .seek-slider{order:6;flex:1 1 220px;width:auto;min-width:140px;height:34px}
+body[data-page="reader"] .player-panel .seek-row .time-readout:last-child{order:4}
+body[data-page="reader"] .player-panel .control-row button:nth-of-type(2){order:5}
+body[data-page="reader"] .player-panel .control-row button:nth-of-type(4){order:7}
+body[data-page="reader"] .player-panel .control-row button:nth-of-type(1){order:8}
+body[data-page="reader"] .player-panel .control-row button:nth-of-type(5){order:9}
+body[data-page="reader"] .player-panel .volume-control{order:10;flex:0 0 auto;max-width:none;gap:.25rem;font-size:.72rem}
+body[data-page="reader"] .player-panel .volume-control input{width:72px}
+body[data-page="reader"] .player-panel .control-row button:nth-of-type(6){order:11}
+body[data-page="reader"] .player-panel .control-row button:nth-of-type(8){order:12}
+body[data-page="reader"] .player-panel .control-row .subtitle-control{order:13;display:inline-flex}
+body[data-page="reader"] .player-panel .time-readout{color:#eef4f5;font-size:.72rem}
+body[data-page="reader"] .player-panel .playback-status{display:none}
+body[data-page="reader"] .player-panel button{white-space:nowrap}
+body[data-page="reader"] .player-panel .seek-slider{accent-color:#efbd4c}
+body.subtitles-hidden .frame-subtitle{visibility:hidden}
+@media(max-width:760px){body[data-page="reader"] .player-panel{justify-content:flex-start}.reader-shell:fullscreen .player-panel{overflow-x:auto}}

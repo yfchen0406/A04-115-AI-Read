@@ -18,6 +18,8 @@
     return found && time < found[end] ? found : null;
   };
 
+  const motionMode = document.body.dataset.page === 'motion';
+
   if (document.body.dataset.page === 'home') {
     const settings = window.EPISODE_SETTINGS;
     root.innerHTML = `<section class="hero episode-hero">
@@ -28,22 +30,26 @@
           <a class="start-link" href="${esc(settings.links.reading)}">開始閱讀</a>
           <a class="youtube-link" href="${esc(settings.links.youtubeWithSubtitles)}" target="_blank" rel="noopener"><span class="yt-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg></span>YT連結（有字幕）</a>
           <a class="youtube-link" href="${esc(settings.links.youtubeWithoutSubtitles)}" target="_blank" rel="noopener"><span class="yt-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg></span>YT連結（無字幕）</a>
+          <a class="motion-link" href="${esc(settings.links.motion)}">動畫特效版 ✦</a>
         </div>
       </div>
     </section>`;
     return;
   }
 
+  if (motionMode) document.body.classList.add('motion-reader');
   root.innerHTML = `<div class="reader-page">
     <header class="reader-header">
-      <a class="back-link" href="./index.html">回首頁</a>
+      <a class="back-link" href="${motionMode ? './reading.html' : './index.html'}">${motionMode ? '返回原版閱讀' : '回首頁'}</a>
       <div><p class="eyebrow">千年之後，我們仍記得蘇東坡，東坡名作三十，第9集</p><h1>《東欄梨花》</h1></div>
       <span class="reader-duration">${fmt(timeline.durationMs)}</span>
     </header>
+    ${motionMode ? '<nav class="motion-page-nav" aria-label="閱讀版本"><a href="./index.html">回首頁</a><span>動畫特效版</span></nav>' : ''}
     <section class="reader-shell" aria-label="動態閱讀播放器">
       <audio id="narration" class="master-audio" preload="metadata" src="./assets/audio/narration.mp3"></audio>
       <div id="stage" class="stage-wrap" aria-label="分鏡播放畫面">
         <div class="scene-layer is-active" id="scene-a"></div><div class="scene-layer" id="scene-b"></div>
+        ${motionMode ? '<div id="motion-art" class="motion-art" aria-hidden="true"></div><div id="poem-overlay" class="poem-overlay" aria-hidden="true"></div>' : ''}
         <div id="chapter-corner" class="chapter-corner"></div><div id="chapter-intro" class="chapter-intro" hidden></div>
         <div id="caption-line" class="caption-line" aria-live="off"></div>
       </div>
@@ -72,6 +78,10 @@
   const chapterStatus = document.getElementById('chapter-status');
   const shotStatus = document.getElementById('shot-status');
   const layers = [document.getElementById('scene-a'), document.getElementById('scene-b')];
+  const motionArt = motionMode ? document.getElementById('motion-art') : null;
+  const poemOverlay = motionMode ? document.getElementById('poem-overlay') : null;
+  const readerTitle = motionMode ? document.querySelector('.reader-header h1') : null;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let activeLayer = 0, shownScene = null, shownCaption = null, dragging = false, wasPlaying = false, lastChapter = null, lastIntro = null, raf = 0;
 
   const motionFor = id => {
@@ -89,8 +99,34 @@
     img.src = `./${scene.imagePath}`; layer.appendChild(img);
   }
   function applyMotion(scene, time) {
-    const image = layers[activeLayer].querySelector('img'); if (!image) return;
+    const image = layers[activeLayer].querySelector('img'); if (!image) { paintPoem(time); return; }
     const p = Math.max(0, Math.min(1, (time-scene.startMs)/Math.max(1,scene.endMs-scene.startMs)));
+    if (motionMode) {
+      const config = window.MOTION_EFFECTS?.[scene.shotId];
+      if (!config || reducedMotion) {
+        image.style.transform = 'scale(1)';
+        if (motionArt) motionArt.style.opacity = '0';
+        paintPoem(time);
+        return;
+      }
+      image.style.transformOrigin = `${config.focus[0]}% ${config.focus[1]}%`;
+      const paths = {
+        left: [2.4, 0, 1.045, -2.4, 0, 1.075], right: [-2.4, 0, 1.045, 2.4, 0, 1.075],
+        up: [0, 2.1, 1.045, 0, -2.1, 1.075], down: [0, -2.1, 1.045, 0, 2.1, 1.075],
+        push: [0, 0, 1.045, 0, 0, 1.105], pull: [0, 0, 1.105, 0, 0, 1.045],
+        diagonal: [-1.7, 1.2, 1.05, 1.7, -1.2, 1.08], reveal: [1.8, 1, 1.09, -1.8, -1, 1.045],
+        drift: [-1.2, 0.8, 1.05, 1.2, -0.8, 1.075]
+      };
+      const path = paths[config.move] || paths.push;
+      const ease = p * p * (3 - 2 * p);
+      const x = path[0] + (path[3] - path[0]) * ease;
+      const y = path[1] + (path[4] - path[1]) * ease;
+      const zoom = path[2] + (path[5] - path[2]) * ease;
+      image.style.transform = `scale(${zoom}) translate(${x}%, ${y}%)`;
+      paintVisualEffect(scene.shotId, config, p);
+      paintPoem(time);
+      return;
+    }
     const m = motionFor(scene.shotId), z = 1.075 + 0.045 * p, drift = 1.7 + p * 2.0;
     const transforms = [
       `scale(${z}) translate(0,0)`, `scale(${1.12-.045*p}) translate(0,0)`,
@@ -98,6 +134,84 @@
       `scale(1.12) translate(${drift}%,0)`, `scale(1.12) translate(${-drift}%,0)`
     ];
     image.style.transform = transforms[m];
+  }
+  function paintVisualEffect(shotId, config, p) {
+    if (!motionArt) return;
+    const alpha = reducedMotion ? 0 : Math.min(0.42, config.strength * 1.8) * (0.72 + 0.28 * Math.sin(Math.PI * p));
+    motionArt.style.opacity = String(alpha);
+    motionArt.dataset.effect = config.effect;
+    if (motionArt.dataset.shotId !== shotId) {
+      motionArt.dataset.shotId = shotId;
+      if (config.effect === 'petals' || config.effect === 'dust' || config.effect === 'fluff') {
+        motionArt.innerHTML = Array.from({length: config.count || 4}, () => '<i class="motion-particle"></i>').join('');
+      } else if (config.effect === 'water') {
+        motionArt.innerHTML = `<svg class="motion-water" viewBox="0 0 100 56.25" preserveAspectRatio="none">${[0,1,2].map(() => '<ellipse/>').join('')}</svg>`;
+      } else motionArt.innerHTML = '';
+    }
+    motionArt.style.setProperty('--fx-x', `${config.point[0]}%`);
+    motionArt.style.setProperty('--fx-y', `${config.point[1]}%`);
+    motionArt.style.setProperty('--fx-progress', String(p));
+    motionArt.style.setProperty('--fx-position', `${p * 100}%`);
+    motionArt.style.setProperty('--fx-tone', config.tone || '255,238,190');
+    if (config.effect === 'petals' || config.effect === 'dust' || config.effect === 'fluff') {
+      const seed = Number(config.seed || 1);
+      motionArt.querySelectorAll('.motion-particle').forEach((particle, i) => {
+        const sx = (seed * (i + 17) * 37) % 92 + 4;
+        const sy = (seed * (i + 11) * 23) % 72 + 8;
+        const drift = ((seed + i * 13) % 2 ? 1 : -1) * (7 + i * 1.5);
+        const x = (sx + drift * p + 100) % 100;
+        const y = (sy + (18 + i * 2) * p) % 96;
+        const fade = Math.sin(Math.PI * Math.min(1, Math.max(0, p * 1.2 + i * 0.12)));
+        particle.className = `motion-particle ${config.effect}`;
+        particle.style.left = `${x}%`; particle.style.top = `${y}%`;
+        particle.style.opacity = String(Math.max(0, fade) * .72);
+        particle.style.transform = `rotate(${(seed * 11 + i * 47 + p * 55) % 360}deg)`;
+      });
+    } else if (config.effect === 'water') {
+      const cx = config.point[0], cy = config.point[1];
+      motionArt.querySelectorAll('ellipse').forEach((ring, i) => {
+        const phase = (p + i / 3) % 1;
+        const radius = 2 + phase * (config.radius || 18);
+        const opacity = (1 - phase) * .44;
+        ring.setAttribute('cx', String(cx)); ring.setAttribute('cy', String(cy));
+        ring.setAttribute('rx', String(radius)); ring.setAttribute('ry', String(radius * .34));
+        ring.style.opacity = String(opacity);
+      });
+    }
+  }
+  function paintPoem(time) {
+    if (!poemOverlay) return;
+    const cues = window.MOTION_POEM_CUES || [];
+    const entry = cues.find(item => {
+      const cue = captionData.captions.find(candidate => candidate.id === item.cueId);
+      const scene = timeline.scenes.find(candidate => candidate.shotId === item.shotId);
+      return cue && scene && time >= cue.startMs && time < cue.endMs && time >= scene.startMs && time < scene.endMs;
+    });
+    if (!entry) { poemOverlay.textContent = ''; poemOverlay.className = 'poem-overlay'; delete poemOverlay.dataset.cueId; return; }
+    const cue = captionData.captions.find(candidate => candidate.id === entry.cueId);
+    const progress = (time - cue.startMs) / Math.max(1, cue.endMs - cue.startMs);
+    const fadeRatio = Math.min(1, 250 / Math.max(1, cue.endMs - cue.startMs));
+    const edge = reducedMotion ? 1 : Math.min(1, progress / fadeRatio, (1 - progress) / fadeRatio);
+    const opacity = Math.max(0, Math.min(1, edge));
+    const glyphs = Array.from(entry.text);
+    const displayText = entry.lineBreakAt
+      ? `${glyphs.slice(0, entry.lineBreakAt).join('')}\n${glyphs.slice(entry.lineBreakAt).join('')}`
+      : entry.text.replace('，', '，\n');
+    if (poemOverlay.dataset.cueId !== String(entry.cueId)) {
+      poemOverlay.textContent = displayText;
+      poemOverlay.dataset.cueId = String(entry.cueId);
+    }
+    poemOverlay.className = `poem-overlay ${entry.position}`;
+    poemOverlay.style.opacity = String(opacity);
+    poemOverlay.style.transform = reducedMotion ? 'none' : `translateY(${(1 - opacity) * 8}px)`;
+  }
+  function paintMentionedTitle(time) {
+    if (!readerTitle) return;
+    const cue = captionData.captions.find(candidate => candidate.id === 11);
+    if (!cue || time < cue.startMs || time >= cue.endMs) { readerTitle.style.textShadow = ''; return; }
+    const elapsed = time - cue.startMs;
+    const pulse = reducedMotion ? 0 : Math.max(0, 1 - elapsed / 400);
+    readerTitle.style.textShadow = pulse ? `0 0 ${10 * pulse}px rgba(226,169,67,${0.68 * pulse})` : '';
   }
   function paintCaption(time) {
     const cue = activeAt(captionData.captions, time);
@@ -141,6 +255,7 @@
       lastChapter = chapter.id;
     }
     if (scene) applyMotion(scene,t);
+    if (motionMode) paintMentionedTitle(t);
     paintCaption(t);
   }
   const playButton=document.getElementById('play-pause');

@@ -33,9 +33,10 @@
             <h1 id="home-title">《記承天寺夜遊》</h1>
             <p class="hero-summary">從一束入戶月光，到兩位夜遊者眼中的空明庭院。沿著原速旁白與原始字幕，重新讀見蘇軾筆下平凡夜色的深意。</p>
             <div class="hero-actions">
-              <a class="start-link" href="${esc(readingPath)}" aria-label="開始閱讀《記承天寺夜遊》">開始閱讀</a>
-              <a class="youtube-link" href="${esc(settings.links?.youtubeWithSubtitles || 'https://www.youtube.com/')}" target="_blank" rel="noopener noreferrer">YT連結(有字幕)</a>
-              <a class="youtube-link" href="${esc(settings.links?.youtubeWithoutSubtitles || 'https://www.youtube.com/')}" target="_blank" rel="noopener noreferrer">YT連結(無字幕)</a>
+              <a class="start-link" href="${esc(readingPath)}" aria-label="開始閱讀《記承天寺夜遊》">開始閱讀 <span aria-hidden="true">→</span></a>
+              <a class="youtube-link" href="${esc(settings.links?.youtubeWithSubtitles || 'https://www.youtube.com/')}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.6 6.3-3.6-6.3-3.6z"/></svg>YT連結（有字幕）</a>
+              <a class="youtube-link" href="${esc(settings.links?.youtubeWithoutSubtitles || 'https://www.youtube.com/')}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8Z"/><path fill="#fff" d="m9.6 15.6 6.3-3.6-6.3-3.6z"/></svg>YT連結（無字幕）</a>
+              <a class="start-link effect-link" href="./reading-effects.html" aria-label="開啟《記承天寺夜遊》動畫特效版">動畫特效版 ✦</a>
             </div>
             <p class="hero-meta">${timeline.scenes.length} 鏡・${chapters} 章・原速旁白・離線可讀</p>
           </div>
@@ -67,11 +68,13 @@
           <a class="back-link" href="${esc(homePath)}">← 系列首頁</a>
           <div><p class="eyebrow">千年後，我們仍記得蘇東坡</p><h1>${esc(timeline.title)}</h1></div>
           <span class="reader-duration">${timeline.scenes.length} 鏡・${timeline.chapters.length} 章</span>
+          ${settings.effectsMode ? '<a class="back-link effect-return" href="./reading.html">返回原版閱讀</a>' : ''}
         </header>
-        <section class="reader-shell" aria-label="旁白與分鏡同步播放器">
+        <section class="reader-shell" ${settings.effectsMode ? 'id="reader-shell"' : ''} aria-label="旁白與分鏡同步播放器">
           <div class="stage-wrap" id="stage-wrap" aria-label="16:9 分鏡畫面">
             <img class="scene-layer" id="scene-layer-a" alt="">
             <img class="scene-layer" id="scene-layer-b" alt="">
+            ${settings.effectsMode ? '<div class="effect-layer" id="effect-layer-a" aria-hidden="true"></div><div class="effect-layer" id="effect-layer-b" aria-hidden="true"></div><div class="quote-overlay" id="quote-overlay" aria-hidden="true"></div>' : ''}
             <div class="frame-chapter" id="chapter-corner" aria-live="polite"></div>
             <div class="frame-intro" id="chapter-intro" aria-live="polite"></div>
             <div class="frame-subtitle" id="caption-line" aria-live="polite"></div>
@@ -109,6 +112,10 @@
 
     const audio = document.getElementById('master-audio');
     const layerEls = [document.getElementById('scene-layer-a'),document.getElementById('scene-layer-b')];
+    const effectLayers = settings.effectsMode ? [document.getElementById('effect-layer-a'),document.getElementById('effect-layer-b')] : [];
+    const quoteOverlay = settings.effectsMode ? document.getElementById('quote-overlay') : null;
+    const reducedMotion = settings.effectsMode && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(settings.effectsMode) document.body.classList.add('effect-mode');
     const intro = document.getElementById('chapter-intro'), corner = document.getElementById('chapter-corner');
     const caption = document.getElementById('caption-line'), placeholderTag = document.getElementById('placeholder-tag');
     const slider = document.getElementById('seek-slider'), currentTime = document.getElementById('time-current');
@@ -122,9 +129,23 @@
     const setLayer = (index,scene,opacity,ms) => {
       const el=layerEls[index];
       if(el.dataset.sceneId!==scene.id){el.dataset.sceneId=scene.id;el.dataset.imageStatus=scene.imageStatus||'generated';el.src=assetUrl(`assets/${scene.imagePath}`);el.onerror=()=>{el.onerror=null;el.dataset.imageStatus='error';el.src=assetUrl('assets/images/placeholder-error.webp');placeholderTag.hidden=false;placeholderTag.textContent=`圖片載入失敗・IMG${scene.id}`;};}
+      if(settings.effectsMode){
+        const effect=window.SCENE_EFFECTS?.find((item)=>item.sceneId===scene.id);
+        const field=effectLayers[index];
+        if(effect&&field){
+          const duration=Math.max(1,scene.endMs-scene.startMs), progress=Math.max(0,Math.min(1,(ms-scene.startMs)/duration));
+          const phase=progress*Math.PI*2*effect.direction;
+          field.dataset.sceneId=scene.id;field.dataset.kind=effect.kind;
+          field.style.setProperty('--fx-x',`${Math.max(4,Math.min(96,effect.x+Math.sin(phase)*5))}%`);
+          field.style.setProperty('--fx-y',`${Math.max(6,Math.min(94,effect.y+Math.cos(phase*.7)*3))}%`);
+          field.style.setProperty('--fx-rx',`${effect.radius}%`);field.style.setProperty('--fx-rx-wide',`${effect.radius*1.25}%`);field.style.setProperty('--fx-ry',`${effect.radius*.72}%`);field.style.setProperty('--fx-ry-wide',`${effect.radius*.9}%`);field.style.setProperty('--fx-ry-narrow',`${effect.radius*.55}%`);
+          field.style.setProperty('--fx-alpha',String(reducedMotion?0:effect.strength));
+          field.style.opacity=String(reducedMotion?0:opacity);field.style.display=opacity>0.001&&!reducedMotion?'block':'none';
+        }
+      }
       const duration=Math.max(1,scene.endMs-scene.startMs), p=Math.max(0,Math.min(1,(ms-scene.startMs)/duration));
-      const eased=p*p*(3-2*p); let scale=1.025,x=0,y=0;
-      switch(scene.motion){case'push':scale=1+eased*.055;break;case'pull':scale=1.055-eased*.055;break;case'pan-left':scale=1.045;x=-2+eased*4;break;case'pan-right':scale=1.045;x=2-eased*4;break;case'diagonal':scale=1.05;x=-1.5+eased*3;y=.8-eased*1.6;break;case'settle':scale=1.02+eased*.02;break;}
+      const eased=p*p*(3-2*p); let scale=reducedMotion?1:1.025,x=0,y=0;
+      if(!reducedMotion)switch(scene.motion){case'push':scale=1+eased*.055;break;case'pull':scale=1.055-eased*.055;break;case'pan-left':scale=1.045;x=-2+eased*4;break;case'pan-right':scale=1.045;x=2-eased*4;break;case'diagonal':scale=1.05;x=-1.5+eased*3;y=.8-eased*1.6;break;case'settle':scale=1.02+eased*.02;break;}
       el.style.opacity=String(opacity);el.style.transform=`translate(${x}%,${y}%) scale(${scale})`;el.style.display=opacity>0.001?'block':'none';
     };
     const activeAt=(ms)=>timeline.scenes.findIndex((scene)=>ms>=scene.startMs&&ms<scene.endMs);
@@ -147,6 +168,15 @@
       if(chapter.id!==shownChapterId){shownChapterId=chapter.id;document.querySelectorAll('.chapter-button').forEach((button)=>{const on=button.dataset.chapter===String(timeline.chapters.indexOf(chapter));button.classList.toggle('active',on);if(on)button.setAttribute('aria-current','location');else button.removeAttribute('aria-current');});document.getElementById('debug-chapter').textContent=`${chapter.id}・${chapter.title}・Excel ${chapter.startMs} ms`;}
       const cue=timeline.subtitles.find((item)=>time>=item.startMs&&time<item.endMs);
       caption.innerHTML=cue?highlighted(cue.displayText||cue.text.replace(/\n/g,' ')):'';
+      if(quoteOverlay){
+        const quote=(window.QUOTE_OVERLAYS||[]).find((item)=>item.sceneId===scene.id&&time>=item.startMs&&time<item.endMs);
+        if(quote){
+          const age=time-quote.startMs;const fade=Math.min(1,age/(quote.text.length<=7?80:160));
+          quoteOverlay.textContent=quote.text;quoteOverlay.dataset.cueId=quote.cueId;quoteOverlay.dataset.short=String(quote.text.length<=7);
+          quoteOverlay.style.left=`${quote.left}%`;quoteOverlay.style.top=`${quote.top}%`;quoteOverlay.style.width=`${quote.width}%`;quoteOverlay.style.height=`${quote.height}%`;
+          quoteOverlay.style.opacity=String(Math.max(0,Math.min(1,fade)));quoteOverlay.classList.toggle('is-visible',fade>.01);
+        }else{quoteOverlay.textContent='';quoteOverlay.removeAttribute('data-cue-id');quoteOverlay.style.opacity='0';quoteOverlay.classList.remove('is-visible');}
+      }
       if(cue){document.getElementById('debug-caption').textContent=`${cue.id}・${cue.startTimecode} → ${cue.endTimecode}・${cue.text}`;const width=document.getElementById('stage-wrap').clientWidth;const font=Math.max(18,Math.min(34,width*.9/Math.max(1,(cue.displayText||cue.text).length)*1.55));caption.style.fontSize=`${font}px`;}
       else {document.getElementById('debug-caption').textContent='此刻無字幕';caption.style.fontSize='';}
       document.getElementById('debug-audio').textContent=`${(time/1000).toFixed(3)} 秒`;
@@ -191,3 +221,5 @@
 
   if (isReader) renderReader(); else renderHome();
 })();
+
+
