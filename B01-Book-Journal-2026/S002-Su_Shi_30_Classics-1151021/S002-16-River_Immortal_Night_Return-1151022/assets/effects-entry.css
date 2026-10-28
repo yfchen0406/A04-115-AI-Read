@@ -1,0 +1,53 @@
+/* The home link inherits the existing capsule button dimensions and focus style. */
+.hero-actions .effects-entry-link {
+  background: rgba(9, 38, 47, .5);
+  border: 1px solid rgba(255, 255, 255, .82);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.hero-actions .effects-entry-link:hover {
+  background: rgba(255, 255, 255, .16);
+}
+
+.effects-version-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: .7rem clamp(.8rem, 2vw, 1.5rem) .1rem;
+  color: #173b2e;
+  font-weight: 800;
+}
+
+.effects-version-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: .45rem .9rem;
+  border: 1px solid #b6c8bd;
+  border-radius: 999px;
+  background: #fff;
+  color: #173b2e;
+  font-size: .85rem;
+  text-decoration: none;
+}
+
+.effects-version-nav a:hover {
+  background: #fff3d5;
+}
+
+.effects-version-nav a:focus-visible {
+  outline: 3px solid #e2a943;
+  outline-offset: 3px;
+}
+
+@media (max-width: 380px) {
+  .effects-version-nav {
+    flex-wrap: wrap;
+    padding-inline: .75rem;
+  }
+}

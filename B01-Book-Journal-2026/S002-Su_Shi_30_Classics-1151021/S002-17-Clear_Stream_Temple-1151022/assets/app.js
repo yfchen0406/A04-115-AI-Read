@@ -20,7 +20,21 @@
   const scenes = timeline.scenes;
   const chapters = timeline.chapters;
   const settings = window.EPISODE_SETTINGS || {};
-  const isReader = document.body.dataset.page === 'reader';
+  const isEffectsReader = document.body.dataset.page === 'reader-effects';
+  const isReader = document.body.dataset.page === 'reader' || isEffectsReader;
+
+  function youtubeButton(url, label) {
+    const icon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff0033" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>';
+    let href = '';
+    try {
+      const parsed = new URL(String(url || '').trim());
+      if (parsed.protocol === 'https:' && ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be', 'www.youtube-nocookie.com'].includes(parsed.hostname)) href = parsed.href;
+    } catch {}
+    const content = `${icon}<span>${label}</span>`;
+    return href
+      ? `<a class="youtube-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${content}</a>`
+      : `<span class="youtube-link is-unset" aria-disabled="true" title="請先在 index.html 填入有效的 YouTube 網址">${content}</span>`;
+  }
 
   function renderHome() {
     return `<main class="home-page">
@@ -31,8 +45,9 @@
           <h1 id="main-title" class="visually-hidden">千年後，我們仍記得蘇東坡</h1>
           <div class="hero-actions">
             <a class="start-link" href="${escapeHtml(settings.links.reading)}">開始閱讀 <b aria-hidden="true">→</b></a>
-            <a class="youtube-link" href="${escapeHtml(settings.links.youtubeWithSubtitles)}" target="_blank" rel="noopener noreferrer">YT連結（有字幕）</a>
-            <a class="youtube-link" href="${escapeHtml(settings.links.youtubeWithoutSubtitles)}" target="_blank" rel="noopener noreferrer">YT連結（無字幕）</a>
+            ${youtubeButton(settings.links.youtubeWithSubtitles, 'YT連結（有字幕）')}
+            ${youtubeButton(settings.links.youtubeWithoutSubtitles, 'YT連結（無字幕）')}
+            <a class="effects-link" href="${escapeHtml(settings.links.effects)}">動畫特效版 <b aria-hidden="true">✦</b></a>
           </div>
           <p class="hero-meta">${scenes.length} 個分鏡 · ${chapters.length} 個章節 · 原速旁白 · 動態同步播放</p>
         </div>
@@ -43,7 +58,7 @@
   function renderReader() {
     return `<main class="reader-page" id="reading">
       <header class="reader-header">
-        <a class="back-link" href="./index.html">← 系列首頁</a>
+        <a class="back-link" href="${isEffectsReader ? './reading.html' : './index.html'}">${isEffectsReader ? '← 返回原版閱讀' : '← 系列首頁'}</a>
         <div><p class="eyebrow">千年後，我們仍記得蘇東坡</p><h1>${escapeHtml(timeline.title)}</h1></div>
         <span class="reader-duration">${scenes.length} 鏡 · ${chapters.length} 章</span>
       </header>
@@ -54,6 +69,7 @@
               <img id="art-a" alt=""><img id="art-b" alt="">
               <div class="art-missing" id="art-fallback" hidden>正式分鏡插圖待補</div>
               <div class="frame-shade"></div>
+              ${isEffectsReader ? '<div class="frame-effects" id="frame-effects" aria-hidden="true"></div><div class="poem-overlay" id="poem-overlay" aria-hidden="true"><span id="poem-overlay-text"></span></div>' : ''}
               <div class="frame-chapter" id="chapter-title"></div>
               <div class="frame-subtitle" id="caption"></div>
             </div>
@@ -95,7 +111,7 @@
         <p class="debug-explainer">旁白音檔是播放主時鐘；分鏡與章節起點依 Excel 時間軸，字幕依整理後的字幕時間。</p>
         <dl class="debug-grid"><div><dt>旁白時間</dt><dd id="debug-time">00:00.000</dd></div><div><dt>目前分鏡</dt><dd id="debug-scene">—</dd></div><div><dt>目前章節</dt><dd id="debug-chapter">—</dd></div><div><dt>字幕</dt><dd id="debug-caption">（此刻沒有字幕）</dd></div><div><dt>圖片數量</dt><dd>${scenes.length} 張正式圖片</dd></div></dl>
       </section>
-      <footer class="reader-footer">分鏡與章節起點依 Excel；旁白以原始 MP3 原速播放。每鏡圖片皆有隨機推拉與平移動畫。</footer>
+      <footer class="reader-footer">${isEffectsReader ? '動畫特效版沿用原始旁白、字幕、圖片與時間軸；所有動態依播放時間同步。' : '分鏡與章節起點依 Excel；旁白以原始 MP3 原速播放。每鏡圖片皆有隨機推拉與平移動畫。'}</footer>
     </main>`;
   }
 
@@ -138,15 +154,17 @@
     lastSceneIndex = index;
     const nextImage = activeImage === imageA ? imageB : imageA;
     activeMotion?.cancel();
-    const axis = Math.random() < 0.5 ? 'x' : 'y';
-    const direction = Math.random() < 0.5 ? -1 : 1;
-    const zoomIn = Math.random() < 0.5;
-    const fromScale = zoomIn ? 1.025 : 1.115;
-    const toScale = zoomIn ? 1.115 : 1.025;
-    const startX = axis === 'x' ? -direction * 3.2 : (Math.random() - 0.5) * 1.2;
-    const startY = axis === 'y' ? -direction * 3.2 : (Math.random() - 0.5) * 1.2;
-    const endX = axis === 'x' ? direction * 3.2 : startX;
-    const endY = axis === 'y' ? direction * 3.2 : startY;
+    const plannedMotion = isEffectsReader ? window.B17_EFFECTS?.imageEffects?.[scene.id]?.motion : null;
+    const sceneSeed = Number(scene.id) || 1;
+    const axis = isEffectsReader ? (sceneSeed % 2 ? 'x' : 'y') : (Math.random() < 0.5 ? 'x' : 'y');
+    const direction = isEffectsReader ? (sceneSeed % 4 < 2 ? -1 : 1) : (Math.random() < 0.5 ? -1 : 1);
+    const zoomIn = isEffectsReader ? sceneSeed % 3 !== 0 : Math.random() < 0.5;
+    const fromScale = plannedMotion?.fromScale ?? (zoomIn ? 1.025 : 1.115);
+    const toScale = plannedMotion?.toScale ?? (zoomIn ? 1.115 : 1.025);
+    const startX = plannedMotion?.fromX ?? (axis === 'x' ? -direction * 3.2 : (isEffectsReader ? (sceneSeed % 5 - 2) * 0.3 : (Math.random() - 0.5) * 1.2));
+    const startY = plannedMotion?.fromY ?? (axis === 'y' ? -direction * 3.2 : (isEffectsReader ? (sceneSeed % 5 - 2) * 0.3 : (Math.random() - 0.5) * 1.2));
+    const endX = plannedMotion?.toX ?? (axis === 'x' ? direction * 3.2 : startX);
+    const endY = plannedMotion?.toY ?? (axis === 'y' ? direction * 3.2 : startY);
     nextImage.onload = () => { fallback.hidden = true; nextImage.style.opacity = '1'; };
     nextImage.onerror = () => { nextImage.style.opacity = '0'; fallback.hidden = false; fallback.textContent = `正式分鏡插圖待補｜IMG${scene.id}`; };
     nextImage.style.transition = 'opacity .48s ease';
@@ -155,12 +173,18 @@
     nextImage.style.opacity = '1';
     activeImage.style.opacity = '0';
     activeImage = nextImage;
-    activeMotion = nextImage.animate([
-      { transform: `scale(${fromScale}) translate(${startX}%,${startY}%)` },
-      { transform: `scale(${toScale}) translate(${endX}%,${endY}%)` }
-    ], { duration: scene.durationMs, fill: 'forwards', easing: 'linear' });
-    activeMotion.currentTime = Math.max(0, audio.currentTime * 1000 - scene.startMs);
-    if (audio.paused) activeMotion.pause();
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (isEffectsReader && reduceMotion) {
+      nextImage.style.transform = 'scale(1.015)';
+      activeMotion = null;
+    } else {
+      activeMotion = nextImage.animate([
+        { transform: `scale(${fromScale}) translate(${startX}%,${startY}%)` },
+        { transform: `scale(${toScale}) translate(${endX}%,${endY}%)` }
+      ], { duration: scene.durationMs, fill: 'forwards', easing: 'linear' });
+      activeMotion.currentTime = Math.max(0, audio.currentTime * 1000 - scene.startMs);
+      if (audio.paused) activeMotion.pause();
+    }
     $('#scene-label').textContent = `第 ${scene.id} 鏡｜${scene.shot}`;
     $('#debug-scene').textContent = `${scene.id}｜${scene.shot}`;
   }
