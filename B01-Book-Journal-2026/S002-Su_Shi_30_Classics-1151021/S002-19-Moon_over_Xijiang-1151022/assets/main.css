@@ -6,5 +6,5 @@ body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a
 .frame-subtitle .poem-highlight{color:#fff200}
 
 /* B19：單行字幕、繁體楷體與清楚描邊 */
-.frame-subtitle{white-space:nowrap!important;overflow:hidden;text-overflow:clip;display:block!important;line-height:1.22!important;font-family:KaiTi,"標楷體",serif!important;font-weight:900!important;text-shadow:0 2px 4px #000,0 0 8px #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000!important}
-.frame-subtitle .poem-highlight{color:#fff200!important}
+
+

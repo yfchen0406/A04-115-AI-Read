@@ -7,20 +7,21 @@
   <meta name="description" content="蘇東坡《西江月·世事一場大夢》動態閱讀；字幕依原始SRT時間碼。">
   <title>西江月·世事一場大夢｜同步閱讀</title>
   <link rel="stylesheet" href="./assets/main.css">
-  <!-- 請將下方 youtubeWithSubtitles 與 youtubeWithoutSubtitles 的網址值，分別替換成正式 YouTube 影片網址。 -->
+  <!-- 將兩個空字串分別填入完整的 YouTube 影片網址；填入後首頁按鈕會在新分頁開啟該影片。 -->
   <script>window.EPISODE_SETTINGS = {
     links: {
       home: './index.html',
       reading: './reading.html',
       chapters: './reading.html#chapter-index',
-      // 有字幕影片：請將下方網址替換成 YouTube 影片網址。
-      youtubeWithSubtitles: 'https://www.youtube.com/',
-      // 無字幕影片：請將下方網址替換成 YouTube 影片網址。
-      youtubeWithoutSubtitles: 'https://www.youtube.com/'
+      // YT連結（有字幕）：貼上完整 YouTube 影片網址，例如 https://www.youtube.com/watch?v=影片代碼
+      youtubeWithSubtitles: '',
+      // YT連結（無字幕）：貼上完整 YouTube 影片網址，例如 https://youtu.be/影片代碼
+      youtubeWithoutSubtitles: ''
     },
     assets: { base: './', coverImage: 'assets/images/cover.webp', sceneImagePattern: 'assets/images/IMG{id}.webp', narrationAudio: 'assets/audio/narration.mp3' }
   };</script>
   <script defer src="./assets/main.js"></script>
+  <script defer src="./assets/motion-home.js"></script>
 </head>
 <body><div id="root"></div></body>
 </html>

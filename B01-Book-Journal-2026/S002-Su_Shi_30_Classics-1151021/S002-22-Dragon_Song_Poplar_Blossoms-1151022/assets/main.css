@@ -4,6 +4,17 @@
 body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a[href*="yyvFhMmIHLQ"],.reader-page a[href*="XOSHlXa_GjU"]{display:none!important}
 
 .frame-subtitle .poem-highlight{color:#fff200}
+
+/* Approved independent motion edition */
+.motion-link{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.8rem 1.25rem;border:1px solid rgba(255,255,255,.72);border-radius:999px;background:#ffe8ad;color:#21382d;font-weight:900;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.motion-link:hover{transform:translateY(-2px);background:#fff4d2}
+.motion-canvas{position:absolute;inset:0;z-index:1;display:block;pointer-events:none}
+.poem-overlay{position:absolute;z-index:4;top:18%;right:4.5%;width:min(54%,52rem);max-height:53%;overflow:hidden;padding:clamp(.45rem,1.6vw,1.15rem) clamp(.65rem,2vw,1.45rem);border:1px solid rgba(255,235,184,.68);border-radius:.55rem;background:rgba(8,28,31,.78);box-shadow:0 4px 20px rgba(0,0,0,.32);color:#fff4c2;font-family:var(--kai);font-size:clamp(14px,2.3vw,35px);font-weight:900;line-height:1.55;letter-spacing:.025em;text-align:center;text-shadow:0 1px 2px #17211e,-1px 0 #173027,1px 0 #173027,0 2px 5px #071411;opacity:var(--poem-opacity,1);transition:opacity .12s linear;pointer-events:none}
+.poem-overlay::first-letter{color:#ffd86a}
+.poem-overlay[data-position="upper-right-wide"]{width:min(68%,62rem)}
+.poem-overlay[hidden]{display:none}
+@media(max-width:760px){.motion-link{min-height:46px;padding:.7rem 1rem;font-size:.9rem}.poem-overlay{top:19%;right:3.5%;width:min(60%,34rem);max-height:51%;padding:.4rem .55rem;border-radius:.4rem;font-size:clamp(12px,3.2vw,20px);line-height:1.42}}
+@media(prefers-reduced-motion:reduce){.motion-link,.poem-overlay{transition:none!important}}
 :root{--stage-placeholder:#142d35;--stage-ink:#f8f4e8;--stage-gold:#ffe266}
 .scene-layer{position:absolute;inset:0;overflow:hidden;will-change:opacity;pointer-events:none;background:var(--stage-placeholder);opacity:0}
 .scene-visual{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;transform-origin:center;will-change:transform}
@@ -42,6 +53,7 @@ body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a
 .scene-nav-row .play-control{min-width:5.8rem;padding:.55rem 1rem;border:1px solid #fff;background:#fff;color:var(--ink)}
 .scene-nav-row .play-control:hover{background:#ffe4a0}
 @media(max-width:560px){.scene-nav-row{grid-template-columns:minmax(0,1fr) 3.8rem minmax(0,1fr);gap:.35rem}.scene-nav-row button{min-height:42px;font-size:.72rem}.scene-nav-row .scene-nav-button{padding:.4rem .25rem}.scene-nav-row .play-control{min-width:3.8rem;padding:.4rem .35rem}}
+@media(min-width:761px){.control-row{flex-wrap:nowrap;gap:.42rem}.control-row button{white-space:nowrap;padding:.44rem .62rem;font-size:.76rem}}
 
-/* Single-line playback controls, arranged to match the supplied reference. */
-.control-row{gap:.42rem;margin-top:.35rem}.control-row button{white-space:nowrap}.control-row .scene-nav-button{min-height:40px;padding:.52rem .86rem;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:transparent;color:#fff;font-size:.84rem;font-weight:850}.control-row .scene-nav-button:hover:not(:disabled){background:#ffffff24}@media(max-width:900px){.control-row{gap:.32rem}.control-row button,.control-row .scene-nav-button{min-height:38px;padding:.42rem .58rem;font-size:.75rem}.volume-control{max-width:7.3rem}}
+
+@media(min-width:761px){.cover-hero-copy .hero-actions{flex-wrap:nowrap;margin-left:calc(1rem - clamp(1.1rem,3vw,2.5rem))}}

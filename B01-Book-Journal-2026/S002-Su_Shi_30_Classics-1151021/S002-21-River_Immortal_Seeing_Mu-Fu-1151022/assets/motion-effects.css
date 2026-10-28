@@ -1,0 +1,12 @@
+.motion-start-link{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 1.25rem;border:1px solid rgba(238,205,127,.65);border-radius:999px;color:#f5d994;background:rgba(24,52,42,.78);font-weight:700;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.motion-start-link:hover{transform:translateY(-2px);background:#244b3b}
+.reader-page.motion-reader .stage-wrap{isolation:isolate}
+.motion-layer{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;contain:strict}
+.motion-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.88}
+.motion-verse{position:absolute;z-index:2;width:max-content;max-width:none;padding:.13em .28em;color:#fff200;font-family:"DFKai-SB","BiauKai","標楷體","KaiTi","Noto Serif TC",serif;font-size:clamp(.82rem,2.3vw,2.45rem);font-weight:700;line-height:1.3;letter-spacing:.025em;text-align:center;white-space:pre;-webkit-text-stroke:.7px #302414;text-shadow:0 2px 2px #160f08,0 0 7px rgba(20,13,7,.85);transform:translate(-50%,-50%);background:linear-gradient(90deg,transparent,rgba(25,20,13,.18),transparent);opacity:0;transition:opacity .2s ease}
+.reader-page.motion-reader .frame-subtitle .poem-highlight{font-family:"DFKai-SB","BiauKai","標楷體","KaiTi","Noto Serif TC",serif}
+.motion-verse.is-visible{opacity:1}
+.motion-reader .reader-header .back-link{font-size:0}
+.motion-reader .reader-header .back-link::after{content:"← 返回原版閱讀";font-size:1rem}
+@media(max-width:640px){.motion-verse{font-size:clamp(.82rem,4.1vw,1.18rem);letter-spacing:.015em;padding:.18em .35em;background:rgba(25,20,13,.28);border-radius:.2rem}}
+@media(prefers-reduced-motion:reduce){.motion-start-link{transition:none}.motion-verse{transition:none}}
