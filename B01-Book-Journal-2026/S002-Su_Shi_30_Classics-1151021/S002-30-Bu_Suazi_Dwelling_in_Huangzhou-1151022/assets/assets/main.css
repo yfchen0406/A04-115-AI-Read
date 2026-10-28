@@ -4,3 +4,7 @@
 body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a[href*="yyvFhMmIHLQ"],.reader-page a[href*="XOSHlXa_GjU"]{display:none!important}
 
 .frame-subtitle .poem-highlight{color:#fff200}
+.youtube-link[aria-disabled="true"]{opacity:.56;cursor:not-allowed}
+.cover-start[hidden]{display:none!important}
+
+.hero-actions>a{flex:0 0 auto;white-space:nowrap}.motion-version-link{background:transparent;color:#fff;border-color:rgba(255,255,255,.72)}.motion-version-link:hover{background:rgba(255,255,255,.14)}

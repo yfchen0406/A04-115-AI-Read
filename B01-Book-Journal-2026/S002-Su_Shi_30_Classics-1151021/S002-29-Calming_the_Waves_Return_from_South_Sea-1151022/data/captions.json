@@ -1,0 +1,2027 @@
+[
+  {
+    "id": "S001",
+    "sequence": 1,
+    "startTimecode": "00:00:01,500",
+    "endTimecode": "00:00:07,921",
+    "startMs": 1500,
+    "endMs": 7921,
+    "startSeconds": 1.5,
+    "endSeconds": 7.921,
+    "text": "一個人離開熟悉的城市，走過陌生山路，還能在哪裡找到家的感覺？",
+    "displayText": "一個人離開熟悉的城市，走過陌生山路，還能在哪裡找到家的感覺？",
+    "displaySegments": [
+      {
+        "text": "一個人離開熟悉的城市，走過陌生山路，還能在哪裡找到家的感覺？",
+        "startSeconds": 1.5,
+        "endSeconds": 7.921,
+        "id": "S001-01",
+        "cueId": "S001",
+        "sequence": 1,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 45,
+    "endFrame": 238
+  },
+  {
+    "id": "S002",
+    "sequence": 2,
+    "startTimecode": "00:00:07,921",
+    "endTimecode": "00:00:12,629",
+    "startMs": 7921,
+    "endMs": 12629,
+    "startSeconds": 7.921,
+    "endSeconds": 12.629,
+    "text": "蘇軾寫過一句令人難忘的詞：「此心安處是吾鄉。",
+    "displayText": "蘇軾寫過一句令人難忘的詞：「此心安處是吾鄉。",
+    "displaySegments": [
+      {
+        "text": "蘇軾寫過一句令人難忘的詞：「此心安處是吾鄉。",
+        "startSeconds": 7.921,
+        "endSeconds": 12.629,
+        "id": "S002-01",
+        "cueId": "S002",
+        "sequence": 2,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 238,
+    "endFrame": 379
+  },
+  {
+    "id": "S003",
+    "sequence": 3,
+    "startTimecode": "00:00:12,629",
+    "endTimecode": "00:00:17,980",
+    "startMs": 12629,
+    "endMs": 17980,
+    "startSeconds": 12.629,
+    "endSeconds": 17.98,
+    "text": "」但這句話最動人的地方，是它背後有一位女性的身影。",
+    "displayText": "」但這句話最動人的地方，是它背後有一位女性的身影。",
+    "displaySegments": [
+      {
+        "text": "」但這句話最動人的地方，是它背後有一位女性的身影。",
+        "startSeconds": 12.629,
+        "endSeconds": 17.98,
+        "id": "S003-01",
+        "cueId": "S003",
+        "sequence": 3,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 379,
+    "endFrame": 539
+  },
+  {
+    "id": "S004",
+    "sequence": 4,
+    "startTimecode": "00:00:18,160",
+    "endTimecode": "00:00:23,164",
+    "startMs": 18160,
+    "endMs": 23164,
+    "startSeconds": 18.16,
+    "endSeconds": 23.164,
+    "text": "她叫柔奴，也稱寓娘，是蘇軾友人王定國身邊的歌兒。",
+    "displayText": "她叫柔奴，也稱寓娘，是蘇軾友人王定國身邊的歌兒。",
+    "displaySegments": [
+      {
+        "text": "她叫柔奴，也稱寓娘，是蘇軾友人王定國身邊的歌兒。",
+        "startSeconds": 18.16,
+        "endSeconds": 23.164,
+        "id": "S004-01",
+        "cueId": "S004",
+        "sequence": 4,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 545,
+    "endFrame": 695
+  },
+  {
+    "id": "S005",
+    "sequence": 5,
+    "startTimecode": "00:00:23,164",
+    "endTimecode": "00:00:31,920",
+    "startMs": 23164,
+    "endMs": 31920,
+    "startSeconds": 23.164,
+    "endSeconds": 31.92,
+    "text": "相傳，她陪著王定國經歷嶺南貶謫，回來後，面對一句關於艱苦生活的詢問，說出了這份回答。",
+    "displayText": "相傳，她陪著王定國經歷嶺南貶謫，回來後，面對一句關於艱苦生活的詢問，說出了這份回答。",
+    "displaySegments": [
+      {
+        "text": "相傳，她陪著王定國經歷嶺南貶謫，回來後，面對一句關於艱苦生活的詢問，說出了這份回答。",
+        "startSeconds": 23.164,
+        "endSeconds": 31.92,
+        "id": "S005-01",
+        "cueId": "S005",
+        "sequence": 5,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 695,
+    "endFrame": 958
+  },
+  {
+    "id": "S006",
+    "sequence": 6,
+    "startTimecode": "00:00:32,100",
+    "endTimecode": "00:00:43,336",
+    "startMs": 32100,
+    "endMs": 43336,
+    "startSeconds": 32.1,
+    "endSeconds": 43.336,
+    "text": "千年後，我們仍會搬家、退休、告別熟悉的角色，也仍然會問：安定究竟來自住在哪裡，還是來自心裡有什麼可以依靠？",
+    "displayText": "千年後，我們仍會搬家、退休、告別熟悉的角色，也仍然會問：安定究竟來自住在哪裡，還是來自心裡有什麼可以依靠？",
+    "displaySegments": [
+      {
+        "text": "千年後，我們仍會搬家、退休、告別熟悉的角色，也仍然會問：安定究竟來自住在哪裡，還是來自心裡有什麼可以依靠？",
+        "startSeconds": 32.1,
+        "endSeconds": 43.336,
+        "id": "S006-01",
+        "cueId": "S006",
+        "sequence": 6,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 963,
+    "endFrame": 1300
+  },
+  {
+    "id": "S007",
+    "sequence": 7,
+    "startTimecode": "00:00:43,336",
+    "endTimecode": "00:00:51,180",
+    "startMs": 43336,
+    "endMs": 51180,
+    "startSeconds": 43.336,
+    "endSeconds": 51.18,
+    "text": "今天，我們不急著把苦難說成美好，而要看看一個人如何在變動中保留自己的位置。",
+    "displayText": "今天，我們不急著把苦難說成美好，而要看看一個人如何在變動中保留自己的位置。",
+    "displaySegments": [
+      {
+        "text": "今天，我們不急著把苦難說成美好，而要看看一個人如何在變動中保留自己的位置。",
+        "startSeconds": 43.336,
+        "endSeconds": 51.18,
+        "id": "S007-01",
+        "cueId": "S007",
+        "sequence": 7,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 1300,
+    "endFrame": 1535
+  },
+  {
+    "id": "S008",
+    "sequence": 8,
+    "startTimecode": "00:00:51,360",
+    "endTimecode": "00:00:55,644",
+    "startMs": 51360,
+    "endMs": 55644,
+    "startSeconds": 51.36,
+    "endSeconds": 55.644,
+    "text": "故事要從北宋一場政治風波說起。",
+    "displayText": "故事要從北宋一場政治風波說起。",
+    "displaySegments": [
+      {
+        "text": "故事要從北宋一場政治風波說起。",
+        "startSeconds": 51.36,
+        "endSeconds": 55.644,
+        "id": "S008-01",
+        "cueId": "S008",
+        "sequence": 8,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 1541,
+    "endFrame": 1669
+  },
+  {
+    "id": "S009",
+    "sequence": 9,
+    "startTimecode": "00:00:55,644",
+    "endTimecode": "00:01:05,070",
+    "startMs": 55644,
+    "endMs": 65070,
+    "startSeconds": 55.644,
+    "endSeconds": 65.07,
+    "text": "一〇七九年，蘇軾捲入烏臺詩案，友人王鞏也受到牽連，被貶往嶺南賓州。",
+    "displayText": "一〇七九年，蘇軾捲入烏臺詩案，友人王鞏也受到牽連，被貶往嶺南賓州。",
+    "displaySegments": [
+      {
+        "text": "一〇七九年，蘇軾捲入烏臺詩案，友人王鞏也受到牽連，被貶往嶺南賓州。",
+        "startSeconds": 55.644,
+        "endSeconds": 65.07,
+        "id": "S009-01",
+        "cueId": "S009",
+        "sequence": 9,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 1669,
+    "endFrame": 1952
+  },
+  {
+    "id": "S010",
+    "sequence": 10,
+    "startTimecode": "00:01:05,070",
+    "endTimecode": "00:01:09,640",
+    "startMs": 65070,
+    "endMs": 69640,
+    "startSeconds": 65.07,
+    "endSeconds": 69.64,
+    "text": "蘇軾則在一〇八〇年開始黃州貶居。",
+    "displayText": "蘇軾則在一〇八〇年開始黃州貶居。",
+    "displaySegments": [
+      {
+        "text": "蘇軾則在一〇八〇年開始黃州貶居。",
+        "startSeconds": 65.07,
+        "endSeconds": 69.64,
+        "id": "S010-01",
+        "cueId": "S010",
+        "sequence": 10,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 1952,
+    "endFrame": 2089
+  },
+  {
+    "id": "S011",
+    "sequence": 11,
+    "startTimecode": "00:01:09,820",
+    "endTimecode": "00:01:15,126",
+    "startMs": 69820,
+    "endMs": 75126,
+    "startSeconds": 69.82,
+    "endSeconds": 75.126,
+    "text": "兩人的遭遇不同，卻都承受政治失意帶來的壓力。",
+    "displayText": "兩人的遭遇不同，卻都承受政治失意帶來的壓力。",
+    "displaySegments": [
+      {
+        "text": "兩人的遭遇不同，卻都承受政治失意帶來的壓力。",
+        "startSeconds": 69.82,
+        "endSeconds": 75.126,
+        "id": "S011-01",
+        "cueId": "S011",
+        "sequence": 11,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 2095,
+    "endFrame": 2254
+  },
+  {
+    "id": "S012",
+    "sequence": 12,
+    "startTimecode": "00:01:15,126",
+    "endTimecode": "00:01:18,743",
+    "startMs": 75126,
+    "endMs": 78743,
+    "startSeconds": 75.126,
+    "endSeconds": 78.743,
+    "text": "王鞏字定國，與蘇軾有詩文往來。",
+    "displayText": "王鞏字定國，與蘇軾有詩文往來。",
+    "displaySegments": [
+      {
+        "text": "王鞏字定國，與蘇軾有詩文往來。",
+        "startSeconds": 75.126,
+        "endSeconds": 78.743,
+        "id": "S012-01",
+        "cueId": "S012",
+        "sequence": 12,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 2254,
+    "endFrame": 2362
+  },
+  {
+    "id": "S013",
+    "sequence": 13,
+    "startTimecode": "00:01:18,743",
+    "endTimecode": "00:01:26,460",
+    "startMs": 78743,
+    "endMs": 86460,
+    "startSeconds": 78.743,
+    "endSeconds": 86.46,
+    "text": "早期筆記記載，他從嶺南回來時，身邊有一位歌兒柔奴，曾為東坡勸酒。",
+    "displayText": "早期筆記記載，他從嶺南回來時，身邊有一位歌兒柔奴，曾為東坡勸酒。",
+    "displaySegments": [
+      {
+        "text": "早期筆記記載，他從嶺南回來時，身邊有一位歌兒柔奴，曾為東坡勸酒。",
+        "startSeconds": 78.743,
+        "endSeconds": 86.46,
+        "id": "S013-01",
+        "cueId": "S013",
+        "sequence": 13,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 2362,
+    "endFrame": 2594
+  },
+  {
+    "id": "S014",
+    "sequence": 14,
+    "startTimecode": "00:01:26,640",
+    "endTimecode": "00:01:31,827",
+    "startMs": 86640,
+    "endMs": 91827,
+    "startSeconds": 86.64,
+    "endSeconds": 91.827,
+    "text": "柔奴姓宇文，據附見的敘事，她原本住在京師，善於應對。",
+    "displayText": "柔奴姓宇文，據附見的敘事，她原本住在京師，善於應對。",
+    "displaySegments": [
+      {
+        "text": "柔奴姓宇文，據附見的敘事，她原本住在京師，善於應對。",
+        "startSeconds": 86.64,
+        "endSeconds": 91.827,
+        "id": "S014-01",
+        "cueId": "S014",
+        "sequence": 14,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 2599,
+    "endFrame": 2755
+  },
+  {
+    "id": "S015",
+    "sequence": 15,
+    "startTimecode": "00:01:31,827",
+    "endTimecode": "00:01:38,410",
+    "startMs": 91827,
+    "endMs": 98410,
+    "startSeconds": 91.827,
+    "endSeconds": 98.41,
+    "text": "然而我們不知道她的確切年齡，也不能從一首詞推斷她一路上的全部心情。",
+    "displayText": "然而我們不知道她的確切年齡，也不能從一首詞推斷她一路上的全部心情。",
+    "displaySegments": [
+      {
+        "text": "然而我們不知道她的確切年齡，也不能從一首詞推斷她一路上的全部心情。",
+        "startSeconds": 91.827,
+        "endSeconds": 98.41,
+        "id": "S015-01",
+        "cueId": "S015",
+        "sequence": 15,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 2755,
+    "endFrame": 2952
+  },
+  {
+    "id": "S016",
+    "sequence": 16,
+    "startTimecode": "00:01:38,410",
+    "endTimecode": "00:01:42,600",
+    "startMs": 98410,
+    "endMs": 102600,
+    "startSeconds": 98.41,
+    "endSeconds": 102.6,
+    "text": "這首詞有一〇八三年和一〇八五年的繫年說法。",
+    "displayText": "這首詞有一〇八三年和一〇八五年的繫年說法。",
+    "displaySegments": [
+      {
+        "text": "這首詞有一〇八三年和一〇八五年的繫年說法。",
+        "startSeconds": 98.41,
+        "endSeconds": 102.6,
+        "id": "S016-01",
+        "cueId": "S016",
+        "sequence": 16,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 2952,
+    "endFrame": 3078
+  },
+  {
+    "id": "S017",
+    "sequence": 17,
+    "startTimecode": "00:01:42,780",
+    "endTimecode": "00:01:45,889",
+    "startMs": 102780,
+    "endMs": 105889,
+    "startSeconds": 102.78,
+    "endSeconds": 105.889,
+    "text": "如果採前者，蘇軾四十七虛歲；",
+    "displayText": "如果採前者，蘇軾四十七虛歲；",
+    "displaySegments": [
+      {
+        "text": "如果採前者，蘇軾四十七虛歲；",
+        "startSeconds": 102.78,
+        "endSeconds": 105.889,
+        "id": "S017-01",
+        "cueId": "S017",
+        "sequence": 17,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 3083,
+    "endFrame": 3177
+  },
+  {
+    "id": "S018",
+    "sequence": 18,
+    "startTimecode": "00:01:45,889",
+    "endTimecode": "00:01:48,554",
+    "startMs": 105889,
+    "endMs": 108554,
+    "startSeconds": 105.889,
+    "endSeconds": 108.554,
+    "text": "採後者，則是四十九虛歲。",
+    "displayText": "採後者，則是四十九虛歲。",
+    "displaySegments": [
+      {
+        "text": "採後者，則是四十九虛歲。",
+        "startSeconds": 105.889,
+        "endSeconds": 108.554,
+        "id": "S018-01",
+        "cueId": "S018",
+        "sequence": 18,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 3177,
+    "endFrame": 3257
+  },
+  {
+    "id": "S019",
+    "sequence": 19,
+    "startTimecode": "00:01:48,554",
+    "endTimecode": "00:01:51,219",
+    "startMs": 108554,
+    "endMs": 111219,
+    "startSeconds": 108.554,
+    "endSeconds": 111.219,
+    "text": "會面地點也不宜直接說死。",
+    "displayText": "會面地點也不宜直接說死。",
+    "displaySegments": [
+      {
+        "text": "會面地點也不宜直接說死。",
+        "startSeconds": 108.554,
+        "endSeconds": 111.219,
+        "id": "S019-01",
+        "cueId": "S019",
+        "sequence": 19,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 3257,
+    "endFrame": 3337
+  },
+  {
+    "id": "S020",
+    "sequence": 20,
+    "startTimecode": "00:01:51,219",
+    "endTimecode": "00:01:57,660",
+    "startMs": 111219,
+    "endMs": 117660,
+    "startSeconds": 111.219,
+    "endSeconds": 117.66,
+    "text": "真正值得確定的是，這場南遷與歸來，成為詞中思考故鄉的起點。",
+    "displayText": "真正值得確定的是，這場南遷與歸來，成為詞中思考故鄉的起點。",
+    "displaySegments": [
+      {
+        "text": "真正值得確定的是，這場南遷與歸來，成為詞中思考故鄉的起點。",
+        "startSeconds": 111.219,
+        "endSeconds": 117.66,
+        "id": "S020-01",
+        "cueId": "S020",
+        "sequence": 20,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 3337,
+    "endFrame": 3530
+  },
+  {
+    "id": "S021",
+    "sequence": 21,
+    "startTimecode": "00:01:57,840",
+    "endTimecode": "00:02:01,287",
+    "startMs": 117840,
+    "endMs": 121287,
+    "startSeconds": 117.84,
+    "endSeconds": 121.287,
+    "text": "詞的開頭，蘇軾先讚美王定國與柔奴。",
+    "displayText": "詞的開頭，蘇軾先讚美王定國與柔奴。",
+    "displaySegments": [
+      {
+        "text": "詞的開頭，蘇軾先讚美王定國與柔奴。",
+        "startSeconds": 117.84,
+        "endSeconds": 121.287,
+        "id": "S021-01",
+        "cueId": "S021",
+        "sequence": 21,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 3535,
+    "endFrame": 3639
+  },
+  {
+    "id": "S022",
+    "sequence": 22,
+    "startTimecode": "00:02:01,287",
+    "endTimecode": "00:02:06,964",
+    "startMs": 121287,
+    "endMs": 126964,
+    "startSeconds": 121.287,
+    "endSeconds": 126.964,
+    "text": "他用琢磨過的美玉形容男子，又以細緻的酥脂比喻女子的容貌。",
+    "displayText": "他用琢磨過的美玉形容男子，又以細緻的酥脂比喻女子的容貌。",
+    "displaySegments": [
+      {
+        "text": "他用琢磨過的美玉形容男子，又以細緻的酥脂比喻女子的容貌。",
+        "startSeconds": 121.287,
+        "endSeconds": 126.964,
+        "id": "S022-01",
+        "cueId": "S022",
+        "sequence": 22,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 3639,
+    "endFrame": 3809
+  },
+  {
+    "id": "S023",
+    "sequence": 23,
+    "startTimecode": "00:02:06,964",
+    "endTimecode": "00:02:15,480",
+    "startMs": 126964,
+    "endMs": 135480,
+    "startSeconds": 126.964,
+    "endSeconds": 135.48,
+    "text": "這些說法帶著宋代男性文人觀看歌兒的時代眼光，我們今天閱讀，不能忽略她在身分上的限制。",
+    "displayText": "這些說法帶著宋代男性文人觀看歌兒的時代眼光，我們今天閱讀，不能忽略她在身分上的限制。",
+    "displaySegments": [
+      {
+        "text": "這些說法帶著宋代男性文人觀看歌兒的時代眼光，我們今天閱讀，不能忽略她在身分上的限制。",
+        "startSeconds": 126.964,
+        "endSeconds": 135.48,
+        "id": "S023-01",
+        "cueId": "S023",
+        "sequence": 23,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 3809,
+    "endFrame": 4064
+  },
+  {
+    "id": "S024",
+    "sequence": 24,
+    "startTimecode": "00:02:15,660",
+    "endTimecode": "00:02:22,392",
+    "startMs": 135660,
+    "endMs": 142392,
+    "startSeconds": 135.66,
+    "endSeconds": 142.392,
+    "text": "但蘇軾接著寫到歌聲，讓柔奴不只是一個被觀看的身影。",
+    "displayText": "但蘇軾接著寫到歌聲，讓柔奴不只是一個被觀看的身影。",
+    "displaySegments": [
+      {
+        "text": "但蘇軾接著寫到歌聲，讓柔奴不只是一個被觀看的身影。",
+        "startSeconds": 135.66,
+        "endSeconds": 142.392,
+        "id": "S024-01",
+        "cueId": "S024",
+        "sequence": 24,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 4070,
+    "endFrame": 4272
+  },
+  {
+    "id": "S025",
+    "sequence": 25,
+    "startTimecode": "00:02:22,392",
+    "endTimecode": "00:02:30,740",
+    "startMs": 142392,
+    "endMs": 150740,
+    "startSeconds": 142.392,
+    "endSeconds": 150.74,
+    "text": "清亮的歌聲從唇齒間傳出，彷彿風起雪飛，連炎熱的嶺南都忽然清涼。",
+    "displayText": "清亮的歌聲從唇齒間傳出，彷彿風起雪飛，連炎熱的嶺南都忽然清涼。",
+    "displaySegments": [
+      {
+        "text": "清亮的歌聲從唇齒間傳出，彷彿風起雪飛，連炎熱的嶺南都忽然清涼。",
+        "startSeconds": 142.392,
+        "endSeconds": 150.74,
+        "id": "S025-01",
+        "cueId": "S025",
+        "sequence": 25,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 4272,
+    "endFrame": 4522
+  },
+  {
+    "id": "S026",
+    "sequence": 26,
+    "startTimecode": "00:02:30,920",
+    "endTimecode": "00:02:35,936",
+    "startMs": 150920,
+    "endMs": 155936,
+    "startSeconds": 150.92,
+    "endSeconds": 155.936,
+    "text": "這不是當地真的下雪，而是聽覺引發的想像。",
+    "displayText": "這不是當地真的下雪，而是聽覺引發的想像。",
+    "displaySegments": [
+      {
+        "text": "這不是當地真的下雪，而是聽覺引發的想像。",
+        "startSeconds": 150.92,
+        "endSeconds": 155.936,
+        "id": "S026-01",
+        "cueId": "S026",
+        "sequence": 26,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 4528,
+    "endFrame": 4678
+  },
+  {
+    "id": "S027",
+    "sequence": 27,
+    "startTimecode": "00:02:35,936",
+    "endTimecode": "00:02:41,203",
+    "startMs": 155936,
+    "endMs": 161203,
+    "startSeconds": 155.936,
+    "endSeconds": 161.203,
+    "text": "聲音不能改變氣候，卻可能暫時改變人的感受。",
+    "displayText": "聲音不能改變氣候，卻可能暫時改變人的感受。",
+    "displaySegments": [
+      {
+        "text": "聲音不能改變氣候，卻可能暫時改變人的感受。",
+        "startSeconds": 155.936,
+        "endSeconds": 161.203,
+        "id": "S027-01",
+        "cueId": "S027",
+        "sequence": 27,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 4678,
+    "endFrame": 4836
+  },
+  {
+    "id": "S028",
+    "sequence": 28,
+    "startTimecode": "00:02:41,203",
+    "endTimecode": "00:02:46,720",
+    "startMs": 161203,
+    "endMs": 166720,
+    "startSeconds": 161.203,
+    "endSeconds": 166.72,
+    "text": "想像遠行之後，一首歌讓疲憊的人得到片刻舒緩。",
+    "displayText": "想像遠行之後，一首歌讓疲憊的人得到片刻舒緩。",
+    "displaySegments": [
+      {
+        "text": "想像遠行之後，一首歌讓疲憊的人得到片刻舒緩。",
+        "startSeconds": 161.203,
+        "endSeconds": 166.72,
+        "id": "S028-01",
+        "cueId": "S028",
+        "sequence": 28,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 4836,
+    "endFrame": 5002
+  },
+  {
+    "id": "S029",
+    "sequence": 29,
+    "startTimecode": "00:02:46,900",
+    "endTimecode": "00:02:53,308",
+    "startMs": 166900,
+    "endMs": 173308,
+    "startSeconds": 166.9,
+    "endSeconds": 173.308,
+    "text": "這樣的場景可以成為影片的象徵畫面，但不能當作我們親眼見到的歷史紀錄。",
+    "displayText": "這樣的場景可以成為影片的象徵畫面，但不能當作我們親眼見到的歷史紀錄。",
+    "displaySegments": [
+      {
+        "text": "這樣的場景可以成為影片的象徵畫面，但不能當作我們親眼見到的歷史紀錄。",
+        "startSeconds": 166.9,
+        "endSeconds": 173.308,
+        "id": "S029-01",
+        "cueId": "S029",
+        "sequence": 29,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 5007,
+    "endFrame": 5199
+  },
+  {
+    "id": "S030",
+    "sequence": 30,
+    "startTimecode": "00:02:53,308",
+    "endTimecode": "00:02:59,340",
+    "startMs": 173308,
+    "endMs": 179340,
+    "startSeconds": 173.308,
+    "endSeconds": 179.34,
+    "text": "真正使這首詞留下來的，也不只是歌聲，而是後面那句出人意料的回答。",
+    "displayText": "真正使這首詞留下來的，也不只是歌聲，而是後面那句出人意料的回答。",
+    "displaySegments": [
+      {
+        "text": "真正使這首詞留下來的，也不只是歌聲，而是後面那句出人意料的回答。",
+        "startSeconds": 173.308,
+        "endSeconds": 179.34,
+        "id": "S030-01",
+        "cueId": "S030",
+        "sequence": 30,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 5199,
+    "endFrame": 5380
+  },
+  {
+    "id": "S031",
+    "sequence": 31,
+    "startTimecode": "00:02:59,520",
+    "endTimecode": "00:03:04,517",
+    "startMs": 179520,
+    "endMs": 184517,
+    "startSeconds": 179.52,
+    "endSeconds": 184.517,
+    "text": "現在，讓我們完整讀一次這首《定風波》。",
+    "displayText": "現在，讓我們完整讀一次這首《定風波》。",
+    "displaySegments": [
+      {
+        "text": "現在，讓我們完整讀一次這首《定風波》。",
+        "startSeconds": 179.52,
+        "endSeconds": 184.517,
+        "id": "S031-01",
+        "cueId": "S031",
+        "sequence": 31,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 5386,
+    "endFrame": 5536
+  },
+  {
+    "id": "S032",
+    "sequence": 32,
+    "startTimecode": "00:03:04,517",
+    "endTimecode": "00:03:08,725",
+    "startMs": 184517,
+    "endMs": 188725,
+    "startSeconds": 184.517,
+    "endSeconds": 188.725,
+    "text": "常羨人間琢玉郎，天應乞與點酥娘。",
+    "displayText": "常羨人間琢玉郎，天應乞與點酥娘。",
+    "displaySegments": [
+      {
+        "text": "常羨人間琢玉郎，天應乞與點酥娘。",
+        "startSeconds": 184.517,
+        "endSeconds": 188.725,
+        "id": "S032-01",
+        "cueId": "S032",
+        "sequence": 32,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 5536,
+    "endFrame": 5662
+  },
+  {
+    "id": "S033",
+    "sequence": 33,
+    "startTimecode": "00:03:08,725",
+    "endTimecode": "00:03:13,723",
+    "startMs": 188725,
+    "endMs": 193723,
+    "startSeconds": 188.725,
+    "endSeconds": 193.723,
+    "text": "盡道清歌傳皓齒，風起，雪飛炎海變清涼。",
+    "displayText": "盡道清歌傳皓齒，風起，雪飛炎海變清涼。",
+    "displaySegments": [
+      {
+        "text": "盡道清歌傳皓齒，風起，雪飛炎海變清涼。",
+        "startSeconds": 188.725,
+        "endSeconds": 193.723,
+        "id": "S033-01",
+        "cueId": "S033",
+        "sequence": 33,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 5662,
+    "endFrame": 5812
+  },
+  {
+    "id": "S034",
+    "sequence": 34,
+    "startTimecode": "00:03:13,723",
+    "endTimecode": "00:03:18,720",
+    "startMs": 193723,
+    "endMs": 198720,
+    "startSeconds": 193.723,
+    "endSeconds": 198.72,
+    "text": "萬里歸來顏愈少，微笑，笑時猶帶嶺梅香。",
+    "displayText": "萬里歸來顏愈少，微笑，笑時猶帶嶺梅香。",
+    "displaySegments": [
+      {
+        "text": "萬里歸來顏愈少，微笑，笑時猶帶嶺梅香。",
+        "startSeconds": 193.723,
+        "endSeconds": 198.72,
+        "id": "S034-01",
+        "cueId": "S034",
+        "sequence": 34,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 5812,
+    "endFrame": 5962
+  },
+  {
+    "id": "S035",
+    "sequence": 35,
+    "startTimecode": "00:03:18,900",
+    "endTimecode": "00:03:23,174",
+    "startMs": 198900,
+    "endMs": 203174,
+    "startSeconds": 198.9,
+    "endSeconds": 203.174,
+    "text": "試問嶺南應不好，卻道：此心安處是吾鄉。",
+    "displayText": "試問嶺南應不好，卻道：此心安處是吾鄉。",
+    "displaySegments": [
+      {
+        "text": "試問嶺南應不好，卻道：此心安處是吾鄉。",
+        "startSeconds": 198.9,
+        "endSeconds": 203.174,
+        "id": "S035-01",
+        "cueId": "S035",
+        "sequence": 35,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 5967,
+    "endFrame": 6095
+  },
+  {
+    "id": "S036",
+    "sequence": 36,
+    "startTimecode": "00:03:23,174",
+    "endTimecode": "00:03:30,147",
+    "startMs": 203174,
+    "endMs": 210147,
+    "startSeconds": 203.174,
+    "endSeconds": 210.147,
+    "text": "上片從人物的姿容寫到歌聲，下片卻突然把視線移到歸來之後的神情。",
+    "displayText": "上片從人物的姿容寫到歌聲，下片卻突然把視線移到歸來之後的神情。",
+    "displaySegments": [
+      {
+        "text": "上片從人物的姿容寫到歌聲，下片卻突然把視線移到歸來之後的神情。",
+        "startSeconds": 203.174,
+        "endSeconds": 210.147,
+        "id": "S036-01",
+        "cueId": "S036",
+        "sequence": 36,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 6095,
+    "endFrame": 6304
+  },
+  {
+    "id": "S037",
+    "sequence": 37,
+    "startTimecode": "00:03:30,147",
+    "endTimecode": "00:03:36,220",
+    "startMs": 210147,
+    "endMs": 216220,
+    "startSeconds": 210.147,
+    "endSeconds": 216.22,
+    "text": "「顏愈少」是說看來更顯年輕，不是告訴我們柔奴當時幾歲。",
+    "displayText": "「顏愈少」是說看來更顯年輕，不是告訴我們柔奴當時幾歲。",
+    "displaySegments": [
+      {
+        "text": "「顏愈少」是說看來更顯年輕，不是告訴我們柔奴當時幾歲。",
+        "startSeconds": 210.147,
+        "endSeconds": 216.22,
+        "id": "S037-01",
+        "cueId": "S037",
+        "sequence": 37,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 6304,
+    "endFrame": 6487
+  },
+  {
+    "id": "S038",
+    "sequence": 38,
+    "startTimecode": "00:03:36,400",
+    "endTimecode": "00:03:46,470",
+    "startMs": 216400,
+    "endMs": 226470,
+    "startSeconds": 216.4,
+    "endSeconds": 226.47,
+    "text": "「嶺梅香」也不是她必定佩戴了梅花，而是詞人把嶺南的記憶，化成彷彿仍留在笑容裡的一縷香氣。",
+    "displayText": "「嶺梅香」也不是她必定佩戴了梅花，而是詞人把嶺南的記憶，化成彷彿仍留在笑容裡的一縷香氣。",
+    "displaySegments": [
+      {
+        "text": "「嶺梅香」也不是她必定佩戴了梅花，而是詞人把嶺南的記憶，化成彷彿仍留在笑容裡的一縷香氣。",
+        "startSeconds": 216.4,
+        "endSeconds": 226.47,
+        "id": "S038-01",
+        "cueId": "S038",
+        "sequence": 38,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 6492,
+    "endFrame": 6794
+  },
+  {
+    "id": "S039",
+    "sequence": 39,
+    "startTimecode": "00:03:46,470",
+    "endTimecode": "00:03:50,360",
+    "startMs": 226470,
+    "endMs": 230360,
+    "startSeconds": 226.47,
+    "endSeconds": 230.36,
+    "text": "從容的微笑，並不表示過去沒有難處。",
+    "displayText": "從容的微笑，並不表示過去沒有難處。",
+    "displaySegments": [
+      {
+        "text": "從容的微笑，並不表示過去沒有難處。",
+        "startSeconds": 226.47,
+        "endSeconds": 230.36,
+        "id": "S039-01",
+        "cueId": "S039",
+        "sequence": 39,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 6794,
+    "endFrame": 6911
+  },
+  {
+    "id": "S040",
+    "sequence": 40,
+    "startTimecode": "00:03:50,540",
+    "endTimecode": "00:03:54,947",
+    "startMs": 230540,
+    "endMs": 234947,
+    "startSeconds": 230.54,
+    "endSeconds": 234.947,
+    "text": "恰恰因為有過遠行，這一抹微笑才顯得不尋常。",
+    "displayText": "恰恰因為有過遠行，這一抹微笑才顯得不尋常。",
+    "displaySegments": [
+      {
+        "text": "恰恰因為有過遠行，這一抹微笑才顯得不尋常。",
+        "startSeconds": 230.54,
+        "endSeconds": 234.947,
+        "id": "S040-01",
+        "cueId": "S040",
+        "sequence": 40,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 6916,
+    "endFrame": 7048
+  },
+  {
+    "id": "S041",
+    "sequence": 41,
+    "startTimecode": "00:03:54,947",
+    "endTimecode": "00:03:58,935",
+    "startMs": 234947,
+    "endMs": 238935,
+    "startSeconds": 234.947,
+    "endSeconds": 238.935,
+    "text": "關於那場問答，早期筆記留下了一段故事。",
+    "displayText": "關於那場問答，早期筆記留下了一段故事。",
+    "displaySegments": [
+      {
+        "text": "關於那場問答，早期筆記留下了一段故事。",
+        "startSeconds": 234.947,
+        "endSeconds": 238.935,
+        "id": "S041-01",
+        "cueId": "S041",
+        "sequence": 41,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7048,
+    "endFrame": 7168
+  },
+  {
+    "id": "S042",
+    "sequence": 42,
+    "startTimecode": "00:03:58,935",
+    "endTimecode": "00:04:02,502",
+    "startMs": 238935,
+    "endMs": 242502,
+    "startSeconds": 238.935,
+    "endSeconds": 242.502,
+    "text": "蘇軾問柔奴，廣南的風土想必不好吧。",
+    "displayText": "蘇軾問柔奴，廣南的風土想必不好吧。",
+    "displaySegments": [
+      {
+        "text": "蘇軾問柔奴，廣南的風土想必不好吧。",
+        "startSeconds": 238.935,
+        "endSeconds": 242.502,
+        "id": "S042-01",
+        "cueId": "S042",
+        "sequence": 42,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7168,
+    "endFrame": 7275
+  },
+  {
+    "id": "S043",
+    "sequence": 43,
+    "startTimecode": "00:04:02,502",
+    "endTimecode": "00:04:05,860",
+    "startMs": 242502,
+    "endMs": 245860,
+    "startSeconds": 242.502,
+    "endSeconds": 245.86,
+    "text": "柔奴回答：「此心安處，便是吾鄉。",
+    "displayText": "柔奴回答：「此心安處，便是吾鄉。",
+    "displaySegments": [
+      {
+        "text": "柔奴回答：「此心安處，便是吾鄉。",
+        "startSeconds": 242.502,
+        "endSeconds": 245.86,
+        "id": "S043-01",
+        "cueId": "S043",
+        "sequence": 43,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7275,
+    "endFrame": 7376
+  },
+  {
+    "id": "S044",
+    "sequence": 44,
+    "startTimecode": "00:04:06,040",
+    "endTimecode": "00:04:09,232",
+    "startMs": 246040,
+    "endMs": 249232,
+    "startSeconds": 246.04,
+    "endSeconds": 249.232,
+    "text": "」要留意，這是筆記敘事中的文字；",
+    "displayText": "」要留意，這是筆記敘事中的文字；",
+    "displaySegments": [
+      {
+        "text": "」要留意，這是筆記敘事中的文字；",
+        "startSeconds": 246.04,
+        "endSeconds": 249.232,
+        "id": "S044-01",
+        "cueId": "S044",
+        "sequence": 44,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7381,
+    "endFrame": 7477
+  },
+  {
+    "id": "S045",
+    "sequence": 45,
+    "startTimecode": "00:04:09,232",
+    "endTimecode": "00:04:12,623",
+    "startMs": 249232,
+    "endMs": 252623,
+    "startSeconds": 249.232,
+    "endSeconds": 252.623,
+    "text": "詞的結尾則寫成「此心安處是吾鄉」。",
+    "displayText": "詞的結尾則寫成「此心安處是吾鄉」。",
+    "displaySegments": [
+      {
+        "text": "詞的結尾則寫成「此心安處是吾鄉」。",
+        "startSeconds": 249.232,
+        "endSeconds": 252.623,
+        "id": "S045-01",
+        "cueId": "S045",
+        "sequence": 45,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7477,
+    "endFrame": 7579
+  },
+  {
+    "id": "S046",
+    "sequence": 46,
+    "startTimecode": "00:04:12,623",
+    "endTimecode": "00:04:15,815",
+    "startMs": 252623,
+    "endMs": 255815,
+    "startSeconds": 252.623,
+    "endSeconds": 255.815,
+    "text": "兩者相近，卻不是完全相同的句子。",
+    "displayText": "兩者相近，卻不是完全相同的句子。",
+    "displaySegments": [
+      {
+        "text": "兩者相近，卻不是完全相同的句子。",
+        "startSeconds": 252.623,
+        "endSeconds": 255.815,
+        "id": "S046-01",
+        "cueId": "S046",
+        "sequence": 46,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7579,
+    "endFrame": 7674
+  },
+  {
+    "id": "S047",
+    "sequence": 47,
+    "startTimecode": "00:04:15,815",
+    "endTimecode": "00:04:21,400",
+    "startMs": 255815,
+    "endMs": 261400,
+    "startSeconds": 255.815,
+    "endSeconds": 261.4,
+    "text": "這段附序也不能毫無保留地當成蘇軾親筆，更不是當年的錄音。",
+    "displayText": "這段附序也不能毫無保留地當成蘇軾親筆，更不是當年的錄音。",
+    "displaySegments": [
+      {
+        "text": "這段附序也不能毫無保留地當成蘇軾親筆，更不是當年的錄音。",
+        "startSeconds": 255.815,
+        "endSeconds": 261.4,
+        "id": "S047-01",
+        "cueId": "S047",
+        "sequence": 47,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7674,
+    "endFrame": 7842
+  },
+  {
+    "id": "S048",
+    "sequence": 48,
+    "startTimecode": "00:04:21,580",
+    "endTimecode": "00:04:27,570",
+    "startMs": 261580,
+    "endMs": 267570,
+    "startSeconds": 261.58,
+    "endSeconds": 267.57,
+    "text": "可是，詞中那個「卻道」，確實讓整首作品轉了一個方向。",
+    "displayText": "可是，詞中那個「卻道」，確實讓整首作品轉了一個方向。",
+    "displaySegments": [
+      {
+        "text": "可是，詞中那個「卻道」，確實讓整首作品轉了一個方向。",
+        "startSeconds": 261.58,
+        "endSeconds": 267.57,
+        "id": "S048-01",
+        "cueId": "S048",
+        "sequence": 48,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 7847,
+    "endFrame": 8027
+  },
+  {
+    "id": "S049",
+    "sequence": 49,
+    "startTimecode": "00:04:27,570",
+    "endTimecode": "00:04:34,943",
+    "startMs": 267570,
+    "endMs": 274943,
+    "startSeconds": 267.57,
+    "endSeconds": 274.943,
+    "text": "別人先想到的是地理偏遠、生活艱難，她的回答卻把目光轉回人的內心。",
+    "displayText": "別人先想到的是地理偏遠、生活艱難，她的回答卻把目光轉回人的內心。",
+    "displaySegments": [
+      {
+        "text": "別人先想到的是地理偏遠、生活艱難，她的回答卻把目光轉回人的內心。",
+        "startSeconds": 267.57,
+        "endSeconds": 274.943,
+        "id": "S049-01",
+        "cueId": "S049",
+        "sequence": 49,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 8027,
+    "endFrame": 8248
+  },
+  {
+    "id": "S050",
+    "sequence": 50,
+    "startTimecode": "00:04:34,943",
+    "endTimecode": "00:04:38,860",
+    "startMs": 274943,
+    "endMs": 278860,
+    "startSeconds": 274.943,
+    "endSeconds": 278.86,
+    "text": "白居易也寫過心安與歸處相連的詩句；",
+    "displayText": "白居易也寫過心安與歸處相連的詩句；",
+    "displaySegments": [
+      {
+        "text": "白居易也寫過心安與歸處相連的詩句；",
+        "startSeconds": 274.943,
+        "endSeconds": 278.86,
+        "id": "S050-01",
+        "cueId": "S050",
+        "sequence": 50,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 8248,
+    "endFrame": 8366
+  },
+  {
+    "id": "S051",
+    "sequence": 51,
+    "startTimecode": "00:04:39,040",
+    "endTimecode": "00:04:44,364",
+    "startMs": 279040,
+    "endMs": 284364,
+    "startSeconds": 279.04,
+    "endSeconds": 284.364,
+    "text": "思想可以互相映照，但不能因此斷言柔奴讀過哪一首詩。",
+    "displayText": "思想可以互相映照，但不能因此斷言柔奴讀過哪一首詩。",
+    "displaySegments": [
+      {
+        "text": "思想可以互相映照，但不能因此斷言柔奴讀過哪一首詩。",
+        "startSeconds": 279.04,
+        "endSeconds": 284.364,
+        "id": "S051-01",
+        "cueId": "S051",
+        "sequence": 51,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 8371,
+    "endFrame": 8531
+  },
+  {
+    "id": "S052",
+    "sequence": 52,
+    "startTimecode": "00:04:44,364",
+    "endTimecode": "00:04:47,771",
+    "startMs": 284364,
+    "endMs": 287771,
+    "startSeconds": 284.364,
+    "endSeconds": 287.771,
+    "text": "更重要的是，心安不代表忍受一切。",
+    "displayText": "更重要的是，心安不代表忍受一切。",
+    "displaySegments": [
+      {
+        "text": "更重要的是，心安不代表忍受一切。",
+        "startSeconds": 284.364,
+        "endSeconds": 287.771,
+        "id": "S052-01",
+        "cueId": "S052",
+        "sequence": 52,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 8531,
+    "endFrame": 8633
+  },
+  {
+    "id": "S053",
+    "sequence": 53,
+    "startTimecode": "00:04:47,771",
+    "endTimecode": "00:04:53,520",
+    "startMs": 287771,
+    "endMs": 293520,
+    "startSeconds": 287.771,
+    "endSeconds": 293.52,
+    "text": "安全的住處、被尊重的生活、能夠求助的人，同樣不可缺少。",
+    "displayText": "安全的住處、被尊重的生活、能夠求助的人，同樣不可缺少。",
+    "displaySegments": [
+      {
+        "text": "安全的住處、被尊重的生活、能夠求助的人，同樣不可缺少。",
+        "startSeconds": 287.771,
+        "endSeconds": 293.52,
+        "id": "S053-01",
+        "cueId": "S053",
+        "sequence": 53,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 8633,
+    "endFrame": 8806
+  },
+  {
+    "id": "S054",
+    "sequence": 54,
+    "startTimecode": "00:04:53,700",
+    "endTimecode": "00:04:57,657",
+    "startMs": 293700,
+    "endMs": 297657,
+    "startSeconds": 293.7,
+    "endSeconds": 297.657,
+    "text": "千年後，這句詞仍然貼近我們的生活。",
+    "displayText": "千年後，這句詞仍然貼近我們的生活。",
+    "displaySegments": [
+      {
+        "text": "千年後，這句詞仍然貼近我們的生活。",
+        "startSeconds": 293.7,
+        "endSeconds": 297.657,
+        "id": "S054-01",
+        "cueId": "S054",
+        "sequence": 54,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 8811,
+    "endFrame": 8930
+  },
+  {
+    "id": "S055",
+    "sequence": 55,
+    "startTimecode": "00:04:57,657",
+    "endTimecode": "00:05:01,149",
+    "startMs": 297657,
+    "endMs": 301149,
+    "startSeconds": 297.657,
+    "endSeconds": 301.149,
+    "text": "第一個場景，是一位退休的老師。",
+    "displayText": "第一個場景，是一位退休的老師。",
+    "displaySegments": [
+      {
+        "text": "第一個場景，是一位退休的老師。",
+        "startSeconds": 297.657,
+        "endSeconds": 301.149,
+        "id": "S055-01",
+        "cueId": "S055",
+        "sequence": 55,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 8930,
+    "endFrame": 9034
+  },
+  {
+    "id": "S056",
+    "sequence": 56,
+    "startTimecode": "00:05:01,149",
+    "endTimecode": "00:05:07,900",
+    "startMs": 301149,
+    "endMs": 307900,
+    "startSeconds": 301.149,
+    "endSeconds": 307.9,
+    "text": "離開每天走過的校門，不再主持會議，也不必趕著處理行政工作。",
+    "displayText": "離開每天走過的校門，不再主持會議，也不必趕著處理行政工作。",
+    "displaySegments": [
+      {
+        "text": "離開每天走過的校門，不再主持會議，也不必趕著處理行政工作。",
+        "startSeconds": 301.149,
+        "endSeconds": 307.9,
+        "id": "S056-01",
+        "cueId": "S056",
+        "sequence": 56,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 9034,
+    "endFrame": 9237
+  },
+  {
+    "id": "S057",
+    "sequence": 57,
+    "startTimecode": "00:05:08,080",
+    "endTimecode": "00:05:13,895",
+    "startMs": 308080,
+    "endMs": 313895,
+    "startSeconds": 308.08,
+    "endSeconds": 313.895,
+    "text": "最初的清晨，可能忽然覺得時間很多，心裡卻空了一塊。",
+    "displayText": "最初的清晨，可能忽然覺得時間很多，心裡卻空了一塊。",
+    "displaySegments": [
+      {
+        "text": "最初的清晨，可能忽然覺得時間很多，心裡卻空了一塊。",
+        "startSeconds": 308.08,
+        "endSeconds": 313.895,
+        "id": "S057-01",
+        "cueId": "S057",
+        "sequence": 57,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 9242,
+    "endFrame": 9417
+  },
+  {
+    "id": "S058",
+    "sequence": 58,
+    "startTimecode": "00:05:13,895",
+    "endTimecode": "00:05:20,407",
+    "startMs": 313895,
+    "endMs": 320407,
+    "startSeconds": 313.895,
+    "endSeconds": 320.407,
+    "text": "這時候，心安不是命令自己立刻快樂，而是慢慢建立新的節奏。",
+    "displayText": "這時候，心安不是命令自己立刻快樂，而是慢慢建立新的節奏。",
+    "displaySegments": [
+      {
+        "text": "這時候，心安不是命令自己立刻快樂，而是慢慢建立新的節奏。",
+        "startSeconds": 313.895,
+        "endSeconds": 320.407,
+        "id": "S058-01",
+        "cueId": "S058",
+        "sequence": 58,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 9417,
+    "endFrame": 9612
+  },
+  {
+    "id": "S059",
+    "sequence": 59,
+    "startTimecode": "00:05:20,407",
+    "endTimecode": "00:05:26,920",
+    "startMs": 320407,
+    "endMs": 326920,
+    "startSeconds": 320.407,
+    "endSeconds": 326.92,
+    "text": "每天讀幾頁書，整理照片，和老同事聯絡，或者學一項新技術。",
+    "displayText": "每天讀幾頁書，整理照片，和老同事聯絡，或者學一項新技術。",
+    "displaySegments": [
+      {
+        "text": "每天讀幾頁書，整理照片，和老同事聯絡，或者學一項新技術。",
+        "startSeconds": 320.407,
+        "endSeconds": 326.92,
+        "id": "S059-01",
+        "cueId": "S059",
+        "sequence": 59,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 9612,
+    "endFrame": 9808
+  },
+  {
+    "id": "S060",
+    "sequence": 60,
+    "startTimecode": "00:05:27,100",
+    "endTimecode": "00:05:33,642",
+    "startMs": 327100,
+    "endMs": 333642,
+    "startSeconds": 327.1,
+    "endSeconds": 333.642,
+    "text": "熟悉的職稱已經放下，曾經累積的能力和情誼，仍能陪自己往前走。",
+    "displayText": "熟悉的職稱已經放下，曾經累積的能力和情誼，仍能陪自己往前走。",
+    "displaySegments": [
+      {
+        "text": "熟悉的職稱已經放下，曾經累積的能力和情誼，仍能陪自己往前走。",
+        "startSeconds": 327.1,
+        "endSeconds": 333.642,
+        "id": "S060-01",
+        "cueId": "S060",
+        "sequence": 60,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 9813,
+    "endFrame": 10009
+  },
+  {
+    "id": "S061",
+    "sequence": 61,
+    "startTimecode": "00:05:33,642",
+    "endTimecode": "00:05:37,568",
+    "startMs": 333642,
+    "endMs": 337568,
+    "startSeconds": 333.642,
+    "endSeconds": 337.568,
+    "text": "第二個場景，是搬到陌生城市生活的人。",
+    "displayText": "第二個場景，是搬到陌生城市生活的人。",
+    "displaySegments": [
+      {
+        "text": "第二個場景，是搬到陌生城市生活的人。",
+        "startSeconds": 333.642,
+        "endSeconds": 337.568,
+        "id": "S061-01",
+        "cueId": "S061",
+        "sequence": 61,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 10009,
+    "endFrame": 10127
+  },
+  {
+    "id": "S062",
+    "sequence": 62,
+    "startTimecode": "00:05:37,568",
+    "endTimecode": "00:05:43,020",
+    "startMs": 337568,
+    "endMs": 343020,
+    "startSeconds": 337.568,
+    "endSeconds": 343.02,
+    "text": "窗外的街道、早餐的味道、說話的口音，都和從前不同。",
+    "displayText": "窗外的街道、早餐的味道、說話的口音，都和從前不同。",
+    "displaySegments": [
+      {
+        "text": "窗外的街道、早餐的味道、說話的口音，都和從前不同。",
+        "startSeconds": 337.568,
+        "endSeconds": 343.02,
+        "id": "S062-01",
+        "cueId": "S062",
+        "sequence": 62,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 10127,
+    "endFrame": 10291
+  },
+  {
+    "id": "S063",
+    "sequence": 63,
+    "startTimecode": "00:05:43,200",
+    "endTimecode": "00:05:46,719",
+    "startMs": 343200,
+    "endMs": 346719,
+    "startSeconds": 343.2,
+    "endSeconds": 346.719,
+    "text": "有人會想家，也有人會擔心工作與收入。",
+    "displayText": "有人會想家，也有人會擔心工作與收入。",
+    "displaySegments": [
+      {
+        "text": "有人會想家，也有人會擔心工作與收入。",
+        "startSeconds": 343.2,
+        "endSeconds": 346.719,
+        "id": "S063-01",
+        "cueId": "S063",
+        "sequence": 63,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 10296,
+    "endFrame": 10402
+  },
+  {
+    "id": "S064",
+    "sequence": 64,
+    "startTimecode": "00:05:46,719",
+    "endTimecode": "00:05:50,434",
+    "startMs": 346719,
+    "endMs": 350434,
+    "startSeconds": 346.719,
+    "endSeconds": 350.434,
+    "text": "這時候，光說一句「心安就好」並不足夠。",
+    "displayText": "這時候，光說一句「心安就好」並不足夠。",
+    "displaySegments": [
+      {
+        "text": "這時候，光說一句「心安就好」並不足夠。",
+        "startSeconds": 346.719,
+        "endSeconds": 350.434,
+        "id": "S064-01",
+        "cueId": "S064",
+        "sequence": 64,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 10402,
+    "endFrame": 10513
+  },
+  {
+    "id": "S065",
+    "sequence": 65,
+    "startTimecode": "00:05:50,434",
+    "endTimecode": "00:06:00,600",
+    "startMs": 350434,
+    "endMs": 360600,
+    "startSeconds": 350.434,
+    "endSeconds": 360.6,
+    "text": "先確認住得安全，找到可以聯繫的朋友，熟悉交通與醫療資源，再從一頓固定的晚餐、一條常走的路，慢慢建立歸屬。",
+    "displayText": "先確認住得安全，找到可以聯繫的朋友，熟悉交通與醫療資源，再從一頓固定的晚餐、一條常走的路，慢慢建立歸屬。",
+    "displaySegments": [
+      {
+        "text": "先確認住得安全，找到可以聯繫的朋友，熟悉交通與醫療資源，再從一頓固定的晚餐、一條常走的路，慢慢建立歸屬。",
+        "startSeconds": 350.434,
+        "endSeconds": 360.6,
+        "id": "S065-01",
+        "cueId": "S065",
+        "sequence": 65,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 10513,
+    "endFrame": 10818
+  },
+  {
+    "id": "S066",
+    "sequence": 66,
+    "startTimecode": "00:06:00,780",
+    "endTimecode": "00:06:05,163",
+    "startMs": 360780,
+    "endMs": 365163,
+    "startSeconds": 360.78,
+    "endSeconds": 365.163,
+    "text": "心裡的安定，往往需要外在條件一起支撐。",
+    "displayText": "心裡的安定，往往需要外在條件一起支撐。",
+    "displaySegments": [
+      {
+        "text": "心裡的安定，往往需要外在條件一起支撐。",
+        "startSeconds": 360.78,
+        "endSeconds": 365.163,
+        "id": "S066-01",
+        "cueId": "S066",
+        "sequence": 66,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 10823,
+    "endFrame": 10955
+  },
+  {
+    "id": "S067",
+    "sequence": 67,
+    "startTimecode": "00:06:05,163",
+    "endTimecode": "00:06:09,315",
+    "startMs": 365163,
+    "endMs": 369315,
+    "startSeconds": 365.163,
+    "endSeconds": 369.315,
+    "text": "第三個場景，是做影片和網站的創作者。",
+    "displayText": "第三個場景，是做影片和網站的創作者。",
+    "displaySegments": [
+      {
+        "text": "第三個場景，是做影片和網站的創作者。",
+        "startSeconds": 365.163,
+        "endSeconds": 369.315,
+        "id": "S067-01",
+        "cueId": "S067",
+        "sequence": 67,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 10955,
+    "endFrame": 11079
+  },
+  {
+    "id": "S068",
+    "sequence": 68,
+    "startTimecode": "00:06:09,315",
+    "endTimecode": "00:06:17,620",
+    "startMs": 369315,
+    "endMs": 377620,
+    "startSeconds": 369.315,
+    "endSeconds": 377.62,
+    "text": "好不容易寫好腳本，模型卻無法生成，網頁又出現錯誤，忙了整晚仍看不到成果。",
+    "displayText": "好不容易寫好腳本，模型卻無法生成，網頁又出現錯誤，忙了整晚仍看不到成果。",
+    "displaySegments": [
+      {
+        "text": "好不容易寫好腳本，模型卻無法生成，網頁又出現錯誤，忙了整晚仍看不到成果。",
+        "startSeconds": 369.315,
+        "endSeconds": 377.62,
+        "id": "S068-01",
+        "cueId": "S068",
+        "sequence": 68,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 11079,
+    "endFrame": 11329
+  },
+  {
+    "id": "S069",
+    "sequence": 69,
+    "startTimecode": "00:06:17,800",
+    "endTimecode": "00:06:25,851",
+    "startMs": 377800,
+    "endMs": 385851,
+    "startSeconds": 377.8,
+    "endSeconds": 385.851,
+    "text": "這時候，與其用作品數量證明自己，不如先存好檔案，記下問題，休息一下，再向夥伴請教。",
+    "displayText": "這時候，與其用作品數量證明自己，不如先存好檔案，記下問題，休息一下，再向夥伴請教。",
+    "displaySegments": [
+      {
+        "text": "這時候，與其用作品數量證明自己，不如先存好檔案，記下問題，休息一下，再向夥伴請教。",
+        "startSeconds": 377.8,
+        "endSeconds": 385.851,
+        "id": "S069-01",
+        "cueId": "S069",
+        "sequence": 69,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 11334,
+    "endFrame": 11576
+  },
+  {
+    "id": "S070",
+    "sequence": 70,
+    "startTimecode": "00:06:25,851",
+    "endTimecode": "00:06:29,385",
+    "startMs": 385851,
+    "endMs": 389385,
+    "startSeconds": 385.851,
+    "endSeconds": 389.385,
+    "text": "技術可以重新學習，失敗也能逐步修正。",
+    "displayText": "技術可以重新學習，失敗也能逐步修正。",
+    "displaySegments": [
+      {
+        "text": "技術可以重新學習，失敗也能逐步修正。",
+        "startSeconds": 385.851,
+        "endSeconds": 389.385,
+        "id": "S070-01",
+        "cueId": "S070",
+        "sequence": 70,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 11576,
+    "endFrame": 11682
+  },
+  {
+    "id": "S071",
+    "sequence": 71,
+    "startTimecode": "00:06:29,385",
+    "endTimecode": "00:06:37,240",
+    "startMs": 389385,
+    "endMs": 397240,
+    "startSeconds": 389.385,
+    "endSeconds": 397.24,
+    "text": "真正讓人走得遠的，不只是一次成功，而是知道自己為何創作，也願意在困難時接受幫助。",
+    "displayText": "真正讓人走得遠的，不只是一次成功，而是知道自己為何創作，也願意在困難時接受幫助。",
+    "displaySegments": [
+      {
+        "text": "真正讓人走得遠的，不只是一次成功，而是知道自己為何創作，也願意在困難時接受幫助。",
+        "startSeconds": 389.385,
+        "endSeconds": 397.24,
+        "id": "S071-01",
+        "cueId": "S071",
+        "sequence": 71,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 11682,
+    "endFrame": 11917
+  },
+  {
+    "id": "S072",
+    "sequence": 72,
+    "startTimecode": "00:06:37,420",
+    "endTimecode": "00:06:40,594",
+    "startMs": 397420,
+    "endMs": 400594,
+    "startSeconds": 397.42,
+    "endSeconds": 400.594,
+    "text": "這三種人生，都不必假裝毫無失落。",
+    "displayText": "這三種人生，都不必假裝毫無失落。",
+    "displaySegments": [
+      {
+        "text": "這三種人生，都不必假裝毫無失落。",
+        "startSeconds": 397.42,
+        "endSeconds": 400.594,
+        "id": "S072-01",
+        "cueId": "S072",
+        "sequence": 72,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 11923,
+    "endFrame": 12018
+  },
+  {
+    "id": "S073",
+    "sequence": 73,
+    "startTimecode": "00:06:40,594",
+    "endTimecode": "00:06:48,530",
+    "startMs": 400594,
+    "endMs": 408530,
+    "startSeconds": 400.594,
+    "endSeconds": 408.53,
+    "text": "柔奴的回答提醒我們：環境會改變，角色會改變，但我們仍可以一點一點建立內心的秩序。",
+    "displayText": "柔奴的回答提醒我們：環境會改變，角色會改變，但我們仍可以一點一點建立內心的秩序。",
+    "displaySegments": [
+      {
+        "text": "柔奴的回答提醒我們：環境會改變，角色會改變，但我們仍可以一點一點建立內心的秩序。",
+        "startSeconds": 400.594,
+        "endSeconds": 408.53,
+        "id": "S073-01",
+        "cueId": "S073",
+        "sequence": 73,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 12018,
+    "endFrame": 12256
+  },
+  {
+    "id": "S074",
+    "sequence": 74,
+    "startTimecode": "00:06:48,530",
+    "endTimecode": "00:06:52,300",
+    "startMs": 408530,
+    "endMs": 412300,
+    "startSeconds": 408.53,
+    "endSeconds": 412.3,
+    "text": "那份秩序，並不排斥眼淚，也不排斥求助。",
+    "displayText": "那份秩序，並不排斥眼淚，也不排斥求助。",
+    "displaySegments": [
+      {
+        "text": "那份秩序，並不排斥眼淚，也不排斥求助。",
+        "startSeconds": 408.53,
+        "endSeconds": 412.3,
+        "id": "S074-01",
+        "cueId": "S074",
+        "sequence": 74,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 12256,
+    "endFrame": 12369
+  },
+  {
+    "id": "S075",
+    "sequence": 75,
+    "startTimecode": "00:06:52,480",
+    "endTimecode": "00:07:00,759",
+    "startMs": 412480,
+    "endMs": 420759,
+    "startSeconds": 412.48,
+    "endSeconds": 420.759,
+    "text": "回望這首詞，蘇軾最初寫的是姿容與歌聲，最後留下的，卻是一句關於歸屬的回答。",
+    "displayText": "回望這首詞，蘇軾最初寫的是姿容與歌聲，最後留下的，卻是一句關於歸屬的回答。",
+    "displaySegments": [
+      {
+        "text": "回望這首詞，蘇軾最初寫的是姿容與歌聲，最後留下的，卻是一句關於歸屬的回答。",
+        "startSeconds": 412.48,
+        "endSeconds": 420.759,
+        "id": "S075-01",
+        "cueId": "S075",
+        "sequence": 75,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 12374,
+    "endFrame": 12623
+  },
+  {
+    "id": "S076",
+    "sequence": 76,
+    "startTimecode": "00:07:00,759",
+    "endTimecode": "00:07:07,920",
+    "startMs": 420759,
+    "endMs": 427920,
+    "startSeconds": 420.759,
+    "endSeconds": 427.92,
+    "text": "王定國的貶謫是真實的政治處境，柔奴的生活也有我們無法看見的艱難。",
+    "displayText": "王定國的貶謫是真實的政治處境，柔奴的生活也有我們無法看見的艱難。",
+    "displaySegments": [
+      {
+        "text": "王定國的貶謫是真實的政治處境，柔奴的生活也有我們無法看見的艱難。",
+        "startSeconds": 420.759,
+        "endSeconds": 427.92,
+        "id": "S076-01",
+        "cueId": "S076",
+        "sequence": 76,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 12623,
+    "endFrame": 12838
+  },
+  {
+    "id": "S077",
+    "sequence": 77,
+    "startTimecode": "00:07:08,100",
+    "endTimecode": "00:07:15,611",
+    "startMs": 428100,
+    "endMs": 435611,
+    "startSeconds": 428.1,
+    "endSeconds": 435.611,
+    "text": "因此，「此心安處是吾鄉」不是要我們忘記不公平，更不是要求每個受苦的人都微笑。",
+    "displayText": "因此，「此心安處是吾鄉」不是要我們忘記不公平，更不是要求每個受苦的人都微笑。",
+    "displaySegments": [
+      {
+        "text": "因此，「此心安處是吾鄉」不是要我們忘記不公平，更不是要求每個受苦的人都微笑。",
+        "startSeconds": 428.1,
+        "endSeconds": 435.611,
+        "id": "S077-01",
+        "cueId": "S077",
+        "sequence": 77,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 12843,
+    "endFrame": 13068
+  },
+  {
+    "id": "S078",
+    "sequence": 78,
+    "startTimecode": "00:07:15,611",
+    "endTimecode": "00:07:21,540",
+    "startMs": 435611,
+    "endMs": 441540,
+    "startSeconds": 435.611,
+    "endSeconds": 441.54,
+    "text": "它可以是一個溫柔的提醒：在陌生地方，仍值得尋找可以依靠的人；",
+    "displayText": "它可以是一個溫柔的提醒：在陌生地方，仍值得尋找可以依靠的人；",
+    "displaySegments": [
+      {
+        "text": "它可以是一個溫柔的提醒：在陌生地方，仍值得尋找可以依靠的人；",
+        "startSeconds": 435.611,
+        "endSeconds": 441.54,
+        "id": "S078-01",
+        "cueId": "S078",
+        "sequence": 78,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 13068,
+    "endFrame": 13246
+  },
+  {
+    "id": "S079",
+    "sequence": 79,
+    "startTimecode": "00:07:21,720",
+    "endTimecode": "00:07:25,573",
+    "startMs": 441720,
+    "endMs": 445573,
+    "startSeconds": 441.72,
+    "endSeconds": 445.573,
+    "text": "在生活改變時，仍可以慢慢安放自己。",
+    "displayText": "在生活改變時，仍可以慢慢安放自己。",
+    "displaySegments": [
+      {
+        "text": "在生活改變時，仍可以慢慢安放自己。",
+        "startSeconds": 441.72,
+        "endSeconds": 445.573,
+        "id": "S079-01",
+        "cueId": "S079",
+        "sequence": 79,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 13252,
+    "endFrame": 13367
+  },
+  {
+    "id": "S080",
+    "sequence": 80,
+    "startTimecode": "00:07:25,573",
+    "endTimecode": "00:07:34,413",
+    "startMs": 445573,
+    "endMs": 454413,
+    "startSeconds": 445.573,
+    "endSeconds": 454.413,
+    "text": "故鄉不只是一個熟悉的地名，也可能是有人牽掛、有事可做，心裡仍有安放自己的地方。",
+    "displayText": "故鄉不只是一個熟悉的地名，也可能是有人牽掛、有事可做，心裡仍有安放自己的地方。",
+    "displaySegments": [
+      {
+        "text": "故鄉不只是一個熟悉的地名，也可能是有人牽掛、有事可做，心裡仍有安放自己的地方。",
+        "startSeconds": 445.573,
+        "endSeconds": 454.413,
+        "id": "S080-01",
+        "cueId": "S080",
+        "sequence": 80,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 13367,
+    "endFrame": 13632
+  },
+  {
+    "id": "S081",
+    "sequence": 81,
+    "startTimecode": "00:07:34,413",
+    "endTimecode": "00:07:42,120",
+    "startMs": 454413,
+    "endMs": 462120,
+    "startSeconds": 454.413,
+    "endSeconds": 462.12,
+    "text": "真正的心安，不是從此沒有風浪，而是在風浪之中，知道自己還能往哪裡走。",
+    "displayText": "真正的心安，不是從此沒有風浪，而是在風浪之中，知道自己還能往哪裡走。",
+    "displaySegments": [
+      {
+        "text": "真正的心安，不是從此沒有風浪，而是在風浪之中，知道自己還能往哪裡走。",
+        "startSeconds": 454.413,
+        "endSeconds": 462.12,
+        "id": "S081-01",
+        "cueId": "S081",
+        "sequence": 81,
+        "segmentIndex": 1
+      }
+    ],
+    "startFrame": 13632,
+    "endFrame": 13864
+  }
+]

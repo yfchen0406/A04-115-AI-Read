@@ -1,0 +1,14 @@
+/* Independent image effects and original-verse overlays. */
+.stage-wrap.b16-effects-active { position: relative; }
+.b16-effects-canvas { position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none; }
+.b16-quote-layer { position:absolute;z-index:12;top:7%;left:7%;right:7%;display:flex;justify-content:center;pointer-events:none;opacity:0;transition:opacity .12s ease; }
+.b16-quote-layer.is-visible { opacity:1; }
+.b16-quote-text { max-width:100%;padding:.24em .15em;border:1px solid rgba(248,231,176,.45);border-radius:.18em;background:rgba(16,36,54,.70);color:#ffe86b;font-family:serif;font-size:clamp(14px,3.05vw,38px);font-weight:700;line-height:1.45;letter-spacing:.08em;text-align:center;text-shadow:0 2px 5px #071311,0 0 12px #000;box-decoration-break:clone;-webkit-box-decoration-break:clone; }
+.b16-ending-text { position:absolute;z-index:12;top:20%;left:9%;right:9%;padding:.35em .65em;border-radius:.2em;background:rgba(11,29,33,.46);color:#fff8e7;font-family:serif;font-size:clamp(14px,2.6vw,34px);font-weight:700;line-height:1.6;text-align:center;text-shadow:0 2px 6px #000;opacity:0;transition:opacity .2s ease;pointer-events:none; }
+.b16-ending-text.is-visible {opacity:1;}
+.frame-intro.b16-title-glow {animation:b16-title-glow .13s ease-out both;}
+@keyframes b16-title-glow {from{filter:brightness(1)}to{filter:brightness(1.12)}}
+@media(max-width:600px){.b16-quote-layer{top:6%;left:4%;right:4%}.b16-quote-text{font-size:clamp(14px,4vw,20px);padding:.22em .12em;letter-spacing:.01em}.b16-ending-text{top:26%;left:44%;width:52%;font-size:clamp(14px,4vw,20px)}}
+
+/* Keep animated chapter headings on one line, matching the reference layout. */
+body[data-mode="effects"] .frame-intro { width:94%; max-width:none; font-size:clamp(16px,5.1vw,72px); white-space:nowrap; }

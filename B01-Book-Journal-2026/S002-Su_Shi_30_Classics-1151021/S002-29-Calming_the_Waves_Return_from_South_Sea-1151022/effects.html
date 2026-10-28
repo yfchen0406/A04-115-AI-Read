@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《定風波·南海歸贈王定國侍人寓娘》動畫特效版，沿用原旁白、字幕、分鏡與時間軸。">
+  <title>《定風波》動畫特效版｜同步閱讀</title>
+  <link rel="stylesheet" href="./assets/main.css">
+  <link rel="stylesheet" href="./assets/effects-standalone.css">
+  <script defer src="./assets/effects-standalone-data.js"></script>
+  <script defer src="./assets/effects-standalone.js"></script>
+</head>
+<body class="effects-page">
+  <main class="effects-shell">
+    <header class="effects-header">
+      <a class="effects-back" href="./index.html">← 返回原版網站</a>
+      <div><p class="effects-eyebrow">B29 · 同步閱讀</p><h1>《定風波》動畫特效版</h1></div>
+      <a class="effects-reader-link" href="./reading.html">原版同步閱讀</a>
+    </header>
+    <section class="effects-player" aria-label="動畫特效播放器">
+    <section class="effects-stage" aria-label="動畫分鏡畫面">
+      <img id="effect-image" alt="" draggable="false">
+      <canvas id="effect-canvas" aria-hidden="true"></canvas>
+      <div class="effects-shade" aria-hidden="true"></div>
+      <div id="effect-chapter" class="effects-chapter" aria-live="polite"></div>
+      <div id="effect-poem" class="effects-poem" aria-live="polite" hidden></div>
+      <div id="effect-caption" class="effects-caption" aria-live="off"></div>
+      <div class="effects-image-number" id="effect-image-number"></div>
+    </section>
+    <audio id="effect-audio" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+    <section class="effects-controls" aria-label="播放控制">
+      <div class="effects-control-row">
+        <button id="effect-play" class="effects-play" type="button" aria-label="播放旁白">▶ 播放</button>
+        <span id="effect-current" class="effects-time">00:00</span>
+        <input id="effect-seek" class="effects-seek" type="range" min="0" max="462120" value="0" step="1" aria-label="播放進度">
+        <span id="effect-duration" class="effects-time">07:42</span>
+        <button id="effect-fullscreen" class="effects-fullscreen" type="button" aria-label="全螢幕播放">全螢幕</button>
+      </div>
+      <div class="effects-scene-label"><strong id="effect-scene-title"></strong><span id="effect-scene-time"></span></div>
+    </section>
+    </section>
+    <section class="effects-chapter-section" aria-labelledby="effect-chapter-heading">
+      <div class="effects-chapter-head"><p class="effects-eyebrow">CHAPTER INDEX</p><h2 id="effect-chapter-heading">章節索引</h2></div>
+      <nav id="effect-chapters" class="effects-chapter-list" aria-label="跳至章節"></nav>
+    </section>
+    <footer class="effects-footer">動畫特效為獨立播放層；原版圖片、旁白、字幕與時間軸維持原樣。</footer>
+  </main>
+</body>
+</html>

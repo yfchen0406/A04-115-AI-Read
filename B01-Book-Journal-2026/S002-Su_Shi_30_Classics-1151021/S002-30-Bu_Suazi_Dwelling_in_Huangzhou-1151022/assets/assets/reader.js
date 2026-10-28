@@ -1,6 +1,10 @@
 (() => {
   const T=window.TIMELINE, audio=document.querySelector('#audio'), seek=document.querySelector('#seek');
   const imgs=[document.querySelector('#scene-a'),document.querySelector('#scene-b')];
+  const motionLayers=[document.querySelector('#motion-a'),document.querySelector('#motion-b')];
+  const motionMode=document.body.dataset.motionMode==='true'&&motionLayers.every(Boolean);
+  const poemOverlay=document.querySelector('#poem-overlay');
+  const reducedMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches||false;
   const caption=document.querySelector('#caption'), intro=document.querySelector('#chapter-title'), corner=document.querySelector('#chapter-corner');
   const current=document.querySelector('#current-time'), total=document.querySelector('#total-time'), status=document.querySelector('#playback-status');
   const error=document.querySelector('#playback-error'), splash=document.querySelector('#cover-start'), debug=document.querySelector('#debug-grid');
@@ -10,6 +14,7 @@
   const fmt=n=>{const s=Math.max(0,Math.floor(n||0));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
   let activeChapter=-1,activeScene=-1,scrubbing=false,resumeAfterSeek=false,debugSecond=-1,lastVolume=1;
   const motion=id=>['push','pull','up','down','left','right'][(Number(id)||0)%6];
+  const interpolate=(a,b,p)=>a+(b-a)*p;
   const fitCaption=text=>{const width=document.querySelector('#stage').clientWidth,available=width*.88;caption.style.fontSize=Math.max(18,Math.min(34,available/(Math.max(1,[...text].length)*1.04)))+'px'};
   function renderHighlighted(text){
     caption.replaceChildren();const ranges=[];
@@ -22,11 +27,46 @@
   }
   function setImage(el,scene,time,opacity,z){
     if(el.dataset.scene!==scene.id){el.dataset.scene=scene.id;el.src='./assets/images/'+scene.image;el.alt=`IMG${scene.id} 正式分鏡插圖`}
-    const p=ease(clamp((time-scene.startMs)/Math.max(1,scene.endMs-scene.startMs))),m=motion(scene.id);
-    const scale=m==='push'?1+.05*p:m==='pull'?1.05-.05*p:1.045;
-    const x=m==='left'?1.2-2.4*p:m==='right'?-1.2+2.4*p:0;
-    const y=m==='up'?1.2-2.4*p:m==='down'?-1.2+2.4*p:0;
-    Object.assign(el.style,{position:'absolute',inset:'0',width:'100%',height:'100%',objectFit:'cover',opacity:String(opacity),zIndex:String(z),transform:`translate(${x}%,${y}%) scale(${scale})`,transformOrigin:'center'});
+    const p=ease(clamp((time-scene.startMs)/Math.max(1,scene.endMs-scene.startMs)));
+    let x,y,scale,layerZ;
+    if(motionMode){
+      const shot=window.MOTION_EFFECTS?.[scene.id]||{from:[0,0,1.03],to:[0,0,1.05]};
+      x=reducedMotion?0:interpolate(shot.from[0],shot.to[0],p);
+      y=reducedMotion?0:interpolate(shot.from[1],shot.to[1],p);
+      scale=reducedMotion?1:interpolate(shot.from[2],shot.to[2],p);
+      layerZ=z*2+1;
+    }else{
+      const m=motion(scene.id);
+      scale=m==='push'?1+.05*p:m==='pull'?1.05-.05*p:1.045;
+      x=m==='left'?1.2-2.4*p:m==='right'?-1.2+2.4*p:0;
+      y=m==='up'?1.2-2.4*p:m==='down'?-1.2+2.4*p:0;
+      layerZ=z;
+    }
+    Object.assign(el.style,{position:'absolute',inset:'0',width:'100%',height:'100%',objectFit:'cover',opacity:String(opacity),zIndex:String(layerZ),transform:`translate(${x}%,${y}%) scale(${scale})`,transformOrigin:'center'});
+  }
+  function setMotionLayer(el,scene,time,opacity,z){
+    if(!motionMode||!el)return;
+    const shot=window.MOTION_EFFECTS?.[scene.id];
+    if(!shot||opacity<=0){el.style.opacity='0';el.dataset.effect='';return}
+    const p=clamp((time-scene.startMs)/Math.max(1,scene.endMs-scene.startMs));
+    const pulse=reducedMotion?1:.78+.22*Math.sin(p*Math.PI*2);
+    el.dataset.effect=shot.effect;
+    el.style.setProperty('--focus-x',`${shot.focus?.[0]??50}%`);
+    el.style.setProperty('--focus-y',`${shot.focus?.[1]??50}%`);
+    el.style.setProperty('--effect-progress',String(p));
+    el.style.opacity=String(opacity*shot.strength*pulse);
+    el.style.zIndex=String(z*2+2);
+  }
+  function renderPoemOverlay(ms){
+    if(!motionMode||!poemOverlay)return;
+    const cue=window.POEM_IMAGE_CUES?.find(item=>ms>=item.startMs&&ms<item.endMs);
+    if(!cue){poemOverlay.hidden=true;poemOverlay.textContent='';return}
+    if(poemOverlay.dataset.cue!==`${cue.sceneId}-${cue.startMs}`){
+      poemOverlay.dataset.cue=`${cue.sceneId}-${cue.startMs}`;
+      poemOverlay.textContent=cue.text;
+      poemOverlay.dataset.position=cue.position;
+    }
+    poemOverlay.hidden=false;
   }
   function updateDebug(scene,chapter,subtitle,ms){
     if(document.querySelector('#sync-debug').hidden||Math.floor(ms/500)===debugSecond)return;
@@ -43,7 +83,8 @@
       const transition=next?(scene.chapter===next.chapter?650:900):0;
       const mix=next?clamp((ms-(scene.endMs-transition))/transition):0;
       setImage(imgs[baseSlot],scene,ms,1-mix,1);
-      if(next&&mix>0)setImage(imgs[(i+1)%2],next,ms,mix,2);else imgs[(i+1)%2].style.opacity='0';
+      setMotionLayer(motionLayers[baseSlot],scene,ms,1-mix,1);
+      if(next&&mix>0){setImage(imgs[(i+1)%2],next,ms,mix,2);setMotionLayer(motionLayers[(i+1)%2],next,ms,mix,2)}else{imgs[(i+1)%2].style.opacity='0';if(motionLayers[(i+1)%2])motionLayers[(i+1)%2].style.opacity='0'}
       let chapterIndex=T.chapters.findIndex(ch=>ms>=ch.startMs&&ms<ch.endMs);if(chapterIndex<0)chapterIndex=T.chapters.length-1;
       const chapter=T.chapters[chapterIndex],elapsed=ms-chapter.startMs;
       document.querySelector('#previous-chapter').disabled=chapterIndex===0;document.querySelector('#next-chapter').disabled=chapterIndex===T.chapters.length-1;
@@ -53,6 +94,7 @@
       if(chapterIndex!==activeChapter){activeChapter=chapterIndex;document.querySelectorAll('.chapter-button').forEach((b,j)=>{const selected=j===chapterIndex;b.classList.toggle('active',selected);if(selected)b.setAttribute('aria-current','location');else b.removeAttribute('aria-current')})}
       const subtitle=T.subtitles.find(cue=>ms>=cue.startMs&&ms<cue.endMs);
       if(subtitle){const text=subtitle.text.replace(/\n/g,' ');if(caption.dataset.text!==text){caption.dataset.text=text;renderHighlighted(text)}caption.hidden=false}else{caption.hidden=true;caption.dataset.text=''}
+      renderPoemOverlay(ms);
       updateDebug(scene,chapter,subtitle,ms);seek.value=audio.currentTime;current.textContent=fmt(audio.currentTime);
     }
     if(!audio.paused)requestAnimationFrame(render);

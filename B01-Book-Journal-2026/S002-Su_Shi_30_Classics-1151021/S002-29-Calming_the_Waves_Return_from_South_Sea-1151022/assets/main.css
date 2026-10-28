@@ -4,3 +4,11 @@
 body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a[href*="yyvFhMmIHLQ"],.reader-page a[href*="XOSHlXa_GjU"]{display:none!important}
 
 .frame-subtitle .poem-highlight{color:#fff200}
+
+/* B29 playback controls arranged to match the supplied reference image. */
+.player-panel{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .42rem;padding:.55rem .8rem}.seek-row,.control-row{display:contents}.seek-slider{order:5;flex:1 1 180px;width:auto}.current-time{order:3}.total-time{display:none}.order-play{order:1}.order-replay{order:2}.order-prev-scene{order:4}.order-next-scene{order:6}.order-prev-chapter{order:7}.order-next-chapter{order:8}.order-volume{order:9}.order-mute{order:10}.order-fullscreen{display:none!important}.player-panel .playback-status{display:none}.player-panel .playback-error{flex-basis:100%;order:20}.control-row button{min-height:36px;padding:.42rem .68rem;border-radius:.55rem;font-size:.78rem}.control-row .play-control{min-width:0;border-color:#f1c84b;background:#f1c84b;color:#18382f}.seek-slider{height:36px}.seek-slider::-webkit-slider-thumb{border-color:var(--ink);background:#4f9ad8;box-shadow:0 0 0 2px #fff}.seek-slider::-moz-range-thumb{border-color:var(--ink);background:#4f9ad8;box-shadow:0 0 0 2px #fff}@media(max-width:760px){.player-panel{gap:.28rem .35rem}.seek-slider{flex:1 1 100%;order:5}.current-time{font-size:.68rem}.volume-control{max-width:5.8rem}.control-row button{min-height:34px;padding:.36rem .5rem;font-size:.7rem}}
+.subtitle-toggle{order:11;display:inline-flex;align-items:center;gap:.3rem;color:#fff;font-size:.75rem;white-space:nowrap;cursor:pointer}.subtitle-toggle input{width:14px;height:14px;margin:0;accent-color:#4f9ad8}.reader-shell.captions-hidden .frame-subtitle{display:none!important}@media(max-width:760px){.subtitle-toggle{font-size:.68rem}}
+
+/* Remove the two requested playback-page panels. */
+.sync-debug-toggle,.sync-debug,.reader-footer,.effects-version-nav{display:none!important}
+

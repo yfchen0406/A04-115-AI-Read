@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173b2e">
+<meta name="description" content="依旁白、字幕與逐鏡視覺特效同步閱讀《惠州一絕·食荔枝》。">
+<title>惠州一絕·食荔枝｜動畫特效版</title><link rel="stylesheet" href="./assets/main.css"><link rel="stylesheet" href="./assets/motion.css">
+  <script>window.EPISODE_SETTINGS={links:{home:"./index.html",reading:"./reading.html",chapters:"#chapter-index"},assets:{base:"./",coverImage:"./assets/images/cover.webp",sceneImagePattern:"./assets/images/IMG{id}.webp",narrationAudio:"./assets/audio/narration.mp3"}};</script>
+</head>
+<body data-page="reader" data-motion-mode="true"><div id="root"><main class="reader-page">
+<header class="reader-header"><div><p class="eyebrow">動畫特效版・蘇東坡名作三十・第三十集</p><h1>惠州一絕·食荔枝</h1></div><span class="reader-duration" id="duration-label">06:43</span><a class="back-link" href="./reading.html">回原版閱讀</a></header>
+<section class="reader-shell" id="reader-shell"><div class="stage-wrap" id="stage">
+<img id="scene-a" class="frame-art" alt="正式分鏡插圖"><img id="scene-b" class="frame-art" alt="正式分鏡插圖"><div id="motion-a" class="motion-atmosphere" aria-hidden="true"></div><div id="motion-b" class="motion-atmosphere" aria-hidden="true"></div><div class="frame-shade"></div>
+<div id="chapter-title" class="frame-intro" aria-live="polite"></div><div id="poem-overlay" class="poem-image-overlay" aria-hidden="true" hidden></div><div id="chapter-corner" class="frame-chapter"></div><div id="caption" class="frame-subtitle" aria-live="polite"></div>
+<button id="cover-start" class="cover-start" type="button"><img src="./assets/images/cover.webp" alt=""><span class="cover-shade"></span><span class="cover-start-copy"><b aria-hidden="true">▶</b><strong>開始閱讀</strong><small id="cover-meta">原速旁白</small></span></button>
+</div><audio id="audio" class="master-audio" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+<div class="player-panel"><div class="seek-row"><span class="time-readout" id="current-time">00:00</span><input id="seek" class="seek-slider" type="range" min="0" max="403.18" step="0.01" value="0" aria-label="播放進度"><span class="time-readout" id="total-time">06:43</span></div>
+<div class="control-row"><button id="previous-chapter" type="button" disabled>上一章</button><button id="previous-scene" type="button" disabled>前一鏡</button><button class="play-control" id="play" type="button" aria-label="播放">播放</button><button id="next-scene" type="button">下一鏡</button><button id="next-chapter" type="button">下一章</button><button id="mute" type="button">靜音</button><label class="volume-control"><span>音量</span><input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="音量"></label><button id="fullscreen" type="button">全螢幕</button><button id="restart" type="button">從頭重播</button></div><div class="playback-status"><span id="playback-status">尚未播放</span><span>播放速度 1.0×</span><span id="scene-status">Excel 分鏡空檔</span></div><p id="playback-error" class="playback-error" role="status" hidden></p></div>
+<section class="chapter-section" id="chapter-index" aria-labelledby="chapter-heading"><p class="eyebrow">CHAPTER INDEX</p><h2 id="chapter-heading">章節索引</h2><nav id="chapter-list" class="chapter-list" aria-label="章節索引"></nav></section>
+<button id="sync-debug-toggle" class="sync-debug-toggle" type="button" aria-expanded="false" aria-controls="sync-debug">查看同步資訊</button><section id="sync-debug" class="sync-debug" aria-label="時間軸同步資訊" hidden><p class="debug-explainer">分鏡時間以 Excel 為唯一來源；播放時鐘取自旁白播放器 currentTime。</p><dl id="debug-grid" class="debug-grid"></dl></section>
+<footer class="reader-footer">動畫特效版沿用原版旁白、字幕、時間軸與 53 幅正式插圖；<a href="./reading.html">返回原版閱讀</a>。</footer></section>
+<script src="./assets/motion-effects.js"></script><script src="./assets/timeline-data.js"></script><script src="./assets/reader.js"></script></main></div></body></html>
+
+
+
