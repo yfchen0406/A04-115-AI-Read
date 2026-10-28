@@ -24,9 +24,9 @@
         <p class="hero-summary">《水龍吟·次韻章質夫楊花詞》<br>離別情緒，如何寄託於景物？</p>
         <div class="hero-actions">
           <a class="start-link" href="${safe(SETTINGS.links.reading)}">開始閱讀</a>
-          <a class="youtube-link" data-youtube="with" href="${safe(SETTINGS.links.youtubeWithSubtitles || '#')}" target="_blank" rel="noopener">YT連結(有字幕)</a>
-          <a class="youtube-link" data-youtube="without" href="${safe(SETTINGS.links.youtubeWithoutSubtitles || '#')}" target="_blank" rel="noopener">YT連結(無字幕)</a>
-          <a class="motion-link" href="${safe(SETTINGS.links.motion || './reading-motion.html')}">動畫特效版 ✦</a>
+          <a class="youtube-link" data-youtube="with" href="${safe(SETTINGS.links.youtubeWithSubtitles || "#")}" target="_blank" rel="noopener">YT連結(有字幕)</a>
+          <a class="youtube-link" data-youtube="without" href="${safe(SETTINGS.links.youtubeWithoutSubtitles || "#")}" target="_blank" rel="noopener">YT～動畫特效版</a>
+          <a class="motion-link" href="${safe(SETTINGS.links.motion || "./reading-motion.html")}">動畫特效版 ✦</a>
         </div>
         <p class="hero-meta">旁白 ${duration}｜${T.chapters.length} 個章節｜${T.scenes.length} 個分鏡｜${T.placeholderCount ? `分鏡圖待補 ${T.placeholderCount} 張` : `分鏡圖片載入中…`}</p>
       </div>

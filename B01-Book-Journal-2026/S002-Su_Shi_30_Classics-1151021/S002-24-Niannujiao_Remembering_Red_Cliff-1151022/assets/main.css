@@ -4,3 +4,39 @@
 body[data-page="reader"] .youtube-link,.reader-page .youtube-link,.reader-page a[href*="yyvFhMmIHLQ"],.reader-page a[href*="XOSHlXa_GjU"]{display:none!important}
 
 .frame-subtitle .poem-highlight{color:#fff200}
+
+/* 控制列位置依使用者提供的參考畫面排列 */
+.reader-shell .player-panel { display:flex; flex-wrap:wrap; align-items:center; gap:.38rem; }
+.reader-shell .seek-row, .reader-shell .control-row { display:contents; }
+.reader-shell .seek-row > *, .reader-shell .control-row > *, .reader-shell .reference-caption-toggle { flex:none; }
+.reader-shell .seek-row > span:first-child { order:3; }
+.reader-shell .seek-row > span:last-child { order:4; }
+.reader-shell .seek-row > .seek-slider { order:6; flex:1 1 180px; min-width:110px; height:30px; }
+.reader-shell .control-row > button:nth-child(1) { order:8; }
+.reader-shell .control-row > button:nth-child(2) { order:5; }
+.reader-shell .control-row > button:nth-child(3) { order:1; }
+.reader-shell .control-row > button:nth-child(4) { order:7; }
+.reader-shell .control-row > button:nth-child(5) { order:9; }
+.reader-shell .control-row > button:nth-child(6) { order:11; }
+.reader-shell .control-row > .volume-control { order:10; max-width:none; gap:.35rem; }
+.reader-shell .control-row > .volume-control span { display:inline; }
+.reader-shell .control-row > .volume-control input { width:76px; }
+.reader-shell .control-row > button:nth-child(8) { display:none; }
+.reader-shell .control-row > button:nth-child(9) { order:2; }
+.reader-shell .reference-caption-toggle { order:12; display:inline-flex; align-items:center; gap:.22rem; color:#e7f0f1; font-size:.76rem; white-space:nowrap; }
+.reader-shell .reference-caption-toggle input { margin:0; accent-color:var(--gold); }
+.reader-shell .control-row > .reference-play-button::before { content:"▶ "; }
+.reader-shell .control-row > button { min-height:36px; padding:.42rem .62rem; white-space:nowrap; }
+.reader-shell .control-row > .play-control { min-width:5.8rem; }
+.reader-shell .seek-row > .seek-slider::-webkit-slider-thumb { width:16px; height:16px; margin-top:-4px; }
+.reader-shell .seek-row > .seek-slider::-moz-range-thumb { width:12px; height:12px; }
+.reader-shell .playback-status { display:none; }
+@media (max-width:680px) {
+  .reader-shell .player-panel { gap:.28rem; }
+  .reader-shell .seek-row > .seek-slider { order:20; flex:1 1 100%; min-width:100%; height:28px; }
+  .reader-shell .control-row > button { min-height:32px; padding:.3rem .42rem; font-size:.7rem; }
+  .reader-shell .control-row > .play-control { min-width:4.2rem; }
+  .reader-shell .seek-row > span { font-size:.68rem; }
+  .reader-shell .control-row > .volume-control input { width:60px; }
+  .reader-shell .reference-caption-toggle { font-size:.7rem; }
+}

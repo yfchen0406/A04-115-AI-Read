@@ -45,8 +45,8 @@
           <h1 id="main-title" class="visually-hidden">千年後，我們仍記得蘇東坡</h1>
           <div class="hero-actions">
             <a class="start-link" href="${escapeHtml(settings.links.reading)}">開始閱讀 <b aria-hidden="true">→</b></a>
-            ${youtubeButton(settings.links.youtubeWithSubtitles, 'YT連結（有字幕）')}
-            ${youtubeButton(settings.links.youtubeWithoutSubtitles, 'YT連結（無字幕）')}
+            ${youtubeButton(settings.links.youtubeWithSubtitles, "YT連結（有字幕）")}
+            ${youtubeButton(settings.links.youtubeWithoutSubtitles, "YT～動畫特效版")}
             <a class="effects-link" href="${escapeHtml(settings.links.effects)}">動畫特效版 <b aria-hidden="true">✦</b></a>
           </div>
           <p class="hero-meta">${scenes.length} 個分鏡 · ${chapters.length} 個章節 · 原速旁白 · 動態同步播放</p>

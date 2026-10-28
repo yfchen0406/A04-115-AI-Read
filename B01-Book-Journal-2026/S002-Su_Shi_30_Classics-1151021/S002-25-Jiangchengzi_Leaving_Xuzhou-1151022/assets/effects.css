@@ -1,0 +1,9 @@
+/* Animation-only layers for the independent, non-destructive effects reader. */
+.effects-canvas,.effect-poem{position:absolute;inset:0;pointer-events:none}
+.effects-canvas{z-index:3;mix-blend-mode:screen}
+.effect-poem{inset:auto;z-index:4;display:none;align-items:center;justify-content:center;flex-direction:column;gap:.22em;padding:.28em .48em;border:1px solid rgba(255,242,178,.2);border-radius:.45em;background:rgba(7,24,31,.48);color:#fff2b2;font-family:var(--kai);font-size:clamp(14px,1.75vw,34px);font-weight:900;line-height:1.35;text-align:center;white-space:pre-line;-webkit-text-stroke:.45px rgba(6,23,26,.8);paint-order:stroke fill;text-shadow:0 1px 3px #06171a,0 0 9px rgba(255,232,155,.5);box-shadow:0 2px 10px rgba(0,0,0,.14);transition:opacity .18s ease}
+.effect-poem.is-visible{display:flex}
+.effect-poem span{display:block;max-width:100%}
+.effects-error{padding:.8rem 1rem;color:#8e2b1d;background:#fff2ee}
+@media(max-width:640px){.effect-poem{font-size:clamp(13px,3.4vw,18px);gap:.12em;padding:.22em .35em;border-radius:.35em;line-height:1.3}.effects-canvas{opacity:.78}}
+@media(prefers-reduced-motion:reduce){.effect-poem{transition:none}}

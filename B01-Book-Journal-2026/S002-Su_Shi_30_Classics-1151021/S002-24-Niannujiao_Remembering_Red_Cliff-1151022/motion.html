@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="《蝶戀花·密州上元》動畫特效版；沿用原旁白、字幕、分鏡和時間軸。">
+  <title>《蝶戀花·密州上元》｜動畫特效版</title>
+  <link rel="stylesheet" href="./assets/motion.css">
+  <script defer src="./assets/motion-data.js"></script>
+  <script defer src="./assets/motion-runtime.js"></script>
+</head>
+<body>
+  <main class="motion-page">
+    <header class="motion-header">
+      <a class="nav-link" href="./index.html">← 返回首頁</a>
+      <div class="page-title">
+        <p class="eyebrow">動畫特效版</p>
+        <h1>《蝶戀花·密州上元》</h1>
+      </div>
+    </header>
+
+    <section class="player-shell" id="player-shell" aria-label="動畫特效播放器">
+      <div class="stage" id="stage">
+        <img class="stage-art" id="stage-art" alt="" draggable="false">
+        <canvas class="stage-fx" id="stage-fx" aria-hidden="true"></canvas>
+        <div class="stage-shade" aria-hidden="true"></div>
+        <div class="chapter-badge" id="chapter-badge" aria-live="off"></div>
+        <div class="poem-card" id="poem-card" aria-live="off" hidden>
+          <span class="poem-label" id="poem-label" hidden></span>
+          <span class="poem-text" id="poem-text"></span>
+        </div>
+        <div class="frame-subtitle" id="frame-subtitle" aria-live="off"></div>
+      </div>
+
+      <audio id="narration" preload="metadata" src="./assets/audio/narration.mp3"></audio>
+
+      <div class="player-panel">
+        <div class="control-row reference-control-layout" aria-label="播放控制列">
+          <button class="primary-control" id="play-button" type="button">▶ 播放</button>
+          <button id="restart-button" type="button">重新播放</button>
+          <span class="time-label" id="time-range">00:00 / 07:10</span>
+          <button id="previous-scene-button" type="button" disabled>上一鏡</button>
+          <input class="seek-control" id="seek-control" type="range" min="0" max="430.72" step="0.001" value="0" aria-label="播放進度">
+          <button id="next-scene-button" type="button">下一鏡</button>
+          <button id="previous-chapter-button" type="button" disabled>上一章</button>
+          <button id="next-chapter-button" type="button">下一章</button>
+          <label class="volume-control"><span>音量</span><input id="volume-control" type="range" min="0" max="1" step="0.01" value="1" aria-label="旁白音量"></label>
+          <button id="mute-button" type="button">靜音</button>
+          <label class="caption-toggle"><input id="caption-toggle" type="checkbox" checked><span>字幕</span></label>
+        </div>
+        <p class="playback-status" id="playback-status" role="status">尚未播放</p>
+        <p class="playback-error" id="playback-error" role="status" hidden></p>
+      </div>
+    </section>
+
+    <section class="chapter-section" id="chapter-index" aria-labelledby="chapter-heading">
+      <p class="eyebrow">本集章節</p>
+      <h2 id="chapter-heading">章節索引</h2>
+      <div class="chapter-list" id="chapter-list"></div>
+    </section>
+  </main>
+</body>
+</html>

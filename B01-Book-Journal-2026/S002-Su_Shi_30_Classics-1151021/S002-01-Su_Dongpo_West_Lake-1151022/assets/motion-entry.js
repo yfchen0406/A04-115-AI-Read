@@ -1,1 +1,40 @@
-(()=>{const root=document.querySelector('#root'),body=document.body;if(!root)return;const motion=body.dataset.motionEdition==='true';const insert=()=>{const heroActions=root.querySelector('.hero-actions');if(heroActions&&!motion&&!heroActions.querySelector('[data-motion-entry]')){const a=document.createElement('a');a.href='./motion.html';a.className='start-link motion-entry-link';a.dataset.motionEntry='true';a.textContent='動畫特效版';heroActions.append(a)}const header=root.querySelector('.reader-header');if(header&&!header.querySelector('[data-motion-entry]')){const a=document.createElement('a');a.dataset.motionEntry='true';a.className='motion-reader-entry';if(motion){a.href='./reading.html';a.textContent='返回原版閱讀'}else{a.href='./motion.html';a.textContent='動畫特效版'}header.append(a)}};new MutationObserver(insert).observe(root,{childList:true,subtree:true});insert()})();
+(() => {
+  const root = document.querySelector("#root"),
+    body = document.body;
+  if (!root) return;
+  const motion = body.dataset.motionEdition === "true";
+  const insert = () => {
+    const heroActions = root.querySelector(".hero-actions");
+    if (
+      heroActions &&
+      !motion &&
+      !heroActions.querySelector("[data-motion-entry]")
+    ) {
+      const a = document.createElement("a");
+      a.href = "./motion.html";
+      a.className = "start-link motion-entry-link";
+      a.dataset.motionEntry = "true";
+      a.textContent = "動畫特效版";
+      heroActions.append(a);
+    }
+    const header = root.querySelector(".reader-header");
+    if (header && !header.querySelector("[data-motion-entry]")) {
+      const a = document.createElement("a");
+      a.dataset.motionEntry = "true";
+      a.className = "motion-reader-entry";
+      if (motion) {
+        a.href = "./reading.html";
+        a.textContent = "返回原版閱讀";
+      } else {
+        a.href = "./motion.html";
+        a.textContent = "動畫特效版";
+      }
+      header.append(a);
+    }
+  };
+  new MutationObserver(insert).observe(root, {
+    childList: true,
+    subtree: true,
+  });
+  insert();
+})();
