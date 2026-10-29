@@ -1,0 +1,13 @@
+.motion-fx-layer{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}.motion-fx-layer canvas{display:block;width:100%;height:100%}.motion-poem-layer{position:absolute;inset:0;z-index:3;pointer-events:none}.motion-poem{position:absolute;box-sizing:border-box;color:#fff4ca;font-family:var(--kai,serif);font-size:clamp(18px,2.05vw,38px);font-weight:900;line-height:1.38;letter-spacing:.04em;text-align:left;-webkit-text-stroke:.8px rgba(10,28,43,.95);paint-order:stroke fill;text-shadow:0 2px 5px #081521,0 0 12px rgba(0,0,0,.9);padding:.24em .42em;border-radius:.28em;background:rgba(13,34,47,.53);backdrop-filter:blur(2px);transform:translateY(5px);transition:opacity 100ms linear,transform 160ms ease}.motion-poem.is-visible{transform:translateY(0)}.motion-effects-layer:not(.is-active),.motion-poem-layer:not(.is-active){display:none}.effects-return-link{display:inline-flex;align-items:center;min-height:38px;margin:.55rem 0 0;padding:.45rem .8rem;border:1px solid rgba(255,255,255,.65);border-radius:999px;color:#fff;text-decoration:none;font-weight:700;background:rgba(15,42,52,.38)}.effects-return-link:focus-visible,.effects-return-link:hover{outline:2px solid #f7dda0;outline-offset:2px;background:rgba(15,42,52,.72)}.motion-home-link{position:relative;box-shadow:0 0 0 1px rgba(245,215,143,.24),0 0 18px rgba(245,215,143,.14)}.motion-home-link:hover{box-shadow:0 0 0 2px rgba(255,229,165,.72),0 0 22px rgba(245,215,143,.3)}@media(max-width:760px){.motion-poem{font-size:clamp(13px,2.35vw,22px);line-height:1.32;padding:.18em .3em;letter-spacing:.01em}.effects-return-link{margin:.45rem 0 0;min-height:34px;padding:.35rem .65rem;font-size:.86rem}}@media(prefers-reduced-motion:reduce){.motion-poem{transition:none;transform:none!important}.frame-art{scale:1!important;translate:0 0!important;transition:none!important}.motion-home-link{box-shadow:0 0 0 1px rgba(245,215,143,.24)}}
+
+
+
+
+/* Keep these reference-only sections out of the animated playback screen. */
+body[data-mode="effects"] .effects-version-nav,
+body[data-mode="effects"] .reader-duration,
+body[data-mode="effects"] .sync-debug-toggle,
+body[data-mode="effects"] .sync-debug,
+body[data-mode="effects"] .reader-footer {
+  display: none !important;
+}
