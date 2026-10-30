@@ -1,0 +1,2716 @@
+{
+  "episode": "台灣商業史｜第10集：東帝士集團──用借來的錢堆出的帝國",
+  "duration": 1218.86,
+  "durationTimecode": "00:20:18,860",
+  "timingAuthority": "MP3 master clock; scenes and chapter boundaries from workbook; subtitle text and timecodes from SRT",
+  "audio": "audio/narration.mp3",
+  "chapters": [
+    {
+      "id": "00",
+      "title": "00｜ 623億元債務：帝國最後留下什麼？",
+      "start": 1.5,
+      "end": 90.2,
+      "firstShot": "IMG001",
+      "lastShot": "IMG009"
+    },
+    {
+      "id": "01",
+      "title": "01｜ 從紡織廠到跨產業帝國",
+      "start": 90.38,
+      "end": 216.346,
+      "firstShot": "IMG010",
+      "lastShot": "IMG022"
+    },
+    {
+      "id": "02",
+      "title": "02｜ 資產愈多，借款愈容易？",
+      "start": 216.346,
+      "end": 350.15,
+      "firstShot": "IMG023",
+      "lastShot": "IMG036"
+    },
+    {
+      "id": "03",
+      "title": "03｜ 長期投資，短期債務",
+      "start": 350.15,
+      "end": 501.22,
+      "firstShot": "IMG037",
+      "lastShot": "IMG051"
+    },
+    {
+      "id": "04",
+      "title": "04｜ 當景氣反轉，銀行開始追債",
+      "start": 501.22,
+      "end": 669.508,
+      "firstShot": "IMG052",
+      "lastShot": "IMG066"
+    },
+    {
+      "id": "05",
+      "title": "05｜ 企業危機之外，司法風暴來了",
+      "start": 669.508,
+      "end": 837.78,
+      "firstShot": "IMG067",
+      "lastShot": "IMG082"
+    },
+    {
+      "id": "06",
+      "title": "06｜ 資產拍賣、債權追索與跨境發展",
+      "start": 837.96,
+      "end": 992.483,
+      "firstShot": "IMG083",
+      "lastShot": "IMG098"
+    },
+    {
+      "id": "07",
+      "title": "07｜ 借來的帝國，留下什麼教訓？",
+      "start": 992.483,
+      "end": 1218.86,
+      "firstShot": "IMG099",
+      "lastShot": "IMG119"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "IMG001",
+      "start": 1.5,
+      "end": 8.994,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img001.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG002",
+      "start": 8.994,
+      "end": 17.66,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img002.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG003",
+      "start": 17.84,
+      "end": 28.493,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img003.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG004",
+      "start": 28.493,
+      "end": 40.053,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img004.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "追償結果、時間延續"
+    },
+    {
+      "id": "IMG005",
+      "start": 40.053,
+      "end": 49.393,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img005.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG006",
+      "start": 49.393,
+      "end": 60.36,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img006.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG007",
+      "start": 60.54,
+      "end": 70.111,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img007.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG008",
+      "start": 70.111,
+      "end": 79.708,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img008.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG009",
+      "start": 79.708,
+      "end": 90.2,
+      "chapter": "00｜623億元債務：帝國最後留下什麼？",
+      "image": "images/img009.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG010",
+      "start": 90.38,
+      "end": 97.64,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img010.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG011",
+      "start": 97.64,
+      "end": 107.97999999999999,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img011.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "版圖擴張、產業對照"
+    },
+    {
+      "id": "IMG012",
+      "start": 108.16,
+      "end": 115.775,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img012.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "產業起點、製造行動"
+    },
+    {
+      "id": "IMG013",
+      "start": 115.775,
+      "end": 129.16,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img013.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG014",
+      "start": 129.34,
+      "end": 136.541,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img014.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG015",
+      "start": 136.541,
+      "end": 145.679,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img015.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG016",
+      "start": 145.679,
+      "end": 156.76,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img016.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG017",
+      "start": 156.94,
+      "end": 168.38,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img017.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "版圖擴張、產業對照"
+    },
+    {
+      "id": "IMG018",
+      "start": 168.38,
+      "end": 176.3,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img018.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "擴張行動、建設場景"
+    },
+    {
+      "id": "IMG019",
+      "start": 176.48,
+      "end": 186.224,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img019.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG020",
+      "start": 186.224,
+      "end": 197.712,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img020.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG021",
+      "start": 197.712,
+      "end": 209.94,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img021.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "產業起點、製造行動"
+    },
+    {
+      "id": "IMG022",
+      "start": 210.12,
+      "end": 216.346,
+      "chapter": "01｜從紡織廠到跨產業帝國",
+      "image": "images/img022.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG023",
+      "start": 216.346,
+      "end": 224.72,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img023.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG024",
+      "start": 224.9,
+      "end": 232.522,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img024.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG025",
+      "start": 232.522,
+      "end": 241.967,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img025.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG026",
+      "start": 241.967,
+      "end": 249.62,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img026.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG027",
+      "start": 249.62,
+      "end": 260.52,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img027.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG028",
+      "start": 260.7,
+      "end": 271.376,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img028.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG029",
+      "start": 271.376,
+      "end": 286.044,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img029.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG030",
+      "start": 286.044,
+      "end": 295.2,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img030.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG031",
+      "start": 295.38,
+      "end": 304.747,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img031.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG032",
+      "start": 304.747,
+      "end": 315.919,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img032.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG033",
+      "start": 315.919,
+      "end": 324.28,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img033.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG034",
+      "start": 324.46,
+      "end": 332.974,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img034.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG035",
+      "start": 332.974,
+      "end": 342.1,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img035.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG036",
+      "start": 342.1,
+      "end": 350.15,
+      "chapter": "02｜資產愈多，借款愈容易？",
+      "image": "images/img036.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG037",
+      "start": 350.15,
+      "end": 359.12,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img037.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG038",
+      "start": 359.3,
+      "end": 366.659,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img038.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG039",
+      "start": 366.659,
+      "end": 377.985,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img039.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG040",
+      "start": 377.985,
+      "end": 390.76,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img040.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG041",
+      "start": 390.94,
+      "end": 401.037,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img041.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG042",
+      "start": 401.037,
+      "end": 410.06,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img042.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG043",
+      "start": 410.24,
+      "end": 419.291,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img043.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG044",
+      "start": 419.291,
+      "end": 429.247,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img044.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG045",
+      "start": 429.247,
+      "end": 437.838,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img045.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "版圖擴張、產業對照"
+    },
+    {
+      "id": "IMG046",
+      "start": 437.838,
+      "end": 444.889,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img046.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG047",
+      "start": 444.889,
+      "end": 454.88,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img047.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "追償結果、時間延續"
+    },
+    {
+      "id": "IMG048",
+      "start": 455.06,
+      "end": 467.433,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img048.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG049",
+      "start": 467.433,
+      "end": 477.38,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img049.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG050",
+      "start": 477.56,
+      "end": 486.97,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img050.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "擴張行動、建設場景"
+    },
+    {
+      "id": "IMG051",
+      "start": 486.97,
+      "end": 501.22,
+      "chapter": "03｜長期投資，短期債務",
+      "image": "images/img051.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "擴張行動、建設場景"
+    },
+    {
+      "id": "IMG052",
+      "start": 501.22,
+      "end": 511.06,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img052.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "火場建立、災害衝擊"
+    },
+    {
+      "id": "IMG053",
+      "start": 511.24,
+      "end": 525.76,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img053.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "火場建立、災害衝擊"
+    },
+    {
+      "id": "IMG054",
+      "start": 525.94,
+      "end": 537.763,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img054.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG055",
+      "start": 537.763,
+      "end": 551.263,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img055.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "擴張行動、建設場景"
+    },
+    {
+      "id": "IMG056",
+      "start": 551.263,
+      "end": 560.04,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img056.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "火場建立、災害衝擊"
+    },
+    {
+      "id": "IMG057",
+      "start": 560.22,
+      "end": 570.854,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img057.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG058",
+      "start": 570.854,
+      "end": 584.212,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img058.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG059",
+      "start": 584.212,
+      "end": 591.32,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img059.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG060",
+      "start": 591.5,
+      "end": 600.643,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img060.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "版圖擴張、產業對照"
+    },
+    {
+      "id": "IMG061",
+      "start": 600.643,
+      "end": 615.585,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img061.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG062",
+      "start": 615.585,
+      "end": 625.744,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img062.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG063",
+      "start": 625.744,
+      "end": 633.871,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img063.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG064",
+      "start": 633.871,
+      "end": 644.62,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img064.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG065",
+      "start": 644.8,
+      "end": 657.006,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img065.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG066",
+      "start": 657.006,
+      "end": 669.508,
+      "chapter": "04｜當景氣反轉，銀行開始追債",
+      "image": "images/img066.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG067",
+      "start": 669.508,
+      "end": 677.58,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img067.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG068",
+      "start": 677.76,
+      "end": 685.359,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img068.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG069",
+      "start": 685.359,
+      "end": 701.4,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img069.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG070",
+      "start": 701.58,
+      "end": 709.399,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img070.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG071",
+      "start": 709.399,
+      "end": 718.26,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img071.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG072",
+      "start": 718.44,
+      "end": 729.857,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img072.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG073",
+      "start": 729.857,
+      "end": 740.68,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img073.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG074",
+      "start": 740.68,
+      "end": 752.134,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img074.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG075",
+      "start": 752.134,
+      "end": 761.671,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img075.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG076",
+      "start": 761.671,
+      "end": 771.336,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img076.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG077",
+      "start": 771.336,
+      "end": 779.62,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img077.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG078",
+      "start": 779.8,
+      "end": 794.92,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img078.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG079",
+      "start": 795.1,
+      "end": 803.46,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img079.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG080",
+      "start": 803.64,
+      "end": 822.4,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img080.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG081",
+      "start": 822.58,
+      "end": 834.325,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img081.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG082",
+      "start": 834.325,
+      "end": 837.78,
+      "chapter": "05｜企業危機之外，司法風暴來了",
+      "image": "images/img082.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG083",
+      "start": 837.96,
+      "end": 845.218,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img083.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "追償結果、時間延續"
+    },
+    {
+      "id": "IMG084",
+      "start": 845.218,
+      "end": 856.48,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img084.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG085",
+      "start": 856.66,
+      "end": 864.58,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img085.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG086",
+      "start": 864.58,
+      "end": 875.892,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img086.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG087",
+      "start": 875.892,
+      "end": 892.36,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img087.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "追償結果、時間延續"
+    },
+    {
+      "id": "IMG088",
+      "start": 892.54,
+      "end": 902.187,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img088.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG089",
+      "start": 902.187,
+      "end": 915.558,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img089.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG090",
+      "start": 915.558,
+      "end": 925.96,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img090.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG091",
+      "start": 926.14,
+      "end": 934.567,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img091.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG092",
+      "start": 934.567,
+      "end": 941.945,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img092.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG093",
+      "start": 941.945,
+      "end": 951.819,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img093.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "追償結果、時間延續"
+    },
+    {
+      "id": "IMG094",
+      "start": 951.819,
+      "end": 960.02,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img094.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "追償結果、時間延續"
+    },
+    {
+      "id": "IMG095",
+      "start": 960.02,
+      "end": 970.66,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img095.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "追償結果、時間延續"
+    },
+    {
+      "id": "IMG096",
+      "start": 970.84,
+      "end": 978.934,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img096.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG097",
+      "start": 978.934,
+      "end": 988.04,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img097.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG098",
+      "start": 988.22,
+      "end": 992.483,
+      "chapter": "06｜資產拍賣、債權追索與跨境發展",
+      "image": "images/img098.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG099",
+      "start": 992.483,
+      "end": 1001.82,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img099.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG100",
+      "start": 1002.0,
+      "end": 1010.454,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img100.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG101",
+      "start": 1010.454,
+      "end": 1017.64,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img101.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG102",
+      "start": 1017.82,
+      "end": 1028.14,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img102.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG103",
+      "start": 1028.14,
+      "end": 1038.02,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img103.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG104",
+      "start": 1038.2,
+      "end": 1048.493,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img104.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG105",
+      "start": 1048.493,
+      "end": 1063.102,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img105.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG106",
+      "start": 1063.102,
+      "end": 1080.26,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img106.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "產業投資、資本回收"
+    },
+    {
+      "id": "IMG107",
+      "start": 1080.44,
+      "end": 1091.317,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img107.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG108",
+      "start": 1091.317,
+      "end": 1103.971,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img108.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG109",
+      "start": 1103.971,
+      "end": 1112.98,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img109.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "版圖擴張、產業對照"
+    },
+    {
+      "id": "IMG110",
+      "start": 1113.16,
+      "end": 1123.105,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img110.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG111",
+      "start": 1123.105,
+      "end": 1142.86,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img111.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG112",
+      "start": 1143.04,
+      "end": 1151.955,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img112.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "決策／反思、資金安排"
+    },
+    {
+      "id": "IMG113",
+      "start": 1151.955,
+      "end": 1163.52,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img113.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG114",
+      "start": 1163.7,
+      "end": 1172.3,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img114.webp",
+      "motion": "driftDown",
+      "objectPosition": "50% 50%",
+      "card": "程序證據、法律界線"
+    },
+    {
+      "id": "IMG115",
+      "start": 1172.3,
+      "end": 1184.34,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img115.webp",
+      "motion": "slowZoomIn",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG116",
+      "start": 1184.52,
+      "end": 1193.286,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img116.webp",
+      "motion": "slowZoomOut",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG117",
+      "start": 1193.286,
+      "end": 1203.4,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img117.webp",
+      "motion": "panLeft",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    },
+    {
+      "id": "IMG118",
+      "start": 1203.58,
+      "end": 1211.432,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img118.webp",
+      "motion": "panRight",
+      "objectPosition": "50% 50%",
+      "card": "融資機制、債權證據"
+    },
+    {
+      "id": "IMG119",
+      "start": 1211.432,
+      "end": 1218.86,
+      "chapter": "07｜借來的帝國，留下什麼教訓？",
+      "image": "images/img119.webp",
+      "motion": "driftUp",
+      "objectPosition": "50% 50%",
+      "card": "財務機制、風險"
+    }
+  ],
+  "subtitles": [
+    {
+      "index": 1,
+      "start": 1.5,
+      "end": 2.905,
+      "text": "623億元。",
+      "sceneId": "IMG001"
+    },
+    {
+      "index": 2,
+      "start": 2.905,
+      "end": 8.994,
+      "text": "這個數字，曾出現在媒體對東帝士相關銀行債權的報導裡。",
+      "sceneId": "IMG001"
+    },
+    {
+      "index": 3,
+      "start": 8.994,
+      "end": 17.66,
+      "text": "請注意，它不是一張已經核定的個人欠款單，也不能直接當成銀行最後損失的金額。",
+      "sceneId": "IMG002"
+    },
+    {
+      "index": 4,
+      "start": 17.84,
+      "end": 28.493,
+      "text": "但它足以讓人問一句：一個曾經橫跨紡織、營建、水泥、石化的企業版圖，怎麼會留下如此沉重的債權問題？",
+      "sceneId": "IMG003"
+    },
+    {
+      "index": 5,
+      "start": 28.493,
+      "end": 31.6,
+      "text": "鏡頭先不要回到最風光的年代。",
+      "sceneId": "IMG004"
+    },
+    {
+      "index": 6,
+      "start": 31.78,
+      "end": 33.304,
+      "text": "先看多年以後。",
+      "sceneId": "IMG004"
+    },
+    {
+      "index": 7,
+      "start": 33.304,
+      "end": 40.053,
+      "text": "2025年，台灣的行政執行機關仍然公告拍賣土地，追討相關欠稅。",
+      "sceneId": "IMG004"
+    },
+    {
+      "index": 8,
+      "start": 40.053,
+      "end": 47.02,
+      "text": "高樓可能還矗立著，土地也仍有價格，但債權追索，卻能延續二十多年。",
+      "sceneId": "IMG005"
+    },
+    {
+      "index": 9,
+      "start": 47.2,
+      "end": 49.393,
+      "text": "現在，把時間往回倒。",
+      "sceneId": "IMG005"
+    },
+    {
+      "index": 10,
+      "start": 49.393,
+      "end": 55.754,
+      "text": "當年的東帝士，不是從一夜暴富的傳說開始，而是從紡織業出發。",
+      "sceneId": "IMG006"
+    },
+    {
+      "index": 11,
+      "start": 55.754,
+      "end": 60.36,
+      "text": "它一步一步走向建設、石化和更大的投資版圖。",
+      "sceneId": "IMG006"
+    },
+    {
+      "index": 12,
+      "start": 60.54,
+      "end": 64.742,
+      "text": "那是一個企業規模常被視為實力的年代。",
+      "sceneId": "IMG007"
+    },
+    {
+      "index": 13,
+      "start": 64.742,
+      "end": 70.111,
+      "text": "廠房愈多，土地愈廣，銀行似乎就愈願意相信未來。",
+      "sceneId": "IMG007"
+    },
+    {
+      "index": 14,
+      "start": 70.111,
+      "end": 76.18,
+      "text": "然而，這個故事最殘酷的反轉，藏在兩個看似相近的詞裡。",
+      "sceneId": "IMG008"
+    },
+    {
+      "index": 15,
+      "start": 76.36,
+      "end": 77.923,
+      "text": "資產，與現金。",
+      "sceneId": "IMG008"
+    },
+    {
+      "index": 16,
+      "start": 77.923,
+      "end": 79.708,
+      "text": "資產可以被估價；",
+      "sceneId": "IMG008"
+    },
+    {
+      "index": 17,
+      "start": 79.708,
+      "end": 83.95,
+      "text": "到期的借款，卻必須用能支付的錢來償還。",
+      "sceneId": "IMG009"
+    },
+    {
+      "index": 18,
+      "start": 83.95,
+      "end": 90.2,
+      "text": "東帝士的帝國，究竟是在什麼時候，開始把這兩件事混在一起？",
+      "sceneId": "IMG009"
+    },
+    {
+      "index": 19,
+      "start": 90.38,
+      "end": 93.02000000000001,
+      "text": "故事的起點，是紡織工廠。",
+      "sceneId": "IMG010"
+    },
+    {
+      "index": 20,
+      "start": 93.02000000000001,
+      "end": 97.64,
+      "text": "布匹從機台送出，機器的聲音一整天不曾停歇。",
+      "sceneId": "IMG010"
+    },
+    {
+      "index": 21,
+      "start": 97.64,
+      "end": 107.97999999999999,
+      "text": "這不是某一段真實錄影，而是那個產業年代的象徵：台灣企業靠製造、出口和經營效率，一步步累積資本。",
+      "sceneId": "IMG011"
+    },
+    {
+      "index": 22,
+      "start": 108.16,
+      "end": 111.622,
+      "text": "東帝士從家族紡織事業發展而來。",
+      "sceneId": "IMG012"
+    },
+    {
+      "index": 23,
+      "start": 111.622,
+      "end": 115.775,
+      "text": "陳由豪接手後，企業版圖逐漸向外延伸。",
+      "sceneId": "IMG012"
+    },
+    {
+      "index": 24,
+      "start": 115.775,
+      "end": 121.083,
+      "text": "根據歷史報導，1983年，東帝士跨足建設事業。",
+      "sceneId": "IMG013"
+    },
+    {
+      "index": 25,
+      "start": 121.083,
+      "end": 129.16,
+      "text": "往後，營建、水泥、石化，甚至電信等領域，也陸續出現在集團的發展敘事中。",
+      "sceneId": "IMG013"
+    },
+    {
+      "index": 26,
+      "start": 129.34,
+      "end": 136.541,
+      "text": "這些不是同一天成立的公司，更不是一張可以把所有資產、負債加在一起的簡單表格；",
+      "sceneId": "IMG014"
+    },
+    {
+      "index": 27,
+      "start": 136.541,
+      "end": 140.9,
+      "text": "它們有不同法人、不同投資項目，也有不同的風險。",
+      "sceneId": "IMG015"
+    },
+    {
+      "index": 28,
+      "start": 141.07999999999998,
+      "end": 143.589,
+      "text": "想像1990年代的台灣。",
+      "sceneId": "IMG015"
+    },
+    {
+      "index": 29,
+      "start": 143.589,
+      "end": 145.679,
+      "text": "城市天際線不斷改變。",
+      "sceneId": "IMG015"
+    },
+    {
+      "index": 30,
+      "start": 145.679,
+      "end": 148.815,
+      "text": "工地裡，鋼筋一層一層向上延伸；",
+      "sceneId": "IMG016"
+    },
+    {
+      "index": 31,
+      "start": 148.815,
+      "end": 151.324,
+      "text": "石化設備在遠方亮起燈光；",
+      "sceneId": "IMG016"
+    },
+    {
+      "index": 32,
+      "start": 151.324,
+      "end": 156.76,
+      "text": "銀行辦公室裡，土地估價和融資計畫被一份份送進會議室。",
+      "sceneId": "IMG016"
+    },
+    {
+      "index": 33,
+      "start": 156.94,
+      "end": 168.38,
+      "text": "對企業而言，從單一產品走向多個產業，有機會取得新的成長，也可能讓每一項新事業，都需要一筆尚未回收的資金。",
+      "sceneId": "IMG017"
+    },
+    {
+      "index": 34,
+      "start": 168.38,
+      "end": 176.3,
+      "text": "1995年，依中央社後來的歷史回顧，東帝士集團總部遷入汐止東方科學園區。",
+      "sceneId": "IMG018"
+    },
+    {
+      "index": 35,
+      "start": 176.48,
+      "end": 180.626,
+      "text": "玻璃帷幕與大型建築，成為企業規模的象徵。",
+      "sceneId": "IMG019"
+    },
+    {
+      "index": 36,
+      "start": 180.626,
+      "end": 186.224,
+      "text": "陳由豪也曾擔任國民黨中常委，在公共場合具有政商知名度。",
+      "sceneId": "IMG019"
+    },
+    {
+      "index": 37,
+      "start": 186.224,
+      "end": 191.2,
+      "text": "但政治職務與公開交往，本身不能證明任何授信違法；",
+      "sceneId": "IMG020"
+    },
+    {
+      "index": 38,
+      "start": 191.38,
+      "end": 197.712,
+      "text": "這部影片要追問的，是企業的財務結構，而不是用人脈代替證據。",
+      "sceneId": "IMG020"
+    },
+    {
+      "index": 39,
+      "start": 197.712,
+      "end": 202.734,
+      "text": "從紡織廠走到大型園區，看起來像一場成功的擴張。",
+      "sceneId": "IMG021"
+    },
+    {
+      "index": 40,
+      "start": 202.734,
+      "end": 209.94,
+      "text": "可是一座大樓能不能蓋起來，和它未來能不能帶來足夠現金，是兩個問題。",
+      "sceneId": "IMG021"
+    },
+    {
+      "index": 41,
+      "start": 210.12,
+      "end": 216.346,
+      "text": "下一個問題更直接：這麼多新事業，究竟靠什麼資金同時往前走？",
+      "sceneId": "IMG022"
+    },
+    {
+      "index": 42,
+      "start": 216.346,
+      "end": 220.211,
+      "text": "一塊土地，放在資產負債表上，是資產。",
+      "sceneId": "IMG023"
+    },
+    {
+      "index": 43,
+      "start": 220.211,
+      "end": 224.72,
+      "text": "拿去銀行作擔保，又可能成為取得資金的基礎。",
+      "sceneId": "IMG023"
+    },
+    {
+      "index": 44,
+      "start": 224.9,
+      "end": 232.522,
+      "text": "當企業把借來的錢投入新的土地、廠房和設備，帳面上的資產規模便有機會繼續擴大。",
+      "sceneId": "IMG024"
+    },
+    {
+      "index": 45,
+      "start": 232.522,
+      "end": 238.54,
+      "text": "這是一個可以推動成長的金融工具，但也可能變成不斷加速的迴圈。",
+      "sceneId": "IMG025"
+    },
+    {
+      "index": 46,
+      "start": 238.72,
+      "end": 241.967,
+      "text": "鏡頭切到一座尚未完工的建築。",
+      "sceneId": "IMG025"
+    },
+    {
+      "index": 47,
+      "start": 241.967,
+      "end": 247.765,
+      "text": "地基已經打好，鋼骨正在升起，工程款卻得按進度支付。",
+      "sceneId": "IMG026"
+    },
+    {
+      "index": 48,
+      "start": 247.765,
+      "end": 249.62,
+      "text": "再切到石化設備。",
+      "sceneId": "IMG026"
+    },
+    {
+      "index": 49,
+      "start": 249.62,
+      "end": 260.52,
+      "text": "管線、儲槽、控制室，任何一項大型投資都需要長時間建設、試車和營運，才有可能把投資變成穩定收入。",
+      "sceneId": "IMG027"
+    },
+    {
+      "index": 50,
+      "start": 260.7,
+      "end": 266.678,
+      "text": "企業不能拿明年可能收到的租金，直接支付今天已到期的本金。",
+      "sceneId": "IMG028"
+    },
+    {
+      "index": 51,
+      "start": 266.678,
+      "end": 271.376,
+      "text": "東帝士跨足的事業中，包含多種資本密集型投資。",
+      "sceneId": "IMG028"
+    },
+    {
+      "index": 52,
+      "start": 271.376,
+      "end": 276.5,
+      "text": "歷史報導也顯示，集團後來留下龐大的銀行債權問題。",
+      "sceneId": "IMG029"
+    },
+    {
+      "index": 53,
+      "start": 276.68,
+      "end": 286.044,
+      "text": "然而，目前沒有完整的集團合併財報與銀行債權清冊，足以證明每一筆借款的期限、用途和擔保條件。",
+      "sceneId": "IMG029"
+    },
+    {
+      "index": 54,
+      "start": 286.044,
+      "end": 295.2,
+      "text": "因此，我們不能宣稱東帝士每一項擴張都靠短期借款，更不能把每一筆債務都算在陳由豪個人名下。",
+      "sceneId": "IMG030"
+    },
+    {
+      "index": 55,
+      "start": 295.38,
+      "end": 304.747,
+      "text": "但可以確定的財務原理是：借款讓企業提前取得投資能力，也讓未來的現金流背上固定的承諾。",
+      "sceneId": "IMG031"
+    },
+    {
+      "index": 56,
+      "start": 304.747,
+      "end": 310.1,
+      "text": "景氣好的時候，資產估值上升，銀行可能更願意放款；",
+      "sceneId": "IMG032"
+    },
+    {
+      "index": 57,
+      "start": 310.28,
+      "end": 315.919,
+      "text": "企業也可能更相信，下一個計畫能替上一個計畫帶來更大的回報。",
+      "sceneId": "IMG032"
+    },
+    {
+      "index": 58,
+      "start": 315.919,
+      "end": 324.28,
+      "text": "真正的危險，往往不是借到第一筆錢，而是在連續幾次擴張之後，忘記了每一筆借款都有到期日。",
+      "sceneId": "IMG033"
+    },
+    {
+      "index": 59,
+      "start": 324.46,
+      "end": 329.029,
+      "text": "銀行看見的是擔保價值，企業期待的是未來收益；",
+      "sceneId": "IMG034"
+    },
+    {
+      "index": 60,
+      "start": 329.029,
+      "end": 332.974,
+      "text": "兩者中間，隔著施工、銷售、景氣和時間。",
+      "sceneId": "IMG034"
+    },
+    {
+      "index": 61,
+      "start": 332.974,
+      "end": 339.62,
+      "text": "如果下一個投資案還沒開始賺錢，前一筆借款就要到期，企業會怎麼辦？",
+      "sceneId": "IMG035"
+    },
+    {
+      "index": 62,
+      "start": 339.8,
+      "end": 340.95,
+      "text": "再借一筆？",
+      "sceneId": "IMG035"
+    },
+    {
+      "index": 63,
+      "start": 340.95,
+      "end": 342.1,
+      "text": "賣掉資產？",
+      "sceneId": "IMG035"
+    },
+    {
+      "index": 64,
+      "start": 342.1,
+      "end": 344.4,
+      "text": "還是賭景氣繼續向上？",
+      "sceneId": "IMG036"
+    },
+    {
+      "index": 65,
+      "start": 344.4,
+      "end": 350.15,
+      "text": "從這裡開始，帝國的速度，可能逐漸超過現金流的速度。",
+      "sceneId": "IMG036"
+    },
+    {
+      "index": 66,
+      "start": 350.15,
+      "end": 353.37,
+      "text": "讓我們把畫面縮小到一張日曆。",
+      "sceneId": "IMG037"
+    },
+    {
+      "index": 67,
+      "start": 353.37,
+      "end": 359.12,
+      "text": "左邊是工程預定完工的日子，右邊是銀行借款的到期日。",
+      "sceneId": "IMG037"
+    },
+    {
+      "index": 68,
+      "start": 359.3,
+      "end": 365.068,
+      "text": "只要右邊比左邊早，財務主管就必須回答一個問題：錢從哪裡來？",
+      "sceneId": "IMG038"
+    },
+    {
+      "index": 69,
+      "start": 365.068,
+      "end": 366.659,
+      "text": "這叫做期限錯配。",
+      "sceneId": "IMG038"
+    },
+    {
+      "index": 70,
+      "start": 366.659,
+      "end": 373.62,
+      "text": "它不是東帝士某一份已經公開的貸款契約，而是一個理解大型投資風險的工具。",
+      "sceneId": "IMG039"
+    },
+    {
+      "index": 71,
+      "start": 373.8,
+      "end": 377.985,
+      "text": "房地產可能要等到銷售或出租才產生現金；",
+      "sceneId": "IMG039"
+    },
+    {
+      "index": 72,
+      "start": 377.985,
+      "end": 383.271,
+      "text": "石化投資可能要等設備建成、運轉，才逐步回收資本。",
+      "sceneId": "IMG040"
+    },
+    {
+      "index": 73,
+      "start": 383.271,
+      "end": 390.76,
+      "text": "可是利息不會等工程完成才開始計算，本金也不會因為市場不好就自動延期。",
+      "sceneId": "IMG040"
+    },
+    {
+      "index": 74,
+      "start": 390.94,
+      "end": 398.029,
+      "text": "如果企業原本預期資產價格上漲，便可能用資產作擔保，取得下一輪資金。",
+      "sceneId": "IMG041"
+    },
+    {
+      "index": 75,
+      "start": 398.029,
+      "end": 401.037,
+      "text": "這個模式在順風時很有吸引力。",
+      "sceneId": "IMG041"
+    },
+    {
+      "index": 76,
+      "start": 401.037,
+      "end": 410.06,
+      "text": "銀行願意續貸，工程可以繼續，企業甚至可能把帳面上的資產增值，當成自己經營能力的證明。",
+      "sceneId": "IMG042"
+    },
+    {
+      "index": 77,
+      "start": 410.24,
+      "end": 415.872,
+      "text": "但是，市場只要出現一個小小的停頓，整套結構就會變得脆弱。",
+      "sceneId": "IMG043"
+    },
+    {
+      "index": 78,
+      "start": 415.872,
+      "end": 419.291,
+      "text": "房子賣得慢一點，現金晚進來幾個月；",
+      "sceneId": "IMG043"
+    },
+    {
+      "index": 79,
+      "start": 419.291,
+      "end": 421.906,
+      "text": "工廠多花一段時間才能投產；",
+      "sceneId": "IMG044"
+    },
+    {
+      "index": 80,
+      "start": 421.906,
+      "end": 424.32,
+      "text": "銀行重新評估擔保品價值。",
+      "sceneId": "IMG044"
+    },
+    {
+      "index": 81,
+      "start": 424.5,
+      "end": 429.247,
+      "text": "對一家借款不多的公司，這可能只是營運波動。",
+      "sceneId": "IMG044"
+    },
+    {
+      "index": 82,
+      "start": 429.247,
+      "end": 437.838,
+      "text": "對一個同時推動多項大型投資的集團，卻可能讓不同事業的資金需求在同一時間碰撞。",
+      "sceneId": "IMG045"
+    },
+    {
+      "index": 83,
+      "start": 437.838,
+      "end": 439.42,
+      "text": "再看一個反轉。",
+      "sceneId": "IMG046"
+    },
+    {
+      "index": 84,
+      "start": 439.6,
+      "end": 444.889,
+      "text": "企業明明還擁有土地和大樓，為什麼可能付不出一筆到期款？",
+      "sceneId": "IMG046"
+    },
+    {
+      "index": 85,
+      "start": 444.889,
+      "end": 449.983,
+      "text": "因為估價報告不是現金，拍賣公告也不代表明天就能成交。",
+      "sceneId": "IMG047"
+    },
+    {
+      "index": 86,
+      "start": 449.983,
+      "end": 454.88,
+      "text": "買方需要時間，價格可能折讓，抵押權人還有受償順位。",
+      "sceneId": "IMG047"
+    },
+    {
+      "index": 87,
+      "start": 455.06,
+      "end": 461.125,
+      "text": "即使資產最後賣掉，也未必能在債務到期之前完成交易。",
+      "sceneId": "IMG048"
+    },
+    {
+      "index": 88,
+      "start": 461.125,
+      "end": 467.433,
+      "text": "我們沒有足夠證據，替東帝士每一筆融資畫出精確到期表。",
+      "sceneId": "IMG048"
+    },
+    {
+      "index": 89,
+      "start": 467.433,
+      "end": 477.38,
+      "text": "但從後續多年追償的事實，可以看見大型資產與債權問題並沒有因企業規模龐大而自動消失。",
+      "sceneId": "IMG049"
+    },
+    {
+      "index": 90,
+      "start": 477.56,
+      "end": 486.97,
+      "text": "當企業需要的不是更多土地，而是今天就能動用的現金，過去引以為傲的資產，可能忽然變得沉重。",
+      "sceneId": "IMG050"
+    },
+    {
+      "index": 91,
+      "start": 486.97,
+      "end": 493.6,
+      "text": "接下來，故事裡那棟象徵企業規模的大樓，還遭遇了一場真實的災難。",
+      "sceneId": "IMG051"
+    },
+    {
+      "index": 92,
+      "start": 493.78,
+      "end": 501.22,
+      "text": "但那場災難，究竟是原因，還是已經脆弱的結構所承受的另一記衝擊？",
+      "sceneId": "IMG051"
+    },
+    {
+      "index": 93,
+      "start": 501.22,
+      "end": 506.74,
+      "text": "2001年5月，汐止東方科學園區發生重大火災。",
+      "sceneId": "IMG052"
+    },
+    {
+      "index": 94,
+      "start": 506.74,
+      "end": 511.06,
+      "text": "濃煙與火光成為那一年令人難忘的畫面。",
+      "sceneId": "IMG052"
+    },
+    {
+      "index": 95,
+      "start": 511.24,
+      "end": 517.84,
+      "text": "根據中央社後來的歷史回顧，火勢延燒約43小時，造成龐大損失。",
+      "sceneId": "IMG053"
+    },
+    {
+      "index": 96,
+      "start": 517.84,
+      "end": 525.76,
+      "text": "這場大火是真實事件，但不能因此把東帝士所有財務困境，都歸因於同一場事故。",
+      "sceneId": "IMG053"
+    },
+    {
+      "index": 97,
+      "start": 525.94,
+      "end": 528.403,
+      "text": "鏡頭從火場切回銀行。",
+      "sceneId": "IMG054"
+    },
+    {
+      "index": 98,
+      "start": 528.403,
+      "end": 537.763,
+      "text": "對銀行而言，企業的資產如果受到損害，原本的擔保與還款評估就可能需要重新檢視。",
+      "sceneId": "IMG054"
+    },
+    {
+      "index": 99,
+      "start": 537.763,
+      "end": 544.66,
+      "text": "對企業而言，除了修復與營運中斷，還可能面臨資金調度壓力。",
+      "sceneId": "IMG055"
+    },
+    {
+      "index": 100,
+      "start": 544.84,
+      "end": 551.263,
+      "text": "然而，東方科學園區的不同樓層與資產，並不必然屬於同一家公司；",
+      "sceneId": "IMG055"
+    },
+    {
+      "index": 101,
+      "start": 551.263,
+      "end": 555.544,
+      "text": "火災損失也不能直接等同東帝士的銀行債務。",
+      "sceneId": "IMG056"
+    },
+    {
+      "index": 102,
+      "start": 555.544,
+      "end": 560.04,
+      "text": "更大的問題，在於景氣與信用往往會同時轉向。",
+      "sceneId": "IMG056"
+    },
+    {
+      "index": 103,
+      "start": 560.22,
+      "end": 565.758,
+      "text": "順風時，銀行看的是未來成長，投資人看的是資產增值。",
+      "sceneId": "IMG057"
+    },
+    {
+      "index": 104,
+      "start": 565.758,
+      "end": 570.854,
+      "text": "逆風時，大家開始問：這些資產今天到底能賣多少？",
+      "sceneId": "IMG057"
+    },
+    {
+      "index": 105,
+      "start": 570.854,
+      "end": 573.2909999999999,
+      "text": "這筆借款什麼時候能還？",
+      "sceneId": "IMG058"
+    },
+    {
+      "index": 106,
+      "start": 573.2909999999999,
+      "end": 577.5,
+      "text": "如果不能續借，企業還能靠營運支付多少？",
+      "sceneId": "IMG058"
+    },
+    {
+      "index": 107,
+      "start": 577.68,
+      "end": 584.212,
+      "text": "一家企業可以有營收，也可以有龐大的土地和設備，卻仍然陷入流動性困境。",
+      "sceneId": "IMG058"
+    },
+    {
+      "index": 108,
+      "start": 584.212,
+      "end": 591.32,
+      "text": "這不是因為所有資產突然消失，而是因為債務的到期日，比資產變現的速度更急迫。",
+      "sceneId": "IMG059"
+    },
+    {
+      "index": 109,
+      "start": 591.5,
+      "end": 600.643,
+      "text": "尤其當多個事業同時依賴融資，原本想分散風險的多角化，反而可能形成資金需求的共振。",
+      "sceneId": "IMG060"
+    },
+    {
+      "index": 110,
+      "start": 600.643,
+      "end": 607.5,
+      "text": "歷史報導回顧，東帝士集團在2001年前後走向解散與財務危機。",
+      "sceneId": "IMG061"
+    },
+    {
+      "index": 111,
+      "start": 607.68,
+      "end": 615.585,
+      "text": "但「集團解散」並不是所有關係企業在同一天依法破產，也不代表每一筆債權從此消失。",
+      "sceneId": "IMG061"
+    },
+    {
+      "index": 112,
+      "start": 615.585,
+      "end": 622.68,
+      "text": "企業可能停業，個別公司可能解散，資產可能被處分，債權人仍可能多年追索。",
+      "sceneId": "IMG062"
+    },
+    {
+      "index": 113,
+      "start": 622.86,
+      "end": 625.744,
+      "text": "這些是不同的法律程序。",
+      "sceneId": "IMG062"
+    },
+    {
+      "index": 114,
+      "start": 625.744,
+      "end": 633.871,
+      "text": "到了2017年，媒體仍報導東帝士相關銀行債權規模達623億元。",
+      "sceneId": "IMG063"
+    },
+    {
+      "index": 115,
+      "start": 633.871,
+      "end": 644.62,
+      "text": "這個數字的基準日、是否包含利息或保證責任，以及實際回收金額，尚無完整清冊可以核對。",
+      "sceneId": "IMG064"
+    },
+    {
+      "index": 116,
+      "start": 644.8,
+      "end": 657.006,
+      "text": "因此，真正值得追問的不是用一個驚人的數字替所有人定罪，而是為什麼企業危機發生多年之後，債權問題仍然存在。",
+      "sceneId": "IMG065"
+    },
+    {
+      "index": 117,
+      "start": 657.006,
+      "end": 662.64,
+      "text": "如果故事只到這裡，它會是一堂關於槓桿與景氣的課。",
+      "sceneId": "IMG066"
+    },
+    {
+      "index": 118,
+      "start": 662.82,
+      "end": 669.508,
+      "text": "但接下來，東帝士的歷史又出現另一條更敏感的線索：司法調查。",
+      "sceneId": "IMG066"
+    },
+    {
+      "index": 119,
+      "start": 669.508,
+      "end": 672.737,
+      "text": "企業經營失敗，並不等於犯罪。",
+      "sceneId": "IMG067"
+    },
+    {
+      "index": 120,
+      "start": 672.737,
+      "end": 677.58,
+      "text": "借款還不出來，也不會自動證明有人掏空公司。",
+      "sceneId": "IMG067"
+    },
+    {
+      "index": 121,
+      "start": 677.76,
+      "end": 685.359,
+      "text": "要跨過這條界線，必須看具體交易、檢方指控、證據，以及法院最後作出的裁判。",
+      "sceneId": "IMG068"
+    },
+    {
+      "index": 122,
+      "start": 685.359,
+      "end": 690.002,
+      "text": "東帝士相關事件中，東鼎案就是不能簡化的例子。",
+      "sceneId": "IMG069"
+    },
+    {
+      "index": 123,
+      "start": 690.002,
+      "end": 701.4,
+      "text": "根據中央社對司法程序的報導，檢方曾指控，相關人員利用觀塘工業區開發名義與暫付款等方式，涉嫌不法處理公司資金。",
+      "sceneId": "IMG069"
+    },
+    {
+      "index": 124,
+      "start": 701.58,
+      "end": 709.399,
+      "text": "2005年，檢方就涉及4億668萬3745元的款項提起公訴。",
+      "sceneId": "IMG070"
+    },
+    {
+      "index": 125,
+      "start": 709.399,
+      "end": 718.26,
+      "text": "請記住，這是檢方所指控的涉案金額，不是已經由法院確定認定的不法所得。",
+      "sceneId": "IMG071"
+    },
+    {
+      "index": 126,
+      "start": 718.44,
+      "end": 725.84,
+      "text": "鏡頭此刻不該出現虛構的密室交易，也不該讓歷史人物說出不存在的犯罪自白。",
+      "sceneId": "IMG072"
+    },
+    {
+      "index": 127,
+      "start": 725.84,
+      "end": 729.857,
+      "text": "真正的戲劇張力，來自司法文件的時間線。",
+      "sceneId": "IMG072"
+    },
+    {
+      "index": 128,
+      "start": 729.857,
+      "end": 731.76,
+      "text": "2005年，起訴。",
+      "sceneId": "IMG073"
+    },
+    {
+      "index": 129,
+      "start": 731.94,
+      "end": 734.7,
+      "text": "接著，時間一年一年過去。",
+      "sceneId": "IMG073"
+    },
+    {
+      "index": 130,
+      "start": 734.7,
+      "end": 740.68,
+      "text": "到了2016年，這起案件因追訴權時效完成，免訴確定。",
+      "sceneId": "IMG073"
+    },
+    {
+      "index": 131,
+      "start": 740.68,
+      "end": 744.82,
+      "text": "這裡出現一個許多觀眾意想不到的反轉。",
+      "sceneId": "IMG074"
+    },
+    {
+      "index": 132,
+      "start": 745.0,
+      "end": 748.465,
+      "text": "免訴，不等於法院已經認定被告無罪；",
+      "sceneId": "IMG074"
+    },
+    {
+      "index": 133,
+      "start": 748.465,
+      "end": 752.134,
+      "text": "但同樣地，也絕對不等於法院認定有罪。",
+      "sceneId": "IMG074"
+    },
+    {
+      "index": 134,
+      "start": 752.134,
+      "end": 754.376,
+      "text": "它是程序上的裁判結果。",
+      "sceneId": "IMG075"
+    },
+    {
+      "index": 135,
+      "start": 754.376,
+      "end": 759.88,
+      "text": "不能因為檢方曾經起訴，就把指控寫成已經定讞的犯罪事實。",
+      "sceneId": "IMG075"
+    },
+    {
+      "index": 136,
+      "start": 760.06,
+      "end": 761.671,
+      "text": "事情還沒結束。",
+      "sceneId": "IMG075"
+    },
+    {
+      "index": 137,
+      "start": 761.671,
+      "end": 765.813,
+      "text": "2017年，檢方再聲請單獨宣告沒收。",
+      "sceneId": "IMG076"
+    },
+    {
+      "index": 138,
+      "start": 765.813,
+      "end": 771.336,
+      "text": "後來，高等法院駁回抗告，這項沒收聲請的結果確定。",
+      "sceneId": "IMG076"
+    },
+    {
+      "index": 139,
+      "start": 771.336,
+      "end": 779.62,
+      "text": "也就是說，不能把那筆4億多元的檢方指控金額，說成法院已經成功追繳的款項。",
+      "sceneId": "IMG077"
+    },
+    {
+      "index": 140,
+      "start": 779.8,
+      "end": 784.621,
+      "text": "東帝士相關的其他案件，還有不同的案由與程序。",
+      "sceneId": "IMG078"
+    },
+    {
+      "index": 141,
+      "start": 784.621,
+      "end": 794.92,
+      "text": "例如東華開發等爭議，不能和東鼎案混成同一件事，更不能用一個案件的裁判，代替所有案件的法律結論。",
+      "sceneId": "IMG078"
+    },
+    {
+      "index": 142,
+      "start": 795.1,
+      "end": 803.46,
+      "text": "若沒有查到個別案件的確定判決，就應該停在「曾被指控」或「曾進入司法程序」的範圍。",
+      "sceneId": "IMG079"
+    },
+    {
+      "index": 143,
+      "start": 803.64,
+      "end": 822.4,
+      "text": "這一段歷史真正讓人不安的，不是簡單貼上好人或壞人的標籤，而是當企業規模、關係企業交易與資訊不透明交織在一起，外部債權人和社會大眾，究竟能不能知道資金去了哪裡、責任由誰承擔？",
+      "sceneId": "IMG080"
+    },
+    {
+      "index": 144,
+      "start": 822.58,
+      "end": 834.325,
+      "text": "而另一個令人意外的反轉是：司法程序有它的時效，銀行債權和稅務執行卻可能沿著不同的法律道路，持續很多年。",
+      "sceneId": "IMG081"
+    },
+    {
+      "index": 145,
+      "start": 834.325,
+      "end": 837.78,
+      "text": "接下來，把鏡頭拉遠到台灣之外。",
+      "sceneId": "IMG082"
+    },
+    {
+      "index": 146,
+      "start": 837.96,
+      "end": 841.464,
+      "text": "一邊，是台灣的銀行債權資料。",
+      "sceneId": "IMG083"
+    },
+    {
+      "index": 147,
+      "start": 841.464,
+      "end": 845.218,
+      "text": "一邊，是多年後的土地拍賣公告。",
+      "sceneId": "IMG083"
+    },
+    {
+      "index": 148,
+      "start": 845.218,
+      "end": 850.474,
+      "text": "第三邊，是司法案件從起訴走向免訴的時間線。",
+      "sceneId": "IMG084"
+    },
+    {
+      "index": 149,
+      "start": 850.474,
+      "end": 856.48,
+      "text": "第四邊，則是陳由豪在中國發展石化事業的公開報導。",
+      "sceneId": "IMG084"
+    },
+    {
+      "index": 150,
+      "start": 856.66,
+      "end": 863.38,
+      "text": "四條線看似分開，卻都讓人想起東帝士帝國崩解後留下的問題。",
+      "sceneId": "IMG085"
+    },
+    {
+      "index": 151,
+      "start": 863.38,
+      "end": 864.58,
+      "text": "先看債權。",
+      "sceneId": "IMG085"
+    },
+    {
+      "index": 152,
+      "start": 864.58,
+      "end": 871.54,
+      "text": "2017年，有媒體以623億元描述東帝士相關銀行債權規模。",
+      "sceneId": "IMG086"
+    },
+    {
+      "index": 153,
+      "start": 871.72,
+      "end": 875.892,
+      "text": "這不是一張可以直接算出最終損失的帳單；",
+      "sceneId": "IMG086"
+    },
+    {
+      "index": 154,
+      "start": 875.892,
+      "end": 880.503,
+      "text": "它提醒我們，企業解體，不等於債權立即結束。",
+      "sceneId": "IMG087"
+    },
+    {
+      "index": 155,
+      "start": 880.503,
+      "end": 881.601,
+      "text": "再看資產。",
+      "sceneId": "IMG087"
+    },
+    {
+      "index": 156,
+      "start": 881.601,
+      "end": 892.36,
+      "text": "土地與廠房即使還有價值，也必須經過查封、估價、拍賣與受償程序，才能把價值變成債權人可能收到的現金。",
+      "sceneId": "IMG087"
+    },
+    {
+      "index": 157,
+      "start": 892.54,
+      "end": 894.427,
+      "text": "鏡頭切到司法卷宗。",
+      "sceneId": "IMG088"
+    },
+    {
+      "index": 158,
+      "start": 894.427,
+      "end": 897.573,
+      "text": "2005年，東鼎案遭檢方起訴。",
+      "sceneId": "IMG088"
+    },
+    {
+      "index": 159,
+      "start": 897.573,
+      "end": 902.187,
+      "text": "2016年，案件因追訴權時效完成而免訴確定。",
+      "sceneId": "IMG088"
+    },
+    {
+      "index": 160,
+      "start": 902.187,
+      "end": 907.22,
+      "text": "2017年，檢方聲請單獨沒收，最後也遭駁回確定。",
+      "sceneId": "IMG089"
+    },
+    {
+      "index": 161,
+      "start": 907.4,
+      "end": 915.558,
+      "text": "這三個年份必須清楚呈現，因為起訴、免訴與沒收聲請的結果，代表完全不同的法律意義。",
+      "sceneId": "IMG089"
+    },
+    {
+      "index": 162,
+      "start": 915.558,
+      "end": 917.802,
+      "text": "鏡頭再轉向海峽另一端。",
+      "sceneId": "IMG090"
+    },
+    {
+      "index": 163,
+      "start": 917.802,
+      "end": 925.96,
+      "text": "中央社曾報導，陳由豪離境後，在中國參與石化事業發展，相關報導提及翔鷺騰龍等事業。",
+      "sceneId": "IMG090"
+    },
+    {
+      "index": 164,
+      "start": 926.14,
+      "end": 934.567,
+      "text": "這是可以討論的公開經營軌跡，卻不能因此推定每一筆海外投資都來自東帝士的不法資金。",
+      "sceneId": "IMG091"
+    },
+    {
+      "index": 165,
+      "start": 934.567,
+      "end": 938.78,
+      "text": "資金來源與刑事責任，需要各自獨立的證據。",
+      "sceneId": "IMG092"
+    },
+    {
+      "index": 166,
+      "start": 938.96,
+      "end": 941.945,
+      "text": "然後，時間來到2025年。",
+      "sceneId": "IMG092"
+    },
+    {
+      "index": 167,
+      "start": 941.945,
+      "end": 951.819,
+      "text": "中央社報導，部分歷史欠稅因追稅期間屆滿而註銷，當年仍有約5630萬元的欠稅金額被公告。",
+      "sceneId": "IMG093"
+    },
+    {
+      "index": 168,
+      "start": 951.819,
+      "end": 957.56,
+      "text": "到了11月，行政執行機關仍公告拍賣18筆土地追稅。",
+      "sceneId": "IMG094"
+    },
+    {
+      "index": 169,
+      "start": 957.74,
+      "end": 960.02,
+      "text": "注意，註銷不是已經繳清；",
+      "sceneId": "IMG094"
+    },
+    {
+      "index": 170,
+      "start": 960.02,
+      "end": 963.25,
+      "text": "拍賣公告也不代表全部標的已經成交。",
+      "sceneId": "IMG095"
+    },
+    {
+      "index": 171,
+      "start": 963.25,
+      "end": 965.91,
+      "text": "現在，把四條時間線放在一起。",
+      "sceneId": "IMG095"
+    },
+    {
+      "index": 172,
+      "start": 965.91,
+      "end": 970.66,
+      "text": "企業的招牌可以退場，個別法人可以進入不同法律程序；",
+      "sceneId": "IMG095"
+    },
+    {
+      "index": 173,
+      "start": 970.84,
+      "end": 978.934,
+      "text": "但債權、稅務與司法爭議，不會因為一場記者會、一張機票或一份公告，就自動畫上句點。",
+      "sceneId": "IMG096"
+    },
+    {
+      "index": 174,
+      "start": 978.934,
+      "end": 988.04,
+      "text": "帝國崩塌最震撼的地方，或許不是當年蓋起多少樓，而是多年之後，仍有人必須面對當初的資金承諾。",
+      "sceneId": "IMG097"
+    },
+    {
+      "index": 175,
+      "start": 988.22,
+      "end": 992.483,
+      "text": "那麼，這場故事究竟能給今天的企業什麼警告？",
+      "sceneId": "IMG098"
+    },
+    {
+      "index": 176,
+      "start": 992.483,
+      "end": 999.993,
+      "text": "如果只用一句「借錢太多」來解釋東帝士，我們就會錯過這段歷史真正重要的部分。",
+      "sceneId": "IMG099"
+    },
+    {
+      "index": 177,
+      "start": 999.993,
+      "end": 1001.82,
+      "text": "借款本身不是錯誤。",
+      "sceneId": "IMG099"
+    },
+    {
+      "index": 178,
+      "start": 1002.0,
+      "end": 1006.65,
+      "text": "銀行融資可以讓企業建廠、創造就業、擴大產能；",
+      "sceneId": "IMG100"
+    },
+    {
+      "index": 179,
+      "start": 1006.65,
+      "end": 1010.454,
+      "text": "多角化也可能讓企業找到新的成長機會。",
+      "sceneId": "IMG100"
+    },
+    {
+      "index": 180,
+      "start": 1010.454,
+      "end": 1017.64,
+      "text": "問題是，當企業愈來愈依賴借款，它有沒有同時建立足以償還借款的現金流？",
+      "sceneId": "IMG101"
+    },
+    {
+      "index": 181,
+      "start": 1017.82,
+      "end": 1021.992,
+      "text": "第一個教訓，是資產規模不等於償債能力。",
+      "sceneId": "IMG102"
+    },
+    {
+      "index": 182,
+      "start": 1021.992,
+      "end": 1028.14,
+      "text": "土地、大樓、設備可以很值錢，但銀行到期日只看能不能付款。",
+      "sceneId": "IMG102"
+    },
+    {
+      "index": 183,
+      "start": 1028.14,
+      "end": 1038.02,
+      "text": "一家企業即使帳面富有，只要短期內沒有足夠可動用現金，仍可能被迫賣掉原本打算長期持有的資產。",
+      "sceneId": "IMG103"
+    },
+    {
+      "index": 184,
+      "start": 1038.2,
+      "end": 1043.466,
+      "text": "第二個教訓，是槓桿會放大順風，也會放大逆風。",
+      "sceneId": "IMG104"
+    },
+    {
+      "index": 185,
+      "start": 1043.466,
+      "end": 1048.493,
+      "text": "景氣好時，借款可以提高股東投入資本的報酬；",
+      "sceneId": "IMG104"
+    },
+    {
+      "index": 186,
+      "start": 1048.493,
+      "end": 1053.52,
+      "text": "景氣差時，利息和本金不會跟著營收一起縮水。",
+      "sceneId": "IMG105"
+    },
+    {
+      "index": 187,
+      "start": 1053.7,
+      "end": 1063.102,
+      "text": "若企業必須用新借款來支應舊承諾，融資環境一變，原本的成長引擎就可能成為風險來源。",
+      "sceneId": "IMG105"
+    },
+    {
+      "index": 188,
+      "start": 1063.102,
+      "end": 1067.333,
+      "text": "第三個教訓，是多角化不一定分散風險。",
+      "sceneId": "IMG106"
+    },
+    {
+      "index": 189,
+      "start": 1067.333,
+      "end": 1080.26,
+      "text": "營建、石化、水泥，看似是不同產業，卻都可能需要大量資金，也可能同時受到信用緊縮、景氣下滑與融資成本上升的影響。",
+      "sceneId": "IMG106"
+    },
+    {
+      "index": 190,
+      "start": 1080.44,
+      "end": 1091.317,
+      "text": "真正的分散風險，不只是公司名稱變多，而是不同事業的現金流、負債到期日和風險來源，能不能彼此承受衝擊。",
+      "sceneId": "IMG107"
+    },
+    {
+      "index": 191,
+      "start": 1091.317,
+      "end": 1096.32,
+      "text": "第四個教訓，是公司治理不能等到危機發生才補救。",
+      "sceneId": "IMG108"
+    },
+    {
+      "index": 192,
+      "start": 1096.5,
+      "end": 1103.971,
+      "text": "關係人交易不必然違法，但必須清楚揭露、經過適當決策程序，並接受監督。",
+      "sceneId": "IMG108"
+    },
+    {
+      "index": 193,
+      "start": 1103.971,
+      "end": 1112.98,
+      "text": "當一家集團的公司層層交錯，外界更需要知道每筆交易的實際對價、誰作決策、誰承擔風險。",
+      "sceneId": "IMG109"
+    },
+    {
+      "index": 194,
+      "start": 1113.16,
+      "end": 1116.776,
+      "text": "經營失敗與刑事責任必須分開判斷；",
+      "sceneId": "IMG110"
+    },
+    {
+      "index": 195,
+      "start": 1116.776,
+      "end": 1123.105,
+      "text": "但資訊透明和內部控制，本來就應該在企業最風光的時候建立。",
+      "sceneId": "IMG110"
+    },
+    {
+      "index": 196,
+      "start": 1123.105,
+      "end": 1127.4,
+      "text": "第五個教訓，是停損必須比危機更早出現。",
+      "sceneId": "IMG111"
+    },
+    {
+      "index": 197,
+      "start": 1127.58,
+      "end": 1142.86,
+      "text": "假設一個大型開發案延遲完工、銷售不如預期，企業應該事先知道，現金還能撐多久，銀行若不續貸該怎麼辦，哪些非核心資產可以處分，哪些投資應該暫停。",
+      "sceneId": "IMG111"
+    },
+    {
+      "index": 198,
+      "start": 1143.04,
+      "end": 1151.955,
+      "text": "這些問題，在資金充裕時看起來不夠豪邁，卻可能決定企業在逆風時是否還有選擇。",
+      "sceneId": "IMG112"
+    },
+    {
+      "index": 199,
+      "start": 1151.955,
+      "end": 1153.4,
+      "text": "回到東帝士。",
+      "sceneId": "IMG113"
+    },
+    {
+      "index": 200,
+      "start": 1153.4,
+      "end": 1163.52,
+      "text": "歷史報導記錄了它從紡織走向多產業的擴張，也記錄了後來的龐大債權、司法爭議與多年追償。",
+      "sceneId": "IMG113"
+    },
+    {
+      "index": 201,
+      "start": 1163.7,
+      "end": 1172.3,
+      "text": "這些事情不能被簡化成一個人欠下所有債務，也不能把檢方指控直接改寫成法院有罪判決。",
+      "sceneId": "IMG114"
+    },
+    {
+      "index": 202,
+      "start": 1172.3,
+      "end": 1184.34,
+      "text": "真正值得警惕的，是當企業版圖大到足以令人驚嘆，外界卻不容易看清楚它的負債、現金流與治理風險時，危機可能早已累積。",
+      "sceneId": "IMG115"
+    },
+    {
+      "index": 203,
+      "start": 1184.52,
+      "end": 1189.015,
+      "text": "借來的錢，可以讓企業提前看見帝國的輪廓；",
+      "sceneId": "IMG116"
+    },
+    {
+      "index": 204,
+      "start": 1189.015,
+      "end": 1193.286,
+      "text": "卻不能替企業創造永遠不會中斷的現金流。",
+      "sceneId": "IMG116"
+    },
+    {
+      "index": 205,
+      "start": 1193.286,
+      "end": 1203.4,
+      "text": "大樓可以越蓋越高，土地可以越買越多，真正支撐企業信用的，仍是每一次到期時，能不能履行承諾。",
+      "sceneId": "IMG117"
+    },
+    {
+      "index": 206,
+      "start": 1203.58,
+      "end": 1211.432,
+      "text": "如果你是當年東帝士的經營者，或是提供貸款的銀行，你會在哪一個時刻按下煞車？",
+      "sceneId": "IMG118"
+    },
+    {
+      "index": 207,
+      "start": 1211.432,
+      "end": 1218.86,
+      "text": "是看到資產價格開始下跌時，還是更早，在擴張速度第一次超過現金流的時候？",
+      "sceneId": "IMG119"
+    }
+  ]
+}
