@@ -1,0 +1,31 @@
+#economic-dashboard{margin:1.5rem 0 2rem;scroll-margin-top:5rem}
+#economic-dashboard .ed-shell{position:relative;overflow:hidden;padding:clamp(1rem,2.5vw,2rem);border:3px double #b28a48;border-radius:1.1rem;background:linear-gradient(135deg,#fff9ecf2,#f2e7d2f5),url('../images/qing-cover.png') center/cover;color:#2d241c;box-shadow:0 12px 34px #3824141c}
+#economic-dashboard .ed-shell:before{content:"";position:absolute;inset:12px;border:1px solid #bd9b5e70;border-radius:.6rem;pointer-events:none}
+#economic-dashboard .ed-eyebrow{margin:0 0 .3rem;color:#8f3425;font-size:.82rem;letter-spacing:.15em}
+#economic-dashboard h3{margin:.2rem 0 .5rem;font-family:inherit;font-size:clamp(1.35rem,2.5vw,2rem);color:#33271d}
+#economic-dashboard .ed-intro{max-width:75ch;color:#514436;line-height:1.8}
+#economic-dashboard .ed-controls,#economic-dashboard .ed-metrics,#economic-dashboard .ed-countries,#economic-dashboard .ed-era{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.9rem 0}
+#economic-dashboard button,#economic-dashboard select{min-height:2.35rem;padding:.38rem .7rem;border:1px solid #9e7840;border-radius:.45rem;background:#fffaf0;color:#34281e;font:inherit}
+#economic-dashboard button{cursor:pointer}#economic-dashboard button:hover,#economic-dashboard button[aria-pressed="true"]{background:#7f2e22;color:#fff8e9}
+#economic-dashboard .ed-control-label{display:flex;align-items:center;gap:.5rem;flex:1 1 250px}#economic-dashboard input[type=range]{width:100%;accent-color:#8f3425}
+#economic-dashboard .ed-year{min-width:4.3rem;text-align:center;font-size:1.45rem;color:#8f3425}
+#economic-dashboard .ed-chart{height:clamp(340px,48vw,500px);min-height:320px;width:100%;margin:.5rem 0;background:#fffdf8c9;border:1px solid #d7c49c;border-radius:.6rem}
+#economic-dashboard .ed-summary{padding:.8rem 1rem;border-left:4px solid #a57c38;background:#f6eedc;color:#403428;line-height:1.7}
+#economic-dashboard .ed-source-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem;margin:1rem 0}
+#economic-dashboard .ed-source{padding:.75rem;border:1px solid #d4c09a;border-radius:.55rem;background:#fffaf1e8;font-size:.9rem;line-height:1.6}
+#economic-dashboard .ed-source strong{display:block;margin-bottom:.25rem;color:#553c24}#economic-dashboard a{color:#7e3024;text-decoration-thickness:1px;text-underline-offset:2px}
+#economic-dashboard .ed-note{font-size:.85rem;color:#665847;line-height:1.65}
+#economic-dashboard .ed-legend-help{font-size:.84rem;color:#655747}
+#economic-dashboard .ed-compare{display:flex;flex-wrap:wrap;align-items:start;gap:.6rem;padding:.75rem;border:1px solid #c8ad77;border-radius:.55rem;background:#f8f0df}
+#economic-dashboard .ed-compare[hidden]{display:none}
+#economic-dashboard .ed-compare-summary{flex:1 1 100%;line-height:1.7}
+#economic-dashboard .ed-event-detail,#economic-dashboard .ed-sources-detail{margin:.9rem 0;padding:.65rem .8rem;border:1px solid #d5c29a;border-radius:.45rem;background:#fffaf1c7;line-height:1.7}
+#economic-dashboard .ed-event-list{display:flex;flex-wrap:wrap;gap:.35rem;margin:.5rem 0 .8rem}
+#economic-dashboard .ed-event-list button{font-size:.82rem;min-height:2rem}
+#economic-dashboard .ed-countries label{display:inline-flex;align-items:flex-start;gap:.3rem;padding:.35rem .45rem;border:1px solid #d7c49c;border-radius:.35rem;background:#fffaf0;font-size:.9rem}
+#economic-dashboard .ed-countries input:disabled{cursor:not-allowed;accent-color:#9b8b72}
+#economic-dashboard summary{cursor:pointer;color:#6f3026;font-weight:700}
+#economic-dashboard input[type=number]{width:6.5rem;min-height:2.2rem;padding:.3rem .45rem;border:1px solid #9e7840;border-radius:.4rem;font:inherit}
+@media(max-width:650px){#economic-dashboard .ed-shell{padding:1rem}#economic-dashboard .ed-shell:before{inset:7px}#economic-dashboard .ed-chart{height:370px;min-height:330px}#economic-dashboard .ed-metrics button{flex:1 1 42%}#economic-dashboard .ed-controls button{flex:1 1 auto}}
+@media(prefers-reduced-motion:reduce){#economic-dashboard *,#economic-dashboard *:before,#economic-dashboard *:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+html.qing-motion-off #economic-dashboard .ed-shell{scroll-behavior:auto}

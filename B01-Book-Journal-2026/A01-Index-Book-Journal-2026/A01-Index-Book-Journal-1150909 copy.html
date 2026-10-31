@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 建置HTML教學網站 ，以Bootstrap 4 為主，少量css -->
+<!-- 版面準備以 2 8 2 做切割 -->
+
+<head>
+  <title> 經典書籍回顧 </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/images/A01-logo/A01-9.png" type="image/x-icon">
+  <!-- Bootstrap 4 下面都固定，剩下自訂 css架構還沒放進來 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+  <!-- font-awesome 6.2 -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.3/css/all.css" rel="stylesheet"> -->
+
+  <!-- 自己的CSS -->
+  <link rel="stylesheet" href="/css/B01-Bootstrap.css">
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <script src="./css/iconfont.js"></script>
+
+
+  <!-- (ok)  google font link  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
+    .yf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+    }
+
+    .yf-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .yf-image-with-text {
+      display: inline-flex;
+      /* 讓容器和文字內容以行內方式顯示 */
+      align-items: baseline;
+      /* 對齊文字基線 */
+    }
+  </style>
+  <style>
+    td:nth-child(6n+1) {
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    td:nth-child(6n+2) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+3) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+4) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+5) {
+      vertical-align: middle;
+
+    }
+
+    td:nth-child(6n+6) {
+      vertical-align: middle;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body class="bg-dar" onload="updateCounter()">
+  <!-- 這邊是navigation 導覽列，利用 jQuery 套用，BX01-nav.html load 就好! -->
+  <div id="nav1"></div>
+
+  <!-- *************************************************************************** -->
+  <header style="margin-top: 56px;">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 輪播解說 -->
+        <!-- p1-1,p1-2,p1-3,p1-4 -->
+        <!-- p2-1,p2-2,p2-3,p2-4 -->
+        <!-- p3-1,p3-2,p3-3,p3-4 -->
+        <!-- p4-1,p4-2,p4-3,p4-4 -->
+
+
+        <!-- @@@@@@@@@@@@@@@@@@@  第一部分，輪播部分從這邊開始  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+        <div class="card-group col-sm-12 px-0">
+          <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <!-- 退休第1-1張  -->
+              <div class="carousel-item active">
+                <a href="" target="_blank">
+                  <img id="p1-1" src="/images/B03-banner/A07.webp" width="100%" title="AI提示詞"></a>
+              </div>
+              <!-- 2024第2-1張  -->
+              <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p2-1" src="/images/B03-banner/A08.webp" width="100%" title="AI提示詞"></a>
+              </div>
+              <!-- 2024第3-1張  -->
+              <!-- <div class="carousel-item">
+                <a href="" target="_blank">
+                  <img id="p3-1" src="/images/B02-banner/A03.webp" width="100%" title="AI提示詞"></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+  <!-- <header class="text-center bg-dark p-2 yf-font1" style="margin-top:55px;">
+    <h1 class="text-info yf-header-font yf-font1"><svg class="icon text-info" aria-hidden="true">
+        <use xlink:href="#icon-icon_datas"> </use>
+      </svg> 台北國際書展!~2024.02.23</h1>
+    <p class="yf-color-as2 yf-font1"> 退休之後，花了比較多的時間在閱讀上面，也慢慢學會如何閱讀，目前的閱讀沒有壓力，沒有期限，可以依照自己的興趣和喜好去追尋自己想看的書籍!</p>
+
+  </header> -->
+  <!-- ############################################################################ -->
+  <!-- 主畫面整個 -->
+  <div class="container-fluid yf-font1" style="background-color:rgb(223, 241, 241);">
+    <!-- <div class="container-fluid yf-font1"> -->
+    <div class="row">
+      <!-- 相關連結，利用 jQuery 套用，BX01-aside.html load 就好!  -->
+      <div class="col-sm-1 yf-font1">
+        <div class="container-fluid">
+          <div class="btn-group-vertical">
+            <!-- <h5 class="yf-header-font text-primary yf-font1">照片集錦</h5> -->
+            <!-- <button type="button" class="btn btn-sm btn-outline-danger text-left mb-1">
+              <a href="/T01-Travel/T02-Kirigakure-Yingge-1130203/T02B-Kirigakure-Yingge-1130203-pic-wife.html" target="_blank"><i
+                  class="fa-solid fa-book"></i> 1.老婆新手機拍攝照片 </a></button> -->
+            <!-- <button type="button" class="btn btn-sm btn-outline-danger text-left mb-1">
+              <a href="/T01-Travel/U02-Chinese-Year-2024-11302014/U02A-Chinese-Year-2024-11-0214-pic.html" target="_blank"><i
+                  class="fa-regular fa-images"></i> 1.網頁內照片~照片牆 </a></button>
+            <button type="button" class="btn btn-sm btn-outline-danger text-left mb-1">
+              <a href="/T01-Travel/U02-Chinese-Year-2024-11302014/U02C-Chinese-Year-2024-11-0214-cycle.html" target="_blank"><i
+                  class="fa-regular fa-images"></i> 2.網頁內所有照片~輪播版 </a></button> -->
+            <br>
+          </div>
+        </div>
+      </div>
+      <!-- 主要內容 -->
+      <!-- 準備說明h4   -->
+      <div class="col-sm-10">
+        <br>
+        <!-- <h2 id="1-5" class=" yf-font1"><i class="fa-solid fa-paintbrush"></i> <strong class="yf-code2">
+            AI個人化工作</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-5" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr> -->
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-7" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 蘇軾名作三十</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-7" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-5" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 古風詩詞</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-5" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-6" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 商業迷因</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-6" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-2" class=" yf-font1"><i class="fa-solid fa-book-journal-whills"></i>
+          <strong class="yf-code2"> 經典書籍</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-2" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+
+        <!-- <h2 id="1-3" class=" yf-font1"><img class="icon" src="./images/A01-icon/ai.webp"> -->
+        <h2 id="1-3" class=" yf-font1"><i class="fa-solid fa-book-open"></i>
+          <strong class="yf-code2">新書心得</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-3" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+        <!-- <h2 id="1-4" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
+        <h2 id="1-4" class=" yf-font1"><i class="fa-solid fa-scale-balanced"></i>
+          <strong class="yf-code2"> 四處走走</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-4" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+        <!-- <h2 id="1-1" class=" yf-font1"><img class="icon" src="./images/A01-icon/generative.webp"> -->
+        <h2 id="1-1" class=" yf-font1"><i class="fa-solid fa-newspaper"></i>
+          <strong class="yf-code2">生活紀錄</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-1" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+
+
+
+        <!-- <h2 id="1-4" class=" yf-font1"><img class="icon" src="./images/A01-icon/ai-technology.png"> <strong
+            class="yf-code2"> AI生成</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-4" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr> -->
+
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+        <!-- 參考資料 -->
+      </div>
+      <div class="col-sm-2">
+        <div class="container-fluid">
+          <div class="btn-group-vertical">
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="footer"></div>
+
+  <!-- 調整完成-->
+  <!--  ##################       各區塊html 載入     ###################### -->
+  <script>
+    $(function () {
+      $("#nav1").load("/B01-Book-Journal-2026/B01-ex-comm/BX02-nav-2026.html");
+      // $("#a1").load("../B01-ex-comm/BX01-aside.html");
+      // $("#a2").load("../B01-ex-comm/BX01-aside-right.html");
+      $("#footer").load("/ex-Comm/CX01-footer.html");
+    });
+  </script>
+  <script src="/js/V03-vue3.js"></script>
+
+  <script type="module">
+    import { createApp, ref, reactive, computed } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+    // AI提示詞
+    const app7 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+          // S002-01 第01集《飲湖上初晴後雨二首·其二》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-01-Su_Dongpo_West_Lake-1151022/index.html',
+            pic1s: './images/S002/01.webp',
+            dec1: 'S002-01 第01集《飲湖上初晴後雨二首·其二》~ 115.10.22!',
+          },
+
+          // S002-02 第02集《六月二十七日望湖樓醉書五絕·其一》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-02-Drunk_on_West_Lake-1151022/index.html',
+            pic1s: './images/S002/02.webp',
+            dec1: 'S002-02 第02集《六月二十七日望湖樓醉書五絕·其一》~ 115.10.22!',
+          },
+
+          // S002-03 第03集《惠崇春江晚景二首·其二》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-03-Spring_River_at_Dusk-1151022/index.html',
+            pic1s: './images/S002/03.webp',
+            dec1: 'S002-03 第03集《惠崇春江晚景二首·其二》~ 115.10.22!',
+          },
+
+          // S002-04 第04集《春宵》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-04-Spring_Night-1151022/index.html',
+            pic1s: './images/S002/04.webp',
+            dec1: 'S002-04 第04集《春宵》~ 115.10.22!',
+          },
+
+          // S002-05 第05集《海棠》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-05-Begonia-1151022/index.html',
+            pic1s: './images/S002/05.webp',
+            dec1: 'S002-05 第05集《海棠》~ 115.10.22!',
+          },
+
+          // S002-06 第06集《花影》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-06-Flower_Shadow-1151022/index.html',
+            pic1s: './images/S002/06.webp',
+            dec1: 'S002-06 第06集《花影》~ 115.10.22!',
+          },
+
+          // S002-07 第07集《琴詩》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-07-The_Poem-1151022/index.html',
+            pic1s: './images/S002/07.webp',
+            dec1: 'S002-07 第07集《琴詩》~ 115.10.22!',
+          },
+
+          // S002-08 第08集《洗兒戲作》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-08-Washing_Child-1151022/index.html',
+            pic1s: './images/S002/08.webp',
+            dec1: 'S002-08 第08集《洗兒戲作》~ 115.10.22!',
+          },
+
+          // S002-09 第09集《寒食雨二首·其一》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-09-Cold_Food_Rain-1151022/index.html',
+            pic1s: './images/S002/09.webp',
+            dec1: 'S002-09 第09集《寒食雨二首·其一》~ 115.10.22!',
+          },
+
+          // S002-10 第10集《有美堂暴雨》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-10-Rain_at_Youmei_Hall-1151022/index.html',
+            pic1s: './images/S002/10.webp',
+            dec1: 'S002-10 第10集《有美堂暴雨》~ 115.10.22!',
+          },
+
+          // S002-11 第11集《百步洪二首·其一》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-11-Baibu_Flood-1151022/index.html',
+            pic1s: './images/S002/11.webp',
+            dec1: 'S002-11 第11集《百步洪二首·其一》~ 115.10.22!',
+          },
+
+          // S002-12 第12集《石鐘山記》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-12-The_Stone_Bell_Mountain-1151022/index.html',
+            pic1s: './images/S002/12.webp',
+            dec1: 'S002-12 第12集《石鐘山記》~ 115.10.22!',
+          },
+
+          // S002-13 第13集《前赤壁賦》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-13-First_Red_Cliff_Rhapsody-1151022/index.html',
+            pic1s: './images/S002/13.webp',
+            dec1: 'S002-13 第13集《前赤壁賦》~ 115.10.22!',
+          },
+
+          // S002-14 第14集《後赤壁賦》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-14-Second_Red_Cliff_Rhapsody-1151022/index.html',
+            pic1s: './images/S002/14.webp',
+            dec1: 'S002-14 第14集《後赤壁賦》~ 115.10.22!',
+          },
+
+          // S002-15 第15集《記承天寺夜遊》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-15-Night_Visit_to_Chengtian_Temple-1151022/index.html',
+            pic1s: './images/S002/15.webp',
+            dec1: 'S002-15 第15集《記承天寺夜遊》~ 115.10.22!',
+          },
+
+          // S002-16 第16集《臨江仙·夜歸臨皋》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-16-River_Immortal_Night_Return-1151022/index.html',
+            pic1s: './images/S002/16.webp',
+            dec1: 'S002-16 第16集《臨江仙·夜歸臨皋》~ 115.10.22!',
+          },
+
+          // S002-17 第17集《浣溪沙·遊蘄水清泉寺》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-17-Clear_Stream_Temple-1151022/index.html',
+            pic1s: './images/S002/17.webp',
+            dec1: 'S002-17 第17集《浣溪沙·遊蘄水清泉寺》~ 115.10.22!',
+          },
+
+          // S002-18 第18集《浣溪沙·細雨斜風作曉寒》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-18-Spring_Cold_Morning-1151022/index.html',
+            pic1s: './images/S002/18.webp',
+            dec1: 'S002-18 第18集《浣溪沙·細雨斜風作曉寒》~ 115.10.22!',
+          },
+
+          // S002-19 第19集《西江月·世事一場大夢》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-19-Moon_over_Xijiang-1151022/index.html',
+            pic1s: './images/S002/19.webp',
+            dec1: 'S002-19 第19集《西江月·世事一場大夢》~ 115.10.22!',
+          },
+
+          // S002-20 第20集《行香子·述懷》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-20-Xingxiangzi_Reflections-1151022/index.html',
+            pic1s: './images/S002/20.webp',
+            dec1: 'S002-20 第20集《行香子·述懷》~ 115.10.22!',
+          },
+
+          // S002-21 第21集《臨江仙·送錢穆父》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-21-River_Immortal_Seeing_Mu-Fu-1151022/index.html',
+            pic1s: './images/S002/21.webp',
+            dec1: 'S002-21 第21集《臨江仙·送錢穆父》~ 115.10.22!',
+          },
+
+          // S002-22 第22集《水龍吟·次韻章質夫楊花詞》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-22-Dragon_Song_Poplar_Blossoms-1151022/index.html',
+            pic1s: './images/S002/22.webp',
+            dec1: 'S002-22 第22集《水龍吟·次韻章質夫楊花詞》~ 115.10.22!',
+          },
+
+          // S002-23 第23集《賀新郎·乳燕飛華屋》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-23-Young_Swallows_Fly-1151022/index.html',
+            pic1s: './images/S002/23.webp',
+            dec1: 'S002-23 第23集《賀新郎·乳燕飛華屋》~ 115.10.22!',
+          },
+
+          // S002-24 第24集《念奴嬌·赤壁懷古》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-24-Niannujiao_Remembering_Red_Cliff-1151022/index.html',
+            pic1s: './images/S002/24.webp',
+            dec1: 'S002-24 第24集《念奴嬌·赤壁懷古》~ 115.10.22!',
+          },
+
+          // S002-25 第25集《江城子·別徐州》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-25-Jiangchengzi_Leaving_Xuzhou-1151022/index.html',
+            pic1s: './images/S002/25.webp',
+            dec1: 'S002-25 第25集《江城子·別徐州》~ 115.10.22!',
+          },
+
+          // S002-26 第26集《八聲甘州·寄參寥子》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-26-Basheng_Ganzhou_For_Canliao-1151022/index.html',
+            pic1s: './images/S002/26.webp',
+            dec1: 'S002-26 第26集《八聲甘州·寄參寥子》~ 115.10.22!',
+          },
+
+          // S002-27 第27集《南鄉子·重九涵輝樓呈徐君猷》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-27-Nanxiangzi_At_Huiguang_Tower-1151022/index.html',
+            pic1s: './images/S002/27.webp',
+            dec1: 'S002-27 第27集《南鄉子·重九涵輝樓呈徐君猷》~ 115.10.22!',
+          },
+
+          // S002-28 第28集《西江月·照野彌彌淺浪》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-28-Moon_over_Xijiang_Shallow_Waves-1151022/index.html',
+            pic1s: './images/S002/28.webp',
+            dec1: 'S002-28 第28集《西江月·照野彌彌淺浪》~ 115.10.22!',
+          },
+
+          // S002-29 第29集《定風波·南海歸贈王定國侍人寓娘》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-29-Calming_the_Waves_Return_from_South_Sea-1151022/index.html',
+            pic1s: './images/S002/29.webp',
+            dec1: 'S002-29 第29集《定風波·南海歸贈王定國侍人寓娘》~ 115.10.22!',
+          },
+
+          // S002-30 第30集《卜算子·黃州定慧院寓居作》~ 115.10.22!
+          {
+            pic1: '/B01-Book-Journal-2026/S002-Su_Shi_30_Classics-1151021/S002-30-Bu_Suazi_Dwelling_in_Huangzhou-1151022/index.html',
+            pic1s: './images/S002/30.webp',
+            dec1: 'S002-30 第30集《卜算子·黃州定慧院寓居作》~ 115.10.22!',
+          },
+
+
+
+
+
+
+        ]);
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-7')
+
+    // 古風詩詞
+
+    const app5 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+          // S001. 江城子·密州出獵~(手繪插畫中國古風27鏡) ~ 115.10.19!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A001-Su_Dongpo_Mizhou_Hunting-1151019/index.html',
+            pic1s: './images/S001/B01-1-4X3.webp',
+            dec1: 'S001. 江城子·密州出獵~(手繪插畫中國古風27鏡) ~ 115.10.19!',
+          },
+          // S002. 卜算子·黃州定慧院寓居作~(手繪插畫中國古風20鏡) ~ 115.10.19!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A002-Su_Dongpo_Dinghui_Temple-1151019/index.html',
+            pic1s: './images/S001/B02-1-4X3.webp',
+            dec1: 'S002. 卜算子·黃州定慧院寓居作~(手繪插畫中國古風20鏡) ~ 115.10.19!',
+          },
+          // S003. 水調歌頭·明月幾時有~(手繪插畫中國古風22鏡) ~ 115.10.19!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A003-Su_Dongpo_Bright_Moon-1151019/index.html',
+            pic1s: './images/S001/B03-1-4X3.webp',
+            dec1: 'S003. 水調歌頭·明月幾時有~(手繪插畫中國古風22鏡) ~ 115.10.19!',
+          },
+          // S004. 江城子·乙卯正月二十日夜記夢~(手繪插畫中國古風??鏡) ~ 115.10.19!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A004-Su_Dongpo_Dream_Record-1151019/index.html',
+            pic1s: './images/S001/B04-1-4X3.webp',
+            dec1: 'S004. 江城子·乙卯正月二十日夜記夢~(手繪插畫中國古風20鏡) ~ 115.10.19!',
+          },
+          // S005. 臨江仙_送錢穆父~(手繪插畫中國古風??鏡) ~ 115.10.19!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A005-Su_Dongpo_Farewell_Qian_Mufu-1151019/index.html',
+            pic1s: './images/S001/B05-1-4X3.webp',
+            dec1: 'S005. 臨江仙_送錢穆父~(手繪插畫中國古風24鏡) ~ 115.10.19!',
+          },
+          // S006A. 念奴嬌·赤壁懷古~(手繪插畫中國古風??鏡) ~ 115.10.20!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A006A-Su_Dongpo_Red_Cliff-1151020/index.html',
+            pic1s: './images/S001/B06A-1-4X3.webp',
+            dec1: 'S006A. 念奴嬌·赤壁懷古~(手繪插畫中國古風22鏡) ~ 115.10.20!',
+          },
+          // S006B. 定風波_莫聽穿林打葉聲~(手繪插畫中國古風??鏡) ~ 115.10.20!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A006B-Su_Dongpo_Rain_Walk-1151020/index.html',
+            pic1s: './images/S001/B06B-1-4X3.webp',
+            dec1: 'S006B. 定風波_莫聽穿林打葉聲~(手繪插畫中國古風22鏡) ~ 115.10.20!',
+          },
+          // S007. 自題金山畫像~(手繪插畫中國古風??鏡) ~ 115.10.20!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A007-Su_Dongpo_Jinshan_Portrait-1151020/index.html',
+            pic1s: './images/S001/B07-1-4X3.webp',
+            dec1: 'S007. 自題金山畫像~(手繪插畫中國古風22鏡) ~ 115.10.20!',
+          },
+          // S008. 望江南·超然臺作~(手繪插畫中國古風??鏡) ~ 115.10.20!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A008-Su_Dongpo_Chaoran_Terrace-1151020/index.html',
+            pic1s: './images/S001/B08-1-4X3.webp',
+            dec1: 'S008. 望江南·超然臺作~(手繪插畫中國古風25鏡) ~ 115.10.20!',
+          },
+          // S009. 題西林壁~(手繪插畫中國古風??鏡) ~ 115.10.20!
+          {
+            pic1: '/B01-Book-Journal-2026/S001-Su_Dongpo_Poems-1151019/A009-Su_Dongpo_Xilin_Wall-1151020/index.html',
+            pic1s: './images/S001/B09-1-4X3.webp',
+            dec1: 'S009. 題西林壁~(手繪插畫中國古風21鏡) ~ 115.10.20!',
+          },
+
+
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-5')
+
+    const app2 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+          // J003.《原子習慣：細微改變帶來巨大成就的實證法則》 動態劇本網頁(新的聲音版~男聲磁性版) ~ 115.09.13!
+          {
+            pic1: '/B01-Book-Journal-2026/J003-Atomic-Habits-1150913/J003-Atomic-Habits-1150913.html',
+            pic1s: './images/J003-1.webp',
+            dec1: 'J003.《原子習慣：細微改變帶來巨大成就的實證法則》 動態劇本網頁(新的聲音版~男聲磁性版) ~ 115.09.13!',
+          },
+
+          // J002B.《一如既往》 動態劇本網頁(新的聲音版~男聲磁性版) ~ 115.09.12!
+          {
+            pic1: '/B01-Book-Journal-2026/J002B-Sma-as-Ever-Dynamic-Web-1150911/J002B-Sma-as-Ever-Dynamic-Web-1150911.html',
+            pic1s: './images/J002B-1.webp',
+            dec1: 'J002B.《一如既往》 動態劇本網頁(新的聲音版~男聲磁性版) ~ 115.09.12!',
+          },
+
+          // J002A.《一如既往》 23條生活守則 ~ 115.09.12!
+          {
+            pic1: '/B01-Book-Journal-2026/J002A-Same-as-Ever-23-Life-Rules-1150912/J002A-Same-as-Ever-23-Life-Rules-1150912.html',
+            pic1s: './images/J002A-1.webp',
+            dec1: 'J002A.《一如既往》 23條生活守則 ~ 115.09.12!',
+          },
+
+          // J002.《一如既往》：不變的人性法則與致富心態(讀書心得)【AI協作】 ~115.09.12!
+          {
+            pic1: '/B01-Book-Journal-2026/J002-Sma-as-Ever-1150911/J002-Sma-as-Ever-1150911.html',
+            pic1s: './images/J002-1.webp',
+            dec1: 'J002.《一如既往》：不變的人性法則與致富心態(讀書心得)【AI協作】 ~115.09.12!',
+          },
+          // J001.黑天鵝效應~動態劇本網頁(新的聲音版~語速太快) ~ 115.09.11!
+          {
+            pic1: '/B01-Book-Journal-2026/J001-The-Black-Swan-1150911/J001-The-Black-Swan-1150911.html',
+            pic1s: './images/J001-2.webp',
+            dec1: 'J001.《黑天鵝效應》~動態劇本網頁(新的聲音版~語速太快) ~ 115.09.11!',
+          },
+          // J000.閱讀視覺筆記｜100種風格(慢慢增加中...) ~ 115.10.02!
+          {
+            pic1: '/B01-Book-Journal-2026/J000-Visual_Notes_100_Styles-1151002/index.html',
+            pic1s: './images/J000-1.webp',
+            dec1: 'J000.閱讀視覺筆記｜100種風格(慢慢增加中...) ~ 115.10.02!!',
+          },
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-2')
+
+
+
+    const app3 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+          // N004A.《每天把心掃乾淨》 ~ 枡野俊明(動態閱讀網頁)~ 【AI協作】 ~ 115.09.22
+          {
+            pic1: '/B01-Book-Journal-2026/N005-D-Sweep-Your-Heart-Daily-115092/index.html',
+            pic1s: './images/N005A-1.webp',
+            dec1: 'N005A.《每天把心掃乾淨》 ~ 枡野俊明(動態閱讀網頁)~ 【AI協作】 ~ 115.09.22!',
+          },
+          // N004.《每天把心掃乾淨》 ~ 枡野俊明(圖片呈現方式改變) ~ 【AI協作】 ~ 115.09.22
+          {
+            pic1: '/B01-Book-Journal-2026/N005-AI-Sweep-Your-Heart-Daily-1150922/N005-AI-Sweep-Your-Heart-Daily-1150922.html',
+            pic1s: './images/N005-1.webp',
+            dec1: ' N005.《每天把心掃乾淨》 ~ 枡野俊明(圖片呈現方式改變) ~ 【AI協作】 ~ 115.09.22!',
+          },
+
+          // N004.《當道德經成為必修課：八十一個老子人生智慧必修學分！》(動態閱讀網頁) ~ 【AI協作】 ~ 115.09.22
+          {
+            pic1: '/B01-Book-Journal-2026/N004-D-Tao-Te-Ching-81-Required-Life-Lessons-1150920/index.html',
+            pic1s: './images/N004A-1.webp',
+            dec1: 'N004.《當道德經成為必修課：八十一個老子人生智慧必修學分！》(動態閱讀網頁) ~ 【AI協作】 ~ 115.09.22!',
+          },
+
+          // N004.《當道德經成為必修課：八十一個老子人生智慧必修學分！》(加註原文) ~ 【AI協作】 ~ 115.09.21
+          {
+            pic1: '/B01-Book-Journal-2026/N004-AI-Tao-Te-Ching-81-Required-Life-Lessons-1150920/N004-Tao-Te-Ching-81-Required-Life-Lessons-1150920.html',
+            pic1s: './images/N004-1.webp',
+            dec1: 'N004.《當道德經成為必修課：八十一個老子人生智慧必修學分！》(加註原文) ~ 【AI協作】 ~ 115.09.21!',
+          },
+
+          // N003A.《誰的島鏈？為何反戰？》 ~ 關於全球與台海戰爭局勢的思索 (動態網頁)【AI協作】 ~ 115.09.20
+          {
+            pic1: '/B01-Book-Journal-2026/N003-D-Whose-Island-Chain-Why-Oppose-War-1150920/index.html',
+            pic1s: './images/N003A-1.webp',
+            dec1: 'N003A.《誰的島鏈？為何反戰？》 ~ 關於全球與台海戰爭局勢的思索 (動態網頁)【AI協作】 ~ 115.09.20!',
+          },
+
+          // N003.《誰的島鏈？為何反戰？》 ~ 在煙硝與霸權之外，尋找東亞和平的主體性 【AI協作】 ~ 115.09.19
+          {
+            pic1: '/B01-Book-Journal-2026/N003-Whose-Island-Chain-Why-Oppose-War-1150919/N003-Whose-Island-Chain-Why-Oppose-War-1150919.html',
+            pic1s: './images/N003-1.webp',
+            dec1: 'N003.《誰的島鏈？為何反戰？》 ~ 在煙硝與霸權之外，尋找東亞和平的主體性 【AI協作】 ~ 115.09.19!',
+          },
+
+
+
+          // N002A.《無限機器：Gemini推手哈薩比斯的超級智慧長征》(動態網頁)【AI協作】 ~ 115.09.18
+          {
+            pic1: '/B01-Book-Journal-2026/N002-D-The-Infinity-Machine-Hassabis-1150917/index.html',
+            pic1s: './images/N002A-1.webp',
+            dec1: 'N002A.《無限機器：Gemini推手哈薩比斯的超級智慧長征》(動態網頁)【AI協作】 ~ 115.09.18!',
+          },
+
+          // N002.《無限機器：Gemini推手哈薩比斯的超級智慧長征》 ~ 115.09.17
+          {
+            pic1: '/B01-Book-Journal-2026/N002-The-Infinity-Machine-Hassabis-1150917/N002-The-Infinity-Machine-Hassabis-1150917.html',
+            pic1s: './images/N002-1.webp',
+            dec1: 'N002.《無限機器：Gemini推手哈薩比斯的超級智慧長征》【AI協作】 ~ 115.09.17!',
+          },
+
+          // N001A. 《不被洗腦的思維練習》(動態網頁)【AI協作】 ~ 115.09.15!
+          {
+            pic1: '/B01-Book-Journal-2026/N001A--Brainwash-Proof-Thinking-Dynamic-Web-1150914/N001A-Brainwash-Proof-Thinking-Dynamic-Web-1150914.html',
+            pic1s: './images/N001A-1.webp',
+            dec1: 'N001A. 《不被洗腦的思維練習》(動態網頁)【AI協作】 ~ 115.09.15!',
+          },
+
+          // N001. 《不被洗腦的思維練習》(讀書心得)【AI協作】 ~ 115.09.14!
+          {
+            pic1: '/B01-Book-Journal-2026/N001-Brainwash-Proof-Thinking-1150914/N001-Brainwash-Proof-Thinking-1150914.html',
+            pic1s: './images/N001-1.webp',
+            dec1: 'N001. 《不被洗腦的思維練習》(讀書心得)【AI協作】 ~ 115.09.14!',
+          },
+
+
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-3')
+
+    const app1 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+          // G003.2026台北市長民調紀錄~持續更新 ~ 115.10.02
+          {
+            pic1: '/B01-Book-Journal-2026/G003-2026_Taipei_Mayor_Poll_Feature-1151002/poll_2026_taipei.html',
+            pic1s: './images/G003-2.webp',
+            dec1: 'G003.2026台北市長民調紀錄~持續更新 ~ 115.10.02!',
+          },
+
+          // G002.Q萌標準象棋對戰(全盤) ~ 115.09.21
+          {
+            pic1: '/B01-Book-Journal-2026/G002-Standard-Xiangqi-Full-Game-1150920/index.html',
+            pic1s: './images/G002-1.webp',
+            dec1: 'G002.Q萌標準象棋對戰(全盤) ~ 115.09.21!',
+          },
+
+          // G001.Q萌暗棋對戰(就是象棋暗棋) ~115.09.20
+          {
+            pic1: '/B01-Book-Journal-2026/G001-Q-Chess-Dark-Battle-1150920/index.html',
+            pic1s: './images/G001-1.webp',
+            dec1: 'G001.Q萌暗棋對戰(就是象棋暗棋) ~115.09.20!',
+          },
+
+          // L001-退休後的快樂聚會~43年的同學好友，簡單的幸福(有字幕)!
+          {
+            pic1: 'https://youtu.be/44WStU1T9eA',
+            pic1s: './images/L001-1.webp',
+            dec1: 'L001-退休後的快樂聚會~43年的同學好友，簡單的幸福(有字幕)~115.09.18!',
+          },
+
+
+
+
+
+
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-1')
+
+
+
+    const app4 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+          // T003. 日本旅遊全覽第3站~.八天七夜新潟自由行(動態網頁) ~ 115.09.23!
+          {
+            pic1: '/B01-Book-Journal-2026/T003-D-Jp-3rd-Stop-Niigata-8D7N-Free-Travel-1150924/index.html',
+            pic1s: './images/T003-1.webp',
+            dec1: 'T003. 日本旅遊全覽第3站~.八天七夜新潟自由行(動態網頁) ~ 115.09.23!',
+          },
+
+          // T002B. 日本旅遊全覽第2站~.用十天九夜，慢慢走進京都與宇治(動態網頁) ~ 115.09.15!
+          {
+            pic1: '/B01-Book-Journal-2026/T002-D-Jp-2nd-Stop-Kyoto-and-Uji-Dynamic-Web-1150915/index.html',
+            pic1s: './images/T002B-1.webp',
+            dec1: 'T002B. 日本旅遊全覽第2站~京都與宇治(動態網頁)(這版做得很糟糕) ❌❌❌ 👎🏿👎🏿👎🏿 ~ 115.09.15!',
+          },
+
+          // T002A. 日本旅遊全覽第2站~京都$宇治(十天九夜~資訊圖表) ~ 115.09.15!
+          {
+            pic1: '/B01-Book-Journal-2026/T002-W-Jp-2nd-Stop-Kyoto-and-Uji-info-Graphic-1150915/T002-W-Jp-2nd-Stop-Kyoto-and-Uji-info-Graphic-1150915.html',
+            pic1s: './images/T002A-1.webp',
+            dec1: 'T002A. 日本旅遊全覽第2站~京都與宇治(十天九夜~資訊圖表) ~ 115.09.15!',
+          },
+
+          // T001. 日本旅遊全覽第一站~北海道道央 ~ 115.09.14!
+          {
+            pic1: '/B01-Book-Journal-2026/T001-JP-1st-Stop-Central-Hokkaido-1150914/T001-JP-1st-Stop-Central-Hokkaido-1150914.html',
+            pic1s: './images/T001-1.webp',
+            dec1: 'T001. 日本旅遊全覽第1站~北海道道央 ~ 115.09.14!',
+          },
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-4')
+
+
+
+    const app6 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+          // H001.Blockbuster 百視達：拒絕收購Netflix的代價 ~ 115.10.15
+          {
+            pic1: '/B01-Book-Journal-2026/H001-The-Rise-and-Fal-of-Blockbuster-1151015/index.html',
+            pic1s: './images/H001-1.webp',
+            dec1: 'H001.Blockbuster 百視達：拒絕收購Netflix的代價 ~ 115.10.15!',
+          },
+          // H001A.Blockbuster 百視達：拒絕收購Netflix的代價(日式卡通版438鏡) ~ 115.10.16!
+          {
+            pic1: '/B01-Book-Journal-2026/H001-A-438--The-Rise-and-Fal-of-Blockbuster-1151016/index.html',
+            pic1s: './images/H001-2.webp',
+            dec1: 'H001A.Blockbuster 百視達：拒絕收購Netflix的代價(日式卡通版438鏡) ~ 115.10.16!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A01-Kodak_Killed_by_Own_Invention/index.html',
+            pic1s: './images/U001-01.webp',
+            dec1: 'U001-01.Kodak 柯達：發明者死於自己的發明 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A02-Blockbuster_Netflix_Rejection/index.html',
+            pic1s: './images/U001-02.webp',
+            dec1: 'U001-02.Blockbuster 百視達：拒絕收購Netflix的代價 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A03-Nokia_Burning_Platform/index.html',
+            pic1s: './images/U001-03.webp',
+            dec1: 'U001-03.Nokia 諾基亞：在燃燒的平台上跳錯了方向 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A04-Xerox_Future_Marketing_Fail/index.html',
+            pic1s: './images/U001-04.webp',
+            dec1: 'U001-04.Xerox 施樂：發明了未來卻不會賣 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A05-Sears_Hollowed_Retail_Empire/index.html',
+            pic1s: './images/U001-05.webp',
+            dec1: 'U001-05.Sears 西爾斯：被資本家掏空的零售帝國 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A06-Yahoo_Lost_Identity/index.html',
+            pic1s: './images/U001-06.webp',
+            dec1: 'U001-06.Yahoo! 雅虎：不知道自己是誰的門戶巨頭 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A07-Motorola_Hardware_Trap/index.html',
+            pic1s: './images/U001-07.webp',
+            dec1: 'U001-07.Motorola 摩托羅拉：沉迷硬體夢，錯失軟體時代 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A08-MySpace_Ad-First_Demise/index.html',
+            pic1s: './images/U001-08.webp',
+            dec1: 'U001-08.MySpace：廣告優先殺死了社交體驗 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A09-A&P_Model_Curse/index.html',
+            pic1s: './images/U001-09.webp',
+            dec1: 'U001-09.A&P 超市：被自己發明的模式困住 ~ 115.10.26!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U001-US_Giants_Fall/A10-GM_Brand_Cannibalization/index.html',
+            pic1s: './images/U001-10.webp',
+            dec1: 'U001-10.GM通用汽車：多品牌內耗與路徑依賴 ~ 115.10.26!',
+          },
+
+
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep01_WecChuan_Wrong_Parent_Loss/index.html',
+            pic1s: './images/U002-01.webp',
+            dec1: 'U002-01.味全──選錯母公司，信任資產的不可逆折舊 ~ 115.10.30!',
+          },
+
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep02_HTC_OEM_Brand_War/index.html',
+            pic1s: './images/U002-02.webp',
+            dec1: 'U002-02.宏達電HTC——用代工的思維，打一場品牌的戰爭 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep03_BenQ_Time_Buying_Merger/index.html',
+            pic1s: './images/U002-03.webp',
+            dec1: 'U002-03.明基BenQ——用金錢買時間的跨文化併購 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep04_Luxgen_No_Scale_Dream/index.html',
+            pic1s: './images/U002-04.webp',
+            dec1: 'U002-04.納智捷LUXGEN——沒有經過規模支撐的品牌夢 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep05_TransAsia_Political_Bet/index.html',
+            pic1s: './images/U002-05.webp',
+            dec1: 'U002-05.復興航空——把機隊押在一個由政治決定的市場上 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep06_Rebar_Leader_Risk/index.html',
+            pic1s: './images/U002-06.webp',
+            dec1: 'U002-06.力霸集團——當決策者本身就是風險 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep07_Tatung_Arbitrage_Ruin/index.html',
+            pic1s: './images/U002-07.webp',
+            dec1: 'U002-07.大同公司——百年品牌，被兩派資產套利掏空 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep08_VIA_Ecosystem_Over_Share/index.html',
+            pic1s: './images/U002-08.webp',
+            dec1: 'U002-08.威盛電子——市佔率是暫時的，生態系才是領土 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep09_E_Ton_Motech_Capacity_Race/index.html',
+            pic1s: './images/U002-09.webp',
+            dec1: 'U002-09.益通光能與茂迪——沒有進入門檻的產能競賽 ~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U002-Taiwan_10_Fatal_Business_Decisions/Ep10_Tuntex_Borrowed_Money_Empire/index.html',
+            pic1s: './images/U002-10.webp',
+            dec1: 'U002-10.東帝士集團──用借來的錢堆出的帝國 ~ 115.10.30!',
+          },
+          {
+            pic1: 'k-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-01_TSMC_Foundry_Foundation/index.html',
+            pic1s: './images/U003/U003-01.webp',
+            dec1: 'U003-第01集-台灣近30年崛起十大企業-台積電：把「代工」從邊緣做成產業地基~ 115.10.30!',
+          },
+       
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-02_Foxconn_Scale_Speed/index.html',
+            pic1s: './images/U003/U003-02.webp',
+            dec1: 'U003-第02集-台灣近30年崛起十大企業-鴻海：把「代工」做成規模與速度的極致~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-03_MediaTek_5G_Overtake/index.html',
+            pic1s: './images/U003/U003-03.webp',
+            dec1: 'U003-第03集-台灣近30年崛起十大企業-聯發科：從「山寨之王」到5G反超~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-04_Delta_AI_Power_Crisis/index.html',
+            pic1s: './images/U003/U003-04.webp',
+            dec1: 'U003-第04集-台灣近30年崛起十大企業-台達電：電源效率的偏執，接住了AI的功耗危機~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-05_Quanta_AI_Server_Leader/index.html',
+            pic1s: './images/U003/U003-05.webp',
+            dec1: 'U003-第05集-台灣近30年崛起十大企業-廣達：從筆電之王到AI伺服器龍頭，三次「連中三元」~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-09_Wiwynn_Hyperscale_Datacenter/index.html',
+            pic1s: './images/U003/U003-06.webp',
+            dec1: 'U003-第06集-台灣近30年崛起十大企業-緯穎：從緯創「切出來」，專攻超大規模資料中心~ 115.10.30!',
+          },
+          {
+
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-08_King_Slide_AI_Racks/index.html',
+            pic1s: './images/U003/U003-07.webp',
+            dec1: 'U003-第07集-台灣近30年崛起十大企業-川湖：兩根鐵條，卡進AI機櫃最賺錢的縫隙~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-10_AVC_Liquid_Cooling/index.html',
+            pic1s: './images/U003/U003-08.webp',
+            dec1: 'U003-第08集-台灣近30年崛起十大企業-奇鋐：押注液冷35年，等來AI的「熱危機」~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-07_Yageo_25_Mergers/index.html',
+            pic1s: './images/U003/U003-09.webp',
+            dec1: 'U003-第09集-台灣近30年崛起十大企業-國巨：用25次併購，從「等著被殺價」到掌握話語權~ 115.10.30!',
+          },
+          {
+            pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-06_Fubon_Mergers_Giant/index.html',
+            pic1s: './images/U003/U003-10.webp',
+            dec1: 'U003-第10集-台灣近30年崛起十大企業-富邦金：用併購在金融自由化中長成巨頭~ 115.10.30!',
+          },
+          
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-6')
+
+
+
+    const app8 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-8')
+
+
+
+    const app9 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-9')
+
+
+    const app10 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-10')
+
+
+
+
+  </script>
+  <!-- ####################################  套用資料區域結束  ##################################################### -->
+  <script>
+    function updateCounter() {
+      // 112.10.05 移除之前舊資料
+      const arr1 = ['A17', 'A18', 'A19', 'A20'];
+      // const arr1 = ['A15', 'A16', 'A17', 'A18', 'A19', 'A20'];
+
+      const randomNum = Math.floor(Math.random() * arr1.length);
+      const arr_ok = shuffleArray(arr1)
+      const str1 = '/images/B03-banner/'
+      const str2 = '.webp';
+      document.getElementById('p1-1').src = str1 + arr_ok[0] + str2;
+      document.getElementById('p2-1').src = str1 + arr_ok[1] + str2;
+      // document.getElementById('p3-1').src = str1 + arr_ok[2] + str2;
+      // document.getElementById('p4-1').src = str1 + arr_ok[3] + str2;
+      // document.getElementById('p5-1').src = str1 + arr_ok[4] + str2;
+      // document.getElementById('p6-1').src = str1 + arr_ok[5] + str2;
+      // document.getElementById('p7-1').src = str1 + arr_ok[6] + str2;
+      // document.getElementById('p8-1').src = str1 + arr_ok[7] + str2;
+      // document.getElementById('p4-1').src = str1 + arr_ok[3] + '-1' + str2;
+      // document.getElementById('p5-1').src = str1 + arr_ok[4] + '-1' + str2;
+      // document.getElementById('p6-1').src = str1 + arr_ok[5] + '-1' + str2;
+      // document.getElementById('p7-1').src = str1 + arr_ok[6] + '-1' + str2;
+      // document.getElementById('p8-1').src = str1 + arr_ok[7] + '-1' + str2;
+      // document.getElementById('p9-1').src = str1 + arr_ok[8] + '-1' + str2;
+      // document.getElementById('p10-1').src = str1 + arr_ok[9] + '-1' + str2;
+      // document.getElementById('p11-1').src = str1 + arr_ok[10] + '-1' + str2;
+      // document.getElementById('p12-1').src = str1 + arr_ok[11] + '-1' + str2;
+      // document.getElementById('p13-1').src = str1 + arr_ok[12] + '-1' + str2;
+      // document.getElementById('p14-1').src = str1 + arr_ok[13] + '-1' + str2;
+      // document.getElementById('p15-1').src = str1 + arr_ok[14] + '-1' + str2;
+      // document.getElementById('p16-1').src = str1 + arr_ok[15] + '-1' + str2;
+
+
+      //document.getElementById('p1-2').src = str1 + arr_ok[0] + '-2' + str2;
+      //document.getElementById('p2-2').src = str1 + arr_ok[1] + '-2' + str2;
+      //document.getElementById('p3-2').src = str1 + arr_ok[2] + '-2' + str2;
+      // document.getElementById('p4-2').src = str1 + arr_ok[3] + '-2' + str2;
+      // document.getElementById('p5-2').src = str1 + arr_ok[4] + '-2' + str2;
+      // document.getElementById('p6-2').src = str1 + arr_ok[5] + '-2' + str2;
+      // document.getElementById('p7-2').src = str1 + arr_ok[6] + '-2' + str2;
+      // document.getElementById('p8-2').src = str1 + arr_ok[7] + '-2' + str2;
+      // document.getElementById('p9-2').src = str1 + arr_ok[8] + '-2' + str2;
+      // document.getElementById('p10-2').src = str1 + arr_ok[9] + '-2' + str2;
+      // document.getElementById('p11-2').src = str1 + arr_ok[10] + '-2' + str2;
+      // document.getElementById('p12-2').src = str1 + arr_ok[11] + '-2' + str2;
+      // document.getElementById('p13-2').src = str1 + arr_ok[12] + '-2' + str2;
+      // document.getElementById('p14-2').src = str1 + arr_ok[13] + '-2' + str2;
+      // document.getElementById('p15-2').src = str1 + arr_ok[14] + '-2' + str2;
+      // document.getElementById('p16-2').src = str1 + arr_ok[15] + '-2' + str2;
+
+      //document.getElementById('p1-3').src = str1 + arr_ok[0] + '-3' + str2;
+      //document.getElementById('p2-3').src = str1 + arr_ok[1] + '-3' + str2;
+      //document.getElementById('p3-3').src = str1 + arr_ok[2] + '-3' + str2;
+      // document.getElementById('p4-3').src = str1 + arr_ok[3] + '-3' + str2;
+      // document.getElementById('p5-3').src = str1 + arr_ok[4] + '-3' + str2;
+      // document.getElementById('p6-3').src = str1 + arr_ok[5] + '-3' + str2;
+      // document.getElementById('p7-3').src = str1 + arr_ok[6] + '-3' + str2;
+      // document.getElementById('p8-3').src = str1 + arr_ok[7] + '-3' + str2;
+      // document.getElementById('p9-3').src = str1 + arr_ok[8] + '-3' + str2;
+      // document.getElementById('p10-3').src = str1 + arr_ok[9] + '-3' + str2;
+      // document.getElementById('p11-3').src = str1 + arr_ok[10] + '-3' + str2;
+      // document.getElementById('p12-3').src = str1 + arr_ok[11] + '-3' + str2;
+      // document.getElementById('p13-3').src = str1 + arr_ok[12] + '-3' + str2;
+      // document.getElementById('p14-3').src = str1 + arr_ok[13] + '-3' + str2;
+      // document.getElementById('p15-3').src = str1 + arr_ok[14] + '-3' + str2;
+      // document.getElementById('p16-3').src = str1 + arr_ok[15] + '-3' + str2;
+
+
+      //document.getElementById('p1-4').src = str1 + arr_ok[0] + '-4' + str2;
+      //document.getElementById('p2-4').src = str1 + arr_ok[1] + '-4' + str2;
+      //document.getElementById('p3-4').src = str1 + arr_ok[2] + '-4' + str2;
+      // document.getElementById('p4-4').src = str1 + arr_ok[3] + '-4' + str2;
+      // document.getElementById('p5-4').src = str1 + arr_ok[4] + '-4' + str2;
+      // document.getElementById('p6-4').src = str1 + arr_ok[5] + '-4' + str2;
+      // document.getElementById('p7-4').src = str1 + arr_ok[6] + '-4' + str2;
+      // document.getElementById('p8-4').src = str1 + arr_ok[7] + '-4' + str2;
+      // document.getElementById('p9-4').src = str1 + arr_ok[8] + '-4' + str2;
+      // document.getElementById('p10-4').src = str1 + arr_ok[9] + '-4' + str2;
+      // document.getElementById('p11-4').src = str1 + arr_ok[10] + '-4' + str2;
+      // document.getElementById('p12-4').src = str1 + arr_ok[11] + '-4' + str2;
+      // document.getElementById('p13-4').src = str1 + arr_ok[12] + '-4' + str2;
+      // document.getElementById('p14-4').src = str1 + arr_ok[13] + '-4' + str2;
+      // document.getElementById('p15-4').src = str1 + arr_ok[14] + '-4' + str2;
+      // document.getElementById('p16-4').src = str1 + arr_ok[15] + '-4' + str2;
+
+      // 亂數洗牌
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          // 交換元素
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>

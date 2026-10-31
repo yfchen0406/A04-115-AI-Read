@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "note": "來源登錄擴充原始 economic_data.json 的 sources 欄位；原始登錄仍保留，資料沒有因此新增或覆寫。",
+  "researchReferences": [
+    {
+      "title": "World Countries Population Size ratio / Clio Infra Total Population",
+      "authors": "Jonathan Fink-Jensen; Clio Infra",
+      "year": "2015 (production date shown by source) ",
+      "version": "Compact and Broad population workbooks; 50-year intervals 1500–1800",
+      "url": "https://clio-infra.eu/Indicators/TotalPopulation.html",
+      "status": "candidate dataset not imported",
+      "reason": "The official metadata describes current-country boundaries for the main series and 50-year estimates before 1800; a separate England historical-boundary series is listed. The compact workbook request returned HTTP 403 in the available research tool, so regional mapping and values have not been independently checked. It cannot yet be merged with thirteen-colony or 1790 US census observations."
+    },
+    {
+      "title": "Population – HYDE, Gapminder, UN – Long-run data",
+      "authors": "Our World in Data; source datasets: PBL Netherlands Environmental Assessment Agency (HYDE 3.3), Gapminder v7, United Nations WPP 2024",
+      "year": "Last updated 2024-07-15; metadata observed 2026-10-31",
+      "version": "OWID indicator 953903; HYDE 3.3 for 10,000 BCE–1799; Gapminder 7 for 1800–1949; UN WPP 2024 thereafter",
+      "url": "https://ourworldindata.org/grapher/population",
+      "status": "partially imported: seven labelled historical current-border series",
+      "reason": "Official OWID indicator 953903 metadata and data API were read on 2026-10-31. Imported the 1700–1790 decade anchors only. HYDE v3.3 is used through 1799; the historical series maps modern national borders and cannot represent Qing territory or the thirteen colonies. Population rankings and cross-method comparisons remain disabled."
+    },
+    {
+      "title": "Historical intercontinental trade per capita, 1500–1800",
+      "authors": "Allen (2003); Costa, Palma and Reis (2015); France and Netherlands estimates credited separately in the supporting literature",
+      "year": "Underlying estimates span 1500–1800; some terminal values represent France 1788 and Netherlands 1780",
+      "version": "Our World in Data chart; pounds sterling per capita at 1700 prices; colonial/intercontinental trade proxy",
+      "url": "https://ourworldindata.org/grapher/intercontinental-trade-per-capita-1500-1800",
+      "status": "candidate dataset not imported",
+      "reason": "The series is per-capita colonial trade rather than complete imports plus exports, covers only selected European trading states, and does not provide matching Qing, Russia, or American-colony series. The chart's CSV endpoint was inaccessible to the available research tool, so no values were extracted. See also LSE Economic History Working Paper 210 for the figure's country-specific sources and exchange-rate conversions."
+    },
+    {
+      "title": "Maddison Project Database 2023",
+      "authors": "Jutta Bolt and Jan Luiten van Zanden",
+      "year": "2024 paper introducing the 2023 update",
+      "version": "MPD 2023; Dataverse DOI 10.34894/INZBF2; CC BY 4.0",
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023?lang=en",
+      "status": "alternate version not imported",
+      "reason": "Original economic_data.json GDP observations use a separate 1990 international-dollar Cambridge table. MPD 2023 is not blended with it; an independently archived, checked extract and series-specific attribution list are needed before adding its 2011 PPP USD values."
+    },
+    {
+      "title": "TOFLIT18 French foreign trade database, 1716–1821",
+      "authors": "Sciences Po Médialab / ANR TOFLIT18 project",
+      "year": "Project database",
+      "version": "Bilateral trade values by partner and product category",
+      "url": "https://toflit18.medialab.sciences-po.fr/",
+      "status": "candidate dataset not imported",
+      "reason": "The current source JSON contains no verified export/import amount rows from this project; the dashboard therefore does not label the SlaveVoyages counts as general trade values."
+    }
+  ],
+  "sources": {
+    "cambridge": {
+      "title": "The Cambridge Economic History of the Modern World, Volume I, Table I.1",
+      "author": "Stephen Broadberry、Kyoji Fukao（編）；表中各國數值依該書註記之學術重建系列",
+      "year": "2021（出版版本；表格資料版本依原書引用）",
+      "version": "Volume I, Table I.1 excerpt; 1990 international dollars",
+      "url": "https://assets.cambridge.org/97811071/59457/excerpt/9781107159457_excerpt.pdf",
+      "geography": "中國、Great Britain、France、Netherlands、Spain、北美／美國多族群估計等原表區域",
+      "coverage": "1500–1870 的部分錨點；本網站取1700、1750、1800",
+      "method": "歷史 GDP per capita 重建值；並非現代國民帳戶或逐年觀測",
+      "unit": "1990 international dollars per person",
+      "limitations": "國界與地區定義隨研究系列而異；1800 超出本網站1661–1799時段。此表不等於 Maddison Project Database 2023，版本與基準不可混接。"
+    },
+    "bairoch": {
+      "title": "Cities and Economic Development: From the Dawn of History to the Present",
+      "author": "Paul Bairoch；英文譯本 Christopher Braider 譯",
+      "year": "1988",
+      "version": "Table 13.1; urbanization estimates with cities of 5,000 or more",
+      "url": "https://www.bibliovault.org/BV.book.epl?ISBN=9780226034652",
+      "rawUrl": "https://www.scribd.com/document/811390488/Paul-Bairoch-Cities-and-Economic-Development",
+      "geography": "英國、法國、荷蘭、西班牙、俄羅斯等原表地理範圍",
+      "coverage": "1700、1750、1800 錨點",
+      "method": "後世估計；原始表列區間，本網站原始資料保存區間中點與範圍註記",
+      "unit": "percent of population in cities",
+      "limitations": "城市門檻為人口至少5,000；區間中點非精確值。清朝與北美缺少本表同口徑列。"
+    },
+    "fiscal": {
+      "title": "Qing Central Government Revenue in International Comparison / International comparison of per capita tax revenue",
+      "author": "Debin Ma；比較研究另據 Karaman、Pamuk 等財政史資料",
+      "year": "2012 working paper version; later related research by Ma and Rubin (2019)",
+      "version": "LSE Working Paper 152, Table 2; 50-year averages",
+      "url": "https://www.lse.ac.uk/asset-library/information/wp152.pdf",
+      "geography": "China, Russia, France, Spain, England, Dutch Republic（另含 Ottoman Empire）",
+      "coverage": "1700–1749、1750–1799區間；原站以1725、1775標示區間中心",
+      "method": "人均中央政府收入研究估值；每人以克白銀表示；文中換算1 tael=37g silver",
+      "unit": "grams of silver per person",
+      "limitations": "不是單年資料、地方政府全部收入或居民總稅負；各國史料與人口分母由不同研究重建。"
+    },
+    "slave": {
+      "title": "SlaveVoyages: Trans-Atlantic Slave Trade Estimates",
+      "author": "SlaveVoyages research database contributors",
+      "year": "網站目前版本；原站逐筆資料未記錄下載版號",
+      "version": "Estimates table; 25-year periods grouped by carrier flag",
+      "url": "https://www.slavevoyages.org/assessment/estimates",
+      "rawUrl": "https://legacy.slavevoyages.org/assessment/estimates",
+      "geography": "跨大西洋航線；按船旗國／旗國類別",
+      "coverage": "1701–1800 分四個25年區間；本網站用代表年1713、1738、1763、1788",
+      "method": "航次登錄與學術估算彙整的強迫登船人口估計；不是貨物價值",
+      "unit": "estimated people forcibly embarked per 25-year period",
+      "limitations": "反映跨大西洋奴隸貿易暴力，不代表經濟績效；旗國不等同殖民地歸屬；區間估值具不確定性。"
+    },
+    "cotton": {
+      "title": "Great Britain retained raw-cotton imports, 1697–1849",
+      "author": "Wadsworth and Mann (1931), Appendix G, as transcribed by CFR Project",
+      "year": "1931 source; CFR dataset accessed 2026-10-31",
+      "version": "CFR Project dataset; underlying historical compilations",
+      "url": "https://www.cfrproject.com/en/datasets/dataset%3Agb-raw-cotton-retained-imports-1697-1849",
+      "geography": "Great Britain",
+      "coverage": "1697–1779 decadal period averages in the underlying compilation",
+      "method": "Retained imports used as a proxy for raw-cotton consumption / textile demand",
+      "unit": "million pounds per year",
+      "limitations": "Single-country proxy, not industrial output; excludes other industrial sectors and nations."
+    },
+    "cotton2": {
+      "title": "Cotton Manufacture, Encyclopaedia Britannica, 8th edition",
+      "author": "Encyclopaedia Britannica editors; figures compiled from nineteenth-century historical reports",
+      "year": "1853–1860 edition",
+      "version": "Five-year average series cited by the original project",
+      "url": "https://jimclifford.ca/britannica-articles-4/a/EB.16/193109114/838.html",
+      "geography": "Great Britain",
+      "coverage": "1771–1800 reported five-year period averages; original chart uses 1773–1798 representative years",
+      "method": "Historical retained raw-cotton import figures, transcribed from a later compilation",
+      "unit": "million pounds per year",
+      "limitations": "Different compiler than the earlier CFR/Wadsworth–Mann points. Keep as a separate series; do not join across the source break or treat as industrial output."
+    },
+    "census": {
+      "title": "1790 United States Census",
+      "author": "United States Census Bureau / original federal enumeration",
+      "year": "1790 enumeration; results published 1791–1793",
+      "version": "First decennial census; returned total 3,929,214",
+      "url": "https://www.census.gov/library/publications/1793/dec/number-of-persons.html",
+      "rawUrl": "https://www.census.gov/about/history/historical-censuses-and-surveys/decade-facts.1790.html",
+      "geography": "United States states and districts as enumerated in 1790",
+      "coverage": "1790",
+      "method": "Official census enumeration; counts enslaved people under period-specific categories and concepts",
+      "unit": "persons",
+      "limitations": "Political territory and enumeration categories differ from 1776 colonial estimates and modern population concepts."
+    },
+    "colonial": {
+      "title": "Colonial-era population estimate for the thirteen colonies",
+      "author": "U.S. Census Bureau historical article summarizing colonial population estimates",
+      "year": "2023 article about historical estimates",
+      "version": "Approximate 1776 estimate used in original project",
+      "url": "https://www.census.gov/library/stories/2023/12/boston-tea-party.html",
+      "geography": "British North American thirteen colonies; not present-day United States borders",
+      "coverage": "1776 estimate",
+      "method": "Retrospective estimate, not a federal census",
+      "unit": "persons",
+      "limitations": "Territorial boundaries, Indigenous populations and enumeration methods differ from the 1790 U.S. census."
+    },
+    "owid": {
+      "title": "Population – HYDE, Gapminder, UN – Long-run data",
+      "author": "Our World in Data; source datasets: PBL Netherlands Environmental Assessment Agency (HYDE 3.3), Gapminder v7, United Nations WPP 2024",
+      "year": "OWID dataset version 2024-07-15; metadata updated 2026-10-22; accessed 2026-10-31",
+      "version": "OWID indicator 953903; 10,000 BCE–1799 HYDE 3.3; imported only 1700–1790 decade anchors for seven present-day countries",
+      "url": "https://ourworldindata.org/grapher/population",
+      "geography": "OWID population series mapped to present-day national borders for historical years; China is not the Qing polity, and United States is not the thirteen colonies",
+      "coverage": "1700–1790, decade anchors; 70 extracted observations across China and six current-border country series",
+      "method": "Historical population reconstruction estimates from HYDE 3.3, served by OWID indicator API; no interpolation",
+      "unit": "people",
+      "limitations": "Current-border historical mapping cannot represent period-specific polity boundaries. The US series cannot stand for the thirteen colonies. Decade anchors omit 1661–1699; values are estimates, not census observations. Do not mix with colonial-era estimate or census rows for rankings, differences, or growth rates."
+    }
+  }
+}

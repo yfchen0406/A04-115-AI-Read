@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "period": [
+    1661,
+    1799
+  ],
+  "provenanceNote": "數值取自原站 economic_data.json；此側錄只補充圖表表現規則與可比較性，不改動原始觀測。缺值維持缺值，零值只有在來源資料明示為零時保留。",
+  "indicators": {
+    "population": {
+      "label": "歷史人口",
+      "unit": "人",
+      "sourceKeys": [
+        "colonial",
+        "census",
+        "owid"
+      ],
+      "seriesMode": "points",
+      "rankable": false,
+      "unavailableRegions": [],
+      "rankMessage": "人口序列涵蓋現代疆界回溯估計、十三殖民地估計及美國普查，地理口徑與統計制度不同，不能跨系列排名。",
+      "comparison": {
+        "enabled": false,
+        "growthMode": "none",
+        "reason": "HYDE序列為現代國家疆界回溯的十年估計；另兩筆為十三殖民地估計與美國普查。不同疆界、年份與統計制度，禁止計算共同比較差距及成長率。"
+      },
+      "description": "新增 OWID/HYDE 3.3 的中國及六個歐洲／美洲現代國家疆界回溯估計，涵蓋1700–1790每十年錨點；與原有1776十三殖民地估計、1790美國普查分列呈現，不補值、不跨系列連線。1661–1699在此來源缺值。",
+      "limitation": "HYDE為人口重建估計，OWID依現代國家地理疆界回溯呈現，不能代表清朝或當時歐洲國家的歷史疆界；United States系列亦不能代表十三殖民地。資料僅每十年提供錨點。普查、殖民地估計和模型重建不可視為同口徑或互相驗證。"
+    },
+    "gdp": {
+      "label": "人均 GDP",
+      "unit": "1990 國際元／人",
+      "sourceKeys": [
+        "cambridge"
+      ],
+      "seriesMode": "anchors",
+      "rankable": true,
+      "unavailableRegions": [
+        "俄羅斯"
+      ],
+      "rankMessage": "僅為同一 Cambridge 表格中已選國家同一估計年份的人均 GDP 估值排名，屬歷史重建估計，不代表整體國力或福利。",
+      "comparison": {
+        "enabled": true,
+        "growthMode": "cagr",
+        "caveat": "同一研究表、同一估算版本與1990國際元；仍受歷史 GDP 與人口重建假設影響。1800 錨點超出清帝在位時段。"
+      },
+      "description": "依原始錨點繪製稀疏序列，不補成年資料。1800 年只是期末參照，略超出本研究的1799年範圍。",
+      "limitation": "歷史國民所得為研究者重建值，數值高度依賴人口與產出假設；不同版本及購買力基準不能混接。"
+    },
+    "urban": {
+      "label": "城市化率",
+      "unit": "%",
+      "sourceKeys": [
+        "bairoch"
+      ],
+      "seriesMode": "anchors",
+      "rankable": true,
+      "unavailableRegions": [
+        "清朝／中國",
+        "北美／美國"
+      ],
+      "rankMessage": "僅對同一 Bairoch 城市門檻下、已選國家同一估計年份的原始中點排序；區間中點不等於精確統計。",
+      "comparison": {
+        "enabled": true,
+        "growthMode": "cagr",
+        "caveat": "共同來源及≥5,000人城市定義；數值為研究估計區間中點，應同時閱讀各筆區間。沒有清朝同口徑資料。"
+      },
+      "description": "顯示原站記錄的區間中點，不把中點誤稱為精確值。",
+      "limitation": "採人口至少5,000人的城市口徑；清朝缺同口徑數據，各地史料與區間範圍不同，適合看來源內部錨點，不作跨文明排名。"
+    },
+    "fiscal": {
+      "label": "人均中央政府收入",
+      "unit": "克白銀／人",
+      "sourceKeys": [
+        "fiscal"
+      ],
+      "seriesMode": "intervals",
+      "rankable": true,
+      "unavailableRegions": [
+        "北美／美國"
+      ],
+      "rankMessage": "僅對同一研究兩個共同50年區間、同一單位的中央政府人均收入作描述性排序；不是居民稅負或福利排名。",
+      "comparison": {
+        "enabled": true,
+        "growthMode": "none",
+        "caveat": "依 Ma 等同一比較研究及克白銀／人單位；兩筆為50年區間均值，不計年均成長率；不同國家原始史料仍存在差異，結果不等同稅負或行政效率。"
+      },
+      "description": "標出1700–1749及1750–1799兩個區間平均；1725及1775是區間中心位置。",
+      "limitation": "並非單年收入或完整地方稅負。研究對不同政體採用的史料序列及人口分母存在差異。",
+      "totalSeries": {
+        "label": "中央政府收入總額",
+        "unit": "噸白銀／年（50年區間均值）",
+        "unavailableRegions": [
+          "北美／美國"
+        ],
+        "sourceKeys": [
+          "fiscal"
+        ],
+        "rankable": true,
+        "rankMessage": "僅對同一比較表、同一50年區間及白銀噸單位的中央政府年度總收入估值作排序；人口規模影響總額，不能當作居民福利或政府效率排行。",
+        "comparison": {
+          "enabled": true,
+          "growthMode": "none",
+          "caveat": "50年區間平均；原始國別資料由不同研究彙整。總額受國家人口規模影響，不代表人均負擔。"
+        },
+        "description": "按 Ma 的比較表一，顯示同一50年區間內中央政府年度總收入均值。",
+        "limitation": "原表以 tons of silver 記錄；中國銀兩按1 tael=37g換算。年份1725與1775是區間中心，不是單年。區域按原表歷史政體，例如 England、Dutch Republic。"
+      }
+    },
+    "trade": {
+      "label": "跨大西洋強迫運奴估計",
+      "unit": "被強迫登船人數／25年區間",
+      "sourceKeys": [
+        "slave"
+      ],
+      "seriesMode": "intervals",
+      "rankable": true,
+      "unavailableRegions": [
+        "清朝／中國",
+        "俄羅斯"
+      ],
+      "rankMessage": "此排名只比較同一 SlaveVoyages 資料集的旗國25年強迫登船人數估計，不是貿易額、經濟表現或文明優劣排名。",
+      "comparison": {
+        "enabled": true,
+        "growthMode": "none",
+        "caveat": "共同旗國分類與25年區間，只比較估計強迫登船人數；此數字呈現奴隸貿易暴力，不是正向經濟績效，不計年均成長率。"
+      },
+      "description": "目前來源檔沒有可核對的一般商品進出口金額；本專題另列 SlaveVoyages 按旗國估計的25年強迫登船人數，不代表商品貿易額或經濟進步。",
+      "limitation": "此指標記錄奴隸貿易造成的暴力與強迫遷徙。區間總量是估算；旗國不等同殖民地歸屬。零值依來源保留。一般進出口資料尚未匯入。"
+    },
+    "industrial": {
+      "label": "英國生棉進口代理指標",
+      "unit": "百萬英磅／年",
+      "sourceKeys": [
+        "cotton",
+        "cotton2"
+      ],
+      "seriesMode": "separate-series",
+      "rankable": false,
+      "unavailableRegions": [
+        "清朝／中國",
+        "法國",
+        "荷蘭",
+        "西班牙",
+        "俄羅斯",
+        "北美／美國"
+      ],
+      "rankMessage": "僅有英國且分屬不同來源時段，無跨國同口徑序列，不能排名或計算跨序列差距。",
+      "comparison": {
+        "enabled": false,
+        "growthMode": "none",
+        "reason": "此資料只有單一國家，且前後時段來自不同歷史編纂；無法提供兩國差距或跨段成長率。"
+      },
+      "description": "紡織原料需求的單國代理指標；前期與後期來源分成兩條序列，不畫跨來源連線。",
+      "limitation": "進口原棉不等於工業產值、總生產力或工業化綜合指數；其他國家沒有同口徑序列。"
+    }
+  },
+  "visualizationRules": {
+    "noInterpolation": true,
+    "missingValues": "omit",
+    "showSourceInTooltip": true,
+    "markHistoricalEvents": true,
+    "ranking": "enabled only for selected indicators and only at a shared observed year; show the dataset-specific caveat"
+  }
+}
