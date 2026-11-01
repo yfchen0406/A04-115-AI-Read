@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "period": [1661, 1799],
+  "baseMap": {
+    "provider": "OpenFreeMap",
+    "style": "https://tiles.openfreemap.org/styles/liberty",
+    "attribution": "© OpenStreetMap contributors · OpenFreeMap",
+    "modernBoundariesWarning": "底圖只供現代地理定位；現代行政線不表示清代、歐洲或美洲殖民時代疆界。"
+  },
+  "confidenceScale": {
+    "high": "地名及歷史事件可定位至具名城市／遺址；點位只表位置，不代表疆界精度。",
+    "medium": "可定位至較廣的具名地區或事件場域；實際位置範圍較大。",
+    "low": "僅作區域級概略定位或示意路徑，不可解讀為精確位置、路徑或邊界。"
+  },
+  "layers": [
+    {"id":"events","name":"有來源的歷史事件地點","path":"./data/maps/historical-events.geojson","available":true},
+    {"id":"trade","name":"全球貿易路線","path":"./data/maps/trade-routes.geojson","available":true,"schematic":true},
+    {"id":"military","name":"戰爭與軍事行動","path":"./data/maps/military-campaigns.geojson","available":true,"schematic":true},
+    {"id":"historical-polities","name":"Cliopatria 歷史政體範圍","path":"./data/maps/historical-polities.geojson","available":true,"partial":true,"source_id":"cliopatria-polities","message":"依所選年份顯示來源所繪政體範圍（低信度），不是精確國界、法律主權或行政界線。清朝圖形不完整（不含完整西藏、蒙古及新疆等）；歐洲缺少蘇格蘭，且英格蘭／大不列顛年代有間隔；美洲是部分殖民帝國、政體與豪德諾索尼聯盟，不等同十三殖民地或完整原住民族領域。"}
+  ],
+  "modes": [
+    {"id":"polities","label":"世界政權","layers":["historical-polities","events"]},
+    {"id":"qing","label":"清朝疆域（來源概略範圍）","layers":["historical-polities","events","military"],"filter":"清朝相關資料"},
+    {"id":"europe","label":"歐洲政權（來源概略範圍）","layers":["historical-polities","events","military"],"filter":"歐洲相關資料"},
+    {"id":"americas","label":"美洲政體（部分來源範圍）","layers":["historical-polities","events","military"],"filter":"美洲相關資料"},
+    {"id":"trade","label":"全球貿易航線","layers":["trade"]},
+    {"id":"military","label":"戰爭與軍事路線","layers":["military","events"]}
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-01",
+  "sources": [
+    {
+      "id": "natural-earth",
+      "title": "Natural Earth",
+      "url": "https://www.naturalearthdata.com/",
+      "license": "Public domain",
+      "use": "僅作現代自然地理與定位底圖參考；不代表1661–1799年的國界或主權。",
+      "version": "110m cultural/physical datasets; project site accessed 2026-11-01"
+    },
+    {
+      "id": "openhistoricalmap",
+      "title": "OpenHistoricalMap (OHM)",
+      "url": "https://api.openhistoricalmap.org/export",
+      "license": "CC0 public domain dedication except where otherwise noted by the contributor",
+      "use": "官方 Overpass 支援依 start_date／end_date 篩選歷史要素；可作清代、歐洲政權及美洲歷史圖層候選。各要素由不同貢獻者繪製，須逐筆核對日期、名稱、來源、地理範圍、分類與例外授權。研究端點本次不可存取，未能完成覆蓋稽核，因此沒有匯入或宣稱其涵蓋目標政體。",
+      "version": "OpenHistoricalMap export and Overpass documentation accessed 2026-11-01; data endpoint coverage not verified"
+    },
+    {
+      "id": "openfreemap",
+      "title": "OpenFreeMap Liberty style",
+      "url": "https://tiles.openfreemap.org/styles/liberty",
+      "license": "OpenFreeMap public instance: free, no stated per-view/request cap; provided as-is without availability or SLA guarantee.",
+      "use": "官方表示公用服務免費且沒有地圖瀏覽／請求數上限，服務仍為 as-is，可能變更或中止且不保證可用性。互動地圖需網路；MapLibre 會顯示服務署名。若自行提供離線下載，官方條件為每次不超過 3,000 tiles 或 50 MB、最多 4 個並行請求，並使用識別本應用程式的唯一 User-Agent。",
+      "version": "Official OpenFreeMap FAQ and Terms of Service (TOS last updated 2026-10-14), accessed 2026-11-01."
+    },
+    {
+      "id": "whg",
+      "title": "World Historical Gazetteer",
+      "url": "https://docs.whgazetteer.org/content/technical/apis.html",
+      "license": "WHG curation CC BY 4.0 plus each upstream record's own license",
+      "use": "歷史地名探索候選來源；其聚合資料並非單一可再散布授權，逐筆授權核查前不匯入本網站 GeoJSON。多數 API 需要 token。",
+      "version": "documentation accessed 2026-11-01"
+    },
+    {
+      "id": "chgis-v6",
+      "title": "China Historical GIS (CHGIS), Version 6",
+      "url": "https://chgis.fas.harvard.edu/data/chgis/v6/",
+      "license": "Free for academic research; no commercial use, resale, or redistribution",
+      "use": "CHGIS 有清代行政地理時間序列，但本網站 ZIP 不得再散布其資料；官方亦指出 Neimeng、Qinghai、Xinjiang、Xizang 不在該時間序列範圍。因此不匯入本站圖層，清代疆界模式明確標示未提供可再散布資料。",
+      "version": "Version 6, 2016; Harvard CGA and CHGIS scope/license pages accessed 2026-11-01"
+    },
+    {
+      "id": "cliopatria-polities",
+      "title": "Seshat Global History Databank: Cliopatria GeoJSON",
+      "url": "https://github.com/Seshat-Global-History-Databank/cliopatria",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "use": "已整理為按 FromYear／ToYear（含首尾年）顯示的來源政體範圍圖層。僅覆蓋本專案列出的政體；幾何及時間精度不一，來源不區分實際控制與法律主權。清朝形狀有明顯缺區；美洲形狀不是完整殖民行政區、十三殖民地或原住民族領域。圖層以低信度概略參考呈現。",
+      "version": "v0.2.1; released 2026-10-04; commit 5f433377139a6eeaeacbdc894b70f8805b72c8b5; source archive SHA-256 E10A4E429FCA708788FF9E7572A95FCE801FAE55852D217CFFABC1C59CD4EED4"
+    },
+    {
+      "id": "euratlas-boundaries",
+      "title": "Euratlas Historical Political Boundaries of Europe",
+      "url": "https://library.duke.edu/data/sources/euratlas",
+      "license": "Access restricted to Duke University affiliates; use restrictions apply under Euratlas license",
+      "use": "提供世紀交界政治圖層，含 1700 與 1800 快照，並非 1661–1799 逐年疆界；資料取得及授權不允許本網站 ZIP 重新散布，故未匯入歐洲國界圖層。",
+      "version": "Duke Libraries dataset description and linked Euratlas license accessed 2026-11-01"
+    },
+    {
+      "id": "loc-maps",
+      "title": "Library of Congress Geography and Map Division",
+      "url": "https://www.loc.gov/collections/general-maps/about-this-collection/rights-and-access/",
+      "license": "Each item must be checked; free to use and reuse unless its Rights Advisory says otherwise",
+      "use": "清代及美洲歷史地圖的研究與逐件授權核對入口；本階段未將掃描地圖數位化為邊界。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "slavevoyages",
+      "title": "Slave Voyages: Trans-Atlantic Slave Trade Database",
+      "url": "https://www.slavevoyages.org/voyage/database",
+      "license": "Database/data redistribution terms must be checked per download; site identifies consortium copyright",
+      "use": "跨大西洋強迫人口販運的學術航次資料入口。此包只顯示明確標示的概略示意線，沒有下載、複製或聲稱為個別航次資料。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "historical-event-records",
+      "title": "本網站第三階段逐筆歷史事件來源",
+      "url": "./data/historical-events.json",
+      "license": "Event summaries are linked to their cited source; coordinates are this project's approximate modern place locators and are not source-verified historical boundaries",
+      "use": "事件文字及來源連結沿用 data/historical-events.json；地點點位採現代地名位置作低精度定位。",
+      "version": "project dataset"
+    },
+    {
+      "id": "trade-schematic",
+      "title": "概略海上貿易網路路線",
+      "url": "https://www.rmg.co.uk/stories/maritime-history/cutty-sark-tea-trade",
+      "license": "Route geometries are original schematic illustrations; not copied historic tracks",
+      "use": "依歷史港口與貿易網絡研究繪製概略連線；不代表可追溯的單船航跡。奴隸貿易線單獨分層並以強迫人口販運標示。",
+      "version": "route references listed in methodology"
+    },
+    {
+      "id": "war-schematic",
+      "title": "概略戰爭地點及進軍方向",
+      "url": "./docs/historical-map-methodology.md",
+      "license": "Original generalized visual summaries; linked to event/academic references",
+      "use": "路線只表達主要相關區域的示意性連線；不作精確行軍路徑、疆界或戰線資料。",
+      "version": "project dataset"
+    },
+    {
+      "id": "osm",
+      "title": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "Open Database Licence (ODbL)",
+      "use": "只作現代道路、地名與底圖資料署名；不是歷史國界資料。",
+      "version": "OpenFreeMap Liberty vector tiles"
+    },
+    {
+      "id": "trade-canton",
+      "title": "Canton trade and maritime links",
+      "url": "https://reviews.history.ac.uk/review/2367/print/",
+      "license": "Research source; route geometry in this project is an original schematic, not copied data",
+      "use": "支持澳門、廣州及沿岸貿易背景；線路是本專案概略繪製，非作者提供 GIS 航跡。",
+      "version": "Reviews in History, 2018"
+    },
+    {
+      "id": "trade-eic",
+      "title": "Royal Museums Greenwich: Cutty Sark and the Tea Trade",
+      "url": "https://www.rmg.co.uk/stories/maritime-history/cutty-sark-tea-trade",
+      "license": "Research reference; route geometry in this project is an original schematic",
+      "use": "支持英國東印度公司與中國茶貿易背景；不提供逐船航跡。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "trade-voc",
+      "title": "National Archives of the Netherlands: VOC archive guide",
+      "url": "https://www.nationaalarchief.nl/onderzoeken/archief/1.04.02",
+      "license": "Archival reference; route geometry in this project is an original schematic",
+      "use": "VOC 史料檔案入口；本圖未複製檔案中的單船航跡。",
+      "version": "archive guide accessed 2026-11-01"
+    },
+    {
+      "id": "trade-indian-ocean",
+      "title": "Institute of Historical Research: maritime India bibliography",
+      "url": "https://archives.history.ac.uk/history-in-focus/Sea/books.html",
+      "license": "Bibliographic research reference; route geometry in this project is an original schematic",
+      "use": "印度洋區域海上網絡研究文獻導引；簡化路線不是精確航跡。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "trade-manila",
+      "title": "Library of Congress: A Hydrographical and Chorographical Chart of the Philippine Islands",
+      "url": "https://www.loc.gov/item/2021668467/",
+      "license": "Library of Congress item; consult the item-level Rights & Access statement; this project does not redistribute the map",
+      "use": "西班牙美洲—馬尼拉跨太平洋網絡的歷史參考入口；本線不是精確航跡。",
+      "version": "1734 map item; accessed 2026-11-01"
+    },
+    {
+      "id": "trade-atlantic",
+      "title": "Slave Voyages trans-Atlantic database",
+      "url": "https://www.slavevoyages.org/voyage/database",
+      "license": "Consortium-copyrighted database; no voyage data redistributed in this project",
+      "use": "一般大西洋貿易網絡背景；奴隸貿易另設獨立圖層，不把強迫人口販運與一般商品混為一談。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "slavevoyages",
+      "title": "Slave Voyages: Trans-Atlantic Slave Trade Database",
+      "url": "https://www.slavevoyages.org/voyage/database",
+      "license": "Consortium-copyrighted database; this package contains no copied voyage-level records",
+      "use": "強迫人口販運航次研究入口；圖上線條是全區域概略示意，個別航次及流量須於原資料庫查詢。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-qing",
+      "title": "Three Feudatories Rebellion scholarly article",
+      "url": "https://www.tandfonline.com/doi/abs/10.2753/CSH0009-46331501027",
+      "license": "Scholarly reference; route geometry in this project is an original schematic",
+      "use": "支持1673–1681年戰爭年代及多省戰區背景。",
+      "version": "Chinese Studies in History, 1981"
+    },
+    {
+      "id": "war-qing-russia",
+      "title": "Library of Congress: Russian Encroachment in Manchuria",
+      "url": "https://tile.loc.gov/storage-services/service/ll/llglrdppub/2019668557/2019668557.pdf",
+      "license": "Government research publication; location lines in this project are original schematic summaries",
+      "use": "支持阿爾巴津與黑龍江流域戰事／條約背景。",
+      "version": "Library of Congress report"
+    },
+    {
+      "id": "war-qing-dzungar",
+      "title": "Oxford Research Encyclopedia: Expansion of the Qing and Zunghar Mongol State",
+      "url": "https://academic.oup.com/edited-volume/61799/chapter/546312989",
+      "license": "Scholarly reference; route geometry in this project is an original schematic",
+      "use": "支持清準戰事多階段背景；不將交戰、屠殺與治理變化簡化為精確疆界線。",
+      "version": "Oxford Research Encyclopedia of Asian History"
+    },
+    {
+      "id": "war-qing-burma",
+      "title": "Yingcong Dai, A Disguised Defeat: The Myanmar Campaign of the Qing Dynasty",
+      "url": "https://www.cambridge.org/core/journals/modern-asian-studies/article/abs/disguised-defeat-the-myanmar-campaign-of-the-qing-dynasty/63CA69CE98806A12469BA642B1306CF7",
+      "license": "Scholarly reference; route geometry in this project is an original schematic",
+      "use": "支持1765–1770年緬甸戰事及清軍未能征服緬甸的說明。",
+      "version": "Modern Asian Studies 38(1), 2004"
+    },
+    {
+      "id": "war-qing-vietnam",
+      "title": "Oxford Research Encyclopedia: The Qing Empire and Its Military",
+      "url": "https://academic.oup.com/edited-volume/63143/chapter/568216247",
+      "license": "Scholarly reference; route geometry in this project is an original schematic",
+      "use": "支持1788–1789年清軍介入越南政局及撤軍背景。",
+      "version": "Oxford Research Encyclopedia of Military History"
+    },
+    {
+      "id": "war-europe",
+      "title": "Encyclopaedia Britannica: War of the Spanish Succession",
+      "url": "https://www.britannica.com/event/War-of-the-Spanish-Succession",
+      "license": "Reference only; no spatial data copied",
+      "use": "支持西班牙王位繼承戰爭的事件背景；本專案路線為多戰區示意，不是歷史 GIS 幾何。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-europe-great-northern",
+      "title": "Latvian National History Museum: The Great Northern War in the Baltics (1700–1721)",
+      "url": "https://lnvm.gov.lv/en/for-schools/travelling-exhibitions/the-great-northern-war-in-the-baltics-1700-1721/",
+      "license": "Historical reference; no map geometry copied",
+      "use": "支持大北方戰爭 1700–1721 年代、波羅的海戰區與拉脫維亞事件背景；本專案路線為原創概略連線。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-europe-austrian-succession",
+      "title": "National Army Museum: War of the Austrian Succession",
+      "url": "https://www.nam.ac.uk/explore/war-austrian",
+      "license": "Museum historical reference; no map geometry copied",
+      "use": "支持奧地利王位繼承戰爭 1740–1748 年代、主要參戰方及歐洲戰區背景；本專案路線為原創概略連線。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-europe-seven-years",
+      "title": "Encyclopaedia Britannica: Seven Years' War",
+      "url": "https://www.britannica.com/event/Seven-Years-War",
+      "license": "Reference only; no spatial data copied",
+      "use": "支持七年戰爭年代及多洲戰區背景。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-europe-revolution",
+      "title": "Encyclopaedia Britannica: French Revolutionary Wars",
+      "url": "https://www.britannica.com/event/French-Revolutionary-wars",
+      "license": "Reference only; no spatial data copied",
+      "use": "支持法國革命戰爭年代及多戰線概述。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-americas",
+      "title": "U.S. Army Center of Military History: Revolutionary War Campaigns",
+      "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Revolutionary-War-Campaigns/",
+      "license": "Government historical reference; route geometry here is a generalized interpretation, not copied campaign GIS",
+      "use": "支持美洲戰爭主要戰役地點與年代；本線條簡化多場戰役。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-americas-independence",
+      "title": "U.S. Army Center of Military History: Revolutionary War Campaigns",
+      "url": "https://history.army.mil/Research/Reference-Topics/Army-Campaigns/Brief-Summaries/Revolutionary-War-Campaigns/",
+      "license": "Government historical reference; route geometry here is a generalized interpretation, not copied campaign GIS",
+      "use": "支持獨立戰爭戰役節點；未使用現代國界或單一線條宣稱完整戰場。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "war-americas-french-indian",
+      "title": "U.S. Army Center of Military History: campaign resources; Library of Congress map collections",
+      "url": "https://www.loc.gov/collections/general-maps/about-this-collection/rights-and-access/",
+      "license": "Research reference; no campaign GIS copied",
+      "use": "北美衝突地點僅作示意；原住民族及盟友立場各異，不以單一殖民地疆界取代其領域。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "us-paris-treaty-1763",
+      "title": "美國國務院歷史學家辦公室：1763年巴黎和約",
+      "url": "https://history.state.gov/milestones/1750-1775/treaty-of-paris",
+      "license": "Government historical reference; no GIS data copied",
+      "use": "支持七年戰爭結束及北美領土影響摘要；地圖座標是本專案廣域概略定位，不呈現條約疆界。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "us-constitution-1787",
+      "title": "美國國家檔案館：1787年美國憲法",
+      "url": "https://www.archives.gov/milestone-documents/constitution",
+      "license": "Government historical reference; no spatial data copied",
+      "use": "支持費城制憲會議於1787年簽署憲法之年份與制度背景。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "id": "us-federal-government-1789",
+      "title": "美國國家檔案館：憲法問答（政府運作日期）",
+      "url": "https://www.archives.gov/founding-docs/constitution-q-and-a",
+      "license": "Government historical reference; no spatial data copied",
+      "use": "區分1789年3月4日依法開始運作、4月6日國會取得法定人數及4月30日總統就職。",
+      "version": "accessed 2026-11-01"
+    },
+    {
+      "use": "支持1757–1759年南疆和卓勢力與清軍衝突的年代與區域背景；此線只是喀什噶爾、葉爾羌一帶定位示意，不是戰役進軍路線或控制邊界。",
+      "version": "Oxford Research Encyclopedia of Asian History",
+      "id": "war-qing-khoja",
+      "url": "https://academic.oup.com/edited-volume/61799/chapter-abstract/546337180",
+      "license": "Scholarly reference; route geometry in this project is an original schematic",
+      "title": "Oxford Research Encyclopedia: Xinjiang Under the Qing"
+    },
+    {
+      "title": "Oxford Research Encyclopedia: The Qing Empire and Its Military",
+      "url": "https://academic.oup.com/edited-volume/63143/chapter/568216247",
+      "license": "Scholarly reference; route geometry in this project is an original schematic",
+      "use": "支持第一次金川戰事1747–1749年、第二次金川戰事1771–1776年的分期及背景。",
+      "id": "war-jinchuan",
+      "version": "Oxford Research Encyclopedia of Military History"
+    }
+  ]
+}

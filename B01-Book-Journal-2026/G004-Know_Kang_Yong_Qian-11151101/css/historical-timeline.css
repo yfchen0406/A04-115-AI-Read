@@ -1,0 +1,33 @@
+#global-history{--history-red:#8e332c;--history-gold:#af7a37;--history-paper:#fff8e9;color:#30281f}
+#global-history .ht-controls,#global-history .ht-filters{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;margin:.8rem 0}
+#global-history .ht-controls button,#global-history .ht-controls select,#global-history .ht-controls input,#global-history .ht-filters label{font:inherit;border:1px solid #b99b6c;border-radius:.4rem;padding:.4rem .6rem;background:var(--history-paper);color:#43352a}
+#global-history .ht-controls button,#global-history .ht-filters input{cursor:pointer}
+#global-history .ht-category-tabs{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;margin:.8rem 0;padding:.35rem 0}#global-history .ht-category-all{font:inherit;font-weight:700;padding:.55rem 1.05rem;border:1px solid #8e332c;border-radius:.35rem;background:#fff8e9;color:#74372a;cursor:pointer;box-shadow:0 2px 5px #39261312}#global-history .ht-category-all[aria-pressed=true]{background:#8e332c;color:#fff8e9;box-shadow:0 3px 10px #8e332c33}#global-history .ht-category-all:focus-visible{outline:3px solid #d4ad54;outline-offset:2px}#global-history .ht-category-hint{font-size:.9rem;color:#705b45}#global-history .ht-category-tabs label{font:inherit;border:1px solid #b99b6c;border-radius:.35rem;padding:.35rem .55rem;background:#fff8e9;color:#43352a}
+#global-history .ht-controls input[type=range]{flex:1 1 240px;accent-color:var(--history-red)}
+#global-history .ht-year{font-size:1.5rem;font-variant-numeric:tabular-nums;color:var(--history-red);min-width:5rem}
+#global-history .ht-era{display:inline-block;margin:.25rem;padding:.2rem .65rem;border-radius:2rem;background:#eee3cd;color:#533b2c;font-weight:700}
+#global-history .ht-jumps{display:flex;flex-wrap:wrap;gap:.35rem}
+#global-history .ht-jumps button{padding:.25rem .5rem;border:1px solid #b99b6c;border-radius:2rem;background:#fff9ed;color:#68452d;cursor:pointer}
+#global-history .ht-jumps button[aria-current=true]{background:#8e332c;color:white}
+#global-history .ht-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+#global-history .ht-region{min-width:0;background:linear-gradient(150deg,#fffaf0,#f1e5cd);border:1px solid #c5a979;border-top:4px solid #8e332c;border-radius:.45rem;padding:.8rem;box-shadow:0 5px 18px #39261312}
+#global-history .ht-region[data-region=europe]{border-top-color:#345c7a}#global-history .ht-region[data-region=america]{border-top-color:#55754e}
+#global-history .ht-region h3{margin:.1rem 0;color:#6f3127!important;font-size:1.25rem}
+#global-history .ht-card{margin:.7rem 0;padding:.75rem;background:#fffdf8;border-left:3px solid #b08a49;border-radius:.25rem}
+#global-history .ht-card time,#global-history .ht-card strong{color:#74372a}
+#global-history .ht-date-note{font-size:.83rem;color:#78654e}
+#global-history .ht-card p{margin:.35rem 0;color:#41382d;line-height:1.65}
+#global-history .ht-card details{font-size:.9rem}#global-history .ht-card a{color:#7f3326}
+#global-history .ht-empty{padding:.7rem;background:#f4ecd9;border:1px dashed #bba477;color:#665847}
+#global-history .ht-region-toggle{font-size:.82rem;font-weight:400;float:right}
+#global-history .ht-status{min-height:1.5rem;color:#644831}
+.qing-era-kangxi{--history-era:#315f5b}.qing-era-yongzheng{--history-era:#8e332c}.qing-era-qianlong{--history-era:#a47b34}.qing-era-jiaqing{--history-era:#684239}.qing-era-transition{--history-era:#8e332c}
+#global-history .ht-era{border-bottom:2px solid var(--history-era,#a47b34)}
+#global-history .econ-panel{border-top-color:var(--history-era,#a47b34);transition:border-color .25s,background-color .25s}
+html.qing-era-kangxi #global-history .econ-panel{background:linear-gradient(145deg,#eef1e5,#fff8e9)}
+html.qing-era-yongzheng #global-history .econ-panel,html.qing-era-transition #global-history .econ-panel{background:linear-gradient(145deg,#f4e2d7,#fff8e9)}
+html.qing-era-qianlong #global-history .econ-panel{background:linear-gradient(145deg,#f2e8d4,#fff8e9)}
+html.qing-era-jiaqing #global-history .econ-panel{background:linear-gradient(145deg,#eee2d9,#fff8e9)}
+@media(max-width:760px){#global-history .ht-grid{grid-template-columns:1fr}#global-history .ht-controls input[type=range]{flex-basis:100%}#global-history .ht-region{padding:.7rem}}
+@media(prefers-reduced-motion:reduce){#global-history .ht-card{animation:none}}
+html.qing-motion-off #global-history .ht-card{animation:none;transition:none}

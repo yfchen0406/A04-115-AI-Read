@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "note": "Modern place locator coordinates for historical events. Coordinates are representative present-day place locations, not surveyed battle positions or historical boundaries.",
+  "locations": {
+    "hist-1661-01": {
+      "name": "北京（清廷）",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "high",
+      "notes": "地名層級定位；不是特定即位儀式位置。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1669-02": {
+      "name": "北京（清廷）",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "high",
+      "notes": "事件定位至清廷政治中心；非逮捕現場座標。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1673-03": {
+      "name": "雲南及南方戰區（概略中心）",
+      "coordinates": [
+        102.833,
+        24.88
+      ],
+      "confidence": "low",
+      "notes": "戰爭跨越多省，此點只作戰區索引，並非戰場或疆界。",
+      "polity": "清與三藩勢力",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1683-04": {
+      "name": "澎湖群島（概略定位）",
+      "coordinates": [
+        119.57,
+        23.58
+      ],
+      "confidence": "medium",
+      "notes": "攻臺戰事包含澎湖海戰；點位代表群島海域，不代表單一交戰點。",
+      "polity": "清與鄭氏政權",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1688-05": {
+      "name": "倫敦",
+      "coordinates": [
+        -0.1276,
+        51.5072
+      ],
+      "confidence": "high",
+      "notes": "政權變動的政治中心定位。",
+      "polity": "英格蘭",
+      "economyCountry": "英國"
+    },
+    "hist-1689-06": {
+      "name": "尼布楚（今涅爾琴斯克，地名定位）",
+      "coordinates": [
+        119.76,
+        51.98
+      ],
+      "confidence": "medium",
+      "notes": "近似現代城鎮定位；不描繪條約邊界。",
+      "polity": "清與俄羅斯沙皇國",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1689-07": {
+      "name": "倫敦",
+      "coordinates": [
+        -0.1276,
+        51.5072
+      ],
+      "confidence": "high",
+      "notes": "英格蘭議會立法的政治中心定位。",
+      "polity": "英格蘭",
+      "economyCountry": "英國"
+    },
+    "hist-1713-08": {
+      "name": "烏特勒支",
+      "coordinates": [
+        5.1214,
+        52.0907
+      ],
+      "confidence": "high",
+      "notes": "系列條約之一的具名簽約城市；其他條約分別在不同日期簽署。",
+      "polity": "荷蘭共和國／歐洲列強",
+      "economyCountry": "荷蘭"
+    },
+    "hist-1722-09a": {
+      "name": "北京西北郊（暢春園所在地區）",
+      "coordinates": [
+        116.31,
+        40
+      ],
+      "confidence": "medium",
+      "notes": "依事件史料地名作區域定位，不表示園址邊界。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1722-09b": {
+      "name": "北京",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "high",
+      "notes": "詔告發布地區的概略定位。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1729-10": {
+      "name": "北京",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "medium",
+      "notes": "中央軍務機構形成的政治中心定位；非單一建築考證。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1735-11a": {
+      "name": "北京西北郊（圓明園所在地區）",
+      "coordinates": [
+        116.3,
+        40.01
+      ],
+      "confidence": "medium",
+      "notes": "園林所在區域的近似現代定位；不表示歷史園界。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1735-11b": {
+      "name": "北京（太和殿）",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "high",
+      "notes": "紫禁城所在城市定位；非建築測繪點。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1756-12": {
+      "name": "薩克森戰區（概略定位）",
+      "coordinates": [
+        13.7373,
+        51.0504
+      ],
+      "confidence": "low",
+      "notes": "戰爭是多戰區衝突；此點只代表歐洲開戰背景區域，非單一開戰點。",
+      "polity": "普魯士與哈布斯堡君主國等",
+      "economyCountry": "法國"
+    },
+    "hist-1759-13": {
+      "name": "喀什噶爾地區（概略定位）",
+      "coordinates": [
+        75.9898,
+        39.4704
+      ],
+      "confidence": "low",
+      "notes": "大小和卓戰事跨越新疆多地；此處為區域索引，非精確戰場或疆界。",
+      "polity": "清與大小和卓勢力",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1769-14": {
+      "name": "倫敦",
+      "coordinates": [
+        -0.1276,
+        51.5072
+      ],
+      "confidence": "high",
+      "notes": "專利文件相關政治／商業中心定位；非瓦特實驗室位置。",
+      "polity": "大不列顛",
+      "economyCountry": "英國"
+    },
+    "hist-1776-16": {
+      "name": "倫敦（出版地）",
+      "coordinates": [
+        -0.1276,
+        51.5072
+      ],
+      "confidence": "high",
+      "notes": "初版出版城市定位；非特定印刷廠定位。",
+      "polity": "大不列顛",
+      "economyCountry": "英國"
+    },
+    "hist-1776-15": {
+      "name": "費城（大陸會議）",
+      "coordinates": [
+        -75.1652,
+        39.9526
+      ],
+      "confidence": "high",
+      "notes": "大陸會議所在地城市定位；十三殖民地疆界不由此點代表。",
+      "polity": "英屬北美十三殖民地",
+      "economyCountry": "英屬北美十三殖民地"
+    },
+    "hist-1783-17": {
+      "name": "巴黎",
+      "coordinates": [
+        2.3522,
+        48.8566
+      ],
+      "confidence": "high",
+      "notes": "和約簽署城市定位；不代表條約領土線。",
+      "polity": "法蘭西王國／美利堅合眾國",
+      "economyCountry": "美國"
+    },
+    "hist-1789-18": {
+      "name": "巴黎",
+      "coordinates": [
+        2.3522,
+        48.8566
+      ],
+      "confidence": "high",
+      "notes": "革命政治中心定位；事件亦遍及法蘭西各地。",
+      "polity": "法蘭西王國",
+      "economyCountry": "法國"
+    },
+    "hist-1793-19": {
+      "name": "北京（清廷）",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "high",
+      "notes": "使團到達清廷都城的城市定位；不表示整段使團行程。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1796-20": {
+      "name": "北京",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "high",
+      "notes": "禪位政治中心定位；不代表嘉慶元年內實權交接的單一日期。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1799-21": {
+      "name": "北京",
+      "coordinates": [
+        116.397,
+        39.916
+      ],
+      "confidence": "high",
+      "notes": "清廷政治中心定位；非精確死亡地點標示。",
+      "polity": "清",
+      "economyCountry": "清朝／中國"
+    },
+    "hist-1763-22": {
+      "name": "北美殖民勢力重整區（概略中心；條約簽署於巴黎）",
+      "coordinates": [
+        -82,
+        43
+      ],
+      "confidence": "low",
+      "notes": "僅作條約主要北美影響區的廣域索引，非簽署地、殖民地疆界或精確控制線。",
+      "polity": "英國／法國／西班牙及北美原住民族",
+      "economyCountry": "英屬北美十三殖民地"
+    },
+    "hist-1787-23": {
+      "name": "費城（制憲會議）",
+      "coordinates": [
+        -75.1652,
+        39.9526
+      ],
+      "confidence": "high",
+      "notes": "制憲會議及憲法簽署的城市定位；不代表其後批准範圍或歷史疆界。",
+      "polity": "美利堅合眾國",
+      "economyCountry": "美國"
+    },
+    "hist-1789-24": {
+      "name": "紐約市（第一屆聯邦國會所在地）",
+      "coordinates": [
+        -74.006,
+        40.7128
+      ],
+      "confidence": "high",
+      "notes": "標示聯邦新政府開始依法運作時的臨時首都；華盛頓總統就職另在同年4月30日。",
+      "polity": "美利堅合眾國",
+      "economyCountry": "美國"
+    }
+  }
+}

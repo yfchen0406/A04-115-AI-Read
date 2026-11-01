@@ -1,0 +1,942 @@
+{
+  "type": "FeatureCollection",
+  "name": "sourced_historical_event_location_1661_1799",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "hist-1661-01",
+      "properties": {
+        "id": "hist-1661-01",
+        "name": "康熙帝即位",
+        "event_id": "hist-1661-01",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1661,
+        "end_year": 1661,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/biography/Kangxi",
+        "related_source_url": "",
+        "notes": "地名層級定位；不是特定即位儀式位置。",
+        "location_name": "北京（清廷）",
+        "country": "清",
+        "category": "政治制度",
+        "date": "",
+        "date_precision": "year",
+        "background": "清廷進入康熙朝。1661為即位年份；皇帝年號「康熙」於1662年改元，兩者不是同一日期。",
+        "people": "玄燁（康熙帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1669-02",
+      "properties": {
+        "id": "hist-1669-02",
+        "name": "擒獲鰲拜",
+        "event_id": "hist-1669-02",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1669,
+        "end_year": 1669,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "Journal of Asian Studies / Cambridge Core",
+        "source_url": "https://www.cambridge.org/core/journals/journal-of-asian-studies/article/abs/policies-and-institutions-of-the-oboi-regency-16611669/2BBA176346E6E488D83F06C6FD9D27A8",
+        "related_source_url": "",
+        "notes": "事件定位至清廷政治中心；非逮捕現場座標。",
+        "location_name": "北京（清廷）",
+        "country": "清",
+        "category": "政治制度",
+        "date": "1669-06",
+        "date_precision": "month",
+        "background": "年幼即位的康熙帝在1669年逮捕權臣鰲拜，開始親政。",
+        "people": "玄燁（康熙帝）、鰲拜",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1673-03",
+      "properties": {
+        "id": "hist-1673-03",
+        "name": "三藩之亂爆發",
+        "event_id": "hist-1673-03",
+        "region": "清朝",
+        "polity": "清與三藩勢力",
+        "start_year": 1673,
+        "end_year": 1673,
+        "control_type": "event_location_only",
+        "confidence": "low",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/event/Revolt-of-the-Three-Feudatories",
+        "related_source_url": "",
+        "notes": "戰爭跨越多省，此點只作戰區索引，並非戰場或疆界。",
+        "location_name": "雲南及南方戰區（概略中心）",
+        "country": "清",
+        "category": "戰爭與軍事",
+        "date": "",
+        "date_precision": "year",
+        "background": "吳三桂等藩王反清，戰事延續至1681年。",
+        "people": "吳三桂、康熙帝",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.833,
+          24.88
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1683-04",
+      "properties": {
+        "id": "hist-1683-04",
+        "name": "清軍攻取臺灣",
+        "event_id": "hist-1683-04",
+        "region": "清朝",
+        "polity": "清與鄭氏政權",
+        "start_year": 1683,
+        "end_year": 1683,
+        "control_type": "event_location_only",
+        "confidence": "medium",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/place/Taiwan/History",
+        "related_source_url": "",
+        "notes": "攻臺戰事包含澎湖海戰；點位代表群島海域，不代表單一交戰點。",
+        "location_name": "澎湖群島（概略定位）",
+        "country": "清",
+        "category": "戰爭與軍事",
+        "date": "",
+        "date_precision": "year",
+        "background": "施琅率清軍攻取臺灣，鄭氏政權降清；臺灣納入清廷統治，隨後設府治理。",
+        "people": "施琅、鄭克塽",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.57,
+          23.58
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1688-05",
+      "properties": {
+        "id": "hist-1688-05",
+        "name": "光榮革命",
+        "event_id": "hist-1688-05",
+        "region": "歐洲",
+        "polity": "英格蘭",
+        "start_year": 1688,
+        "end_year": 1688,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "UK Parliament",
+        "source_url": "https://www.parliament.uk/about/living-heritage/evolutionofparliament/parliamentaryauthority/revolution/overview/",
+        "related_source_url": "",
+        "notes": "政權變動的政治中心定位。",
+        "location_name": "倫敦",
+        "country": "英格蘭",
+        "category": "政治制度",
+        "date": "",
+        "date_precision": "year",
+        "background": "威廉奧蘭治入英，詹姆士二世政權倒台；英國議會將王位交予威廉與瑪麗，相關憲政安排於1689年延續。",
+        "people": "威廉三世、瑪麗二世、詹姆士二世",
+        "economy_country": "英國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1276,
+          51.5072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1689-06",
+      "properties": {
+        "id": "hist-1689-06",
+        "name": "《尼布楚條約》簽訂",
+        "event_id": "hist-1689-06",
+        "region": "清朝",
+        "polity": "清與俄羅斯沙皇國",
+        "start_year": 1689,
+        "end_year": 1689,
+        "control_type": "event_location_only",
+        "confidence": "medium",
+        "source_id": "historical-event-records",
+        "source_title": "俄羅斯總統圖書館",
+        "source_url": "https://www.prlib.ru/node/619514",
+        "related_source_url": "",
+        "notes": "近似現代城鎮定位；不描繪條約邊界。",
+        "location_name": "尼布楚（今涅爾琴斯克，地名定位）",
+        "country": "清",
+        "category": "重大外交事件",
+        "date": "1689-09-06",
+        "date_precision": "day",
+        "background": "清與俄羅斯代表簽訂邊界條約，處理黑龍江流域邊界與雙方關係。日期採條約西曆簽署日。",
+        "people": "索額圖、費耀多羅",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.76,
+          51.98
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1689-07",
+      "properties": {
+        "id": "hist-1689-07",
+        "name": "《權利法案》成為法律",
+        "event_id": "hist-1689-07",
+        "region": "歐洲",
+        "polity": "英格蘭",
+        "start_year": 1689,
+        "end_year": 1689,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "UK Parliament",
+        "source_url": "https://www.parliament.uk/about/living-heritage/evolutionofparliament/parliamentaryauthority/revolution/overview/billofrights/",
+        "related_source_url": "",
+        "notes": "英格蘭議會立法的政治中心定位。",
+        "location_name": "倫敦",
+        "country": "英格蘭",
+        "category": "政治制度",
+        "date": "1689-12",
+        "date_precision": "month",
+        "background": "英格蘭議會於12月通過《權利法案》，確認若干議會權利與王權限制；並非普遍適用的現代人權宣言。",
+        "people": "威廉三世、瑪麗二世、英格蘭議會",
+        "economy_country": "英國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1276,
+          51.5072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1713-08",
+      "properties": {
+        "id": "hist-1713-08",
+        "name": "《烏特勒支和約》",
+        "event_id": "hist-1713-08",
+        "region": "歐洲",
+        "polity": "荷蘭共和國／歐洲列強",
+        "start_year": 1713,
+        "end_year": 1713,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "UK Parliament",
+        "source_url": "https://www.parliament.uk/about/living-heritage/evolutionofparliament/parliamentaryauthority/revolution/keydates/keydates1689-1714/",
+        "related_source_url": "",
+        "notes": "系列條約之一的具名簽約城市；其他條約分別在不同日期簽署。",
+        "location_name": "烏特勒支",
+        "country": "歐洲列強",
+        "category": "重大外交事件",
+        "date": "1713-04-11",
+        "date_precision": "day",
+        "background": "一系列和約結束西班牙王位繼承戰爭的重要部分，重整歐洲與殖民地權益。",
+        "people": "安妮女王、路易十四",
+        "economy_country": "荷蘭",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.1214,
+          52.0907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1722-09a",
+      "properties": {
+        "id": "hist-1722-09a",
+        "name": "康熙帝去世",
+        "event_id": "hist-1722-09a",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1722,
+        "end_year": 1722,
+        "control_type": "event_location_only",
+        "confidence": "medium",
+        "source_id": "historical-event-records",
+        "source_title": "中央研究院歷史語言研究所歷史文物陳列館",
+        "source_url": "https://museum.sinica.edu.tw/en/collection/3/item/125/",
+        "related_source_url": "",
+        "notes": "依事件史料地名作區域定位，不表示園址邊界。",
+        "location_name": "北京西北郊（暢春園所在地區）",
+        "country": "清",
+        "category": "政治制度",
+        "date": "1722-12-20",
+        "date_precision": "day",
+        "background": "康熙帝於12月20日去世，遺詔指定皇四子胤禛承繼。此為皇位交替年。",
+        "people": "玄燁（康熙帝）、胤禛（雍正帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.31,
+          40
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1722-09b",
+      "properties": {
+        "id": "hist-1722-09b",
+        "name": "雍正帝即位詔告",
+        "event_id": "hist-1722-09b",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1722,
+        "end_year": 1722,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "中央研究院歷史語言研究所歷史文物陳列館",
+        "source_url": "https://museum.sinica.edu.tw/en/collection/17/item/447/",
+        "related_source_url": "",
+        "notes": "詔告發布地區的概略定位。",
+        "location_name": "北京",
+        "country": "清",
+        "category": "政治制度",
+        "date": "1722-12-27",
+        "date_precision": "day",
+        "background": "康熙帝去世七日後，雍正帝發布即位詔告。此為皇位交替年；資料所述為詔告日期。",
+        "people": "玄燁（康熙帝）、胤禛（雍正帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1729-10",
+      "properties": {
+        "id": "hist-1729-10",
+        "name": "軍機處早期機構形成",
+        "event_id": "hist-1729-10",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1729,
+        "end_year": 1729,
+        "control_type": "event_location_only",
+        "confidence": "medium",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/topic/Grand-Council",
+        "related_source_url": "",
+        "notes": "中央軍務機構形成的政治中心定位；非單一建築考證。",
+        "location_name": "北京",
+        "country": "清",
+        "category": "政治制度",
+        "date": "",
+        "date_precision": "year",
+        "background": "雍正朝在西北軍務背景下形成軍機房等早期機構，後發展為軍機處。制度形成有過程，不以單一年份代表全部制度定型。",
+        "people": "胤禛（雍正帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1735-11a",
+      "properties": {
+        "id": "hist-1735-11a",
+        "name": "雍正帝去世",
+        "event_id": "hist-1735-11a",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1735,
+        "end_year": 1735,
+        "control_type": "event_location_only",
+        "confidence": "medium",
+        "source_id": "historical-event-records",
+        "source_title": "故宮博物院；中央研究院歷史語言研究所學術研究",
+        "source_url": "https://www.dpm.org.cn/court/lineage/226259.html",
+        "related_source_url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/1467nJcfKKT.pdf",
+        "notes": "園林所在區域的近似現代定位；不表示歷史園界。",
+        "location_name": "北京西北郊（圓明園所在地區）",
+        "country": "清",
+        "category": "政治制度",
+        "date": "1735-10-08",
+        "date_precision": "day",
+        "background": "雍正十三年八月二十三日，雍正帝於圓明園去世，遺命皇四子弘曆承統。此為皇位交替年。",
+        "people": "胤禛（雍正帝）、弘曆（乾隆帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.3,
+          40.01
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1735-11b",
+      "properties": {
+        "id": "hist-1735-11b",
+        "name": "乾隆帝即位",
+        "event_id": "hist-1735-11b",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1735,
+        "end_year": 1735,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "中央研究院歷史語言研究所歷史文物陳列館",
+        "source_url": "https://ihp.openmuseum.tw/muse/digi_object/2304b27fe89b094f73050a67a67e8639",
+        "related_source_url": "https://www.dpm.org.cn/court/lineage/226259.html",
+        "notes": "紫禁城所在城市定位；非建築測繪點。",
+        "location_name": "北京（太和殿）",
+        "country": "清",
+        "category": "政治制度",
+        "date": "1735-10-18",
+        "date_precision": "day",
+        "background": "雍正十三年九月初三日，弘曆於太和殿即位；乾隆年號元年自次年開始，與即位年不同。此為皇位交替年。",
+        "people": "胤禛（雍正帝）、弘曆（乾隆帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1756-12",
+      "properties": {
+        "id": "hist-1756-12",
+        "name": "七年戰爭爆發",
+        "event_id": "hist-1756-12",
+        "region": "歐洲",
+        "polity": "普魯士與哈布斯堡君主國等",
+        "start_year": 1756,
+        "end_year": 1756,
+        "control_type": "event_location_only",
+        "confidence": "low",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/event/Seven-Years-War",
+        "related_source_url": "",
+        "notes": "戰爭是多戰區衝突；此點只代表歐洲開戰背景區域，非單一開戰點。",
+        "location_name": "薩克森戰區（概略定位）",
+        "country": "歐洲列強",
+        "category": "戰爭與軍事",
+        "date": "",
+        "date_precision": "year",
+        "background": "歐洲戰事於1756年擴大為七年戰爭；戰爭亦延伸至北美與其他海外戰場。",
+        "people": "腓特烈二世、喬治二世、瑪麗亞・特蕾莎",
+        "economy_country": "法國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7373,
+          51.0504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1759-13",
+      "properties": {
+        "id": "hist-1759-13",
+        "name": "清軍平定大小和卓",
+        "event_id": "hist-1759-13",
+        "region": "清朝",
+        "polity": "清與大小和卓勢力",
+        "start_year": 1759,
+        "end_year": 1759,
+        "control_type": "event_location_only",
+        "confidence": "low",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/place/Xinjiang/History",
+        "related_source_url": "",
+        "notes": "大小和卓戰事跨越新疆多地；此處為區域索引，非精確戰場或疆界。",
+        "location_name": "喀什噶爾地區（概略定位）",
+        "country": "清",
+        "category": "戰爭與軍事",
+        "date": "",
+        "date_precision": "year",
+        "background": "清軍在新疆平定大小和卓勢力，清廷對新疆地區的統治進一步擴張。",
+        "people": "弘曆（乾隆帝）、大小和卓",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.9898,
+          39.4704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1763-22",
+      "properties": {
+        "id": "hist-1763-22",
+        "name": "《巴黎和約》重整北美殖民勢力",
+        "event_id": "hist-1763-22",
+        "region": "美洲",
+        "polity": "英國／法國／西班牙及北美原住民族",
+        "start_year": 1763,
+        "end_year": 1763,
+        "control_type": "event_location_only",
+        "confidence": "low",
+        "source_id": "historical-event-records",
+        "source_title": "美國國務院歷史學家辦公室",
+        "source_url": "https://history.state.gov/milestones/1750-1775/treaty-of-paris",
+        "related_source_url": "",
+        "notes": "僅作條約主要北美影響區的廣域索引，非簽署地、殖民地疆界或精確控制線。",
+        "location_name": "北美殖民勢力重整區（概略中心；條約簽署於巴黎）",
+        "country": "英國／法國／西班牙",
+        "category": "重大外交事件",
+        "date": "1763-02-10",
+        "date_precision": "day",
+        "background": "英、法、西等國於巴黎簽訂和約，結束七年戰爭。條約使英國取得法國在密西西比河以東的北美領地及佛羅里達；此圖點只作北美影響區概略定位，不表示和約簽署地或殖民疆界。",
+        "people": "英國、法國與西班牙代表",
+        "economy_country": "英屬北美十三殖民地",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82,
+          43
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1769-14",
+      "properties": {
+        "id": "hist-1769-14",
+        "name": "瓦特取得蒸汽機改良專利",
+        "event_id": "hist-1769-14",
+        "region": "歐洲",
+        "polity": "大不列顛",
+        "start_year": 1769,
+        "end_year": 1769,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "Powerhouse Collection",
+        "source_url": "https://collection.powerhouse.com.au/object/119115",
+        "related_source_url": "",
+        "notes": "專利文件相關政治／商業中心定位；非瓦特實驗室位置。",
+        "location_name": "倫敦",
+        "country": "大不列顛",
+        "category": "科學技術",
+        "date": "1769-01-05",
+        "date_precision": "day",
+        "background": "詹姆斯・瓦特取得蒸汽機分離冷凝器改良專利；專利核准不等於技術當年即普及。",
+        "people": "詹姆斯・瓦特",
+        "economy_country": "英國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1276,
+          51.5072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1776-16",
+      "properties": {
+        "id": "hist-1776-16",
+        "name": "《國富論》出版",
+        "event_id": "hist-1776-16",
+        "region": "歐洲",
+        "polity": "大不列顛",
+        "start_year": 1776,
+        "end_year": 1776,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/topic/The-Wealth-of-Nations",
+        "related_source_url": "",
+        "notes": "初版出版城市定位；非特定印刷廠定位。",
+        "location_name": "倫敦（出版地）",
+        "country": "大不列顛",
+        "category": "文化教育",
+        "date": "",
+        "date_precision": "year",
+        "background": "亞當・斯密《國民財富的性質和原因的研究》出版，成為政治經濟學史的重要著作。",
+        "people": "亞當・斯密",
+        "economy_country": "英國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1276,
+          51.5072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1776-15",
+      "properties": {
+        "id": "hist-1776-15",
+        "name": "《獨立宣言》通過",
+        "event_id": "hist-1776-15",
+        "region": "美洲",
+        "polity": "英屬北美十三殖民地",
+        "start_year": 1776,
+        "end_year": 1776,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "U.S. National Archives",
+        "source_url": "https://www.archives.gov/milestone-documents/declaration-of-independence",
+        "related_source_url": "",
+        "notes": "大陸會議所在地城市定位；十三殖民地疆界不由此點代表。",
+        "location_name": "費城（大陸會議）",
+        "country": "英屬北美十三殖民地",
+        "category": "殖民與獨立",
+        "date": "1776-07-04",
+        "date_precision": "day",
+        "background": "大陸會議於7月4日通過《獨立宣言》。此時為十三殖民地宣布獨立，不將其倒稱為已成立的美國人口統計序列。",
+        "people": "大陸會議、托馬斯・傑佛遜",
+        "economy_country": "英屬北美十三殖民地",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1652,
+          39.9526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1783-17",
+      "properties": {
+        "id": "hist-1783-17",
+        "name": "《巴黎和約》簽署",
+        "event_id": "hist-1783-17",
+        "region": "美洲",
+        "polity": "法蘭西王國／美利堅合眾國",
+        "start_year": 1783,
+        "end_year": 1783,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "U.S. National Archives",
+        "source_url": "https://www.archives.gov/milestone-documents/treaty-of-paris",
+        "related_source_url": "",
+        "notes": "和約簽署城市定位；不代表條約領土線。",
+        "location_name": "巴黎",
+        "country": "美利堅合眾國",
+        "category": "重大外交事件",
+        "date": "1783-09-03",
+        "date_precision": "day",
+        "background": "英美代表於9月3日簽署《巴黎和約》，英國承認美國獨立，正式結束兩國戰爭。",
+        "people": "約翰・亞當斯、本傑明・富蘭克林、約翰・傑伊",
+        "economy_country": "美國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3522,
+          48.8566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1787-23",
+      "properties": {
+        "id": "hist-1787-23",
+        "name": "費城制憲會議簽署美國憲法",
+        "event_id": "hist-1787-23",
+        "region": "美洲",
+        "polity": "美利堅合眾國",
+        "start_year": 1787,
+        "end_year": 1787,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "美國國家檔案館",
+        "source_url": "https://www.archives.gov/milestone-documents/constitution",
+        "related_source_url": "",
+        "notes": "制憲會議及憲法簽署的城市定位；不代表其後批准範圍或歷史疆界。",
+        "location_name": "費城（制憲會議）",
+        "country": "美利堅合眾國",
+        "category": "政治制度",
+        "date": "1787-09-17",
+        "date_precision": "day",
+        "background": "制憲會議代表於費城簽署憲法。憲法後續仍須各州批准；本事件標記會議與簽署，不代表全國政府當日已開始運作。",
+        "people": "制憲會議代表",
+        "economy_country": "美國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.1652,
+          39.9526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1789-24",
+      "properties": {
+        "id": "hist-1789-24",
+        "name": "新憲法政府開始依法運作",
+        "event_id": "hist-1789-24",
+        "region": "美洲",
+        "polity": "美利堅合眾國",
+        "start_year": 1789,
+        "end_year": 1789,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "美國國家檔案館：憲法問答",
+        "source_url": "https://www.archives.gov/founding-docs/constitution-q-and-a",
+        "related_source_url": "https://www.inaugural.senate.gov/1st-inaugural-ceremonies/",
+        "notes": "標示聯邦新政府開始依法運作時的臨時首都；華盛頓總統就職另在同年4月30日。",
+        "location_name": "紐約市（第一屆聯邦國會所在地）",
+        "country": "美利堅合眾國",
+        "category": "政治制度",
+        "date": "1789-03-04",
+        "date_precision": "day",
+        "background": "依美國國家檔案館說明，聯邦新政府於1789年3月4日開始依法運作；國會在4月6日取得法定人數後才能實際組織，華盛頓則於4月30日就任總統。此處標示法律生效節點，與行政首長就職日不同。",
+        "people": "第一屆聯邦國會、喬治・華盛頓",
+        "economy_country": "美國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.006,
+          40.7128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1789-18",
+      "properties": {
+        "id": "hist-1789-18",
+        "name": "法國大革命",
+        "event_id": "hist-1789-18",
+        "region": "歐洲",
+        "polity": "法蘭西王國",
+        "start_year": 1789,
+        "end_year": 1789,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/event/French-Revolution",
+        "related_source_url": "",
+        "notes": "革命政治中心定位；事件亦遍及法蘭西各地。",
+        "location_name": "巴黎",
+        "country": "法蘭西王國",
+        "category": "政治制度",
+        "date": "1789-07-14",
+        "date_precision": "day",
+        "background": "1789年革命以多項事件展開；此處以7月14日巴士底監獄遭攻佔作為常用的象徵性節點，不代表革命僅在該日發生。",
+        "people": "路易十六、法國國民議會",
+        "economy_country": "法國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3522,
+          48.8566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1793-19",
+      "properties": {
+        "id": "hist-1793-19",
+        "name": "馬戛爾尼使團訪清",
+        "event_id": "hist-1793-19",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1793,
+        "end_year": 1793,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "Encyclopaedia Britannica",
+        "source_url": "https://www.britannica.com/biography/George-Macartney",
+        "related_source_url": "",
+        "notes": "使團到達清廷都城的城市定位；不表示整段使團行程。",
+        "location_name": "北京（清廷）",
+        "country": "清",
+        "category": "重大外交事件",
+        "date": "",
+        "date_precision": "year",
+        "background": "英國使團抵達清廷交涉外交與貿易事宜；雙方對外交禮儀與通商要求存在分歧。",
+        "people": "乾隆帝、喬治・馬戛爾尼",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1796-20",
+      "properties": {
+        "id": "hist-1796-20",
+        "name": "乾隆禪位嘉慶",
+        "event_id": "hist-1796-20",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1796,
+        "end_year": 1796,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "中央研究院歷史語言研究所歷史文物陳列館；Chinese Text Project",
+        "source_url": "https://museum.sinica.edu.tw/en/collection/3/item/146/",
+        "related_source_url": "https://ctext.org/datawiki.pl?if=en&res=901967",
+        "notes": "禪位政治中心定位；不代表嘉慶元年內實權交接的單一日期。",
+        "location_name": "北京",
+        "country": "清",
+        "category": "政治制度",
+        "date": "1796-02-09",
+        "date_precision": "day",
+        "background": "乾隆帝禪位予嘉慶帝，仍以太上皇身分影響政務；1796至1799須標示嘉慶在位與乾隆太上皇並存。",
+        "people": "弘曆（太上皇）、顒琰（嘉慶帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hist-1799-21",
+      "properties": {
+        "id": "hist-1799-21",
+        "name": "乾隆帝去世",
+        "event_id": "hist-1799-21",
+        "region": "清朝",
+        "polity": "清",
+        "start_year": 1799,
+        "end_year": 1799,
+        "control_type": "event_location_only",
+        "confidence": "high",
+        "source_id": "historical-event-records",
+        "source_title": "Oxford Art Online, Grove Art",
+        "source_url": "https://doi.org/10.1093/gao/9781884446054.article.T070272",
+        "related_source_url": "",
+        "notes": "清廷政治中心定位；非精確死亡地點標示。",
+        "location_name": "北京",
+        "country": "清",
+        "category": "政治制度",
+        "date": "1799-02-07",
+        "date_precision": "day",
+        "background": "乾隆帝於1799年去世，嘉慶帝親政。",
+        "people": "弘曆（乾隆帝）、顒琰（嘉慶帝）",
+        "economy_country": "清朝／中國",
+        "route_type": "event"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.397,
+          39.916
+        ]
+      }
+    }
+  ]
+}

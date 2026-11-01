@@ -4,7 +4,7 @@
   if (!root) return;
   const status = root.querySelector('[data-ed-status]');
   const chartNode = root.querySelector('[data-ed-chart]');
-  const state = { metric: 'gdp', mode: 'line', fiscalView:'perCapita', year: 1750, selected: new Set(), pair: { a: '', b: '' }, speed: 1, timer: null, chart: null, data: null, extensions:[], meta: null, sources: null, sourceDetails: null, redraw: 0, resizeObserver: null };
+  const state = { metric: 'gdp', mode: 'line', dataMode:'raw', fiscalView:'perCapita', year: 1750, selected: new Set(), pair: { a: '', b: '' }, speed: 1, timer: null, chart: null, data: null, extensions:[], meta: null, sources: null, sourceDetails: null, redraw: 0, resizeObserver: null, timeUnsubscribe:null, mapSelectionHandler:null };
   const $ = selector => root.querySelector(selector);
   const fmt = value => Number(value).toLocaleString('zh-TW', { maximumFractionDigits: 2 });
   const esc = value => String(value).replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[char]);
@@ -51,11 +51,14 @@
   }
   function setStatus(message) { if (status) status.textContent = message; }
   function publishYear() {
+    if (window.HistoricalTimeController) { window.HistoricalTimeController.setCurrentYear(state.year, { source: 'economic-dashboard' }); return; }
     const worldYear=document.getElementById('worldYear');
     if(worldYear&&Number(worldYear.value)!==state.year){worldYear.value=state.year;worldYear.dispatchEvent(new Event('input',{bubbles:true}));}
   }
   function selectEvent(event) {
-    state.year=event.year; $('[data-ed-year]').value=state.year; $('[data-ed-jump]').value=state.year; publishYear();
+    state.year=event.year; $('[data-ed-year]').value=state.year; $('[data-ed-jump]').value=state.year;
+    publishYear();
+    if(window.HistoricalTimeController)window.HistoricalTimeController.setSelections({selectedEvent:`economic-${event.year}-${event.label}`});
     const source=event.source?`<br><a href="${esc(event.source.url)}" target="_blank" rel="noopener">史料／研究來源：${esc(event.source.label)}</a>`:'';
     $('[data-ed-event-detail]').innerHTML=`<strong>${event.year}｜${esc(event.label)}｜${esc(event.region)}</strong><br>${esc(event.detail)}${source}<br><span class="ed-note">事件標記協助定位年代，不代表對圖表數值的因果解釋。</span>`;
     $('[data-ed-event-detail]').closest('details').open=true; render(); setStatus(`${event.year} 年｜${event.label}`);
@@ -84,20 +87,21 @@
     $('[data-ed-year]').oninput = event => { state.year = Number(event.target.value); $('[data-ed-jump]').value=state.year; publishYear(); scheduleRender(); };
     $('[data-ed-metrics]').onclick = event => {
       const button = event.target.closest('[data-ed-metric]'); if (!button) return;
-      state.metric = button.dataset.edMetric; state.selected = new Set(availableCountries()); buildControls(); render();
+      state.metric = button.dataset.edMetric; state.selected = new Set(availableCountries()); if(window.HistoricalTimeController)window.HistoricalTimeController.setSelections({selectedCountries:[...state.selected]}); buildControls(); render();
     };
     $('[data-ed-countries]').onchange = event => {
       const input = event.target.closest('[data-ed-country]'); if (!input) return;
       const members=JSON.parse(decodeURIComponent(input.dataset.members||'%5B%5D'));
       members.forEach(name=>input.checked?state.selected.add(name):state.selected.delete(name));
+      if(window.HistoricalTimeController) window.HistoricalTimeController.setSelections({selectedCountries:[...state.selected]});
       render();
     };
-    $('[data-ed-reset]').onclick = () => { state.selected = new Set(availableCountries()); buildControls(); render(); };
+    $('[data-ed-reset]').onclick = () => { state.selected = new Set(availableCountries()); if(window.HistoricalTimeController)window.HistoricalTimeController.setSelections({selectedCountries:[...state.selected]}); buildControls(); render(); };
     $('[data-ed-play]').onclick = togglePlay;
     $('[data-ed-replay]').onclick = () => { stopPlay(); state.year=Number(state.meta.period[0]); $('[data-ed-year]').value=state.year; $('[data-ed-jump]').value=state.year; publishYear(); render(); startPlay(); };
-    $('[data-ed-speed]').onchange = event => { state.speed = Number(event.target.value); if (state.timer) { stopPlay(); startPlay(); } };
+    $('[data-ed-speed]').onchange = event => { state.speed = Number(event.target.value); if(window.HistoricalTimeController)window.HistoricalTimeController.setPlaybackSpeed(state.speed); if (state.timer) { stopPlay(); startPlay(); } };
     $('[data-ed-jump-button]').onclick = () => { const input=$('[data-ed-jump]'); const year=Number(input.value); if(Number.isInteger(year)&&year>=1661&&year<=1799){state.year=year;$('[data-ed-year]').value=year;publishYear();render();setStatus(`年份已移至 ${year} 年。`);}else{input.setCustomValidity('請輸入1661至1799之間的整數年份。');input.reportValidity();input.setCustomValidity('');} };
-    root.querySelectorAll('[data-ed-select]').forEach(button=>{button.onclick=()=>{const names=availableCountries();if(button.dataset.edSelect==='all')state.selected=new Set(names);if(button.dataset.edSelect==='clear')state.selected.clear();if(button.dataset.edSelect==='single'){const first=[...state.selected][0]||names[0];state.selected=new Set(first?[first]:[]);state.mode='line';}if(button.dataset.edSelect==='multi')state.mode='line';if(button.dataset.edSelect==='compare')state.mode='compare';$('[data-ed-countries]').querySelectorAll('[data-ed-country]').forEach(input=>{const members=JSON.parse(decodeURIComponent(input.dataset.members||'%5B%5D'));input.checked=members.some(name=>state.selected.has(name));});render();};});
+    root.querySelectorAll('[data-ed-select]').forEach(button=>{button.onclick=()=>{const names=availableCountries();if(button.dataset.edSelect==='all')state.selected=new Set(names);if(button.dataset.edSelect==='clear')state.selected.clear();if(button.dataset.edSelect==='single'){const first=[...state.selected][0]||names[0];state.selected=new Set(first?[first]:[]);state.mode='line';}if(button.dataset.edSelect==='multi')state.mode='line';if(button.dataset.edSelect==='compare')state.mode='compare';if(window.HistoricalTimeController)window.HistoricalTimeController.setSelections({selectedCountries:[...state.selected]});$('[data-ed-countries]').querySelectorAll('[data-ed-country]').forEach(input=>{const members=JSON.parse(decodeURIComponent(input.dataset.members||'%5B%5D'));input.checked=members.some(name=>state.selected.has(name));});render();};});
     $('[data-ed-era]').onclick = event => {
       const button = event.target.closest('[data-year]'); if (!button) return;
       state.year = Number(button.dataset.year); $('[data-ed-year]').value = state.year; publishYear(); render();
@@ -122,9 +126,9 @@
     const fiscalTotalCard=state.metric==='fiscal'?`<article class="ed-source"><strong>中央政府收入總額｜${esc(state.meta.indicators.fiscal.totalSeries.unit)}</strong><div>Debin Ma, LSE WP152/11, Table 1，1700–1749及1750–1799年度平均。</div><div>資料按研究表格的原單位錄入；中國銀兩按原文1兩=37克換算為噸白銀。</div><a href="${esc(fiscalTotal.url)}" target="_blank" rel="noopener">${esc(fiscalTotal.title)}｜表一</a><div class="ed-note">50年區間平均，不是單年實測。總額受國家人口規模影響，不代表人均負擔。英國列依原文稱 England，荷蘭列為 Dutch Republic。</div></article>`:'';
     host.innerHTML=indicatorCards+fiscalTotalCard+references;
   }
-  function seriesRows(countries=[...state.selected]) {
+  function seriesRows(countries=[...state.selected], sourceRows=availableRows()) {
     const included=new Set(countries);
-    const rows = availableRows().filter(row => included.has(row.country));
+    const rows = sourceRows.filter(row => included.has(row.country));
     const isSplit = state.metric === 'industrial';
     const groups = new Map();
     rows.forEach(row => {
@@ -202,12 +206,14 @@
     if (!state.chart) return;
     const meta=metricMeta(); const countries=[...state.selected];
     const rows=availableRows().filter(row=>state.selected.has(row.country)&&row.year<=state.year);
-    const latest=[...state.selected].map(country=>rows.filter(row=>row.country===country).sort((x,y)=>y.year-x.year)[0]).filter(Boolean);
+    const latestRowsFor=countries=>countries.map(country=>availableRows().filter(row=>row.country===country&&row.year<=state.year).sort((x,y)=>y.year-x.year)[0]).filter(Boolean);
+    const latest=latestRowsFor([...state.selected]);
     $('[data-ed-year-label]').textContent=`${state.year} 年`;
     $('[data-ed-jump]').value=state.year;
     $('[data-ed-limit]').textContent=`${meta.limitation} 圖面只呈現原始記錄點，不連接不同研究版本、不補值或補零。`;
     $('[data-ed-availability]').textContent=meta.unavailableRegions&&meta.unavailableRegions.length?`本指標缺少同口徑觀測：${meta.unavailableRegions.join('、')}。國家選項只列出來源檔實際有資料的地區。`:'本指標的來源資料未標記目標地區缺值；仍請以每筆來源註解為準。';
-    $('[data-ed-snapshot]').innerHTML=latest.length?`截至 ${state.year} 年，各已選系列最近記錄：${latest.map(row=>`<strong>${esc(row.country)} ${row.year}：${fmt(row.value)} ${esc(meta.unit)}（${esc(row.kind)}）</strong>`).join('；')}`:`截至 ${state.year} 年，所選系列尚無已記錄資料點。年份滑桿只作年代定位，不代表逐年資料。`;
+    const nearest=state.dataMode==='nearest';
+    $('[data-ed-snapshot]').innerHTML=latest.length?`${nearest?`最近已知資料（各列均標明實際年份；不是游標年份數值）：`:`截至 ${state.year} 年，各已選系列最近記錄：`}${latest.map(row=>`<strong>${esc(row.country)} ${row.year}：${fmt(row.value)} ${esc(meta.unit)}（${esc(row.kind)}${nearest?`；距游標 ${state.year-row.year} 年`:''}）</strong>`).join('；')}`:`截至 ${state.year} 年，所選系列尚無已記錄資料點。年份滑桿只作年代定位，不代表逐年資料。`;
     root.querySelectorAll('[data-ed-metric]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.edMetric===state.metric)));
     root.querySelectorAll('[data-ed-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.edMode===state.mode)));
     $('[data-ed-compare]').hidden=state.mode!=='compare';
@@ -216,7 +222,8 @@
     if(state.mode==='compare') compareSummary();
     let series=[]; let xAxis,yAxis; let legend={show:true,type:'scroll',top:6,textStyle:{color:'#463a2e'}};
     let zoom=[]; let grid={left:76,right:30,top:62,bottom:35,containLabel:true}; let chartCaption='';
-    const lineRows=seriesRows().map(item=>({...item,itemStyle:{...item.itemStyle,color:stableColor(item.name)},lineStyle:{...item.lineStyle,color:stableColor(item.name)},data:item.data.filter(point=>point.value[0]<=state.year)}));
+    const displayRows=nearest?latestRowsFor(state.mode==='compare'?[state.pair.a,state.pair.b]:[...state.selected]):availableRows().filter(row=>row.year<=state.year);
+    const lineRows=seriesRows([...state.selected],displayRows).map(item=>({...item,itemStyle:{...item.itemStyle,color:stableColor(item.name)},lineStyle:{...item.lineStyle,color:stableColor(item.name)},data:item.data.filter(point=>nearest||point.value[0]<=state.year)}));
     if(state.mode==='race') {
       if(!meta.rankable) chartCaption=meta.rankMessage||'資料口徑不適合排名，請改看折線或點位。';
       else {
@@ -233,7 +240,7 @@
       }
     } else if(state.mode==='compare') {
       if(state.pair.a===state.pair.b)chartCaption='請選擇兩個不同國家或資料系列。';
-      else if(meta.comparison&&meta.comparison.enabled) series=seriesRows([state.pair.a,state.pair.b]).map(item=>({...item,itemStyle:{...item.itemStyle,color:stableColor(item.name)},lineStyle:{...item.lineStyle,color:stableColor(item.name)},data:item.data.filter(point=>point.value[0]<=state.year)}));
+      else if(meta.comparison&&meta.comparison.enabled) series=seriesRows([state.pair.a,state.pair.b],displayRows).map(item=>({...item,itemStyle:{...item.itemStyle,color:stableColor(item.name)},lineStyle:{...item.lineStyle,color:stableColor(item.name)},data:item.data.filter(point=>nearest||point.value[0]<=state.year)}));
       else chartCaption=meta.comparison?meta.comparison.reason:'此指標尚無可比較的共同資料口徑。';
       xAxis={type:'value',min:1661,max:1799,interval:20,name:'年份',nameLocation:'middle',nameGap:30,axisLabel:{color:'#594b3b'},splitLine:{lineStyle:{color:'#d8c9ab55'}},axisLine:{lineStyle:{color:'#9c7c4b'}}};
       yAxis={type:'value',name:meta.unit,nameLocation:'middle',nameGap:52,axisLabel:{color:'#594b3b'},splitLine:{lineStyle:{color:'#bca77d55',type:'dashed'}},axisLine:{show:true,lineStyle:{color:'#9c7c4b'}}};
@@ -245,10 +252,12 @@
       zoom=[{type:'inside',xAxisIndex:0,filterMode:'none'},{type:'slider',xAxisIndex:0,height:18,bottom:8,borderColor:'#ceb98e'}];
     }
     const graphic=buildEventGraphic(rows.length>0);
+    if(nearest) graphic.push({type:'text',left:78,top:59,silent:true,style:{text:`最近已知原始資料點，非 ${state.year} 年實測；各點以實際觀測年份定位。`,fill:'#70583b',font:'12px sans-serif'}});
     if(chartCaption) graphic.push({type:'text',left:78,top:44,silent:true,style:{text:chartCaption,width:Math.max(100,chartNode.clientWidth-130),overflow:'break',fill:'#70583b',font:'12px sans-serif'}});
     state.chart.setOption({animation:!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&!document.documentElement.classList.contains('qing-motion-off'),animationDuration:450,animationDurationUpdate:320,color:palette,tooltip:{trigger:'item',confine:true,formatter:params=>{const row=params.data&&params.data.row;return row?`<strong>${esc(row.country)}｜${row.year} 年｜${esc(row.kind)}</strong><br>${esc(meta.label)}：${fmt(row.value)} ${esc(meta.unit)}<br>${esc(row.kind)}<br>${esc(row.note||'')}<br>${esc(sourceLabel(row.source))}`:''},backgroundColor:'#fffaf0',borderColor:'#ad8a50',textStyle:{color:'#34281e'}},legend,grid,xAxis,yAxis,dataZoom:zoom,series,graphic},{lazyUpdate:true,replaceMerge:['series','xAxis','yAxis','dataZoom','graphic','legend']});
   }
   function startPlay() {
+    if(window.HistoricalTimeController){window.HistoricalTimeController.play();return;}
     if (state.timer) return;
     $('[data-ed-play]').textContent = '■ 暫停';
     state.timer = window.setInterval(() => {
@@ -260,8 +269,8 @@
       scheduleRender();
     }, 500);
   }
-  function stopPlay() { window.clearInterval(state.timer); state.timer = null; $('[data-ed-play]').textContent = '▶ 播放'; }
-  function togglePlay() { if (state.timer) stopPlay(); else startPlay(); }
+  function stopPlay() { if(window.HistoricalTimeController){window.HistoricalTimeController.pause();return;} window.clearInterval(state.timer); state.timer = null; $('[data-ed-play]').textContent = '▶ 播放'; }
+  function togglePlay() { if(window.HistoricalTimeController){const controller=window.HistoricalTimeController;controller.getSnapshot().playing?controller.pause():startPlay();return;} if (state.timer) stopPlay(); else startPlay(); }
   function resize() { if (state.chart) state.chart.resize(); }
   function init(data, metadata, sourceDetails, extensions) {
     state.data = data; state.meta = metadata;
@@ -270,15 +279,31 @@
     state.extensions=extensions.observations;
     state.chart = window.echarts.init(chartNode, null, { renderer: 'canvas', useDirtyRect: true });
     const worldYear=document.getElementById('worldYear');
-    state.year = Number(worldYear ? worldYear.value : $('[data-ed-year]').value);
+    state.year = window.HistoricalTimeController ? window.HistoricalTimeController.getCurrentYear() : Number(worldYear ? worldYear.value : $('[data-ed-year]').value);
     $('[data-ed-year]').value=state.year;
-    buildControls(); buildSources(); buildEventList(); render();
+    buildControls(); if(window.HistoricalTimeController)window.HistoricalTimeController.setSelections({selectedCountries:[...state.selected]}); buildSources(); buildEventList(); render();
     state.chart.on('click', event => {
       if (!event.data || !event.data.event) return;
-      state.year = event.data.event.year; $('[data-ed-year]').value = state.year; render();
+      state.year = event.data.event.year; $('[data-ed-year]').value = state.year; $('[data-ed-jump]').value = state.year;
+      if(window.HistoricalTimeController) window.HistoricalTimeController.setCurrentYear(state.year,{source:'economic-event-marker'}); else render();
       setStatus(`${event.data.event.year} 年｜${event.data.event.label}`);
     });
-    if(worldYear)worldYear.addEventListener('input',()=>{const year=Number(worldYear.value);if(year!==state.year){state.year=year;$('[data-ed-year]').value=year;$('[data-ed-jump]').value=year;scheduleRender();}});
+    if(window.HistoricalTimeController) state.timeUnsubscribe=window.HistoricalTimeController.subscribe(detail=>{state.year=detail.currentYear;$('[data-ed-year]').value=state.year;$('[data-ed-jump]').value=state.year;if(detail.source==='playback')scheduleRender();else render();});
+    state.mapSelectionHandler = event => {
+      const next = [...new Set(event.detail?.selectedCountries || [])];
+      const before = [...state.selected].sort(); const after = [...next].sort();
+      if (JSON.stringify(before) === JSON.stringify(after)) return;
+      state.selected = new Set(next);
+      $('[data-ed-countries]').querySelectorAll('[data-ed-country]').forEach(input => {
+        const members=JSON.parse(decodeURIComponent(input.dataset.members||'%5B%5D'));
+        input.checked=members.some(name=>state.selected.has(name));
+      });
+      render();
+    };
+    window.addEventListener('historicalmapupdate', state.mapSelectionHandler);
+    if(!window.HistoricalTimeController && worldYear)worldYear.addEventListener('input',()=>{const year=Number(worldYear.value);if(year!==state.year){state.year=year;$('[data-ed-year]').value=year;$('[data-ed-jump]').value=year;scheduleRender();}});
+    const dataMode=$('[data-ed-data-mode]');
+    if(dataMode)dataMode.addEventListener('change',()=>{state.dataMode=dataMode.value;render();setStatus(state.dataMode==='nearest'?'最近已知資料模式：每點保留實際年份，不作當年實測解讀。':state.dataMode==='estimate'?'本資料庫沒有可依來源重現的插值模型。':'原始資料點模式：只顯示資料庫實際記錄。');});
     window.addEventListener('resize', resize, { passive: true });
     if(window.ResizeObserver){state.resizeObserver=new ResizeObserver(resize);state.resizeObserver.observe(chartNode);}
     if (window.gsap && window.ScrollTrigger && !document.documentElement.classList.contains('qing-motion-off') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -289,7 +314,7 @@
     const updateMotion = () => { if (state.chart) { state.chart.setOption({ animation: !reduced.matches && !document.documentElement.classList.contains('qing-motion-off') }); } };
     reduced.addEventListener ? reduced.addEventListener('change', updateMotion) : reduced.addListener(updateMotion);
     const observer = new MutationObserver(updateMotion); observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    window.addEventListener('pagehide', () => { stopPlay(); if(state.redraw)cancelAnimationFrame(state.redraw); if(state.resizeObserver)state.resizeObserver.disconnect(); observer.disconnect(); window.removeEventListener('resize', resize); state.chart.dispose(); }, { once: true });
+    window.addEventListener('pagehide', () => { stopPlay(); if(state.timeUnsubscribe)state.timeUnsubscribe(); if(state.mapSelectionHandler)window.removeEventListener('historicalmapupdate',state.mapSelectionHandler); if(state.redraw)cancelAnimationFrame(state.redraw); if(state.resizeObserver)state.resizeObserver.disconnect(); observer.disconnect(); window.removeEventListener('resize', resize); state.chart.dispose(); }, { once: true });
     setStatus('儀表板已載入；圖表只呈現來源記錄的年份。');
   }
   if (!window.echarts) { setStatus('圖表函式庫未能載入；原有經濟圖表仍可使用。'); return; }

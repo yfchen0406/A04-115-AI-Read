@@ -1,0 +1,473 @@
+{
+  "period": [
+    1661,
+    1799
+  ],
+  "categories": [
+    "政治制度",
+    "戰爭與軍事",
+    "科學技術",
+    "工業發展",
+    "財政經濟",
+    "國際貿易",
+    "文化教育",
+    "社會變遷",
+    "殖民與獨立",
+    "重大外交事件"
+  ],
+  "events": [
+    {
+      "id": "hist-1661-01",
+      "year": 1661,
+      "date": null,
+      "datePrecision": "year",
+      "region": "清朝",
+      "country": "清",
+      "title": "康熙帝即位",
+      "background": "清廷進入康熙朝。1661為即位年份；皇帝年號「康熙」於1662年改元，兩者不是同一日期。",
+      "category": "政治制度",
+      "people": [
+        "玄燁（康熙帝）"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/biography/Kangxi"
+    },
+    {
+      "id": "hist-1669-02",
+      "year": 1669,
+      "date": "1669-06",
+      "datePrecision": "month",
+      "region": "清朝",
+      "country": "清",
+      "title": "擒獲鰲拜",
+      "background": "年幼即位的康熙帝在1669年逮捕權臣鰲拜，開始親政。",
+      "category": "政治制度",
+      "people": [
+        "玄燁（康熙帝）",
+        "鰲拜"
+      ],
+      "sourceTitle": "Journal of Asian Studies / Cambridge Core",
+      "sourceUrl": "https://www.cambridge.org/core/journals/journal-of-asian-studies/article/abs/policies-and-institutions-of-the-oboi-regency-16611669/2BBA176346E6E488D83F06C6FD9D27A8",
+      "dateNote": "學術研究摘要記載鰲拜於1669年6月被捕。"
+    },
+    {
+      "id": "hist-1673-03",
+      "year": 1673,
+      "date": null,
+      "datePrecision": "year",
+      "region": "清朝",
+      "country": "清",
+      "title": "三藩之亂爆發",
+      "background": "吳三桂等藩王反清，戰事延續至1681年。",
+      "category": "戰爭與軍事",
+      "people": [
+        "吳三桂",
+        "康熙帝"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/event/Revolt-of-the-Three-Feudatories"
+    },
+    {
+      "id": "hist-1683-04",
+      "year": 1683,
+      "date": null,
+      "datePrecision": "year",
+      "region": "清朝",
+      "country": "清",
+      "title": "清軍攻取臺灣",
+      "background": "施琅率清軍攻取臺灣，鄭氏政權降清；臺灣納入清廷統治，隨後設府治理。",
+      "category": "戰爭與軍事",
+      "people": [
+        "施琅",
+        "鄭克塽"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/place/Taiwan/History"
+    },
+    {
+      "id": "hist-1688-05",
+      "year": 1688,
+      "date": null,
+      "datePrecision": "year",
+      "region": "歐洲",
+      "country": "英格蘭",
+      "title": "光榮革命",
+      "background": "威廉奧蘭治入英，詹姆士二世政權倒台；英國議會將王位交予威廉與瑪麗，相關憲政安排於1689年延續。",
+      "category": "政治制度",
+      "people": [
+        "威廉三世",
+        "瑪麗二世",
+        "詹姆士二世"
+      ],
+      "sourceTitle": "UK Parliament",
+      "sourceUrl": "https://www.parliament.uk/about/living-heritage/evolutionofparliament/parliamentaryauthority/revolution/overview/"
+    },
+    {
+      "id": "hist-1689-06",
+      "year": 1689,
+      "date": "1689-09-06",
+      "datePrecision": "day",
+      "region": "清朝",
+      "country": "清",
+      "title": "《尼布楚條約》簽訂",
+      "background": "清與俄羅斯代表簽訂邊界條約，處理黑龍江流域邊界與雙方關係。日期採條約西曆簽署日。",
+      "category": "重大外交事件",
+      "people": [
+        "索額圖",
+        "費耀多羅"
+      ],
+      "sourceTitle": "俄羅斯總統圖書館",
+      "sourceUrl": "https://www.prlib.ru/node/619514",
+      "dateNote": "格里曆1689-09-06（俄曆1689-08-27；來源並列兩種曆法日期）"
+    },
+    {
+      "id": "hist-1689-07",
+      "year": 1689,
+      "date": "1689-12",
+      "datePrecision": "month",
+      "region": "歐洲",
+      "country": "英格蘭",
+      "title": "《權利法案》成為法律",
+      "background": "英格蘭議會於12月通過《權利法案》，確認若干議會權利與王權限制；並非普遍適用的現代人權宣言。",
+      "category": "政治制度",
+      "people": [
+        "威廉三世",
+        "瑪麗二世",
+        "英格蘭議會"
+      ],
+      "sourceTitle": "UK Parliament",
+      "sourceUrl": "https://www.parliament.uk/about/living-heritage/evolutionofparliament/parliamentaryauthority/revolution/overview/billofrights/",
+      "dateNote": "1689年12月（英格蘭議會通過；非單一日事件）"
+    },
+    {
+      "id": "hist-1713-08",
+      "year": 1713,
+      "date": "1713-04-11",
+      "datePrecision": "day",
+      "region": "歐洲",
+      "country": "歐洲列強",
+      "title": "《烏特勒支和約》",
+      "background": "一系列和約結束西班牙王位繼承戰爭的重要部分，重整歐洲與殖民地權益。",
+      "category": "重大外交事件",
+      "people": [
+        "安妮女王",
+        "路易十四"
+      ],
+      "sourceTitle": "UK Parliament",
+      "sourceUrl": "https://www.parliament.uk/about/living-heritage/evolutionofparliament/parliamentaryauthority/revolution/keydates/keydates1689-1714/",
+      "dateNote": "1713-04-11為英法和約簽署日；烏特勒支系列條約分批簽署"
+    },
+    {
+      "id": "hist-1722-09a",
+      "year": 1722,
+      "date": "1722-12-20",
+      "datePrecision": "day",
+      "region": "清朝",
+      "country": "清",
+      "title": "康熙帝去世",
+      "background": "康熙帝於12月20日去世，遺詔指定皇四子胤禛承繼。此為皇位交替年。",
+      "category": "政治制度",
+      "people": [
+        "玄燁（康熙帝）",
+        "胤禛（雍正帝）"
+      ],
+      "sourceTitle": "中央研究院歷史語言研究所歷史文物陳列館",
+      "sourceUrl": "https://museum.sinica.edu.tw/en/collection/3/item/125/"
+    },
+    {
+      "id": "hist-1722-09b",
+      "year": 1722,
+      "date": "1722-12-27",
+      "datePrecision": "day",
+      "region": "清朝",
+      "country": "清",
+      "title": "雍正帝即位詔告",
+      "background": "康熙帝去世七日後，雍正帝發布即位詔告。此為皇位交替年；資料所述為詔告日期。",
+      "category": "政治制度",
+      "people": [
+        "玄燁（康熙帝）",
+        "胤禛（雍正帝）"
+      ],
+      "sourceTitle": "中央研究院歷史語言研究所歷史文物陳列館",
+      "sourceUrl": "https://museum.sinica.edu.tw/en/collection/17/item/447/",
+      "dateNote": "中央研究院藏品說明記載即位詔告於康熙帝去世七日後發布。"
+    },
+    {
+      "id": "hist-1729-10",
+      "year": 1729,
+      "date": null,
+      "datePrecision": "year",
+      "region": "清朝",
+      "country": "清",
+      "title": "軍機處早期機構形成",
+      "background": "雍正朝在西北軍務背景下形成軍機房等早期機構，後發展為軍機處。制度形成有過程，不以單一年份代表全部制度定型。",
+      "category": "政治制度",
+      "people": [
+        "胤禛（雍正帝）"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/topic/Grand-Council"
+    },
+    {
+      "id": "hist-1735-11a",
+      "year": 1735,
+      "date": "1735-10-08",
+      "datePrecision": "day",
+      "region": "清朝",
+      "country": "清",
+      "title": "雍正帝去世",
+      "background": "雍正十三年八月二十三日，雍正帝於圓明園去世，遺命皇四子弘曆承統。此為皇位交替年。",
+      "category": "政治制度",
+      "people": [
+        "胤禛（雍正帝）",
+        "弘曆（乾隆帝）"
+      ],
+      "sourceTitle": "故宮博物院；中央研究院歷史語言研究所學術研究",
+      "sourceUrl": "https://www.dpm.org.cn/court/lineage/226259.html",
+      "dateNote": "故宮記清曆雍正十三年八月二十三日；公曆日期由中研院學術研究記為1735年10月8日。",
+      "relatedSourceUrl": "https://www11.ihp.sinica.edu.tw/storage/w2_file/1467nJcfKKT.pdf"
+    },
+    {
+      "id": "hist-1735-11b",
+      "year": 1735,
+      "date": "1735-10-18",
+      "datePrecision": "day",
+      "region": "清朝",
+      "country": "清",
+      "title": "乾隆帝即位",
+      "background": "雍正十三年九月初三日，弘曆於太和殿即位；乾隆年號元年自次年開始，與即位年不同。此為皇位交替年。",
+      "category": "政治制度",
+      "people": [
+        "胤禛（雍正帝）",
+        "弘曆（乾隆帝）"
+      ],
+      "sourceTitle": "中央研究院歷史語言研究所歷史文物陳列館",
+      "sourceUrl": "https://ihp.openmuseum.tw/muse/digi_object/2304b27fe89b094f73050a67a67e8639",
+      "dateNote": "中研院登極詔書資料標示公曆1735年10月18日；故宮記清曆雍正十三年九月初三日。",
+      "relatedSourceUrl": "https://www.dpm.org.cn/court/lineage/226259.html"
+    },
+    {
+      "id": "hist-1756-12",
+      "year": 1756,
+      "date": null,
+      "datePrecision": "year",
+      "region": "歐洲",
+      "country": "歐洲列強",
+      "title": "七年戰爭爆發",
+      "background": "歐洲戰事於1756年擴大為七年戰爭；戰爭亦延伸至北美與其他海外戰場。",
+      "category": "戰爭與軍事",
+      "people": [
+        "腓特烈二世",
+        "喬治二世",
+        "瑪麗亞・特蕾莎"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/event/Seven-Years-War"
+    },
+    {
+      "id": "hist-1759-13",
+      "year": 1759,
+      "date": null,
+      "datePrecision": "year",
+      "region": "清朝",
+      "country": "清",
+      "title": "清軍平定大小和卓",
+      "background": "清軍在新疆平定大小和卓勢力，清廷對新疆地區的統治進一步擴張。",
+      "category": "戰爭與軍事",
+      "people": [
+        "弘曆（乾隆帝）",
+        "大小和卓"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/place/Xinjiang/History"
+    },
+    {
+      "id": "hist-1763-22",
+      "year": 1763,
+      "date": "1763-02-10",
+      "datePrecision": "day",
+      "region": "美洲",
+      "country": "英國／法國／西班牙",
+      "title": "《巴黎和約》重整北美殖民勢力",
+      "background": "英、法、西等國於巴黎簽訂和約，結束七年戰爭。條約使英國取得法國在密西西比河以東的北美領地及佛羅里達；此圖點只作北美影響區概略定位，不表示和約簽署地或殖民疆界。",
+      "category": "重大外交事件",
+      "people": [
+        "英國、法國與西班牙代表"
+      ],
+      "sourceTitle": "美國國務院歷史學家辦公室",
+      "sourceUrl": "https://history.state.gov/milestones/1750-1775/treaty-of-paris"
+    },
+    {
+      "id": "hist-1769-14",
+      "year": 1769,
+      "date": "1769-01-05",
+      "datePrecision": "day",
+      "region": "歐洲",
+      "country": "大不列顛",
+      "title": "瓦特取得蒸汽機改良專利",
+      "background": "詹姆斯・瓦特取得蒸汽機分離冷凝器改良專利；專利核准不等於技術當年即普及。",
+      "category": "科學技術",
+      "people": [
+        "詹姆斯・瓦特"
+      ],
+      "sourceTitle": "Powerhouse Collection",
+      "sourceUrl": "https://collection.powerhouse.com.au/object/119115",
+      "dateNote": "專利說明書日期為1769年1月5日，登記日期為同年4月29日。此處以專利說明書日期標示。"
+    },
+    {
+      "id": "hist-1776-16",
+      "year": 1776,
+      "date": null,
+      "datePrecision": "year",
+      "region": "歐洲",
+      "country": "大不列顛",
+      "title": "《國富論》出版",
+      "background": "亞當・斯密《國民財富的性質和原因的研究》出版，成為政治經濟學史的重要著作。",
+      "category": "文化教育",
+      "people": [
+        "亞當・斯密"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/topic/The-Wealth-of-Nations"
+    },
+    {
+      "id": "hist-1776-15",
+      "year": 1776,
+      "date": "1776-07-04",
+      "datePrecision": "day",
+      "region": "美洲",
+      "country": "英屬北美十三殖民地",
+      "title": "《獨立宣言》通過",
+      "background": "大陸會議於7月4日通過《獨立宣言》。此時為十三殖民地宣布獨立，不將其倒稱為已成立的美國人口統計序列。",
+      "category": "殖民與獨立",
+      "people": [
+        "大陸會議",
+        "托馬斯・傑佛遜"
+      ],
+      "sourceTitle": "U.S. National Archives",
+      "sourceUrl": "https://www.archives.gov/milestone-documents/declaration-of-independence"
+    },
+    {
+      "id": "hist-1783-17",
+      "year": 1783,
+      "date": "1783-09-03",
+      "datePrecision": "day",
+      "region": "美洲",
+      "country": "美利堅合眾國",
+      "title": "《巴黎和約》簽署",
+      "background": "英美代表於9月3日簽署《巴黎和約》，英國承認美國獨立，正式結束兩國戰爭。",
+      "category": "重大外交事件",
+      "people": [
+        "約翰・亞當斯",
+        "本傑明・富蘭克林",
+        "約翰・傑伊"
+      ],
+      "sourceTitle": "U.S. National Archives",
+      "sourceUrl": "https://www.archives.gov/milestone-documents/treaty-of-paris"
+    },
+    {
+      "id": "hist-1787-23",
+      "year": 1787,
+      "date": "1787-09-17",
+      "datePrecision": "day",
+      "region": "美洲",
+      "country": "美利堅合眾國",
+      "title": "費城制憲會議簽署美國憲法",
+      "background": "制憲會議代表於費城簽署憲法。憲法後續仍須各州批准；本事件標記會議與簽署，不代表全國政府當日已開始運作。",
+      "category": "政治制度",
+      "people": [
+        "制憲會議代表"
+      ],
+      "sourceTitle": "美國國家檔案館",
+      "sourceUrl": "https://www.archives.gov/milestone-documents/constitution"
+    },
+    {
+      "id": "hist-1789-24",
+      "year": 1789,
+      "date": "1789-03-04",
+      "datePrecision": "day",
+      "region": "美洲",
+      "country": "美利堅合眾國",
+      "title": "新憲法政府開始依法運作",
+      "background": "依美國國家檔案館說明，聯邦新政府於1789年3月4日開始依法運作；國會在4月6日取得法定人數後才能實際組織，華盛頓則於4月30日就任總統。此處標示法律生效節點，與行政首長就職日不同。",
+      "category": "政治制度",
+      "people": [
+        "第一屆聯邦國會",
+        "喬治・華盛頓"
+      ],
+      "sourceTitle": "美國國家檔案館：憲法問答",
+      "sourceUrl": "https://www.archives.gov/founding-docs/constitution-q-and-a",
+      "relatedSourceUrl": "https://www.inaugural.senate.gov/1st-inaugural-ceremonies/"
+    },
+    {
+      "id": "hist-1789-18",
+      "year": 1789,
+      "date": "1789-07-14",
+      "datePrecision": "day",
+      "region": "歐洲",
+      "country": "法蘭西王國",
+      "title": "法國大革命",
+      "background": "1789年革命以多項事件展開；此處以7月14日巴士底監獄遭攻佔作為常用的象徵性節點，不代表革命僅在該日發生。",
+      "category": "政治制度",
+      "people": [
+        "路易十六",
+        "法國國民議會"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/event/French-Revolution"
+    },
+    {
+      "id": "hist-1793-19",
+      "year": 1793,
+      "date": null,
+      "datePrecision": "year",
+      "region": "清朝",
+      "country": "清",
+      "title": "馬戛爾尼使團訪清",
+      "background": "英國使團抵達清廷交涉外交與貿易事宜；雙方對外交禮儀與通商要求存在分歧。",
+      "category": "重大外交事件",
+      "people": [
+        "乾隆帝",
+        "喬治・馬戛爾尼"
+      ],
+      "sourceTitle": "Encyclopaedia Britannica",
+      "sourceUrl": "https://www.britannica.com/biography/George-Macartney"
+    },
+    {
+      "id": "hist-1796-20",
+      "year": 1796,
+      "date": "1796-02-09",
+      "datePrecision": "day",
+      "region": "清朝",
+      "country": "清",
+      "title": "乾隆禪位嘉慶",
+      "background": "乾隆帝禪位予嘉慶帝，仍以太上皇身分影響政務；1796至1799須標示嘉慶在位與乾隆太上皇並存。",
+      "category": "政治制度",
+      "people": [
+        "弘曆（太上皇）",
+        "顒琰（嘉慶帝）"
+      ],
+      "sourceTitle": "中央研究院歷史語言研究所歷史文物陳列館；Chinese Text Project",
+      "sourceUrl": "https://museum.sinica.edu.tw/en/collection/3/item/146/",
+      "dateNote": "採公曆日期；為嘉慶元年正月初一，乾隆禪位並由嘉慶帝承統。",
+      "relatedSourceUrl": "https://ctext.org/datawiki.pl?if=en&res=901967"
+    },
+    {
+      "id": "hist-1799-21",
+      "year": 1799,
+      "date": "1799-02-07",
+      "datePrecision": "day",
+      "region": "清朝",
+      "country": "清",
+      "title": "乾隆帝去世",
+      "background": "乾隆帝於1799年去世，嘉慶帝親政。",
+      "category": "政治制度",
+      "people": [
+        "弘曆（乾隆帝）",
+        "顒琰（嘉慶帝）"
+      ],
+      "sourceTitle": "Oxford Art Online, Grove Art",
+      "sourceUrl": "https://doi.org/10.1093/gao/9781884446054.article.T070272"
+    }
+  ]
+}

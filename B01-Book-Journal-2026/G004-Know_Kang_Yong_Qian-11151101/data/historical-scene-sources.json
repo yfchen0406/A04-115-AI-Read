@@ -1,0 +1,165 @@
+{
+  "sources": {
+    "britannica-kangxi": {
+      "title": "Kangxi Emperor",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/biography/Kangxi",
+      "use": "皇帝生平與在位背景；本場景的宮廷人物及空間為示意重建。"
+    },
+    "britannica-three-feudatories": {
+      "title": "Revolt of the Three Feudatories",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Revolt-of-the-Three-Feudatories",
+      "use": "戰事年代與背景；地圖線條是概略事件示意。"
+    },
+    "britannica-taiwan": {
+      "title": "Taiwan: History",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/place/Taiwan/History",
+      "use": "1683年鄭氏政權降清及後續治理背景。"
+    },
+    "met-kangxi-scroll": {
+      "title": "The Kangxi Emperor's Southern Inspection Tour, Scroll Three",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/49156",
+      "image": "https://images.metmuseum.org/CRDImages/as/original/DP105303_CRD.jpg",
+      "creator": "王翬及其團隊",
+      "date": "1698",
+      "rights": "Public Domain（博物館物件頁標示）",
+      "use": "絲本十二卷組件之一；紀念康熙1689年南巡。原作與情境重建分開標示。"
+    },
+    "met-qianlong-scroll": {
+      "title": "The Qianlong Emperor's Southern Inspection Tour, Scroll Six",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/41493",
+      "image": "https://images.metmuseum.org/CRDImages/as/original/DP105240_CRD.jpg",
+      "creator": "徐揚及其團隊",
+      "date": "1770",
+      "rights": "Public Domain（博物館物件頁標示）",
+      "use": "絲本十二卷組件之一；繪乾隆1751年南巡，草稿約自1764年開始。"
+    },
+    "npm-siku": {
+      "title": "清 高宗敕編《四庫全書》",
+      "publisher": "國立故宮博物院",
+      "url": "https://theme.npm.edu.tw/selection/Article.aspx?sNo=04001076",
+      "use": "1772年下詔、編纂完成時間、工程規模及藏本背景；文化保存與禁毀面向併讀。"
+    },
+    "smg-newcomen": {
+      "title": "Newcomen Atmospheric Engine",
+      "publisher": "Science Museum Group",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co50900/newcomen-atmospheric-engine",
+      "use": "1712年早期大氣式蒸汽機原理：缸內冷凝、由大氣壓推動活塞、搖樑帶動抽水桿。博物館藏實物為1791年機型，不等同1712年首台。"
+    },
+    "smg-watt-condenser": {
+      "title": "Watt's second separate condenser, 1765",
+      "publisher": "Science Museum Group",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co50928/watts-second-separate-condenser-1765-condensers",
+      "use": "分離冷凝器的歷史模型與熱效率原理；動畫不混入不同年代的機械配置。"
+    },
+    "smg-jenny": {
+      "title": "Reproduction of Hargreaves' original spinning jenny",
+      "publisher": "Science Museum Group",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co44855/reproduction-of-hargreavess-original-spinning-jenny-spinning-jennies-spinning-wheels",
+      "use": "手動多錠紡紗機結構參考；網站使用自製示意 SVG，不使用其受限影像。"
+    },
+    "sim-water-frame": {
+      "title": "Arkwright's Water Frame",
+      "publisher": "Science Museum Group",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co8411373",
+      "use": "紡紗機水輪動力、滾筒牽伸及紡錠加捻原理。館藏生產型機器約製於1775年，場景年表另標註1769專利與1771工場投用背景。"
+    },
+    "smg-cartwright": {
+      "title": "Edmund Cartwright",
+      "publisher": "Science Museum Group",
+      "url": "https://collection.sciencemuseumgroup.org.uk/people/ap13666/cartwright-edmund",
+      "use": "1784年構想、1785年專利與早期織機動力試驗背景。"
+    },
+    "oxford-canton": {
+      "title": "From Open Seas to the Guangzhou System",
+      "publisher": "Oxford Research Encyclopedia of Asian History",
+      "url": "https://academic.oup.com/edited-volume/61799/chapter-abstract/546301609",
+      "use": "廣州貿易集中與制度演變背景；1757年後集中貿易不等於全面閉關。"
+    },
+    "british-museum-hong": {
+      "title": "Hong bowl depicting the foreign factories at Canton",
+      "publisher": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/A_Franks-745-",
+      "date": "約1780–1785",
+      "rights": "僅引用藏品頁資料；本網站不嵌入該器物圖片。",
+      "use": "廣州商館、外商建築及港口船舶圖像背景；本網站港口是示意重建。"
+    },
+    "britannica-seven-years": {
+      "title": "Seven Years' War",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Seven-Years-War",
+      "use": "1756–1763年歐洲與全球戰場背景。"
+    },
+    "archives-independence": {
+      "title": "Declaration of Independence: A Transcription",
+      "publisher": "U.S. National Archives",
+      "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+      "use": "美國獨立戰爭與1776年《獨立宣言》背景。"
+    },
+    "britannica-french-revolution": {
+      "title": "French Revolutionary wars",
+      "publisher": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/French-revolutionary-wars",
+      "use": "1792–1799年戰爭範圍及聯盟變動背景。"
+    },
+    "chicago-encyclopedie": {
+      "title": "Encyclopédie Project",
+      "publisher": "University of Chicago ARTFL",
+      "url": "https://encyclopedie.uchicago.edu/",
+      "use": "1751–1772年文字卷及版畫卷出版、編輯者與知識傳播網絡。"
+    },
+    "oxford-zunghar-russia": {
+      "title": "The Expansion of the Qing Dynasty of China and the Zunghar Mongol State",
+      "publisher": "Oxford Research Encyclopedia of Asian History",
+      "url": "https://academic.oup.com/edited-volume/61799/chapter/546312989",
+      "use": "清俄邊疆、雅克薩衝突與1689年尼布楚條約背景。"
+    },
+    "oxford-jinchuan-borderlands": {
+      "title": "The Sino-Tibetan Borderlands",
+      "publisher": "Oxford Research Encyclopedia of Asian History",
+      "url": "https://academic.oup.com/edited-volume/61799/chapter/546340776",
+      "use": "川西金川地區、第一次（1747–1749）及第二次（1771–1776）戰事分期背景。"
+    },
+    "oxford-qing-military": {
+      "title": "The Qing Empire and Its Military",
+      "publisher": "Oxford Research Encyclopedia of Military History",
+      "url": "https://academic.oup.com/edited-volume/63143/chapter/568216247",
+      "use": "清代軍事組織與十八世紀邊疆戰事背景；本網站路線僅作概略示意。"
+    },
+    "sinica-yongzheng-will": {
+      "title": "Last Testament of the Yongzheng Emperor",
+      "publisher": "Institute of History & Philology, Academia Sinica Museum",
+      "url": "https://museum.sinica.edu.tw/en/exhibition/46/item/448/",
+      "use": "雍正朝密詔及秘密立儲方式、密匣位置與制度沿革。"
+    },
+    "qsyj-grand-council": {
+      "title": "雍正密諭淺析——兼及軍機處設立的時間",
+      "publisher": "中國人民大學清史研究所《清史研究》",
+      "url": "https://qsyj.ruc.edu.cn/CN/abstract/abstract419.shtml",
+      "use": "軍機處源起、密諭與西北軍務的制度背景；軍機處具體成立年份有研究爭議，因此場景說明制度逐步形成。"
+    },
+    "qsyj-tax-reforms": {
+      "title": "清史研究所論文 PDF：攤丁入畝與耗羨歸公研究",
+      "publisher": "中國人民大學清史研究所《清史研究》",
+      "url": "https://qsyj.ruc.edu.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=1854",
+      "use": "學術論文所述攤丁入畝、耗羨歸公與養廉銀等改革背景；各省推行及效果不同。"
+    },
+    "uw-gaitu-guiliu": {
+      "title": "The Consolidation of Qing Rule: Gaitu Guiliu",
+      "publisher": "University of Washington, Empire and Identity in Guizhou",
+      "url": "https://uw.manifoldapp.org/read/5f24c524-1dc5-4731-8fdc-4d02353aab83/section/4f3e4d13-2e73-4d2d-a93f-5443c44bc787",
+      "use": "改土歸流在西南各地分期推動，雍正朝為重要階段；地方社會與自治受影響，並非單一事件。"
+    },
+    "hku-siku-censorship": {
+      "title": "Prohibition and resistance: the banned works under the Qianlong Four Treasuries book ban",
+      "publisher": "The University of Hong Kong Scholars Hub",
+      "url": "https://hub.hku.hk/handle/10722/352869",
+      "use": "《四庫》編纂與禁書審查、明遺民著作及政治文化背景；作為保存與知識治理並讀的補充研究。"
+    }
+  },
+  "assetPolicy": "本階段沒有新增 AI 生成圖片。人物、宮廷、軍事地形、港口及機械動畫使用網站自行繪製的 SVG/CSS 示意，均標示為歷史情境重建或技術示意；Met 原畫以博物館 Public Domain 物件頁及 IIIF 影像連結展示，需網路連線。"
+}

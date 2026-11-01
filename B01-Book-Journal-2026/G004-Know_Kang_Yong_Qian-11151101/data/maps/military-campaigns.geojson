@@ -1,0 +1,581 @@
+{
+  "type": "FeatureCollection",
+  "name": "schematic_campaign_regions_1661_1799",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "war-three-feudatories",
+      "properties": {
+        "id": "war-three-feudatories",
+        "name": "三藩之亂主要戰區（非行軍路線）",
+        "region": "清朝",
+        "polity": "清與三藩勢力",
+        "start_year": 1673,
+        "end_year": 1681,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-qing",
+        "notes": "多省戰爭區域的示意連線，不能解讀成軍隊實際路線或控制線。",
+        "routeType": "military",
+        "sides": "清廷；吳三桂、尚之信、耿精忠等藩王勢力",
+        "outcome": "清廷於1681年恢復對主要反叛區的控制。",
+        "label": "衝突區域概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            102.833,
+            24.88
+          ],
+          [
+            106.55,
+            29.56
+          ],
+          [
+            112.94,
+            28.23
+          ],
+          [
+            114.3,
+            30.59
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-albazin",
+      "properties": {
+        "id": "war-albazin",
+        "name": "雅克薩／阿爾巴津衝突地區（示意）",
+        "region": "清俄邊境",
+        "polity": "清與俄羅斯沙皇國",
+        "start_year": 1685,
+        "end_year": 1689,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-qing-russia",
+        "notes": "僅示意黑龍江流域相關區域；點線不代表條約界線或實際軍隊路徑。",
+        "routeType": "military",
+        "sides": "清與俄羅斯沙皇國",
+        "outcome": "雙方簽訂《尼布楚條約》，以條約文字及勘界處理邊界。",
+        "label": "戰事區域概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            123.3,
+            53.6
+          ],
+          [
+            122.5,
+            53.2
+          ],
+          [
+            119.76,
+            51.98
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-dzungar",
+      "properties": {
+        "id": "war-dzungar",
+        "name": "清準戰爭及西北戰事（概略區域）",
+        "region": "蒙古與西北",
+        "polity": "清與準噶爾汗國",
+        "start_year": 1688,
+        "end_year": 1758,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-qing-dzungar",
+        "notes": "戰事長期、多階段且橫跨廣大區域；示意線僅用作事件索引，不能視為精確疆界或單一軍事路線。",
+        "routeType": "military",
+        "sides": "清與準噶爾勢力",
+        "outcome": "經多階段戰爭，準噶爾汗國於18世紀中葉覆亡；各地治理與人口經驗仍須分區研究。",
+        "label": "多階段戰區概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.4,
+            40
+          ],
+          [
+            99.8,
+            39.6
+          ],
+          [
+            87.6,
+            43.8
+          ],
+          [
+            80,
+            44
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-qing-burma",
+      "properties": {
+        "id": "war-qing-burma",
+        "name": "清緬戰爭相關地區（示意）",
+        "region": "雲南—緬甸",
+        "polity": "清與貢榜王朝",
+        "start_year": 1765,
+        "end_year": 1769,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-qing-burma",
+        "notes": "多次交戰分布於邊境與緬甸北部；線條不是精確進軍路徑，也不表示永久疆界。",
+        "routeType": "military",
+        "sides": "清與貢榜王朝",
+        "outcome": "清軍未能征服緬甸；雙方後續恢復往來。",
+        "label": "戰事區域概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            102.833,
+            24.88
+          ],
+          [
+            98,
+            23
+          ],
+          [
+            96.2,
+            21.9
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-qing-vietnam",
+      "properties": {
+        "id": "war-qing-vietnam",
+        "name": "清越戰爭（示意）",
+        "region": "廣西—北越",
+        "polity": "清與西山朝",
+        "start_year": 1788,
+        "end_year": 1789,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-qing-vietnam",
+        "notes": "只連接北越與清軍出發方向的大區域；非精確戰線。",
+        "routeType": "military",
+        "sides": "清與西山朝",
+        "outcome": "清軍在昇龍受挫撤退；阮惠即位為光中帝。",
+        "label": "戰事區域概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.32,
+            22.82
+          ],
+          [
+            106.7,
+            22.8
+          ],
+          [
+            105.85,
+            21.03
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-spanish-succession",
+      "properties": {
+        "id": "war-spanish-succession",
+        "name": "西班牙王位繼承戰爭主要歐洲戰區（示意）",
+        "region": "歐洲",
+        "polity": "多個歐洲王朝及聯盟",
+        "start_year": 1701,
+        "end_year": 1714,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-europe",
+        "notes": "多戰區戰爭的簡化連線，不能視為一條軍事行軍路線。",
+        "routeType": "military",
+        "sides": "法國與西班牙波旁王朝；反法同盟等",
+        "outcome": "烏特勒支等系列和約重整王位及殖民權益。",
+        "label": "多戰區概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            2.3522,
+            48.8566
+          ],
+          [
+            4.35,
+            50.85
+          ],
+          [
+            9.19,
+            45.46
+          ],
+          [
+            2.17,
+            41.39
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-great-northern",
+      "properties": {
+        "id": "war-great-northern",
+        "name": "大北方戰爭主要戰區（示意）",
+        "region": "北歐與東歐",
+        "polity": "瑞典帝國、俄羅斯及其盟友",
+        "start_year": 1700,
+        "end_year": 1721,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+      "source_id": "war-europe-great-northern",
+        "notes": "戰爭涉及波羅的海沿岸多國與多場戰役；示意線只標示部分重要地點。",
+        "routeType": "military",
+        "sides": "瑞典帝國；俄羅斯、丹麥—挪威及其他盟友",
+        "outcome": "瑞典在波羅的海地區的優勢下降，俄羅斯地位上升。",
+        "label": "多戰區概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            24.75,
+            59.44
+          ],
+          [
+            30.32,
+            59.94
+          ],
+          [
+            34.55,
+            48.45
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-austrian-succession",
+      "properties": {
+        "id": "war-austrian-succession",
+        "name": "奧地利王位繼承戰爭主要戰區（示意）",
+        "region": "歐洲",
+        "polity": "哈布斯堡君主國與歐洲列強",
+        "start_year": 1740,
+        "end_year": 1748,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+      "source_id": "war-europe-austrian-succession",
+        "notes": "多國多戰區衝突的概略連線；並非單一軍隊路線。",
+        "routeType": "military",
+        "sides": "哈布斯堡君主國及盟友；普魯士、法國等對手",
+        "outcome": "亞琛和約確認部分既成局勢，瑪麗亞・特蕾莎維持王位。",
+        "label": "多戰區概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            14.4378,
+            50.0755
+          ],
+          [
+            16.3738,
+            48.2082
+          ],
+          [
+            -0.1276,
+            51.5072
+          ],
+          [
+            4.35,
+            50.85
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-seven-years",
+      "properties": {
+        "id": "war-seven-years",
+        "name": "七年戰爭歐洲主要戰區（示意）",
+        "region": "歐洲",
+        "polity": "普魯士、哈布斯堡君主國、法國、英國及盟友",
+        "start_year": 1756,
+        "end_year": 1763,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-europe-seven-years",
+        "notes": "僅連接部分歐洲戰區位置；另有北美、加勒比海、非洲及亞洲戰場，線條不表示完整戰事。",
+        "routeType": "military",
+        "sides": "普魯士與英國等；哈布斯堡、法國、俄羅斯等",
+        "outcome": "1763年巴黎及胡貝圖斯堡等和約結束不同戰區戰事。",
+        "label": "多戰區概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            13.7373,
+            51.0504
+          ],
+          [
+            13.405,
+            52.52
+          ],
+          [
+            14.4378,
+            50.0755
+          ],
+          [
+            16.3738,
+            48.2082
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-french-revolution",
+      "properties": {
+        "id": "war-french-revolution",
+        "name": "法國革命戰爭主要戰區（示意）",
+        "region": "歐洲",
+        "polity": "法蘭西革命政權與反法聯盟",
+        "start_year": 1792,
+        "end_year": 1799,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-europe-revolution",
+        "notes": "革命戰爭涵蓋多國、多條戰線；示意線不表示精確戰線或軍隊行進。",
+        "routeType": "military",
+        "sides": "法蘭西革命政權；奧地利、普魯士、英國等不同聯盟成員",
+        "outcome": "法軍與多國聯盟長期交戰；1799年政局轉變。",
+        "label": "多戰區概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            2.3522,
+            48.8566
+          ],
+          [
+            7.7521,
+            48.5734
+          ],
+          [
+            9.19,
+            45.4642
+          ],
+          [
+            16.3738,
+            48.2082
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-french-indian",
+      "properties": {
+        "id": "war-french-indian",
+        "name": "法國與印第安人戰爭主要北美戰區（示意）",
+        "region": "北美",
+        "polity": "英屬北美殖民地、法國與原住民族",
+        "start_year": 1754,
+        "end_year": 1763,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-americas",
+        "notes": "包含多個殖民地戰場及原住民族政治參與；不得將原住民族視為同一陣營，也不是精確行軍路線。",
+        "routeType": "military",
+        "sides": "英法殖民勢力及不同原住民族政權／社群",
+        "outcome": "1763年巴黎條約重整法國在北美的殖民勢力；原住民族土地與政治自主受到持續衝擊。",
+        "label": "多戰區概略示意"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -80,
+            40.44
+          ],
+          [
+            -73.57,
+            45.5
+          ],
+          [
+            -71.21,
+            46.81
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-american-independence",
+      "properties": {
+        "id": "war-american-independence",
+        "name": "美國獨立戰爭主要戰區（示意）",
+        "region": "北美大西洋沿岸",
+        "polity": "英屬北美十三殖民地與大不列顛",
+        "start_year": 1775,
+        "end_year": 1783,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-americas-independence",
+        "notes": "僅連接波士頓、費城與約克鎮等事件節點；非完整戰線或軍隊行進路徑。原住民族立場多元，且殖民擴張持續影響其領域。",
+        "routeType": "military",
+        "sides": "大不列顛；十三殖民地大陸軍及其盟友",
+        "outcome": "1783年巴黎條約承認美國獨立；條約線不代表原住民族領域或平等主權協議。",
+        "label": "主要事件節點概略連線"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -71.0589,
+            42.3601
+          ],
+          [
+            -75.1652,
+            39.9526
+          ],
+          [
+            -76.2859,
+            36.8978
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-khoja",
+      "properties": {
+        "id": "war-khoja",
+        "name": "大小和卓相關戰事（南疆戰區示意）",
+        "region": "南疆",
+        "polity": "清軍與和卓勢力",
+        "start_year": 1757,
+        "end_year": 1759,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-qing-khoja",
+        "notes": "概略標示喀什噶爾與葉爾羌一帶的衝突區域；不表示軍隊實際推進方向、控制範圍或當地群體立場。",
+        "routeType": "military",
+        "sides": "清軍；布拉尼敦與霍集占等和卓勢力",
+        "outcome": "清軍於1759年重新控制南疆主要綠洲地區；該時期社會經驗及政治脈絡應參照專門史研究。",
+        "label": "概略衝突區域，非行軍路線"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.99,
+            39.47
+          ],
+          [
+            77.27,
+            38.42
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-jinchuan-first",
+      "properties": {
+        "id": "war-jinchuan-first",
+        "name": "第一次大小金川戰事（1747–1749）",
+        "region": "四川西部",
+        "polity": "清廷與大金川土司勢力",
+        "start_year": 1747,
+        "end_year": 1749,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-jinchuan",
+        "notes": "第一場金川戰事的區域索引；示意線不代表軍隊行軍路線或精確控制範圍。",
+        "routeType": "military",
+        "sides": "清廷；大金川土司勢力",
+        "outcome": "大金川土司首領於1749年降服，戰事暫告一段落。",
+        "label": "第一場戰事區域示意，非行軍路線"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.0665,
+            30.5723
+          ],
+          [
+            102.25,
+            31.9
+          ],
+          [
+            101.96,
+            31.48
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "war-jinchuan-second",
+      "properties": {
+        "id": "war-jinchuan-second",
+        "name": "第二次大小金川戰事（1771–1776）",
+        "region": "四川西部",
+        "polity": "清廷與大小金川土司勢力",
+        "start_year": 1771,
+        "end_year": 1776,
+        "control_type": "schematic_conflict_region",
+        "confidence": "low",
+        "source_id": "war-jinchuan",
+        "notes": "第二場金川戰事的區域索引；與第一次戰事分開標示，示意線不代表軍隊行軍路線或精確控制範圍。",
+        "routeType": "military",
+        "sides": "清廷；大小金川土司勢力",
+        "outcome": "清軍於1776年結束戰事並重整當地治理。",
+        "label": "第二場戰事區域示意，非行軍路線"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.0665,
+            30.5723
+          ],
+          [
+            102.25,
+            31.9
+          ],
+          [
+            101.96,
+            31.48
+          ]
+        ]
+      }
+    }
+  ]
+}

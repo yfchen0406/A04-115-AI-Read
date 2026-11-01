@@ -23,6 +23,7 @@
       button.setAttribute('aria-pressed', String(on));
       button.setAttribute('aria-label', reduced.matches ? '系統偏好已降低動態效果' : (on ? '關閉動畫效果' : '開啟動畫效果'));
     }
+    window.dispatchEvent(new CustomEvent('qingmotionchange', { detail: { enabled: on } }));
   }
 
   function cleanup() {

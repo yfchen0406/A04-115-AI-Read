@@ -1,0 +1,919 @@
+{
+  "schemaVersion": 1,
+  "title": "第五階段｜歷史場景、古畫長卷與機械互動",
+  "period": [
+    1661,
+    1799
+  ],
+  "sceneTypes": [
+    "court",
+    "scroll",
+    "machine",
+    "trade",
+    "military",
+    "culture",
+    "comparison"
+  ],
+  "scenes": [
+    {
+      "id": "kangxi-court",
+      "category": "康熙宮廷",
+      "title": "康熙親政與宮廷",
+      "start_year": 1661,
+      "end_year": 1722,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "court",
+      "source_id": "britannica-kangxi",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "少年即位",
+          "text": "1661年玄燁即位；年號康熙於1662年改元，兩者日期不同。",
+          "year": 1661,
+          "event_id": "hist-1661-01"
+        },
+        {
+          "title": "擒獲鰲拜",
+          "text": "1669年鰲拜被捕，康熙開始親政。此處為歷史情境重建，非事件原始影像。",
+          "year": 1669,
+          "event_id": "hist-1669-02"
+        },
+        {
+          "title": "鞏固統治",
+          "text": "以奏摺、宮門與人物剪影構成的示意場景，供閱讀制度背景。",
+          "year": 1680
+        }
+      ],
+      "illustration": "./images/scenes/01-kangxi-court.webp"
+    },
+    {
+      "id": "kangxi-three-feudatories",
+      "category": "康熙宮廷",
+      "title": "平定三藩之亂",
+      "start_year": 1673,
+      "end_year": 1681,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "military",
+      "source_id": "britannica-three-feudatories",
+      "map_mode": "military",
+      "route_id": "war-three-feudatories",
+      "steps": [
+        {
+          "title": "撤藩與起兵",
+          "text": "吳三桂於1673年起兵，戰事擴及南方多地。地圖箭線僅表示事件區域與概略方向，不是逐日行軍路線。",
+          "year": 1673,
+          "event_id": "hist-1673-03"
+        },
+        {
+          "title": "戰事延續",
+          "text": "戰爭歷時八年，期間各地戰況不同；此重建不推定未有來源支持的兵力位置。",
+          "year": 1677
+        },
+        {
+          "title": "戰事平定",
+          "text": "清廷於1681年平定三藩之亂。",
+          "year": 1681
+        }
+      ],
+      "illustration": "./images/scenes/02-kangxi-three-feudatories.webp"
+    },
+    {
+      "id": "kangxi-taiwan",
+      "category": "康熙宮廷",
+      "title": "澎湖海戰與臺灣納入清廷治理",
+      "start_year": 1683,
+      "end_year": 1684,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "military",
+      "source_id": "britannica-taiwan",
+      "map_mode": "military",
+      "steps": [
+        {
+          "title": "澎湖海戰",
+          "text": "1683年施琅率清軍水師攻取澎湖，鄭氏政權隨後降清。",
+          "year": 1683,
+          "event_id": "hist-1683-04"
+        },
+        {
+          "title": "設府治理",
+          "text": "1684年清廷設臺灣府。水師與島嶼採概略情境重建，並非戰鬥實況復原。",
+          "year": 1684
+        }
+      ],
+      "illustration": "./images/scenes/03-kangxi-taiwan.webp"
+    },
+    {
+      "id": "kangxi-southern-tour-scroll",
+      "category": "清代古畫長卷",
+      "title": "《康熙南巡圖》第三卷｜原畫探索",
+      "start_year": 1698,
+      "end_year": 1698,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "scroll",
+      "source_id": "met-kangxi-scroll",
+      "map_mode": "qing",
+      "art": "https://images.metmuseum.org/CRDImages/as/original/DP105303_CRD.jpg",
+      "steps": [
+        {
+          "title": "徐揚團隊繪製",
+          "text": "大都會藝術博物館藏本頁所列第三卷，作者王翬及其團隊，約1698年完成。原畫為絲本長卷，為十二卷組件之一。",
+          "year": 1698
+        },
+        {
+          "title": "南巡圖像",
+          "text": "畫作紀念康熙1689年南巡；圖像是宮廷繪畫呈現，不等同現場攝影或中立地圖。",
+          "year": 1698
+        },
+        {
+          "title": "橫向探索",
+          "text": "可拖動長卷檢視原畫。若外部原圖服務不可用，畫面會保留本地示意長卷。",
+          "year": 1698
+        }
+      ],
+      "illustration": "./images/scenes/04-kangxi-southern-tour-scroll.webp"
+    },
+    {
+      "id": "kangxi-russia-diplomacy",
+      "category": "康熙宮廷",
+      "title": "清俄外交與《尼布楚條約》",
+      "start_year": 1689,
+      "end_year": 1689,
+      "event_id": "hist-1689-06",
+      "region": "清朝",
+      "scene_type": "court",
+      "source_id": "oxford-zunghar-russia",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "邊疆交涉",
+          "text": "清俄代表於尼布楚交涉，訂立邊界安排。場景中的人物、地圖與文書皆為情境示意。",
+          "year": 1689
+        },
+        {
+          "title": "條約文本",
+          "text": "以文書熱點閱讀外交背景；此頁不重製原始條約圖像或聲稱復原談判現場。",
+          "year": 1689
+        }
+      ],
+      "illustration": "./images/scenes/05-kangxi-russia-diplomacy.webp"
+    },
+    {
+      "id": "yongzheng-secret-succession",
+      "category": "雍正宮廷",
+      "title": "秘密立儲制度",
+      "start_year": 1723,
+      "end_year": 1735,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "court",
+      "source_id": "sinica-yongzheng-will",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "承統與制度",
+          "text": "雍正即位後逐步建立秘密建儲安排，將繼承資訊密封保存。",
+          "year": 1723
+        },
+        {
+          "title": "御書房奏摺",
+          "text": "奏摺、朱批與匣盒為示意重建，不代表現存原件陳列。",
+          "year": 1730
+        },
+        {
+          "title": "制度延續",
+          "text": "此制度與皇位繼承風險管理相關，並非當代常設公開程序。",
+          "year": 1735
+        }
+      ],
+      "illustration": "./images/scenes/06-yongzheng-secret-succession.webp"
+    },
+    {
+      "id": "yongzheng-grand-council",
+      "category": "雍正宮廷",
+      "title": "軍機處與西北軍務",
+      "start_year": 1729,
+      "end_year": 1735,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "court",
+      "source_id": "qsyj-grand-council",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "因軍務設立",
+          "text": "軍機處於雍正朝西北軍務背景下形成，後成為重要政務中樞。",
+          "year": 1729,
+          "event_id": "hist-1729-10"
+        },
+        {
+          "title": "奏報與決策",
+          "text": "流程圖示意奏報、皇帝裁決及執行關係；非實際軍機處平面復原。",
+          "year": 1731
+        },
+        {
+          "title": "制度演變",
+          "text": "機構職掌隨時間演變，本場景限於雍正時期的形成脈絡。",
+          "year": 1735
+        }
+      ],
+      "illustration": "./images/scenes/07-yongzheng-grand-council.webp"
+    },
+    {
+      "id": "yongzheng-tax-reform",
+      "category": "雍正宮廷",
+      "title": "攤丁入畝與財政改革",
+      "start_year": 1723,
+      "end_year": 1735,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "culture",
+      "source_id": "qsyj-tax-reforms",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "丁銀併入地賦",
+          "text": "雍正朝在各地推動將丁銀攤入田賦，實施時間與方法存在地區差異。",
+          "year": 1725
+        },
+        {
+          "title": "地方財政",
+          "text": "以土地、稅額與官員流程圖說明制度方向；不以動畫數字虛構稅收成效。",
+          "year": 1729
+        },
+        {
+          "title": "養廉銀",
+          "text": "養廉銀與地方官俸及廉政治理相關，制度成效與執行並非單一數值可概括。",
+          "year": 1732
+        }
+      ],
+      "illustration": "./images/scenes/08-yongzheng-tax-reform.webp"
+    },
+    {
+      "id": "yongzheng-tusi",
+      "category": "雍正宮廷",
+      "title": "改土歸流與地方治理",
+      "start_year": 1726,
+      "end_year": 1735,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "court",
+      "source_id": "uw-gaitu-guiliu",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "制度背景",
+          "text": "改土歸流在西南不同地區分期推行，地方條件與結果各異。",
+          "year": 1726
+        },
+        {
+          "title": "治理形式轉變",
+          "text": "場景以行政文書與區域位置作概略示意，不將治理變化簡化為單一瞬間。",
+          "year": 1730
+        },
+        {
+          "title": "地方差異",
+          "text": "適用年份與地域須依個別研究判讀，地圖僅作區域導覽。",
+          "year": 1735
+        }
+      ],
+      "illustration": "./images/scenes/09-yongzheng-tusi.webp"
+    },
+    {
+      "id": "qianlong-court",
+      "category": "乾隆宮廷",
+      "title": "乾隆朝廷與宮廷藝術",
+      "start_year": 1735,
+      "end_year": 1796,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "court",
+      "source_id": "met-qianlong-scroll",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "乾隆即位",
+          "text": "弘曆於1735年即位，翌年改元乾隆。",
+          "year": 1735,
+          "event_id": "hist-1735-11b"
+        },
+        {
+          "title": "宮廷藝術",
+          "text": "清宮繪畫、器物及建築展現多族群宮廷文化與跨地域工藝交流。畫面為情境重建。",
+          "year": 1750
+        },
+        {
+          "title": "晚年退位",
+          "text": "1796年禪位嘉慶帝，乾隆仍以太上皇身分影響政務。",
+          "year": 1796,
+          "event_id": "hist-1796-20"
+        }
+      ],
+      "illustration": "./images/scenes/10-qianlong-court.webp"
+    },
+    {
+      "id": "qianlong-southern-tour-scroll",
+      "category": "清代古畫長卷",
+      "title": "《乾隆南巡圖》第六卷｜原畫探索",
+      "start_year": 1770,
+      "end_year": 1770,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "scroll",
+      "source_id": "met-qianlong-scroll",
+      "map_mode": "qing",
+      "art": "https://images.metmuseum.org/CRDImages/as/original/DP105240_CRD.jpg",
+      "steps": [
+        {
+          "title": "徐揚與團隊",
+          "text": "大都會藝術博物館藏第六卷，徐揚及其團隊於1770年完成，絲本，十二卷組件之一。",
+          "year": 1770
+        },
+        {
+          "title": "描繪1751年南巡",
+          "text": "此卷繪乾隆1751年南巡，草稿約自1764年開始。作品是宮廷紀念性圖像。",
+          "year": 1770
+        },
+        {
+          "title": "觸控長卷",
+          "text": "可橫向滑動、放大細節與查看標記。原圖由博物館 IIIF 影像服務提供，需連網。",
+          "year": 1770
+        }
+      ],
+      "illustration": "./images/scenes/11-qianlong-southern-tour-scroll.webp"
+    },
+    {
+      "id": "qianlong-ten-campaigns",
+      "category": "乾隆宮廷",
+      "title": "十全武功與戰事記憶",
+      "start_year": 1755,
+      "end_year": 1792,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "military",
+      "source_id": "oxford-qing-military",
+      "map_mode": "military",
+      "route_id": "war-dzungar",
+      "steps": [
+        {
+          "title": "戰役群的時間範圍",
+          "text": "「十全武功」為乾隆對多場戰事的自我概括，場景分別列出戰役，不把它當作單一連續戰爭。",
+          "year": 1755
+        },
+        {
+          "title": "大小和卓戰事",
+          "text": "1757–1759年南疆戰事以來源支持的區域示意呈現，線條不代表精確軍隊路徑。",
+          "year": 1759,
+          "event_id": "hist-1759-13"
+        },
+        {
+          "title": "金川戰役",
+          "text": "第一次金川戰役（1747–1749）與第二次金川戰役（1771–1776）分開記錄，避免誤呈連續戰事。",
+          "year": 1771,
+          "map_mode": "military",
+          "route_id": "war-jinchuan-second"
+        }
+      ],
+      "illustration": "./images/scenes/12-qianlong-ten-campaigns.webp"
+    },
+    {
+      "id": "qianlong-siku",
+      "category": "乾隆宮廷",
+      "title": "《四庫全書》編纂與知識治理",
+      "start_year": 1772,
+      "end_year": 1787,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "culture",
+      "source_id": "npm-siku",
+      "map_mode": "qing",
+      "steps": [
+        {
+          "title": "下詔編纂",
+          "text": "1772年乾隆下詔徵書與編纂，工程包括分類、抄寫、校勘與謄錄。",
+          "year": 1772
+        },
+        {
+          "title": "七閣藏書",
+          "text": "工程至1787年前後大致完成，建置七部繕本。數量依宮廷檔案與現代研究口徑呈現。",
+          "year": 1787
+        },
+        {
+          "title": "保存與禁毀並存",
+          "text": "《四庫全書》保存大量典籍，同時伴隨禁毀、刪改與文字獄脈絡，須併讀其知識治理面向。",
+          "year": 1787
+        }
+      ],
+      "related_source_id": "hku-siku-censorship",
+      "illustration": "./images/scenes/13-qianlong-siku.webp"
+    },
+    {
+      "id": "qianlong-macartney",
+      "category": "乾隆宮廷",
+      "title": "馬戛爾尼使團與廣州貿易體制",
+      "start_year": 1793,
+      "end_year": 1793,
+      "event_id": null,
+      "region": "清朝",
+      "scene_type": "trade",
+      "source_id": "oxford-canton",
+      "map_mode": "trade",
+      "route_id": "trade-canton-macau",
+      "steps": [
+        {
+          "title": "使團抵達",
+          "text": "1793年英國馬戛爾尼使團出使清廷。場景分開呈現外交禮儀與貿易訴求。",
+          "year": 1793,
+          "event_id": "hist-1793-19"
+        },
+        {
+          "title": "廣州貿易",
+          "text": "1757年後西方海上貿易集中於廣州的制度逐步形成；不等同所有外國交流或中國對外往來完全中止。",
+          "year": 1793
+        },
+        {
+          "title": "商品與商館",
+          "text": "茶、絲、瓷器及商館以示意物件呈現，商品構圖不聲稱復原某批貨物。",
+          "year": 1793
+        }
+      ],
+      "illustration": "./images/scenes/14-qianlong-macartney.webp"
+    },
+    {
+      "id": "newcomen-engine",
+      "category": "工業革命機械",
+      "title": "紐科門大氣式蒸汽機｜約1712",
+      "start_year": 1712,
+      "end_year": 1735,
+      "event_id": null,
+      "region": "英國",
+      "scene_type": "machine",
+      "source_id": "smg-newcomen",
+      "machine": "newcomen",
+      "map_mode": "europe",
+      "steps": [
+        {
+          "title": "汽缸注入蒸汽",
+          "text": "蒸汽進入汽缸，使活塞上升；大型搖樑連接礦井抽水桿。",
+          "year": 1712
+        },
+        {
+          "title": "缸內噴水冷凝",
+          "text": "水噴入汽缸使蒸汽冷凝，缸內壓力下降，大氣壓將活塞推下。",
+          "year": 1712
+        },
+        {
+          "title": "抽水輸出",
+          "text": "搖樑帶動泵桿抽水。此早期型不加入瓦特分離冷凝器或飛輪。",
+          "year": 1712
+        }
+      ],
+      "illustration": "./images/scenes/15-newcomen-engine.webp"
+    },
+    {
+      "id": "watt-condenser",
+      "category": "工業革命機械",
+      "title": "瓦特分離冷凝器｜1765改良",
+      "start_year": 1765,
+      "end_year": 1769,
+      "event_id": "hist-1769-14",
+      "region": "英國",
+      "scene_type": "machine",
+      "source_id": "smg-watt-condenser",
+      "machine": "watt",
+      "map_mode": "europe",
+      "steps": [
+        {
+          "title": "汽缸保持高溫",
+          "text": "將冷凝放在汽缸之外，避免反覆加熱與冷卻汽缸，提升熱效率。",
+          "year": 1765
+        },
+        {
+          "title": "分離冷凝器",
+          "text": "活塞與搖樑仍以往復運動抽水；本模型展示1765年分離冷凝器改良，不混入後來的旋轉飛輪配置。",
+          "year": 1765
+        },
+        {
+          "title": "技術改良背景",
+          "text": "瓦特於1765年形成此構想，1769年取得相關專利；早期採用與普及有時間差。",
+          "year": 1769
+        }
+      ],
+      "illustration": "./images/scenes/16-watt-condenser.webp"
+    },
+    {
+      "id": "spinning-jenny",
+      "category": "工業革命機械",
+      "title": "珍妮紡紗機｜約1766",
+      "start_year": 1766,
+      "end_year": 1766,
+      "event_id": null,
+      "region": "英國",
+      "scene_type": "machine",
+      "source_id": "smg-jenny",
+      "machine": "jenny",
+      "map_mode": "europe",
+      "steps": [
+        {
+          "title": "手搖輸入",
+          "text": "操作者轉動手柄，帶動多個紡錘。",
+          "year": 1766
+        },
+        {
+          "title": "多錠同時紡紗",
+          "text": "滑動車架拉伸纖維，紡錘加捻；重建以示意機構說明，不是原件影像。",
+          "year": 1766
+        },
+        {
+          "title": "家庭與作坊生產",
+          "text": "珍妮機提高一人同時操作紡錠數，與工廠制度及動力織機分屬不同發展。",
+          "year": 1766
+        }
+      ],
+      "illustration": "./images/scenes/17-spinning-jenny.webp"
+    },
+    {
+      "id": "water-frame",
+      "category": "工業革命機械",
+      "title": "阿克萊水力紡紗機｜1769–1771",
+      "start_year": 1769,
+      "end_year": 1771,
+      "event_id": null,
+      "region": "英國",
+      "scene_type": "machine",
+      "source_id": "sim-water-frame",
+      "machine": "waterframe",
+      "map_mode": "europe",
+      "steps": [
+        {
+          "title": "水力帶動滾筒",
+          "text": "阿克萊取得紡紗機專利，機械以滾筒牽伸纖維。",
+          "year": 1769
+        },
+        {
+          "title": "滾筒牽伸與紡錠加捻",
+          "text": "約1771年克羅姆福德工場使用水力帶動紡紗機；製造與普及是漸進過程。",
+          "year": 1771
+        },
+        {
+          "title": "工廠生產",
+          "text": "滾筒牽伸後由紡錠加捻。水輪供能的生產設備與珍妮機的手動架構不同。",
+          "year": 1771
+        }
+      ],
+      "illustration": "./images/scenes/18-water-frame.webp"
+    },
+    {
+      "id": "cartwright-loom",
+      "category": "工業革命機械",
+      "title": "卡特萊特早期動力織機｜1784–1789",
+      "start_year": 1784,
+      "end_year": 1789,
+      "event_id": null,
+      "region": "英國",
+      "scene_type": "machine",
+      "source_id": "smg-cartwright",
+      "machine": "loom",
+      "map_mode": "europe",
+      "steps": [
+        {
+          "title": "提出機械織布",
+          "text": "卡特萊特於1784年提出機械織布構想，1785年取得專利。",
+          "year": 1784
+        },
+        {
+          "title": "動力來源試驗",
+          "text": "早期織機曾以牛力驅動，後於1788–1789年嘗試蒸汽動力；普及並非立即完成。",
+          "year": 1788
+        },
+        {
+          "title": "經紗與梭子",
+          "text": "示意動畫展示經紗開口、梭子往返等基本動作；不是精確比例復原。",
+          "year": 1789
+        }
+      ],
+      "illustration": "./images/scenes/19-cartwright-loom.webp"
+    },
+    {
+      "id": "canton-port",
+      "category": "廣州海上貿易",
+      "title": "廣州商館、港口與海上商品",
+      "start_year": 1757,
+      "end_year": 1799,
+      "event_id": "hist-1793-19",
+      "region": "廣州",
+      "scene_type": "trade",
+      "source_id": "british-museum-hong",
+      "map_mode": "trade",
+      "route_id": "trade-canton-macau",
+      "steps": [
+        {
+          "title": "珠江口與港口",
+          "text": "以廣州與外海船舶示意商貿活動；非精確港口比例或船舶航跡。",
+          "year": 1757
+        },
+        {
+          "title": "商館與行商",
+          "text": "約1780–1785年外國商館圖像可見多國商館建築與船隻。",
+          "year": 1782
+        },
+        {
+          "title": "茶、絲與瓷器",
+          "text": "商品卡說明主要交換品與制度背景，不代表每艘商船貨單。",
+          "year": 1793
+        }
+      ],
+      "illustration": "./images/scenes/20-canton-port.webp"
+    },
+    {
+      "id": "war-albazin",
+      "category": "戰役與軍事",
+      "title": "雅克薩之戰與尼布楚交涉",
+      "start_year": 1685,
+      "end_year": 1689,
+      "event_id": null,
+      "region": "清朝與俄羅斯邊疆",
+      "scene_type": "military",
+      "source_id": "oxford-zunghar-russia",
+      "map_mode": "military",
+      "route_id": "war-albazin",
+      "steps": [
+        {
+          "title": "雅克薩衝突",
+          "text": "1685與1686年清俄在雅克薩發生戰事。位置使用區域示意。",
+          "year": 1686
+        },
+        {
+          "title": "邊疆交涉",
+          "text": "軍事衝突與外交談判並行，1689年簽訂《尼布楚條約》。",
+          "year": 1689,
+          "event_id": "hist-1689-06"
+        },
+        {
+          "title": "示意限制",
+          "text": "缺乏逐日行軍資料的部分以概略區域標示，不將線段解讀為部隊軌跡。",
+          "year": 1689
+        }
+      ],
+      "illustration": "./images/scenes/21-war-albazin.webp"
+    },
+    {
+      "id": "war-dzungar",
+      "category": "戰役與軍事",
+      "title": "清準戰爭與準噶爾汗國",
+      "start_year": 1688,
+      "end_year": 1758,
+      "event_id": null,
+      "region": "中亞與清朝西北邊疆",
+      "scene_type": "military",
+      "source_id": "oxford-qing-military",
+      "map_mode": "military",
+      "route_id": "war-dzungar",
+      "steps": [
+        {
+          "title": "長期衝突",
+          "text": "清準衝突跨越數十年，包含多個階段與政局變化。",
+          "year": 1690
+        },
+        {
+          "title": "清廷西北行動",
+          "text": "本圖只表示相關地區及來源已記載的戰事框架，不作連續疆界或固定軍路。",
+          "year": 1735
+        },
+        {
+          "title": "準噶爾政權終結",
+          "text": "1755–1758年事件涉及政權崩解、戰事與重大人口災難，需避免單以勝利敘事呈現。",
+          "year": 1758
+        }
+      ],
+      "illustration": "./images/scenes/22-war-dzungar.webp"
+    },
+    {
+      "id": "war-khoja",
+      "category": "戰役與軍事",
+      "title": "大小和卓相關戰事",
+      "start_year": 1757,
+      "end_year": 1759,
+      "event_id": null,
+      "region": "南疆",
+      "scene_type": "military",
+      "source_id": "oxford-qing-military",
+      "map_mode": "military",
+      "route_id": "war-khoja",
+      "steps": [
+        {
+          "title": "地方叛亂與清軍行動",
+          "text": "1757–1759年南疆戰事依來源分期呈現；地圖使用低信度區域示意。",
+          "year": 1757
+        },
+        {
+          "title": "事件與地區",
+          "text": "不以單一箭頭呈現複雜的人群立場與戰爭經過。",
+          "year": 1758
+        },
+        {
+          "title": "結果與限制",
+          "text": "戰事結果及人口、政治影響應與專門研究並讀；本場景不提供無來源兵力數字。",
+          "year": 1759,
+          "event_id": "hist-1759-13"
+        }
+      ],
+      "illustration": "./images/scenes/23-war-khoja.webp"
+    },
+    {
+      "id": "war-jinchuan",
+      "category": "戰役與軍事",
+      "title": "大小金川兩次戰役｜分期比較",
+      "start_year": 1747,
+      "end_year": 1776,
+      "event_id": null,
+      "region": "四川西部",
+      "scene_type": "military",
+      "source_id": "oxford-jinchuan-borderlands",
+      "map_mode": "military",
+      "route_id": "war-jinchuan-first",
+      "steps": [
+        {
+          "title": "第一次金川戰役",
+          "text": "1747–1749年。",
+          "year": 1747,
+          "route_id": "war-jinchuan-first"
+        },
+        {
+          "title": "戰事間隔",
+          "text": "兩次金川戰役之間有二十餘年，不能畫成連續戰爭。",
+          "year": 1760,
+          "route_id": "war-jinchuan-first"
+        },
+        {
+          "title": "第二次金川戰役",
+          "text": "1771–1776年。",
+          "year": 1771,
+          "route_id": "war-jinchuan-second"
+        }
+      ],
+      "illustration": "./images/scenes/24-war-jinchuan.webp"
+    },
+    {
+      "id": "war-seven-years",
+      "category": "戰役與軍事",
+      "title": "七年戰爭｜歐洲與全球戰場",
+      "start_year": 1756,
+      "end_year": 1763,
+      "event_id": null,
+      "region": "歐洲與全球",
+      "scene_type": "military",
+      "source_id": "britannica-seven-years",
+      "map_mode": "military",
+      "route_id": "war-seven-years",
+      "steps": [
+        {
+          "title": "歐洲戰事",
+          "text": "1756–1763年歐洲列強交戰，聯盟與戰區多次變化。",
+          "year": 1756,
+          "event_id": "hist-1756-12"
+        },
+        {
+          "title": "全球戰場",
+          "text": "戰事延伸至美洲、印度與海上，並非單一歐洲戰役。",
+          "year": 1759
+        },
+        {
+          "title": "巴黎和約",
+          "text": "1763年巴黎和約是戰後安排之一。",
+          "year": 1763,
+          "event_id": "hist-1763-22"
+        }
+      ],
+      "illustration": "./images/scenes/25-war-seven-years.webp"
+    },
+    {
+      "id": "war-american-independence",
+      "category": "戰役與軍事",
+      "title": "美國獨立戰爭｜多戰區衝突",
+      "start_year": 1775,
+      "end_year": 1783,
+      "event_id": null,
+      "region": "北美",
+      "scene_type": "military",
+      "source_id": "archives-independence",
+      "map_mode": "military",
+      "route_id": "war-american-independence",
+      "steps": [
+        {
+          "title": "戰事爆發",
+          "text": "1775年武裝衝突開始；1776年《獨立宣言》公布。",
+          "year": 1775
+        },
+        {
+          "title": "多地戰事",
+          "text": "1776年《獨立宣言》公布，獨立戰爭仍持續至1783年巴黎和約。路線為概略戰區與聯盟示意，不能作為單次戰役推進圖。",
+          "year": 1776,
+          "event_id": "hist-1776-15"
+        },
+        {
+          "title": "巴黎和約",
+          "text": "1783年英國承認美國獨立。",
+          "year": 1783,
+          "event_id": "hist-1783-17"
+        }
+      ],
+      "illustration": "./images/scenes/26-war-american-independence.webp"
+    },
+    {
+      "id": "war-french-revolution",
+      "category": "戰役與軍事",
+      "title": "法國大革命戰爭初期",
+      "start_year": 1792,
+      "end_year": 1799,
+      "event_id": null,
+      "region": "歐洲",
+      "scene_type": "military",
+      "source_id": "britannica-french-revolution",
+      "map_mode": "military",
+      "route_id": "war-french-revolution",
+      "steps": [
+        {
+          "title": "革命與戰爭",
+          "text": "1789年法國大革命爆發；法國於1792年進入對外戰爭。",
+          "year": 1792
+        },
+        {
+          "title": "聯盟與戰線變化",
+          "text": "1790年代多國參戰，戰線與政局變動頻繁。示意線不代表精確行軍。",
+          "year": 1795
+        },
+        {
+          "title": "世紀末",
+          "text": "場景止於1799年，後續拿破崙戰爭未納入本專案時段。",
+          "year": 1799
+        }
+      ],
+      "illustration": "./images/scenes/27-war-french-revolution.webp"
+    },
+    {
+      "id": "culture-siku-encyclopedie",
+      "category": "文化與科技比較",
+      "title": "《四庫全書》與《百科全書》｜編纂方式比較",
+      "start_year": 1751,
+      "end_year": 1787,
+      "event_id": null,
+      "region": "清朝與歐洲",
+      "scene_type": "comparison",
+      "source_id": "chicago-encyclopedie",
+      "map_mode": "polities",
+      "steps": [
+        {
+          "title": "歐洲《百科全書》",
+          "text": "1751–1772年出版，含17卷文字與11卷版畫，展現18世紀知識編輯與出版網絡。",
+          "year": 1751
+        },
+        {
+          "title": "清廷《四庫全書》",
+          "text": "1772年起編纂，至1787年前後大致完成；由宮廷主持徵書、分類、抄寫及收藏。",
+          "year": 1772
+        },
+        {
+          "title": "制度差異與限制",
+          "text": "一者以多作者出版、訂閱及書商網絡為主；一者以皇權主持的大型官修工程為主。兩者皆需考察選錄、審查與知識傳播限制。",
+          "year": 1787
+        }
+      ],
+      "related_source_id": "npm-siku",
+      "illustration": "./images/scenes/28-culture-siku-encyclopedie.webp"
+    },
+    {
+      "id": "culture-print-science",
+      "category": "文化與科技比較",
+      "title": "知識傳播：宮廷編纂、印刷與科學社群",
+      "start_year": 1661,
+      "end_year": 1799,
+      "event_id": null,
+      "region": "清朝與歐洲",
+      "scene_type": "comparison",
+      "source_id": "chicago-encyclopedie",
+      "map_mode": "polities",
+      "steps": [
+        {
+          "title": "清代宮廷知識工程",
+          "text": "宮廷徵書、編纂與典藏代表特定的國家知識治理方式。",
+          "year": 1720
+        },
+        {
+          "title": "歐洲出版網絡",
+          "text": "印刷、學會、書商與多地作者構成多層知識流通網絡。",
+          "year": 1751
+        },
+        {
+          "title": "情境比較",
+          "text": "比較制度、資助、使用者及審查條件，避免以單一機器或文明刻板印象概括整體。",
+          "year": 1790
+        }
+      ],
+      "illustration": "./images/scenes/29-culture-print-science.webp"
+    }
+  ]
+}
