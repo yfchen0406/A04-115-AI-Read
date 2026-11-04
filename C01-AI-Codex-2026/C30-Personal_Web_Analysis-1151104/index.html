@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 學苑 · 網頁群分析</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Iansui&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="left">
+    <div class="brand">AI 學苑<small>網頁群分析</small></div>
+    <nav>
+      <a href="#top">總覽</a><a href="#growth">成長軌跡</a><a href="#mix">內容結構</a>
+      <a href="#rhythm">發文節奏</a><a href="#tags">標籤排行</a><a href="#find">搜尋文章</a>
+    </nav>
+    <h3>年份</h3><div id="fy" class="chips"></div>
+    <h3>分類</h3><div id="fc" class="chips v"></div>
+    <label class="chk"><input type="checkbox" id="fx"> 排除批次日（單日 ≥ 10 篇）</label>
+    <button id="play" class="btn">▶ 播放年度演變</button>
+    <button id="theme" class="btn ghost">切換淺色／深色</button>
+  </aside>
+
+  <main>
+    <section id="top" class="hero">
+      <h1>每一天，都寫下一點。<br><span id="hT">0</span> 篇文章，<span id="hD">0</span> 個有紀錄的日子。</h1>
+      <p id="hS" class="mu"></p>
+    </section>
+
+    <section id="growth" class="card">
+      <h2>成長軌跡：每月產出</h2>
+      <p class="mu">★ 代表該月含「單日 ≥ 10 篇」的批次上架日，游標移過去可看篇數。</p>
+      <div class="cv"><canvas id="cGrowth"></canvas></div>
+    </section>
+
+    <section id="mix" class="two">
+      <div class="card"><h2>內容結構</h2><p class="mu">點圓環可篩選該分類。</p><div class="cv s"><canvas id="cMix"></canvas></div></div>
+      <div class="card"><h2>星期節奏</h2><p class="mu">哪一天寫得最多。</p><div class="cv s"><canvas id="cWeek"></canvas></div></div>
+    </section>
+
+    <section id="rhythm" class="card">
+      <h2>每日發文熱力圖 <span id="hy" class="mu"></span></h2>
+      <div id="heat" class="heat"></div>
+      <p class="mu">顏色越亮、當天篇數越多；珊瑚色外框是批次日。</p>
+    </section>
+
+    <section id="tags" class="card">
+      <h2>最常用的 15 個標籤</h2>
+      <div class="cv t"><canvas id="cTags"></canvas></div>
+    </section>
+
+    <section id="find" class="card">
+      <h2>搜尋文章</h2>
+      <div class="row">
+        <input id="q" type="search" placeholder="輸入標題或標籤關鍵字">
+      </div>
+      <p id="cnt" class="mu"></p>
+      <ul id="list"></ul>
+    </section>
+  </main>
+
+  <aside class="right">
+    <div class="kpi"><span>篇數</span><b id="k1">0</b></div>
+    <div class="kpi"><span>活躍天數</span><b id="k2">0</b></div>
+    <div class="kpi"><span>最長連續天數</span><b id="k3">0</b></div>
+    <div class="kpi"><span>單日最高篇數</span><b id="k4">0</b></div>
+    <div class="kpi"><span>活躍日均篇數</span><b id="k5">0</b></div>
+    <p class="mu note">指標會跟著左側的年份、分類、批次日設定一起變化。</p>
+  </aside>
+</div>
+<script src="lib/chart.umd.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
