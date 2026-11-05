@@ -238,10 +238,12 @@
         <br>
         <hr>
         <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
-        <div id="a1-6" class="row" style="align-items: flex-start;">
-          <template v-for="item in arr">
-            <div class="w-100" v-if="item.newRow"></div>
-            <div class="col-sm-2 p-1">
+        <!-- <h2 id="1-6" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 商業迷因</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-6" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
               <figure>
                 <a :href="item.pic1" target="_blank">
                   <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
@@ -251,8 +253,55 @@
                 </h6>
               </figure>
             </div>
-          </template>
+          </div>
         </div>
+        <br>
+        <hr> -->
+
+
+        <!-- 以下版本可以空格，換句話說就是跳行-->
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-6" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 商業迷因</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-6" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure v-if="item.pic1s"> <!-- ← 只在這裡加 v-if="item.pic1s" -->
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+
+
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-8" class=" yf-font1"><i class="fa-solid fa-book-journal-whills"></i>
+          <strong class="yf-code2"> 靈異事件</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-8" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure>
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
         <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
         <h2 id="1-2" class=" yf-font1"><i class="fa-solid fa-book-journal-whills"></i>
           <strong class="yf-code2"> 經典書籍</strong>
@@ -1099,6 +1148,16 @@
             dec1: 'U002-10.東帝士集團──用借來的錢堆出的帝國 ~ 115.10.30!',
           },
           {
+            pic1: '',
+            pic1s: '',
+            dec1: '',
+          },
+          {
+            pic1: '',
+            pic1s: '',
+            dec1: '',
+          },
+          {
             newRow: true,   // ← 新增這一行：這張圖從新的一排開始
             pic1: '/B01-Book-Journal-2026/U003-TW_30Y_10_Emerging_Firms/R37-01_TSMC_Foundry_Foundation/index.html',
             pic1s: './images/U003/U003-01.webp',
@@ -1167,8 +1226,56 @@
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
-
-
+          {
+            pic1: 'https://youtu.be/Qet4vzUooEg',
+            pic1s: './images/U004/V01-001.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第01集~《井底的紅衣》',
+          },
+          {
+            pic1: 'https://youtu.be/6rLKuMlMz_k',
+            pic1s: './images/U004/V01-002.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第02集~《十二戶》',
+          },
+          {
+            pic1: 'https://youtu.be/e-88yVusV5o',
+            pic1s: './images/U004/V01-003.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第03集~《X光室的第二具》',
+          },
+          {
+            pic1: 'https://youtu.be/QAJ54CrjoIA',
+            pic1s: './images/U004/V01-004.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第04集~《兩張字條》',
+          },
+          {
+            pic1: 'https://youtu.be/VGf8VRdRyv8',
+            pic1s: './images/U004/V01-005.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第05集~《閉園之後》',
+          },
+          {
+            pic1: 'https://youtu.be/KGh6OSHBmOE',
+            pic1s: './images/U004/V01-006.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第06集~《落鼻之夜》',
+          },
+          {
+            pic1: 'https://youtu.be/JQZ9BahZKG0',
+            pic1s: './images/U004/V01-007.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第07集~《夜巡鍾馗》',
+          },
+          {
+            pic1: 'https://youtu.be/d7bfBSAaeQY',
+            pic1s: './images/U004/V01-008.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第08集~《西昌街繞圈人》',
+          },
+          {
+            pic1: 'https://youtu.be/d7bfBSAaeQY',
+            pic1s: './images/U004/V01-009.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第09集~《打烊後的洗頭客》',
+          },
+          {
+            pic1: 'https://youtu.be/3tSZJTt8lXc',
+            pic1s: './images/U004/V01-010.webp',
+            dec1: 'U004.萬華地區十大靈異事件-第10集~《楊柳不遮陰》',
+          },
 
         ]);
         // 返回數據和方法

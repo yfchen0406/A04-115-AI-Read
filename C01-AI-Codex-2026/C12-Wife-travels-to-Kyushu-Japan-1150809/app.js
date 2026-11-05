@@ -20,6 +20,31 @@ tabs.forEach((tab) => {
   });
 });
 
+const galleryTabs = [...document.querySelectorAll('.gallery-tab')];
+const galleryPanels = [...document.querySelectorAll('.gallery-panel')];
+
+galleryTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    const target = tab.getAttribute('aria-controls');
+    galleryTabs.forEach((item) => {
+      const selected = item === tab;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+    galleryPanels.forEach((panel) => { panel.hidden = panel.id !== target; });
+  });
+
+  tab.addEventListener('keydown', (event) => {
+    const keys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? galleryTabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + galleryTabs.length) % galleryTabs.length;
+    galleryTabs[next].focus();
+    galleryTabs[next].click();
+  });
+});
+
 document.querySelectorAll('.art-slot').forEach((slot) => {
   const image = slot.querySelector('img');
   const showPlaceholder = () => slot.classList.add('is-placeholder');

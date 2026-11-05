@@ -11,6 +11,16 @@ body.is-lightbox-open { overflow: hidden; }
 .latest-rules-images figure { margin: 0; overflow: hidden; border-radius: 14px; background: var(--white); box-shadow: 0 10px 25px rgb(31 46 56 / .08); }
 .latest-rules-images img { display: block; width: 100%; height: auto; }
 .latest-rules-images figcaption { padding: .55rem .85rem; color: var(--muted); font-size: .78rem; }
+.trip-gallery { scroll-margin-top: 95px; }
+.gallery-tabs { display: flex; gap: .35rem; margin-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.gallery-tab { min-height: 48px; padding: .7rem 1.2rem; border: 0; border-bottom: 4px solid transparent; background: transparent; color: var(--muted); font: inherit; font-weight: 800; cursor: pointer; }
+.gallery-tab.active { border-bottom-color: var(--maple); background: rgb(255 255 255 / .55); color: var(--navy); }
+.gallery-tab:focus-visible, .gallery-panel:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.gallery-panel { padding: clamp(.75rem, 2vw, 1.5rem); border-radius: 14px; background: var(--white); box-shadow: var(--shadow); }
+.gallery-panel[hidden] { display: none; }
+.gallery-panel figure { width: min(100%, 720px); margin: 0 auto; }
+.gallery-panel img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.gallery-panel figcaption { padding: .65rem .25rem 0; color: var(--muted); font-size: .84rem; text-align: center; }
 .rules-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
 .rules-summary article { display: grid; grid-template-columns: 2.2rem 1fr; gap: .7rem; align-items: start; padding: 1rem 1.1rem; background: var(--white); border-radius: 12px; box-shadow: 0 10px 25px rgb(31 46 56 / .07); }
 .rules-summary article > span { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--maple); color: var(--white); font-size: .72rem; font-weight: 800; }
@@ -73,6 +83,8 @@ body.is-lightbox-open { overflow: hidden; }
   .countdown-unit strong { font-size: .83rem; }
   .countdown-unit small, .countdown-label { font-size: .65rem; }
   .latest-rules-images, .rules-summary { grid-template-columns: 1fr; }
+  .topbar nav { min-width: 0; max-width: 100%; overflow-x: auto; white-space: nowrap; }
+  .gallery-tab { flex: 1; padding-inline: .6rem; }
   .journal-main { width: calc(100% - 2rem); margin: 1.6rem auto 4rem; }
   .journal-banner { grid-template-columns: 1fr; padding: 1.25rem; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }

@@ -5255,5 +5255,75 @@ const promptsData = [
     date: "2026-10-17",
     url: "",
   },
+  {
+    id: 538,
+    title: "年底老婆公司團體旅遊-九州圖卡-1",
+    category: "Map",
+    image:
+      "/C01-AI-Codex-2026/C12-Wife-travels-to-Kyushu-Japan-1150809/images/kyushu-family-trip-overview.webp",
+    prompt: "<span class='yf66'>老婆公司旅遊，依照行程做的圖卡",
+    date: "2026-11-06",
+    url: "",
+  },
+  {
+    id: 539,
+    title: "年底老婆公司團體旅遊-九州圖卡-2",
+    category: "Map",
+    image:
+      "/C01-AI-Codex-2026/C12-Wife-travels-to-Kyushu-Japan-1150809/images/kyushu-five-day-itinerary.webp",
+    prompt: "<span class='yf66'>老婆公司旅遊，依照行程做的圖卡",
+    date: "2026-11-06",
+    url: "",
+  },
+  {
+    id: 540,
+    title: "2026年~【築】",
+    category: "Personal",
+    image: "./images/P04-Personal/P005-1.webp",
+    prompt:
+      "<span class='yf66'>2026年給自己的代表字~圖中明確列出了退休後的五大目標（築知識、築作品、築能力、築生活、築人生），是一張非常棒的目標設定藍圖。",
+    date: "2026-11-06",
+    url: "",
+  },
+  {
+    id: 541,
+    title: "退休生活-無奈篇-1",
+    category: "Life",
+    image: "./images/L02-life/L028-1.webp",
+    prompt:
+      "<span class='yf66'>1.極度真實的退休日常寫照。買菜、拖地、洗碗、被老婆碎念，這些都是最接地氣的生活場景。",
+    date: "2026-11-06",
+    url: "",
+  },
+  {
+    id: 542,
+    title: "退休生活-無奈篇-2",
+    category: "Life",
+    image: "./images/L02-life/L028-2.webp",
+    prompt:
+      "<span class='yf66'>2.現實中滿頭大汗做家事的苦臉，與腦海中幻想「站在講台上教書」或「騎馬當大官封侯」的得意表情形成強烈對比，充滿了幽默感與自嘲。",
+    date: "2026-11-06",
+    url: "",
+  },
+  {
+    id: 543,
+    title: "過去三年多減重成果",
+    category: "Personal",
+    image: "./images/P04-Personal/P006-1.webp",
+    prompt:
+      "<span class='yf66'>這絕對是最貼切的類別。圖中明確列出了「目標體重 90.0 公斤」、達成了 63.2%、以及「下一階段行動」的具體計畫，是一份非常標準的個人目標追蹤與管理成果。",
+    date: "2026-11-06",
+    url: "",
+  },
+  {
+    id: 544,
+    title: "好友老孟的承諾",
+    category: "Fun",
+    image: "./images/F01-Fun/F015-1.webp",
+    prompt:
+      "<span class='yf6'>這張圖帶有一點幽默的「反差萌」。左邊熬夜爆肝做資料的苦臉，對比右邊舉著大拇指、爽快把香菸丟進垃圾桶的笑臉，加上「考上大學就要戒菸」這種奇妙的約定，讓整張圖充滿趣味。",
+    date: "2026-11-06",
+    url: "",
+  },
 ];
 
