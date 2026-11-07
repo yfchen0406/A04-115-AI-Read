@@ -280,7 +280,27 @@
         </div>
         <br>
         <hr>
-
+        <!-- 以下版本可以空格，換句話說就是跳行-->
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-9" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 歷史縱橫</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-9" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure v-if="item.pic1s"> <!-- ← 只在這裡加 v-if="item.pic1s" -->
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
 
         <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
         <h2 id="1-8" class=" yf-font1"><i class="fa-solid fa-book-journal-whills"></i>
@@ -1291,8 +1311,56 @@
       setup() {
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
-
-
+          {
+            pic1: 'https://youtu.be/kUNrXAYAT3k',
+            pic1s: './images/U005/R40-01.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第01集-皇帝的類型學——三種「最好」，同一種封閉',
+          },
+          {
+            pic1: 'https://youtu.be/cJYcTrLgMKU',
+            pic1s: './images/U005/R40-02.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第02集-官僚與財政——高效執行機器與自我糾錯的喪失',
+          },
+          {
+            pic1: 'https://youtu.be/I1N5FgbFSv8',
+            pic1s: './images/U005/R40-03.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第03集-士人與思想——文化工程的頂峰與公共批判空間的歸零',
+          },
+          {
+            pic1: 'https://youtu.be/YTpPA8_ZtXk',
+            pic1s: './images/U005/R40-04.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第04集-人口與農業——總量奇蹟與人均內卷',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U005/R40-05.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第05集-邊疆與民族——空間整合的極限與治理的半徑',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U005/R40-06.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第06集-對外關係——朝貢秩序與主權國家體系的兩種語法',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U005/R40-07.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第07集-軍事與科技——傳統武功的巔峰與代差的形成',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U005/R40-08.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第08集-社會矛盾與治理極限——腐敗、叛亂與系統的「不可修正性」',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U005/R40-09.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第09集-時間觀與改革意願——「持盈保泰」與「不斷突破」的兩種未來觀',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U005/R40-10.webp',
+            dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第10集-總體評價——「落日的輝煌」與大分流的同步性',
+          },
 
         ]);
 
