@@ -10,6 +10,203 @@ nav{position:sticky;top:18px;z-index:5;width:min(1160px,calc(100% - 32px));margi
 main{overflow:hidden}.hero{width:min(1160px,calc(100% - 32px));margin:0 auto;padding:96px 0 112px;position:relative}.hero:after{content:'';position:absolute;width:420px;height:420px;right:5%;top:25%;background:radial-gradient(circle,#b9e1efcc,transparent 68%);filter:blur(12px);z-index:-1}.eyebrow{color:#477f9a;font-weight:700;letter-spacing:.1em;font-size:.78rem;text-transform:uppercase}.hero h1{font-size:clamp(2.35rem,5.4vw,5rem);line-height:1.12;letter-spacing:-.035em;max-width:900px;margin:18px 0 22px}.hero h1 em{font-style:normal;color:#c89416}.hero p{max-width:640px;font-size:1.05rem;color:var(--muted)}.actions{display:flex;gap:12px;margin-top:28px}.btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--ink);text-decoration:none;color:var(--ink);font-weight:700;transition:.35s}.btn.primary{background:var(--ink);color:#fff}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 20px #18324a1a}
 .wrap{width:min(1160px,calc(100% - 32px));margin:auto}.section{padding:76px 0 116px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section h2{font-size:clamp(1.75rem,3.3vw,3.15rem);line-height:1.15;letter-spacing:-.025em;margin:0}.section-head p{max-width:430px;color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:40px 0}.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:20px}.stat strong{font-size:2rem;display:block}.stat small{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-flow:dense;gap:14px}.card{padding:25px;min-height:178px;transition:.45s}.card:hover{transform:translateY(-6px);box-shadow:0 28px 70px #2c688224}.card.wide{grid-column:span 7;background:var(--ink);color:#fff}.card.tall{grid-column:span 5;grid-row:span 2}.card.mid{grid-column:span 4}.card h3{margin:0 0 8px;font-size:1.18rem}.card p{color:var(--muted);margin:0}.wide p{color:#d6e8ee}.kicker{font-size:.75rem;color:#be8f12;font-weight:700;letter-spacing:.06em}.skill-card{grid-column:span 4;min-height:210px}.skill-card code,.card code{color:#39718b;font-size:.8rem;overflow-wrap:anywhere}.wide code{color:#d6e8ee}.tag{display:inline-block;padding:3px 9px;border-radius:99px;background:#e1f3f9;color:#39718b;font-size:.78rem;margin:8px 4px 0 0}.searchbar{display:flex;gap:10px;margin:24px 0}.searchbar input,.searchbar select{font:inherit;border:1px solid var(--line);background:#fffef7;border-radius:12px;padding:12px 14px;color:var(--ink)}.searchbar input{flex:1}.empty{display:none;padding:30px;color:var(--muted)}.daily-months{display:flex;gap:10px;margin:-4px 0 10px}.daily-months button{padding:8px 14px;border:1px solid #9bcfe3;border-radius:10px;color:#245f7d;font:inherit;font-weight:700;background:#fffef7;cursor:pointer}.daily-months button:hover,.daily-months button[aria-selected="true"]{background:#18324a;border-color:#18324a;color:#fff}.daily-pagination{margin:0 0 22px}.daily-date-group{display:flex;flex-wrap:wrap;gap:8px}.daily-date-group[hidden]{display:none}.daily-pagination a{padding:8px 13px;border:1px solid #9bcfe3;border-radius:10px;color:#245f7d;text-decoration:none;font-weight:700;background:#fffef7}.daily-pagination a:hover,.daily-pagination a[aria-current="page"]{background:#18324a;border-color:#18324a;color:#fff}.daily-month-page[hidden]{display:none}.daily-page{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.daily-page[hidden]{display:none}.daily-date{grid-column:1/-1;padding:14px 0 2px;color:#39718b;font-weight:700;border-bottom:1px solid var(--line)}.daily-item{padding:20px;background:#f8fdff;border:1px solid var(--line);border-radius:16px}.daily-item h3{margin:0 0 8px;font-size:1.05rem}.daily-item p{margin:0;color:var(--muted)}.daily-item a{color:#236a8e;font-weight:700}.daily-item small{display:block;margin-top:10px;color:#698596}footer{background:var(--ink);color:#fff;padding:80px 0}.footer-inner{width:min(1160px,calc(100% - 32px));margin:auto;display:flex;justify-content:space-between;gap:30px}footer p{color:#c4dce8;max-width:480px}footer a{color:#fff}.source{font-size:.82rem;color:#b9d7e5}
 @media(max-width:760px){body>nav a{display:none}.hero{padding:82px 0 90px}.stats,.daily-page{grid-template-columns:1fr}.card.wide,.card.tall,.card.mid,.skill-card{grid-column:span 12;grid-row:auto}.section-head,.footer-inner{display:block}.section-head p{margin-top:16px}.searchbar{display:block}.searchbar>*{width:100%;margin-bottom:8px}}
+/* Redesigned presentation layer: content and data remain sourced from the original HTML. */
+:root{
+  --ink:#15324a;
+  --muted:#526b7d;
+  --paper:#f2f8fb;
+  --card:#ffffff;
+  --mint:#c4e7f3;
+  --orange:#d99c14;
+  --line:#c8dce7;
+  --shadow:0 12px 32px rgba(31,67,88,.075);
+  --surface:#e7f3f8;
+  --focus:#b27700;
+}
+html{scroll-padding-top:112px;scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'字魂扁桃體','字魂扁桃体','Zihun BianTaoTi','Noto Sans TC','Microsoft JhengHei',sans-serif;
+  line-height:1.72;
+}
+body:before{opacity:0}
+main{overflow:clip}
+body>nav{
+  top:12px;
+  width:min(1240px,calc(100% - 40px));
+  margin:12px auto 0;
+  min-height:58px;
+  padding:9px 18px;
+  border:1px solid rgba(198,220,231,.9);
+  border-radius:16px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 6px 22px rgba(31,67,88,.07);
+  backdrop-filter:blur(12px);
+}
+.brand{font-size:1rem;letter-spacing:0;font-weight:800;white-space:nowrap}
+.brand span{color:var(--orange);padding:0 .12em}
+body>nav a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  margin-left:4px;
+  padding:0 11px;
+  border-radius:9px;
+  color:#294b63;
+  font-size:.92rem;
+  transition:background-color .18s ease,color .18s ease;
+}
+body>nav a:hover{background:#eaf5fa;color:#123b57}
+body>nav a:focus-visible,.btn:focus-visible,.daily-months button:focus-visible,.daily-pagination a:focus-visible,
+.searchbar input:focus-visible,.searchbar select:focus-visible,.daily-item a:focus-visible{
+  outline:3px solid var(--focus);outline-offset:3px
+}
+.hero{
+  width:min(1160px,calc(100% - 40px));
+  min-height:min(690px,calc(100svh - 72px));
+  display:flex;flex-direction:column;justify-content:center;
+  padding:76px 0 88px;
+}
+.hero:after{
+  width:min(46vw,560px);height:min(46vw,560px);right:3%;top:12%;
+  background:radial-gradient(circle at 52% 48%,rgba(184,222,238,.72),rgba(213,237,246,.38) 42%,transparent 70%);
+  filter:none;z-index:-1;pointer-events:none
+}
+.hero .eyebrow{
+  color:#416a82;font-size:.82rem;letter-spacing:.08em;
+  padding-left:14px;border-left:3px solid var(--orange)
+}
+.hero h1{
+  max-width:820px;margin:20px 0 18px;
+  font-size:clamp(2.6rem,5.2vw,4.55rem);
+  line-height:1.18;letter-spacing:-.035em;font-weight:750
+}
+.hero h1 em{color:#a87508}
+.hero p{max-width:680px;font-size:1.08rem;color:#405e73;line-height:1.85}
+.actions{gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{
+  min-height:46px;padding:10px 18px;border-radius:10px;border-color:#8aaaba;
+  font-weight:700;transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease
+}
+.btn.primary{background:#183a54;border-color:#183a54}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(21,50,74,.15)}
+.wrap,.footer-inner{width:min(1160px,calc(100% - 40px))}
+.section{padding:72px 0 84px;scroll-margin-top:96px}
+.section:nth-of-type(even){background:rgba(255,255,255,.5)}
+.section-head{align-items:center;gap:36px;margin-bottom:30px}
+.section h2{font-size:clamp(1.8rem,3.2vw,2.65rem);line-height:1.22;letter-spacing:-.025em;font-weight:750}
+.section-head p{max-width:470px;color:#50697a;font-size:.98rem;line-height:1.75}
+.stats{gap:14px;margin:30px 0 26px}
+.stat,.card{
+  background:var(--card);border:1px solid var(--line);border-radius:15px;
+  box-shadow:0 5px 18px rgba(31,67,88,.045)
+}
+.stat{padding:18px 20px;border-top:3px solid #dca81f}
+.stat strong{font-size:1.85rem;line-height:1.2;color:#173b55}
+.stat small{font-size:.88rem;color:#536c7e}
+.grid{gap:16px}
+.card,.card.wide,.card.tall,.card.mid,.skill-card{
+  grid-column:span 4;grid-row:auto;min-height:0;
+}
+.card{padding:22px 22px 24px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-2px);border-color:#a9c8d7;box-shadow:0 12px 28px rgba(31,67,88,.1)}
+.card.wide{background:#fff;color:var(--ink)}
+.card h3{font-size:1.12rem;line-height:1.45;font-weight:750}
+.card p,.wide p{color:#4d6678;line-height:1.75}
+.card code,.skill-card code{font-size:.8rem;color:#315d76;overflow-wrap:anywhere;word-break:break-word}
+.kicker{display:inline-block;margin-bottom:8px;color:#90630a;font-size:.78rem;letter-spacing:.025em}
+.tag{background:#e6f3f8;color:#28556f;border:1px solid #c9e1eb}
+.searchbar{gap:12px;margin:22px 0 26px}
+.searchbar input,.searchbar select{
+  min-height:48px;border:1px solid #b9d0dc;border-radius:10px;
+  background:#fff;color:var(--ink);padding:11px 15px
+}
+.searchbar input::placeholder{color:#60798a;opacity:1}
+.daily-months{gap:8px;margin:0 0 12px;flex-wrap:wrap}
+.daily-months button,.daily-pagination a{
+  min-height:44px;padding:8px 15px;border:1px solid #a9c9d8;border-radius:10px;
+  color:#234f69;background:#fff;font-weight:700;transition:background-color .18s ease,color .18s ease,border-color .18s ease
+}
+.daily-months button:hover,.daily-pagination a:hover{background:#e7f3f8;border-color:#76a9c0;color:#173c56}
+.daily-months button[aria-selected="true"],.daily-pagination a[aria-current="page"]{
+  background:#173a54;border-color:#173a54;color:#fff
+}
+.daily-pagination{
+  position:relative;top:auto;z-index:auto;width:auto;display:block;
+  margin:0 0 24px;padding:14px;border:1px solid #d3e3eb;border-radius:14px;
+  background:#e9f3f7;box-shadow:none;backdrop-filter:none
+}
+.daily-date-group{gap:8px}
+.daily-pagination a{display:inline-flex;align-items:center;justify-content:center;margin:0;text-decoration:none}
+.daily-page{gap:14px;scroll-margin-top:100px}
+.daily-date{
+  padding:14px 16px;border:0;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;
+  background:#e7f3f8;color:#193e58;font-size:1.03rem
+}
+.daily-item{
+  padding:20px 21px 22px;background:#fff;border:1px solid #d1e1e9;border-radius:14px;
+  box-shadow:0 4px 14px rgba(31,67,88,.04);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease
+}
+.daily-item:hover{transform:translateY(-2px);border-color:#a9c8d7;box-shadow:0 10px 24px rgba(31,67,88,.085)}
+.daily-item h3{font-size:1.08rem;line-height:1.45;color:#173b55}
+.daily-item p{color:#4c6577;line-height:1.78}
+.daily-item a{color:#175d83;text-underline-offset:3px;text-decoration-thickness:1px}
+.daily-item a:hover{color:#9a6907}
+.daily-item small{font-size:.86rem;line-height:1.7;color:#526b7b}
+.skill-card{border-top:3px solid #b7dce9}
+.skill-card .kicker{margin-bottom:7px}
+.empty{padding:26px;border:1px dashed #9bb9c8;border-radius:12px;background:#fff}
+footer{padding:60px 0;background:#17364e;color:#fff}
+.footer-inner{align-items:center}
+footer h2{font-size:clamp(1.6rem,2.5vw,2.25rem);line-height:1.35}
+footer p{color:#d7e7ee;line-height:1.75}
+.source{color:#c8dce7;line-height:1.8}
+@media(min-width:761px) and (max-width:1020px){
+  .card,.card.wide,.card.tall,.card.mid,.skill-card{grid-column:span 6}
+  .hero h1{max-width:740px}
+  .section{padding:58px 0 68px}
+}
+@media(max-width:760px){
+  body>nav{
+    width:calc(100% - 24px);top:8px;margin:8px auto 0;padding:8px 10px;
+    display:flex;flex-wrap:wrap;gap:4px 8px;border-radius:14px
+  }
+  body>nav>div:last-child{display:flex;width:100%;gap:2px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+  body>nav a{display:inline-flex;flex:0 0 auto;min-height:40px;margin:0;padding:0 10px;font-size:.86rem}
+  .hero{width:calc(100% - 32px);min-height:0;padding:82px 0 76px}
+  .hero:after{width:78vw;height:78vw;right:-9%;top:10%;opacity:.75}
+  .hero h1{max-width:100%;font-size:clamp(2.25rem,10vw,3.25rem);line-height:1.2}
+  .hero p{font-size:1rem}
+  .actions{display:grid;grid-template-columns:1fr;width:100%}
+  .btn{text-align:center;min-height:48px}
+  .wrap,.footer-inner{width:calc(100% - 32px)}
+  .section{padding:52px 0 60px}
+  .section-head{display:block;margin-bottom:22px}
+  .section-head p{margin-top:12px}
+  .stats{grid-template-columns:1fr;gap:10px;margin:20px 0}
+  .stat{padding:14px 16px}
+  .stat strong{font-size:1.55rem}
+  .card,.card.wide,.card.tall,.card.mid,.skill-card{grid-column:1/-1;grid-row:auto}
+  .card{padding:18px 18px 20px}
+  .daily-months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .daily-months button{width:100%}
+  .daily-pagination{padding:10px}
+  .daily-date-group{gap:7px}
+  .daily-pagination a{min-width:48px;padding:7px 10px}
+  .daily-page{grid-template-columns:minmax(0,1fr);gap:11px}
+  .daily-date{padding:12px 13px}
+  .daily-item{padding:17px 16px 18px}
+  .searchbar{display:grid;grid-template-columns:1fr;gap:8px}
+  .searchbar>*{width:100%;margin:0}
+  .footer-inner{display:grid;gap:18px}
+  footer{padding:42px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
 </style></head>
 <body>
 <nav><div class="brand">學習中樞<span>／</span>盤點報告</div><div><a href="#projects">專案</a><a href="#weekly">週報</a><a href="#daily">每日摘要</a><a href="#skills">Skills</a><a href="#scope">盤點說明</a></div></nav>
@@ -50,7 +247,7 @@ main{overflow:hidden}.hero{width:min(1160px,calc(100% - 32px));margin:0 auto;pad
  <div class="daily-date-group" data-month="202610" hidden><a href="#daily-20261024">10/24</a><a href="#daily-20261025">10/25</a></div>
  <div class="daily-date-group" data-month="202610" hidden><a href="#daily-20261026">10/26</a><a href="#daily-20261027">10/27</a><a href="#daily-20261028">10/28</a></div>
  <div class="daily-date-group" data-month="202610" hidden><a href="#daily-20261029">10/29</a><a href="#daily-20261030">10/30</a><a href="#daily-20261031">10/31</a></div>
- <div class="daily-date-group" data-month="202611" hidden><a href="#daily-20261101">11/1</a><a href="#daily-20261102">11/2</a><a href="#daily-20261103">11/3</a></div></nav><div class="daily-month-page" data-month="202608"><div class="daily-pages">
+ <div class="daily-date-group" data-month="202611" hidden><a href="#daily-20261101">11/1</a><a href="#daily-20261102">11/2</a><a href="#daily-20261103">11/3</a><a href="#daily-20261104">11/4</a><a href="#daily-20261105">11/5</a><a href="#daily-20261107">11/7</a><a href="#daily-20261108">11/8</a></div></nav><div class="daily-month-page" data-month="202608"><div class="daily-pages">
 <div class="daily-page" id="daily-20260801">
 <div class="daily-date">2026/08/01｜六大主題摘要</div>
 <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>Build Week 的 Codex 創作學習資源</h3><p>OpenAI 提供 Codex Sites 與 Creative Building 的活動資源，適合把「每日網頁」做成小型、可完成的練習。</p><a href="https://openai.com/build-week/" target="_blank" rel="noreferrer">閱讀官方資源</a><small>行動：本週選一個既有 HTML 頁面，練習新增一項可用功能。</small></article>
@@ -881,10 +1078,70 @@ main{overflow:hidden}.hero{width:min(1160px,calc(100% - 32px));margin:0 auto;pad
   <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>Cognitive speed training may delay dementia diagnosis</h3><p>研究顯示特定認知速度訓練可能與較低失智診斷率相關，但不代表任何腦力遊戲都有效。</p><a href="https://www.nih.gov/news-events/news-releases/cognitive-speed-training-over-weeks-may-delay-diagnosis-dementia-over-decades" target="_blank" rel="noreferrer">NIH｜2026/02/10</a><small>建議：將閱讀、英文、網頁製作與 AI 學習視為持續且有目標的認知活動。</small></article>
   <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>Exercise and cognitive function in older adults</h3><p>系統性回顧發現，運動對高齡者的執行功能、記憶與處理速度有正面效果。</p><a href="https://pubmed.ncbi.nlm.nih.gov/42767813/" target="_blank" rel="noreferrer">PubMed｜2026/09/21</a><small>建議：每日 2,000 步是很好的起點，並逐步加入簡單肌力活動。</small></article>
   <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>Cognitive Health and Older Adults</h3><p>NIA 說明有意義的學習活動、創作與持續參與可能有助於維持認知健康，但證據仍需持續累積。</p><a href="https://www.nia.nih.gov/health/brain-health/cognitive-health-and-older-adults" target="_blank" rel="noreferrer">NIA｜近期更新</a><small>建議：維持「每日一」制度，比追求一次大量學習更適合長期退休生活。</small></article>
-  </div></div></div></section>
+  </div>
+  <div class="daily-page" id="daily-20261104" hidden>
+  <div class="daily-date">2026/11/04｜六大主題摘要（6 則資料）</div>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>整理 Skills、AGENTS.md 與提示詞</h3><p>OpenAI Developers 分享如何規劃可重複使用的 Skills 與提示詞，並以 Codex 工作流程為例。</p><a href="https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra" target="_blank" rel="noreferrer">OpenAI Developers｜2026/09/11</a><small>行動：檢查 AI 學苑的 AGENTS.md，把常用流程整理成精簡、可重複使用的 Skill。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>Google Cloud 整理免費 AI 工具</h3><p>Google Cloud 彙整多種可免費開始使用的 AI 工具與應用情境。</p><a href="https://cloud.google.com/use-cases/free-ai-tools" target="_blank" rel="noreferrer">Google Cloud｜2026/11/02</a><small>行動：挑一項工具實測，記錄免費額度、限制及是否適合長期使用。</small></article>
+  <article class="daily-item"><span class="kicker">AI Agent 與 Vibe Coding</span><h3>Agent 輔助程式設計仍需人的查證</h3><p>NIST 討論 Agentic AI 輔助程式設計中的知識根據與驗證責任，提醒開發者保留規劃和監督。</p><a href="https://www.nist.gov/publications/agentic-ai-assisted-coding-offers-unique-opportunity-instill-epistemic-grounding-during" target="_blank" rel="noreferrer">NIST｜2026</a><small>行動：每次交辦 Codex 修改網頁時，要求先列計畫、修改後再測試。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>Pika H3 Flex 加入影片控制方式</h3><p>Pika H3 Flex 支援文字生影片、首尾幀控制、參考圖生成影片及同步音訊。</p><a href="https://pika.art/blog/pika-h3-flex" target="_blank" rel="noreferrer">Pika｜2026/10/29</a><small>行動：先用一段 5 秒場景測試首尾幀連續性，再延伸至完整動畫。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>使用 British Council 免費英文資源</h3><p>British Council 提供免費聽力、閱讀、口說、文法與單字練習素材。</p><a href="https://learnenglish.britishcouncil.org/free-resources" target="_blank" rel="noreferrer">British Council｜免費資源</a><small>行動：每天花 5–10 分鐘聽讀短文，說一句摘要並記下三個單字。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>WHO 更新認知下降與失智風險指引</h3><p>WHO 指引整理運動、健康管理、生活型態與多面向介入等認知健康相關建議。</p><a href="https://www.who.int/publications/i/item/9789240123557" target="_blank" rel="noreferrer">WHO｜2026/07/15</a>　<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noreferrer">PubMed 研究資料庫</a><small>行動：把走路、閱讀、英文與 AI 學習納入穩定日常；健康決策仍依醫療專業建議。</small></article>
+  </div>
+  <div class="daily-page" id="daily-20261105" hidden>
+  <div class="daily-date">2026/11/05｜六大主題摘要（11 則資料）</div>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>重新思考 Skills 與提示詞</h3><p>OpenAI Developers 說明如何設計可重複使用的 Skills 與提示詞。</p><a href="https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra" target="_blank" rel="noreferrer">OpenAI Developers｜2026/09/11</a><small>行動：把 AI 學苑固定流程拆成容易維護的小型 Skill。</small></article>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>Codex Skills 的基本概念</h3><p>OpenAI 開發者文件介紹以資料夾保存指令、資源與工作流程的 Skills。</p><a href="https://developers.openai.com/plugins/concepts/skills" target="_blank" rel="noreferrer">OpenAI Developers｜Skills 文件</a><small>行動：先把每日摘要、文章插圖提示詞等重複流程整理成可重用步驟。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>Free Tier Finder 整理免費方案</h3><p>此目錄整理不同 AI 工具的免費層級與限制，實際額度仍以服務商當前條款為準。</p><a href="https://freetierfinder.com/" target="_blank" rel="noreferrer">Free Tier Finder｜2026/11/03 更新</a><small>行動：使用前先確認額度、資料隱私與是否要求信用卡。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>查看 ChatGPT 與 Codex 更新說明</h3><p>官方更新頁彙整 ChatGPT 與 Codex 功能變更，可作為已可用工具的查證入口。</p><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noreferrer">OpenAI Help｜更新說明</a><small>行動：先熟悉現有方案可用功能，不急著增加訂閱。</small></article>
+  <article class="daily-item"><span class="kicker">AI Agent 與 Vibe Coding</span><h3>Agentic AI 輔助程式設計</h3><p>NIST 指出 Agent 協助寫程式時仍需要人的規劃、驗證與把關。</p><a href="https://www.nist.gov/publications/agentic-ai-assisted-coding-offers-unique-opportunity-instill-epistemic-grounding-during" target="_blank" rel="noreferrer">NIST｜2026</a><small>行動：交辦 Agent 前先說清楚目標、修改範圍與驗收方式。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>OpenAI Images 2.6 探索動畫素材</h3><p>OpenAI 介紹圖片生成與動畫角色、反應圖及分鏡探索的應用。</p><a href="https://openai.com/index/introducing-images-2-6/" target="_blank" rel="noreferrer">OpenAI｜2026/11/04</a><small>行動：以同一角色測試表情、動作與鏡頭變化，觀察一致性。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>Runway Gen-4.5 文字與圖片生影片</h3><p>Runway 說明 Gen-4.5 的文字生影片與圖片生影片流程。</p><a href="https://help.runwayml.com/hc/en-us/articles/46974685288467-Creating-with-Gen-4-5" target="_blank" rel="noreferrer">Runway｜Gen-4.5 使用說明</a><small>行動：先產出 2–5 秒短鏡頭，再接回既有分鏡流程。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>British Council Magazine Zone 閱讀練習</h3><p>Magazine Zone 提供 B1–B2 程度閱讀文章與互動練習。</p><a href="https://learnenglish.britishcouncil.org/free-resources/general/magazine-zone" target="_blank" rel="noreferrer">British Council｜2026/11/05</a><small>行動：每天讀一篇短文，摘錄五個多益常用單字。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>Cambridge English 免費學習資源</h3><p>Cambridge English 提供文法、閱讀、聽力與考試準備材料。</p><a href="https://www.cambridgeenglish.org/learners/" target="_blank" rel="noreferrer">Cambridge English｜學習者資源</a><small>行動：每週安排一次閱讀或聽力小測驗，累積多益備考經驗。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>NIH/NIA 2026 阿茲海默症研究進展</h3><p>NIA 報告概述相關研究進展，包含生活方式與健康監測等持續研究方向。</p><a href="https://www.nia.nih.gov/about/2026-nih-alzheimers-disease-and-related-dementias-research-progress-report-advances-and" target="_blank" rel="noreferrer">NIA｜2026/10</a><small>行動：持續閱讀、學英文與實作網頁，維持低壓力而穩定的學習節奏。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>認知健康與年長者</h3><p>NIA 整理身體活動與心血管健康等認知健康相關資訊。</p><a href="https://www.nia.nih.gov/health/brain-health/cognitive-health-and-older-adults" target="_blank" rel="noreferrer">NIA｜認知健康資訊</a><small>行動：持續走路並搭配飲食管理；個人健康安排請依醫師建議。</small></article>
+  </div>
+  <div class="daily-page" id="daily-20261107" hidden>
+  <div class="daily-date">2026/11/07｜六大主題摘要（18 則資料）</div>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>OpenAI Training：ChatGPT Work 與 Codex 實作課程</h3><p>OpenAI Training 提供由入門到實務工作流程的訓練資源。</p><a href="https://developers.openai.com/training" target="_blank" rel="noreferrer">OpenAI｜近期更新</a><small>行動：今天完成一個 Codex 小練習，把做法記錄在學習筆記。</small></article>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>Codex Academy</h3><p>OpenAI Academy 提供 Codex 提示詞與實務工作流程相關學習內容。</p><a href="https://openai.com/academy/codex/" target="_blank" rel="noreferrer">OpenAI｜Codex Academy</a><small>行動：將實用課程整理成自己的 Codex 學習索引。</small></article>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>依 ChatGPT 方案使用 Codex</h3><p>官方說明頁介紹 Codex 的使用方式及帳戶方案限制。</p><a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan" target="_blank" rel="noreferrer">OpenAI Help｜近期更新</a><small>行動：使用前先確認帳戶目前的方案與可用額度。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>Phosphene 免費本機 AI 影片工具</h3><p>Phosphene 更新紀錄介紹以 Mac 本機與隱私為訴求的 AI 影片工具；此工具環境支援度需先確認。</p><a href="https://phosphene.video/changelog/" target="_blank" rel="noreferrer">Phosphene｜2026/11</a><small>行動：先確認系統相容性與硬體需求，再評估是否適用 Windows。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>freeCodeCamp 免費向量資料庫課程</h3><p>freeCodeCamp 提供免費向量資料庫課程，適合入門 AI 知識搜尋概念。</p><a href="https://www.freecodecamp.org/news/" target="_blank" rel="noreferrer">freeCodeCamp｜2026/11/06</a><small>行動：先從基礎課程了解向量資料庫如何支援文件檢索。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>OpenAI Images 2.6</h3><p>OpenAI 展示圖片生成及動畫精靈圖等應用方向。</p><a href="https://openai.com/index/introducing-images-2-6/" target="_blank" rel="noreferrer">OpenAI｜2026/11/04</a><small>行動：記錄角色一致性與動畫素材的可用做法。</small></article>
+  <article class="daily-item"><span class="kicker">AI Agent 與 Vibe Coding</span><h3>Google Research：AI 作為協作夥伴</h3><p>Google Research 將軟體工程 Agent 的協作行為分類，提供理解 Agent 工作方式的研究視角。</p><a href="https://research.google/pubs/towards-ai-as-a-collaborative-partner-a-taxonomy-of-ai-agent-behavior-in-software-engineering/" target="_blank" rel="noreferrer">Google Research｜2026</a><small>行動：用研究分類建立自己的 Agent 工作規則與交付檢查清單。</small></article>
+  <article class="daily-item"><span class="kicker">AI Agent 與 Vibe Coding</span><h3>什麼是 Agentic Coding？</h3><p>Google Cloud 說明從聊天式 AI 轉向任務委派式 Agent 的概念。</p><a href="https://cloud.google.com/discover/what-is-agentic-coding" target="_blank" rel="noreferrer">Google Cloud｜2026/09/29</a><small>行動：練習把網頁修改拆成小任務，逐項檢查成果。</small></article>
+  <article class="daily-item"><span class="kicker">AI Agent 與 Vibe Coding</span><h3>SWE-chat：從真實互動研究 Vibe Coding</h3><p>研究以使用紀錄探討 Vibe Coding 的實際互動，提醒將人工查驗納入開發流程。</p><a href="https://doi.org/10.48550/arXiv.2604.20779" target="_blank" rel="noreferrer">arXiv｜2026/10/01 修訂</a><small>行動：每次 AI 修改後都保留人工檢查與測試步驟。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>Images 2.6 動畫精靈圖探索</h3><p>OpenAI Images 2.6 展示角色與動畫精靈圖應用，可用於研究素材一致性。</p><a href="https://openai.com/index/introducing-images-2-6/" target="_blank" rel="noreferrer">OpenAI｜2026/11/04</a><small>行動：先設計同一角色的表情與循環動作素材。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>Phosphene 本機影片生成方向</h3><p>Phosphene 更新紀錄提供本機 AI 影片工具資訊，需留意其平台支援限制。</p><a href="https://phosphene.video/changelog/" target="_blank" rel="noreferrer">Phosphene｜2026/11</a><small>行動：先確認 Windows 相容性，再決定是否納入動畫流程。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>Tella Motion 以 Agent 製作動態圖形</h3><p>Tella Motion 以 Agent 協助產生關鍵影格、文字動畫與形狀變形。</p><a href="https://www.tella.com/motion" target="_blank" rel="noreferrer">Tella Motion｜近期更新</a><small>行動：觀察 AI 協助關鍵影格的方式，並與既有分鏡流程比較。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>Cambridge English 免費學習資源</h3><p>Cambridge English 提供程度測驗、閱讀、聽力、寫作與考試準備素材。</p><a href="https://www.cambridgeenglish.org/learners/" target="_blank" rel="noreferrer">Cambridge English｜學習者資源</a><small>行動：每天做一項短練習，每週安排一次多益閱讀或聽力小測驗。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>British Council 免費英文資源</h3><p>British Council 可依程度與技能篩選免費教材。</p><a href="https://learnenglish.britishcouncil.org/free-resources" target="_blank" rel="noreferrer">British Council｜免費資源</a><small>行動：選一篇短文或一段聽力，實踐「每日一」英文目標。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>5–10 分鐘英文練習活動</h3><p>British Council General English 資源包含短篇閱讀、影音與音訊活動。</p><a href="https://learnenglish.britishcouncil.org/free-resources/general" target="_blank" rel="noreferrer">British Council｜近期更新</a><small>行動：完成一篇短文或一段聽力，再記錄今天學會的一句話。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>WHO 認知下降與失智風險降低指南</h3><p>WHO 指南整理健康生活、慢性病管理與多面向介入的相關建議。</p><a href="https://www.who.int/publications/i/item/B09867" target="_blank" rel="noreferrer">WHO｜2026/09/02</a><small>行動：將走路、閱讀與社交學習納入退休生活日常。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>身體活動與高齡者認知功能研究</h3><p>PubMed 收錄研究持續探討身體活動與高齡認知功能的關聯，單一研究不等同個人療效。</p><a href="https://pubmed.ncbi.nlm.nih.gov/42803718/" target="_blank" rel="noreferrer">PubMed｜2026/11</a><small>行動：維持安全且穩定的步行習慣，並依自身健康狀況調整。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>個人社交網絡與認知健康研究</h3><p>近期研究探討社交連結與晚年認知健康的關聯，仍應審慎看待研究結果。</p><a href="https://pubmed.ncbi.nlm.nih.gov/42714954/" target="_blank" rel="noreferrer">PubMed｜2026/11/01</a><small>行動：把與家人、同學交流也安排進持續學習與生活紀錄。</small></article>
+  </div>
+  <div class="daily-page" id="daily-20261108" hidden>
+  <div class="daily-date">2026/11/08｜六大主題摘要（12 則資料）</div>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>OpenAI Training：Codex 實作訓練</h3><p>OpenAI Training 提供從建立第一個版本到實際修改程式的循序練習，適合以短單元熟悉 Codex 工作流程。</p><a href="https://developers.openai.com/training" target="_blank" rel="noreferrer">OpenAI｜近期更新</a><small>行動：今天完成一個 15–25 分鐘單元，將做法記到 AI 學苑筆記。</small></article>
+  <article class="daily-item"><span class="kicker">Codex 實用技巧</span><h3>Codex Academy 工作流程學習</h3><p>OpenAI Academy 提供 Codex 寫程式、執行任務與建立自動化工作流的學習內容。</p><a href="https://openai.com/academy/codex/" target="_blank" rel="noreferrer">OpenAI｜Codex Academy</a><small>行動：把實用課程整理進 AI 學苑的「Codex 入門」分類。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>BudAI 搭配 Ollama 體驗本機模型</h3><p>Visual Studio Marketplace 的 BudAI 擴充功能可連接 Ollama，支援程式編輯、文件問答與多 Agent 工作流；需自行確認擴充功能權限與模型需求。</p><a href="https://marketplace.visualstudio.com/items?itemName=BudAI.budai" target="_blank" rel="noreferrer">Visual Studio Marketplace｜BudAI</a><small>行動：先在測試資料夾與非私人文件中試用，確認本機模型能正常運作。</small></article>
+  <article class="daily-item"><span class="kicker">免費 AI 工具</span><h3>Free Tier Finder 比較免費方案限制</h3><p>Free Tier Finder 整理 AI 與軟體服務的免費方案；實際額度、地區與隱私條件仍要以各服務官方說明為準。</p><a href="https://freetierfinder.com/" target="_blank" rel="noreferrer">Free Tier Finder｜2026/11/06 更新</a><small>行動：使用前逐一確認免費額度、資料用途與是否要求付款資料。</small></article>
+  <article class="daily-item"><span class="kicker">AI Agent 與 Vibe Coding</span><h3>NIST：Agent 輔助程式設計仍需查證</h3><p>NIST 討論 Agentic AI 寫程式時建立知識根據與驗證的機會，提醒保留人的規劃、測試與監督。</p><a href="https://www.nist.gov/publications/agentic-ai-assisted-coding-offers-unique-opportunity-instill-epistemic-grounding-during" target="_blank" rel="noreferrer">NIST｜2026</a><small>行動：沿用「先規劃、再修改、最後測試」並核對變更範圍。</small></article>
+  <article class="daily-item"><span class="kicker">AI Agent 與 Vibe Coding</span><h3>Google Research：從正確性走向協作</h3><p>Google Research 以人本角度整理軟體工程 AI Agent 的協作行為，提供比較不同 Agent 工作方式的研究框架。</p><a href="https://research.google/pubs/from-correctness-to-collaboration-a-human-centered-taxonomy-of-ai-agent-behavior-in-software-engineering/" target="_blank" rel="noreferrer">Google Research｜2026</a><small>行動：比較 Codex 與其他 Agent 時，記錄它如何提問、執行、回報及接受修正。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>Images 2.6 探索角色與動畫素材</h3><p>OpenAI 展示圖片生成及動畫角色、海報等應用，可用來研究同一角色在視覺素材中的一致性。</p><a href="https://openai.com/index/introducing-images-2-6/" target="_blank" rel="noreferrer">OpenAI｜2026/11/04</a><small>行動：以同一角色設計三個場景，檢查外觀與畫面風格是否一致。</small></article>
+  <article class="daily-item"><span class="kicker">AI 動畫製作</span><h3>依動畫目標挑選 AI 動畫工具</h3><p>近期工具指南將動畫工具分為影片片段、動態設計與程式動畫等用途；先定義作品類型，再比較工具功能與限制。</p><a href="https://www.aicssanimations.com/guides/best-ai-animation-tools" target="_blank" rel="noreferrer">AI CSS Animations｜工具指南</a><small>行動：先判斷要做角色動畫、分鏡動畫或網站動效，再選一個小場景測試。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>British Council LearnEnglish 免費資源</h3><p>British Council 提供免費聽力、閱讀、文法與單字練習，可依程度選擇短篇教材。</p><a href="https://learnenglish.britishcouncil.org/free-resources" target="_blank" rel="noreferrer">British Council｜免費資源</a><small>行動：每天選一篇短文，完成閱讀、聽力與記錄三個單字。</small></article>
+  <article class="daily-item"><span class="kicker">英文學習工具</span><h3>先測程度再安排英文練習</h3><p>LearnEnglish 提供免費程度測驗與分級學習資源，可作為安排英文與多益基礎練習的起點。</p><a href="https://learnenglish.britishcouncil.org/" target="_blank" rel="noreferrer">British Council｜LearnEnglish</a><small>行動：先做程度測驗，再選符合目前程度的聽力或閱讀活動。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>NIA／NIH 2026 認知健康研究進展</h3><p>NIA 報告整理阿茲海默症與相關失智症研究進展，涵蓋認知健康、教育與老化研究方向。</p><a href="https://www.nia.nih.gov/about/2026-nih-alzheimers-disease-and-related-dementias-research-progress-report-advances-and" target="_blank" rel="noreferrer">NIA／NIH｜2026 年進展報告</a><small>行動：閱讀時分別記下研究發現、限制與可實踐的日常行動。</small></article>
+  <article class="daily-item"><span class="kicker">退休學習與認知思維</span><h3>特定認知速度訓練的長期研究</h3><p>NIH 報導特定認知速度訓練與失智診斷時間的長期研究結果；研究結果不代表所有腦力活動都有相同效果。</p><a href="https://www.nih.gov/news-events/news-releases/cognitive-speed-training-over-weeks-may-delay-diagnosis-dementia-over-decades" target="_blank" rel="noreferrer">NIH｜2026/02/10</a><small>行動：把閱讀、走路與有目標的學習持續安排在日常；健康疑問仍請諮詢醫療專業人員。</small></article>
+  </div>
+  </div></div></section>
  <section class="section wrap" id="skills"><div class="section-head"><h2>Skill 圖鑑</h2><p>截至 2026/11/02，已盤點使用者全域 Skill 目錄並去除重複名稱，共 75 項；另標示本專案專屬的 <code>impeccable</code>。清單依 Skill 說明整理，可用英文名稱、功能或類別搜尋；按 <strong>Ctrl + K</strong> 可直接跳到搜尋框。</p></div><div class="searchbar"><input id="q" placeholder="例如：remotion、文件、網站、動畫、skill…" aria-label="搜尋 Skill"><select id="filter"><option value="all">全部來源</option><option value="project">本專案專屬</option><option value="global">全域可用</option></select></div><div class="grid" id="skillGrid"></div><div class="empty" id="empty">找不到符合條件的 skill，請換一個英文名稱或功能關鍵字。</div></section>
 <section class="section wrap" id="scope"><div class="section-head"><h2>盤點邊界</h2><p>這份報告誠實區分「可讀取的本機資料」與「尚未連線的帳號雲端資料」。</p></div><div class="grid"><article class="card wide"><span class="kicker">已盤點</span><h3>本機可讀取範圍</h3><p>目前工作區成果與資料夾、`.agents/skills`、使用者 skill 目錄，以及本工作區的 `skills-lock.json`。</p></article><article class="card tall"><span class="kicker">待連線</span><h3>帳號層級專案</h3><p>本回合沒有連接 GitHub、Google Drive、Notion 或其他帳號專案服務，因此不能把雲端帳號中的所有專案宣稱為已完成盤點。</p></article><article class="card mid"><span class="kicker">判讀方式</span><h3>專案專屬 Skill</h3><p>目前可確認的是 `impeccable`，來源為本工作區 `.agents/skills/impeccable` 並列在 lock。</p></article><article class="card mid"><span class="kicker">維護建議</span><h3>下一次更新</h3><p>新增專案或 skill 後，重新整理 lock 與本頁資料，即可保持學習地圖同步。</p></article></div></section>
-   </main><footer><div class="footer-inner"><div><h2>讓每一次學習，都留下入口。</h2><p>報告以溫暖書房感、清楚導覽與低維護成本為設計方向，適合作為個人 AI 學苑的索引首頁。</p></div><div class="source">資料快照：2026 年 11 月 3 日<br>產出檔案：skill-project-report.html</div></div></footer>
+   </main><footer><div class="footer-inner"><div><h2>讓每一次學習，都留下入口。</h2><p>報告以溫暖書房感、清楚導覽與低維護成本為設計方向，適合作為個人 AI 學苑的索引首頁。</p></div><div class="source">資料快照：2026 年 11 月 8 日<br>產出檔案：skill-project-report.html</div></div></footer>
 <script>
 const octoberDateGroups=[...document.querySelectorAll('.daily-date-group[data-month="202610"]')];
 if(octoberDateGroups.length>1){octoberDateGroups[0].append(...octoberDateGroups.slice(1).flatMap(group=>[...group.querySelectorAll('a')]));octoberDateGroups.slice(1).forEach(group=>group.remove())}
