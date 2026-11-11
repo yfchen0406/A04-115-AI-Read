@@ -282,6 +282,27 @@
         <hr>
         <!-- 以下版本可以空格，換句話說就是跳行-->
         <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
+        <h2 id="1-10" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
+          <strong class="yf-code2"> 交通與人性</strong>
+        </h2>
+        <div class="container-fluid">
+          <div id="a1-10" class="row" style="align-items: flex-start;">
+            <div class="col-sm-2 p-1" v-for="item in arr">
+              <figure v-if="item.pic1s"> <!-- ← 只在這裡加 v-if="item.pic1s" -->
+                <a :href="item.pic1" target="_blank">
+                  <img class="rounded float-end yf-border-radius" :src="item.pic1s" style="width:100%">
+                </a>
+                <h6>
+                  <figcaption class="text-center text-primary yf-font1">{{item.dec1}}</figcaption>
+                </h6>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <!-- 以下版本可以空格，換句話說就是跳行-->
+        <!-- <h2 id="1-2" class=" yf-font1"><img class="icon" src="./images/A01-icon/chat-gpt.webp"> -->
         <h2 id="1-9" class=" yf-font1"><i class="fa-solid fa-clock-rotate-left"></i>
           <strong class="yf-code2"> 歷史縱橫</strong>
         </h2>
@@ -789,6 +810,19 @@
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
 
+
+          // J004A.《影響力》~看懂說服心理，掌握七個影響力開關，動態劇本網頁(女聲版) ~ 115.11.13!
+          {
+            pic1: '',
+            pic1s: './images/J004A-1.webp',
+            dec1: 'J004A.《影響力》~看懂說服心理，掌握七個影響力開關，動態劇本網頁(女聲版) ~ 115.11.13!',
+          },
+          // 
+          {
+            pic1: 'https://youtu.be/2VlRvFbfTf8',
+            pic1s: './images/J004-1.webp',
+            dec1: 'J004.《影響力》~為什麼我們總是不自學點頭，動態劇本網頁(男聲版) ~ 115.11.13!',
+          },
           // J003.《原子習慣：細微改變帶來巨大成就的實證法則》 動態劇本網頁(新的聲音版~男聲磁性版) ~ 115.09.13!
           {
             pic1: '/B01-Book-Journal-2026/J003-Atomic-Habits-1150913/J003-Atomic-Habits-1150913.html',
@@ -1361,6 +1395,67 @@
             pic1s: './images/U005/R40-10.webp',
             dec1: 'U005.《在頂峰錯過：康乾盛世與西方崛起》第10集-總體評價——「落日的輝煌」與大分流的同步性',
           },
+          {
+            pic1: '',
+            pic1s: '',
+            dec1: '',
+          },
+          {
+            pic1: '',
+            pic1s: '',
+            dec1: '',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-01.webp',
+            dec1: 'U007.R38-01-《中國帝王系列》｜唐太宗與魏徵的那面鏡子｜殺兄稱帝，卻成千古明君 ~ 115.10.14',
+          },
+
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-02.webp',
+            dec1: 'U007.R38-02-《中國帝王系列》｜漢光武帝的柔道治國｜兩萬打四十萬，他靠什麼贏？ ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-03.webp',
+            dec1: 'U007.R38-03-《中國帝王系列》｜康熙擒鰲拜的那場摔跤遊戲｜十六歲的少年，扳倒了權臣 ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-04.webp',
+            dec1: 'U007.R38-04-《中國帝王系列》｜漢文帝的節儉治國學｜一座露台要百金，他說不蓋了 ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-05.webp',
+            dec1: 'U007.R38-05-《中國帝王系列》｜隋文帝與科舉制的誕生｜他結束了三百年亂世，卻被兒子毀了名聲 ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-06.webp',
+            dec1: 'U007.R38-06-《中國帝王系列》｜宋仁宗的「不折騰」治國智慧｜半夜想吃羊肉，他卻忍住了 ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-07.webp',
+            dec1: 'U007.R38-07-《中國帝王系列》｜宋太祖杯酒釋兵權的溫柔權謀｜一頓酒，收回所有兵權 ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-08.webp',
+            dec1: 'U007.R38-08-《中國帝王系列》｜漢高祖劉邦的用人之道｜什麼都不會的人，憑什麼當皇帝？ ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-09.webp',
+            dec1: 'U007.R38-09-《中國帝王系列》｜漢武帝的雄心與代價｜他派出去的人失敗了，卻改變了世界 ~ 115.10.14',
+          },
+          {
+            pic1: '',
+            pic1s: './images/U007/R38-10.webp',
+            dec1: 'U007.R38-10-《中國帝王系列》｜漢宣帝的底層治國學｜從監獄裡走出來的皇帝 ~ 115.10.14',
+          }
 
         ]);
 
@@ -1377,7 +1472,56 @@
         // 使用 ref 定義響應式狀態（陣列）
         const arr = ref([
 
-
+          {
+            pic1: 'https://youtu.be/trhduFmVDdA',
+            pic1s: './images/U006/R41A-01.webp',
+            dec1: 'U006-R41-第01集-台灣十大「最容易讓駕駛失去耐性的交通情境」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/0nS0tG0d7yQ',
+            pic1s: './images/U006/R41A-02.webp',
+            dec1: 'U006-R41-第02集-台灣十大「行人最沒有安全感的道路環境」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/Kxv8FvvTCzE',
+            pic1s: './images/U006/R41A-03.webp',
+            dec1: 'U006-R41-第03集-台灣十大「最容易讓汽車與機車互相討厭的情境」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/AX81eemirhw',
+            pic1s: './images/U006/R41A-04.webp',
+            dec1: 'U006-R41-第04集-台灣十大「最容易引爆路怒的交通問題」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/C7KAz1X1QvM',
+            pic1s: './images/U006/R41A-05.webp',
+            dec1: 'U006-R41-第05集-台灣十大「大家都知道危險，卻每天照做的交通習慣」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/wR2BJ4Hk7UI',
+            pic1s: './images/U006/R41A-06.webp',
+            dec1: 'U006-R41-第06集-台灣十大「最容易讓人違規圖方便的道路設計」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/c93gunU5YQA',
+            pic1s: './images/U006/R41A-07.webp',
+            dec1: 'U006-R41-第07集-台灣十大「台灣人最不願意讓的交通時刻」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/ducCLTGzBeY',
+            pic1s: './images/U006/R41A-08.webp',
+            dec1: 'U006-R41-第08集-台灣十大「最容易讓老人不敢過馬路的地方」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/7EFeGlj8LoQ',
+            pic1s: './images/U006/R41A-09.webp',
+            dec1: 'U006-R41-第09集-台灣十大「最容易讓家長不敢讓孩子自己上學的交通環境」~ 115.11.12',
+          },
+          {
+            pic1: 'https://youtu.be/qPWIcpR18ys',
+            pic1s: './images/U006/R41A-10.webp',
+            dec1: 'U006-R41-第10集-台灣十大「道路其實最能看見台灣人性的時刻」~ 115.11.12',
+          },
 
         ]);
 
@@ -1388,7 +1532,53 @@
       }
     }).mount('#a1-10')
 
+    const app11 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
 
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-11')
+
+    const app12 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-12')
+
+    const app13 = createApp({
+      setup() {
+        // 使用 ref 定義響應式狀態（陣列）
+        const arr = ref([
+
+
+
+        ]);
+
+        // 返回數據和方法
+        return {
+          arr,
+        };
+      }
+    }).mount('#a1-13')
 
 
   </script>

@@ -10,203 +10,6 @@ nav{position:sticky;top:18px;z-index:5;width:min(1160px,calc(100% - 32px));margi
 main{overflow:hidden}.hero{width:min(1160px,calc(100% - 32px));margin:0 auto;padding:96px 0 112px;position:relative}.hero:after{content:'';position:absolute;width:420px;height:420px;right:5%;top:25%;background:radial-gradient(circle,#b9e1efcc,transparent 68%);filter:blur(12px);z-index:-1}.eyebrow{color:#477f9a;font-weight:700;letter-spacing:.1em;font-size:.78rem;text-transform:uppercase}.hero h1{font-size:clamp(2.35rem,5.4vw,5rem);line-height:1.12;letter-spacing:-.035em;max-width:900px;margin:18px 0 22px}.hero h1 em{font-style:normal;color:#c89416}.hero p{max-width:640px;font-size:1.05rem;color:var(--muted)}.actions{display:flex;gap:12px;margin-top:28px}.btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--ink);text-decoration:none;color:var(--ink);font-weight:700;transition:.35s}.btn.primary{background:var(--ink);color:#fff}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 20px #18324a1a}
 .wrap{width:min(1160px,calc(100% - 32px));margin:auto}.section{padding:76px 0 116px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section h2{font-size:clamp(1.75rem,3.3vw,3.15rem);line-height:1.15;letter-spacing:-.025em;margin:0}.section-head p{max-width:430px;color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:40px 0}.stat,.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:20px}.stat strong{font-size:2rem;display:block}.stat small{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-flow:dense;gap:14px}.card{padding:25px;min-height:178px;transition:.45s}.card:hover{transform:translateY(-6px);box-shadow:0 28px 70px #2c688224}.card.wide{grid-column:span 7;background:var(--ink);color:#fff}.card.tall{grid-column:span 5;grid-row:span 2}.card.mid{grid-column:span 4}.card h3{margin:0 0 8px;font-size:1.18rem}.card p{color:var(--muted);margin:0}.wide p{color:#d6e8ee}.kicker{font-size:.75rem;color:#be8f12;font-weight:700;letter-spacing:.06em}.skill-card{grid-column:span 4;min-height:210px}.skill-card code,.card code{color:#39718b;font-size:.8rem;overflow-wrap:anywhere}.wide code{color:#d6e8ee}.tag{display:inline-block;padding:3px 9px;border-radius:99px;background:#e1f3f9;color:#39718b;font-size:.78rem;margin:8px 4px 0 0}.searchbar{display:flex;gap:10px;margin:24px 0}.searchbar input,.searchbar select{font:inherit;border:1px solid var(--line);background:#fffef7;border-radius:12px;padding:12px 14px;color:var(--ink)}.searchbar input{flex:1}.empty{display:none;padding:30px;color:var(--muted)}.daily-months{display:flex;gap:10px;margin:-4px 0 10px}.daily-months button{padding:8px 14px;border:1px solid #9bcfe3;border-radius:10px;color:#245f7d;font:inherit;font-weight:700;background:#fffef7;cursor:pointer}.daily-months button:hover,.daily-months button[aria-selected="true"]{background:#18324a;border-color:#18324a;color:#fff}.daily-pagination{margin:0 0 22px}.daily-date-group{display:flex;flex-wrap:wrap;gap:8px}.daily-date-group[hidden]{display:none}.daily-pagination a{padding:8px 13px;border:1px solid #9bcfe3;border-radius:10px;color:#245f7d;text-decoration:none;font-weight:700;background:#fffef7}.daily-pagination a:hover,.daily-pagination a[aria-current="page"]{background:#18324a;border-color:#18324a;color:#fff}.daily-month-page[hidden]{display:none}.daily-page{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.daily-page[hidden]{display:none}.daily-date{grid-column:1/-1;padding:14px 0 2px;color:#39718b;font-weight:700;border-bottom:1px solid var(--line)}.daily-item{padding:20px;background:#f8fdff;border:1px solid var(--line);border-radius:16px}.daily-item h3{margin:0 0 8px;font-size:1.05rem}.daily-item p{margin:0;color:var(--muted)}.daily-item a{color:#236a8e;font-weight:700}.daily-item small{display:block;margin-top:10px;color:#698596}footer{background:var(--ink);color:#fff;padding:80px 0}.footer-inner{width:min(1160px,calc(100% - 32px));margin:auto;display:flex;justify-content:space-between;gap:30px}footer p{color:#c4dce8;max-width:480px}footer a{color:#fff}.source{font-size:.82rem;color:#b9d7e5}
 @media(max-width:760px){body>nav a{display:none}.hero{padding:82px 0 90px}.stats,.daily-page{grid-template-columns:1fr}.card.wide,.card.tall,.card.mid,.skill-card{grid-column:span 12;grid-row:auto}.section-head,.footer-inner{display:block}.section-head p{margin-top:16px}.searchbar{display:block}.searchbar>*{width:100%;margin-bottom:8px}}
-/* Redesigned presentation layer: content and data remain sourced from the original HTML. */
-:root{
-  --ink:#15324a;
-  --muted:#526b7d;
-  --paper:#f2f8fb;
-  --card:#ffffff;
-  --mint:#c4e7f3;
-  --orange:#d99c14;
-  --line:#c8dce7;
-  --shadow:0 12px 32px rgba(31,67,88,.075);
-  --surface:#e7f3f8;
-  --focus:#b27700;
-}
-html{scroll-padding-top:112px;scroll-behavior:smooth}
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'字魂扁桃體','字魂扁桃体','Zihun BianTaoTi','Noto Sans TC','Microsoft JhengHei',sans-serif;
-  line-height:1.72;
-}
-body:before{opacity:0}
-main{overflow:clip}
-body>nav{
-  top:12px;
-  width:min(1240px,calc(100% - 40px));
-  margin:12px auto 0;
-  min-height:58px;
-  padding:9px 18px;
-  border:1px solid rgba(198,220,231,.9);
-  border-radius:16px;
-  background:rgba(255,255,255,.96);
-  box-shadow:0 6px 22px rgba(31,67,88,.07);
-  backdrop-filter:blur(12px);
-}
-.brand{font-size:1rem;letter-spacing:0;font-weight:800;white-space:nowrap}
-.brand span{color:var(--orange);padding:0 .12em}
-body>nav a{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  min-height:40px;
-  margin-left:4px;
-  padding:0 11px;
-  border-radius:9px;
-  color:#294b63;
-  font-size:.92rem;
-  transition:background-color .18s ease,color .18s ease;
-}
-body>nav a:hover{background:#eaf5fa;color:#123b57}
-body>nav a:focus-visible,.btn:focus-visible,.daily-months button:focus-visible,.daily-pagination a:focus-visible,
-.searchbar input:focus-visible,.searchbar select:focus-visible,.daily-item a:focus-visible{
-  outline:3px solid var(--focus);outline-offset:3px
-}
-.hero{
-  width:min(1160px,calc(100% - 40px));
-  min-height:min(690px,calc(100svh - 72px));
-  display:flex;flex-direction:column;justify-content:center;
-  padding:76px 0 88px;
-}
-.hero:after{
-  width:min(46vw,560px);height:min(46vw,560px);right:3%;top:12%;
-  background:radial-gradient(circle at 52% 48%,rgba(184,222,238,.72),rgba(213,237,246,.38) 42%,transparent 70%);
-  filter:none;z-index:-1;pointer-events:none
-}
-.hero .eyebrow{
-  color:#416a82;font-size:.82rem;letter-spacing:.08em;
-  padding-left:14px;border-left:3px solid var(--orange)
-}
-.hero h1{
-  max-width:820px;margin:20px 0 18px;
-  font-size:clamp(2.6rem,5.2vw,4.55rem);
-  line-height:1.18;letter-spacing:-.035em;font-weight:750
-}
-.hero h1 em{color:#a87508}
-.hero p{max-width:680px;font-size:1.08rem;color:#405e73;line-height:1.85}
-.actions{gap:12px;margin-top:26px;flex-wrap:wrap}
-.btn{
-  min-height:46px;padding:10px 18px;border-radius:10px;border-color:#8aaaba;
-  font-weight:700;transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease
-}
-.btn.primary{background:#183a54;border-color:#183a54}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(21,50,74,.15)}
-.wrap,.footer-inner{width:min(1160px,calc(100% - 40px))}
-.section{padding:72px 0 84px;scroll-margin-top:96px}
-.section:nth-of-type(even){background:rgba(255,255,255,.5)}
-.section-head{align-items:center;gap:36px;margin-bottom:30px}
-.section h2{font-size:clamp(1.8rem,3.2vw,2.65rem);line-height:1.22;letter-spacing:-.025em;font-weight:750}
-.section-head p{max-width:470px;color:#50697a;font-size:.98rem;line-height:1.75}
-.stats{gap:14px;margin:30px 0 26px}
-.stat,.card{
-  background:var(--card);border:1px solid var(--line);border-radius:15px;
-  box-shadow:0 5px 18px rgba(31,67,88,.045)
-}
-.stat{padding:18px 20px;border-top:3px solid #dca81f}
-.stat strong{font-size:1.85rem;line-height:1.2;color:#173b55}
-.stat small{font-size:.88rem;color:#536c7e}
-.grid{gap:16px}
-.card,.card.wide,.card.tall,.card.mid,.skill-card{
-  grid-column:span 4;grid-row:auto;min-height:0;
-}
-.card{padding:22px 22px 24px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.card:hover{transform:translateY(-2px);border-color:#a9c8d7;box-shadow:0 12px 28px rgba(31,67,88,.1)}
-.card.wide{background:#fff;color:var(--ink)}
-.card h3{font-size:1.12rem;line-height:1.45;font-weight:750}
-.card p,.wide p{color:#4d6678;line-height:1.75}
-.card code,.skill-card code{font-size:.8rem;color:#315d76;overflow-wrap:anywhere;word-break:break-word}
-.kicker{display:inline-block;margin-bottom:8px;color:#90630a;font-size:.78rem;letter-spacing:.025em}
-.tag{background:#e6f3f8;color:#28556f;border:1px solid #c9e1eb}
-.searchbar{gap:12px;margin:22px 0 26px}
-.searchbar input,.searchbar select{
-  min-height:48px;border:1px solid #b9d0dc;border-radius:10px;
-  background:#fff;color:var(--ink);padding:11px 15px
-}
-.searchbar input::placeholder{color:#60798a;opacity:1}
-.daily-months{gap:8px;margin:0 0 12px;flex-wrap:wrap}
-.daily-months button,.daily-pagination a{
-  min-height:44px;padding:8px 15px;border:1px solid #a9c9d8;border-radius:10px;
-  color:#234f69;background:#fff;font-weight:700;transition:background-color .18s ease,color .18s ease,border-color .18s ease
-}
-.daily-months button:hover,.daily-pagination a:hover{background:#e7f3f8;border-color:#76a9c0;color:#173c56}
-.daily-months button[aria-selected="true"],.daily-pagination a[aria-current="page"]{
-  background:#173a54;border-color:#173a54;color:#fff
-}
-.daily-pagination{
-  position:relative;top:auto;z-index:auto;width:auto;display:block;
-  margin:0 0 24px;padding:14px;border:1px solid #d3e3eb;border-radius:14px;
-  background:#e9f3f7;box-shadow:none;backdrop-filter:none
-}
-.daily-date-group{gap:8px}
-.daily-pagination a{display:inline-flex;align-items:center;justify-content:center;margin:0;text-decoration:none}
-.daily-page{gap:14px;scroll-margin-top:100px}
-.daily-date{
-  padding:14px 16px;border:0;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;
-  background:#e7f3f8;color:#193e58;font-size:1.03rem
-}
-.daily-item{
-  padding:20px 21px 22px;background:#fff;border:1px solid #d1e1e9;border-radius:14px;
-  box-shadow:0 4px 14px rgba(31,67,88,.04);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease
-}
-.daily-item:hover{transform:translateY(-2px);border-color:#a9c8d7;box-shadow:0 10px 24px rgba(31,67,88,.085)}
-.daily-item h3{font-size:1.08rem;line-height:1.45;color:#173b55}
-.daily-item p{color:#4c6577;line-height:1.78}
-.daily-item a{color:#175d83;text-underline-offset:3px;text-decoration-thickness:1px}
-.daily-item a:hover{color:#9a6907}
-.daily-item small{font-size:.86rem;line-height:1.7;color:#526b7b}
-.skill-card{border-top:3px solid #b7dce9}
-.skill-card .kicker{margin-bottom:7px}
-.empty{padding:26px;border:1px dashed #9bb9c8;border-radius:12px;background:#fff}
-footer{padding:60px 0;background:#17364e;color:#fff}
-.footer-inner{align-items:center}
-footer h2{font-size:clamp(1.6rem,2.5vw,2.25rem);line-height:1.35}
-footer p{color:#d7e7ee;line-height:1.75}
-.source{color:#c8dce7;line-height:1.8}
-@media(min-width:761px) and (max-width:1020px){
-  .card,.card.wide,.card.tall,.card.mid,.skill-card{grid-column:span 6}
-  .hero h1{max-width:740px}
-  .section{padding:58px 0 68px}
-}
-@media(max-width:760px){
-  body>nav{
-    width:calc(100% - 24px);top:8px;margin:8px auto 0;padding:8px 10px;
-    display:flex;flex-wrap:wrap;gap:4px 8px;border-radius:14px
-  }
-  body>nav>div:last-child{display:flex;width:100%;gap:2px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
-  body>nav a{display:inline-flex;flex:0 0 auto;min-height:40px;margin:0;padding:0 10px;font-size:.86rem}
-  .hero{width:calc(100% - 32px);min-height:0;padding:82px 0 76px}
-  .hero:after{width:78vw;height:78vw;right:-9%;top:10%;opacity:.75}
-  .hero h1{max-width:100%;font-size:clamp(2.25rem,10vw,3.25rem);line-height:1.2}
-  .hero p{font-size:1rem}
-  .actions{display:grid;grid-template-columns:1fr;width:100%}
-  .btn{text-align:center;min-height:48px}
-  .wrap,.footer-inner{width:calc(100% - 32px)}
-  .section{padding:52px 0 60px}
-  .section-head{display:block;margin-bottom:22px}
-  .section-head p{margin-top:12px}
-  .stats{grid-template-columns:1fr;gap:10px;margin:20px 0}
-  .stat{padding:14px 16px}
-  .stat strong{font-size:1.55rem}
-  .card,.card.wide,.card.tall,.card.mid,.skill-card{grid-column:1/-1;grid-row:auto}
-  .card{padding:18px 18px 20px}
-  .daily-months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .daily-months button{width:100%}
-  .daily-pagination{padding:10px}
-  .daily-date-group{gap:7px}
-  .daily-pagination a{min-width:48px;padding:7px 10px}
-  .daily-page{grid-template-columns:minmax(0,1fr);gap:11px}
-  .daily-date{padding:12px 13px}
-  .daily-item{padding:17px 16px 18px}
-  .searchbar{display:grid;grid-template-columns:1fr;gap:8px}
-  .searchbar>*{width:100%;margin:0}
-  .footer-inner{display:grid;gap:18px}
-  footer{padding:42px 0}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
-}
 </style></head>
 <body>
 <nav><div class="brand">學習中樞<span>／</span>盤點報告</div><div><a href="#projects">專案</a><a href="#weekly">週報</a><a href="#daily">每日摘要</a><a href="#skills">Skills</a><a href="#scope">盤點說明</a></div></nav>
@@ -1232,5 +1035,30 @@ function chooseMonth(month){dateGroups.forEach(group=>group.hidden=group.dataset
 function showDailyPage(target,{scroll=false,updateHash=false}={}){if(!target)return;const month=target.id.slice(6,12);chooseMonth(month);document.querySelectorAll('.daily-page').forEach(page=>{const active=page===target;page.hidden=!active;if(active){page.removeAttribute('hidden');page.style.display='grid';page.closest('.daily-month-page')?.removeAttribute('hidden');page.querySelectorAll('.daily-item').forEach(card=>card.hidden=false)}});dateLinks.forEach(link=>{if(link.getAttribute('href')===`#${target.id}`)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});if(scroll)target.scrollIntoView({behavior:'smooth',block:'start'});if(updateHash)history.replaceState(null,'',`#${target.id}`)}
 monthButtons.forEach(button=>button.addEventListener('click',()=>{const group=dateGroups.find(item=>item.dataset.month===button.dataset.month);const firstLink=group?.querySelector('a');if(firstLink)showDailyPage(document.querySelector(firstLink.getAttribute('href')),{updateHash:true})}));
 dateLinks.forEach(link=>link.addEventListener('click',event=>{event.preventDefault();showDailyPage(document.querySelector(link.getAttribute('href')),{scroll:true,updateHash:true})}));
+const addedDailySummaries={
+  '20261109':[
+    ['Codex 實用技巧','用清楚目標與驗收條件撰寫 Codex 提示詞','OpenAI 建議提示詞交代目標、背景、限制與完成條件；OpenAI Cookbook 也示範以反覆測試、修正和驗證推進開發。','https://learn.chatgpt.com/docs/learn/best-practices','ChatGPT Learn｜提示詞最佳實務','https://github.com/openai/openai-cookbook/blob/main/examples/codex/iterating-development-workflows-with-codex.md','OpenAI Cookbook｜Codex 迭代工作流程','每次任務先寫明目標、現況、限制和驗收方式，並安排修改後的檢查。'],
+    ['免費 AI 工具','以免費學習資源開始，不急著新增付費工具','近 24 小時未找到具可靠來源且明確新推出的免費工具；freeCodeCamp 的向量資料庫課程可作為免費學習入口。','https://www.freecodecamp.org/news/learn-vector-databases/','freeCodeCamp｜免費向量資料庫課程','','','先用現有免費方案學習，使用新服務前確認額度、資料隱私及付款要求。'],
+    ['AI Agent 與 Vibe Coding','Agent 開發仍需規劃、查證與人工檢查','NIST 討論 Agent 輔助程式設計中的知識根據與監督；報導也指出除生成外，除錯、理解程式和找出根因仍可能拖慢效益。','https://www.nist.gov/publications/agentic-ai-assisted-coding-offers-unique-opportunity-instill-epistemic-grounding-during','NIST｜Agent 輔助程式設計','https://www.techradar.com/pro/why-coding-agents-arent-delivering-the-promised-gains-for-engineering-yet','TechRadar｜Coding Agent 的實際瓶頸（2026/11/04）','把任務拆小，要求 Agent 說明依據；修改後由自己檢視差異並執行測試。'],
+    ['AI 動畫製作','依作品類型挑選動畫工具','近期工具整理將 AI 動畫分成影片生成、動態設計與程式化動畫等類型，適合先依作品需求分類，再比較工具。','https://www.aicssanimations.com/guides/best-ai-animation-tools','AI CSS Animations｜2026 AI 動畫工具整理','','','先決定要做角色影片、動態圖形或網頁動畫，再以短場景試做。'],
+    ['英文學習工具','用 British Council 免費資源練聽讀','British Council LearnEnglish 提供閱讀、聽力、影片、Podcast、文法及互動練習，另有免費線上資源與 EnglishScore。','https://learnenglish.britishcouncil.org/','British Council｜LearnEnglish','https://www.britishcouncil.org/english/learn-online/resources-apps','British Council｜免費線上英文資源','每天選一項短聽力或閱讀，記下三個單字和一個句子。'],
+    ['退休學習與認知思維','把認知研究當作資訊，不當成個人診斷','Stanford 報導探討記憶症狀出現前的腦部活動型態；NIH 報導特定認知速度訓練的長期研究。研究結果不代表個人診斷，也不能推論所有腦力活動效果相同。','https://news.stanford.edu/stories/2026/11/brain-activity-patterns-alzheimers','Stanford｜腦部活動與阿茲海默症研究（2026/11/05）','https://www.nih.gov/news-events/news-releases/cognitive-speed-training-over-weeks-may-delay-diagnosis-dementia-over-decades','NIH｜認知速度訓練研究（2026/02/10）','持續閱讀、學習與安全活動；健康疑問請諮詢醫療專業人員。']
+  ],
+  '20261110':[
+    ['Codex 實用技巧','用 Codex Cookbook 和 Skills 建立可重複流程','OpenAI Codex Cookbook 持續整理提示、Goals、Agents SDK 與評估範例；Codex Skills 可把常用步驟整理成可重複工作流程。','https://developers.openai.com/cookbook/topic/codex','OpenAI｜Codex Cookbook','https://openai.com/index/introducing-the-codex-app/','OpenAI｜Introducing the Codex app（2026/03/04）','挑一項常做任務，先照 Prompting Guide 或 Goals 範例練習，再整理成 Skill。'],
+    ['免費 AI 工具','試用前先核對免費額度與資料條件','近 7 天未找到有清楚日期且可信的免費 AI 工具方案更新；各服務免費額度、地區與隱私條款可能不同。','','','','','使用前查看官方方案頁，確認額度、資料用途及是否要求信用卡。'],
+    ['AI Agent 與 Vibe Coding','AI 開發趨勢走向多 Agent 協作與工作流程編排','GitHub Universe 討論技術堆疊各層的演進；OpenAI 介紹 Codex 在網站、儀表板與研究工作流程等情境的應用。','https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/','GitHub｜Universe 2026（2026/10/28）','https://openai.com/index/codex-for-every-role-tool-workflow/','OpenAI｜Codex for every role（2026/06/02）','先把單一任務做穩，再練習把研究、製作與檢查分派給不同 Agent。'],
+    ['AI 動畫製作','比較影片生成 API 的模型能力與成本','Runway 的 2026 工具與價格整理指出，各影片模型支援的文字／圖片生成方式和費用不同；成本會受解析度與片長影響。','https://dev.runwayml.com/learn/best-ai-video-generation-apis','Runway｜AI 影片生成 API 指南（2026/11）','https://dev.runwayml.com/learn/ai-video-api-pricing','Runway｜AI 影片 API 價格比較（2026/11/09）','先用短片、低解析度或免費額度測試，記錄每次生成成本再決定是否採用。'],
+    ['英文學習工具','每天以五分鐘聽力搭配單字和句型','British Council 免費資源包含 Podcast、影片、文法、發音練習及 EnglishScore，可作為多益準備的日常素材。','https://www.britishcouncil.org/english/learn-online/resources-apps','British Council｜線上英文學習資源','','','每天聽五分鐘，記三個單字並用其中一個寫一句英文。'],
+    ['退休學習與認知思維','持續學習與生活習慣，參考指引而不過度推論','Stanford 研究報導探討腦部活動與認知風險；WHO 資料則整理認知下降與失智風險降低建議，應區分研究關聯、指引與個人醫療建議。','https://news.stanford.edu/stories/2026/11/brain-activity-patterns-alzheimers','Stanford｜腦部活動研究（2026/11/05）','https://www.ncbi.nlm.nih.gov/sites/books/NBK623916/pdf/Bookshelf_NBK623916.pdf','WHO｜認知下降與失智風險降低資料','保持閱讀、學習、活動等日常習慣；不要把單一研究當成診斷或療效保證。']
+  ]
+};
+const novemberDateGroup=dateGroups.find(group=>group.dataset.month==='202611');
+for(const [date,items] of Object.entries(addedDailySummaries)){
+  const page=document.createElement('div');page.className='daily-page';page.id=`daily-${date}`;page.hidden=true;
+  const day=Number(date.slice(-2));page.innerHTML=`<div class="daily-date">2026/11/${String(day).padStart(2,'0')}｜六大主題摘要（6 則資料）</div>`+items.map(([topic,title,desc,url,label,url2,label2,action])=>`<article class="daily-item"><span class="kicker">${topic}</span><h3>${title}</h3><p>${desc}</p>${url?`<a href="${url}" target="_blank" rel="noreferrer">閱讀 ${label}</a>`:''}${url2?`　<a href="${url2}" target="_blank" rel="noreferrer">閱讀 ${label2}</a>`:''}<small>行動：${action}</small></article>`).join('');
+  document.querySelector('.daily-month-page[data-month="202611"] .daily-pages').append(page);
+  const link=document.createElement('a');link.href=`#${page.id}`;link.textContent=`11/${day}`;link.addEventListener('click',event=>{event.preventDefault();showDailyPage(page,{scroll:true,updateHash:true})});novemberDateGroup.append(link);dateLinks.push(link);
+}
 const linkedPage=document.querySelector(location.hash);showDailyPage(linkedPage&&linkedPage.classList.contains('daily-page')?linkedPage:document.querySelector('.daily-page:not([hidden])')||document.querySelector('.daily-page'));render();
 </script></body></html>
