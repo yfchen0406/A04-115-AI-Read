@@ -121,6 +121,27 @@ const dayOneAlbums = [
       "05-霧島神宮合照.webp",
     ],
   },
+  {
+    name: "04-晚餐及購物",
+    folder: "photos/day-1/04-晚餐及購物",
+    files: [
+      "01-衷心感謝郭哥-感謝有這樣的主管-同事的情誼大於金錢.webp",
+      "02-第一天晚餐自理-看行程應該天文館商店街.webp",
+      "03-牛肉排吧看起來好好吃.webp",
+      "04-有會席料理的樣子.webp",
+      "05-第一天採買-藥妝和零食.webp",
+    ],
+  },
+];
+const dayTwoAlbums = [
+  {
+    name: "01-飯店早餐",
+    folder: "photos/day-2/01-飯店早餐",
+    files: [
+      "01-飯店早餐-視覺上就好看.webp",
+      "02-這個擺盤差一點.webp",
+    ],
+  },
 ];
 const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ length: 6 }, (_, i) => {
   const filename = String(i + 1).padStart(2, "0");
@@ -130,7 +151,7 @@ const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ le
     : "";
   return `<figure class="photo-slot"><img src="${imagePath}" alt="${altPrefix} ${filename}" />${caption}</figure>`;
 }).join("");
-const createMemoryCards = (folder, filenames) => {
+const createMemoryCards = (folder, filenames, albumName = photoTabName) => {
   return [...filenames].sort((a, b) => {
     const aNumber = Number(a.match(/^(\d+)-/)?.[1] ?? Number.MAX_SAFE_INTEGER);
     const bNumber = Number(b.match(/^(\d+)-/)?.[1] ?? Number.MAX_SAFE_INTEGER);
@@ -144,7 +165,7 @@ const createMemoryCards = (folder, filenames) => {
       ? '<span class="photo-ai-badge">AI協作</span>'
       : "";
     const imagePath = `${folder}/${filename}`;
-    return `<figure class="photo-slot photo-memory-card"><div class="photo-memory-image"><img src="${imagePath}" alt="${photoTabName}：${caption}" loading="lazy" />${aiBadge}</div><figcaption><span class="photo-caption-index">${photoNumber}</span><span class="photo-caption-title">${caption}</span></figcaption></figure>`;
+    return `<figure class="photo-slot photo-memory-card"><div class="photo-memory-image"><img src="${imagePath}" alt="${albumName}：${caption}" loading="lazy" />${aiBadge}</div><figcaption><span class="photo-caption-index">${photoNumber}</span><span class="photo-caption-title">${caption}</span></figcaption></figure>`;
   }).join("");
 };
 const aiPhotoSlots = createPhotoSlots(
@@ -152,11 +173,12 @@ const aiPhotoSlots = createPhotoSlots(
   `第 ${day} 天 AI 協作照片`,
   "",
 );
-const travelPhotoSlots = day === 1
-  ? dayOneAlbums.map((album) => ({
+const currentDayAlbums = day === 1 ? dayOneAlbums : day === 2 ? dayTwoAlbums : null;
+const travelPhotoSlots = currentDayAlbums
+  ? currentDayAlbums.map((album) => ({
     name: album.name,
-    panelId: `panel-day-one-${album.name.slice(0, 2)}`,
-    cards: createMemoryCards(album.folder, album.files),
+    panelId: `panel-album-${album.name.slice(0, 2)}`,
+    cards: createMemoryCards(album.folder, album.files, album.name),
   }))
   : createPhotoSlots(
     `photos/day-${day}/travel-photos`,
@@ -177,11 +199,11 @@ const next =
   day < 5
     ? `<a href="day-${day + 1}.html">第 ${day + 1} 天 →</a>`
     : '<a href="C12-Wife-travels-to-Kyushu-Japan-1150809.html">回五日總覽 →</a>';
-const photoAlbumTabs = day === 1
-  ? travelPhotoSlots.map((album, index) => `<button class="photo-tab" id="tab-day-one-${album.name.slice(0, 2)}" type="button" role="tab" aria-selected="false" aria-controls="${album.panelId}" tabindex="-1">${album.name}</button>`).join("")
+const photoAlbumTabs = currentDayAlbums
+  ? travelPhotoSlots.map((album) => `<button class="photo-tab" id="tab-album-${album.name.slice(0, 2)}" type="button" role="tab" aria-selected="false" aria-controls="${album.panelId}" tabindex="-1">${album.name}</button>`).join("")
   : `<button class="photo-tab" id="tab-travel-photos" type="button" role="tab" aria-selected="false" aria-controls="panel-travel-photos" tabindex="-1">${photoTabName}</button>`;
-const photoAlbumPanels = day === 1
-  ? travelPhotoSlots.map((album) => `<div class="photo-panel" id="${album.panelId}" role="tabpanel" aria-labelledby="tab-day-one-${album.name.slice(0, 2)}" tabindex="0" hidden><div class="photo-grid">${album.cards}</div></div>`).join("")
+const photoAlbumPanels = currentDayAlbums
+  ? travelPhotoSlots.map((album) => `<div class="photo-panel" id="${album.panelId}" role="tabpanel" aria-labelledby="tab-album-${album.name.slice(0, 2)}" tabindex="0" hidden><div class="photo-grid">${album.cards}</div></div>`).join("")
   : `<div class="photo-panel" id="panel-travel-photos" role="tabpanel" aria-labelledby="tab-travel-photos" tabindex="0" hidden><div class="photo-grid">${travelPhotoSlots}</div></div>`;
 
 document.querySelector("#main-content").innerHTML = `
