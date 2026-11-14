@@ -1,53 +1,79 @@
-const departureDate = new Date(2026, 10, 14, 0, 0, 0);
+function getTimeInZone(timeZone, now = new Date()) {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(now);
 
-function getCalendarCountdown(now, target) {
-  if (now >= target) return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0, ended: true };
-  let months = (target.getFullYear() - now.getFullYear()) * 12 + target.getMonth() - now.getMonth();
-  let anchor = new Date(now);
-  anchor.setMonth(anchor.getMonth() + months);
-  if (anchor > target) {
-    months -= 1;
-    anchor = new Date(now);
-    anchor.setMonth(anchor.getMonth() + months);
-  }
-  let remaining = target - anchor;
-  const day = 24 * 60 * 60 * 1000;
-  const hour = 60 * 60 * 1000;
-  const minute = 60 * 1000;
-  const days = Math.floor(remaining / day);
-  remaining -= days * day;
-  const hours = Math.floor(remaining / hour);
-  remaining -= hours * hour;
-  const minutes = Math.floor(remaining / minute);
-  remaining -= minutes * minute;
-  return { months, days, hours, minutes, seconds: Math.floor(remaining / 1000), ended: false };
+  return Object.fromEntries(
+    parts
+      .filter(({ type }) => ["hour", "minute", "second"].includes(type))
+      .map(({ type, value }) => [type, value]),
+  );
 }
 
-function renderCountdown(countdown) {
-  const values = countdown.ended ? { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 } : countdown;
-  ['months', 'days', 'hours', 'minutes', 'seconds'].forEach((name) => {
-    const value = document.querySelector(`[data-countdown="${name}"]`);
-    if (value) value.textContent = String(values[name]).padStart(2, '0');
-  });
-  const timer = document.querySelector('.trip-countdown');
-  if (timer) {
-    timer.setAttribute('aria-label', countdown.ended ? '旅程已開始' : `距離 2026 年 11 月 14 日出發還有 ${values.months} 個月 ${values.days} 天 ${values.hours} 小時 ${values.minutes} 分 ${values.seconds} 秒`);
-    timer.classList.toggle('is-ended', countdown.ended);
+async function updateExchangeRate(display, frequency) {
+  const sources = [
+    "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/twd.min.json",
+    "https://latest.currency-api.pages.dev/v1/currencies/twd.min.json",
+  ];
+
+  for (const source of sources) {
+    try {
+      const response = await fetch(source, { cache: "no-store" });
+      if (!response.ok) continue;
+      const data = await response.json();
+      const rate = Number(data.twd?.jpy);
+      if (!Number.isFinite(rate)) continue;
+
+      display.textContent = `NT$1 ≈ ¥${rate.toFixed(2)}`;
+      display.title = `資料日期：${data.date || "最新資料"}；每日更新的參考匯率，實際兌換金額依銀行或兌換處牌告為準。`;
+      frequency.textContent = "日更";
+      return;
+    } catch {
+      // Continue with the fallback data mirror.
+    }
   }
+
+  display.textContent = "暫無資料";
+  display.title = "目前無法連線取得匯率，請稍後重新整理。";
+  frequency.textContent = "";
 }
 
-function mountCountdown() {
-  const topbar = document.querySelector('.topbar');
-  if (!topbar || topbar.querySelector('.trip-countdown')) return;
-  const timer = document.createElement('div');
-  timer.className = 'trip-countdown';
-  timer.setAttribute('role', 'timer');
-  timer.setAttribute('aria-live', 'polite');
-  timer.innerHTML = `<span class="countdown-label">距離出發</span><span class="countdown-units" aria-hidden="true"><span class="countdown-unit"><strong data-countdown="months">00</strong><small>月</small></span><span class="countdown-unit"><strong data-countdown="days">00</strong><small>日</small></span><span class="countdown-unit"><strong data-countdown="hours">00</strong><small>時</small></span><span class="countdown-unit"><strong data-countdown="minutes">00</strong><small>分</small></span><span class="countdown-unit"><strong data-countdown="seconds">00</strong><small>秒</small></span></span>`;
-  topbar.querySelector('nav')?.before(timer);
-  const update = () => renderCountdown(getCalendarCountdown(new Date(), departureDate));
+function mountTravelTime() {
+  const topbar = document.querySelector(".topbar");
+  if (!topbar || topbar.querySelector(".travel-status")) return;
+
+  const status = document.createElement("div");
+  status.className = "travel-status";
+  const timer = document.createElement("div");
+  timer.className = "trip-countdown";
+  timer.setAttribute("role", "group");
+  timer.setAttribute("aria-label", "台灣與日本目前時間");
+  timer.innerHTML = `<span class="clock-zone"><small class="clock-zone-label">台灣時間：</small><time data-clock="taiwan">00:00:00</time></span><span class="clock-divider" aria-hidden="true"></span><span class="clock-zone"><small class="clock-zone-label">日本時間：</small><time data-clock="japan">00:00:00</time></span>`;
+
+  const exchange = document.createElement("span");
+  exchange.className = "exchange-rate";
+  exchange.setAttribute("aria-label", "新台幣兌日圓參考匯率");
+  exchange.innerHTML = `<small class="exchange-rate-label">匯率</small><strong data-exchange-rate>載入中</strong><small class="exchange-rate-frequency" data-exchange-frequency></small>`;
+  status.append(timer, exchange);
+  topbar.querySelector("nav")?.before(status);
+
+  const update = () => {
+    const now = new Date();
+    const taiwan = getTimeInZone("Asia/Taipei", now);
+    const japan = getTimeInZone("Asia/Tokyo", now);
+    timer.querySelector('[data-clock="taiwan"]').textContent = `${taiwan.hour}:${taiwan.minute}:${taiwan.second}`;
+    timer.querySelector('[data-clock="japan"]').textContent = `${japan.hour}:${japan.minute}:${japan.second}`;
+  };
   update();
   window.setInterval(update, 1000);
+  const rateDisplay = exchange.querySelector("[data-exchange-rate]");
+  const frequency = exchange.querySelector("[data-exchange-frequency]");
+  updateExchangeRate(rateDisplay, frequency);
+  window.setInterval(() => updateExchangeRate(rateDisplay, frequency), 24 * 60 * 60 * 1000);
 }
 
-mountCountdown();
+mountTravelTime();

@@ -79,10 +79,53 @@ const days = {
 };
 
 const info = days[day];
-const photoSlots = Array.from({ length: 6 }, (_, i) => {
+const photoTabName = day === 1
+  ? "01-出發和機場"
+  : `${["第一", "第二", "第三", "第四", "第五"][day - 1]}天旅遊照片`;
+const dayOnePhotoFiles = [
+  "01-陽明峰匯一早四點二十分出發.webp",
+  "02-出發前爸爸亂入-AI合成.webp",
+  "03-機場合照.webp",
+  "04-八點二十五華航飛鹿兒島班機.webp",
+  "05-帥帥的詣超.webp",
+  "06-美美的媽媽.webp",
+  "07-一早的滿滿事都是人的機場.webp",
+  "08-老婆八年沒出國-發現機場變漂亮.webp",
+  "09-免稅店逛逛.webp",
+  "10-準備登機-媽媽被兒子出賣.webp",
+  "11-媽媽也出賣兒子-昨晚睡不多累了.webp",
+];
+const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ length: 6 }, (_, i) => {
   const filename = String(i + 1).padStart(2, "0");
-  return `<figure class="photo-slot"><img src="photos/day-${day}/${filename}.webp" alt="第 ${day} 天旅遊照片 ${filename}" /><figcaption>放入旅遊照片<small>photos/day-${day}/${filename}.webp</small></figcaption></figure>`;
+  const imagePath = `${folder}/${filename}.webp`;
+  return `<figure class="photo-slot"><img src="${imagePath}" alt="${altPrefix} ${filename}" /><figcaption>${placeholderText}<small>${imagePath}</small></figcaption></figure>`;
 }).join("");
+const createMemoryCards = (folder, filenames) => {
+  return [...filenames].sort((a, b) => {
+    const aNumber = Number(a.match(/^(\d+)-/)?.[1] ?? Number.MAX_SAFE_INTEGER);
+    const bNumber = Number(b.match(/^(\d+)-/)?.[1] ?? Number.MAX_SAFE_INTEGER);
+    return aNumber - bNumber || a.localeCompare(b, "zh-Hant");
+  }).map((filename) => {
+    const stem = filename.replace(/\.[^.]+$/, "");
+    const match = stem.match(/^(\d+)-(.+)$/);
+    const photoNumber = match?.[1] ?? "補充";
+    const caption = match?.[2] ?? stem;
+    const imagePath = `${folder}/${filename}`;
+    return `<figure class="photo-slot photo-memory-card"><div class="photo-memory-image"><img src="${imagePath}" alt="${photoTabName}：${caption}" loading="lazy" /></div><figcaption><span class="photo-caption-index">${photoNumber}</span><span class="photo-caption-title">${caption}</span></figcaption></figure>`;
+  }).join("");
+};
+const aiPhotoSlots = createPhotoSlots(
+  `photos/day-${day}`,
+  `第 ${day} 天 AI 協作照片`,
+  "AI 協作照片位置",
+);
+const travelPhotoSlots = day === 1
+  ? createMemoryCards("photos/day-1/01-出發和機場", dayOnePhotoFiles)
+  : createPhotoSlots(
+    `photos/day-${day}/travel-photos`,
+    photoTabName,
+    "放入當天旅遊照片",
+  );
 const timeline = info.timeline
   .map(
     ([time, title, text]) =>
@@ -101,9 +144,40 @@ const next =
 document.querySelector("#main-content").innerHTML = `
   <section class="journal-banner"><div><p class="kicker">DAY ${day}｜${info.date}</p><h1>${info.route}</h1><p>${info.intro}</p></div><figure class="art-slot"><img src="images/${info.image}" alt="第 ${day} 天行程插圖" /></figure></section>
   <section class="journal-section journal-timeline"><h2>當日行程時間軸</h2><p class="journal-summary">${info.meal}</p><div class="timeline">${timeline}</div></section>
-  <section class="journal-section" id="photos"><div class="photo-heading"><div><h2>今天的旅遊照片</h2><p>先保留六個位置；拍攝後只要把照片依序放入指定資料夾。</p></div></div><div class="photo-grid">${photoSlots}</div></section>
+  <section class="journal-section" id="photos"><div class="photo-heading"><div><h2>旅遊照片</h2></div></div>
+    <div class="photo-tabs" role="tablist" aria-label="第 ${day} 天旅遊照片分類">
+      <button class="photo-tab active" id="tab-ai-photos" type="button" role="tab" aria-selected="true" aria-controls="panel-ai-photos" tabindex="0">AI協作</button>
+      <button class="photo-tab" id="tab-travel-photos" type="button" role="tab" aria-selected="false" aria-controls="panel-travel-photos" tabindex="-1">${photoTabName}</button>
+    </div>
+    <div class="photo-panel active" id="panel-ai-photos" role="tabpanel" aria-labelledby="tab-ai-photos" tabindex="0"><div class="photo-grid">${aiPhotoSlots}</div></div>
+    <div class="photo-panel" id="panel-travel-photos" role="tabpanel" aria-labelledby="tab-travel-photos" tabindex="0" hidden><div class="photo-grid">${travelPhotoSlots}</div></div>
+  </section>
   <section class="journal-section journal-notes"><h2>今日回憶筆記</h2><p>可在日後加入當天最喜歡的景點、餐點、同行家人的一句話，或補上照片說明。</p></section>
   <nav class="day-nav" aria-label="切換旅遊日期">${previous}${next}</nav>`;
+
+const photoTabs = [...document.querySelectorAll(".photo-tab")];
+const photoPanels = [...document.querySelectorAll(".photo-panel")];
+photoTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    const target = tab.getAttribute("aria-controls");
+    photoTabs.forEach((item) => {
+      const selected = item === tab;
+      item.classList.toggle("active", selected);
+      item.setAttribute("aria-selected", String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+    photoPanels.forEach((panel) => { panel.hidden = panel.id !== target; });
+  });
+
+  tab.addEventListener("keydown", (event) => {
+    const keys = ["ArrowRight", "ArrowLeft", "Home", "End"];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? photoTabs.length - 1 : (index + (event.key === "ArrowRight" ? 1 : -1) + photoTabs.length) % photoTabs.length;
+    photoTabs[nextIndex].focus();
+    photoTabs[nextIndex].click();
+  });
+});
 
 document.querySelectorAll(".photo-slot").forEach((slot) => {
   const image = slot.querySelector("img");
