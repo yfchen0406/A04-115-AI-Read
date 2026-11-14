@@ -29,6 +29,7 @@ function createImageLightbox() {
   let activeIndex = 0;
 
   const getCaption = (image) => {
+    if (image.closest("#panel-ai-photos")) return "";
     const figure = image.closest("figure");
     const number = figure?.querySelector(".photo-caption-index")?.textContent.trim();
     const title = figure?.querySelector(".photo-caption-title")?.textContent.trim();
@@ -42,6 +43,7 @@ function createImageLightbox() {
     enlargedImage.src = image.currentSrc || image.src;
     enlargedImage.alt = image.alt || "放大圖片";
     caption.textContent = getCaption(image);
+    caption.hidden = !caption.textContent;
     counter.textContent = `${activeIndex + 1} / ${galleryImages.length}`;
     previousButton.hidden = galleryImages.length < 2;
     nextButton.hidden = galleryImages.length < 2;

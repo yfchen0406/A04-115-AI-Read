@@ -95,10 +95,40 @@ const dayOnePhotoFiles = [
   "10-準備登機-媽媽被兒子出賣.webp",
   "11-媽媽也出賣兒子-昨晚睡不多累了.webp",
 ];
+const dayOneAlbums = [
+  { name: "01-出發和機場", folder: "photos/day-1/01-出發和機場", files: dayOnePhotoFiles },
+  {
+    name: "02-抵達鹿兒島",
+    folder: "photos/day-1/02-抵達鹿兒島",
+    files: [
+      "01-抵達鹿兒島機場.webp",
+      "02-一下飛機先到霧島.webp",
+      "03-中午鹿兒島風味定食.webp",
+      "04-亂入午餐-AI合成所有沒有餐點.webp",
+      "05-五餐後採買顯逛.webp",
+      "06-AI合成-我也在霧島.webp",
+      "07-AI合成-亂入採買.webp",
+    ],
+  },
+  {
+    name: "03-霧島神宮",
+    folder: "photos/day-1/03-霧島神宮",
+    files: [
+      "01-霧島神宮合照.webp",
+      "02-詣超的御手水.webp",
+      "03-老婆也要洗手不過感覺不認真.webp",
+      "04-霧島神宮合照.webp",
+      "05-霧島神宮合照.webp",
+    ],
+  },
+];
 const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ length: 6 }, (_, i) => {
   const filename = String(i + 1).padStart(2, "0");
   const imagePath = `${folder}/${filename}.webp`;
-  return `<figure class="photo-slot"><img src="${imagePath}" alt="${altPrefix} ${filename}" /><figcaption>${placeholderText}<small>${imagePath}</small></figcaption></figure>`;
+  const caption = placeholderText
+    ? `<figcaption>${placeholderText}<small>${imagePath}</small></figcaption>`
+    : "";
+  return `<figure class="photo-slot"><img src="${imagePath}" alt="${altPrefix} ${filename}" />${caption}</figure>`;
 }).join("");
 const createMemoryCards = (folder, filenames) => {
   return [...filenames].sort((a, b) => {
@@ -110,17 +140,24 @@ const createMemoryCards = (folder, filenames) => {
     const match = stem.match(/^(\d+)-(.+)$/);
     const photoNumber = match?.[1] ?? "補充";
     const caption = match?.[2] ?? stem;
+    const aiBadge = /AI/i.test(caption)
+      ? '<span class="photo-ai-badge">AI協作</span>'
+      : "";
     const imagePath = `${folder}/${filename}`;
-    return `<figure class="photo-slot photo-memory-card"><div class="photo-memory-image"><img src="${imagePath}" alt="${photoTabName}：${caption}" loading="lazy" /></div><figcaption><span class="photo-caption-index">${photoNumber}</span><span class="photo-caption-title">${caption}</span></figcaption></figure>`;
+    return `<figure class="photo-slot photo-memory-card"><div class="photo-memory-image"><img src="${imagePath}" alt="${photoTabName}：${caption}" loading="lazy" />${aiBadge}</div><figcaption><span class="photo-caption-index">${photoNumber}</span><span class="photo-caption-title">${caption}</span></figcaption></figure>`;
   }).join("");
 };
 const aiPhotoSlots = createPhotoSlots(
   `photos/day-${day}`,
   `第 ${day} 天 AI 協作照片`,
-  "AI 協作照片位置",
+  "",
 );
 const travelPhotoSlots = day === 1
-  ? createMemoryCards("photos/day-1/01-出發和機場", dayOnePhotoFiles)
+  ? dayOneAlbums.map((album) => ({
+    name: album.name,
+    panelId: `panel-day-one-${album.name.slice(0, 2)}`,
+    cards: createMemoryCards(album.folder, album.files),
+  }))
   : createPhotoSlots(
     `photos/day-${day}/travel-photos`,
     photoTabName,
@@ -135,11 +172,17 @@ const timeline = info.timeline
 const previous =
   day > 1
     ? `<a href="day-${day - 1}.html">← 第 ${day - 1} 天</a>`
-    : '<a href="index.html">← 回五日總覽</a>';
+    : '<a href="C12-Wife-travels-to-Kyushu-Japan-1150809.html">← 回五日總覽</a>';
 const next =
   day < 5
     ? `<a href="day-${day + 1}.html">第 ${day + 1} 天 →</a>`
     : '<a href="C12-Wife-travels-to-Kyushu-Japan-1150809.html">回五日總覽 →</a>';
+const photoAlbumTabs = day === 1
+  ? travelPhotoSlots.map((album, index) => `<button class="photo-tab" id="tab-day-one-${album.name.slice(0, 2)}" type="button" role="tab" aria-selected="false" aria-controls="${album.panelId}" tabindex="-1">${album.name}</button>`).join("")
+  : `<button class="photo-tab" id="tab-travel-photos" type="button" role="tab" aria-selected="false" aria-controls="panel-travel-photos" tabindex="-1">${photoTabName}</button>`;
+const photoAlbumPanels = day === 1
+  ? travelPhotoSlots.map((album) => `<div class="photo-panel" id="${album.panelId}" role="tabpanel" aria-labelledby="tab-day-one-${album.name.slice(0, 2)}" tabindex="0" hidden><div class="photo-grid">${album.cards}</div></div>`).join("")
+  : `<div class="photo-panel" id="panel-travel-photos" role="tabpanel" aria-labelledby="tab-travel-photos" tabindex="0" hidden><div class="photo-grid">${travelPhotoSlots}</div></div>`;
 
 document.querySelector("#main-content").innerHTML = `
   <section class="journal-banner"><div><p class="kicker">DAY ${day}｜${info.date}</p><h1>${info.route}</h1><p>${info.intro}</p></div><figure class="art-slot"><img src="images/${info.image}" alt="第 ${day} 天行程插圖" /></figure></section>
@@ -147,10 +190,10 @@ document.querySelector("#main-content").innerHTML = `
   <section class="journal-section" id="photos"><div class="photo-heading"><div><h2>旅遊照片</h2></div></div>
     <div class="photo-tabs" role="tablist" aria-label="第 ${day} 天旅遊照片分類">
       <button class="photo-tab active" id="tab-ai-photos" type="button" role="tab" aria-selected="true" aria-controls="panel-ai-photos" tabindex="0">AI協作</button>
-      <button class="photo-tab" id="tab-travel-photos" type="button" role="tab" aria-selected="false" aria-controls="panel-travel-photos" tabindex="-1">${photoTabName}</button>
+      ${photoAlbumTabs}
     </div>
     <div class="photo-panel active" id="panel-ai-photos" role="tabpanel" aria-labelledby="tab-ai-photos" tabindex="0"><div class="photo-grid">${aiPhotoSlots}</div></div>
-    <div class="photo-panel" id="panel-travel-photos" role="tabpanel" aria-labelledby="tab-travel-photos" tabindex="0" hidden><div class="photo-grid">${travelPhotoSlots}</div></div>
+    ${photoAlbumPanels}
   </section>
   <section class="journal-section journal-notes"><h2>今日回憶筆記</h2><p>可在日後加入當天最喜歡的景點、餐點、同行家人的一句話，或補上照片說明。</p></section>
   <nav class="day-nav" aria-label="切換旅遊日期">${previous}${next}</nav>`;
