@@ -6,6 +6,8 @@ const days = {
     image: "03-day-1-kagoshima.webp",
     intro: "飛抵鹿兒島後，以酒造、神宮與夜間商店街展開九州旅程。",
     meal: "機上精緻餐食；午餐為豬排御膳或鹿兒島風味定食；晚餐自理。",
+    memoryNote:
+      "一大早六點半集合，所以四點半就出門。老婆出國已經是2018年的事，恰巧也和這次一樣是九州；不過這次是從南九州開始的行程，一路往上。半小時的車程，很快就抵達人群很多的桃園第二航廈。完成今天的任務後，也預祝他們母子旅途順利！", // 在這裡填入第一天回憶筆記
     timeline: [
       ["05:25", "抵達桃園機場", "團體集合、報到、托運與安檢。"],
       ["08:25", "CI118 飛往鹿兒島", "機上精緻餐食。"],
@@ -20,6 +22,7 @@ const days = {
     image: "04-day-2-ibusuki.webp",
     intro: "從地熱砂浴、薩摩半島海岸到以櫻島為借景的日式庭園。",
     meal: "飯店早餐；指宿風味午餐；晚餐自理。",
+    memoryNote: "", // 在這裡填入第二天回憶筆記
     timeline: [
       ["08:00", "前往指宿", "南下薩摩半島，車程較長。"],
       ["09:30", "指宿砂浴", "砂浴本體約 10～20 分鐘，另預留更衣與淋浴。"],
@@ -35,6 +38,7 @@ const days = {
     image: "05-day-3-sakurajima-miyazaki.webp",
     intro: "渡輪、活火山、黑醋、瀑布與青島海岸的一天。",
     meal: "飯店早餐；日式風味餐或鹿兒島黑醋特色定食；晚餐為飯店和洋自助餐或日式餐。",
+    memoryNote: "", // 在這裡填入第三天回憶筆記
     timeline: [
       ["08:00", "錦江灣渡輪與櫻島", "海上航程約 15 分鐘，甲板風強。"],
       ["09:15", "湯之平展望所", "遠望櫻島火山與錦江灣。"],
@@ -49,6 +53,7 @@ const days = {
     image: "06-day-4-takachiho-aso.webp",
     intro: "從太平洋海崖走入峽谷瀑布，傍晚抵達阿蘇火山草原。",
     meal: "飯店早餐；日式御膳或日式風味午餐；晚餐為飯店和洋料理或日式會席料理。",
+    memoryNote: "", // 在這裡填入第四天回憶筆記
     timeline: [
       ["06:30", "早餐、出發", "景點分散，是全程最需要守時的一天。"],
       ["09:20", "日向岬馬背瞭望台、十字海", "海崖景觀，風大時注意安全。"],
@@ -67,6 +72,7 @@ const days = {
     image: "07-day-5-kikuchi-yanagawa.webp",
     intro: "以森林溪谷、水鄉遊船與最後購物，收束為福岡晚班機返台。",
     meal: "飯店早餐；特色鰻魚風味午餐；機上精緻餐食晚餐。",
+    memoryNote: "", // 在這裡填入第五天回憶筆記
     timeline: [
       ["08:00", "菊池溪谷", "賞水色、森林與秋葉，穿防滑鞋。"],
       ["11:30", "柳川遊船", "上下傳統木船時注意踏板。"],
@@ -152,6 +158,26 @@ const dayTwoAlbums = [
       "04-龍空神社浦島太郎故事寓意~3D卡通版.webp",
       "05-龍空神社浦島太郎故事~漫畫版.webp",
       "06-龍空神社圍著浦島太郎的許願.mp4",
+      "07-龍宮神社前鳥居.webp",
+      "08-鹿兒島縣指宿市的長崎鼻燈塔-2018被選為戀愛燈塔.webp",
+      "09-好好一個愛心燈塔被你們拍得很搞笑.webp",
+      "11-搞笑母子-風大雨大.webp",
+      "12-搞笑母子-有點正常了.webp",
+      "13-詣超難得獨照.webp",
+      "14-詣超難得獨照-背影-媽媽亂拍.webp",
+      "15-詣超難得獨照-太遠.webp",
+      "16-詣超獨照-終於正常一點.webp",
+      "17-浦島太郎救的烏龜.webp",
+    ],
+  },
+  {
+    name: "03-鹿兒島仙巖園",
+    folder: "photos/day-2/03-鹿兒島仙巖園",
+    files: [
+      "01-仙巖園-這張還不錯.webp",
+      "02-大夥合照.webp",
+      "03-背後櫻島-明天會去.webp",
+      "04-指宿沙浴.webp",
     ],
   },
 ];
@@ -233,7 +259,7 @@ document.querySelector("#main-content").innerHTML = `
     <div class="photo-panel active" id="panel-ai-photos" role="tabpanel" aria-labelledby="tab-ai-photos" tabindex="0"><div class="photo-grid">${aiPhotoSlots}</div></div>
     ${photoAlbumPanels}
   </section>
-  <section class="journal-section journal-notes"><h2>今日回憶筆記</h2><p>可在日後加入當天最喜歡的景點、餐點、同行家人的一句話，或補上照片說明。</p></section>
+  <section class="journal-section journal-notes"><h2>今日回憶筆記</h2><p>${info.memoryNote || "可在日後加入當天最喜歡的景點、餐點、同行家人的一句話，或補上照片說明。"}</p></section>
   <nav class="day-nav" aria-label="切換旅遊日期">${previous}${next}</nav>`;
 
 const photoTabs = [...document.querySelectorAll(".photo-tab")];

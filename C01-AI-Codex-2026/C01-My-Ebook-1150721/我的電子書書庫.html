@@ -64,7 +64,22 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
 .to-top:hover{background:#5e432a}
 @media(max-width:760px){main{padding:16px 14px 72px}.filter-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.filter-summary{grid-column:1/-1}.library-stats{align-items:flex-start}.summary-card{padding-inline:10px}}
 @media(max-width:520px){header{padding:12px 14px}.brand{gap:9px}.brand-logo{width:38px;height:38px;flex-basis:38px}.brand>div{display:flex;flex-wrap:wrap;gap:3px 10px}.title-row{flex:1 1 100%;align-items:baseline;gap:4px 8px}h1{font-size:1.28rem}.updated{font-size:.73rem}.archive-link{margin-left:auto;font-size:.76rem}.library-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:8px 0}.summary-card,.summary-card:first-child{display:grid;gap:1px;padding:2px 8px}.summary-card:first-child{padding-left:0}.summary-value{font-size:1.08rem}.summary-label{font-size:.7rem;line-height:1.35}.filters{gap:6px}.filter{flex:1 1 calc(50% - 6px);justify-content:space-between;padding:6px 7px}.filter b{font-size:.78rem}.filter span{font-size:.68rem}.filter::before{width:7px;height:7px;flex-basis:7px}.subfilter{font-size:.74rem}.filter-controls{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:18px}.category{margin:24px 0 32px}.category>h2{font-size:1.15rem}.category h3{font-size:.9rem}.book-title{font-size:.9rem;gap:7px}.year-badge{min-width:62px;font-size:.68rem}.book-meta{margin-left:69px;font-size:.7rem}.to-top{right:12px;bottom:12px;padding:7px 10px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}</style></head><body>
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+/* 簡化書庫首頁：保留搜尋、分類筆數與年份 */
+.page-tabs,.subfilter-panel{display:none!important}
+.filter-controls{grid-template-columns:minmax(0,1fr) auto;gap:10px;margin-top:14px}
+.filter-controls label[hidden]{display:none!important}
+.filter-controls label:not([hidden]){grid-column:1}
+.filter-controls .clear-filters{grid-column:2;grid-row:1}
+.filter-controls .filter-summary{grid-column:1/-1;grid-row:2}
+@media(max-width:760px){.filter-controls{grid-template-columns:minmax(0,1fr) auto}}
+@media(max-width:520px){
+  .filter-controls{grid-template-columns:minmax(0,1fr) auto}
+  .filters .filter{min-width:0;justify-content:space-between}
+  .filters .filter b{min-width:0;white-space:normal;overflow-wrap:anywhere}
+  .filters .filter span{flex:0 0 auto}
+}
+</style></head><body>
 <header id="all">
   <div class="brand">
     <img class="brand-logo" src="我的電子書書庫-logo.svg" alt="我的個人 Logo">
@@ -84,7 +99,7 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
   <a href="#major-18" data-view="pending">待確認</a>
 </nav>
 <main>
-<input id="search" class="search" type="search" aria-label="搜尋書名、檔名或分類" placeholder="搜尋書名、檔名或分類…">
+<input id="search" class="search" type="search" aria-label="搜尋書名、檔名或分類" placeholder="搜尋書名、原始檔名、分類或年份…">
 <section id="library-stats" class="library-stats" aria-label="書庫摘要" aria-live="polite"></section>
 <nav class="filters"><a class="filter" style="--c:#334155" href="#all"><b>全部書籍</b><span>點此回到頂端</span></a><a class="filter" style="--c:#4f46e5" href="#major-01"><b>01_AI程式與數位工具</b><span>210 本</span></a><a class="filter" style="--c:#0369a1" href="#major-02"><b>02_科學科技與未來</b><span>208 本</span></a><a class="filter" style="--c:#0f766e" href="#major-03"><b>03_學習閱讀與知識管理</b><span>188 本</span></a><a class="filter" style="--c:#0e7490" href="#major-04"><b>04_思考邏輯與決策</b><span>258 本</span></a><a class="filter" style="--c:#7c3aed" href="#major-05"><b>05_語言寫作與表達</b><span>103 本</span></a><a class="filter" style="--c:#b45309" href="#major-06"><b>06_投資理財與交易</b><span>308 本</span></a><a class="filter" style="--c:#c2410c" href="#major-07"><b>07_經濟商業與行銷</b><span>215 本</span></a><a class="filter" style="--c:#2563eb" href="#major-08"><b>08_管理領導與職場</b><span>183 本</span></a><a class="filter" style="--c:#0891b2" href="#major-09"><b>09_溝通談判與人際</b><span>192 本</span></a><a class="filter" style="--c:#be123c" href="#major-10"><b>10_歷史文明與世界</b><span>285 本</span></a><a class="filter" style="--c:#dc2626" href="#major-11"><b>11_政治社會與國際</b><span>264 本</span></a><a class="filter" style="--c:#9333ea" href="#major-12"><b>12_心理情緒與關係</b><span>315 本</span></a><a class="filter" style="--c:#7e22ce" href="#major-13"><b>13_哲學人生與個人成長</b><span>1417 本</span></a><a class="filter" style="--c:#15803d" href="#major-14"><b>14_健康生活與運動</b><span>165 本</span></a><a class="filter" style="--c:#9f1239" href="#major-15"><b>15_文學小說與藝術</b><span>233 本</span></a><a class="filter" style="--c:#a16207" href="#major-16"><b>16_傳記人物與回憶錄</b><span>66 本</span></a><a class="filter" style="--c:#047857" href="#major-17"><b>已看過書籍</b><span>118 本</span></a><a class="filter" style="--c:#475569" href="#major-18"><b>99_待確認與重複檔</b><span>31 本</span></a><a class="filter" style="--c:#dc2626" href="#major-19"><b>11_社會政治與國際關係</b><span>5 本</span></a><a class="filter" style="--c:#15803d" href="#major-20"><b>14_健康醫療與生活</b><span>26 本</span></a></nav><details class="subfilter-panel"><summary>子分類快速篩選（<span id="subfilter-count"></span> 個選項）</summary><nav class="subfilters"><a class="subfilter" href="#sub-13-001">08_其他人生與成長／01_2025-2026_最新 <span>117 本</span></a><a class="subfilter" href="#sub-13-002">03_習慣自律與效率／01_2025-2026_最新 <span>14 本</span></a><a class="subfilter" href="#sub-13-003">05_心態韌性與正念／01_2025-2026_最新 <span>8 本</span></a><a class="subfilter" href="#sub-13-004">06_人性智慧與處世／01_2025-2026_最新 <span>10 本</span></a><a class="subfilter" href="#sub-13-005">02_人生意義與價值／01_2025-2026_最新 <span>25 本</span></a><a class="subfilter" href="#sub-13-006">07_財富觀與自由人生／01_2025-2026_最新 <span>7 本</span></a><a class="subfilter" href="#sub-13-007">01_哲學思想與經典／01_2025-2026_最新 <span>18 本</span></a><a class="subfilter" href="#sub-13-008">04_成功成長與職涯／01_2025-2026_最新 <span>5 本</span></a><a class="subfilter" href="#sub-13-009">08_其他人生與成長／02_2020-2024_近年 <span>439 本</span></a><a class="subfilter" href="#sub-13-010">04_成功成長與職涯／02_2020-2024_近年 <span>30 本</span></a><a class="subfilter" href="#sub-13-011">02_人生意義與價值／02_2020-2024_近年 <span>106 本</span></a><a class="subfilter" href="#sub-13-012">02_2020-2024_近年 <span>9 本</span></a><a class="subfilter" href="#sub-13-013">07_財富觀與自由人生／02_2020-2024_近年 <span>23 本</span></a><a class="subfilter" href="#sub-13-014">01_哲學思想與經典／02_2020-2024_近年 <span>61 本</span></a><a class="subfilter" href="#sub-13-015">06_人性智慧與處世／02_2020-2024_近年 <span>21 本</span></a><a class="subfilter" href="#sub-13-016">05_心態韌性與正念／02_2020-2024_近年 <span>27 本</span></a><a class="subfilter" href="#sub-13-017">03_習慣自律與效率／02_2020-2024_近年 <span>49 本</span></a><a class="subfilter" href="#sub-13-018">02_2020-2024_近年／02_2020-2024_近年 <span>2 本</span></a><a class="subfilter" href="#sub-13-019">08_其他人生與成長／03_2010-2019_經典 <span>211 本</span></a><a class="subfilter" href="#sub-13-020">06_人性智慧與處世／03_2010-2019_經典 <span>29 本</span></a><a class="subfilter" href="#sub-13-021">01_哲學思想與經典／03_2010-2019_經典 <span>31 本</span></a><a class="subfilter" href="#sub-13-022">02_人生意義與價值／03_2010-2019_經典 <span>50 本</span></a><a class="subfilter" href="#sub-13-023">04_成功成長與職涯／03_2010-2019_經典 <span>24 本</span></a><a class="subfilter" href="#sub-13-024">03_習慣自律與效率／03_2010-2019_經典 <span>24 本</span></a><a class="subfilter" href="#sub-13-025">05_心態韌性與正念／03_2010-2019_經典 <span>9 本</span></a><a class="subfilter" href="#sub-13-026">03_2010-2019_經典 <span>11 本</span></a><a class="subfilter" href="#sub-13-027">07_財富觀與自由人生／03_2010-2019_經典 <span>6 本</span></a><a class="subfilter" href="#sub-13-028">06_人性智慧與處世／04_2000-2009_基礎 <span>3 本</span></a><a class="subfilter" href="#sub-13-029">08_其他人生與成長／04_2000-2009_基礎 <span>17 本</span></a><a class="subfilter" href="#sub-13-030">04_成功成長與職涯／04_2000-2009_基礎 <span>4 本</span></a><a class="subfilter" href="#sub-13-031">02_人生意義與價值／04_2000-2009_基礎 <span>2 本</span></a><a class="subfilter" href="#sub-13-032">01_哲學思想與經典／04_2000-2009_基礎 <span>3 本</span></a><a class="subfilter" href="#sub-13-033">07_財富觀與自由人生／04_2000-2009_基礎 <span>2 本</span></a><a class="subfilter" href="#sub-13-034">01_哲學思想與經典／05_2000年前_典藏 <span>4 本</span></a><a class="subfilter" href="#sub-13-035">08_其他人生與成長／05_2000年前_典藏 <span>1 本</span></a><a class="subfilter" href="#sub-13-036">04_2000年前_典藏 <span>2 本</span></a><a class="subfilter" href="#sub-13-037">08_其他人生與成長 <span>13 本</span></a></nav></details>
 <section id="filter-controls" class="filter-controls" aria-label="進階篩選">
@@ -120,11 +135,21 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
   const subfilterPanel = document.querySelector(".subfilter-panel");
   const pageTabs = document.querySelector(".page-tabs");
   const pageTabLinks = Array.from(pageTabs.querySelectorAll("a"));
+  statusSelect.closest("label").hidden = true;
+  formatSelect.closest("label").hidden = true;
   categoryNav.id = "categories";
   categoryNav.setAttribute("aria-label", "書籍分類");
   subfilterPanel.id = "subcategories";
+  [["major-19", "major-11"], ["major-20", "major-14"]].forEach(([sourceId, targetId]) => {
+    const source = document.getElementById(sourceId);
+    const target = document.getElementById(targetId);
+    if (!source || !target) return;
+    source.querySelectorAll("li").forEach(item => target.appendChild(item));
+    categoryNav.querySelector('a[href="#' + sourceId + '"]')?.remove();
+    source.remove();
+  });
   const sections = Array.from(document.querySelectorAll("section.category"));
-  const yearPattern = /^[\s\uFEFF]*[\[【(（]?(\d{4})(?=$|[-_.\/\s\u2013\u2014:：年\]】)）]|(?=[^0-9])/;
+  const yearPattern = /^[\s\uFEFF]*[\[【(（]?(\d{4})(?=$|[^0-9])/;
   const stripYearPattern = /^[\s\uFEFF]*[\[【(（]?\d{4}(?:[-_.\/]\d{1,2}(?:[-_.\/]\d{1,2})?)?(?:[-_.\/\s\u2013\u2014:：年\]】)）]+)/;
   const numberFormat = new Intl.NumberFormat("zh-TW");
 
@@ -168,6 +193,7 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
 
       const rawTitle = titleElement.textContent.trim();
       const sourceMeta = metaElement.textContent.trim();
+      const originalSearch = item.dataset.search || "";
       const year = getYear(rawTitle);
       const formatMatch = sourceMeta.match(/\b(EPUB|PDF|MOBI|AZW3?|CBZ|CBR|TXT)\b/i);
       const format = formatMatch ? formatMatch[1].toUpperCase() : "其他";
@@ -179,7 +205,7 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
       item.dataset.format = format;
       item.dataset.status = status;
       item.dataset.subgroup = groupName;
-      item.dataset.search = [rawTitle, categoryName, groupName, format, year || "年份未標記"].join(" ").toLocaleLowerCase("zh-TW");
+      item.dataset.search = [originalSearch, rawTitle, categoryName, groupName, format, year || "年份未標記"].join(" ").toLocaleLowerCase("zh-TW");
 
       const badge = document.createElement("span");
       badge.className = year ? "year-badge" : "year-badge unmarked";
@@ -239,11 +265,9 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
   const pendingCount = sections.find(section => section.id === "major-18")?.querySelectorAll("li").length || 0;
   const mainCount = Math.max(0, allItems.length - readCount - pendingCount);
   const stats = [
-    ["電子書檔案總數", allItems.length],
-    ["主書庫書籍", mainCount],
-    ["主庫未標初版年份", allItems.filter(item => item.dataset.status === "unread" && !item.dataset.year).length],
-    ["已看過書籍", readCount],
-    ["待確認書籍", pendingCount]
+    ["電子書總數", allItems.length],
+    ["主書庫", mainCount],
+    ["已看過", readCount]
   ];
   statsRoot.innerHTML = stats.map(([label, count]) =>
     '<article class="summary-card"><div class="summary-value">' + numberFormat.format(count) +
@@ -293,6 +317,7 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
 
   function applyFilters() {
     const query = search.value.trim().toLocaleLowerCase("zh-TW");
+    const queryTerms = query.split(/\s+/).filter(Boolean);
     let visible = 0;
 
     sections.forEach(section => {
@@ -302,7 +327,7 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
         const year = item.dataset.year || "unmarked";
         const matches = selectedSection &&
           (!activeSubgroup || item.dataset.subgroup === activeSubgroup) &&
-          (!query || item.dataset.search.includes(query)) &&
+          (!queryTerms.length || queryTerms.every(term => item.dataset.search.includes(term))) &&
           (yearSelect.value === "all" || year === yearSelect.value) &&
           (statusSelect.value === "all" || item.dataset.status === statusSelect.value) &&
           (formatSelect.value === "all" || item.dataset.format === formatSelect.value);
@@ -339,7 +364,16 @@ main{max-width:var(--max);margin:0 auto;padding:20px 18px 82px}
     setCurrentView(statusSelect.value === "read" ? "read" : statusSelect.value === "pending" ? "pending" : activeSubgroup ? "subcategories" : activeCategory !== "all" ? "categories" : yearSelect.value !== "all" ? "years" : ["categories", "subcategories", "years"].includes(currentView) ? currentView : "all");
   }
 
-  search.addEventListener("input", applyFilters);
+  search.addEventListener("input", () => {
+    if (search.value.trim()) {
+      activeCategory = "all";
+      activeSubgroup = "";
+      yearSelect.value = "all";
+      statusSelect.value = "all";
+      formatSelect.value = "all";
+    }
+    applyFilters();
+  });
   [yearSelect, statusSelect, formatSelect].forEach(control => control.addEventListener("change", applyFilters));
 
   categoryNav?.addEventListener("click", event => {

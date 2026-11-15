@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用第一性原理讀懂日常：50個生活問題的重新拆解</title>
+<style>
+:root{
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1f2328; --muted:#5f6673;
+  --line:#e3e5e8; --accent:#2f6f5e; --accent-soft:#e8f2ee;
+  --warn:#b45309; --warn-soft:#fef3e2; --tag:#eef2ff; --tag-ink:#3730a3;
+  --radius:16px; --shadow:0 1px 2px rgba(0,0,0,.04),0 10px 28px rgba(0,0,0,.06);
+  --fs-base:18px;
+}
+*{box-sizing:border-box}
+html{font-size:var(--fs-base)}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  background:var(--bg); color:var(--ink); line-height:1.8;
+  font-size:1rem; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.site .wrap{display:flex;align-items:center;gap:16px;height:66px}
+.brand:hover{text-decoration:none;opacity:.82}
+.brand{font-weight:800;font-size:1.05rem;letter-spacing:.2px;white-space:nowrap;color:var(--ink);text-decoration:none}
+.brand span{color:var(--accent)}
+.site nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.site nav a{font-size:.95rem;padding:7px 12px;border-radius:9px;color:var(--muted)}
+.site nav a:hover{background:var(--accent-soft);color:var(--accent);text-decoration:none}
+main{min-height:70vh;padding:32px 0 70px}
+
+.hero{padding:38px 0 12px}
+.hero h1{font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.28;margin:0 0 12px;letter-spacing:-.3px}
+.hero p.sub{color:var(--muted);margin:0 0 8px;font-size:1.05rem}
+.hero .method{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);font-size:1.02rem}
+.hero .method b{color:var(--accent)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px}
+.step{background:var(--accent-soft);border-radius:11px;padding:12px 14px;font-size:.98rem}
+.step i{font-style:normal;font-weight:800;color:var(--accent);margin-right:7px}
+
+.chapter-map{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:26px 0 8px}
+.chap{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;cursor:pointer;transition:.15s;box-shadow:var(--shadow)}
+.chap:hover{border-color:var(--accent);transform:translateY(-1px)}
+.chap .n{font-size:.82rem;color:var(--muted)}
+.chap .t{font-weight:700;font-size:1rem;margin-top:3px}
+.chap .c{font-size:.82rem;color:var(--accent);margin-top:7px}
+
+.page-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}
+.page-tab{padding:9px 16px;border-radius:11px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:.95rem;font-weight:600;color:var(--muted);transition:.15s}
+.page-tab:hover{border-color:var(--accent);color:var(--accent)}
+.page-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.page-tab .pn{font-weight:800;margin-right:6px}
+
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
+.toolbar input[type=search]{flex:1;min-width:240px;padding:12px 16px;border:1px solid var(--line);border-radius:11px;font-size:1rem;background:var(--card);outline:none;color:var(--ink)}
+.toolbar input[type=search]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.count{font-size:.9rem;color:var(--muted);margin-left:auto}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.15s;cursor:pointer}
+.card:hover{transform:translateY(-2px);border-color:#cfd8d4}
+.card .top{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.card .id{font-size:.82rem;font-weight:800;color:var(--accent);background:var(--accent-soft);border-radius:8px;padding:3px 8px}
+.card .chapname{font-size:.82rem;color:var(--muted)}
+.card h3{font-size:1.1rem;margin:5px 0 9px;line-height:1.5}
+.card .fp{font-size:.95rem;color:var(--muted);border-left:3px solid var(--accent);padding-left:10px;margin:7px 0 11px}
+.card .one{font-size:1rem;font-weight:700;margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.tag{font-size:.76rem;padding:3px 9px;border-radius:999px;background:var(--tag);color:var(--tag-ink)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.empty{padding:48px;text-align:center;color:var(--muted);font-size:1rem}
+
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+.pager a{flex:1;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 16px;font-size:.95rem}
+.pager a:hover{border-color:var(--accent);text-decoration:none}
+.pager .dir{display:block;font-size:.8rem;color:var(--muted);margin-bottom:3px}
+.pager .r{text-align:right}
+
+.detail{max-width:940px;margin:0 auto}
+.crumb{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+.detail h1{font-size:clamp(1.55rem,3.2vw,2.3rem);margin:8px 0 6px;line-height:1.35}
+.detail .meta{font-size:.92rem;color:var(--muted);margin-bottom:22px}
+.fpbox{background:linear-gradient(135deg,#e8f2ee,#f3f8f5);border:1px solid #cfe3da;border-radius:var(--radius);padding:22px 24px;margin:18px 0 26px}
+.fpbox .label{font-size:.82rem;font-weight:800;color:var(--accent);letter-spacing:.5px}
+.fpbox .big{font-size:1.35rem;font-weight:800;margin-top:6px;line-height:1.5}
+.fpbox .full{font-size:1rem;color:#374151;margin-top:8px}
+.sec{margin:28px 0}
+.sec h2{font-size:1.05rem;margin:0 0 12px;display:flex;align-items:center;gap:9px}
+.sec h2::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:720px){.duo{grid-template-columns:1fr}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 17px}
+.box .who{font-size:.82rem;color:var(--muted);margin-bottom:7px}
+.box .quote{font-weight:700;font-size:1.03rem;line-height:1.7}
+.box .src{font-size:.82rem;color:var(--muted);margin-top:7px}
+.box .plain{font-size:.97rem;color:#374151;margin-top:9px;padding-top:9px;border-top:1px dashed var(--line)}
+.compare{background:var(--accent-soft);border-radius:13px;padding:14px 16px;font-size:.98rem}
+.casebox{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:16px 17px;font-size:1rem}
+.casebox .type{display:inline-block;font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;margin-bottom:9px}
+.casebox .type.supp{background:var(--warn-soft);color:var(--warn)}
+.casebox .map{font-size:.97rem;color:#374151;margin-top:9px;padding-top:9px;border-top:1px dashed var(--line)}
+.warnbox{background:var(--warn-soft);border:1px solid #f3d9b5;border-radius:13px;padding:15px 17px;font-size:1rem}
+.actionbox{background:#eef7f1;border:1px solid #cfe6d8;border-radius:13px;padding:15px 17px;font-size:1rem}
+.onebox{background:#1f2328;color:#fff;border-radius:13px;padding:18px 20px;font-size:1.12rem;font-weight:700;text-align:center;margin-top:8px;line-height:1.6}
+.rel{display:flex;gap:7px;flex-wrap:wrap}
+.rel a{font-size:.9rem;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink)}
+.rel a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.cite-list{font-size:.95rem;color:#374151;margin:0;padding-left:1.2em}
+.cite-list li{margin:5px 0}
+
+.card-image{display:block;width:calc(100% + 42px);height:auto;aspect-ratio:16/9;object-fit:cover;margin:-21px -21px 16px;border-radius:17px 17px 0 0;background:#e7f3ff}
+.chap{text-decoration:none;color:var(--ink)}
+.chap:hover{text-decoration:none;box-shadow:0 12px 28px rgba(28,91,160,.14)}
+.chap .n,.chap .t,.chap .c{display:block}
+.detail-image-open{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:transparent;cursor:zoom-in;margin:0 0 20px}
+.detail-image-open img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;background:#f7f4ea}
+.detail-image-open:focus-visible,.lightbox-close:focus-visible{outline:3px solid #ffc629;outline-offset:3px}
+.image-lightbox{width:min(96vw,1500px);max-width:96vw;max-height:96dvh;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink)}
+.image-lightbox::backdrop{background:rgba(9,20,36,.82)}
+.image-lightbox img{display:block;max-width:calc(96vw - 24px);max-height:calc(96dvh - 72px);width:auto;height:auto;margin:8px auto 0;object-fit:contain}
+.lightbox-close{display:block;margin-left:auto;border:1px solid var(--line);border-radius:9px;padding:8px 12px;background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:.95rem}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--accent-soft);color:var(--accent);font-size:.86rem;letter-spacing:.3px}
+tr:last-child td{border-bottom:none}
+
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.86rem;text-align:center}
+.hidden{display:none!important}
+/* Calm reading experience and responsive 1-10-1 structure */
+:root{--bg:#f3f8ff;--card:#ffffff;--ink:#182a48;--muted:#5c6e88;--line:#d8e4f4;--accent:#1e90ff;--accent-soft:#e4f2ff;--warn:#986300;--warn-soft:#fff2c7;--tag:#fff3c4;--tag-ink:#705100;--shadow:0 8px 24px rgba(28,91,160,.09)}
+body{background:radial-gradient(ellipse at 8% 0%,#e3f1ff 0,transparent 36rem),radial-gradient(ellipse at 95% 8%,#fff4c7 0,transparent 26rem),var(--bg);line-height:1.85}
+.wrap{max-width:1360px}
+@media(min-width:761px){.wrap{width:83.333%;max-width:1600px}}
+header.site{background:rgba(248,251,255,.94);border-color:rgba(30,144,255,.2)}
+.brand{letter-spacing:.04em}
+.site nav a{font-weight:600}
+.hero{padding:46px 0 12px}
+.hero h1{letter-spacing:.01em}
+.hero .method{border-left:5px solid var(--accent);padding:24px 26px}
+.step{background:var(--accent-soft)}
+.fpbox{background:linear-gradient(135deg,#e7f3ff,#fff7d9);border-color:#bfddf8}
+.fpbox .label{color:#176dbd}
+.actionbox{background:#fff7dc;border-color:#f0d77c;color:#493c18}
+.onebox{background:#174f8a;color:#fff}
+.chapter-map{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}
+.chap{cursor:pointer;min-height:112px;display:flex;flex-direction:column;justify-content:center}
+.chap:focus-visible,.card:focus-visible,.page-tab:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #ffc629;outline-offset:3px}
+.group-head{padding:28px 0 5px}
+.group-head h1{font-size:clamp(1.55rem,3vw,2.15rem);margin:0 0 5px}
+.group-head p{margin:0;color:var(--muted)}
+.page-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 10px;padding:8px 0}
+.page-tab{flex:1;text-align:center;min-width:145px;background:var(--card)}
+.page-tab.active{box-shadow:0 5px 15px rgba(30,144,255,.22)}
+.reader-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.reader-toolbar .toolbar{flex:1;margin:0}
+.reader-tools{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.tool-btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 11px;font:inherit;font-size:.88rem;font-weight:650;color:var(--ink);cursor:pointer}
+.tool-btn:hover{border-color:var(--accent);color:var(--accent)}
+.progress-wrap{display:flex;align-items:center;gap:10px;margin:14px 0 19px;color:var(--muted);font-size:.9rem}
+.progress-track{height:7px;flex:1;background:#e3ebf6;border-radius:99px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#ffc629,var(--accent));border-radius:99px;transition:width .25s}
+.quick-jump{margin:0 0 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:10px 14px}
+.quick-jump summary{cursor:pointer;color:var(--accent);font-weight:750}
+.quick-jump-links{display:flex;gap:7px;flex-wrap:wrap;padding-top:10px}
+.quick-jump-links button{border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:var(--bg);font:inherit;font-size:.84rem;color:var(--accent);cursor:pointer}
+.quick-jump-links button:hover{background:var(--accent-soft)}
+.card[id]{scroll-margin-top:24px}
+.opening-card{position:relative;overflow:hidden;margin:10px 0 20px;padding:24px 26px;border:1px solid #c9e3fb;border-radius:18px;background:linear-gradient(125deg,#e8f4ff,#fff8dc 78%);box-shadow:var(--shadow)}
+.opening-card:after{content:"01";position:absolute;right:22px;top:-16px;font-size:6rem;font-weight:900;line-height:1;color:rgba(30,144,255,.1)}
+.opening-card .eyebrow,.closing-card .eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;color:#126cc6}
+.opening-card h2,.closing-card h2{position:relative;margin:4px 0 6px;font-size:1.35rem;line-height:1.5}
+.opening-card p,.closing-card p{position:relative;margin:0;color:#515d55}
+.opening-card .opening-desc{max-width:780px}
+.grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.card{min-height:244px;padding:21px;cursor:pointer}
+.card:hover{box-shadow:0 15px 32px rgba(28,91,160,.14);border-color:#a9d2f5}
+.card .id{min-width:42px;text-align:center}
+.card .fp{font-size:1rem;color:#3b6251}
+.card .one{font-size:1.02rem}
+.card .card-actions{display:flex;justify-content:flex-end;margin-top:10px}
+.read-marker{font-size:.76rem;color:var(--accent);font-weight:750;margin-left:auto}
+.favorite-btn{background:transparent;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted);font:inherit;font-size:.82rem;cursor:pointer}
+.favorite-btn[aria-pressed="true"]{background:#fff2d8;border-color:#efd49e;color:#805810}
+.closing-card{margin:26px 0 8px;padding:23px 25px;border-radius:18px;background:linear-gradient(135deg,#155cae,#1e90ff);color:#fff;box-shadow:var(--shadow)}
+.closing-card .eyebrow{color:#ffe27a}.closing-card p{color:#f0f7ff}
+.closing-card .closing-actions{position:relative;display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.closing-card a{display:inline-block;background:#ffd34d;color:#17365f;border-radius:9px;padding:7px 12px;font-weight:750}
+.closing-card .tool-btn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.48);color:#fff}
+.empty{grid-column:1/-1;background:var(--card);border:1px dashed var(--line);border-radius:14px}
+.detail{max-width:1020px}
+.fpbox{box-shadow:var(--shadow)}
+.sec h2{font-size:1.12rem}
+.box,.casebox{box-shadow:0 5px 16px rgba(36,54,44,.035)}
+.detail-tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 20px}
+.detail-tools .tool-btn{font-size:.88rem}
+body.dark-mode{--bg:#101b2b;--card:#19283c;--ink:#eff6ff;--muted:#b2c3d8;--line:#344963;--accent:#74bcff;--accent-soft:#203d5b;--warn:#ffd25c;--warn-soft:#4c4024;--tag:#493f24;--tag-ink:#ffe69a;background:radial-gradient(ellipse at 8% 0%,#183961 0,transparent 36rem),radial-gradient(ellipse at 95% 5%,#403719 0,transparent 26rem),var(--bg)}
+body.dark-mode header.site{background:rgba(16,27,43,.94)}
+body.dark-mode .hero .method,body.dark-mode .opening-card{background:linear-gradient(125deg,#1b3551,#39351f);border-color:#426487}
+body.dark-mode .opening-card p,body.dark-mode .casebox .map,body.dark-mode .box .plain{color:#d7e5f5}
+body.dark-mode .opening-card .eyebrow{color:#ffd25c}
+body.dark-mode .page-tab.active{background:#145fa7;border-color:#74bcff}
+body.dark-mode .progress-track{background:#344963}
+body.dark-mode .fpbox{background:linear-gradient(135deg,#1b3551,#24354a);border-color:#426487}
+body.dark-mode .fpbox .full,body.dark-mode .box .plain,body.dark-mode .casebox .map{color:#d7e5f5}
+body.dark-mode .compare{background:#203d5b;color:#e7f1fc}
+body.dark-mode .warnbox{border-color:#89763d;color:#ffe8a0}
+body.dark-mode .actionbox{background:#193a52;border-color:#426487;color:#e5f2ff}
+body.dark-mode .step{background:#203d5b;color:#e8f3ff}
+body.dark-mode .onebox{background:#0e4f8f;color:#fff}
+body.dark-mode .closing-card{background:linear-gradient(135deg,#124b87,#176fbd)}
+body.dark-mode .closing-card a{background:#ffd34d;color:#17365f}
+html.large-text{font-size:20px}body.large-text{font-size:20px}
+@media(max-width:760px){.wrap{padding-left:16px;padding-right:16px}.site .wrap{height:auto;min-height:66px;align-items:flex-start;flex-direction:column;gap:4px;padding-top:9px;padding-bottom:9px}.site nav{margin:0;width:100%;overflow-x:auto;flex-wrap:nowrap}.site nav a{white-space:nowrap;padding:6px 9px}.page-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}.page-tab{flex:0 0 auto}.reader-toolbar{align-items:stretch}.reader-tools{width:100%}.tool-btn{flex:1}.grid{grid-template-columns:1fr}.card{min-height:0}.card-image{width:calc(100% + 42px);margin:-21px -21px 14px}.detail-image-open{margin-bottom:16px}.image-lightbox{padding:8px}.image-lightbox img{max-width:calc(96vw - 16px);max-height:calc(96dvh - 64px)}.opening-card,.closing-card{padding:20px}.hero{padding-top:28px}.duo{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#/" aria-label="回首頁">第一性原理 · <span>50個生活問題</span></a>
+    <nav>
+
+      <a href="#/biblio">引用書目</a>
+      <a href="#/about">方法說明</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer>
+  <div class="wrap">
+    整理自《用第一性原理讀懂日常：50個生活問題的重新拆解》（品成心理）。本頁為閱讀整理，非原書複製。
+  </div>
+</footer>
+
+<script>
+/* ================= DATA ================= */
+const ITEMS = [
+{id:1,chapter:"一 自我與成長",proposition:"自律是習慣，不是意志力",firstPrinciple:"形成低耗能的自動行為",firstPrincipleFull:"自律的第一性原理是習慣，不是意志力；把對的事變成到點就做的自動行為。",east:{quote:"少成若天性，習慣如自然。",source:"中國古語（書中引用）",plain:"小時候養成的習慣，長大後做起來自然，不用強迫；習慣是把「強迫」拿掉。"},west:{quote:"習慣是自律的根源，每一次重複，都是在把這件事從費勁變成本能。",source:"詹姆斯·克利爾《掌控習慣》（書中引用）",plain:"靠重複把行為變低耗能，而不是靠意志力硬撐。"},comparison:"東方偏「養成後自然」；西方偏「重複—自動化」機制。共同點：都不靠硬扛，靠重複把行為變低耗能。",case:{type:"書中案例",text:"村上春樹寫長篇時凌晨四點起床、不用鬧鐘、固定跑步與就寢，維持幾十年。",mapping:"不是每天較勁，是到點身體自己動。"},misconception:"把自律當忍耐力比賽；目標定太大，靠短期爆發，第三週就斷。",minAction:"選一個小到不需要毅力的動作（晚飯後五個俯臥撐、比昨天早睡十分鐘），固定同一時間做一個月。",oneLine:"自律不是硬扛，是把對的事變成到點就做的習慣。",relatedIds:[2,21,24,45],evidenceTags:["哲學命題","心理學理論","書中案例","有爭議"],citations:["《掌控習慣》詹姆斯·克利爾","鮑邁斯特自我損耗實驗（1998，書中注明學界有爭議）"]},
+{id:2,chapter:"一 自我與成長",proposition:"成長是反思，不是經歷",firstPrinciple:"從經歷中提取可遷移的改變",firstPrincipleFull:"成長的第一性原理是反思，不是經歷；經歷只是素材，反思才是把素材變成養分。",east:{quote:"吾日三省吾身。",source:"《論語》曾子（書中引用）",plain:"每天反省盡責、守信、溫習，是對自己反思，不是記流水帳。王陽明「事上磨鍊」：事不經反思就只是事。"},west:{quote:"我們不從經驗中學習，我們從對經驗的反思中學習。",source:"約翰·杜威（書中引用）",plain:"經歷本身不產生學習，對經歷的加工才產生學習。"},comparison:"東方重「日省、事上問」的功夫；西方重「經驗—反思—學習」的教育心理機制。共同點：都把「回頭想」當成成長開關。",case:{type:"書中案例",text:"同齡兩人，一個十年換七八家公司、履歷密密麻麻，遇難題只會固定套路；另一個十年深耕一處，能用三句話講清複雜問題。",mapping:"差別不在經歷數量，在有没有把經歷拆成規律。"},misconception:"把折騰多、吃苦多當成長；只埋頭衝，不復盤贏輸原因。",minAction:"每次事情後寫一句「這件事給我上了什麼課」；輸了問是方案問題還是表達問題，贏了問是運氣還是實力。",oneLine:"經歷只是素材，反思才是把素材變成養分。",relatedIds:[17,21,49],evidenceTags:["哲學命題","教育理論","書中案例"],citations:["《論語》","杜威教育思想"]},
+{id:3,chapter:"一 自我與成長",proposition:"專注是放棄，不是克制",firstPrinciple:"主動排除選項，讓誘惑不在場",firstPrincipleFull:"專注的第一性原理是放棄，不是克制；讓自己沒有別的可選，注意力才集中。",east:{quote:"逐二兔者不得一兔。",source:"中國古語（書中引用）",plain:"同時追兩隻兔子，一隻也抓不到；先放掉一隻，專心追剩下那隻，反而抓到。專注靠更會放，不是更會抓。"},west:{quote:"專注就是說不，決定不做什麼和決定做什麼一樣重要，甚至更重要。",source:"史蒂夫·喬布斯（書中引用）",plain:"專注是選項管理，不是意志力管理。"},comparison:"東方用「逐兔」講取捨；西方用「說不」講選項砍除。共同點：都把「減少在場選項」當專注前提。",case:{type:"書中案例",text:"喬布斯回蘋果，產品線三百多個型號砍到十個，停掉上百項目，後來少數產品拿走行業大頭利潤。",mapping:"砍出來的專注。"},misconception:"把專注當忍住不看；留著誘惑在眼前，再用毅力對抗。",minAction:"做事前把手機拿到另一個房間、關通知；多目標時只留一個，其餘暫停。",oneLine:"專注不是忍得住，是讓自己沒得選。",relatedIds:[24,27,47],evidenceTags:["哲學命題","商業案例","書中案例"],citations:["喬布斯傳記資料"]},
+{id:4,chapter:"一 自我與成長",proposition:"情緒管理是接納，不是控制",firstPrinciple:"承認情緒、給出口，讓它自然退去",firstPrincipleFull:"情緒管理的第一性原理是接納，不是控制；情緒是來傳遞信息的，信息傳到了，它自己會走。",east:{quote:"大禹治水，疏導而非堵。",source:"中國上古史事（書中引用）",plain:"鯀用堵，堵九年越堵越高最後決堤；禹用疏導。情緒堵著不通，遲早溢出來，要給出口。"},west:{quote:"越叫受試者別想白熊，白熊念頭越多。",source:"韋格納白熊實驗（書中引用）",plain:"越壓越反彈；接納承諾療法核心是接納情感，不與之對抗。"},comparison:"東方以「治水」喻疏導；西方以「白熊實驗」證壓抑反效果。共同點：對抗情緒會強化情緒，接納才降溫。",case:{type:"書中案例",text:"受委屈忍住不哭，不久一杯灑出的熱咖啡讓他號啕大哭。",mapping:"壓抑不是消失，是攢到臨界點。"},misconception:"把情緒管理當不生氣、不難過；用強顏歡笑、強迫冷靜來壓。",minAction:"情緒來時先命名：「現在我很生氣／很委屈」；承認它合理，留一段時間，再處理事情。",oneLine:"情緒不是拿來壓的，是拿來看見的。",relatedIds:[8,40,49],evidenceTags:["心理學實驗","哲學寓言","書中案例"],citations:["韋格納白熊實驗（1987）","接納承諾療法（ACT）"]},
+{id:5,chapter:"一 自我與成長",proposition:"興趣是內在驅動，不是喜歡",firstPrinciple:"無外在獎賞也願意持續投入",firstPrincipleFull:"興趣的第一性原理是內在驅動，不是喜歡；沒人點讚、沒錢賺還願意做，才算興趣。",east:{quote:"知之者不如好之者，好之者不如樂之者。",source:"《論語》孔子（書中引用）",plain:"知道不如喜愛，喜愛不如樂在其中；樂在其中就是內在驅動。"},west:{quote:"報酬撤掉後，自由時間反而比從沒拿錢那組做得更短。",source:"德西實驗（書中引用）",plain:"金錢把自願參與換成對錢的渴望，錢一撤熱情也撤。"},comparison:"東方用「樂之」分層；西方用實驗證明外在獎賞會擠出內在動機。共同點：真興趣的判準是「沒人給好處還做」。",case:{type:"書中案例",text:"報名吉他班前兩週興致勃勃，第三週新鮮感過去覺得痛苦，半個月後收進儲物櫃。",mapping:"喜歡是新品期的好感，興趣要過枯燥關。"},misconception:"把「我喜歡」當興趣；把一百種愛好當興趣豐富。",minAction:"問自己：沒人點讚、沒錢賺，我還願意為它花時間琢磨嗎？願意，才算興趣候選。",oneLine:"喜歡是享受結果，興趣是享受做本身。",relatedIds:[14,25,47,48],evidenceTags:["哲學命題","心理學實驗","書中案例"],citations:["《論語》","德西實驗（1971）"]},
+{id:6,chapter:"一 自我與成長",proposition:"慎獨是不自欺，不是自律",firstPrinciple:"獨處時對自己誠實，不給自己開口子",firstPrincipleFull:"慎獨的第一性原理是不自欺，不是自律；沒人看也騙不了自己。",east:{quote:"所謂誠其意者，毋自欺也，故君子必慎其獨也。",source:"《大學》（書中引用）",plain:"誠意就是不騙自己，所以君子獨處也謹慎。楊震暮夜卻金：「天知地知你知我知」，沒人看見照樣守得住，靠的是騙不過自己。"},west:{quote:"人最擅長騙自己：「就這一次沒關係」「明天再開始」「反正沒人知道」。",source:"心理學「自我欺騙」（書中引用）",plain:"口子開一次，第二次第三次跟著來，最後分不清哪句是真話。"},comparison:"東方以「毋自欺」「四知」講獨處誠實；西方以自我欺騙講心理機制。共同點：慎獨的敵人不是沒人管，是自己給自己找臺階。",case:{type:"書中案例",text:"朋友圈發健身卡天天打卡，一旦不打卡就把卡扔抽屜底層。",mapping:"做給人看不是做給自己看；人後鬆下來那一下，才是真實樣子。"},misconception:"把慎獨當獨處時管住行為的自律；靠硬撐，弦一鬆就斷。",minAction:"獨處時問一句：如果沒人看，我還這麼做嗎？冒出「就這一次，沒人知道」，就是自欺開頭。",oneLine:"慎獨不是沒人管時管住手，是沒人看時不騙心。",relatedIds:[1,9,49],evidenceTags:["哲學命題","心理學概念","書中案例"],citations:["《大學》","《後漢書·楊震傳》"]},
+{id:7,chapter:"一 自我與成長",proposition:"中庸是恰到好處，不是平庸",firstPrinciple:"找到不過不及的分寸點",firstPrincipleFull:"中庸的第一性原理是恰到好處，不是平庸；中庸是剛剛好，平庸是差不多算了。",east:{quote:"過猶不及。",source:"《論語》孔子（書中引用）",plain:"過分和不足都達不到目的。孔子又說：「天下國家可均也，爵祿可辭也，白刃可蹈也，中庸不可能也。」朱熹補：「三者難而易，中庸易而難。」"},west:{quote:"美德居兩極之間。",source:"亞里士多德倫理學（書中引用）",plain:"勇敢介於魯莽與膽小之間，慷慨介於奢侈浪費與吝嗇之間，超過限度就變相反狀態。"},comparison:"東方用「過猶不及」「執兩用中」講分寸；西方用「兩極之間」講美德。共同點：中庸是動態找合適點，不是固定站中間。",case:{type:"書中反例",text:"開會知道方案有毛病不出聲，被問就說「性格內向、不願得罪人」，把中庸當逃避責任的藉口。",mapping:"這是平庸，不是中庸。"},misconception:"把中庸當不出頭、沒立場、隨波逐流；把「差不多就行」降低為恰到好處。",minAction:"做事前問：「這事做到哪裡為止才算合適？」在小事上練說話速度、做事速度、生氣速度的分寸。",oneLine:"中庸是剛剛好，平庸是差不多算了。",relatedIds:[22,39,49],evidenceTags:["哲學命題","倫理學","書中案例"],citations:["《論語》","《中庸》","亞里士多德《尼各馬可倫理學》"]},
+{id:8,chapter:"一 自我與成長",proposition:"反內耗：行動，不是想通",firstPrinciple:"把「想」與「做」重新接上",firstPrincipleFull:"反內耗的第一性原理是行動，不是想通；內耗是想的圈，邁一步就出圈。",east:{quote:"一瓶一缽就夠了。",source:"彭端淑《為學》（書中引用）",plain:"窮和尚說走就走，第二年從南海回來；富和尚籌劃數年僱船未成行。想得太周全，反而一步沒邁。"},west:{quote:"問最壞結果→接受最壞結果→冷靜把力氣花在改善上。",source:"卡里爾三步法（書中引用）",plain:"接受最壞，焦慮消失，腦子騰出來補救。腦科學：發呆空想時默認模式網絡異常活躍，專注做事能把它壓下去。"},comparison:"東方以「窮和尚一瓶一缽」講行動破想；西方以默認模式網絡講機制、以卡里爾三步講操作。共同點：切斷反覆想，靠做。",case:{type:"書中案例",text:"糾結要不要辭職，別在腦子裡反覆權衡，先把簡歷更新一遍、投出去，三個月糾結的問題沒那麼難。",mapping:"想通是做了之後的事，順序一反就卡住。"},misconception:"用雞湯、冥想、勸自己別想來解決，全在想的層面打轉；等想通再做。",minAction:"內耗時別問「我想明白了嗎」，改問「我此刻能做什麼」：從床上坐起來、把糾結寫下來、發一條消息，做最小一步。",oneLine:"內耗是想的圈，邁一步就出圈。",relatedIds:[14,18,24],evidenceTags:["哲學寓言","腦科學","書中案例"],citations:["彭端淑《為學》","卡里爾冷卻器發明故事","默認模式網絡研究"]},
+{id:9,chapter:"一 自我與成長",proposition:"自我價值是內在確認，不是外在認可",firstPrinciple:"用自己的標準估量自己",firstPrincipleFull:"自我價值的第一性原理是內在確認，不是外在認可；價值是自己給的，不是別人嘴裡加的。",east:{quote:"人不知而不慍，不亦君子乎。",source:"《論語》孔子（書中引用）",plain:"別人不認識、不喜歡自己也不生氣，內心評價比外界看法重要。孔子周遊列國處處碰壁，仍學而不厭、誨人不倦，因為志於道。"},west:{quote:"別人怎樣評價你是別人的課題，你如何看待自己才是自己的課題。",source:"阿德勒「課題分離」（書中引用）",plain:"把價值放在別人口中，等於讓別人決定你的人生方向。"},comparison:"東方以「人不知而不慍」講內在安定；西方以「課題分離」講責任歸屬。共同點：自我評價權在自己手裡。",case:{type:"書中案例",text:"朋友圈發照片半小時沒點讚就焦慮，不斷查看，懷疑自己拍照差、不好相處；有人點讚才放鬆。",mapping:"價值掛在別人回饋上，心情隨之起落。"},misconception:"把內在確認當完全不理別人評價；其實要區分哪些話值得放進自己的標準衡量。",minAction:"把「別人怎樣看我」改成「我如何看待自己」；列三件自己做過但沒被注意的事，作為真實自我的證據。",oneLine:"價值是自己給的，不是別人嘴裡加的。",relatedIds:[6,35,36,48],evidenceTags:["哲學命題","心理學理論","書中案例"],citations:["《論語》","阿德勒個體心理學"]},
+{id:10,chapter:"一 自我與成長",proposition:"鬆弛感是放下執念，不是躺平",firstPrinciple:"分清可控與不可控，只管可管的部分",firstPrincipleFull:"鬆弛感的第一性原理是放下執念，不是躺平；管好能管的，放開管不了的。",east:{quote:"莫問收穫，但問耕耘。",source:"曾國藩座右銘（書中引用）",plain:"做好分內事，結果交給上天；只管自己管得著的，不管管不著的。"},west:{quote:"事情有的是由我們決定的，另一些不是。",source:"愛比克泰德《手冊》（書中引用）",plain:"前者包括看法、衝動、慾望；後者包括身體、財產、名譽。煩惱多半來自想抓抓不住的東西。"},comparison:"東方以「耕耘—收穫」分界；西方以「可控—不可控」分界。共同點：把注意力放回可控行為，放開不可控結果。",case:{type:"書中案例",text:"機場一家人，孩子證件到期登不了機，媽媽陪孩子回家，其他人照常飛，行李掛在媽媽名下被退回；一家人沒吵沒抱怨，平穩處理。",mapping:"能管的是補救與寄箱，管不了的是證件到期；不跟結果較勁。反例：嘴上說隨緣，工作拖到最後、考試不復習，這是撒手不管，不是鬆弛。"},misconception:"把鬆弛當躺平、什麼都不管；把逃避包裝成隨緣。",minAction:"遇到慌的事先問：「這件事裡我能管的到底是什麼？」孩子考砸，能管的是找錯題、定下次方向；分數管不了就放開。",oneLine:"鬆弛是管好能管的，放開管不了的。",relatedIds:[4,23,46],evidenceTags:["哲學命題","斯多噶哲學","書中案例"],citations:["曾國藩家書","愛比克泰德《手冊》"]},
+{id:11,chapter:"一 自我與成長",proposition:"無為是不妄為，不是無所作為",firstPrinciple:"順規律而行，不逆規律亂動",firstPrincipleFull:"無為的第一性原理是不妄為，不是無所作為；無為不是不動，是不亂動。",east:{quote:"人法地，地法天，天法道，道法自然。",source:"《道德經》老子（書中引用）",plain:"人順地、地順天、天順道、道順自然，不破壞規律。「治大國如烹小鮮」：煎小魚不能翻來翻去，一翻就碎；治國也別亂干預。"},west:{quote:"市場有一隻看不見的手，會自動調節供求。",source:"亞當·斯密（書中引用）",plain:"短缺漲價、生產者加入、過剩降價、退出；政府少干預，讓規律自己運行。"},comparison:"東方以「道法自然」「烹小鮮」講不妄為；西方以「看不見的手」講少干預。共同點：尊重事物內在規律，反對逆規律硬來。",case:{type:"書中案例",text:"宋國農民嫌禾苗長得慢，把每株往上拔一點，累得半死還得意，兒子去看時禾苗全枯了。",mapping:"禾苗有生長規律，逆規律越用力越糟。反例：工作十年原地踏步說隨遇而安，該爭取不爭取說無為——這是偷懶、逃避。"},misconception:"把無為當躺平、得過且過、逃避責任的藉口；把順著惰性走當順其自然。",minAction:"動手前先問：這件事的規律是什麼？沒弄清規律別急著行動；弄清後按規律辦。",oneLine:"無為不是不動，是不亂動。",relatedIds:[7,10,25],evidenceTags:["哲學命題","經濟學思想","書中案例"],citations:["《道德經》","亞當·斯密《國富論》"]},
+{id:12,chapter:"二 思維與認知",proposition:"認知升級是更新框架，不是堆積知識",firstPrinciple:"處理信息的框架變了",firstPrincipleFull:"認知升級的第一性原理是框架，不是知識量；換框架比塞知識有用。",east:{quote:"博學而詳說之，將以反說約也。",source:"《孟子》（書中引用）",plain:"學得多、說得細，圖的是返回到「約」——那個統攝知識的框架。"},west:{quote:"數據沒變，結論全變，這就是框架的力量。",source:"哥白尼日心說（書中引用）",plain:"托勒密在地心體系不斷加本輪，哥白尼直接換日心體系，同樣數據一下子全符合。芒格：手裡只有一把錘子的人，看什麼都像釘子。"},comparison:"東方以「由博返約」講框架統攝；西方以「範式轉換」講框架革命。共同點：升級不在知識量，在組織知識的那套預設換了。",case:{type:"書中案例",text:"有人鑽研股票，幾十本技術分析書、K線均線倒背如流，操作仍追漲殺跌，越讀越虧。",mapping:"用錯誤框架吸收正確知識，知識進了舊框架等於沒升級。"},misconception:"把認知升級當多讀書、多聽課、多收藏；用舊框架塞新知識。",minAction:"學新知識前先問：我是在往舊框架裡塞，還是換了新眼光？學完問：我看世界的角度有沒有不一樣？",oneLine:"換框架比塞知識有用。",relatedIds:[13,14,15,38],evidenceTags:["哲學命題","科學史案例","書中案例"],citations:["《孟子》","哥白尼《天體運行論》","芒格多元思維模型"]},
+{id:13,chapter:"二 思維與認知",proposition:"祛魅是看清真實，不是全盤否定",firstPrinciple:"去掉美化，看清本相",firstPrincipleFull:"祛魅的第一性原理是看清真實，不是全盤否定；祛魅是去掉美化，不是從美化掉進貶低。",east:{quote:"凡人之患，蔽於一曲，而暗於大理。",source:"荀子《解蔽》（書中引用）",plain:"人常犯的毛病，只看一個片面，就看不見全貌；「解蔽」就是去掉片面。"},west:{quote:"世界上只有一種英雄主義，就是認清生活的真相之後，依然熱愛生活。",source:"羅曼·羅蘭（書中引用）",plain:"看清和熱愛不矛盾。韋伯「祛魅」：現代化是去神秘化，把靠想象運作的世界變成靠事實運作的世界。"},comparison:"東方以「解蔽」講去掉片面；西方以「祛魅」講去掉神秘化。共同點：都是去掉遮擋、看清本相，不是把對象消滅。",case:{type:"書中案例",text:"崇拜多年的人，近距離接觸發現他也偷懶、算計、背後誹謗；第一反應「原來他是這樣的人」。",mapping:"偷懶算計一直都在，只是以前被好感擋住。反例：偶像垮台就破口大罵、對象有瑕疵就全盤否決。"},misconception:"把祛魅當否定、批判、拋棄；以為祛魅是證明對方糟糕。",minAction:"沉迷某人某事時先問：我看的是本相，還是我美化後的樣子？去掉美化再看，能接受才是真喜歡；接受不了離開也行，用不著否定。",oneLine:"祛魅是去掉美化，不是從美化掉進貶低。",relatedIds:[9,36,46,48],evidenceTags:["哲學命題","社會學概念","書中案例"],citations:["《荀子·解蔽》","韋伯祛魅論","羅曼·羅蘭《米開朗基羅傳》"]},
+{id:14,chapter:"二 思維與認知",proposition:"學習是應用，不是記憶",firstPrinciple:"把不知道的變成能用的能力",firstPrincipleFull:"學習的第一性原理是應用，不是記憶；用不出來的都不算學會。",east:{quote:"知而不行，等於不懂。",source:"王陽明「知行合一」（書中引用）",plain:"以為知道，其實只是記得。「紙上得來終覺淺，絕知此事要躬行。」"},west:{quote:"用最簡單的語言向別人解釋清楚，直到對方真正理解；說不清就是沒掌握。",source:"費曼技巧（書中引用）",plain:"能不能講出來，檢驗懂沒懂；講出來就是運用的一種。"},comparison:"東方以「知行合一」「躬行」講應用；西方以「費曼技巧」講輸出檢驗。共同點：都以「用得出／講得出」為學會標準。",case:{type:"書中案例",text:"游泳口訣背得滾瓜爛熟，真下水撲騰幾下就沉，口訣一個字沒忘卻不會游。英語記上萬單詞，真正交流腦子一片空白。",mapping:"口訣與會游泳之間隔著應用鴻溝。"},misconception:"把記住當學會；做筆記、抄寫、收藏等於學習；用反覆背誦代替使用。",minAction:"學完一項內容，24小時內找真實場景用一次（最小應用）；學概念就用自己的話講一遍，學方法就找場景實際做一次。",oneLine:"用不出來的都不算學會。",relatedIds:[15,18,19,38],evidenceTags:["哲學命題","學習方法","書中案例"],citations:["王陽明《傳習錄》","費曼學習法"]},
+{id:15,chapter:"二 思維與認知",proposition:"閱讀是思考，不是瀏覽數量",firstPrinciple:"讓文字經過大腦變成自己的",firstPrincipleFull:"閱讀的第一性原理是思考，不是瀏覽數量；讀進去才算讀，翻過去只是看過。",east:{quote:"學而不思則罔。",source:"《論語》孔子（書中引用）",plain:"只讀書不分析研究，結果只會越來越糊塗。"},west:{quote:"不經過自己的思考就去讀書，那就是把思考的工作交給他人來做。",source:"叔本華（書中引用）",plain:"讀完留在腦裡的是作者觀點，不是自己獨立見解；讀得越多，反而越沒有自己的觀點。"},comparison:"東方以「學思並重」講思考；西方以「獨立思考」講不把腦子外包。共同點：讀而不思，等於沒讀進去。",case:{type:"書中案例",text:"年終曬書單五十本獲好評，被問哪一本留下深刻印象、講了什麼，支支吾吾答不上，只好說都很不錯。",mapping:"書單越積越多，真正吸收的寥寥無幾。"},misconception:"追求一年讀多少本；打開書就覺得讀了，看完就覺得懂了；用打卡、排行榜代替消化。",minAction:"看完一節先別看下一節，用三問：作者想說什麼？他說得對不對？我同不同意？能用自己話概括，才算讀進去。",oneLine:"讀進去才算讀，翻過去只是看過。",relatedIds:[12,14,38],evidenceTags:["哲學命題","閱讀方法","書中案例"],citations:["《論語》","叔本華《讀書與書籍》"]},
+{id:16,chapter:"二 思維與認知",proposition:"決策是目的，不是選項",firstPrinciple:"先知道要什麼，再篩選項",firstPrincipleFull:"決策的第一性原理是目的，不是選項；先知道要什麼，選項才會排隊。",east:{quote:"知止而後有定。",source:"《大學》（書中引用）",plain:"「止」就是目標；明白追求什麼，心才能定，才談怎麼做。沒目標，給多少選項都無從下手。"},west:{quote:"該機會是否為目前所能得到的最佳選擇。",source:"巴菲特投資標準（書中引用）",plain:"背後目標是複利最大化。打孔卡比喻：一張卡只有二十個孔，真能賺大錢的機會也就四五個。"},comparison:"東方以「知止」講目標先於行動；西方以「最佳選擇＋打孔卡」講目標約束選項。共同點：目的在前，選項在後。",case:{type:"書中案例",text:"換工作，A公司高薪、B公司穩定、C公司發展，列長清單猶豫三個多月，最後哪家都沒投。",mapping:"缺的不是選項，是現階段最需要什麼——金錢、晉升還是安穩。"},misconception:"把大部分精力花在收集選項、列優缺點、打分排序；目標沒立起來，A和B哪個好就無所適從。",minAction:"做選擇前先把選項放一邊，問：「我現在真正需要的是什麼？」寫下來，符合的留、不符合的劃掉。",oneLine:"先知道要什麼，選項才會排隊。",relatedIds:[24,50,38],evidenceTags:["哲學命題","投資案例","書中案例"],citations:["《大學》","巴菲特致股東信"]},
+{id:17,chapter:"二 思維與認知",proposition:"覆盤是提煉規律，不是複述經過",firstPrinciple:"從過去提取下次可用的規律",firstPrincipleFull:"覆盤的第一性原理是提煉規律，不是複述經過；覆盤是給下次用，不是給這次存檔。",east:{quote:"吾日三省吾身。",source:"曾國藩日記（書中引用）",plain:"每天反省，貪慾起時記錄並要求改正——能改掉的才是規律；見了誰、吃了什麼不必記。柳傳志四步：回顧目標、評價結果、剖析原因、歸納經驗教訓。"},west:{quote:"連續追問五個為什麼，直到找到根本原因。",source:"豐田五問法（書中引用）",plain:"機器停→保險絲燒→軸承缺油→油泵壞→沒定期保養；問一個為什麼得表象，問到第五個本質才露出來。"},comparison:"東方以「日記自省」「四步法」講回顧歸納；西方以「五問法」講追根因。共同點：都不停在發生了什麼，要走到下次怎麼辦。",case:{type:"書中案例",text:"項目總結把開多少次會、改多少次、怎麼完成一一記錄，自己都不願翻第二次——全是已發生事實，沒有下次可借鑑。",mapping:"只回答發生了什麼，沒回答接下來怎麼做。"},misconception:"把覆盤當寫日報、年終羅列；以為記錄詳細就是覆盤。",minAction:"每次行動後強迫自己寫一條下次能用的經驗，哪怕一句。彙報失敗別只寫失敗了，追問原因，寫下「下次先提結論再談過程」。",oneLine:"覆盤是給下次用，不是給這次存檔。",relatedIds:[2,20,38],evidenceTags:["哲學命題","管理實務","書中案例"],citations:["《曾國藩日記》","豐田生產方式"]},
+{id:18,chapter:"二 思維與認知",proposition:"知行合一是知行一體，不是先知後行",firstPrinciple:"知和行是一件事，不是兩件",firstPrincipleFull:"知行合一的第一性原理是知行一體，不是先知後行；做不到的知，不叫作知。",east:{quote:"知而不行，不過是無知而已。",source:"王陽明（書中引用）",plain:"知是行之始，行是知之成，兩者本就連接。王陽明講學時說出此理，後來巡撫南贛、平定寧王叛亂，做事與講話對得上，學問才有實證。"},west:{quote:"情緒和認知不是行動的前提，行動本身是知識的入口。",source:"行為激活療法（書中引用）",plain:"人們總想等心情好再去做，順序一反就停滯。"},comparison:"東方以「知行一體」講本體論；西方以「行為激活」講臨床操作。共同點：行動不是知的結果，而是知的一部分。",case:{type:"書中案例",text:"收藏很多健身教程、個個點讚，三年沒練過一個動作；以為掌握了方法，其實掌握的是看別人怎麼做。",mapping:"聽說和知道隔著一條河，河叫做。"},misconception:"把知道但做不到當意志力問題，繼續買書、收藏；把思考當行動的預演，預演到不敢做。",minAction:"出現「我知道但做不到」時，改成「我不確定」，再問「現在我能為這件事做什麼」——打開書看一頁、把念頭發給朋友，邁第一步。",oneLine:"做不到的知，不叫作知。",relatedIds:[1,8,14,49],evidenceTags:["哲學命題","臨床心理","書中案例"],citations:["王陽明《傳習錄》","行為激活療法"]},
+{id:19,chapter:"二 思維與認知",proposition:"教育是培養能力，不是分數",firstPrinciple:"離開學校後還能靠自己的能力",firstPrincipleFull:"教育的第一性原理是培養能力，不是分數；分數是抽樣測量，能力才是目的。",east:{quote:"記問之學，不足以為人師。",source:"《禮記·學記》（書中引用）",plain:"只會把記住的東西講出來、自己沒有心得，不夠資格教人。兩千多年前已把記住和學會分開。「授人以魚，不如授人以漁。」"},west:{quote:"教育是教人掌握運用知識的藝術。",source:"懷特海《教育的目的》（書中引用）",plain:"教育不是灌知識，是教人會用知識。"},comparison:"東方以「記問之學不足為師」「授人以漁」講能力；西方以「運用知識的藝術」講教育目的。共同點：都反對把記憶當教育終點。",case:{type:"書中案例",text:"孩子考上名校，進社會才發現沒有標準答案的題一道不會做、沒有考綱的事一件辦不成。",mapping:"十幾年只練了在劃定範圍內拿高分，沒有範圍就沒著落；分數是窄卷子抽樣，量不出完整的人。"},misconception:"把分數當目的，補習班越報越多、題越刷越狠；以為分數高就是孩子好。",minAction:"考完試別只問考多少分，問：哪道題錯了？為什麼錯？下次怎麼做才不會再錯？讓孩子多做沒有標準答案的事。",oneLine:"分數是抽樣測量，能力才是目的。",relatedIds:[14,15,33,48],evidenceTags:["哲學命題","教育哲學","書中案例"],citations:["《禮記·學記》","懷特海《教育的目的》"]},
+{id:20,chapter:"三 事業與成就",proposition:"職場是價值，不是努力",firstPrinciple:"公司為結果付錢，不為過程付錢",firstPrincipleFull:"職場的第一性原理是價值，不是努力；職場認的是交付，不是辛苦。",east:{quote:"君子務本，本立而道生。",source:"《論語》（書中引用）",plain:"先抓住根本，別的事才順得起來；職場那個本就是價值。"},west:{quote:"成果全在組織外部，組織內部沒有成果。",source:"彼得·德魯克《卓有成效的管理者》（書中引用）",plain:"關起門再辛苦，外面沒人受益，這辛苦就沒價值。"},comparison:"東方以「務本」講抓根本；西方以「成果在外部」講價值在組織之外。共同點：看交付，不看辛苦。",case:{type:"書中案例",text:"一人天天最晚走、便利貼貼滿、凌晨曬辦公室燈；另一人按時下班卻完成多個專案、省大量資金、客戶表揚信多。年終晉升的是第二個。",mapping:"公司算交出多少結果，十分付出只交一分結果，只承認那一分。"},misconception:"把努力當成果，把加班當功勞；用沒有功勞也有苦勞自我安慰。",minAction:"每天把「今天忙不忙」換成「今天交付了什麼」。",oneLine:"職場認的是交付，不是辛苦。",relatedIds:[21,24,30],evidenceTags:["管理學經典命題","書中案例"],citations:["《論語》","德魯克《卓有成效的管理者》"]},
+{id:21,chapter:"三 事業與成就",proposition:"長期主義是複利積累，不是熬時間",firstPrinciple:"讓昨天的結果成為今天的起點",firstPrincipleFull:"長期主義的第一性原理是複利積累，不是熬時間；長期主義看複利，不看熬了多久。",east:{quote:"不積跬步，無以至千里；不積小流，無以成江海。",source:"荀子《勸學》（書中引用）",plain:"千里一步步積，江海一滴滴積，每一步每一滴都接在上一回上。"},west:{quote:"重要的是找到很溼的雪和很長的坡。",source:"巴菲特滾雪球（書中引用）",plain:"溼雪是積累，長坡是時間。貝索斯1997年致股東信：衡量亞馬遜成功的根本標準，是長期創造的股東價值。"},comparison:"東方以「積跬步、積小流」講累積；西方以「滾雪球、長期股東價值」講複利。共同點：時間只是條件，累積才是根。",case:{type:"書中案例",text:"有人堅持寫作三年每天更新，粉絲只有幾千，覺得長期主義是騙人；另人在同一崗位十年做同樣事、沒晉升，覺得十年白費。",mapping:"兩人都只熬時間，沒讓每次結果疊上去，做完了就歸零。"},misconception:"把長期主義當待得久、熬得住；把一年經驗用十年當累積。",minAction:"把「我今天干了多久」換成「我今天比昨天多了什麼」。",oneLine:"長期主義看複利，不看熬了多久。",relatedIds:[1,20,24,26],evidenceTags:["哲學命題","商業案例","書中案例"],citations:["《荀子·勸學》","貝索斯1997年致股東信","巴菲特滾雪球理論"]},
+{id:22,chapter:"三 事業與成就",proposition:"管理是成就他人，不是管住人",firstPrinciple:"讓下屬能幹、想幹、有條件幹成",firstPrincipleFull:"管理的第一性原理是成就他人，不是管住人；管理是讓別人變強，不是讓自己更忙。",east:{quote:"功成事遂，百姓皆謂我自然。",source:"《道德經》老子（書中引用）",plain:"最好的管理者，人們只知道有這麼個人；事辦成了，大家說這是我們自己幹成的。"},west:{quote:"讓每個人的長處發揮出來，讓短處變得無關緊要。",source:"德魯克《管理的實踐》（書中引用）",plain:"杜魯門桌上牌子：「責任止於此。」功勞可讓，責任不再往上送。"},comparison:"東方以「百姓皆謂我自然」講成就他人的最高境界；西方以「發揮長處」「責任止於此」講管理責任。共同點：管理者退後，讓做事的人成事。",case:{type:"書中案例",text:"業務骨幹升主管，逐字改下屬方案、大小事都要審批、盯進度查考勤看報表；半年後下屬越來越不會幹活，他自己累到住院，部門狀況更差。",mapping:"管得越緊，團隊越離不了他，他一鬆手整攤停住。"},misconception:"把管理當管住人、監督檢查留痕；以為自己越忙越負責。",minAction:"分清哪些自己負責、哪些交出去：方向自己定，路讓做事的人找，只告訴他要達到什麼效果。",oneLine:"管理是讓別人變強，不是讓自己更忙。",relatedIds:[19,33,35],evidenceTags:["哲學命題","管理學經典","書中案例"],citations:["《道德經》","德魯克《管理的實踐》"]},
+{id:23,chapter:"三 事業與成就",proposition:"反脆弱是從波動中受益，不是規避風險",firstPrinciple:"波動後比之前更強",firstPrincipleFull:"反脆弱的第一性原理是從波動中受益，不是規避風險；風浪不是敵人，看你怎麼用它。",east:{quote:"生於憂患，死於安樂。",source:"《孟子》（書中引用）",plain:"安定舒適易懈怠，真出事就慌；常在動盪裡打磨的人越來越強。"},west:{quote:"風能吹滅蠟燭，也能點燃山火。",source:"塔勒布《反脆弱》（書中引用）",plain:"九頭蛇砍一個頭長兩個；肌肉斷裂才長；疫苗讓免疫系統先打一架。槓鈴策略：一頭最穩、一頭最冒進，中間不要。"},comparison:"東方以「生於憂患」講磨鍊；西方以「反脆弱、槓鈴策略」講機制與配置。共同點：壓力不都是敵人，是讓人變強的東西。",case:{type:"書中案例",text:"裁員消息一出，第一種人緊張四處找安穩飯碗，只想躲；第二種人鎮定，在動盪中發現自己哪裡有價值，價值高的加強、無用的及早轉行。",mapping:"差距不在緊張與否，在把波動當成什麼。"},misconception:"把規避風險當最高策略；把全部身家壓在不高不低那一檔；以為穩定就是贏。",minAction:"用槓鈴策略：留足保底的錢和本事，再拿一小部分去試錯、折騰。",oneLine:"風浪不是敵人，看你怎麼用它。",relatedIds:[10,26,45],evidenceTags:["哲學命題","風險哲學","書中案例"],citations:["《孟子》","塔勒布《反脆弱》"]},
+{id:24,chapter:"三 事業與成就",proposition:"時間管理是目標，不是效率",firstPrinciple:"時間押在離目標近的事上",firstPrincipleFull:"時間管理的第一性原理是目標，不是效率；沒有目標，效率再高也是南轅北轍。",east:{quote:"重要但不緊迫的事，離目標近、卻沒人催，最該優先。",source:"艾森豪威爾四象限（書中引用）",plain:"四類事：重要且緊迫、重要不緊迫、不重要但緊迫、不重要不緊迫；最常被拖到最後的是第二類。"},west:{quote:"要事第一；以終為始。",source:"柯維《高效能人士的七個習慣》（書中引用）",plain:"從最後結果反推現在該做什麼。粥左羅：沒有目標的人，不用學時間管理；時間押注，把時間當資本往收益高處押。"},comparison:"四象限講輕重緩急；柯維講目標導向；粥左羅講資本視角。共同點：先定目標，再談分配。",case:{type:"書中案例",text:"一人日程從早8點排到晚10點，三款待辦軟件、兩個番茄鐘，仍覺時間不夠，年初想做的事沒成；另一人日程留白，每天花20分鐘想今年要完成什麼，再安排今天，一年下來完成大部分計劃。",mapping:"前者忙於救火，後者讓時間往目標流。"},misconception:"把時間管理當把每一分鐘掰兩半用；回所有信息、參加所有會議、填所有表格，卻沒時間想目標。",minAction:"每天開始前花20分鐘問：今年要完成的是什麼？今天哪件事離它最近？先做那件重要但不緊迫的。",oneLine:"沒有目標，效率再高也是南轅北轍。",relatedIds:[3,16,20,21],evidenceTags:["管理實務","自我管理","書中案例"],citations:["柯維《高效能人士的七個習慣》","粥左羅《成事的時間管理》"]},
+{id:25,chapter:"三 事業與成就",proposition:"匠心是合道，不是熟能生巧",firstPrinciple:"順著這件事的規律做",firstPrincipleFull:"匠心的第一性原理是合道，不是熟能生巧；合道，手熟是水到渠成；不合道，手熟只是原地轉。",east:{quote:"臣之所好者，道也，進乎技矣。",source:"《莊子》庖丁解牛（書中引用）",plain:"別人一年換一把刀，他一把刀用十九年刀刃如新；差別不在手熟，在摸清牛的筋骨紋理，順骨縫下刀，練到以神遇而不以目視。"},west:{quote:"把一條魚的規律摸進骨子裡。",source:"小野二郎（書中引用）",plain:"什麼時候的魚最肥、米泡多久蒸到什麼硬度、手捏幾下、水溫多少，都順食材本性來；九十多歲還在捏。"},comparison:"東方以「庖丁解牛」講道進乎技；西方以「小野二郎」講順食材本性。共同點：極致來自合規律，不來自重複次數。",case:{type:"書中案例",text:"一人每天臨帖兩小時、堅持二十多年，字很規範挑不出毛病，卻給不了人感覺；另一人只練五六年，別人爭著買他的字掛牆上。",mapping:"差別不在練習時間，在有没有摸到書法的門道。"},misconception:"把匠心當熟能生巧；把重複當進步，方向錯了重複只會讓錯誤根深蒂固。",minAction:"練之前先想清楚：這件事好壞由什麼決定、勁該往哪使；弄明白再練，每次練習都對準規律。",oneLine:"合道，手熟是水到渠成；不合道，手熟只是原地轉。",relatedIds:[5,11,47,48],evidenceTags:["哲學寓言","職人案例","書中案例"],citations:["《莊子·養生主》","小野二郎紀錄片《壽司之神》"]},
+{id:26,chapter:"四 財富與金錢",proposition:"投資是風險控制，不是高回報",firstPrinciple:"先不虧本金，再談盈利",firstPrincipleFull:"投資的第一性原理是風險控制，不是高回報；先活下來，才談賺多少。",east:{quote:"先為不可勝，以待敵之可勝。",source:"《孫子兵法》（書中引用）",plain:"先讓自己立於不敗之地，再等敵人可被戰勝的時候。"},west:{quote:"第一不能虧錢，第二要牢記第一條。",source:"巴菲特（書中引用）",plain:"1969年股市火爆大家搶股票，他解散合夥基金，理由找不到符合標準的便宜貨，第二年市場果然大跌。"},comparison:"東方以「先為不可勝」講不敗而後勝；西方以「不能虧錢」講本金安全。共同點：先守再攻。",case:{type:"書中案例",text:"看鄰居買基金賺錢就跟風，漲時不賣、跌時急拋，一年下來仍虧。",mapping:"精力全用在找下一個高收益，沒意識到第一步是先不虧本金。反例：加槓桿全押，一次大回調把之前盈利全吐回去。"},misconception:"把投資當追高回報；不懂的也碰、超認知範圍的錢也投、不分散、不講安全邊際。",minAction:"設四道防線：不懂不碰；留足生活費再投；資金分散不同領域；買價格遠低於價值的，留安全邊際。",oneLine:"先活下來，才談賺多少。",relatedIds:[21,23,29,30],evidenceTags:["兵法命題","投資實例","書中案例"],citations:["《孫子兵法》","巴菲特致股東信"]},
+{id:27,chapter:"四 財富與金錢",proposition:"斷舍離是留下重要，不是扔東西",firstPrinciple:"先分清什麼重要，再清場",firstPrincipleFull:"斷舍離的第一性原理是留下重要，不是扔東西；斷舍離看留下什麼，不看丟掉多少。",east:{quote:"鷦鷯巢於深林，不過一枝；偃鼠飲河，不過滿腹。",source:"《莊子·逍遙遊》（書中引用）",plain:"鳥做窩只佔一根樹枝，老鼠喝水只喝一肚子；人所需不多，多出來的是慾望執著。"},west:{quote:"判定是否保留，不在東西還能不能用，在它對當下的自己有沒有用、能不能帶來快樂。",source:"山下英子《斷舍離》（書中引用）",plain:"主角是自己不是物品；用得上就留，看見就歡喜也留，兩樣都不佔才輪到丟。"},comparison:"東方以「不過一枝、不過滿腹」講所需有限；西方以「當下有用、主角是自己」講判準。共同點：先問需要，再問取捨。",case:{type:"書中案例",text:"看極簡博主受觸動，回家把衣櫃倒出來丟一半、書丟一半、雜物打包帶走；兩三個月後又開始買與丟的循環。",mapping:"力氣全使在丟上，從沒想過什麼該留的標準。"},misconception:"把斷舍離當丟東西比賽；以為丟得越多越極簡；標準沒立起來就動手丟。",minAction:"先列一張紙：一年中真正用到的東西有哪些；其餘看是否心動、有用；不確定的先擱一邊別急丟。",oneLine:"斷舍離看留下什麼，不看丟掉多少。",relatedIds:[3,30,46],evidenceTags:["哲學寓言","整理方法","書中案例"],citations:["《莊子·逍遙遊》","山下英子《斷舍離》（2009）"]},
+{id:28,chapter:"四 財富與金錢",proposition:"營銷是價值交換，不是定位",firstPrinciple:"讓買賣雙方都覺得獲得價值",firstPrincipleFull:"營銷的第一性原理是價值交換，不是定位；有價值才有人換，嗓門大沒用。",east:{quote:"炮製雖繁必不敢省人工，品味雖貴必不敢減物力。",source:"同仁堂《藥目敘》樂鳳鳴，1706（書中引用）",plain:"工序再煩不敢省一道，藥材再貴不敢少一分；傳三百多年還照做。老商號門前：「童叟無欺，貨真價實。」"},west:{quote:"通過創造並交換產品和價值來滿足消費者的需求，交換是核心。",source:"科特勒《營銷管理》（書中引用）",plain:"定位、廣告、渠道都是為交換而生的工具，交換不在，這些就失去意義。"},comparison:"東方以「童叟無欺、炮製雖繁」講以真價值換信任；西方以「交換是核心」講營銷定義。共同點：先有價值，再有交換。",case:{type:"書中案例",text:"前幾年擠進央視黃金時段廣告，銷量基本穩；這幾年花大錢在各媒體投廣告，效果越來越差——人們轉台、低頭玩手機。",mapping:"商家只做了露出，沒解決顧客為什麼要換的價值問題。"},misconception:"把力氣全用在定位、廣告、噱頭；以為口號夠響、心智佔得夠牢，顧客自然買。",minAction:"別急著定位，先問：手裡商品能不能替顧客解決問題，且解決得好一點？",oneLine:"有價值才有人換，嗓門大沒用。",relatedIds:[20,30,36],evidenceTags:["商業史","營銷學定義","書中案例"],citations:["同仁堂《藥目敘》（1706）","科特勒《營銷管理》"]},
+{id:29,chapter:"四 財富與金錢",proposition:"保險是互助，不是理財",firstPrinciple:"眾人的錢分攤少數人的損失",firstPrincipleFull:"保險的第一性原理是互助分攤，不是理財；保險看理賠額度，不看返本收益。",east:{quote:"豐年攢下餘糧就是保費，荒年領到的口糧就是賠付。",source:"隋朝義倉制度（書中引用）",plain:"隋開皇五年長孫平上奏：各地百姓按收成分攤，秋收每家拿部分粟麥存本社倉窖，遇荒年賑濟。明清稱社倉、義倉。"},west:{quote:"大數法則可精準測算群體出險概率，將個人難擔的損失分攤給所有投保人。",source:"保險精算原理（書中引用）",plain:"返還型重疾險總保費是消費型的2倍；同等保費下保額低一半還多。"},comparison:"東方以「義倉、社倉」講豐年攢荒年用；西方以大數法則講風險分攤數學基礎。共同點：都是眾人分攤少數人損失。",case:{type:"書中案例（數據）",text:"2024年參保機動車3.72億輛，保費收入2710.6億元，賠付支出2262.8億元，車均保費762.5元；未出險車主繳的保費都賠給當年出險車主。",mapping:"這就是池子互助。反例：重疾險件均賠付約8萬元，覆蓋不了治療開支。"},misconception:"把保險當理財、看返本收益；為了返本壓低保額；以為保費交了就該拿回來。",minAction:"看保單換順序：先確定出事能賠多少，再看要交多少保費；優先配置自己扛不住的風險。",oneLine:"保險看理賠額度，不看返本收益。",relatedIds:[26,30],evidenceTags:["制度史","精算原理","書中數據"],citations:["《隋書》義倉制度","國家金融監督管理總局2024年數據","平安人壽2024年理賠年報"]},
+{id:30,chapter:"四 財富與金錢",proposition:"財富是資產，不是收入",firstPrinciple:"讓錢生錢的東西才是家底",firstPrincipleFull:"財富的第一性原理是資產，不是收入；收入是流過，資產才是留下。",east:{quote:"以末致財，用本守之。",source:"《史記·貨殖列傳》（書中引用）",plain:"經商賺收入（末），要換成土地這類資產（本），錢才留得住。"},west:{quote:"資產是把錢放進口袋的東西，負債是從口袋取錢的東西。",source:"羅伯特·清崎《富爸爸窮爸爸》（書中引用）",plain:"富人買資產，中產買他們以為是資產的負債；差的不在收入，在會不會把收入變資產。"},comparison:"東方以「末—本」講收入換資產；西方以「資產—負債」講現金流方向。共同點：看手裡有沒有生錢的東西。",case:{type:"書中案例",text:"寫字樓上班族月入3萬，發完工資房貸車貸新衣服一花，月底回原點；樓下小鋪老張月賺5千，十幾年前買三套房，兩套出租一套自住，租金比小鋪賺得多。",mapping:"月薪3萬的看著富，其實沒有月入5千的老張富。"},misconception:"把收入當財富，以為賺得多就是富；追求高工資忘了財富增長；先消費再想資產。",minAction:"管住收入流向：每月發薪先拿一部分買能增值的投資品，其餘才花；先買資產再消費。",oneLine:"收入是流過，資產才是留下。",relatedIds:[20,21,26,29],evidenceTags:["史學","財商讀物","書中案例"],citations:["《史記·貨殖列傳》","清崎《富爸爸窮爸爸》（1997）"]},
+{id:31,chapter:"五 關係與情感",proposition:"家庭是責任，不是對錯",firstPrinciple:"不管誰對誰錯都一起過下去",firstPrincipleFull:"家庭的第一性原理是責任，不是對錯；家裡不是法庭，是共同生活的地方。",east:{quote:"死生契闊，與子成說。執子之手，與子偕老。",source:"《詩經》（書中引用）",plain:"生死相依、聚散離合都約定好了，一起過完這一生；一句不反悔的諾言比任何道理都有說服力。"},west:{quote:"在順境和逆境中，在富貴與貧賤之間，在安康與疾病之下，我都會愛你、敬重你。",source:"西方婚禮誓言（書中引用）",plain:"後半句不帶任何條件，是往後幾十年不論發生什麼都一起面對。"},comparison:"東方以「契闊偕老」講約定；西方以婚禮誓言講無條件承諾。共同點：家庭靠承諾與責任維繫，不靠辯論輸贏。",case:{type:"書中案例",text:"一對夫妻為倒垃圾、多花幾百塊、沒接孩子、襪子丟沙發爭吵，最後翻出三五年前舊帳，非要分清是非，關係越來越差；另一對意見不合時先想這個家以後怎麼經營、各自能做什麼，矛盾很快化解。",mapping:"差別在發生事情後是爭對錯，還是先承擔責任。"},misconception:"把家庭當可以明辨是非的地方，搶著當法官；翻舊帳、算總帳、請親友評理。",minAction:"爭吵時先別說誰是誰非，先想這個家還要繼續、我能做什麼——倒杯熱水、讓一步。",oneLine:"家裡不是法庭，是共同生活的地方。",relatedIds:[7,32,39],evidenceTags:["文學經典","文化文本","書中案例"],citations:["《詩經·邶風·擊鼓》","西方婚禮誓言"]},
+{id:32,chapter:"五 關係與情感",proposition:"愛情是承諾，不是浪漫",firstPrinciple:"熱情消退後仍願意共度一生",firstPrincipleFull:"愛情的第一性原理是承諾，不是浪漫；浪漫是外殼，承諾才是裡子。",east:{quote:"山無陵，江水為竭。冬雷震震，夏雨雪。天地合，乃敢與君絕。",source:"《上邪》（書中引用）",plain:"山平、江乾、冬雷、夏雪、天地相接，才敢與你分離——用不可能發生的條件，說不可能分開。秦觀：「兩情若是久長時，又豈在朝朝暮暮。」"},west:{quote:"親密、激情、承諾三成分；只有激情是迷戀，親密加激情缺承諾是浪漫的愛。",source:"斯滕伯格愛情三角理論，1986（書中引用）",plain:"浪漫的愛看著美，缺的那一角恰恰是承諾。"},comparison:"東方以「山無陵、天地合」講承諾的絕對性；西方以三角理論講承諾是完滿愛情的必要成分。共同點：承諾是愛情能否長久的根。",case:{type:"書中案例",text:"一對情侶戀愛時紀念日驚喜、燭光晚餐、甜言蜜語，朋友羨慕；激情過後膩煩、鬧矛盾分手。另一對日子普通，卻沒人想過分開，因為心裡默認這個人的存在就是一種承諾。",mapping:"浪漫會退潮，承諾決定退潮後還剩什麼。"},misconception:"把浪漫當愛情基礎；沒有浪漫就覺得失去愛情，一再追逐新浪漫。",minAction:"別先問他浪不浪漫，先問熱情退了、人老了醜了窮了，我還肯不肯要他；想明白再談浪漫。",oneLine:"浪漫是外殼，承諾才是裡子。",relatedIds:[31,33,46],evidenceTags:["文學經典","心理學理論","書中案例"],citations:["《上邪》","秦觀《鵲橋仙》","斯滕伯格愛情三角理論（1986）"]},
+{id:33,chapter:"五 關係與情感",proposition:"親子是陪伴，不是報班",firstPrinciple:"有限期內給足安全感",firstPrincipleFull:"親子的第一性原理是陪伴，不是報班；技能可外包，安全感只有父母能給。",east:{quote:"教婦初來，教兒嬰孩。",source:"《顏氏家訓》（書中引用）",plain:"教媳婦趁剛進門，教孩子趁還小、還能引導。「父子之嚴，不可以狎；骨肉之愛，不可以簡。」"},west:{quote:"嬰兒期與主要照顧者的親密關係，一生起安全基地作用。",source:"鮑爾比依戀理論（書中引用）",plain:"小時候被好好陪伴的孩子，長大更有勇氣冒險、更能承受壓力；缺了這份陪伴，一生都在補缺口。"},comparison:"東方以「教兒嬰孩」講時機；西方以「安全基地」講機制。共同點：陪伴有窗口期，錯過難補。",case:{type:"書中案例",text:"一家孩子週一到週五三門課、週六日兩門，鋼琴英語奧數游泳排滿；另一家只有兩門，在家和爸媽寫作業、下棋、聊天、散步。多年後，一個回憶被逼趕場喘不過氣，一個回憶晚飯後一家人下棋。",mapping:"技能可外包，安全感不能。反例：人在客廳玩手機、孩子在房裡做功課，不算陪伴。"},misconception:"把報班當盡責；以為花錢多就是給孩子多；人在旁邊就算陪。",minAction:"做減法：砍掉一些班，空出時間陪寫一次作業、打一場球、吃一頓不緊不慢的晚飯。",oneLine:"技能可外包，安全感只有父母能給。",relatedIds:[19,31,40],evidenceTags:["家訓","發展心理學","書中案例"],citations:["《顏氏家訓》","鮑爾比依戀理論"]},
+{id:34,chapter:"五 關係與情感",proposition:"友情是靠得住，不是玩得來",firstPrinciple:"難處時肯伸手",firstPrincipleFull:"友情的第一性原理是靠得住，不是玩得來；熱鬧會散，靠得住才留。",east:{quote:"生我者父母，知我者鮑叔牙。",source:"管仲（書中引用）",plain:"管仲做生意本錢少分紅多，鮑叔牙說他家貧；管仲當兵逃三次，鮑叔牙說他家有老母；管仲爭位失敗成俘虜，鮑叔牙仍向齊桓公舉薦。莊子：「君子之交淡如水，小人之交甘若醴。」"},west:{quote:"圖有用、圖玩得開心、因認同對方這個人本身；只有第三種才是真正友誼。",source:"亞里士多德《尼各馬可倫理學》（書中引用）",plain:"玩得來是第二類，靠得住是第三類。"},comparison:"東方以「管鮑之交」「淡如水」講知心與靠得住；西方以三種友誼講分類。共同點：真友誼看人品與難處，不看熱鬧。",case:{type:"書中案例",text:"一人天天喝酒打球唱歌、形影不離、隨時可打電話；另一人平時各忙、半年沒聯繫。意外發生時，第一個藉口太忙推掉，第二個立刻趕到。",mapping:"熱鬧是外衣，難處才見真章。"},misconception:"把玩得來當友誼基礎；酒桌上稱兄道弟，真借錢生病沒人接電話。",minAction:"別急著給友誼下結論：放慢觀察，遇困難時誰伸手；想結交靠得住的人，先讓自己成為靠得住的人。",oneLine:"熱鬧會散，靠得住才留。",relatedIds:[35,36,39],evidenceTags:["史例","倫理學","書中案例"],citations:["《史記·管晏列傳》","《莊子·山木》","亞里士多德《尼各馬可倫理學》"]},
+{id:35,chapter:"五 關係與情感",proposition:"社交是品質，不是數量",firstPrinciple:"少數深關係帶來大部分好處",firstPrincipleFull:"社交的第一性原理是品質，不是數量；社交看幾段能互相成就，不看通訊錄人數。",east:{quote:"諸客見孟嘗君廢，皆去。",source:"《史記》孟嘗君（書中引用）",plain:"三千食客走得乾乾淨淨，只有馮諼留下，替他跑一趟說動秦王、又趕回齊國放風聲，齊王趕緊請回孟嘗君加封土地。"},west:{quote:"人的大腦大概能維持150段穩定社交關係，最貼心5人、往外15人、再往外50人。",source:"鄧巴研究（書中引用）",plain:"帕累托二八定律：少數幾段深關係帶來大部分好處。"},comparison:"東方以「三千食客皆去」講數量靠不住；西方以鄧巴數、二八定律講精力有限、關係分層。共同點：心力要投在少數重要關係上。",case:{type:"書中案例",text:"一人每天聚會、微信好友五千、各行各業都有，一年累夠嗆，真做成的事幾乎沒有；另一人圈子小、交往實在，關鍵時刻一個頂十個。",mapping:"差別不在誰更努力，在時間用對地方。"},misconception:"把社交當積累人脈，加好友、混圈子；以為朋友多路就寬，沒算精力成本。",minAction:"把社交當投資記帳：算有限時間投到哪，徒勞無功的關係果斷捨，時間挪到真正有價值的關係上。",oneLine:"社交看幾段能互相成就，不看通訊錄人數。",relatedIds:[9,34,36],evidenceTags:["史例","統計實證","書中案例"],citations:["《史記·孟嘗君列傳》","鄧巴數（Dunbar's number）","帕累托二八定律"]},
+{id:36,chapter:"五 關係與情感",proposition:"識人是看人品，不是聽言語",firstPrinciple:"看利益、時間、困難前的取捨",firstPrincipleFull:"識人的第一性原理是看人品，不是聽言語；人品藏在兩難取捨裡，不在漂亮話裡。",east:{quote:"歲寒，然後知松柏之後凋也。",source:"《論語》孔子（書中引用）",plain:"天冷別樹掉光葉子，才看出松柏常青；順境個個是好人，逆境取捨才分真人和演員。「視其所以，觀其所由，察其所安。」"},west:{quote:"一個人真實看重什麼，不看他嘴上怎麼說，看他拿真金白銀怎麼選。",source:"薩繆爾森「顯示性偏好」（書中引用）",plain:"嘴上說在乎，卻一分錢不肯花、一小時不肯給，那點在乎是假的。"},comparison:"東方以「歲寒知松柏」「視其所安」講逆境與動機；西方以「顯示性偏好」講代價揭示偏好。共同點：看取捨與代價，不聽表態。",case:{type:"書中案例",text:"飯桌上一人拍胸脯「有事找我」「包在我身上」，真要出面就推脫；另一人話少、不隨便許諾，答應的件件做到，關鍵時刻拿真金白銀幫人。",mapping:"差別不在誰說得好聽，在人品經不經得起考驗。"},misconception:"只聽言語，把客套當真情、表面話當承諾；越滿口承諾、句句漂亮，越該打問號。",minAction:"從日常小事看：諾言兌現沒有？利益前讓不讓？出差錯認不認？對沒用的人客不客氣？",oneLine:"人品藏在兩難取捨裡，不在漂亮話裡。",relatedIds:[9,28,34],evidenceTags:["哲學命題","經濟學概念","書中案例"],citations:["《論語》","薩繆爾森顯示性偏好理論"]},
+{id:37,chapter:"五 關係與情感",proposition:"原生家庭是起點，不是宿命",firstPrinciple:"起點影響出發，不決定走多遠",firstPrincipleFull:"原生家庭的第一性原理是起點，不是宿命；起點是第一章，路靠自己走。",east:{quote:"畫荻教子。",source:"歐陽修母親鄭氏（書中引用）",plain:"歐陽修四歲喪父，家貧買不起紙筆，母親用蘆葦稈在沙地上畫字教他；後來考中進士，做到參知政事，提攜蘇軾、蘇轍、曾鞏。"},west:{quote:"決定一個人的，是這個人給經歷賦予了什麼意義，不是過去的經歷本身。",source:"阿德勒目的論（書中引用）",plain:"阿德勒幼年體弱、患佝僂病、五歲肺炎險死，老師判定他只能當鞋匠；他後來考入維也納大學、成為醫生，創立個體心理學學派。"},comparison:"東方以歐陽修「畫荻教子」講起點低仍可成；西方以阿德勒親身經歷講目的論。共同點：起點影響出發，不決定走多遠。",case:{type:"書中案例",text:"兩人都從不美滿家庭長大。一個把起點當一輩子負擔，遇事說我原來的家就是這樣、改變不了；另一個承認創傷也承認起點，明白起點是起點、路靠自己闖，慢慢重塑自己。",mapping:"困住人的不是過去，是我改不了這個念頭。"},misconception:"宿命論（童年決定一切）與推卸責任（把原生家庭當免責卡），本質都是把起點當宿命。",minAction:"三步：先認下起點；再認清模板（哪些想法是自己的、哪些來自家庭）；最後重新養育自己（建立健康關係、做能自主決定的事）。",oneLine:"起點是第一章，路靠自己走。",relatedIds:[2,9,48,49],evidenceTags:["史例","心理學理論","書中案例"],citations:["《宋史·歐陽修傳》","阿德勒個體心理學"]},
+{id:38,chapter:"五 關係與情感",proposition:"提問是追問，不是要答案",firstPrinciple:"一層層問到無可再問",firstPrincipleFull:"提問的第一性原理是追問，不是要答案；答案會過時，追問到本質才靠得住。",east:{quote:"學、問、思、辨、行。",source:"《中庸》（書中引用）",plain:"廣泛學、詳細問、慎重思、清楚辨、最後落到做；追問專門佔一步，學來不追不問就停在第一步。"},west:{quote:"我思故我在。",source:"笛卡爾普遍懷疑（書中引用）",plain:"凡是能懷疑的先懷疑掉，追到只剩我正在懷疑懷疑不掉，再從這兒重建知識。蘇格拉底反詰法：一個問題接一個問，問到對方站不住腳，自己把答案想出來。豐田五問法：從換保險絲追到改保養制度。"},comparison:"東方以「學問思辨行」把問列為獨立一步；西方以蘇格拉底反詰、笛卡爾懷疑、豐田五問講追問方法。共同點：追到不可再分，再從本質往上搭。",case:{type:"書中案例",text:"同樣問AI怎麼賺錢，一個得到找到需求、創造價值、持續變現，正確但沒意義；另一個先想自己有什麼資源、能幫別人解決什麼、對方願付多少，一步步問下去，落到具體事情上。",mapping:"同一個AI，差別在會不會追問。"},misconception:"拿到答案就停，不問對不對、從哪來、有沒有更深；攢一堆淺答案，解決不了一個真問題。",minAction:"拿到答案別急著結束，多問一句這個答案對不對、背後原因是什麼，追到問不出為什麼；最高形式是反躬自問。",oneLine:"答案會過時，追問到本質才靠得住。",relatedIds:[8,12,14,50],evidenceTags:["哲學命題","哲學方法","管理實務","書中案例"],citations:["《中庸》","蘇格拉底反詰法","笛卡爾《第一哲學沉思集》","豐田五問法"]},
+{id:39,chapter:"五 關係與情感",proposition:"邊界感是分清你我，不是學會說不",firstPrinciple:"分清誰的事、誰擔責",firstPrincipleFull:"邊界感的第一性原理是分清你我，不是學會說不；分清你我，不自然說得出口。",east:{quote:"己所不欲，勿施於人。",source:"《論語》孔子（書中引用）",plain:"自己不願承受的，別加到別人頭上；把自己和別人的位置放正，知道哪些該管、哪些不該管。"},west:{quote:"界限就是分清什麼是我、什麼不是我。",source:"克勞德《過猶不及》（書中引用）",plain:"分身體、心理、情緒三類；好的界限像可呼吸的柵欄，好的進得來、壞的擋在外。岸見一郎《被討厭的勇氣》總結阿德勒「課題分離」。"},comparison:"東方以「己所不欲」講換位與分寸；西方以「界限三類」「課題分離」講責任歸屬。共同點：先分清誰的事，再談拒絕。",case:{type:"書中案例",text:"兩人從大學形影不離，同棟樓、換衣服穿、手機密碼互知。一個談戀愛，另一個不痛快，要求每天說清去哪見誰、手機一響就湊過去看；還跑去找她男友談，結果兩人早和好。",mapping:"沒分清誰的戀愛、誰的情緒，真心越了界。"},misconception:"把邊界感窄化成會說不；背一堆拒絕話術，關鍵時刻張不開口或開口就錯。",minAction:"先把事情分一分：自己的事自己做主自己擔責，別人的事不越權不插手，一起扛的事坐下來商量。",oneLine:"分清你我，不自然說得出口。",relatedIds:[7,31,40],evidenceTags:["哲學命題","心理學讀物","書中案例"],citations:["《論語》","克勞德《過猶不及》","岸見一郎《被討厭的勇氣》"]},
+{id:40,chapter:"五 關係與情感",proposition:"情緒價值是接納情緒，不是哄人開心",firstPrinciple:"先承認情緒是真的，再談回應",firstPrincipleFull:"情緒價值的第一性原理是接納情緒，不是哄人開心；先接住情緒，再談解決。",east:{quote:"書中未直接引用東方句。",source:"整理時可補《論語》「己所不欲，勿施於人」的反面應用：自己不想被否定情緒，就別急著否定對方情緒。",plain:"此為整理時補充，非書中原引。"},west:{quote:"一方情緒被另一方承接住，關係就穩；逃避或反抗，關係就裂。",source:"戈特曼情緒協調（書中引用）",plain:"羅傑斯「無條件積極關注」：人際中最看重被理解接納。共情是進入對方情境一起體會，同情是在一旁說真可惜。"},comparison:"東方（補充）以「己所不欲」講不否定他人感受；西方以「情緒協調」「無條件積極關注」講接納機制。共同點：先接住情緒，再談解決。",case:{type:"書中案例",text:"妻子下班臉色灰暗，訴說會議上被上司公開指責，又氣又委屈；丈夫抬頭說不要把這些放心上，又說今晚出去散散步心情就好了。妻子沒回答，轉身進房關門。",mapping:"丈夫想哄開心，跳過了承認委屈這一步。補充案例：海底撈等位做指甲、修鞋，還承認我們工作沒做好、讓您久等。"},misconception:"把情緒價值當哄人開心；朋友難過說沒事、伴侶委屈說沒關係、孩子哭說別哭。",minAction:"對方有情緒時先接一句：你一定很不好受吧、這樣的事落到誰頭上都不舒服；壓住立刻安慰、哄、轉移話題的衝動。",oneLine:"先接住情緒，再談解決。",relatedIds:[4,31,33,39],evidenceTags:["心理學研究","臨床心理","書中案例","補充案例"],citations:["戈特曼婚姻研究","羅傑斯人本主義心理學"]},
+{id:41,chapter:"六 健康與身體",proposition:"健康是身心愉悅，不是不生病",firstPrinciple:"身心有活力，不只是沒病",firstPrincipleFull:"健康的第一性原理是身心愉悅，不是不生病；沒病只是底線，有活力才是健康。",east:{quote:"聖人不治已病治未病。",source:"《黃帝內經》（書中引用）",plain:"《鶡冠子》扁鵲三兄弟：大哥在病未顯形時除掉，名聲傳不出家門；二哥在病剛冒頭時下手；扁鵲治病樣子看得見，反倒名聞諸侯。病未顯形那個階段，正是現在說的沒病。"},west:{quote:"健康是生理、心理、社會三方面完滿狀態，不是沒有生病或虛弱。",source:"世界衛生組織定義（書中引用）",plain:"後來補充生物心理社會醫學模式：治病不能只盯病變，三層都要看。"},comparison:"東方以「治未病」講病前狀態；西方以三維完滿講健康定義。共同點：健康是大於沒病的整體狀態。",case:{type:"書中案例",text:"一同事年年體檢指標正常，卻總覺得累、白天打瞌睡、晚上睡不著、吃得少體重掉、情緒煩躁，查出亞健康；另一同事報告有幾個小箭頭，卻每天精神飽滿、早上跑步、中午吃得香、晚上很快睡。",mapping:"沒病不等於健康。"},misconception:"把健康當沒去醫院、體檢都好；一邊熬夜久坐暴食，一邊敷面膜、開藥調理、貼膏藥找補。",minAction:"別只盯體檢數據，多關注自身感覺：早晨有沒有勁、一天累不累、晚上睡不睡得好、飯香不香、心情舒暢還是壓抑。",oneLine:"沒病只是底線，有活力才是健康。",relatedIds:[43,44,45,46],evidenceTags:["醫學典籍","公共衛生定義","書中案例"],citations:["《黃帝內經》","《鶡冠子》","世界衛生組織健康定義"]},
+{id:42,chapter:"六 健康與身體",proposition:"減肥是攝入低於消耗，不是運動量",firstPrinciple:"能量差額決定胖瘦",firstPrincipleFull:"減肥的第一性原理是攝入低於消耗，不是運動量；管住嘴比邁開腿更根本。",east:{quote:"書中未直接引用東方句。",source:"核心是現代營養學能量差額原理，整理時不強配東方句。",plain:"東方養生重「節食有度」，但書中未展開，僅供參考。"},west:{quote:"七分吃、三分練。",source:"健身界說法（書中引用）",plain:"能量守恆：進多出少存脂肪，進少出多燒脂肪。數據：成年女性基礎代謝約1200–1300卡；一碗米飯要跑二十分鐘，一塊奶油蛋糕要跑四十分鐘。"},comparison:"此條以現代能量守恆為單一主軸，東西方對比不強。",case:{type:"書中案例",text:"健身房一人跑步機滿頭大汗、動感單車蹬到腿痠，三個月體重沒變；旁邊同事不健身，只少吃三分之一，兩個月甩掉四公斤半。",mapping:"鍛鍊後一頓烤肉加奶茶，汗白流。"},misconception:"把減肥當運動量比賽；練完覺得累就大吃一頓恢復體力；只練不管嘴。",minAction:"先守嘴：少喝含糖飲料；調整吃飯順序，先蔬菜和肉再主食；鍛鍊照常，但別拿它當放縱藉口。",oneLine:"管住嘴比邁開腿更根本。",relatedIds:[41,44,45],evidenceTags:["營養學原理","書中案例"],citations:["能量守恆原理","健身營養學通識"]},
+{id:43,chapter:"六 健康與身體",proposition:"睡眠是規律，不是時長",firstPrinciple:"跟生物鐘一致",firstPrincipleFull:"睡眠的第一性原理是規律，不是時長；睡得規律，比睡得久重要。",east:{quote:"書中未直接引用東方句。",source:"主軸是現代晝夜節律研究；東方「日出而作、日落而息」可作補充，但書中未引。",plain:"整理時標為補充，不與書中原引混淆。"},west:{quote:"睡前看兩小時平板或手機，褪黑素降一半以上，入睡推後約一個半小時。",source:"藍光與褪黑素研究（書中引用）",plain:"晝夜節律跟著光線走；藍光波長約460–480奈米，對褪黑素最敏感。核磁共振研究：作息不規律者，負責注意與判斷的腦區連接較差。"},comparison:"以現代睡眠科學為主，東西方對照不強。",case:{type:"書中案例",text:"小王每晚11點睡、7點起，工作日週末都一樣，早上神采奕奕；小張隨心所欲，有時十點睡、有時熬到凌晨兩三點，週末睡到中午，時長更多卻一臉倦容，週一頭重腳輕。",mapping:"問題出在作息亂，不在睡得少。"},misconception:"把睡眠當固定八小時的算術；以為缺的覺能靠週末補；睡前刷手機越刷越精神。",minAction:"先定固定起床時間，前一晚幾點睡都準時起；早上拉窗簾見光幾分鐘；睡前一小時調暗燈光、手機放遠。",oneLine:"睡得規律，比睡得久重要。",relatedIds:[41,42,44,45],evidenceTags:["睡眠科學","書中案例"],citations:["晝夜節律研究","藍光與褪黑素研究"]},
+{id:44,chapter:"六 健康與身體",proposition:"飲食是均衡，不是進補",firstPrinciple:"多樣食物織成完整的網",firstPrincipleFull:"飲食的第一性原理是均衡，不是進補；均衡是整張網，進補只是補丁。",east:{quote:"五穀為養，五果為助，五畜為益，五菜為充。",source:"《黃帝內經》（書中引用）",plain:"穀物主食養人，水果輔助、肉類補益、蔬菜填充，合起來吃氣力才補得上。"},west:{quote:"每天攝入12種以上食物，每週至少25種。",source:"《中國居民膳食指南》（書中引用）",plain:"谷薯、蔬果、畜禽魚蛋奶、大豆堅果都要有；中國營養學會共識：健康人按指南吃就夠，不需額外補保健品。"},comparison:"東方以「五穀五果五畜五菜」講食物分工；西方以膳食指南講種類與數量。共同點：營養靠多樣搭配，不靠單一補品。",case:{type:"書中案例",text:"一員工抽屜塞滿褪黑素、魚肝油、維生素、蛋白質粉，吃飯隨意；另一員工什麼保健品都不吃，三餐規律葷素搭配。一年下來，吃保健品者面色不佳、常疲倦上火；吃三餐者面色紅潤、精力充沛。",mapping:"補品替代不了一頓飯。"},misconception:"相信進補能治各種虛弱；三餐敷衍、把保健品當主食；脂溶性維生素補過頭在體內堆積。",minAction:"吃得雜一點，三餐米飯蔬菜肉類都沾；真有明確缺乏才在醫生指導下針對性補。",oneLine:"均衡是整張網，進補只是補丁。",relatedIds:[41,42,45],evidenceTags:["醫學典籍","營養學指南","書中案例"],citations:["《黃帝內經》","《中國居民膳食指南》","中國營養學會共識"]},
+{id:45,chapter:"六 健康與身體",proposition:"運動是長期可持續，不是強度",firstPrinciple:"規律刺激、給恢復時間",firstPrincipleFull:"運動的第一性原理是長期可持續，不是強度；能一直做的運動，才有效。",east:{quote:"人體欲得勞動，但不當使極耳。",source:"華佗勸吳普，《後漢書》（書中引用）",plain:"人要動，但別動到極點。吳普照五禽戲練幾十年，活到九十多歲，耳靈牙未掉。"},west:{quote:"成年人每週至少150分鐘中等強度鍛鍊，或75分鐘高強度鍛鍊。",source:"世界衛生組織建議（書中引用）",plain:"核心是有規律進行、堅持下來；效果在鍛鍊後休息時出現，不在運動那一下。"},comparison:"東方以「不當使極」講適度持續；西方以每週150分鐘講劑量標準。共同點：運動看能不能一直做，不看某次多狠。",case:{type:"書中案例",text:"一人買健身卡，一開始天天練器械、跑步機最大坡度、深蹲硬拉臥推全上，累到爬樓梯都吃力；另一人沒買東西，每天提早一站下車走兩公里、辦公室多跑樓梯、晚上簡單拉伸。一年下來，後者血壓降了、睡眠好了、精神頭好了、腰不痠了。",mapping:"可持續勝過高強度。"},misconception:"以為強度越大越好，一上來拼命出汗；猛練幾天後全身疼痛、膝蓋發炎，從此放棄。",minAction:"選能堅持的方式：每天快走二十分鐘、爬樓梯、幾組深蹲；循序漸進加量；把運動融入日常。",oneLine:"能一直做的運動，才有效。",relatedIds:[1,41,42,43],evidenceTags:["史書","公共衛生建議","書中案例"],citations:["《後漢書·華佗傳》","世界衛生組織身體活動建議"]},
+{id:46,chapter:"七 人生與意義",proposition:"幸福是意義，不是擁有",firstPrinciple:"把生命連到更大的東西",firstPrincipleFull:"幸福的第一性原理是意義，不是擁有；擁有只到快樂層，意義才託底。",east:{quote:"知足不辱，知止不殆。",source:"《道德經》老子（書中引用）",plain:"懂得滿足不受辱，知道適可而止不遇險。「禍莫大於不知足。」"},west:{quote:"幸福＝先天遺傳＋環境＋個人可控；環境只佔約一成，個人可控佔四成。",source:"塞利格曼幸福公式（書中引用）",plain:"布里克曼1978：中獎者不比普通人幸福多少，癱瘓者過得比預想好。哈佛研究追蹤八十年：最重要的是人際關係的溫暖。弗蘭克爾：意義三條路——關愛他人、創造價值、勇敢面對苦難。"},comparison:"東方以「知足知止」講節制；西方以幸福公式、哈佛研究、意義治療講實證與臨床。共同點：擁有只到快樂層，意義才託底。",case:{type:"書中案例",text:"同屆畢業兩人，一個進大公司拼命掙錢，買房買車存款翻番，卻越掙越空；另一個做社區工作收入不高，每天為老人買菜、給小孩補習，回家立刻睡著、臉上帶笑。",mapping:"物質優渥不等於生活質量高。月薪5萬爽感頂多三個月，之後又追更高。"},misconception:"把幸福當快樂、當擁有；陷入享樂跑步機；越重視金錢權力外表，越容易焦慮抑鬱。",minAction:"找一件自己認真的小事——幫人也好、磨一門技藝也好——投入時間精力；少跟人比擁有。",oneLine:"擁有只到快樂層，意義才託底。",relatedIds:[10,32,47,48],evidenceTags:["哲學命題","心理學實證","書中案例"],citations:["《道德經》","塞利格曼《真實的幸福》","哈佛成人發展研究","弗蘭克爾《尋找生命的意義》"]},
+{id:47,chapter:"七 人生與意義",proposition:"心流是投入，不是專注",firstPrinciple:"挑戰與技能匹配，全然投入",firstPrincipleFull:"心流的第一性原理是投入，不是專注；專注是投入的結果，不是開關。",east:{quote:"用志不分，乃凝於神。",source:"《莊子》孔子評駝背老人（書中引用）",plain:"駝背老人粘蟬一粘一個準，說天地雖大、萬物雖多，心裡只有蟬的翅膀；心思不分散，精神就凝聚到一處。"},west:{quote:"目標明確、反饋迅速、挑戰與能力匹配、人與工作融為一體。",source:"契克森米哈賴心流研究（書中引用）",plain:"1975《超越無聊與焦慮》提出心流，1990《心流：最優體驗心理學》；做這件事本身就是獎賞。"},comparison:"東方以「用志不分」講凝神；西方以心流研究講條件與機制。共同點：忘我來自投入，不來自強迫。",case:{type:"書中案例",text:"越想專心越進不去——戒手機、番茄鐘、白噪音、打坐都試過，任務要麼太簡單靜不下心，要麼太難一碰就慌。",mapping:"缺的不是專注技巧，是匹配難度的任務。"},misconception:"把心流當專心致志；四處找專注方法，卻不給自己匹配適配難度的任務。",minAction:"找一件稍微超出能力的事，設一個小目標去挑戰；目標明確、反饋及時、難度匹配。",oneLine:"專注是投入的結果，不是開關。",relatedIds:[3,5,25,48],evidenceTags:["哲學寓言","心理學研究","書中案例"],citations:["《莊子·達生》","契克森米哈賴《心流》"]},
+{id:48,chapter:"七 人生與意義",proposition:"自我實現是成為自己，不是變優秀",firstPrinciple:"把本來就有的活出來",firstPrincipleFull:"自我實現的第一性原理是成為自己，不是變優秀；變優秀向外比，成為自己向內走。",east:{quote:"書中未直接引用東方句。",source:"主軸是馬斯洛與阿德勒；東方「盡性」「率性」可作補充，但書中未引。",plain:"整理時標為補充，不與書中原引混淆。"},west:{quote:"一個人能夠成為什麼，他就必須成為什麼。",source:"馬斯洛（書中引用）",plain:"自我實現者共同點：不太在乎別人看法、對現實清醒、接納自己也接納別人。「約拿情結」：人對自己的潛能感到害怕。阿德勒：追求優越越來越累，社會興趣才是正路。"},comparison:"以西方心理學為主軸；東方「盡性」思想可補充，但書中未展開。",case:{type:"書中案例",text:"一同學日積月累變優秀，朋友圈打卡、早讀健身英語理財一門接一門，證書堆成小山，心裡還是不滿足；另一同學只守一門手藝，一遍遍琢磨打磨，日子慢，內心越來越堅定。",mapping:"變優秀向外比，成為自己向內走。"},misconception:"把自我實現當自我提升、變強變出色；用社會標準量自己，越量越空。",minAction:"問自己想成為什麼樣的人，找一件一上手就順手、做多久都不累的事，踏實堅持；留一段不打卡、不給人看的時間。",oneLine:"變優秀向外比，成為自己向內走。",relatedIds:[5,9,25,46],evidenceTags:["心理學理論","書中案例"],citations:["馬斯洛需求層次理論","阿德勒《自卑與超越》"]},
+{id:49,chapter:"七 人生與意義",proposition:"自洽是內在一致，不是自我和解",firstPrinciple:"認知、情感、行為三樣對得上",firstPrincipleFull:"自洽的第一性原理是內在一致，不是自我和解；和解是情緒停戰，自洽是三樣一致。",east:{quote:"誠於中，形於外。",source:"《大學》（書中引用）",plain:"裡面什麼樣，外面就流露什麼；真正自洽是裡面長出來的，不是外面說出來的。蘇格拉底本可逃，卻寧可喝毒酒——一輩子教人守法，若逃了，說過和做過就對不上。"},west:{quote:"腦中同時裝兩套打架想法會不安，會想辦法讓它們一致。",source:"費斯廷格認知失調理論，1957（書中引用）",plain:"榮格：人在社會戴人格面具，戴久了分不清哪個是自己；外面形象和內心真我越拉越遠，人越空越累。"},comparison:"東方以「誠中形外」「蘇格拉底之死」講內外一致；西方以認知失調、人格面具講機制。共同點：自洽是三樣對得上，不是嘴上想通。",case:{type:"書中案例",text:"老周離婚三年多，見誰都說放下了、想通了，聽說前妻再婚還樂呵呵說祝福他們，轉頭一個人喝得酩酊大醉睡一宿，第二天照常上班像沒事。",mapping:"嘴上和解，認知情感行為沒對上。"},misconception:"把自洽當自我和解、解脫、看透；只把我放下了掛嘴邊，遇舊人舊事情緒仍崩。",minAction:"把心裡想的、嘴上說的、手上做的各寫下來，對不上的地方改過來；三樣一致才算自洽。",oneLine:"和解是情緒停戰，自洽是三樣一致。",relatedIds:[2,4,6,18],evidenceTags:["哲學命題","社會心理學","書中案例"],citations:["《大學》","費斯廷格認知失調理論（1957）","榮格人格面具理論"]},
+{id:50,chapter:"七 人生與意義",proposition:"自由是能選擇，不是沒人管",firstPrinciple:"想清真正需求後自主選擇",firstPrincipleFull:"自由的第一性原理是能選擇，不是沒人管；選項多不等於自由，會選才是。",east:{quote:"從心所欲，不逾矩。",source:"《論語》孔子七十歲（書中引用）",plain:"想怎樣做就怎樣做，做得再多也不出格；這個矩不是旁人強加，是活一輩子參悟出的道理。莊子「逍遙」即「無待」：真正自由是外物他人之外沒有東西能制約它。"},west:{quote:"自律就是自由。",source:"康德（書中引用）",plain:"伯林兩種自由：沒有人為限制、成為自己的主人，後者才是真自由。施瓦茨選擇悖論：24種果醬購買率3%，6種達30%；追求最優工作的人起薪高20%，滿意度反而更低。"},comparison:"東方以「從心所欲不逾矩」「無待」講自主與不依賴；西方以「自律即自由」「兩種自由」「選擇悖論」講自主與選項管理。共同點：自由不是沒人管，是自己給自己做主。",case:{type:"書中案例",text:"果醬實驗、應屆生求職研究、喬布斯固定著裝（書中引用）。",mapping:"選項多不等於自由，會選才是。反例：面對諸多選擇直接挑看上去最合理的，不先問問題是什麼、需求是什麼。"},misconception:"把自由當不受任何管理；受制於手機、惰性、習慣，即使沒人看著也不自由。",minAction:"面對選擇先別列選項，先問我真正需要的是什麼、這件事本質是什麼；用全書49條的拆法把大問題拆到根，再回頭看哪個選項從根上長出來。",oneLine:"選項多不等於自由，會選才是。",relatedIds:[16,38,48,49],evidenceTags:["哲學命題","心理學實證","書中案例"],citations:["《論語》","康德道德哲學","伯林兩種自由概念","施瓦茨《選擇的悖論》"]}
+];
+
+const PAGES = [
+  {no:1, range:[1,10],  title:"自我與成長（上）",   desc:"自律、成長、專注、情緒、興趣、慎獨、中庸、反內耗、自我價值、鬆弛感"},
+  {no:2, range:[11,20], title:"無為與思維認知",     desc:"無為、認知升級、祛魅、學習、閱讀、決策、覆盤、知行合一、教育、職場"},
+  {no:3, range:[21,30], title:"事業、財富與金錢",   desc:"長期主義、管理、反脆弱、時間管理、匠心、投資、斷舍離、營銷、保險、財富"},
+  {no:4, range:[31,40], title:"關係與情感",         desc:"家庭、愛情、親子、友情、社交、識人、原生家庭、提問、邊界感、情緒價值"},
+  {no:5, range:[41,50], title:"健康、人生與意義",   desc:"健康、減肥、睡眠、飲食、運動、幸福、心流、自我實現、自洽、自由"}
+];
+
+const CHAPTERS = [
+  {name:"一 自我與成長",range:[1,11]},
+  {name:"二 思維與認知",range:[12,19]},
+  {name:"三 事業與成就",range:[20,25]},
+  {name:"四 財富與金錢",range:[26,30]},
+  {name:"五 關係與情感",range:[31,40]},
+  {name:"六 健康與身體",range:[41,45]},
+  {name:"七 人生與意義",range:[46,50]}
+];
+
+const BIBLIO = [
+  {cat:"東方典籍",rows:[
+    ["《論語》","先秦","2, 5, 7, 9, 15, 20, 36, 39, 50"],
+    ["《大學》","先秦","6, 16, 49"],
+    ["《中庸》","先秦","7, 38"],
+    ["《孟子》","先秦","12, 23"],
+    ["《荀子·勸學》","先秦","21"],
+    ["《荀子·解蔽》","先秦","13"],
+    ["《莊子·逍遙遊》","先秦","27, 50"],
+    ["《莊子·養生主》庖丁解牛","先秦","25"],
+    ["《莊子·達生》駝背老人","先秦","47"],
+    ["《莊子·山木》","先秦","34"],
+    ["《道德經》","先秦","11, 22, 46"],
+    ["《詩經·邶風·擊鼓》","先秦","31"],
+    ["《黃帝內經》","先秦至漢","41, 44"],
+    ["《鶡冠子》","先秦","41"],
+    ["《禮記·學記》","西漢","19"],
+    ["《史記·貨殖列傳》","西漢","30"],
+    ["《史記·管晏列傳》","西漢","34"],
+    ["《史記·孟嘗君列傳》","西漢","35"],
+    ["《後漢書·楊震傳》","南朝宋","6"],
+    ["《後漢書·華佗傳》","南朝宋","45"],
+    ["《顏氏家訓》","南北朝","33"],
+    ["《上邪》","漢樂府","32"],
+    ["秦觀《鵲橋仙》","北宋","32"],
+    ["《宋史·歐陽修傳》","元","37"],
+    ["《曾國藩日記》","清","17"],
+    ["彭端淑《為學》","清","8"],
+    ["《孫子兵法》","先秦","26"],
+    ["同仁堂《藥目敘》","1706","28"],
+    ["《隋書》義倉制度","唐","29"]
+  ]},
+  {cat:"西方著作",rows:[
+    ["詹姆斯·克利爾《掌控習慣》","2018","1"],
+    ["約翰·杜威教育思想","20世紀初","2"],
+    ["韋格納白熊實驗","1987","4"],
+    ["接納承諾療法（ACT）","1980年代起","4"],
+    ["德西實驗","1971","5"],
+    ["亞里士多德《尼各馬可倫理學》","公元前4世紀","7, 34"],
+    ["彼得·德魯克《卓有成效的管理者》","1966","20"],
+    ["彼得·德魯克《管理的實踐》","1954","22"],
+    ["塔勒布《反脆弱》","2012","23"],
+    ["柯維《高效能人士的七個習慣》","1989","24"],
+    ["粥左羅《成事的時間管理》","近年","24"],
+    ["科特勒《營銷管理》","1967初版","28"],
+    ["山下英子《斷舍離》","2009","27"],
+    ["羅伯特·清崎《富爸爸窮爸爸》","1997","30"],
+    ["斯滕伯格愛情三角理論","1986","32"],
+    ["鮑爾比依戀理論","1950–60年代","33"],
+    ["克勞德《過猶不及》","1992","39"],
+    ["岸見一郎《被討厭的勇氣》","2013","39"],
+    ["戈特曼婚姻研究","1980年代起","40"],
+    ["羅傑斯人本主義心理學","1950–60年代","40"],
+    ["塞利格曼《真實的幸福》","2002","46"],
+    ["弗蘭克爾《尋找生命的意義》","1946","46"],
+    ["契克森米哈賴《心流》","1990","47"],
+    ["馬斯洛需求層次理論","1943","48"],
+    ["阿德勒《自卑與超越》","1932","48"],
+    ["費斯廷格認知失調理論","1957","49"],
+    ["榮格人格面具理論","20世紀初","49"],
+    ["康德道德哲學","18世紀","50"],
+    ["伯林兩種自由概念","1958","50"],
+    ["施瓦茨《選擇的悖論》","2004","50"],
+    ["叔本華《讀書與書籍》","19世紀","15"],
+    ["懷特海《教育的目的》","1929","19"],
+    ["亞當·斯密《國富論》","1776","11"],
+    ["愛比克泰德《手冊》","公元1–2世紀","10"],
+    ["羅曼·羅蘭《米開朗基羅傳》","1906","13"],
+    ["韋伯祛魅論","20世紀初","13"],
+    ["薩繆爾森顯示性偏好理論","1938","36"],
+    ["蘇格拉底反詰法","公元前5世紀","38"],
+    ["笛卡爾《第一哲學沉思集》","1641","38"]
+  ]},
+  {cat:"研究與實驗",rows:[
+    ["鮑邁斯特自我損耗實驗","1998","1（有爭議）"],
+    ["韋格納白熊實驗","1987","4"],
+    ["德西實驗","1971","5"],
+    ["布里克曼中獎者/癱瘓者研究","1978","46"],
+    ["哈佛成人發展研究","1938年起","46"],
+    ["柳博米爾斯基幸福研究","—","46"],
+    ["卡瑟物質主義研究","—","46"],
+    ["契克森米哈賴心流研究","1960年代起","47"],
+    ["果醬實驗（施瓦茨）","2000","50"],
+    ["應屆生求職跟蹤研究","—","50"],
+    ["藍光與褪黑素研究","—","43"],
+    ["作息不規律腦區連接研究","—","43"],
+    ["鄧巴數研究","1990年代","35"],
+    ["帕累托二八定律","19世紀末","35"],
+    ["大數法則","概率論","29"]
+  ]},
+  {cat:"商業案例與公開資料",rows:[
+    ["SpaceX火箭成本案例","2000年代","序言"],
+    ["村上春樹作息","—","1"],
+    ["喬布斯砍蘋果產品線","1997","3"],
+    ["哥白尼日心說","1543","12"],
+    ["芒格多元思維模型","—","12"],
+    ["巴菲特1969年解散合夥基金","1969","26"],
+    ["巴菲特滾雪球","—","21"],
+    ["貝索斯1997年致股東信","1997","21"],
+    ["杜魯門「責任止於此」","1945–53","22"],
+    ["小野二郎壽司","—","25"],
+    ["同仁堂《藥目敘》","1706","28"],
+    ["國家金融監督管理總局2024年車險數據","2024","29"],
+    ["平安人壽2024年理賠年報","2024","29"],
+    ["孟嘗君三千食客","戰國","35"],
+    ["管仲鮑叔牙","春秋","34"],
+    ["歐陽修畫荻教子","北宋","37"],
+    ["阿德勒生平","19–20世紀","37"],
+    ["豐田五問法","20世紀","17, 38"],
+    ["海底撈服務案例","—","40"],
+    ["卡里爾冷卻器發明故事","1900年代初","8"]
+  ]}
+];
+
+/* ================= HELPERS ================= */
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+const esc = s => String(s??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const itemById = id => ITEMS.find(x=>x.id===Number(id));
+const pageByNo = no => PAGES.find(p=>p.no===Number(no));
+const itemsOfPage = p => ITEMS.filter(it=>it.id>=p.range[0] && it.id<=p.range[1]);
+const pageForId = id => PAGES.find(p=>id>=p.range[0] && id<=p.range[1]);
+const readStored = key => { try{const value=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(value)?value:[]}catch{return []} };
+const writeStored = (key,value) => { try{localStorage.setItem(key,JSON.stringify(value))}catch{} };
+const readPref = key => {try{return localStorage.getItem(key)}catch{return null}};
+const getFavorites = () => readStored("fp50-favorites");
+const getViewed = () => readStored("fp50-viewed");
+function markViewed(id){const viewed=getViewed();if(!viewed.includes(Number(id))){viewed.push(Number(id));writeStored("fp50-viewed",viewed)}}
+function applyReaderPrefs(){document.body.classList.toggle("dark-mode",readPref("fp50-dark")==="1");const large=readPref("fp50-large")==="1";document.body.classList.toggle("large-text",large);document.documentElement.classList.toggle("large-text",large)}
+function toggleReaderPref(key,cls){const on=!document.body.classList.contains(cls);document.body.classList.toggle(cls,on);if(cls==="large-text")document.documentElement.classList.toggle("large-text",on);try{localStorage.setItem(key,on?"1":"0")}catch{}}
+async function copyText(text){try{await navigator.clipboard.writeText(text);return true}catch{const area=document.createElement("textarea");area.value=text;area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();const ok=document.execCommand("copy");area.remove();return ok}}
+const pageForChapter = c => PAGES.find(p=>c.range[1]>=p.range[0] && c.range[0]<=p.range[1]);
+
+/* ================= ROUTER ================= */
+function router(){
+  applyReaderPrefs();
+  const hash = location.hash || "#/";
+  const app = $("#app");
+  if(hash.startsWith("#/item/")){
+    renderDetail(app, hash.split("/")[2]);
+  }else if(hash.startsWith("#/chapter/")){
+    const chapterNo=Number(hash.split("/")[2]);
+    const chapter=CHAPTERS[chapterNo-1];
+    renderPage(app,chapter?pageForId(chapter.range[0]).no:1,chapterNo);
+  }else if(hash.startsWith("#/page/")){
+    renderPage(app, Number(hash.split("/")[2]));
+  }else if(hash === "#/biblio"){
+    renderBiblio(app);
+  }else if(hash === "#/about"){
+    renderAbout(app);
+  }else{
+    renderPage(app, 1);
+  }
+  window.scrollTo({top:0,behavior:"instant"});
+  if(hash.startsWith("#/page/")||hash.startsWith("#/chapter/")){try{const back=JSON.parse(sessionStorage.getItem("fp50-return-to")||"null");const routeNo=Number(hash.split("/")[2]);const chapterNo=hash.startsWith("#/chapter/")?routeNo:0;if(back&&((chapterNo&&back.chapter===chapterNo)||(!chapterNo&&back.page===routeNo))){sessionStorage.removeItem("fp50-return-to");requestAnimationFrame(()=>document.getElementById(`item-card-${back.id}`)?.scrollIntoView({block:"center",behavior:"smooth"}))}}catch{}}
+}
+window.addEventListener("hashchange", router);
+
+/* ================= PAGE ================= */
+function renderPage(app, no, chapterNo=0){
+  const chapter=chapterNo?CHAPTERS[chapterNo-1]:null;
+  const p = pageByNo(no);
+  if(!p||chapterNo&&!chapter){ app.innerHTML = `<div class="empty">找不到這一頁。<a href="#/">回首頁</a></div>`; return; }
+  const list = chapter?ITEMS.filter(it=>it.id>=chapter.range[0]&&it.id<=chapter.range[1]):itemsOfPage(p);
+
+
+
+  const heroHtml = (!chapter && p.no === 1) ? `
+    <section class="hero">
+      <h1>用第一性原理讀懂日常</h1>
+      <p class="sub">50個生活問題的重新拆解 · 追問到根，自由選擇</p>
+      <div class="method">
+        <b>第一性原理四步：</b>放下慣例 → 一層層問為什麼 → 問「必須滿足什麼條件」 → 找滿足條件之物。
+        <div class="steps">
+          <div class="step"><i>1</i>先問這件事本身是什麼</div>
+          <div class="step"><i>2</i>往下追問，直到沒有為什麼</div>
+          <div class="step"><i>3</i>問它必須滿足什麼條件</div>
+          <div class="step"><i>4</i>去找能滿足條件的東西</div>
+        </div>
+      </div>
+      <div class="chapter-map" id="chapterMap">
+        ${CHAPTERS.map((c,index)=>`
+          <a class="chap" href="#/chapter/${index+1}" aria-label="閱讀${esc(c.name)}，第 ${c.range[0]} 到 ${c.range[1]} 條">
+            <span class="n">${c.range[0]}–${c.range[1]} 條</span>
+            <span class="t">${esc(c.name.replace(/^[一二三四五六七] /,""))}</span>
+            <span class="c">${esc(c.name)}</span>
+          </a>`).join("")}
+      </div>
+    </section>` : `
+    <div class="group-head">
+      <h1>${chapter?esc(chapter.name):`第 ${p.range[0]}–${p.range[1]} 條 · ${esc(p.title)}`}</h1>
+      <p>${chapter?`第 ${chapter.range[0]}–${chapter.range[1]} 條 · ${list.length} 個生活問題`:esc(p.desc)}</p>
+    </div>`;
+
+  const tabsHtml = PAGES.map(pg=>`
+    <a class="page-tab ${pg.no===p.no?"active":""}" href="#/page/${pg.no}">
+      <span class="pn">${String(pg.no).padStart(2,"0")}</span>第 ${pg.range[0]}–${pg.range[1]} 條
+    </a>`).join("");
+
+  app.innerHTML = `
+    <section class="opening-card">
+      <div class="eyebrow">1 · 開場導讀</div>
+      ${heroHtml}
+    </section>
+    <div class="page-tabs">${tabsHtml}</div>
+    <div class="progress-wrap" aria-label="閱讀進度">
+      <span id="progress-label"></span><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><span id="progress-count"></span>
+    </div>
+    <details class="quick-jump"><summary>${chapter?"本章":"本組"}快速導覽（${list.length} 條）</summary><nav class="quick-jump-links" aria-label="${chapter?"本章":"本組"}條目">${list.map(it=>`<button type="button" data-jump="${it.id}">#${it.id} ${esc(it.proposition)}</button>`).join("")}</nav></details>
+    <div class="reader-toolbar">
+      <div class="toolbar"><input type="search" id="search" placeholder="搜尋命題、關鍵詞、第一性原理、案例…（輸入即時篩選）" aria-label="搜尋閱讀條目"><button class="tool-btn" id="clear-search" type="button">清除</button><span class="count" id="count"></span></div>
+      <div class="reader-tools"><button class="tool-btn" id="favorites-only" type="button" aria-pressed="false">☆ 只看收藏</button><button class="tool-btn" id="font-toggle" type="button">字級：標準</button><button class="tool-btn" id="theme-toggle" type="button">深色閱讀</button></div>
+    </div>
+    <div id="list" class="grid">${list.map(cardHtml).join("")}</div>
+    <section class="closing-card"><div class="eyebrow">1 · 收束回顧</div><h2>${chapter?`讀完${esc(chapter.name)}，挑一個想帶回生活的觀點`:"讀完這十條，挑一個想帶回生活的觀點"}</h2><p>選一條最貼近近日生活的內容，連結到自己的經驗，再試著做一個小行動。</p><div class="closing-actions"><a href="#/item/${list[list.length-1]?.id||1}">閱讀本${chapter?"章":"組"}最後一條</a><button class="tool-btn" type="button" id="copy-group-summary">複製本${chapter?"章":"組"}一句話總結</button></div></section>
+    <div class="pager" id="pager"></div>
+  `;
+
+  const search = $("#search");
+  const listEl = $("#list");
+  const countEl = $("#count");
+  const pagerEl = $("#pager");
+  const favoritesOnly = $("#favorites-only");
+  let favoritesMode = false;
+
+  function updateProgress(){
+    const viewed=getViewed(); const pageViewed=list.filter(it=>viewed.includes(it.id)).length;
+    $("#progress-label").textContent=chapter?`${chapter.name}閱讀進度`:`第 ${p.no} 組閱讀進度`;
+    $("#progress-count").textContent=`${pageViewed} / ${list.length} 條`;
+    $("#progress-fill").style.width=`${pageViewed/list.length*100}%`;
+  }
+
+  function renderPager(){
+    if(chapter){
+      const prev=CHAPTERS[chapterNo-2],next=CHAPTERS[chapterNo];
+      pagerEl.innerHTML=`${prev?`<a href="#/chapter/${chapterNo-1}"><span class="dir">← 上一章</span>${esc(prev.name)}</a>`:`<span></span>`}${next?`<a class="r" href="#/chapter/${chapterNo+1}"><span class="dir">下一章 →</span>${esc(next.name)}</a>`:`<span></span>`}`;
+      return;
+    }
+    const prev = pageByNo(p.no-1), next = pageByNo(p.no+1);
+    pagerEl.innerHTML = `
+      ${prev?`<a href="#/page/${prev.no}"><span class="dir">← 上一頁</span>第 ${prev.range[0]}–${prev.range[1]} 條 · ${esc(prev.title)}</a>`:`<span></span>`}
+      ${next?`<a class="r" href="#/page/${next.no}"><span class="dir">下一頁 →</span>第 ${next.range[0]}–${next.range[1]} 條 · ${esc(next.title)}</a>`:`<span></span>`}
+    `;
+  }
+
+  function bindCards(){
+    $$("#list .card").forEach(el=>{el.addEventListener("click",e=>{if(e.target.closest("button"))return;try{sessionStorage.setItem("fp50-return-to",JSON.stringify({page:pageForId(Number(el.dataset.id))?.no||p.no,chapter:chapterNo||0,id:Number(el.dataset.id)}))}catch{}location.hash = `#/item/${el.dataset.id}`; });el.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&!e.target.closest("button")){e.preventDefault();try{sessionStorage.setItem("fp50-return-to",JSON.stringify({page:pageForId(Number(el.dataset.id))?.no||p.no,chapter:chapterNo||0,id:Number(el.dataset.id)}))}catch{}location.hash=`#/item/${el.dataset.id}`}})});
+    $$("#list .favorite-btn").forEach(btn=>btn.addEventListener("click",e=>{e.stopPropagation();const id=Number(btn.dataset.favorite);let fav=getFavorites();fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];writeStored("fp50-favorites",fav);filterCards()}));
+  }
+
+  function filterCards(q=search.value.trim().toLowerCase()){
+    let results=q?ITEMS.filter(it=>{const hay=[it.proposition,it.firstPrinciple,it.firstPrincipleFull,it.east?.quote,it.east?.plain,it.west?.quote,it.west?.plain,it.comparison,it.case?.text,it.case?.mapping,it.misconception,it.minAction,it.oneLine,it.chapter,...(it.evidenceTags||[])].join(" ").toLowerCase();return hay.includes(q)}):list;
+    if(favoritesMode)results=results.filter(it=>getFavorites().includes(it.id));
+    pagerEl.style.display=q||favoritesMode?"none":"";
+    countEl.textContent=(q||favoritesMode)?`符合 ${results.length} 條`:"";
+    listEl.innerHTML=results.length?results.map(cardHtml).join(""):`<div class="empty">${favoritesMode&&!getFavorites().length?"目前還沒有收藏條目。按條目上的收藏按鈕即可加入。":"沒有符合的條目，換個關鍵詞試試。"}</div>`;
+    bindCards();
+  }
+
+  function setCount(n){
+    if(n == null){ countEl.textContent = ""; return; }
+    countEl.textContent = `共 ${n} 條`;
+  }
+
+  renderPager();
+  bindCards();
+  $$(".quick-jump-links button").forEach(btn=>btn.addEventListener("click",()=>document.getElementById(`item-card-${btn.dataset.jump}`)?.scrollIntoView({behavior:"smooth",block:"center"})));
+  setCount(null);
+  updateProgress();
+
+  search.addEventListener("input", e=>{
+    filterCards(e.target.value.trim().toLowerCase());
+  });
+  $("#clear-search").addEventListener("click",()=>{search.value="";filterCards("");search.focus()});
+  favoritesOnly.addEventListener("click",()=>{favoritesMode=!favoritesMode;favoritesOnly.setAttribute("aria-pressed",String(favoritesMode));favoritesOnly.textContent=favoritesMode?"★ 顯示全部":"☆ 只看收藏";filterCards()});
+  $("#font-toggle").addEventListener("click",e=>{toggleReaderPref("fp50-large","large-text");e.currentTarget.textContent=document.body.classList.contains("large-text")?"字級：放大":"字級：標準"});
+  $("#theme-toggle").addEventListener("click",e=>{toggleReaderPref("fp50-dark","dark-mode");e.currentTarget.textContent=document.body.classList.contains("dark-mode")?"淺色閱讀":"深色閱讀"});
+  $("#copy-group-summary").addEventListener("click",async e=>{const button=e.currentTarget;const text=list.map(it=>`#${it.id} ${it.oneLine}`).join("\n");button.textContent=await copyText(text)?"已複製本組總結":"複製未成功";setTimeout(()=>{button.textContent="複製本組一句話總結"},1800)});
+
+  // Chapter cards are native links for keyboard and browser navigation.
+}
+
+function cardHtml(it){
+  const isFavorite=getFavorites().includes(it.id);
+  const wasViewed=getViewed().includes(it.id);
+  return `
+  <article class="card" id="item-card-${it.id}" data-id="${it.id}" tabindex="0" role="link" aria-label="閱讀第 ${it.id} 條：${esc(it.proposition)}">
+    <img class="card-image" src="images/R33-${String(it.id).padStart(2,"0")}.webp" alt="第 ${it.id} 條資訊圖：${esc(it.proposition)}" loading="lazy" decoding="async">
+    <div class="top">
+      <span class="id">#${it.id}</span>
+      <span class="chapname">${esc(it.chapter)}</span>
+      ${wasViewed?`<span class="read-marker">✓ 已讀</span>`:""}
+    </div>
+    <h3>${esc(it.proposition)}</h3>
+    <div class="fp">${esc(it.firstPrinciple)}</div>
+    <div class="tags">${(it.evidenceTags||[]).map(t=>`<span class="tag ${t.includes("爭議")?"warn":""}">${esc(t)}</span>`).join("")}</div>
+    <div class="one">${esc(it.oneLine)}</div>
+    <div class="card-actions"><button class="favorite-btn" type="button" data-favorite="${it.id}" aria-pressed="${isFavorite}">${isFavorite?"★ 已收藏":"☆ 收藏"}</button></div>
+  </article>`;
+}
+
+/* ================= DETAIL ================= */
+function renderDetail(app,id){
+  const it = itemById(id);
+  if(!it){ app.innerHTML = `<div class="empty">找不到第 ${esc(id)} 條。<a href="#/">回第 1 頁</a></div>`; return; }
+  markViewed(it.id);
+  const prev = itemById(it.id-1), next = itemById(it.id+1);
+  const caseType = it.case?.type||"";
+  const isSupp = caseType.includes("補充");
+  const pg = pageForId(it.id);
+  const chapterIndex=CHAPTERS.findIndex(c=>it.id>=c.range[0]&&it.id<=c.range[1]);
+  const chapter=CHAPTERS[chapterIndex];
+  const pageHref = pg ? `#/page/${pg.no}` : "#/";
+  const chapterHref=`#/chapter/${chapterIndex+1}`;
+  const pageLabel = pg ? `第 ${pg.range[0]}–${pg.range[1]} 條` : "第 1 頁";
+  const imageSrc=`images/R33-${String(it.id).padStart(2,"0")}.webp`;
+  const imageAlt=`第 ${it.id} 條資訊圖：${it.proposition}`;
+
+  app.innerHTML = `
+  <div class="detail">
+    <div class="crumb">
+      <a href="#/">首頁</a> / <a href="${chapterHref}">${esc(chapter.name)}</a> / <a href="${pageHref}">${pageLabel}</a> / 第 ${it.id} 條
+    </div>
+    <h1>${esc(it.proposition)}</h1>
+    <div class="meta">第 ${it.id} 條 · ${esc(it.chapter)}</div>
+    <button class="detail-image-open" id="open-image" type="button" aria-label="放大${esc(imageAlt)}"><img src="${imageSrc}" alt="${esc(imageAlt)}" decoding="async" fetchpriority="high"></button>
+    <dialog class="image-lightbox" id="image-lightbox" aria-label="資訊圖放大檢視"><button class="lightbox-close" id="close-image" type="button">關閉圖片</button><img src="${imageSrc}" alt="${esc(imageAlt)}"></dialog>
+    <div class="detail-tools"><button class="tool-btn" id="detail-favorite" type="button" aria-pressed="${getFavorites().includes(it.id)}">${getFavorites().includes(it.id)?"★ 已收藏":"☆ 收藏此條"}</button><button class="tool-btn" id="detail-copy" type="button">複製一句話總結</button><button class="tool-btn" id="detail-font" type="button">字級：${document.body.classList.contains("large-text")?"放大":"標準"}</button><button class="tool-btn" id="detail-theme" type="button">${document.body.classList.contains("dark-mode")?"淺色閱讀":"深色閱讀"}</button></div>
+
+    <div class="fpbox">
+      <div class="label">第一性原理</div>
+      <div class="big">${esc(it.firstPrinciple)}</div>
+      <div class="full">${esc(it.firstPrincipleFull)}</div>
+    </div>
+
+    <section class="sec">
+      <h2>東西方論述對照</h2>
+      <div class="duo">
+        <div class="box">
+          <div class="who">東方</div>
+          <div class="quote">「${esc(it.east.quote)}」</div>
+          <div class="src">${esc(it.east.source)}</div>
+          <div class="plain">${esc(it.east.plain)}</div>
+        </div>
+        <div class="box">
+          <div class="who">西方</div>
+          <div class="quote">「${esc(it.west.quote)}」</div>
+          <div class="src">${esc(it.west.source)}</div>
+          <div class="plain">${esc(it.west.plain)}</div>
+        </div>
+      </div>
+      <div class="compare" style="margin-top:14px"><b>對比：</b>${esc(it.comparison)}</div>
+    </section>
+
+    <section class="sec">
+      <h2>案例與原理映射</h2>
+      <div class="casebox">
+        <span class="type ${isSupp?"supp":""}">${esc(caseType)}</span>
+        <div>${esc(it.case.text)}</div>
+        <div class="map"><b>映射：</b>${esc(it.case.mapping)}</div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>常見誤區</h2>
+      <div class="warnbox">${esc(it.misconception)}</div>
+    </section>
+
+    <section class="sec">
+      <h2>最小行動</h2>
+      <div class="actionbox">${esc(it.minAction)}</div>
+    </section>
+
+    <section class="sec">
+      <h2>一句話總結</h2>
+      <div class="onebox">${esc(it.oneLine)}</div>
+    </section>
+
+    <section class="sec">
+      <h2>證據標籤</h2>
+      <div class="tags">${(it.evidenceTags||[]).map(t=>`<span class="tag ${t.includes("爭議")?"warn":""}">${esc(t)}</span>`).join("")}</div>
+    </section>
+
+    <section class="sec">
+      <h2>關聯條目</h2>
+      <div class="rel">
+        ${(it.relatedIds||[]).map(rid=>{const r=itemById(rid); return r?`<a href="#/item/${rid}">#${rid} ${esc(r.proposition)}</a>`:"";}).join("")}
+      </div>
+    </section>
+
+    <section class="sec">
+      <h2>引用出處</h2>
+      <ul class="cite-list">${(it.citations||[]).map(c=>`<li>${esc(c)}</li>`).join("")}</ul>
+    </section>
+
+    <div class="pager">
+      ${prev?`<a href="#/item/${prev.id}"><span class="dir">← 上一張資訊圖</span>#${prev.id} ${esc(prev.proposition)}</a>`:`<span></span>`}
+      ${next?`<a class="r" href="#/item/${next.id}"><span class="dir">下一張資訊圖 →</span>#${next.id} ${esc(next.proposition)}</a>`:`<span></span>`}
+    </div>
+  </div>`;
+  const imageDialog=$("#image-lightbox");
+  $("#open-image").addEventListener("click",()=>imageDialog.showModal());
+  $("#close-image").addEventListener("click",()=>imageDialog.close());
+  imageDialog.addEventListener("click",e=>{if(e.target===imageDialog)imageDialog.close()});
+  $("#detail-favorite").addEventListener("click",e=>{let fav=getFavorites();fav=fav.includes(it.id)?fav.filter(x=>x!==it.id):[...fav,it.id];writeStored("fp50-favorites",fav);const active=fav.includes(it.id);e.currentTarget.setAttribute("aria-pressed",String(active));e.currentTarget.textContent=active?"★ 已收藏":"☆ 收藏此條"});
+  $("#detail-copy").addEventListener("click",async e=>{const button=e.currentTarget;button.textContent=await copyText(it.oneLine)?"已複製":"複製未成功";setTimeout(()=>{button.textContent="複製一句話總結"},1600)});
+  $("#detail-font").addEventListener("click",e=>{toggleReaderPref("fp50-large","large-text");e.currentTarget.textContent=`字級：${document.body.classList.contains("large-text")?"放大":"標準"}`});
+  $("#detail-theme").addEventListener("click",e=>{toggleReaderPref("fp50-dark","dark-mode");e.currentTarget.textContent=document.body.classList.contains("dark-mode")?"淺色閱讀":"深色閱讀"});
+}
+
+/* ================= BIBLIO ================= */
+function renderBiblio(app){
+  app.innerHTML = `
+    <div class="detail">
+      <div class="crumb"><a href="#/">首頁</a> / 引用書目</div>
+      <h1>引用出處完整書目</h1>
+      <p class="sub" style="color:var(--muted)">按類別整理，注明對應條目編號。標「書中引用」者為原書已引；標「整理補充」者為整理時另行補入。</p>
+      ${BIBLIO.map(group=>`
+        <section class="sec">
+          <h2>${esc(group.cat)}</h2>
+          <table>
+            <thead><tr><th>出處</th><th>年份/時期</th><th>對應條目</th></tr></thead>
+            <tbody>${group.rows.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join("")}</tbody>
+          </table>
+        </section>`).join("")}
+    </div>`;
+}
+
+/* ================= ABOUT ================= */
+function renderAbout(app){
+  app.innerHTML = `
+    <div class="detail">
+      <div class="crumb"><a href="#/">首頁</a> / 方法說明</div>
+      <h1>第一性原理：追問到根，自由選擇</h1>
+      <section class="sec">
+        <h2>這個方法是什麼</h2>
+        <p>第一性原理最早由亞里士多德提出：每個系統裡有一個最根本的前提，不能刪掉也不能推翻，其他前提都從它推出來。馬斯克把它簡化成一句大白話：<b>先把一件事情追到最根本的事實，然後再回到本質重新思考一遍。</b></p>
+      </section>
+      <section class="sec">
+        <h2>四步操作</h2>
+        <div class="steps">
+          <div class="step"><i>1</i>放下大家習慣的做法，問這件事本身是什麼</div>
+          <div class="step"><i>2</i>一層層往下追問為什麼，直到沒有為什麼</div>
+          <div class="step"><i>3</i>找到本質後，先問它必須滿足什麼條件</div>
+          <div class="step"><i>4</i>去找能滿足這個條件的東西</div>
+        </div>
+      </section>
+      <section class="sec">
+        <h2>與類比的分別</h2>
+        <p>類比是別人怎麼做就跟著做；第一性原理是先問這件事情本身是什麼，追到底，再回到本質重新思考。用類比的人看見火箭貴，就認定它本來就這麼貴；用第一性原理的人會追問它為什麼這麼貴，這一問就問出了不一樣的答案。</p>
+      </section>
+      <section class="sec">
+        <h2>這50條怎麼用</h2>
+        <p>每一條都是「X 是 A，不是 B」的拆解：先問 B 為何不是根，再追到 A，把 A 轉成條件，最後用案例驗證。讀完不是記住50句口號，而是養成一個習慣——遇到事情先別急著得出結論，一層層問下去，問到無可再問時，本質就露出來了。</p>
+      </section>
+    </div>`;
+}
+
+/* ================= INIT ================= */
+router();
+</script>
+</body>
+</html>
+
+

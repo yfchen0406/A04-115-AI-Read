@@ -25,8 +25,8 @@ a:hover{text-decoration:underline}
 header.site{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
 .site .wrap{display:flex;align-items:center;gap:16px;height:66px}
-.brand:hover{text-decoration:none;opacity:.82}
 .brand{font-weight:800;font-size:1.05rem;letter-spacing:.2px;white-space:nowrap;color:var(--ink);text-decoration:none}
+.brand:hover{text-decoration:none;opacity:.82}
 .brand span{color:var(--accent)}
 .site nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
 .site nav a{font-size:.95rem;padding:7px 12px;border-radius:9px;color:var(--muted)}
@@ -36,7 +36,7 @@ main{min-height:70vh;padding:32px 0 70px}
 .hero{padding:38px 0 12px}
 .hero h1{font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.28;margin:0 0 12px;letter-spacing:-.3px}
 .hero p.sub{color:var(--muted);margin:0 0 8px;font-size:1.05rem}
-.hero .method{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow);font-size:1.02rem}
+.hero .method{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow);font-size:1rem}
 .hero .method b{color:var(--accent)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px}
 .step{background:var(--accent-soft);border-radius:11px;padding:12px 14px;font-size:.98rem}
@@ -112,16 +112,25 @@ main{min-height:70vh;padding:32px 0 70px}
 .cite-list{font-size:.95rem;color:#374151;margin:0;padding-left:1.2em}
 .cite-list li{margin:5px 0}
 
-.card-image{display:block;width:calc(100% + 42px);height:auto;aspect-ratio:16/9;object-fit:cover;margin:-21px -21px 16px;border-radius:17px 17px 0 0;background:#e7f3ff}
+.card-image{display:block;width:calc(100% + 38px);height:auto;aspect-ratio:16/9;object-fit:cover;margin:-19px -19px 16px;border-radius:17px 17px 0 0;background:#e7f3ff}
 .chap{text-decoration:none;color:var(--ink)}
 .chap:hover{text-decoration:none;box-shadow:0 12px 28px rgba(28,91,160,.14)}
 .chap .n,.chap .t,.chap .c{display:block}
 .detail-image-open{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;background:transparent;cursor:zoom-in;margin:0 0 20px}
 .detail-image-open img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;background:#f7f4ea}
-.detail-image-open:focus-visible,.lightbox-close:focus-visible{outline:3px solid #ffc629;outline-offset:3px}
+.detail-visual-stage{position:relative;margin:0 0 20px}
+.detail-visual-stage .detail-image-open{margin:0}
+.detail-image-nav{position:absolute;z-index:2;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:50px;height:50px;border:1px solid rgba(216,228,244,.95);border-radius:50%;background:rgba(255,255,255,.92);color:#174f8a;box-shadow:0 4px 16px rgba(24,42,72,.18);font-family:inherit;font-weight:700;font-size:2rem;line-height:1;cursor:pointer;transition:transform .16s ease,background .16s ease}
+.detail-image-nav:hover:not(:disabled){transform:translateY(-50%) scale(1.06);background:#fff}
+.detail-image-nav:disabled,.lightbox-nav:disabled{opacity:.38;cursor:not-allowed}
+.detail-image-nav.prev{left:14px}.detail-image-nav.next{right:14px}
+.detail-image-open:focus-visible,.lightbox-close:focus-visible,.detail-image-nav:focus-visible,.lightbox-nav:focus-visible{outline:3px solid #ffc629;outline-offset:3px}
 .image-lightbox{width:min(96vw,1500px);max-width:96vw;max-height:96dvh;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink)}
 .image-lightbox::backdrop{background:rgba(9,20,36,.82)}
-.image-lightbox img{display:block;max-width:calc(96vw - 24px);max-height:calc(96dvh - 72px);width:auto;height:auto;margin:8px auto 0;object-fit:contain}
+.lightbox-viewer{display:grid;grid-template-columns:52px minmax(0,1fr) 52px;gap:12px;align-items:center;min-width:0;margin-top:8px}
+.image-lightbox img{display:block;max-width:100%;max-height:calc(96dvh - 90px);width:auto;height:auto;margin:0 auto;object-fit:contain}
+.lightbox-nav{display:grid;place-items:center;width:48px;height:52px;border:1px solid var(--line);border-radius:12px;background:var(--accent-soft);color:#174f8a;font-family:inherit;font-weight:700;font-size:2.2rem;line-height:1;cursor:pointer;transition:background .16s ease,transform .16s ease}
+.lightbox-nav:hover:not(:disabled){background:#d3e9ff;transform:scale(1.04)}
 .lightbox-close{display:block;margin-left:auto;border:1px solid var(--line);border-radius:9px;padding:8px 12px;background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
 
 table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:.95rem}
@@ -148,6 +157,17 @@ header.site{background:rgba(248,251,255,.94);border-color:rgba(30,144,255,.2)}
 .actionbox{background:#fff7dc;border-color:#f0d77c;color:#493c18}
 .onebox{background:#174f8a;color:#fff}
 .chapter-map{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}
+.chapter-nav{margin:14px 0 4px}
+.chapter-nav h2,.page-nav h2{font-size:.9rem;letter-spacing:.04em;margin:0 0 8px;color:var(--muted)}
+.chapter-nav .chapter-map{margin:0;gap:9px}
+.chapter-nav .chap{min-height:82px;padding:10px 12px}
+.chapter-nav .chap.active{border-color:var(--accent);background:linear-gradient(135deg,#e4f2ff,#fff8dc);box-shadow:0 0 0 2px rgba(30,144,255,.14)}
+.page-nav{margin:16px 0 10px}
+.page-nav .page-tabs{margin:0;padding:0}
+.hero .method summary{cursor:pointer;color:var(--ink);font-weight:600;list-style-position:inside}
+.hero .method summary b{color:var(--accent)}
+.hero .method[open] summary{margin-bottom:10px}
+.page-tab,.tool-btn,.quick-jump-links button,.favorite-btn{min-height:44px}
 .chap{cursor:pointer;min-height:112px;display:flex;flex-direction:column;justify-content:center}
 .chap:focus-visible,.card:focus-visible,.page-tab:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #ffc629;outline-offset:3px}
 .group-head{padding:28px 0 5px}
@@ -177,11 +197,13 @@ header.site{background:rgba(248,251,255,.94);border-color:rgba(30,144,255,.2)}
 .opening-card p,.closing-card p{position:relative;margin:0;color:#515d55}
 .opening-card .opening-desc{max-width:780px}
 .grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
-.card{min-height:244px;padding:21px;cursor:pointer}
+.card{min-height:244px;padding:19px;cursor:pointer;border-color:#d5e3f2}
 .card:hover{box-shadow:0 15px 32px rgba(28,91,160,.14);border-color:#a9d2f5}
 .card .id{min-width:42px;text-align:center}
 .card .fp{font-size:1rem;color:#3b6251}
-.card .one{font-size:1.02rem}
+.card .one{font-size:1.02rem;color:#174f8a}
+.card h3{letter-spacing:.01em}
+.card .tags{min-height:28px}
 .card .card-actions{display:flex;justify-content:flex-end;margin-top:10px}
 .read-marker{font-size:.76rem;color:var(--accent);font-weight:750;margin-left:auto}
 .favorite-btn{background:transparent;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted);font:inherit;font-size:.82rem;cursor:pointer}
@@ -192,7 +214,7 @@ header.site{background:rgba(248,251,255,.94);border-color:rgba(30,144,255,.2)}
 .closing-card a{display:inline-block;background:#ffd34d;color:#17365f;border-radius:9px;padding:7px 12px;font-weight:750}
 .closing-card .tool-btn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.48);color:#fff}
 .empty{grid-column:1/-1;background:var(--card);border:1px dashed var(--line);border-radius:14px}
-.detail{max-width:1020px}
+.detail{max-width:1600px}
 .fpbox{box-shadow:var(--shadow)}
 .sec h2{font-size:1.12rem}
 .box,.casebox{box-shadow:0 5px 16px rgba(36,54,44,.035)}
@@ -215,7 +237,7 @@ body.dark-mode .onebox{background:#0e4f8f;color:#fff}
 body.dark-mode .closing-card{background:linear-gradient(135deg,#124b87,#176fbd)}
 body.dark-mode .closing-card a{background:#ffd34d;color:#17365f}
 html.large-text{font-size:20px}body.large-text{font-size:20px}
-@media(max-width:760px){.wrap{padding-left:16px;padding-right:16px}.site .wrap{height:auto;min-height:66px;align-items:flex-start;flex-direction:column;gap:4px;padding-top:9px;padding-bottom:9px}.site nav{margin:0;width:100%;overflow-x:auto;flex-wrap:nowrap}.site nav a{white-space:nowrap;padding:6px 9px}.page-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}.page-tab{flex:0 0 auto}.reader-toolbar{align-items:stretch}.reader-tools{width:100%}.tool-btn{flex:1}.grid{grid-template-columns:1fr}.card{min-height:0}.card-image{width:calc(100% + 42px);margin:-21px -21px 14px}.detail-image-open{margin-bottom:16px}.image-lightbox{padding:8px}.image-lightbox img{max-width:calc(96vw - 16px);max-height:calc(96dvh - 64px)}.opening-card,.closing-card{padding:20px}.hero{padding-top:28px}.duo{grid-template-columns:1fr}}
+@media(max-width:760px){.wrap{padding-left:16px;padding-right:16px}.site .wrap{height:auto;min-height:66px;align-items:flex-start;flex-direction:column;gap:4px;padding-top:9px;padding-bottom:9px}.site nav{margin:0;width:100%;overflow-x:auto;flex-wrap:nowrap}.site nav a{white-space:nowrap;padding:6px 9px}.page-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}.page-tab{flex:0 0 auto}.reader-toolbar{align-items:stretch}.reader-tools{width:100%}.tool-btn{flex:1}.grid{grid-template-columns:1fr}.card{min-height:0}.card-image{width:calc(100% + 40px);margin:-20px -20px 14px}.detail-image-nav{width:46px;height:46px}.detail-image-nav.prev{left:8px}.detail-image-nav.next{right:8px}.image-lightbox{padding:8px}.lightbox-viewer{grid-template-columns:48px minmax(0,1fr) 48px;gap:5px}.lightbox-nav{width:44px;height:48px}.image-lightbox img{max-height:calc(96dvh - 72px)}.opening-card,.closing-card{padding:17px}.hero{padding-top:20px}.hero .method{padding:12px}.hero .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.step{padding:9px 10px;font-size:.9rem}.chapter-nav .chapter-map{grid-template-columns:repeat(2,minmax(0,1fr))}.chapter-nav .chap{min-height:72px}.duo{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 
 </style>
@@ -226,7 +248,6 @@ html.large-text{font-size:20px}body.large-text{font-size:20px}
   <div class="wrap">
     <a class="brand" href="#/" aria-label="回首頁">第一性原理 · <span>50個生活問題</span></a>
     <nav>
-
       <a href="#/biblio">引用書目</a>
       <a href="#/about">方法說明</a>
     </nav>
@@ -485,31 +506,27 @@ function renderPage(app, no, chapterNo=0){
     <section class="hero">
       <h1>用第一性原理讀懂日常</h1>
       <p class="sub">50個生活問題的重新拆解 · 追問到根，自由選擇</p>
-      <div class="method">
-        <b>第一性原理四步：</b>放下慣例 → 一層層問為什麼 → 問「必須滿足什麼條件」 → 找滿足條件之物。
+      <details class="method">
+        <summary><b>第一性原理四步：</b>放下慣例 → 追問原因 → 確認必要條件 → 找出可行解法</summary>
         <div class="steps">
           <div class="step"><i>1</i>先問這件事本身是什麼</div>
           <div class="step"><i>2</i>往下追問，直到沒有為什麼</div>
           <div class="step"><i>3</i>問它必須滿足什麼條件</div>
           <div class="step"><i>4</i>去找能滿足條件的東西</div>
         </div>
-      </div>
-      <div class="chapter-map" id="chapterMap">
-        ${CHAPTERS.map((c,index)=>`
-          <a class="chap" href="#/chapter/${index+1}" aria-label="閱讀${esc(c.name)}，第 ${c.range[0]} 到 ${c.range[1]} 條">
-            <span class="n">${c.range[0]}–${c.range[1]} 條</span>
-            <span class="t">${esc(c.name.replace(/^[一二三四五六七] /,""))}</span>
-            <span class="c">${esc(c.name)}</span>
-          </a>`).join("")}
-      </div>
+      </details>
     </section>` : `
     <div class="group-head">
       <h1>${chapter?esc(chapter.name):`第 ${p.range[0]}–${p.range[1]} 條 · ${esc(p.title)}`}</h1>
       <p>${chapter?`第 ${chapter.range[0]}–${chapter.range[1]} 條 · ${list.length} 個生活問題`:esc(p.desc)}</p>
     </div>`;
 
+  const chaptersHtml = CHAPTERS.map((c,index)=>`
+    <a class="chap ${chapterNo===index+1?"active":""}" href="#/chapter/${index+1}" ${chapterNo===index+1?'aria-current="page"':""} aria-label="閱讀${esc(c.name)}，第 ${c.range[0]} 到 ${c.range[1]} 條">
+      <span class="n">${c.range[0]}–${c.range[1]} 條</span><span class="t">${esc(c.name.replace(/^[一二三四五六七] /,""))}</span><span class="c">${esc(c.name)}</span>
+    </a>`).join("");
   const tabsHtml = PAGES.map(pg=>`
-    <a class="page-tab ${pg.no===p.no?"active":""}" href="#/page/${pg.no}">
+    <a class="page-tab ${pg.no===p.no?"active":""}" href="#/page/${pg.no}" ${pg.no===p.no?'aria-current="page"':""}>
       <span class="pn">${String(pg.no).padStart(2,"0")}</span>第 ${pg.range[0]}–${pg.range[1]} 條
     </a>`).join("");
 
@@ -518,7 +535,8 @@ function renderPage(app, no, chapterNo=0){
       <div class="eyebrow">1 · 開場導讀</div>
       ${heroHtml}
     </section>
-    <div class="page-tabs">${tabsHtml}</div>
+    <section class="chapter-nav" aria-labelledby="chapter-nav-title"><h2 id="chapter-nav-title">依主題閱讀｜七個章節</h2><nav class="chapter-map" aria-label="七個主題章節">${chaptersHtml}</nav></section>
+    <section class="page-nav" aria-labelledby="page-nav-title"><h2 id="page-nav-title">依條目分組｜每組十條</h2><nav class="page-tabs" aria-label="五組條目">${tabsHtml}</nav></section>
     <div class="progress-wrap" aria-label="閱讀進度">
       <span id="progress-label"></span><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><span id="progress-count"></span>
     </div>
@@ -639,8 +657,19 @@ function renderDetail(app,id){
     </div>
     <h1>${esc(it.proposition)}</h1>
     <div class="meta">第 ${it.id} 條 · ${esc(it.chapter)}</div>
-    <button class="detail-image-open" id="open-image" type="button" aria-label="放大${esc(imageAlt)}"><img src="${imageSrc}" alt="${esc(imageAlt)}" decoding="async" fetchpriority="high"></button>
-    <dialog class="image-lightbox" id="image-lightbox" aria-label="資訊圖放大檢視"><button class="lightbox-close" id="close-image" type="button">關閉圖片</button><img src="${imageSrc}" alt="${esc(imageAlt)}"></dialog>
+    <div class="detail-visual-stage">
+      <button class="detail-image-nav prev" id="detail-prev-image" type="button" aria-label="上一個生活問題：${prev?`第 ${prev.id} 條，${esc(prev.proposition)}`:"已是第一個問題"}" ${prev?`data-problem="${prev.id}"`:"disabled"}>‹</button>
+      <button class="detail-image-open" id="open-image" type="button" aria-label="放大${esc(imageAlt)}"><img src="${imageSrc}" alt="${esc(imageAlt)}" decoding="async" fetchpriority="high"></button>
+      <button class="detail-image-nav next" id="detail-next-image" type="button" aria-label="下一個生活問題：${next?`第 ${next.id} 條，${esc(next.proposition)}`:"已是最後一個問題"}" ${next?`data-problem="${next.id}"`:"disabled"}>›</button>
+    </div>
+    <dialog class="image-lightbox" id="image-lightbox" aria-label="資訊圖放大檢視">
+      <button class="lightbox-close" id="close-image" type="button">關閉圖片</button>
+      <div class="lightbox-viewer">
+        <button class="lightbox-nav prev" id="lightbox-prev-image" type="button" aria-label="上一個生活問題：${prev?`第 ${prev.id} 條，${esc(prev.proposition)}`:"已是第一個問題"}" ${prev?`data-problem="${prev.id}"`:"disabled"}>‹</button>
+        <img src="${imageSrc}" alt="${esc(imageAlt)}">
+        <button class="lightbox-nav next" id="lightbox-next-image" type="button" aria-label="下一個生活問題：${next?`第 ${next.id} 條，${esc(next.proposition)}`:"已是最後一個問題"}" ${next?`data-problem="${next.id}"`:"disabled"}>›</button>
+      </div>
+    </dialog>
     <div class="detail-tools"><button class="tool-btn" id="detail-favorite" type="button" aria-pressed="${getFavorites().includes(it.id)}">${getFavorites().includes(it.id)?"★ 已收藏":"☆ 收藏此條"}</button><button class="tool-btn" id="detail-copy" type="button">複製一句話總結</button><button class="tool-btn" id="detail-font" type="button">字級：${document.body.classList.contains("large-text")?"放大":"標準"}</button><button class="tool-btn" id="detail-theme" type="button">${document.body.classList.contains("dark-mode")?"淺色閱讀":"深色閱讀"}</button></div>
 
     <div class="fpbox">
@@ -718,6 +747,13 @@ function renderDetail(app,id){
   $("#open-image").addEventListener("click",()=>imageDialog.showModal());
   $("#close-image").addEventListener("click",()=>imageDialog.close());
   imageDialog.addEventListener("click",e=>{if(e.target===imageDialog)imageDialog.close()});
+  imageDialog.addEventListener("keydown",e=>{if(e.key==="ArrowLeft"){const button=$("#lightbox-prev-image");if(!button.disabled)button.click()}else if(e.key==="ArrowRight"){const button=$("#lightbox-next-image");if(!button.disabled)button.click()}});
+  const navigateProblem=(button,keepLightboxOpen)=>{const target=Number(button.dataset.problem);if(!target)return;if(keepLightboxOpen)sessionStorage.setItem("fp50-keep-lightbox","1");location.hash=`#/item/${target}`};
+  $("#detail-prev-image").addEventListener("click",e=>navigateProblem(e.currentTarget,false));
+  $("#detail-next-image").addEventListener("click",e=>navigateProblem(e.currentTarget,false));
+  $("#lightbox-prev-image").addEventListener("click",e=>navigateProblem(e.currentTarget,true));
+  $("#lightbox-next-image").addEventListener("click",e=>navigateProblem(e.currentTarget,true));
+  if(sessionStorage.getItem("fp50-keep-lightbox")==="1"){sessionStorage.removeItem("fp50-keep-lightbox");imageDialog.showModal()}
   $("#detail-favorite").addEventListener("click",e=>{let fav=getFavorites();fav=fav.includes(it.id)?fav.filter(x=>x!==it.id):[...fav,it.id];writeStored("fp50-favorites",fav);const active=fav.includes(it.id);e.currentTarget.setAttribute("aria-pressed",String(active));e.currentTarget.textContent=active?"★ 已收藏":"☆ 收藏此條"});
   $("#detail-copy").addEventListener("click",async e=>{const button=e.currentTarget;button.textContent=await copyText(it.oneLine)?"已複製":"複製未成功";setTimeout(()=>{button.textContent="複製一句話總結"},1600)});
   $("#detail-font").addEventListener("click",e=>{toggleReaderPref("fp50-large","large-text");e.currentTarget.textContent=`字級：${document.body.classList.contains("large-text")?"放大":"標準"}`});
