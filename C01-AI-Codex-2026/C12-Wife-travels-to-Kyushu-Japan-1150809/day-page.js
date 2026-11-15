@@ -142,6 +142,18 @@ const dayTwoAlbums = [
       "02-這個擺盤差一點.webp",
     ],
   },
+  {
+    name: "02-龍宮神社",
+    folder: "photos/day-2/02-龍宮神社",
+    files: [
+      "01-龍宮神社~團體照~看得出來大夥得好心得.webp",
+      "02-團體照~換個方向~一樣開心.webp",
+      "03-龍空神社浦島太郎故事寓意.webp",
+      "04-龍空神社浦島太郎故事寓意~3D卡通版.webp",
+      "05-龍空神社浦島太郎故事~漫畫版.webp",
+      "06-龍空神社圍著浦島太郎的許願.mp4",
+    ],
+  },
 ];
 const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ length: 6 }, (_, i) => {
   const filename = String(i + 1).padStart(2, "0");
@@ -165,6 +177,10 @@ const createMemoryCards = (folder, filenames, albumName = photoTabName) => {
       ? '<span class="photo-ai-badge">AI協作</span>'
       : "";
     const imagePath = `${folder}/${filename}`;
+    if (/\.mp4$/i.test(filename)) {
+      const posterPath = imagePath.replace(/\.mp4$/i, ".webp");
+      return `<figure class="photo-memory-card photo-video-card"><video class="photo-memory-video" controls playsinline preload="metadata" poster="${posterPath}" aria-label="${albumName}：${caption}"><source src="${imagePath}" type="video/mp4">瀏覽器不支援影片播放。</video><figcaption><span class="photo-caption-index">${photoNumber}</span><span class="photo-caption-title">${caption}</span></figcaption></figure>`;
+    }
     return `<figure class="photo-slot photo-memory-card"><div class="photo-memory-image"><img src="${imagePath}" alt="${albumName}：${caption}" loading="lazy" />${aiBadge}</div><figcaption><span class="photo-caption-index">${photoNumber}</span><span class="photo-caption-title">${caption}</span></figcaption></figure>`;
   }).join("");
 };
