@@ -22,7 +22,8 @@ const days = {
     image: "04-day-2-ibusuki.webp",
     intro: "從地熱砂浴、薩摩半島海岸到以櫻島為借景的日式庭園。",
     meal: "飯店早餐；指宿風味午餐；晚餐自理。",
-    memoryNote: "", // 在這裡填入第二天回憶筆記
+    memoryNote:
+      "今天從清晨一路玩到最南端的龍宮神社，傍晚再晃到永旺購物中心（AEON MALL）逛逛，一整天走下來，從照片就看得出來，這一帶是日本比較鄉下的地方。不過跟團旅遊要的就是這種味道：避開人擠人、人看人的熱門景點，慢慢走、慢慢看，享受悠閒自在的假期。<br><br>所以鄉下地方一點都不差，反而讓心情特別放鬆。交通、餐食、住宿都不用操心，只要帶著輕鬆的心情跟著走就好。再加上遠離都市的純樸日式風情，難怪大家對日本總是一來再來。", // 在這裡填入第二天回憶筆記
     timeline: [
       ["08:00", "前往指宿", "南下薩摩半島，車程較長。"],
       ["09:30", "指宿砂浴", "砂浴本體約 10～20 分鐘，另預留更衣與淋浴。"],
@@ -38,7 +39,8 @@ const days = {
     image: "05-day-3-sakurajima-miyazaki.webp",
     intro: "渡輪、活火山、黑醋、瀑布與青島海岸的一天。",
     meal: "飯店早餐；日式風味餐或鹿兒島黑醋特色定食；晚餐為飯店和洋自助餐或日式餐。",
-    memoryNote: "", // 在這裡填入第三天回憶筆記
+    memoryNote:
+      "第三天的行程，起床搭渡輪到櫻島，櫻島上有國立公園，有展望所；關之尾瀑布，順序我不清楚，反正離開櫻島到鹿兒島吃黑醋特色定食，下午還有往宮崎的行程", // 在這裡填入第三天回憶筆記
     timeline: [
       ["08:00", "錦江灣渡輪與櫻島", "海上航程約 15 分鐘，甲板風強。"],
       ["09:15", "湯之平展望所", "遠望櫻島火山與錦江灣。"],
@@ -181,6 +183,18 @@ const dayTwoAlbums = [
     ],
   },
 ];
+const dayThreeAlbums = [
+  {
+    name: "01-飯店早餐",
+    folder: "photos/day-3/01-飯店早餐",
+    files: ["00-昨晚採購戰利品.webp","01-飯店海景套房窗外風景.webp","02-房間寬敞.webp","03-早上起床有點亂.webp","04-悠閒美麗的海邊.webp","05-清晨的海邊.webp","06-清晨的海邊-櫻島.webp","07-清晨的海邊-碼頭.webp","08-清晨的海邊-對面應該是櫻島.webp","09-清晨的海邊.webp","10-天亮了.webp","11-看起來像碼頭.webp","12-剛睡醒的詣超-好像在罰站.webp","13-ART 鹿兒島酒店大廳.webp","14-ART 鹿兒島酒店早餐地點.webp","15-早餐配海景-悠閒暇意.webp","16-飯店早餐-熱食區.webp","17-飯店早餐-麵包區.webp","18-飯店早餐.webp","19-飯店早餐.webp","20-詣超看起來在吃冰淇淋.webp","21-這個應該是飲料類.webp","22-飯店早餐.webp","23-悠閒早上麵包咖啡-用餐玩準備出發前往櫻島.webp"],
+  },
+  {
+    name: "02-櫻島火山",
+    folder: "photos/day-3/02-櫻島火山",
+    files: ["01-錦江灣渡輪.webp","02-錦江灣渡輪-鹿兒島出發.webp","03-另一個方向看渡輪.webp","04-錦江灣渡輪.webp","05-渡輪-車子也可以停進去-長崎好像也坐過.webp","06-渡輪上的詣超.webp"],
+  },
+];
 const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ length: 6 }, (_, i) => {
   const filename = String(i + 1).padStart(2, "0");
   const imagePath = `${folder}/${filename}.webp`;
@@ -215,7 +229,7 @@ const aiPhotoSlots = createPhotoSlots(
   `第 ${day} 天 AI 協作照片`,
   "",
 );
-const currentDayAlbums = day === 1 ? dayOneAlbums : day === 2 ? dayTwoAlbums : null;
+const currentDayAlbums = day === 1 ? dayOneAlbums : day === 2 ? dayTwoAlbums : day === 3 ? dayThreeAlbums : null;
 const travelPhotoSlots = currentDayAlbums
   ? currentDayAlbums.map((album) => ({
     name: album.name,

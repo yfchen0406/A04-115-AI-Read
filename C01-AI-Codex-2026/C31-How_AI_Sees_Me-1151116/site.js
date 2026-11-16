@@ -1,0 +1,1 @@
+document.addEventListener("click",function(event){const top=event.target.closest(".floating");if(top){window.scrollTo({top:0,behavior:"smooth"});return}const print=event.target.closest(".print");if(print)window.print()});
