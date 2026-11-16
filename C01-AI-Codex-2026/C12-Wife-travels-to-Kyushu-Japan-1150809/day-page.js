@@ -181,6 +181,18 @@ const dayTwoAlbums = [
     ],
   },
 ];
+const dayThreeAlbums = [
+  {
+    name: "01-飯店早餐",
+    folder: "photos/day-3/01-飯店早餐",
+    files: ["00-昨晚採購戰利品.webp","01-飯店海景套房窗外風景.webp","02-房間寬敞.webp","03-早上起床有點亂.webp","04-悠閒美麗的海邊.webp","05-清晨的海邊.webp","06-清晨的海邊-櫻島.webp","07-清晨的海邊-碼頭.webp","08-清晨的海邊-對面應該是櫻島.webp","09-清晨的海邊.webp","10-天亮了.webp","11-看起來像碼頭.webp","12-剛睡醒的詣超-好像在罰站.webp","13-ART 鹿兒島酒店大廳.webp","14-ART 鹿兒島酒店早餐地點.webp","15-早餐配海景-悠閒暇意.webp","16-飯店早餐-熱食區.webp","17-飯店早餐-麵包區.webp","18-飯店早餐.webp","19-飯店早餐.webp","20-詣超看起來在吃冰淇淋.webp","21-這個應該是飲料類.webp","22-飯店早餐.webp","23-悠閒早上麵包咖啡-用餐玩準備出發前往櫻島.webp"],
+  },
+  {
+    name: "02-櫻島火山",
+    folder: "photos/day-3/02-櫻島火山",
+    files: ["01-錦江灣渡輪.webp","02-錦江灣渡輪-鹿兒島出發.webp","03-另一個方向看渡輪.webp","04-錦江灣渡輪.webp","05-渡輪-車子也可以停進去-長崎好像也坐過.webp","06-渡輪上的詣超.webp"],
+  },
+];
 const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ length: 6 }, (_, i) => {
   const filename = String(i + 1).padStart(2, "0");
   const imagePath = `${folder}/${filename}.webp`;
@@ -215,7 +227,7 @@ const aiPhotoSlots = createPhotoSlots(
   `第 ${day} 天 AI 協作照片`,
   "",
 );
-const currentDayAlbums = day === 1 ? dayOneAlbums : day === 2 ? dayTwoAlbums : null;
+const currentDayAlbums = day === 1 ? dayOneAlbums : day === 2 ? dayTwoAlbums : day === 3 ? dayThreeAlbums : null;
 const travelPhotoSlots = currentDayAlbums
   ? currentDayAlbums.map((album) => ({
     name: album.name,
