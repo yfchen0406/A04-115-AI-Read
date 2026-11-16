@@ -24,6 +24,17 @@ h1{font:700 46px/1.1 "Times New Roman","標楷體","DFKai-SB","BiauKai",serif;co
 select,button{font:inherit;background:var(--paper);color:var(--fg);border:1px solid var(--line);border-radius:3px;padding:4px 10px}
 .tabs{display:flex;gap:6px;margin-bottom:12px}
 .tabs button{flex:1;padding:8px;font-size:16px;letter-spacing:.2em}.tabs .on{background:var(--ac);color:var(--ink);border-color:var(--ac)}
+.video-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.video-tools input{font:inherit;min-width:min(260px,100%);padding:6px 10px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--fg)}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:12px}
+.video-card{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:14px;box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px var(--line)}
+.video-card h3{font:700 19px/1.5 "標楷體","DFKai-SB","BiauKai",serif;margin:4px 0;color:#000}
+.video-card p{margin:4px 0;color:var(--mut);font-size:13px}
+.video-card a,.detail-video a{display:inline-block;margin-top:8px;padding:5px 12px;border-radius:3px;background:var(--ac);color:var(--ink);text-decoration:none;font-weight:700}
+.video-card a:hover,.detail-video a:hover{background:#7e1712}
+.video-pending{display:inline-block;margin-top:8px;padding:4px 10px;border:1px dashed var(--line);border-radius:3px;color:var(--mut);font-size:13px}
+.detail-video{margin:12px 0;padding:10px 12px;border:1px solid var(--line);border-radius:3px;background:rgba(184,134,43,.08)}
+@media(max-width:700px){.tabs{flex-wrap:wrap}.tabs button{min-width:calc(50% - 3px)}}
 .g{display:grid;grid-template-columns:1fr 380px;gap:12px;align-items:start}
 @media(max-width:1100px){.g{grid-template-columns:1fr}}
 .tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}
@@ -70,7 +81,7 @@ details{border-bottom:1px solid var(--line);padding:4px 0}summary{cursor:pointer
 <label><input type="checkbox" id="fm"> 只看少數民族政權</label>
 <button id="rs">重設權重與篩選</button><span id="cnt" class="note"></span></div>
 <div class="note" style="margin-top:6px">滑桿數值會自動換算成實際占比（合計 100%）。</div></div>
-<div class="tabs" id="tabs"><button data-t="a" class="on">排行榜</button><button data-t="b">卡片牆</button><button data-t="c">時間軸</button></div>
+<div class="tabs" id="tabs"><button data-t="a" class="on">排行榜</button><button data-t="b">卡片牆</button><button data-t="c">時間軸</button><button data-t="d">故事影片</button></div>
 <div id="main"></div>
 <details class="box"><summary><b>評分說明</b></summary><p>每項 1–10 分：10 為歷代頂尖，5 為中等，1 為極差。總分＝五項依權重加權平均後乘以 10（滿分 100）。同分時依政績、民生、用人、制度、晚節逐項比較，仍相同則年代早者在前。分數為主觀初評，依據見各君主「延伸閱讀」。</p></details>
 <p class="note">史料提醒：正史多由後代王朝編寫，容易美化開國君、醜化亡國君，評價宜多方參照。</p>
@@ -493,6 +504,39 @@ const E={"唐太宗":649,"漢光武帝":57,"清康熙帝":1722,"漢文帝":-157,
 const P={"秦始皇":"稱帝","漢高祖":"稱帝","武則天":"稱帝"};
 const M=[[-770,"平王東遷","東周開始，進入春秋時代"],[-403,"三家分晉","韓趙魏立為諸侯，通常視為戰國開端"],[-221,"秦統一六國","建立中央集權帝國"],[-206,"秦亡","子嬰降劉邦，隨後楚漢相爭"],[-202,"漢朝建立","劉邦稱帝，定都長安"],[8,"王莽篡漢","新朝取代西漢"],[184,"黃巾之亂","東漢政局崩壞的轉捩點"],[220,"東漢亡、三國分立","曹丕代漢，魏蜀吳鼎立"],[316,"西晉滅亡","永嘉之亂後，北方進入五胡十六國"],[439,"北魏統一北方","南北朝對峙格局形成"],[589,"隋統一南北","結束近三百年分裂"],[618,"唐朝建立","李淵稱帝，定都長安"],[755,"安史之亂","唐由盛轉衰的分水嶺"],[907,"唐亡、五代十國","朱溫代唐，進入分裂時期"],[1127,"靖康之變","北宋滅亡，南宋建立"],[1206,"蒙古帝國建立","成吉思汗統一蒙古諸部"],[1279,"元滅南宋","忽必烈完成全國統一"],[1368,"明朝建立","朱元璋稱帝，元順帝北走"],[1644,"明亡、清入關","李自成入京後，清軍入關"],[1796,"白蓮教之亂","乾隆末年，清朝由盛轉衰"],[1840,"鴉片戰爭","中國進入近代"]];
 const D=R.map(([n,d,t,s,c,y,m])=>({n,d,t,s:s.split(",").map(Number),c,y,m,e:E[n]}));
+const VIDEOS=[
+{n:"唐太宗",title:"唐太宗與魏徵的那面鏡子｜殺兄稱帝，卻成千古明君",url:"https://youtu.be/0onO14f88pM"},
+{n:"漢光武帝",title:"漢光武帝的柔道治國｜兩萬打四十萬，他靠什麼贏？",url:"https://youtu.be/XiGvViX0NU8"},
+{n:"清康熙帝",title:"康熙擒鰲拜的那場摔跤遊戲｜十六歲的少年，扳倒了權臣",url:"https://youtu.be/f17-FpKFOBE"},
+{n:"漢文帝",title:"漢文帝的節儉治國學｜一座露台要百金，他說不蓋了",url:"https://youtu.be/iOzS_VHX8LA"},
+{n:"隋文帝",title:"隋文帝與科舉制的誕生｜他結束了三百年亂世，卻被兒子毀了名聲",url:"https://youtu.be/9Mw8IczSEkU"},
+{n:"宋仁宗",title:"宋仁宗的「不折騰」治國智慧｜半夜想吃羊肉，他卻忍住了",url:"https://youtu.be/kUDmiKnq3GE"},
+{n:"宋太祖",title:"宋太祖杯酒釋兵權的溫柔權謀｜一頓酒，收回所有兵權",url:"https://youtu.be/B7YR8KcGmJs"},
+{n:"漢高祖",title:"漢高祖劉邦的用人之道｜什麼都不會的人，憑什麼當皇帝？",url:"https://youtu.be/WnBEScRvceU"},
+{n:"漢武帝",title:"漢武帝的雄心與代價｜他派出去的人失敗了，卻改變了世界",url:"https://youtu.be/JHfuw3vJx8w"},
+{n:"漢宣帝",title:"漢宣帝的底層治國學｜從監獄裡走出來的皇帝",url:"https://youtu.be/aHJn2e6eKlQ"},
+{n:"北魏孝文帝",title:"北魏孝文帝的雨中遷都｜改革整合中原，也讓北鎮將士漸被遺忘",url:"https://youtu.be/k3coW-RIvgI"},
+{n:"武則天",title:"武則天與那塊無字碑｜她改變朝局，也讓後人難以一句定論",url:"https://youtu.be/NlDMISwnnVg"},
+{n:"清雍正帝",title:"雍正帝十三年的批閱｜勤政整頓財政，卻留下猜忌陰影",url:"https://youtu.be/7yE6wXtbA5M"},
+{n:"魏文侯",title:"魏文侯先把人才請進來｜重用賢臣，魏國由此崛起",url:"https://youtu.be/I4bZisZqMe8"},
+{n:"元世祖忽必烈",title:"忽必烈與兩個大汗的內戰｜兄弟相爭之後，他如何建立新王朝",url:"https://youtu.be/6V_I3OyMVMc"},
+{n:"遼聖宗",title:"遼聖宗與替他守江山的母親｜蕭太后聯手締造澶淵和平",url:"https://youtu.be/CbBugxylTzo"},
+{n:"金世宗",title:"金世宗被推上皇位｜穩住金國之後，如何守住女真傳承",url:"https://youtu.be/ufP6aTsVQjs"},
+{n:"唐玄宗",title:"唐玄宗從開元走到天寶｜盛世繁華如何走向安史之亂",url:"https://youtu.be/YO_3i9ZJJuk"},
+{n:"明太祖",title:"朱元璋從赤貧走到皇帝｜重建天下秩序，也把皇權推向高處",url:"https://youtu.be/ItdcmoWyx7A"},
+{n:"秦孝公",title:"秦孝公與一根木頭換來的信用｜商鞅變法讓秦國走上強國之路",url:"https://youtu.be/wY8CJzR0zRY"},
+{n:"明成祖",title:"明成祖朱棣靖難奪位後的永樂帝國｜遷都北京、遠航西洋，功業背後有代價",url:"https://youtu.be/8nFWpEXJiWA"},
+{n:"北周武帝",title:"北周武帝奪回皇帝手中的權力｜擊敗權臣宇文護，再統一北方",url:"https://youtu.be/3PrqjrSPUoA"},
+{n:"後周世宗",title:"後周世宗柴榮統一天下只差一步｜整軍南征北伐，英年早逝留下未竟之志",url:""},
+{n:"齊桓公",title:"齊桓公讓曾經射他的人成為宰相｜放下私怨重用管仲，成就春秋霸業",url:""},
+{n:"宋孝宗",title:"宋孝宗想北伐，也選擇停戰｜隆興和議背後，是理想與現實的拉鋸",url:""},
+{n:"明仁宗",title:"明仁宗等了多年，終於坐上皇位｜洪熙短短十月，先讓天下喘口氣",url:""},
+{n:"明孝宗",title:"明孝宗從深宮倖存到弘治中興｜少些清算、多些協作，明朝迎來喘息",url:"https://youtu.be/uNBaqpiFqgw"},
+{n:"秦始皇",title:"秦始皇統一天下，也統一制度｜帝國如何建立，又為何二世而亡",url:"https://youtu.be/mfhTY8MYYl4"},
+{n:"宋文帝劉義隆",title:"宋文帝元嘉之治走向政變｜殺了守邊名將，也逐漸失去信任",url:"https://youtu.be/WvEXHhrLPNc"},
+{n:"唐宣宗",title:"唐宣宗從被看輕的皇子到皇帝｜隱忍登基後，能挽救晚唐多久",url:"https://youtu.be/DaG8JyN172c"},
+{n:"清乾隆帝",title:"乾隆帝十全武功背後的盛世盲點｜功業與文字獄並存，危機如何累積",url:"https://youtu.be/h-sFKzXsHts"}
+];
 const K=["政績與國力","民生福祉","用人與納諫","制度貢獻","個人德行與晚節"],W0=[30,25,20,15,10];
 let W=W0.slice(),tab="a",sel=D[0].n,F={d:"",t:"",m:false};
 const $=i=>document.getElementById(i);
@@ -512,6 +556,7 @@ return`<svg viewBox="0 0 220 220" width="100%" style="max-width:260px;display:bl
 function detail(n){const o=rank().find(o=>o.r.n===n),r=o.r,x=X[n],[a,b]=r.c.split("；");
 let h=`<div class="dt"><h2 class="ttl">${r.n}</h2><div class="m"><span class="tag">${r.d}</span><span class="tag">${r.t}</span>${r.m?'<span class="tag">少數民族政權</span>':""}在位 ${reign(r)}</div>
 <div><span class="big">${o.s.toFixed(1)}</span> 分｜第 ${o.k} 名</div>${radar(r.s)}`;
+const video=VIDEOS.find(v=>v.n===r.n);if(video)h+=`<div class="detail-video"><b>對應故事｜第 ${String(VIDEOS.indexOf(video)+1).padStart(2,"0")} 集</b><br>${video.title}<br>${video.url?`<a href="${video.url}" target="_blank" rel="noopener noreferrer">觀看故事影片</a>`:'<span class="video-pending">影片連結待補</span>'}</div>`;
 if(x){h+=`<p><b>重要事件與決策</b> <button class="ex" data-o="0">全部展開</button></p>`+x.e.map(([y,t,i])=>`<details><summary><b>${y}</b>｜${t}</summary><p>${i}</p></details>`).join("")+`<p><b>功績</b><br>${x.g}</p><p><b>爭議</b><br>${x.z}</p><p><b>延伸閱讀</b><br>${x.r}</p>`}
 else{h+=`<p><b>功績／亮點</b><br>${a}</p>${b?`<p><b>爭議／缺點</b><br>${b}</p>`:""}`}
 return h+"</div>"}
@@ -523,6 +568,7 @@ else{const showM=!F.d&&!F.t&&!F.m;const it=[...all.map(o=>({y:o.r.y,t:0,o})),...
 h=`<div class="box"><div class="tl">`+it.map(i=>{let s="";const e=era(i.y);if(e!==last){last=e;s=`<div class="era">${e}</div>`}
 if(i.t){return s+`<div class="mi"><em>${yr(i.y)}</em><b>${i.m[0]}</b><span>${i.m[1]}</span></div>`}
 const o=i.o,r=o.r;return s+`<div class="ti" data-n="${r.n}"><em>${yr(r.y)}</em><b class="nm">${r.n}</b> <span class="note">${r.d}・${r.t}</span> <span class="sc">${o.s.toFixed(1)}</span> <span class="note">第 ${o.k} 名｜在位 ${reign(r)}</span>${X[r.n].e.slice(0,3).map(([a,b])=>`<div class="ev"><b>${a}</b>｜${b}</div>`).join("")}</div>`}).join("")+`</div></div>`}
+if(tab==="d"){const q=(window.videoQuery||"").trim().toLocaleLowerCase();const safeQ=q.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));const videos=VIDEOS.map((v,i)=>({...v,i})).filter(v=>{const r=D.find(row=>row.n===v.n);return(!F.d||r?.d===F.d)&&(!F.t||r?.t===F.t)&&(!F.m||r?.m)&&(!q||`${v.n} ${v.title}`.toLocaleLowerCase().includes(q))});h=`<div class="box"><div class="video-tools"><label for="videoSearch">搜尋故事</label><input id="videoSearch" type="search" placeholder="輸入君王或故事關鍵字" value="${safeQ}"><span class="note">顯示 ${videos.length} / ${VIDEOS.length} 集${F.d?`｜${F.d}`:"｜依集數排序"}</span></div><div class="video-grid">${videos.map(v=>`<article class="video-card"><p>第 ${String(v.i+1).padStart(2,"0")} 集｜${D.find(r=>r.n===v.n)?.d||""}</p><h3>${v.n}</h3><p>${v.title}</p>${v.url?`<a href="${v.url}" target="_blank" rel="noopener noreferrer">前往 YouTube 觀看</a>`:'<span class="video-pending">影片連結待補</span>'}</article>`).join("")||'<p class="note">找不到符合的故事。</p>'}</div></div>`;}
 $("main").innerHTML=h}
 function init(){$("ws").innerHTML=K.map((k,i)=>`<label>${k} <b id="wv${i}">${pc(i)}</b>%<input type="range" min="0" max="50" value="${W[i]}" data-w="${i}"></label>`).join("");
 const u=a=>[...new Set(a)];$("fd").innerHTML='<option value="">全部</option>'+u(D.slice().sort((a,b)=>a.y-b.y).map(r=>r.d)).map(x=>`<option>${x}</option>`).join("");
@@ -532,6 +578,7 @@ $("ws").addEventListener("input",e=>{const i=e.target.dataset.w;if(i==null)retur
 $("fd").onchange=e=>{F.d=e.target.value;render()};$("ft").onchange=e=>{F.t=e.target.value;render()};$("fm").onchange=e=>{F.m=e.target.checked;render()};
 $("rs").onclick=()=>{W=W0.slice();F={d:"",t:"",m:false};init();render()};
 $("tabs").onclick=e=>{const t=e.target.dataset.t;if(!t)return;tab=t;document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));render()};
+$("main").addEventListener("input",e=>{if(e.target.id!=="videoSearch")return;const p=e.target.selectionStart;window.videoQuery=e.target.value;render();const input=$("videoSearch");input.focus();input.setSelectionRange(p,p)});
 $("cl").onclick=()=>$("ov").style.display="none";
 document.addEventListener("click",e=>{const el=e.target.closest("[data-n]");if(!el)return;sel=el.dataset.n;
 if(tab==="a"){render()}else{$("mod").innerHTML=detail(sel);$("ov").style.display="block"}});
