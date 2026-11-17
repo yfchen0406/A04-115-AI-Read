@@ -204,6 +204,18 @@ const dayThreeAlbums = [
     folder: "photos/day-3/04-宮崎青島神社",
     files: ["01-要慢慢走進去海邊.webp","02-青島鬼洗衣岩-反正怎麼稱呼都可以.webp","03-青島鬼洗衣岩-宮崎海邊.webp","04-鬼之洗衣板-大夥合照-1.webp","05-鬼之洗衣板-大夥合照-2.webp","06-鬼之洗衣板-母子合照-1.webp","07-鬼之洗衣板-母子合照-2.webp","08-鬼之洗衣板-正常版-1.webp","09-鬼之洗衣板-看海的年輕人.webp","10-青島神社-從外面走蠻進來的有一段距離.webp","11-晚上用餐-日式涮涮鍋.webp","12-一餐六百還吃到飽.webp","13-補一張上午照片-櫻島展望台.webp"],
   },
+  {
+    name: "05-關之尾瀑布",
+    folder: "photos/day-3/05-關之尾瀑布",
+    files: ["01-關之尾瀑布-合照-1.webp","02-關之尾瀑布-合照-2.webp","03-關之尾瀑布-合照-3.webp","04-關之尾瀑布-母子合照.webp","05-有村溶岩展望所-1.webp","06-有村溶岩展望所-2.webp","07-不知名平台-也有google不知道的地方.webp","08-不知名平台-也有google不知道的地方.webp","09-不知名平台-也有google不知道的地方.webp","10-年輕人玩的梗-一堆人老人家也玩的開心.mp4","226068_0.webp"],
+  },
+];
+const dayFourAlbums = [
+  {
+    name: "01-起床",
+    folder: "photos/day-4/01-起床",
+    files: ["01-飯店起床-感覺沒睡飽.webp","02-飯店起床-感覺沒睡飽.webp"],
+  },
 ];
 const createPhotoSlots = (folder, altPrefix, placeholderText) => Array.from({ length: 6 }, (_, i) => {
   const filename = String(i + 1).padStart(2, "0");
@@ -239,7 +251,7 @@ const aiPhotoSlots = createPhotoSlots(
   `第 ${day} 天 AI 協作照片`,
   "",
 );
-const currentDayAlbums = day === 1 ? dayOneAlbums : day === 2 ? dayTwoAlbums : day === 3 ? dayThreeAlbums : null;
+const currentDayAlbums = day === 1 ? dayOneAlbums : day === 2 ? dayTwoAlbums : day === 3 ? dayThreeAlbums : day === 4 ? dayFourAlbums : null;
 const travelPhotoSlots = currentDayAlbums
   ? currentDayAlbums.map((album) => ({
     name: album.name,
