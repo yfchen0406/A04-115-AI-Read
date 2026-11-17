@@ -26,7 +26,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font: 15px/1.7 "Microsoft JhengHei", "微軟正黑體", "PingFang TC", "Noto Sans TC", sans-serif
+      font: 15px/1.7 "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif
     }
 
     button,
@@ -90,14 +90,14 @@
     }
 
     h1 {
-      font: 700 46px/1.1 "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font: 700 46px/1.1 "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif;
       color: #000;
       margin: 0 0 4px;
       letter-spacing: .25em
     }
 
     .ttl {
-      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-family: "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif;
       color: #000
     }
 
@@ -110,7 +110,7 @@
       writing-mode: vertical-rl;
       background: var(--ac);
       color: var(--ink);
-      font: 700 24px/1 "標楷體", "DFKai-SB", "BiauKai", serif;
+      font: 700 24px/1 "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif;
       padding: 10px 12px;
       letter-spacing: .15em;
       border-radius: 3px;
@@ -214,7 +214,7 @@
     }
 
     .video-card h3 {
-      font: 700 19px/1.5 "標楷體", "DFKai-SB", "BiauKai", serif;
+      font: 700 19px/1.5 "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif;
       margin: 4px 0;
       color: #000
     }
@@ -240,6 +240,59 @@
     .video-card a:hover,
     .detail-video a:hover {
       background: #7e1712
+    }
+
+    .video-card a.video-thumb,
+    .detail-video a.video-thumb {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 10px 0 0;
+      padding: 0;
+      background: none;
+      border-radius: 3px;
+      line-height: 0
+    }
+
+    .video-thumb img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 3px
+    }
+
+    .video-card a.video-thumb:hover,
+    .detail-video a.video-thumb:hover {
+      background: none;
+      filter: brightness(1.08)
+    }
+
+    .video-thumb::after {
+      content: "\25B6";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .6);
+      color: #fff;
+      font-size: 18px;
+      pointer-events: none
+    }
+
+    .video-card {
+      overflow: hidden
+    }
+
+    html, body, button, input, select, textarea, svg text {
+      font-family: "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif !important
     }
 
     .video-pending {
@@ -373,7 +426,7 @@
     }
 
     .nm {
-      font-family: "Times New Roman", "標楷體", "DFKai-SB", "BiauKai", serif;
+      font-family: "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif;
       color: #000;
       font-weight: 700
     }
@@ -449,7 +502,7 @@
       background: var(--ac);
       color: var(--ink);
       padding: 2px 18px;
-      font: 700 20px "標楷體", "DFKai-SB", "BiauKai", serif;
+      font: 700 20px "標楷體", "DFKai-SB", "BiauKai", "Kaiti TC", "KaiTi", serif;
       letter-spacing: .3em
     }
 
@@ -1160,38 +1213,39 @@
     const P = { "秦始皇": "稱帝", "漢高祖": "稱帝", "武則天": "稱帝" };
     const M = [[-770, "平王東遷", "東周開始，進入春秋時代"], [-403, "三家分晉", "韓趙魏立為諸侯，通常視為戰國開端"], [-221, "秦統一六國", "建立中央集權帝國"], [-206, "秦亡", "子嬰降劉邦，隨後楚漢相爭"], [-202, "漢朝建立", "劉邦稱帝，定都長安"], [8, "王莽篡漢", "新朝取代西漢"], [184, "黃巾之亂", "東漢政局崩壞的轉捩點"], [220, "東漢亡、三國分立", "曹丕代漢，魏蜀吳鼎立"], [316, "西晉滅亡", "永嘉之亂後，北方進入五胡十六國"], [439, "北魏統一北方", "南北朝對峙格局形成"], [589, "隋統一南北", "結束近三百年分裂"], [618, "唐朝建立", "李淵稱帝，定都長安"], [755, "安史之亂", "唐由盛轉衰的分水嶺"], [907, "唐亡、五代十國", "朱溫代唐，進入分裂時期"], [1127, "靖康之變", "北宋滅亡，南宋建立"], [1206, "蒙古帝國建立", "成吉思汗統一蒙古諸部"], [1279, "元滅南宋", "忽必烈完成全國統一"], [1368, "明朝建立", "朱元璋稱帝，元順帝北走"], [1644, "明亡、清入關", "李自成入京後，清軍入關"], [1796, "白蓮教之亂", "乾隆末年，清朝由盛轉衰"], [1840, "鴉片戰爭", "中國進入近代"]];
     const D = R.map(([n, d, t, s, c, y, m]) => ({ n, d, t, s: s.split(",").map(Number), c, y, m, e: E[n] }));
+    const thumb = v => v.img ? `<a class="video-thumb" ${v.url ? `href="${v.url}" target="_blank" rel="noopener noreferrer" title="點圖前往 YouTube 觀看"` : ""} aria-label="${v.n}：前往 YouTube 觀看"><img src="${v.img}" alt="${v.n}故事圖片" loading="lazy" onerror="this.parentNode.outerHTML='<span class=&quot;video-pending&quot;>圖片待補</span>'"></a>` : '<span class="video-pending">圖片待補</span>';
     const VIDEOS = [
-      { n: "唐太宗", title: "唐太宗與魏徵的那面鏡子｜殺兄稱帝，卻成千古明君", url: "https://youtu.be/0onO14f88pM" },
-      { n: "漢光武帝", title: "漢光武帝的柔道治國｜兩萬打四十萬，他靠什麼贏？", url: "https://youtu.be/XiGvViX0NU8" },
-      { n: "清康熙帝", title: "康熙擒鰲拜的那場摔跤遊戲｜十六歲的少年，扳倒了權臣", url: "https://youtu.be/f17-FpKFOBE" },
-      { n: "漢文帝", title: "漢文帝的節儉治國學｜一座露台要百金，他說不蓋了", url: "https://youtu.be/iOzS_VHX8LA" },
-      { n: "隋文帝", title: "隋文帝與科舉制的誕生｜他結束了三百年亂世，卻被兒子毀了名聲", url: "https://youtu.be/9Mw8IczSEkU" },
-      { n: "宋仁宗", title: "宋仁宗的「不折騰」治國智慧｜半夜想吃羊肉，他卻忍住了", url: "https://youtu.be/kUDmiKnq3GE" },
-      { n: "宋太祖", title: "宋太祖杯酒釋兵權的溫柔權謀｜一頓酒，收回所有兵權", url: "https://youtu.be/B7YR8KcGmJs" },
-      { n: "漢高祖", title: "漢高祖劉邦的用人之道｜什麼都不會的人，憑什麼當皇帝？", url: "https://youtu.be/WnBEScRvceU" },
-      { n: "漢武帝", title: "漢武帝的雄心與代價｜他派出去的人失敗了，卻改變了世界", url: "https://youtu.be/JHfuw3vJx8w" },
-      { n: "漢宣帝", title: "漢宣帝的底層治國學｜從監獄裡走出來的皇帝", url: "https://youtu.be/aHJn2e6eKlQ" },
-      { n: "北魏孝文帝", title: "北魏孝文帝的雨中遷都｜改革整合中原，也讓北鎮將士漸被遺忘", url: "https://youtu.be/k3coW-RIvgI" },
-      { n: "武則天", title: "武則天與那塊無字碑｜她改變朝局，也讓後人難以一句定論", url: "https://youtu.be/NlDMISwnnVg" },
-      { n: "清雍正帝", title: "雍正帝十三年的批閱｜勤政整頓財政，卻留下猜忌陰影", url: "https://youtu.be/7yE6wXtbA5M" },
-      { n: "魏文侯", title: "魏文侯先把人才請進來｜重用賢臣，魏國由此崛起", url: "https://youtu.be/I4bZisZqMe8" },
-      { n: "元世祖忽必烈", title: "忽必烈與兩個大汗的內戰｜兄弟相爭之後，他如何建立新王朝", url: "https://youtu.be/6V_I3OyMVMc" },
-      { n: "遼聖宗", title: "遼聖宗與替他守江山的母親｜蕭太后聯手締造澶淵和平", url: "https://youtu.be/CbBugxylTzo" },
-      { n: "金世宗", title: "金世宗被推上皇位｜穩住金國之後，如何守住女真傳承", url: "https://youtu.be/ufP6aTsVQjs" },
-      { n: "唐玄宗", title: "唐玄宗從開元走到天寶｜盛世繁華如何走向安史之亂", url: "https://youtu.be/YO_3i9ZJJuk" },
-      { n: "明太祖", title: "朱元璋從赤貧走到皇帝｜重建天下秩序，也把皇權推向高處", url: "https://youtu.be/ItdcmoWyx7A" },
-      { n: "秦孝公", title: "秦孝公與一根木頭換來的信用｜商鞅變法讓秦國走上強國之路", url: "https://youtu.be/wY8CJzR0zRY" },
-      { n: "明成祖", title: "明成祖朱棣靖難奪位後的永樂帝國｜遷都北京、遠航西洋，功業背後有代價", url: "https://youtu.be/8nFWpEXJiWA" },
-      { n: "北周武帝", title: "北周武帝奪回皇帝手中的權力｜擊敗權臣宇文護，再統一北方", url: "https://youtu.be/3PrqjrSPUoA" },
-      { n: "後周世宗", title: "後周世宗柴榮統一天下只差一步｜整軍南征北伐，英年早逝留下未竟之志", url: "https://youtu.be/QDiR1koVAZY" },
-      { n: "齊桓公", title: "齊桓公讓曾經射他的人成為宰相｜放下私怨重用管仲，成就春秋霸業", url: "https://youtu.be/qTZObk4Gyhg" },
-      { n: "宋孝宗", title: "宋孝宗想北伐，也選擇停戰｜隆興和議背後，是理想與現實的拉鋸", url: "https://youtu.be/0XJzvEVj-Hg" },
-      { n: "明仁宗", title: "明仁宗等了多年，終於坐上皇位｜洪熙短短十月，先讓天下喘口氣", url: "https://youtu.be/zp3rZ52WBQ4" },
-      { n: "明孝宗", title: "明孝宗從深宮倖存到弘治中興｜少些清算、多些協作，明朝迎來喘息", url: "https://youtu.be/uNBaqpiFqgw" },
-      { n: "秦始皇", title: "秦始皇統一天下，也統一制度｜帝國如何建立，又為何二世而亡", url: "https://youtu.be/mfhTY8MYYl4" },
-      { n: "宋文帝劉義隆", title: "宋文帝元嘉之治走向政變｜殺了守邊名將，也逐漸失去信任", url: "https://youtu.be/WvEXHhrLPNc" },
-      { n: "唐宣宗", title: "唐宣宗從被看輕的皇子到皇帝｜隱忍登基後，能挽救晚唐多久", url: "https://youtu.be/DaG8JyN172c" },
-      { n: "清乾隆帝", title: "乾隆帝十全武功背後的盛世盲點｜功業與文字獄並存，危機如何累積", url: "https://youtu.be/h-sFKzXsHts" }
+      { n: "唐太宗", title: "唐太宗與魏徵的那面鏡子｜殺兄稱帝，卻成千古明君", url: "https://youtu.be/0onO14f88pM", img: "../A01-Index-Book-Journal-2026/images/U007/R38-01.webp" },
+      { n: "漢光武帝", title: "漢光武帝的柔道治國｜兩萬打四十萬，他靠什麼贏？", url: "https://youtu.be/XiGvViX0NU8", img: "../A01-Index-Book-Journal-2026/images/U007/R38-02.webp" },
+      { n: "清康熙帝", title: "康熙擒鰲拜的那場摔跤遊戲｜十六歲的少年，扳倒了權臣", url: "https://youtu.be/f17-FpKFOBE", img: "../A01-Index-Book-Journal-2026/images/U007/R38-03.webp" },
+      { n: "漢文帝", title: "漢文帝的節儉治國學｜一座露台要百金，他說不蓋了", url: "https://youtu.be/iOzS_VHX8LA", img: "../A01-Index-Book-Journal-2026/images/U007/R38-04.webp" },
+      { n: "隋文帝", title: "隋文帝與科舉制的誕生｜他結束了三百年亂世，卻被兒子毀了名聲", url: "https://youtu.be/9Mw8IczSEkU", img: "../A01-Index-Book-Journal-2026/images/U007/R38-05.webp" },
+      { n: "宋仁宗", title: "宋仁宗的「不折騰」治國智慧｜半夜想吃羊肉，他卻忍住了", url: "https://youtu.be/kUDmiKnq3GE", img: "../A01-Index-Book-Journal-2026/images/U007/R38-06.webp" },
+      { n: "宋太祖", title: "宋太祖杯酒釋兵權的溫柔權謀｜一頓酒，收回所有兵權", url: "https://youtu.be/B7YR8KcGmJs", img: "../A01-Index-Book-Journal-2026/images/U007/R38-07.webp" },
+      { n: "漢高祖", title: "漢高祖劉邦的用人之道｜什麼都不會的人，憑什麼當皇帝？", url: "https://youtu.be/WnBEScRvceU", img: "../A01-Index-Book-Journal-2026/images/U007/R38-08.webp" },
+      { n: "漢武帝", title: "漢武帝的雄心與代價｜他派出去的人失敗了，卻改變了世界", url: "https://youtu.be/JHfuw3vJx8w", img: "../A01-Index-Book-Journal-2026/images/U007/R38-09.webp" },
+      { n: "漢宣帝", title: "漢宣帝的底層治國學｜從監獄裡走出來的皇帝", url: "https://youtu.be/aHJn2e6eKlQ", img: "../A01-Index-Book-Journal-2026/images/U007/R38-10.webp" },
+      { n: "北魏孝文帝", title: "北魏孝文帝的雨中遷都｜改革整合中原，也讓北鎮將士漸被遺忘", url: "https://youtu.be/k3coW-RIvgI", img: "../A01-Index-Book-Journal-2026/images/U007/R38-11.webp" },
+      { n: "武則天", title: "武則天與那塊無字碑｜她改變朝局，也讓後人難以一句定論", url: "https://youtu.be/NlDMISwnnVg", img: "../A01-Index-Book-Journal-2026/images/U007/R38-12.webp" },
+      { n: "清雍正帝", title: "雍正帝十三年的批閱｜勤政整頓財政，卻留下猜忌陰影", url: "https://youtu.be/7yE6wXtbA5M", img: "../A01-Index-Book-Journal-2026/images/U007/R38-13.webp" },
+      { n: "魏文侯", title: "魏文侯先把人才請進來｜重用賢臣，魏國由此崛起", url: "https://youtu.be/I4bZisZqMe8", img: "../A01-Index-Book-Journal-2026/images/U007/R38-14.webp" },
+      { n: "元世祖忽必烈", title: "忽必烈與兩個大汗的內戰｜兄弟相爭之後，他如何建立新王朝", url: "https://youtu.be/6V_I3OyMVMc", img: "../A01-Index-Book-Journal-2026/images/U007/R38-15.webp" },
+      { n: "遼聖宗", title: "遼聖宗與替他守江山的母親｜蕭太后聯手締造澶淵和平", url: "https://youtu.be/CbBugxylTzo", img: "../A01-Index-Book-Journal-2026/images/U007/R38-16.webp" },
+      { n: "金世宗", title: "金世宗被推上皇位｜穩住金國之後，如何守住女真傳承", url: "https://youtu.be/ufP6aTsVQjs", img: "../A01-Index-Book-Journal-2026/images/U007/R38-17.webp" },
+      { n: "唐玄宗", title: "唐玄宗從開元走到天寶｜盛世繁華如何走向安史之亂", url: "https://youtu.be/YO_3i9ZJJuk", img: "../A01-Index-Book-Journal-2026/images/U007/R38-18.webp" },
+      { n: "明太祖", title: "朱元璋從赤貧走到皇帝｜重建天下秩序，也把皇權推向高處", url: "https://youtu.be/ItdcmoWyx7A", img: "../A01-Index-Book-Journal-2026/images/U007/R38-19.webp" },
+      { n: "秦孝公", title: "秦孝公與一根木頭換來的信用｜商鞅變法讓秦國走上強國之路", url: "https://youtu.be/wY8CJzR0zRY", img: "../A01-Index-Book-Journal-2026/images/U007/R38-20.webp" },
+      { n: "明成祖", title: "明成祖朱棣靖難奪位後的永樂帝國｜遷都北京、遠航西洋，功業背後有代價", url: "https://youtu.be/8nFWpEXJiWA", img: "../A01-Index-Book-Journal-2026/images/U007/R38-21.webp" },
+      { n: "北周武帝", title: "北周武帝奪回皇帝手中的權力｜擊敗權臣宇文護，再統一北方", url: "https://youtu.be/3PrqjrSPUoA", img: "../A01-Index-Book-Journal-2026/images/U007/R38-22.webp" },
+      { n: "後周世宗", title: "後周世宗柴榮統一天下只差一步｜整軍南征北伐，英年早逝留下未竟之志", url: "https://youtu.be/QDiR1koVAZY", img: "../A01-Index-Book-Journal-2026/images/U007/R38-23.webp" },
+      { n: "齊桓公", title: "齊桓公讓曾經射他的人成為宰相｜放下私怨重用管仲，成就春秋霸業", url: "https://youtu.be/qTZObk4Gyhg", img: "../A01-Index-Book-Journal-2026/images/U007/R38-24.webp" },
+      { n: "宋孝宗", title: "宋孝宗想北伐，也選擇停戰｜隆興和議背後，是理想與現實的拉鋸", url: "https://youtu.be/0XJzvEVj-Hg", img: "../A01-Index-Book-Journal-2026/images/U007/R38-25.webp" },
+      { n: "明仁宗", title: "明仁宗等了多年，終於坐上皇位｜洪熙短短十月，先讓天下喘口氣", url: "https://youtu.be/zp3rZ52WBQ4", img: "../A01-Index-Book-Journal-2026/images/U007/R38-26.webp" },
+      { n: "明孝宗", title: "明孝宗從深宮倖存到弘治中興｜少些清算、多些協作，明朝迎來喘息", url: "https://youtu.be/uNBaqpiFqgw", img: "../A01-Index-Book-Journal-2026/images/U007/R38-27.webp" },
+      { n: "秦始皇", title: "秦始皇統一天下，也統一制度｜帝國如何建立，又為何二世而亡", url: "https://youtu.be/mfhTY8MYYl4", img: "../A01-Index-Book-Journal-2026/images/U007/R38-28.webp" },
+      { n: "宋文帝劉義隆", title: "宋文帝元嘉之治走向政變｜殺了守邊名將，也逐漸失去信任", url: "https://youtu.be/WvEXHhrLPNc", img: "../A01-Index-Book-Journal-2026/images/U007/R38-29.webp" },
+      { n: "唐宣宗", title: "唐宣宗從被看輕的皇子到皇帝｜隱忍登基後，能挽救晚唐多久", url: "https://youtu.be/DaG8JyN172c", img: "../A01-Index-Book-Journal-2026/images/U007/R38-30.webp" },
+      { n: "清乾隆帝", title: "乾隆帝十全武功背後的盛世盲點｜功業與文字獄並存，危機如何累積", url: "https://youtu.be/h-sFKzXsHts", img: "../A01-Index-Book-Journal-2026/images/U007/R38-31.webp" }
     ];
     const K = ["政績與國力", "民生福祉", "用人與納諫", "制度貢獻", "個人德行與晚節"], W0 = [30, 25, 20, 15, 10];
     let W = W0.slice(), tab = "a", sel = D[0].n, F = { d: "", t: "", m: false };
@@ -1215,7 +1269,7 @@
       const o = rank().find(o => o.r.n === n), r = o.r, x = X[n], [a, b] = r.c.split("；");
       let h = `<div class="dt"><h2 class="ttl">${r.n}</h2><div class="m"><span class="tag">${r.d}</span><span class="tag">${r.t}</span>${r.m ? '<span class="tag">少數民族政權</span>' : ""}在位 ${reign(r)}</div>
 <div><span class="big">${o.s.toFixed(1)}</span> 分｜第 ${o.k} 名</div>${radar(r.s)}`;
-      const video = VIDEOS.find(v => v.n === r.n); if (video) h += `<div class="detail-video"><b>對應故事｜第 ${String(VIDEOS.indexOf(video) + 1).padStart(2, "0")} 集</b><br>${video.title}<br>${video.url ? `<a href="${video.url}" target="_blank" rel="noopener noreferrer">觀看故事影片</a>` : '<span class="video-pending">影片連結待補</span>'}</div>`;
+      const video = VIDEOS.find(v => v.n === r.n); if (video) h += `<div class="detail-video"><b>對應故事｜第 ${String(VIDEOS.indexOf(video) + 1).padStart(2, "0")} 集</b><br>${video.title}<br>${thumb(video)}</div>`;
       if (x) { h += `<p><b>重要事件與決策</b> <button class="ex" data-o="0">全部展開</button></p>` + x.e.map(([y, t, i]) => `<details><summary><b>${y}</b>｜${t}</summary><p>${i}</p></details>`).join("") + `<p><b>功績</b><br>${x.g}</p><p><b>爭議</b><br>${x.z}</p><p><b>延伸閱讀</b><br>${x.r}</p>` }
       else { h += `<p><b>功績／亮點</b><br>${a}</p>${b ? `<p><b>爭議／缺點</b><br>${b}</p>` : ""}` }
       return h + "</div>"
@@ -1233,7 +1287,7 @@
           const o = i.o, r = o.r; return s + `<div class="ti" data-n="${r.n}"><em>${yr(r.y)}</em><b class="nm">${r.n}</b> <span class="note">${r.d}・${r.t}</span> <span class="sc">${o.s.toFixed(1)}</span> <span class="note">第 ${o.k} 名｜在位 ${reign(r)}</span>${X[r.n].e.slice(0, 3).map(([a, b]) => `<div class="ev"><b>${a}</b>｜${b}</div>`).join("")}</div>`
         }).join("") + `</div></div>`
       }
-      if (tab === "d") { const q = (window.videoQuery || "").trim().toLocaleLowerCase(); const safeQ = q.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); const videos = VIDEOS.map((v, i) => ({ ...v, i })).filter(v => { const r = D.find(row => row.n === v.n); return (!F.d || r?.d === F.d) && (!F.t || r?.t === F.t) && (!F.m || r?.m) && (!q || `${v.n} ${v.title}`.toLocaleLowerCase().includes(q)) }); h = `<div class="box"><div class="video-tools"><label for="videoSearch">搜尋故事</label><input id="videoSearch" type="search" placeholder="輸入君王或故事關鍵字" value="${safeQ}"><span class="note">顯示 ${videos.length} / ${VIDEOS.length} 集${F.d ? `｜${F.d}` : "｜依集數排序"}</span></div><div class="video-grid">${videos.map(v => `<article class="video-card"><p>第 ${String(v.i + 1).padStart(2, "0")} 集｜${D.find(r => r.n === v.n)?.d || ""}</p><h3>${v.n}</h3><p>${v.title}</p>${v.url ? `<a href="${v.url}" target="_blank" rel="noopener noreferrer">前往 YouTube 觀看</a>` : '<span class="video-pending">影片連結待補</span>'}</article>`).join("") || '<p class="note">找不到符合的故事。</p>'}</div></div>`; }
+      if (tab === "d") { const q = (window.videoQuery || "").trim().toLocaleLowerCase(); const safeQ = q.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); const videos = VIDEOS.map((v, i) => ({ ...v, i })).filter(v => { const r = D.find(row => row.n === v.n); return (!F.d || r?.d === F.d) && (!F.t || r?.t === F.t) && (!F.m || r?.m) && (!q || `${v.n} ${v.title}`.toLocaleLowerCase().includes(q)) }); h = `<div class="box"><div class="video-tools"><label for="videoSearch">搜尋故事</label><input id="videoSearch" type="search" placeholder="輸入君王或故事關鍵字" value="${safeQ}"><span class="note">顯示 ${videos.length} / ${VIDEOS.length} 集${F.d ? `｜${F.d}` : "｜依集數排序"}</span></div><div class="video-grid">${videos.map(v => `<article class="video-card"><p>第 ${String(v.i + 1).padStart(2, "0")} 集｜${D.find(r => r.n === v.n)?.d || ""}</p><h3>${v.n}</h3><p>${v.title}</p>${thumb(v)}</article>`).join("") || '<p class="note">找不到符合的故事。</p>'}</div></div>`; }
       $("main").innerHTML = h
     }
     function init() {
