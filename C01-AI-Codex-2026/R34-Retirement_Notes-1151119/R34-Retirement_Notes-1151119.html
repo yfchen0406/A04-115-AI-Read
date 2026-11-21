@@ -53,7 +53,7 @@ mark{background:var(--yellow);color:#16263a}
 </style>
 </head>
 <body>
-<header><div class="w"><div class="title-row"><h1>退休人生 200 則短文</h1><button type="button" class="play-link" id="openViewer">▶ 圖片播放</button></div><p>全文收錄・18 類主題分類（內文改寫中）</p><div class="theme-tabs" role="group" aria-label="全部卡片圖片風格"><button type="button" class="theme-tab" data-theme="images" aria-pressed="true">吉卜力風</button><button type="button" class="theme-tab" data-theme="images2" aria-pressed="false">中國山水風</button></div></div></header>
+<header><div class="w"><div class="title-row"><h1>退休人生 200 則短文</h1><button type="button" class="play-link" id="openViewer">▶ 圖片播放</button></div><p>全文收錄・18 類主題分類（內文改寫中）</p><div class="theme-tabs" role="group" aria-label="全部卡片圖片風格"><button type="button" class="theme-tab" data-theme="images" aria-pressed="true">吉卜力風</button><button type="button" class="theme-tab" data-theme="images2" aria-pressed="false">中國山水風</button><button type="button" class="theme-tab" data-theme="images3" aria-pressed="false">日式卡通風</button><button type="button" class="theme-tab" data-theme="images4" aria-pressed="false">LEGO</button><button type="button" class="theme-tab" data-theme="images5" aria-pressed="false">黏土微縮風</button></div></div></header>
 <div class="bar"><div class="w">
 <input id="q" type="search" placeholder="搜尋標題或內文，例如：知足、茶、放下…">
 <div class="nav" id="nav"></div><div class="st" id="st"></div>
@@ -62,7 +62,7 @@ mark{background:var(--yellow);color:#16263a}
 <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="圖片播放" hidden>
   <div class="viewer-top"><div class="viewer-title"><div class="viewer-category" id="viewerCategory"></div><div class="viewer-topic" id="viewerTitle"></div></div><button class="viewer-home" id="viewerHome" type="button">⌂ 回到首頁</button></div>
   <div class="viewer-stage"><img id="viewerImage" alt=""><div class="viewer-message" id="viewerMessage" role="status" hidden></div><button class="viewer-arrow viewer-prev" id="viewerPrev" type="button" aria-label="上一張">❮</button><button class="viewer-arrow viewer-next" id="viewerNext" type="button" aria-label="下一張">❯</button></div>
-  <div class="viewer-count" id="viewerCount" aria-live="polite"></div><div class="viewer-controls"><button type="button" class="viewer-theme" data-theme="images" aria-pressed="true">吉卜力風</button><button type="button" class="viewer-theme" data-theme="images2" aria-pressed="false">中國山水風</button><button type="button" id="viewerFullscreen" aria-pressed="false">⛶ 全螢幕</button><button type="button" id="viewerAuto" aria-pressed="true">⏸ 切換手動播放</button><button type="button" id="viewerShuffle" aria-pressed="false">🔀 隨機播放：關</button></div>
+  <div class="viewer-count" id="viewerCount" aria-live="polite"></div><div class="viewer-controls"><button type="button" class="viewer-theme" data-theme="images" aria-pressed="true">吉卜力風</button><button type="button" class="viewer-theme" data-theme="images2" aria-pressed="false">中國山水風</button><button type="button" class="viewer-theme" data-theme="images3" aria-pressed="false">日式卡通風</button><button type="button" class="viewer-theme" data-theme="images4" aria-pressed="false">LEGO</button><button type="button" class="viewer-theme" data-theme="images5" aria-pressed="false">黏土微縮風</button><button type="button" id="viewerFullscreen" aria-pressed="false">⛶ 全螢幕</button><button type="button" id="viewerAuto" aria-pressed="true">⏸ 切換手動播放</button><button type="button" id="viewerShuffle" aria-pressed="false">🔀 隨機播放：關</button></div>
 </div>
 <script>
 const C=[
@@ -330,7 +330,7 @@ C.forEach((c,i)=>{
  const s=document.createElement('section');s.id='c'+i;
  const got=by[i].map(d=>d[1]);const left=c.t.filter(t=>!got.includes(t));
  let h='<h2>'+(i+1)+'. '+c.n+'<small>已收錄 '+got.length+' / '+c.t.length+'</small></h2><p class="desc">'+c.d+'</p>';
- if(by[i].length)h+='<div class="grid">'+by[i].map(d=>{const num=String(imageNumber.get(d)).padStart(3,'0');return '<div class="item"><div class="item-head"><h3>'+d[1]+'</h3><button type="button" class="theme-switch" data-folder="images" data-file="Y'+num+'.webp" aria-pressed="true">吉卜力風</button><button type="button" class="theme-switch" data-folder="images2" data-file="B02-'+num+'.webp" aria-pressed="false">中國山水風</button></div><img src="images/Y'+num+'.webp" alt="'+d[1]+'的吉卜力風圖片" loading="lazy" onerror="this.style.visibility=\'hidden\'"></div>'}).join('')+'</div>'; 
+ if(by[i].length)h+='<div class="grid">'+by[i].map(d=>{const num=String(imageNumber.get(d)).padStart(3,'0');return '<div class="item"><div class="item-head"><h3>'+d[1]+'</h3><button type="button" class="theme-switch" data-folder="images" data-file="Y'+num+'.webp" aria-pressed="true">吉卜力風</button><button type="button" class="theme-switch" data-folder="images2" data-file="B02-'+num+'.webp" aria-pressed="false">中國山水風</button><button type="button" class="theme-switch" data-folder="images3" data-file="'+num+'.webp" aria-pressed="false">日式卡通風</button><button type="button" class="theme-switch" data-folder="images4" data-file="'+num+'_'+d[1]+'.webp" aria-pressed="false">LEGO</button><button type="button" class="theme-switch" data-folder="images5" data-file="'+num+'.webp" aria-pressed="false">黏土微縮風</button></div><img src="images/Y'+num+'.webp" alt="'+d[1]+'的吉卜力風圖片" loading="lazy" onerror="this.style.visibility=\'hidden\'"></div>'}).join('')+'</div>'; 
  if(left.length)h+='<div class="pend">待收錄：'+left.map(t=>'<b>'+t+'</b>').join('')+'</div>';
  s.innerHTML=h;m.appendChild(s);
  s.querySelectorAll('.item').forEach(item=>{const image=item.querySelector('img');item.querySelectorAll('.theme-switch').forEach(button=>button.addEventListener('click',()=>{image.style.visibility='visible';image.src=button.dataset.folder+'/'+button.dataset.file;image.alt=item.querySelector('h3').textContent+'的'+button.textContent+'圖片';item.querySelectorAll('.theme-switch').forEach(other=>other.setAttribute('aria-pressed',String(other===button)))}));});
@@ -345,6 +345,7 @@ function setTheme(folder){
   const button=item.querySelector('.theme-switch[data-folder="'+folder+'"]');
   if(button)button.click();
  });
+ if(typeof viewer!=='undefined'&&!viewer.hidden)showImage();
 }
 document.querySelectorAll('.theme-tab,.viewer-theme').forEach(button=>button.addEventListener('click',()=>setTheme(button.dataset.theme)));
 function stat(extra){st.textContent='已收錄 '+DATA.length+' / 200 則・已改寫 '+NEWT.length+' / 200 則'+(extra||'')}
@@ -362,7 +363,7 @@ function refreshControls(){autoButton.textContent=autoPlaying?'⏸ 切換手動�
 function resetTimer(){clearInterval(playTimer);playTimer=null;if(autoPlaying&&!viewer.hidden)playTimer=setInterval(()=>moveImage(1,false),intervalMs)}
 function showImage(){
  viewerIndex=playOrder[position];
- const item=DATA[viewerIndex],num=String(viewerIndex+1).padStart(3,'0'),file=activeThemeFolder==='images'?'Y'+num+'.webp':'B02-'+num+'.webp';
+ const item=DATA[viewerIndex],num=String(viewerIndex+1).padStart(3,'0'),file=activeThemeFolder==='images'?'Y'+num+'.webp':activeThemeFolder==='images2'?'B02-'+num+'.webp':activeThemeFolder==='images4'?num+'_'+item[1]+'.webp':num+'.webp';
  viewerCategory.textContent='分類：'+C[cat[item[1]]].n;viewerTitle.textContent='主題：'+item[1];viewerCount.textContent=(position+1)+' / '+DATA.length+'　・　'+file;
  viewerMessage.hidden=true;viewerImage.style.visibility='visible';viewerImage.alt=item[1]+' 的圖片';
  viewerImage.onerror=()=>{viewerImage.style.visibility='hidden';viewerMessage.textContent='尚未找到圖片：'+activeThemeFolder+'/'+file;viewerMessage.hidden=false};
