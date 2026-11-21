@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>退休人生 200 則短文・全文分類</title>
+<style>
+:root{--bg:#eaf2fb;--card:#fff;--ink:#16263a;--sub:#4d6580;--line:#c7d9ee;--blue:#005A9C;--yellow:#FFD21F;--ybg:#fff6cc;--pend:#dbe7f5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08172a;--card:#0f2742;--ink:#eef3fa;--sub:#a9bdd6;--line:#1f4470;--blue:#2f86d6;--ybg:#3a3210;--pend:#143258}}
+*{box-sizing:border-box}
+html{scroll-padding-top:var(--bar-height,180px)}
+body,button,input{font-family:"標楷體","DFKai-SB","BiauKai","Kaiti TC","KaiTi",serif}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.9;font-size:1.05rem}
+header{background:#005A9C;color:#fff;padding:26px 18px 18px;border-bottom:5px solid var(--yellow)}
+header .w{width:83.333%;margin:0 auto}
+h1{margin:0;font-size:1.7rem;color:var(--yellow);letter-spacing:.05em}
+.title-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.play-link{border:1px solid var(--yellow);border-radius:999px;background:var(--yellow);color:#16263a;font-size:1rem;font-weight:bold;padding:5px 16px;cursor:pointer}.play-link:hover{background:#fff1a1}
+header p{margin:4px 0 0;font-size:.95rem;color:#e6f0fb}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 18px;border-bottom:1px solid var(--line)}
+.bar .w{width:83.333%;margin:0 auto}
+input{width:100%;padding:10px 14px;border:2px solid var(--blue);border-radius:10px;background:var(--card);color:var(--ink);font-size:1.05rem}
+.nav{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;padding:8px 0 2px}
+.nav button{min-width:0;white-space:nowrap;border:1px solid var(--blue);background:var(--card);color:var(--blue);border-radius:999px;padding:3px 12px;font-size:.95rem;cursor:pointer}
+.nav button:hover{background:var(--yellow);color:#16263a;border-color:var(--yellow)}
+.st{font-size:.9rem;color:var(--sub);margin-top:4px}
+main{width:83.333%;margin:0 auto;padding:14px 0 60px}
+@media(max-width:700px){header .w,.bar .w,main{width:100%}main{padding:14px 14px 60px}}
+section{margin:22px 0}
+section>h2{margin:0;font-size:1.35rem;color:#fff;background:var(--blue);padding:8px 16px;border-radius:12px 12px 0 0;border-left:8px solid var(--yellow)}
+section>h2 small{font-size:.85rem;font-weight:400;color:var(--yellow);margin-left:10px}
+.desc{margin:0;padding:6px 16px;background:var(--ybg);color:var(--sub);font-size:.95rem;border:1px solid var(--line);border-top:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px;background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px}
+.item{border:1px solid var(--line);border-top:4px solid var(--yellow);border-radius:10px;padding:10px 14px 14px;background:var(--card)}
+.item h3{margin:0 0 4px;font-size:1.2rem;color:var(--blue)}
+.item img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:7px;background:var(--pend)}
+.pend{padding:0 12px 12px;background:var(--card);border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px;display:flex;flex-wrap:wrap;gap:6px;font-size:.9rem;color:var(--sub)}
+.pend b{background:var(--pend);border-radius:6px;padding:0 10px;font-weight:400}
+.grid+.pend{border-top:0;border-radius:0 0 12px 12px;margin-top:-1px;padding-top:10px}
+mark{background:var(--yellow);color:#16263a}
+.viewer[hidden]{display:none}.viewer{position:fixed;inset:0;z-index:100;background:#080d15;color:#fff;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.viewer-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:#101b2b}.viewer-title{font-size:1.05rem;font-weight:bold}.viewer button{font-family:inherit;color:#fff;background:#173453;border:1px solid #9ab5cf;border-radius:8px;cursor:pointer}.viewer button:hover,.viewer button:focus-visible{background:#285e8e;outline:2px solid var(--yellow)}.viewer-home{font-size:1rem;padding:7px 14px;white-space:nowrap}
+.viewer-stage{min-height:0;flex:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.viewer-stage img{width:100%;height:100%;object-fit:contain}.viewer-message{position:absolute;padding:16px;text-align:center;color:#e3edf7;background:#172638;border-radius:8px}.viewer-message[hidden]{display:none}.viewer-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:72px;font-size:2rem;line-height:1;background:rgba(10,28,48,.8)!important}.viewer-prev{left:12px}.viewer-next{right:12px}.viewer-count{padding:5px 12px;text-align:center;color:#d5e4f2;background:#101b2b;font-size:.95rem}.viewer-controls{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:8px 10px;background:#101b2b}.viewer-controls button{padding:7px 13px;font-size:1rem}.viewer-controls button[aria-pressed="true"]{background:#ffd21f;color:#16263a;border-color:#ffd21f}.viewer-category{font-size:.85rem;color:#b7d2ec;line-height:1.3}.viewer-topic{font-size:1.1rem;color:#fff;line-height:1.4}
+.viewer:fullscreen{padding:0;background:#000}.viewer:fullscreen .viewer-top,.viewer:fullscreen .viewer-count,.viewer:fullscreen .viewer-controls,.viewer:fullscreen .viewer-arrow,.viewer:fullscreen .viewer-message{display:none}.viewer:fullscreen .viewer-stage{width:100%;height:100%}
+.viewer:-webkit-full-screen{padding:0;background:#000}.viewer:-webkit-full-screen .viewer-top,.viewer:-webkit-full-screen .viewer-count,.viewer:-webkit-full-screen .viewer-controls,.viewer:-webkit-full-screen .viewer-arrow,.viewer:-webkit-full-screen .viewer-message{display:none}.viewer:-webkit-full-screen .viewer-stage{width:100%;height:100%}
+@media(max-width:700px){.viewer-top{padding:8px 10px}.viewer-arrow{width:42px;height:58px;font-size:1.7rem}.viewer-prev{left:6px}.viewer-next{right:6px}}
+
+@media(max-width:1100px){.nav{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:700px){html{scroll-padding-top:12px}.bar{position:static;padding:10px 14px}.nav{grid-template-columns:repeat(3,minmax(0,1fr))}.nav button{min-height:40px}.grid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<header><div class="w"><div class="title-row"><h1>退休人生 200 則短文</h1><button type="button" class="play-link" id="openViewer">▶ 圖片播放</button></div><p>全文收錄・18 類主題分類（內文改寫中）</p></div></header>
+<div class="bar"><div class="w">
+<input id="q" type="search" placeholder="搜尋標題或內文，例如：知足、茶、放下…">
+<div class="nav" id="nav"></div><div class="st" id="st"></div>
+</div></div>
+<main id="m"></main>
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="圖片播放" hidden>
+  <div class="viewer-top"><div class="viewer-title"><div class="viewer-category" id="viewerCategory"></div><div class="viewer-topic" id="viewerTitle"></div></div><button class="viewer-home" id="viewerHome" type="button">⌂ 回到首頁</button></div>
+  <div class="viewer-stage"><img id="viewerImage" alt=""><div class="viewer-message" id="viewerMessage" role="status" hidden></div><button class="viewer-arrow viewer-prev" id="viewerPrev" type="button" aria-label="上一張">❮</button><button class="viewer-arrow viewer-next" id="viewerNext" type="button" aria-label="下一張">❯</button></div>
+  <div class="viewer-count" id="viewerCount" aria-live="polite"></div><div class="viewer-controls"><button type="button" id="viewerFullscreen" aria-pressed="false">⛶ 全螢幕</button><button type="button" id="viewerAuto" aria-pressed="true">⏸ 切換手動播放</button><button type="button" id="viewerShuffle" aria-pressed="false">🔀 隨機播放：關</button></div>
+</div>
+<script>
+const C=[
+["知足感恩","懂得滿足、記得別人的好","知足 惜福 感恩 知恩 報恩 念恩 思恩 念好 惜緣 惜情"],
+["樂善好施","把善意化為行動","善念 仁心 慈悲 樂善 好施 喜捨 布施 公益 助人 善行 善舉 義行 利行 善意 善巧 愛語 讚嘆"],
+["廣結善緣","種福田、積福德","結緣 善緣 福報 種福 培福 造福 積德 修福 積善 養德 隨喜"],
+["放下釋懷","不跟自己過不去","放下 看淡 釋懷 和解 止爭 息怨 轉念 放心 寬心 心寬 豁達 退讓 忍讓"],
+["寧靜安然","心靜了，日子就穩了","從容 恬淡 守靜 淡定 安然 平和 寧靜 澄明 靜心 淨心 靜觀 清歡 自在 定力"],
+["歡喜開朗","心裡有光，笑口常開","樂天 悅納 喜樂 開心 歡喜 開朗 陽光 幽默"],
+["溫厚待人","語氣柔、心腸軟","溫和 柔和 溫柔 溫暖 暖心 和顏 柔軟 體貼 體諒 共情 善解 寬厚 敦厚 包容 傾聽 表達"],
+["真誠樸實","不裝、不演、說真話","誠信 誠懇 真誠 真心 誠心 歸真 素心 守拙 抱朴 質樸 順性"],
+["謙虛恭敬","有本事不炫耀，對人對天都有敬意","謙和 低調 虛懷 虛心 謙卑 恭敬 敬人 敬天 敬畏 虔誠"],
+["自省明理","回頭看自己，看清事理","自省 明理 修為 覺知 覺悟 智慧 清醒 通透 明心 護心 護念 正念 沉潛 守心"],
+["責任擔當","守好本分，照顧好自己與家人","責任 擔當 負責 盡責 本分 守分 安分 傳承 陪伴"],
+["堅毅踏實","一步一腳印，持之以恆","堅守 篤定 堅定 堅持 恆心 耐心 踏實 務實 勇氣 規律"],
+["進退有度","拿捏分寸，話留三分","分寸 邊界 知止 知量 知時 知趣 識趣 適度 恰當 妥當 平衡 節制 惜言 守口"],
+["穩重圓融","沉得住氣，做事周到","穩當 慎重 謹慎 圓融 圓滿 周全 細膩 成熟 穩重 穩健 沉穩 用心 盡心"],
+["簡樸慢活","少一點、慢一點、淨一點","簡樸 勤儉 愛物 潔淨 留白 寡欲 慢活 雅致 隨緣 安命"],
+["養生保健","身體是行善與陪伴的本錢","養生 養氣 安眠 步行 食淡 惜身 守身"],
+["老有所樂","茶、書、花草與面對變老","茶香 書香 園藝 閒趣 玩心 好奇 學老 忘齡 服老"],
+["珍惜當下","把握今天，專心過好每一刻","惜時 惜今 專注 惜命"]
+].map(c=>({n:c[0],d:c[1],t:c[2].split(' ')}));
+const DATA=[
+["一-1","知足","金山銀山，不如平平安安；大富大貴，不如健康到位。人這一輩子，爭來爭去，最後才懂：千好萬好，開心就好；知足常樂，才是人生之最。"],
+["一-2","惜福","有水當思無水之苦，有飯當念來處不易。人常常有福不知福，等少了才懷念。每天謝一點、省一點、分一點給人，福氣這種東西，越惜越有，越分越多。"],
+["一-3","感恩","最困難的時候，不是每個人都會幫你；願意伸手的，一定希望你過得好。滴水之恩也好，舉手之勞也罷，都別忘。感恩的心，才能讓緣分長長久久。"],
+["一-4","從容","事來了，一件一件做；事過了，就讓它過。退休以後不必再趕，日子不是拿來追的。氣順一點，話柔一點，今天過好，就是對自己最好的交代。"],
+["一-5","放下","有些事像手裡握著熱杯，燙了還不放，只會更痛。放下不是認輸，是知道盡力了。手空出來，才能牽人一把；心空出來，才能裝進新的福氣。"],
+["一-6","恬淡","茶淡有回甘，人淡有真情。少比名利高低，多聽鳥叫風聲。口味淡一點，身體輕一點；交際淡一點，心就安靜一點。恬淡不是冷清，是不被外物牽著走。"],
+["一-7","守靜","每天留一點安靜給自己，關掉電視，放下手機，聽聽呼吸。心像一杯濁水，放久了自然會清。清一點，就知道什麼話不必說、什麼氣不必生。"],
+["一-8","寡欲","少買一點，不會缺；少爭一點，不會輸。需要和想要分清楚，心就不糊塗。慾望少一點，眼睛亮一點；心清一點，善念就多一點。"],
+["一-9","寬厚","別人的錯，看淡一點；自己的氣，留少一點。心裡的石頭搬開，走路自然輕巧。寬一點，好相見；厚一點，好到老。寬厚不是吃虧，是善緣自己找上門。"],
+["一-10","慈悲","看見人苦，不忍心；有能力，伸一隻手；沒能力，說一句暖話。慈悲不必驚天動地，從不傷人開始，從肯幫忙做起。心不變硬，人就還有溫度。"],
+["一-11","隨緣","人生下半場，做個簡單的人，少與人糾纏，多看大自然。該做的認真做，該等的耐心等；花不開，硬掰也不香。盡心之後就鬆手，至於其他，隨緣就好。"],
+["一-12","簡樸","家裡少一點雜物，心裡少一點念頭。碗洗乾淨、地掃乾淨、話說乾淨，日子就鬆了。簡樸不是刻苦，是不用一直跟人比。少一點，反而多一點。"],
+["一-13","淡定","讚美來了不飄，批評來了不亂。離開職位，掌聲少了，正好練平常心。不爭一時高下，不讓情緒翻船。淡定不是無感，是心穩了，善念才守得住。"],
+["一-14","安然","很喜歡現在的自己，不去捲入是非，也無心分辨笑臉背後的真假。只想守好自己的健康與情緒，不越界打擾別人，也不願被任何人、任何事綁架。"],
+["一-15","自省","晚上回頭看看，今天有沒有多說一句傷人的話。人常先怪別人，退休後多照鏡子：少問人負我，多問我負人。肯改一點，心就亮一點。"],
+["一-16","明理","該進的時候進，該退的時候退。不倚老賣老，也不看輕自己。理說得柔，人才聽得進去；話留三分，路才走得長。明理不是精明，是分寸拿得對。"],
+["一-17","豁達","人生拉長來看，得失不過一陣風。小怨別佔滿心，小利別太認真。心胸開一點，路就寬一點；看得遠一點，氣就順一點。豁達是留空間給善意。"],
+["一-18","包容","人都有不完美，自己也是。相處摩擦難免，少說「你應該」，多說「我理解」。多留一步台階給人，家就和；家一和，善緣就深。"],
+["一-19","謙和","有本事不炫耀，有年紀不壓人。語氣柔三分暖，態度敬一分真。慢心一起，善就遠；謙下一起，福就來。謙和不是軟弱，是心裡有分寸。"],
+["一-20","誠信","說話算話，小事也認真。不欺人，也不騙自己。退休後信用還是人的底氣。答應一句做到，往來不用猜。誠信不是古板，是心安路好走。"],
+["一-21","善念","念頭一起，先問一句：會不會傷人？能不能幫人？每天種一個小善念，讓座、讚美、不傳閒話，久了就成習慣。善念不是口號，是天天在練習。"],
+["一-22","仁心","把別人當人看，對老弱病苦多一分不忍。退休後身體漸衰，更懂無助的滋味。能力內伸一手，沒能力說一聲。仁心不是濫情，是心裡有盞燈。"],
+["一-23","節制","吃飯八分飽，生氣留餘地，花錢看需要。退休收入固定，節制是保護自己，也是愛家人。不暴食、不暴怒、不貪多，身心平穩，善念才不會被擠走。"],
+["一-24","平衡","動一動，也靜一靜；陪人，也陪自己。退休容易過忙或過閒。量力而行最久，留白生活才美。心不偏，善與足才能一起走。"],
+["一-25","自在","別人的眼光別綁住自己，自己的本心別丟掉。退休卸下頭銜，日子按心來走。做該做，放該放，有分寸就自由。自在不是放縱，是心無掛礙。"],
+["一-26","清歡","一壺茶、一本書、一段散步，都能樂。人別一直追刺激，簡單反而深刻。清歡不是苦行，是不被物慾拖著走。心清，善念明；知足，日子甜。"],
+["一-27","靜觀","靜靜看自己的心，靜靜看外面變化，不急著評判。退休後人情冷暖、身體起落都看得見。看清了再行善，才不盲目；看懂了，知足才不是安慰自己。"],
+["一-28","慢活","飯好好吃一口，路好好走一段，話出口前慢一點。退休不是趕場，日子不必塞滿。慢下來，才看見身邊人的需要，才嘗得出知足的味。"],
+["一-29","養生","不熬夜，不暴食，多走路，多曬太陽。心少煩，氣就順；身安穩，福就長。健康是行善的本錢，也是不拖累家人的慈悲。養生不是怕死，是珍惜。"],
+["一-30","修為","修心先少怨氣，修口先少傷人，修行先從小事做起。脾氣改一點，善念多一分。修為不是高深道理，是每天進步一點點，讓善念落到行動。"],
+["一-31","心寬","小事別放太大，壞話別記太久。凡事留餘地，放過別人也放過自己。心寬則氣順，氣順則善生。心寬不是糊塗，是不跟怨氣結仇。"],
+["一-32","看淡","掌聲會停，頭銜會退，別人的眼光也會變。看淡不是看輕自己，是知道那些不是全部。健康、親情、一顆肯對人好的心，才是真正跟著自己的。"],
+["一-33","釋懷","舊怨別反覆嚼，遺憾別一直追。過去無法重來，與其問「為何是我」，不如問「我還能做什麼」。釋懷不是遺忘，是不讓過去擋住向善的路。"],
+["一-34","歸真","不必再演角色，不用凡事裝強。承認有限，說真話，過真生活。衣暖飯飽就好，待人誠懇不慌。歸真不是退步，是回到心明亮的樣子。"],
+["一-35","守拙","不逞一時聰明，不爭一時鋒頭。肯用笨功夫踏實做事，厚道反而長久。少算計，多真誠；吃點小虧不計較。守拙不是愚笨，是把善緣守得牢。"],
+["一-36","抱朴","衣夠暖就好穿，飯夠飽就好吃，話夠真就好說。心樸，慾望就少；慾少，善念就直。抱朴不是寒酸，是保留人最真的本質。"],
+["一-37","樂天","知道天命會老，仍要歡喜過日。不因年歲自怨，不為未來愁急。看看自己有的，笑一笑就受益。樂天不是盲目樂觀，是接受起落，仍願意善待他人。"],
+["一-38","安命","命有不同際遇，身體各有起落。能改的努力，不能改的接受。不怨天，不妒人，盡本分，心就柔。安命不是消極，是安定之後，還能行善。"],
+["一-39","順性","順著良善本性，順著自然作息。不勉強，不扭曲，不虛偽。早睡早起，量力而為，與人相處真意。順性不是任性，是去掉造作，讓善自然流露。"],
+["一-40","養德","多說一句好話，多改一點脾氣，多做一些好事。德行慢慢累積，德厚自然載福，心正自然知足。養德不是口號，是日常的練習。"],
+["一-41","積善","小善常常做，不必等有錢有勢。讓座、撿紙、陪人說說話，都是善的門。善行會回頭養自己的心，讓人不空虛。積善不是求回報，是讓良心自在。"],
+["一-42","留白","日子別塞太滿，話別說太盡，人際留點空間。退休後留白，是給自己呼吸，也給別人餘地。空白生清淨，清淨裡善念有地方站。"],
+["一-43","退讓","不爭一時輸贏，該讓就讓一步。退休後爭贏也未必心安。退讓不是懦弱，是看清輕重，不與人結怨。和氣留下，善緣守住，心也鬆了。"],
+["一-44","低調","有功不必張揚，有錢不必炫富，有見識也別壓人。低調少妒少爭，能安靜做事。低調不是自卑，是把注意力從「我」轉到「事」和「人」。"],
+["一-45","沉潛","沉下心讀點書，潛進生活深處。練身體，也練心，不追熱鬧虛浮。定力足，不被誘惑牽走，看得清什麼該珍惜。沉潛不是消失，是為善養力氣。"],
+["一-46","悅納","歡喜接納自己，也接納別人的不同，包括身體變老。接納不是認輸，是不再內耗。心鬆了，才有力氣把善念化為行動。"],
+["一-47","和解","與人說清界限，與自己放下舊仇。和解不是縱容惡，是停止報復循環。怨氣一直轉，苦的是自己。說開了，放下了，心才回得了善與安穩。"],
+["一-48","止爭","無謂的爭辯少爭，家裡、網路上都一樣。爭贏一句傷感情，輸了和氣不值得。止爭不是沒原則，是把力氣留給真正重要的善事。"],
+["一-49","息怨","心裡的怨氣熄一熄，別反覆說誰對不起我。別人的過錯，不該繼續懲罰自己。把怨話轉成感恩話，把怒氣化成善行。息怨，是讓自己復原。"],
+["一-50","念好","多念人的好，少記人的壞；多說謝謝，少翻舊帳。相伴時間越長，越要看見對方的付出。念好不是鄉愿，是選擇看光明面，讓善緣留住。"],
+["一-51","惜緣","家人、朋友、鄰居，相遇都是緣分。別把陪伴當應該，問候要趁現在。耐心聽，及時謝，善意才會流動。惜緣不是黏人，是珍惜每個人。"],
+["一-52","敬人","不分年齡職業，尊重每個人的人格。不以資歷壓人，也不輕視服務的人。敬人者人恆敬，善意在人際循環。敬人不是客套，是心裡有分寸。"],
+["一-53","愛物","一粥一飯當思來處，一器一物都有情。不浪費，不糟蹋，物盡其用最清。愛物是敬天地，也是敬重勞動。人儉樸，心不貪，善與知足一起長。"],
+["一-54","勤儉","勤在有益身心的事，儉在不必要的花費。不懶散，不奢華，資源留給需要的人。生活踏實安穩，心不空虛浮誇。勤儉不是寒酸，是讓福氣留下。"],
+["一-55","潔淨","身體清爽，居所清爽，心念也清爽。日日整理一點，不讓雜物堆積，不讓惡念進門。潔淨不是潔癖，是讓善念有位置，讓知足住得安穩。"],
+["一-56","規律","作息、飲食、運動，有常就有節奏。退休最怕日夜顛倒、無所適從。規律給人安定，安定生定力。定力足，守得住善，也安得住知足。"],
+["一-57","專注","吃飯就好好吃，走路就好好走。一次做好一件事，心不亂就不愁。專注減少焦慮，也讓人看見細節與需要。心在當下，善與足都真實。"],
+["一-58","閒趣","種花、下棋、寫字、聽戲，都是樂。退休有閒是福，閒要有寄託才不空。閒趣養心，心樂少怨，能以好心情待人。閒趣不是耗時，是讓生活有顏色。"],
+["一-59","雅致","衣著整潔舒服，言語溫和從容。不必浮誇奢華，用心就是不同。雅致不是有錢，是舉止有分寸。自己舒服，別人也舒服，善意自然流通。"],
+["一-60","素心","少算計，少虛榮，與人交往簡簡單單。心不被名利染色，平凡也能好看。素心看得見平凡裡的好，知足與善念都清亮。素心不是無知，是保留真誠。"],
+["一-61","虛懷","心像空杯，肯聽、肯學、肯認錯。不倚老賣老，晚輩意見也採。虛懷讓人不僵化，能修正自己。心有空位，善念才長得進來，知足才不自滿。"],
+["一-62","忍讓","忍一時之氣，讓一步之路，但不是無底線退縮。原則是善，方法是柔。少爭一句，可免大怨。心平了，氣和了，知足才穩得住。"],
+["一-63","敦厚","說話留點口德，做事留點餘地。不刻薄，不佔便宜。厚道看似吃虧，其實是在積善緣。讓人心安，自己也睡得穩。敦厚不是笨拙，是良心放第一。"],
+["一-64","質樸","衣夠暖就好穿，飯夠養就好吃，話夠真就好說。不浮誇，不掩飾。質樸減少比較，心不被物拖著走。善念與知足自然生長，日子實在有致。"],
+["一-65","溫和","語氣柔三分暖，態度暖一分親。不因年老暴躁，不把情緒丟給人。家人相處日久，溫和能化摩擦。溫和不是沒脾氣，是把情緒管好，用善意說話。"],
+["一-66","喜樂","常保一分歡喜，不把快樂全寄託在兒女或外物。健康、助人、興趣、感恩，都能生喜。喜樂會感染人，讓善行不沉重。知足不苦澀，日子有光。"],
+["一-67","平和","情緒不大起大落，不把怒氣遷移到別人身上。身體與人際都會變，接納無常，少計較。心平氣和，善言善行容易出來，知足不被情緒破壞。"],
+["一-68","寧靜","外面少一點喧鬧，裡面少一點雜念。給自己安靜時光，遠離無謂紛擾。寧靜不是孤僻，是充電。靜過之後更能溫柔待人，看清自己已擁有的福。"],
+["一-69","澄明","心像清水，沉澱後能照見真相。少被名利攪動，多點反省靜心。澄明能分辨善惡，知道取捨。知足出於明白，不是出於糊塗。"],
+["一-70","定力","誘惑來不動心，閒話來不動怒，變故來心能穩。定力靠規律與自省養成。心定，守得住善，知足不被風吹倒。定力不是固執，是心中有主。"],
+["一-71","覺知","時時知道自己在想什麼、說什麼、做什麼。慣性抱怨或管太多時，能及時踩剎車。看見念頭，才能轉向善念；看見所有，才懂珍惜當下。"],
+["一-72","轉念","遇到不如意，換個角度看，不鑽死胡同。從「失去什麼」看到「還能做什麼」，從怨氣看到善意。轉念不是逃避，是讓心重新點燃。"],
+["一-73","善解","把人往好處想，不預設壞心腸。少猜疑，少閒話，多問多聽。善解給人解釋的機會，減少怨結。善解不是天真，是心寬，是給自己陽光。"],
+["一-74","體諒","站在對方處境，替他多想一分。家人、服務的人，都有難處。少責備，多協助，善緣因此加深。體諒不是縱容，是明白人都有不容易的時候。"],
+["一-75","共情","感受別人的苦與樂，不冷漠，也不過度承擔。有能力聽人說話，就是一份善緣。共情讓人不孤單，也提醒自己惜福。知足裡仍願意伸手，心暖路不孤獨。"],
+["一-76","分寸","說話知進退，做事知深淺。不越界，也不委屈自己。退休後對兒女少干涉，對朋友少為難。分寸是尊重，也是慈悲。守住界線，善才長久。"],
+["一-77","邊界","自己的事自己擔，別人的事別亂攬，老天的事就接受。不推卸，也不硬攀。少替兒女做決定，少被情緒綁架。有邊界，關係才健康，善意才不變負擔。"],
+["一-78","責任","照顧好自己的健康，不拖累家人，是責任。量力助人，守公德，也是責任。盡責後心安定，知足才有底氣。責任不是壓力，是讓善能站穩。"],
+["一-79","傳承","經驗、家風、善念，傳給下一代。不傳怨氣，不傳貪念。留德比留財真。說故事、教手藝、做榜樣，都是傳承。讓善循環，自己也在付出裡知足。"],
+["一-80","陪伴","花時間在重要的人身邊，專心聽，好好在。陪老伴、陪老友，比給錢更暖。陪伴是善的具體樣子，也讓自己看見仍被需要。陪伴不是佔有，是真心不離開。"],
+["一-81","傾聽","少急著給建議，多聽對方把話說完。退休後容易以過來人指點，傾聽是放下自己。聽懂家人的難處、朋友的寂寞，善解就生，心也更謙卑。"],
+["一-82","表達","感謝、關心、界線，都要好好說出來，別憋成怨。練習說「謝謝你」「我需要休息」「我愛你」。真誠表達減少誤會，讓善念被聽見，讓知足被分享。"],
+["一-83","幽默","對自己寬一點，對生活笑一笑。不尖酸，不挖苦。身體和記性常鬧笑話，幽默能化解尷尬。善意的幽默讓人放鬆，少怨氣，知足更有趣。"],
+["一-84","玩心","保留好奇與遊戲的心情，學新事物，享受小樂趣。退休不是等老，玩心能活化身心。但玩要無害、有度，自己快樂，也讓別人舒服。"],
+["一-85","好奇","對世界還願意發問、學習，不因年老封閉。學手機、學園藝，心會年輕。好奇也讓人理解不同世代，少批判，多善意。好奇不是多事，是讓生命有趣。"],
+["一-86","學老","老去也是一門功課，學接受，學安排，學求助也助人。優雅退場，量力而行。學明白，就少恐懼。學老不是等衰敗，是把日子過明白。"],
+["一-87","忘齡","不讓年齡限制好奇與行動，但不忘身體現實。可以學新事，也可以承認累了要休息。忘齡是心不老，不是逞強。善與知足都要量力，日子才有光。"],
+["一-88","服老","身體有限要認，不硬撐，不逞強。按時就醫，好好休息，量力而為。服老是智慧，不是認輸。保護好自己，不拖累家人，才有餘力行善。"],
+["一-89","敬天","敬畏自然規律，不狂妄，不浪費。人算不如天算，盡力之後就退一步。敬天讓人謙卑惜福，善待土地萬物。知足裡有敬畏，善念不越界。"],
+["一-90","惜命","珍惜生命與健康，不糟蹋，也不因老自棄。規律生活，遠離危險，心情開朗。惜命是對家人負責，也是行善的本錢。活著，就有機會把善意給出去。"],
+["一-91","護心","不讓怨恨長住，不讓嫉妒開門。少看挑撥資訊，少跟人比較。多親近善友與自然。護心就是守善，心乾淨了，知足才住得久。"],
+["一-92","養氣","少生氣，多呼吸，多曬太陽多走走。氣順，身體就安；身安，心就寬。養氣不是玄談，是把怒氣化成體諒，把怨氣化成善行。"],
+["一-93","安眠","煩惱別帶上床，作息規律，少刺激。睡得好，情緒就穩；情緒穩，待人就和氣。安眠不是小事，是養身也養心。精神足，善念才有活力。"],
+["一-94","步行","每天走一走，活動筋骨，看看世界。走路也是修行，呼吸放慢，心就跟著開。跟人點頭微笑，不擾人，也愛自己。善與知足，都在腳下。"],
+["一-95","食淡","飲食清淡有節，不暴食，不貪味。身體代謝慢了，淡一點少負擔。淡不是無味，是少負擔、多感恩。吃得珍惜，不浪費，知足從一餐飯開始。"],
+["一-96","茶香","一壺茶裡有清閒、有朋友、有感恩。退休不必拼酒應酬，泡茶待客，獨坐品茗都好。茶香讓人慢下來，話柔和，心清淨。善念與知足，都有味道。"],
+["一-97","書香","讀書養智，也養心。好書、經典、傳記，開眼界，少固執。書香讓人明理謙卑，知道人生有限，更願善待他人。知足而不自滿，善念有根有底。"],
+["一-98","園藝","種花種菜，親近土地，看生命慢慢長。動身體，安心情，也教人耐心惜物。花草不爭，人也不妨少爭。在澆灌裡練習付出，知足花開滿庭。"],
+["一-99","公益","餘力拿來做公益，捐款、志工、社區服務都好。量力而為，不求回報。善行讓社會更好，也讓自己保持連結與價值感。知足，也可以很有意義。"],
+["一-100","助人","能力範圍內幫一把，不分大小。讓座、陪診、聽人訴苦、分享經驗，都行。助人讓心不老，知足不忘別人。善行形成循環，日子越走越明。"],
+["二-1","知止","人到了一定年紀才懂，不是什麼都要爭到底。話到嘴邊留三分，事到盡頭退一步。知道哪裡該停，心才不會亂；懂得什麼該放，日子才過得安。"],
+["二-2","守分","該你做的，認真做；不該你管的，少插手。退休後守好自己的本分，不越界，也不委屈。把自己照顧好，不拖累人，就是對家人最實在的愛。"],
+["二-3","安分","別人的田園再美，也不必羨慕；自己的日子再淡，也有滋味。安分不是沒出息，是知道什麼是自己的。心安定下來，粗茶淡飯也吃得香甜。"],
+["二-4","樂善","有能力幫人一把，是福氣；沒能力說句暖話，也是心意。行善不必等有錢，隨手讓個座、順口讚個人，都是善。樂善的人，心裡住著光。"],
+["二-5","好施","手裡有的，分一點出去，不會少，反而多。施的不是錢，是一份心。今天幫人開一扇門，明天有人為你留一盞燈。好施的人，路越走越寬。"],
+["二-6","喜捨","捨得捨得，有捨才有得。捨掉一點計較，得到一身輕鬆；捨掉一點執著，得到一片清淨。歡歡喜喜地給，比緊緊抓著更富有。"],
+["二-7","布施","不一定要捐大錢才叫布施。一個微笑、一句好話、一段陪伴，都是給。給出去的東西，最後都會回到自己身上。心量越大，福氣越深。"],
+["二-8","結緣","人與人相遇，都是緣分。多說一句好話，多留一分情面，就是結善緣。今天種下的善緣，來日也許就是扶你一把的手。廣結善緣，路才好走。"],
+["二-9","福報","福報不是求來的，是做出來的。平常多積一點德，多存一點善，福氣自然跟著來。不用羨慕別人命好，自己好好種，也會有收成的一天。"],
+["二-10","種福","福氣像種田，今天撒下善的種子，慢慢澆灌，總有一天會開花。不必急著看結果，只要天天做一點好事，福報就在土裡悄悄長大。"],
+["二-11","培福","有福的時候，別忘了培福。多幫人，多惜物，多說好話，福氣才不會用盡。就像種樹，平常澆水施肥，日後才有大樹可以乘涼。"],
+["二-12","造福","與其求福，不如造福。自己多做一點善事，也帶動身邊的人一起做，福氣就越來越厚。造福的人，不只自己好，也讓別人跟著好。"],
+["二-13","積德","德是一點一滴累積的。今天少說一句傷人的話，明天多幫一個需要的人，都是在積德。德厚的人，走到哪裡都有人敬重，日子也過得安穩。"],
+["二-14","修福","福不是憑空來的，要修。修脾氣，修口德，修一顆肯為人著想的心。天天修一點，福氣就天天長一點。修福的人，愈老愈有福相。"],
+["二-15","隨喜","看到別人好，替他歡喜，不嫉妒、不比較，這也是一種善。隨喜不用花錢，卻能讓心變寬。心寬了，別人的福氣也像自己的福氣。"],
+["二-16","讚嘆","多說一句好話，不會少一塊肉，卻能讓人溫暖一整天。看到別人的優點，就大方讚美；看到別人的努力，就真心肯定。讚嘆是送人最好的禮物。"],
+["二-17","柔軟","牙齒硬，老了會掉；舌頭軟，一輩子都在。人也是一樣，心柔軟一點，話柔軟一點，路就順一點。柔軟不是軟弱，是懂得轉彎的智慧。"],
+["二-18","和顏","臉色和氣一點，家裡的氣氛就暖一點。不必板著臉過日子，也不必把情緒寫在臉上。和顏悅色，是給家人最好的見面禮。"],
+["二-19","愛語","話說得好，像冬天的一杯熱茶；話說得重，像夏天的一把火。多說關心的話、感謝的話、鼓勵的話，少說責備的話。愛語，是最便宜的善行。"],
+["二-20","利行","做對人有幫助的事，不分大小。順手幫人提個東西，順口指個路，都是利行。利行的人，看起來在幫別人，其實最受益的是自己。"],
+["二-21","善巧","好心也要有好的方法。話說得對，不如說得巧；幫人幫得對，不如幫得巧。善巧不是狡猾，是懂得用對方需要的方式，把善意送到心裡。"],
+["二-22","智慧","智慧不是讀多少書，是知道什麼該計較、什麼該放下。退休後少爭一點，多看一點，想通一點。有智慧的人，不跟自己過不去，也不跟別人過不去。"],
+["二-23","覺悟","人這一輩子，很多事要慢慢才懂。錢夠用就好，氣少生就好，人平安就好。覺悟不是看破紅塵，是看清什麼才是真正重要的。"],
+["二-24","清醒","年紀大了，最怕糊塗。不是記性糊塗，是心裡糊塗。知道誰對你好，知道什麼該珍惜，知道日子該怎麼過。清醒的人，不被人牽著走。"],
+["二-25","通透","有些事，想通了就通了。別人的閒話，不必往心裡去；過去的遺憾，不必一直回頭看。通透的人，看得開、放得下，日子過得清爽。"],
+["二-26","開朗","心開一點，路就寬一點。不必什麼事都往壞處想，也不必什麼人都往壞處猜。開朗的人，笑聲多、朋友多，福氣也多。"],
+["二-27","陽光","心裡有陽光，看什麼都順眼。早上起來曬曬太陽，出門走走，跟人說說笑笑。陽光不用花錢買，卻能讓日子暖起來。"],
+["二-28","溫暖","一句問候，一杯熱茶，一個陪伴，都能讓人覺得溫暖。退休後，做一個溫暖的人，不必做大事，只要讓身邊的人覺得舒服就好。"],
+["二-29","溫柔","溫柔不是年輕人的專利，年紀越大，越要溫柔。對老伴溫柔一點，對兒女溫柔一點，對自己溫柔一點。溫柔的人，歲月也對她溫柔。"],
+["二-30","體貼","體貼是站在對方角度想一分。老伴累了，遞杯水；朋友病了，打個電話。體貼不用花大錢，卻能讓人記一輩子。體貼的人，最得人心。"],
+["二-31","耐心","有些事急不來，有些人催不得。耐心等一朵花開，耐心聽一個人把話說完。退休後最不缺的就是時間，慢慢來，反而比較快。"],
+["二-32","恆心","做一件好事不難，難的是天天做。每天走一走路，每天讀一讀書，每天存一點善念。恆心不是什麼大道理，就是不放棄而已。"],
+["二-33","堅持","對的事，就堅持做下去。哪怕每天只做一點點，日子久了也會看見成果。堅持不是固執，是知道自己要什麼，然後一步一步往前走。"],
+["二-34","踏實","一步一腳印，不貪快，不取巧。退休後過日子也一樣，飯好好吃，覺好好睡，事好好做。踏實的人，心裡安定，日子也安定。"],
+["二-35","務實","不畫大餅，不做白日夢。有多少力，做多少事；有多少錢，過多少日子。務實不是沒夢想，是知道先把眼前的日子過好。"],
+["二-36","誠懇","說話誠懇，人家才願意聽；做事誠懇，人家才願意信。誠懇不是笨，是把心掏出來給人看。誠懇的人，朋友不多，但都是真心的。"],
+["二-37","真誠","不虛偽，不造假，不當面一套背後一套。真誠的人，也許不會說漂亮話，但說出來的話都算數。真誠，是人與人之間最厚的橋。"],
+["二-38","真心","對人真心，別人才會對你真心。不必算計，不必防備，簡簡單單就好。真心不一定換來真心，但至少自己睡得安穩。"],
+["二-39","善意","看人先看好的一面，想事先想好的可能。善意不是天真，是選擇用溫暖的眼光看世界。你給出去的善意，最後都會回到自己身上。"],
+["二-40","善行","善行不必驚天動地，順手做就好。幫人開個門，撿個垃圾，讓個座，都是善行。善行做多了，人就變好了，日子也變順了。"],
+["二-41","善舉","舉手之勞的善，最可貴。不必等有錢有閒才做善事，當下能幫就幫。善舉不分大小，有心最重要。做一件善舉，心裡就多一分歡喜。"],
+["二-42","義行","看到不公平的事，敢說一句公道話；看到需要幫助的人，願意伸一隻手。義行不是逞英雄，是心裡有一把尺，知道什麼該做。"],
+["二-43","勇氣","年紀大了，不是什麼都不怕，是怕了還是願意做對的事。勇氣不是衝動，是知道後果，仍然選擇善良。有勇氣的人，心裡住著正氣。"],
+["二-44","擔當","該扛的責任，不推給別人。對家庭有擔當，對自己有擔當。擔當不是吃虧，是讓人信任。有擔當的人，走到哪裡都受人敬重。"],
+["二-45","負責","答應的事，就要做到；做錯的事，就要認錯。負責不是壓力，是對自己的尊重。退休後對健康負責、對情緒負責，就是對家人最好的交代。"],
+["二-46","盡責","做一天和尚敲一天鐘，做一天人就盡一天責。不必做到完美，但要盡心。盡責的人，晚上睡得安穩，白天過得踏實。"],
+["二-47","本分","是你的，跑不掉；不是你的，爭不來。守好自己的本分，做好自己的事，不羨慕、不嫉妒、不強求。本分守住了，心就安了。"],
+["二-48","堅守","有些東西不能丟，比如良心，比如原則，比如對人的善意。不管別人怎麼做，自己守住就好。堅守不是食古不化，是心裡有一盞不滅的燈。"],
+["二-49","篤定","心裡有方向，腳下就不會亂。知道自己要什麼，也知道自己不要什麼。篤定的人，不隨波逐流，不被別人牽著鼻子走。"],
+["二-50","堅定","決定了的事，就好好做下去。不因為別人一句話就動搖，不因為一時困難就放棄。堅定不是不聽勸，是知道自己在做對的事。"],
+["二-51","穩重","說話不搶，做事不急，走路不慌。穩重的人，給人安心的感覺。年紀大了，更要穩穩當當，讓家人放心，也讓自己安心。"],
+["二-52","穩健","不急進，不冒險，一步一步來。退休後過日子，穩健最重要。身體穩健，財務穩健，人際穩健，日子就過得長長久久。"],
+["二-53","沉穩","遇到事，不慌張；遇到人，不浮躁。沉穩的人，像一棵大樹，風來了搖一搖，但根扎得深。沉穩是歲月給的禮物，也是修行。"],
+["二-54","成熟","成熟不是年紀大，是懂得體諒、懂得退讓、懂得什麼話該說、什麼話不該說。成熟的人，不爭對錯，只求和氣；不爭輸贏，只求心安。"],
+["二-55","圓融","做人圓融一點，不必處處稜角。話說得圓，事做得圓，人際關係也圓。圓融不是鄉愿，是懂得給人留餘地，也給自己留後路。"],
+["二-56","圓滿","人生不求圓滿，但求心安。該做的做了，該還的還了，該放的放了。圓滿不是什麼都有，是心裡沒有遺憾。"],
+["二-57","周全","做事多想一步，說話多留一分。周全不是心機，是替人著想。周全的人，讓別人舒服，也讓自己安心。凡事想得周到，遺憾就少一點。"],
+["二-58","細膩","細膩的人，看得見別人的需要，聽得懂別人的心事。一杯水、一句問候、一個眼神，都是細膩。細膩不是敏感，是用心對待人。"],
+["二-59","用心","用心吃飯，用心走路，用心聽人說話。退休後最不缺時間，最該學的就是用心。用心過日子，日子就有滋味；用心待人，人就溫暖。"],
+["二-60","盡心","盡心就好，不必求完美。對家人盡心，對朋友盡心，對自己盡心。盡心的人，晚上睡得安穩，因為知道自己已經盡力了。"],
+["二-61","誠心","誠心誠意，比什麼都重要。誠心道歉，人家感受得到；誠心感謝，人家聽得出來。誠心不用華麗的詞，只要一顆真摯的心。"],
+["二-62","虛心","覺得自己什麼都懂，就什麼都學不到了。虛心聽聽別人的話，看看不一樣的觀點。虛心的人，愈老愈有智慧，因為他一直在學。"],
+["二-63","謙卑","稻穗愈飽滿，頭垂得愈低。人也是一樣，愈有本事，愈要謙卑。謙卑不是看不起自己，是看得起別人。謙卑的人，走到哪裡都受歡迎。"],
+["二-64","恭敬","對人恭敬，不分老少貴賤。對天地恭敬，對萬物恭敬。恭敬不是客套，是心裡有敬意。恭敬的人，自有貴氣。"],
+["二-65","虔誠","對信仰虔誠，對善念虔誠，對自己做過的好事虔誠。虔誠不是迷信，是心裡有一份篤定。虔誠的人，心是安靜的。"],
+["二-66","敬畏","敬畏天地，敬畏因果，敬畏生命。人有了敬畏，才不會亂來。敬畏不是害怕，是知道什麼該做、什麼不該做。有敬畏的人，走得正、坐得穩。"],
+["二-67","謹慎","話到嘴邊想一想，事到臨頭緩一緩。謹慎不是膽小，是知道後果。年紀大了，更要謹慎，不給自己找麻煩，也不給家人添負擔。"],
+["二-68","慎重","重要的決定，慢慢來；傷人的話，想一想再說。慎重不是優柔寡斷，是對自己負責，也對別人負責。慎重的人，少犯錯，少後悔。"],
+["二-69","穩當","做事穩當，人家才放心把事交給你；做人穩當，人家才願意跟你來往。穩當不是慢，是不出錯。穩當的人，日子過得安安穩穩。"],
+["二-70","妥當","話說得妥當，事辦得妥當，人就舒服。妥當不是圓滑，是恰到好處。把話說到人心裡，把事做到點子上，就是妥當。"],
+["二-71","恰當","該說的時候說，該沉默的時候沉默；該進的時候進，該退的時候退。恰當就是剛剛好，不多不少。恰到好處，是人際關係最好的距離。"],
+["二-72","適度","吃飯適度，說話適度，關心也適度。過猶不及，太多太少都不好。適度的人，懂得拿捏分寸，讓自己舒服，也讓別人自在。"],
+["二-73","知量","知道自己有多少能力，就做多少事；知道自己有多少福氣，就享多少福。知量不是認輸，是認清自己。知量的人，不會把自己撐壞。"],
+["二-74","知時","春天播種，秋天收成；該休息的時候休息，該做的時候做。知時的人，順著節奏走，不逆天，也不勉強。時候到了，自然水到渠成。"],
+["二-75","知趣","看到人家不想說了，就別再問；看到人家不方便，就別再麻煩。知趣不是見外，是懂得看場合。知趣的人，走到哪裡都讓人舒服。"],
+["二-76","識趣","懂得看人臉色，不是虛偽，是體貼。人家忙，就別打擾；人家累，就別硬聊。識趣的人，不多事、不添亂，人緣自然好。"],
+["二-77","知恩","別人幫過你，要記得。不管是滴水之恩，還是舉手之勞，都別裝作沒發生。知恩的人，心裡有溫度，走到哪裡都有人願意幫。"],
+["二-78","報恩","知恩還要報恩。不必等發大財，平常多問候、多關心、多幫忙，就是報恩。報恩不是還債，是把善意傳下去。"],
+["二-79","念恩","常常想起別人對你的好，心裡就暖。別老記著誰對不起你，多念著誰幫過你。念恩的人，怨氣少、福氣多，日子越過越順。"],
+["二-80","思恩","靜下來的時候，想想這一路走來，有多少人幫過你。父母、師長、朋友、甚至陌生人。思恩的人，心是軟的，眼是亮的。"],
+["二-81","惜時","日子過一天少一天，別把時間浪費在生氣、計較、後悔上。想做什麼，趁現在；想見誰，趁現在。惜時的人，活得充實，老得優雅。"],
+["二-82","惜今","昨天過去了，明天還不知道，能把握的只有今天。今天飯好好吃，今天覺好好睡，今天話好好說。惜今的人，天天都是好日子。"],
+["二-83","惜身","身體是自己的，也是家人的。不熬夜，不暴食，不糟蹋。惜身不是怕死，是珍惜還能走、還能笑、還能陪家人的每一天。"],
+["二-84","惜言","話說出去，收不回來。傷人的話，少說；沒必要的話，別說；好話，多說。惜言的人，不惹禍，不傷人，人緣自然好。"],
+["二-85","守口","病從口入，禍從口出。年紀大了，更要管好自己的嘴。不傳閒話，不說是非，不揭人短。守口的人，清淨，也讓人安心。"],
+["二-86","守心","外面再亂，心要守住。不讓貪念進來，不讓怨氣住下，不讓嫉妒開門。守心的人，心是定的，日子是安的。"],
+["二-87","守身","守好自己的身體，也守好自己的名聲。不做糊塗事，不交糊塗人。守身的人，一輩子清清白白，老了也受人尊敬。"],
+["二-88","護念","保護好自己的念頭。壞念頭一起，就把它轉掉；好念頭一起，就讓它長大。護念的人，心越來越乾淨，日子越來越歡喜。"],
+["二-89","正念","多想好的，少想壞的；多念人的好，少記人的壞。正念不是自我安慰，是選擇讓心住在光明裡。心光明了，人就自在了。"],
+["二-90","明心","知道自己要什麼，也知道自己不要什麼。不被別人牽著走，不被慾望拖著跑。明心的人，活得清楚，也活得輕鬆。"],
+["二-91","靜心","心煩的時候，坐下來，喝杯茶，聽聽呼吸。心靜了，很多事就想通了。靜心不是逃避，是給自己一個喘息的空間。"],
+["二-92","淨心","把心裡的垃圾清一清。怨恨清掉，嫉妒清掉，貪念清掉。心乾淨了，看什麼都順眼，過什麼日子都舒服。"],
+["二-93","暖心","做一個暖心的人。天冷的時候，給人倒杯熱茶；人累的時候，說句體貼的話。暖心不用花錢，卻能讓世界變得更溫柔。"],
+["二-94","寬心","凡事看寬一點，別鑽牛角尖。孩子有孩子的路，別人的嘴長在別人身上。寬心的人，放過別人，也放過自己。"],
+["二-95","放心","兒女大了，就放心讓他們飛；事情過了，就放心讓它過去。放心不是不管，是相信一切都會好好的。放心的人，活得輕鬆。"],
+["二-96","開心","笑一笑，十年少。退休後最該做的事，就是讓自己開心。做喜歡的事，見喜歡的人，吃喜歡的東西。開心，是給自己最好的禮物。"],
+["二-97","歡喜","歡歡喜喜過日子，比什麼都重要。歡喜不是因為什麼都有，是因為什麼都看得開。歡喜的人，走到哪裡都受歡迎，因為他身上有光。"],
+["二-98","柔和","說話柔和一點，態度柔和一點，眼神柔和一點。柔和不是沒脾氣，是懂得用溫柔的方式對待世界。柔和的人，像春風，讓人舒服。"],
+["二-99","善緣","多結善緣，少結怨。見面點個頭，說話帶個笑，能幫就幫一把。善緣結多了，路就好走了。你給出去的善意，最後都會回到自己身上。"],
+["二-100","惜情","人與人之間，最難得的是情分。親情、友情、夫妻情，都要珍惜。別為小事傷感情，別為面子斷了情。惜情的人，老了不孤單。"],
+/*END*/
+];
+const m=document.getElementById('m'),nav=document.getElementById('nav'),q=document.getElementById('q'),st=document.getElementById('st');
+const NEWT=[
+["知足","錢夠用就好，心夠寬就笑；不跟人比較，福氣自然到。手邊有的珍惜，別人的難看到；知足不是停下，是把善念做牢。"],
+["惜福","有水當思無水，有飯莫嫌粗；今天有人相伴，就是好福。省一點不浪費，分一點不孤獨；惜福的人心暖，走到哪裡都足。"],
+["感恩","醒來手腳能動，先說一聲謝；有人幫我一把，暖意別忘卻。沒人幫也自立，有心就能給；感恩不是客氣，是讓心不缺。"],
+["從容","事來一件件做，事過就放鬆；退休不必趕路，慢走也從容。氣順話就柔和，心寬人就好逢；從容不是偷懶，是不亂了陣腳。"],
+["放下","熱杯燙手就放，舊怨別緊抓；盡力之後鬆手，心才不疲乏。手空才能牽人，心空才能開花；放下不是認輸，是讓善再出發。"],
+["恬淡","茶淡也有回甘，人淡也有真情；少比名利高低，多聽鳥叫風聲。口味淡身體輕，交際淡心安寧；恬淡不是冷清，是不被物牽行。"],
+["守靜","每天留點安靜，關機聽呼吸；心像一杯濁水，放久就清淤。清一點少生氣，明一點多體諒；守靜不是孤僻，是讓善有場地。"],
+["寡欲","少買一點不缺，少爭一點不輸；需要想要分清，心就不糊塗。欲少眼睛就亮，心清善念就出；寡欲不是壓抑，是把日子過足。"],
+["寬厚","別人的錯看淡，自己的氣留少；心裡石頭搬開，走路自然輕巧。寬一點好相見，厚一點好到老；寬厚不是吃虧，是善緣自己找。"],
+["慈悲","看見人苦不忍，能力內伸一手；沒能力說暖話，也算一份溫柔。不傷人先做到，肯幫人再往前走；慈悲不是大事，是心不變硬。"],
+["隨緣","該做的認真做，該等的耐心等；花不開別硬掰，人事總有聚散。盡心後就鬆手，心安靜路就寬；隨緣不是不管，是不跟天爭。"],
+["簡樸","家裡少點雜物，心裡少點念頭；碗洗淨地掃淨，日子自然鬆柔。不為面子浪費，不跟別人比闊；簡樸不是刻苦，是知足有處留。"],
+["淡定","讚美來了不飄，批評來了不亂；離開職位掌聲，正好練平常般。不爭一時高下，不讓情緒翻船；淡定不是無感，是心穩善不斷。"],
+["安然","過去讓它過去，未來別先憂愁；今天飯好好吃，今天路慢慢走。身體會變就接，角色會換就受；安然不是消極，是把當下守。"],
+["自省","晚上回頭看看，今天話有沒有傷；有過就改一點，有善就繼續長。少問人負了我，多問我幫幾場；自省不是自責，是讓心更亮。"],
+["明理","該進的時候進，該退的時候退；不倚老賣老，也不看輕自己。理說柔聽得進，話留德人不累；明理不是精明，是分寸拿得對。"],
+["豁達","人生拉長來看，得失不過一陣；小怨別佔滿心，小利別太認真。心胸開路就寬，看得遠氣就順；豁達不是無感，是留空間給善。"],
+["包容","人有不完美，自己也有缺；相處摩擦難免，少說你應該。多說一句我懂，多留一步台階；包容不是鄉愿，是讓家園和諧。"],
+["謙和","有本事不炫耀，有年紀不壓人；語氣柔三分暖，態度敬一分真。慢心一起善遠，謙下一起福臨；謙和不是軟弱，是心裡有分寸。"],
+["誠信","說話就要算話，小事也認真做；不欺人也不騙己，信用就是底火。答應一句做到，往來不用猜破；誠信不是古板，是心安路好走。"],
+["善念","念頭一起先問，會不會傷人心；能不能幫一把，能不能留點情。每天種個小善，讓座讚美都行；善念不是口號，是天天在練習。"],
+["仁心","把別人當人看，老弱病苦多疼；退休身體漸衰，更懂無助心情。能力內伸一手，沒能力說一聲；仁心不是濫情，是心裡有盞燈。"],
+["節制","吃飯吃到八分，生氣留點餘地；花錢看看需要，不讓慾望牽去。不暴食身安穩，不暴怒家和氣；節制不是小氣，是保護你自己。"],
+["平衡","動一動也靜一靜，陪人也陪自己；退休別過忙亂，也別閒到無依。量力而行最久，留白生活才美；平衡不是折中，是心身都歡喜。"],
+["自在","別人眼光別綁，自己本心別丟；退休卸下頭銜，日子按心來走。做該做放該放，有分寸就自由；自在不是放縱，是心無掛無憂。"],
+["清歡","一壺茶一本書，一段路也能樂；人別一直追刺激，簡單反而深刻。清歡不是苦行，是不被物慾拖；心清善念就明，知足日子就甜。"],
+["靜觀","靜靜看自己的心，靜靜看外面變；不急著下判斷，先讓情緒沉澱。看清了再行善，看懂了再發言；靜觀不是冷眼，是明白後更暖。"],
+["慢活","飯好好吃一口，路好好走一段；話出口前慢點，氣上來時緩一緩。退休不是趕場，日子不必塞滿；慢活不是拖延，是讓心有驛站。"],
+["養生","不熬夜不暴食，多走路多曬陽；心少煩氣就順，身安穩福就長。健康是行善本錢，也是家人的光；養生不是怕死，是珍惜好時光。"],
+["修為","修心先少怨氣，修口先少傷人；修行先從小事，答應就要認真。脾氣改一點點，善念多一分分；修為不是高深，是每天進步些。"],
+/*END2*/
+];const originalText=new Map(DATA.map(d=>[d,d[2]]));
+const imageNumber=new Map(DATA.map((d,i)=>[d,i+1]));
+const nw={};NEWT.forEach(x=>nw[x[0]]=x[1]);DATA.forEach(d=>{if(nw[d[1]])d[2]=nw[d[1]]});
+const cat={};C.forEach((c,i)=>c.t.forEach(t=>cat[t]=i));
+const by=C.map(()=>[]);DATA.forEach(d=>{if(cat[d[1]]!==undefined)by[cat[d[1]]].push(d)});
+C.forEach((c,i)=>{
+ const s=document.createElement('section');s.id='c'+i;
+ const got=by[i].map(d=>d[1]);const left=c.t.filter(t=>!got.includes(t));
+ let h='<h2>'+(i+1)+'. '+c.n+'<small>已收錄 '+got.length+' / '+c.t.length+'</small></h2><p class="desc">'+c.d+'</p>';
+ if(by[i].length)h+='<div class="grid">'+by[i].map(d=>{const num=String(imageNumber.get(d)).padStart(3,'0');return '<div class="item"><h3>'+d[1]+'</h3><img src="images/Y'+num+'.webp" alt="'+d[1]+'的圖片" loading="lazy" onerror="this.style.visibility=\'hidden\'"></div>'}).join('')+'</div>'; 
+ if(left.length)h+='<div class="pend">待收錄：'+left.map(t=>'<b>'+t+'</b>').join('')+'</div>';
+ s.innerHTML=h;m.appendChild(s);
+ s.querySelectorAll('.item').forEach((item,j)=>{const d=by[i][j];item.searchText=d[1]+' '+originalText.get(d)+' '+d[2]});
+ const b=document.createElement('button');b.textContent=c.n;b.onclick=()=>s.scrollIntoView({behavior:'smooth'});nav.appendChild(b);
+});
+function stat(extra){st.textContent='已收錄 '+DATA.length+' / 200 則・已改寫 '+NEWT.length+' / 200 則'+(extra||'')}
+q.oninput=()=>{const v=q.value.trim();let n=0;
+ document.querySelectorAll('.item').forEach(e=>{const h=!v||e.searchText.includes(v);e.style.display=h?'':'none';if(h&&v)n++});
+ document.querySelectorAll('section').forEach(s=>{const has=[...s.querySelectorAll('.item')].some(e=>e.style.display!=='none');s.style.display=(!v||has)?'':'none'});
+ stat(v?'・符合 '+n+' 則':'')};
+stat();
+const viewer=document.getElementById('viewer'),viewerImage=document.getElementById('viewerImage'),viewerMessage=document.getElementById('viewerMessage'),viewerTitle=document.getElementById('viewerTitle'),viewerCategory=document.getElementById('viewerCategory'),viewerCount=document.getElementById('viewerCount'),openViewer=document.getElementById('openViewer'),autoButton=document.getElementById('viewerAuto'),shuffleButton=document.getElementById('viewerShuffle');
+const intervalMs=5000;
+let viewerIndex=0,previousOverflow='',playOrder=DATA.map((_,i)=>i),position=0,autoPlaying=true,shuffled=false,playTimer=null;
+function shuffleList(list){for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[list[i],list[j]]=[list[j],list[i]]}return list}
+function newRandomOrder(first){return [first,...shuffleList(DATA.map((_,i)=>i).filter(i=>i!==first))]}
+function refreshControls(){autoButton.textContent=autoPlaying?'⏸ 切換手動播放':'▶ 切換自動播放';autoButton.setAttribute('aria-pressed',String(autoPlaying));shuffleButton.textContent=shuffled?'🔀 隨機播放：開':'🔀 隨機播放：關';shuffleButton.setAttribute('aria-pressed',String(shuffled))}
+function resetTimer(){clearInterval(playTimer);playTimer=null;if(autoPlaying&&!viewer.hidden)playTimer=setInterval(()=>moveImage(1,false),intervalMs)}
+function showImage(){
+ viewerIndex=playOrder[position];
+ const item=DATA[viewerIndex],file='Y'+String(viewerIndex+1).padStart(3,'0')+'.webp';
+ viewerCategory.textContent='分類：'+C[cat[item[1]]].n;viewerTitle.textContent='主題：'+item[1];viewerCount.textContent=(position+1)+' / '+DATA.length+'　・　'+file;
+ viewerMessage.hidden=true;viewerImage.style.visibility='visible';viewerImage.alt=item[1]+' 的圖片';
+ viewerImage.onerror=()=>{viewerImage.style.visibility='hidden';viewerMessage.textContent='尚未找到圖片：images/'+file;viewerMessage.hidden=false};
+ viewerImage.src='images/'+file;
+}
+function moveImage(step,manual=true){
+ if(step>0&&position===playOrder.length-1&&shuffled){const last=viewerIndex;let first=Math.floor(Math.random()*(DATA.length-1));if(first>=last)first++;playOrder=newRandomOrder(first);position=0}
+ else position=(position+step+playOrder.length)%playOrder.length;
+ showImage();if(manual)resetTimer();
+}
+openViewer.addEventListener('click',()=>{previousOverflow=document.body.style.overflow;document.body.style.overflow='hidden';viewer.hidden=false;autoPlaying=true;shuffled=false;playOrder=DATA.map((_,i)=>i);position=0;refreshControls();showImage();resetTimer();document.getElementById('viewerHome').focus()});
+function closeViewer(){if(document.fullscreenElement===viewer&&document.exitFullscreen)document.exitFullscreen().catch(()=>{});else if(document.webkitFullscreenElement===viewer&&document.webkitExitFullscreen)document.webkitExitFullscreen();viewer.hidden=true;clearInterval(playTimer);playTimer=null;document.body.style.overflow=previousOverflow;openViewer.focus()}
+const fullscreenButton=document.getElementById('viewerFullscreen');
+let wasViewerFullscreen=false,autoBeforeFullscreen=true;
+function updateFullscreenButton(){const active=(document.fullscreenElement||document.webkitFullscreenElement)===viewer;if(active&&!wasViewerFullscreen){autoBeforeFullscreen=autoPlaying;autoPlaying=true;refreshControls();resetTimer()}else if(!active&&wasViewerFullscreen){autoPlaying=autoBeforeFullscreen;refreshControls();resetTimer()}wasViewerFullscreen=active;fullscreenButton.textContent=active?'⛶ 離開全螢幕':'⛶ 全螢幕';fullscreenButton.setAttribute('aria-pressed',String(active))}
+fullscreenButton.addEventListener('click',async()=>{try{const active=(document.fullscreenElement||document.webkitFullscreenElement)===viewer;if(active){if(document.exitFullscreen)await document.exitFullscreen();else if(document.webkitExitFullscreen)document.webkitExitFullscreen()}else if(viewer.requestFullscreen)await viewer.requestFullscreen();else if(viewer.webkitRequestFullscreen)viewer.webkitRequestFullscreen();else alert('此瀏覽器不支援全螢幕播放。');updateFullscreenButton()}catch(e){alert('無法進入或離開全螢幕，請檢查瀏覽器設定。')}});
+document.addEventListener('fullscreenchange',updateFullscreenButton);document.addEventListener('webkitfullscreenchange',updateFullscreenButton);
+document.getElementById('viewerHome').addEventListener('click',closeViewer);
+document.getElementById('viewerPrev').addEventListener('click',()=>moveImage(-1));
+document.getElementById('viewerNext').addEventListener('click',()=>moveImage(1));
+autoButton.addEventListener('click',()=>{autoPlaying=!autoPlaying;refreshControls();resetTimer()});
+shuffleButton.addEventListener('click',()=>{shuffled=!shuffled;playOrder=shuffled?newRandomOrder(viewerIndex):DATA.map((_,i)=>i);position=shuffled?0:viewerIndex;refreshControls();showImage();resetTimer()});
+document.addEventListener('keydown',e=>{if(viewer.hidden)return;if(e.key==='ArrowLeft'){e.preventDefault();moveImage(-1)}else if(e.key==='ArrowRight'){e.preventDefault();moveImage(1)}});
+const bar=document.querySelector('.bar');
+function updateBarHeight(){document.documentElement.style.setProperty('--bar-height',(bar.offsetHeight+12)+'px')}
+if('ResizeObserver' in window)new ResizeObserver(updateBarHeight).observe(bar);
+window.addEventListener('resize',updateBarHeight);updateBarHeight();
+</script>
+</body>
+</html>
